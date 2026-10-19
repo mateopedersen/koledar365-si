@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#edf3fa">
+<meta name="theme-color" content="#0b4ea2">
 <meta name="description" content="Koledar365.si nastaja. Skupaj sestavljamo koledar s slovaškim značajem.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://koledar365.si/">
-<link rel="icon" href="./brand-mark.svg" type="image/svg+xml">
-<link rel="stylesheet" href="./style.css">
+<link rel="icon" href="./favicon-sk.svg?v=sk-3" type="image/svg+xml">
+<link rel="stylesheet" href="./style.css?v=sk-3">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="sl_SI">
 <meta property="og:site_name" content="Koledar365.si">
@@ -25,7 +25,7 @@
 <div class="site-shell site-shell--cinematic">
   <header class="topbar">
     <a class="brand" href="./" aria-label="Koledar365.si">
-      <img class="brand__mark" src="./brand-mark.svg" alt="" width="42" height="42">
+      <img class="brand__mark" src="./favicon-sk.svg?v=sk-3" alt="" width="42" height="42">
       <span class="brand__word">koledar<span>365</span><small>.si</small></span>
     </a>
     <div class="topbar__status"><span class="status-dot" aria-hidden="true"></span> V nastajanju</div>
@@ -44,7 +44,7 @@
           <title id="scene-title">Ljudje skupaj gradijo velik koledar</title>
           <desc id="scene-description">Trije delavci v varnostnih čeladah sestavljajo velik stenski koledar pod vrhovi Visokih Tater. Eden namešča datum, drugi meri mrežo, tretji pripravlja načrte.</desc>
           <defs>
-            <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fbfdff"/><stop offset=".55" stop-color="#d9e7f7"/><stop offset="1" stop-color="#c5d8ef"/></linearGradient>
+            <linearGradient id="sky" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#9bc4f1"/><stop offset=".48" stop-color="#fff"/><stop offset="1" stop-color="#f2b3b8"/></linearGradient>
             <linearGradient id="paper" x1="0" y1="0" x2="0.95" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#e8eff8"/></linearGradient>
             <linearGradient id="cover" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1262bd"/><stop offset="1" stop-color="#073b7b"/></linearGradient>
             <linearGradient id="vest" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ef5260"/><stop offset="1" stop-color="#b9132c"/></linearGradient>
@@ -128,8 +128,9 @@
           </g>
 
           <!-- Builder A: standing on the left, checking the frame. -->
+          <g class="worker-stage worker-stage--left">
           <g class="worker worker--left">
-            <g class="worker-figure worker-figure--left" transform="translate(260 565) scale(1.35) translate(-260 -565)">
+            <g class="worker-figure worker-figure--left" transform="translate(260 565) scale(1.85) translate(-260 -565)">
             <ellipse cx="260" cy="565" rx="52" ry="13" fill="#35577d" opacity=".18"/>
             <path d="m238 491-7 59m35-57 12 58" stroke="#26364d" stroke-width="17" stroke-linecap="round"/>
             <path d="m226 550-14 9m66-7 17 8" stroke="#26364d" stroke-width="12" stroke-linecap="round"/>
@@ -140,17 +141,20 @@
             <g class="worker-head worker-head--left">
             <circle cx="256" cy="407" r="25" fill="#dca17b"/>
             <path d="M229 405q1-30 28-29 23 1 27 28h-55Z" fill="#fff" stroke="#0b4ea2" stroke-width="3"/>
-            <path d="M224 405h63" stroke="#ee1c25" stroke-width="9" stroke-linecap="round"/>
-            <path d="M247 409h5m13 0h5" stroke="#493f37" stroke-width="3" stroke-linecap="round"/>
-            <path d="M250 420q6 5 13 0" fill="none" stroke="#9b5545" stroke-width="2" stroke-linecap="round"/>
+            <path d="M224 400h63" stroke="#ee1c25" stroke-width="7" stroke-linecap="round"/>
+            <g class="worker-eyes worker-eyes--left" fill="#26364d"><ellipse cx="249" cy="412" rx="2.2" ry="3"/><ellipse cx="265" cy="412" rx="2.2" ry="3"/></g>
+            <circle cx="243" cy="419" r="3.2" fill="#f28272" opacity=".48"/><circle cx="271" cy="419" r="3.2" fill="#f28272" opacity=".48"/>
+            <path d="M250 423q6 7 14 0" fill="none" stroke="#9b5545" stroke-width="2.5" stroke-linecap="round"/>
             <path d="m218 462-4 7m-3 4-4 5" stroke="#fff" stroke-width="3"/>
             </g>
             </g>
           </g>
+          </g>
 
           <!-- Builder B: on the scaffold, fitting the hanging date tile. -->
+          <g class="worker-stage worker-stage--high">
           <g class="worker worker--high">
-            <g class="worker-figure worker-figure--high" transform="translate(876 408) scale(1.35) translate(-876 -408)">
+            <g class="worker-figure worker-figure--high" transform="translate(876 408) scale(1.85) translate(-876 -408)">
             <ellipse cx="876" cy="408" rx="46" ry="12" fill="#35577d" opacity=".16"/>
             <path d="m853 354-17 42m43-39 15 43" stroke="#26364d" stroke-width="16" stroke-linecap="round"/>
             <path d="m833 396-12 8m64-7 14 6" stroke="#26364d" stroke-width="11" stroke-linecap="round"/>
@@ -161,17 +165,20 @@
             <g class="worker-head worker-head--high">
             <circle cx="867" cy="268" r="24" fill="#dca17b"/>
             <path d="M840 266q1-29 27-29 25 1 29 29h-56Z" fill="#0b4ea2" stroke="#073b7b" stroke-width="3"/>
-            <path d="M835 266h65" stroke="#ee1c25" stroke-width="9" stroke-linecap="round"/>
-            <path d="M858 269h5m13 0h5" stroke="#493f37" stroke-width="3" stroke-linecap="round"/>
-            <path d="M861 280q6 5 13 0" fill="none" stroke="#9b5545" stroke-width="2" stroke-linecap="round"/>
+            <path d="M835 260h65" stroke="#ee1c25" stroke-width="7" stroke-linecap="round"/>
+            <g class="worker-eyes worker-eyes--high" fill="#26364d"><ellipse cx="858" cy="275" rx="2.2" ry="3"/><ellipse cx="874" cy="275" rx="2.2" ry="3"/></g>
+            <circle cx="852" cy="282" r="3" fill="#f28272" opacity=".48"/><circle cx="880" cy="282" r="3" fill="#f28272" opacity=".48"/>
+            <path d="M861 287q6 7 13 0" fill="none" stroke="#9b5545" stroke-width="2.5" stroke-linecap="round"/>
             </g>
             <path class="spark" d="m936 227 6-11m5 17 12-2m-23-13-2-10" stroke="#ee1c25" stroke-width="4" stroke-linecap="round"/>
             </g>
           </g>
+          </g>
 
           <!-- Builder C: measuring and marking the calendar below. -->
+          <g class="worker-stage worker-stage--front">
           <g class="worker worker--front">
-            <g class="worker-figure worker-figure--front" transform="translate(709 563) scale(1.35) translate(-709 -563)">
+            <g class="worker-figure worker-figure--front" transform="translate(709 563) scale(1.85) translate(-709 -563)">
             <ellipse cx="709" cy="563" rx="66" ry="13" fill="#35577d" opacity=".17"/>
             <path d="m674 520-10 34m54-32 20 33" stroke="#26364d" stroke-width="18" stroke-linecap="round"/>
             <path d="m662 551-15 8m82-3 17 7" stroke="#26364d" stroke-width="12" stroke-linecap="round"/>
@@ -182,11 +189,13 @@
             <g class="worker-head worker-head--front">
             <circle cx="697" cy="438" r="24" fill="#bd805e"/>
             <path d="M670 436q1-29 27-29 25 1 29 29h-56Z" fill="#fff" stroke="#0b4ea2" stroke-width="3"/>
-            <path d="M665 436h65" stroke="#ee1c25" stroke-width="9" stroke-linecap="round"/>
-            <path d="M688 439h5m13 0h5" stroke="#493f37" stroke-width="3" stroke-linecap="round"/>
-            <path d="M691 450q6 5 13 0" fill="none" stroke="#9b5545" stroke-width="2" stroke-linecap="round"/>
+            <path d="M665 430h65" stroke="#ee1c25" stroke-width="7" stroke-linecap="round"/>
+            <g class="worker-eyes worker-eyes--front" fill="#26364d"><ellipse cx="688" cy="444" rx="2.2" ry="3"/><ellipse cx="704" cy="444" rx="2.2" ry="3"/></g>
+            <circle cx="682" cy="451" r="3" fill="#f28272" opacity=".48"/><circle cx="710" cy="451" r="3" fill="#f28272" opacity=".48"/>
+            <path d="M691 456q6 7 13 0" fill="none" stroke="#9b5545" stroke-width="2.5" stroke-linecap="round"/>
             </g>
             </g>
+          </g>
           </g>
 
           <!-- Blueprint, toolbox and the Slovak tricolor with its coat of arms. -->

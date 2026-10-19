@@ -17,7 +17,7 @@ FileUtils.mkdir_p(OUTPUT)
   OUTPUT.join(output_name).write(template.result, encoding: 'UTF-8')
 end
 
-%w[style.css brand-mark.svg].each do |asset_name|
+%w[style.css brand-mark.svg favicon-sk.svg].each do |asset_name|
   FileUtils.cp(SOURCE.join(asset_name), OUTPUT.join(asset_name))
 end
 
@@ -34,6 +34,8 @@ OUTPUT.join('_headers').write(<<~HEADERS, encoding: 'UTF-8')
     Cache-Control: public, max-age=300, must-revalidate
   /brand-mark.svg
     Cache-Control: public, max-age=300, must-revalidate
+  /favicon-sk.svg
+    Cache-Control: public, max-age=300, must-revalidate
   HEADERS
 
 required = {
@@ -41,6 +43,7 @@ required = {
   '404 page' => OUTPUT.join('404.html'),
   'stylesheet' => OUTPUT.join('style.css'),
   'brand mark' => OUTPUT.join('brand-mark.svg'),
+  'Slovak favicon' => OUTPUT.join('favicon-sk.svg'),
   'robots rules' => OUTPUT.join('robots.txt'),
   'Cloudflare response headers' => OUTPUT.join('_headers')
 }
