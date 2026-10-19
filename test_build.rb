@@ -52,8 +52,14 @@ class Koledar365SiBuildTest < Minitest::Test
     assert_includes html, 'id="scene-title">Ljudje skupaj gradijo velik koledar</title>'
     assert_includes html, 'Trije delavci v varnostnih čeladah'
     assert_equal 3, html.scan(/class="worker worker--/).length
+    assert_equal 3, html.scan(/class="worker-figure worker-figure--/).length
+    assert_equal 3, html.scan(/scale\(1\.35\)/).length
     assert_includes html, 'class="suspended-tile"'
     assert_includes html, 'class="tile-slot"'
+    assert_equal 3, html.scan(/class="worker-head worker-head--/).length
+    assert_includes html, 'preserveAspectRatio="xMidYMid slice"'
+    assert_includes html, '#0b4ea2'
+    assert_includes html, '#ee1c25'
     assert_equal 1, html.scan('<section ').length, 'the launch page should keep its copy focused'
     svg = html[/<svg\b.*?<\/svg>/m]
     refute_nil svg
@@ -62,6 +68,10 @@ class Koledar365SiBuildTest < Minitest::Test
     assert_includes css, '@keyframes hoist-travel'
     assert_includes css, '@keyframes cable-lift'
     assert_includes css, '@keyframes fit-tile'
+    assert_includes css, '@keyframes work-left'
+    assert_includes css, '@keyframes work-high'
+    assert_includes css, '@keyframes work-front'
+    assert_includes css, '.worker-arm--left { transform-origin: 56% 18%; animation: reach-left 3.2s ease-in-out infinite; }'
     assert_includes css, '@media (prefers-reduced-motion: reduce)'
   end
 
