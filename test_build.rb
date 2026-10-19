@@ -4,11 +4,16 @@ require 'digest'
 require 'minitest/autorun'
 require 'open3'
 require 'pathname'
+require 'rexml/document'
 
 ROOT = Pathname.new(__dir__)
 RUBY = ROOT.join('../tooling/ruby-current/bin/ruby').expand_path
 
 class Koledar365SiBuildTest < Minitest::Test
+  def setup
+    build
+  end
+
   def build
     stdout, stderr, status = Open3.capture3(RUBY.to_s, 'build.rb', chdir: ROOT.to_s)
     assert status.success?, "build failed:\n#{stdout}\n#{stderr}"
@@ -34,11 +39,30 @@ class Koledar365SiBuildTest < Minitest::Test
     assert_includes html, '<html lang="sl">'
     assert_includes html, '<link rel="canonical" href="https://koledar365.si/">'
     assert_includes html, '<meta name="robots" content="noindex, nofollow">'
-    assert_includes html, 'PRAZNIKI'
-    assert_includes html, 'NAČRTI'
+    assert_includes html, 'Koledar se'
+    assert_includes html, 'Ekipa že sestavlja koledar s slovaškim značajem.'
+    assert_includes html, 'V GRADNJI · SLOVAŠKA'
     refute_match(/<script\b/i, html)
     assert_includes ROOT.join('dist/_headers').read(encoding: 'UTF-8'), "X-Robots-Tag: noindex, nofollow"
     assert_includes ROOT.join('dist/robots.txt').read(encoding: 'UTF-8'), 'Disallow: /'
+  end
+
+  def test_build_scene_has_three_accessible_workers_and_motion_support
+    html = ROOT.join('dist/index.html').read(encoding: 'UTF-8')
+    assert_includes html, 'id="scene-title">Ljudje skupaj gradijo velik koledar</title>'
+    assert_includes html, 'Trije delavci v varnostnih čeladah'
+    assert_equal 3, html.scan(/class="worker worker--/).length
+    assert_includes html, 'class="suspended-tile"'
+    assert_includes html, 'class="tile-slot"'
+    assert_equal 1, html.scan('<section ').length, 'the launch page should keep its copy focused'
+    svg = html[/<svg\b.*?<\/svg>/m]
+    refute_nil svg
+    REXML::Document.new(svg)
+    css = ROOT.join('dist/style.css').read(encoding: 'UTF-8')
+    assert_includes css, '@keyframes hoist-travel'
+    assert_includes css, '@keyframes cable-lift'
+    assert_includes css, '@keyframes fit-tile'
+    assert_includes css, '@media (prefers-reduced-motion: reduce)'
   end
 
   def test_local_brand_and_stylesheet_are_present_in_deploy_output
