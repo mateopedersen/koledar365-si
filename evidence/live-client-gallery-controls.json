@@ -1,0 +1,60 @@
+{
+  "checked_at": "2026-10-20T20:24:45.937444+00:00",
+  "passed": true,
+  "results": [
+    {
+      "path": "/prazen-koledar/",
+      "status": 200,
+      "design_count": 15,
+      "design_ids": [
+        "ele-01",
+        "ele-02",
+        "ele-03",
+        "geo-01",
+        "geo-02",
+        "geo-03",
+        "min-01",
+        "min-02",
+        "min-03",
+        "nat-01",
+        "nat-02",
+        "nat-03",
+        "pla-01",
+        "pla-02",
+        "pla-03"
+      ],
+      "format_button_counts": {
+        "pdf": 15,
+        "webp": 15
+      },
+      "passed": true
+    },
+    {
+      "path": "/koledar-z-imenom/ana/",
+      "status": 200,
+      "design_count": 15,
+      "design_ids": [
+        "ele-01",
+        "ele-02",
+        "ele-03",
+        "geo-01",
+        "geo-02",
+        "geo-03",
+        "min-01",
+        "min-02",
+        "min-03",
+        "nat-01",
+        "nat-02",
+        "nat-03",
+        "pla-01",
+        "pla-02",
+        "pla-03"
+      ],
+      "format_button_counts": {
+        "pdf": 15,
+        "webp": 15
+      },
+      "passed": true
+    }
+  ]
+}

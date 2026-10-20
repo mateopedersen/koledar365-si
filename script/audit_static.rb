@@ -11,6 +11,8 @@ Dir[site.join('**/*.html')].sort.each do |file|
  fail_with.call('Missing Slovene language') unless doc.at_css('html')['lang']=='sl'
  fail_with.call('Expected one main heading') unless doc.css('main h1').size==1
  fail_with.call('Missing title or description') unless doc.at_css('title')&.text.to_s.length>0 && doc.at_css('meta[name=description]')&.[]('content').to_s.length>0
+ preview_images=doc.css('img[src^="/prenosi/"][src$="/predogled.png"],img[src^="/predogled/"],img[data-static-preview^="/free/samples/"],img[data-preview-design]')
+ fail_with.call('Calendar design previews must declare the optimized 212 × 300 dimensions') unless preview_images.all? { |node|node['width']=='212'&&node['height']=='300' }
  robots=doc.at_css('meta[name=robots]')&.[]('content').to_s
  unless robots.include?('noindex')
   indexable+=1;canonical=doc.at_css('link[rel=canonical]')&.[]('href').to_s
@@ -47,6 +49,7 @@ Dir[site.join('**/*.html')].sort.each do |file|
     fail_with.call("Inline #{format} downloads do not match this page's exact year/month") unless actual==expected.map { |row|row.fetch('files').fetch(format) }.sort
    end
    fail_with.call('Inline previews do not match the actual download files') unless gallery.css('img').map { |node|node['src'] }.sort==expected.map { |row|row.fetch('files').fetch('preview') }.sort
+   fail_with.call('Gallery previews must use the optimized 212 × 300 thumbnail dimensions') unless gallery.css('img').all? { |node|node['width']=='212'&&node['height']=='300' }
   end
  end
  doc.css('source[srcset],img[srcset]').each do |node|
@@ -55,8 +58,8 @@ Dir[site.join('**/*.html')].sort.each do |file|
    targets << URI::DEFAULT_PARSER.unescape(raw) if raw&.start_with?('/')
   end
  end
- doc.css('script[src],link[rel=stylesheet],img[src],a[href]').each do |node|
-  raw=node['href']||node['src'];next if raw.nil?||raw.empty?||raw.start_with?('#','mailto:','tel:','data:','blob:')
+ doc.css('script[src],link[rel=stylesheet],img[src],a[href],meta[property="og:image"],meta[name="twitter:image"]').each do |node|
+  raw=node['href']||node['src']||node['content'];next if raw.nil?||raw.empty?||raw.start_with?('#','mailto:','tel:','data:','blob:')
   begin
    base='https://koledar365.si/'+relative.sub(%r{index\.html\z},'');uri=URI.join(base,raw)
    next unless uri.host=='koledar365.si'

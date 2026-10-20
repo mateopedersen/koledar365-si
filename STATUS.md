@@ -2,15 +2,12 @@
 
 ## Güncel yayın doğrulaması — 20.10.2026
 
-- `e2461b8eea` ana dalındaki yeni Ay takvimleri korunarak PageSpeed düzeltmeleri birleştirildi. Üst araç menüsüne bağımsız yatay kaydırma alanı, çerez şeridine ekran genişliği sınırı ve mobil hızlı bağlantılara metin saran iki sütun uygulandı. Ana/özel gün görsellerine eşleşen AVIF ön yüklemesi eklendi.
-- Güncel Ruby/Rails kaynağı: **66 test, 2.551 doğrulama, 0 hata/başarısızlık**. Dar ekran regresyonu sekiz sayfa ailesinde Chromium, WebKit, Android ve iPhone profillerinde geçti.
-- Doğru statik çıktı üzerinde dört profilde tarayıcı paketi tamamlandı: **57 başarılı, 0 başarısız, 3 kasıtlı atlama** (PDF üretimi yalnız Chromium). Tam statik yayının son denetimi çalışıyor. Kaynak henüz bu düzeltmelerle canlıya gönderilmedi; yayın ve canlı doğrulama sonucu aşağıya kaydedilecek.
-- Önceki canlı sürümün tam sitemap taraması **8.888/8.888 başarılı HTTPS yanıtı** verdi: `evidence/pagespeed-live-url-check.json`. Bu sonuç yeni yayın sonrası tekrarlanacak.
-- Son canlı Lighthouse mobil ana sayfa sonucu **98/100/100/100**; önceki yerel matriste bazı mobil performans sonuçları 99. Yeni canlı ölçüm gelmeden bütün kategoriler 100 olarak raporlanmayacak.
-- Birleştirme öncesi kaynak ve doğrulama çıktıları `stash@{0}` içinde korunur: “Preserve pending PageSpeed fixes and verification evidence before current main integration”.
-
-Güncelleme: 20.10.2026 20:12 +0300. Takvim metni düzeltmesi: 7d49796b4; otomatik statik yayın: 1fe95b074; Cloudflare Pages dağıtımı: f7ca7688-c429-45f4-ab8b-82d42cab497e (başarılı).
-Bu dosya birincil devam kaydıdır; önceki çalışma günlüğü docs/status-history-2026-10-20.md içinde korunur.
+- Ana dalın güncel temel sürümü `1197d74df2`. Kaynak ve statik çıktı için son PageSpeed düzeltmesi hazırlanıyor; henüz Cloudflare production’a gönderilmedi.
+- Google PSI’nin canlı aylık takvim ölçümünde bulunan tek puan kaybı, 15 galeride ekrana göre büyük indirilen önizlemelerdi. 2.820 galeri önizlemesi ve 15 düzenleyici örneği 425×600’den 212×300’e indirildi; 8.689 HTML sayfasında boyutlar eşleştirildi. Görsel aktarımı 12.719.024 bayt azaldı. PDF/WebP baskı dosyalarından hiçbirine dokunulmadı.
+- Paylaşım görsellerinden 276 eski ve hiçbir sayfanın artık kullanmadığı PNG kaldırıldı. Güncel Open Graph görselleri korundu; statik çıktı Cloudflare Free sınırının altında: **19.720 dosya / 20.000**.
+- Statik SEO/iç bağlantı denetimi geçti: 8.912 HTML, 8.888 indexlenebilir URL, 12.505 iç hedef, 8.888 sitemap girdisi ve 52 aylık/yıllık inline galeri. Dosya üretim doğrulaması: **2.820/2.820 PDF–WebP çifti**, Ay verisi 208 çift / 53 temel sayfa, sorun yok.
+- Önceki canlı sürümde ana sayfa PSI mobil ve masaüstü 100’dü; Şubat 2027 mobil PSI 98’di. Yeni optimizasyon yayınlandıktan sonra aylık, yıllık ve boş takvim sayfalarında mobil/masaüstü Google PSI yeniden ölçülecek; raporlar tamamlanmadan tüm sayfaların 100 olduğu söylenmeyecek.
+- Ücretsiz Cloudflare Pages/GitHub hattı kullanılıyor; yeni ücretli servis veya VPS açılmadı.
 
 ## Son tam denetim — 20.10.2026 21:40 +0300
 
