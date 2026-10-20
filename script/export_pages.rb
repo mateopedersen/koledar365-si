@@ -16,7 +16,7 @@ assets=nil;processed=[];style_sets={}
 transform=lambda do |body,path,indexable:true|
  doc=Nokogiri::HTML(body)
  sources=doc.css('script[src]').map { |node|node['src'] }
- assets||={scripts:sources.reject { |src|src.include?('holidays-')||src.include?('city_card-')||src.split('?',2).first=='/school/experience.mjs' },holidays:ApplicationController.helpers.asset_path('holidays.js')}
+ assets||={scripts:sources.reject { |src|src.include?('holidays-')||src.include?('city_card-')||src.include?('vacation-')||src.split('?',2).first=='/school/experience.mjs' },holidays:ApplicationController.helpers.asset_path('holidays.js'),vacation:ApplicationController.helpers.asset_path('vacation.js')}
  doc.css('script[src]').each { |script|src=script['src'];script.remove unless src.include?('city_card-')||src.split('?',2).first=='/school/experience.mjs' }
  doc.css('meta[name="csrf-token"],meta[name="csrf-param"],meta[name="csp-nonce"],meta[http-equiv="Content-Security-Policy"],input[name="authenticity_token"]').remove
  doc.css('[nonce]').each { |node|node.remove_attribute('nonce') }
@@ -39,7 +39,7 @@ transform=lambda do |body,path,indexable:true|
  # Discover the small interactive scripts during HTML parsing, without an extra
  # assets.json round trip or a serial module dependency waterfall.
  config=Nokogiri::XML::Node.new('script',doc);config['type']='application/json';config['id']='k365-static-config';config.content=JSON.generate(assets);doc.at_css('head').add_child(config)
- (assets[:scripts]+[assets[:holidays]]).each do |src|
+ (assets[:scripts]+[assets[:holidays]]+(doc.at_css('[data-vacation-planner]') ? [assets[:vacation]] : [])).each do |src|
   next if src==assets[:holidays]&&!doc.at_css('#holiday-filters')
   preload=Nokogiri::XML::Node.new('link',doc);preload['rel']='preload';preload['as']='script';preload['href']=src;doc.at_css('head').add_child(preload)
  end
