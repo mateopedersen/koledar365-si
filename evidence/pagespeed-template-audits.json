@@ -1,0 +1,1185 @@
+{
+  "checked_at_utc": "2026-10-20T18:40:24+00:00",
+  "site": "https://koledar365.si/",
+  "method": "Lighthouse 13.5 on local production-static build; mobile and desktop emulation. 35 page families additionally checked for accessibility, best practices, and SEO.",
+  "representative_page_performance_checks": [
+    {
+      "path": "/",
+      "form_factor": "mobile",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 1276,
+        "lcp": 1751,
+        "tbt": 6,
+        "speed_index": 1276
+      },
+      "cls": 0.0002042734374564385,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/mobile-00.json"
+    },
+    {
+      "path": "/koledar/2027/februar/",
+      "form_factor": "mobile",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 1244,
+        "lcp": 1587,
+        "tbt": 0,
+        "speed_index": 1244
+      },
+      "cls": 0.01477587858774859,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/mobile-01.json"
+    },
+    {
+      "path": "/koledar/2030/april/",
+      "form_factor": "mobile",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 1207,
+        "lcp": 1357,
+        "tbt": 0,
+        "speed_index": 1207
+      },
+      "cls": 0.01477587858774859,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/mobile-02.json"
+    },
+    {
+      "path": "/koledar/2027/",
+      "form_factor": "mobile",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 1207,
+        "lcp": 2111,
+        "tbt": 0,
+        "speed_index": 1207
+      },
+      "cls": 0.01477587858774859,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/mobile-03.json"
+    },
+    {
+      "path": "/prazniki/2027/",
+      "form_factor": "mobile",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 1512,
+        "lcp": 1662,
+        "tbt": 0,
+        "speed_index": 1512
+      },
+      "cls": 0,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/mobile-04.json"
+    },
+    {
+      "path": "/prazniki/marijino-vnebovzetje/",
+      "form_factor": "mobile",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 1206,
+        "lcp": 1959,
+        "tbt": 0,
+        "speed_index": 1206
+      },
+      "cls": 0,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/mobile-05.json"
+    },
+    {
+      "path": "/koledar-z-imenom/ana/",
+      "form_factor": "mobile",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 1207,
+        "lcp": 2111,
+        "tbt": 0,
+        "speed_index": 1603
+      },
+      "cls": 0,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/mobile-06.json"
+    },
+    {
+      "path": "/prazen-koledar/",
+      "form_factor": "mobile",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 1227,
+        "lcp": 1355,
+        "tbt": 0,
+        "speed_index": 1227
+      },
+      "cls": 0,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/mobile-07.json"
+    },
+    {
+      "path": "/datumski-kalkulator/",
+      "form_factor": "mobile",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 1306,
+        "lcp": 1358,
+        "tbt": 0,
+        "speed_index": 1306
+      },
+      "cls": 0,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/mobile-08.json"
+    },
+    {
+      "path": "/o-nas/",
+      "form_factor": "mobile",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 1229,
+        "lcp": 1665,
+        "tbt": 0,
+        "speed_index": 1229
+      },
+      "cls": 0,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/mobile-09.json"
+    },
+    {
+      "path": "/zasebnost/",
+      "form_factor": "mobile",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 1208,
+        "lcp": 1358,
+        "tbt": 0,
+        "speed_index": 1208
+      },
+      "cls": 0,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/mobile-10.json"
+    },
+    {
+      "path": "/lunin-koledar/",
+      "form_factor": "mobile",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 1204,
+        "lcp": 2181,
+        "tbt": 0,
+        "speed_index": 1204
+      },
+      "cls": 0,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/mobile-11.json"
+    },
+    {
+      "path": "/solske-pocitnice/",
+      "form_factor": "mobile",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 1364,
+        "lcp": 1596,
+        "tbt": 4,
+        "speed_index": 1364
+      },
+      "cls": 0,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/mobile-12.json"
+    },
+    {
+      "path": "/",
+      "form_factor": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 336,
+        "lcp": 377,
+        "tbt": 0,
+        "speed_index": 336
+      },
+      "cls": 0.006922508628111957,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/desktop-00.json"
+    },
+    {
+      "path": "/koledar/2027/februar/",
+      "form_factor": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 285,
+        "lcp": 347,
+        "tbt": 0,
+        "speed_index": 285
+      },
+      "cls": 0.0073828911653970744,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/desktop-01.json"
+    },
+    {
+      "path": "/koledar/2030/april/",
+      "form_factor": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 287,
+        "lcp": 351,
+        "tbt": 0,
+        "speed_index": 287
+      },
+      "cls": 0.007382891165397075,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/desktop-02.json"
+    },
+    {
+      "path": "/koledar/2027/",
+      "form_factor": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 289,
+        "lcp": 454,
+        "tbt": 0,
+        "speed_index": 289
+      },
+      "cls": 0.007382891165397075,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/desktop-03.json"
+    },
+    {
+      "path": "/prazniki/2027/",
+      "form_factor": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 375,
+        "lcp": 392,
+        "tbt": 0,
+        "speed_index": 375
+      },
+      "cls": 0,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/desktop-04.json"
+    },
+    {
+      "path": "/prazniki/marijino-vnebovzetje/",
+      "form_factor": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 286,
+        "lcp": 430,
+        "tbt": 0,
+        "speed_index": 286
+      },
+      "cls": 0,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/desktop-05.json"
+    },
+    {
+      "path": "/koledar-z-imenom/ana/",
+      "form_factor": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 286,
+        "lcp": 509,
+        "tbt": 0,
+        "speed_index": 286
+      },
+      "cls": 0,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/desktop-06.json"
+    },
+    {
+      "path": "/prazen-koledar/",
+      "form_factor": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 309,
+        "lcp": 611,
+        "tbt": 0,
+        "speed_index": 309
+      },
+      "cls": 0,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/desktop-07.json"
+    },
+    {
+      "path": "/datumski-kalkulator/",
+      "form_factor": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 297,
+        "lcp": 305,
+        "tbt": 0,
+        "speed_index": 297
+      },
+      "cls": 0,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/desktop-08.json"
+    },
+    {
+      "path": "/o-nas/",
+      "form_factor": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 287,
+        "lcp": 371,
+        "tbt": 0,
+        "speed_index": 287
+      },
+      "cls": 0,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/desktop-09.json"
+    },
+    {
+      "path": "/zasebnost/",
+      "form_factor": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 291,
+        "lcp": 297,
+        "tbt": 0,
+        "speed_index": 291
+      },
+      "cls": 0,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/desktop-10.json"
+    },
+    {
+      "path": "/lunin-koledar/",
+      "form_factor": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 289,
+        "lcp": 493,
+        "tbt": 0,
+        "speed_index": 289
+      },
+      "cls": 0,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/desktop-11.json"
+    },
+    {
+      "path": "/solske-pocitnice/",
+      "form_factor": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics_ms": {
+        "fcp": 348,
+        "lcp": 388,
+        "tbt": 0,
+        "speed_index": 348
+      },
+      "cls": 0,
+      "lighthouse_report": "tmp/qa/pagespeed/templates-final/desktop-12.json"
+    }
+  ],
+  "representative_page_family_checks": [
+    {
+      "path": "/mesecni-koledar/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-01.json"
+    },
+    {
+      "path": "/koledar/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-00.json"
+    },
+    {
+      "path": "/tedenski-koledar/2028/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-02.json"
+    },
+    {
+      "path": "/delovni-dnevi/2028/februar/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-04.json"
+    },
+    {
+      "path": "/lunin-koledar/2028/februar/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-03.json"
+    },
+    {
+      "path": "/podaljsani-vikendi/2028/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-05.json"
+    },
+    {
+      "path": "/piskotki/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-08.json"
+    },
+    {
+      "path": "/pomembni-dnevi/februar/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-07.json"
+    },
+    {
+      "path": "/pomembni-dnevi/2028/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-06.json"
+    },
+    {
+      "path": "/kontakt/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-09.json"
+    },
+    {
+      "path": "/uredniska-politika/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-11.json"
+    },
+    {
+      "path": "/viri-in-metodologija/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-10.json"
+    },
+    {
+      "path": "/pogoji-uporabe/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-12.json"
+    },
+    {
+      "path": "/imena/najpogostejsa/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-14.json"
+    },
+    {
+      "path": "/fotografije-in-licence/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-13.json"
+    },
+    {
+      "path": "/horoskop/oven/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-16.json"
+    },
+    {
+      "path": "/horoskop/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-15.json"
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-17.json"
+    },
+    {
+      "path": "/nacrtovalnik-dopusta/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-19.json"
+    },
+    {
+      "path": "/kalkulator-delovnih-dni/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-18.json"
+    },
+    {
+      "path": "/odstevanje/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-20.json"
+    },
+    {
+      "path": "/prestopno-leto/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-23.json"
+    },
+    {
+      "path": "/stevilka-tedna/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-21.json"
+    },
+    {
+      "path": "/dan-v-letu/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-22.json"
+    },
+    {
+      "path": "/ustvari-koledar/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-24.json"
+    },
+    {
+      "path": "/solski-urnik/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-26.json"
+    },
+    {
+      "path": "/razpored-izmen/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-25.json"
+    },
+    {
+      "path": "/dnevni-planer/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-28.json"
+    },
+    {
+      "path": "/rojstnodnevni-koledar/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-27.json"
+    },
+    {
+      "path": "/druzinski-planer/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-29.json"
+    },
+    {
+      "path": "/orodja/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-31.json"
+    },
+    {
+      "path": "/koledar-za-tiskanje/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-30.json"
+    },
+    {
+      "path": "/solske-pocitnice/2026-2027/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-32.json"
+    },
+    {
+      "path": "/solske-pocitnice/zimske/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-33.json"
+    },
+    {
+      "path": "/prazniki/bozic/",
+      "form_factor": "mobile",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/mobile-34.json"
+    },
+    {
+      "path": "/koledar/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-00.json"
+    },
+    {
+      "path": "/mesecni-koledar/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-01.json"
+    },
+    {
+      "path": "/lunin-koledar/2028/februar/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-03.json"
+    },
+    {
+      "path": "/tedenski-koledar/2028/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-02.json"
+    },
+    {
+      "path": "/podaljsani-vikendi/2028/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-05.json"
+    },
+    {
+      "path": "/delovni-dnevi/2028/februar/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-04.json"
+    },
+    {
+      "path": "/pomembni-dnevi/2028/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-06.json"
+    },
+    {
+      "path": "/pomembni-dnevi/februar/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-07.json"
+    },
+    {
+      "path": "/piskotki/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-08.json"
+    },
+    {
+      "path": "/kontakt/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-09.json"
+    },
+    {
+      "path": "/uredniska-politika/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-11.json"
+    },
+    {
+      "path": "/viri-in-metodologija/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-10.json"
+    },
+    {
+      "path": "/pogoji-uporabe/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-12.json"
+    },
+    {
+      "path": "/imena/najpogostejsa/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-14.json"
+    },
+    {
+      "path": "/horoskop/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-15.json"
+    },
+    {
+      "path": "/fotografije-in-licence/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-13.json"
+    },
+    {
+      "path": "/kalkulator-delovnih-dni/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-18.json"
+    },
+    {
+      "path": "/horoskop/oven/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-16.json"
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-17.json"
+    },
+    {
+      "path": "/odstevanje/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-20.json"
+    },
+    {
+      "path": "/stevilka-tedna/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-21.json"
+    },
+    {
+      "path": "/nacrtovalnik-dopusta/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-19.json"
+    },
+    {
+      "path": "/prestopno-leto/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-23.json"
+    },
+    {
+      "path": "/dan-v-letu/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-22.json"
+    },
+    {
+      "path": "/ustvari-koledar/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-24.json"
+    },
+    {
+      "path": "/razpored-izmen/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-25.json"
+    },
+    {
+      "path": "/solski-urnik/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-26.json"
+    },
+    {
+      "path": "/rojstnodnevni-koledar/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-27.json"
+    },
+    {
+      "path": "/dnevni-planer/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-28.json"
+    },
+    {
+      "path": "/druzinski-planer/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-29.json"
+    },
+    {
+      "path": "/koledar-za-tiskanje/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-30.json"
+    },
+    {
+      "path": "/orodja/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-31.json"
+    },
+    {
+      "path": "/solske-pocitnice/2026-2027/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-32.json"
+    },
+    {
+      "path": "/solske-pocitnice/zimske/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-33.json"
+    },
+    {
+      "path": "/prazniki/bozic/",
+      "form_factor": "desktop",
+      "scores": {
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "report": "tmp/qa/pagespeed/families-final/desktop-34.json"
+    }
+  ],
+  "summary": {
+    "performance_mobile_100": 7,
+    "performance_mobile_total": 13,
+    "performance_desktop_100": 13,
+    "performance_desktop_total": 13,
+    "family_accessibility_best_practices_seo_all_100": true,
+    "family_page_mode_checks": 70
+  }
+}
