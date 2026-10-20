@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-20T19:31:27.578Z",
+  "checkedAt": "2026-10-20T19:50:37.006Z",
   "base": "http://127.0.0.1:8667",
   "passed": true,
   "checks": [
@@ -57,6 +57,30 @@
     },
     {
       "name": "chromium leap-day atlas",
+      "passed": true
+    },
+    {
+      "name": "chromium keyboard Home",
+      "passed": true
+    },
+    {
+      "name": "chromium keyboard day and week",
+      "passed": true
+    },
+    {
+      "name": "chromium keyboard End",
+      "passed": true
+    },
+    {
+      "name": "chromium date picker changes month",
+      "passed": true
+    },
+    {
+      "name": "chromium summer local offset",
+      "passed": true
+    },
+    {
+      "name": "chromium phase filter",
       "passed": true
     },
     {
@@ -149,6 +173,30 @@
     },
     {
       "name": "webkit leap-day atlas",
+      "passed": true
+    },
+    {
+      "name": "webkit keyboard Home",
+      "passed": true
+    },
+    {
+      "name": "webkit keyboard day and week",
+      "passed": true
+    },
+    {
+      "name": "webkit keyboard End",
+      "passed": true
+    },
+    {
+      "name": "webkit date picker changes month",
+      "passed": true
+    },
+    {
+      "name": "webkit summer local offset",
+      "passed": true
+    },
+    {
+      "name": "webkit phase filter",
       "passed": true
     },
     {

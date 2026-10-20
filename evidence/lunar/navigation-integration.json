@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "wrappedDerivedHtmlFiles": 9293,
+  "source": "app/views/layouts/application.html.erb",
+  "purpose": "Apply the new navigation wrapper to existing name pages and home fragments without changing their content."
+}
