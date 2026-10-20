@@ -1,0 +1,88 @@
+/* The live city card is isolated from the dense calendar's spacing rules. */
+#city-card{display:block;padding:0;overflow:hidden;border:1px solid #e1e7ef;border-radius:18px;background:#fff;box-shadow:0 8px 25px #1c365e0a}
+#city-card .today-heading{display:flex;align-items:center;gap:10px;padding:17px 15px 15px;background:linear-gradient(120deg,#fff 30%,#faf4f4);position:relative}
+#city-card .today-location{width:29px;height:37px;flex:none;display:block;filter:drop-shadow(0 3px 3px #c72a3d1c)}
+#city-card .today-location svg{width:100%;height:100%}
+#city-card .today-eyebrow{display:block;font-size:8px;line-height:1.4;letter-spacing:1.7px;text-transform:uppercase;font-weight:800;color:#9d4c5b;margin:0 0 3px}
+#city-card .today-heading h2{font-size:17px;line-height:1.2;letter-spacing:-.5px;margin:0;color:#173052}
+#city-card .today-live{margin-left:auto;white-space:nowrap;align-self:flex-start;font-size:8px;font-weight:650;letter-spacing:.1px;color:#657b8a;display:flex;gap:4px;align-items:center;margin-top:2px}
+#city-card .today-live i{width:5px;height:5px;border-radius:50%;background:#38a182;box-shadow:0 0 0 3px #38a18213}
+#city-card .city-photo{display:block;position:relative;grid-column:auto;grid-row:auto;height:155px;margin:0;border-radius:0;background:#e4edf6}
+#city-card .city-photo:after{content:'';position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 1px 0 #ffffff30}
+#city-card .city-photo img{height:100%;width:100%;object-fit:cover}
+#city-card .city-photo figcaption{padding:32px 15px 12px;background:linear-gradient(transparent,#081e39bf);font-size:12px;letter-spacing:.1px}
+#city-card .city-photo figcaption a{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;border:1px solid #ffffff70;background:#ffffff17;backdrop-filter:blur(5px)}
+#city-card .today-body{padding:15px 15px 10px;min-width:0}
+#city-card .today-date{margin:0 0 13px;font-size:12px;color:#556c87;font-weight:650;line-height:1.45}
+#city-card .time-row{display:grid;grid-template-columns:54px minmax(0,1fr);gap:11px;align-items:center;margin:0 0 17px;position:relative}
+#city-card .city-clock{width:54px;height:54px;filter:drop-shadow(0 3px 4px #1c3b6010)}
+#city-card .city-clock path[class]{transform-origin:32px 32px}
+#city-card .clock-hour-hand{transform:rotate(var(--clock-hour,0deg))}#city-card .clock-minute-hand{transform:rotate(var(--clock-minute,0deg))}#city-card .clock-second-hand{transform:rotate(var(--clock-second,0deg))}
+#city-card .clock-caption{display:block;text-transform:uppercase;font-size:8px;font-weight:800;letter-spacing:1.3px;color:#7e8fa3;margin:0 0 2px}
+#city-card .clock-digits{display:flex;align-items:baseline;gap:5px;line-height:1}
+#city-card #ljubljana-clock{font-size:40px;line-height:1.05;font-weight:850;letter-spacing:-1.8px;color:#112f53;font-variant-numeric:tabular-nums}
+#city-card #city-clock-seconds{font-size:13px;font-weight:600;color:#9b5470;font-variant-numeric:tabular-nums;letter-spacing:.1px}
+#city-card .clock-zone{position:absolute;right:0;top:1px;padding:3px 5px;border-radius:4px;background:#f0f4f8;color:#6c7e93;font-size:8px;font-weight:750;letter-spacing:.4px}
+#city-card .city-picker{margin:0 0 10px}
+#city-card .city-picker>label{display:block;font-size:9px;font-weight:750;color:#7b8999;letter-spacing:1px;text-transform:uppercase;margin:0 0 6px}
+#city-card .city-location-status{display:block;margin:5px 2px 0;color:#465e79;font-size:10px;line-height:1.45}
+#city-card .city-select-shell{position:relative;border-radius:10px;background:linear-gradient(115deg,#f5f8fc,#fff);box-shadow:0 2px 5px #233e6710}
+#city-card .city-select-shell select{appearance:none;-webkit-appearance:none;display:block;position:relative;width:100%;height:44px;min-height:44px;margin:0;border:1px solid #dce6f0;border-radius:10px;background:transparent;padding:9px 34px 9px 34px;color:#173453;font-family:inherit;font-size:13px;font-weight:750;line-height:1.3;cursor:pointer;z-index:1}
+#city-card .city-select-shell select:focus-visible{outline:3px solid #82aee3;outline-offset:2px}
+#city-card .city-select-shell select:hover{border-color:#aabfd8}
+#city-card .city-select-shell>.ui-icon{position:absolute;width:16px;height:16px;top:14px;left:11px;color:#cf3f54;pointer-events:none;filter:none}
+#city-card .city-select-shell>.icon-chevron-right{left:auto;right:12px;width:13px;height:13px;top:16px;color:#486c92;transform:rotate(90deg);stroke-width:2.4}
+#city-card .weather-details{border-top:1px solid #e9eef4;padding-top:5px}
+#city-card .weather-details summary{display:grid;grid-template-columns:64px minmax(0,1fr) auto 10px;gap:7px;align-items:center;min-height:86px;list-style:none;cursor:pointer}
+#city-card .weather-details summary::-webkit-details-marker{display:none}
+#city-card .weather-details summary:focus-visible{outline:3px solid #82aee3;outline-offset:2px;border-radius:8px}
+#city-card .weather-icon{display:grid;place-items:center;width:64px;height:78px;line-height:1;filter:drop-shadow(0 4px 4px #36587c10)}
+#city-card .weather-icon>svg{display:block;width:76px;height:76px;overflow:visible}
+#city-card .weather-summary b{font-size:9px;line-height:1.4;letter-spacing:.15px;font-weight:600;color:#7a8da5;display:block;margin-bottom:4px;overflow-wrap:anywhere}
+#city-card .weather-summary small{display:block;font-size:13px;line-height:1.3;color:#203e5e;font-weight:750}
+#city-card .weather-details summary>strong{font-size:31px;letter-spacing:-1px;line-height:1;color:#153451;font-weight:800;font-variant-numeric:tabular-nums}
+#city-card .weather-details summary>.ui-icon{width:12px;height:12px;filter:none;color:#8b9eb3;transition:transform .2s}
+#city-card .weather-details[open] summary>.ui-icon{transform:rotate(90deg)}
+#city-card .weather-facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:2px 0 7px}
+#city-card .weather-facts>div{padding:9px 11px;background:#f4f7fb;border-radius:9px;border:1px solid #e9eff6}
+#city-card .weather-facts span{display:block;font-size:9px;color:#7a8ea5;margin-bottom:3px}
+#city-card .weather-facts strong{display:block;font-size:13px;color:#355779}
+#city-card .weather-hours{padding:5px 0 10px;gap:6px;scrollbar-width:thin;scrollbar-color:#cbd8e6 transparent}
+#city-card .weather-hours>div{min-width:43px;padding:8px 5px;background:#f6f9fc;border:1px solid #ebf0f6;border-radius:8px;font-size:10px;color:#7b8fa7}
+#city-card .weather-hours strong{font-size:15px;margin-top:4px;color:#2e5377}
+#city-card #weather-more>.muted{font-size:10px;color:#7d8c9f;line-height:1.55;margin:3px 0 12px}
+#city-card .weather-source{display:flex;align-items:center;gap:7px;margin:0 0 12px;padding:0 0 0 4px;min-height:35px;color:#7a8da3}
+#city-card .weather-source .status-dot{width:5px;height:5px;flex:none;background:#a9bacd;border-radius:50%}
+#city-card .weather-source>div{min-width:0;flex:1}
+#city-card .weather-source small{display:block;font-size:9px;line-height:1.65}
+#city-card #weather-published{font-size:8px;color:#91a0b2}
+#city-card #weather-refresh{display:grid;place-items:center;flex:none;width:28px;height:28px;min-height:28px;padding:6px;border:1px solid #e5ecf4;border-radius:50%;background:#f8fafd;color:#7f95ae;box-shadow:none;cursor:pointer}
+#city-card #weather-refresh:hover{background:#e9f0f8;color:#244d76}
+#city-card #weather-refresh svg{width:14px;height:14px}
+#city-card[data-weather-state=ready] .status-dot{background:#35a88a;box-shadow:0 0 0 3px #35a88a10}
+#city-card[data-weather-state=saved] .status-dot,#city-card[data-weather-state=unavailable] .status-dot{background:#d69b4c}
+#city-card.is-refreshing #weather-refresh svg{animation:wx-spin 1.5s linear infinite}
+#city-card .line-link{align-items:center;padding:12px 2px 10px;border-top:1px solid #e9eef4;font-size:12px;color:#3b5573;font-weight:650}
+#city-card .line-link span{display:flex;align-items:center;gap:9px}
+#city-card .line-link .ui-icon{width:17px;height:17px;filter:none;color:#708fac}
+#city-card .card-credit{font-size:8px;color:#97a3b3;text-align:center;padding:5px 0 1px}
+.wx-rays{transform-origin:50px 47px;animation:wx-spin 28s linear infinite}.wx-sun-core,.wx-halo{transform-origin:50px 47px;animation:wx-glow 4s ease-in-out infinite}.wx-sun-partly{transform:translate(-13px,-9px) scale(.9)}
+.wx-cloud-back{animation:wx-drift 6s ease-in-out infinite}.wx-cloud-front{animation:wx-drift 5s ease-in-out infinite reverse}.wx-rain path{animation:wx-rain 1.2s linear infinite}.wx-rain path:nth-child(2){animation-delay:-.4s}.wx-rain path:nth-child(3){animation-delay:-.8s}
+.wx-snow circle{animation:wx-snow 3s ease-in-out infinite}.wx-snow circle:nth-child(2){animation-delay:-1s}.wx-snow circle:nth-child(3){animation-delay:-2s}.wx-bolt{animation:wx-flash 3.5s ease-in-out infinite}.wx-fog{animation:wx-drift 5s ease-in-out infinite}.wx-star{animation:wx-glow 3s ease-in-out infinite}.weather-loading{animation:wx-spin 2s linear infinite}
+@keyframes wx-spin{to{transform:rotate(360deg)}}@keyframes wx-glow{0%,100%{opacity:.75}50%{opacity:1}}@keyframes wx-drift{0%,100%{transform:translateX(-2px)}50%{transform:translateX(3px)}}@keyframes wx-rain{0%{transform:translate(1px,-3px);opacity:0}25%{opacity:1}100%{transform:translate(-4px,8px);opacity:0}}@keyframes wx-snow{0%{transform:translate(0,-3px);opacity:0}30%{opacity:1}100%{transform:translate(4px,9px);opacity:0}}@keyframes wx-flash{0%,65%,100%{opacity:.3}70%,82%{opacity:1}76%{opacity:.4}}
+@media(min-width:650px) and (max-width:1100px){#city-card{display:grid;grid-template-columns:minmax(190px,.85fr) minmax(250px,1fr)}#city-card .today-heading{grid-column:1/-1;padding:15px 18px}#city-card .city-photo{height:100%;min-height:320px;grid-column:1;grid-row:2}#city-card .today-body{padding:15px 20px}#city-card .today-heading h2{font-size:19px}#city-card .today-eyebrow{font-size:9px}#city-card .today-live{font-size:9px}}
+@media(max-width:649px){#city-card .today-heading{padding:17px 18px}#city-card .today-heading h2{font-size:19px}#city-card .today-eyebrow{font-size:9px}#city-card .today-location{width:32px;height:38px}#city-card .city-photo{height:175px}#city-card .today-body{padding:17px 19px 12px}#city-card .today-date{font-size:13px}#city-card .time-row{grid-template-columns:60px minmax(0,1fr);gap:14px}#city-card .city-clock{width:60px;height:60px}#city-card #ljubljana-clock{font-size:46px}#city-card .clock-caption{font-size:9px}#city-card .clock-zone{font-size:9px}#city-card .city-select-shell select{height:46px;font-size:14px}#city-card .weather-details summary{grid-template-columns:76px minmax(0,1fr) auto 12px;gap:10px;min-height:96px}#city-card .weather-icon{width:76px;height:86px}#city-card .weather-icon>svg{width:88px;height:88px}#city-card .weather-summary b{font-size:10px}#city-card .weather-summary small{font-size:15px}#city-card .weather-details summary>strong{font-size:37px}#city-card .weather-source small{font-size:10px}#city-card #weather-published{font-size:9px}#city-card .line-link{font-size:13px}#city-card .card-credit{font-size:9px}}
+@media(max-width:359px){#city-card .today-heading{padding:15px 13px;gap:8px}#city-card .today-heading h2{font-size:17px}#city-card .today-live{font-size:7px}#city-card .today-body{padding:15px 14px 10px}#city-card #ljubljana-clock{font-size:41px}#city-card .weather-details summary{grid-template-columns:62px minmax(0,1fr) auto 10px;gap:6px}#city-card .weather-icon{width:62px}#city-card .weather-icon>svg{width:76px;height:76px}#city-card .weather-summary small{font-size:13px}#city-card .weather-details summary>strong{font-size:32px}}
+@media(prefers-reduced-motion:reduce){#city-card *,#city-card *:before,#city-card *:after{animation:none!important;transition:none!important}}
+
+#city-card .card-credit{font-size:10px;color:#526174;min-height:28px;display:flex;align-items:center;justify-content:center;padding:5px 8px}
+
+#city-card .city-photo picture{display:block;width:100%;height:100%}
+
+#city-card .clock-caption,#city-card .clock-zone,#city-card .city-picker>label,#city-card #weather-label,#city-card .weather-source small{color:#526174}
+
+#city-card #weather-published{color:#526174}
+
+#city-card .weather-facts span,#city-card .weather-hours>div,#city-card #weather-more>.muted,#city-card .today-live{color:#526174}
+/* Keep the first paint steady; motion responds to deliberate interaction. */
+#city-card:not(:hover):not(:focus-within) [class^="wx-"],#city-card:not(:hover):not(:focus-within) [class^="wx-"] *{animation-play-state:paused}
