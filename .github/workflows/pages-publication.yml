@@ -10,6 +10,10 @@ on:
       - 'app/**'
       - 'config/locales/**'
       - 'lib/portable/**'
+      - 'lib/horoscope/**'
+      - 'data/horoscope/**'
+      - 'public/horoscope/**'
+      - 'functions/horoskop/**'
       - '.github/workflows/pages-publication.yml'
 permissions:
   contents: write
@@ -40,21 +44,7 @@ jobs:
       - name: Install PDF tools
         run: sudo apt-get update -qq && sudo apt-get install -y poppler-utils python3-pil
       - name: Rebuild public HTML with Ruby
-        run: bundle exec ruby script/rebuild_free.rb && bundle exec ruby script/verify_vector_identity.rb
+        run: node script/generate_daily_horoscope.mjs && bundle exec ruby script/rebuild_free.rb && bundle exec ruby script/verify_vector_identity.rb
       - name: Save complete verified publication
         run: |
-          git config user.name 'Koledar365 publication'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add site functions/cities.js
-          if git diff --cached --quiet; then exit 0; fi
-          git commit -m 'Publish verified calendar and dated editorial content'
-          for attempt in 1 2 3 4 5; do
-            git fetch origin main
-            git rebase origin/main
-            if git push origin HEAD:main; then
-              exit 0
-            fi
-            echo "Main advanced during publication push; retrying (${attempt}/5)."
-          done
-          echo 'Could not publish after five attempts to incorporate concurrent main commits.' >&2
-          exit 1
+          bash script/save_pages_publication.sh

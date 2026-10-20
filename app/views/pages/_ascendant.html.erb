@@ -1,0 +1,16 @@
+<section class="z-calculator" id="ascendent" aria-labelledby="ascendant-title">
+  <div class="z-calculator-title"><%= horoscope_icon %><span class="z-kicker">SPOZNAJTE ŠE DRUGO STRAN SEBE</span></div>
+  <h2 id="ascendant-title">Kateri je vaš <em>ascendent?</em></h2>
+  <p>Odkrijte znamenje, ki je ob vašem rojstvu vzhajalo na vzhodnem obzorju. Potrebujete <strong>datum, točno uro in kraj rojstva.</strong></p>
+  <form class="z-birth-form" data-birth-form>
+    <fieldset disabled data-birth-fields><legend class="sr-only">Podatki za izračun ascendenta</legend>
+      <div class="z-form-pair"><label for="z-birth-date">Datum rojstva<input id="z-birth-date" type="date" min="1900-01-01" max="<%= @today.iso8601 %>" required data-birth-date></label><label for="z-birth-time">Točna ura rojstva<input id="z-birth-time" type="time" required data-birth-time><small>Ura, zapisana ob rojstvu.</small></label></div>
+      <label for="z-birth-place">Kraj rojstva<select id="z-birth-place" data-birth-place><option value="46.0569|14.5058|Europe/Ljubljana">Ljubljana, Slovenija</option></select></label>
+      <details class="z-manual-place" data-manual-place><summary>Drug kraj ali ročni vnos koordinat</summary><p>Če vašega kraja ni na seznamu, vnesite njegove koordinate in časovni pas IANA. Vzhodna dolžina in severna širina sta pozitivni.</p><div class="z-form-pair"><label for="z-birth-lat">Zemljepisna širina<input id="z-birth-lat" type="number" min="-89.999" max="89.999" step="any" value="46.0569" data-birth-lat></label><label for="z-birth-lon">Zemljepisna dolžina<input id="z-birth-lon" type="number" min="-180" max="180" step="any" value="14.5058" data-birth-lon></label></div><label for="z-birth-zone">Časovni pas<input id="z-birth-zone" type="text" value="Europe/Ljubljana" placeholder="Europe/Ljubljana" autocomplete="off" spellcheck="false" data-birth-zone></label></details>
+      <label class="z-fold" hidden data-birth-fold-label for="z-birth-fold">Ta ura se je ob premiku ure ponovila. Kateri pojav?<select id="z-birth-fold" data-birth-fold><option value="">Izberite pojav ure</option><option value="0">Prvi pojav (pred premikom ure)</option><option value="1">Drugi pojav (po premiku ure)</option></select></label>
+      <button type="submit" class="z-primary" data-birth-submit>Izračunaj moje znamenje <span aria-hidden="true">↗</span></button>
+    </fieldset>
+    <p class="z-privacy"><%= ui_icon('shield') %> Podatki ostanejo na vaši napravi. Ne pošiljamo jih strežniku in jih ne shranjujemo.</p>
+    <div class="z-birth-result" data-birth-result role="status" aria-live="polite" tabindex="-1" hidden></div>
+  </form><noscript><p>Za izračun omogočite JavaScript. Podatkov obrazca ni mogoče poslati strežniku.</p></noscript>
+</section>

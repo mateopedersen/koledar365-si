@@ -1,0 +1,342 @@
+{
+  "reference": "Swiss Ephemeris 2.10.03",
+  "method": "swe.houses_ex; tropical, true equator/equinox; synthetic UTC fixtures, no personal birth data",
+  "samples": [
+    {
+      "instant": "1900-01-01T12:00:00Z",
+      "latitude": 46.0569,
+      "longitude": 14.5058,
+      "reference": 45.566566534618524,
+      "location": "Ljubljana"
+    },
+    {
+      "instant": "1900-01-01T12:00:00Z",
+      "latitude": 0,
+      "longitude": 0,
+      "reference": 11.617781015184763,
+      "location": "Equator"
+    },
+    {
+      "instant": "1900-01-01T12:00:00Z",
+      "latitude": -33.8688,
+      "longitude": 151.2093,
+      "reference": 152.8007236091023,
+      "location": "Sydney"
+    },
+    {
+      "instant": "1900-01-01T12:00:00Z",
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "reference": 274.4398011671104,
+      "location": "New York"
+    },
+    {
+      "instant": "1900-01-01T12:00:00Z",
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "reference": 155.43441326324523,
+      "location": "Tokyo"
+    },
+    {
+      "instant": "1900-01-01T12:00:00Z",
+      "latitude": 65,
+      "longitude": 25,
+      "reference": 100.51695112532327,
+      "location": "High north"
+    },
+    {
+      "instant": "1945-06-01T07:40:00Z",
+      "latitude": 46.0569,
+      "longitude": 14.5058,
+      "reference": 126.91173496734851,
+      "location": "Ljubljana"
+    },
+    {
+      "instant": "1945-06-01T07:40:00Z",
+      "latitude": 0,
+      "longitude": 0,
+      "reference": 94.06259215003087,
+      "location": "Equator"
+    },
+    {
+      "instant": "1945-06-01T07:40:00Z",
+      "latitude": -33.8688,
+      "longitude": 151.2093,
+      "reference": 263.0266368585575,
+      "location": "Sydney"
+    },
+    {
+      "instant": "1945-06-01T07:40:00Z",
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "reference": 33.99432485095612,
+      "location": "New York"
+    },
+    {
+      "instant": "1945-06-01T07:40:00Z",
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "reference": 224.50532287724437,
+      "location": "Tokyo"
+    },
+    {
+      "instant": "1945-06-01T07:40:00Z",
+      "latitude": 65,
+      "longitude": 25,
+      "reference": 146.25987460339775,
+      "location": "High north"
+    },
+    {
+      "instant": "1970-01-01T00:00:00Z",
+      "latitude": 46.0569,
+      "longitude": 14.5058,
+      "reference": 198.56250500669265,
+      "location": "Ljubljana"
+    },
+    {
+      "instant": "1970-01-01T00:00:00Z",
+      "latitude": 0,
+      "longitude": 0,
+      "reference": 191.12942456262076,
+      "location": "Equator"
+    },
+    {
+      "instant": "1970-01-01T00:00:00Z",
+      "latitude": -33.8688,
+      "longitude": 151.2093,
+      "reference": 344.35777636948086,
+      "location": "Sydney"
+    },
+    {
+      "instant": "1970-01-01T00:00:00Z",
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "reference": 129.81453874054407,
+      "location": "New York"
+    },
+    {
+      "instant": "1970-01-01T00:00:00Z",
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "reference": 315.34744269981707,
+      "location": "Tokyo"
+    },
+    {
+      "instant": "1970-01-01T00:00:00Z",
+      "latitude": 65,
+      "longitude": 25,
+      "reference": 199.79632304110777,
+      "location": "High north"
+    },
+    {
+      "instant": "1990-05-21T10:30:00Z",
+      "latitude": 46.0569,
+      "longitude": 14.5058,
+      "reference": 150.65613822213908,
+      "location": "Ljubljana"
+    },
+    {
+      "instant": "1990-05-21T10:30:00Z",
+      "latitude": 0,
+      "longitude": 0,
+      "reference": 123.98589411044715,
+      "location": "Equator"
+    },
+    {
+      "instant": "1990-05-21T10:30:00Z",
+      "latitude": -33.8688,
+      "longitude": 151.2093,
+      "reference": 291.32574540573944,
+      "location": "Sydney"
+    },
+    {
+      "instant": "1990-05-21T10:30:00Z",
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "reference": 74.55024195258201,
+      "location": "New York"
+    },
+    {
+      "instant": "1990-05-21T10:30:00Z",
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "reference": 250.6514833038029,
+      "location": "Tokyo"
+    },
+    {
+      "instant": "1990-05-21T10:30:00Z",
+      "latitude": 65,
+      "longitude": 25,
+      "reference": 163.85047876094453,
+      "location": "High north"
+    },
+    {
+      "instant": "2000-01-01T12:00:00Z",
+      "latitude": 46.0569,
+      "longitude": 14.5058,
+      "reference": 45.20105015364765,
+      "location": "Ljubljana"
+    },
+    {
+      "instant": "2000-01-01T12:00:00Z",
+      "latitude": 0,
+      "longitude": 0,
+      "reference": 11.373899604604901,
+      "location": "Equator"
+    },
+    {
+      "instant": "2000-01-01T12:00:00Z",
+      "latitude": -33.8688,
+      "longitude": 151.2093,
+      "reference": 152.48890913928093,
+      "location": "Sydney"
+    },
+    {
+      "instant": "2000-01-01T12:00:00Z",
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "reference": 274.24198357024164,
+      "location": "New York"
+    },
+    {
+      "instant": "2000-01-01T12:00:00Z",
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "reference": 155.24863169978312,
+      "location": "Tokyo"
+    },
+    {
+      "instant": "2000-01-01T12:00:00Z",
+      "latitude": 65,
+      "longitude": 25,
+      "reference": 100.32057528532812,
+      "location": "High north"
+    },
+    {
+      "instant": "2026-03-29T01:30:00Z",
+      "latitude": 46.0569,
+      "longitude": 14.5058,
+      "reference": 286.76767256101726,
+      "location": "Ljubljana"
+    },
+    {
+      "instant": "2026-03-29T01:30:00Z",
+      "latitude": 0,
+      "longitude": 0,
+      "reference": 296.9332105179848,
+      "location": "Equator"
+    },
+    {
+      "instant": "2026-03-29T01:30:00Z",
+      "latitude": -33.8688,
+      "longitude": 151.2093,
+      "reference": 75.210562412245,
+      "location": "Sydney"
+    },
+    {
+      "instant": "2026-03-29T01:30:00Z",
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "reference": 215.48375375611116,
+      "location": "New York"
+    },
+    {
+      "instant": "2026-03-29T01:30:00Z",
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "reference": 96.0916907969666,
+      "location": "Tokyo"
+    },
+    {
+      "instant": "2026-03-29T01:30:00Z",
+      "latitude": 65,
+      "longitude": 25,
+      "reference": 259.3147582703042,
+      "location": "High north"
+    },
+    {
+      "instant": "2026-10-25T00:30:00Z",
+      "latitude": 46.0569,
+      "longitude": 14.5058,
+      "reference": 154.0908020823057,
+      "location": "Ljubljana"
+    },
+    {
+      "instant": "2026-10-25T00:30:00Z",
+      "latitude": 0,
+      "longitude": 0,
+      "reference": 128.49641635830667,
+      "location": "Equator"
+    },
+    {
+      "instant": "2026-10-25T00:30:00Z",
+      "latitude": -33.8688,
+      "longitude": 151.2093,
+      "reference": 295.1856249882551,
+      "location": "Sydney"
+    },
+    {
+      "instant": "2026-10-25T00:30:00Z",
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "reference": 79.28328443108926,
+      "location": "New York"
+    },
+    {
+      "instant": "2026-10-25T00:30:00Z",
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "reference": 254.54716536737686,
+      "location": "Tokyo"
+    },
+    {
+      "instant": "2026-10-25T00:30:00Z",
+      "latitude": 65,
+      "longitude": 25,
+      "reference": 166.43227355737892,
+      "location": "High north"
+    },
+    {
+      "instant": "2026-10-25T01:30:00Z",
+      "latitude": 46.0569,
+      "longitude": 14.5058,
+      "reference": 165.33264767738015,
+      "location": "Ljubljana"
+    },
+    {
+      "instant": "2026-10-25T01:30:00Z",
+      "latitude": 0,
+      "longitude": 0,
+      "reference": 143.63848921344854,
+      "location": "Equator"
+    },
+    {
+      "instant": "2026-10-25T01:30:00Z",
+      "latitude": -33.8688,
+      "longitude": 151.2093,
+      "reference": 307.6329788306093,
+      "location": "Sydney"
+    },
+    {
+      "instant": "2026-10-25T01:30:00Z",
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "reference": 93.49578655321623,
+      "location": "New York"
+    },
+    {
+      "instant": "2026-10-25T01:30:00Z",
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "reference": 267.7019058412537,
+      "location": "Tokyo"
+    },
+    {
+      "instant": "2026-10-25T01:30:00Z",
+      "latitude": 65,
+      "longitude": 25,
+      "reference": 174.89676359433693,
+      "location": "High north"
+    }
+  ]
+}
