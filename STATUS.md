@@ -1,13 +1,14 @@
 # Koledar365 — devam ve canlı yayın durumu
 
-Güncelleme: 20.10.2026 19:47 +0300. Son doğrulanan uygulama: bdf11c564; otomatik statik üretim: 16e398cda.
+Güncelleme: 20.10.2026 20:12 +0300. Takvim metni düzeltmesi: 7d49796b4; otomatik statik yayın: 1fe95b074; Cloudflare Pages dağıtımı: f7ca7688-c429-45f4-ab8b-82d42cab497e (başarılı).
 Bu dosya birincil devam kaydıdır; önceki çalışma günlüğü docs/status-history-2026-10-20.md içinde korunur.
 
-## Aylık takvim metinleri — yayına hazır
+## Aylık takvim metinleri — canlıda doğrulandı
 
-- Ortak ay şablonunda uzun tatil ve özel gün adları tek satırda üç noktayla kısalır; kelimeler hücre dışında alt satıra bölünmez. Tam ad hem bağlantı metninde hem `title` niteliğinde korunur. Aynı kural ana sayfadaki ay görünümüne de uygulanır.
-- 2027–2030 arasındaki 48 statik ay sayfası ve 313 olay bağlantısı kontrol edildi; hepsi yeni `/assets/slovenia-f54bd27f.css` dosyasına bağlıdır. Yerel 390 px ve 1378 px görünümlerde computed CSS ve hücre ölçüleri incelendi. Kanıt: evidence/calendar-event-label-layout.json.
-- İlk metin düzeltmesinin tam Ruby üretimi başarıyla tamamlandı: 8.912 HTML, 8.743 galeri, 18.750 dosya ve 2.820 PDF/WebP çifti doğrulandı. Aynı tarihte iki etiket bulunan kompakt hücrelerin sabit yükseklik sınırı da kaldırıldı. Ana dalın yeni hesaplayıcı ve tatil sayfası kaynakları alındı; birleşik son kaynak GitHub’ın mevcut Ruby yayın iş akışında üretilecek ve canlıda doğrulanacak. Yerel komut yolu eksikleri Node ve mise dizinleriyle giderildi; tamamlanmış çıktılar ve üretilen ek runtime dosyaları tmp/qa altında korunur.
+- Ortak ay şablonunda uzun tatil ve özel gün adları dar gün hücrelerinde tek satırda üç noktayla kısalır; kelimeler bölünmez ve komşu hücreye taşmaz. Tam ad bağlantı metninde ve `title` niteliğinde korunur. Kural ana sayfanın takvim ızgarasında da geçerlidir. İki olaylı dar hücrede dikey kesme kaldırıldı.
+- Cloudflare Pages dağıtımı `f7ca7688-c429-45f4-ab8b-82d42cab497e` başarılı oldu; `https://koledar365.si/` özel alan adı yeni yayını sunuyor. 2027–2030 arasındaki 48 aylık ve 4 yıllık canlı URL'nin tümü HTTP 200, her birinde 15 galeri tasarımı, yeni CSS varlıkları ve sürüm manifestiyle eşleşen kaynak SHA-256'ları doğrulandı. 48 aydaki 313 olay bağlantısının tam başlığı da korundu. Kanıt: `evidence/calendar-labels-live-verification.json`.
+- Canlı tarayıcıda Şubat 2027 ve Nisan 2030 görsel olarak incelendi. Nisan 2030'da aynı dar hücredeki iki olay da ayrı satırda kalıyor; Şubat 2027'de uzun adlar kelime ortasında bölünmeden kısalıyor. 390 px telefon görünümü yerelde ayrıca ölçüldü. Kanıtlar: `evidence/calendar-labels-live-feb-2027.png`, `evidence/calendar-labels-live-apr-2030.png`, `evidence/calendar-labels-browser-layout.json`.
+- Kaynak düzeltmesi `7d49796b4fb0a58f03595f174ded512900435291`; otomatik statik çıktı `1fe95b074ea999105e7cae0c2252d37eb383809d`. Tam CI ve yeniden üretim başarılı: https://github.com/mateopedersen/koledar365-si/actions/runs/39461414151. Ruby statik üretimi ve Cloudflare yayın hazırlığı başarılı: https://github.com/mateopedersen/koledar365-si/actions/runs/39461414134.
 
 ## Galeri düzeni — tamamlandı
 
@@ -24,7 +25,7 @@ Bu dosya birincil devam kaydıdır; önceki çalışma günlüğü docs/status-h
 
 - Ana adres: https://koledar365.si/ — HTTPS üzerinden erişilebilir.
 - Cloudflare Pages projesi koledar365-si; production branch main; otomatik dağıtımlar açık.
-- Son doğrulanmış uygulama dağıtımı başarılı: https://a6fd3aa3.koledar365-si.pages.dev/ — deployment a6fd3aa3-bbb5-43d1-bb04-e72419b54ecd; kaynak commit bdf11c564. 20.10.2026 19:27 +0300 tarihinde başarılı. Koledar365.si özel alanında yeni takvim/galeri düzeni canlıda doğrulandı. 16e398cda aynı kaynaktan otomatik yayın çıktısını günceller.
+- Son doğrulanmış uygulama dağıtımı başarılı: https://f7ca7688.koledar365-si.pages.dev/ — deployment f7ca7688-c429-45f4-ab8b-82d42cab497e; kaynak commit 1fe95b074. 20.10.2026 20:11 +0300 tarihinde başarılı; koledar365.si özel alanı da aynı yayını sunuyor.
 - Repo herkese açık: https://github.com/mateopedersen/koledar365-si
 - Cloudflare Preview: https://e689a94c.koledar365-si.pages.dev/
 - Son yerel statik üretimde 18.750 dosya ve 2.820 eşleşmiş PDF/WebP çifti doğrulandı. 8.912 HTML, 8.888 indexlenebilir URL ve 11.434 iç hedefle statik/SEO kontrolü geçti.

@@ -1,0 +1,640 @@
+{
+  "checked_at": "2026-10-20T17:11:49.994756+00:00",
+  "base_url": "https://koledar365.si",
+  "monthly_pages": 48,
+  "annual_pages": 4,
+  "event_links": 313,
+  "source_hashes_match": {
+    "app/assets/stylesheets/slovenia.css": true,
+    "app/assets/stylesheets/calendar_gallery.css": true,
+    "app/views/pages/_month.html.erb": true
+  },
+  "css_rules_present": true,
+  "pages": [
+    {
+      "path": "/koledar/2027/januar/",
+      "http_status": 200,
+      "event_links": 4,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2027/februar/",
+      "http_status": 200,
+      "event_links": 4,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2027/marec/",
+      "http_status": 200,
+      "event_links": 10,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2027/april/",
+      "http_status": 200,
+      "event_links": 6,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2027/maj/",
+      "http_status": 200,
+      "event_links": 9,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2027/junij/",
+      "http_status": 200,
+      "event_links": 5,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2027/julij/",
+      "http_status": 200,
+      "event_links": 0,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2027/avgust/",
+      "http_status": 200,
+      "event_links": 5,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2027/september/",
+      "http_status": 200,
+      "event_links": 7,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2027/oktober/",
+      "http_status": 200,
+      "event_links": 8,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2027/november/",
+      "http_status": 200,
+      "event_links": 11,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2027/december/",
+      "http_status": 200,
+      "event_links": 8,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2028/januar/",
+      "http_status": 200,
+      "event_links": 4,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2028/februar/",
+      "http_status": 200,
+      "event_links": 4,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2028/marec/",
+      "http_status": 200,
+      "event_links": 7,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2028/april/",
+      "http_status": 200,
+      "event_links": 7,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2028/maj/",
+      "http_status": 200,
+      "event_links": 7,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2028/junij/",
+      "http_status": 200,
+      "event_links": 6,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2028/julij/",
+      "http_status": 200,
+      "event_links": 0,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2028/avgust/",
+      "http_status": 200,
+      "event_links": 5,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2028/september/",
+      "http_status": 200,
+      "event_links": 7,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2028/oktober/",
+      "http_status": 200,
+      "event_links": 12,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2028/november/",
+      "http_status": 200,
+      "event_links": 12,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2028/december/",
+      "http_status": 200,
+      "event_links": 8,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2029/januar/",
+      "http_status": 200,
+      "event_links": 4,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2029/februar/",
+      "http_status": 200,
+      "event_links": 4,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2029/marec/",
+      "http_status": 200,
+      "event_links": 8,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2029/april/",
+      "http_status": 200,
+      "event_links": 8,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2029/maj/",
+      "http_status": 200,
+      "event_links": 6,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2029/junij/",
+      "http_status": 200,
+      "event_links": 5,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2029/julij/",
+      "http_status": 200,
+      "event_links": 1,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2029/avgust/",
+      "http_status": 200,
+      "event_links": 5,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2029/september/",
+      "http_status": 200,
+      "event_links": 6,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2029/oktober/",
+      "http_status": 200,
+      "event_links": 11,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2029/november/",
+      "http_status": 200,
+      "event_links": 11,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2029/december/",
+      "http_status": 200,
+      "event_links": 9,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2030/januar/",
+      "http_status": 200,
+      "event_links": 4,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2030/februar/",
+      "http_status": 200,
+      "event_links": 3,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2030/marec/",
+      "http_status": 200,
+      "event_links": 7,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2030/april/",
+      "http_status": 200,
+      "event_links": 9,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2030/maj/",
+      "http_status": 200,
+      "event_links": 5,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2030/junij/",
+      "http_status": 200,
+      "event_links": 6,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2030/julij/",
+      "http_status": 200,
+      "event_links": 0,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2030/avgust/",
+      "http_status": 200,
+      "event_links": 5,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2030/september/",
+      "http_status": 200,
+      "event_links": 9,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2030/oktober/",
+      "http_status": 200,
+      "event_links": 11,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2030/november/",
+      "http_status": 200,
+      "event_links": 11,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2030/december/",
+      "http_status": 200,
+      "event_links": 9,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2027/",
+      "http_status": 200,
+      "event_links": 0,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2028/",
+      "http_status": 200,
+      "event_links": 0,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2029/",
+      "http_status": 200,
+      "event_links": 0,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/koledar/2030/",
+      "http_status": 200,
+      "event_links": 0,
+      "designs": 15,
+      "styles": [
+        "/assets/slovenia-f54bd27f.css",
+        "/assets/calendar_gallery-21122c64.css"
+      ],
+      "issues": [],
+      "passed": true
+    }
+  ],
+  "passed": true
+}
