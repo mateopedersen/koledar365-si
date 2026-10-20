@@ -4,6 +4,7 @@ from urllib.request import urlopen
 import os
 root=Path(__file__).resolve().parent.parent/'site'
 os.chdir(root)
+csp=next(line.split(':',1)[1].strip() for line in (root/'_headers').read_text().splitlines() if line.strip().startswith('Content-Security-Policy:'))
 class Handler(SimpleHTTPRequestHandler):
  def do_GET(self):
   if self.path.startswith('/vreme/'):
@@ -15,7 +16,7 @@ class Handler(SimpleHTTPRequestHandler):
   super().do_GET()
  def end_headers(self):
   self.send_header('Cache-Control','no-store')
-  self.send_header('Content-Security-Policy',"default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' blob:; connect-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'")
+  self.send_header('Content-Security-Policy',csp)
   super().end_headers()
 class Server(ThreadingHTTPServer):
  request_queue_size=128

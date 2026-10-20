@@ -4,7 +4,7 @@
     <div class="cookie-bar-copy">
       <span class="cookie-bar-eyebrow">Vaša zasebnost</span>
       <h2 id="cookie-title">Vi odločate, kaj si zapomnimo.</h2>
-      <p id="cookie-intro">Koledar za delovanje uporablja nujno hrambo. Z vašim dovoljenjem si do 180 dni zapomnimo izbrano mesto za fotografijo in vreme ob naslednjem obisku. Upravljavec je Mateo Pedersen. Analitike in oglasnih sledilnikov ne uporabljamo. <a href="/piskotki/">Kako uporabljamo hrambo</a></p>
+      <p id="cookie-intro">Koledar uporablja nujno hrambo. Z vašim dovoljenjem do 180 dni shranimo izbrano mesto za lokalni čas in vreme. Analitike in oglasnih sledilnikov ne uporabljamo. <a href="/piskotki/">Podrobnosti</a></p>
     </div>
     <div class="cookie-actions" role="group" aria-label="Izbira nastavitev zasebnosti">
       <button type="button" data-consent="necessary"><%= ui_icon('shield') %> Ne shrani mesta</button>
@@ -25,3 +25,18 @@
   </details>
   <output id="cookie-status" role="status"></output>
 </section>
+<script nonce="<%= content_security_policy_nonce %>">
+(()=>{
+  const bar=document.getElementById('cookies');
+  if(!bar)return;
+  let hasValidChoice=false;
+  try{
+    const choice=JSON.parse(localStorage.getItem('k365.consent')||'null');
+    hasValidChoice=choice?.version===2&&Number.isFinite(choice.expiresAt)&&choice.expiresAt>Date.now();
+  }catch{}
+  if(!hasValidChoice){
+    bar.hidden=false;
+    document.documentElement.style.setProperty('--cookie-space',`${bar.getBoundingClientRect().height}px`);
+  }
+})();
+</script>

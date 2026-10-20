@@ -2,6 +2,7 @@ require_relative '../config/environment'
 require 'nokogiri'
 require 'fileutils'
 require 'digest'
+require 'base64'
 ENV['OPERATOR_CONTACT']='koledar365@gmail.com'
 out=Rails.root.join(ENV.fetch('STATIC_OUT','site'));FileUtils.mkdir_p(out)
 partial=ENV['STATIC_ONLY']&.split(',')
@@ -138,12 +139,14 @@ css=Dir[out.join('assets/holidays-*.css')].first;FileUtils.cp(css,out.join('free
 cities=CityCatalog.all.map { |city|city.slice('id','name','coordinates') }
 Rails.root.join('functions/cities.js').write('export default '+cities.to_json+';')
 # No server sessions, authentication material, contacts or private exports enter this directory.
+cookie_script=File.read(Rails.root.join('app/views/layouts/_cookies.html.erb')).match(/<script nonce="<%= content_security_policy_nonce %>">(.*?)<\/script>/m).captures.fetch(0)
+cookie_script_hash=Base64.strict_encode64(Digest::SHA256.digest(cookie_script))
 headers=<<~HEADERS
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' blob:; connect-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-#{cookie_script_hash}'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' blob:; connect-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'
   Cache-Control: public, max-age=0, must-revalidate
 /visuals/*
   Cache-Control: public, max-age=31536000, immutable
