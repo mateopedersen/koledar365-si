@@ -1,54 +1,51 @@
-# Koledar365 — gerçek devam durumu
+# Koledar365 — devam ve canlı yayın durumu
 
-Güncelleme: 20.10.2026 17:31 +03. Kaynak commit: 8891981. Dal: free-cloudflare-pages.
-Bu dosya güncel durumu gösterir; önceki ayrıntılı çalışma günlüğü docs/status-history-2026-10-20.md içinde korunmuştur.
+Güncelleme: 20.10.2026 18:03 +03. Dal: main. Canlı kaynak commit'i: 426d2cf (günlük yayın içeriği).
+Bu dosya birincil devam kaydıdır; önceki çalışma günlüğü docs/status-history-2026-10-20.md içinde korunur.
 
-## Yayın durumu
-- Canlı koledar365.si henüz bu sürümle yayımlanmadı. Eski yapım sayfası yayında.
-- Mevcut Cloudflare Pages projesinde build `node script/verify_static.mjs`, çıktı `site`, production branch `main` ayarlandı.
-- Production ve Preview için SKIP_DEPENDENCY_INSTALL=1 kaydedildi. Ücretli hizmet açılmadı.
-- Kullanıcı yalnız ücretsiz GitHub + Cloudflare istedi. VPS, Containers Paid, R2 veya ücretli veritabanı alınmayacak.
-- Ücretsiz model: Ruby 4.0.7/Rails 8.1.4 ile veri/HTML build; aynı Ruby hesap/Prawn servisleri resmî ruby.wasm 2.10.1 (tarayıcı Ruby 4.0.0) ile cihazda çalışır. Bu, Cloudflare üzerinde sürekli Rails veya PostgreSQL sunucusu değildir.
-- Orijinal Rails/Docker/PostgreSQL uygulaması ve rails-turnkey-2027-2030 dalı korunmuştur. Yönetim ücretsiz yayında gerçek GitHub yetkileri ve tarihli yayın workflow'u üzerinden yapılır. Kişisel planlar yerel JSON/ICS yedeğiyle cihazda saklanır.
+## Canlı yayın
 
-## Dosya üretimi ve iki kontrol
-- Hedef: 2.820 farklı PDF–WebP çifti. Üretilen: 2820. Bağımsız ikinci kontrolü geçen: 2820. Kaydedilen hata: 0.
-- 48 ay × 15 = 720 aylık çift ve 4 yıl × 15 = 60 yıllık çift tamamlandı.
-- Bütün 2.820 standart dönem çiftinin üretimi ve ikinci kontrolü tamamlandı. İsimler ve özel dönemler gerçek Ruby motoruyla cihazda talep üzerine üretilir.
-- Birinci kontrol: kodlanmış WebP tekrar açılır, kaynak raster ile her piksel ve sRGB profil baytları eşleşir.
-- İkinci kontrol: PDF yeniden 600 ppi rasterleştirilir; piksel eşitliği, 5 mm köşeler, gömülü font/marka, fiziksel ölçü, BW kanal eşitliği ve ZIP bütün sayfaları doğrulanır.
-- Dört katalog raporu ve tüm ikinci kontroller bitmeden finalize_static.rb yayını tamamlamayı reddeder. Genel site dosyası sınırı 20.000, tek varlık sınırı 25 MiB olarak denetlenir.
+- Ana adres: https://koledar365.si/ — HTTPS üzerinden erişilebilir.
+- Cloudflare Pages projesi koledar365-si; production branch main; otomatik dağıtımlar açık.
+- Güncel production dağıtımı başarılı: https://50f00bdd.koledar365-si.pages.dev/ — deployment 50f00bdd-d782-41bc-be86-a7923632ad2f; kaynak commit 426d2cf.
+- Repo herkese açık: https://github.com/mateopedersen/koledar365-si
+- Cloudflare Preview: https://e689a94c.koledar365-si.pages.dev/
+- Oluşturulan 18.741 dosya, 2.820 eşleşmiş PDF/WebP paketiyle statik yayın doğrulamasından geçti. Günlük yayın yeni içerik revizyonunu production'a otomatik taşıdı.
+- Ücretli ürün, VPS, ücretli Containers, R2 veya ücretli veritabanı açılmadı. Mevcut Cloudflare Pages Free kullanıldı.
 
-## Mevcut kanıtlar
-- Yerel native test: 55 test / 1.727 doğrulama / 0 hata (evidence/tests-free.txt).
-- Tarayıcı Ruby: 225 gerçek PDF kompozisyonu + araç/ICS/DST/girdi güvenliği (evidence/portable-engine.json).
-- Gerçek browser: Ana renkli PDF + 600 ppi WebP ve BW çok sayfalı ZIP; kişisel ekleme/düzenleme/reload/JSON restore/ICS round trip; artık yıl ve isim pagination (evidence/free-browser-functional.json).
-- Statik tarama: 8.912 HTML, 8.888 indexlenebilir URL, 9.093 iç hedef; hata yok (evidence/static-audit.json). Son değişikliklerin ardından nihai tarama tekrarlanacak.
-- Resmî Wrangler 4.151.3 ile hava durumu Pages Function derlendi (evidence/cloudflare-function-build.txt). Expires/Last-Modified/304/şehir beyaz listesi testli.
-- d96cc48 native Linux/PostgreSQL/Docker CI geçti: https://github.com/mateopedersen/koledar365-si/actions/runs/39433668914 . Daha yeni commit yeniden kontrol edilecek.
-- PR #2 (free): https://github.com/mateopedersen/koledar365-si/pull/2 . PR #1 orijinal Rails teslimini korur. İkisi sohbete bağlandı.
+## Uygulama ve işlevler
 
-## Süreçler kesintiden sonra nasıl sürdürülür?
-Önce ps ile gerçekten çalışan süreçleri ve JSON raporlarını okuyun. Aynı üreticiyi üst üste başlatmayın. Tamamlanan fingerprintleri silmeyin.
-Ortak ortam: work/runtime/mise/installs/ruby/4.0.7/bin PATH başında; PDFTOPPM_BIN=/Users/melihozcan/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override/pdftoppm; PYTHON_BIN=/Users/melihozcan/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.
-- Ana katalog: CATALOG_SHARD=0/1 CATALOG_SHARDS=2 bundle exec ruby script/generate_release_catalog.rb
-- Ek katalog: aynı iki shard ile script/generate_extra_catalog.rb
-- Yıllık Ay ön üretim: WARM_SHARD=0/1 WARM_SHARDS=2 script/warm_annual_lunar.rb. Kilitler ortak; raporu ana ek katalog toplar.
-- Ana doğrulama: VERIFY_SHARD=0/1 VERIFY_SHARDS=2 Python script/verify_release_pairs.py.
-- Ek doğrulama: VERIFY_SHARD=0/1/2/3, VERIFY_SHARDS=4, aynı araç; VERIFY_PREFIX=release-extra-verification, CATALOG_PATTERN=release-extra-catalog-[0-9].json. Önceki 569 geçen sonuç kayıpsız dört dilime taşındı.
-- Yerel HTTP: python3 script/serve_static.py (3651); weather yerelde 3650 Rails'e GET proxy olur. Üretimde gerçek Pages Function kullanılır.
-- 3650 Rails: bundle exec rails server -p 3650 -b 127.0.0.1. Eski tmp/pids/server.pid varsa önce PID'nin gerçekten canlı olduğunu doğrulayın.
+- Ruby 4.0.7 / Rails 8.1.4 kaynak uygulaması korunur ve Linux/PostgreSQL/Docker üzerinde CI'da gerçek test edilir. Ruby günlük ve tarihli içeriği derler; Pages'e statik Slovence HTML/asset yayınlanır.
+- Ücretsiz prodüksiyonda sürekli Rails/DB sunucusu yoktur. İstemci tarafı gerçek Ruby/Wasm takvim ve Prawn çıktısı üretir; hava durumu için küçük Cloudflare Pages Function kullanılır. Kişisel not/olay/özel fotoğraf cihazda kalır.
+- 69 Slovenya belediye merkezi seçilebilir; kaynak/lisansı gösterilen gerçek şehir fotoğrafları ve seçilen şehre göre MET Norway hava durumu çalışır. Canlı Bled görünümü doğrulandı.
+- Dört yıl 2027–2030; her yılın 12 ayı, yıllık ve diğer standart takvim türleri için 15 PDF + 15 WebP tasarımı hazırdır. İsim sayfalarında 8.561 popüler isim için 15 tasarım; özel aralık ve kullanıcı planları tarayıcı Ruby motoruyla talep üzerine oluşturulur.
+- Ana sayfa, özel gün/tatil ayrıntıları, Hakkımızda, gizlilik/çerez, lisans, özel 404 ve araç akışları yayımdadır. Karanlık mod yoktur; çerez tercihleri ince alt şerit olarak kalır.
+- Admin/yayın yönetimi GitHub izinli workflow'ları ile yapılır; herkese açık bir admin paneli yoktur.
 
-## Sıradaki zorunlu işler
-1. Devam eden katalog/ikinci kontrolleri tamamla; hiçbir başarısız kaydı geçilmiş sayma.
-2. Son HTML/client ve gerçek fotoğraf/duyarlı görünüm/klavye kontrolleri; kişisel veri için ağ POST'u olmadığını doğrula. WebP köşe/harf/hizalama kanıtlarını koru.
-3. package_catalog.rb → validate_catalog_sources.rb → audit_static.rb → finalize_static.rb → verify_static.mjs. Sonuç ve site/ commit/push.
-4. Cloudflare Preview HTTPS, gerçek Function, indirmeler, CSP/noindex; ardından yetkilendirilmiş main yayını ve koledar365.si canlı kontrolü.
-5. Yayın otomasyonunu temiz kurulumda test et; kabul matrisi, docs ve bu dosyayı gerçek canlı kanıtlarla güncelle.
+## Dosya üretimi ve doğrulama
 
-## Korunacak sınırlar
-- 13 godovi ve doğrulanmamış 4 gelecek okul yılı held/noindex. Lisans/kaynak engeli sessizce kaldırılmaz; gelecek tatil tarihleri uydurulmaz.
-- Günlük burç gerçek hazırlanmış tarihli 12 özgün yorumdur. API anahtarı olmadan sahte entegrasyon veya dünkü metne bugünün tarihi yok; tarihli editoryal hazırlama ve eksik gün açıklaması korunur.
-- Avenir cihazda kuruluysa kullanılır; dağıtılabilir webfont lisansı verilmedi. PDF'lerde lisanslı DejaVu gömülür.
-- İşletmeci Mateo Pedersen, gerçek iletişim koledar365@gmail.com. Sahte adres/ekip/uzman sertifikası yazılmaz.
-- Google sıralaması veya gerçek kullanıcı CWV başarısı garanti edilmez. Yerel ölçüm, üretim ölçümü ve saha verisi ayrı raporlanır.
+- 2.820/2.820 eşleşmiş PDF/WebP çiftinin ikinci bağımsız raster kontrolü geçti; 6.452 sayfa, hata 0. 48×15 aylık = 720, 4×15 yıllık = 60 çift; kalan standart tür/scope'lar da sürüm kataloğunda yer alır.
+- PDF'ler gerçek 600 ppi fiziksel sayfa ölçüsünde, gerçek sRGB WebP'ye dönüştürülmüş ve her sayfada Koledar365 marka imzasını taşır. PDF yeniden 600 ppi rasterleştirilip WebP ile karşılaştırılır; köşe boşluğu, hizalama ve imza da denetlenir.
+- Canlı örnek PDF ve WebP ZIP 200 döndürdü; sunulan baytların SHA-256 değerleri release manifest ile birebir eşleşti. ZIP testinden geçti; 2 sayfa, 600 ppi, manifest ve README bulundu. İki biçim de bir yıllık immutable cache ve noindex alıyor.
+- Statik release: 18.741 dosya, 2.820 çift, issues=[]; SEO taraması 8.912 HTML, 8.888 indexlenebilir URL ve 9.093 iç hedefte hata bulmadı.
+- Yerel test: 55 test / 1.727 doğrulama / 0 hata. Ruby/Wasm testleri 225 gerçek PDF kompozisyonunu kapsar. Ücretsiz site için 24 responsive görünüm geçti.
+- GitHub PR #2 ana dala alındı: https://github.com/mateopedersen/koledar365-si/pull/2
+- Temiz üretim doğrulamaları geçti: https://github.com/mateopedersen/koledar365-si/actions/runs/39442489071 (Ruby ile temiz HTML yayın üretimi); https://github.com/mateopedersen/koledar365-si/actions/runs/39442489088 (Rails/PostgreSQL, backup/restore, Docker imajı, 600 ppi PDF ve temiz SQLite statik üretimi).
+- Canlı doğrulama ayrıntısı: evidence/production-verification.json. Release/SEO/responsive/kabul raporları evidence/ altında.
+
+## Bilinçli kısıtlar ve açık kalemler
+
+- 13 godovi ay sayfası ve 2027–2031'e uzanan 4 okul tatili dönemi kaynak/hak veya resmî tarih doğrulaması yetersiz olduğundan noindex/held kalır; tarih ya da hak uydurulmadı.
+- İşletmeci Mateo Pedersen; doğrulanmış iletişim koledar365@gmail.com. Gönderim almayan ücretsiz mailto akışı başarılı iletildi mesajı varmış gibi göstermez.
+- Avenir lisanslı olarak cihazda mevcutsa seçilir; dağıtılabilir webfont lisansı olmadığı için font dosyası siteye eklenmez. PDF'de lisanslı DejaVu gömülüdür.
+- Kontrollü Lighthouse/Core Web Vitals saha verisi, gerçek %200 zoom incelemesi ve bağımsız Slovence anadili editörü sertifikası yoktur; tamamlanmış gibi raporlanmaz. Google sıralaması garantisi verilmez.
+- Cloudflare Pages bu ücretsiz mimaride Rails sürecini sürekli çalıştırmaz; yönetim, veritabanı, dosya depolama talebi varsa ayrıca ücretli altyapı gerekebilir. Ücretli servis izinsiz açılmayacak.
+
+## Kesintiden sonra devam
+
+Önce gerçek çalışan süreçleri, git durumu ve bu dosyayı kontrol et. Katalog üreticilerini üst üste başlatma; tamamlanmış fingerprintleri silme.
+Ruby ve yerel test ortamı için repo kökünde:
+PATH="$PWD/../../work/runtime/mise/installs/ruby/4.0.7/bin:$PATH"
+PDFTOPPM_BIN=/Users/melihozcan/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override/pdftoppm
+PYTHON_BIN=/Users/melihozcan/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3
+Daha ayrıntılı kurtarma komutları ve faz kayıtları: docs/status-history-2026-10-20.md.

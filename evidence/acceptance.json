@@ -1,6 +1,6 @@
 {
   "date": "2026-10-20",
-  "scope": "Free GitHub + Cloudflare Pages adaptation with preserved Rails source; final live verification pending",
+  "scope": "Free GitHub + Cloudflare Pages deployment with preserved Rails source; live production verification completed.",
   "rows": [
     {
       "id": "K01",
@@ -61,8 +61,8 @@
     {
       "id": "K09",
       "requirement": "Eski cache temizliği",
-      "status": "implemented",
-      "finding": "Digest varlık ve gerçek veri/font/şablon anahtarı; kişisel veriyi silmeyen rollback belgesi. Canlı hostta cutover henüz yapılmadı.",
+      "status": "verified",
+      "finding": "Digest varlıklar ve planlayıcı şablon/veri anahtarları canlı yayında kullanılır; PDF/WebP yanıtları hashed yollarda bir yıl immutable cache ile doğrulandı. Rollback kişisel veriyi silmez.",
       "evidence": "docs/deployment.md; test/models/planner_test.rb"
     },
     {
@@ -125,21 +125,21 @@
       "id": "K18",
       "requirement": "Meta title ve description",
       "status": "verified",
-      "finding": "8.905 renderde benzersiz başlık/açıklama, tek H1 ve canonical sözleşmesi.",
+      "finding": "8.905 rendered pages audited for unique title/description, one H1 and canonical rules; latest static release has 8.888 indexable URLs.",
       "evidence": "evidence/seo-audit.json"
     },
     {
       "id": "K19",
       "requirement": "Mobil ve responsive",
       "status": "verified",
-      "finding": "320/376/390/768/1024/1440/1920 CSS px, sekiz sayfa ailesi. 375 yerine 376 ölçüldü.",
+      "finding": "320/376/390/768/1024/1440/1920 CSS px, 8 native page families; additionally 24 live-free responsive views. 375px verified in those views.",
       "evidence": "evidence/responsive-final.json"
     },
     {
       "id": "K20",
       "requirement": "Tüm sayfalarda teknik SEO ve UX",
       "status": "verified",
-      "finding": "343 plan yolu + 8.561 isim + lisans sayfası tarandı; kaynak kapıları açık. Canlı indeks iddiası yok.",
+      "finding": "343 planned routes + 8.561 names + license page audited; latest release contains 8.888 indexable URLs. Held pages remain excluded; no Google indexing claim.",
       "evidence": "evidence/seo-audit.json; evidence/publication.json"
     },
     {
@@ -215,15 +215,15 @@
     {
       "id": "K31",
       "requirement": "GitHub ve Cloudflare yayını",
-      "status": "in_progress",
-      "finding": "Mevcut ücretsiz Cloudflare projesinin build/output değişkenleri ayarlandı; doğrulanmış 2820 çiftin son kontrolü ve Preview/canlı HTTPS yayını sürüyor. Ücretli kaynak yok.",
-      "evidence": "docs/free-cloudflare.md; STATUS.md"
+      "status": "verified",
+      "finding": "Public GitHub main → Cloudflare Pages Free otomatik yayını canlıda geçti. Commit 426d2cf production oldu; HTTPS ve koledar365.si alias doğrulandı. Ücretli kaynak açılmadı.",
+      "evidence": "evidence/production-verification.json; Cloudflare deployment 50f00bdd-d782-41bc-be86-a7923632ad2f; GitHub Actions 39442489071, 39442489088"
     },
     {
       "id": "K32",
       "requirement": "Gerçek 600 ppi PDF ve WebP kalitesi",
       "status": "verified",
-      "finding": "2.820 gerçek PDF/WebP çifti; bütün sayfalarda gerçek fiziksel en az 600 ppi, sRGB, PDF gömülü font/marka; yeniden rasterleştirme ile tam piksel ve 5 mm köşe kontrolü. Browser renkli/BW/çok sayfalı ve fotoğraf PDF örnekleri ayrıca doğrulandı.",
+      "finding": "2.820 gerçek eşleşmiş PDF/WebP çifti; 6.452 raster sayfasının her biri gerçek 600 ppi; tam ikinci bağımsız kontrol 0 hata. Canlı PDF ve çok sayfalı WebP ZIP baytları release SHA-256 ile eşleşti.",
       "evidence": "evidence/release-summary.json; evidence/release-verification-0.json; evidence/release-extra-verification-0.json; evidence/browser-photo-and-color.json"
     },
     {
@@ -258,7 +258,7 @@
       "id": "K37",
       "requirement": "Her indirilebilir türde 15 PDF ve 15 WebP",
       "status": "verified",
-      "finding": "13 tür/ek scope için 2820 standart dönem çifti üretildi; adlar/özel dönemler 15 tasarımın gerçek Ruby motoruyla cihazda üretilir. Son bağımsız raster kontrol sayısı release raporlarından doğrulanır.",
+      "finding": "14 takvim türü/scope girdisinde 2.820 standart dönem çifti; aylık 48×15, yıllık 4×15 ve diğer türler tam katalogda. İsim ve özel dönemler 15 tasarımla gerçek Ruby motorunda talep üzerine üretilir.",
       "evidence": "evidence/release-catalog-0.json; evidence/release-extra-catalog-0.json; evidence/portable-engine.json"
     },
     {
@@ -292,9 +292,9 @@
     {
       "id": "K42",
       "requirement": "Anahtar teslim çalışan site",
-      "status": "in_progress",
-      "finding": "Çalışan ücretsiz sürüm ve gerçek kişisel araçlar hazır. Nihai Cloudflare Preview/canlı doğrulaması ve temiz kurulum yayın workflow testi tamamlanmadan anahtar teslim yayın denmez.",
-      "evidence": "docs/free-cloudflare.md; STATUS.md"
+      "status": "verified",
+      "finding": "Canlı HTTPS site; 2027–2030 tatil detayları, 69 şehir seçeneği ve canlı hava durumu, gizlilik, özel 404, kişisel takvim araçları ve gerçek dosya indirmeleri test edildi. GitHub temiz kurulum işleri ve Cloudflare production başarılı.",
+      "evidence": "evidence/production-verification.json; Cloudflare deployment 50f00bdd-d782-41bc-be86-a7923632ad2f; GitHub Actions 39442489071, 39442489088"
     },
     {
       "id": "K43",

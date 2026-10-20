@@ -1,0 +1,92 @@
+{
+  "checked_at": "2026-10-20T15:03:47+00:00",
+  "production": {
+    "domain": "https://koledar365.si/",
+    "status": "success",
+    "cloudflare_project": "koledar365-si",
+    "deployment_id": "50f00bdd-d782-41bc-be86-a7923632ad2f",
+    "pages_url": "https://50f00bdd.koledar365-si.pages.dev/",
+    "source_commit": "426d2cf960cb2b84256920402d9a54718363660a",
+    "source_branch": "main",
+    "automatic_deployments": "enabled",
+    "https": "verified"
+  },
+  "github": {
+    "repository": "https://github.com/mateopedersen/koledar365-si",
+    "publication_workflow": "https://github.com/mateopedersen/koledar365-si/actions/runs/39442489071",
+    "rails_and_database_workflow": "https://github.com/mateopedersen/koledar365-si/actions/runs/39442489088",
+    "both_runs": "success"
+  },
+  "static_release": {
+    "files": 18741,
+    "pdf_webp_pairs": 2820,
+    "independently_verified_pairs": 2820,
+    "raster_pages": 6452,
+    "issues": []
+  },
+  "live_routes": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/prazniki/marijino-vnebovzetje/",
+      "status": 200,
+      "years": [
+        2027,
+        2028,
+        2029,
+        2030
+      ]
+    },
+    {
+      "path": "/zasebnost/",
+      "status": 200,
+      "operator": "Mateo Pedersen",
+      "contact": "koledar365@gmail.com"
+    },
+    {
+      "path": "/__live-qa-missing-20261020",
+      "status": 404,
+      "custom_page": true
+    }
+  ],
+  "city_weather": {
+    "selectable_municipality_centres": 69,
+    "tested_city": "Bled",
+    "credited_photo": true,
+    "forecast_rendered": "Delno oblačno, 15°",
+    "weather_provider": "MET Norway"
+  },
+  "live_downloads": [
+    {
+      "kind": "PDF",
+      "path": "/prenosi/0a5df6649e33e3e586a8d84eaaff109b8564ee9662f3bf47c85de7d96dfa5dd5/koledar365-monthly-2027-01-min-02-A4-portrait-color-v2.0.1.pdf",
+      "status": 200,
+      "bytes": 98034,
+      "sha256_matches_release_manifest": true,
+      "content_type": "application/pdf",
+      "cache": "immutable, one year",
+      "robots": "noindex"
+    },
+    {
+      "kind": "WebP pages ZIP",
+      "path": "/prenosi/0a5df6649e33e3e586a8d84eaaff109b8564ee9662f3bf47c85de7d96dfa5dd5/koledar365-monthly-2027-01-min-02-A4-portrait-color-v2.0.1-multipage-webp-600ppi.zip",
+      "status": 200,
+      "bytes": 116473,
+      "sha256_matches_release_manifest": true,
+      "content_type": "application/zip",
+      "webp_pages": 2,
+      "each_page_nominal_ppi": 600,
+      "archive_integrity": true,
+      "manifest_and_readme": true,
+      "cache": "immutable, one year",
+      "robots": "noindex"
+    }
+  ],
+  "pricing": {
+    "new_paid_services": false,
+    "vps": false,
+    "cloudflare_pages_free": true
+  }
+}
