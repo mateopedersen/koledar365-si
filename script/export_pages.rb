@@ -1,6 +1,7 @@
 require_relative '../config/environment'
 require 'nokogiri'
 require 'fileutils'
+require 'digest'
 ENV['OPERATOR_CONTACT']='koledar365@gmail.com'
 out=Rails.root.join(ENV.fetch('STATIC_OUT','site'));FileUtils.mkdir_p(out)
 partial=ENV['STATIC_ONLY']&.split(',')
@@ -8,6 +9,8 @@ FileUtils.cp_r(Rails.root.join('public/.'),out) unless partial
 FileUtils.mkdir_p(out.join('free/views/home'));FileUtils.mkdir_p(out.join('free/names'))
 FileUtils.cp_r(Rails.root.join('cloudflare/free/.'),out.join('free'))
 FileUtils.rm_f(out.join('free/README.md'))
+client_asset="client-#{Digest::SHA256.file(out.join('free/client.js')).hexdigest[0,16]}.js"
+FileUtils.cp(out.join('free/client.js'),out.join('free',client_asset))
 session=ActionDispatch::Integration::Session.new(Rails.application);session.host!('localhost')
 assets=nil;processed=[]
 transform=lambda do |body,path,indexable:true|
@@ -55,7 +58,7 @@ transform=lambda do |body,path,indexable:true|
  if path.start_with?('/koledar/','/tedenski-koledar/')
   doc.css('.calendar-toolbar .tabs a').each { |node|node['href']='/'+node['href'] if node['href'].start_with?('?') }
  end
- script=Nokogiri::XML::Node.new('script',doc);script['type']='module';script['src']='/free/client.js';doc.at_css('head').add_child(script)
+ script=Nokogiri::XML::Node.new('script',doc);script['type']='module';script['src']="/free/#{client_asset}";doc.at_css('head').add_child(script)
  doc.to_html
 end
 write=lambda do |path,html|
@@ -108,6 +111,8 @@ headers=<<~HEADERS
   Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' blob:; connect-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'
   Cache-Control: public, max-age=0, must-revalidate
 /assets/*
+  Cache-Control: public, max-age=31536000, immutable
+/free/#{client_asset}
   Cache-Control: public, max-age=31536000, immutable
 /free/engine/*
   Cache-Control: public, max-age=31536000, immutable

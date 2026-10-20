@@ -17,4 +17,9 @@ for(let year=2027;year<=2030;year++){
 for(const relative of Object.keys(manifest.files))if(!fs.existsSync(path.join(site,relative)))issues.push(relative+': manifest output missing');
 for(const row of catalog)for(const filename of Object.values(row.files)){if(!fs.existsSync(path.join(site,filename)))issues.push(filename+': missing catalog asset')}
 for(const relative of ['index.html','404.html','free/client.js','free/ruby-worker.js','free/runtime.json','zasebnost/index.html','upravljanje/index.html','_routes.json'])if(!fs.existsSync(path.join(site,relative)))issues.push(relative+': missing release file');
+// A new publication must bypass any previously cached stable browser adapter.
+const clientBytes=fs.readFileSync(path.join(root,'cloudflare/free/client.js')),clientName='client-'+crypto.createHash('sha256').update(clientBytes).digest('hex').slice(0,16)+'.js',clientFile=path.join(site,'free',clientName);
+if(!fs.existsSync(clientFile)||!fs.readFileSync(clientFile).equals(clientBytes))issues.push('Fingerprint browser adapter is missing or differs from source');
+for(const file of files.filter(file=>file.endsWith('.html'))){const html=fs.readFileSync(file,'utf8');if(html.includes('src="/free/client.js"')||[...html.matchAll(/src="\/free\/(client-[a-f0-9]+\.js)"/g)].some(match=>match[1]!==clientName))issues.push(path.relative(site,file)+': stale browser adapter URL')}
+if(!fs.readFileSync(path.join(site,'index.html'),'utf8').includes('/free/'+clientName))issues.push('Home page is missing the fingerprint browser adapter');
 console.log(JSON.stringify({passed:!issues.length,files:files.length,pairs:catalog.length,issues},null,2));if(issues.length)process.exit(1);

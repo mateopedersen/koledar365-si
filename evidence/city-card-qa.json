@@ -51,5 +51,12 @@
     "weather timestamp cannot change clock",
     "resume and DST"
   ],
-  "screenshot_data": "Mock public forecast and fixed Slovenian clock used for reproducible browser tests; not a live weather observation."
+  "screenshot_data": "Mock public forecast and fixed Slovenian clock used for reproducible browser tests; not a live weather observation.",
+  "cache_repair": {
+    "cloudflare_browser_ttl_before": "4 hours",
+    "cloudflare_browser_ttl_after": "Respect Existing Headers",
+    "prior_live_client_cache_control": "public, max-age=14400, must-revalidate",
+    "versioned_client": "client-70a41d40ffe068f9.js",
+    "reason": "Force already-cached browsers onto the current adapter without clearing personal data"
+  }
 }
