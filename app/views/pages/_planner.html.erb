@@ -1,5 +1,8 @@
 <% type={'ustvari-koledar'=>'name','prazen-koledar'=>'blank','razpored-izmen'=>'shift','solski-urnik'=>'school','rojstnodnevni-koledar'=>'birthday','dnevni-planer'=>'daily','druzinski-planer'=>'family','koledar-za-tiskanje'=>'annual'}[page_path.split('/').last] || 'weekly';type=params[:type] if PrintCatalog::TYPES.key?(params[:type]) %>
-<section class="panel planner-workbench">
+<div class="download-workspace" data-download-workspace>
+<section class="panel planner-workbench gallery-context">
+  <%= render 'context_heading', title: 'Prilagodite svoj koledar', expand: 'Razširi nastavitve' %>
+  <div class="context-content" id="gallery-context-content">
   <form id="planner-options" data-planner-type="<%= type %>">
     <div class="filters">
       <label>Leto<select name="year"><% (2027..2030).each do |y| %><option <%= 'selected' if y==@year %>><%= y %></option><% end %></select></label>
@@ -7,6 +10,7 @@
       <label>Izbrani datum<input type="date" name="date" min="2027-01-01" max="2030-12-31" value="<%= @selected&.year==@year && @year!=2026 ? @selected : Date.new(@year==2026 ? 2027 : @year,@month,1) %>" required></label>
       <label>Vrsta<select name="type"><% PrintCatalog::TYPES.each do |value,label| %><option value="<%= value %>" <%= 'selected' if value==type %>><%= label %></option><% end %></select></label>
     </div>
+    <details class="planner-advanced"><summary>Ime, zapiski in dodatne možnosti</summary>
     <label>Ime (neobvezno)<input name="name" maxlength="100" placeholder="Ana"></label>
     <label>Osebni zapiski (neobvezno)<textarea name="notes" maxlength="2000" rows="2"></textarea></label>
     <div class="filters" data-planner-fields="blank">
@@ -18,9 +22,10 @@
     <div data-planner-fields="daily" class="filters"><label>Prva ura<input name="start_hour" type="number" min="0" max="23" value="7" required></label><label>Zadnja ura<input name="end_hour" type="number" min="0" max="23" value="21" required></label></div>
     <details class="photo-upload"><summary>Dodajte svojo fotografijo</summary><p>JPEG, PNG ali WebP do 20 MB, najmanj 900 × 600 slikovnih pik. Fotografija se natisne v glavi koledarja pri najmanj 600 ppi. Podatke o lokaciji odstranimo.</p><label>Fotografija<input id="calendar-photo" type="file" accept="image/jpeg,image/png,image/webp"></label><input type="hidden" name="photo_token" value=""><button id="remove-photo" type="button" hidden>Odstrani fotografijo</button><output id="photo-status" role="status"></output></details>
     <p class="muted">Vnosi ostanejo na tej napravi. Za osebni predogled in prenos jih pošljemo strežniku; fotografije in zasebne izvoze izbrišemo po sedmih dneh.</p>
+    </details>
     <button type="button" id="save-planner">Shrani nastavitve</button><output id="planner-message" role="status"></output>
   </form>
-  <section class="planner-inputs"><h2>Vaši vnosi</h2><p>Dodajte obveznosti, izmene, predmete ali rojstne dneve. Kratek pregled v mreži dopolnjuje celoten seznam vseh vnosov v PDF-ju.</p>
+  <details class="planner-inputs"><summary>Dodajte obveznosti ali osebne vnose</summary><p>Dodajte obveznosti, izmene, predmete ali rojstne dneve. Kratek pregled v mreži dopolnjuje celoten seznam vseh vnosov v PDF-ju.</p>
     <form id="planner-entry"><input type="hidden" name="entry_id"><div class="filters">
       <label>Datum<input name="date" type="date" value="2027-01-04" required></label>
       <label>Začetek<input name="time" type="time"></label><label>Konec<input name="end_time" type="time"></label>
@@ -31,7 +36,9 @@
     <p class="muted">Konec pred začetkom pomeni naslednji dan. ICS ohrani celotno časovno obdobje; odmor je zapisan v opisu.</p>
     <div id="planner-entries" aria-live="polite"></div>
     <div class="actions"><button id="planner-ics" type="button">Izvozi vnose ICS</button><button id="planner-backup" type="button">Varnostna kopija</button><label class="file-button">Obnovi kopijo<input id="planner-restore" type="file" accept="application/json,.json"></label></div><output id="planner-entry-status" role="status"></output>
-  </section>
+  </details>
   <section data-planner-fields="shift"><h2>Ponavljajoči se razpored</h2><form class="api-form" id="shift-form" action="/izracun/" method="post"><%= hidden_field_tag :authenticity_token,form_authenticity_token %><input name="tool" type="hidden" value="shift"><div class="filters"><label>Začetek cikla<input type="date" name="from" value="2027-01-04" required></label><label>Konec obdobja<input type="date" name="to" value="2027-01-31" required></label><label>Cikel (ločite z vejico)<input name="cycle" value="D,D,N,N,Prosto,Prosto" required></label><label>Oseba<input name="person" maxlength="80"></label></div><p>Izračun zamenja trenutne vnose. Po potrebi prej shranite varnostno kopijo.</p><button>Izračunaj razpored</button><output class="result" aria-live="polite"></output></form></section>
+</div>
 </section>
 <%= render 'designs',type:type %>
+</div>

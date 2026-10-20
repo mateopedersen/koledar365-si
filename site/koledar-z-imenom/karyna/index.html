@@ -27,18 +27,18 @@
 <meta name="twitter:image" content="https://koledar365.si/og.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl"},{"@type":"WebPage","@id":"https://koledar365.si/koledar-z-imenom/karyna/#webpage","url":"https://koledar365.si/koledar-z-imenom/karyna/","name":"Koledar z imenom Karyna","description":"Koledar z imenom Karyna za leta 2027–2030: 15 predlog PDF in WebP, izbira barv in podatki o pogostosti imena iz zbirke SURS.","inLanguage":"sl","isPartOf":{"@id":"https://koledar365.si/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://koledar365.si/"},{"@type":"ListItem","position":2,"name":"Koledar z imenom","item":"https://koledar365.si/koledar-z-imenom/"},{"@type":"ListItem","position":3,"name":"Koledar z imenom Karyna","item":"https://koledar365.si/koledar-z-imenom/karyna/"}]}]}</script>
 
-<meta name="csp-nonce" content="r84vbDv2ppj1SH3AZJBIG9j/HFN5ZyN3">
+<meta name="csp-nonce" content="Xsso7Ffi3jx3ObBB37GRcxo4Zy5islO/">
 <link rel="stylesheet" href="/assets/application-e12463e6.css">
 <link rel="stylesheet" href="/assets/experience-b5e27fe8.css">
 <link rel="stylesheet" href="/assets/slovenia-6c23c5bf.css">
 
 
 
-
+<link rel="stylesheet" href="/assets/calendar_gallery-478077f8.css">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 <script type="module" src="/free/client.js"></script>
 </head>
-<body>
+<body class="gallery-page">
 <a class="skip" href="#vsebina">Na vsebino</a>
 <header class="topbar"><a class="brand" href="/" aria-label="Koledar365 – domov"><span class="brand-symbol"><svg viewbox="0 0 40 40" aria-hidden="true"><rect x="5" y="7" width="30" height="29" rx="6" fill="#08264d"></rect><rect x="9" y="15" width="22" height="17" rx="2" fill="white"></rect><path d="M13 5v6m14-6v6" stroke="#08264d" stroke-width="4" stroke-linecap="round"></path><path d="M11 9h18" stroke="#408dff" stroke-width="2"></path><rect x="23" y="19" width="5" height="5" rx="1.4" fill="#ff334e"></rect></svg></span> Koledar<span>365</span></a>
 <nav aria-label="Glavna navigacija"><a href="/koledar/">Koledar</a><a href="/prazniki/">Prazniki</a><a href="/solske-pocitnice/">Šolske počitnice</a><a href="/koledar-z-imenom/">Imena</a></nav>
@@ -53,133 +53,189 @@
 <!-- BEGIN app/views/pages/show.html.erb
 --><div class="page-heading">
 <span class="eyebrow">KOLEDAR365 · SLOVENIJA</span><h1>Koledar z imenom Karyna</h1>
-<p>Koledar z imenom Karyna za leta 2027–2030: 15 predlog PDF in WebP, izbira barv in podatki o pogostosti imena iz zbirke SURS.</p>
+<p>V galeriji izberite eno od 15 predlog: PDF za tisk in ujemajoči se WebP pri 600 ppi, s podpisom Koledar365 na vsaki strani. Večstranski WebP je v datoteki ZIP; PDF tiskajte v merilu 100 %.</p>
 </div>
 <!-- BEGIN app/views/pages/_name.html.erb
---><section class="panel"><!-- BEGIN app/views/pages/_year_selector.html.erb
+--><div class="download-workspace" data-download-workspace>
+<section class="panel gallery-context">
+<!-- BEGIN app/views/pages/_context_heading.html.erb
+--><header class="context-heading"><h2>Ime in leto</h2>
+<button type="button" data-context-expand aria-expanded="false" aria-controls="gallery-context-content" data-expand-label="Razširi pregled" hidden>Razširi pregled <span aria-hidden="true">↗</span></button></header>
+<!-- END app/views/pages/_context_heading.html.erb -->
+<div class="context-content" id="gallery-context-content">
+<!-- BEGIN app/views/pages/_year_selector.html.erb
 --><nav class="year-links" aria-label="Izbira leta"><a class="active" href="?year=2027">2027</a><a class="" href="?year=2028">2028</a><a class="" href="?year=2029">2029</a><a class="" href="?year=2030">2030</a></nav>
 <!-- END app/views/pages/_year_selector.html.erb --><p>Ime na vseh predlogah: <strong>Karyna</strong>. Izbirate lahko med vsemi 15 oblikami, ne glede na spol. Pri večstranskem koledarju prenos WebP vsebuje ZIP z vsemi stranmi.</p>
-<a href="/koledar-z-imenom/">Izberi drugo ime</a></section><!-- BEGIN app/views/pages/_designs.html.erb
---><section class="design-section" data-export-options='{"type":"name","year":2027,"month":1,"date":"2027-01-01","name":"Karyna"}'><div class="section-heading"><div>
-<h2>15 predlog. Vaš način načrtovanja.</h2>
-<p>PDF z vektorskim besedilom · WebP pri 600 ppi · podpis Koledar365</p>
-</div></div>
-<div class="filters">
+<a href="/koledar-z-imenom/">Izberi drugo ime</a>
+</div></section><!-- BEGIN app/views/pages/_designs.html.erb
+--><section class="design-section" id="design-gallery" aria-labelledby="design-gallery-title" data-export-options='{"type":"name","year":2027,"month":1,"date":"2027-01-01","name":"Karyna"}'>
+  <header class="section-heading"><div>
+<span class="eyebrow">ZBIRKA ZA TISKANJE</span><h2 id="design-gallery-title">15 predlog za vaš koledar</h2>
+</div>
+<span class="gallery-format-label">PDF + WebP · 600 ppi</span></header>
+  <div class="filters design-settings">
 <label>Papir<select class="export-paper"><option>A4</option>
 <option>A3</option>
 <option>A5</option></select></label><label>Usmerjenost<select class="export-orientation"><option value="portrait">Pokončno</option>
 <option value="landscape">Ležeče</option></select></label>
 </div>
-<div class="design-grid">
-<article class="design-card"><img src="/free/samples/min-01.png" data-preview-design="min-01" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/min-01.png"><div>
-<span class="eyebrow">MINIMALISTIČNI</span><h3>Čista mreža</h3>
-<p>Barvna predloga</p>
-<div class="actions">
-<button class="preview-personal" type="button" data-personal-preview="min-01">Moj predogled</button><button data-export="min-01" data-format="pdf">Prenesi PDF</button><button data-export="min-01" data-format="webp">Prenesi WebP</button>
+  <div class="design-grid">
+<article class="design-card">
+    <img src="/free/samples/min-01.png" data-preview-design="min-01" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/min-01.png">
+    <div>
+<h3>
+<span class="design-number">01</span>Čista mreža</h3>
+<p>Barvna predloga · podpis Koledar365</p>
+      <div class="actions">
+<button class="preview-personal" type="button" data-personal-preview="min-01">Moj predogled <span aria-hidden="true">↗</span></button><button data-export="min-01" data-format="pdf"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> PDF</button><button data-export="min-01" data-format="webp"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> WebP</button>
 </div>
-<p class="export-status" role="status"></p>
-</div></article><article class="design-card"><img src="/free/samples/min-02.png" data-preview-design="min-02" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/min-02.png"><div>
-<span class="eyebrow">MINIMALISTIČNI</span><h3>Časovna os</h3>
-<p>Barvna predloga</p>
-<div class="actions">
-<button class="preview-personal" type="button" data-personal-preview="min-02">Moj predogled</button><button data-export="min-02" data-format="pdf">Prenesi PDF</button><button data-export="min-02" data-format="webp">Prenesi WebP</button>
+      <p class="export-status" role="status"></p>
+    </div></article><article class="design-card">
+    <img src="/free/samples/min-02.png" data-preview-design="min-02" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/min-02.png">
+    <div>
+<h3>
+<span class="design-number">02</span>Časovna os</h3>
+<p>Barvna predloga · podpis Koledar365</p>
+      <div class="actions">
+<button class="preview-personal" type="button" data-personal-preview="min-02">Moj predogled <span aria-hidden="true">↗</span></button><button data-export="min-02" data-format="pdf"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> PDF</button><button data-export="min-02" data-format="webp"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> WebP</button>
 </div>
-<p class="export-status" role="status"></p>
-</div></article><article class="design-card"><img src="/free/samples/min-03.png" data-preview-design="min-03" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/min-03.png"><div>
-<span class="eyebrow">MINIMALISTIČNI</span><h3>Odprti stolpci</h3>
-<p>Črno-bela predloga</p>
-<div class="actions">
-<button class="preview-personal" type="button" data-personal-preview="min-03">Moj predogled</button><button data-export="min-03" data-format="pdf">Prenesi PDF</button><button data-export="min-03" data-format="webp">Prenesi WebP</button>
+      <p class="export-status" role="status"></p>
+    </div></article><article class="design-card">
+    <img src="/free/samples/min-03.png" data-preview-design="min-03" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/min-03.png">
+    <div>
+<h3>
+<span class="design-number">03</span>Odprti stolpci</h3>
+<p>Črno-bela predloga · podpis Koledar365</p>
+      <div class="actions">
+<button class="preview-personal" type="button" data-personal-preview="min-03">Moj predogled <span aria-hidden="true">↗</span></button><button data-export="min-03" data-format="pdf"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> PDF</button><button data-export="min-03" data-format="webp"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> WebP</button>
 </div>
-<p class="export-status" role="status"></p>
-</div></article><article class="design-card"><img src="/free/samples/ele-01.png" data-preview-design="ele-01" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/ele-01.png"><div>
-<span class="eyebrow">ELEGANTNI</span><h3>Uredniška izdaja</h3>
-<p>Barvna predloga</p>
-<div class="actions">
-<button class="preview-personal" type="button" data-personal-preview="ele-01">Moj predogled</button><button data-export="ele-01" data-format="pdf">Prenesi PDF</button><button data-export="ele-01" data-format="webp">Prenesi WebP</button>
+      <p class="export-status" role="status"></p>
+    </div></article><article class="design-card">
+    <img src="/free/samples/ele-01.png" data-preview-design="ele-01" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/ele-01.png">
+    <div>
+<h3>
+<span class="design-number">04</span>Uredniška izdaja</h3>
+<p>Barvna predloga · podpis Koledar365</p>
+      <div class="actions">
+<button class="preview-personal" type="button" data-personal-preview="ele-01">Moj predogled <span aria-hidden="true">↗</span></button><button data-export="ele-01" data-format="pdf"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> PDF</button><button data-export="ele-01" data-format="webp"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> WebP</button>
 </div>
-<p class="export-status" role="status"></p>
-</div></article><article class="design-card"><img src="/free/samples/ele-02.png" data-preview-design="ele-02" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/ele-02.png"><div>
-<span class="eyebrow">ELEGANTNI</span><h3>Galerijski okvir</h3>
-<p>Barvna predloga</p>
-<div class="actions">
-<button class="preview-personal" type="button" data-personal-preview="ele-02">Moj predogled</button><button data-export="ele-02" data-format="pdf">Prenesi PDF</button><button data-export="ele-02" data-format="webp">Prenesi WebP</button>
+      <p class="export-status" role="status"></p>
+    </div></article><article class="design-card">
+    <img src="/free/samples/ele-02.png" data-preview-design="ele-02" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/ele-02.png">
+    <div>
+<h3>
+<span class="design-number">05</span>Galerijski okvir</h3>
+<p>Barvna predloga · podpis Koledar365</p>
+      <div class="actions">
+<button class="preview-personal" type="button" data-personal-preview="ele-02">Moj predogled <span aria-hidden="true">↗</span></button><button data-export="ele-02" data-format="pdf"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> PDF</button><button data-export="ele-02" data-format="webp"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> WebP</button>
 </div>
-<p class="export-status" role="status"></p>
-</div></article><article class="design-card"><img src="/free/samples/ele-03.png" data-preview-design="ele-03" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/ele-03.png"><div>
-<span class="eyebrow">ELEGANTNI</span><h3>Tipografska izdaja</h3>
-<p>Črno-bela predloga</p>
-<div class="actions">
-<button class="preview-personal" type="button" data-personal-preview="ele-03">Moj predogled</button><button data-export="ele-03" data-format="pdf">Prenesi PDF</button><button data-export="ele-03" data-format="webp">Prenesi WebP</button>
+      <p class="export-status" role="status"></p>
+    </div></article><article class="design-card">
+    <img src="/free/samples/ele-03.png" data-preview-design="ele-03" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/ele-03.png">
+    <div>
+<h3>
+<span class="design-number">06</span>Tipografska izdaja</h3>
+<p>Črno-bela predloga · podpis Koledar365</p>
+      <div class="actions">
+<button class="preview-personal" type="button" data-personal-preview="ele-03">Moj predogled <span aria-hidden="true">↗</span></button><button data-export="ele-03" data-format="pdf"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> PDF</button><button data-export="ele-03" data-format="webp"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> WebP</button>
 </div>
-<p class="export-status" role="status"></p>
-</div></article><article class="design-card"><img src="/free/samples/nat-01.png" data-preview-design="nat-01" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/nat-01.png"><div>
-<span class="eyebrow">NARAVA</span><h3>Botanični rob</h3>
-<p>Barvna predloga</p>
-<div class="actions">
-<button class="preview-personal" type="button" data-personal-preview="nat-01">Moj predogled</button><button data-export="nat-01" data-format="pdf">Prenesi PDF</button><button data-export="nat-01" data-format="webp">Prenesi WebP</button>
+      <p class="export-status" role="status"></p>
+    </div></article><article class="design-card">
+    <img src="/free/samples/nat-01.png" data-preview-design="nat-01" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/nat-01.png">
+    <div>
+<h3>
+<span class="design-number">07</span>Botanični rob</h3>
+<p>Barvna predloga · podpis Koledar365</p>
+      <div class="actions">
+<button class="preview-personal" type="button" data-personal-preview="nat-01">Moj predogled <span aria-hidden="true">↗</span></button><button data-export="nat-01" data-format="pdf"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> PDF</button><button data-export="nat-01" data-format="webp"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> WebP</button>
 </div>
-<p class="export-status" role="status"></p>
-</div></article><article class="design-card"><img src="/free/samples/nat-02.png" data-preview-design="nat-02" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/nat-02.png"><div>
-<span class="eyebrow">NARAVA</span><h3>Alpski horizont</h3>
-<p>Barvna predloga</p>
-<div class="actions">
-<button class="preview-personal" type="button" data-personal-preview="nat-02">Moj predogled</button><button data-export="nat-02" data-format="pdf">Prenesi PDF</button><button data-export="nat-02" data-format="webp">Prenesi WebP</button>
+      <p class="export-status" role="status"></p>
+    </div></article><article class="design-card">
+    <img src="/free/samples/nat-02.png" data-preview-design="nat-02" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/nat-02.png">
+    <div>
+<h3>
+<span class="design-number">08</span>Alpski horizont</h3>
+<p>Barvna predloga · podpis Koledar365</p>
+      <div class="actions">
+<button class="preview-personal" type="button" data-personal-preview="nat-02">Moj predogled <span aria-hidden="true">↗</span></button><button data-export="nat-02" data-format="pdf"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> PDF</button><button data-export="nat-02" data-format="webp"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> WebP</button>
 </div>
-<p class="export-status" role="status"></p>
-</div></article><article class="design-card"><img src="/free/samples/nat-03.png" data-preview-design="nat-03" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/nat-03.png"><div>
-<span class="eyebrow">NARAVA</span><h3>Terenski zvezek</h3>
-<p>Črno-bela predloga</p>
-<div class="actions">
-<button class="preview-personal" type="button" data-personal-preview="nat-03">Moj predogled</button><button data-export="nat-03" data-format="pdf">Prenesi PDF</button><button data-export="nat-03" data-format="webp">Prenesi WebP</button>
+      <p class="export-status" role="status"></p>
+    </div></article><article class="design-card">
+    <img src="/free/samples/nat-03.png" data-preview-design="nat-03" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/nat-03.png">
+    <div>
+<h3>
+<span class="design-number">09</span>Terenski zvezek</h3>
+<p>Črno-bela predloga · podpis Koledar365</p>
+      <div class="actions">
+<button class="preview-personal" type="button" data-personal-preview="nat-03">Moj predogled <span aria-hidden="true">↗</span></button><button data-export="nat-03" data-format="pdf"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> PDF</button><button data-export="nat-03" data-format="webp"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> WebP</button>
 </div>
-<p class="export-status" role="status"></p>
-</div></article><article class="design-card"><img src="/free/samples/pla-01.png" data-preview-design="pla-01" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/pla-01.png"><div>
-<span class="eyebrow">NAČRTOVALNIK</span><h3>Cilji in čas</h3>
-<p>Barvna predloga</p>
-<div class="actions">
-<button class="preview-personal" type="button" data-personal-preview="pla-01">Moj predogled</button><button data-export="pla-01" data-format="pdf">Prenesi PDF</button><button data-export="pla-01" data-format="webp">Prenesi WebP</button>
+      <p class="export-status" role="status"></p>
+    </div></article><article class="design-card">
+    <img src="/free/samples/pla-01.png" data-preview-design="pla-01" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/pla-01.png">
+    <div>
+<h3>
+<span class="design-number">10</span>Cilji in čas</h3>
+<p>Barvna predloga · podpis Koledar365</p>
+      <div class="actions">
+<button class="preview-personal" type="button" data-personal-preview="pla-01">Moj predogled <span aria-hidden="true">↗</span></button><button data-export="pla-01" data-format="pdf"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> PDF</button><button data-export="pla-01" data-format="webp"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> WebP</button>
 </div>
-<p class="export-status" role="status"></p>
-</div></article><article class="design-card"><img src="/free/samples/pla-02.png" data-preview-design="pla-02" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/pla-02.png"><div>
-<span class="eyebrow">NAČRTOVALNIK</span><h3>Skupni načrt</h3>
-<p>Barvna predloga</p>
-<div class="actions">
-<button class="preview-personal" type="button" data-personal-preview="pla-02">Moj predogled</button><button data-export="pla-02" data-format="pdf">Prenesi PDF</button><button data-export="pla-02" data-format="webp">Prenesi WebP</button>
+      <p class="export-status" role="status"></p>
+    </div></article><article class="design-card">
+    <img src="/free/samples/pla-02.png" data-preview-design="pla-02" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/pla-02.png">
+    <div>
+<h3>
+<span class="design-number">11</span>Skupni načrt</h3>
+<p>Barvna predloga · podpis Koledar365</p>
+      <div class="actions">
+<button class="preview-personal" type="button" data-personal-preview="pla-02">Moj predogled <span aria-hidden="true">↗</span></button><button data-export="pla-02" data-format="pdf"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> PDF</button><button data-export="pla-02" data-format="webp"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> WebP</button>
 </div>
-<p class="export-status" role="status"></p>
-</div></article><article class="design-card"><img src="/free/samples/pla-03.png" data-preview-design="pla-03" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/pla-03.png"><div>
-<span class="eyebrow">NAČRTOVALNIK</span><h3>Operativni list</h3>
-<p>Črno-bela predloga</p>
-<div class="actions">
-<button class="preview-personal" type="button" data-personal-preview="pla-03">Moj predogled</button><button data-export="pla-03" data-format="pdf">Prenesi PDF</button><button data-export="pla-03" data-format="webp">Prenesi WebP</button>
+      <p class="export-status" role="status"></p>
+    </div></article><article class="design-card">
+    <img src="/free/samples/pla-03.png" data-preview-design="pla-03" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/pla-03.png">
+    <div>
+<h3>
+<span class="design-number">12</span>Operativni list</h3>
+<p>Črno-bela predloga · podpis Koledar365</p>
+      <div class="actions">
+<button class="preview-personal" type="button" data-personal-preview="pla-03">Moj predogled <span aria-hidden="true">↗</span></button><button data-export="pla-03" data-format="pdf"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> PDF</button><button data-export="pla-03" data-format="webp"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> WebP</button>
 </div>
-<p class="export-status" role="status"></p>
-</div></article><article class="design-card"><img src="/free/samples/geo-01.png" data-preview-design="geo-01" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/geo-01.png"><div>
-<span class="eyebrow">GEOMETRIJSKI</span><h3>Modularne ploščice</h3>
-<p>Barvna predloga</p>
-<div class="actions">
-<button class="preview-personal" type="button" data-personal-preview="geo-01">Moj predogled</button><button data-export="geo-01" data-format="pdf">Prenesi PDF</button><button data-export="geo-01" data-format="webp">Prenesi WebP</button>
+      <p class="export-status" role="status"></p>
+    </div></article><article class="design-card">
+    <img src="/free/samples/geo-01.png" data-preview-design="geo-01" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/geo-01.png">
+    <div>
+<h3>
+<span class="design-number">13</span>Modularne ploščice</h3>
+<p>Barvna predloga · podpis Koledar365</p>
+      <div class="actions">
+<button class="preview-personal" type="button" data-personal-preview="geo-01">Moj predogled <span aria-hidden="true">↗</span></button><button data-export="geo-01" data-format="pdf"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> PDF</button><button data-export="geo-01" data-format="webp"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> WebP</button>
 </div>
-<p class="export-status" role="status"></p>
-</div></article><article class="design-card"><img src="/free/samples/geo-02.png" data-preview-design="geo-02" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/geo-02.png"><div>
-<span class="eyebrow">GEOMETRIJSKI</span><h3>Prelom mreže</h3>
-<p>Barvna predloga</p>
-<div class="actions">
-<button class="preview-personal" type="button" data-personal-preview="geo-02">Moj predogled</button><button data-export="geo-02" data-format="pdf">Prenesi PDF</button><button data-export="geo-02" data-format="webp">Prenesi WebP</button>
+      <p class="export-status" role="status"></p>
+    </div></article><article class="design-card">
+    <img src="/free/samples/geo-02.png" data-preview-design="geo-02" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/geo-02.png">
+    <div>
+<h3>
+<span class="design-number">14</span>Prelom mreže</h3>
+<p>Barvna predloga · podpis Koledar365</p>
+      <div class="actions">
+<button class="preview-personal" type="button" data-personal-preview="geo-02">Moj predogled <span aria-hidden="true">↗</span></button><button data-export="geo-02" data-format="pdf"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> PDF</button><button data-export="geo-02" data-format="webp"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> WebP</button>
 </div>
-<p class="export-status" role="status"></p>
-</div></article><article class="design-card"><img src="/free/samples/geo-03.png" data-preview-design="geo-03" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/geo-03.png"><div>
-<span class="eyebrow">GEOMETRIJSKI</span><h3>Krog in koordinata</h3>
-<p>Črno-bela predloga</p>
-<div class="actions">
-<button class="preview-personal" type="button" data-personal-preview="geo-03">Moj predogled</button><button data-export="geo-03" data-format="pdf">Prenesi PDF</button><button data-export="geo-03" data-format="webp">Prenesi WebP</button>
+      <p class="export-status" role="status"></p>
+    </div></article><article class="design-card">
+    <img src="/free/samples/geo-03.png" data-preview-design="geo-03" alt="Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled." width="354" height="500" loading="lazy" data-static-preview="/free/samples/geo-03.png">
+    <div>
+<h3>
+<span class="design-number">15</span>Krog in koordinata</h3>
+<p>Črno-bela predloga · podpis Koledar365</p>
+      <div class="actions">
+<button class="preview-personal" type="button" data-personal-preview="geo-03">Moj predogled <span aria-hidden="true">↗</span></button><button data-export="geo-03" data-format="pdf"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> PDF</button><button data-export="geo-03" data-format="webp"><svg class="ui-icon icon-download" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13m-4-4 4 4 4-4M3 16v5h18v-5"></path></svg> WebP</button>
 </div>
-<p class="export-status" role="status"></p>
-</div></article>
+      <p class="export-status" role="status"></p>
+    </div></article>
 </div>
-<p class="muted">Sličica prikazuje vzorec postavitve. »Moj predogled« pripravi izbrano obdobje in vaše vnose na tej napravi. PDF vsebuje vektorsko besedilo, WebP pa celotno ločljivost 600 ppi. Večstranski prenos WebP je ZIP z vsemi stranmi in podatki za tisk.</p></section>
-<!-- END app/views/pages/_designs.html.erb --><section class="panel"><h2>Ime v podatkih SURS</h2>
+</section>
+<!-- END app/views/pages/_designs.html.erb -->
+</div>
+<section class="panel"><h2>Ime v podatkih SURS</h2>
 <table class="data-table">
 <thead><tr>
 <th>Podatek</th>

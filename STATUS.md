@@ -1,7 +1,14 @@
 # Koledar365 — devam ve canlı yayın durumu
 
-Güncelleme: 20.10.2026 19:01 +0300. Son bağımsız doğrulanan uygulama yayını: dadefcb (52 inline galeri); son otomatik statik üretim: 5e9afe3.
+Güncelleme: 20.10.2026 19:18 +0300. Son bağımsız doğrulanan uygulama yayını: dadefcb (52 inline galeri); son otomatik statik üretim: 5e9afe3.
 Bu dosya birincil devam kaydıdır; önceki çalışma günlüğü docs/status-history-2026-10-20.md içinde korunur.
+
+## Devam eden galeri UX düzenlemesi
+
+- Yeni istek: 48 aylık + 4 yıllık sayfada ve diğer bütün galeri türlerinde takvim/ayarlar ile galeri ilk ekranda birlikte görülecek. Uzun takvim, tablo ve formlar galeriyi aşağı itmeyecek.
+- Kaynakta ortak iki sütunlu workspace, kompakt takvim/ayar paneli, erişilebilir genişletme/daraltma düğmesi ve tek pratik Slovence dosya açıklaması uygulandı. Tatil galerisi de kapalı alt bölümden çıkarılıp üstte açık gösteriliyor.
+- Yerel testler: 58 test / 2.194 doğrulama / 0 hata. Tam yeniden üretim, 8.743 galerili sayfanın ortak düzen/15 tasarım denetimi, 8.905 sayfalık SEO kontrolü ve 148 gerçek tarayıcı görünümü geçti. 52 dönem masaüstü 1440×900 ve mobil 390×844 boyutlarında tek tek kontrol edildi; diğer türler ayrıca 376×668 ve 768×1024 boyutlarında incelendi. Kanıt: evidence/gallery-workspace-local-ux.json. Yeni düzen henüz canlı sürüm olarak doğrulanmadı; aşağıdaki canlı kayıt önceki düzen içindir.
+- Sıradaki iş: kaynak ve doğrulanmış statik çıktıyı ana dala yayımlamak; Cloudflare deployment ve yeni GitHub CI sonucunu bekleyip production üzerinde 52 dönemi tekrar doğrulamak. Takvim genişletme/daraltma, planlayıcı kayıt ekleme/silme ve kâğıt seçimi yerelde başarılı.
 
 ## Canlı yayın
 
@@ -30,7 +37,7 @@ Bu dosya birincil devam kaydıdır; önceki çalışma günlüğü docs/status-h
 - Canlı örnek PDF ve WebP ZIP 200 döndürdü; sunulan baytların SHA-256 değerleri release manifest ile birebir eşleşti. ZIP testinden geçti; 2 sayfa, 600 ppi, manifest ve README bulundu. İki biçim de bir yıllık immutable cache ve noindex alıyor.
 - Statik release manifestinde 18.743 dosya (manifest ile toplam 18.744), 2.820 çift, issues=[]; SEO taraması 8.912 HTML, 8.888 indexlenebilir URL ve 11.434 iç hedefte hata bulmadı.
 - Canlı Şubat 2028 galerisinden tarayıcı aracılığıyla PDF, WebP ve çok sayfalı WebP ZIP doğrudan indirildi. SHA-256 değerleri release manifest ile aynı; WebP 4961 × 7016 piksel ve sRGB, ZIP iki 600 ppi sayfa içeriyor. 2030 yıllık sayfasında 12 normal ay tablosu ve ardından 15 yıllık tasarım doğrulandı. Kanıt: evidence/inline-calendar-live.json, evidence/inline-gallery-ui-downloads.json ve evidence/inline-monthly-gallery-live.png.
-- Yerel test: 57 test / 2.114 doğrulama / 0 hata. Yeni 52 inline galeri kontrolü de geçti. Yeni yerel SEO denetimi 8.905 sayfada ve özel gün denetimi 58 sayfa / 232 ICS çıktısında geçti. İlk yeni CI çalışması (39452494100), SEO sayfa bağlantısı denetiminin yeni /prenosi/ dosyalarını tanımaması nedeniyle durdu. Denetim şimdi yalnızca katalogda izin verilen ve gerçekten mevcut dosyaları kabul eder; bunun tam CI tekrarı bekleniyor. Önceki sürümün  GitHub CI: SEO/tatil sözleşmeleri, PostgreSQL, yedekleme/geri yükleme, Docker production imajı, gerçek 600 ppi çıktı ve temiz SQLite yayın üretimi başarılı: https://github.com/mateopedersen/koledar365-si/actions/runs/39447819630. Ruby/Wasm testleri 225 gerçek PDF kompozisyonunu kapsar. Ücretsiz site için 24 responsive görünüm geçti. Yeni yıllık/aylık indirme CTA testleri geçti.
+- Yerel test: 57 test / 2.114 doğrulama / 0 hata. Yeni 52 inline galeri kontrolü de geçti. Yeni yerel SEO denetimi 8.905 sayfada ve özel gün denetimi 58 sayfa / 232 ICS çıktısında geçti. İlk yeni CI çalışması (39452494100), SEO sayfa bağlantısı denetiminin yeni /prenosi/ dosyalarını tanımaması nedeniyle durdu. Denetim şimdi yalnızca katalogda izin verilen ve gerçekten mevcut dosyaları kabul eder; düzeltilmiş sürümün tam CI tekrarı başarılı: https://github.com/mateopedersen/koledar365-si/actions/runs/39453842264. Önceki sürümün  GitHub CI: SEO/tatil sözleşmeleri, PostgreSQL, yedekleme/geri yükleme, Docker production imajı, gerçek 600 ppi çıktı ve temiz SQLite yayın üretimi başarılı: https://github.com/mateopedersen/koledar365-si/actions/runs/39447819630. Ruby/Wasm testleri 225 gerçek PDF kompozisyonunu kapsar. Ücretsiz site için 24 responsive görünüm geçti. Yeni yıllık/aylık indirme CTA testleri geçti.
 - GitHub PR #2 ana dala alındı: https://github.com/mateopedersen/koledar365-si/pull/2
 - Temiz üretim doğrulamaları geçti: https://github.com/mateopedersen/koledar365-si/actions/runs/39442489071 (Ruby ile temiz HTML yayın üretimi); https://github.com/mateopedersen/koledar365-si/actions/runs/39442489088 (Rails/PostgreSQL, backup/restore, Docker imajı, 600 ppi PDF ve temiz SQLite statik üretimi).
 - Canlı doğrulama ayrıntısı: evidence/production-verification.json. Release/SEO/responsive/kabul raporları evidence/ altında.

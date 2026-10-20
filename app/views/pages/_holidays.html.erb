@@ -1,8 +1,12 @@
 <div class="holiday-page" data-holiday-year="<%= @year %>">
-  <section class="holiday-hero" aria-labelledby="holiday-title">
+  <div class="page-heading"><span class="eyebrow">KOLEDAR365 · SLOVENIJA</span><h1>Prazniki <%= @year %> in dela prosti dnevi</h1><p><%= gallery_description %></p></div>
+  <div class="download-workspace" data-download-workspace>
+  <section class="holiday-hero panel gallery-context" aria-labelledby="holiday-title">
+    <%= render 'context_heading', title: 'Prazniki na dlani', expand: 'Razširi pregled' %>
+    <div class="context-content" id="gallery-context-content">
     <div class="holiday-intro">
       <span class="eyebrow">SLOVENIJA · PRAZNIKI IN PROSTI DNEVI</span>
-      <h1 id="holiday-title">Prazniki <span><%= @year %>.</span><br>Več časa za vaše načrte.</h1>
+      <h2 id="holiday-title">Več časa za vaše načrte.</h2>
       <p>Vsi državni prazniki in drugi dela prosti dnevi. Na enem mestu, z jasnim odgovorom: je ta dan prost?</p>
       <nav class="holiday-years" aria-label="Leto praznikov"><% CalendarEngine::YEARS.each do |year| %><a href="/prazniki/<%= year %>/" <%= 'aria-current=page' if year==@year %>><%= year %></a><% end %></nav>
       <div class="holiday-hero-actions"><a href="#prazniki-seznam"><%= ui_icon('calendar') %> Pregled datumov</a><a href="#holiday-downloads" data-open-downloads><%= ui_icon('download') %> PDF in WebP</a></div>
@@ -11,8 +15,10 @@
       <% photo=HolidayPhotoCatalog.find('pust') %><img src="<%= photo.fetch('local_path') %>" alt="<%= photo.fetch('alt_sl') %>" width="<%= photo.fetch('width') %>" height="<%= photo.fetch('height') %>" fetchpriority="high">
       <figcaption><span>Kurentovanje na Ptuju, 2019</span><a href="/fotografije-in-licence/#praznik-pust">Fotografija in licenca <%= ui_icon('info') %></a></figcaption>
       <span class="holiday-cover-note">Izročilo, ki povezuje generacije.</span>
-    </figure>
+    </figure></div>
   </section>
+  <section id="holiday-downloads" aria-label="Prazniki za tiskanje"><%= render 'designs',type:'holidays' %></section>
+  </div>
 
   <dl class="holiday-facts" aria-label="Povzetek leta">
     <div><dt>Zakonsko dela prostih datumov</dt><dd><%= @holidays.free_dates.size %><%= ui_icon('calendar') %></dd></div>
@@ -67,7 +73,7 @@
 
   <section class="holiday-comparison" aria-labelledby="holiday-compare-title"><div class="holiday-section-heading"><div><span class="eyebrow">ŠTIRI LETA, JASEN PREGLED</span><h2 id="holiday-compare-title">Kako se razporedijo prosti dnevi?</h2></div></div><div class="holiday-comparison-grid"><% @holiday_comparison.each do |period| %><a href="/prazniki/<%= period.year %>/" <%= 'aria-current=page' if period.year==@year %>><h3><%= period.year %><span aria-hidden="true">↗</span></h3><dl><div><dt>Dela prosti datumi</dt><dd><%= period.free_dates.size %></dd></div><div><dt>Od teh med tednom</dt><dd><%= period.weekday_free_dates.size %></dd></div><div><dt>Delovni dnevi</dt><dd><%= period.working_days %></dd></div></dl></a><% end %></div><p>Izračun velja za ponedeljek–petek. Prazniki na soboto ali nedeljo se ne odštejejo še enkrat. Dopust, bolniška odsotnost in individualni razporedi niso vključeni.</p></section>
 
-  <details class="holiday-downloads" id="holiday-downloads"><summary><span><%= ui_icon('download') %><strong>Prazniki <%= @year %> za tiskanje</strong><small>Celoten letni pregled · 15 predlog PDF in WebP</small></span><span class="holiday-download-arrow" aria-hidden="true">+</span></summary><%= render 'designs',type:'holidays' %></details>
+
 
   <section class="holiday-culture"><div><span class="eyebrow">TRADICIJE IN OBIČAJI</span><h2>Slovenija praznuje tudi drugače.</h2><p>Gregorjevo, pust, martinovo in drugi običaji imajo svoje mesto v letu. Sami po sebi niso zakonsko dela prosti dnevi.</p></div><div class="holiday-culture-links"><% %w[gregorjevo pust martinovo miklavz].each do |slug| %><% page=Page.find_by(path:"/prazniki/#{slug}/") %><a href="<%= page.path %>"><%= page.title %><%= ui_icon('chevron-right') %></a><% end %><a href="/pomembni-dnevi/<%= @year %>/">Vsi pomembni dnevi <%= @year %><%= ui_icon('chevron-right') %></a></div></section>
   <section class="holiday-sources" id="holiday-sources"><%= ui_icon('shield') %><div><h2>Preverjeni datumi. Razložena pravila.</h2><p>Pravna podlaga: <%= source_link(HolidayYear::LAW_URL,'Zakon o praznikih in dela prostih dnevih v Republiki Sloveniji (ZPDPD)') %>, vključno z <%= source_link(HolidayYear::AMENDMENT_URL,'novelo ZPDPD-I, veljavno od 17. oktobra 2026') %>. Upoštevani so dan Triglava ter veljavna poimenovanja praznikov.</p><p>Datumi za prihodnja leta so izračunani po trenutno veljavnem zakonu. Morebitne poznejše zakonske spremembe lahko vplivajo nanje. Velika noč se računa po gregorijanskem koledarju; binkošti so 49 dni pozneje.</p><p>Preverjeno: <time datetime="<%= HolidayYear::CHECKED_ON %>"><%= I18n.l(HolidayYear::CHECKED_ON) %></time> · <a href="/viri-in-metodologija/">Metodologija</a> · <a href="/kontakt/">Sporočite popravek</a> · <a href="/solske-pocitnice/">Šolske počitnice so ločen koledar</a></p></div></section>

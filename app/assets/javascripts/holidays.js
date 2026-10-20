@@ -57,9 +57,6 @@
         form.elements.month.focus({preventScroll: true});
       });
     }
-    page.querySelectorAll('[data-open-downloads]').forEach(link => link.addEventListener('click', () => {
-      document.getElementById('holiday-downloads').open = true;
-    }));
     update({remember: false});
   }
 }

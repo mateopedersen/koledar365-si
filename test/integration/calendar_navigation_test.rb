@@ -29,7 +29,8 @@ class CalendarNavigationTest < ActionDispatch::IntegrationTest
    path=month ? "/koledar/#{year}/#{CalendarEngine::MONTHS[month-1]}/" : "/koledar/#{year}/"
    get path
    assert_response :success
-   assert_select '.calendar-download-callout a[href="#calendar-designs"]','Prikaži 15 predlog'
+   assert_select '.download-workspace > .calendar-context [data-context-expand][aria-expanded=false]'
+   assert_select '.context-actions a[href="#calendar-designs"]','15 predlog za prenos'
    assert_select '.panel .calendar',minimum:1
    assert_select '#calendar-designs[data-gallery-year="'+year.to_s+'"][data-gallery-type="'+(month ? 'monthly' : 'annual')+'"]' do
     assert_select '[data-calendar-design]',count:15
@@ -42,7 +43,22 @@ class CalendarNavigationTest < ActionDispatch::IntegrationTest
     end
     assert_select 'a[href^="/koledar-za-tiskanje/"]',count:0
    end
-   assert_operator response.body.index('class="panel"'),:<,response.body.index('id="calendar-designs"')
+   assert_operator response.body.index('class="panel gallery-context'),:<,response.body.index('id="calendar-designs"')
+  end
+ end
+ test 'all gallery families put controls beside an open complete gallery' do
+  ['/koledar-z-imenom/ana/','/prazen-koledar/','/tedenski-koledar/2028/','/delovni-dnevi/2028/','/lunin-koledar/2028/','/prazniki/2028/'].each do |path|
+   get path
+   assert_response :success
+   assert_select 'body.gallery-page'
+   assert_select '.page-heading p',text:ApplicationController.helpers.gallery_description
+   assert_select '.download-workspace > .gallery-context #gallery-context-content'
+   assert_select '.download-workspace [data-context-expand][aria-controls=gallery-context-content]'
+   assert_select '.download-workspace .design-section .design-card',count:15
+   assert_select 'details .design-section',count:0
+   assert_select '#planner-options' do
+    assert_select 'details.planner-advanced:not([open])'
+   end if path=='/prazen-koledar/'
   end
  end
  test 'gallery download URLs serve real files and reject unknown artifacts' do

@@ -1,7 +1,7 @@
 <% period = month ? "koledar za #{CalendarEngine::MONTHS[month - 1]} #{year}" : "letni koledar #{year}" %>
 <section class="calendar-gallery" id="calendar-designs" aria-labelledby="calendar-gallery-title" data-calendar-gallery data-gallery-type="<%= month ? 'monthly' : 'annual' %>" data-gallery-year="<%= year %>" data-gallery-month="<%= month %>">
   <header class="calendar-gallery-heading">
-    <div><span class="eyebrow">ZBIRKA ZA TISKANJE</span><h2 id="calendar-gallery-title"><%= period.capitalize %>: 15 predlog</h2><p>Izberite svoj slog. PDF za tiskanje ali WebP pri 600 ppi prenesite neposredno s te strani.</p></div>
+    <div><span class="eyebrow">ZBIRKA ZA TISKANJE</span><h2 id="calendar-gallery-title"><%= period.capitalize %>: 15 predlog</h2></div>
     <span class="calendar-gallery-quality"><%= ui_icon('print') %><span>A4 · Pokončno<small>Podpis Koledar365 na vsaki strani</small></span></span>
   </header>
   <div class="calendar-gallery-toolbar" data-gallery-filters hidden>
@@ -33,5 +33,5 @@
       </article>
     <% end %>
   </div>
-  <p class="calendar-gallery-footnote">Za tisk izberite PDF, papir A4 in dejansko velikost (100 %). WebP je izrisan iz istega PDF-ja pri 600 ppi; pri večstranskih predlogah ZIP vsebuje vse strani.</p>
+
 </section>
