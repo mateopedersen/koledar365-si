@@ -38,7 +38,7 @@ jobs:
         with:
           node-version: '24'
       - name: Weather and public download contracts
-        run: node script/test_weather_function.mjs && node script/test_public_catalog.mjs
+        run: node script/test_weather_function.mjs && node script/test_public_catalog.mjs && node script/test_vacation_planner.cjs
       - name: Astronomical lunar date and phase data
         run: node script/lunar/audit_dates.mjs
       - name: Ruby syntax

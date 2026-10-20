@@ -19,6 +19,20 @@ class PlannerIntegrationTest < ActionDispatch::IntegrationTest
       assert_select 'script[src*="planners"]'
     end
   end
+  test 'Slovenian leave planner exposes the annual optimizer and export controls' do
+    get '/nacrtovalnik-dopusta/'
+    assert_response :success
+    assert_select '.vacation-page[data-vacation-planner]'
+    assert_select '#vacation-holiday-data[type="application/json"]'
+    assert_select 'input[name="year"][value="2027"]'
+    assert_select '#vacation-budget[type="range"]'
+    assert_select '[data-vacation-plan-list]'
+    assert_select '[data-vacation-suggestions]'
+    assert_select '[data-vacation-export]'
+    assert_select 'script[src*="vacation"]'
+    assert_select 'a[href^="https://www.gov.si/teme/drzavni-prazniki-in-dela-prosti-dnevi/"]'
+    assert_select '.page-heading',false
+  end
   test 'authenticated content management leaves source gated pages held' do
     admin=Admin.create!(email:'test-editor',password:'a-long-test-password-123')
     post '/upravljanje/prijava/',params:{email:admin.email,password:'a-long-test-password-123'}
