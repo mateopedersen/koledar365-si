@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/izvozi/:id/' => 'exports#show'
   get '/izvozi/:id/:kind' => 'exports#download'
   get '/predogled/:year/:design/:slug.png' => 'previews#show'
+  get '/prenosi/:fingerprint/:filename' => 'public_calendar_downloads#show', format: false, constraints: { fingerprint: /[a-f0-9]{64}/, filename: /[^\/]+/ }
   get '/druzabno/:kind/:id/:version.png' => 'previews#social'
   get '/og.png' => 'previews#og'
   get '/sitemap.xml' => 'pages#sitemap'

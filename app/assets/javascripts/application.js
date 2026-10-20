@@ -70,3 +70,14 @@ $$('[data-add-event]').forEach(button=>button.addEventListener('click',()=>{if($
 
 function renderQuickTasks(){const root=$('#quick-tasks');if(!root||!planner)return;root.replaceChildren();const tasks=personal.events.filter(e=>e.kind==='task'&&e.date===planner.dataset.selectedDate);if(!tasks.length){const empty=document.createElement('p');empty.className='muted';empty.textContent='Kaj želite danes opraviti?';root.append(empty)}for(const task of tasks){const label=document.createElement('label');label.className='check'+(task.done?' task-done':'');const input=document.createElement('input');input.type='checkbox';input.checked=!!task.done;input.addEventListener('change',()=>{task.done=input.checked;savePersonal();renderPersonal()});label.append(input,document.createTextNode(task.title));root.append(label)}}
 $('#quick-task-form')?.addEventListener('submit',e=>{e.preventDefault();const input=$('#quick-task-title');personal.events.push({uid:crypto.randomUUID(),date:planner.dataset.selectedDate,title:input.value.trim(),time:'',repeat:'',kind:'task',category:'personal',done:false});savePersonal();input.value='';renderPersonal()});renderQuickTasks();
+
+// The complete gallery and direct downloads also work without JavaScript.
+$$('[data-calendar-gallery]').forEach(gallery=>{
+ const toolbar=gallery.querySelector('[data-gallery-filters]');if(!toolbar)return;toolbar.hidden=false;
+ const buttons=[...gallery.querySelectorAll('[data-gallery-filter]')],cards=[...gallery.querySelectorAll('[data-calendar-design]')];
+ buttons.forEach(button=>button.addEventListener('click',()=>{
+  const filter=button.dataset.galleryFilter;buttons.forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
+  cards.forEach(card=>{card.hidden=filter!=='all'&&card.dataset.colorMode!==filter});
+  gallery.querySelector('[data-gallery-count]').textContent=cards.filter(card=>!card.hidden).length+' / '+cards.length+' predlog';
+ }));
+});

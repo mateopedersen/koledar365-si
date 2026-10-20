@@ -14,6 +14,7 @@
 <%= csrf_meta_tags %><%= csp_meta_tag %><%= stylesheet_link_tag 'application', 'experience', 'slovenia' %><%= javascript_include_tag 'application','planners',defer:true %>
 <% if @section=='holidays' %><%= stylesheet_link_tag 'holidays' %><%= javascript_include_tag 'holidays',defer:true %><% end %>
 <% if @section=='observance' %><%= stylesheet_link_tag 'observances' %><% end %>
+<% if @section=='calendar' %><%= stylesheet_link_tag 'calendar_gallery' %><% end %>
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 </head>
 <body>

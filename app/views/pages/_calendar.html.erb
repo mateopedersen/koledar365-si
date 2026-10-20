@@ -1,20 +1,36 @@
 <% if @page.year %>
-  <% if (2027..2030).cover?(@year) && !page_path.start_with?('/tedenski-koledar/') %>
+  <% inline_gallery = (2027..2030).cover?(@year) && !page_path.start_with?('/tedenski-koledar/') %>
+  <% if inline_gallery %>
     <% download_month = @page.month || 1 %>
-    <% download_type = @page.month ? 'monthly' : 'annual' %>
-    <% download_date = Date.new(@year, download_month, 1).iso8601 %>
-    <% download_query = { year: @year, month: download_month, type: download_type, date: download_date }.to_query %>
     <% download_heading = @page.month ? "Koledar za #{CalendarEngine::MONTHS[download_month - 1]} #{@year}" : "Letni koledar #{@year}" %>
     <aside class="calendar-download-callout" aria-labelledby="calendar-download-title">
       <span class="calendar-download-icon"><%= ui_icon('download') %></span>
       <div class="calendar-download-copy">
         <span class="eyebrow">15 PREDLOG · PDF + WEBP · 600 PPI</span>
         <h2 id="calendar-download-title"><%= download_heading %> za tisk</h2>
-        <p>Za to obdobje izberite med 15 predlogami, nato prenesite izbrani koledar kot PDF ali WebP.</p>
+        <p>Pod koledarjem vas čaka vseh 15 predlog s predogledom ter neposrednim prenosom PDF in WebP.</p>
       </div>
-      <a class="button primary" href="/koledar-za-tiskanje/?<%= download_query %>"><%= ui_icon('download') %> Prikaži predloge</a>
+      <a class="button primary" href="#calendar-designs"><%= ui_icon('download') %> Prikaži 15 predlog</a>
     </aside>
   <% end %>
-  <section class="panel"><% if page_path.start_with?('/tedenski-koledar/') %><% @view='week' %><% end %><%= render 'calendar_controls' %><%= render 'calendar_view' %><div class="actions"><button data-print>Natisni</button><a class="button" href="/koledar-za-tiskanje/?year=<%= @year %>&month=<%= @month %>&type=<%= @view=='week' ? 'weekly' : (@page.month ? 'monthly' : 'annual') %>&date=<%= @selected.iso8601 %>">Prenesi PDF in WebP</a><a href="/koledar/<%= @year %>/">Letni pregled</a></div></section>
-<% else %><%= render 'year_cards' %><div class="link-grid"><% @children.limit(65).each do |p| %><a href="<%= p.path %>"><%= p.title %></a><% end %></div><% end %>
+  <% @view = 'week' if page_path.start_with?('/tedenski-koledar/') %>
+  <% download_type = @view == 'week' ? 'weekly' : (@page.month ? 'monthly' : 'annual') %>
+  <% download_url = inline_gallery ? '#calendar-designs' : "/koledar-za-tiskanje/?#{ { year: @year, month: @month, type: download_type, date: @selected.iso8601 }.to_query }" %>
+  <section class="panel">
+    <%= render 'calendar_controls' %>
+    <%= render 'calendar_view' %>
+    <div class="actions">
+      <button data-print>Natisni</button>
+      <a class="button" href="<%= download_url %>">Prenesi PDF in WebP</a>
+      <a href="/koledar/<%= @year %>/">Letni pregled</a>
+    </div>
+  </section>
 <% if @page.month %><nav class="actions"><% d=Date.new(@year,@month,1);[d.prev_month,d.next_month].each do |n| %><% if CalendarEngine::YEARS.include?(n.year) %><a href="<%= month_url(n.year,n.month) %>"><%= CalendarEngine::MONTHS[n.month-1] %> <%= n.year %></a><% end %><% end %></nav><% end %>
+  <% if inline_gallery %>
+    <% if PublicCalendarGallery.available? %>
+      <%= render 'calendar_gallery', year: @year, month: @page.month, rows: PublicCalendarGallery.rows_for(year: @year, month: @page.month) %>
+    <% else %>
+      <div id="calendar-designs"><%= render 'designs', type: @page.month ? 'monthly' : 'annual' %></div>
+    <% end %>
+  <% end %>
+<% else %><%= render 'year_cards' %><div class="link-grid"><% @children.limit(65).each do |p| %><a href="<%= p.path %>"><%= p.title %></a><% end %></div><% end %>

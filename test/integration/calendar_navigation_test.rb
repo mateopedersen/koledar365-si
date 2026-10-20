@@ -24,23 +24,38 @@ class CalendarNavigationTest < ActionDispatch::IntegrationTest
     assert_equal '2028-03-01',Rack::Utils.parse_query(URI(links.first['href']).query)['date']
   end
  end
- test 'annual and monthly pages expose their matching PDF and WebP designs above the calendar' do
-  get '/koledar/2027/'
-  assert_response :success
-  assert_select '.calendar-download-callout' do
-   assert_select 'h2#calendar-download-title','Letni koledar 2027 za tisk'
-   assert_select 'a[href^="/koledar-za-tiskanje/"]',text:'Prikaži predloge' do |links|
-    assert_equal({'date'=>'2027-01-01','month'=>'1','type'=>'annual','year'=>'2027'},Rack::Utils.parse_query(URI(links.first['href']).query))
+ test 'year and month pages contain their own complete gallery with direct period-specific files' do
+  [[2027,nil],[2030,nil],[2027,2],[2028,2],[2030,12]].each do |year,month|
+   path=month ? "/koledar/#{year}/#{CalendarEngine::MONTHS[month-1]}/" : "/koledar/#{year}/"
+   get path
+   assert_response :success
+   assert_select '.calendar-download-callout a[href="#calendar-designs"]','Prikaži 15 predlog'
+   assert_select '.panel .calendar',minimum:1
+   assert_select '#calendar-designs[data-gallery-year="'+year.to_s+'"][data-gallery-type="'+(month ? 'monthly' : 'annual')+'"]' do
+    assert_select '[data-calendar-design]',count:15
+    assert_select 'img[src^="/prenosi/"]',count:15
+    %w[pdf webp].each do |format|
+     assert_select 'a[data-calendar-download="'+format+'"][download]',count:15 do |links|
+      assert_equal 15,links.map { |a|a['href'] }.uniq.size
+      links.each { |a|assert_includes a['href'],month ? "monthly-#{year}-#{'%02d' % month}-" : "annual-#{year}-" }
+     end
+    end
+    assert_select 'a[href^="/koledar-za-tiskanje/"]',count:0
    end
-   assert_select '.eyebrow','15 PREDLOG · PDF + WEBP · 600 PPI'
+   assert_operator response.body.index('class="panel"'),:<,response.body.index('id="calendar-designs"')
   end
-  get '/koledar/2027/februar/'
+ end
+ test 'gallery download URLs serve real files and reject unknown artifacts' do
+  row=PublicCalendarGallery.rows_for(year:2028,month:2).find { |r|r.dig('files','webp').end_with?('.zip') }
+  get row.fetch('files').fetch('pdf')
   assert_response :success
-  assert_select '.calendar-download-callout' do
-   assert_select 'h2#calendar-download-title','Koledar za februar 2027 za tisk'
-   assert_select 'a[href^="/koledar-za-tiskanje/"]',text:'Prikaži predloge' do |links|
-    assert_equal({'date'=>'2027-02-01','month'=>'2','type'=>'monthly','year'=>'2027'},Rack::Utils.parse_query(URI(links.first['href']).query))
-   end
-  end
+  assert_equal 'application/pdf',response.media_type
+  assert response.body.start_with?('%PDF-')
+  get row.fetch('files').fetch('webp')
+  assert_response :success
+  assert_equal 'application/zip',response.media_type
+  assert response.body.start_with?("PK")
+  get '/prenosi/'+('0'*64)+'/unknown.pdf'
+  assert_response :not_found
  end
 end
