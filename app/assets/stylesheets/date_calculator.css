@@ -15,7 +15,7 @@
 .date-hero .eyebrow,
 .date-tool__eyebrow,
 .date-guide__eyebrow,
-.date-guide__number { color: var(--blue); }
+.date-guide__number { color: #0054b8; }
 .date-hero h1,
 .date-tool__intro h2,
 .date-guide__aside h3 { color: var(--ink); }
@@ -41,7 +41,7 @@
 }
 .date-tool__intro { background: var(--soft); }
 .date-tool__eyebrow,
-.date-result__eyebrow { color: var(--blue); }
+.date-result__eyebrow { color: #0054b8; }
 .date-tabs { background: var(--soft); }
 .date-tabs button { color: var(--muted); }
 .date-tabs button:hover { background: var(--surface); color: var(--blue); }
@@ -70,19 +70,21 @@
 .date-submit:hover { background: #00438f; border-color: #00438f; }
 .date-result {
   border-left: 4px solid var(--red);
-  background: var(--blue);
+  background: #0054b8;
   box-shadow: 0 8px 22px #0054b81c;
 }
-.date-result__eyebrow { color: #d9e8f8; }
+.date-result__eyebrow { color: #fff; }
 .date-result__top p,
 .date-result__main span,
-.date-result__stats span { color: #e3edf7; }
+.date-result__stats span { color: #f5f8fc; }
 .date-result__stats > div { border-color: #ffffff35; background: #ffffff12; }
 .date-result__note { background: #ffffff18; color: #fff; }
-.date-tool--error .date-result { background: var(--red); }
+.date-result .date-copy { border-color: #ffffffa8; background: #003f87; color: #fff; }
+.date-result .date-copy:hover { background: #00366f; color: #fff; }
+.date-tool--error .date-result { background: #8f1e33; }
 
 .date-guide__aside { border: 1px solid var(--line); background: var(--soft); }
-.date-guide__number span { color: var(--red); }
+.date-guide__number span { color: #bd233b; }
 .date-benefits li span { background: #eef4fa; color: var(--blue); }
 .date-faq details { border-color: var(--line); }
 .date-faq summary { color: var(--ink); }

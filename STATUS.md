@@ -3,6 +3,15 @@
 Güncelleme: 20.10.2026 20:12 +0300. Takvim metni düzeltmesi: 7d49796b4; otomatik statik yayın: 1fe95b074; Cloudflare Pages dağıtımı: f7ca7688-c429-45f4-ab8b-82d42cab497e (başarılı).
 Bu dosya birincil devam kaydıdır; önceki çalışma günlüğü docs/status-history-2026-10-20.md içinde korunur.
 
+## Son tam denetim — 20.10.2026 21:40 +0300
+
+- Yerel statik üretim tamamlandı ve doğrulandı: 19.670 dosya, 2.820/2.820 PDF–WebP çifti, 8.912 HTML, 8.888 indexlenebilir URL ve 52 aylık/yıllık galeri. `script/audit_static.rb`, `script/finalize_static.rb`, `script/verify_static.mjs` ve `script/verify_vector_identity.rb` geçti; vektör imzaları 9.638 sayfada 402.010 ikon örneğinde doğrulandı.
+- Rails testleri: 58 test, 2.198 doğrulama, 0 hata/başarısızlık.
+- Lighthouse 13.5: 35 sayfa ailesi mobil ve masaüstünde (70 kontrol) erişilebilirlik, iyi uygulamalar ve SEO kategorilerinin tamamında 100. Ayrı 13 sayfalık mobil/masaüstü performans matrisi: masaüstü performans 13/13 100; mobil performans 7/13 100 ve 6/13 99. Mobilde erişilebilirlik/iyi uygulamalar/SEO 13/13 100. Mobilde 99 kalan sayfalar: `/koledar/2027/`, `/prazniki/2027/`, `/prazniki/marijino-vnebovzetje/`, `/koledar-z-imenom/ana/`, `/lunin-koledar/`, `/solske-pocitnice/`. 99 değerleri 100 gibi sunulmuyor. Ham rapor özeti: `evidence/pagespeed-template-audits.json`; ayrıntılı Lighthouse raporları `tmp/qa/pagespeed/templates-final/` ve `tmp/qa/pagespeed/families-final/`.
+- Yeni kontrast düzeltmeleri tarih hesaplayıcı ve okul tatili sayfasında uygulandı. Tüm 70 aile kontrolünde kontrast kusuru kalmadı.
+- İlk GitHub CI tarayıcı kontrolü, 320 px genişlikte kök sayfanın 322 px taşması yüzünden Chromium/WebKit/Android/iPhone profillerinde başarısız olmuştu. 359 px ve altında kök yatay taşmayı kırpan dar kapsamlı CSS düzeltmesi eklendi. Bu düzeltme henüz CI’da doğrulanmadı; kaynaklar `main` dalına gönderilip yeni tarayıcı workflow’u bekleniyor. Önceki CI: https://github.com/mateopedersen/koledar365-si/actions/runs/39472164379 (başarısız dar ekran testi); aynı kaynakla statik yayın hazırlığı başarılı: https://github.com/mateopedersen/koledar365-si/actions/runs/39472164469.
+- Bu son CSS değişiklikleri henüz canlıda değil. Canlıya gönderildikten sonra tarayıcı CI, Cloudflare dağıtımı ve sitemap’teki 8.888 URL’nin HTTPS yanıtı tekrar doğrulanacak. Sonuç gelmeden “bütün canlı URL’ler geçti” denmeyecek.
+
 ## PageSpeed ve erişilebilirlik — devam ediyor
 
 - Kaynak optimizasyonu yerel `582a7c76f2` commitinde; güncel `origin/main` (okul ve üniversite takvimleri + tarih hesaplayıcı rengi) `856fc5dd1f` ile korunarak birleştirildi. Henüz bu optimizasyon canlı değil.
