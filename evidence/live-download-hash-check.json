@@ -1,0 +1,51 @@
+{
+  "checked_at": "2026-10-20T20:24:00.302289+00:00",
+  "origin": "https://koledar365.si",
+  "passed": true,
+  "samples": [
+    {
+      "scope": "monthly-2027-02-min-01",
+      "format": "pdf",
+      "path": "/prenosi/1da6182badd10bc27fbff7f5a752f49ec7368d4ce4cfa06b5dfa42ed221a7b80/koledar365-monthly-2027-02-min-01-A4-portrait-color-v2.0.1.pdf",
+      "status": 200,
+      "bytes": 100387,
+      "content_type": "application/pdf",
+      "sha256_live": "f09d8cb851a5be29a7c94d32bd7b885853b403c18aa4ce6fee1c1e5b6a08e82a",
+      "sha256_local": "f09d8cb851a5be29a7c94d32bd7b885853b403c18aa4ce6fee1c1e5b6a08e82a",
+      "matches": true
+    },
+    {
+      "scope": "monthly-2027-02-min-01",
+      "format": "webp",
+      "path": "/prenosi/1da6182badd10bc27fbff7f5a752f49ec7368d4ce4cfa06b5dfa42ed221a7b80/koledar365-monthly-2027-02-min-01-A4-portrait-color-v2.0.1.webp",
+      "status": 200,
+      "bytes": 56508,
+      "content_type": "image/webp",
+      "sha256_live": "cc14ef2bb867053d2eb96b2ac6f3eac4508bfa73afe8255cd513dbc42ae68ee4",
+      "sha256_local": "cc14ef2bb867053d2eb96b2ac6f3eac4508bfa73afe8255cd513dbc42ae68ee4",
+      "matches": true
+    },
+    {
+      "scope": "annual-2030-01-min-02",
+      "format": "pdf",
+      "path": "/prenosi/adf732e5976278deaea25d4a1c1582c7574ee2d59779b1112a3055ea5fbecdc8/koledar365-annual-2030-min-02-A4-portrait-color-v2.0.1.pdf",
+      "status": 200,
+      "bytes": 136525,
+      "content_type": "application/pdf",
+      "sha256_live": "022dfe3d8895cb30472b2b4fb6b747f54df713d65b750579c7bdd04cd6c63999",
+      "sha256_local": "022dfe3d8895cb30472b2b4fb6b747f54df713d65b750579c7bdd04cd6c63999",
+      "matches": true
+    },
+    {
+      "scope": "annual-2030-01-min-02",
+      "format": "webp",
+      "path": "/prenosi/adf732e5976278deaea25d4a1c1582c7574ee2d59779b1112a3055ea5fbecdc8/koledar365-annual-2030-min-02-A4-portrait-color-v2.0.1-multipage-webp-600ppi.zip",
+      "status": 200,
+      "bytes": 325024,
+      "content_type": "application/zip",
+      "sha256_live": "7d64c4dce982bbde62fd45c6a397edf175da6cb451550209963c856526cddba1",
+      "sha256_local": "7d64c4dce982bbde62fd45c6a397edf175da6cb451550209963c856526cddba1",
+      "matches": true
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "checked_at": "2026-10-20T20:26:50.460302+00:00",
+  "origin": "https://koledar365.si",
+  "release_commit": "5e43a1abc355266c6eefd95c7d0967da83d41e3c",
+  "cloudflare_deployment_id": "ae3af720-4129-47bc-9cdd-73bc6b66be64",
+  "passed": true,
+  "results": [
+    {
+      "path": "/",
+      "expected_status": 200,
+      "status": 200,
+      "passed": true,
+      "content_marker_new_rising_sign": null
+    },
+    {
+      "path": "/koledar/2027/februar/",
+      "expected_status": 200,
+      "status": 200,
+      "passed": true,
+      "content_marker_new_rising_sign": null
+    },
+    {
+      "path": "/koledar/2027/",
+      "expected_status": 200,
+      "status": 200,
+      "passed": true,
+      "content_marker_new_rising_sign": null
+    },
+    {
+      "path": "/koledar/2030/",
+      "expected_status": 200,
+      "status": 200,
+      "passed": true,
+      "content_marker_new_rising_sign": null
+    },
+    {
+      "path": "/prazen-koledar/",
+      "expected_status": 200,
+      "status": 200,
+      "passed": true,
+      "content_marker_new_rising_sign": null
+    },
+    {
+      "path": "/prazniki/marijino-vnebovzetje/",
+      "expected_status": 200,
+      "status": 200,
+      "passed": true,
+      "content_marker_new_rising_sign": null
+    },
+    {
+      "path": "/o-nas/",
+      "expected_status": 200,
+      "status": 200,
+      "passed": true,
+      "content_marker_new_rising_sign": null
+    },
+    {
+      "path": "/zasebnost/",
+      "expected_status": 200,
+      "status": 200,
+      "passed": true,
+      "content_marker_new_rising_sign": null
+    },
+    {
+      "path": "/piskotki/",
+      "expected_status": 200,
+      "status": 200,
+      "passed": true,
+      "content_marker_new_rising_sign": null
+    },
+    {
+      "path": "/fotografije-in-licence/",
+      "expected_status": 200,
+      "status": 200,
+      "passed": true,
+      "content_marker_new_rising_sign": null
+    },
+    {
+      "path": "/vreme/ljubljana/",
+      "expected_status": 200,
+      "status": 200,
+      "passed": true,
+      "content_marker_new_rising_sign": null
+    },
+    {
+      "path": "/not-found-koledar365-check/",
+      "expected_status": 404,
+      "status": 404,
+      "passed": true,
+      "content_marker_new_rising_sign": null
+    }
+  ]
+}

@@ -40,6 +40,7 @@ run!('bundle','exec','ruby','script/build_admin_page.rb')
 run!('bundle','exec','ruby','script/package_social.rb')
 # Reuse the verified public catalogue on CI; original rendering folders are private build caches.
 run!('bundle','exec','ruby','script/validate_catalog_sources.rb')
+run!(ENV.fetch('PYTHON_BIN','python3'),'script/optimize_gallery_previews.py')
 run!('bundle','exec','ruby','script/audit_static.rb')
 run!('ruby','script/finalize_static.rb')
 run!(ENV.fetch('NODE_BIN','node'),'script/verify_static.mjs')
