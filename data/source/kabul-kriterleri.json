@@ -1,0 +1,389 @@
+[
+  {
+    "id": "K01",
+    "origin": "user_numbered_21",
+    "requirement_tr": "Çerez politikası ve kabul butonu",
+    "implementation_tr": "Slovence Piškotki sayfası; Sprejmi vse, Zavrni nenujne, Nastavitve; isteğe bağlı kategoriler varsayılan kapalı.",
+    "acceptance_tr": "Temiz profilde onaydan önce izleyici yok; ret kalıcı; geri çekme çalışıyor; klavye ve karanlık mod okunur.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K02",
+    "origin": "user_numbered_21",
+    "requirement_tr": "Görsel SEO",
+    "implementation_tr": "İçeriğe uygun dosya adları, responsive srcset/sizes, boyut bilgileri ve doğru sıkıştırma; taranabilir önizleme URLleri.",
+    "acceptance_tr": "Ağ/HTML kontrolünde kırık görsel yok; LCP görseli geciktirilmez; önizleme boyutu ve kalite uygundur.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K03",
+    "origin": "user_numbered_21",
+    "requirement_tr": "ALT text",
+    "implementation_tr": "Bilgi taşıyan görsellere kısa doğal Slovence alt; dekorasyona boş alt; anahtar kelime yığını yok.",
+    "acceptance_tr": "Yıl/ay/ad tasarımla eşleşir; ekran okuyucu etiketi doğru; 2029 görüntüsünde 2027 altı kalmaz.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K04",
+    "origin": "user_numbered_21",
+    "requirement_tr": "Özel 404",
+    "implementation_tr": "Markalı Slovence 404; arama, ilgili takvimler ve ana sayfa bağlantısı; gerçek HTTP 404.",
+    "acceptance_tr": "Rastgele yol 404 döndürür; soft404 ve ana sayfaya toplu yönlendirme yok; sayfa sitemapte değildir.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K05",
+    "origin": "user_numbered_21",
+    "requirement_tr": "İletişim",
+    "implementation_tr": "Özel Kontakt sayfası; gerçek alıcı veya kalıcı yönetici gelen kutusuna bağlı form; spam/CSRF koruması.",
+    "acceptance_tr": "Geçerli mesaj gerçekten kaydolur/iletilir; hatalı giriş anlaşılır; e-posta başarısı sahte gösterilmez.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K06",
+    "origin": "user_numbered_21",
+    "requirement_tr": "XML sitemap",
+    "implementation_tr": "Yalnız yayımlanmış canonical 200 sayfalar; doğru lastmod; konu/isim sitemap bölümleri.",
+    "acceptance_tr": "XML doğrulanır; tüm URLler canonical ve200; noindex, parametre,404 ve taslak dahil değildir.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K07",
+    "origin": "user_numbered_21",
+    "requirement_tr": "İç linkleme",
+    "implementation_tr": "Merkez→yıl→ay; önceki/sonraki dönem; kaynaklı özel gün, araç ve isim ilişkileri; breadcrumb.",
+    "acceptance_tr": "Yayımlanmış sayfalar yetim kalmaz; bütün iç linkler çalışır; kısa ilgili anchor kullanılır.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K08",
+    "origin": "user_numbered_21",
+    "requirement_tr": "Dış linkleme",
+    "implementation_tr": "İddianın yanındaki birincil kaynak; lisans/atıf; reklam ilişkisi varsa uygun rel; yeni sekme tutarlı.",
+    "acceptance_tr": "Kaynak hedefi iddiayı destekler; bozuk/yanlış kaynak yok; sahte kaynak ve toplu gereksiz nofollow yok.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K09",
+    "origin": "user_numbered_21",
+    "requirement_tr": "Eski cache temizliği",
+    "implementation_tr": "Hashli varlıklar; veri/şablon sürümlü cache; deploy sonrası hedefli purge; rollback.",
+    "acceptance_tr": "Yeni içerik eski CDN/uygulama kopyasıyla karışmaz; kişisel kayıtlar veya tercih depoları silinmez.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K10",
+    "origin": "user_numbered_21",
+    "requirement_tr": "Tüm takvimler tıklanabilir",
+    "implementation_tr": "Kartlar gerçek sayfaya, indirmeler gerçek dosyaya gider; iç içe link/button yok.",
+    "acceptance_tr": "Yıl/ay/isim/tasarım kartları fare ve klavyeyle açılır; hash placeholder ve ölü tıklama yok.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K11",
+    "origin": "user_numbered_21",
+    "requirement_tr": "Genel tasarım",
+    "implementation_tr": "Referansın işlevsel düzeni; ferah tipografi, kontrollü kartlar, Slovence içerik ve Slovenya varlıkları.",
+    "acceptance_tr": "Masaüstü/tablet/mobil ekran görüntüleri; tasarım tutarlı, okunur ve gerçek veriyi taşıyor.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K12",
+    "origin": "user_numbered_21",
+    "requirement_tr": "Buton işlevleri",
+    "implementation_tr": "Açık eylem adı, hover/focus/loading/disabled/success/error halleri; çift gönderim önleme.",
+    "acceptance_tr": "Her görünür buton somut iş yapar; kullanıcı sonucu görür; ağ hatası anlaşılır ve tekrar denenebilir.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K13",
+    "origin": "user_numbered_21",
+    "requirement_tr": "Hız ve performans",
+    "implementation_tr": "Sunucu HTMLi, az JS, uygun cache, küçük önizlemeler, sorgu optimizasyonu; ağır export arka planda.",
+    "acceptance_tr": "Temsili sayfalarda lab ölçümü; saha verisi yoksa iddia edilmez; hedef LCP≤2.5s INP≤200ms CLS≤0.1.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K14",
+    "origin": "user_numbered_21",
+    "requirement_tr": "Site içi arama",
+    "implementation_tr": "Takvim, tarih, ay, araç, özel gün ve isim araması; aksan toleransı; gerçek ad kimliği korunur.",
+    "acceptance_tr": "koledar 2029, februar 2028, lunine mene, Ana, Žan/Zan, dan Triglava senaryoları; boş sonuç ve klavye akışı.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K15",
+    "origin": "user_numbered_21",
+    "requirement_tr": "2029 takvim bozuklukları",
+    "implementation_tr": "Tüm 12 ay ve 15 çıktı tasarımı için doğru grid, hücre/başlık taşması ve baskı kontrolleri.",
+    "acceptance_tr": "2029=365 gün; Ocak1=Pazartesi; Şubat28; altı hafta gerektiren aylar kesilmez; PDF/WebP karşılaştırılır.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K16",
+    "origin": "user_numbered_21",
+    "requirement_tr": "İç içe tablo ve kartlar",
+    "implementation_tr": "Sayfa yerleşiminde CSS grid/flex; takvimde semantik tablo veya erişilebilir grid; kontrollü hiyerarşi.",
+    "acceptance_tr": "320–1920px görünümde üst üste binme/yatay sayfa taşması yok; uzun Slovence metin ve200% zoom okunur.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K17",
+    "origin": "user_numbered_21",
+    "requirement_tr": "OG görselleri",
+    "implementation_tr": "Sayfa ailesine ve dönemine uygun OG; mutlak HTTPS URL, doğru boyut/tür/alt; yaygın paylaşım uyumu.",
+    "acceptance_tr": "Örnek1200×630 JPG/PNG paylaşım kartı erişilir; yanlış yıl/isim yok; OG tek başına sıralama garantisi sayılmaz.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K18",
+    "origin": "user_numbered_21",
+    "requirement_tr": "Meta title ve description",
+    "implementation_tr": "Sayfa niyetine uygun doğal Slovence başlık/açıklama; tek H1 ve doğru canonical; benzersiz dönem/ad.",
+    "acceptance_tr": "Tekrar/boş metadata taraması; gövdeyle tutarlılık;60/160 karakter zorunlu Google kuralı diye sunulmaz.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K19",
+    "origin": "user_numbered_21",
+    "requirement_tr": "Mobil ve responsive",
+    "implementation_tr": "320,375,390,768,1024,1440,1920px kontroller; mobil yan paneller çekmece; büyük dokunma alanları.",
+    "acceptance_tr": "Takvim kullanılır ve kaydırma kontrollüdür; modal focus/ESC çalışır; portre/yatay ve gerçek cihaz benzetimi.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K20",
+    "origin": "user_numbered_21",
+    "requirement_tr": "Tüm sayfalarda teknik SEO ve UX",
+    "implementation_tr": "HTTP durumları, canonical, robots, sitemap, dil, erişilebilirlik, bağlantı ve çıktı denetimi.",
+    "acceptance_tr": "Tüm yayımlanmış manifest URLleri taranır; eksik işlev/soft404/JS hatası raporlanır ve düzeltilir.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K21",
+    "origin": "user_numbered_21",
+    "requirement_tr": "Karanlık mod",
+    "implementation_tr": "Açık/koyu/sistem tema tokenları; tercih kalıcı; form, modal, tooltip, grafik ve çerez dahil bütün bileşenler.",
+    "acceptance_tr": "İki temada kontrast/taşma kontrolü; tercih açılışta sıçramaz; basılı PDF varsayılan açık temada kalır.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K22",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "Lunar Calendar",
+    "implementation_tr": "Yıllık+aylık lunin koledar;4 faz; yerel zaman; kaynak/yöntem; güneş/ay ayrı ve astronomi doğru.",
+    "acceptance_tr": "UTC→Europe/Ljubljana; DST ve gün sınırı örnekleri; USNO dst=true Slovenyaya uygulanmaz.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K23",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "Burç hesaplayıcı",
+    "implementation_tr": "Doğum tarihinden geleneksel güneş burcu; yaklaşık sınır açıklaması; hesaplama yöntemine uygun iddia.",
+    "acceptance_tr": "Oğlak yıl geçişi,29Şubat,geçersiz tarih ve sınır günleri; yükselen/doğum haritası diye sunulmaz.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K24",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "Bugünün tarihli burç yorumu",
+    "implementation_tr": "12 burç için date+sign+locale benzersiz kayıt; özgün Slovence günlük yorum; gerçek yayın tarihi.",
+    "acceptance_tr": "Ljubljana gece yarısı ve DST; kayıt yokken eski metne yeni tarih basılmaz; yorumlar kopya değildir.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K25",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "E E A T ve kullanıcı deneyimi",
+    "implementation_tr": "Gerçek işletmeci/editör, yöntem, kaynak, düzeltme yolu ve içerik türü; gerçek güncelleme bilgisi.",
+    "acceptance_tr": "Hayalî uzman/sertifika/puan/yorum yok; kaynaklar sayfa bazında ulaşılır; E-E-A-T puanı veya garanti vaat edilmez.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K26",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "Özel Hakkımızda",
+    "implementation_tr": "Özel tasarımlı O nas; proje amacı, ücretsiz hizmetler, gerçek sorumluluklar, kaynak ve iletişim akışı.",
+    "acceptance_tr": "Şablon lorem ipsum veya uydurma ekip yok; tüm linkler gerçek; mobil ve koyu tema kontrol edilir.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K27",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "Slovenya yerelleştirmesi",
+    "implementation_tr": "sl-SI, SI, Europe/Ljubljana; Slovenija ve Koledar365; Slovak bayrağı/Bratislava/meniny kaldırılır.",
+    "acceptance_tr": "Metin taramasında sk-SK, Slovensko, Kalendár, Bratislava kalmaz; Slovençe ay/gün çekimleri gözden geçirilir.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K28",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "İsim başına 5 ana ailede 15 tasarım",
+    "implementation_tr": "8.561 aday,200 ilk,1.000 büyüme; tek ad sayfası; 5 ana aile × 3 farklı düzen = 15 eşleşen PDF/WebP tasarımı; cinsiyet kısıtı yok.",
+    "acceptance_tr": "İlk 200 sayfanın her birinde 15 gerçek PDF ve 15 WebP akışı; aynı kesin ad birleşir; Žan/Zan ayrılır; bastırılmış veri sıfırlaşmaz.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K29",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "En güncel kararlı Ruby",
+    "implementation_tr": "Başlangıçta resmî sürüm kontrolü;20Ekim2026 Ruby4.0.7+Rails8.1.4; sürüm pinleri ve Docker.",
+    "acceptance_tr": "Kurulum/CI/üretim sürümleri aynı; tümgem/yerel bağımlılıklar Docker buildde çalışır; preview/nightly yok.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K30",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "Doğru yerel veri",
+    "implementation_tr": "Güncel mevzuat sürümü; tatil/işten tatil/okul tatili ayrımı; yalnız doğrulanmış okul takvimi.",
+    "acceptance_tr": "2027/2028/2029/2030 iş günleri 255/250/248/249; pazar tatili pazartesiye taşınmaz; gelecekteki okul tarihleri uydurulmaz.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K31",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "GitHub ve Cloudflare yayını",
+    "implementation_tr": "Astra gerçek hesabı doğrular, yeni özel repo oluşturur; Rails için uygun runtime, kalıcıveri ve açık maliyet.",
+    "acceptance_tr": "CI ve gerçek deploy URLkanıtı; PagesRubybuild Railsruntime sanılmaz; onaysız ücretli plan açılmaz.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K32",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "Gerçek 600 ppi PDF ve WebP kalitesi",
+    "implementation_tr": "Vektör PDF metin/çizgileri; raster öğeler baskı ölçüsünde yeterli çözünürlük; WebP gerçek 600 ppi piksel ölçüsünde; küçük önizleme ayrı.",
+    "acceptance_tr": "A4 portre WebP 4961×7016 px; PDF sayfa ölçüsü/font/raster kalitesi; gerçek MIME, tüm günler, ČŠŽ ve uzun adlar; metadata tek başına kalite sayılmaz.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K33",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "Kişisel kayıtlar ve ICS",
+    "implementation_tr": "Misafir yerelde kayıt/dışa aktarma; hesap varsa gerçek sahiplikli kalıcıDB; CSRF, import limitleri ve gizli cache.",
+    "acceptance_tr": "Ekle/düzenle/sil/yinele veICS gidişdönüş; başka kullanıcı verisi sızmaz; yerelkayıt bulutsenkron diye gösterilmez.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K34",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "Font ve varlık lisansları",
+    "implementation_tr": "Avenir lisanslı webfont sağlanırsa kullan; bulunmuyorsa dürüst geçicifallback; görsel/font kaynak kaydı.",
+    "acceptance_tr": "Font yüklenmesi ve Slovençe glyph testi; lisanssız dosya yok; fallback Avenir diye etiketlenmez.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K35",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "Kesintiye dayanıklı teslim",
+    "implementation_tr": "Repo içi kararlar, görevler, veri kaynakları ve test sonuçları güncel; her faz somut commit ve devam noktası.",
+    "acceptance_tr": "Yarım kalan faz tamamlandı sayılmaz; gerçek linkler, kalan bağımlılıklar ve yayın durumu birlikte raporlanır.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K36",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "2030 dahil dört tam yıl",
+    "implementation_tr": "2027, 2028, 2029, 2030; her yıl 12 ay; yıllık, aylık, haftalık, Ay, tatil, iş günü ve isim tasarımları aynı yıl seçimini destekler.",
+    "acceptance_tr": "48 ay, 4 yıl, 5 eğitim yılı bağlamı; 2028 artık yıl; 2030 Ocak1=Salı ve 365 gün; HTML/PDF/WebP/ICS yıl tutarlılığı.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K37",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "Her indirilebilir türde 15 PDF ve 15 WebP",
+    "implementation_tr": "Yıllık/aylık/haftalık/Ay/boş takvim/vardiya ve diğer şablonlarda seçili dönem/ad için 15 farklı tasarım; 10 renkli+5 baskıya uygun siyah beyaz; aynı tasarım iki formatta.",
+    "acceptance_tr": "15 eşleşen tasarım kartı ve iki gerçek indirme; boş takvim ve weekly shift planner dahil; çok sayfalı PDFde tüm sayfaların WebPleri ZIPte; renklendirme tek başına farklı düzen sayılmaz.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K38",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "Her dosyada site marka imzası",
+    "implementation_tr": "Bütün PDF sayfaları ve WebPlerde okunur Koledar365 · koledar365.si alt imzası; baskı güvenli alanı; renkli ve siyah beyaz uyumu.",
+    "acceptance_tr": "15 tasarım × iki formatta marka görünür, kesilmez ve takvim hücresini kapatmaz; tescil doğrulanmadan ® sembolü eklenmez.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K39",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "En popüler isimlerden başlama",
+    "implementation_tr": "SURS nüfus ve yeni doğan sıklıklarından hazırlanmış recommended_candidate_order kullanılır; nüfus ve doğum dönemi ayrı kalır.",
+    "acceptance_tr": "İlk 200 dosyasıyla sıra eşleşir; alfabetik veya rastgele sıra yayın önceliği yerine geçmez; kaynak popülerliği arama hacmi diye sunulmaz.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K40",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "Son ana sayfa görselini referans alma",
+    "implementation_tr": "ZIPteki anasayfa-referansi.png son Slovence görseldir; üç kolon, araçlar ve gezinme bu referansa göre; 2030 da eklenir.",
+    "acceptance_tr": "Önce görsel açılıp incelenir; statik saat/örnek etkinlik veri diye kopyalanmaz; desktop/mobile/dark çıktılar aynı tasarım kararını korur.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K41",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "Bütün önemli günler ve kutlamalar merkezi",
+    "implementation_tr": "/pomembni-dnevi/; 4 yıl ve 12 aylık dizin; resmî tatil, kültürel/dinî/uluslararası gün ayrımı; kaynaklı günler, filtreler, ICS ve baskı.",
+    "acceptance_tr": "Bütün yasal günler kapsanır; kaynaklı ek kutlamalar tarihe göre bulunur; işten tatil bayrağı doğru; organizatör tarihi uydurulmaz.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K42",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "Anahtar teslim çalışan site",
+    "implementation_tr": "Kod, GitHub, üretim kurulumu, alan adı/HTTPS, kalıcı veriler, yönetim ekranları, gerçek araç/çıktılar ve yayın sonrası kontroller birlikte tamamlanır.",
+    "acceptance_tr": "Canlı URL, commit, sürüm, test, indirme ve backup kanıtı; erişim/maliyet/veri bağımlılığı varsa açık; yalnız kod teslimi canlı yayın sayılmaz.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  },
+  {
+    "id": "K43",
+    "origin": "user_followup_or_required_implementation",
+    "requirement_tr": "Uzman titizliğinde bütünsel Slovence",
+    "implementation_tr": "Terim sözlüğü, sl yerel kuralları, ikili/çoğul, çekimler, tarih/saat/sayı, adlar ve čšž; bütün UI, SEO, hata, e-posta ve PDF/WebP metinlerinde son okuma.",
+    "acceptance_tr": "Türkçe/Slovakça/İngilizce artık metin yok; CLDR sayı örnekleri, uzun başlık/ad, 404/cookie/form/OG/print dahil; gerçek insan uzman incelemesi yapılmadıysa yapıldı denmez.",
+    "status": "required_not_implemented",
+    "evidence": "Astra uygulama sırasında dolduracak"
+  }
+]

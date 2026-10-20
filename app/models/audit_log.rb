@@ -1,0 +1,3 @@
+class AuditLog < ApplicationRecord
+  
+end

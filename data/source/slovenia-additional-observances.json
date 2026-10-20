@@ -1,0 +1,1481 @@
+{
+  "project": "koledar365.si",
+  "researched_at": "2026-10-20",
+  "country": "SI",
+  "locale": "sl-SI",
+  "timezone": "Europe/Ljubljana",
+  "years": [
+    2027,
+    2028,
+    2029,
+    2030
+  ],
+  "scope": "Additional sourced observances beyond the original 40 topic pages; supports the important-days hub, year pages and evergreen month pages. Does not edit or automatically extend the final route manifest.",
+  "coverage_statement": "A curated, extensible expansion of relevant Slovenian, European, international and religious observances. This is not an exhaustive list of every local custom, festival, religious community or international campaign.",
+  "metrics_note": "Editorial usefulness only; no keyword volume, traffic or ranking claim.",
+  "existing_topic_pages_checked": 40,
+  "counts": {
+    "additional_observances": 25,
+    "single_day_observances": 24,
+    "multi_day_programmes": 1,
+    "standalone_candidates": 18,
+    "hub_only_initially": 7
+  },
+  "legal_status_method": {
+    "law_source": "https://pisrs.si/pregledPredpisa?id=ZAKO865",
+    "law_version": "ZPDPD NPB11, effective 2026-10-17",
+    "verified_project_source": "research/slovenia-localisation.json",
+    "source_ref_from_localisation_research": "turn12search9",
+    "status_basis": "None of these additional observances itself grants a statutory work-free day in the verified holiday inventory. Government-declared commemorative day is not necessarily an Article 1 statutory holiday.",
+    "important": "Compute date-level work_free by OR across every coincident legal holiday; never let a nonstatutory observance reset that date to a working day. Halloween coincides with work-free Dan reformacije on 31 October."
+  },
+  "generation_rules": [
+    "Use civil dates, never UTC-midnight timestamps for these all-day calendar records.",
+    "Fixed recurring observance dates can be computed for 2027–2030; future festival programmes, themes, ticket prices, venues and opening hours cannot be inferred.",
+    "Keep multiple observances on the same date; 3 December has both Ta veseli dan kulture and Mednarodni dan invalidov.",
+    "Teden otroka is a seven-day period; for ICS use the exclusive end date.",
+    "A source news publication date can differ from the observance date; examples include the 23 August remembrance announcement and 2 October Animal Day article.",
+    "Revalidate rules and legal classification when implementing and during future source refreshes."
+  ],
+  "observances": [
+    {
+      "id": "OBS-01",
+      "slug": "dan-spomina-na-zrtve-holokavsta",
+      "title_sl": "Mednarodni dan spomina na žrtve holokavsta",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 1,
+        "day": 27,
+        "calendar": "gregory"
+      },
+      "category": "international_commemoration",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.unesco.org/en/days/holocaust-remembrance",
+        "ref_id": "turn75view3",
+        "publisher": "UNESCO",
+        "published_date": null,
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "UNESCO identifies 27 January as the annual Holocaust remembrance day.",
+      "standalone_page_useful": true,
+      "suggested_standalone_url": "/pomembni-dnevi/dan-spomina-na-zrtve-holokavsta/",
+      "editorial_usefulness_note": "Slovene remembrance explanation, respectful source-led context and date table; annual ceremonies require separate organizer confirmation.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-01-27",
+          "weekday_iso": 3,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-01-27",
+          "weekday_iso": 4,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-01-27",
+          "weekday_iso": 6,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-01-27",
+          "weekday_iso": 7,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Only publish when original Slovene content, source attribution and functional calendar links are complete; date verification alone is not a finished page."
+    },
+    {
+      "id": "OBS-02",
+      "slug": "mednarodni-dan-maternega-jezika",
+      "title_sl": "Mednarodni dan maternega jezika",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 2,
+        "day": 21,
+        "calendar": "gregory"
+      },
+      "category": "international_cultural",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.unesco.org/en/days/mother-language",
+        "ref_id": "turn75view4",
+        "publisher": "UNESCO",
+        "published_date": null,
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "The official UNESCO day page states 21 February.",
+      "standalone_page_useful": true,
+      "suggested_standalone_url": "/pomembni-dnevi/mednarodni-dan-maternega-jezika/",
+      "editorial_usefulness_note": "Useful Slovenian language/culture context; distinguish from European Day of Languages on 26 September.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-02-21",
+          "weekday_iso": 7,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-02-21",
+          "weekday_iso": 1,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-02-21",
+          "weekday_iso": 3,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-02-21",
+          "weekday_iso": 4,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Only publish when original Slovene content, source attribution and functional calendar links are complete; date verification alone is not a finished page."
+    },
+    {
+      "id": "OBS-03",
+      "slug": "svetovni-dan-voda",
+      "title_sl": "Svetovni dan voda",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 3,
+        "day": 22,
+        "calendar": "gregory"
+      },
+      "category": "international_environment",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.unesco.org/en/days/world-water",
+        "ref_id": "turn75view5",
+        "publisher": "UNESCO",
+        "published_date": null,
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "UNESCO explicitly states that World Water Day is held annually on 22 March.",
+      "standalone_page_useful": true,
+      "suggested_standalone_url": "/pomembni-dnevi/svetovni-dan-voda/",
+      "editorial_usefulness_note": "Calendar date, Slovenian water context and links to ARSO or verified educational resources. Annual themes must carry their actual year.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-03-22",
+          "weekday_iso": 1,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-03-22",
+          "weekday_iso": 3,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-03-22",
+          "weekday_iso": 4,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-03-22",
+          "weekday_iso": 5,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Only publish when original Slovene content, source attribution and functional calendar links are complete; date verification alone is not a finished page."
+    },
+    {
+      "id": "OBS-04",
+      "slug": "svetovni-dan-knjige-in-avtorskih-pravic",
+      "title_sl": "Svetovni dan knjige in avtorskih pravic",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 4,
+        "day": 23,
+        "calendar": "gregory"
+      },
+      "category": "international_cultural",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.unesco.org/en/days/world-book-and-copyright",
+        "ref_id": "turn68view3",
+        "publisher": "UNESCO",
+        "published_date": null,
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "UNESCO explicitly says it celebrates World Book and Copyright Day every 23 April.",
+      "standalone_page_useful": true,
+      "suggested_standalone_url": "/pomembni-dnevi/svetovni-dan-knjige-in-avtorskih-pravic/",
+      "editorial_usefulness_note": "Book/reading date and Slovene library context; local book fairs and Noč knjige programmes have separate confirmed schedules.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-04-23",
+          "weekday_iso": 5,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-04-23",
+          "weekday_iso": 7,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-04-23",
+          "weekday_iso": 1,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-04-23",
+          "weekday_iso": 2,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Only publish when original Slovene content, source attribution and functional calendar links are complete; date verification alone is not a finished page."
+    },
+    {
+      "id": "OBS-05",
+      "slug": "mednarodni-dan-druzin",
+      "title_sl": "Mednarodni dan družin",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 5,
+        "day": 15,
+        "calendar": "gregory"
+      },
+      "category": "international_family",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.gov.si/novice/2022-05-15-organizacija-zdruzenih-narodov-15-maj-razglasila-za-mednarodni-dan-druzin/",
+        "ref_id": "turn73view0",
+        "publisher": "GOV.SI",
+        "published_date": "2022-05-15",
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "The Slovenian government identifies 15 May as International Day of Families.",
+      "standalone_page_useful": true,
+      "suggested_standalone_url": "/pomembni-dnevi/mednarodni-dan-druzin/",
+      "editorial_usefulness_note": "Relates directly to family planning tools; use inclusive factual wording and distinguish from mother/father days.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-05-15",
+          "weekday_iso": 6,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-05-15",
+          "weekday_iso": 1,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-05-15",
+          "weekday_iso": 2,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-05-15",
+          "weekday_iso": 3,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Only publish when original Slovene content, source attribution and functional calendar links are complete; date verification alone is not a finished page."
+    },
+    {
+      "id": "OBS-06",
+      "slug": "dan-slovenskega-krvodajalstva",
+      "title_sl": "Dan slovenskega krvodajalstva",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 6,
+        "day": 4,
+        "calendar": "gregory"
+      },
+      "category": "slovenian_commemorative",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.gov.si/novice/2021-06-04-minister-za-zdravje-janez-poklukar-daroval-kri-na-dan-slovenskega-krvodajalstva/",
+        "ref_id": "turn69view4",
+        "publisher": "GOV.SI",
+        "published_date": "2021-06-04",
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "The government states that Slovenian Blood Donation Day is marked every year on 4 June.",
+      "standalone_page_useful": true,
+      "suggested_standalone_url": "/pomembni-dnevi/dan-slovenskega-krvodajalstva/",
+      "editorial_usefulness_note": "Explain the local observance and distinguish it from World Blood Donor Day on 14 June; link actual donation schedules to RKS rather than inventing future events.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-06-04",
+          "weekday_iso": 5,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-06-04",
+          "weekday_iso": 7,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-06-04",
+          "weekday_iso": 1,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-06-04",
+          "weekday_iso": 2,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Only publish when original Slovene content, source attribution and functional calendar links are complete; date verification alone is not a finished page."
+    },
+    {
+      "id": "OBS-07",
+      "slug": "svetovni-dan-okolja",
+      "title_sl": "Svetovni dan okolja",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 6,
+        "day": 5,
+        "calendar": "gregory"
+      },
+      "category": "international_environment",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.gov.si/novice/2022-06-03-svetovni-dan-okolja-5-junija-sporoca-zemlja-je-le-ena/",
+        "ref_id": "turn73view1",
+        "publisher": "GOV.SI",
+        "published_date": "2022-06-03",
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "The government identifies World Environment Day as 5 June and as a UN/UNEP observance.",
+      "standalone_page_useful": true,
+      "suggested_standalone_url": "/pomembni-dnevi/svetovni-dan-okolja/",
+      "editorial_usefulness_note": "Date and Slovenian environmental context; keep separate from Earth Day on 22 April.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-06-05",
+          "weekday_iso": 6,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-06-05",
+          "weekday_iso": 1,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-06-05",
+          "weekday_iso": 2,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-06-05",
+          "weekday_iso": 3,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Only publish when original Slovene content, source attribution and functional calendar links are complete; date verification alone is not a finished page."
+    },
+    {
+      "id": "OBS-08",
+      "slug": "mednarodni-dan-mladih",
+      "title_sl": "Mednarodni dan mladih",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 8,
+        "day": 12,
+        "calendar": "gregory"
+      },
+      "category": "international_social",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.stat.si/StatWeb/News/Index/14501",
+        "ref_id": "turn73view2",
+        "publisher": "SURS",
+        "published_date": "2026-08-06",
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "SURS confirms that the UN designated 12 August as International Youth Day.",
+      "standalone_page_useful": false,
+      "suggested_standalone_url": null,
+      "editorial_usefulness_note": "Add a sourced calendar entry and optional year-specific SURS context; a standalone page is unnecessary until useful original content exists.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-08-12",
+          "weekday_iso": 4,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-08-12",
+          "weekday_iso": 6,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-08-12",
+          "weekday_iso": 7,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-08-12",
+          "weekday_iso": 1,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Keep in important-days/year/month hubs initially; no separate thin page required."
+    },
+    {
+      "id": "OBS-09",
+      "slug": "evropski-dan-spomina-na-zrtve-totalitarnih-rezimov",
+      "title_sl": "Evropski dan spomina na žrtve totalitarnih in avtoritarnih režimov",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 8,
+        "day": 23,
+        "calendar": "gregory"
+      },
+      "category": "european_commemoration",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.gov.si/novice/2026-08-24-23-avgust-evropski-dan-spomina-na-vse-zrtve-totalitarnih-in-avtoritarnih-rezimov/",
+        "ref_id": "turn69view5",
+        "publisher": "GOV.SI",
+        "published_date": "2026-08-24",
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "The government identifies 23 August as the remembrance date; the cited 2026 ceremony occurred on 21 August, illustrating that ceremony dates differ.",
+      "standalone_page_useful": true,
+      "suggested_standalone_url": "/pomembni-dnevi/evropski-dan-spomina-na-zrtve-totalitarnih-rezimov/",
+      "editorial_usefulness_note": "Respectful factual remembrance page with precise date; do not carry a particular ceremony schedule into future years.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-08-23",
+          "weekday_iso": 1,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-08-23",
+          "weekday_iso": 3,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-08-23",
+          "weekday_iso": 4,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-08-23",
+          "weekday_iso": 5,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Only publish when original Slovene content, source attribution and functional calendar links are complete; date verification alone is not a finished page."
+    },
+    {
+      "id": "OBS-10",
+      "slug": "mednarodni-dan-pismenosti",
+      "title_sl": "Mednarodni dan pismenosti",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 9,
+        "day": 8,
+        "calendar": "gregory"
+      },
+      "category": "international_education",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.unesco.org/en/days/literacy",
+        "ref_id": "turn68view7",
+        "publisher": "UNESCO",
+        "published_date": null,
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "UNESCO states that the annual observance is on 8 September.",
+      "standalone_page_useful": false,
+      "suggested_standalone_url": null,
+      "editorial_usefulness_note": "Calendar entry and links to reading/education resources; no generic thin page just to increase page count.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-09-08",
+          "weekday_iso": 3,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-09-08",
+          "weekday_iso": 5,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-09-08",
+          "weekday_iso": 6,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-09-08",
+          "weekday_iso": 7,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Keep in important-days/year/month hubs initially; no separate thin page required."
+    },
+    {
+      "id": "OBS-11",
+      "slug": "mednarodni-dan-miru",
+      "title_sl": "Mednarodni dan miru",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 9,
+        "day": 21,
+        "calendar": "gregory"
+      },
+      "category": "international_commemoration",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.unesco.org/en/days/peace",
+        "ref_id": "turn73view3",
+        "publisher": "UNESCO",
+        "published_date": null,
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "UNESCO gives 21 September for International Day of Peace.",
+      "standalone_page_useful": false,
+      "suggested_standalone_url": null,
+      "editorial_usefulness_note": "Sourced calendar entry; local programmes require their own organizer and year.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-09-21",
+          "weekday_iso": 2,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-09-21",
+          "weekday_iso": 4,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-09-21",
+          "weekday_iso": 5,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-09-21",
+          "weekday_iso": 6,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Keep in important-days/year/month hubs initially; no separate thin page required."
+    },
+    {
+      "id": "OBS-12",
+      "slug": "evropski-dan-jezikov",
+      "title_sl": "Evropski dan jezikov",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 9,
+        "day": 26,
+        "calendar": "gregory"
+      },
+      "category": "european_cultural",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.gov.si/teme/jeziki-v-vzgoji-in-izobrazevanju/",
+        "ref_id": "turn75view7",
+        "publisher": "GOV.SI",
+        "published_date": null,
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "The education ministry lists European Day of Languages on 26 September and identifies its Council of Europe origin.",
+      "standalone_page_useful": true,
+      "suggested_standalone_url": "/pomembni-dnevi/evropski-dan-jezikov/",
+      "editorial_usefulness_note": "Slovene language and education context, distinct from 21 February; link confirmed local educational activities only.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-09-26",
+          "weekday_iso": 7,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-09-26",
+          "weekday_iso": 2,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-09-26",
+          "weekday_iso": 3,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-09-26",
+          "weekday_iso": 4,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Only publish when original Slovene content, source attribution and functional calendar links are complete; date verification alone is not a finished page."
+    },
+    {
+      "id": "OBS-13",
+      "slug": "mednarodni-dan-starejsih",
+      "title_sl": "Mednarodni dan starejših",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 10,
+        "day": 1,
+        "calendar": "gregory"
+      },
+      "category": "international_social",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.gov.si/novice/2026-10-01-mednarodni-dan-starejsih-cas-je-za-nov-pogled-na-dolgozivost-in-staranje/",
+        "ref_id": "turn73view5",
+        "publisher": "GOV.SI",
+        "published_date": "2026-10-01",
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "The government states that the UN designated 1 October as International Day of Older Persons.",
+      "standalone_page_useful": false,
+      "suggested_standalone_url": null,
+      "editorial_usefulness_note": "Useful date entry for family/community planning; age statistics, if used, need an explicit source reference year.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-10-01",
+          "weekday_iso": 5,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-10-01",
+          "weekday_iso": 7,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-10-01",
+          "weekday_iso": 1,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-10-01",
+          "weekday_iso": 2,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Keep in important-days/year/month hubs initially; no separate thin page required."
+    },
+    {
+      "id": "OBS-14",
+      "slug": "svetovni-dan-zivali",
+      "title_sl": "Svetovni dan živali",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 10,
+        "day": 4,
+        "calendar": "gregory"
+      },
+      "category": "international_awareness",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.gov.si/novice/2026-10-02-ob-svetovnem-dnevu-zivali-dobrobit-zivali-je-nasa-skupna-odgovornost/",
+        "ref_id": "turn73view6",
+        "publisher": "GOV.SI",
+        "published_date": "2026-10-02",
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "The government confirms World Animal Day is observed on 4 October.",
+      "standalone_page_useful": true,
+      "suggested_standalone_url": "/pomembni-dnevi/svetovni-dan-zivali/",
+      "editorial_usefulness_note": "Date, distinction from state holidays and verified local animal-welfare activities; do not classify it as a UN-proclaimed day without separate evidence.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-10-04",
+          "weekday_iso": 1,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-10-04",
+          "weekday_iso": 3,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-10-04",
+          "weekday_iso": 4,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-10-04",
+          "weekday_iso": 5,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Only publish when original Slovene content, source attribution and functional calendar links are complete; date verification alone is not a finished page."
+    },
+    {
+      "id": "OBS-15",
+      "slug": "svetovni-dan-uciteljev",
+      "title_sl": "Svetovni dan učiteljev",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 10,
+        "day": 5,
+        "calendar": "gregory"
+      },
+      "category": "international_education",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.unesco.org/en/days/teachers",
+        "ref_id": "turn68view10",
+        "publisher": "UNESCO",
+        "published_date": null,
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "UNESCO explicitly states that World Teachers Day is held annually on 5 October.",
+      "standalone_page_useful": true,
+      "suggested_standalone_url": "/pomembni-dnevi/svetovni-dan-uciteljev/",
+      "editorial_usefulness_note": "Useful school-planning context and Slovene educational source links; annual themes and ceremonies remain year-specific.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-10-05",
+          "weekday_iso": 2,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-10-05",
+          "weekday_iso": 4,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-10-05",
+          "weekday_iso": 5,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-10-05",
+          "weekday_iso": 6,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Only publish when original Slovene content, source attribution and functional calendar links are complete; date verification alone is not a finished page."
+    },
+    {
+      "id": "OBS-25",
+      "slug": "teden-otroka",
+      "title_sl": "Teden otroka®",
+      "date_rule": {
+        "type": "nth_weekday_period",
+        "month": 10,
+        "weekday_iso": 1,
+        "ordinal": 1,
+        "duration_days": 7,
+        "end_exclusive": true,
+        "calendar": "gregory",
+        "label_sl": "od prvega ponedeljka v oktobru do nedelje istega tedna"
+      },
+      "category": "slovenian_organizer_programme",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.zpms.si/programi/teden-otroka/",
+        "ref_id": "turn69view1",
+        "publisher": "Zveza prijateljev mladine Slovenije (ZPMS)",
+        "published_date": null,
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "The programme organizer states that the week starts on the first Monday of October and ends on that Sunday.",
+      "standalone_page_useful": true,
+      "suggested_standalone_url": "/pomembni-dnevi/teden-otroka/",
+      "editorial_usefulness_note": "Useful start/end dates and organizer link. It is a week, not a one-day public holiday; do not confuse it with World Childrens Day in November.",
+      "scope_note": "Report factually with ZPMS attribution. The organizer marks the programme name as registered and restricts promotional use; do not present the site as the organizer, copy its logo/materials or imply sponsorship. Annual theme/events need fresh confirmation.",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "start_date": "2027-10-04",
+          "end_date_inclusive": "2027-10-10",
+          "end_date_exclusive": "2027-10-11",
+          "provenance": "computed_from_organizer_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "start_date": "2028-10-02",
+          "end_date_inclusive": "2028-10-08",
+          "end_date_exclusive": "2028-10-09",
+          "provenance": "computed_from_organizer_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "start_date": "2029-10-01",
+          "end_date_inclusive": "2029-10-07",
+          "end_date_exclusive": "2029-10-08",
+          "provenance": "computed_from_organizer_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "start_date": "2030-10-07",
+          "end_date_inclusive": "2030-10-13",
+          "end_date_exclusive": "2030-10-14",
+          "provenance": "computed_from_organizer_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Only publish when original Slovene content, source attribution and functional calendar links are complete; date verification alone is not a finished page."
+    },
+    {
+      "id": "OBS-16",
+      "slug": "svetovni-dan-hrane",
+      "title_sl": "Svetovni dan hrane",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 10,
+        "day": 16,
+        "calendar": "gregory"
+      },
+      "category": "international_food",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.stat.si/StatWeb/News/Index/14653",
+        "ref_id": "turn75view10",
+        "publisher": "SURS",
+        "published_date": "2026-10-12",
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "The SURS observance page names 16 October as World Food Day.",
+      "standalone_page_useful": false,
+      "suggested_standalone_url": null,
+      "editorial_usefulness_note": "Calendar entry with optional correctly dated SURS context; distinguish from Dan slovenske hrane in November.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-10-16",
+          "weekday_iso": 6,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-10-16",
+          "weekday_iso": 1,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-10-16",
+          "weekday_iso": 2,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-10-16",
+          "weekday_iso": 3,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Keep in important-days/year/month hubs initially; no separate thin page required."
+    },
+    {
+      "id": "OBS-17",
+      "slug": "noc-carovnic",
+      "title_sl": "Noč čarovnic",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 10,
+        "day": 31,
+        "calendar": "gregory",
+        "evidence_scope": "Conventional Halloween date; linked primary tourism evidence confirms the 2026 local instance. Future event programmes are unverified."
+      },
+      "category": "cultural_custom",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.slovenia.info/sl/dozivetja/dogodki/27688-noc-carovnic-in-veronikina-zgodba",
+        "ref_id": "turn75view9",
+        "publisher": "Slovenska turistična organizacija / I feel Slovenia",
+        "published_date": null,
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "The national tourism board lists a Slovenian Halloween event on 31 October 2026. This verifies local cultural relevance, not a future festival schedule.",
+      "standalone_page_useful": true,
+      "suggested_standalone_url": "/pomembni-dnevi/noc-carovnic/",
+      "editorial_usefulness_note": "Useful explanation of Halloween on 31 October and its distinction from Dan reformacije and 1 November.",
+      "scope_note": "Halloween itself is not a statutory work-free observance. The same date IS a statutory work-free date because of Dan reformacije. The customary 31 October calendar date must not imply that the cited Celje event repeats in 2027–2030.",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "coincides_with_statutory_observance": {
+        "title_sl": "Dan reformacije",
+        "date_rule": "10-31",
+        "work_free": true,
+        "source_inventory": "research/slovenia-localisation.json / ZPDPD Article 2"
+      },
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-10-31",
+          "weekday_iso": 7,
+          "provenance": "computed_from_conventional_calendar_date_not_future_event_schedule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-10-31",
+          "weekday_iso": 2,
+          "provenance": "computed_from_conventional_calendar_date_not_future_event_schedule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-10-31",
+          "weekday_iso": 3,
+          "provenance": "computed_from_conventional_calendar_date_not_future_event_schedule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-10-31",
+          "weekday_iso": 4,
+          "provenance": "computed_from_conventional_calendar_date_not_future_event_schedule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Only publish when original Slovene content, source attribution and functional calendar links are complete; date verification alone is not a finished page."
+    },
+    {
+      "id": "OBS-18",
+      "slug": "spomin-vseh-vernih-rajnih",
+      "title_sl": "Spomin vseh vernih rajnih",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 11,
+        "day": 2,
+        "calendar": "gregory"
+      },
+      "category": "religious_catholic",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://katoliska-cerkev.si/spomin-vseh-vernih-rajnih",
+        "ref_id": "turn69view2",
+        "publisher": "Slovenska škofovska konferenca / Katoliška cerkev",
+        "published_date": "2025-11-02",
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "The official Slovenian Catholic Church page states that the Church remembers all the faithful departed on 2 November.",
+      "standalone_page_useful": true,
+      "suggested_standalone_url": "/pomembni-dnevi/spomin-vseh-vernih-rajnih/",
+      "editorial_usefulness_note": "Explain the distinction between 2 November, 1 November Vsi sveti and the statutory Dan spomina na mrtve; no invented church-service times.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-11-02",
+          "weekday_iso": 2,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-11-02",
+          "weekday_iso": 4,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-11-02",
+          "weekday_iso": 5,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-11-02",
+          "weekday_iso": 6,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Only publish when original Slovene content, source attribution and functional calendar links are complete; date verification alone is not a finished page."
+    },
+    {
+      "id": "OBS-19",
+      "slug": "dan-slovenskega-znakovnega-jezika",
+      "title_sl": "Dan slovenskega znakovnega jezika",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 11,
+        "day": 14,
+        "calendar": "gregory"
+      },
+      "category": "slovenian_commemorative",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.gov.si/novice/2020-11-13-dan-slovenskega-znakovnega-jezika/",
+        "ref_id": "turn69view3",
+        "publisher": "GOV.SI",
+        "published_date": "2020-11-13",
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "The government states that in 2014 it declared 14 November Slovenian Sign Language Day.",
+      "standalone_page_useful": true,
+      "suggested_standalone_url": "/pomembni-dnevi/dan-slovenskega-znakovnega-jezika/",
+      "editorial_usefulness_note": "Locally specific observance; explain accessibility context without presenting it as a statutory work-free day or reusing unlicensed materials.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-11-14",
+          "weekday_iso": 7,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-11-14",
+          "weekday_iso": 2,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-11-14",
+          "weekday_iso": 3,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-11-14",
+          "weekday_iso": 4,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Only publish when original Slovene content, source attribution and functional calendar links are complete; date verification alone is not a finished page."
+    },
+    {
+      "id": "OBS-24",
+      "slug": "dan-slovenske-hrane",
+      "title_sl": "Dan slovenske hrane",
+      "date_rule": {
+        "type": "nth_weekday_of_month",
+        "month": 11,
+        "weekday_iso": 5,
+        "ordinal": 3,
+        "calendar": "gregory",
+        "label_sl": "tretji petek v novembru"
+      },
+      "category": "slovenian_cultural",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.gov.si/teme/solska-prehrana/",
+        "ref_id": "turn69view7",
+        "publisher": "GOV.SI",
+        "published_date": null,
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "The government states that Tradicionalni slovenski zajtrk takes place on Dan slovenske hrane, the third Friday of November.",
+      "standalone_page_useful": true,
+      "suggested_standalone_url": "/pomembni-dnevi/dan-slovenske-hrane/",
+      "editorial_usefulness_note": "Strong Slovenian calendar topic. Treat the national recurring date separately from institution-specific breakfast programmes and menus.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "secondary_source": {
+        "url": "https://www.gov.si/novice/2021-10-19-cez-mesec-dni-obelezujemo-dan-slovenske-hrane-na-mizah-bo-tradicionalni-slovenski-zajtrk/",
+        "ref_id": "turn65search16",
+        "publisher": "GOV.SI",
+        "published_date": "2021-10-19",
+        "accessed_date": "2026-10-20",
+        "evidence": "Explicit recurring third-Friday rule and 2012 government declaration."
+      },
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-11-19",
+          "weekday_iso": 5,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-11-17",
+          "weekday_iso": 5,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-11-16",
+          "weekday_iso": 5,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-11-15",
+          "weekday_iso": 5,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Only publish when original Slovene content, source attribution and functional calendar links are complete; date verification alone is not a finished page."
+    },
+    {
+      "id": "OBS-20",
+      "slug": "svetovni-dan-otrok",
+      "title_sl": "Svetovni dan otrok",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 11,
+        "day": 20,
+        "calendar": "gregory"
+      },
+      "category": "international_family",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://unicef.si/svetovni-dan-otrok/",
+        "ref_id": "turn75view8",
+        "publisher": "UNICEF Slovenija",
+        "published_date": null,
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "UNICEF Slovenia identifies 20 November as World Childrens Day and the anniversary of the Convention on the Rights of the Child.",
+      "standalone_page_useful": true,
+      "suggested_standalone_url": "/pomembni-dnevi/svetovni-dan-otrok/",
+      "editorial_usefulness_note": "Distinguish 20 November from Slovenia’s October Teden otroka programme; avoid importing an unrelated national Children’s Day date.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-11-20",
+          "weekday_iso": 6,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-11-20",
+          "weekday_iso": 1,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-11-20",
+          "weekday_iso": 2,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-11-20",
+          "weekday_iso": 3,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Only publish when original Slovene content, source attribution and functional calendar links are complete; date verification alone is not a finished page."
+    },
+    {
+      "id": "OBS-22",
+      "slug": "mednarodni-dan-invalidov",
+      "title_sl": "Mednarodni dan invalidov",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 12,
+        "day": 3,
+        "calendar": "gregory"
+      },
+      "category": "international_social",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.gov.si/novice/2025-12-03-poslanica-ministra-luke-mesca-ob-mednarodnem-dnevu-invalidov-2025/",
+        "ref_id": "turn75view0",
+        "publisher": "GOV.SI",
+        "published_date": "2025-12-03",
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "The government identifies 3 December as International Day of Persons with Disabilities.",
+      "standalone_page_useful": false,
+      "suggested_standalone_url": null,
+      "editorial_usefulness_note": "Include as a distinct same-day calendar record, preserving the simultaneous cultural observance rather than overwriting it.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-12-03",
+          "weekday_iso": 5,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-12-03",
+          "weekday_iso": 7,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-12-03",
+          "weekday_iso": 1,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-12-03",
+          "weekday_iso": 2,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Keep in important-days/year/month hubs initially; no separate thin page required."
+    },
+    {
+      "id": "OBS-21",
+      "slug": "ta-veseli-dan-kulture",
+      "title_sl": "Ta veseli dan kulture",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 12,
+        "day": 3,
+        "calendar": "gregory"
+      },
+      "category": "slovenian_cultural",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.gov.si/novice/2025-12-03-ta-veseli-dan-kulture-2025-odprta-vrata-kulture-in-umetnosti/",
+        "ref_id": "turn69view6",
+        "publisher": "GOV.SI / Ministrstvo za kulturo",
+        "published_date": "2025-12-03",
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "The ministry describes the 3 December cultural open-day programme on the anniversary of France Prešeren’s birth.",
+      "standalone_page_useful": true,
+      "suggested_standalone_url": "/pomembni-dnevi/ta-veseli-dan-kulture/",
+      "editorial_usefulness_note": "Strong local cultural calendar topic. Distinguish from Prešernov dan on 8 February. Future participating institutions, entry conditions and programme times need annual confirmation.",
+      "scope_note": "A recurring cultural date is supported; do not promise that every venue is free or open in future years.",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-12-03",
+          "weekday_iso": 5,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-12-03",
+          "weekday_iso": 7,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-12-03",
+          "weekday_iso": 1,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-12-03",
+          "weekday_iso": 2,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Only publish when original Slovene content, source attribution and functional calendar links are complete; date verification alone is not a finished page."
+    },
+    {
+      "id": "OBS-23",
+      "slug": "dan-clovekovih-pravic",
+      "title_sl": "Dan človekovih pravic",
+      "date_rule": {
+        "type": "fixed_month_day",
+        "month": 12,
+        "day": 10,
+        "calendar": "gregory"
+      },
+      "category": "international_commemoration",
+      "state_holiday": false,
+      "work_free": false,
+      "legal_status_scope": "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+      "source": {
+        "url": "https://www.unesco.org/en/days/human-rights",
+        "ref_id": "turn75view6",
+        "publisher": "UNESCO",
+        "published_date": null,
+        "accessed_date": "2026-10-20"
+      },
+      "evidence": "UNESCO explicitly states that Human Rights Day is observed every year on 10 December.",
+      "standalone_page_useful": false,
+      "suggested_standalone_url": null,
+      "editorial_usefulness_note": "Sourced calendar entry; a standalone page needs substantive original local context, not a copied declaration.",
+      "scope_note": "",
+      "publication_status": "date_rule_verified_content_not_implemented",
+      "dates_2027_2030": {
+        "2027": {
+          "date": "2027-12-10",
+          "weekday_iso": 5,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2028": {
+          "date": "2028-12-10",
+          "weekday_iso": 7,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2029": {
+          "date": "2029-12-10",
+          "weekday_iso": 1,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        },
+        "2030": {
+          "date": "2030-12-10",
+          "weekday_iso": 2,
+          "provenance": "computed_from_verified_recurring_rule",
+          "event_programme_confirmed": false
+        }
+      },
+      "standalone_publication_gate": "Keep in important-days/year/month hubs initially; no separate thin page required."
+    }
+  ],
+  "held_or_excluded": [
+    {
+      "topic_sl": "Očetovski dan",
+      "status": "held_ambiguous_nationwide_convention",
+      "reason": "Sources use both 19 March (Saint Joseph/local religious tradition) and the third Sunday in June. No authoritative single nationwide Slovenian date was established in this research; do not silently import the US convention or call either date a statutory national holiday.",
+      "evidence_sources": [
+        {
+          "url": "https://ocetje.si/ocetovski-dan-2/",
+          "ref_id": "turn75view2",
+          "publisher": "Društvo očetov Slovenije",
+          "evidence": "The association discusses the third Sunday in June and contrasts it with 19 March."
+        },
+        {
+          "url": "https://www.katoliska-cerkev.si/praznik-sv-jozefa-moza-device-marije1",
+          "ref_id": "turn72search21",
+          "publisher": "Katoliška cerkev",
+          "evidence": "The Church supports the Saint Joseph date of 19 March and his patronage of fathers, but that alone does not establish a universal secular Father’s Day rule."
+        }
+      ],
+      "safe_handling": "If added later, label the observed convention/organizer explicitly and distinguish religious observance from a general national day. No 2027–2030 Father’s Day fixture is supplied."
+    },
+    {
+      "topic_sl": "Festivali, sejmi, občinski prazniki in krajevna praznovanja",
+      "status": "requires_named_organizer_and_annual_programme",
+      "reason": "Do not manufacture recurrence or 2027–2030 schedules from a single past edition. Add only separately sourced local records with location, organizer, event dates and publication status."
+    }
+  ],
+  "route_policy": {
+    "hub": "/pomembni-dnevi/",
+    "year_example": "/pomembni-dnevi/2030/",
+    "month_example": "/pomembni-dnevi/januar/",
+    "note": "Month pages use a year selector; recommended standalone routes here are editorial candidates, not permission to create duplicate /prazniki/ routes. Parent owns the final manifest."
+  },
+  "validation": {
+    "newfile_only": true,
+    "existing_plan_not_edited": true,
+    "all_source_urls_primary_institution_or_organizer": true,
+    "dates_derived_not_announced_future_event_programmes": true
+  }
+}

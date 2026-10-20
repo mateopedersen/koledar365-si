@@ -1,0 +1,23 @@
+<section id="cookies" class="cookie-bar" aria-labelledby="cookie-title" hidden>
+  <div class="cookie-bar-main">
+    <div class="cookie-bar-icon" aria-hidden="true"><%= ui_icon('cookie') %></div>
+    <div class="cookie-bar-copy"><h2 id="cookie-title">Vaša zasebnost, vaša izbira.</h2><p id="cookie-intro">Uporabljamo nujno hrambo. Z dovoljenjem si zapomnimo še mesto. Brez analitike in oglasnih sledilnikov. <a href="/piskotki/">Več o piškotkih</a></p></div>
+    <div class="cookie-actions">
+      <button type="button" data-consent="all">Sprejmi vse</button>
+      <button type="button" data-consent="necessary">Zavrni nenujne</button>
+      <button type="button" data-consent-settings aria-expanded="false" aria-controls="cookie-settings"><%= ui_icon('settings') %> Nastavitve</button>
+    </div>
+    <button type="button" class="cookie-close" data-cookie-close aria-label="Zapri brez spremembe nastavitev">×</button>
+  </div>
+  <details id="cookie-settings">
+    <summary>Podrobne nastavitve</summary>
+    <p class="cookie-explanation">»Sprejmi vse« omogoči le pomnjenje mesta. Osebni načrti se shranijo na tej napravi, ko jih sami ustvarite. Zavrnitev ne omeji uporabe koledarja. Izbiro hranimo 180 dni.</p>
+    <div class="cookie-category"><div><strong>Nujna hramba</strong><p>Seja, varnost obrazcev in vaša izbira zasebnosti.</p></div><span class="necessary-label">Vedno dejavna</span></div>
+    <label class="cookie-category"><span><strong>Zapomni si mesto</strong><small>Izbrano mesto za fotografijo in vreme ob naslednjem obisku. Hramba največ 180 dni.</small></span><input id="cookie-preferences" type="checkbox" role="switch"></label>
+    <div class="cookie-category"><div><strong>Analitika in oglaševanje</strong><p>Teh storitev trenutno ni.</p></div><span class="inactive-label">Ni v uporabi</span></div>
+    <button type="button" data-consent="custom" class="button">Shrani izbrane nastavitve</button>
+    <button type="button" data-consent="withdraw" class="text-button">Prekliči dovoljenje za pomnjenje mesta</button>
+    <p class="cookie-links"><a href="/piskotki/">Politika piškotkov</a><span>·</span><a href="/zasebnost/">Varstvo osebnih podatkov</a><span>·</span>Izbiro lahko kadar koli spremenite.</p>
+  </details>
+  <output id="cookie-status" role="status"></output>
+</section>

@@ -1,0 +1,1854 @@
+{
+  "project": "koledar365.si",
+  "research_date": "2026-10-20",
+  "country": {
+    "name_en": "Slovenia",
+    "name_sl": "Slovenija",
+    "country_code": "SI"
+  },
+  "language": {
+    "name_en": "Slovene / Slovenian",
+    "locale": "sl-SI"
+  },
+  "scope": "Research input for a detailed Astra implementation prompt only; do not actually build, deploy or publish the website in this task.",
+  "correction": "All previously researched Slovak/Slovakia keywords are excluded; no quantitative metrics transferred from Slovakia or Lithuania.",
+  "methodology": {
+    "tools": "Public web search using system2, system1 verification attempt, direct competitor page opens and a previous Lithuania catalog extraction.",
+    "limitations": [
+      "Search result ordering is not a controlled Google Slovenia rank audit.",
+      "Current monthly volumes, keyword difficulty, clicks and domain traffic were not available from a current verified provider report.",
+      "Keyword variants are a planning universe, not claims that each has independently observed demand.",
+      "Seasonality notes are intent/calendar-based hypotheses, not Google Trends measurements.",
+      "Do not sum close variants or historical estimates into a traffic forecast.",
+      "An apparent Ahrefs report redirected to AhrefsTop during independent root verification. Its two figures are segregated into an unverified historical appendix and must not be presented as verified provider estimates."
+    ],
+    "priority_definitions": {
+      "P0": "First release: direct core-task fit, reproducible data and multiple relevant local/print competitors.",
+      "P1": "Next release: adjacent utility, specific recurring need or a narrower intent requiring distinct output.",
+      "P2": "Experiment/later: mixed commercial intent, weaker exact-query evidence or specialist content dependency."
+    },
+    "demand_label": "Priority is an editorial judgment; it is not a volume or KD tier."
+  },
+  "metrics_rejected": [
+    {
+      "source": "https://hypestat.com/info/lunin.net",
+      "reason": "Mixed third-party traffic estimates, unclear common measurement month and method; not used for keyword demand."
+    },
+    {
+      "source": "https://www.topwebsites.online/slovenia/",
+      "reason": "Secondary aggregator rather than original verified provider; not used."
+    },
+    {
+      "source": "https://ahrefstop.com/websites/koledarcek.com/competitors",
+      "reason": "Not original Ahrefs provider domain; unverified snapshot. Excluded."
+    }
+  ],
+  "clusters": [
+    {
+      "id": "C01",
+      "name_tr": "Genel Slovence takvim",
+      "priority": "P0",
+      "primary_keyword_sl": "koledar",
+      "recommended_url": "/",
+      "keywords_sl": [
+        "koledar",
+        "slovenski koledar",
+        "koledar Slovenija",
+        "spletni koledar",
+        "koledar s prazniki",
+        "brezplačni koledar",
+        "koledar danes"
+      ],
+      "intent_tr": "Hızlı tarih kontrolü ve takvim kullanımı. Baş terim uygulama/navigasyon niyeti de taşıyabilir.",
+      "priority_basis_tr": "Ana ürün ve tüm kümelerin doğal giriş noktası; birden fazla yerel takvim doğrudan aynı ihtiyacı karşılıyor.",
+      "source_ids": [
+        "koledarcek",
+        "koledarko",
+        "prazniki"
+      ],
+      "minimum_useful_output_tr": "Güncel ay, yıl seçici, açık tatil/izin günü ayrımı, mobil kullanım.",
+      "seasonality_tr": "Sürekli; yıl sonu artışı hipotezi ölçülmelidir.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "final_target_url": "/",
+      "final_mapping_note": "Research recommendation matches the final route manifest; implementation must follow the manifest and its publication/source gates.",
+      "final_priority": "P0",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C02",
+      "name_tr": "Yıllık takvim",
+      "priority": "P0",
+      "primary_keyword_sl": "koledar 2027",
+      "recommended_url": "/koledar/2027/",
+      "keywords_sl": [
+        "koledar 2027",
+        "koledar 2026",
+        "koledar 2028",
+        "koledar 2029",
+        "letni koledar",
+        "letni koledar 2027",
+        "koledar 2027 s prazniki",
+        "slovenski koledar 2027",
+        "koledar 2027 Slovenija",
+        "koledar 2030",
+        "letni koledar 2030",
+        "koledar 2030 s prazniki"
+      ],
+      "intent_tr": "Belirli yılın 12 aylık görünümü.",
+      "priority_basis_tr": "2027 sayfaları yerel rakiplerde şimdiden indeksleniyor; 20 Ekim 2026 itibarıyla gelecek yıl sayfası önceliklidir.",
+      "source_ids": [
+        "koledarcek2027",
+        "prazniki",
+        "timeanddate"
+      ],
+      "minimum_useful_output_tr": "2027–2030 yıllarının her biri için 12 ay, tatiller, ISO hafta numarası, yazdırma ve dönem bağlantıları; 2030 sonrasına yayımlanmamış/boş bağlantı üretme.",
+      "seasonality_tr": "Q4–Q1 beklenen planlama dönemi; ölçülmüş hacim değildir.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "year_scope_expansions": {
+        "date": "2026-10-20",
+        "reason": "Explicit user expansion to 2027–2030; editorial year substitution only, not observed 2030 search demand.",
+        "variants": [
+          "koledar 2030",
+          "letni koledar 2030",
+          "koledar 2030 s prazniki"
+        ]
+      },
+      "required_calendar_years": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "final_target_url": "/koledar/2027/",
+      "final_mapping_note": "Research recommendation matches the final route manifest; implementation must follow the manifest and its publication/source gates.",
+      "final_priority": "P0",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C03",
+      "name_tr": "Aylık takvim",
+      "priority": "P0",
+      "primary_keyword_sl": "mesečni koledar",
+      "recommended_url": "/koledar/2027/januar/",
+      "keywords_sl": [
+        "mesečni koledar",
+        "mesečni koledar 2027",
+        "koledar januar 2027",
+        "januar 2027",
+        "koledar februar 2027",
+        "koledar marec 2027",
+        "koledar april 2027",
+        "koledar maj 2027",
+        "koledar junij 2027",
+        "koledar julij 2027",
+        "koledar avgust 2027",
+        "koledar september 2027",
+        "koledar oktober 2027",
+        "koledar november 2027",
+        "koledar december 2027",
+        "mesečni koledar 2030",
+        "koledar januar 2030",
+        "koledar december 2030"
+      ],
+      "intent_tr": "Ayı görüntüleme, planlama ve yazdırma.",
+      "priority_basis_tr": "Yerel ay URL örnekleri var; ana takvimle doğrudan ürün uyumu.",
+      "source_ids": [
+        "koledmonth",
+        "sevenmonthly",
+        "koledarko"
+      ],
+      "minimum_useful_output_tr": "Dört yıl için toplam 48 gerçek ay sayfası; aylık tatiller, not alanı ve çalışan indirme; yıl sınırları doğru.",
+      "seasonality_tr": "Her ayın öncesi ve başlangıcı; hipotez.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "year_scope_expansions": {
+        "date": "2026-10-20",
+        "reason": "Explicit user expansion to 2027–2030; editorial year substitution only, not observed 2030 search demand.",
+        "variants": [
+          "mesečni koledar 2030",
+          "koledar januar 2030",
+          "koledar december 2030"
+        ]
+      },
+      "required_calendar_years": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "final_target_url": "/koledar/2027/januar/",
+      "final_mapping_note": "Research recommendation matches the final route manifest; implementation must follow the manifest and its publication/source gates.",
+      "final_priority": "P0",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C04",
+      "name_tr": "Haftalık takvim ve planlayıcı",
+      "priority": "P1",
+      "primary_keyword_sl": "tedenski koledar",
+      "recommended_url": "/tedenski-koledar/",
+      "keywords_sl": [
+        "tedenski koledar",
+        "tedenski koledar 2027",
+        "tedenski planer",
+        "tedenski planer za tiskanje",
+        "tedenski načrtovalnik",
+        "tedenski razpored",
+        "tedenski koledar pdf",
+        "tedenski koledar 2030"
+      ],
+      "intent_tr": "Haftalık görünüm veya yazdırılabilir plan; fiziksel ürün alışverişiyle karışık niyet.",
+      "priority_basis_tr": "Haftalık terimlerde fiziksel planer mağazaları belirgin; ücretsiz araç niyetini başlıkta belirtmek gerekir.",
+      "source_ids": [
+        "sevenweekly",
+        "magicplanner"
+      ],
+      "minimum_useful_output_tr": "Saatli/saatsiz hafta, boş şablon, notlar, yazdırma.",
+      "seasonality_tr": "Sürekli ve okul/yıl başlangıçları; hipotez.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "year_scope_expansions": {
+        "date": "2026-10-20",
+        "reason": "Explicit user expansion to 2027–2030; editorial year substitution only, not observed 2030 search demand.",
+        "variants": [
+          "tedenski koledar 2030"
+        ]
+      },
+      "required_calendar_years": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "final_target_url": "/tedenski-koledar/",
+      "final_mapping_note": "Research recommendation matches the final route manifest; implementation must follow the manifest and its publication/source gates.",
+      "final_priority": "P1",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C05",
+      "name_tr": "PDF ve boş takvim şablonları",
+      "priority": "P0",
+      "primary_keyword_sl": "koledar za tiskanje",
+      "recommended_url": "/koledar-za-tiskanje/",
+      "keywords_sl": [
+        "koledar za tiskanje",
+        "koledar 2027 za tiskanje",
+        "koledar 2027 pdf",
+        "prazen koledar",
+        "prazen koledar za tiskanje",
+        "koledar A4",
+        "koledar 2027 Excel",
+        "koledar 2027 Word",
+        "mesečni koledar pdf",
+        "koledar na eni strani",
+        "koledar 2030 za tiskanje",
+        "koledar 2030 pdf",
+        "koledar 2030 Excel",
+        "koledar 2030 Word"
+      ],
+      "intent_tr": "Ücretsiz indirilebilir/yazdırılabilir dosya.",
+      "priority_basis_tr": "Açık ürün ihtiyacı, yerel print_version örneği ve küresel şablon rekabeti.",
+      "source_ids": [
+        "koledarcekprint",
+        "enetko",
+        "xcalendar",
+        "sevenmonthly"
+      ],
+      "minimum_useful_output_tr": "PDF + gerçek yazdırma görünümü; A4 dikey/yatay; izin verilen formatlar gerçekten çalışmalı.",
+      "seasonality_tr": "Yıl sonu/yıl başı ve aylık kullanımlar; hipotez.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "year_scope_expansions": {
+        "date": "2026-10-20",
+        "reason": "Explicit user expansion to 2027–2030; editorial year substitution only, not observed 2030 search demand.",
+        "variants": [
+          "koledar 2030 za tiskanje",
+          "koledar 2030 pdf",
+          "koledar 2030 Excel",
+          "koledar 2030 Word"
+        ]
+      },
+      "required_calendar_years": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "final_target_url": "/koledar-za-tiskanje/",
+      "final_mapping_note": "Research recommendation matches the final route manifest; implementation must follow the manifest and its publication/source gates.",
+      "final_priority": "P0",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C06",
+      "name_tr": "İsimli ve kişiselleştirilmiş takvim",
+      "priority": "P2",
+      "primary_keyword_sl": "personaliziran koledar",
+      "recommended_url": "/ustvari-koledar/",
+      "keywords_sl": [
+        "personaliziran koledar",
+        "koledar po meri",
+        "izdelava koledarja",
+        "ustvari svoj koledar",
+        "koledar z imenom",
+        "koledar z imeni",
+        "koledar s fotografijami",
+        "foto koledar",
+        "fotokoledar",
+        "osebni koledar"
+      ],
+      "intent_tr": "Kişiye özel dijital dosya oluşturma veya fiziksel fotoğraf takvimi satın alma; ayrıştırılmalı.",
+      "priority_basis_tr": "Kişiselleştirme gerçek rekabet alanı; ancak tam koledar z imenom ifadesi zayıf/karma sonuç verdi. Hacim iddiası yerine özellik deneyi.",
+      "source_ids": [
+        "cewe",
+        "enzophoto",
+        "magicplanner",
+        "magicfamily"
+      ],
+      "minimum_useful_output_tr": "İsim, fotoğraf, doğum günleri, tema, güvenilir PDF. Godovi verisinden farklı özellik.",
+      "seasonality_tr": "Hediye dönemleri ve yıl sonu hipotezi; talep ayrıca doğrulanmalı.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "final_target_url": "/ustvari-koledar/",
+      "final_mapping_note": "personaliziran koledar / koledar po meri intent maps to /ustvari-koledar/; do not create an additional /personaliziran-koledar/ route. Curated public name-calendar catalogue is /koledar-z-imenom/, while user-entered names, photos and personal events are not public indexable profiles by default. Final feature priority follows explicit user scope, not measured demand.",
+      "final_priority": "P1",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C07",
+      "name_tr": "Resmî ve ulusal tatiller",
+      "priority": "P0",
+      "primary_keyword_sl": "prazniki 2027",
+      "recommended_url": "/prazniki/2027/",
+      "keywords_sl": [
+        "prazniki",
+        "prazniki 2027",
+        "prazniki Slovenija",
+        "slovenski prazniki",
+        "državni prazniki",
+        "državni prazniki 2027",
+        "koledar praznikov 2027",
+        "prazniki 2028",
+        "prazniki 2029",
+        "prazniki 2030",
+        "državni prazniki 2030"
+      ],
+      "intent_tr": "Tatil tarihleri ve niteliklerini öğrenme.",
+      "priority_basis_tr": "Birden fazla yıllık rakip sayfası ve resmî veri kaynağı var; ana takvim kullanımına doğrudan bağlı.",
+      "source_ids": [
+        "praznikifree",
+        "govholidays",
+        "javnipodatki"
+      ],
+      "minimum_useful_output_tr": "Tarih + hafta günü + çalışma serbestliği; resmî ad ve kaynak tarihi.",
+      "seasonality_tr": "Yıl öncesi ve ilgili tatiller öncesi; hipotez.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "year_scope_expansions": {
+        "date": "2026-10-20",
+        "reason": "Explicit user expansion to 2027–2030; editorial year substitution only, not observed 2030 search demand.",
+        "variants": [
+          "prazniki 2030",
+          "državni prazniki 2030"
+        ]
+      },
+      "required_calendar_years": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "final_target_url": "/prazniki/2027/",
+      "final_mapping_note": "Research recommendation matches the final route manifest; implementation must follow the manifest and its publication/source gates.",
+      "final_priority": "P1",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C08",
+      "name_tr": "Çalışılmayan günler",
+      "priority": "P0",
+      "primary_keyword_sl": "dela prosti dnevi 2027",
+      "recommended_url": "/dela-prosti-dnevi/2027/",
+      "keywords_sl": [
+        "dela prosti dnevi",
+        "dela prosti dnevi 2027",
+        "dela prosti dnevi 2026",
+        "dela prosti dnevi Slovenija",
+        "prosti dnevi 2027",
+        "koliko dela prostih dni je 2027",
+        "naslednji dela prost dan",
+        "ali je danes praznik",
+        "dela prosti dnevi 2030",
+        "prosti dnevi 2030"
+      ],
+      "intent_tr": "İşten izinli/tatil gününün pratik yanıtı.",
+      "priority_basis_tr": "Resmî tatil ve çalışılmayan gün aynı kavram değildir; bu fark faydalı ayrı filtre veya sayfa sağlar.",
+      "source_ids": [
+        "govholidays",
+        "praznikifree",
+        "javnipodatki"
+      ],
+      "minimum_useful_output_tr": "Hafta içi/hafta sonu ayrımı, sonraki boş gün. Prazniki sayfasını bire bir kopyalamamalı.",
+      "seasonality_tr": "Yıl planlaması ve tatil öncesi; hipotez.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "year_scope_expansions": {
+        "date": "2026-10-20",
+        "reason": "Explicit user expansion to 2027–2030; editorial year substitution only, not observed 2030 search demand.",
+        "variants": [
+          "dela prosti dnevi 2030",
+          "prosti dnevi 2030"
+        ]
+      },
+      "required_calendar_years": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "final_target_url": "/prazniki/2027/",
+      "final_mapping_note": "Dela prosti dnevi is a separate intent/label within the official-holidays year page; do not create a duplicate annual route. Repeat for all four scoped years.",
+      "final_priority": "P1",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C09",
+      "name_tr": "Okul takvimi ve tatiller",
+      "priority": "P0",
+      "primary_keyword_sl": "šolske počitnice 2027",
+      "recommended_url": "/solske-pocitnice/2026-2027/",
+      "keywords_sl": [
+        "šolske počitnice",
+        "šolske počitnice 2027",
+        "šolski koledar 2026 2027",
+        "šolski koledar 2026/2027",
+        "zimske počitnice 2027",
+        "jesenske počitnice 2026",
+        "prvomajske počitnice 2027",
+        "poletne počitnice 2027",
+        "novoletne počitnice 2026 2027",
+        "zimske počitnice Ljubljana",
+        "zimske počitnice Maribor"
+      ],
+      "intent_tr": "Çocuklar/aileler için okul yılı ve bölgeye göre tatil.",
+      "priority_basis_tr": "GOV.SI 2026/2027 okul yılı yayınlarını doğruluyor; yerel fayda yüksektir.",
+      "source_ids": [
+        "govschoolprimary",
+        "govschoolsecondary",
+        "javnipodatki",
+        "schoolpdf"
+      ],
+      "minimum_useful_output_tr": "Okul yılı URL, ilkokul/lise ayrımı, kış tatili bölge istisnaları, onay durumu.",
+      "seasonality_tr": "Okula dönüş ve her tatil öncesi; hipotez.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "four_year_constraint_tr": "2027–2030 kapsamı gelecek okul tatillerini uydurma izni değildir; 2026/27 dahil bu yıllarla kesişen sadece resmen yayımlanmış okul yılı kayıtlarını göster.",
+      "final_target_url": "/solske-pocitnice/2026-2027/",
+      "final_mapping_note": "Research recommendation matches the final route manifest; implementation must follow the manifest and its publication/source gates.",
+      "final_priority": "P0",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C10",
+      "name_tr": "İş günleri ve aylık saatler",
+      "priority": "P0",
+      "primary_keyword_sl": "delovni dnevi 2027",
+      "recommended_url": "/delovni-dnevi/2027/",
+      "keywords_sl": [
+        "delovni dnevi",
+        "delovni dnevi 2027",
+        "delovni dnevi 2026",
+        "delovne ure 2027",
+        "mesečni fond ur 2027",
+        "število delovnih dni 2027",
+        "delovni koledar 2027",
+        "delovni dnevi po mesecih",
+        "sklad delovnih ur 2027",
+        "delovni dnevi 2030",
+        "delovne ure 2030",
+        "mesečni fond ur 2030"
+      ],
+      "intent_tr": "İş planlama ve aylık gün/saat tablosu.",
+      "priority_basis_tr": "Uzman muhasebe siteleri ve yeni veri portalları aynı ihtiyacı karşılıyor; yöntem şeffaflığı şart.",
+      "source_ids": [
+        "workdays",
+        "accounting",
+        "javnipodatki"
+      ],
+      "minimum_useful_output_tr": "Pzt–Cum baz varsayımı, tatiller ayrı, saat/gün seçimi; bordro garantisi verilmemeli.",
+      "seasonality_tr": "Yıllık bütçe ve her ay; hipotez.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "year_scope_expansions": {
+        "date": "2026-10-20",
+        "reason": "Explicit user expansion to 2027–2030; editorial year substitution only, not observed 2030 search demand.",
+        "variants": [
+          "delovni dnevi 2030",
+          "delovne ure 2030",
+          "mesečni fond ur 2030"
+        ]
+      },
+      "required_calendar_years": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "final_target_url": "/delovni-dnevi/2027/",
+      "final_mapping_note": "Research recommendation matches the final route manifest; implementation must follow the manifest and its publication/source gates.",
+      "final_priority": "P0",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C11",
+      "name_tr": "Tarih ve iş günü hesaplama",
+      "priority": "P1",
+      "primary_keyword_sl": "izračun dni med datumi",
+      "recommended_url": "/izracun-dni/",
+      "keywords_sl": [
+        "izračun dni med datumi",
+        "dnevi med datumi",
+        "koliko dni med datumoma",
+        "kalkulator datumov",
+        "kalkulator dni",
+        "izračun delovnih dni",
+        "delovni dnevi med datumi",
+        "prištevanje dni datumu",
+        "odštevanje dni od datuma",
+        "koliko dni do novega leta"
+      ],
+      "intent_tr": "İki tarih farkı veya bir tarihe gün ekleme/çıkarma.",
+      "priority_basis_tr": "Doğrudan yerel araç rekabeti var; resmî Slovenya tatil takvimiyle birleşmesi ürün avantajı olabilir.",
+      "source_ids": [
+        "datecalc",
+        "workcalc",
+        "koledarko"
+      ],
+      "minimum_useful_output_tr": "Takvim/iş günü, başlangıç/bitiş dahil seçimi, tatil kaynağı, paylaşılabilir sonuç.",
+      "seasonality_tr": "Sürekli.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "final_target_url": "/datumski-kalkulator/",
+      "final_mapping_note": "Date-difference and date-arithmetic queries share the functional date calculator. Do not implement /izracun-dni/ as a second indexable tool.",
+      "final_priority": "P1",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C12",
+      "name_tr": "ISO hafta numarası",
+      "priority": "P1",
+      "primary_keyword_sl": "številka tedna",
+      "recommended_url": "/stevilka-tedna/",
+      "keywords_sl": [
+        "številka tedna",
+        "kateri teden je danes",
+        "kateri teden v letu je",
+        "trenutni teden",
+        "koledar s številkami tednov",
+        "tedni v letu 2027",
+        "koledar 2027 tedni",
+        "tedni v letu 2030",
+        "koledar 2030 tedni"
+      ],
+      "intent_tr": "Şu anki veya seçilen tarihin hafta numarası.",
+      "priority_basis_tr": "Bu konuya adanmış rakip ve ana takvimlerde hafta numarası işlevi var.",
+      "source_ids": [
+        "weeknumber",
+        "koledarcek",
+        "timeanddate"
+      ],
+      "minimum_useful_output_tr": "ISO hafta, Pazartesi–Pazar aralığı, yıl sınırı açıklaması.",
+      "seasonality_tr": "Sürekli.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "year_scope_expansions": {
+        "date": "2026-10-20",
+        "reason": "Explicit user expansion to 2027–2030; editorial year substitution only, not observed 2030 search demand.",
+        "variants": [
+          "tedni v letu 2030",
+          "koledar 2030 tedni"
+        ]
+      },
+      "required_calendar_years": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "final_target_url": "/stevilka-tedna/",
+      "final_mapping_note": "Research recommendation matches the final route manifest; implementation must follow the manifest and its publication/source gates.",
+      "final_priority": "P1",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C13",
+      "name_tr": "Bugünün tarihi",
+      "priority": "P1",
+      "primary_keyword_sl": "kateri dan je danes",
+      "recommended_url": "/danes/",
+      "keywords_sl": [
+        "kateri dan je danes",
+        "današnji datum",
+        "datum danes",
+        "kateri datum je danes",
+        "kateri dan v letu je danes",
+        "koliko dni do konca leta",
+        "današnji koledar"
+      ],
+      "intent_tr": "Hızlı gün/tarih yanıtı.",
+      "priority_basis_tr": "Yerel takvimlerin günlük veri modülü olarak mantıklı; bağımsız sayfanın indeks faydası ölçülmeli.",
+      "source_ids": [
+        "today",
+        "koledarcek",
+        "koledarko"
+      ],
+      "minimum_useful_output_tr": "Europe/Ljubljana yerel tarihi; tarih, hafta, yılın günü, ilgili tatil ve faz.",
+      "seasonality_tr": "Sürekli; sıfır tıklama riski.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "final_target_url": "/",
+      "final_mapping_note": "Today/date/day-number intent is served by the homepage with an actual Europe/Ljubljana date. /danes/ is research-only.",
+      "final_priority": "P0",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C14",
+      "name_tr": "Yıllık/aylık ay takvimi",
+      "priority": "P0",
+      "primary_keyword_sl": "lunin koledar 2027",
+      "recommended_url": "/lunin-koledar/2027/",
+      "keywords_sl": [
+        "lunin koledar",
+        "lunin koledar 2027",
+        "lunin koledar 2026",
+        "lunin koledar 2028",
+        "mesečni lunin koledar",
+        "lunin koledar januar 2027",
+        "lunin koledar za tiskanje",
+        "lunarni koledar",
+        "lunin koledar 2029",
+        "lunin koledar 2030"
+      ],
+      "intent_tr": "Ay döngüleri ve evrelerinin takvimi.",
+      "priority_basis_tr": "Lunin.net yıllık 2027 sayfası ve birden fazla uzman yayın güçlü konu kanıtı.",
+      "source_ids": [
+        "lunin2027",
+        "lunin",
+        "bodieko"
+      ],
+      "minimum_useful_output_tr": "Dört ana evre, saat dilimi ve kaynak; yıllık + aylık filtreler.",
+      "seasonality_tr": "Sürekli aylık döngü ve yıl planlaması; hipotez.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "year_scope_expansions": {
+        "date": "2026-10-20",
+        "reason": "Explicit user expansion to 2027–2030; editorial year substitution only, not observed 2030 search demand.",
+        "variants": [
+          "lunin koledar 2029",
+          "lunin koledar 2030"
+        ]
+      },
+      "required_calendar_years": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "final_target_url": "/lunin-koledar/2027/",
+      "final_mapping_note": "Research recommendation matches the final route manifest; implementation must follow the manifest and its publication/source gates.",
+      "final_priority": "P0",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C15",
+      "name_tr": "Ay evreleri ve bugün",
+      "priority": "P0",
+      "primary_keyword_sl": "lunine mene",
+      "recommended_url": "/lunine-mene/",
+      "keywords_sl": [
+        "lunine mene",
+        "lunine mene 2027",
+        "lunine mene 2026",
+        "lunine mene danes",
+        "današnja luna",
+        "luna danes",
+        "lunina mena danes",
+        "lunine faze",
+        "faza lune danes",
+        "lunine mene 2028",
+        "lunine mene 2029",
+        "lunine mene 2030"
+      ],
+      "intent_tr": "Şu anki evre ve yaklaşan evreler.",
+      "priority_basis_tr": "Yerel ay takvimi rakiplerinde açık konu kanıtı. AhrefsTop adlı üçüncü tarafın Nisan 2025 tarihli anlık raporunda 4.4K yazıyor; asıl Ahrefs kaynağı ve güncel hacim doğrulanmadığı için yalnızca zayıf tarihsel ek kanıt.",
+      "source_ids": [
+        "lunin",
+        "astrosvet",
+        "ahrefstop_historical"
+      ],
+      "minimum_useful_output_tr": "Bugünkü aydınlanma, büyüyen/küçülen faz, sonraki evre saati; astronomi/astroloji açıklamasını ayır.",
+      "seasonality_tr": "Ay döngüsü; geçmiş rapordan güncel mevsimsellik çıkarılamaz.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "year_scope_expansions": {
+        "date": "2026-10-20",
+        "reason": "Explicit user expansion to 2027–2030; editorial year substitution only, not observed 2030 search demand.",
+        "variants": [
+          "lunine mene 2028",
+          "lunine mene 2029",
+          "lunine mene 2030"
+        ]
+      },
+      "required_calendar_years": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "final_target_url": "/lunine-mene/",
+      "final_mapping_note": "Research recommendation matches the final route manifest; implementation must follow the manifest and its publication/source gates.",
+      "final_priority": "P1",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C16",
+      "name_tr": "Dolunay",
+      "priority": "P0",
+      "primary_keyword_sl": "polna luna",
+      "recommended_url": "/polna-luna/",
+      "keywords_sl": [
+        "polna luna",
+        "polna luna 2027",
+        "polna luna 2026",
+        "kdaj je polna luna",
+        "naslednja polna luna",
+        "polna luna danes",
+        "polna luna januar 2027",
+        "ščip",
+        "ščip 2027",
+        "polna luna 2028",
+        "polna luna 2029",
+        "polna luna 2030"
+      ],
+      "intent_tr": "En yakın dolunayın tarihi/saati ve yıllık liste.",
+      "priority_basis_tr": "Yerel ay takvimi ve dolunay yayınlarında açık konu kanıtı. AhrefsTop adlı üçüncü tarafın Nisan 2025 tarihli anlık raporunda 11K yazıyor; asıl Ahrefs kaynağı ve güncel hacim doğrulanmadığı için yalnızca zayıf tarihsel ek kanıt.",
+      "source_ids": [
+        "lunin",
+        "bodieko",
+        "ahrefstop_historical",
+        "astrosvet"
+      ],
+      "minimum_useful_output_tr": "Üstte sonraki dolunay + yerel saat, sonra yıllık tablo. Genel ay takvimiyle aynı metni kopyalama.",
+      "seasonality_tr": "Döngüsel; olay öncesi yoğunluk hipotezi.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "year_scope_expansions": {
+        "date": "2026-10-20",
+        "reason": "Explicit user expansion to 2027–2030; editorial year substitution only, not observed 2030 search demand.",
+        "variants": [
+          "polna luna 2028",
+          "polna luna 2029",
+          "polna luna 2030"
+        ]
+      },
+      "required_calendar_years": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "final_target_url": "/polna-luna/",
+      "final_mapping_note": "Research recommendation matches the final route manifest; implementation must follow the manifest and its publication/source gates.",
+      "final_priority": "P1",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C17",
+      "name_tr": "Yeni ay",
+      "priority": "P1",
+      "primary_keyword_sl": "mlaj",
+      "recommended_url": "/mlaj/",
+      "keywords_sl": [
+        "mlaj",
+        "mlaj 2027",
+        "mlaj 2026",
+        "kdaj je mlaj",
+        "naslednji mlaj",
+        "prazna luna",
+        "prazna luna 2027",
+        "mlaj januar 2027",
+        "mlaj 2028",
+        "mlaj 2029",
+        "mlaj 2030"
+      ],
+      "intent_tr": "En yakın yeni ay ve yıllık tarihler. Tek başına mlaj ayrıca süslü direk/ağaç anlamına gelir; başlıkta Mlaj (prazna luna) ile ay bağlamını netleştir.",
+      "priority_basis_tr": "Yerel ay takvimleri mlaj ve prazna luna terimlerini kullanıyor; dolunaydan bağımsız talep büyüklüğü doğrulanmadı.",
+      "source_ids": [
+        "lunin",
+        "astrosvet",
+        "koledarko",
+        "fran_mlaj"
+      ],
+      "minimum_useful_output_tr": "Sonraki yeni ay, tarih/saat, yıllık liste; dolunay sayfasıyla ortak veri motoru.",
+      "seasonality_tr": "Döngüsel; hipotez.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "year_scope_expansions": {
+        "date": "2026-10-20",
+        "reason": "Explicit user expansion to 2027–2030; editorial year substitution only, not observed 2030 search demand.",
+        "variants": [
+          "mlaj 2028",
+          "mlaj 2029",
+          "mlaj 2030"
+        ]
+      },
+      "required_calendar_years": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "final_target_url": "/mlaj/",
+      "final_mapping_note": "Research recommendation matches the final route manifest; implementation must follow the manifest and its publication/source gates.",
+      "final_priority": "P1",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C18",
+      "name_tr": "Güneş doğuşu/batışı",
+      "priority": "P1",
+      "primary_keyword_sl": "sončni vzhod in zahod",
+      "recommended_url": "/soncni-vzhod-in-zahod/ljubljana/",
+      "keywords_sl": [
+        "sončni vzhod",
+        "sončni zahod",
+        "sončni vzhod in zahod",
+        "sončni vzhod Ljubljana",
+        "sončni zahod Ljubljana",
+        "dolžina dneva",
+        "dolžina dneva danes",
+        "sončni zahod Maribor",
+        "sončni zahod Koper"
+      ],
+      "intent_tr": "Konuma ve tarihe bağlı astronomik saat.",
+      "priority_basis_tr": "Yerel gözlemevi ve konum sayfası sağlayıcıları doğrudan ihtiyaç kanıtı.",
+      "source_ids": [
+        "observatory",
+        "heliotempo",
+        "koledarcek"
+      ],
+      "minimum_useful_output_tr": "Gerçek koordinatlar, Europe/Ljubljana, yaz saati, gün uzunluğu. Şehir sayfaları özgün hesap üretmeli.",
+      "seasonality_tr": "Sürekli; mevsim ve dış mekân kullanımı.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "final_target_url": "/soncni-vzhod-in-zahod/ljubljana/",
+      "final_mapping_note": "Research recommendation matches the final route manifest; implementation must follow the manifest and its publication/source gates.",
+      "final_priority": "P1",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C19",
+      "name_tr": "Mevsimler ve gündönümü",
+      "priority": "P1",
+      "primary_keyword_sl": "letni časi",
+      "recommended_url": "/letni-casi/2027/",
+      "keywords_sl": [
+        "letni časi",
+        "začetek pomladi 2027",
+        "spomladansko enakonočje 2027",
+        "poletni solsticij 2027",
+        "začetek poletja 2027",
+        "jesensko enakonočje 2027",
+        "začetek jeseni 2027",
+        "zimski solsticij 2027",
+        "začetek zime 2027",
+        "najdaljši dan 2027",
+        "najkrajši dan 2027",
+        "letni časi 2030",
+        "spomladansko enakonočje 2030",
+        "poletni solsticij 2030",
+        "zimski solsticij 2030"
+      ],
+      "intent_tr": "Mevsim başlangıcının kesin tarih/saati.",
+      "priority_basis_tr": "Ana takvim ve astronomi rakiplerinde yer alan yakın konu; mevcut astronomi motoruyla sağlanabilir.",
+      "source_ids": [
+        "heliotempoevents",
+        "koledarcek"
+      ],
+      "minimum_useful_output_tr": "Astronomik/meteorolojik başlangıç farkı, yerel saat ve yıllık tablo.",
+      "seasonality_tr": "Mart/Haziran/Eylül/Aralık olayları öncesi; hipotez.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "year_scope_expansions": {
+        "date": "2026-10-20",
+        "reason": "Explicit user expansion to 2027–2030; editorial year substitution only, not observed 2030 search demand.",
+        "variants": [
+          "letni časi 2030",
+          "spomladansko enakonočje 2030",
+          "poletni solsticij 2030",
+          "zimski solsticij 2030"
+        ]
+      },
+      "required_calendar_years": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "final_target_url": "/letni-casi/",
+      "final_mapping_note": "Use the final evergreen seasons page with verified 2027–2030 data/selection. No separate /letni-casi/2027/ route is in the launch manifest.",
+      "final_priority": "P1",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C20",
+      "name_tr": "Saat değişikliği",
+      "priority": "P1",
+      "primary_keyword_sl": "premik ure 2027",
+      "recommended_url": "/premik-ure/2027/",
+      "keywords_sl": [
+        "premik ure",
+        "premik ure 2027",
+        "premik ure 2026",
+        "prestavitev ure",
+        "zimski čas 2027",
+        "poletni čas 2027",
+        "kdaj se prestavi ura",
+        "premik ure na zimski čas",
+        "premik ure na poletni čas",
+        "premik ure 2030"
+      ],
+      "intent_tr": "Saatin ne zaman ve hangi yöne değişeceği.",
+      "priority_basis_tr": "Tarih/olay takvimiyle güçlü uyum; mevzuat ve gelecek tarihler yayın öncesi resmî AB kaynağından kontrol edilmeli.",
+      "source_ids": [
+        "heliotempoevents"
+      ],
+      "minimum_useful_output_tr": "Sonraki değişim, ileri/geri, önce/sonra saat, kaynağın kontrol tarihi.",
+      "seasonality_tr": "Mart/Ekim; takvim kuralından çıkarılan sezon.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "year_scope_expansions": {
+        "date": "2026-10-20",
+        "reason": "Explicit user expansion to 2027–2030; editorial year substitution only, not observed 2030 search demand.",
+        "variants": [
+          "premik ure 2030"
+        ]
+      },
+      "required_calendar_years": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "final_target_url": "/premik-ure/",
+      "final_mapping_note": "Use the final evergreen clock-change page with scoped-year records and current legal basis; no separate /premik-ure/2027/ launch route.",
+      "final_priority": "P1",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C21",
+      "name_tr": "İsim günleri ve aziz takvimi",
+      "priority": "P1",
+      "primary_keyword_sl": "godovi",
+      "recommended_url": "/godovi/",
+      "keywords_sl": [
+        "godovi",
+        "godovi danes",
+        "kdo danes goduje",
+        "godovni koledar",
+        "koledar imen",
+        "kdaj imam god",
+        "kdaj goduje Ana",
+        "kdaj goduje Marija",
+        "kdaj goduje Janez",
+        "god imena",
+        "svetnik dneva"
+      ],
+      "intent_tr": "Bir adın kutlama gününü veya günün azizini bulma.",
+      "priority_basis_tr": "Yerel sözlük, dinî yayın ve takvim özellikleri var; ad-gün eşlemesini Litvanya/Slovakya listesinden taşımak yanlış olur.",
+      "source_ids": [
+        "fran",
+        "church",
+        "hozana",
+        "ognjisce",
+        "koledarko"
+      ],
+      "minimum_useful_output_tr": "Ad arama, birden fazla tarih/geleneğin kaynağı; kişisel isim basma özelliğinden ayrı.",
+      "seasonality_tr": "Sürekli, kişisel tarihler.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "final_target_url": "/godovi/",
+      "final_mapping_note": "Research recommendation matches the final route manifest; implementation must follow the manifest and its publication/source gates.",
+      "final_priority": "P1",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C22",
+      "name_tr": "Uzun hafta sonları ve izin planlama",
+      "priority": "P1",
+      "primary_keyword_sl": "podaljšani vikendi 2027",
+      "recommended_url": "/podaljsani-vikendi/2027/",
+      "keywords_sl": [
+        "podaljšani vikendi",
+        "podaljšani vikendi 2027",
+        "dolgi vikendi 2027",
+        "dopust 2027",
+        "načrtovanje dopusta 2027",
+        "planer dopusta",
+        "prazniki in dopust 2027",
+        "kako izkoristiti dopust 2027",
+        "podaljšani vikendi 2030",
+        "načrtovanje dopusta 2030"
+      ],
+      "intent_tr": "En az izin günüyle daha uzun dinlenme dönemi.",
+      "priority_basis_tr": "Koledarko dopustni planer sunuyor; iş günü/tatil veri motorunun değerli bir çıktısı.",
+      "source_ids": [
+        "koledarko",
+        "praznikifree"
+      ],
+      "minimum_useful_output_tr": "Gerçek izin maliyetini hesapla; hafta içi çalışan varsayımını belirt. Seyahat önerisi olarak genişletmek gerekmez.",
+      "seasonality_tr": "Yıl planlaması ve tatiller öncesi; hipotez.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "year_scope_expansions": {
+        "date": "2026-10-20",
+        "reason": "Explicit user expansion to 2027–2030; editorial year substitution only, not observed 2030 search demand.",
+        "variants": [
+          "podaljšani vikendi 2030",
+          "načrtovanje dopusta 2030"
+        ]
+      },
+      "required_calendar_years": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "final_target_url": "/podaljsani-vikendi/2027/",
+      "final_mapping_note": "Research recommendation matches the final route manifest; implementation must follow the manifest and its publication/source gates.",
+      "final_priority": "P1",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C23",
+      "name_tr": "Paskalya, karnaval ve tekil tatil tarihleri",
+      "priority": "P1",
+      "primary_keyword_sl": "velika noč 2027",
+      "recommended_url": "/prazniki/velika-noc/",
+      "keywords_sl": [
+        "velika noč 2027",
+        "kdaj je velika noč 2027",
+        "velikonočni ponedeljek 2027",
+        "pust 2027",
+        "kdaj je pust 2027",
+        "pustni torek 2027",
+        "binkošti 2027",
+        "božič 2027",
+        "prešernov dan 2027",
+        "dan državnosti 2027",
+        "dan reformacije 2027",
+        "velika noč 2030",
+        "pust 2030"
+      ],
+      "intent_tr": "Belirli özel günün tarihi ve tatil olup olmadığı.",
+      "priority_basis_tr": "2027 karnaval sayfaları/organizatörleri ve yıllık tatil sayfalarında belirgin alt niyetler.",
+      "source_ids": [
+        "govholidays",
+        "pust",
+        "maskarada",
+        "prazniki"
+      ],
+      "minimum_useful_output_tr": "Özgün tarih/hesaplama/yerel anlam varsa ayrı konu sayfası; her yılı ince kopyalara bölme.",
+      "seasonality_tr": "Her olay öncesi.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "year_scope_expansions": {
+        "date": "2026-10-20",
+        "reason": "Explicit user expansion to 2027–2030; editorial year substitution only, not observed 2030 search demand.",
+        "variants": [
+          "velika noč 2030",
+          "pust 2030"
+        ]
+      },
+      "required_calendar_years": [
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "final_target_url": "/prazniki/velika-noc/",
+      "final_mapping_note": "Research recommendation matches the final route manifest; implementation must follow the manifest and its publication/source gates.",
+      "final_priority": "P0",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C24",
+      "name_tr": "Ekim/dikim ve bahçe takvimi",
+      "priority": "P2",
+      "primary_keyword_sl": "setveni koledar",
+      "recommended_url": "/setveni-koledar/",
+      "keywords_sl": [
+        "setveni koledar",
+        "setveni koledar 2027",
+        "setveni koledar 2026",
+        "lunin setveni koledar",
+        "vrtnarski koledar",
+        "koledar vrtnih opravil",
+        "setveni koledar marec",
+        "setveni koledar april",
+        "setveni koledar 2030"
+      ],
+      "intent_tr": "Bahçe işi zamanı; bazı sonuçlar biyodinamik/astrolojik takvim.",
+      "priority_basis_tr": "Yerel uzmanlar güçlü ve içerik maliyeti daha yüksek; ana takvim lansmanını geciktirmemeli.",
+      "source_ids": [
+        "gaia",
+        "deloindom"
+      ],
+      "minimum_useful_output_tr": "Bölgesel bahçecilik kaynakları ve özgün içerik gerekir; ay evresi verisini bilimsel tarım etkisi gibi sunmama.",
+      "seasonality_tr": "İlkbahar ekim dönemi ve aylık bahçe işleri; hipotez.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "year_scope_expansions": {
+        "date": "2026-10-20",
+        "reason": "Explicit user expansion to 2027–2030; editorial year substitution only, not observed 2030 search demand.",
+        "variants": [
+          "setveni koledar 2030"
+        ]
+      },
+      "final_target_url": null,
+      "final_mapping_note": "Research-only P2 cluster; no launch route and no empty gardening page. Reconsider only after original, supported agronomic content is available.",
+      "launch_status": "held_no_agronomic_content",
+      "final_priority": "P2"
+    },
+    {
+      "id": "C25",
+      "name_tr": "Aile ve okul planlayıcıları",
+      "priority": "P2",
+      "primary_keyword_sl": "družinski koledar",
+      "recommended_url": "/druzinski-koledar/",
+      "keywords_sl": [
+        "družinski koledar",
+        "družinski planer",
+        "družinski koledar za tiskanje",
+        "koledar rojstnih dni",
+        "šolski urnik za tiskanje",
+        "predloga urnika",
+        "dnevni planer za tiskanje",
+        "planer za otroke",
+        "koledar z zapiski"
+      ],
+      "intent_tr": "Birden fazla kişinin programını veya okul ders çizelgesini düzenleme.",
+      "priority_basis_tr": "Kişiselleştirme ve haftalık şablonlarla güçlü ürün uyumu; fiziksel ürün niyeti baskın olabilir.",
+      "source_ids": [
+        "magicfamily",
+        "magicplanner",
+        "schoolpdf"
+      ],
+      "minimum_useful_output_tr": "Aile üyesi sütunları, isimler, ders programı, doğum günü listesi ve PDF.",
+      "seasonality_tr": "Okul başlangıcı/yıl başı hipotezi; arama hacmi ölçülmedi.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Topic vocabulary supported by source titles/pages; modifiers and year/month/name variations include editorial expansions, not independently measured search queries.",
+      "final_target_url": "/druzinski-planer/",
+      "final_mapping_note": "Family-calendar intent is served by the family planner. Avoid a second equivalent /druzinski-koledar/ page.",
+      "final_priority": "P1",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C26",
+      "name_tr": "Horoskop ve tarihli günlük burç yorumları",
+      "priority": "P0",
+      "primary_keyword_sl": "dnevni horoskop",
+      "recommended_url": "/horoskop/",
+      "keywords_sl": [
+        "horoskop",
+        "dnevni horoskop",
+        "horoskop danes",
+        "današnji horoskop",
+        "horoskop za danes",
+        "dnevni horoskop oven",
+        "dnevni horoskop bik",
+        "dnevni horoskop dvojčka",
+        "dnevni horoskop dvojčki",
+        "dnevni horoskop rak",
+        "dnevni horoskop lev",
+        "dnevni horoskop devica",
+        "dnevni horoskop tehtnica",
+        "dnevni horoskop škorpijon",
+        "dnevni horoskop strelec",
+        "dnevni horoskop kozorog",
+        "dnevni horoskop vodnar",
+        "dnevni horoskop ribi",
+        "dnevni horoskop ribe"
+      ],
+      "intent_tr": "Bugüne ve seçilen burca ait yorum; astrolojik eğlence/yorum içeriği.",
+      "priority_basis_tr": "Kullanıcı açıkça istediği için uygulama kapsamı zorunludur; P0 burada yüksek arama hacmi iddiası değildir. Yerel rakibin gerçek tarihli günlük yayını içerik formatını doğruluyor.",
+      "source_ids": [
+        "horoskop_daily"
+      ],
+      "minimum_useful_output_tr": "Europe/Ljubljana için görünür hedef tarih, 12 burç, özgün tarihli yorum, gerçek yayın/güncelleme zamanı ve editoryal süreç. Yeni içerik yoksa son yayımlanan tarihi göster; eski metni sadece tarihi değiştirerek yeni yorum gibi sunma.",
+      "seasonality_tr": "Günlük tekrar niyeti; ölçülmüş mevsimsellik verisi yok.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Local competitor vocabulary plus editorial query expansions; no independently measured current volumes.",
+      "child_url_policy": {
+        "sign_page_example": "/horoskop/oven/",
+        "dated_reading_example": "/horoskop/2026-10-20/oven/",
+        "note": "A dedicated dated URL is optional; index only real substantive published records. Avoid auto-generating 12 empty pages per day.",
+        "final_launch_policy": "Launch has the hub, 12 stable sign pages and zodiac calculator from the final 14-route manifest. Dated records are required data; the optional dated URL example is research-only and does not authorize extra launch routes or empty archives."
+      },
+      "final_target_url": "/horoskop/",
+      "final_mapping_note": "Research recommendation matches the final route manifest; implementation must follow the manifest and its publication/source gates. Explicitly requested user functionality makes every one of the 14 horoscope routes P0; this is not a search-volume claim.",
+      "final_priority": "P0",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    },
+    {
+      "id": "C27",
+      "name_tr": "Burç bulma hesaplayıcısı ve zodyak tarihleri",
+      "priority": "P0",
+      "primary_keyword_sl": "horoskopska znamenja",
+      "recommended_url": "/horoskop/znamenja/",
+      "keywords_sl": [
+        "horoskopska znamenja",
+        "astrološka znamenja",
+        "znamenja zodiaka",
+        "znamenja po datumih",
+        "horoskop po datumu rojstva",
+        "katero znamenje sem",
+        "izračun horoskopa",
+        "kalkulator horoskopa",
+        "izračun znamenja",
+        "horoskopsko znamenje datum rojstva",
+        "zodiakalna znamenja"
+      ],
+      "intent_tr": "Doğum tarihinden geleneksel güneş burcunu bulma.",
+      "priority_basis_tr": "Kullanıcının açık hesaplayıcı isteği; Lunin.net doğum tarihi girdili bir hesaplama aracı sunuyor. Baş terim talebi sayısal olarak ölçülmedi.",
+      "source_ids": [
+        "lunin_zodiac",
+        "horoskop_daily"
+      ],
+      "minimum_useful_output_tr": "Geçerli doğum tarihi, 12 burç eşlemesi, mevsim/yıl sınırı testleri, sonuçtan günlük yoruma bağlantı. Yalnız ay/gün kullanılıyorsa geleneksel yaklaşık tarih aralıkları olarak açıkla; kesin saatli doğum haritası veya yükselen sonucu iddia etme. Doğum tarihini varsayılan olarak sunucuya/analitiğe gönderme.",
+      "seasonality_tr": "Sürekli; hacim ölçülmedi.",
+      "current_monthly_volume": null,
+      "keyword_difficulty": null,
+      "keyword_provenance": "Primary local tool vocabulary plus editorial expansions; no independently measured current volumes.",
+      "final_target_url": "/horoskop/izracun-znamenja/",
+      "final_mapping_note": "Sign vocabulary and date calculator are consolidated on this final route. /horoskop/znamenja/ remains a research suggestion only. Explicitly requested user functionality makes every one of the 14 horoscope routes P0; this is not a search-volume claim.",
+      "final_priority": "P0",
+      "launch_status": "planned_subject_to_quality_and_source_gates"
+    }
+  ],
+  "recommended_information_architecture": {
+    "primary_navigation_sl": [
+      "Koledar",
+      "Prazniki",
+      "Lunin koledar",
+      "Šolske počitnice",
+      "Orodja",
+      "Ustvari koledar",
+      "Horoskop"
+    ],
+    "url_rules": [
+      "Use Slovene wording with accent-free slugs: š→s, č→c, ž→z. Keep proper accents in visible titles and text.",
+      "Use one canonical URL for the same calendar intent; format/filter variations should not create redundant content pages.",
+      "Year pages remain fixed to their year. Evergreen hubs link to current and following years.",
+      "School years use paired-year labels such as 2026-2027 or 2029-2030 rather than a calendar-year-only label; verify publication status separately.",
+      "Month/year child pages require useful month-specific dates and output; do not mass-generate empty combinations.",
+      "Name-day search results and user-entered personalized calendars should not become public indexable profile pages by default."
+    ],
+    "recommended_launch_focus_years": [
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "launch_year_note": "Primary required calendar coverage is 2027, 2028, 2029 and 2030. October 2026 is the research/launch context. All four years need functional calendar, month, holiday, lunar and export coverage; 2027 can be the default entry year. School schedules are published only when officially confirmed, even where future calendar grids can be computed.",
+    "distinct_intents_to_preserve": [
+      "prazniki vs dela prosti dnevi",
+      "godovi / koledar imen vs koledar z imenom",
+      "lunin koledar vs setveni koledar",
+      "free digital calendar creator vs physical photo-calendar seller",
+      "calendar-year dates vs school-year dates"
+    ],
+    "school_year_coverage_note": "School-year records may span the boundaries of 2027–2030 (for example 2026-2027 through 2030-2031); include only officially published schedules and label unavailable years honestly.",
+    "final_url_precedence": "Use final_target_url and the final page manifest; recommended_url is preserved research history. Consolidate personalized-calendar wording on /ustvari-koledar/. No setveni-koledar launch page without agronomic content."
+  },
+  "competitor_observations": [
+    {
+      "domain": "koledarcek.com",
+      "role": "Core local calendar benchmark",
+      "source_ids": [
+        "koledarcek",
+        "koledarcek2027",
+        "koledarcekprint"
+      ],
+      "observed": "Year/month views, holiday markings, lunar and solar details, ISO weeks and dedicated printing.",
+      "opportunity_hypothesis": "Offer the same reliable basics with clear sources and easier downloads/personalization; superiority is not proven by this content-only review."
+    },
+    {
+      "domain": "koledarko.si",
+      "role": "Modern utility competitor",
+      "source_ids": [
+        "koledarko"
+      ],
+      "observed": "Calendar plus working-day calculator, vacation planner, printing, lunar calendar, embed and API links.",
+      "opportunity_hypothesis": "A generic calendar-only launch would have little functional differentiation; downloadable and personalized outputs need real depth."
+    },
+    {
+      "domain": "koled.si",
+      "role": "Calendar/holiday taxonomy competitor",
+      "source_ids": [
+        "koled",
+        "koledmonth"
+      ],
+      "observed": "Indexed annual, monthly and daily paths with categorized holiday data.",
+      "opportunity_hypothesis": "Clear year/month architecture is useful. Homepage retrieval returned a loading shell, which alone is insufficient for a search-rendering verdict."
+    },
+    {
+      "domain": "prazniki.si",
+      "role": "Holiday/year intent specialist",
+      "source_ids": [
+        "prazniki",
+        "praznikifree"
+      ],
+      "observed": "Explicit year-calendar and work-free-day pages.",
+      "opportunity_hypothesis": "Win usefulness through clearer legal classification, weekday counts, downloads and planning tools."
+    },
+    {
+      "domain": "javnipodatki.si",
+      "role": "Sourced practical-date competitor",
+      "source_ids": [
+        "javnipodatki"
+      ],
+      "observed": "Holidays, school holidays and working-day tables combined with official-source references.",
+      "opportunity_hypothesis": "Source transparency is already a competitive baseline, not a unique feature."
+    },
+    {
+      "domain": "lunin.net",
+      "role": "Local lunar specialist",
+      "source_ids": [
+        "lunin",
+        "lunin2027",
+        "ahrefstop_historical"
+      ],
+      "observed": "Year and month lunar calendars demonstrate topic coverage. Third-party historical keyword estimates are included only in the explicitly unverified appendix.",
+      "opportunity_hypothesis": "Focus on concise accurate astronomical answers and local times rather than copying broad spiritual content."
+    },
+    {
+      "domain": "timeanddate.com",
+      "role": "Global calendar/astronomy benchmark",
+      "source_ids": [
+        "timeanddate"
+      ],
+      "observed": "Slovenia annual calendar with local holidays and moon phases.",
+      "opportunity_hypothesis": "Native Slovene explanations and local planning context are the practical differentiators."
+    },
+    {
+      "domain": "7calendar.com / enetko.com / x-calendar.com",
+      "role": "Printable-template competitors",
+      "source_ids": [
+        "sevenmonthly",
+        "sevenweekly",
+        "enetko",
+        "xcalendar"
+      ],
+      "observed": "Year, month and weekly downloadable formats plus customization options.",
+      "opportunity_hypothesis": "Reliable Slovenian holidays and typography should be integral to the print output."
+    },
+    {
+      "domain": "cewe.si / enzo.si / magic-planner.com",
+      "role": "Personalization and physical-product competitors",
+      "source_ids": [
+        "cewe",
+        "enzophoto",
+        "magicplanner",
+        "magicfamily"
+      ],
+      "observed": "Photo calendars and planners with layouts, names, events or covers.",
+      "opportunity_hypothesis": "Free downloadable personalization is a plausible differentiated use case, but its demand is not quantified."
+    }
+  ],
+  "lithuania_architecture_reference": {
+    "url": "https://kalendorius365.lt/paieska/",
+    "local_evidence": "/workspace/scratch/a46a09528df9/research/lithuania/catalog-groups.json",
+    "status": "Reviewed existing prior public-HTML catalog extraction. Fresh browser open failed and direct network request was sandbox-blocked. Not a fresh independent crawl.",
+    "catalog_entries_in_prior_extraction": 190,
+    "group_counts": {
+      "Astronomija": 48,
+      "Kalendoriai": 39,
+      "Šventės": 47,
+      "Pradžia": 1,
+      "Horoskopai": 14,
+      "Planavimas ir darbo laikas": 11,
+      "Svetainės informacija": 1,
+      "Mokykla": 3,
+      "Įrankiai": 26
+    },
+    "transferable_patterns": [
+      "Evergreen topic hub → year → useful month page.",
+      "Connect calendar, holidays, working days and vacation planning with shared data.",
+      "Keep printable output and personal calendar creation as practical utilities.",
+      "Use name-day and astronomy sections only with local data."
+    ],
+    "do_not_transfer": [
+      "Lithuanian keywords, demand estimates, holiday dates, school schedules or name-day lists.",
+      "Copying a 190-page catalog as an arbitrary Slovenian launch target."
+    ],
+    "count_caveat": "Catalog entries are not Google index counts, traffic, or proof of demand.",
+    "horoscope_scope_note": "Horoscope is now expressly requested by user. Include it with original Slovene dated content and calculator; do not copy Lithuanian readings or imply scientific prediction."
+  },
+  "sources": [
+    {
+      "id": "koledarcek",
+      "url": "https://www.koledarcek.com/",
+      "web_ref": "turn11view2",
+      "note": "Direct competitor; annual calendar, holidays, lunar phases, solar data, ISO weeks and print access."
+    },
+    {
+      "id": "koledarcek2027",
+      "url": "https://www.koledarcek.com/index.php?trenutno_leto=2027",
+      "web_ref": "turn1search10",
+      "note": "Indexed 2027 annual calendar."
+    },
+    {
+      "id": "koledarcekprint",
+      "url": "https://www.koledarcek.com/print_version.php?trenutno_leto=2027",
+      "web_ref": "turn27search18",
+      "note": "Dedicated printable 2027 calendar."
+    },
+    {
+      "id": "koledarko",
+      "url": "https://koledarko.si/",
+      "web_ref": "turn11view0",
+      "note": "Direct competitor; month/year calendar, holidays, lunar tools, holiday planner, working-day calculator, print, embed, API."
+    },
+    {
+      "id": "koled",
+      "url": "https://koled.si/koledar/2027",
+      "web_ref": "turn1search4",
+      "note": "2027 calendar in search index; homepage fetch only showed loading, so no full technical verdict."
+    },
+    {
+      "id": "koledmonth",
+      "url": "https://koled.si/koledar/2027/1",
+      "web_ref": "turn27search15",
+      "note": "Year/month path and contextual holiday entries."
+    },
+    {
+      "id": "prazniki",
+      "url": "https://prazniki.si/koledar-2027",
+      "web_ref": "turn1search3",
+      "note": "Annual calendar with Slovenia holiday list."
+    },
+    {
+      "id": "praznikifree",
+      "url": "https://prazniki.si/prazniki-dela-prosti-dnevi-2027",
+      "web_ref": "turn3search8",
+      "note": "Dedicated holiday and work-free-day annual landing page."
+    },
+    {
+      "id": "govholidays",
+      "url": "https://www.gov.si/teme/drzavni-prazniki-in-dela-prosti-dnevi/",
+      "web_ref": "turn3search0",
+      "note": "Official source for state holidays and work-free days."
+    },
+    {
+      "id": "govschoolprimary",
+      "url": "https://www.gov.si/teme/solski-koledar-za-osnovne-sole/",
+      "web_ref": "turn3search7",
+      "note": "Official primary-school calendar with 2026/2027 documents."
+    },
+    {
+      "id": "govschoolsecondary",
+      "url": "https://www.gov.si/teme/solski-koledar-za-srednje-sole/",
+      "web_ref": "turn3search6",
+      "note": "Official secondary-school calendar with 2026/2027 documents."
+    },
+    {
+      "id": "javnipodatki",
+      "url": "https://javnipodatki.si/koledar",
+      "web_ref": "turn3search13",
+      "note": "Calendar hub combining holidays, school holidays and working days with official-source references."
+    },
+    {
+      "id": "workdays",
+      "url": "https://poslovni.si/pripomocki/delovni-dnevi/2027",
+      "web_ref": "turn3search2",
+      "note": "2027 working-day and monthly-hours utility."
+    },
+    {
+      "id": "accounting",
+      "url": "https://www.zvezarfr.si/pripomocki/uporabni-podatki/g-stevilo-delovnih-dni-in-stevilo-dni-praznikov-ki-so-dela-prosti-dnevi",
+      "web_ref": "turn3search5",
+      "note": "Professional accounting association working-day/hour tables."
+    },
+    {
+      "id": "datecalc",
+      "url": "https://preracunaj.si/dnevi.html",
+      "web_ref": "turn13search17",
+      "note": "Date-difference calculator."
+    },
+    {
+      "id": "workcalc",
+      "url": "https://racunaj.net/kalkulator-delovnih-dni",
+      "web_ref": "turn13search16",
+      "note": "Working-day calculator with Slovenian holidays."
+    },
+    {
+      "id": "weeknumber",
+      "url": "https://xn--tevilkatedna-unc.si/",
+      "web_ref": "turn13search22",
+      "note": "Dedicated week-number site."
+    },
+    {
+      "id": "today",
+      "url": "https://calculaterix.com/sl/danes",
+      "web_ref": "turn13search30",
+      "note": "Today/day/date query competitor."
+    },
+    {
+      "id": "lunin",
+      "url": "https://www.lunin.net/koledar/lunine-mene/",
+      "web_ref": "turn11view3",
+      "note": "Local lunar-phase specialist; year and month navigation."
+    },
+    {
+      "id": "lunin2027",
+      "url": "https://www.lunin.net/koledar/leto/2027/",
+      "web_ref": "turn27search24",
+      "note": "Dedicated annual 2027 lunar calendar."
+    },
+    {
+      "id": "bodieko",
+      "url": "https://www.bodieko.si/polna-luna-in-lunin-koledar",
+      "web_ref": "turn1search12",
+      "note": "Recurring full-moon and lunar-calendar editorial page."
+    },
+    {
+      "id": "astrosvet",
+      "url": "https://www.astrosvet.si/luna/lunin-mesecni-koledar2/",
+      "web_ref": "turn1search21",
+      "note": "Monthly lunar calendar using Mlaj and Ščip terminology."
+    },
+    {
+      "id": "ahrefstop_historical",
+      "url": "https://ahrefstop.com/websites/lunin.net",
+      "web_ref": "turn34view0",
+      "note": "Root independently opened original Ahrefs URL and observed redirect to AhrefsTop, a third-party domain. April 2025 snapshot attributed to Ahrefs; primary-provider provenance not verified. Weak historical directional appendix only.",
+      "original_requested_url": "https://ahrefs.com/websites/lunin.net",
+      "secondary_ref": "turn19view2"
+    },
+    {
+      "id": "xcalendar",
+      "url": "https://www.x-calendar.com/sl",
+      "web_ref": "turn1search23",
+      "note": "Printable/localized calendar controls and monthly/yearly formats."
+    },
+    {
+      "id": "enetko",
+      "url": "https://enetko.com/sl/calendar/yearly/2027",
+      "web_ref": "turn27search3",
+      "note": "Free annual 2027 PDF landing page."
+    },
+    {
+      "id": "sevenmonthly",
+      "url": "https://7calendar.com/si/2027-january-monthly/p-1/",
+      "web_ref": "turn27search9",
+      "note": "Month/template-level PDF, PNG, Word and Excel offers."
+    },
+    {
+      "id": "sevenweekly",
+      "url": "https://7calendar.com/si/calendar-march-weekly/",
+      "web_ref": "turn27search7",
+      "note": "Printable weekly calendar templates."
+    },
+    {
+      "id": "cewe",
+      "url": "https://www.cewe.si/fotokoledarji.html",
+      "web_ref": "turn13search0",
+      "note": "Photo-calendar creator; predominantly physical-product transaction intent."
+    },
+    {
+      "id": "enzophoto",
+      "url": "https://www.enzo.si/foto-koledarji-iz-vasih-fotografij/",
+      "web_ref": "turn13search1",
+      "note": "Personalized photo calendars."
+    },
+    {
+      "id": "magicplanner",
+      "url": "https://magic-planner.com/sestavi-svoj-planer",
+      "web_ref": "turn27search1",
+      "note": "Personalization of planner covers/layouts/events."
+    },
+    {
+      "id": "magicfamily",
+      "url": "https://magic-planner.com/",
+      "web_ref": "turn27search0",
+      "note": "Family planners with personalized member names."
+    },
+    {
+      "id": "observatory",
+      "url": "https://new.observatorij.org/Efemeride/sonce26.html",
+      "web_ref": "turn27search19",
+      "note": "Local astronomy provider: Sun/Moon rise/set and day length."
+    },
+    {
+      "id": "heliotempo",
+      "url": "https://heliotempo.com/sl/soncni-vzhod-in-zahod/ljubljana/",
+      "web_ref": "turn27search34",
+      "note": "Local-city solar utility."
+    },
+    {
+      "id": "heliotempoevents",
+      "url": "https://heliotempo.com/sl/dogodki/",
+      "web_ref": "turn16search27",
+      "note": "Solstice, equinox, eclipse and clock-change calendar."
+    },
+    {
+      "id": "church",
+      "url": "https://katoliska-cerkev.si/cerkveno-leto",
+      "web_ref": "turn14search39",
+      "note": "Catholic Church explanation and calendar context."
+    },
+    {
+      "id": "hozana",
+      "url": "https://hozana.si/api",
+      "web_ref": "turn13search38",
+      "note": "Primary liturgical-data provider documentation; review license and terms before reuse."
+    },
+    {
+      "id": "ognjisce",
+      "url": "https://revija.ognjisce.si/category/svetniki-2026/ime-veliko-pove/page/105/",
+      "web_ref": "turn16search33",
+      "note": "Slovene names and saints specialist, showing multiple saint associations for names."
+    },
+    {
+      "id": "fran",
+      "url": "https://fran.si/iskanje?AllNoHeadword=god&Query=god&View=1&hs=2168",
+      "web_ref": "turn14search28",
+      "note": "Lexicographic support for god/godovi terminology."
+    },
+    {
+      "id": "pust",
+      "url": "https://pust.si/",
+      "web_ref": "turn16search0",
+      "note": "Carnival organizer with 2027 program."
+    },
+    {
+      "id": "maskarada",
+      "url": "https://www.maskarada.si/kdaj-bo-letos-pust-vse-kar-morate-vedeti-o-letosnjem-pustu/",
+      "web_ref": "turn16search3",
+      "note": "Retail-led annual carnival-date landing page."
+    },
+    {
+      "id": "gaia",
+      "url": "https://www.klubgaia.com/si/vrtnarski-nasveti/6138-koledar-vrtnih-opravil-za-leto-2026",
+      "web_ref": "turn27search25",
+      "note": "Gardening calendar specialist."
+    },
+    {
+      "id": "deloindom",
+      "url": "https://deloindom.delo.si/setveni-koledar",
+      "web_ref": "turn27search44",
+      "note": "Interactive sowing-calendar publisher; separate editorial/licensing considerations."
+    },
+    {
+      "id": "schoolpdf",
+      "url": "https://pedagoskidnevnik.com/izdelek/pdf-solski-koledar-2026-2027-a4-a3/",
+      "web_ref": "turn14search21",
+      "note": "Slovene school-year PDF calendar product."
+    },
+    {
+      "id": "timeanddate",
+      "url": "https://www.timeanddate.com/calendar/?country=45&year=2027",
+      "web_ref": "turn1search8",
+      "note": "Global calendar provider with Slovenia holidays and lunar phases."
+    },
+    {
+      "id": "fran_mlaj",
+      "url": "https://www.fran.si/iskanje?AllNoHeadword=mlaj&FilteredDictionaryIds=133&Query=mlaj&View=1",
+      "web_ref": "turn38search0",
+      "note": "Primary Slovene dictionary records two senses of mlaj: new moon and a decorated pole/tree; bare query is ambiguous."
+    },
+    {
+      "id": "horoskop_daily",
+      "url": "https://horoskop.si/dnevni-horoskop-za-torek-20-oktobra-2026/",
+      "web_ref": "turn45view3",
+      "note": "Primary competitor dated daily reading with local Slovene sign vocabulary; evidence of content format, not measured demand."
+    },
+    {
+      "id": "lunin_zodiac",
+      "url": "https://www.lunin.net/horoskop/",
+      "web_ref": "turn43view1",
+      "note": "Primary local astrology provider with birthdate input and personal-horoscope calculation; query/feature evidence only."
+    }
+  ],
+  "summary": {
+    "cluster_count": 27,
+    "keyword_variant_count": 300,
+    "priority_counts": {
+      "P0": 13,
+      "P1": 11,
+      "P2": 3
+    }
+  },
+  "scope_update": {
+    "date": "2026-10-20",
+    "authorization": "User explicitly requested Horoscope page with zodiac calculator and dated daily readings, lunar section, E-E-A-T practices, and custom About/404, in addition to their 21 SEO/UX criteria. Horoscope is required scope; previous advice against automatic horoscope expansion no longer excludes it.",
+    "implementation_status": "Planning/prompt only; no site implementation authorized in this task.",
+    "primary_calendar_years": [
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "four_year_scope_note": "User expanded primary calendar scope to all four years 2027–2030. Historical 2026 source examples remain evidence only; they are not a replacement for the four required years. Daily horoscope uses the actual publication date, not a fabricated four-year advance corpus."
+  },
+  "horoscope_requirements": {
+    "sign_labels_sl": [
+      "Oven",
+      "Bik",
+      "Dvojčka",
+      "Rak",
+      "Lev",
+      "Devica",
+      "Tehtnica",
+      "Škorpijon",
+      "Strelec",
+      "Kozorog",
+      "Vodnar",
+      "Ribi"
+    ],
+    "sign_slugs": [
+      "oven",
+      "bik",
+      "dvojcka",
+      "rak",
+      "lev",
+      "devica",
+      "tehtnica",
+      "skorpijon",
+      "strelec",
+      "kozorog",
+      "vodnar",
+      "ribi"
+    ],
+    "content_records": [
+      "sign",
+      "reading_date",
+      "locale",
+      "title",
+      "body",
+      "status",
+      "author_or_editor",
+      "published_at",
+      "updated_at",
+      "provenance"
+    ],
+    "freshness": "Current date label must match actual reading_date, not merely browser clock. No fake editorial authors or credentials; no fake daily refresh.",
+    "scope_boundary": "User requested zodiac calculator and daily reading, not mandatory ascendant, natal chart, compatibility, or paid consultations.",
+    "scientific_boundary": "Lunar phases are astronomical data; horoscope readings are interpretive entertainment, not scientific factual forecasts.",
+    "final_routes": [
+      {
+        "url": "/horoskop/",
+        "final_priority": "P0"
+      },
+      {
+        "url": "/horoskop/oven/",
+        "final_priority": "P0"
+      },
+      {
+        "url": "/horoskop/bik/",
+        "final_priority": "P0"
+      },
+      {
+        "url": "/horoskop/dvojcka/",
+        "final_priority": "P0"
+      },
+      {
+        "url": "/horoskop/rak/",
+        "final_priority": "P0"
+      },
+      {
+        "url": "/horoskop/lev/",
+        "final_priority": "P0"
+      },
+      {
+        "url": "/horoskop/devica/",
+        "final_priority": "P0"
+      },
+      {
+        "url": "/horoskop/tehtnica/",
+        "final_priority": "P0"
+      },
+      {
+        "url": "/horoskop/skorpijon/",
+        "final_priority": "P0"
+      },
+      {
+        "url": "/horoskop/strelec/",
+        "final_priority": "P0"
+      },
+      {
+        "url": "/horoskop/kozorog/",
+        "final_priority": "P0"
+      },
+      {
+        "url": "/horoskop/vodnar/",
+        "final_priority": "P0"
+      },
+      {
+        "url": "/horoskop/ribi/",
+        "final_priority": "P0"
+      },
+      {
+        "url": "/horoskop/izracun-znamenja/",
+        "final_priority": "P0"
+      }
+    ],
+    "final_priority_basis": "All 14 routes are P0 because the user explicitly requested daily horoscope and zodiac calculator functionality; no current volume evidence is implied."
+  },
+  "final_route_mapping": {
+    "as_of": "2026-10-20",
+    "source_of_truth": "work/koledar365-bundle/sayfa-plani.json",
+    "planned_core_routes": 308,
+    "precedence": "final_target_url and the final page manifest govern implementation. recommended_url preserves research suggestions and must not create conflicting additional routes.",
+    "route_count_is": "planned routes, not live, indexed or traffic-bearing URLs",
+    "held_clusters": [
+      {
+        "id": "C24",
+        "status": "held_no_agronomic_content"
+      }
+    ],
+    "all_non_null_targets_verified_in_manifest": true
+  },
+  "package_note": "Güncel hacmi doğrulanmamış tarihsel sayısal snapshot eki bu teslimden çıkarıldı. Güncel hacim/KD alanları null; 41 ek yıl varyantı editoryaldir.",
+  "final_route_manifest_count": 343
+}

@@ -1,0 +1,1 @@
+<nav class="year-links" aria-label="Izbira leta"><% (2027..2030).each do |y| %><a class="<%= 'active' if y==@year %>" href="<%= @page&.year ? @page.path.sub("/#{@page.year}/", "/#{y}/") : "?year=#{y}" %>"><%= y %></a><% end %></nav>

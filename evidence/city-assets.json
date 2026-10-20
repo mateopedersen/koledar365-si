@@ -1,0 +1,696 @@
+{
+  "count": 69,
+  "passed": true,
+  "cities": [
+    {
+      "city": "Ajdovščina",
+      "width": 960,
+      "height": 720,
+      "license": "CC BY-SA 4.0",
+      "author": "Doremo",
+      "bytes": 200628,
+      "latitude": 45.88611111,
+      "longitude": 13.90972222
+    },
+    {
+      "city": "Bled",
+      "width": 960,
+      "height": 720,
+      "license": "CC BY-SA 3.0",
+      "author": "Canadianhockey91",
+      "bytes": 176891,
+      "latitude": 46.3683,
+      "longitude": 14.1147
+    },
+    {
+      "city": "Bovec",
+      "width": 640,
+      "height": 480,
+      "license": "CC BY-SA 2.5",
+      "author": "Damjanleban at Slovenian Wikipedia",
+      "bytes": 321946,
+      "latitude": 46.33777778,
+      "longitude": 13.55222222
+    },
+    {
+      "city": "Brežice",
+      "width": 960,
+      "height": 639,
+      "license": "CC BY 2.0",
+      "author": "Matjaž Mirt from Krško, Slovenia",
+      "bytes": 258036,
+      "latitude": 45.90666667,
+      "longitude": 15.59611111
+    },
+    {
+      "city": "Celje",
+      "width": 960,
+      "height": 631,
+      "license": "CC BY-SA 4.0",
+      "author": "Reisevogel",
+      "bytes": 171493,
+      "latitude": 46.23583333,
+      "longitude": 15.2675
+    },
+    {
+      "city": "Črnomelj",
+      "width": 960,
+      "height": 539,
+      "license": "CC BY-SA 4.0",
+      "author": "Občina Črnomelj",
+      "bytes": 249416,
+      "latitude": 45.57111,
+      "longitude": 15.18889
+    },
+    {
+      "city": "Domžale",
+      "width": 960,
+      "height": 720,
+      "license": "CC BY 4.0",
+      "author": "Doremo",
+      "bytes": 159377,
+      "latitude": 46.13944444,
+      "longitude": 14.595
+    },
+    {
+      "city": "Gornja Radgona",
+      "width": 960,
+      "height": 640,
+      "license": "CC BY-SA 3.0 at",
+      "author": "Karl Gruber",
+      "bytes": 177544,
+      "latitude": 46.67523333,
+      "longitude": 15.99260556
+    },
+    {
+      "city": "Hrastnik",
+      "width": 960,
+      "height": 720,
+      "license": "CC BY-SA 3.0",
+      "author": "Ajznponar",
+      "bytes": 146413,
+      "latitude": 46.14788333,
+      "longitude": 15.15275278
+    },
+    {
+      "city": "Idrija",
+      "width": 960,
+      "height": 640,
+      "license": "CC BY-SA 4.0",
+      "author": "Luka Peternel",
+      "bytes": 265497,
+      "latitude": 46.0025,
+      "longitude": 14.0275
+    },
+    {
+      "city": "Ilirska Bistrica",
+      "width": 960,
+      "height": 720,
+      "license": "CC BY-SA 4.0",
+      "author": "Stemby71",
+      "bytes": 186545,
+      "latitude": 45.56790556,
+      "longitude": 14.25269167
+    },
+    {
+      "city": "Izola",
+      "width": 960,
+      "height": 643,
+      "license": "CC BY-SA 4.0",
+      "author": "Petar Milošević",
+      "bytes": 202065,
+      "latitude": 45.53444444,
+      "longitude": 13.6675
+    },
+    {
+      "city": "Jesenice",
+      "width": 960,
+      "height": 638,
+      "license": "CC BY 4.0",
+      "author": "Dreamy Pixel",
+      "bytes": 133600,
+      "latitude": 46.43657222,
+      "longitude": 14.06017222
+    },
+    {
+      "city": "Kamnik",
+      "width": 960,
+      "height": 640,
+      "license": "CC BY-SA 2.0",
+      "author": "Ramón from Llanera, España",
+      "bytes": 215195,
+      "latitude": 46.22574722,
+      "longitude": 14.61198333
+    },
+    {
+      "city": "Kočevje",
+      "width": 960,
+      "height": 748,
+      "license": "CC BY-SA 3.0",
+      "author": "Sl-Ziga",
+      "bytes": 297654,
+      "latitude": 45.64296111,
+      "longitude": 14.85938333
+    },
+    {
+      "city": "Koper",
+      "width": 960,
+      "height": 634,
+      "license": "CC BY-SA 4.0",
+      "author": "TICKoper",
+      "bytes": 164387,
+      "latitude": 45.55,
+      "longitude": 13.73333333
+    },
+    {
+      "city": "Kostanjevica na Krki",
+      "width": 960,
+      "height": 720,
+      "license": "Public domain",
+      "author": "No machine-readable author provided. Žiga assumed (based on copyright claims).",
+      "bytes": 184371,
+      "latitude": 45.846325,
+      "longitude": 15.42486944
+    },
+    {
+      "city": "Kranj",
+      "width": 960,
+      "height": 549,
+      "license": "CC BY 3.0",
+      "author": "Andraž Muljavec, Fotomorgana",
+      "bytes": 171805,
+      "latitude": 46.23333333,
+      "longitude": 14.36666667
+    },
+    {
+      "city": "Krško",
+      "width": 960,
+      "height": 736,
+      "license": "CC BY-SA 4.0",
+      "author": "Darja Gramc Kavčič",
+      "bytes": 311634,
+      "latitude": 45.95,
+      "longitude": 15.48333333
+    },
+    {
+      "city": "Laško",
+      "width": 960,
+      "height": 602,
+      "license": "CC BY 2.0",
+      "author": "antonio from Trieste, Italy",
+      "bytes": 186064,
+      "latitude": 46.15630278,
+      "longitude": 15.23861667
+    },
+    {
+      "city": "Lendava",
+      "width": 960,
+      "height": 664,
+      "license": "CC BY-SA 3.0",
+      "author": "Pierre Bona",
+      "bytes": 227468,
+      "latitude": 46.56305556,
+      "longitude": 16.45194444
+    },
+    {
+      "city": "Litija",
+      "width": 960,
+      "height": 540,
+      "license": "CC BY-SA 4.0",
+      "author": "Peter Jovanovič",
+      "bytes": 251802,
+      "latitude": 46.06666667,
+      "longitude": 14.81666667
+    },
+    {
+      "city": "Ljubljana",
+      "width": 960,
+      "height": 720,
+      "license": "CC BY 2.0",
+      "author": "Andrew Milligan Sumo",
+      "bytes": 262927,
+      "latitude": 46.05138889,
+      "longitude": 14.50611111
+    },
+    {
+      "city": "Ljutomer",
+      "width": 960,
+      "height": 720,
+      "license": "CC0",
+      "author": "BikeMike",
+      "bytes": 192852,
+      "latitude": 46.51675833,
+      "longitude": 16.20266667
+    },
+    {
+      "city": "Maribor",
+      "width": 960,
+      "height": 640,
+      "license": "Public domain",
+      "author": "Vlada Republike Slovenije",
+      "bytes": 203142,
+      "latitude": 46.5575,
+      "longitude": 15.64555556
+    },
+    {
+      "city": "Metlika",
+      "width": 960,
+      "height": 635,
+      "license": "CC BY 2.0",
+      "author": "Uroš Novina from Semič, Slovenia",
+      "bytes": 187282,
+      "latitude": 45.65166667,
+      "longitude": 15.32
+    },
+    {
+      "city": "Murska Sobota",
+      "width": 960,
+      "height": 720,
+      "license": "Public domain",
+      "author": "Sl-Ziga",
+      "bytes": 120896,
+      "latitude": 46.66666667,
+      "longitude": 16.16666667
+    },
+    {
+      "city": "Nova Gorica",
+      "width": 960,
+      "height": 641,
+      "license": "CC BY-SA 4.0",
+      "author": "Eleassar",
+      "bytes": 240821,
+      "latitude": 45.95583333,
+      "longitude": 13.64333333
+    },
+    {
+      "city": "Novo mesto",
+      "width": 960,
+      "height": 720,
+      "license": "Public domain",
+      "author": "gov.si",
+      "bytes": 298578,
+      "latitude": 45.8,
+      "longitude": 15.16666667
+    },
+    {
+      "city": "Ormož",
+      "width": 960,
+      "height": 720,
+      "license": "CC BY-SA 4.0",
+      "author": "Ajznponar",
+      "bytes": 139948,
+      "latitude": 46.40861111,
+      "longitude": 16.1475
+    },
+    {
+      "city": "Piran",
+      "width": 960,
+      "height": 636,
+      "license": "CC BY 4.0",
+      "author": "Etienne O. Dallaire",
+      "bytes": 202979,
+      "latitude": 45.52833333,
+      "longitude": 13.56833333
+    },
+    {
+      "city": "Postojna",
+      "width": 960,
+      "height": 720,
+      "license": "CC BY-SA 3.0",
+      "author": "Tiia Monto",
+      "bytes": 226497,
+      "latitude": 45.77586389,
+      "longitude": 14.21366111
+    },
+    {
+      "city": "Ptuj",
+      "width": 960,
+      "height": 769,
+      "license": "Public domain",
+      "author": "Ptuj-mestnaHisa1.JPG: Sl-Ziga\nuploaded and derivative work: MrPanyGoff",
+      "bytes": 188876,
+      "latitude": 46.41944444,
+      "longitude": 15.86944444
+    },
+    {
+      "city": "Radeče",
+      "width": 960,
+      "height": 640,
+      "license": "CC0",
+      "author": "Janezdrilc",
+      "bytes": 155990,
+      "latitude": 46.06583333,
+      "longitude": 15.17277778
+    },
+    {
+      "city": "Radovljica",
+      "width": 960,
+      "height": 720,
+      "license": "CC BY-SA 2.5 si",
+      "author": "Miran Hladnik",
+      "bytes": 202707,
+      "latitude": 46.34251667,
+      "longitude": 14.17207778
+    },
+    {
+      "city": "Ravne na Koroškem",
+      "width": 960,
+      "height": 720,
+      "license": "CC BY-SA 3.0",
+      "author": "BlueBay",
+      "bytes": 129445,
+      "latitude": 46.54373611,
+      "longitude": 14.96423333
+    },
+    {
+      "city": "Sevnica",
+      "width": 960,
+      "height": 569,
+      "license": "CC BY-SA 4.0",
+      "author": "Petar Milošević",
+      "bytes": 223106,
+      "latitude": 46.00921389,
+      "longitude": 15.30409444
+    },
+    {
+      "city": "Sežana",
+      "width": 960,
+      "height": 640,
+      "license": "CC BY-SA 4.0",
+      "author": "Samo Onič",
+      "bytes": 227742,
+      "latitude": 45.70340278,
+      "longitude": 13.87060278
+    },
+    {
+      "city": "Slovenska Bistrica",
+      "width": 960,
+      "height": 641,
+      "license": "CC BY-SA 3.0",
+      "author": "Eleassar",
+      "bytes": 130171,
+      "latitude": 46.39027778,
+      "longitude": 15.575
+    },
+    {
+      "city": "Slovenj Gradec",
+      "width": 960,
+      "height": 720,
+      "license": "CC0",
+      "author": "Janezdrilc",
+      "bytes": 177144,
+      "latitude": 46.50935833,
+      "longitude": 15.07915833
+    },
+    {
+      "city": "Slovenske Konjice",
+      "width": 960,
+      "height": 538,
+      "license": "CC BY-SA 4.0",
+      "author": "Shabicht",
+      "bytes": 111762,
+      "latitude": 46.33833333,
+      "longitude": 15.42333333
+    },
+    {
+      "city": "Škofja Loka",
+      "width": 960,
+      "height": 641,
+      "license": "CC BY 2.0",
+      "author": "Bernd Thaller from Graz, Austria",
+      "bytes": 237545,
+      "latitude": 46.16721944,
+      "longitude": 14.30303889
+    },
+    {
+      "city": "Šoštanj",
+      "width": 960,
+      "height": 720,
+      "license": "CC BY-SA 4.0",
+      "author": "Ajznponar",
+      "bytes": 150269,
+      "latitude": 46.37976667,
+      "longitude": 15.04823611
+    },
+    {
+      "city": "Tolmin",
+      "width": 960,
+      "height": 476,
+      "license": "CC BY-SA 4.0",
+      "author": "Krzysztof Golik",
+      "bytes": 205557,
+      "latitude": 46.18574722,
+      "longitude": 13.73515
+    },
+    {
+      "city": "Trbovlje",
+      "width": 960,
+      "height": 720,
+      "license": "CC BY 4.0",
+      "author": "Viktar Palstsiuk",
+      "bytes": 212189,
+      "latitude": 46.15,
+      "longitude": 15.05
+    },
+    {
+      "city": "Tržič",
+      "width": 960,
+      "height": 720,
+      "license": "CC BY-SA 3.0",
+      "author": "Matijap",
+      "bytes": 224356,
+      "latitude": 46.35808056,
+      "longitude": 14.29295556
+    },
+    {
+      "city": "Velenje",
+      "width": 960,
+      "height": 720,
+      "license": "CC BY-SA 4.0",
+      "author": "Tilky0808",
+      "bytes": 279231,
+      "latitude": 46.3625,
+      "longitude": 15.11444444
+    },
+    {
+      "city": "Višnja Gora",
+      "width": 960,
+      "height": 539,
+      "license": "CC BY-SA 4.0",
+      "author": "Lan G.",
+      "bytes": 178539,
+      "latitude": 45.95796111,
+      "longitude": 14.74223056
+    },
+    {
+      "city": "Vrhnika",
+      "width": 960,
+      "height": 720,
+      "license": "CC0",
+      "author": "Ajznponar",
+      "bytes": 207030,
+      "latitude": 45.962375,
+      "longitude": 14.29373611
+    },
+    {
+      "city": "Zagorje ob Savi",
+      "width": 960,
+      "height": 720,
+      "license": "Public domain",
+      "author": "No machine-readable author provided. Romanm assumed (based on copyright claims).",
+      "bytes": 211112,
+      "latitude": 46.13416667,
+      "longitude": 14.99416667
+    },
+    {
+      "city": "Žalec",
+      "width": 960,
+      "height": 720,
+      "license": "CC0",
+      "author": "Janezdrilc",
+      "bytes": 178761,
+      "latitude": 46.25099722,
+      "longitude": 15.16393889
+    },
+    {
+      "city": "Cerknica",
+      "width": 960,
+      "height": 477,
+      "license": "Public domain",
+      "author": "No machine-readable author provided. Žiga assumed (based on copyright claims).",
+      "bytes": 74766,
+      "latitude": 45.79638889,
+      "longitude": 14.35805556
+    },
+    {
+      "city": "Dravograd",
+      "width": 629,
+      "height": 483,
+      "license": "CC BY-SA 3.0",
+      "author": "Besednjak at Dutch Wikipedia",
+      "bytes": 57802,
+      "latitude": 46.59027778,
+      "longitude": 15.02361111
+    },
+    {
+      "city": "Grosuplje",
+      "width": 960,
+      "height": 756,
+      "license": "CC BY-SA 3.0",
+      "author": "Eleassar",
+      "bytes": 307011,
+      "latitude": 45.955125,
+      "longitude": 14.6562
+    },
+    {
+      "city": "Logatec",
+      "width": 960,
+      "height": 720,
+      "license": "CC BY-SA 4.0",
+      "author": "Andrejj",
+      "bytes": 206259,
+      "latitude": 45.91670278,
+      "longitude": 14.22972778
+    },
+    {
+      "city": "Medvode",
+      "width": 960,
+      "height": 623,
+      "license": "CC BY-SA 4.0",
+      "author": "Doremo",
+      "bytes": 139001,
+      "latitude": 46.13824167,
+      "longitude": 14.41471389
+    },
+    {
+      "city": "Mengeš",
+      "width": 960,
+      "height": 689,
+      "license": "CC BY-SA 4.0",
+      "author": "Doremo",
+      "bytes": 165920,
+      "latitude": 46.16258333,
+      "longitude": 14.56803056
+    },
+    {
+      "city": "Mežica",
+      "width": 960,
+      "height": 720,
+      "license": "CC BY-SA 4.0",
+      "author": "Savinjc",
+      "bytes": 314783,
+      "latitude": 46.52055556,
+      "longitude": 14.85361111
+    },
+    {
+      "city": "Prevalje",
+      "width": 960,
+      "height": 498,
+      "license": "CC BY 2.0",
+      "author": "Maximilian Paradiz from Amsterdam, Netherlands",
+      "bytes": 215542,
+      "latitude": 46.54376111,
+      "longitude": 14.91186944
+    },
+    {
+      "city": "Ribnica",
+      "width": 960,
+      "height": 638,
+      "license": "CC BY-SA 3.0",
+      "author": "Sl-Ziga",
+      "bytes": 170694,
+      "latitude": 45.738607241,
+      "longitude": 14.727022808
+    },
+    {
+      "city": "Rogaška Slatina",
+      "width": 960,
+      "height": 640,
+      "license": "CC BY-SA 4.0",
+      "author": "Nxr-at",
+      "bytes": 232309,
+      "latitude": 46.23138889,
+      "longitude": 15.63805556
+    },
+    {
+      "city": "Ruše",
+      "width": 960,
+      "height": 555,
+      "license": "Public domain",
+      "author": "Sl-Ziga",
+      "bytes": 182546,
+      "latitude": 46.538575,
+      "longitude": 15.5154
+    },
+    {
+      "city": "Šempeter pri Gorici",
+      "width": 960,
+      "height": 640,
+      "license": "CC BY-SA 4.0",
+      "author": "Faktikus",
+      "bytes": 205779,
+      "latitude": 45.92837778,
+      "longitude": 13.637825
+    },
+    {
+      "city": "Šentjur",
+      "width": 960,
+      "height": 640,
+      "license": "CC0",
+      "author": "Janezdrilc",
+      "bytes": 218182,
+      "latitude": 46.21758611,
+      "longitude": 15.39598056
+    },
+    {
+      "city": "Trebnje",
+      "width": 960,
+      "height": 622,
+      "license": "CC BY-SA 3.0",
+      "author": "Eleassar",
+      "bytes": 122004,
+      "latitude": 45.91037778,
+      "longitude": 15.00862778
+    },
+    {
+      "city": "Železniki",
+      "width": 960,
+      "height": 720,
+      "license": "Public domain",
+      "author": "Sl-Ziga",
+      "bytes": 195560,
+      "latitude": 46.21824167,
+      "longitude": 14.15919444
+    },
+    {
+      "city": "Žiri",
+      "width": 960,
+      "height": 680,
+      "license": "CC BY 4.0",
+      "author": "Doremo",
+      "bytes": 211614,
+      "latitude": 46.04694444,
+      "longitude": 14.10972222
+    },
+    {
+      "city": "Lenart v Slovenskih goricah",
+      "width": 960,
+      "height": 1166,
+      "license": "CC BY-SA 3.0",
+      "author": "T@Di",
+      "bytes": 212422,
+      "latitude": 46.57416667,
+      "longitude": 15.83222222
+    },
+    {
+      "city": "Zreče",
+      "width": 960,
+      "height": 720,
+      "license": "CC BY-SA 4.0",
+      "author": "Andrej Jakobčič",
+      "bytes": 193452,
+      "latitude": 46.375,
+      "longitude": 15.38527778
+    }
+  ]
+}

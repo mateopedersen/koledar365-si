@@ -1,0 +1,14 @@
+production:
+  publish_horoscopes:
+    class: EditorialJob
+    schedule: every 5 minutes
+  purge_private_exports:
+    class: ExpiryJob
+    schedule: every hour
+development:
+  publish_horoscopes:
+    class: EditorialJob
+    schedule: every 5 minutes
+  purge_private_exports:
+    class: ExpiryJob
+    schedule: every hour

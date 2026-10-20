@@ -1,0 +1,3358 @@
+{
+  "researched_at": "2026-10-20",
+  "country": "Slovenija",
+  "country_code": "SI",
+  "locale": "sl-SI",
+  "timezone": "Europe/Ljubljana",
+  "calendar": "gregory",
+  "default_city": "Ljubljana",
+  "executive_notes": [
+    "Definitive full-year scope: 2027, 2028, 2029 and 2030 (48 months). Keep only a separate minimal 2026 bridge for current-date and 2026/2027 school context.",
+    "The legal truth changed THREE DAYS before the research date. Use ZPDPD NPB11 effective 17 October 2026 rather than stale GOV.SI summary.",
+    "State holiday and work-free are independent booleans. 31 October is listed in Article 2 as another work-free day; avoid treating all work-free dates as Article 1 state holidays.",
+    "23 individual legal dates each year: 17 state-holiday dates (15 named holidays) plus 6 other work-free dates. There are 15 statutory work-free dates including Easter Sunday and Pentecost Sunday.",
+    "Sunday holiday does not transfer to the next working day, explicitly ZPDPD Article 3. Do not create observed-Monday holidays. Saturday dates also have no substitute-day rule in the Act.",
+    "Workdays in this file assume Monday–Friday and remove only statutory work-free dates. They do not model shift work, annual leave, local closures or an individual employment agreement.",
+    "School holidays 2026/2027 are verified. Official 2027/2028, 2028/2029, 2029/2030 and 2030/2031 dates were not found on the Ministry pages as of research. Publish an honest awaiting-publication state; do not extrapolate regional winter breaks.",
+    "The booleans on an observance describe that observance’s own legal status. A cultural or international observance can coincide with a separate legal work-free date; combine date-level flags with OR. Example: World Bee Day and Pentecost both fall on 20 May 2029.",
+    "2030 fixed holidays follow the current ZPDPD law, not a claim that legislation cannot change before 2030. Reverify the source during implementation and data refreshes."
+  ],
+  "sources": {
+    "law": {
+      "url": "https://pisrs.si/pregledPredpisa?id=ZAKO865",
+      "pdf": "https://pisrs.si/api/datoteke/integracije/649721108",
+      "ref": "turn12search9",
+      "title": "ZPDPD, neuradno prečiščeno besedilo št. 11",
+      "effective_from": "2026-10-17"
+    },
+    "amendment_2026": {
+      "url": "https://pisrs.si/api/uradni-list/objava/u20261567.pdf",
+      "ref": "turn12search6",
+      "title": "ZPDPD-I, Uradni list RS št. 1567/2026",
+      "published": "2026-10-02",
+      "effective_from": "2026-10-17"
+    },
+    "gov_holidays": {
+      "url": "https://www.gov.si/teme/drzavni-prazniki-in-dela-prosti-dnevi/",
+      "ref": "turn10view0",
+      "last_updated": "2026-08-18",
+      "warning": "Stale relative to 17 October amendment: missing dan Triglava and has superseded names for 17 August and 15 September. Its introductory exception list also omits dan znanosti although its table includes it."
+    },
+    "school_primary": {
+      "url": "https://www.gov.si/teme/solski-koledar-za-osnovne-sole/",
+      "ref": "turn10view1",
+      "pdf": "https://www.gov.si/assets/ministrstva/MVI/Dokumenti/Osnovna-sola/Solski-koledar/2026_2027/Podrobnejsa-navodila-o-solskem-koledarju-za-OS-za-sol-leto-2026-2027.pdf",
+      "pdf_ref": "turn10view2",
+      "rechecked_ref": "turn52view3"
+    },
+    "school_secondary": {
+      "url": "https://www.gov.si/teme/solski-koledar-za-srednje-sole/",
+      "ref": "turn17view1"
+    },
+    "arso_tides_2026": {
+      "url": "https://www.arso.gov.si/vode/morje/Plima2026_a5.pdf",
+      "ref": "turn20view0",
+      "title": "Prognozirano plimovanje morja 2026",
+      "caveat": "Sunrise/sunset is for Koper, not Ljubljana. Booklet times use CET (UTC+1), with +1 hour during summer time. Lunar phases are supplied by the Astronomical Geophysical Observatory Golovec, University of Ljubljana."
+    },
+    "usno_moon": {
+      "url": "https://aa.usno.navy.mil/data/MoonPhases",
+      "ref": "turn26view3"
+    },
+    "usno_seasons": {
+      "url": "https://aa.usno.navy.mil/data/Earth_Seasons",
+      "ref": "turn26view4"
+    },
+    "usno_api": {
+      "url": "https://aa.usno.navy.mil/data/api",
+      "ref": "turn28view0"
+    },
+    "usno_christian": {
+      "url": "https://aa.usno.navy.mil/api/observances/christian?year=2027",
+      "ref": "turn32view3"
+    },
+    "eu_dst_schedule": {
+      "url": "https://eur-lex.europa.eu/eli/C/2026/1660/oj/eng",
+      "ref": "turn30search0",
+      "title": "Schedule for summer-time periods 2027–2031, C/2026/1660",
+      "published": "2026-03-18",
+      "pdf": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:C_202601660",
+      "pdf_ref": "turn54view0",
+      "verified_years": [
+        2027,
+        2028,
+        2029,
+        2030,
+        2031
+      ]
+    },
+    "eu_dst_status": {
+      "url": "https://transport.ec.europa.eu/transport-themes/summertime_en",
+      "ref": "turn26view0",
+      "note": "Proposal to end clock changes is not effective law; Council has not finalised its position."
+    },
+    "mother": {
+      "url": "https://www.stat.si/statweb/News/Index/14231",
+      "ref": "turn17search0",
+      "title": "SURS: 25. marec, materinski dan"
+    },
+    "women": {
+      "url": "https://www.stat.si/StatWeb/sl/News/Index/14206",
+      "ref": "turn33search1",
+      "title": "SURS: 8. marec, mednarodni dan žensk"
+    },
+    "gregory": {
+      "url": "https://www.etno-muzej.si/sl/blog/na-gregorjevo-se-pticki-zenijo",
+      "ref": "turn20search3"
+    },
+    "nicholas": {
+      "url": "https://www.etno-muzej.si/sl/naprejvpreteklost-blog-nesnovna-dediscina/miklavz-je-eden-od-decembrskih-obdarovalcev-otrok",
+      "ref": "turn20search0"
+    },
+    "carnival": {
+      "url": "https://www.gov.si/novice/2023-02-21-pustovanje-sega-ki-je-vkoreninjena-v-zgodovino-vseh-slovenskih-pokrajin/",
+      "ref": "turn23search1"
+    },
+    "martin": {
+      "url": "https://etno-muzej.si/sl/razstave/pust-mozirski",
+      "ref": "turn17search15"
+    },
+    "seasonal_dates": {
+      "url": "https://www.gov.si/assets/ministrstva/MKGP/PODROCJA/HRANA/SHEME-KAKOVOSTI/SPECIFIKACIJE-EVROPSKA-KOMISIJA/Slovenska-potica-v2.pdf",
+      "ref": "turn23search25",
+      "note": "Government specification includes dated cultural calendar: Epiphany Jan 6, Valentine Feb 14, Gregory Mar 12, Martin Nov 11, Nicholas Dec 6, Silvester Dec 31. Do not inherit older holiday names from it."
+    },
+    "church_year": {
+      "url": "https://www.katoliska-cerkev.si/cerkveno-leto",
+      "ref": "turn28search2"
+    },
+    "palm_sunday": {
+      "url": "https://www.katoliska-cerkev.si/cvetna-nedelja2026",
+      "ref": "turn28search0"
+    },
+    "earth": {
+      "url": "https://www.un.org/en/observances/earth-day",
+      "ref": "turn24search0"
+    },
+    "europe": {
+      "url": "https://european-union.europa.eu/principles-countries-history/europe-day_en",
+      "ref": "turn26view1"
+    },
+    "bees": {
+      "url": "https://www.fao.org/world-bee-day/en",
+      "ref": "turn24search1"
+    },
+    "easter_census": {
+      "url": "https://www.census.gov/data/software/x13as/genhol/easter-dates.html",
+      "ref": "turn54search3",
+      "title": "U.S. Census Bureau: Easter Dates from 1600 to 2099",
+      "verified_dates": {
+        "2027": "2027-03-28",
+        "2028": "2028-04-16",
+        "2029": "2029-04-01",
+        "2030": "2030-04-21"
+      }
+    }
+  },
+  "holiday_definitions": [
+    {
+      "id": "novo-leto",
+      "name_sl": "novo leto",
+      "rule": {
+        "kind": "fixed",
+        "month": 1,
+        "days": [
+          1,
+          2
+        ]
+      },
+      "state_holiday": true,
+      "work_free": true,
+      "legal_article": 1,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": null
+    },
+    {
+      "id": "presernov-dan",
+      "name_sl": "Prešernov dan, slovenski kulturni praznik",
+      "rule": {
+        "kind": "fixed",
+        "month": 2,
+        "days": [
+          8
+        ]
+      },
+      "state_holiday": true,
+      "work_free": true,
+      "legal_article": 1,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": null
+    },
+    {
+      "id": "dan-upora-proti-okupatorju",
+      "name_sl": "dan upora proti okupatorju",
+      "rule": {
+        "kind": "fixed",
+        "month": 4,
+        "days": [
+          27
+        ]
+      },
+      "state_holiday": true,
+      "work_free": true,
+      "legal_article": 1,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": null
+    },
+    {
+      "id": "praznik-dela",
+      "name_sl": "praznik dela",
+      "rule": {
+        "kind": "fixed",
+        "month": 5,
+        "days": [
+          1,
+          2
+        ]
+      },
+      "state_holiday": true,
+      "work_free": true,
+      "legal_article": 1,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": null
+    },
+    {
+      "id": "dan-primoza-trubarja",
+      "name_sl": "dan Primoža Trubarja",
+      "rule": {
+        "kind": "fixed",
+        "month": 6,
+        "days": [
+          8
+        ]
+      },
+      "state_holiday": true,
+      "work_free": false,
+      "legal_article": 1,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": null
+    },
+    {
+      "id": "dan-drzavnosti",
+      "name_sl": "dan državnosti",
+      "rule": {
+        "kind": "fixed",
+        "month": 6,
+        "days": [
+          25
+        ]
+      },
+      "state_holiday": true,
+      "work_free": true,
+      "legal_article": 1,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": null
+    },
+    {
+      "id": "dan-triglava",
+      "name_sl": "dan Triglava",
+      "rule": {
+        "kind": "fixed",
+        "month": 8,
+        "days": [
+          7
+        ]
+      },
+      "state_holiday": true,
+      "work_free": false,
+      "legal_article": 1,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": "2026-10-17"
+    },
+    {
+      "id": "zdruzitev-prekmurskih-slovencev",
+      "name_sl": "združitev prekmurskih Slovencev z matičnim narodom",
+      "rule": {
+        "kind": "fixed",
+        "month": 8,
+        "days": [
+          17
+        ]
+      },
+      "state_holiday": true,
+      "work_free": false,
+      "legal_article": 1,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": "2026-10-17"
+    },
+    {
+      "id": "vrnitev-primorske",
+      "name_sl": "vrnitev Primorske k matični domovini",
+      "rule": {
+        "kind": "fixed",
+        "month": 9,
+        "days": [
+          15
+        ]
+      },
+      "state_holiday": true,
+      "work_free": false,
+      "legal_article": 1,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": "2026-10-17"
+    },
+    {
+      "id": "dan-slovenskega-sporta",
+      "name_sl": "dan slovenskega športa",
+      "rule": {
+        "kind": "fixed",
+        "month": 9,
+        "days": [
+          23
+        ]
+      },
+      "state_holiday": true,
+      "work_free": false,
+      "legal_article": 1,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": null
+    },
+    {
+      "id": "dan-suverenosti",
+      "name_sl": "dan suverenosti",
+      "rule": {
+        "kind": "fixed",
+        "month": 10,
+        "days": [
+          25
+        ]
+      },
+      "state_holiday": true,
+      "work_free": false,
+      "legal_article": 1,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": null
+    },
+    {
+      "id": "dan-spomina-na-mrtve",
+      "name_sl": "dan spomina na mrtve",
+      "rule": {
+        "kind": "fixed",
+        "month": 11,
+        "days": [
+          1
+        ]
+      },
+      "state_holiday": true,
+      "work_free": true,
+      "legal_article": 1,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": null
+    },
+    {
+      "id": "dan-znanosti",
+      "name_sl": "dan znanosti",
+      "rule": {
+        "kind": "fixed",
+        "month": 11,
+        "days": [
+          10
+        ]
+      },
+      "state_holiday": true,
+      "work_free": false,
+      "legal_article": 1,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": null
+    },
+    {
+      "id": "dan-rudolfa-maistra",
+      "name_sl": "dan Rudolfa Maistra",
+      "rule": {
+        "kind": "fixed",
+        "month": 11,
+        "days": [
+          23
+        ]
+      },
+      "state_holiday": true,
+      "work_free": false,
+      "legal_article": 1,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": null
+    },
+    {
+      "id": "dan-samostojnosti-in-enotnosti",
+      "name_sl": "dan samostojnosti in enotnosti",
+      "rule": {
+        "kind": "fixed",
+        "month": 12,
+        "days": [
+          26
+        ]
+      },
+      "state_holiday": true,
+      "work_free": true,
+      "legal_article": 1,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": null
+    },
+    {
+      "id": "velika-noc",
+      "name_sl": "velikonočna nedelja in ponedeljek, velika noč",
+      "rule": {
+        "kind": "gregorian_easter",
+        "offsets_days": [
+          0,
+          1
+        ]
+      },
+      "state_holiday": false,
+      "work_free": true,
+      "legal_article": 2,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": null
+    },
+    {
+      "id": "binkosti",
+      "name_sl": "binkoštna nedelja, binkošti",
+      "rule": {
+        "kind": "gregorian_easter",
+        "offsets_days": [
+          49
+        ]
+      },
+      "state_holiday": false,
+      "work_free": true,
+      "legal_article": 2,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": null
+    },
+    {
+      "id": "marijino-vnebovzetje",
+      "name_sl": "Marijino vnebovzetje",
+      "rule": {
+        "kind": "fixed",
+        "month": 8,
+        "days": [
+          15
+        ]
+      },
+      "state_holiday": false,
+      "work_free": true,
+      "legal_article": 2,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": null
+    },
+    {
+      "id": "dan-reformacije",
+      "name_sl": "dan reformacije",
+      "rule": {
+        "kind": "fixed",
+        "month": 10,
+        "days": [
+          31
+        ]
+      },
+      "state_holiday": false,
+      "work_free": true,
+      "legal_article": 2,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": null
+    },
+    {
+      "id": "bozic",
+      "name_sl": "božič",
+      "rule": {
+        "kind": "fixed",
+        "month": 12,
+        "days": [
+          25
+        ]
+      },
+      "state_holiday": false,
+      "work_free": true,
+      "legal_article": 2,
+      "source_ids": [
+        "law"
+      ],
+      "effective_from": null
+    }
+  ],
+  "years": {
+    "2027": {
+      "events": [
+        {
+          "date": "2027-01-01",
+          "name_sl": "novo leto",
+          "id": "novo-leto",
+          "weekday_sl": "petek",
+          "iso_weekday": 5,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2027-01-02",
+          "name_sl": "novo leto",
+          "id": "novo-leto",
+          "weekday_sl": "sobota",
+          "iso_weekday": 6,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2027-02-08",
+          "name_sl": "Prešernov dan, slovenski kulturni praznik",
+          "id": "presernov-dan",
+          "weekday_sl": "ponedeljek",
+          "iso_weekday": 1,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2027-03-28",
+          "name_sl": "velikonočna nedelja",
+          "id": "velika-noc",
+          "weekday_sl": "nedelja",
+          "iso_weekday": 7,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2027-03-29",
+          "name_sl": "velikonočni ponedeljek",
+          "id": "velika-noc",
+          "weekday_sl": "ponedeljek",
+          "iso_weekday": 1,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2027-04-27",
+          "name_sl": "dan upora proti okupatorju",
+          "id": "dan-upora-proti-okupatorju",
+          "weekday_sl": "torek",
+          "iso_weekday": 2,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2027-05-01",
+          "name_sl": "praznik dela",
+          "id": "praznik-dela",
+          "weekday_sl": "sobota",
+          "iso_weekday": 6,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2027-05-02",
+          "name_sl": "praznik dela",
+          "id": "praznik-dela",
+          "weekday_sl": "nedelja",
+          "iso_weekday": 7,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2027-05-16",
+          "name_sl": "binkoštna nedelja, binkošti",
+          "id": "binkosti",
+          "weekday_sl": "nedelja",
+          "iso_weekday": 7,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2027-06-08",
+          "name_sl": "dan Primoža Trubarja",
+          "id": "dan-primoza-trubarja",
+          "weekday_sl": "torek",
+          "iso_weekday": 2,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2027-06-25",
+          "name_sl": "dan državnosti",
+          "id": "dan-drzavnosti",
+          "weekday_sl": "petek",
+          "iso_weekday": 5,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2027-08-07",
+          "name_sl": "dan Triglava",
+          "id": "dan-triglava",
+          "weekday_sl": "sobota",
+          "iso_weekday": 6,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2027-08-15",
+          "name_sl": "Marijino vnebovzetje",
+          "id": "marijino-vnebovzetje",
+          "weekday_sl": "nedelja",
+          "iso_weekday": 7,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2027-08-17",
+          "name_sl": "združitev prekmurskih Slovencev z matičnim narodom",
+          "id": "zdruzitev-prekmurskih-slovencev",
+          "weekday_sl": "torek",
+          "iso_weekday": 2,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2027-09-15",
+          "name_sl": "vrnitev Primorske k matični domovini",
+          "id": "vrnitev-primorske",
+          "weekday_sl": "sreda",
+          "iso_weekday": 3,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2027-09-23",
+          "name_sl": "dan slovenskega športa",
+          "id": "dan-slovenskega-sporta",
+          "weekday_sl": "četrtek",
+          "iso_weekday": 4,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2027-10-25",
+          "name_sl": "dan suverenosti",
+          "id": "dan-suverenosti",
+          "weekday_sl": "ponedeljek",
+          "iso_weekday": 1,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2027-10-31",
+          "name_sl": "dan reformacije",
+          "id": "dan-reformacije",
+          "weekday_sl": "nedelja",
+          "iso_weekday": 7,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2027-11-01",
+          "name_sl": "dan spomina na mrtve",
+          "id": "dan-spomina-na-mrtve",
+          "weekday_sl": "ponedeljek",
+          "iso_weekday": 1,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2027-11-10",
+          "name_sl": "dan znanosti",
+          "id": "dan-znanosti",
+          "weekday_sl": "sreda",
+          "iso_weekday": 3,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2027-11-23",
+          "name_sl": "dan Rudolfa Maistra",
+          "id": "dan-rudolfa-maistra",
+          "weekday_sl": "torek",
+          "iso_weekday": 2,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2027-12-25",
+          "name_sl": "božič",
+          "id": "bozic",
+          "weekday_sl": "sobota",
+          "iso_weekday": 6,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2027-12-26",
+          "name_sl": "dan samostojnosti in enotnosti",
+          "id": "dan-samostojnosti-in-enotnosti",
+          "weekday_sl": "nedelja",
+          "iso_weekday": 7,
+          "state_holiday": true,
+          "work_free": true
+        }
+      ],
+      "counts": {
+        "calendar_days": 365,
+        "weekdays_mon_fri": 261,
+        "weekend_days": 104,
+        "statutory_work_free_on_weekdays": 6,
+        "working_days_mon_fri": 255,
+        "state_holiday_dates": 17,
+        "statutory_work_free_dates_including_weekend": 15
+      },
+      "months": [
+        {
+          "month": 1,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 21,
+          "weekend_days": 10,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 20,
+          "weekday_holiday_dates": [
+            "2027-01-01"
+          ]
+        },
+        {
+          "month": 2,
+          "calendar_days": 28,
+          "weekdays_mon_fri": 20,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 19,
+          "weekday_holiday_dates": [
+            "2027-02-08"
+          ]
+        },
+        {
+          "month": 3,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 23,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 22,
+          "weekday_holiday_dates": [
+            "2027-03-29"
+          ]
+        },
+        {
+          "month": 4,
+          "calendar_days": 30,
+          "weekdays_mon_fri": 22,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": [
+            "2027-04-27"
+          ]
+        },
+        {
+          "month": 5,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 21,
+          "weekend_days": 10,
+          "statutory_work_free_on_weekdays": 0,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": []
+        },
+        {
+          "month": 6,
+          "calendar_days": 30,
+          "weekdays_mon_fri": 22,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": [
+            "2027-06-25"
+          ]
+        },
+        {
+          "month": 7,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 22,
+          "weekend_days": 9,
+          "statutory_work_free_on_weekdays": 0,
+          "working_days_mon_fri": 22,
+          "weekday_holiday_dates": []
+        },
+        {
+          "month": 8,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 22,
+          "weekend_days": 9,
+          "statutory_work_free_on_weekdays": 0,
+          "working_days_mon_fri": 22,
+          "weekday_holiday_dates": []
+        },
+        {
+          "month": 9,
+          "calendar_days": 30,
+          "weekdays_mon_fri": 22,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 0,
+          "working_days_mon_fri": 22,
+          "weekday_holiday_dates": []
+        },
+        {
+          "month": 10,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 21,
+          "weekend_days": 10,
+          "statutory_work_free_on_weekdays": 0,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": []
+        },
+        {
+          "month": 11,
+          "calendar_days": 30,
+          "weekdays_mon_fri": 22,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": [
+            "2027-11-01"
+          ]
+        },
+        {
+          "month": 12,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 23,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 0,
+          "working_days_mon_fri": 23,
+          "weekday_holiday_dates": []
+        }
+      ],
+      "movable": {
+        "pustni_torek": "2027-02-09",
+        "pepelnica": "2027-02-10",
+        "cvetna_nedelja": "2027-03-21",
+        "veliki_petek": "2027-03-26",
+        "velikonocna_nedelja": "2027-03-28",
+        "velikonocni_ponedeljek": "2027-03-29",
+        "vnebohod": "2027-05-06",
+        "binkosti": "2027-05-16",
+        "telovo": "2027-05-27",
+        "prva_adventna_nedelja": "2027-11-28"
+      },
+      "dst": {
+        "start_date": "2027-03-28",
+        "start_local_change": "02:00 → 03:00",
+        "end_date": "2027-10-31",
+        "end_local_change": "03:00 → 02:00",
+        "transition_utc": "01:00",
+        "source_ids": [
+          "eu_dst_schedule"
+        ]
+      },
+      "christian_verification_source": "https://aa.usno.navy.mil/api/observances/christian?year=2027",
+      "calendar_fixtures": {
+        "is_leap_year": false,
+        "first_day": "2027-01-01",
+        "first_day_iso_weekday": 5,
+        "first_day_weekday_sl": "petek",
+        "last_day": "2027-12-31",
+        "last_day_iso_weekday": 5,
+        "last_day_weekday_sl": "petek",
+        "iso_weeks_in_iso_year": 52,
+        "days_in_months": [
+          31,
+          28,
+          31,
+          30,
+          31,
+          30,
+          31,
+          31,
+          30,
+          31,
+          30,
+          31
+        ]
+      },
+      "legal_basis_as_of": "2026-10-20",
+      "calculation_status": "computed_from_current_law_and_calendar_rules"
+    },
+    "2028": {
+      "events": [
+        {
+          "date": "2028-01-01",
+          "name_sl": "novo leto",
+          "id": "novo-leto",
+          "weekday_sl": "sobota",
+          "iso_weekday": 6,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2028-01-02",
+          "name_sl": "novo leto",
+          "id": "novo-leto",
+          "weekday_sl": "nedelja",
+          "iso_weekday": 7,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2028-02-08",
+          "name_sl": "Prešernov dan, slovenski kulturni praznik",
+          "id": "presernov-dan",
+          "weekday_sl": "torek",
+          "iso_weekday": 2,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2028-04-16",
+          "name_sl": "velikonočna nedelja",
+          "id": "velika-noc",
+          "weekday_sl": "nedelja",
+          "iso_weekday": 7,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2028-04-17",
+          "name_sl": "velikonočni ponedeljek",
+          "id": "velika-noc",
+          "weekday_sl": "ponedeljek",
+          "iso_weekday": 1,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2028-04-27",
+          "name_sl": "dan upora proti okupatorju",
+          "id": "dan-upora-proti-okupatorju",
+          "weekday_sl": "četrtek",
+          "iso_weekday": 4,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2028-05-01",
+          "name_sl": "praznik dela",
+          "id": "praznik-dela",
+          "weekday_sl": "ponedeljek",
+          "iso_weekday": 1,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2028-05-02",
+          "name_sl": "praznik dela",
+          "id": "praznik-dela",
+          "weekday_sl": "torek",
+          "iso_weekday": 2,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2028-06-04",
+          "name_sl": "binkoštna nedelja, binkošti",
+          "id": "binkosti",
+          "weekday_sl": "nedelja",
+          "iso_weekday": 7,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2028-06-08",
+          "name_sl": "dan Primoža Trubarja",
+          "id": "dan-primoza-trubarja",
+          "weekday_sl": "četrtek",
+          "iso_weekday": 4,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2028-06-25",
+          "name_sl": "dan državnosti",
+          "id": "dan-drzavnosti",
+          "weekday_sl": "nedelja",
+          "iso_weekday": 7,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2028-08-07",
+          "name_sl": "dan Triglava",
+          "id": "dan-triglava",
+          "weekday_sl": "ponedeljek",
+          "iso_weekday": 1,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2028-08-15",
+          "name_sl": "Marijino vnebovzetje",
+          "id": "marijino-vnebovzetje",
+          "weekday_sl": "torek",
+          "iso_weekday": 2,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2028-08-17",
+          "name_sl": "združitev prekmurskih Slovencev z matičnim narodom",
+          "id": "zdruzitev-prekmurskih-slovencev",
+          "weekday_sl": "četrtek",
+          "iso_weekday": 4,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2028-09-15",
+          "name_sl": "vrnitev Primorske k matični domovini",
+          "id": "vrnitev-primorske",
+          "weekday_sl": "petek",
+          "iso_weekday": 5,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2028-09-23",
+          "name_sl": "dan slovenskega športa",
+          "id": "dan-slovenskega-sporta",
+          "weekday_sl": "sobota",
+          "iso_weekday": 6,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2028-10-25",
+          "name_sl": "dan suverenosti",
+          "id": "dan-suverenosti",
+          "weekday_sl": "sreda",
+          "iso_weekday": 3,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2028-10-31",
+          "name_sl": "dan reformacije",
+          "id": "dan-reformacije",
+          "weekday_sl": "torek",
+          "iso_weekday": 2,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2028-11-01",
+          "name_sl": "dan spomina na mrtve",
+          "id": "dan-spomina-na-mrtve",
+          "weekday_sl": "sreda",
+          "iso_weekday": 3,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2028-11-10",
+          "name_sl": "dan znanosti",
+          "id": "dan-znanosti",
+          "weekday_sl": "petek",
+          "iso_weekday": 5,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2028-11-23",
+          "name_sl": "dan Rudolfa Maistra",
+          "id": "dan-rudolfa-maistra",
+          "weekday_sl": "četrtek",
+          "iso_weekday": 4,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2028-12-25",
+          "name_sl": "božič",
+          "id": "bozic",
+          "weekday_sl": "ponedeljek",
+          "iso_weekday": 1,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2028-12-26",
+          "name_sl": "dan samostojnosti in enotnosti",
+          "id": "dan-samostojnosti-in-enotnosti",
+          "weekday_sl": "torek",
+          "iso_weekday": 2,
+          "state_holiday": true,
+          "work_free": true
+        }
+      ],
+      "counts": {
+        "calendar_days": 366,
+        "weekdays_mon_fri": 260,
+        "weekend_days": 106,
+        "statutory_work_free_on_weekdays": 10,
+        "working_days_mon_fri": 250,
+        "state_holiday_dates": 17,
+        "statutory_work_free_dates_including_weekend": 15
+      },
+      "months": [
+        {
+          "month": 1,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 21,
+          "weekend_days": 10,
+          "statutory_work_free_on_weekdays": 0,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": []
+        },
+        {
+          "month": 2,
+          "calendar_days": 29,
+          "weekdays_mon_fri": 21,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 20,
+          "weekday_holiday_dates": [
+            "2028-02-08"
+          ]
+        },
+        {
+          "month": 3,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 23,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 0,
+          "working_days_mon_fri": 23,
+          "weekday_holiday_dates": []
+        },
+        {
+          "month": 4,
+          "calendar_days": 30,
+          "weekdays_mon_fri": 20,
+          "weekend_days": 10,
+          "statutory_work_free_on_weekdays": 2,
+          "working_days_mon_fri": 18,
+          "weekday_holiday_dates": [
+            "2028-04-17",
+            "2028-04-27"
+          ]
+        },
+        {
+          "month": 5,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 23,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 2,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": [
+            "2028-05-01",
+            "2028-05-02"
+          ]
+        },
+        {
+          "month": 6,
+          "calendar_days": 30,
+          "weekdays_mon_fri": 22,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 0,
+          "working_days_mon_fri": 22,
+          "weekday_holiday_dates": []
+        },
+        {
+          "month": 7,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 21,
+          "weekend_days": 10,
+          "statutory_work_free_on_weekdays": 0,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": []
+        },
+        {
+          "month": 8,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 23,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 22,
+          "weekday_holiday_dates": [
+            "2028-08-15"
+          ]
+        },
+        {
+          "month": 9,
+          "calendar_days": 30,
+          "weekdays_mon_fri": 21,
+          "weekend_days": 9,
+          "statutory_work_free_on_weekdays": 0,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": []
+        },
+        {
+          "month": 10,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 22,
+          "weekend_days": 9,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": [
+            "2028-10-31"
+          ]
+        },
+        {
+          "month": 11,
+          "calendar_days": 30,
+          "weekdays_mon_fri": 22,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": [
+            "2028-11-01"
+          ]
+        },
+        {
+          "month": 12,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 21,
+          "weekend_days": 10,
+          "statutory_work_free_on_weekdays": 2,
+          "working_days_mon_fri": 19,
+          "weekday_holiday_dates": [
+            "2028-12-25",
+            "2028-12-26"
+          ]
+        }
+      ],
+      "movable": {
+        "pustni_torek": "2028-02-29",
+        "pepelnica": "2028-03-01",
+        "cvetna_nedelja": "2028-04-09",
+        "veliki_petek": "2028-04-14",
+        "velikonocna_nedelja": "2028-04-16",
+        "velikonocni_ponedeljek": "2028-04-17",
+        "vnebohod": "2028-05-25",
+        "binkosti": "2028-06-04",
+        "telovo": "2028-06-15",
+        "prva_adventna_nedelja": "2028-12-03"
+      },
+      "dst": {
+        "start_date": "2028-03-26",
+        "start_local_change": "02:00 → 03:00",
+        "end_date": "2028-10-29",
+        "end_local_change": "03:00 → 02:00",
+        "transition_utc": "01:00",
+        "source_ids": [
+          "eu_dst_schedule"
+        ]
+      },
+      "christian_verification_source": "https://aa.usno.navy.mil/api/observances/christian?year=2028",
+      "calendar_fixtures": {
+        "is_leap_year": true,
+        "first_day": "2028-01-01",
+        "first_day_iso_weekday": 6,
+        "first_day_weekday_sl": "sobota",
+        "last_day": "2028-12-31",
+        "last_day_iso_weekday": 7,
+        "last_day_weekday_sl": "nedelja",
+        "iso_weeks_in_iso_year": 52,
+        "days_in_months": [
+          31,
+          29,
+          31,
+          30,
+          31,
+          30,
+          31,
+          31,
+          30,
+          31,
+          30,
+          31
+        ]
+      },
+      "legal_basis_as_of": "2026-10-20",
+      "calculation_status": "computed_from_current_law_and_calendar_rules"
+    },
+    "2029": {
+      "events": [
+        {
+          "date": "2029-01-01",
+          "name_sl": "novo leto",
+          "id": "novo-leto",
+          "weekday_sl": "ponedeljek",
+          "iso_weekday": 1,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2029-01-02",
+          "name_sl": "novo leto",
+          "id": "novo-leto",
+          "weekday_sl": "torek",
+          "iso_weekday": 2,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2029-02-08",
+          "name_sl": "Prešernov dan, slovenski kulturni praznik",
+          "id": "presernov-dan",
+          "weekday_sl": "četrtek",
+          "iso_weekday": 4,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2029-04-01",
+          "name_sl": "velikonočna nedelja",
+          "id": "velika-noc",
+          "weekday_sl": "nedelja",
+          "iso_weekday": 7,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2029-04-02",
+          "name_sl": "velikonočni ponedeljek",
+          "id": "velika-noc",
+          "weekday_sl": "ponedeljek",
+          "iso_weekday": 1,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2029-04-27",
+          "name_sl": "dan upora proti okupatorju",
+          "id": "dan-upora-proti-okupatorju",
+          "weekday_sl": "petek",
+          "iso_weekday": 5,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2029-05-01",
+          "name_sl": "praznik dela",
+          "id": "praznik-dela",
+          "weekday_sl": "torek",
+          "iso_weekday": 2,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2029-05-02",
+          "name_sl": "praznik dela",
+          "id": "praznik-dela",
+          "weekday_sl": "sreda",
+          "iso_weekday": 3,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2029-05-20",
+          "name_sl": "binkoštna nedelja, binkošti",
+          "id": "binkosti",
+          "weekday_sl": "nedelja",
+          "iso_weekday": 7,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2029-06-08",
+          "name_sl": "dan Primoža Trubarja",
+          "id": "dan-primoza-trubarja",
+          "weekday_sl": "petek",
+          "iso_weekday": 5,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2029-06-25",
+          "name_sl": "dan državnosti",
+          "id": "dan-drzavnosti",
+          "weekday_sl": "ponedeljek",
+          "iso_weekday": 1,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2029-08-07",
+          "name_sl": "dan Triglava",
+          "id": "dan-triglava",
+          "weekday_sl": "torek",
+          "iso_weekday": 2,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2029-08-15",
+          "name_sl": "Marijino vnebovzetje",
+          "id": "marijino-vnebovzetje",
+          "weekday_sl": "sreda",
+          "iso_weekday": 3,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2029-08-17",
+          "name_sl": "združitev prekmurskih Slovencev z matičnim narodom",
+          "id": "zdruzitev-prekmurskih-slovencev",
+          "weekday_sl": "petek",
+          "iso_weekday": 5,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2029-09-15",
+          "name_sl": "vrnitev Primorske k matični domovini",
+          "id": "vrnitev-primorske",
+          "weekday_sl": "sobota",
+          "iso_weekday": 6,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2029-09-23",
+          "name_sl": "dan slovenskega športa",
+          "id": "dan-slovenskega-sporta",
+          "weekday_sl": "nedelja",
+          "iso_weekday": 7,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2029-10-25",
+          "name_sl": "dan suverenosti",
+          "id": "dan-suverenosti",
+          "weekday_sl": "četrtek",
+          "iso_weekday": 4,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2029-10-31",
+          "name_sl": "dan reformacije",
+          "id": "dan-reformacije",
+          "weekday_sl": "sreda",
+          "iso_weekday": 3,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2029-11-01",
+          "name_sl": "dan spomina na mrtve",
+          "id": "dan-spomina-na-mrtve",
+          "weekday_sl": "četrtek",
+          "iso_weekday": 4,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2029-11-10",
+          "name_sl": "dan znanosti",
+          "id": "dan-znanosti",
+          "weekday_sl": "sobota",
+          "iso_weekday": 6,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2029-11-23",
+          "name_sl": "dan Rudolfa Maistra",
+          "id": "dan-rudolfa-maistra",
+          "weekday_sl": "petek",
+          "iso_weekday": 5,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2029-12-25",
+          "name_sl": "božič",
+          "id": "bozic",
+          "weekday_sl": "torek",
+          "iso_weekday": 2,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2029-12-26",
+          "name_sl": "dan samostojnosti in enotnosti",
+          "id": "dan-samostojnosti-in-enotnosti",
+          "weekday_sl": "sreda",
+          "iso_weekday": 3,
+          "state_holiday": true,
+          "work_free": true
+        }
+      ],
+      "counts": {
+        "calendar_days": 365,
+        "weekdays_mon_fri": 261,
+        "weekend_days": 104,
+        "statutory_work_free_on_weekdays": 13,
+        "working_days_mon_fri": 248,
+        "state_holiday_dates": 17,
+        "statutory_work_free_dates_including_weekend": 15
+      },
+      "months": [
+        {
+          "month": 1,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 23,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 2,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": [
+            "2029-01-01",
+            "2029-01-02"
+          ]
+        },
+        {
+          "month": 2,
+          "calendar_days": 28,
+          "weekdays_mon_fri": 20,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 19,
+          "weekday_holiday_dates": [
+            "2029-02-08"
+          ]
+        },
+        {
+          "month": 3,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 22,
+          "weekend_days": 9,
+          "statutory_work_free_on_weekdays": 0,
+          "working_days_mon_fri": 22,
+          "weekday_holiday_dates": []
+        },
+        {
+          "month": 4,
+          "calendar_days": 30,
+          "weekdays_mon_fri": 21,
+          "weekend_days": 9,
+          "statutory_work_free_on_weekdays": 2,
+          "working_days_mon_fri": 19,
+          "weekday_holiday_dates": [
+            "2029-04-02",
+            "2029-04-27"
+          ]
+        },
+        {
+          "month": 5,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 23,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 2,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": [
+            "2029-05-01",
+            "2029-05-02"
+          ]
+        },
+        {
+          "month": 6,
+          "calendar_days": 30,
+          "weekdays_mon_fri": 21,
+          "weekend_days": 9,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 20,
+          "weekday_holiday_dates": [
+            "2029-06-25"
+          ]
+        },
+        {
+          "month": 7,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 22,
+          "weekend_days": 9,
+          "statutory_work_free_on_weekdays": 0,
+          "working_days_mon_fri": 22,
+          "weekday_holiday_dates": []
+        },
+        {
+          "month": 8,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 23,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 22,
+          "weekday_holiday_dates": [
+            "2029-08-15"
+          ]
+        },
+        {
+          "month": 9,
+          "calendar_days": 30,
+          "weekdays_mon_fri": 20,
+          "weekend_days": 10,
+          "statutory_work_free_on_weekdays": 0,
+          "working_days_mon_fri": 20,
+          "weekday_holiday_dates": []
+        },
+        {
+          "month": 10,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 23,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 22,
+          "weekday_holiday_dates": [
+            "2029-10-31"
+          ]
+        },
+        {
+          "month": 11,
+          "calendar_days": 30,
+          "weekdays_mon_fri": 22,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": [
+            "2029-11-01"
+          ]
+        },
+        {
+          "month": 12,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 21,
+          "weekend_days": 10,
+          "statutory_work_free_on_weekdays": 2,
+          "working_days_mon_fri": 19,
+          "weekday_holiday_dates": [
+            "2029-12-25",
+            "2029-12-26"
+          ]
+        }
+      ],
+      "movable": {
+        "pustni_torek": "2029-02-13",
+        "pepelnica": "2029-02-14",
+        "cvetna_nedelja": "2029-03-25",
+        "veliki_petek": "2029-03-30",
+        "velikonocna_nedelja": "2029-04-01",
+        "velikonocni_ponedeljek": "2029-04-02",
+        "vnebohod": "2029-05-10",
+        "binkosti": "2029-05-20",
+        "telovo": "2029-05-31",
+        "prva_adventna_nedelja": "2029-12-02"
+      },
+      "dst": {
+        "start_date": "2029-03-25",
+        "start_local_change": "02:00 → 03:00",
+        "end_date": "2029-10-28",
+        "end_local_change": "03:00 → 02:00",
+        "transition_utc": "01:00",
+        "source_ids": [
+          "eu_dst_schedule"
+        ]
+      },
+      "christian_verification_source": "https://aa.usno.navy.mil/api/observances/christian?year=2029",
+      "calendar_fixtures": {
+        "is_leap_year": false,
+        "first_day": "2029-01-01",
+        "first_day_iso_weekday": 1,
+        "first_day_weekday_sl": "ponedeljek",
+        "last_day": "2029-12-31",
+        "last_day_iso_weekday": 1,
+        "last_day_weekday_sl": "ponedeljek",
+        "iso_weeks_in_iso_year": 52,
+        "days_in_months": [
+          31,
+          28,
+          31,
+          30,
+          31,
+          30,
+          31,
+          31,
+          30,
+          31,
+          30,
+          31
+        ]
+      },
+      "legal_basis_as_of": "2026-10-20",
+      "calculation_status": "computed_from_current_law_and_calendar_rules"
+    },
+    "2030": {
+      "events": [
+        {
+          "date": "2030-01-01",
+          "name_sl": "novo leto",
+          "id": "novo-leto",
+          "weekday_sl": "torek",
+          "iso_weekday": 2,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2030-01-02",
+          "name_sl": "novo leto",
+          "id": "novo-leto",
+          "weekday_sl": "sreda",
+          "iso_weekday": 3,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2030-02-08",
+          "name_sl": "Prešernov dan, slovenski kulturni praznik",
+          "id": "presernov-dan",
+          "weekday_sl": "petek",
+          "iso_weekday": 5,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2030-04-21",
+          "name_sl": "velikonočna nedelja",
+          "id": "velika-noc",
+          "weekday_sl": "nedelja",
+          "iso_weekday": 7,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2030-04-22",
+          "name_sl": "velikonočni ponedeljek",
+          "id": "velika-noc",
+          "weekday_sl": "ponedeljek",
+          "iso_weekday": 1,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2030-04-27",
+          "name_sl": "dan upora proti okupatorju",
+          "id": "dan-upora-proti-okupatorju",
+          "weekday_sl": "sobota",
+          "iso_weekday": 6,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2030-05-01",
+          "name_sl": "praznik dela",
+          "id": "praznik-dela",
+          "weekday_sl": "sreda",
+          "iso_weekday": 3,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2030-05-02",
+          "name_sl": "praznik dela",
+          "id": "praznik-dela",
+          "weekday_sl": "četrtek",
+          "iso_weekday": 4,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2030-06-08",
+          "name_sl": "dan Primoža Trubarja",
+          "id": "dan-primoza-trubarja",
+          "weekday_sl": "sobota",
+          "iso_weekday": 6,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2030-06-09",
+          "name_sl": "binkoštna nedelja, binkošti",
+          "id": "binkosti",
+          "weekday_sl": "nedelja",
+          "iso_weekday": 7,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2030-06-25",
+          "name_sl": "dan državnosti",
+          "id": "dan-drzavnosti",
+          "weekday_sl": "torek",
+          "iso_weekday": 2,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2030-08-07",
+          "name_sl": "dan Triglava",
+          "id": "dan-triglava",
+          "weekday_sl": "sreda",
+          "iso_weekday": 3,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2030-08-15",
+          "name_sl": "Marijino vnebovzetje",
+          "id": "marijino-vnebovzetje",
+          "weekday_sl": "četrtek",
+          "iso_weekday": 4,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2030-08-17",
+          "name_sl": "združitev prekmurskih Slovencev z matičnim narodom",
+          "id": "zdruzitev-prekmurskih-slovencev",
+          "weekday_sl": "sobota",
+          "iso_weekday": 6,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2030-09-15",
+          "name_sl": "vrnitev Primorske k matični domovini",
+          "id": "vrnitev-primorske",
+          "weekday_sl": "nedelja",
+          "iso_weekday": 7,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2030-09-23",
+          "name_sl": "dan slovenskega športa",
+          "id": "dan-slovenskega-sporta",
+          "weekday_sl": "ponedeljek",
+          "iso_weekday": 1,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2030-10-25",
+          "name_sl": "dan suverenosti",
+          "id": "dan-suverenosti",
+          "weekday_sl": "petek",
+          "iso_weekday": 5,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2030-10-31",
+          "name_sl": "dan reformacije",
+          "id": "dan-reformacije",
+          "weekday_sl": "četrtek",
+          "iso_weekday": 4,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2030-11-01",
+          "name_sl": "dan spomina na mrtve",
+          "id": "dan-spomina-na-mrtve",
+          "weekday_sl": "petek",
+          "iso_weekday": 5,
+          "state_holiday": true,
+          "work_free": true
+        },
+        {
+          "date": "2030-11-10",
+          "name_sl": "dan znanosti",
+          "id": "dan-znanosti",
+          "weekday_sl": "nedelja",
+          "iso_weekday": 7,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2030-11-23",
+          "name_sl": "dan Rudolfa Maistra",
+          "id": "dan-rudolfa-maistra",
+          "weekday_sl": "sobota",
+          "iso_weekday": 6,
+          "state_holiday": true,
+          "work_free": false
+        },
+        {
+          "date": "2030-12-25",
+          "name_sl": "božič",
+          "id": "bozic",
+          "weekday_sl": "sreda",
+          "iso_weekday": 3,
+          "state_holiday": false,
+          "work_free": true
+        },
+        {
+          "date": "2030-12-26",
+          "name_sl": "dan samostojnosti in enotnosti",
+          "id": "dan-samostojnosti-in-enotnosti",
+          "weekday_sl": "četrtek",
+          "iso_weekday": 4,
+          "state_holiday": true,
+          "work_free": true
+        }
+      ],
+      "counts": {
+        "calendar_days": 365,
+        "weekdays_mon_fri": 261,
+        "weekend_days": 104,
+        "statutory_work_free_on_weekdays": 12,
+        "working_days_mon_fri": 249,
+        "state_holiday_dates": 17,
+        "statutory_work_free_dates_including_weekend": 15
+      },
+      "months": [
+        {
+          "month": 1,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 23,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 2,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": [
+            "2030-01-01",
+            "2030-01-02"
+          ]
+        },
+        {
+          "month": 2,
+          "calendar_days": 28,
+          "weekdays_mon_fri": 20,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 19,
+          "weekday_holiday_dates": [
+            "2030-02-08"
+          ]
+        },
+        {
+          "month": 3,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 21,
+          "weekend_days": 10,
+          "statutory_work_free_on_weekdays": 0,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": []
+        },
+        {
+          "month": 4,
+          "calendar_days": 30,
+          "weekdays_mon_fri": 22,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": [
+            "2030-04-22"
+          ]
+        },
+        {
+          "month": 5,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 23,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 2,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": [
+            "2030-05-01",
+            "2030-05-02"
+          ]
+        },
+        {
+          "month": 6,
+          "calendar_days": 30,
+          "weekdays_mon_fri": 20,
+          "weekend_days": 10,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 19,
+          "weekday_holiday_dates": [
+            "2030-06-25"
+          ]
+        },
+        {
+          "month": 7,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 23,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 0,
+          "working_days_mon_fri": 23,
+          "weekday_holiday_dates": []
+        },
+        {
+          "month": 8,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 22,
+          "weekend_days": 9,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": [
+            "2030-08-15"
+          ]
+        },
+        {
+          "month": 9,
+          "calendar_days": 30,
+          "weekdays_mon_fri": 21,
+          "weekend_days": 9,
+          "statutory_work_free_on_weekdays": 0,
+          "working_days_mon_fri": 21,
+          "weekday_holiday_dates": []
+        },
+        {
+          "month": 10,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 23,
+          "weekend_days": 8,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 22,
+          "weekday_holiday_dates": [
+            "2030-10-31"
+          ]
+        },
+        {
+          "month": 11,
+          "calendar_days": 30,
+          "weekdays_mon_fri": 21,
+          "weekend_days": 9,
+          "statutory_work_free_on_weekdays": 1,
+          "working_days_mon_fri": 20,
+          "weekday_holiday_dates": [
+            "2030-11-01"
+          ]
+        },
+        {
+          "month": 12,
+          "calendar_days": 31,
+          "weekdays_mon_fri": 22,
+          "weekend_days": 9,
+          "statutory_work_free_on_weekdays": 2,
+          "working_days_mon_fri": 20,
+          "weekday_holiday_dates": [
+            "2030-12-25",
+            "2030-12-26"
+          ]
+        }
+      ],
+      "movable": {
+        "pustni_torek": "2030-03-05",
+        "pepelnica": "2030-03-06",
+        "cvetna_nedelja": "2030-04-14",
+        "veliki_petek": "2030-04-19",
+        "velikonocna_nedelja": "2030-04-21",
+        "velikonocni_ponedeljek": "2030-04-22",
+        "vnebohod": "2030-05-30",
+        "binkosti": "2030-06-09",
+        "telovo": "2030-06-20",
+        "prva_adventna_nedelja": "2030-12-01"
+      },
+      "dst": {
+        "start_date": "2030-03-31",
+        "start_local_change": "02:00 → 03:00",
+        "end_date": "2030-10-27",
+        "end_local_change": "03:00 → 02:00",
+        "transition_utc": "01:00",
+        "source_ids": [
+          "eu_dst_schedule"
+        ],
+        "verification_status": "verified_official_2027_2031_schedule"
+      },
+      "christian_verification_source": "https://www.census.gov/data/software/x13as/genhol/easter-dates.html",
+      "christian_verification_note": "Easter Sunday independently verified in U.S. Census table. Other movable dates are computed from Gregorian Easter offsets; Advent is computed from its Sunday rule. USNO 2030 Christian API retrieval failed; do not claim those dates were retrieved from it.",
+      "calendar_fixtures": {
+        "is_leap_year": false,
+        "first_day": "2030-01-01",
+        "first_day_iso_weekday": 2,
+        "first_day_weekday_sl": "torek",
+        "last_day": "2030-12-31",
+        "last_day_iso_weekday": 2,
+        "last_day_weekday_sl": "torek",
+        "iso_weeks_in_iso_year": 52,
+        "days_in_months": [
+          31,
+          28,
+          31,
+          30,
+          31,
+          30,
+          31,
+          31,
+          30,
+          31,
+          30,
+          31
+        ]
+      },
+      "legal_basis_as_of": "2026-10-20",
+      "calculation_status": "computed_from_current_law_and_calendar_rules"
+    }
+  },
+  "school": {
+    "scope": "osnovne šole, with secondary-school range differences noted",
+    "school_year": "2026/2027",
+    "status": "verified_official",
+    "sources": [
+      "school_primary",
+      "school_secondary"
+    ],
+    "regional_groups": {
+      "east_2027": {
+        "label_sl": "Vzhodna skupina",
+        "official_start": "2027-02-15",
+        "official_end": "2027-02-19",
+        "regions": [
+          "jugovzhodna Slovenija (razen občin Ribnica, Sodražica, Loški Potok, Kočevje, Osilnica in Kostel)",
+          "koroška",
+          "podravska",
+          "pomurska",
+          "savinjska",
+          "posavska"
+        ],
+        "notes": "Group label is a convenient site label, not an official administrative unit. Use school location, not family home address, to identify the relevant school calendar."
+      },
+      "west_2027": {
+        "label_sl": "Zahodna skupina",
+        "official_start": "2027-02-22",
+        "official_end": "2027-02-26",
+        "regions": [
+          "gorenjska",
+          "goriška",
+          "notranjsko-kraška (uradno besedilo šolskega koledarja; današnje ime regije primorsko-notranjska)",
+          "obalno-kraška",
+          "osrednjeslovenska",
+          "zasavska"
+        ],
+        "additional_municipalities": [
+          "Ribnica",
+          "Sodražica",
+          "Loški Potok",
+          "Kočevje",
+          "Osilnica",
+          "Kostel"
+        ],
+        "notes": "Ljubljana belongs to this group in 2026/2027; Maribor belongs to the first group."
+      }
+    },
+    "events": [
+      {
+        "id": "start",
+        "name_sl": "Začetek pouka",
+        "start": "2026-09-01",
+        "end": "2026-09-01",
+        "type": "milestone"
+      },
+      {
+        "id": "autumn",
+        "name_sl": "Jesenske počitnice",
+        "start": "2026-10-26",
+        "end": "2026-10-30",
+        "type": "vacation"
+      },
+      {
+        "id": "new_year",
+        "name_sl": "Novoletne počitnice",
+        "start": "2026-12-25",
+        "end": "2027-01-02",
+        "type": "vacation",
+        "secondary_school_official_range": [
+          "2026-12-28",
+          "2026-12-31"
+        ],
+        "note": "Primary-school range includes statutory holidays; secondary-school table lists only non-holiday school vacation weekdays. A user-facing continuous no-class period may be 25 Dec–3 Jan including weekend, but label this derived, not the official vacation date range."
+      },
+      {
+        "id": "winter_east",
+        "name_sl": "Zimske počitnice – vzhodna skupina",
+        "start": "2027-02-15",
+        "end": "2027-02-19",
+        "type": "vacation",
+        "region_group": "east_2027"
+      },
+      {
+        "id": "winter_west",
+        "name_sl": "Zimske počitnice – zahodna skupina",
+        "start": "2027-02-22",
+        "end": "2027-02-26",
+        "type": "vacation",
+        "region_group": "west_2027"
+      },
+      {
+        "id": "april_bridge",
+        "name_sl": "Pouka prost dan",
+        "start": "2027-04-26",
+        "end": "2027-04-26",
+        "type": "school_free_day",
+        "note": "Not a statutory work-free day. Applies to school calendar, not the workday calculator."
+      },
+      {
+        "id": "may",
+        "name_sl": "Prvomajske počitnice",
+        "start": "2027-04-27",
+        "end": "2027-05-02",
+        "type": "vacation",
+        "secondary_school_official_range": [
+          "2027-04-28",
+          "2027-04-30"
+        ]
+      },
+      {
+        "id": "grade9_end",
+        "name_sl": "Zaključek pouka za 9. razred",
+        "start": "2027-06-15",
+        "end": "2027-06-15",
+        "type": "milestone"
+      },
+      {
+        "id": "end",
+        "name_sl": "Zaključek pouka za 1.–8. razred",
+        "start": "2027-06-24",
+        "end": "2027-06-24",
+        "type": "milestone"
+      },
+      {
+        "id": "summer",
+        "name_sl": "Poletne počitnice",
+        "start": "2027-06-28",
+        "end": "2027-08-31",
+        "type": "vacation",
+        "note": "Official 2026/2027 table starts holiday period on Monday 28 June. Friday 25 June is already a statutory holiday; 26–27 June are weekend. Do not silently change the official vacation start to 25 June."
+      }
+    ],
+    "future_years": [
+      {
+        "school_year": "2027/2028",
+        "status": "not_yet_published_or_not_found",
+        "publish_label_sl": "Uradni šolski koledar še ni objavljen.",
+        "can_populate": false
+      },
+      {
+        "school_year": "2028/2029",
+        "status": "not_yet_published_or_not_found",
+        "publish_label_sl": "Uradni šolski koledar še ni objavljen.",
+        "can_populate": false
+      },
+      {
+        "school_year": "2029/2030",
+        "status": "not_yet_published_or_not_found",
+        "publish_label_sl": "Uradni šolski koledar še ni objavljen.",
+        "can_populate": false,
+        "checked_at": "2026-10-20",
+        "source_ids": [
+          "school_primary",
+          "school_secondary"
+        ]
+      },
+      {
+        "school_year": "2030/2031",
+        "status": "not_yet_published_or_not_found",
+        "publish_label_sl": "Uradni šolski koledar še ni objavljen.",
+        "can_populate": false,
+        "checked_at": "2026-10-20",
+        "source_ids": [
+          "school_primary",
+          "school_secondary"
+        ]
+      }
+    ],
+    "year_page_note": "Calendar year 2027 has verified school data through 31 August, but autumn 2027 belongs to 2027/2028 and must await that official release. Calendar-year 2030 spans school years 2029/2030 and 2030/2031; both schedules remain unverified/unpublished as of 20 October 2026. School years cross calendar years. Do not infer vacation ranges from statutory holidays or repeat past regional schedules.",
+    "calendar_year_2030": {
+      "status": "official_dates_unknown",
+      "required_school_years": [
+        "2029/2030",
+        "2030/2031"
+      ],
+      "first_part_school_year": "2029/2030",
+      "autumn_part_school_year": "2030/2031",
+      "publish_label_sl": "Uradni datumi šolskih počitnic za leto 2030 še niso objavljeni.",
+      "do_not_extrapolate": [
+        "regional winter-group order",
+        "autumn vacation range",
+        "extra school-free bridge days",
+        "school-year end dates"
+      ],
+      "calendar_holidays_available": true
+    }
+  },
+  "editorial": {
+    "recommended_page_count": 40,
+    "core_count": 20,
+    "seasonal_count": 20,
+    "page_template": [
+      "Next occurrence and weekday",
+      "Date rule",
+      "Badge: Državni praznik / Dela prost dan / Običaj / Mednarodni dan / Astronomski dogodek",
+      "2027–2030 date table with Europe/Ljubljana for timed events",
+      "Short factual explanation",
+      "Planning relevance and links to nearby holidays/school vacations",
+      "Source link and last verification date",
+      "Relevant related pages"
+    ],
+    "pages": [
+      {
+        "slug": "novo-leto",
+        "title_sl": "Novo leto",
+        "tier": "core",
+        "type": "state_holiday",
+        "rule": {
+          "kind": "fixed",
+          "month": 1,
+          "days": [
+            1,
+            2
+          ]
+        },
+        "state_holiday": true,
+        "work_free": true,
+        "source_ids": [
+          "law"
+        ],
+        "editorial_angle_sl": "Pojasnite, da sta 1. in 2. januar dela prosta dneva; pokažite njuno lego v tednu in povezavo s šolskimi počitnicami."
+      },
+      {
+        "slug": "presernov-dan",
+        "title_sl": "Prešernov dan, slovenski kulturni praznik",
+        "tier": "core",
+        "type": "state_holiday",
+        "rule": {
+          "kind": "fixed",
+          "month": 2,
+          "days": [
+            8
+          ]
+        },
+        "state_holiday": true,
+        "work_free": true,
+        "source_ids": [
+          "law"
+        ],
+        "editorial_angle_sl": "Datum kulturnega praznika, dela prost status in preverjene letne možnosti kulturnih obiskov; programov za prihodnja leta ne izmišljajte."
+      },
+      {
+        "slug": "dan-upora-proti-okupatorju",
+        "title_sl": "Dan upora proti okupatorju",
+        "tier": "core",
+        "type": "state_holiday",
+        "rule": {
+          "kind": "fixed",
+          "month": 4,
+          "days": [
+            27
+          ]
+        },
+        "state_holiday": true,
+        "work_free": true,
+        "source_ids": [
+          "law"
+        ],
+        "editorial_angle_sl": "Uradno ime, datum in povezava s prvomajskimi počitnicami; razlikujte praznik od šolskega prostega dne."
+      },
+      {
+        "slug": "praznik-dela",
+        "title_sl": "Praznik dela",
+        "tier": "core",
+        "type": "state_holiday",
+        "rule": {
+          "kind": "fixed",
+          "month": 5,
+          "days": [
+            1,
+            2
+          ]
+        },
+        "state_holiday": true,
+        "work_free": true,
+        "source_ids": [
+          "law"
+        ],
+        "editorial_angle_sl": "Ločeno prikažite 1. in 2. maj ter število dejanskih prostih delavnikov."
+      },
+      {
+        "slug": "dan-primoza-trubarja",
+        "title_sl": "Dan Primoža Trubarja",
+        "tier": "core",
+        "type": "state_holiday",
+        "rule": {
+          "kind": "fixed",
+          "month": 6,
+          "days": [
+            8
+          ]
+        },
+        "state_holiday": true,
+        "work_free": false,
+        "source_ids": [
+          "law"
+        ],
+        "editorial_angle_sl": "Praznik je 8. junija in ni dela prost dan."
+      },
+      {
+        "slug": "dan-drzavnosti",
+        "title_sl": "Dan državnosti",
+        "tier": "core",
+        "type": "state_holiday",
+        "rule": {
+          "kind": "fixed",
+          "month": 6,
+          "days": [
+            25
+          ]
+        },
+        "state_holiday": true,
+        "work_free": true,
+        "source_ids": [
+          "law"
+        ],
+        "editorial_angle_sl": "Pojasnite razliko med dnevom državnosti 25. junija in dnevom samostojnosti in enotnosti 26. decembra."
+      },
+      {
+        "slug": "dan-triglava",
+        "title_sl": "Dan Triglava",
+        "tier": "core",
+        "type": "state_holiday",
+        "rule": {
+          "kind": "fixed",
+          "month": 8,
+          "days": [
+            7
+          ]
+        },
+        "state_holiday": true,
+        "work_free": false,
+        "source_ids": [
+          "law",
+          "amendment_2026"
+        ],
+        "editorial_angle_sl": "Novi državni praznik 7. avgusta po noveli, ki velja od 17. oktobra 2026; ni dela prost dan."
+      },
+      {
+        "slug": "zdruzitev-prekmurskih-slovencev",
+        "title_sl": "Združitev prekmurskih Slovencev z matičnim narodom",
+        "tier": "core",
+        "type": "state_holiday",
+        "rule": {
+          "kind": "fixed",
+          "month": 8,
+          "days": [
+            17
+          ]
+        },
+        "state_holiday": true,
+        "work_free": false,
+        "source_ids": [
+          "law",
+          "amendment_2026"
+        ],
+        "editorial_angle_sl": "Uporabite veljavno uradno ime po noveli iz oktobra 2026; datum je 17. avgust in dan ni dela prost."
+      },
+      {
+        "slug": "vrnitev-primorske",
+        "title_sl": "Vrnitev Primorske k matični domovini",
+        "tier": "core",
+        "type": "state_holiday",
+        "rule": {
+          "kind": "fixed",
+          "month": 9,
+          "days": [
+            15
+          ]
+        },
+        "state_holiday": true,
+        "work_free": false,
+        "source_ids": [
+          "law",
+          "amendment_2026"
+        ],
+        "editorial_angle_sl": "Uporabite veljavno besedo vrnitev po noveli iz oktobra 2026; datum je 15. september in dan ni dela prost."
+      },
+      {
+        "slug": "dan-slovenskega-sporta",
+        "title_sl": "Dan slovenskega športa",
+        "tier": "core",
+        "type": "state_holiday",
+        "rule": {
+          "kind": "fixed",
+          "month": 9,
+          "days": [
+            23
+          ]
+        },
+        "state_holiday": true,
+        "work_free": false,
+        "source_ids": [
+          "law"
+        ],
+        "editorial_angle_sl": "Državni praznik 23. septembra; sam po sebi ni dela prost dan."
+      },
+      {
+        "slug": "dan-suverenosti",
+        "title_sl": "Dan suverenosti",
+        "tier": "core",
+        "type": "state_holiday",
+        "rule": {
+          "kind": "fixed",
+          "month": 10,
+          "days": [
+            25
+          ]
+        },
+        "state_holiday": true,
+        "work_free": false,
+        "source_ids": [
+          "law"
+        ],
+        "editorial_angle_sl": "Državni praznik 25. oktobra; ni dela prost dan."
+      },
+      {
+        "slug": "dan-spomina-na-mrtve",
+        "title_sl": "Dan spomina na mrtve",
+        "tier": "core",
+        "type": "state_holiday",
+        "rule": {
+          "kind": "fixed",
+          "month": 11,
+          "days": [
+            1
+          ]
+        },
+        "state_holiday": true,
+        "work_free": true,
+        "source_ids": [
+          "law"
+        ],
+        "editorial_angle_sl": "Dela prost 1. november; ločite zakonsko poimenovanje od verskega praznika vseh svetih."
+      },
+      {
+        "slug": "dan-znanosti",
+        "title_sl": "Dan znanosti",
+        "tier": "core",
+        "type": "state_holiday",
+        "rule": {
+          "kind": "fixed",
+          "month": 11,
+          "days": [
+            10
+          ]
+        },
+        "state_holiday": true,
+        "work_free": false,
+        "source_ids": [
+          "law"
+        ],
+        "editorial_angle_sl": "Praznik 10. novembra, dodan leta 2025; ni dela prost dan."
+      },
+      {
+        "slug": "dan-rudolfa-maistra",
+        "title_sl": "Dan Rudolfa Maistra",
+        "tier": "core",
+        "type": "state_holiday",
+        "rule": {
+          "kind": "fixed",
+          "month": 11,
+          "days": [
+            23
+          ]
+        },
+        "state_holiday": true,
+        "work_free": false,
+        "source_ids": [
+          "law"
+        ],
+        "editorial_angle_sl": "Državni praznik 23. novembra; ni dela prost dan."
+      },
+      {
+        "slug": "dan-samostojnosti-in-enotnosti",
+        "title_sl": "Dan samostojnosti in enotnosti",
+        "tier": "core",
+        "type": "state_holiday",
+        "rule": {
+          "kind": "fixed",
+          "month": 12,
+          "days": [
+            26
+          ]
+        },
+        "state_holiday": true,
+        "work_free": true,
+        "source_ids": [
+          "law"
+        ],
+        "editorial_angle_sl": "Dela prost 26. december; povežite ga z božičem in letošnjo razporeditvijo prostih dni."
+      },
+      {
+        "slug": "velika-noc",
+        "title_sl": "Velikonočna nedelja in ponedeljek, velika noč",
+        "tier": "core",
+        "type": "statutory_work_free_religious",
+        "rule": {
+          "kind": "gregorian_easter",
+          "offsets_days": [
+            0,
+            1
+          ]
+        },
+        "state_holiday": false,
+        "work_free": true,
+        "source_ids": [
+          "law"
+        ],
+        "editorial_angle_sl": "Ločeni vrstici za velikonočno nedeljo in ponedeljek; veliki petek v Sloveniji ni samostojen zakonski dela prost dan."
+      },
+      {
+        "slug": "binkosti",
+        "title_sl": "Binkoštna nedelja, binkošti",
+        "tier": "core",
+        "type": "statutory_work_free_religious",
+        "rule": {
+          "kind": "gregorian_easter",
+          "offsets_days": [
+            49
+          ]
+        },
+        "state_holiday": false,
+        "work_free": true,
+        "source_ids": [
+          "law"
+        ],
+        "editorial_angle_sl": "Binkoštna nedelja je dela prost dan po zakonu. Binkoštni ponedeljek ni državni dela prost dan v Sloveniji."
+      },
+      {
+        "slug": "marijino-vnebovzetje",
+        "title_sl": "Marijino vnebovzetje",
+        "tier": "core",
+        "type": "statutory_work_free_religious",
+        "rule": {
+          "kind": "fixed",
+          "month": 8,
+          "days": [
+            15
+          ]
+        },
+        "state_holiday": false,
+        "work_free": true,
+        "source_ids": [
+          "law"
+        ],
+        "editorial_angle_sl": "15. avgust je drug dela prost dan po 2. členu zakona; uporabite tudi ljudsko ime veliki šmaren kot pojasnilo."
+      },
+      {
+        "slug": "dan-reformacije",
+        "title_sl": "Dan reformacije",
+        "tier": "core",
+        "type": "statutory_work_free_religious",
+        "rule": {
+          "kind": "fixed",
+          "month": 10,
+          "days": [
+            31
+          ]
+        },
+        "state_holiday": false,
+        "work_free": true,
+        "source_ids": [
+          "law"
+        ],
+        "editorial_angle_sl": "31. oktober je drug dela prost dan po 2. členu ZPDPD; v strogi pravni klasifikaciji ni v seznamu državnih praznikov 1. člena."
+      },
+      {
+        "slug": "bozic",
+        "title_sl": "Božič",
+        "tier": "core",
+        "type": "statutory_work_free_religious",
+        "rule": {
+          "kind": "fixed",
+          "month": 12,
+          "days": [
+            25
+          ]
+        },
+        "state_holiday": false,
+        "work_free": true,
+        "source_ids": [
+          "law"
+        ],
+        "editorial_angle_sl": "25. december je drug dela prost dan po 2. členu; božični večer 24. decembra sam po sebi ni dela prost dan."
+      },
+      {
+        "slug": "sveti-trije-kralji",
+        "title_sl": "Sveti trije kralji",
+        "tier": "seasonal",
+        "type": "religious",
+        "rule": {
+          "kind": "fixed",
+          "month": 1,
+          "days": [
+            6
+          ]
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "seasonal_dates",
+          "church_year"
+        ],
+        "editorial_angle_sl": "6. januar; verski praznik in običaji, brez samostojnega zakonskega prostega dne."
+      },
+      {
+        "slug": "valentinovo",
+        "title_sl": "Valentinovo",
+        "tier": "seasonal",
+        "type": "cultural",
+        "rule": {
+          "kind": "fixed",
+          "month": 2,
+          "days": [
+            14
+          ]
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "seasonal_dates"
+        ],
+        "editorial_angle_sl": "14. februar; običaji in razlika v primerjavi z gregorjevim, brez trditev o uradnem prazniku."
+      },
+      {
+        "slug": "pust",
+        "title_sl": "Pust",
+        "tier": "seasonal",
+        "type": "cultural",
+        "rule": {
+          "kind": "gregorian_easter",
+          "offsets_days": [
+            -47
+          ]
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "carnival",
+          "usno_christian"
+        ],
+        "editorial_angle_sl": "Pustni torek izračunajte kot dan pred pepelnico. Dogodki in sprevodi imajo lahko druge datume; objavite le preverjene programe."
+      },
+      {
+        "slug": "dan-zena",
+        "title_sl": "Dan žena",
+        "tier": "seasonal",
+        "type": "international_observance",
+        "rule": {
+          "kind": "fixed",
+          "month": 3,
+          "days": [
+            8
+          ]
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "women"
+        ],
+        "editorial_angle_sl": "Mednarodni dan žensk 8. marca; ni zakonski dela prost dan."
+      },
+      {
+        "slug": "gregorjevo",
+        "title_sl": "Gregorjevo",
+        "tier": "seasonal",
+        "type": "cultural",
+        "rule": {
+          "kind": "fixed",
+          "month": 3,
+          "days": [
+            12
+          ]
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "gregory"
+        ],
+        "editorial_angle_sl": "12. marec, ljudsko izročilo in gregorčki na predvečer; ne predstavljajte ga kot astronomski začetek pomladi."
+      },
+      {
+        "slug": "materinski-dan",
+        "title_sl": "Materinski dan",
+        "tier": "seasonal",
+        "type": "cultural",
+        "rule": {
+          "kind": "fixed",
+          "month": 3,
+          "days": [
+            25
+          ]
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "mother"
+        ],
+        "editorial_angle_sl": "Slovenski datum je 25. marec. Ne uporabljajte druge nedelje v maju iz tujih koledarjev."
+      },
+      {
+        "slug": "cvetna-nedelja",
+        "title_sl": "Cvetna nedelja",
+        "tier": "seasonal",
+        "type": "religious",
+        "rule": {
+          "kind": "gregorian_easter",
+          "offsets_days": [
+            -7
+          ]
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "palm_sunday",
+          "usno_christian"
+        ],
+        "editorial_angle_sl": "Nedelja pred veliko nočjo; butare, zelenje in vstop v veliki teden."
+      },
+      {
+        "slug": "veliki-petek",
+        "title_sl": "Veliki petek",
+        "tier": "seasonal",
+        "type": "religious",
+        "rule": {
+          "kind": "gregorian_easter",
+          "offsets_days": [
+            -2
+          ]
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "church_year",
+          "usno_christian",
+          "law"
+        ],
+        "editorial_angle_sl": "Dva dneva pred veliko nočjo; v Sloveniji ni zakonski dela prost dan, čeprav je v nekaterih sosednjih državah."
+      },
+      {
+        "slug": "svetovni-dan-zemlje",
+        "title_sl": "Svetovni dan Zemlje",
+        "tier": "seasonal",
+        "type": "international_observance",
+        "rule": {
+          "kind": "fixed",
+          "month": 4,
+          "days": [
+            22
+          ]
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "earth"
+        ],
+        "editorial_angle_sl": "22. april; jasna razlika med mednarodnim dnevom in državnim praznikom."
+      },
+      {
+        "slug": "dan-evrope",
+        "title_sl": "Dan Evrope",
+        "tier": "seasonal",
+        "type": "international_observance",
+        "rule": {
+          "kind": "fixed",
+          "month": 5,
+          "days": [
+            9
+          ]
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "europe"
+        ],
+        "editorial_angle_sl": "9. maj po koledarju Evropske unije; ni slovenski zakonski dela prost dan."
+      },
+      {
+        "slug": "svetovni-dan-cebel",
+        "title_sl": "Svetovni dan čebel",
+        "tier": "seasonal",
+        "type": "international_observance",
+        "rule": {
+          "kind": "fixed",
+          "month": 5,
+          "days": [
+            20
+          ]
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "bees"
+        ],
+        "editorial_angle_sl": "20. maj; posebej relevantna slovenska pobuda pri Združenih narodih. Letno temo označite z letnico."
+      },
+      {
+        "slug": "advent",
+        "title_sl": "Advent",
+        "tier": "seasonal",
+        "type": "religious",
+        "rule": {
+          "kind": "first_sunday_advent"
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "church_year",
+          "usno_christian"
+        ],
+        "editorial_angle_sl": "Štiri adventne nedelje s samodejno izračunanimi letnimi datumi; advent ni zakonski dela prost dan."
+      },
+      {
+        "slug": "martinovo",
+        "title_sl": "Martinovo",
+        "tier": "seasonal",
+        "type": "cultural",
+        "rule": {
+          "kind": "fixed",
+          "month": 11,
+          "days": [
+            11
+          ]
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "martin",
+          "seasonal_dates"
+        ],
+        "editorial_angle_sl": "11. november; kulturna tradicija in dejstvo, da praznik ni dela prost dan."
+      },
+      {
+        "slug": "miklavz",
+        "title_sl": "Miklavž",
+        "tier": "seasonal",
+        "type": "cultural_religious",
+        "rule": {
+          "kind": "fixed",
+          "month": 12,
+          "days": [
+            6
+          ]
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "nicholas"
+        ],
+        "editorial_angle_sl": "God je 6. decembra, obdarovanje pogosto na predvečer 5. decembra. Ločite datum od lokalnih sprevodov."
+      },
+      {
+        "slug": "silvestrovo",
+        "title_sl": "Silvestrovo",
+        "tier": "seasonal",
+        "type": "cultural",
+        "rule": {
+          "kind": "fixed",
+          "month": 12,
+          "days": [
+            31
+          ]
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "seasonal_dates",
+          "law"
+        ],
+        "editorial_angle_sl": "31. december ni samostojen zakonski dela prost dan; razlikujte ga od 1. in 2. januarja."
+      },
+      {
+        "slug": "pomladno-enakonocje",
+        "title_sl": "Pomladno enakonočje",
+        "tier": "seasonal",
+        "type": "astronomical",
+        "rule": {
+          "kind": "astronomical",
+          "event": "march_equinox"
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "usno_seasons"
+        ],
+        "editorial_angle_sl": "Datum in ura v Evropi/Ljubljani; ločite astronomsko pomlad od meteorološke, ki se začne 1. marca."
+      },
+      {
+        "slug": "poletni-solsticij",
+        "title_sl": "Poletni solsticij",
+        "tier": "seasonal",
+        "type": "astronomical",
+        "rule": {
+          "kind": "astronomical",
+          "event": "june_solstice"
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "usno_seasons"
+        ],
+        "editorial_angle_sl": "Datum in ura začetka astronomskega poletja; dolžino dneva izračunajte za izbrani kraj."
+      },
+      {
+        "slug": "jesensko-enakonocje",
+        "title_sl": "Jesensko enakonočje",
+        "tier": "seasonal",
+        "type": "astronomical",
+        "rule": {
+          "kind": "astronomical",
+          "event": "september_equinox"
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "usno_seasons"
+        ],
+        "editorial_angle_sl": "Čas v Sloveniji in razlika med astronomskim dogodkom ter približno enako dolgim dnevom in nočjo."
+      },
+      {
+        "slug": "zimski-solsticij",
+        "title_sl": "Zimski solsticij",
+        "tier": "seasonal",
+        "type": "astronomical",
+        "rule": {
+          "kind": "astronomical",
+          "event": "december_solstice"
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "usno_seasons"
+        ],
+        "editorial_angle_sl": "Najkrajši dan okoli zimskega obrata, z lokacijsko odvisnim vzhodom in zahodom."
+      },
+      {
+        "slug": "premik-ure",
+        "title_sl": "Premik ure",
+        "tier": "seasonal",
+        "type": "civil_time",
+        "rule": {
+          "kind": "last_sunday",
+          "months": [
+            3,
+            10
+          ]
+        },
+        "state_holiday": false,
+        "work_free": false,
+        "source_ids": [
+          "eu_dst_schedule",
+          "eu_dst_status"
+        ],
+        "editorial_angle_sl": "Pomladni premik z 2. na 3. uro, jesenski s 3. na 2. uro. Ohranite veljavno ureditev in letne datume iz evropskega urnika."
+      }
+    ],
+    "quality_rule": "Use 40 substantive evergreen pages with year tables. Do not create empty year variants or unsupported event-program details. Historical copy needs a topic-specific primary source beyond the date/status law."
+  },
+  "astronomy": {
+    "verified_season_events": [
+      {
+        "event": "march_equinox",
+        "utc": "2027-03-20T20:25:00+00:00",
+        "ljubljana": "2027-03-20T21:25:00+01:00",
+        "source_url": "https://aa.usno.navy.mil/api/seasons?year=2027",
+        "source_ref": "turn32view0"
+      },
+      {
+        "event": "june_solstice",
+        "utc": "2027-06-21T14:11:00+00:00",
+        "ljubljana": "2027-06-21T16:11:00+02:00",
+        "source_url": "https://aa.usno.navy.mil/api/seasons?year=2027",
+        "source_ref": "turn32view0"
+      },
+      {
+        "event": "september_equinox",
+        "utc": "2027-09-23T06:02:00+00:00",
+        "ljubljana": "2027-09-23T08:02:00+02:00",
+        "source_url": "https://aa.usno.navy.mil/api/seasons?year=2027",
+        "source_ref": "turn32view0"
+      },
+      {
+        "event": "december_solstice",
+        "utc": "2027-12-22T02:42:00+00:00",
+        "ljubljana": "2027-12-22T03:42:00+01:00",
+        "source_url": "https://aa.usno.navy.mil/api/seasons?year=2027",
+        "source_ref": "turn32view0"
+      },
+      {
+        "event": "march_equinox",
+        "utc": "2028-03-20T02:17:00+00:00",
+        "ljubljana": "2028-03-20T03:17:00+01:00",
+        "source_url": "https://aa.usno.navy.mil/api/seasons?year=2028",
+        "source_ref": "turn32view1"
+      },
+      {
+        "event": "june_solstice",
+        "utc": "2028-06-20T20:02:00+00:00",
+        "ljubljana": "2028-06-20T22:02:00+02:00",
+        "source_url": "https://aa.usno.navy.mil/api/seasons?year=2028",
+        "source_ref": "turn32view1"
+      },
+      {
+        "event": "september_equinox",
+        "utc": "2028-09-22T11:45:00+00:00",
+        "ljubljana": "2028-09-22T13:45:00+02:00",
+        "source_url": "https://aa.usno.navy.mil/api/seasons?year=2028",
+        "source_ref": "turn32view1"
+      },
+      {
+        "event": "december_solstice",
+        "utc": "2028-12-21T08:19:00+00:00",
+        "ljubljana": "2028-12-21T09:19:00+01:00",
+        "source_url": "https://aa.usno.navy.mil/api/seasons?year=2028",
+        "source_ref": "turn32view1"
+      }
+    ],
+    "seasons_2029_status": "API retrieval failed; not copied or invented. Fetch https://aa.usno.navy.mil/api/seasons?year=2029 before publishing exact times.",
+    "moon_sources_by_year": [
+      {
+        "year": 2027,
+        "url": "https://aa.usno.navy.mil/api/moon/phases/year?year=2027",
+        "ref": "turn30view0"
+      },
+      {
+        "year": 2028,
+        "url": "https://aa.usno.navy.mil/api/moon/phases/year?year=2028",
+        "ref": "turn33view1"
+      },
+      {
+        "year": 2029,
+        "url": "https://aa.usno.navy.mil/api/moon/phases/year?year=2029",
+        "ref": "turn33view2"
+      },
+      {
+        "year": 2030,
+        "url": "https://aa.usno.navy.mil/api/moon/phases/year?year=2030",
+        "ref": "turn54view1",
+        "verification_status": "retrieved_official_source",
+        "numphases": 50
+      }
+    ],
+    "implementation_notes": [
+      "USNO moon phase times are Universal Time: convert every instant to Europe/Ljubljana, including date rollover.",
+      "Do not use USNO dst=true for Slovenia: the documented flag implements U.S. DST rules. Request UTC and convert with IANA timezone data.",
+      "A phase moment is global; its displayed civil date depends on timezone. Sunrise, sunset, moonrise and moonset are location-specific.",
+      "ARSO 2026 tide booklet is an excellent Slovenian authority for methodology and Koper; it is not a Ljubljana sunrise data feed.",
+      "ARSO attributes moon phases to Astronomsko geofizikalni observatorij Golovec, Univerza v Ljubljani. No 2027–2030 ARSO ephemeris was verified in this research.",
+      "Label algorithmic sunrise/sunset as izračun and disclose city/coordinates; do not claim official ARSO values unless imported and checked.",
+      "Do not present moon phases as proven causes of health, personality, gardening outcomes or luck."
+    ],
+    "phase_names_sl": {
+      "New Moon": "mlaj",
+      "First Quarter": "prvi krajec",
+      "Full Moon": "ščip (polna luna)",
+      "Last Quarter": "zadnji krajec"
+    },
+    "seasons_2030_status": "Official USNO seasons endpoint retrieval failed. No exact 2030 equinox/solstice timestamps have been inserted. Retrieve and verify primary ephemeris data before publishing exact moments; do not extrapolate 2027/2028 times.",
+    "verified_2030_moon_fixtures": [
+      {
+        "phase": "New Moon",
+        "phase_sl": "mlaj",
+        "utc": "2030-01-04T02:49:00+00:00",
+        "ljubljana": "2030-01-04T03:49:00+01:00",
+        "source_url": "https://aa.usno.navy.mil/api/moon/phases/year?year=2030",
+        "source_ref": "turn54view1"
+      },
+      {
+        "phase": "New Moon",
+        "phase_sl": "mlaj",
+        "utc": "2030-04-02T22:02:00+00:00",
+        "ljubljana": "2030-04-03T00:02:00+02:00",
+        "source_url": "https://aa.usno.navy.mil/api/moon/phases/year?year=2030",
+        "source_ref": "turn54view1",
+        "purpose": "Regression fixture: UTC date and Slovenian civil date differ."
+      }
+    ],
+    "astronomy_not_astrology_note": "The 2030 lunar module concerns calculated astronomical phase instants and location-dependent sunrise/sunset. Do not convert these into predictions about health, personality, luck or gardening outcomes. Such interpretations are outside the astronomical source data and the requested factual calendar scope."
+  },
+  "localisation": {
+    "week_starts_on": "Monday",
+    "iso_week_numbers": true,
+    "date_example": "20. 10. 2026",
+    "long_date_example": "torek, 20. oktober 2026",
+    "time_format": "24-hour HH:mm",
+    "month_names": [
+      "januar",
+      "februar",
+      "marec",
+      "april",
+      "maj",
+      "junij",
+      "julij",
+      "avgust",
+      "september",
+      "oktober",
+      "november",
+      "december"
+    ],
+    "weekday_names": [
+      "ponedeljek",
+      "torek",
+      "sreda",
+      "četrtek",
+      "petek",
+      "sobota",
+      "nedelja"
+    ],
+    "weekday_headers": [
+      "pon",
+      "tor",
+      "sre",
+      "čet",
+      "pet",
+      "sob",
+      "ned"
+    ],
+    "labels": [
+      "Koledar",
+      "Prazniki",
+      "Šolske počitnice",
+      "Godovi",
+      "Koledar godov",
+      "Delovni dnevi",
+      "Lunin koledar",
+      "Sončni vzhod in zahod",
+      "Datumski kalkulator",
+      "Dodaj dogodek",
+      "Moj dan",
+      "Opombe",
+      "Opravila",
+      "Natisni",
+      "Prenesi PDF",
+      "Uvozi ICS",
+      "Izvozi ICS"
+    ],
+    "label_notes": {
+      "Koledar z imenom": "Grammatical but means a calendar personalized with a name. If it means a name-day calendar, use Koledar godov or Imenski koledar.",
+      "Delovni dnevi": "Use Kalkulator delovnih dni when linking specifically to the calculator."
+    },
+    "replace_slovak": [
+      "Bratislava → Ljubljana",
+      "Slovensko → Slovenija",
+      "Kalendár → Koledar",
+      "sk-SK → sl-SI",
+      "Europe/Bratislava → Europe/Ljubljana"
+    ],
+    "nameday_note": "Godovi need a sourced Slovenian name-day/calendar corpus. Do not reuse Slovak meniny or fabricate one name per date. Name days are not legal holidays.",
+    "accessibility_notes": [
+      "Do not use red alone to convey work-free status. Include textual badges and legend.",
+      "Allow separate toggles for state holidays, statutory work-free days, school vacations, cultural observances and astronomy.",
+      "Store all-day civil dates as date-only values; do not shift holidays through UTC timestamps.",
+      "Use Europe/Ljubljana for today, day boundaries and astronomical local-time presentation, regardless of browser device timezone."
+    ]
+  },
+  "primary_years": [
+    2027,
+    2028,
+    2029,
+    2030
+  ],
+  "coverage": {
+    "primary_range": "2027–2030",
+    "full_calendar_years": 4,
+    "months": 48,
+    "legal_event_rows": 92,
+    "bridge_years": [
+      2026
+    ],
+    "bridge_is_primary_year": false,
+    "school_schedule_policy": "Complete calendar grids, legal holidays and calculations for all four years. Unpublished official school dates remain explicitly unavailable, not predicted."
+  },
+  "bridge_2026": {
+    "year": 2026,
+    "role": "minimal_current_date_and_transition_support",
+    "scope_start": "2026-10-20",
+    "scope_end": "2026-12-31",
+    "primary_year": false,
+    "legal_events": [
+      {
+        "date": "2026-10-25",
+        "name_sl": "dan suverenosti",
+        "id": "dan-suverenosti",
+        "weekday_sl": "nedelja",
+        "iso_weekday": 7,
+        "state_holiday": true,
+        "work_free": false
+      },
+      {
+        "date": "2026-10-31",
+        "name_sl": "dan reformacije",
+        "id": "dan-reformacije",
+        "weekday_sl": "sobota",
+        "iso_weekday": 6,
+        "state_holiday": false,
+        "work_free": true
+      },
+      {
+        "date": "2026-11-01",
+        "name_sl": "dan spomina na mrtve",
+        "id": "dan-spomina-na-mrtve",
+        "weekday_sl": "nedelja",
+        "iso_weekday": 7,
+        "state_holiday": true,
+        "work_free": true
+      },
+      {
+        "date": "2026-11-10",
+        "name_sl": "dan znanosti",
+        "id": "dan-znanosti",
+        "weekday_sl": "torek",
+        "iso_weekday": 2,
+        "state_holiday": true,
+        "work_free": false
+      },
+      {
+        "date": "2026-11-23",
+        "name_sl": "dan Rudolfa Maistra",
+        "id": "dan-rudolfa-maistra",
+        "weekday_sl": "ponedeljek",
+        "iso_weekday": 1,
+        "state_holiday": true,
+        "work_free": false
+      },
+      {
+        "date": "2026-12-25",
+        "name_sl": "božič",
+        "id": "bozic",
+        "weekday_sl": "petek",
+        "iso_weekday": 5,
+        "state_holiday": false,
+        "work_free": true
+      },
+      {
+        "date": "2026-12-26",
+        "name_sl": "dan samostojnosti in enotnosti",
+        "id": "dan-samostojnosti-in-enotnosti",
+        "weekday_sl": "sobota",
+        "iso_weekday": 6,
+        "state_holiday": true,
+        "work_free": true
+      }
+    ],
+    "school_context_ref": "school.events, school_year 2026/2027",
+    "note": "Retain today/next-event context and the verified 2026 portion of school year 2026/2027. This is not a fifth full primary content year and does not replace 2030."
+  }
+}

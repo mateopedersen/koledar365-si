@@ -1,0 +1,65 @@
+Run options: --seed 12512
+
+# Running:
+
+E
+
+Error:
+CalendarTest#test_ICS_all_day_roundtrip_and_exclusive_end:
+ArgumentError: wrong number of arguments (given 0, expected 1)
+    app/services/ics_service.rb:29:in 'block (2 levels) in IcsService.import'
+    app/services/ics_service.rb:29:in 'Array#any?'
+    app/services/ics_service.rb:29:in 'block in IcsService.import'
+    app/services/ics_service.rb:28:in 'Array#map'
+    app/services/ics_service.rb:28:in 'IcsService.import'
+    test/models/calendar_test.rb:54:in 'block in <class:CalendarTest>'
+
+bin/rails test test/models/calendar_test.rb:50
+
+...F
+
+Failure:
+CalendarTest#test_Slovene_one_two_few_other_and_decimals [test/models/calendar_test.rb:42]:
+Expected: "2 dneva"
+  Actual: "2 dni"
+
+bin/rails test test/models/calendar_test.rb:41
+
+...F
+
+Failure:
+SiteTest#test_unknown_route_is_a_true_404_and_search_is_noindex [test/integration/site_test.rb:23]:
+Expected response to be a <404: missing>, but was a <301: Moved Permanently> redirect to <http://www.example.com/neobstojeca-stran/>
+Response body: 
+
+bin/rails test test/integration/site_test.rb:21
+
+F
+
+Failure:
+SiteTest#test_all_48_monthly_calendar_routes_render_correct_headings [test/integration/site_test.rb:16]:
+Expected response to be a <2XX: success>, but was a <301: Moved Permanently> redirect to <http://www.example.com/koledar/2027/januar/>
+Response body: 
+
+bin/rails test test/integration/site_test.rb:12
+
+F
+
+Failure:
+SiteTest#test_contact_is_persisted_and_administrator_requires_authentication [test/integration/site_test.rb:42]:
+Expected response to be a <3XX: redirect>, but was a <500: Internal Server Error>
+
+bin/rails test test/integration/site_test.rb:36
+
+F
+
+Failure:
+SiteTest#test_another_session_cannot_download_private_export [test/integration/site_test.rb:48]:
+Expected response to be a <404: missing>, but was a <500: Internal Server Error>
+
+bin/rails test test/integration/site_test.rb:44
+
+..
+
+Finished in 0.248171s, 56.4127 runs/s, 612.4809 assertions/s.
+14 runs, 152 assertions, 5 failures, 1 errors, 0 skips

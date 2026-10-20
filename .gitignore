@@ -1,0 +1,17 @@
+/.bundle
+/log/*
+/tmp/*
+/storage/*
+!/storage/.keep
+/config/master.key
+.env*
+/vendor/bundle
+/evidence/generated
+.DS_Store
+
+/evidence/*.png
+/evidence/*.pdf
+/evidence/*.webp
+/evidence/*.zip
+/evidence/holiday-export-path.txt
+/config/credentials/*.key

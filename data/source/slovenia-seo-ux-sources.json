@@ -1,0 +1,195 @@
+{
+  "project": "koledar365.si",
+  "retrieved_date": "2026-10-20",
+  "scope": "Input research for detailed Astra implementation prompt only; no website built. This file supplements rather than replaces the root agent’s audit of the user’s exact 21 SEO/UX requirements.",
+  "legal_source_note": "Authority guidance retrieved in October 2026; the PDF is the 2023 guidance edition and the dark-pattern opinion is dated 2024-12-12. Do not label either a new 2026 law.",
+  "source_count": 10,
+  "sources": [
+    {
+      "id": "G01",
+      "publisher": "Google Search Central",
+      "topic": "E-E-A-T, About and honest freshness",
+      "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "web_ref": "turn45view6",
+      "finding": "E-E-A-T is not a standalone ranking factor or a numeric score. Google warns against changing dates to imply freshness when content has not substantially changed.",
+      "prompt_requirements": [
+        "Build an original O nas page naming the real operator/editor and the site purpose; never invent a team, qualifications or reviews.",
+        "Explain source selection, calculations, update policy, corrections/contact and how horoscope material is produced.",
+        "Use real publication/update timestamps. A calendar recalculation is not evidence that an editorial horoscope was newly written."
+      ],
+      "acceptance_checks": [
+        "No numeric E-E-A-T score or ranking promise appears.",
+        "Displayed update time changes only when the underlying relevant content/data changes."
+      ]
+    },
+    {
+      "id": "G02",
+      "publisher": "Google Search Central",
+      "topic": "Page titles",
+      "url": "https://developers.google.com/search/docs/appearance/title-link",
+      "web_ref": "turn45view0",
+      "finding": "Google recommends concise, descriptive, page-specific title elements and avoids keyword stuffing; displayed search titles can differ.",
+      "prompt_requirements": [
+        "Give every indexable route a distinct Slovene title reflecting actual year/month/sign/content.",
+        "Character ranges, if used, are editorial targets rather than Google hard limits."
+      ],
+      "acceptance_checks": [
+        "Title examples match the visible route content and contain no stale year.",
+        "Home, year, month, lunar and horoscope pages do not share identical titles.",
+        "Inspect title/year consistency for every year 2027–2030 and representative first/last month routes, not only 2027."
+      ]
+    },
+    {
+      "id": "G03",
+      "publisher": "Google Search Central",
+      "topic": "Meta descriptions",
+      "url": "https://developers.google.com/search/docs/appearance/snippet",
+      "web_ref": "turn43view3",
+      "finding": "Google often generates snippets from page text and sometimes uses meta descriptions. There is no fixed meta-description length limit; display truncation varies.",
+      "prompt_requirements": [
+        "Generate readable, unique summaries from actual page-specific data.",
+        "Do not promise the submitted description is always displayed."
+      ],
+      "acceptance_checks": [
+        "Descriptions summarize the visible function/date/content rather than list keywords.",
+        "A reviewable sample covers home, calendar, lunar, horoscope and About pages.",
+        "Review year-specific descriptions for all four calendar years 2027–2030."
+      ]
+    },
+    {
+      "id": "G04",
+      "publisher": "Google Search Central",
+      "topic": "Images, alt and OG preview metadata",
+      "url": "https://developers.google.com/search/docs/appearance/google-images",
+      "web_ref": "turn45view4",
+      "finding": "Google can consider og:image or schema image metadata when choosing previews. Alt text supports image understanding and accessibility; keyword stuffing is discouraged. These are not ranking guarantees.",
+      "prompt_requirements": [
+        "Use representative page-specific absolute image URLs, suitable resolution and compressed responsive images.",
+        "Use meaningful Slovene alt text for informative images; decorative art should not get keyword-filled descriptions.",
+        "Keep key calendar dates as accessible HTML; an image cannot be the sole information source.",
+        "OG and social-card tags describe actual content; they do not establish an SEO ranking factor."
+      ],
+      "acceptance_checks": [
+        "Image URLs resolve, correct dimensions are set and alt descriptions match content.",
+        "Shared horoscope date/sign and calendar year agree with their pages.",
+        "Check calendar/PDF/WebP/OG output year agreement for 2027, 2028, 2029 and 2030."
+      ]
+    },
+    {
+      "id": "G05",
+      "publisher": "Google Crawling Infrastructure",
+      "topic": "Custom 404 with correct HTTP semantics",
+      "url": "https://developers.google.com/crawling/docs/troubleshooting/http-status-codes",
+      "web_ref": "turn48view4",
+      "finding": "Google does not index 4xx URLs. Returning successful status for an error page can produce a soft 404.",
+      "prompt_requirements": [
+        "Create a branded Slovene not-found page with calendar/home/search links.",
+        "Missing routes and impossible resource paths return HTTP 404; do not redirect every miss to home or return status 200."
+      ],
+      "acceptance_checks": [
+        "A nonsense URL displays the custom page and actual response status 404.",
+        "Valid calendar/horoscope routes return their own successful content.",
+        "Missing/out-of-scope routes follow deliberate 404/navigation behavior; year-end links never point to nonexistent 2031 content."
+      ]
+    },
+    {
+      "id": "G06",
+      "publisher": "Google Search Central",
+      "topic": "UX and page experience",
+      "url": "https://developers.google.com/search/docs/appearance/page-experience",
+      "web_ref": "turn40search7",
+      "finding": "Page experience has multiple aspects; Core Web Vitals are used in ranking systems, but good scores do not guarantee top rankings.",
+      "prompt_requirements": [
+        "Prioritize readable mobile calendars, responsive controls, secure pages and unobstructed main content.",
+        "Use measured performance findings; do not claim Lighthouse perfection guarantees visibility."
+      ],
+      "acceptance_checks": [
+        "Calendar, print action, zodiac input and consent controls remain usable on small screens and keyboard navigation.",
+        "No blocking overlays hide the main task after refusal."
+      ]
+    },
+    {
+      "id": "P01",
+      "publisher": "Informacijski pooblaščenec, Slovenia",
+      "topic": "Cookies and similar tracking guidance",
+      "url": "https://www.ip-rs.si/fileadmin/user_upload/Pdf/smernice/SMERNICE%20O%20UPORABI%20PI%C5%A0KOTKOV%20IN%20PODOBNIH%20SLEDILNIH%20TEHNOLOGIJ_2023.pdf",
+      "web_ref": "turn48view6",
+      "finding": "The guidance requires consent before nonexempt tracking and equally easy withdrawal. Its examples flag missing first-layer rejection, prechecked boxes and visually obscured refusal.",
+      "prompt_requirements": [
+        "Block nonessential analytics/ads/embeds until consent for the relevant purpose.",
+        "Show comparable Sprejmi vse, Zavrni nenujne and Nastavitve controls; optional categories default off.",
+        "Provide a persistent Nastavitve piškotkov link and stop future optional tracking on withdrawal.",
+        "Document actual cookies/providers/purposes/retention. Necessary-only configurations do not need invented optional purposes."
+      ],
+      "acceptance_checks": [
+        "Fresh-session network/storage inspection confirms no optional tracker before action or after reject.",
+        "Accept enables only selected categories; withdrawal prevents later optional requests."
+      ]
+    },
+    {
+      "id": "P02",
+      "publisher": "Informacijski pooblaščenec, Slovenia",
+      "topic": "Dark patterns and repeated consent prompts",
+      "url": "https://www.ip-rs.si/mnenja-zvop-2/zavajajo%C4%8Di-vzorci-pri-pi%C5%A1kotkih-1735549941",
+      "web_ref": "turn45view2",
+      "finding": "A 12 December 2024 nonbinding opinion explains valid consent and warns about cookie walls and repeatedly asking users who already declined.",
+      "prompt_requirements": [
+        "Respect and persist refusal; do not reopen a consent prompt on every route.",
+        "Allow ordinary calendar and horoscope access without optional consent.",
+        "Match labels and consent policy to the real implementation."
+      ],
+      "acceptance_checks": [
+        "Reject survives navigation/reload.",
+        "Full calendar and calculator use works after rejection."
+      ]
+    },
+    {
+      "id": "H01",
+      "publisher": "Horoskop.si, primary competitor",
+      "topic": "Dated Slovene daily readings and signs",
+      "url": "https://horoskop.si/dnevni-horoskop-za-torek-20-oktobra-2026/",
+      "web_ref": "turn45view3",
+      "finding": "The provider publishes a genuinely dated daily-horoscope page. This establishes a local content pattern, not search volume or predictive validity.",
+      "prompt_requirements": [
+        "Horoscope is now expressly user-authorized scope. Use original Slovene text for 12 signs, with date, provenance and editorial status.",
+        "Select today in Europe/Ljubljana; if no reading is actually published, show the last available date or a truthful unavailable state.",
+        "Do not rotate the same text beneath a new daily date."
+      ],
+      "acceptance_checks": [
+        "Each displayed current reading has a stored record for that exact local date and sign.",
+        "Unpublished future or missing records are not exposed as fabricated live daily content.",
+        "Four-year calendar scope must not create fabricated advance horoscope text for 2027–2030; only published date/sign records are presented as available."
+      ]
+    },
+    {
+      "id": "H02",
+      "publisher": "Lunin.net, primary competitor",
+      "topic": "Birthdate-based zodiac calculation",
+      "url": "https://www.lunin.net/horoskop/",
+      "web_ref": "turn43view1",
+      "finding": "The local provider offers a birthdate-based personal-horoscope entry point. This supports tool vocabulary, not a current measured demand estimate.",
+      "prompt_requirements": [
+        "Implement the user-requested sign finder. With month/day lookup, describe conventional approximate sun-sign ranges, especially at boundaries.",
+        "Do not label it an exact birth chart or ascendant calculation unless real year/time/place calculations exist.",
+        "Process date inputs locally by default; do not put birthdates into analytics or public URLs."
+      ],
+      "acceptance_checks": [
+        "All sign boundaries, Capricorn year wrap, leap-day handling and invalid/future date behavior are deliberately tested.",
+        "Result sign links to the matching published reading; missing readings remain truthful."
+      ]
+    }
+  ],
+  "scope_override": "Horoscope page, zodiac calculator and dated daily readings are expressly authorized by the latest user instruction. Previous caution about automatically adding horoscope does not exclude this requested work.",
+  "limitations": [
+    "No current monthly search volume, keyword difficulty or traffic figures established for horoscope queries.",
+    "Acceptance checks are implementation recommendations derived from the sources and task context, not a claim Google requires every UI detail.",
+    "No E-E-A-T score, OG ranking-factor claim, guaranteed ranking or fabricated daily update."
+  ],
+  "primary_calendar_years": [
+    2027,
+    2028,
+    2029,
+    2030
+  ],
+  "scope_year_update": "All four calendar years 2027–2030 are required. Original source dates and historical competitor examples are unchanged. Four-year calendar coverage does not imply daily horoscope readings already exist for future dates or official future school schedules have been released."
+}

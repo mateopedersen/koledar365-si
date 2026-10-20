@@ -1,0 +1,178 @@
+{
+  "researched_at": "2026-10-20",
+  "scope": "Engineering review for an Astra implementation prompt only; no repository creation, provisioning, deployment or paid activation authorized by this review.",
+  "recommendation": {
+    "default": "A single server-rendered Rails application, with public calendar/editorial pages cached behind Cloudflare and interactive features enhanced with Hotwire/Stimulus. Package Rails as a portable Docker image.",
+    "ruby": "4.0.7 is the current stable version verified on 2026-10-20. Recheck official stable releases when implementation starts; pin the chosen version in .ruby-version, Gemfile and Dockerfile. Do not use preview releases.",
+    "rails": "8.1.4 is the current official release verified on 2026-10-20. Recheck and lock the supported stable patch version at implementation time.",
+    "compatibility": "Prove the selected Ruby/Rails/gem/native-library combination with dependency installation and a production image build. Latest stable does not by itself prove every PDF/image gem or host toolchain is compatible. Document any required fallback rather than silently downgrading.",
+    "jekyll_role": "Do not combine Jekyll and Rails by default. Jekyll is suitable for the public editorial/calendar catalog but would duplicate rendering and deployment concerns if Rails already powers the app.",
+    "rationale": "Personal event persistence across devices, authenticated ownership, server-side ICS operations and on-demand PDF/WebP generation fit a Rails application and its database/job abstractions. Date calculators alone do not require a server."
+  },
+  "jekyll_fair_comparison": {
+    "can_do": [
+      "Generate crawlable HTML for calendar years, months and 40 evergreen special-day pages.",
+      "Run date calculators in browser JavaScript.",
+      "Store personal events locally in IndexedDB or localStorage with explicit device-only semantics.",
+      "Generate some PDF/image exports in browser if that implementation is acceptable."
+    ],
+    "does_not_provide_by_itself": [
+      "A long-running Ruby/Rails server at request time.",
+      "Durable server-side user accounts and per-user database persistence.",
+      "Server-side on-demand render jobs or synchronized personal calendars."
+    ],
+    "if_user_requires_static_only": "Jekyll + Cloudflare Pages is a coherent alternative if personal data is explicitly local to the browser and exports run client-side. Adding a Worker API is possible but makes part of the backend JavaScript/TypeScript rather than Ruby. Do not silently replace cross-device persistence with device-only storage.",
+    "avoid_claim": "Do not say Jekyll cannot make interactive calendars or calculators; it can ship client-side JavaScript."
+  },
+  "cloudflare_facts": {
+    "pages_build": {
+      "ruby_default_in_current_v3_docs": "3.4.4",
+      "version_override": [
+        "RUBY_VERSION",
+        ".ruby-version"
+      ],
+      "meaning": "Ruby is available in the build environment to generate site files; this does not create a deployed persistent Ruby/Rails application runtime.",
+      "source_ids": [
+        "pages_build"
+      ]
+    },
+    "pages_functions": {
+      "runtime": "Cloudflare Workers runtime, with configurable runtime features and subset Node.js API compatibility.",
+      "meaning": "A Pages build using Ruby is separate from Pages Functions runtime. Do not claim a normal Rails/Puma process can be deployed as a Pages Function.",
+      "source_ids": [
+        "pages_functions"
+      ]
+    },
+    "containers": {
+      "ruby_supported": "Cloudflare Containers can run a container image with code written in any language/runtime, so Ruby/Rails is possible.",
+      "routing": "Requests pass through a Worker and a Durable Object controlling the container; expect a small JavaScript/TypeScript integration layer even when the application is Ruby.",
+      "paid_plan_required": true,
+      "free_containers_tier": false,
+      "workers_paid_minimum_usd_per_month": 5,
+      "additional_billing": [
+        "Container CPU usage",
+        "Provisioned memory while running",
+        "Provisioned ephemeral disk while running",
+        "Container network egress",
+        "Workers and Durable Objects usage",
+        "Object storage/database services where selected",
+        "Observability according to current product terms"
+      ],
+      "included_per_month": {
+        "memory": "25 GiB-hours",
+        "cpu": "375 vCPU-minutes",
+        "disk": "200 GB-hours"
+      },
+      "overage_rates": {
+        "memory_usd_per_gib_second": 2.5e-06,
+        "cpu_usd_per_vcpu_second": 2e-05,
+        "disk_usd_per_gb_second": 7e-08
+      },
+      "billing_resolution": "10 ms while running",
+      "instance_note": "Memory and disk billing are based on provisioned instance resources; CPU billing uses active CPU consumption. Do not describe the $5 minimum as an all-in application price.",
+      "persistence": "Disk is ephemeral by default and starts fresh from the image after sleep. Never keep the sole production SQLite database, user events, job queue, session state or generated artifacts there.",
+      "persistence_options": "Point-in-time immutable filesystem snapshots exist with durable_object scheduling. FUSE can connect object storage such as R2. These are not automatic transactional database durability; do not equate R2/FUSE with a proven local PostgreSQL/SQLite volume.",
+      "sleep": "Container class defaults to sleepAfter=10 minutes; Durable Object API allows inactivity timeouts. Use lifecycle controls appropriate to the workload.",
+      "stops": "Host events and deployments can stop containers; no guaranteed uninterrupted run duration. Handle SIGTERM and make work restartable.",
+      "cold_starts": "Docs say often 1–3 seconds, dependent on image size and entrypoint work; measure Rails + rendering startup rather than promising that latency.",
+      "autoscaling": "Built-in autoscaling for stateless applications is not available in the current FAQ. Explicit routing/instance policy is required; getRandom supports a fixed stateless pool.",
+      "worker_jobs": "An in-process background worker inside a sleeping web container does not guarantee timely jobs. Durable queue storage and an explicit wake/worker execution strategy are necessary.",
+      "observability_timing": "FAQ says container logs use Cloudflare Observability pricing beginning 1 December 2026; recheck implementation-time pricing rather than applying future terms as already charged.",
+      "source_ids": [
+        "containers_overview",
+        "containers_faq",
+        "containers_lifecycle",
+        "containers_pricing"
+      ]
+    },
+    "account_caveat": "An open GitHub session and an open Cloudflare session do not prove an existing paid Workers plan, compatible application host, database, object bucket, billing approval or budget. Workers Paid is separate from a zone/domain Pro/Business plan."
+  },
+  "deployment_decision": {
+    "preferred_when_available": "Use an already available and explicitly authorized container-capable application runtime, with Cloudflare DNS/TLS/proxy/CDN in front. Reuse an existing authorized durable database and object storage. Do not assume this infrastructure exists.",
+    "generic_runtime_architecture": [
+      "GitHub repository and CI build the pinned production Docker image.",
+      "Rails/Puma web process on the authorized runtime.",
+      "Durable PostgreSQL is the default server-side datastore when a supported existing service is available; SQLite is possible only with a real durable volume, backups and appropriate single-writer deployment assumptions.",
+      "Active Job with a durable queue backend and a functioning worker process for export jobs.",
+      "Persistent object storage for cached/exported files when retention is needed; R2 is an option if already enabled/authorized.",
+      "Cloudflare caches anonymous public responses only. Personal pages, export jobs and authenticated responses remain private."
+    ],
+    "cloudflare_containers_option": "Cloudflare Containers is a valid deployment candidate if the account has the required plan and its costs are authorized. Keep Rails stateless, use durable external storage, configure the Worker/DO wrapper, explicit instance routing, sleep policy, health checks and background job execution. Assess cold starts for Rails plus Chromium/libvips/PDF dependencies.",
+    "cloudflare_native_storage_caveat": "Do not assume Durable Object SQLite or D1 is a drop-in Active Record PostgreSQL database. A Cloudflare-only architecture using bindings may need a Worker API/adapter and is an explicit design change. R2 is object storage, not a relational database.",
+    "no_paid_authorization": "Do not enable Workers Paid, create paid databases/buckets/services, increase billable capacity, buy a server, transfer a domain or change live DNS solely because accounts are open. Finish the code, tests, production image and deployment manifest first; present the specific target, resources, prices, limits and expected usage for any approval still required.",
+    "if_no_compatible_runtime": "Prepare a fully runnable containerized app and concrete deployment instructions. Report the missing hosting prerequisite. Do not claim the Rails app is live on Pages or silently replace it with an incomplete static mockup.",
+    "budget_wording": "No budget has been supplied. Do not invent a monthly ceiling or authorize a paid service on the user’s behalf."
+  },
+  "feature_implementation_recommendations": {
+    "public_content": "Render indexable year/month and evergreen pages from one canonical data model. Use public cache headers, ETags and suitable cache invalidation; editorial updates do not require a second Jekyll pipeline.",
+    "personal_events": "Define persistence explicitly. Account-based mode requires authenticated per-user authorization and a durable database. A device-only guest mode can use IndexedDB but must be labelled in Slovenian and offer ICS/JSON export. Do not label browser-only state as synchronized or backed up.",
+    "date_calculators": "Use deterministic domain services with civil dates, ISO weeks and Europe/Ljubljana. Mirror optional immediate browser results with shared fixtures against the Ruby calculation engine.",
+    "pdf_webp": "Generate named calendars only after user request; no combinatorial pre-generation of all names, years and styles. Validate Unicode names and selected options; cap length and size. Embed a font supporting č, š, ž and other user-input glyphs.",
+    "render_engine": "Use a maintained Ruby PDF renderer or a headless-browser renderer inside the container, plus an appropriate raster/WebP renderer. Choose after checking current Ruby compatibility and production dependency footprint. Reuse the same layout data and calendar logic for HTML, PDF and WebP, with output-specific rendering where needed.",
+    "jobs": "For expensive exports, enqueue an idempotent durable job, expose progress/failure state, retry boundedly and cache successful outputs by a normalized content/template/version fingerprint. Keep private names/events out of public CDN caches.",
+    "storage": "Local /tmp is working scratch only on ephemeral hosts. Stream completed downloads or persist intended retained outputs to authorized durable object storage. Use bounded retention and clean up temporary artifacts.",
+    "scope_control": "Do not add Redis, a separate SPA, Jekyll, an independent Node backend or microservices unless there is a demonstrated requirement. A small Cloudflare Worker wrapper is acceptable where the selected hosting architecture requires it."
+  },
+  "prompt_ready_english": [
+    "Use the latest stable supported Ruby and Rails releases verified from their official release pages at implementation time. As of 20 October 2026 these are Ruby 4.0.7 and Rails 8.1.4. Pin exact versions and dependencies; verify all native PDF/image dependencies in the production Docker image.",
+    "Build one server-rendered Rails application with progressive Hotwire/Stimulus enhancements. Serve public calendar and editorial routes with caching. Implement personal events, calculators and on-demand PDF/WebP exports from one canonical calendar model. Do not add Jekyll as a parallel application unless a concrete requirement makes the split worthwhile.",
+    "Treat deployment as a separate verified target choice. Cloudflare Pages can build Jekyll with Ruby but is not a normal Rails server runtime. Cloudflare Containers can run Ruby/Rails Docker images, with a Worker/Durable Object integration layer, a required paid Workers plan and usage-based charges.",
+    "Prefer an existing authorized container-capable runtime behind Cloudflare if one is actually available. Cloudflare Containers is an option only after confirming the plan, durable storage, lifecycle/job model and authorized cost. Never put the only copy of user data or the job queue on ephemeral container disk.",
+    "An open GitHub or Cloudflare account is not permission to start a paid subscription or provision billable infrastructure. Complete the implementation, production image, tests and deployment configuration before requesting any still-needed approval, and make the proposed resources and estimated costs concrete.",
+    "If the user explicitly chooses static-only/no-server hosting, explain the tradeoff and use Jekyll plus browser tools with clearly labelled device-only personal data. Do not silently downgrade the full application to local storage or claim Rails is deployed on Pages."
+  ],
+  "sources": {
+    "ruby": {
+      "url": "https://www.ruby-lang.org/en/downloads/",
+      "ref": "turn49view0"
+    },
+    "rails": {
+      "url": "https://rubyonrails.org/",
+      "ref": "turn49view1"
+    },
+    "rails_docker": {
+      "url": "https://guides.rubyonrails.org/getting_started.html",
+      "ref": "turn46view4"
+    },
+    "rails_jobs": {
+      "url": "https://guides.rubyonrails.org/active_job_basics.html",
+      "ref": "turn49view2"
+    },
+    "jekyll": {
+      "url": "https://jekyllrb.com/docs/",
+      "ref": "turn42search2"
+    },
+    "pages_build": {
+      "url": "https://developers.cloudflare.com/pages/configuration/build-image/",
+      "ref": "turn42search1"
+    },
+    "pages_functions": {
+      "url": "https://developers.cloudflare.com/pages/functions/",
+      "ref": "turn46view2"
+    },
+    "containers_overview": {
+      "url": "https://developers.cloudflare.com/containers/",
+      "ref": "turn46view1"
+    },
+    "containers_faq": {
+      "url": "https://developers.cloudflare.com/containers/faq/",
+      "ref": "turn44view0"
+    },
+    "containers_lifecycle": {
+      "url": "https://developers.cloudflare.com/containers/concepts/architecture/",
+      "ref": "turn46view3"
+    },
+    "containers_pricing": {
+      "url": "https://developers.cloudflare.com/containers/platform/pricing/",
+      "ref": "turn46view0"
+    },
+    "workers_pricing": {
+      "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+      "ref": "turn44search3"
+    },
+    "r2": {
+      "url": "https://developers.cloudflare.com/r2/",
+      "ref": "turn44search4"
+    }
+  }
+}

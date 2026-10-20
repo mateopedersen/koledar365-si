@@ -1,0 +1,716 @@
+{
+  "title": "Koledar365 — 15 paired print-template specification",
+  "version": "1.0.1",
+  "prepared_on": "2026-10-20",
+  "purpose": "Research and explicit acceptance requirements for the Astra implementation prompt; this file does not generate a site, PDF, WebP or deployment.",
+  "scope": {
+    "brand": "Koledar365",
+    "domain": "koledar365.si",
+    "locale": "sl-SI",
+    "timezone": "Europe/Ljubljana",
+    "week_start": "Monday",
+    "week_number_system": "ISO 8601",
+    "primary_years": [
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "bridge_year": 2026,
+    "catalog_rule": "Every downloadable calendar/planner/template product type must offer all 15 genuinely distinct template variants: 15 PDF choices and 15 paired WebP choices. For a multi-page PDF, its WebP choice is a ZIP containing one full-resolution still WebP per PDF page.",
+    "minimum_variants_per_downloadable_type": 15,
+    "pdf_variants_per_type": 15,
+    "paired_webp_variants_per_type": 15,
+    "color_variants": 10,
+    "families": [
+      "minimal",
+      "elegant",
+      "nature",
+      "planner",
+      "geometric"
+    ],
+    "variants_per_family": 3,
+    "color_variants_per_family": 2,
+    "counting_rule": "A different palette, paper size, orientation, title, filename, year, name, language, preview crop or PDF/WebP format does not count as an additional design. Optional monochrome conversions of a color design do not replace the five original monochrome BW layouts.",
+    "all_downloadable_types_in_scope": [
+      "annual calendars",
+      "monthly calendars",
+      "weekly calendars",
+      "daily planners",
+      "school-year calendars when official data permits",
+      "workday calendars",
+      "shift schedules including weekly shifts",
+      "blank undated annual/monthly/weekly/day grids",
+      "blank shift templates",
+      "family/team organizers",
+      "other advertised printable planner templates",
+      "calendars personalized with a name",
+      "name-day calendars if actually provided"
+    ],
+    "functional_invariant": "A style family changes the presentation, not the selected product function. A blank weekly shift template must remain a usable empty seven-day shift worksheet; it cannot be fulfilled by a decorative annual mini-calendar.",
+    "data_dependency": "Dated content uses the verified Slovenian calendar engine. Do not invent unpublished school dates for 2027/28–2030/31 or mark cultural observances as statutory days off. A custom name is distinct from a name-day/calendar-of-saints feature.",
+    "monochrome_bw_variants": 5,
+    "monochrome_bw_variants_per_family": 1
+  },
+  "design_catalog": [
+    {
+      "id": "min-01",
+      "family": "minimal",
+      "name_sl": "Čista mreža",
+      "color_mode": "color",
+      "original_design_specification": true,
+      "composition": "A strict, evenly spaced modular grid. Small left-aligned title; generous white gutters; one restrained cobalt accent; no enclosing decorative frames.",
+      "type_adaptations": {
+        "annual_calendar": "Twelve equally sized month grids in chronological 3 × 4 portrait or 4 × 3 landscape order, with one compact legend below the complete grid.",
+        "monthly_calendar": "One dominant seven-column month grid. A narrow strip below provides three priorities and a short notes line; every date cell keeps a clear writing area.",
+        "weekly_shift_schedule": "An uninterrupted roster: people or roles down the left, Monday–Sunday across the top, editable shift codes within cells, totals at the right, legend below.",
+        "blank_undated": "An empty seven-column, six-row month skeleton or the chosen empty weekly/time grid. Heading, month and year fields stay writable; no dates or holidays are silently filled.",
+        "planner_or_template": "A main work grid occupying at least two thirds of usable space, followed by a compact checkbox band. The selected template function determines the grid.",
+        "calendar_with_name": "The name is a clean typographic heading above the calendar; its maximum two-line block has a reserved height and never moves or covers dates."
+      },
+      "distinctness_evidence": "Uniform open modular spacing and a single uninterrupted data grid; unlike framed, timeline, card and editorial layouts."
+    },
+    {
+      "id": "min-02",
+      "family": "minimal",
+      "name_sl": "Časovna os",
+      "color_mode": "color",
+      "original_design_specification": true,
+      "composition": "A linear ledger with a strong chronological axis, slim month/day labels, alternating rule weights and small sage highlights. Time is read along rows rather than within boxed mini-calendars.",
+      "type_adaptations": {
+        "annual_calendar": "Twelve horizontal month rows, each containing positions 1–31 with weekday markers. Nonexistent dates are disabled visibly and never presented as dates. Landscape is preferred.",
+        "monthly_calendar": "Weeks appear as full-width horizontal bands with the date and a writable line for each day; a side ruler carries ISO week numbers.",
+        "weekly_shift_schedule": "Seven horizontal daily lanes with start/end fields and a continuous time axis. Multiple shifts use labelled sublanes; overnight shifts show the next-day boundary explicitly.",
+        "blank_undated": "An undated timeline with blank day/date labels and empty time or task lanes. Do not substitute a dated annual overview.",
+        "planner_or_template": "A chronological schedule on the left and a narrow running notes lane on the right; configurable time interval and working hours.",
+        "calendar_with_name": "Name occupies the vertical title rail beside the time axis, with an accessible horizontal reading version if vertical lettering would impair legibility."
+      },
+      "distinctness_evidence": "A linear chronology and row-based information system; its geometry and task flow differ from mini-calendar grids."
+    },
+    {
+      "id": "min-03",
+      "family": "minimal",
+      "name_sl": "Odprti stolpci",
+      "color_mode": "monochrome_bw",
+      "original_design_specification": true,
+      "composition": "Two open typographic columns separated by a single rule. Black ink on white establishes the hierarchy; restrained functional gray is allowed where it improves usability. Dates, content and writing lines use indentation rather than tinted boxes.",
+      "type_adaptations": {
+        "annual_calendar": "Two columns of six months in portrait, with one consistent reading order and thin horizontal separators. If small formats fail legibility, use two complete six-month pages.",
+        "monthly_calendar": "Main month grid in the wider column and a long lined notes column; week rows align with corresponding note groups.",
+        "weekly_shift_schedule": "Left block contains the complete seven-day roster; the right block contains explicit coverage gaps, handover and totals. Split onto another page before compressing staff rows.",
+        "blank_undated": "A blank date/time grid plus an equal-height lined planning column, both genuinely undated and editable.",
+        "planner_or_template": "A two-column worksheet: planned actions and observations/completion, with checkboxes and ample handwriting space.",
+        "calendar_with_name": "Name is set above the two-column system; an optional short dedication uses its own text block below the name."
+      },
+      "distinctness_evidence": "A deliberate two-column writing workflow with no filled panels or colored highlights; not a grayscale copy of min-01."
+    },
+    {
+      "id": "ele-01",
+      "family": "elegant",
+      "name_sl": "Uredniška izdaja",
+      "color_mode": "color",
+      "original_design_specification": true,
+      "composition": "A magazine-like serif masthead, main calendar body and distinct narrow marginal column. Warm ivory accents, dark ink, editorial folios and small caps provide hierarchy.",
+      "type_adaptations": {
+        "annual_calendar": "Four stacked quarter sections, each with three mini-months and a marginal quarter summary. Continuous left-to-right, top-to-bottom order is mandatory.",
+        "monthly_calendar": "An expansive calendar grid with a true marginal notes column, a large month numeral and one short rule separating period facts from writable notes.",
+        "weekly_shift_schedule": "A formal seven-day shift table in the main column; the margin carries team details, shift key and manager notes. Keep individual hours and breaks explicit.",
+        "blank_undated": "An empty weekly/monthly working grid with blank heading lines and marginal notes; no fabricated quote, date or holiday.",
+        "planner_or_template": "Editorial two-zone planner: schedule as the main story, priorities and follow-up in the margin. Real fields match the selected planner type.",
+        "calendar_with_name": "A prominent name masthead with smaller year/subtitle beneath; name and calendar share a consistent baseline system."
+      },
+      "distinctness_evidence": "Strong main-body/marginalia composition and quarter grouping rather than equal cards or all-page framing."
+    },
+    {
+      "id": "ele-02",
+      "family": "elegant",
+      "name_sl": "Galerijski okvir",
+      "color_mode": "color",
+      "original_design_specification": true,
+      "composition": "A restrained double-line outer frame, generous inset white space, centered title and individual captioned panels. Burgundy and warm-neutral accents remain outside writing cells.",
+      "type_adaptations": {
+        "annual_calendar": "A centered 4 × 3 array of individually framed months, with quarter captions and generous separation from the outer frame.",
+        "monthly_calendar": "One centered framed month; notes and important dates occupy clearly separated caption panels below the calendar.",
+        "weekly_shift_schedule": "The seven-day roster is the central framed object. Shift legend and weekly totals use two balanced panels beneath it, with no decorative lines crossing entries.",
+        "blank_undated": "A framed empty grid with a title/date inscription line and independent bottom notes panel.",
+        "planner_or_template": "A presentation-style planner with one primary worksheet and two equal supporting panels for priorities and review.",
+        "calendar_with_name": "Name is centered in a reserved title cartouche above the calendar frame. The cartouche expands vertically within a fixed safe area."
+      },
+      "distinctness_evidence": "A frame-within-frame and caption-panel composition, visibly distinct from the editorial sidebar and unframed minimalist grids."
+    },
+    {
+      "id": "ele-03",
+      "family": "elegant",
+      "name_sl": "Tipografska izdaja",
+      "color_mode": "monochrome_bw",
+      "original_design_specification": true,
+      "composition": "Monochrome typographic hierarchy: large period numerals, serif headings, small sans-serif labels, strong horizontal rules, no colored accents; restrained gray rules or functional panels are permitted.",
+      "type_adaptations": {
+        "annual_calendar": "Two half-year sections. Each section has a large half-year marker and six month blocks arranged 3 × 2; a broad white gap separates the halves.",
+        "monthly_calendar": "Large month numeral occupies a fixed left title block; the seven-column grid starts below it, followed by aligned short task lists.",
+        "weekly_shift_schedule": "The week number and period range anchor a wide header; a seven-day staff matrix sits below, with black-rule separation and labelled totals.",
+        "blank_undated": "A large blank title/date block and an empty structured worksheet. Labels describe what to write without inserting a current year.",
+        "planner_or_template": "A text-led agenda with clear appointment, action and reflection areas; no ornamental pattern substitutes for usable fields.",
+        "calendar_with_name": "Name is the primary typographic element, with carefully controlled wrapping and a subordinate year; all calendar figures remain legible at actual print size."
+      },
+      "distinctness_evidence": "Oversized type and two grouped sections establish the hierarchy; no sidebar, double frame, tint or background illustration."
+    },
+    {
+      "id": "nat-01",
+      "family": "nature",
+      "name_sl": "Botanični rob",
+      "color_mode": "color",
+      "original_design_specification": true,
+      "composition": "Original or appropriately licensed vector botanical sprigs form an asymmetric outer margin. The calendar itself remains white, regular and unobstructed; restrained leaf-green and terracotta accents.",
+      "type_adaptations": {
+        "annual_calendar": "Twelve month panels occupy a regular grid to the right of a botanical margin; seasonal labels appear only in the margin, with chronological ordering preserved.",
+        "monthly_calendar": "A full writable month grid is balanced by a narrow botanical sidebar and a short seasonal notes field outside date cells.",
+        "weekly_shift_schedule": "The complete seven-day shift grid uses the full functional center. A slim botanical edge and separate legend panel provide the style without replacing schedule fields.",
+        "blank_undated": "An empty functional calendar or schedule grid with botanical art only in margins; date boxes remain blank and white.",
+        "planner_or_template": "A working planner with a generous notes garden: a real lined notes section, not an illustration over writing space.",
+        "calendar_with_name": "Name sits in an open botanical heading, never among leaf strokes; long names can wrap into two lines without overlapping the grid."
+      },
+      "distinctness_evidence": "Asymmetric side-margin illustration and a displaced functional center, not a background image or recolored grid."
+    },
+    {
+      "id": "nat-02",
+      "family": "nature",
+      "name_sl": "Alpski horizont",
+      "color_mode": "color",
+      "original_design_specification": true,
+      "composition": "A shallow original vector alpine panorama anchors the top. Broad horizontal sections and small contour-line separators organize the page in muted blue/green; no claim to a specific landscape unless identified correctly.",
+      "type_adaptations": {
+        "annual_calendar": "Four horizontal quarter bands with three month grids in each band; the panorama stays within the title band and does not reduce date labels below minimum size.",
+        "monthly_calendar": "Calendar week rows extend as wide horizontal bands beneath the landscape header; a separate full-width notes horizon occupies the bottom.",
+        "weekly_shift_schedule": "Seven daily horizontal lanes beneath the header, each containing shift name, start, end, break and handover fields. Team schedules add subrows rather than remove fields.",
+        "blank_undated": "Empty horizontal day/week lanes with writable date headings and no prefilled annual dates.",
+        "planner_or_template": "A banded day/week planner with schedule, tasks and review stacked in clearly separated horizontal zones.",
+        "calendar_with_name": "Name is set in clear sky space reserved within the top header; the panorama is resized or simplified before any text is reduced."
+      },
+      "distinctness_evidence": "A panoramic header and horizontal band organization, materially different from a botanical side margin or specimen cards."
+    },
+    {
+      "id": "nat-03",
+      "family": "nature",
+      "name_sl": "Terenski zvezek",
+      "color_mode": "monochrome_bw",
+      "original_design_specification": true,
+      "composition": "A field-notebook aesthetic: black outline botanical details in two corners, small specimen-style labels, ruled cards and white writing areas. Keep decorative ink coverage low; any gray is purposeful and subordinate to the writing areas.",
+      "type_adaptations": {
+        "annual_calendar": "Two six-month pages with specimen-style month cards, each including its own miniature calendar and a small optional observation line. All twelve months are present.",
+        "monthly_calendar": "A ruled field-sheet: month grid on top and dated observation lines underneath; the decorative corners stay outside both.",
+        "weekly_shift_schedule": "Seven labelled day cards, each with actual shift and handover fields. Cards flow across one or more pages while maintaining Monday–Sunday order.",
+        "blank_undated": "Empty observation cards and a blank day/date label on every card; the selected calendar/planner function still determines required fields.",
+        "planner_or_template": "A notebook worksheet with labelled schedule, observations, actions and follow-up, using black rules only.",
+        "calendar_with_name": "Name is written as the field-notebook owner heading; a separate period label prevents the name from consuming calendar space."
+      },
+      "distinctness_evidence": "A card-and-observation notebook with multi-page options and line-art corners; it is not a desaturated botanical template."
+    },
+    {
+      "id": "pla-01",
+      "family": "planner",
+      "name_sl": "Cilji in čas",
+      "color_mode": "color",
+      "original_design_specification": true,
+      "composition": "A functional dashboard with a calendar/schedule region, three priority boxes and a measurable task tracker. Small navy/amber section tabs guide use; no large ink-heavy fills.",
+      "type_adaptations": {
+        "annual_calendar": "Four quarter pages, each showing its three full mini-months, quarterly goals, deadlines and review. Every month of the selected year is included exactly once.",
+        "monthly_calendar": "A large monthly calendar plus goals, deadlines and a compact habit/task tracker. The tracker never overlaps date cells.",
+        "weekly_shift_schedule": "Seven-day shift matrix with coverage totals, planned hours, breaks and a handover action list. Computed totals must state their inputs and policy.",
+        "blank_undated": "Undated functional grid plus empty priorities and tracking fields, with no date-sensitive values calculated until dates are supplied.",
+        "planner_or_template": "A schedule-plus-goals planner with explicit priority, deadline, action and review areas suited to the chosen use.",
+        "calendar_with_name": "Name heads the goal dashboard; it is personalization of a usable planner, not a replacement for its schedule."
+      },
+      "distinctness_evidence": "A genuine planning dashboard and quarterly multi-page organization, distinct from decorative annual overview grids."
+    },
+    {
+      "id": "pla-02",
+      "family": "planner",
+      "name_sl": "Skupni načrt",
+      "color_mode": "color",
+      "original_design_specification": true,
+      "composition": "A parallel-lane organizer with consistent person/project columns and a shared notes region. Teal/coral lane tabs differentiate roles while all meaning remains labelled in text.",
+      "type_adaptations": {
+        "annual_calendar": "A yearly coordination matrix with twelve chronological month columns and editable person/project rows, plus a complete twelve-month date reference on companion page(s). A matrix alone does not count as a complete annual date calendar.",
+        "monthly_calendar": "Days run down rows; people or projects run across columns. Each date is explicit; a shared notes/errands lane spans the bottom or side.",
+        "weekly_shift_schedule": "People or roles run down rows and all seven days across columns. Optional second shift per day uses a distinct subcell with start/end fields; total and absence columns are explicit.",
+        "blank_undated": "Empty labelled lanes for people/projects and blank day/date rows, with editable headings and no invented team members.",
+        "planner_or_template": "A parallel-lane weekly organizer for household or team responsibilities; maintain a shared notes and handover area.",
+        "calendar_with_name": "Selected name appears in the owner/title block; optional other names appear only when provided by the user."
+      },
+      "distinctness_evidence": "A coordination matrix organized around parallel participants, with companion date-reference pages when needed."
+    },
+    {
+      "id": "pla-03",
+      "family": "planner",
+      "name_sl": "Operativni list",
+      "color_mode": "monochrome_bw",
+      "original_design_specification": true,
+      "composition": "A practical black-on-white operational form: ruled tables, unfilled checkboxes, bold textual section labels, explicit totals and a handover area. No colored accents or decorative full-page fills; restrained gray can distinguish functional table regions.",
+      "type_adaptations": {
+        "annual_calendar": "Three pages of four month grids, each accompanied by small labelled workday/holiday summary fields derived from verified data; one consolidated notes table follows.",
+        "monthly_calendar": "A monthly operations table with date, weekday, task/shift, time and notes columns; rows for every real day and a clearly separated totals section.",
+        "weekly_shift_schedule": "A full roster with staff/role, Monday–Sunday shifts, breaks, hours and coverage/handover fields. Preserve the original schedule data, overnight semantics and timezone.",
+        "blank_undated": "A genuinely empty reusable operational form, with blank date, names, shift and totals fields; do not print zeros as though a schedule were calculated.",
+        "planner_or_template": "A checklist-and-schedule worksheet with status, owner, due date and completion fields appropriate to the chosen planner.",
+        "calendar_with_name": "Name occupies the owner field or title above the form; the form remains readable and usable for long names."
+      },
+      "distinctness_evidence": "Operational forms, explicit tabular fields and a compact multi-page monthly organization; not a monochrome color dashboard."
+    },
+    {
+      "id": "geo-01",
+      "family": "geometric",
+      "name_sl": "Modularne ploščice",
+      "color_mode": "color",
+      "original_design_specification": true,
+      "composition": "A modular card composition with interlocking corner tabs, bold geometric section markers and controlled blue/orange accents. Card dimensions are coordinated to a physical baseline grid.",
+      "type_adaptations": {
+        "annual_calendar": "Twelve month cards in a 3 × 4 matrix, with quarter tabs connecting each group of three. A separate narrow annual milestones card completes the composition.",
+        "monthly_calendar": "Week rows become connected rectangular modules, preserving seven ordered day cells; a distinct notes module sits below.",
+        "weekly_shift_schedule": "Seven connected day modules, each containing labelled shift slots; team mode adds equally aligned person rows across every module.",
+        "blank_undated": "Empty modular day/week cards with writable headers and no dates; cards retain the required grid and slot count.",
+        "planner_or_template": "A modular planner with schedule, tasks, tracker and notes cards whose sizes reflect actual writing needs.",
+        "calendar_with_name": "Name appears in the leading title tile, with calendar tiles aligned to its edge; the title tile expands only within its allocated space."
+      },
+      "distinctness_evidence": "Interlocking modular sections and an information-card system, unlike the open minimal grid or framed gallery."
+    },
+    {
+      "id": "geo-02",
+      "family": "geometric",
+      "name_sl": "Prelom mreže",
+      "color_mode": "color",
+      "original_design_specification": true,
+      "composition": "Two large offset rectangular panels, a contrasting vertical index rail and one diagonal cut confined to the header. Writing areas and calendar grids remain orthogonal.",
+      "type_adaptations": {
+        "annual_calendar": "Two half-year panels, each holding six months in a 3 × 2 grid, with a vertical year/quarter index between or beside the panels.",
+        "monthly_calendar": "One dominant calendar panel and a smaller offset notes/deadlines panel, linked by the vertical month/week index.",
+        "weekly_shift_schedule": "A wide seven-day shift panel and a separate offset coverage/handover panel. The diagonal header never cuts a cell or removes a weekday.",
+        "blank_undated": "Two empty working panels: the selected date/time grid and its notes/summary area, with all date labels writable.",
+        "planner_or_template": "An asymmetric schedule-and-action composition with an indexed edge and clearly separated task blocks.",
+        "calendar_with_name": "Name occupies the offset header panel with a rectangular text-safe area; no diagonal clipping of letters."
+      },
+      "distinctness_evidence": "Two offset primary panels, a vertical index and a bounded diagonal header give a distinct composition without sacrificing the grid."
+    },
+    {
+      "id": "geo-03",
+      "family": "geometric",
+      "name_sl": "Krog in koordinata",
+      "color_mode": "monochrome_bw",
+      "original_design_specification": true,
+      "composition": "Black circular period badges paired with an orthogonal coordinate grid. Outlined circles, fine black ticks and whitespace provide emphasis; all information is also written as text.",
+      "type_adaptations": {
+        "annual_calendar": "Four quarter quadrants around a small central year badge; each quadrant contains three months with an explicit chronological reading order. No dates are arranged around a decorative circle.",
+        "monthly_calendar": "A circular month badge sits beside a full rectangular calendar. Small coordinate ticks label week rows; a rectangular notes area occupies the remaining width.",
+        "weekly_shift_schedule": "The week number appears in a circle outside the roster; all seven day columns and staff rows remain rectangular, with a rectangular handover block below.",
+        "blank_undated": "An empty rectangular calendar or time grid with an unfilled period badge and writable labels.",
+        "planner_or_template": "A geometric worksheet with a circular period index, rectangular schedule, task list and review area; circles never become tiny writing cells.",
+        "calendar_with_name": "Name is a horizontal heading aligned to the period badge, not squeezed inside a small circle."
+      },
+      "distinctness_evidence": "Quarter quadrants and a central/edge circular index define the composition, entirely in black and white."
+    }
+  ],
+  "cross_type_functional_requirements": {
+    "annual": "Every selected-year date is present exactly once in the actual calendar component; all twelve months are included. Multiple pages are allowed and declared. Supporting reference duplicates, if deliberately included, are labelled as reference and excluded from the primary-date completeness count.",
+    "monthly": "Correct Monday-start placement, all real dates, no impossible dates, enough rows for six-week months, optional adjacent-month dates visibly distinguished and excluded from the selected-month count.",
+    "weekly": "Monday through Sunday are retained even when the week crosses month/year boundaries. Display the true range and ISO week-year when week numbering is enabled.",
+    "daily": "Use the selected day with an appropriate time grid, tasks and notes. A style may alter composition but must not silently switch the requested day planner to a year calendar.",
+    "weekly_shift": "Retain complete seven-day coverage, staff/role identifiers if supplied, shift labels, start/end times, breaks, totals when requested, absence/holiday indicators and handover/notes. Never shrink a team roster until it is unreadable; paginate with repeated headings. Distinguish blank templates from calculated schedules. Overnight and DST-crossing totals need the intended timezone and explicit break/working-time rules.",
+    "blank": "An undated option has blank date fields and no inferred current dates, holidays or calculated totals. Weekday labels, time intervals, ruled/dotted/plain writing areas and staff headers are options suited to the chosen template. Never fill empty totals with misleading zeroes.",
+    "name": "Render the selected name identically in PDF and WebP, including Slovenian diacritics and Unicode NFC normalization. Support spaces and hyphens; escape user input. Use bounded wrapping and a documented minimum font size. Test long names and combinations, not just short ASCII names. Personal data is not placed in a shared public cache or public URL by accident.",
+    "school_calendar": "Only verified school-year schedules may be represented as official. A printable planner for an unpublished year may be blank/undated or clearly show that official vacation data is not yet available; no guessed regional winter rotation."
+  },
+  "paired_rendering_contract": {
+    "name": "K365 Print Pair Contract v1",
+    "identity_fields": [
+      "product_type",
+      "period_or_year",
+      "template_id",
+      "template_version",
+      "paper_size",
+      "orientation",
+      "color_mode",
+      "locale",
+      "timezone",
+      "input_digest",
+      "calendar_data_version",
+      "render_engine_version"
+    ],
+    "pair_id": "A stable digest of the identity fields; include the same pair_id in PDF metadata and the paired WebP package manifest. Personal input must be handled with appropriate private access and retention.",
+    "single_source": "Build one immutable, validated page model. Render a vector PDF from that model, then rasterize each PDF page at the required physical dimensions and nominal 600 ppi. This makes the printed layout and raster export the same design. A web preview screenshot is not the print master.",
+    "vector_pdf": [
+      "Preserve all calendar text as actual selectable Unicode text with embedded/subset fonts; preserve grids, rules, geometric and botanical line art as vector paths.",
+      "Do not flatten the whole page into a bitmap or wrap a low-resolution screenshot in a PDF.",
+      "Use explicit physical page boxes and correct page rotation. PDF vectors do not have a single fixed ppi: describe the PDF as vector; apply the 600 ppi requirement to raster imagery placed in it and to its WebP export.",
+      "Prefer vector decoration. Any necessary raster asset must have sufficient native pixels for at least 600 effective ppi at its final printed size, with no artificial upscaling advertised as native detail.",
+      "Use fonts licensed for embedding, with complete Slovenian glyph coverage. Check font embedding and extraction of č, š, ž, Č, Š, Ž.",
+      "Disable accidental browser URL/date headers and footers; draw the required branded footer as real page content.",
+      "Home-print download defaults to untrimmed A-series pages with no crop marks and no bleed. High-quality vector output does not by itself establish PDF/X, PDF/A or accessibility conformance; claim a standard only if its actual requirements are verified."
+    ],
+    "webp": [
+      "Export an opaque, white-backed, still WebP for every page at the exact dimensions in the size table. Render directly from vector content at the target grid; do not enlarge a 96/150/300 ppi preview.",
+      "Use explicit lossless WebP encoding with no near-lossless preprocessing for final calendar line art and text. Lossy quality=100 is not accepted as a substitute for lossless encoding.",
+      "For color variants, use a consistent sRGB rendering pipeline and include the intended ICC profile when supported. Verify the decoded colors; do not assume metadata survived encoding.",
+      "A ppi metadata tag alone does not establish resolution. Validate the actual width and height, physical paper-size mapping and page identity. Include physical dimensions and nominal 600 ppi in the manifest and download description.",
+      "The round-to-integer pixel grid produces a negligible fractional difference from mathematically exact 600 pixels per inch. Label it 600 ppi at the stated paper size and retain the exact integer dimensions.",
+      "WebP is not a CMYK print-delivery format. Do not relabel RGB WebP as CMYK, and do not promise that every image-printing app will honor physical-size metadata. Recommend PDF for direct physical-size printing."
+    ],
+    "single_page_delivery": {
+      "pdf": "One PDF containing exactly one page.",
+      "webp": "One .webp image of that entire page at 600 ppi; preview images are additional and do not count."
+    },
+    "multi_page_delivery": {
+      "pdf": "One ordered PDF with N pages, including all calendar, notes, cover, divider and intentionally blank pages actually present in the document. Avoid unnecessary filler pages.",
+      "webp": "One .zip download containing exactly N ordered full-page still .webp files, plus manifest.json and a brief print/readme file. A PDF with 12 pages requires 12 corresponding WebPs.",
+      "prohibited_substitutes": [
+        "first page only",
+        "one low-resolution contact sheet",
+        "one panoramic image containing multiple pages",
+        "animated WebP presented as a printable page set",
+        "missing notes/appendix/blank pages",
+        "a different template or date set from the PDF"
+      ]
+    },
+    "filename_pattern": "koledar365-{type}-{period}-{template_id}-{paper}-{orientation}-{color_mode}-v{template_version}.pdf; its single-page companion uses the same stem.webp; a multi-page companion uses the same stem-webp-600ppi.zip and contains stem-p001.webp, stem-p002.webp, etc.",
+    "manifest_fields": [
+      "contract_version",
+      "pair_id",
+      "identity_fields",
+      "pdf_filename",
+      "pdf_sha256",
+      "page_count",
+      "pages: [page_index, webp_filename, webp_sha256, width_px, height_px, width_mm, height_mm, nominal_ppi, color_mode]",
+      "font_manifest",
+      "source_data_version",
+      "generated_at",
+      "print_instruction_sl"
+    ],
+    "print_instruction_sl": "Za tisk izberite PDF in merilo 100 % oziroma dejansko velikost. Slike WebP so pripravljene za navedeno velikost papirja pri 600 ppi.",
+    "preview_policy": "Create separate, modest-resolution thumbnails for fast browsing and label them as previews. They must match the selected variant, color mode, name and period; a thumbnail is never the promised full-resolution WebP."
+  },
+  "physical_sizes": {
+    "source_ids": [
+      "w3c_paged_media",
+      "w3c_absolute_units"
+    ],
+    "pixel_formula": "round_half_up(width_or_height_mm / 25.4 * 600)",
+    "point_formula": "width_or_height_mm / 25.4 * 72",
+    "derivation_status": "All pixel counts, point sizes and raw-buffer memory estimates are calculated from the cited physical dimensions and unit conversions. They are not externally reported measurements.",
+    "sizes": [
+      {
+        "paper": "A5",
+        "orientation": "portrait",
+        "width_mm": 148,
+        "height_mm": 210,
+        "width_pt": 419.527559,
+        "height_pt": 595.275591,
+        "target_ppi": 600,
+        "width_px": 3496,
+        "height_px": 4961,
+        "pixel_count": 17343656,
+        "one_uncompressed_rgba_buffer_mib": 66.161
+      },
+      {
+        "paper": "A5",
+        "orientation": "landscape",
+        "width_mm": 210,
+        "height_mm": 148,
+        "width_pt": 595.275591,
+        "height_pt": 419.527559,
+        "target_ppi": 600,
+        "width_px": 4961,
+        "height_px": 3496,
+        "pixel_count": 17343656,
+        "one_uncompressed_rgba_buffer_mib": 66.161
+      },
+      {
+        "paper": "A4",
+        "orientation": "portrait",
+        "width_mm": 210,
+        "height_mm": 297,
+        "width_pt": 595.275591,
+        "height_pt": 841.889764,
+        "target_ppi": 600,
+        "width_px": 4961,
+        "height_px": 7016,
+        "pixel_count": 34806376,
+        "one_uncompressed_rgba_buffer_mib": 132.776
+      },
+      {
+        "paper": "A4",
+        "orientation": "landscape",
+        "width_mm": 297,
+        "height_mm": 210,
+        "width_pt": 841.889764,
+        "height_pt": 595.275591,
+        "target_ppi": 600,
+        "width_px": 7016,
+        "height_px": 4961,
+        "pixel_count": 34806376,
+        "one_uncompressed_rgba_buffer_mib": 132.776
+      },
+      {
+        "paper": "A3",
+        "orientation": "portrait",
+        "width_mm": 297,
+        "height_mm": 420,
+        "width_pt": 841.889764,
+        "height_pt": 1190.551181,
+        "target_ppi": 600,
+        "width_px": 7016,
+        "height_px": 9921,
+        "pixel_count": 69605736,
+        "one_uncompressed_rgba_buffer_mib": 265.525
+      },
+      {
+        "paper": "A3",
+        "orientation": "landscape",
+        "width_mm": 420,
+        "height_mm": 297,
+        "width_pt": 1190.551181,
+        "height_pt": 841.889764,
+        "target_ppi": 600,
+        "width_px": 9921,
+        "height_px": 7016,
+        "pixel_count": 69605736,
+        "one_uncompressed_rgba_buffer_mib": 265.525
+      }
+    ],
+    "rounding_rule": "Round each dimension to the nearest whole pixel. The listed dimensions are the acceptance target. If a rasterizer uses ceil internally, configure the target canvas or normalize only the subpixel boundary difference; never resize a low-resolution page to pass the check.",
+    "orientation_rule": "Changing orientation swaps width and height and triggers a deliberate physical layout. Do not rotate only the preview or scale a portrait layout until its text becomes too small.",
+    "small_format_rule": "A5 is a real layout variant in physical space. Preserve the chosen template identity, minimum type size and handwriting utility; paginate when necessary. Do not promise every A3 layout remains a readable one-page A5 layout by simple reduction."
+  },
+  "page_geometry_and_branding": {
+    "classification": "Project design requirements; these margins and sizes are chosen defaults, not a universal guarantee about all printer hardware.",
+    "footer_exact_text": "Koledar365 · koledar365.si",
+    "footer_requirement": "Visible, unobstructed footer on every PDF page and every corresponding WebP, including blank, notes, cover, divider and continuation pages. The footer is real rendered content, not metadata or a viewer overlay.",
+    "registered_mark_rule": "Do not append ® or describe Koledar365 as a registered trademark without verified authorization/evidence. Use the exact requested brand text; no trademark-status claim is needed.",
+    "paper_geometry": {
+      "A5": {
+        "top_margin_mm": 10,
+        "left_margin_mm": 10,
+        "right_margin_mm": 10,
+        "body_bottom_inset_mm": 18,
+        "footer_baseline_from_bottom_mm": 8,
+        "footer_min_font_pt": 7.5
+      },
+      "A4": {
+        "top_margin_mm": 12,
+        "left_margin_mm": 12,
+        "right_margin_mm": 12,
+        "body_bottom_inset_mm": 20,
+        "footer_baseline_from_bottom_mm": 10,
+        "footer_min_font_pt": 8
+      },
+      "A3": {
+        "top_margin_mm": 15,
+        "left_margin_mm": 15,
+        "right_margin_mm": 15,
+        "body_bottom_inset_mm": 20,
+        "footer_baseline_from_bottom_mm": 10,
+        "footer_min_font_pt": 8
+      }
+    },
+    "geometry_notes": [
+      "Apply margins after orientation is chosen. Reserve the footer band independently of content flow so a long name or extra row cannot push it off-page.",
+      "Footer uses solid dark text on white in color designs and solid black text on white in monochrome BW designs. A decorative background watermark alone does not satisfy the branding requirement.",
+      "Page number may sit opposite the brand, but must not replace or truncate the exact brand string.",
+      "Keep functional text, date cells, checkboxes and writing space inside the safe body area. Ornament can use the decorative margin only while respecting the footer and printer-safe default."
+    ],
+    "watermark_policy": "Optional faint decorative branding is off by default. If offered, it never crosses date numbers, entries or writing space and never replaces the visible footer. BW variants must keep any such mark neutral gray with no colored tint; the required footer remains solid readable black on white.",
+    "legibility_minima": {
+      "annual_date_digits_pt": 8.5,
+      "normal_calendar_date_digits_pt": 10,
+      "functional_labels_pt": 8,
+      "ordinary_body_text_pt": 9,
+      "grid_rule_min_pt": 0.35,
+      "important_rule_min_pt": 0.5,
+      "handwriting_line_pitch_mm": 6
+    },
+    "legibility_note": "These are project quality gates, not claims about universal typographic standards. Judge at actual printed size, not only zoomed screens. Where a chosen design cannot meet them, reflow or paginate instead of reducing text indefinitely.",
+    "bleed": {
+      "default_mm": 0,
+      "crop_marks_default": false,
+      "optional_professional_mode": "Only if explicitly offered/requested, add a clearly labelled print-shop export, for example 3 mm bleed as a project choice. Extend artwork correctly; retain the intended trim size and verify TrimBox/BleedBox/MediaBox in the actual PDF. Printer specifications take precedence over the example bleed value.",
+      "webp_pair_for_bleed": "The normal paired WebP depicts the trimmed A-size page at the standard size-table dimensions. If an additional bleed-inclusive raster is offered, label it separately, calculate pixels from the expanded physical dimensions, and do not count it as a different design.",
+      "color_management": "Do not assume CMYK or claim PDF/X just because bleed exists. Use a printer-provided output profile and a validated conversion/preflight only for a specifically requested professional print variant."
+    }
+  },
+  "color_and_bw_quality": {
+    "color": {
+      "count": 10,
+      "requirements": [
+        "Deliberate small palettes and ample white writing areas; keep holiday/category meaning available through text, symbols or outlines as well as color.",
+        "sRGB WebP with opaque white background; no accidental transparent page or color fringes caused by lossy chroma compression.",
+        "Maintain strong text/background contrast and readable line weights in printed previews; color does not justify illegible pale labels.",
+        "If illustrations are present, use original/licensed vector artwork or native high-resolution assets. No made-up official logos, coat-of-arms claims or deceptive factual imagery."
+      ]
+    },
+    "no_palette_substitution": "Each of the five BW designs has its own composition and workflow. A color-to-grayscale filter does not fulfil one of the five BW catalog entries.",
+    "monochrome_bw": {
+      "count": 5,
+      "interpretation": "High-quality monochrome black-and-white output: black ink on white paper, no colored accents. Neutral functional gray and antialiased grayscale edges are permitted; binary-only pixel values are not required.",
+      "pdf_requirements": [
+        "Use a black-ink/white-paper vector master with no chromatic fills, strokes or tinted illustrations. Purposeful neutral gray rules, labels or functional panels are allowed when they improve usability and remain legible.",
+        "Prefer DeviceGray or an equivalent verified neutral black/gray construction. Keep text and line art vector, fonts embedded, and the branded footer solid readable black. Do not add colored accents through ICC conversion or transparency blending.",
+        "Establish hierarchy primarily with typography, whitespace, line weight and layout; use gray sparingly. Preserve contrast in labels, empty cells and handwriting areas."
+      ],
+      "webp_requirements": [
+        "Rasterize directly from the vector master at 600 ppi, preserving high-quality antialiasing. Do not apply a global threshold merely to force binary pixels.",
+        "The final decoded WebP must be monochrome: each pixel has equal red, green and blue channels (R = G = B), with an opaque white page background. Neutral values from 0 through 255 are allowed, including antialiased text edges and purposeful functional gray.",
+        "Encode losslessly without near-lossless preprocessing. Inspect small dates, Slovenian diacritics, punctuation, fine rules and checkboxes at actual print scale; preserve their smooth edges and legibility."
+      ],
+      "optional_bilevel_ink_mode": {
+        "default": false,
+        "counts_as_new_design": false,
+        "description": "An explicitly selected additional ink-saving mode may convert the 600 ppi raster to only black/white values (0/255). It is not the default BW output and is not required to satisfy the five BW designs.",
+        "validation": "Validate its threshold or dithering policy on small text, diacritics, fine rules and checkboxes; reject output that loses strokes or changes usability. Keep the normal antialiased monochrome PDF/WebP pair available."
+      }
+    }
+  },
+  "quality_gates": [
+    {
+      "id": "catalog-completeness",
+      "assertion": "For every advertised downloadable type, there are 15 stable unique template IDs with 10 color and 5 monochrome BW designs, exactly three in each family. All 15 have working paired-export paths for supported data/periods."
+    },
+    {
+      "id": "structural-distinctness",
+      "assertion": "Compare side-by-side contact sheets with colors temporarily neutralized. Every design still differs materially in composition, information hierarchy, arrangement or functional supporting sections. A title/palette swap fails."
+    },
+    {
+      "id": "functional-type",
+      "assertion": "Blank, daily, weekly, shift, monthly, yearly and name products retain their actual required fields and coverage across all 15 variants. No annual mini-calendar is used to impersonate a blank/shift planner."
+    },
+    {
+      "id": "calendar-data",
+      "assertion": "Verify real dates, weekday alignment, leap day 2028, ISO week-year transitions, all requested months and verified holiday categories for 2027–2030. Never infer future school calendars."
+    },
+    {
+      "id": "paired-pages",
+      "assertion": "PDF page count equals WebP image count. Every image has the same page index, period, name, fields, footer and layout as its PDF page, and the package manifest hashes match actual files."
+    },
+    {
+      "id": "actual-resolution",
+      "assertion": "Read decoded WebP width/height; require the exact paper/orientation dimensions from this specification. Verify rendering originated from the vector master at nominal 600 ppi, not a metadata tag or upscaled preview."
+    },
+    {
+      "id": "pdf-vector-fonts",
+      "assertion": "Inspect PDF objects/fonts to confirm actual text and vector rules, embedded fonts and correct page boxes. Zooming a screenshot in a PDF is insufficient evidence."
+    },
+    {
+      "id": "branding-every-page",
+      "assertion": "Extract/search footer text and visually inspect its location on all pages, including intentionally blank pages. Confirm exact brand string, no clipped domain and no unverified ® mark."
+    },
+    {
+      "id": "black-white",
+      "assertion": "Inspect authored PDF color usage for neutral black/gray only and white paper. Decode every BW WebP and assert R = G = B, with alpha absent or fully opaque. Allow grayscale antialiasing and deliberate functional gray. Do not impose a 0/255-only threshold gate on normal BW exports. Inspect glyphs and fine rules at actual print scale; separately validate any optional bilevel ink mode."
+    },
+    {
+      "id": "no-clipping",
+      "assertion": "Check actual-size renderings for overflow, overlapping text, narrow date cells, incomplete six-week months, cut footer, shifted page boundaries and unexpected browser print headers."
+    },
+    {
+      "id": "personalization",
+      "assertion": "Use meaningful samples including Črt, Špela, Živa, a hyphenated/two-word name and a long bounded input. PDF and WebP must show the same correct text without injection, missing glyphs or a layout break."
+    },
+    {
+      "id": "multipage-order",
+      "assertion": "Check first, last and every intervening page against the manifest. No contact sheet, animation, first-page-only export or missing notes page is accepted."
+    },
+    {
+      "id": "representative-print-review",
+      "assertion": "Review color and monochrome BW output at 100% physical print scale for each distinct layout/function pairing. Test the smallest supported format and longest realistic content as meaningful edge cases; automate common checks rather than manually repeating identical cases."
+    }
+  ],
+  "rendering_operations": {
+    "generation_strategy": "Offer all 15 designs for each type; generate selected PDF/WebP pairs on demand or from a cache keyed by immutable nonpersonal inputs and versions. Do not pre-render every name × year × size × style combination merely to meet the catalog count.",
+    "memory": "A single 600 ppi A3 page has 69,605,736 pixels. One uncompressed 8-bit RGBA buffer alone is 278,422,944 bytes, approximately 265.525 MiB; the renderer/encoder may allocate more. This is a derived lower-bound buffer calculation, not a measured runtime requirement.",
+    "resource_control": "Use bounded worker concurrency, render/encode pages incrementally, stream or stage ZIP creation, cap request dimensions/page count and clean up temporary assets. Benchmark the chosen implementation before setting runtime memory or paid infrastructure budgets.",
+    "privacy": "Do not expose arbitrary personalized schedules, names, notes or events through globally shared cache URLs. Public verified year calendars can be cached separately from private user exports.",
+    "status_ui": "Show one concrete variant card with its PDF and WebP/ZIP actions, paper size, orientation, color/BW label and page count. Do not promise a ready download if generation failed. Keep implementation details out of ordinary selection flow."
+  },
+  "prompt_ready_requirements": [
+    "Build 15 genuinely different downloadable designs for every calendar/planner/template type: five design families (minimal, elegant, nature, planner, geometric), three original layouts per family, two color and one monochrome black-and-white in each family. This yields 10 color + 5 monochrome BW PDF variants and 15 exactly paired WebP choices for every supported type, including blank, weekly shift, planner templates and personalized-name calendars. A different palette, orientation, year or filename does not count as a different design.",
+    "Use the named layout catalog and adapt the actual product function. Blank templates remain undated writable grids; weekly shift templates retain all seven days and real shift/role/time/notes fields. Do not use annual mini-calendars as substitutes for other template types.",
+    "Produce a real vector PDF with embedded fonts, selectable Slovenian text and vector calendar grids. Derive one opaque lossless WebP per PDF page directly from that master at nominal 600 ppi: A5 portrait 3496 × 4961, A4 portrait 4961 × 7016, A3 portrait 7016 × 9921 pixels; swap dimensions for landscape. Verify pixels, not just a 600 ppi metadata tag. No screenshot-wrapped PDF or enlarged low-resolution preview.",
+    "For a one-page PDF provide its matching .webp. For an N-page PDF provide a ZIP of N ordered 600 ppi WebPs, manifest and print instructions. Every page, including notes and blank pages, is represented. A contact sheet, animation or first-page-only image is not a paired export.",
+    "Every PDF page and WebP must visibly contain Koledar365 · koledar365.si in a protected footer band. Use real rendered text, adequate margins and solid readable ink; never rely solely on metadata or a background watermark. Do not use an unverified registered-trademark ® symbol.",
+    "The five BW variants are original monochrome layouts with black-ink/white-paper vector masters and no colored accents. Preserve antialiased grayscale edges and permit restrained functional gray. Their final lossless WebP pixels must satisfy R = G = B with an opaque page; do not force a global binary threshold that damages text or fine lines. Keep text, fonts and line art vector in the PDF. A validated bilevel ink-saving option may be offered separately and does not count as another design.",
+    "Use sRGB for normal color WebP output and explicit physical PDF page sizes. Default to no bleed/crop marks. Offer a separate professional-print variant only when specified, with verified page boxes and any requested bleed/profile; do not assume CMYK, PDF/X or universal printer compatibility.",
+    "Pass catalog, structural-distinctness, date coverage, vector/font, page-pair, pixel-size, footer, color/BW, long-name and clipping checks before calling downloads complete. Generate and cache sensibly; do not pre-render every name/year/style combination or assume a paid deployment budget."
+  ],
+  "sources": [
+    {
+      "id": "w3c_paged_media",
+      "url": "https://www.w3.org/TR/css-page-3/",
+      "ref_ids": [
+        "turn62view1"
+      ],
+      "publisher": "W3C",
+      "verified_on": "2026-10-20",
+      "supports": [
+        "A5 148 × 210 mm; A4 210 × 297 mm; A3 297 × 420 mm",
+        "Landscape swaps physical width and height",
+        "Page size, crop marks and bleed are separate concepts; renderer support must be checked"
+      ],
+      "source_status": "Working Draft; dimensions are explicit in the document, not a guarantee that a browser implements every paged-media feature"
+    },
+    {
+      "id": "w3c_absolute_units",
+      "url": "https://www.w3.org/TR/css-values-4/#absolute-lengths",
+      "ref_ids": [
+        "turn63view0"
+      ],
+      "publisher": "W3C",
+      "verified_on": "2026-10-20",
+      "supports": [
+        "1 inch = 2.54 cm = 25.4 mm",
+        "1 point = 1/72 inch",
+        "CSS px is not the same thing as a target raster image pixel at 600 ppi"
+      ]
+    },
+    {
+      "id": "google_cwebp",
+      "url": "https://developers.google.com/speed/webp/docs/cwebp",
+      "ref_ids": [
+        "turn62view2"
+      ],
+      "publisher": "Google / WebP",
+      "verified_on": "2026-10-20",
+      "supports": [
+        "Explicit lossless encoding preserves decoded image values",
+        "Lossy quality 100 is distinct from lossless mode",
+        "Near-lossless preprocessing can change pixels",
+        "Metadata copying is configurable and defaults to none"
+      ]
+    },
+    {
+      "id": "google_webp_container",
+      "url": "https://developers.google.com/speed/webp/docs/riff_container",
+      "ref_ids": [
+        "turn62view3"
+      ],
+      "publisher": "Google / WebP",
+      "verified_on": "2026-10-20",
+      "supports": [
+        "WebP stores still images or animation frames, not a paged-document structure",
+        "ICC, EXIF and XMP chunks are supported",
+        "sRGB should be assumed if an ICC profile is absent",
+        "WebP image data is decoded to RGB/ARGB; do not promise CMYK WebP"
+      ]
+    },
+    {
+      "id": "pdf_standard",
+      "url": "https://pdfa.org/resource/iso-32000-2/",
+      "ref_ids": [
+        "turn63view2"
+      ],
+      "publisher": "PDF Association, ISO liaison",
+      "verified_on": "2026-10-20",
+      "supports": [
+        "ISO 32000 defines PDF document representation independent of the creation/viewing/printing environment"
+      ],
+      "scope_note": "Cited for the PDF format only. Specific layout, font embedding, vector preservation, raster quality and QA items below are explicit project requirements, not claims that every PDF renderer automatically satisfies them."
+    }
+  ],
+  "revision_note": "Monochrome black-and-white outputs preserve antialiased text and permit purposeful functional gray. Strict bilevel rasterization is an optional validated ink-saving mode, not the default or acceptance gate."
+}
