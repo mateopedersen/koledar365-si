@@ -19,6 +19,11 @@ on:
       - 'data/horoscope/**'
       - 'public/horoscope/**'
       - 'functions/horoskop/**'
+      - 'script/lunar/**'
+      - 'script/rebuild_free.rb'
+      - 'script/save_pages_publication.sh'
+      - 'script/export_pages.rb'
+      - 'script/finalize_static.rb'
       - '.github/workflows/pages-publication.yml'
 permissions:
   contents: write
