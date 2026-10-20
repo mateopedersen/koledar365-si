@@ -28,3 +28,15 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
 .topbar .brand{font-weight:800;letter-spacing:-1.2px}
 @media(min-width:851px) and (max-width:1250px){.topbar .country{display:inline-flex;margin-left:auto}.topbar .search{margin-left:auto}}
 @media(max-width:850px){.topbar .country{display:inline-flex;margin-left:auto;font-size:11px;order:1}.topbar .search{order:2;width:100%;max-width:none}.topbar .brand{order:0}.country-flag{width:31px;height:20px}}
+
+/* Give the shared tools row clear, separate tap targets. */
+.subnav{align-items:center;gap:8px}
+.subnav a{flex:0 0 auto;min-height:42px;padding:7px 10px;border:1px solid #d5deea;border-radius:10px;background:linear-gradient(180deg,#fff,#fafbfd);box-shadow:0 1px 3px #17294112;text-decoration:none;transition:background-color .16s,border-color .16s,box-shadow .16s,transform .16s}
+.subnav a:nth-child(-n+4){border-color:#cbd8e7;background:linear-gradient(180deg,#fff,#f2f6fb)}
+.subnav a:hover,.subnav a:nth-child(-n+4):hover{border-color:#c32438;background:#fff6f7;color:#a91f32;box-shadow:0 2px 7px #8c1e2d1a;text-decoration:none;transform:translateY(-1px)}
+.subnav a:focus-visible{outline:3px solid #c324384d;outline-offset:2px}
+@media(max-width:700px){
+  .subnav{justify-content:flex-start;gap:8px;padding:10px 12px;background:#f4f6f9;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+  .subnav a{min-height:44px;padding:8px 11px;border-color:#c8d5e5;border-radius:11px;box-shadow:0 1px 3px #17294117;font-size:13px;scroll-snap-align:start}
+  .ui-icon{filter:saturate(1.18) contrast(1.1) drop-shadow(0 1px 1px #1729412e)!important}
+}
