@@ -1,0 +1,53 @@
+name: Daily Slovenian horoscopes
+on:
+  workflow_dispatch:
+  schedule:
+    # Independent morning recovery checks. The request-time endpoint needs no cron.
+    - cron: '17 3,4 * * *'
+    - cron: '47 7 * * *'
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: horoscope-freshness
+  cancel-in-progress: false
+jobs:
+  verify-and-recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify the dated endpoint and all 13 public pages
+        id: freshness
+        continue-on-error: true
+        run: node script/verify_horoscope_live.mjs
+      - name: Recover the public snapshot without duplicate builds
+        if: steps.freshness.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          active=$(gh run list --workflow pages-publication.yml --branch main --limit 30 --json databaseId,status --jq '[.[] | select(.status != "completed")][0].databaseId // empty')
+          if [ -n "$active" ]; then
+            gh run watch "$active" --exit-status --interval 20
+          else
+            started=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+            gh workflow run pages-publication.yml --ref main
+            for attempt in $(seq 1 12); do
+              run_id=$(gh run list --workflow pages-publication.yml --branch main --event workflow_dispatch --limit 10 --json databaseId,createdAt --jq "[.[] | select(.createdAt >= \"$started\")][0].databaseId // empty")
+              if [ -n "$run_id" ]; then break; fi
+              sleep 5
+            done
+            test -n "${run_id:-}"
+            gh run watch "$run_id" --exit-status --interval 20
+          fi
+          for attempt in $(seq 1 20); do
+            if node script/verify_horoscope_live.mjs; then exit 0; fi
+            sleep 15
+          done
+          exit 1

@@ -14,5 +14,5 @@
   '/druzinski-planer/'=>['person','Povežite načrte družinskih članov v skupen pregled.'],
   '/prazen-koledar/'=>['calendar','Pripravite prazen koledar za lastne zapise.'],
   '/soncni-vzhod-in-zahod/'=>['sun','Izračunajte vzhod, zahod in dolžino dneva za mesto.'],
-  '/horoskop/izracun-znamenja/'=>['star','Poiščite tradicionalno sončno znamenje po datumu rojstva.']
+  '/horoskop/izracun-znamenja/'=>['zodiac','Izračunajte sončno znamenje in ascendent po točnem času in kraju rojstva.']
 } %><% descriptions.each do |path,(icon,description)|;page=Page.find_by(path:path);next unless page %><a class="panel tool-card" href="<%= path %>"><span class="tool-icon"><%= ui_icon(icon) %></span><h2><%= page.title %></h2><p><%= description %></p><span class="tool-open">Odpri orodje <%= ui_icon('chevron-right') %></span></a><% end %></div>
