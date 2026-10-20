@@ -1,8 +1,8 @@
 {
   "status": "local-verification-passed; production-pending",
   "browser": {
-    "startTime": "2026-10-20T16:15:07.567Z",
-    "duration": 32039.89,
+    "startTime": "2026-10-20T16:34:11.928Z",
+    "duration": 20101.969,
     "expected": 32,
     "skipped": 0,
     "unexpected": 0,
@@ -16,8 +16,8 @@
   ],
   "physical_devices": false,
   "rails": {
-    "tests": 57,
-    "assertions": 2114,
+    "tests": 58,
+    "assertions": 2194,
     "failures": 0,
     "errors": 0
   },
@@ -58,5 +58,6 @@
     "prior_live_client_cache_control": "public, max-age=14400, must-revalidate",
     "versioned_client": "client-70a41d40ffe068f9.js",
     "reason": "Force already-cached browsers onto the current adapter without clearing personal data"
-  }
+  },
+  "integrated_main": "16e398cdaab9e95b52ace5141bf311b6e0461e97"
 }
