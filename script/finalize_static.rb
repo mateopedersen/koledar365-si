@@ -11,7 +11,7 @@ files={};Dir.glob(site.join('**/*').to_s,File::FNM_DOTMATCH).select { |file|File
  relative=Pathname.new(file).relative_path_from(site).to_s;next if relative=='release-manifest.json'
  files[relative]={size:File.size(file),sha256:Digest::SHA256.file(file).hexdigest}
 end
-source_patterns=%w[public/visuals/*.svg public/icon.svg app/**/* config/**/* lib/**/* data/editorial/*.json data/web_image_variants.json public/images/**/* public/school/**/* functions/**/* Gemfile Gemfile.lock .node-version script/**/* test/**/* .github/workflows/**/* cloudflare/free/**/* package.json pnpm-lock.yaml playwright.config.mjs]
+source_patterns=%w[public/visuals/*.svg public/icon.svg app/**/* config/**/* lib/**/* data/editorial/*.json data/web_image_variants.json public/images/**/* public/school/**/* public/horoscope/**/* data/horoscope/**/* functions/**/* Gemfile Gemfile.lock .node-version script/**/* test/**/* .github/workflows/**/* cloudflare/free/**/* package.json pnpm-lock.yaml playwright.config.mjs]
 tracked=IO.popen(['git','-C',root.to_s,'ls-files','-z'],&:read).split("\0").to_set
 sources=source_patterns.flat_map { |pattern|Dir[root.join(pattern)] }.select { |file|File.file?(file)&&tracked.include?(Pathname.new(file).relative_path_from(root).to_s)&&!file.match?(%r{/(?:master\.key|credentials/.*\.key)\z}) }.sort.to_h { |file|[Pathname.new(file).relative_path_from(root).to_s,Digest::SHA256.file(file).hexdigest] }
 record={built_at:Time.now.utc.iso8601,pairs:expected.size,verified_pairs:verified.size,files:files,sources:sources}

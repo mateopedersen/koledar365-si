@@ -75,6 +75,27 @@ module SeoHelper
             "acceptedAnswer" => { "@type" => "Answer", "text" => answer } }
         } }
     end
+    if @horoscope_guide
+      graph << { "@type" => "WebApplication", "@id" => "#{canonical_url}#ascendent",
+        "name" => "Izračun ascendenta in sončnega znamenja", "url" => "#{canonical_url}#ascendent",
+        "applicationCategory" => "LifestyleApplication", "operatingSystem" => "Any",
+        "isAccessibleForFree" => true, "inLanguage" => "sl",
+        "featureList" => ["Izračun po datumu, uri in kraju rojstva", "Časovni pasovi in premiki ure", "Obdelava rojstnih podatkov samo na napravi"] }
+      if @horoscope_guide.profile && @horoscope_guide.edition_date
+        graph << { "@type" => "Article", "@id" => "#{canonical_url}#dnevni-zapis",
+          "headline" => @horoscope_guide.reading['title'], "inLanguage" => "sl",
+          "datePublished" => @horoscope_guide.edition['generated_at'],
+          "dateModified" => @horoscope_guide.edition['generated_at'],
+          "author" => { "@type" => "Organization", "name" => "Koledar365", "url" => site_origin+'/' },
+          "mainEntityOfPage" => { "@id" => "#{canonical_url}#webpage" },
+          "description" => "Razvedrilna slovenska izdaja za #{@horoscope_guide.edition_date.iso8601}." }
+      elsif page_path == '/horoskop/'
+        graph << { "@type" => "ItemList", "numberOfItems" => 12,
+          "itemListElement" => @horoscope_guide.profiles.each_with_index.map { |profile,index|
+            { "@type" => "ListItem", "position" => index+1, "name" => profile['name'], "url" => "#{site_origin}/horoskop/#{profile['slug']}/" }
+          } }
+      end
+    end
     { "@context" => "https://schema.org", "@graph" => graph }
   end
 end

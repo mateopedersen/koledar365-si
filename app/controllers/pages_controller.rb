@@ -39,6 +39,12 @@ class PagesController < ApplicationController
     @event_map=@events.group_by(&:on)
     @upcoming=CalendarEvent.where(on:@today..).where(category:'legal').ordered.limit(3)
     @section=section_for(path)
+    if @section=='horoscope'
+      @horoscope_guide=HoroscopeGuide.new(@today,path.split('/').last)
+      sign=@horoscope_guide.profile
+      @title=sign ? "Dnevni horoskop: #{sign['name']}" : (@horoscope_guide.calculator? ? 'Izračun ascendenta in sončnega znamenja' : 'Dnevni horoskop za vseh 12 znamenj')
+      @description=sign ? "#{sign['name']}: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva." : 'Dnevni horoskop za vseh 12 znamenj v slovenščini. Preverite datume, spoznajte svoje znamenje ter brezplačno izračunajte ascendent in sončno znamenje.'
+    end
     if @section=='events' && CalendarEvent.exists?(slug:path.split('/').last)
       @observance=ObservancePage.new(path.split('/').last)
       @section='observance'

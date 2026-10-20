@@ -1,7 +1,7 @@
 <% if @section=='home' %>
 <div class="intro"><div><h1>Vaš dan. Vaši načrti.</h1><p>Slovenski koledar, prazniki in osebno načrtovanje.</p></div><a class="button subtle" href="/ustvari-koledar/"><%= ui_icon('settings') %> Ustvari svoj koledar</a></div>
 <%= render 'home' %>
-<% elsif %w[about privacy cookie_policy holidays observance school].include?(@section) %>
+<% elsif %w[about privacy cookie_policy holidays observance school horoscope].include?(@section) %>
 <%= render @section %>
 <% else %>
 <% if page_path=='/datumski-kalkulator/' %>
@@ -21,4 +21,4 @@
 <%= render @section %>
 <% end %>
 
-<% if @page&.body.present? && !%w[observance school].include?(@section) %><section class="panel prose"><%= simple_format(@page.body) %></section><% end %>
+<% if @page&.body.present? && !%w[observance school horoscope].include?(@section) %><section class="panel prose"><%= simple_format(@page.body) %></section><% end %>

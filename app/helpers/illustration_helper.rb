@@ -4,6 +4,7 @@ module IllustrationHelper
 
   def ui_icon(name)
     name = name.to_s
+    return horoscope_icon if name == 'zodiac'
     name = 'calendar' unless UI_ICON_NAMES.include?(name)
     content_tag(:svg, content_tag(:use, nil, href: "#{UI_ICON_SPRITE}##{name}"),
       class: "ui-icon icon-#{name}", viewBox: '0 0 64 64', width: 24, height: 24,
@@ -18,5 +19,10 @@ module IllustrationHelper
   def slovenia_flag
     image_tag('/visuals/slovenia-fabric-v3.svg', width: 36, height: 22,
       alt: '', class: 'country-flag', 'aria-hidden': 'true')
+  end
+
+  def horoscope_icon
+    image_tag('/horoscope/art/wheel-icon-v1.svg', width: 24, height: 24,
+      alt: '', class: 'ui-icon icon-zodiac', 'aria-hidden': 'true')
   end
 end

@@ -38,7 +38,7 @@ jobs:
         with:
           node-version: '24'
       - name: Weather and public download contracts
-        run: node script/test_weather_function.mjs && node script/test_public_catalog.mjs
+        run: node script/test_weather_function.mjs && node script/test_public_catalog.mjs && node script/test_horoscope.mjs
       - name: Ruby syntax
         run: find app config lib db script test -name '*.rb' -print0 | xargs -0 -n1 ruby -c
       - name: PostgreSQL schema and functional tests
