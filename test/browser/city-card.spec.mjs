@@ -1,0 +1,37 @@
+import {test,expect} from '@playwright/test';
+const NOW='2026-10-20T12:34:56Z';
+function forecast(city='ljubljana',temperature=14,symbol='clearsky_day'){
+ const now=new Date(NOW).getTime();return{city,city_name:city,current:{at:new Date(now-600000).toISOString(),temperature,wind:2,humidity:64,symbol,description:symbol.includes('rain')?'Dež':symbol.includes('cloud')?'Oblačno':'Jasno'},hours:[{at:new Date(now+1800000).toISOString(),temperature:15,description:'Jasno'}],updated_at:new Date(now-3600000).toISOString(),fetched_at:NOW,expires_at:new Date(now+600000).toISOString(),stale:false,server_now:'2020-01-01T00:00:00Z'};
+}
+async function mock(page,handler){await page.clock.setFixedTime(new Date(NOW));await page.route('**/vreme/*/',async route=>{const id=new URL(route.request().url()).pathname.split('/')[2];const body=handler?await handler(id):forecast(id);if(body===null)return route.abort();await route.fulfill({json:body,headers:{'Cache-Control':'no-store'}})});}
+test('clock and weather start without calendar boot and ignore forecast server time',async({page})=>{
+ await mock(page);await page.route('**/free/assets.json',route=>route.abort());await page.goto('/',{waitUntil:'domcontentloaded'});
+ await expect(page.locator('#ljubljana-clock')).toHaveText('14:34');await expect(page.locator('#city-clock-seconds')).toHaveText('56');await expect(page.locator('#weather-temperature')).toHaveText('14°');await expect(page.locator('#city-zone')).toHaveText('CEST');
+ await expect(page.locator('#city-card')).toHaveAttribute('data-live-initialized','true');await expect(page.locator('#weather-updated')).toContainText('Napoved za');await expect(page.locator('#weather-published')).toContainText('MET Norway');
+});
+test('saved forecast remains visible offline and personal records are preserved',async({page})=>{
+ await mock(page);await page.addInitScript(()=>localStorage.setItem('k365.personal',JSON.stringify({note:'Private regression record'})));await page.goto('/');await expect(page.locator('#city-card')).toHaveAttribute('data-weather-state','ready');
+ await page.unroute('**/vreme/*/');await page.route('**/vreme/*/',route=>route.abort());await page.reload();await expect(page.locator('#weather-temperature')).toHaveText('14°');await expect(page.locator('#city-card')).toHaveAttribute('data-weather-state','saved');expect(await page.evaluate(()=>localStorage.getItem('k365.personal'))).toContain('Private regression record');
+});
+test('late response for the old city cannot replace the selected city',async({page})=>{
+ await mock(page,async id=>{if(id==='ljubljana')await new Promise(r=>setTimeout(r,600));return forecast(id,id==='bled'?21:1,id==='bled'?'cloudy':'clearsky_day')});await page.goto('/',{waitUntil:'domcontentloaded'});await page.locator('#city-select').selectOption('bled');await expect(page.locator('#weather-temperature')).toHaveText('21°');await page.waitForTimeout(750);await expect(page.locator('#weather-label')).toContainText('Bled');await expect(page.locator('#city-caption')).toContainText('Bled');await expect(page.locator('#weather-temperature')).toHaveText('21°');await expect(page.locator('#city-photo')).toHaveAttribute('src',/bled/i);await expect(page.locator('#city-select')).toHaveValue('bled');
+});
+test('all weather scenes fit narrow mobile, tablet and desktop and the arrow targets the select',async({page},info)=>{
+ let symbol='clearsky_day';await mock(page,id=>forecast(id,14,symbol));await page.goto('/');await expect(page.locator('#city-card')).toHaveAttribute('data-weather-state','ready');
+ for(const [value,condition] of [['clearsky_day','clear'],['rain','rain'],['cloudy','cloud'],['rainandthunder','storm'],['snow','snow'],['fog','fog'],['clearsky_night','clear']]){symbol=value;await page.locator('#weather-refresh').click();await expect(page.locator('#city-card')).toHaveAttribute('data-weather-condition',condition);await expect(page.locator('#weather-refresh')).toBeEnabled();if(info.project.name==='chromium')await page.locator('#city-card').screenshot({path:info.outputPath('weather-'+value+'.png')});}
+ for(const width of [320,390,768,1440]){await page.setViewportSize({width,height:1000});await page.locator('#city-select').scrollIntoViewIfNeeded();expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(width+1);const hit=await page.locator('#city-select').evaluate(el=>{const r=el.getBoundingClientRect();return document.elementFromPoint(r.right-15,r.top+r.height/2)?.id});expect(hit).toBe('city-select');if(info.project.name==='chromium')await page.locator('#city-card').screenshot({path:info.outputPath('city-card-'+width+'.png')});}
+});
+test('clock catches up after a suspended page and follows Slovenian daylight saving',async({page})=>{
+ await mock(page);await page.goto('/');await page.clock.setFixedTime(new Date('2026-10-25T00:59:00Z'));await page.evaluate(()=>window.dispatchEvent(new Event('pageshow')));await expect(page.locator('#ljubljana-clock')).toHaveText('02:59');await expect(page.locator('#city-zone')).toHaveText('CEST');await page.clock.setFixedTime(new Date('2026-10-25T01:01:00Z'));await page.evaluate(()=>window.dispatchEvent(new Event('pageshow')));await expect(page.locator('#ljubljana-clock')).toHaveText('02:01');await expect(page.locator('#city-zone')).toHaveText('CET');
+});
+test('obsolete saved forecast is rejected and reduced motion disables scene animation',async({page})=>{
+ await mock(page);await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');await expect(page.locator('.wx-rays')).toBeVisible();expect(await page.locator('.wx-rays').evaluate(el=>getComputedStyle(el).animationName)).toBe('none');
+ await page.evaluate(()=>{const key='k365.weather.v1:ljubljana',r=JSON.parse(sessionStorage.getItem(key));r.body.updated_at='2026-10-18T00:00:00Z';sessionStorage.setItem(key,JSON.stringify(r))});await page.unroute('**/vreme/*/');await page.route('**/vreme/*/',route=>route.abort());await page.reload();await expect(page.locator('#weather-temperature')).toHaveText('—');await expect(page.locator('#city-card')).toHaveAttribute('data-weather-state','unavailable');
+});
+
+test('home hydration preserves the live card and selected city',async({page})=>{
+ await mock(page);await page.route('**/free/views/home/*',async route=>{await new Promise(resolve=>setTimeout(resolve,500));await route.continue()});await page.goto('/?year=2029&month=2',{waitUntil:'domcontentloaded'});await page.locator('#city-select').selectOption('bled');await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');await expect(page.locator('#city-select')).toHaveValue('bled');await expect(page.locator('#weather-label')).toContainText('Bled');await expect(page.locator('#ljubljana-clock')).toHaveText('14:34');
+});
+test('a new city never displays the previous city weather scene while waiting',async({page})=>{
+ await mock(page,async id=>{if(id==='bled')await new Promise(resolve=>setTimeout(resolve,500));return forecast(id,id==='bled'?21:14,id==='bled'?'rain':'clearsky_day')});await page.goto('/');await expect(page.locator('#weather-icon .wx-sun')).toBeVisible();await page.locator('#city-select').selectOption('bled');await expect(page.locator('#weather-icon .weather-loading')).toBeVisible();await expect(page.locator('#weather-temperature')).toHaveText('—');await expect(page.locator('#weather-temperature')).toHaveText('21°');await expect(page.locator('#city-card')).toHaveAttribute('data-weather-condition','rain');
+});

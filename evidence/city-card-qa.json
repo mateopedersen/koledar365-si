@@ -1,0 +1,55 @@
+{
+  "status": "local-verification-passed; production-pending",
+  "browser": {
+    "startTime": "2026-10-20T16:15:07.567Z",
+    "duration": 32039.89,
+    "expected": 32,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browser_projects": [
+    "chromium",
+    "webkit",
+    "android-chromium",
+    "iphone-webkit"
+  ],
+  "physical_devices": false,
+  "rails": {
+    "tests": 57,
+    "assertions": 2114,
+    "failures": 0,
+    "errors": 0
+  },
+  "weather_contracts": [
+    "current forecast interval",
+    "immediate valid cache",
+    "background conditional refresh",
+    "304",
+    "upstream timeout",
+    "retry backoff",
+    "city whitelist",
+    "obsolete source rejection"
+  ],
+  "responsive_widths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "visual_fixtures": [
+    "clear day",
+    "clear night",
+    "rain",
+    "cloud",
+    "storm",
+    "snow",
+    "fog"
+  ],
+  "clock_checks": [
+    "independent of calendar assets",
+    "weather timestamp cannot change clock",
+    "resume and DST"
+  ],
+  "screenshot_data": "Mock public forecast and fixed Slovenian clock used for reproducible browser tests; not a live weather observation."
+}

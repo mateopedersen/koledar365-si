@@ -13,8 +13,9 @@ assets=nil;processed=[]
 transform=lambda do |body,path,indexable:true|
  doc=Nokogiri::HTML(body)
  sources=doc.css('script[src]').map { |node|node['src'] }
- assets||={scripts:sources.reject { |src|src.include?('holidays-') },holidays:ApplicationController.helpers.asset_path('holidays.js')}
- doc.css('script[src],meta[name="csrf-token"],meta[name="csrf-param"],meta[http-equiv="Content-Security-Policy"],input[name="authenticity_token"]').remove
+ assets||={scripts:sources.reject { |src|src.include?('holidays-')||src.include?('city_card-') },holidays:ApplicationController.helpers.asset_path('holidays.js')}
+ doc.css('script[src]').reject { |node|node['src'].include?('city_card-') }.each(&:remove)
+ doc.css('meta[name="csrf-token"],meta[name="csrf-param"],meta[name="csp-nonce"],meta[http-equiv="Content-Security-Policy"],input[name="authenticity_token"]').remove
  doc.css('[nonce]').each { |node|node.remove_attribute('nonce') }
  doc.at_css('meta[name=robots]')['content']=indexable ? 'index, follow, max-image-preview:large':'noindex, follow'
  if path.start_with?('/koledar-z-imenom/') && path!='/koledar-z-imenom/'

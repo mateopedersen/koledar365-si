@@ -11,7 +11,7 @@
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="<%= seo_title %>"><meta name="twitter:description" content="<%= @description %>"><meta name="twitter:image" content="<%= sharing_image[:url] %>">
 <% end %>
 <% if (schema=structured_data) %><script type="application/ld+json" nonce="<%= content_security_policy_nonce %>"><%= raw json_escape(schema.to_json) %></script><% end %>
-<%= csrf_meta_tags %><%= csp_meta_tag %><%= stylesheet_link_tag 'application', 'experience', 'slovenia' %><%= javascript_include_tag 'application','planners',defer:true %>
+<%= csrf_meta_tags %><%= csp_meta_tag %><%= stylesheet_link_tag 'application', 'experience', 'slovenia' %><%= javascript_include_tag 'application','planners',defer:true %><% if @section=='home' %><%= stylesheet_link_tag 'city_card' %><%= javascript_include_tag 'city_card',defer:true %><% end %>
 <% if @section=='holidays' %><%= stylesheet_link_tag 'holidays' %><%= javascript_include_tag 'holidays',defer:true %><% end %>
 <% if @section=='observance' %><%= stylesheet_link_tag 'observances' %><% end %>
 <% if @section=='calendar' %><%= stylesheet_link_tag 'calendar_gallery' %><% end %>
