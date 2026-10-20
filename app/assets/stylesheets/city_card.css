@@ -25,7 +25,7 @@
 #city-card .clock-zone{position:absolute;right:0;top:1px;padding:3px 5px;border-radius:4px;background:#f0f4f8;color:#6c7e93;font-size:8px;font-weight:750;letter-spacing:.4px}
 #city-card .city-picker{margin:0 0 10px}
 #city-card .city-picker>label{display:block;font-size:9px;font-weight:750;color:#7b8999;letter-spacing:1px;text-transform:uppercase;margin:0 0 6px}
-#city-card .city-location-status{display:block;margin:5px 2px 0;color:#697d94;font-size:9px;line-height:1.45}
+#city-card .city-location-status{display:block;margin:5px 2px 0;color:#465e79;font-size:10px;line-height:1.45}
 #city-card .city-select-shell{position:relative;border-radius:10px;background:linear-gradient(115deg,#f5f8fc,#fff);box-shadow:0 2px 5px #233e6710}
 #city-card .city-select-shell select{appearance:none;-webkit-appearance:none;display:block;position:relative;width:100%;height:44px;min-height:44px;margin:0;border:1px solid #dce6f0;border-radius:10px;background:transparent;padding:9px 34px 9px 34px;color:#173453;font-family:inherit;font-size:13px;font-weight:750;line-height:1.3;cursor:pointer;z-index:1}
 #city-card .city-select-shell select:focus-visible{outline:3px solid #82aee3;outline-offset:2px}
