@@ -1,0 +1,104 @@
+{
+  "checked_at": "2026-10-20T16:55:36.469Z",
+  "source_commit": "7d49796b4",
+  "scope": "Local compact desktop and expanded 390 px phone calendar, 22 April 2030",
+  "compact": {
+    "cell": {
+      "bottom": 606.5625,
+      "height": 52.1875,
+      "left": 446,
+      "right": 483.140625,
+      "top": 554.375,
+      "width": 37.140625,
+      "x": 446,
+      "y": 554.375
+    },
+    "events": {
+      "height": 25,
+      "maxHeight": "none",
+      "scrollHeight": 25
+    },
+    "labels": [
+      {
+        "box": {
+          "bottom": 592.46875,
+          "height": 11.09375,
+          "left": 448,
+          "right": 480.140625,
+          "top": 581.375,
+          "width": 32.140625,
+          "x": 448,
+          "y": 581.375
+        },
+        "height": 11,
+        "scrollHeight": 11,
+        "text": "Svetovni dan Zemlje",
+        "textOverflow": "ellipsis",
+        "title": "Svetovni dan Zemlje",
+        "whiteSpace": "nowrap",
+        "width": 32
+      },
+      {
+        "box": {
+          "bottom": 603.5625,
+          "height": 11.09375,
+          "left": 448,
+          "right": 480.140625,
+          "top": 592.46875,
+          "width": 32.140625,
+          "x": 448,
+          "y": 592.46875
+        },
+        "height": 11,
+        "scrollHeight": 11,
+        "text": "velikonočni ponedeljek",
+        "textOverflow": "ellipsis",
+        "title": "velikonočni ponedeljek",
+        "whiteSpace": "nowrap",
+        "width": 32
+      }
+    ],
+    "styles": [
+      "http://127.0.0.1:3653/assets/application-91ded5cd.css",
+      "http://127.0.0.1:3653/assets/experience-b5e27fe8.css",
+      "http://127.0.0.1:3653/assets/slovenia-f54bd27f.css",
+      "http://127.0.0.1:3653/assets/calendar_gallery-21122c64.css"
+    ],
+    "viewport": [
+      2560,
+      1440
+    ]
+  },
+  "phone": {
+    "cellWidth": 44,
+    "events": {
+      "height": 32,
+      "scrollHeight": 32
+    },
+    "labels": [
+      {
+        "height": 15,
+        "scrollHeight": 15,
+        "text": "Svetovni dan Zemlje",
+        "textOverflow": "ellipsis",
+        "title": "Svetovni dan Zemlje",
+        "whiteSpace": "nowrap",
+        "width": 40
+      },
+      {
+        "height": 15,
+        "scrollHeight": 15,
+        "text": "velikonočni ponedeljek",
+        "textOverflow": "ellipsis",
+        "title": "velikonočni ponedeljek",
+        "whiteSpace": "nowrap",
+        "width": 40
+      }
+    ],
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  "passed": true
+}
