@@ -1,7 +1,13 @@
 # Koledar365 — devam ve canlı yayın durumu
 
-Güncelleme: 20.10.2026 19:32 +0300. Son doğrulanan uygulama: bdf11c564; otomatik statik üretim: 16e398cda.
+Güncelleme: 20.10.2026 19:47 +0300. Son doğrulanan uygulama: bdf11c564; otomatik statik üretim: 16e398cda.
 Bu dosya birincil devam kaydıdır; önceki çalışma günlüğü docs/status-history-2026-10-20.md içinde korunur.
+
+## Aylık takvim metinleri — yayına hazır
+
+- Ortak ay şablonunda uzun tatil ve özel gün adları tek satırda üç noktayla kısalır; kelimeler hücre dışında alt satıra bölünmez. Tam ad hem bağlantı metninde hem `title` niteliğinde korunur. Aynı kural ana sayfadaki ay görünümüne de uygulanır.
+- 2027–2030 arasındaki 48 statik ay sayfası ve 313 olay bağlantısı kontrol edildi; hepsi yeni `/assets/slovenia-f54bd27f.css` dosyasına bağlıdır. Yerel 390 px ve 1378 px görünümlerde computed CSS ve hücre ölçüleri incelendi. Kanıt: evidence/calendar-event-label-layout.json.
+- İlk metin düzeltmesinin tam Ruby üretimi başarıyla tamamlandı: 8.912 HTML, 8.743 galeri, 18.750 dosya ve 2.820 PDF/WebP çifti doğrulandı. Aynı tarihte iki etiket bulunan kompakt hücrelerin sabit yükseklik sınırı da kaldırıldı. Ana dalın yeni hesaplayıcı ve tatil sayfası kaynakları alındı; birleşik son kaynak GitHub’ın mevcut Ruby yayın iş akışında üretilecek ve canlıda doğrulanacak. Yerel komut yolu eksikleri Node ve mise dizinleriyle giderildi; tamamlanmış çıktılar ve üretilen ek runtime dosyaları tmp/qa altında korunur.
 
 ## Galeri düzeni — tamamlandı
 
@@ -21,7 +27,7 @@ Bu dosya birincil devam kaydıdır; önceki çalışma günlüğü docs/status-h
 - Son doğrulanmış uygulama dağıtımı başarılı: https://a6fd3aa3.koledar365-si.pages.dev/ — deployment a6fd3aa3-bbb5-43d1-bb04-e72419b54ecd; kaynak commit bdf11c564. 20.10.2026 19:27 +0300 tarihinde başarılı. Koledar365.si özel alanında yeni takvim/galeri düzeni canlıda doğrulandı. 16e398cda aynı kaynaktan otomatik yayın çıktısını günceller.
 - Repo herkese açık: https://github.com/mateopedersen/koledar365-si
 - Cloudflare Preview: https://e689a94c.koledar365-si.pages.dev/
-- Son yerel statik üretimde 18.749 dosya ve 2.820 eşleşmiş PDF/WebP çifti doğrulandı. 8.912 HTML, 8.888 indexlenebilir URL ve 11.434 iç hedefle statik/SEO kontrolü geçti.
+- Son yerel statik üretimde 18.750 dosya ve 2.820 eşleşmiş PDF/WebP çifti doğrulandı. 8.912 HTML, 8.888 indexlenebilir URL ve 11.434 iç hedefle statik/SEO kontrolü geçti.
 - Ücretli ürün, VPS, ücretli Containers, R2 veya ücretli veritabanı açılmadı. Mevcut Cloudflare Pages Free kullanıldı.
 
 ## Uygulama ve işlevler
@@ -39,7 +45,7 @@ Bu dosya birincil devam kaydıdır; önceki çalışma günlüğü docs/status-h
 - 2.820/2.820 eşleşmiş PDF/WebP çiftinin ikinci bağımsız raster kontrolü geçti; 6.452 sayfa, hata 0. 48×15 aylık = 720, 4×15 yıllık = 60 çift; kalan standart tür/scope'lar da sürüm kataloğunda yer alır.
 - PDF'ler gerçek 600 ppi fiziksel sayfa ölçüsünde, gerçek sRGB WebP'ye dönüştürülmüş ve her sayfada Koledar365 marka imzasını taşır. PDF yeniden 600 ppi rasterleştirilip WebP ile karşılaştırılır; köşe boşluğu, hizalama ve imza da denetlenir.
 - Canlı örnek PDF ve WebP ZIP 200 döndürdü; sunulan baytların SHA-256 değerleri release manifest ile birebir eşleşti. ZIP testinden geçti; 2 sayfa, 600 ppi, manifest ve README bulundu. İki biçim de bir yıllık immutable cache ve noindex alıyor.
-- Statik release manifestinde 18.748 dosya (manifest ile toplam 18.749), 2.820 çift, issues=[]; SEO taraması 8.912 HTML, 8.888 indexlenebilir URL ve 11.434 iç hedefte hata bulmadı.
+- Statik release manifestinde 18.749 dosya (manifest ile toplam 18.750), 2.820 çift, issues=[]; SEO taraması 8.912 HTML, 8.888 indexlenebilir URL ve 11.434 iç hedefte hata bulmadı.
 - Canlı Şubat 2028 galerisinden tarayıcı aracılığıyla PDF, WebP ve çok sayfalı WebP ZIP doğrudan indirildi. SHA-256 değerleri release manifest ile aynı; WebP 4961 × 7016 piksel ve sRGB, ZIP iki 600 ppi sayfa içeriyor. 2030 yıllık sayfasında 12 normal ay tablosu ve ardından 15 yıllık tasarım doğrulandı. Kanıt: evidence/inline-calendar-live.json, evidence/inline-gallery-ui-downloads.json ve evidence/inline-monthly-gallery-live.png.
 - Yerel test: 58 test / 2.194 doğrulama / 0 hata. Yeni 52 inline galeri kontrolü de geçti. Yeni yerel SEO denetimi 8.905 sayfada ve özel gün denetimi 58 sayfa / 232 ICS çıktısında geçti. İlk yeni CI çalışması (39452494100), SEO sayfa bağlantısı denetiminin yeni /prenosi/ dosyalarını tanımaması nedeniyle durdu. Denetim şimdi yalnızca katalogda izin verilen ve gerçekten mevcut dosyaları kabul eder; düzeltilmiş sürümün tam CI tekrarı başarılı: https://github.com/mateopedersen/koledar365-si/actions/runs/39453842264. Önceki sürümün  GitHub CI: SEO/tatil sözleşmeleri, PostgreSQL, yedekleme/geri yükleme, Docker production imajı, gerçek 600 ppi çıktı ve temiz SQLite yayın üretimi başarılı: https://github.com/mateopedersen/koledar365-si/actions/runs/39447819630. Ruby/Wasm testleri 225 gerçek PDF kompozisyonunu kapsar. Ücretsiz site için 24 responsive görünüm geçti. Yeni yıllık/aylık indirme CTA testleri geçti.
 - GitHub PR #2 ana dala alındı: https://github.com/mateopedersen/koledar365-si/pull/2
@@ -58,7 +64,7 @@ Bu dosya birincil devam kaydıdır; önceki çalışma günlüğü docs/status-h
 
 Önce gerçek çalışan süreçleri, git durumu ve bu dosyayı kontrol et. Katalog üreticilerini üst üste başlatma; tamamlanmış fingerprintleri silme.
 Ruby ve yerel test ortamı için repo kökünde:
-PATH="$PWD/../../work/runtime/mise/installs/ruby/4.0.7/bin:$PATH"
+PATH="/Users/melihozcan/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin:$PWD/../../work/runtime/mise/installs/ruby/4.0.7/bin:$PATH"
 PDFTOPPM_BIN=/Users/melihozcan/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override/pdftoppm
 PYTHON_BIN=/Users/melihozcan/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3
 Daha ayrıntılı kurtarma komutları ve faz kayıtları: docs/status-history-2026-10-20.md.
