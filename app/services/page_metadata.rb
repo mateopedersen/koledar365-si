@@ -1,6 +1,7 @@
 class PageMetadata
   # Describe the actual tool/data on a page; do not append lists of SEO keywords.
   def self.description(page, year:)
+    return 'Ustvarite svoj letni ali mesečni koledar z imenom, fotografijami, logotipom in dogodki. Prilagodite pisave, barve in začetek tedna ter prenesite PDF, PNG ali SVG.' if page.path=='/ustvari-koledar/'
     return page.description if page.description.present?
     path = page.path
     fixed = JSON.parse(Rails.root.join("data/page_descriptions_sl.json").read)

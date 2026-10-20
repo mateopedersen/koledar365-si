@@ -3,7 +3,7 @@
 <%= render 'home' %>
 <% elsif @section=='tool' && page_path=='/nacrtovalnik-dopusta/' %>
 <%= render 'vacation_planner' %>
-<% elsif %w[about privacy cookie_policy holidays observance school].include?(@section) %>
+<% elsif %w[about privacy cookie_policy holidays observance school calendar_studio].include?(@section) %>
 <%= render @section %>
 <% else %>
 <% if page_path=='/datumski-kalkulator/' %>
@@ -23,4 +23,4 @@
 <%= render @section %>
 <% end %>
 
-<% if @page&.body.present? && !%w[observance school].include?(@section) %><section class="panel prose"><%= simple_format(@page.body) %></section><% end %>
+<% if @page&.body.present? && !%w[observance school calendar_studio].include?(@section) %><section class="panel prose"><%= simple_format(@page.body) %></section><% end %>
