@@ -20,6 +20,7 @@ on:
       - 'public/horoscope/**'
       - 'functions/horoskop/**'
       - '.github/workflows/pages-publication.yml'
+      - 'script/save_pages_publication.sh'
 permissions:
   contents: write
 concurrency:
