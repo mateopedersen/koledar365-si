@@ -20,6 +20,8 @@ class LunarCalendarTest < ActionDispatch::IntegrationTest
   assert_select '[data-lunar]'
   assert_select '.lunar-enlarge[aria-label]'
   assert_select 'dialog button[data-close]'
+  assert_select '.lunar-download-hint a[href="#prenosi"]',count:1
+  assert_select '.lunar-downloads#prenosi',count:1
   assert_select 'a[href="/lunin-koledar/2028/marec/"]',minimum:1
   get '/lunin-koledar/2028/'
   assert_select '.lunar-mini-grid a',count:366
@@ -43,6 +45,7 @@ class LunarCalendarTest < ActionDispatch::IntegrationTest
   get '/lunin-koledar/2028/'
   assert_response :success
   assert_select '.lunar-hub',count:0
+  assert_select '.lunar-download-hint a[href="#prenosi"]',count:1
   assert_select '.lunar-downloads',minimum:1
  end
 end

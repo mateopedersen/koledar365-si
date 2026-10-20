@@ -9,5 +9,6 @@ for(const a of data.assets){
 }
 for(const p of JSON.parse(fs.readFileSync(path.join(root,'data/lunar/sayfa-plani.json'))).pages){
  const html=fs.readFileSync(path.join(site,p.proposedPath,'index.html'),'utf8');if(!html.includes('/lunar/calendar.mjs')||!html.includes('data-lunar'))issues.push('Lunar behavior missing '+p.proposedPath)
+ if(p.proposedPath!=='/lunin-koledar/'&&(!html.includes('lunar-download-hint')||!html.includes('href="#prenosi"')))issues.push('PDF/WebP download guidance missing '+p.proposedPath)
 }
 const result={passed:issues.length===0,lunarPairs:data.assets.length,corePages:53,issues};console.log(JSON.stringify(result));if(issues.length)throw Error('Lunar publication verification failed');

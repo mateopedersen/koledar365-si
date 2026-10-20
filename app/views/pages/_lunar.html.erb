@@ -36,6 +36,11 @@
 </section>
 <% else %>
 <nav class="lunar-month-links" aria-label="Meseci"><% (1..12).each do |m| %><a href="<%= LunarCalendar.path(year,m) %>" <%= 'aria-current=page' if month==m %>><%= LunarCalendar::MONTHS[m-1] %></a><% end %></nav>
+<aside class="lunar-download-hint" aria-label="Prenos koledarja">
+  <span class="lunar-download-hint__icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M16 4v15m-6-6 6 6 6-6M6 21v5h20v-5"/></svg></span>
+  <p><strong>Koledar lahko prenesete kot datoteko PDF ali sliko WebP.</strong><br>Razdelek »Predloge za tiskanje« je pri dnu strani. Pomaknite se navzdol ali skočite naravnost nanj.</p>
+  <a href="#prenosi">Odprite predloge <span aria-hidden="true">↓</span></a>
+</aside>
 <% if month %>
 <% first=Date.new(year,month,1); previous=first.prev_month; following=first.next_month; selected=rows.find { |d|d['date']==@selected.iso8601 }||rows.first %>
 <nav class="lunar-period-nav" aria-label="Sosednja obdobja"><% if previous.year>=2027 %><a href="<%= LunarCalendar.path(previous.year,previous.month) %>">← Prejšnji mesec</a><% end %><a href="<%= LunarCalendar.path(year) %>">Letni pregled</a><% if following.year<=2030 %><a href="<%= LunarCalendar.path(following.year,following.month) %>">Naslednji mesec →</a><% end %></nav>
