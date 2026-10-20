@@ -1,5 +1,14 @@
 # Koledar365 — devam ve canlı yayın durumu
 
+## Güncel yayın doğrulaması — 20.10.2026
+
+- `e2461b8eea` ana dalındaki yeni Ay takvimleri korunarak PageSpeed düzeltmeleri birleştirildi. Üst araç menüsüne bağımsız yatay kaydırma alanı, çerez şeridine ekran genişliği sınırı ve mobil hızlı bağlantılara metin saran iki sütun uygulandı. Ana/özel gün görsellerine eşleşen AVIF ön yüklemesi eklendi.
+- Güncel Ruby/Rails kaynağı: **66 test, 2.551 doğrulama, 0 hata/başarısızlık**. Dar ekran regresyonu sekiz sayfa ailesinde Chromium, WebKit, Android ve iPhone profillerinde geçti.
+- Doğru statik çıktı üzerinde dört profilde tarayıcı paketi tamamlandı: **57 başarılı, 0 başarısız, 3 kasıtlı atlama** (PDF üretimi yalnız Chromium). Tam statik yayının son denetimi çalışıyor. Kaynak henüz bu düzeltmelerle canlıya gönderilmedi; yayın ve canlı doğrulama sonucu aşağıya kaydedilecek.
+- Önceki canlı sürümün tam sitemap taraması **8.888/8.888 başarılı HTTPS yanıtı** verdi: `evidence/pagespeed-live-url-check.json`. Bu sonuç yeni yayın sonrası tekrarlanacak.
+- Son canlı Lighthouse mobil ana sayfa sonucu **98/100/100/100**; önceki yerel matriste bazı mobil performans sonuçları 99. Yeni canlı ölçüm gelmeden bütün kategoriler 100 olarak raporlanmayacak.
+- Birleştirme öncesi kaynak ve doğrulama çıktıları `stash@{0}` içinde korunur: “Preserve pending PageSpeed fixes and verification evidence before current main integration”.
+
 Güncelleme: 20.10.2026 20:12 +0300. Takvim metni düzeltmesi: 7d49796b4; otomatik statik yayın: 1fe95b074; Cloudflare Pages dağıtımı: f7ca7688-c429-45f4-ab8b-82d42cab497e (başarılı).
 Bu dosya birincil devam kaydıdır; önceki çalışma günlüğü docs/status-history-2026-10-20.md içinde korunur.
 
