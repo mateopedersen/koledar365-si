@@ -16,8 +16,8 @@ assets=nil;processed=[];style_sets={}
 transform=lambda do |body,path,indexable:true|
  doc=Nokogiri::HTML(body)
  sources=doc.css('script[src]').map { |node|node['src'] }
- assets||={scripts:sources.reject { |src|src.include?('holidays-')||src.include?('city_card-')||src.include?('vacation-')||src.split('?',2).first=='/school/experience.mjs'||src.start_with?('/horoscope/') },holidays:ApplicationController.helpers.asset_path('holidays.js'),vacation:ApplicationController.helpers.asset_path('vacation.js')}
- doc.css('script[src]').each { |script|src=script['src'];script.remove unless src.include?('city_card-')||src.split('?',2).first=='/school/experience.mjs'||src.start_with?('/horoscope/') }
+ assets||={scripts:sources.reject { |src|src.include?('holidays-')||src.include?('city_card-')||src.include?('vacation-')||src.start_with?('/studio/','/horoscope/')||src.split('?',2).first=='/school/experience.mjs' },holidays:ApplicationController.helpers.asset_path('holidays.js'),vacation:ApplicationController.helpers.asset_path('vacation.js')}
+ doc.css('script[src]').each { |script|src=script['src'];script.remove unless src.include?('city_card-')||src.start_with?('/studio/','/horoscope/')||src.split('?',2).first=='/school/experience.mjs' }
  doc.css('meta[name="csrf-token"],meta[name="csrf-param"],meta[name="csp-nonce"],meta[http-equiv="Content-Security-Policy"],input[name="authenticity_token"]').remove
  doc.css('[nonce]').each { |node|node.remove_attribute('nonce') }
  # One cached stylesheet on internal pages; the home screen renders immediately
