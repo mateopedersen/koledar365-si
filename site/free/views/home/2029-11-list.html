@@ -426,11 +426,217 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
 #city-card .weather-facts span,#city-card .weather-hours>div,#city-card #weather-more>.muted,#city-card .today-live{color:#526174}
 /* Keep the first paint steady; motion responds to deliberate interaction. */
 #city-card:not(:hover):not(:focus-within) [class^="wx-"],#city-card:not(:hover):not(:focus-within) [class^="wx-"] *{animation-play-state:paused}
+
+/* Shared print rules for the calendar and content templates. Keep this file
+   last in the stylesheet order so page-specific screen rules cannot leak into
+   the printed document. */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 11mm 10mm;
+  }
+
+  html,
+  body {
+    width: auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: #fff !important;
+    color: #111 !important;
+    font-size: 10pt !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .skip,
+  .topbar,
+  .subnav,
+  .breadcrumb,
+  footer,
+  .left-panel,
+  .right-panel,
+  .intro > .button,
+  .search,
+  button,
+  .button,
+  .period-form,
+  .tabs,
+  .design-section,
+  .discovery,
+  dialog,
+  .category-bar,
+  .filters,
+  .year-links,
+  .calendar-toolbar,
+  .calendar-title > .button,
+  .calendar-footer > div,
+  .holiday-list-actions,
+  .observance-story-actions,
+  .actions,
+  .sp-hero,
+  .sp-quick-bar,
+  .sp-heading > button,
+  .sp-month-heading > div,
+  .sp-small,
+  .sp-selected-date,
+  .sp-save-filter,
+  .sp-favorite,
+  .sp-uni-bottom button,
+  .sp-tip > a,
+  .sp-hero-actions,
+  .sp-levels,
+  .sp-filterbar,
+  .sp-region-note a {
+    display: none !important;
+  }
+
+  .calendar-title .actions {
+    display: flex !important;
+  }
+
+  .download-workspace .context-content,
+  .download-workspace .calendar-context-view,
+  .download-workspace .context-content[hidden],
+  .download-workspace:not(.context-expanded) .context-content,
+  .download-workspace:not(.context-expanded) .calendar-context-view {
+    display: block !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    visibility: visible !important;
+  }
+
+  main {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .workspace {
+    display: block !important;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .panel {
+    max-width: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 5px !important;
+  }
+
+  .calendar-panel {
+    margin: 0 !important;
+    padding: 5px !important;
+  }
+
+  .calendar {
+    width: 100% !important;
+    table-layout: fixed !important;
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .calendar thead,
+  .calendar tbody tr,
+  .calendar td,
+  .calendar th,
+  .sp-holiday,
+  .sp-uni-card,
+  .data-table tr {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .calendar td {
+    height: 75px !important;
+  }
+
+  .calendar td,
+  .calendar th,
+  .event-label,
+  .sp-month-event,
+  .data-table td,
+  .data-table th {
+    overflow-wrap: anywhere;
+  }
+
+  .year-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .school-page,
+  .school-page main,
+  .school-page section,
+  .school-page article,
+  .school-page .sp-calendar-layout,
+  .school-page .sp-calendar-box,
+  .school-page .sp-month-aside {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  .school-page .sp-calendar-section {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .school-page button.sp-day {
+    display: block !important;
+    min-height: 38px;
+    cursor: default;
+  }
+
+  .school-page .sp-universities {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  .school-page .sp-calendar-layout {
+    overflow: visible !important;
+    grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr) !important;
+  }
+
+  .school-page .sp-calendar-box,
+  .school-page .sp-month-aside {
+    padding: 14px !important;
+  }
+
+  a {
+    color: #111 !important;
+    text-decoration: none !important;
+  }
+
+  .panel,
+  .prose {
+    max-width: none !important;
+  }
+
+  .data-table tr {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+}
 </style>
 
 
 
 <script src="/assets/city_card-59b5f990.js" defer></script>
+
+
+
 
 
 
@@ -452,7 +658,7 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
 <label class="sr-only" for="search">Poišči datum, ime ali orodje</label><input id="search" name="q" type="search" placeholder="Poišči datum, ime ali orodje" value=""><button aria-label="Išči"><svg class="ui-icon icon-search" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#search"></use></svg></button>
 </form>
 <span class="country"><img width="36" height="22" alt="" class="country-flag" aria-hidden="true" src="/visuals/slovenia-fabric-v3.svg"> Slovenija</span></header>
-<nav class="subnav" aria-label="Koledarji in orodja"><a href="/koledar/2027/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calendar"></use></svg> 2027</a><a href="/koledar/2028/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calendar"></use></svg> 2028</a><a href="/koledar/2029/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calendar"></use></svg> 2029</a><a href="/koledar/2030/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calendar"></use></svg> 2030</a><a href="/lunin-koledar/"><svg class="ui-icon icon-moon" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#moon"></use></svg> Sonce in Luna</a><a href="/delovni-dnevi/"><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#note"></use></svg> Delovni dnevi</a><a href="/koledar-za-tiskanje/"><svg class="ui-icon icon-print" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#print"></use></svg> Koledarji PDF</a><a href="/datumski-kalkulator/"><svg class="ui-icon icon-calculator" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calculator"></use></svg> Datumski kalkulator</a><a href="/horoskop/"><svg class="ui-icon icon-star" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#star"></use></svg> Horoskop</a><a href="/orodja/"><svg class="ui-icon icon-grid" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#grid"></use></svg> Vsa orodja</a></nav>
+<nav class="subnav" aria-label="Koledarji in orodja"><a href="/koledar/2027/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calendar"></use></svg> 2027</a><a href="/koledar/2028/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calendar"></use></svg> 2028</a><a href="/koledar/2029/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calendar"></use></svg> 2029</a><a href="/koledar/2030/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calendar"></use></svg> 2030</a><a href="/lunin-koledar/"><svg class="ui-icon icon-moon" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#moon"></use></svg> Sonce in Luna</a><a href="/delovni-dnevi/"><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#note"></use></svg> Delovni dnevi</a><a href="/koledar-za-tiskanje/"><svg class="ui-icon icon-print" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#print"></use></svg> Koledarji PDF</a><a href="/datumski-kalkulator/"><svg class="ui-icon icon-calculator" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calculator"></use></svg> Datumski kalkulator</a><a href="/horoskop/"><img width="24" height="24" alt="" class="ui-icon icon-zodiac" aria-hidden="true" src="/horoscope/art/wheel-icon-v1.svg"> Dnevni horoskop</a><a href="/orodja/"><svg class="ui-icon icon-grid" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#grid"></use></svg> Vsa orodja</a></nav>
 <main id="vsebina" tabindex="-1">
 
 
@@ -745,7 +951,7 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
 <span>Izberi predlogo →</span></a>
 </div>
 <div class="quick-links">
-<a href="/pomembni-dnevi/"><svg class="ui-icon icon-gift" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#gift"></use></svg> Pomembni dnevi</a><a href="/lunin-koledar/"><svg class="ui-icon icon-moon" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#moon"></use></svg> Lunin koledar</a><a href="/nacrtovalnik-dopusta/"><svg class="ui-icon icon-vacation" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#vacation"></use></svg> Načrtovalnik dopusta</a><a href="/prazen-koledar/"><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#note"></use></svg> Prazen koledar</a>
+<a href="/horoskop/" class="home-zodiac-link"><img width="24" height="24" alt="" class="ui-icon icon-zodiac" aria-hidden="true" src="/horoscope/art/wheel-icon-v1.svg"> Dnevni horoskop in znamenja</a><a href="/pomembni-dnevi/"><svg class="ui-icon icon-gift" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#gift"></use></svg> Pomembni dnevi</a><a href="/lunin-koledar/"><svg class="ui-icon icon-moon" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#moon"></use></svg> Lunin koledar</a><a href="/nacrtovalnik-dopusta/"><svg class="ui-icon icon-vacation" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#vacation"></use></svg> Načrtovalnik dopusta</a><a href="/prazen-koledar/"><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#note"></use></svg> Prazen koledar</a>
 </div></section>
 <!-- END app/views/pages/_home.html.erb -->
 
