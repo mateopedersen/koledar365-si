@@ -27,7 +27,7 @@
 <meta name="twitter:image" content="https://koledar365.si/lunar/atlas/2027-08-cover.webp">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl"},{"@type":"WebPage","@id":"https://koledar365.si/lunin-koledar/#webpage","url":"https://koledar365.si/lunin-koledar/","name":"Lunin koledar 2027–2030","description":"Izberite leto in mesec za prikaz luninih men v Sloveniji. Oglejte si dnevno osvetljenost Lune ter predloge letnih in mesečnih koledarjev.","inLanguage":"sl","isPartOf":{"@id":"https://koledar365.si/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://koledar365.si/"},{"@type":"ListItem","position":2,"name":"Lunin koledar 2027–2030","item":"https://koledar365.si/lunin-koledar/"}]}]}</script>
 
-<link rel="stylesheet" href="/assets/web-01d3b23cf4230b4b.css">
+<link rel="stylesheet" href="/assets/web-23a1263f3e968b55.css">
 
 
 
@@ -63,35 +63,133 @@
 <nav class="breadcrumb" aria-label="Drobtinice"><a href="/">Domov</a><span aria-hidden="true">›</span><span aria-current="page">Lunin koledar 2027–2030</span></nav>
 
 <!-- BEGIN app/views/pages/show.html.erb
---><div class="page-heading">
-<span class="eyebrow">KOLEDAR365 · SLOVENIJA</span><h1>Lunin koledar 2027–2030</h1>
-<p>Izberite leto in mesec za prikaz luninih men v Sloveniji. Oglejte si dnevno osvetljenost Lune ter predloge letnih in mesečnih koledarjev.</p>
-</div>
+--><section class="lunar-hub-masthead" aria-labelledby="lunar-hub-title">
+  <div class="lunar-hub-masthead__copy">
+    <span class="lunar-hub-kicker">KOLEDAR365 <i aria-hidden="true"></i> LUNA 2027–2030</span>
+    <h1 id="lunar-hub-title">Lunin koledar 2027–2030</h1>
+    <p>Izberite leto in mesec za prikaz luninih men v Sloveniji. Oglejte si dnevno osvetljenost Lune ter predloge letnih in mesečnih koledarjev.</p>
+    <div class="lunar-hub-facts" aria-label="Vsebina luninega koledarja">
+      <span><strong>4</strong> leta</span><span><strong>48</strong> mesecev</span><span><strong>Europe/Ljubljana</strong> lokalni čas</span>
+    </div>
+  </div>
+  <div class="lunar-hub-masthead__art" aria-hidden="true">
+    <svg viewbox="0 0 520 360" focusable="false">
+      <defs>
+        <radialgradient id="lunarHubMoon" cx="35%" cy="28%"><stop stop-color="#fff"></stop><stop offset=".72" stop-color="#e8eff8"></stop><stop offset="1" stop-color="#a9c1dc"></stop></radialgradient>
+        <lineargradient id="lunarHubBlue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#53a0e5"></stop><stop offset="1" stop-color="#005da4"></stop></lineargradient>
+        <lineargradient id="lunarHubRed" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff626b"></stop><stop offset="1" stop-color="#ed1c24"></stop></lineargradient>
+        <clippath id="lunarHubClip"><circle cx="292" cy="171" r="105"></circle></clippath>
+      </defs>
+      <circle cx="292" cy="171" r="139" fill="#fff" opacity=".045"></circle>
+      <circle cx="292" cy="171" r="119" fill="none" stroke="#91bde7" stroke-opacity=".28"></circle>
+      <circle cx="292" cy="171" r="105" fill="url(#lunarHubMoon)"></circle>
+      <g clip-path="url(#lunarHubClip)" fill="none" stroke="#637f9e" stroke-opacity=".2">
+        <path d="M180 117c51-35 143-29 211 8M176 163c66-22 153-15 224 17M190 219c56-22 133-20 195 4"></path>
+        <ellipse cx="292" cy="171" rx="37" ry="105"></ellipse><ellipse cx="292" cy="171" rx="77" ry="105"></ellipse>
+        <circle cx="252" cy="138" r="13"></circle><circle cx="328" cy="202" r="20"></circle><circle cx="273" cy="228" r="8"></circle><circle cx="340" cy="133" r="9"></circle>
+      </g>
+      <path d="M292 66a105 105 0 0 1 0 210c-34-29-52-65-52-105s18-76 52-105Z" fill="#14253f" opacity=".13"></path>
+      <path d="M84 263c69-69 159-77 256-24" fill="none" stroke="url(#lunarHubRed)" stroke-width="5" stroke-linecap="round"></path>
+      <path d="M193 56c70-35 162-22 217 34" fill="none" stroke="url(#lunarHubBlue)" stroke-width="3" stroke-linecap="round"></path>
+      <circle cx="84" cy="263" r="8" fill="#ed1c24"></circle><circle cx="410" cy="90" r="6" fill="#fff"></circle>
+      <path d="M107 91v14m-7-7h14M442 240v14m-7-7h14M395 302v10m-5-5h10" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".8"></path>
+      <circle cx="144" cy="187" r="3" fill="#78b7ef"></circle><circle cx="423" cy="158" r="3" fill="#ff6972"></circle><circle cx="171" cy="307" r="2" fill="#fff"></circle>
+    </svg>
+  </div>
+</section>
+
 <!-- BEGIN app/views/pages/_lunar.html.erb
 -->
 
-<section class="lunar-experience" data-lunar data-year="2027" data-month="">
-<nav class="lunar-years" aria-label="Leta"><a href="/lunin-koledar/2027/">2027</a><a href="/lunin-koledar/2028/">2028</a><a href="/lunin-koledar/2029/">2029</a><a href="/lunin-koledar/2030/">2030</a><a href="/viri-in-metodologija/">Viri in metodologija</a></nav>
-<p>Izberite leto in mesec. Dnevni prikazi prikazujejo Luno ob 12.00 po času v Sloveniji, časi glavnih men pa trenutek posameznega dogodka.</p>
-<div class="lunar-year-links">
-<article class="panel"><h2><a href="/lunin-koledar/2027/">Lunin koledar 2027</a></h2>
-<p>365 dni · 49 glavnih luninih men</p>
-<div class="lunar-month-links">
-<a href="/lunin-koledar/2027/januar/">januar</a><a href="/lunin-koledar/2027/februar/">februar</a><a href="/lunin-koledar/2027/marec/">marec</a><a href="/lunin-koledar/2027/april/">april</a><a href="/lunin-koledar/2027/maj/">maj</a><a href="/lunin-koledar/2027/junij/">junij</a><a href="/lunin-koledar/2027/julij/">julij</a><a href="/lunin-koledar/2027/avgust/">avgust</a><a href="/lunin-koledar/2027/september/">september</a><a href="/lunin-koledar/2027/oktober/">oktober</a><a href="/lunin-koledar/2027/november/">november</a><a href="/lunin-koledar/2027/december/">december</a>
-</div></article><article class="panel"><h2><a href="/lunin-koledar/2028/">Lunin koledar 2028</a></h2>
-<p>366 dni · 50 glavnih luninih men</p>
-<div class="lunar-month-links">
-<a href="/lunin-koledar/2028/januar/">januar</a><a href="/lunin-koledar/2028/februar/">februar</a><a href="/lunin-koledar/2028/marec/">marec</a><a href="/lunin-koledar/2028/april/">april</a><a href="/lunin-koledar/2028/maj/">maj</a><a href="/lunin-koledar/2028/junij/">junij</a><a href="/lunin-koledar/2028/julij/">julij</a><a href="/lunin-koledar/2028/avgust/">avgust</a><a href="/lunin-koledar/2028/september/">september</a><a href="/lunin-koledar/2028/oktober/">oktober</a><a href="/lunin-koledar/2028/november/">november</a><a href="/lunin-koledar/2028/december/">december</a>
-</div></article><article class="panel"><h2><a href="/lunin-koledar/2029/">Lunin koledar 2029</a></h2>
-<p>365 dni · 49 glavnih luninih men</p>
-<div class="lunar-month-links">
-<a href="/lunin-koledar/2029/januar/">januar</a><a href="/lunin-koledar/2029/februar/">februar</a><a href="/lunin-koledar/2029/marec/">marec</a><a href="/lunin-koledar/2029/april/">april</a><a href="/lunin-koledar/2029/maj/">maj</a><a href="/lunin-koledar/2029/junij/">junij</a><a href="/lunin-koledar/2029/julij/">julij</a><a href="/lunin-koledar/2029/avgust/">avgust</a><a href="/lunin-koledar/2029/september/">september</a><a href="/lunin-koledar/2029/oktober/">oktober</a><a href="/lunin-koledar/2029/november/">november</a><a href="/lunin-koledar/2029/december/">december</a>
-</div></article><article class="panel"><h2><a href="/lunin-koledar/2030/">Lunin koledar 2030</a></h2>
-<p>365 dni · 50 glavnih luninih men</p>
-<div class="lunar-month-links">
-<a href="/lunin-koledar/2030/januar/">januar</a><a href="/lunin-koledar/2030/februar/">februar</a><a href="/lunin-koledar/2030/marec/">marec</a><a href="/lunin-koledar/2030/april/">april</a><a href="/lunin-koledar/2030/maj/">maj</a><a href="/lunin-koledar/2030/junij/">junij</a><a href="/lunin-koledar/2030/julij/">julij</a><a href="/lunin-koledar/2030/avgust/">avgust</a><a href="/lunin-koledar/2030/september/">september</a><a href="/lunin-koledar/2030/oktober/">oktober</a><a href="/lunin-koledar/2030/november/">november</a><a href="/lunin-koledar/2030/december/">december</a>
-</div></article>
+<section class="lunar-experience lunar-hub" data-lunar data-year="2027" data-month="">
+
+<section class="lunar-hub-years" aria-labelledby="lunar-hub-years-title">
+  <div class="lunar-hub-section-head">
+<div>
+<span class="lunar-hub-overline">PREGLED PO LETIH</span><h2 id="lunar-hub-years-title">Izberite svoje leto</h2>
 </div>
+<p>Odprite letni pregled ali skočite naravnost na izbrani mesec.</p>
+</div>
+  <div class="lunar-year-links">
+    <article class="lunar-year-card lunar-year-card--2027">
+      <div class="lunar-year-art" aria-hidden="true">
+        <span class="lunar-year-art__label">LETNI LUNIN PREGLED</span><span class="lunar-year-art__number">2027</span>
+        <svg viewbox="0 0 360 150" focusable="false"><circle cx="248" cy="76" r="62" class="orbit"></circle><circle cx="248" cy="76" r="44" class="moon moon--full"></circle><path d="M207 47c22-18 62-20 86-3M216 92c19-16 48-18 65-7" class="crater"></path><circle cx="248" cy="76" r="3" class="moon-mark"></circle><path d="M45 108c51-55 103-58 158-7" class="orbit orbit--red"></path><circle cx="45" cy="108" r="6" class="satellite satellite--red"></circle><path d="M72 34h12m-6-6v12M307 115h10m-5-5v10" class="star"></path></svg>
+
+      </div>
+      <div class="lunar-year-card__body">
+        <div class="lunar-year-summary">
+<span>365 dni</span><span>49 glavnih luninih men</span>
+</div>
+        <a class="lunar-year-open" href="/lunin-koledar/2027/">Odprite letni pregled <span aria-hidden="true">↗</span></a>
+        <h3>Izberite mesec</h3>
+        <nav class="lunar-month-links" aria-label="Meseci leta 2027"><a href="/lunin-koledar/2027/januar/"><span>01</span>januar</a><a href="/lunin-koledar/2027/februar/"><span>02</span>februar</a><a href="/lunin-koledar/2027/marec/"><span>03</span>marec</a><a href="/lunin-koledar/2027/april/"><span>04</span>april</a><a href="/lunin-koledar/2027/maj/"><span>05</span>maj</a><a href="/lunin-koledar/2027/junij/"><span>06</span>junij</a><a href="/lunin-koledar/2027/julij/"><span>07</span>julij</a><a href="/lunin-koledar/2027/avgust/"><span>08</span>avgust</a><a href="/lunin-koledar/2027/september/"><span>09</span>september</a><a href="/lunin-koledar/2027/oktober/"><span>10</span>oktober</a><a href="/lunin-koledar/2027/november/"><span>11</span>november</a><a href="/lunin-koledar/2027/december/"><span>12</span>december</a></nav>
+      </div>
+    </article>
+
+    <article class="lunar-year-card lunar-year-card--2028">
+      <div class="lunar-year-art" aria-hidden="true">
+        <span class="lunar-year-art__label">LETNI LUNIN PREGLED</span><span class="lunar-year-art__number">2028</span>
+        <svg viewbox="0 0 360 150" focusable="false"><circle cx="249" cy="76" r="55" class="moon moon--half"></circle><path d="M249 21a55 55 0 0 0 0 110c22-16 35-36 35-55s-13-39-35-55Z" class="shadow"></path><ellipse cx="249" cy="76" rx="82" ry="30" transform="rotate(-23 249 76)" class="orbit orbit--red"></ellipse><circle cx="174" cy="105" r="6" class="satellite satellite--blue"></circle><path d="M215 48c9-6 17-7 25-4M225 96c7-7 16-9 23-7" class="crater"></path><path d="M74 39h14m-7-7v14M100 106h10m-5-5v10" class="star"></path></svg>
+
+      </div>
+      <div class="lunar-year-card__body">
+        <div class="lunar-year-summary">
+<span>366 dni</span><span>50 glavnih luninih men</span>
+</div>
+        <a class="lunar-year-open" href="/lunin-koledar/2028/">Odprite letni pregled <span aria-hidden="true">↗</span></a>
+        <h3>Izberite mesec</h3>
+        <nav class="lunar-month-links" aria-label="Meseci leta 2028"><a href="/lunin-koledar/2028/januar/"><span>01</span>januar</a><a href="/lunin-koledar/2028/februar/"><span>02</span>februar</a><a href="/lunin-koledar/2028/marec/"><span>03</span>marec</a><a href="/lunin-koledar/2028/april/"><span>04</span>april</a><a href="/lunin-koledar/2028/maj/"><span>05</span>maj</a><a href="/lunin-koledar/2028/junij/"><span>06</span>junij</a><a href="/lunin-koledar/2028/julij/"><span>07</span>julij</a><a href="/lunin-koledar/2028/avgust/"><span>08</span>avgust</a><a href="/lunin-koledar/2028/september/"><span>09</span>september</a><a href="/lunin-koledar/2028/oktober/"><span>10</span>oktober</a><a href="/lunin-koledar/2028/november/"><span>11</span>november</a><a href="/lunin-koledar/2028/december/"><span>12</span>december</a></nav>
+      </div>
+    </article>
+
+    <article class="lunar-year-card lunar-year-card--2029">
+      <div class="lunar-year-art" aria-hidden="true">
+        <span class="lunar-year-art__label">LETNI LUNIN PREGLED</span><span class="lunar-year-art__number">2029</span>
+        <svg viewbox="0 0 360 150" focusable="false"><path d="M194 77h131" class="orbit orbit--blue"></path><circle cx="205" cy="77" r="31" class="moon moon--crescent"></circle><circle cx="221" cy="77" r="31" class="shadow shadow--crescent"></circle><circle cx="261" cy="77" r="31" class="moon moon--half-small"></circle><path d="M261 46a31 31 0 0 0 0 62c13-9 20-21 20-31s-7-22-20-31Z" class="shadow"></path><circle cx="317" cy="77" r="31" class="moon moon--full-small"></circle><path d="M208 24c44-22 96-14 130 19" class="orbit orbit--red"></path><path d="M62 48h12m-6-6v12M104 104h10m-5-5v10" class="star"></path></svg>
+
+      </div>
+      <div class="lunar-year-card__body">
+        <div class="lunar-year-summary">
+<span>365 dni</span><span>49 glavnih luninih men</span>
+</div>
+        <a class="lunar-year-open" href="/lunin-koledar/2029/">Odprite letni pregled <span aria-hidden="true">↗</span></a>
+        <h3>Izberite mesec</h3>
+        <nav class="lunar-month-links" aria-label="Meseci leta 2029"><a href="/lunin-koledar/2029/januar/"><span>01</span>januar</a><a href="/lunin-koledar/2029/februar/"><span>02</span>februar</a><a href="/lunin-koledar/2029/marec/"><span>03</span>marec</a><a href="/lunin-koledar/2029/april/"><span>04</span>april</a><a href="/lunin-koledar/2029/maj/"><span>05</span>maj</a><a href="/lunin-koledar/2029/junij/"><span>06</span>junij</a><a href="/lunin-koledar/2029/julij/"><span>07</span>julij</a><a href="/lunin-koledar/2029/avgust/"><span>08</span>avgust</a><a href="/lunin-koledar/2029/september/"><span>09</span>september</a><a href="/lunin-koledar/2029/oktober/"><span>10</span>oktober</a><a href="/lunin-koledar/2029/november/"><span>11</span>november</a><a href="/lunin-koledar/2029/december/"><span>12</span>december</a></nav>
+      </div>
+    </article>
+
+    <article class="lunar-year-card lunar-year-card--2030">
+      <div class="lunar-year-art" aria-hidden="true">
+        <span class="lunar-year-art__label">LETNI LUNIN PREGLED</span><span class="lunar-year-art__number">2030</span>
+        <svg viewbox="0 0 360 150" focusable="false"><path d="M181 120c23-52 52-78 86-78s63 26 86 78" class="mountain"></path><circle cx="267" cy="74" r="37" class="moon moon--rise"></circle><path d="M231 77h72c-2 19-17 34-36 34s-34-15-36-34Z" class="shadow shadow--horizon"></path><path d="M210 114c30-42 77-57 139-42" class="orbit orbit--red"></path><circle cx="210" cy="114" r="5" class="satellite satellite--red"></circle><path d="M63 36h14m-7-7v14M112 97h10m-5-5v10" class="star"></path></svg>
+      </div>
+      <div class="lunar-year-card__body">
+        <div class="lunar-year-summary">
+<span>365 dni</span><span>50 glavnih luninih men</span>
+</div>
+        <a class="lunar-year-open" href="/lunin-koledar/2030/">Odprite letni pregled <span aria-hidden="true">↗</span></a>
+        <h3>Izberite mesec</h3>
+        <nav class="lunar-month-links" aria-label="Meseci leta 2030"><a href="/lunin-koledar/2030/januar/"><span>01</span>januar</a><a href="/lunin-koledar/2030/februar/"><span>02</span>februar</a><a href="/lunin-koledar/2030/marec/"><span>03</span>marec</a><a href="/lunin-koledar/2030/april/"><span>04</span>april</a><a href="/lunin-koledar/2030/maj/"><span>05</span>maj</a><a href="/lunin-koledar/2030/junij/"><span>06</span>junij</a><a href="/lunin-koledar/2030/julij/"><span>07</span>julij</a><a href="/lunin-koledar/2030/avgust/"><span>08</span>avgust</a><a href="/lunin-koledar/2030/september/"><span>09</span>september</a><a href="/lunin-koledar/2030/oktober/"><span>10</span>oktober</a><a href="/lunin-koledar/2030/november/"><span>11</span>november</a><a href="/lunin-koledar/2030/december/"><span>12</span>december</a></nav>
+      </div>
+    </article>
+  </div>
+</section>
+<section class="lunar-hub-method" aria-label="Kako uporabljati lunin koledar">
+  <div>
+<span class="lunar-hub-method__index">01</span><h2>Dnevni pogled</h2>
+<p>Na mesečni strani izberite datum za osvetljenost, fazo in večji prikaz Lune.</p>
+</div>
+  <div>
+<span class="lunar-hub-method__index">02</span><h2>Lunine mene</h2>
+<p>Časi mlaja, prvega krajca, ščipa in zadnjega krajca so prikazani v lokalnem času.</p>
+</div>
+  <div>
+<span class="lunar-hub-method__index">03</span><h2>Za tisk in zaslon</h2>
+<p>Na letnih in mesečnih straneh prenesite koledar kot datoteko PDF ali sliko WebP.</p>
+</div>
+  <a href="/viri-in-metodologija/">Viri in metodologija <span aria-hidden="true">→</span></a>
+</section>
 <p class="lunar-note">Podatki o menah: USNO. Dnevna osvetljenost: Astronomy Engine, preverjena z efemerido JPL DE440s. Površje Lune: NASA's Scientific Visualization Studio. <a href="/viri-in-metodologija/">Viri in metodologija</a>.</p>
 </section>
 <!-- END app/views/pages/_lunar.html.erb -->
@@ -101,23 +199,24 @@
 </main>
 <footer><a class="brand small" href="/"><span class="brand-symbol"><img width="44" height="44" alt="" class="brand-mark" aria-hidden="true" src="/visuals/brand-calendar-v3.svg"></span> Koledar<span>365</span></a><a href="/o-nas/">O nas</a><a href="/zasebnost/">Zasebnost</a><a href="/viri-in-metodologija/">Viri in metodologija</a><a href="/kontakt/">Kontakt</a><a href="/fotografije-in-licence/">Fotografije in licence</a><a href="/pogoji-uporabe/">Pogoji uporabe</a><button class="text-button" data-cookie-open>Nastavitve piškotkov</button><span>© 2026 Koledar365</span></footer>
 <!-- BEGIN app/views/layouts/_cookies.html.erb
---><section id="cookies" class="cookie-bar" aria-labelledby="cookie-title" hidden>
+--><section id="cookies" class="cookie-bar" aria-labelledby="cookie-title" aria-describedby="cookie-intro" hidden>
   <div class="cookie-bar-main">
     <div class="cookie-bar-icon" aria-hidden="true"><svg class="ui-icon icon-cookie" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#cookie"></use></svg></div>
     <div class="cookie-bar-copy">
-<h2 id="cookie-title">Vaša zasebnost, vaša izbira.</h2>
-<p id="cookie-intro">Uporabljamo nujno hrambo. Z dovoljenjem si zapomnimo še mesto. Brez analitike in oglasnih sledilnikov. <a href="/piskotki/">Več o piškotkih</a></p>
-</div>
-    <div class="cookie-actions">
-      <button type="button" data-consent="all">Sprejmi vse</button>
-      <button type="button" data-consent="necessary">Zavrni nenujne</button>
+      <span class="cookie-bar-eyebrow">Vaša zasebnost</span>
+      <h2 id="cookie-title">Vi odločate, kaj si zapomnimo.</h2>
+      <p id="cookie-intro">Koledar za delovanje uporablja nujno hrambo. Z vašim dovoljenjem si do 180 dni zapomnimo izbrano mesto za fotografijo in vreme ob naslednjem obisku. Upravljavec je Mateo Pedersen. Analitike in oglasnih sledilnikov ne uporabljamo. <a href="/piskotki/">Kako uporabljamo hrambo</a></p>
+    </div>
+    <div class="cookie-actions" role="group" aria-label="Izbira nastavitev zasebnosti">
+      <button type="button" data-consent="necessary"><svg class="ui-icon icon-shield" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#shield"></use></svg> Ne shrani mesta</button>
+      <button type="button" data-consent="all"><svg class="ui-icon icon-pin" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#pin"></use></svg> Zapomni si mesto</button>
       <button type="button" data-consent-settings aria-expanded="false" aria-controls="cookie-settings"><svg class="ui-icon icon-settings" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#settings"></use></svg> Nastavitve</button>
     </div>
     <button type="button" class="cookie-close" data-cookie-close aria-label="Zapri brez spremembe nastavitev">×</button>
   </div>
   <details id="cookie-settings">
     <summary>Podrobne nastavitve</summary>
-    <p class="cookie-explanation">»Sprejmi vse« omogoči le pomnjenje mesta. Osebni načrti se shranijo na tej napravi, ko jih sami ustvarite. Zavrnitev ne omeji uporabe koledarja. Izbiro hranimo 180 dni.</p>
+    <p class="cookie-explanation">Pomnjenje mesta je edina neobvezna možnost. Osebne načrte shranimo v tem brskalniku, ko jih ustvarite. Zavrnitev ne omeji uporabe koledarja. Izbiro hranimo 180 dni.</p>
     <div class="cookie-category">
 <div>
 <strong>Nujna hramba</strong><p>Seja, varnost obrazcev in vaša izbira zasebnosti.</p>
