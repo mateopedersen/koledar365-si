@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "design": "min-01",
+      "width": 4961,
+      "height": 7016,
+      "rgb_difference_bbox": null
+    },
+    {
+      "design": "min-03",
+      "width": 4961,
+      "height": 7016,
+      "rgb_difference_bbox": null
+    }
+  ]
+}

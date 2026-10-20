@@ -5,7 +5,7 @@ Dir[File.join(root,'evidence/release*-catalog-[0-9].json')].sort.each do |report
   source=File.join(root,'storage/release-catalog',row['fingerprint']);dest=File.join(out,'prenosi',row['fingerprint']);FileUtils.mkdir_p(dest)
   row['files'].except('manifest').values.uniq.each do |filename|
    target=File.join(dest,filename);original=File.join(source,filename)
-   FileUtils.cp(original,target) unless File.file?(target)&&File.size(target)==File.size(original)
+   FileUtils.cp(original,target) unless File.file?(target)&&Digest::SHA256.file(target).hexdigest==Digest::SHA256.file(original).hexdigest
   end
   FileUtils.rm_f(File.join(dest,row['files']['manifest']))
   metadata=JSON.parse(File.read(File.join(source,row['files']['manifest'])))

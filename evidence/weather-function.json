@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": [
+    "upstream Expires",
+    "cached read",
+    "conditional Last-Modified and 304",
+    "four-decimal coordinates",
+    "city whitelist",
+    "honest unavailable forecast"
+  ]
+}

@@ -28,6 +28,11 @@ class PagesController < ApplicationController
     end
     @description=@person ? PageMetadata.name_description(@person) : PageMetadata.description(@page,year:@year)
     @selected=Date.iso8601(params[:date].to_s) rescue nil
+    if path=='/'
+      @month=[@month,10].max if @year==2026
+      @selected=nil if @selected && !(@selected.between?(Date.new(2026,10,1),Date.new(2030,12,31)))
+      @year,@month=@selected.year,@selected.month if @selected
+    end
     @selected||=(@today.year==@year&&@today.month==@month ? @today : Date.new(@year,@month,1))
     @view=%w[month week day list year].include?(params[:view]) ? params[:view] : (path.match?(%r{^/koledar/\d{4}/$}) ? 'year':'month')
     @events=CalendarEvent.where(on:Date.new(@year,1,1)..Date.new(@year,12,31)).ordered.to_a
