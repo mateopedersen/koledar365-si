@@ -1,13 +1,13 @@
 # Koledar365 — devam ve canlı yayın durumu
 
-Güncelleme: 20.10.2026 20:25 +03. Dal: finalize-production-documentation. Son doğrulanmış canlı kaynak commit'i: b6e0b7c (günlük yayın içeriği ve yayın belgeleri).
+Güncelleme: 20.10.2026 18:32 +03. Dal: finalize-production-documentation. Son doğrulanmış canlı yayın commit'i: f4a8284 (statik içerik); uygulama değişikliği: 4ae892e.
 Bu dosya birincil devam kaydıdır; önceki çalışma günlüğü docs/status-history-2026-10-20.md içinde korunur.
 
 ## Canlı yayın
 
 - Ana adres: https://koledar365.si/ — HTTPS üzerinden erişilebilir.
 - Cloudflare Pages projesi koledar365-si; production branch main; otomatik dağıtımlar açık.
-- Son doğrulanmış production dağıtımı başarılı: https://e71b55e5.koledar365-si.pages.dev/ — deployment e71b55e5-7b84-4a37-a42f-1c61e0c39674; kaynak commit b6e0b7c. Yıllık/aylık indirme görünürlüğü düzeltmesi bu kayıttan sonra hazırlandı; test edildi ve yayın kuyruğunda.
+- Son doğrulanmış production dağıtımı başarılı: https://04279a44.koledar365-si.pages.dev/ — deployment 04279a44-7965-4613-b226-4441f4494362; kaynak commit f4a8284. Koledar365.si özel alanında yıllık ve aylık indirme düzeltmesi canlıda doğrulandı.
 - Repo herkese açık: https://github.com/mateopedersen/koledar365-si
 - Cloudflare Preview: https://e689a94c.koledar365-si.pages.dev/
 - Son yerel statik üretimde 18.742 dosya ve 2.820 eşleşmiş PDF/WebP çifti doğrulandı. 8.912 HTML, 8.888 indexlenebilir URL ve 9.093 iç hedefle statik/SEO kontrolü geçti.
@@ -29,7 +29,8 @@ Bu dosya birincil devam kaydıdır; önceki çalışma günlüğü docs/status-h
 - PDF'ler gerçek 600 ppi fiziksel sayfa ölçüsünde, gerçek sRGB WebP'ye dönüştürülmüş ve her sayfada Koledar365 marka imzasını taşır. PDF yeniden 600 ppi rasterleştirilip WebP ile karşılaştırılır; köşe boşluğu, hizalama ve imza da denetlenir.
 - Canlı örnek PDF ve WebP ZIP 200 döndürdü; sunulan baytların SHA-256 değerleri release manifest ile birebir eşleşti. ZIP testinden geçti; 2 sayfa, 600 ppi, manifest ve README bulundu. İki biçim de bir yıllık immutable cache ve noindex alıyor.
 - Statik release: 18.741 dosya, 2.820 çift, issues=[]; SEO taraması 8.912 HTML, 8.888 indexlenebilir URL ve 9.093 iç hedefte hata bulmadı.
-- Yerel test: 56 test / 1.745 doğrulama / 0 hata. Ruby/Wasm testleri 225 gerçek PDF kompozisyonunu kapsar. Ücretsiz site için 24 responsive görünüm geçti. Yeni yıllık/aylık indirme CTA testleri geçti.
+- Yıllık ve Şubat 2027 aylık canlı galerisinde 15 tasarım, 15 PDF ve 15 WebP seçeneği göründü; ilk PDF ve WebP indirmeleri tarayıcıda gerçekten hazırlandı. Yıllık/aylık CTA başlıkları ve doğru `annual`/`monthly` tarih parametreleri doğrulandı.
+- Yerel test: 56 test / 1.745 doğrulama / 0 hata. GitHub CI: SEO/tatil sözleşmeleri, PostgreSQL, yedekleme/geri yükleme, Docker production imajı, gerçek 600 ppi çıktı ve temiz SQLite yayın üretimi başarılı: https://github.com/mateopedersen/koledar365-si/actions/runs/39447819630. Ruby/Wasm testleri 225 gerçek PDF kompozisyonunu kapsar. Ücretsiz site için 24 responsive görünüm geçti. Yeni yıllık/aylık indirme CTA testleri geçti.
 - GitHub PR #2 ana dala alındı: https://github.com/mateopedersen/koledar365-si/pull/2
 - Temiz üretim doğrulamaları geçti: https://github.com/mateopedersen/koledar365-si/actions/runs/39442489071 (Ruby ile temiz HTML yayın üretimi); https://github.com/mateopedersen/koledar365-si/actions/runs/39442489088 (Rails/PostgreSQL, backup/restore, Docker imajı, 600 ppi PDF ve temiz SQLite statik üretimi).
 - Canlı doğrulama ayrıntısı: evidence/production-verification.json. Release/SEO/responsive/kabul raporları evidence/ altında.
