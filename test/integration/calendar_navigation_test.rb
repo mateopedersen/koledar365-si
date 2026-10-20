@@ -24,4 +24,23 @@ class CalendarNavigationTest < ActionDispatch::IntegrationTest
     assert_equal '2028-03-01',Rack::Utils.parse_query(URI(links.first['href']).query)['date']
   end
  end
+ test 'annual and monthly pages expose their matching PDF and WebP designs above the calendar' do
+  get '/koledar/2027/'
+  assert_response :success
+  assert_select '.calendar-download-callout' do
+   assert_select 'h2#calendar-download-title','Letni koledar 2027 za tisk'
+   assert_select 'a[href^="/koledar-za-tiskanje/"]',text:'Prikaži predloge' do |links|
+    assert_equal({'date'=>'2027-01-01','month'=>'1','type'=>'annual','year'=>'2027'},Rack::Utils.parse_query(URI(links.first['href']).query))
+   end
+   assert_select '.eyebrow','15 PREDLOG · PDF + WEBP · 600 PPI'
+  end
+  get '/koledar/2027/februar/'
+  assert_response :success
+  assert_select '.calendar-download-callout' do
+   assert_select 'h2#calendar-download-title','Koledar za februar 2027 za tisk'
+   assert_select 'a[href^="/koledar-za-tiskanje/"]',text:'Prikaži predloge' do |links|
+    assert_equal({'date'=>'2027-02-01','month'=>'2','type'=>'monthly','year'=>'2027'},Rack::Utils.parse_query(URI(links.first['href']).query))
+   end
+  end
+ end
 end
