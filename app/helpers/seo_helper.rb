@@ -77,7 +77,7 @@ module SeoHelper
     end
     if @horoscope_guide
       graph << { "@type" => "WebApplication", "@id" => "#{canonical_url}#ascendent",
-        "name" => "Izračun ascendenta in sončnega znamenja", "url" => "#{canonical_url}#ascendent",
+        "name" => "Izračun vzhajajočega znamenja (ascendenta) in sončnega znamenja", "url" => "#{canonical_url}#ascendent",
         "applicationCategory" => "LifestyleApplication", "operatingSystem" => "Any",
         "isAccessibleForFree" => true, "inLanguage" => "sl",
         "featureList" => ["Izračun po datumu, uri in kraju rojstva", "Časovni pasovi in premiki ure", "Obdelava rojstnih podatkov samo na napravi"] }
