@@ -1,7 +1,7 @@
 name: Rails quality and production image
 on:
   push:
-    branches: [main, 'rails-turnkey-*']
+    branches: [main, 'rails-turnkey-*', free-cloudflare-pages]
   pull_request:
   workflow_dispatch:
 permissions:

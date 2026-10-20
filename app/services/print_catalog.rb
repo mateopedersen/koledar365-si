@@ -1,6 +1,6 @@
 class PrintCatalog
   VERSION='2.0.1'
-  TYPES={'annual'=>'Letni koledar','monthly'=>'Mesečni koledar','weekly'=>'Tedenski koledar','lunar'=>'Lunin koledar','blank'=>'Prazen koledar','shift'=>'Razpored izmen','daily'=>'Dnevni planer','family'=>'Družinski planer','school'=>'Šolski urnik','birthday'=>'Rojstnodnevni koledar','name'=>'Koledar z imenom','holidays'=>'Prazniki in dela prosti dnevi'}.freeze
+  TYPES={'annual'=>'Letni koledar','workdays'=>'Koledar delovnih dni','monthly'=>'Mesečni koledar','weekly'=>'Tedenski koledar','lunar'=>'Lunin koledar','blank'=>'Prazen koledar','shift'=>'Razpored izmen','daily'=>'Dnevni planer','family'=>'Družinski planer','school'=>'Šolski urnik','birthday'=>'Rojstnodnevni koledar','name'=>'Koledar z imenom','holidays'=>'Prazniki in dela prosti dnevi'}.freeze
   def self.designs = @designs ||= PackageImporter.read('print-template-specification')['design_catalog']
   def self.normalize(raw)
     p=raw.to_h.stringify_keys
@@ -39,15 +39,19 @@ class PrintCatalog
     PrintGlyphs.assert!([name,notes,*entries.flat_map(&:values)],design:design)
     first_hour=Integer(p.fetch('start_hour',7));last_hour=Integer(p.fetch('end_hour',21))
     raise ArgumentError,'Izberite ure med 0 in 23; konec ne sme biti pred začetkom.' unless first_hour.between?(0,23) && last_hour.between?(first_hour,23)
-    {'start_hour'=>first_hour,'end_hour'=>last_hour,'type'=>type,'design'=>design,'year'=>year,'month'=>month,'date'=>date.iso8601,'name'=>name,'paper'=>paper,'orientation'=>orientation,'notes'=>notes,'entries'=>entries,'undated'=>[true,1,'1'].include?(p.fetch('undated','1')),'blank_layout'=>%w[monthly weekly].include?(p['blank_layout']) ? p['blank_layout'] : 'monthly','ruling'=>%w[lined plain dotted].include?(p['ruling']) ? p['ruling'] : 'lined','leap_policy'=>%w[feb28 march1 leap_only].include?(p['leap_policy']) ? p['leap_policy'] : 'feb28'}
+    normalized={'start_hour'=>first_hour,'end_hour'=>last_hour,'type'=>type,'design'=>design,'year'=>year,'month'=>month,'date'=>date.iso8601,'name'=>name,'paper'=>paper,'orientation'=>orientation,'notes'=>notes,'entries'=>entries,'undated'=>[true,1,'1'].include?(p.fetch('undated','1')),'blank_layout'=>%w[monthly weekly].include?(p['blank_layout']) ? p['blank_layout'] : 'monthly','ruling'=>%w[lined plain dotted].include?(p['ruling']) ? p['ruling'] : 'lined','leap_policy'=>%w[feb28 march1 leap_only].include?(p['leap_policy']) ? p['leap_policy'] : 'feb28'}
+    normalized['lunar_scope']='year' if type=='lunar' && p['lunar_scope']=='year'
+    normalized['workday_scope']=p['workday_scope']=='month' ? 'month' : 'year' if type=='workdays'
+    normalized
   end
   def self.identity(options)
     period=case options['type']
-    when 'monthly','lunar','blank' then options['type']=='blank' && options['undated'] ? 'undated' : '%04d-%02d' % [options['year'],options['month']]
+    when 'workdays' then options['workday_scope']=='month' ? '%04d-%02d' % [options['year'],options['month']] : options['year'].to_s
+    when 'monthly','lunar','blank' then options['lunar_scope']=='year' ? options['year'].to_s : options['type']=='blank' && options['undated'] ? 'undated' : '%04d-%02d' % [options['year'],options['month']]
     when 'weekly','shift','family','school','daily' then options['date']
     else options['year'].to_s
     end
-    {'type'=>options['type'],'period'=>period,'template_id'=>options['design'],'paper'=>options['paper'],'orientation'=>options['orientation'],'color_mode'=>options['design'].end_with?('-03') ? 'monochrome_bw' : 'color','template_version'=>VERSION,'name_exact'=>options['name'].to_s,'name_sha256'=>Digest::SHA256.hexdigest(options['name'].to_s),'layout_options'=>options.slice('month','date','undated','blank_layout','ruling','leap_policy','start_hour','end_hour')}
+    {'type'=>options['type'],'period'=>period,'template_id'=>options['design'],'paper'=>options['paper'],'orientation'=>options['orientation'],'color_mode'=>options['design'].end_with?('-03') ? 'monochrome_bw' : 'color','template_version'=>VERSION,'name_exact'=>options['name'].to_s,'name_sha256'=>Digest::SHA256.hexdigest(options['name'].to_s),'layout_options'=>options.slice('month','date','undated','blank_layout','ruling','leap_policy','start_hour','end_hour','lunar_scope','workday_scope')}
   end
   def self.filename(options)
     i=identity(options)

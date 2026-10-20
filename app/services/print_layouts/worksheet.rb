@@ -187,9 +187,18 @@ module PrintLayouts
     end
 
     def lunar
-      monthly
-      rows=AstronomicalEvent.where(kind:'moon',instant:Time.zone.local(options['year'],options['month'],1)...Time.zone.local(options['year'],options['month'],1).next_month).order(:instant)
-      flow_section('Lunine mene · Europe/Ljubljana',rows.map { |e|"#{I18n.l(e.local_time)} · #{e.title}" }.join("\n\n")+"\n\nVir: USNO. Časi so preračunani iz UTC v slovenski krajevni čas.")
+      original_month=options['month']
+      months=options['lunar_scope']=='year' ? (1..12).to_a : [original_month]
+      months.each_with_index do |month,index|
+        options['month']=month
+        new_page if index>0
+        monthly
+        start=Time.zone.local(options['year'],month,1)
+        rows=AstronomicalEvent.where(kind:'moon',instant:start...start.next_month).order(:instant)
+        flow_section('Lunine mene · Europe/Ljubljana',rows.map { |e|"#{I18n.l(e.local_time)} · #{e.title}" }.join("\n\n")+"\n\nVir: USNO. Časi so preračunani iz UTC v slovenski krajevni čas.")
+      end
+    ensure
+      options['month']=original_month
     end
 
     def holidays

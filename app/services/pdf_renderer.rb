@@ -59,6 +59,7 @@ class PdfRenderer
   end
 
   def period
+    return options['workday_scope']=='month' ? "#{CalendarEngine::MONTHS[options['month']-1].capitalize} #{options['year']}" : options['year'].to_s if options['type']=='workdays'
     return 'Datum / obdobje: ____________________' if options['type']=='blank' && options['undated']
     case options['type']
     when 'monthly','lunar','blank' then "#{CalendarEngine::MONTHS[options['month']-1].capitalize} #{options['year']}"
@@ -149,6 +150,12 @@ class PdfRenderer
     header
     case options['type']
     when 'annual','name' then annual
+    when 'workdays'
+      options['workday_scope']=='month' ? monthly : annual
+      selected=options['workday_scope']=='month' ? [options['month']] : (1..12).to_a
+      totals=selected.map { |m| days=CalendarEngine.working_days(Date.new(options['year'],m,1),Date.new(options['year'],m,-1)); "#{CalendarEngine::MONTHS[m-1].capitalize}: #{days[:working_days]} delovnih dni / #{days[:calendar_days]} koledarskih dni / #{days[:working_days]*8} ur (8 ur na dan)." }
+      sum=selected.sum { |m|CalendarEngine.working_days(Date.new(options['year'],m,1),Date.new(options['year'],m,-1))[:working_days] }
+      flow_section('Delovni dnevi · povzetek',"Privzeti delovni teden: ponedeljek–petek. Zakonski dela prosti dnevi so izločeni enkrat; prazniki ob koncu tedna se ne prenašajo. Urni obseg je informativen.\n\n"+totals.join("\n\n")+"\n\nSkupaj: #{sum} delovnih dni. Vir: ZPDPD in ZPDPD-I; koledar365.si/viri-in-metodologija/")
     when 'monthly','blank' then options['type']=='blank' && options['blank_layout']=='weekly' ? planner : monthly
     when 'lunar' then lunar
     when 'holidays' then holidays

@@ -13,7 +13,7 @@ require_relative "../lib/daily_log_device"
 module Koledar365
   class Application < Rails::Application
     config.load_defaults 8.1
-    config.autoload_lib(ignore: %w[assets tasks])
+    config.autoload_lib(ignore: %w[assets tasks portable])
     config.time_zone = "Europe/Ljubljana"
     sink = DailyLogDevice.new(directory: File.expand_path("../log", __dir__), prefix: Rails.env)
     config.logger = ActiveSupport::TaggedLogging.new(ActiveSupport::Logger.new(sink))

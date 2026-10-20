@@ -20,7 +20,10 @@ module ApplicationHelper
   def export_options(type='annual')
     year=(@year||2027).clamp(2027,2030)
     date=@selected&.year==year ? @selected : Date.new(year,@month||1,1)
-    {type:type,year:year,month:@month||1,date:date.iso8601,name:@person&.exact.to_s}
+    values={type:type,year:year,month:@month||1,date:date.iso8601,name:@person&.exact.to_s}
+    values[:lunar_scope]='year' if type=='lunar' && !@page&.month
+    values[:workday_scope]=@page&.month ? 'month' : 'year' if type=='workdays'
+    values
   end
   def source_link(url,label='Vir')
     link_to(label,url,rel:'noopener') if url.present? && url.start_with?('https://')

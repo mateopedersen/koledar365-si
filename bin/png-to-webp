@@ -11,3 +11,10 @@ if len(sys.argv)>3 and sys.argv[3]=='monochrome_bw':
         raise ValueError('Monochrome PDF contains chromatic pixels')
 profile=ImageCms.ImageCmsProfile(ImageCms.createProfile('sRGB')).tobytes()
 image.save(dst,'WEBP',lossless=True,method=4,icc_profile=profile)
+# Independently decode the encoded bytes before the source raster is removed.
+from PIL import ImageChops
+with Image.open(dst) as encoded:
+    if encoded.size != image.size or ImageChops.difference(encoded.convert('RGB'), image).getbbox():
+        raise ValueError('WebP pixels differ from the source PDF raster')
+    if encoded.info.get('icc_profile') != profile:
+        raise ValueError('WebP sRGB profile was not preserved')

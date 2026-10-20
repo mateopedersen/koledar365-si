@@ -54,6 +54,9 @@ end
 
 class InputLanguageTest < ActionDispatch::IntegrationTest
   test 'malformed calculator and print inputs return useful Slovene errors' do
+    post '/izracun/',params:{tool:'date',from:'2027-01-03',to:'2027-01-01'},as: :json
+    assert_response :success
+    assert_includes response.parsed_body['result'],'-2 dneva'
     post '/izracun/',params:{tool:'date',from:'wrong',to:'2027-01-01'},as: :json
     assert_response :unprocessable_entity
     assert_equal 'Vnesite veljaven datum.',response.parsed_body['error']
