@@ -18,6 +18,7 @@
 <% if @section=='observance' %><%= stylesheet_link_tag 'observances' %><% end %>
 <% if gallery_page? %><%= stylesheet_link_tag 'calendar_gallery' %><% end %>
 <% if @section=='school' %><link rel="stylesheet" href="/school/experience.css?v=20261020-3"><script type="module" src="/school/experience.mjs?v=20261020-3"></script><% end %>
+<%= stylesheet_link_tag 'print' %>
 <link rel="icon" href="/visuals/brand-calendar-v3.svg" type="image/svg+xml">
 </head>
 <body class="<%= [gallery_page? ? 'gallery-page' : nil, @section=='holidays' ? 'holiday-guide' : nil].compact.join(' ') %>">
