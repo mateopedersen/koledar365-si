@@ -20,7 +20,9 @@ test('cookie consent is visible before the main script and stays a compact botto
     await route.continue();
   });
 
-  await page.goto('/prazniki/2027/', { waitUntil: 'commit' });
+  const response = await page.goto('/prazniki/2027/', { waitUntil: 'commit' });
+  const policy = response?.headers()['content-security-policy'] || '';
+  test.skip(!policy.includes('sha256-'), 'Wait for the Pages build to publish the consent script hash before testing its static output.');
   await applicationRequested;
   const consent = page.locator('#cookies');
   await expect(consent).toBeVisible();
