@@ -34,3 +34,8 @@ sl:
     two: "%{count} zadetka"
     few: "%{count} zadetki"
     other: "%{count} zadetkov"
+  day_count_acc:
+    one: "%{count} dan"
+    two: "%{count} dneva"
+    few: "%{count} dni"
+    other: "%{count} dni"

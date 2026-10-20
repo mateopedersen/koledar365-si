@@ -1,7 +1,7 @@
 class ExportsController < ApplicationController
   rate_limit to:20,within:1.minute,only: :create
   def create
-    options=PrintCatalog.normalize(params.require(:options).permit(:type,:design,:year,:month,:date,:name,:paper,:orientation,:notes,:undated,:blank_layout,:ruling,:leap_policy,:start_hour,:end_hour,entries:[:title,:date,:time,:person,:code,:end_time,:break,:notes,:room,:done]).to_h)
+    options=PrintCatalog.normalize(params.require(:options).to_unsafe_h)
     if params.dig(:options,:photo_token).present?
       options['photo']=PrivatePhoto.resolve!(params[:options][:photo_token],session[:export_owner])
     end
@@ -17,8 +17,8 @@ class ExportsController < ApplicationController
     end
     RenderCalendarJob.perform_later(request.id) if request.status=='queued' && request.attempts==0
     render json:{id:request.id,status:request.status,url:"/izvozi/#{request.id}/"},status: :accepted
-  rescue ArgumentError,ActionController::ParameterMissing=>e
-    render json:{error:e.message},status: :unprocessable_entity
+  rescue ArgumentError,TypeError,ActionController::ParameterMissing=>e
+    render json:{error:InputError.message(e)},status: :unprocessable_entity
   end
   def show
     r=authorized_request

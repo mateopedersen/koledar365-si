@@ -1,0 +1,109 @@
+{
+  "checked_at": "2026-10-20T14:39:57+02:00",
+  "environment": "Local Rails development, loopback network, no CPU/network throttle, 3 sequential HTTP requests per route",
+  "scope": "Server HTML response latency only; first request is not a controlled cold process. Does not measure LCP, INP or CLS and is not field data.",
+  "rows": [
+    {
+      "path": "/",
+      "first_request": {
+        "ms": 200.3,
+        "html_bytes": 44686
+      },
+      "warm_requests": [
+        {
+          "ms": 17.53,
+          "html_bytes": 44686
+        },
+        {
+          "ms": 9.5,
+          "html_bytes": 44686
+        }
+      ]
+    },
+    {
+      "path": "/koledar/2029/april/",
+      "first_request": {
+        "ms": 12.51,
+        "html_bytes": 26023
+      },
+      "warm_requests": [
+        {
+          "ms": 9.29,
+          "html_bytes": 26023
+        },
+        {
+          "ms": 9.15,
+          "html_bytes": 26023
+        }
+      ]
+    },
+    {
+      "path": "/prazniki/2028/",
+      "first_request": {
+        "ms": 20.13,
+        "html_bytes": 68026
+      },
+      "warm_requests": [
+        {
+          "ms": 15.5,
+          "html_bytes": 68026
+        },
+        {
+          "ms": 14.13,
+          "html_bytes": 68026
+        }
+      ]
+    },
+    {
+      "path": "/prazniki/marijino-vnebovzetje/",
+      "first_request": {
+        "ms": 15.74,
+        "html_bytes": 30492
+      },
+      "warm_requests": [
+        {
+          "ms": 20.66,
+          "html_bytes": 30492
+        },
+        {
+          "ms": 16.14,
+          "html_bytes": 30492
+        }
+      ]
+    },
+    {
+      "path": "/druzinski-planer/",
+      "first_request": {
+        "ms": 6.97,
+        "html_bytes": 30676
+      },
+      "warm_requests": [
+        {
+          "ms": 6.54,
+          "html_bytes": 30676
+        },
+        {
+          "ms": 6.52,
+          "html_bytes": 30676
+        }
+      ]
+    },
+    {
+      "path": "/pomembni-dnevi/",
+      "first_request": {
+        "ms": 9.63,
+        "html_bytes": 36562
+      },
+      "warm_requests": [
+        {
+          "ms": 7.7,
+          "html_bytes": 36562
+        },
+        {
+          "ms": 6.68,
+          "html_bytes": 36562
+        }
+      ]
+    }
+  ]
+}

@@ -12,8 +12,11 @@ module SeoHelper
 
   def seo_image
     photo=seo_photo
-    photo ? {url:site_origin+photo['local_path'],width:photo['width'],height:photo['height'],alt:photo['alt_sl']} :
-      {url:"#{site_origin}/og.png",width:1200,height:630,alt:'Koledar365 – slovenski koledarji za leta 2027–2030'}
+    return {url:site_origin+photo['local_path'],width:photo['width'],height:photo['height'],alt:photo['alt_sl']} if photo
+    record=@person || @page
+    return {url:"#{site_origin}/og.png",width:1200,height:630,alt:'Koledar365 – slovenski koledarji za leta 2027–2030'} unless record
+    kind=@person ? 'names' : 'pages'
+    {url:"#{site_origin}/druzabno/#{kind}/#{record.id}/#{SocialImage.key(record)}.png",width:1200,height:630,alt:@title}
   end
 
   def breadcrumbs

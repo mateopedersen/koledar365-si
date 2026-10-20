@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/izvozi/:id/' => 'exports#show'
   get '/izvozi/:id/:kind' => 'exports#download'
   get '/predogled/:year/:design/:slug.png' => 'previews#show'
+  get '/druzabno/:kind/:id/:version.png' => 'previews#social'
   get '/og.png' => 'previews#og'
   get '/sitemap.xml' => 'pages#sitemap'
   get '/sitemap-:kind.xml' => 'pages#sitemap_part'

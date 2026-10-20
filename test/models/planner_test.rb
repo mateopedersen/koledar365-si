@@ -28,6 +28,12 @@ class PlannerTest < ActiveSupport::TestCase
     assert_match(/zan-/,PrintCatalog.filename(PrintCatalog.normalize(type:'name',name:'Žan')))
     assert_not_equal PrintCatalog.filename(PrintCatalog.normalize(name:'Žan')),PrintCatalog.filename(PrintCatalog.normalize(name:'Zan'))
   end
+  test 'breaks cannot exceed elapsed shift time and zero duration is rejected' do
+    assert_raises(ArgumentError) { PrintCatalog.normalize(entries:[{date:'2027-01-04',time:'08:00',end_time:'09:00',break:'61'}]) }
+    assert_raises(ArgumentError) { PrintCatalog.normalize(entries:[{date:'2027-01-04',time:'08:00',end_time:'08:00'}]) }
+    assert_equal 420,PlannerCalendar.minutes({'date'=>'2027-03-27','time'=>'22:00','end_time'=>'06:00'})
+    assert_equal 540,PlannerCalendar.minutes({'date'=>'2027-10-30','time'=>'22:00','end_time'=>'06:00'})
+  end
   test 'identical requests use the unique database index without validation failure' do
     fingerprint=SecureRandom.hex(32)
     a=PrintRequest.create_or_find_by!(fingerprint:fingerprint)

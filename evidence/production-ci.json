@@ -1,9 +1,9 @@
 {
   "repo": "https://github.com/mateopedersen/koledar365-si",
   "visibility": "public",
-  "run": "https://github.com/mateopedersen/koledar365-si/actions/runs/39417500303",
-  "attempt": 2,
-  "commit": "19325c5ccc58a98597f83fd91a60239f4cd26505",
+  "run": "https://github.com/mateopedersen/koledar365-si/actions/runs/39423386561",
+  "attempt": 1,
+  "commit": "ff2c15e54e7122b28a18e53017ee935b0d3ae2e8",
   "conclusion": "success",
   "steps": [
     {
@@ -36,6 +36,10 @@
     },
     {
       "name": "SEO and observance contracts",
+      "conclusion": "success"
+    },
+    {
+      "name": "PostgreSQL backup and isolated restore",
       "conclusion": "success"
     },
     {

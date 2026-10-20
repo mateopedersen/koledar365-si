@@ -63,3 +63,19 @@ class NamePaginationSeoTest < ActionDispatch::IntegrationTest
     assert_select 'h1',/stran 2/
   end
 end
+
+class SocialImageTest < ActionDispatch::IntegrationTest
+  test 'social images identify the actual name and calendar period' do
+    person=PersonName.order(:priority).first
+    get person.path
+    assert_select 'meta[property="og:image"]' do |elements|
+      url=elements.first['content'];assert_includes url,"/druzabno/names/#{person.id}/"
+      get URI(url).request_uri
+      assert_response :success
+      assert_equal 'image/png',response.media_type
+      assert_equal [1200,630],response.body.byteslice(16,8).unpack('N2')
+    end
+    get '/koledar/2029/april/'
+    assert_select 'meta[property="og:image:alt"][content="Koledar – april 2029"]'
+  end
+end

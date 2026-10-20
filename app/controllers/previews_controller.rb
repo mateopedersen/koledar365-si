@@ -27,7 +27,7 @@ class PreviewsController < ApplicationController
     head :not_found
   end
   def personal
-    options=PrintCatalog.normalize(params.require(:options).permit(:type,:design,:year,:month,:date,:name,:paper,:orientation,:notes,:undated,:blank_layout,:ruling,:leap_policy,:start_hour,:end_hour,entries:[:title,:date,:time,:person,:code,:end_time,:break,:notes,:room,:done]).to_h)
+    options=PrintCatalog.normalize(params.require(:options).to_unsafe_h)
     if params.dig(:options,:photo_token).present?
       options['photo']=PrivatePhoto.resolve!(params[:options][:photo_token],session[:export_owner])
     end
@@ -37,10 +37,23 @@ class PreviewsController < ApplicationController
     response.headers['Cache-Control']='private, no-store';response.headers['X-Page-Count']=result[:pages].to_s
     response.headers['X-Robots-Tag']='noindex'
     send_data dir.join('preview.png').binread,type:'image/png',disposition:'inline'
-  rescue ArgumentError=>e
-    render json:{error:e.message},status: :unprocessable_entity
+  rescue ArgumentError,TypeError=>e
+    render json:{error:InputError.message(e)},status: :unprocessable_entity
   ensure
     FileUtils.rm_rf(dir) if dir
+  end
+  def social
+    model={'pages'=>Page,'names'=>PersonName}[params[:kind]]
+    raise ActiveRecord::RecordNotFound unless model
+    record=model.find(params[:id]);key=SocialImage.key(record)
+    raise ActiveRecord::RecordNotFound unless key==params[:version]
+    dir=Rails.root.join('storage/social',key);FileUtils.mkdir_p(dir);path=dir.join('image.png')
+    File.open(dir.join('lock'),'w') do |lock|
+      lock.flock(File::LOCK_EX)
+      SocialImage.render(record,path) unless path.file?
+    end
+    response.headers['Cache-Control']='public, max-age=31536000, immutable'
+    send_file(path,type:'image/png',disposition:'inline')
   end
   def og
     path=Rails.root.join('public/og.png')

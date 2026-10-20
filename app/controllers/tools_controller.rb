@@ -1,6 +1,6 @@
 class ToolsController < ApplicationController
   rate_limit to:30,within:1.minute,only:[:contact,:import_ics,:export_ics]
-  rescue_from ArgumentError,Date::Error,KeyError, with: :bad_input
+  rescue_from ArgumentError,Date::Error,KeyError,TypeError, with: :bad_input
   def calculate
     type=params[:tool].to_s
     case type
@@ -17,7 +17,7 @@ class ToolsController < ApplicationController
       difference=(to-from).to_i + (params[:inclusive]=='1' ? 1:0)
       delta=Integer(params[:delta].presence||0)
       shifted=case params[:unit];when 'months' then from>>delta;when 'weeks' then from+delta*7;else from+delta;end
-      @result="Razlika: #{difference} dni (#{difference/7} tednov in #{difference%7} dni). Datum po premiku: #{I18n.l(shifted)}. Pri premiku po mesecih se dan omeji na zadnji dan ciljnega meseca."
+      @result="Razlika: #{I18n.t('day_count_acc',count:difference)}. Celih tednov: #{difference.abs/7}; preostalih dni: #{difference.abs%7}. Datum po premiku: #{I18n.l(shifted)}. Pri premiku po mesecih se dan omeji na zadnji dan ciljnega meseca."
     when 'workdays'
       from=Date.iso8601(params[:from]);to=Date.iso8601(params[:to]);week=Array(params[:weekdays]).map(&:to_i)
       raise ArgumentError,'Izberite vsaj en delovni dan.' if week.empty?||(week-[1,2,3,4,5,6,7]).any?
@@ -26,7 +26,7 @@ class ToolsController < ApplicationController
       @result="Koledarski dnevi: #{v[:calendar_days]}. Delovni dnevi: #{v[:working_days]}. Ure: #{v[:working_days]*hours}. Izločeni prazniki: #{v[:excluded_holidays].map { |d| I18n.l(d) }.join(', ').presence||'ni jih'}."
     when 'vacation'
       year=Integer(params[:year]);budget=Integer(params[:budget]);raise ArgumentError,'Izberite leto 2027–2030 in od 0 do 20 dni dopusta.' unless CalendarEngine::YEARS.include?(year)&&(0..20).cover?(budget)
-      @result=CalendarEngine.vacations(year,budget).first(8).map { |o| "#{I18n.l(o[:from])}–#{I18n.l(o[:to])}: #{o[:total]} prostih dni, poraba dopusta: #{o[:leave]} dni." }.join("\n")
+      @result=CalendarEngine.vacations(year,budget).first(8).map { |o| "#{I18n.l(o[:from])}–#{I18n.l(o[:to])}: prosti dnevi skupaj: #{o[:total]}, poraba dopusta: #{I18n.t('day_count_acc',count:o[:leave])}." }.join("\n")
     when 'countdown'
       date=Date.iso8601(params[:date]);clock=params[:time].presence || '00:00';zone=params[:zone].presence || 'Europe/Ljubljana'
       raise ArgumentError,'Vnesite veljavno uro.' unless clock.match?(/\A(?:[01]\d|2[0-3]):[0-5]\d\z/)
@@ -36,9 +36,8 @@ class ToolsController < ApplicationController
     when 'week','ordinal','leap'
       d=Date.iso8601(params[:date]);@result=case type
       when 'week' then "Teden ISO: #{d.cweek}. Leto ISO: #{d.cwyear}. Od #{I18n.l(d-d.cwday+1)} do #{I18n.l(d-d.cwday+7)}."
-      when 'ordinal' then "Dan v letu: #{d.yday}. Do konca leta ostane #{Date.new(d.year,12,31).yday-d.yday} dni."
+      when 'ordinal' then "Dan v letu: #{d.yday}. Preostali dnevi do konca leta: #{Date.new(d.year,12,31).yday-d.yday}."
       when 'leap' then "Leto #{d.year} #{Date.gregorian_leap?(d.year) ? 'je':'ni'} prestopno. Februar ima #{Date.new(d.year,2,-1).day} dni."
-      else "Do datuma #{I18n.l(d)} je #{(d-Time.zone.today).to_i} dni. Časovni pas: Europe/Ljubljana."
       end
     else raise ArgumentError,'Neznano orodje.'
     end
@@ -55,6 +54,7 @@ class ToolsController < ApplicationController
   def export_ics
     raw=params.fetch(:events,[])
     raise ArgumentError,'Dogodki morajo biti seznam.' unless raw.is_a?(Array)
+    raise ArgumentError,'Vsak dogodek mora biti zapis s polji.' unless raw.all? { |e|e.respond_to?(:permit) }
     entries=raw.map { |e|e.permit(:uid,:title,:date,:time,:minutes,:end_date,:notes,:repeat).to_h }
     raise ArgumentError,'Največ 500 dogodkov.' if entries.size>500
     send_data IcsService.export(entries),type:'text/calendar; charset=utf-8',filename:'koledar365-moj-koledar.ics'
@@ -92,6 +92,6 @@ class ToolsController < ApplicationController
     send_data IcsService.export(rows),type:'text/calendar; charset=utf-8',filename:"koledar365-#{params[:all]=='1' ? 'pomembni-dnevi' : 'prazniki'}-#{year}.ics"
   end
   def bad_input(e)
-    render json:{error:e.is_a?(KeyError) ? 'Izpolnite vsa zahtevana polja.' : (e.is_a?(Date::Error) ? 'Vnesite veljaven datum.' : e.message)},status: :unprocessable_entity
+    render json:{error:InputError.message(e)},status: :unprocessable_entity
   end
 end

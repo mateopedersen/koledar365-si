@@ -1,0 +1,307 @@
+{
+  "date": "2026-10-20",
+  "scope": "Implementation and local/CI evidence; live deployment is not complete",
+  "rows": [
+    {
+      "id": "K01",
+      "requirement": "Çerez politikası ve kabul butonu",
+      "status": "verified",
+      "finding": "Slim alt şerit, ret/kabul/geri çekme; isteğe bağlı şehir hafızası kapalı. Karanlık tema kullanıcı tarafından kaldırıldı.",
+      "evidence": "test/integration/site_test.rb; evidence/cookie-mobile.png"
+    },
+    {
+      "id": "K02",
+      "requirement": "Görsel SEO",
+      "status": "verified",
+      "finding": "Gerçek yerel ve lisanslı fotoğraflar, boyut/srcset; sosyal görseller dönem/isme bağlı.",
+      "evidence": "evidence/photo-serving-audit.json; test/integration/seo_test.rb"
+    },
+    {
+      "id": "K03",
+      "requirement": "ALT text",
+      "status": "verified",
+      "finding": "Slovence konu/isim/dönem etiketleri; süs ikonları aria-hidden.",
+      "evidence": "evidence/seo-audit.json; test/integration/seo_test.rb"
+    },
+    {
+      "id": "K04",
+      "requirement": "Özel 404",
+      "status": "verified",
+      "finding": "Özel tasarım ve gerçek HTTP 404; Slovence statik hata yanıtları.",
+      "evidence": "test/integration/site_test.rb; app/views/pages/not_found.html.erb"
+    },
+    {
+      "id": "K05",
+      "requirement": "İletişim",
+      "status": "verified",
+      "finding": "Kalıcı yönetici gelen kutusu, doğrulama/CSRF/honeypot/rate limit. SMTP gönderildi iddiası yok.",
+      "evidence": "test/integration/site_test.rb; app/controllers/tools_controller.rb"
+    },
+    {
+      "id": "K06",
+      "requirement": "XML sitemap",
+      "status": "verified",
+      "finding": "Sadece yayımlanan canonical kayıtlar; held ve arama dışarıda.",
+      "evidence": "test/integration/seo_test.rb; evidence/publication.json"
+    },
+    {
+      "id": "K07",
+      "requirement": "İç linkleme",
+      "status": "verified",
+      "finding": "Merkez/yıl/ay/kaynak/konu bağlantıları; 86 sayfalı isim gezinmesi, ayrı pagination canonical.",
+      "evidence": "evidence/seo-audit.json; test/integration/seo_test.rb"
+    },
+    {
+      "id": "K08",
+      "requirement": "Dış linkleme",
+      "status": "verified",
+      "finding": "Konu yanında birincil kaynak ve fotoğraf sahibi/lisansı.",
+      "evidence": "evidence/observance-audit.json; docs/data-sources.md"
+    },
+    {
+      "id": "K09",
+      "requirement": "Eski cache temizliği",
+      "status": "implemented",
+      "finding": "Digest varlık ve gerçek veri/font/şablon anahtarı; kişisel veriyi silmeyen rollback belgesi. Canlı hostta cutover henüz yapılmadı.",
+      "evidence": "docs/deployment.md; test/models/planner_test.rb"
+    },
+    {
+      "id": "K10",
+      "requirement": "Tüm takvimler tıklanabilir",
+      "status": "verified",
+      "finding": "Dört yıl/48 ay ve gün bağlantıları; tarih ve tatil kapsamı testli.",
+      "evidence": "test/models/calendar_test.rb; evidence/calendar-2029-browser.json"
+    },
+    {
+      "id": "K11",
+      "requirement": "Genel tasarım",
+      "status": "verified",
+      "finding": "Referans üç sütun, canlı gerçek fotoğraflar, dengeli tipografi ve ulusal renkler.",
+      "evidence": "evidence/home-final-desktop.png; evidence/responsive-final.json"
+    },
+    {
+      "id": "K12",
+      "requirement": "Buton işlevleri",
+      "status": "verified",
+      "finding": "Gerçek planlayıcı CRUD, ICS/yedek/hesaplama/kişisel önizleme ve indirmeler.",
+      "evidence": "test/integration/planner_test.rb; evidence/tests-final.txt"
+    },
+    {
+      "id": "K13",
+      "requirement": "Hız ve performans",
+      "status": "partial",
+      "finding": "Yerel HTTP ölçümü var. Kontrollü Lighthouse/Core Web Vitals ve saha verisi henüz yok; performans hedefinin geçtiği iddia edilmez.",
+      "evidence": "evidence/http-performance.json; docs/seo.md"
+    },
+    {
+      "id": "K14",
+      "requirement": "Site içi arama",
+      "status": "verified",
+      "finding": "Aksan toleransı, exact isim önceliği, araç/yıl/ay sorguları ve noindex sonuçlar.",
+      "evidence": "test/integration/site_test.rb; app/services/search_service.rb"
+    },
+    {
+      "id": "K15",
+      "requirement": "2029 takvim bozuklukları",
+      "status": "verified",
+      "finding": "2029 12 ay doğrudan tarayıcıda; 5/6 satır ve 1 Ocak Pazartesi.",
+      "evidence": "evidence/calendar-2029-browser.json; evidence/calendar-2029-review.jpg"
+    },
+    {
+      "id": "K16",
+      "requirement": "İç içe tablo ve kartlar",
+      "status": "partial",
+      "finding": "CSS grid/flex; takvim semantik tablo, veri tablosunda yerel kaydırma. 56 görünümde dış taşma yok. 200% zoom için genişlik eşdeğeri test; ayrı tam klavye/zoom audit tamamlanmadı.",
+      "evidence": "evidence/responsive-final.json"
+    },
+    {
+      "id": "K17",
+      "requirement": "OG görselleri",
+      "status": "verified",
+      "finding": "İsim/yıl/ay için gerçek 1200×630 sosyal görsel; tatil fotoğrafı konuya bağlı.",
+      "evidence": "test/integration/seo_test.rb; app/services/social_image.rb"
+    },
+    {
+      "id": "K18",
+      "requirement": "Meta title ve description",
+      "status": "verified",
+      "finding": "8.905 renderde benzersiz başlık/açıklama, tek H1 ve canonical sözleşmesi.",
+      "evidence": "evidence/seo-audit.json"
+    },
+    {
+      "id": "K19",
+      "requirement": "Mobil ve responsive",
+      "status": "verified",
+      "finding": "320/376/390/768/1024/1440/1920 CSS px, sekiz sayfa ailesi. 375 yerine 376 ölçüldü.",
+      "evidence": "evidence/responsive-final.json"
+    },
+    {
+      "id": "K20",
+      "requirement": "Tüm sayfalarda teknik SEO ve UX",
+      "status": "verified",
+      "finding": "343 plan yolu + 8.561 isim + lisans sayfası tarandı; kaynak kapıları açık. Canlı indeks iddiası yok.",
+      "evidence": "evidence/seo-audit.json; evidence/publication.json"
+    },
+    {
+      "id": "K21",
+      "requirement": "Karanlık mod",
+      "status": "overridden",
+      "finding": "Son kullanıcı talimatıyla dark/system modu tamamen kaldırıldı; yalnız açık tema.",
+      "evidence": "STATUS.md; app/assets/stylesheets/slovenia.css"
+    },
+    {
+      "id": "K22",
+      "requirement": "Lunar Calendar",
+      "status": "verified",
+      "finding": "USNO gerçek UTC anları, Ljubljana tarihi/DST ve PDF Ay fazları.",
+      "evidence": "test/models/calendar_test.rb; data/source/usno-moon-2028.json"
+    },
+    {
+      "id": "K23",
+      "requirement": "Burç hesaplayıcı",
+      "status": "verified",
+      "finding": "Geleneksel güneş burcu; sınır/29 Şubat/yıl geçişi ve yöntem açıklaması.",
+      "evidence": "test/models/calendar_test.rb; app/services/zodiac.rb"
+    },
+    {
+      "id": "K24",
+      "requirement": "Bugünün tarihli burç yorumu",
+      "status": "verified",
+      "finding": "Bugün 12 özgün kayıt; gerçek tarihli planlama, JSON ithal, izleme ve eksik gün durumu. API anahtarı olmadan editoryal giriş kullanılır.",
+      "evidence": "test/models/editorial_test.rb; app/views/admin/index.html.erb"
+    },
+    {
+      "id": "K25",
+      "requirement": "E E A T ve kullanıcı deneyimi",
+      "status": "partial",
+      "finding": "Gerçek işletmeci Mateo Pedersen, yöntem ve düzeltme yolu var. Yayımlanacak işletmeci iletişimi/üretim sağlayıcısı henüz gelmedi.",
+      "evidence": "app/views/pages/_privacy.html.erb; docs/seo.md"
+    },
+    {
+      "id": "K26",
+      "requirement": "Özel Hakkımızda",
+      "status": "verified",
+      "finding": "Özel O nas tasarımı, gerçek amaç ve kaynaklar.",
+      "evidence": "app/views/pages/_about.html.erb; evidence/responsive-final.json"
+    },
+    {
+      "id": "K27",
+      "requirement": "Slovenya yerelleştirmesi",
+      "status": "verified",
+      "finding": "Slovenya, Ljubljana saati, yerel tarih/ay/gün ve 69 resmî şehir.",
+      "evidence": "test/models/city_test.rb; test/models/calendar_test.rb"
+    },
+    {
+      "id": "K28",
+      "requirement": "İsim başına 5 ana ailede 15 tasarım",
+      "status": "verified",
+      "finding": "Beş aile/15 gerçek yerleşim, 10 renkli/5 BW; NFC ad ve dört yıl seçimi.",
+      "evidence": "evidence/print-gate.json; evidence/print-v2-contact-sheet.jpg"
+    },
+    {
+      "id": "K29",
+      "requirement": "En güncel kararlı Ruby",
+      "status": "verified",
+      "finding": "Ruby 4.0.7/Rails 8.1.4; Linux Docker/PostgreSQL gerçek CI. Son commitin CI sonucu raporda güncellenir.",
+      "evidence": "evidence/production-ci.json; .github/workflows/ci.yml"
+    },
+    {
+      "id": "K30",
+      "requirement": "Doğru yerel veri",
+      "status": "partial",
+      "finding": "Tatil/astronomi/SURS verisi doğrulandı. 13 godovi + 4 gelecek okul yılı kaynağı/hakkı doğrulanmadığından held.",
+      "evidence": "docs/data-sources.md; evidence/publication.json"
+    },
+    {
+      "id": "K31",
+      "requirement": "GitHub ve Cloudflare yayını",
+      "status": "blocked",
+      "finding": "GitHub public ve kaynak dalı/PR hazır. Cloudflare DNS/Pages var; kalıcı Rails hostu verilmedi. Canlı Rails yayını yok.",
+      "evidence": "evidence/pull-request.json; docs/deployment.md"
+    },
+    {
+      "id": "K32",
+      "requirement": "Gerçek 600 ppi PDF ve WebP kalitesi",
+      "status": "verified",
+      "finding": "180 gerçek eşleşme, bütün sayfalarda gerçek 600 ppi boyut, sRGB ve gömülü vektör font.",
+      "evidence": "evidence/export-file-verification.json; evidence/file-contract-v1.1.json"
+    },
+    {
+      "id": "K33",
+      "requirement": "Kişisel kayıtlar ve ICS",
+      "status": "verified",
+      "finding": "Seansa özel dosyalar/fotoğraf; local CRUD, yedek, gerçek ICS ve DST/gece vardiyası/29 Şubat politikası.",
+      "evidence": "test/models/planner_test.rb; test/integration/planner_test.rb"
+    },
+    {
+      "id": "K34",
+      "requirement": "Font ve varlık lisansları",
+      "status": "verified_with_fallback",
+      "finding": "Fotoğraf ve DejaVu lisansları kayıtlı. Avenir cihazda kuruluysa; dağıtılabilir webfont lisansı yok ve sistem fallback açıkça belirtilir.",
+      "evidence": "docs/data-sources.md; app/assets/fonts/LICENSE.txt; README.md"
+    },
+    {
+      "id": "K35",
+      "requirement": "Kesintiye dayanıklı teslim",
+      "status": "verified",
+      "finding": "STATUS, faz commitleri, özel sırlar Git dışında, kaynak/kanıt/yeniden başlatma belgeleri.",
+      "evidence": "STATUS.md; docs/architecture.md"
+    },
+    {
+      "id": "K36",
+      "requirement": "2030 dahil dört tam yıl",
+      "status": "verified",
+      "finding": "2027–2030, 48 ay, artık yıl/ISO/Easter/workdays testli.",
+      "evidence": "test/models/calendar_test.rb; evidence/print-layout-audit.json"
+    },
+    {
+      "id": "K37",
+      "requirement": "Her indirilebilir türde 15 PDF ve 15 WebP",
+      "status": "verified",
+      "finding": "12 indirilebilir tür ×15 tasarımın PDF+WebP gerçek üretimi ve doğrulaması; on-demand sürdürülebilir cache.",
+      "evidence": "evidence/export-matrix-v2.json; evidence/export-file-verification.json"
+    },
+    {
+      "id": "K38",
+      "requirement": "Her dosyada site marka imzası",
+      "status": "verified",
+      "finding": "Her PDF sayfasında okunabilir marka; WebP aynı PDF sayfasından üretilir. ZIP tam sayfalı.",
+      "evidence": "evidence/export-file-verification.json; app/services/pdf_renderer.rb"
+    },
+    {
+      "id": "K39",
+      "requirement": "En popüler isimlerden başlama",
+      "status": "verified",
+      "finding": "Gerçek 200 →1.000 →8.561 kalite kapılı popülerlik sıralı yayın.",
+      "evidence": "evidence/publication.json; evidence/name-layout-audit.json"
+    },
+    {
+      "id": "K40",
+      "requirement": "Son ana sayfa görselini referans alma",
+      "status": "verified",
+      "finding": "Verilen üç sütunlu referans ve kullanıcının sade profesyonel/ulusal renk revizyonları uygulandı.",
+      "evidence": "evidence/home-final-desktop.png"
+    },
+    {
+      "id": "K41",
+      "requirement": "Bütün önemli günler ve kutlamalar merkezi",
+      "status": "verified",
+      "finding": "Önemli gün listesi/ay takvimi, kategori/ay/arama, yaklaşan tarih, seçimle aynı ICS ve 58 konu.",
+      "evidence": "app/views/pages/_important_days.html.erb; evidence/observance-audit.json"
+    },
+    {
+      "id": "K42",
+      "requirement": "Anahtar teslim çalışan site",
+      "status": "blocked",
+      "finding": "Yerelde çalışan uygulama, Docker/Compose, yönetim ve bakım hazır. Canlı host, işletmeci iletişimi ve üretim backup görevi olmadan anahtar teslim yayın tamamlandı denmez.",
+      "evidence": "docs/deployment.md; STATUS.md"
+    },
+    {
+      "id": "K43",
+      "requirement": "Uzman titizliğinde bütünsel Slovence",
+      "status": "verified_with_limit",
+      "finding": "Slovence UI/admin/hatalar/PDF, CLDR ve bağlama uygun sayımlar incelendi. Bağımsız anadili editörü sertifikası veya hatasızlık garantisi verilmez.",
+      "evidence": "config/locales/sl.yml; evidence/tests-final.txt; docs/data-sources.md"
+    }
+  ]
+}

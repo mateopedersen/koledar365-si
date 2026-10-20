@@ -11,3 +11,5 @@ Kontroller: `bundle exec ruby -r ./config/environment script/audit_seo.rb`; `bun
 LCP 2,5 sn, INP 200 ms, CLS 0,1 hedefleri saha ölçümü gerektirir. İlk teslimde laboratuvar ölçümü ayrı raporlanır; tek Lighthouse yüklemesi gerçek kullanıcı INP kanıtı değildir. Canlı alan adı açılmadan Search Console doğrulama ve alan adına özgü saha verisi yoktur.
 
 E-E-A-T bir sayısal puan değildir. Gerçek işletmeci Mateo Pedersen, metodoloji, tarihli kaynaklar ve düzeltme formu kullanılır. Bağımsız Slovence uzman tarafından incelendiği iddia edilmez. İşletmeci iletişimi ve üretim sağlayıcıları doğrulanmadan gizlilik metni son yayın onayı almış sayılmaz.
+
+Son yerel HTTP ölçümü: altı temsilci rota, her biri üç ardışık istek, geliştirme Rails/loopback, ağ/CPU kısıtlaması yok. Sıcak HTML cevapları yaklaşık 6,5–20,7 ms; ilk ana sayfa cevabı 200,3 ms. Bunlar sunucu HTML süreleridir; LCP/INP/CLS değildir. Tam koşullar `evidence/http-performance.json` içinde. Gerçek üretim ağında kontrollü lab ve sonraki saha ölçümü ayrıca yapılmalıdır.

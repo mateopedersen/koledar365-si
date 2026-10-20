@@ -2,7 +2,7 @@ class HoroscopeImporter
   def self.import!(input,actor:)
     raise ArgumentError,'Datoteka je prevelika.' if input.bytesize>200_000
     rows=JSON.parse(input)
-    raise ArgumentError,'Pričakovan je seznam največ 120 besedil.' unless rows.is_a?(Array) && rows.size.between?(1,120)
+    raise ArgumentError,'Pričakovan je seznam največ 120 besedil.' unless rows.is_a?(Array) && rows.size.between?(1,120) && rows.all? { |row|row.is_a?(Hash) }
     keys=rows.map { |r|[r['sign'],r['local_date']] }
     raise ArgumentError,'Datoteka vsebuje podvojeno znamenje in datum.' unless keys.uniq.size==keys.size
     Horoscope.transaction do

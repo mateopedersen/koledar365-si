@@ -142,13 +142,14 @@ module PrintLayouts
     def shift_totals
       totals=options['entries'].group_by { |e|e['person'].presence || 'Brez imena' }.map do |person,entries|
         complete=entries.select { |e|e['time'].present? && e['end_time'].present? }
-        minutes=complete.sum do |e|
-          start=e['time'].split(':').map(&:to_i).then { |h,m|h*60+m };finish=e['end_time'].split(':').map(&:to_i).then { |h,m|h*60+m }
-          finish+=1440 if finish<start;finish-start-e['break'].to_i
+        if complete.empty?
+          "#{person}: ure niso izračunane. Vnosi brez začetka ali konca: #{entries.size}."
+        else
+          minutes=complete.sum { |e|PlannerCalendar.minutes(e)-e['break'].to_i }
+          "#{person}: #{minutes/60} h #{minutes%60} min (#{complete.size} vnosov s časom). Brez časa: #{entries.size-complete.size}."
         end
-        "#{person}: #{minutes/60} h #{minutes%60} min (#{complete.size} vnosov s časom). Brez časa: #{entries.size-complete.size}."
       end
-      flow_section('Seštevek izmen',"#{totals.join("\n")}\n\nKonec pred začetkom pomeni naslednji koledarski dan. Odmor se odšteje. Izračun uporablja krajevne ure; ob premiku ure preverite dejansko trajanje. Vnosi brez začetka ali konca niso vključeni v seštevek.")
+      flow_section('Seštevek vseh vnosov',"#{totals.join("\n")}\n\nKonec pred začetkom pomeni naslednji koledarski dan. Odmor se odšteje. Izračun upošteva dejansko trajanje v časovnem pasu Europe/Ljubljana, vključno s premikom ure. Vnosi brez začetka ali konca niso vključeni v seštevek.")
     end
 
     def daily
@@ -164,7 +165,7 @@ module PrintLayouts
           line(x+50,y-20,x+w,y-20)
         end
       end
-      tasks=options['entries'].select { |e|e['time'].blank? }
+      tasks=options['entries'].select { |e|e['time'].blank? && e['date']==date.iso8601 }
       flow_section('Naloge brez določene ure',tasks.map { |e|"#{e['done']=='1' ? '☑' : '☐'} #{e['title']}" }.join("\n\n")) if tasks.any?
     end
 

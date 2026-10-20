@@ -51,3 +51,18 @@ class PlannerIntegrationTest < ActionDispatch::IntegrationTest
     assert_equal 404,other.response.status
   end
 end
+
+class InputLanguageTest < ActionDispatch::IntegrationTest
+  test 'malformed calculator and print inputs return useful Slovene errors' do
+    post '/izracun/',params:{tool:'date',from:'wrong',to:'2027-01-01'},as: :json
+    assert_response :unprocessable_entity
+    assert_equal 'Vnesite veljaven datum.',response.parsed_body['error']
+    post '/izracun/',params:{tool:'date',from:'2027-01-01',to:'2027-01-02',delta:['wrong']},as: :json
+    assert_response :unprocessable_entity
+    assert_includes response.parsed_body['error'],'Preverite obliko'
+    post '/izvozi/',params:{options:{year:['wrong']}},as: :json
+    assert_response :unprocessable_entity
+    post '/ics/izvoz/',params:{events:['wrong']},as: :json
+    assert_response :unprocessable_entity
+  end
+end

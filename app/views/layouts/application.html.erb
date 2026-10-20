@@ -23,7 +23,7 @@
 <form action="/isci/" class="search" role="search"><label class="sr-only" for="search">Poišči datum, ime ali orodje</label><input id="search" name="q" type="search" placeholder="Poišči datum, ime ali orodje" value="<%= @q %>"><button aria-label="Išči"><%= ui_icon('search') %></button></form>
 <span class="country">🇸🇮 Slovenija</span></header>
 <nav class="subnav" aria-label="Koledarji in orodja"><% (2027..2030).each do |year| %><a href="/koledar/<%= year %>/"><%= ui_icon('calendar') %> <%= year %></a><% end %><a href="/lunin-koledar/"><%= ui_icon('moon') %> Sonce in Luna</a><a href="/delovni-dnevi/"><%= ui_icon('note') %> Delovni dnevi</a><a href="/koledar-za-tiskanje/"><%= ui_icon('print') %> Koledarji PDF</a><a href="/datumski-kalkulator/"><%= ui_icon('calculator') %> Datumski kalkulator</a><a href="/horoskop/"><%= ui_icon('star') %> Horoskop</a><a href="/orodja/"><%= ui_icon('grid') %> Vsa orodja</a></nav>
-<main id="vsebina">
+<main id="vsebina" tabindex="-1">
 <% unless breadcrumbs.empty? %><nav class="breadcrumb" aria-label="Drobtinice"><% breadcrumbs.each_with_index do |(label,path),i| %><% if i>0 %><span aria-hidden="true">›</span><% end %><% if i==breadcrumbs.size-1 %><span aria-current="page"><%= label %></span><% else %><a href="<%= path %>"><%= label %></a><% end %><% end %></nav><% end %>
 <% if flash[:notice] %><p class="notice" role="status"><%= flash[:notice] %></p><% end %><% if flash[:alert] %><p class="error" role="alert"><%= flash[:alert] %></p><% end %>
 <%= yield %>

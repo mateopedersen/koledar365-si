@@ -88,3 +88,19 @@ Ara scripts: work/professional_design.py ve work/metadata_and_editorial.py bir k
 - Yönetim hesabı mateo, parola yalnız storage/private-admin.txt (0600). Uygulama kaynak deposuna veya rapora parola yazılmadı.
 - Son test (son pagination testi öncesi): 46 test / 1.670 doğrulama / sıfır hata. Yeni kaynak ve UI değişikliklerinin son CI commit'i henüz gönderilmedi.
 - Mimari, veri kaynakları, SEO ve deployment belgeleri docs dizininde. Şifreli age yedeği ve izole DB geri yükleme kontrolü eklendi. Yedek görevi henüz gerçek üretim hostuna kurulmadı. CI'ya PostgreSQL dump/restore kontrolü eklendi, çalışması bekleniyor.
+
+## Sonraki commit için hazır kayıt
+- ff2c15e GitHub'a gönderildi; PR: https://github.com/mateopedersen/koledar365-si/pull/1 (draft), sohbete bağlandı.
+- ff2c15e gerçek üretim CI'sı geçti: https://github.com/mateopedersen/koledar365-si/actions/runs/39423386561 . PostgreSQL dump/izole restore, Docker build, production boot ve gerçek 600 ppi BW çıktı dahil. evidence/production-ci.json.
+- Web güncel kodla yeniden açıldı: PID 97411, oturum 85699. İşçi yeniden açıldı: oturum 68129. Sürüm değişikliğinde işçi yeniden başlatılmalı.
+- İlave düzenlemeler: sayıların bağlamına göre Slovence hâl eki, tarihli/isimli gerçek sosyal paylaşım PNG'si, eşit başlangıç/bitiş ve aşırı mola reddi, gerçek DST süreli vardiya toplamı. Zamanı olmayan vardiyalarda hesaplanmış sıfır yerine eksik saat açıklaması. Kişisel günlük görevler yalnız seçili gün için görünür.
+- Güncel kaynak durumunda 49 test bekleniyor; evidence/tests-final.txt gerçek son çıktıdır. Yeni commit ve CI ile sayı kesinleşecek.
+- 43 kabul maddesi evidence/acceptance.json ve docs/acceptance.md içinde dürüstçe işaretlendi. K13 kontrollü CWV lab/saha ve K16 tam ayrı klavye/200% zoom incelemesi tamamlanmadı; K31/K42 canlı Rails hostuna bağlı. Sadece yerel HTTP cevap ölçümü var; LCP/INP/CLS diye sunulmaz.
+- Canlı yayın için sunucu ve yayımlanacak işletmeci iletişimi yeniden istendi; kullanıcı yanıtı bekleniyor. Yeni ücretli hizmet açılmadı.
+
+## Kullanıcı yönlendirmesi — Cloudflare üzerinde yayın
+Kullanıcı VPS istemiyor. GitHub + Cloudflare hedefi korundu: önce Workers Paid yetkisi ve Containers uygunluğu kontrol edilecek, Rails Docker korunacak, en küçük Worker yönlendirme katmanı kullanılabilecek. Kalıcı veritabanı için Cloudflare servisleriyle gerçek Rails CRUD/backup/restart testi; PDF/WebP için R2; GitHub otomatik deploy + HTTPS. İzin olmadan ücretli hizmet açılmaz. Herkese açık iletişim e-postası artık koledar365@gmail.com olarak kullanıcı tarafından sağlandı. Başka teknolojiye geçiş veya proje sıfırlama yetkisi yok. Containers uygun değilse somut test ve alternatif mimari onayı gerekli.
+
+## Ücretsiz yayın yönü — son kullanıcı talimatı
+Kullanıcı Kalendorius365 ile aynı ücretsiz GitHub + Cloudflare düzenini tekrar açıkça istedi; hiçbir ücretli hizmet açılmayacak. Mevcut Cloudflare hesabı Workers Free ($0); Containers ekranı “Workers Paid” satın alma kapısı gösteriyor. Ücretli Containers denenmiş/çalışıyor diye sunulmaz. Kalendorius365 deposu okundu: Ruby/Jekyll ile build, Pages statik HTML, kişisel veriler tarayıcıda, küçük salt okunur hava durumu Functions; sürekli Rails sunucusu yok. Yerel Rails kaynakları, testleri ve çıktı motoru korunacak. Ücretsiz hedef için Rails'te HTML üretimi + tarayıcıda Ruby baskı/hesap motoru fizibilitesi inceleniyor. Teknoloji değişikliği gizlenmeyecek; ücretsiz yayında yönetim ve saklama farkları açıkça kaydedilecek. Public iletişim: koledar365@gmail.com.
+Son test çıktısı 50 test / 1696 doğrulama, 1 başarısız: strong parameters hatalı year dizisini düşürüp varsayılan yıla dönüyordu. Ham seçenekler yalnız normalize fonksiyonuna verilip skaler biçim denetlenerek düzeltildi; tekrar test edilecek.

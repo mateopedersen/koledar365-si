@@ -4,6 +4,7 @@ class PrintCatalog
   def self.designs = @designs ||= PackageImporter.read('print-template-specification')['design_catalog']
   def self.normalize(raw)
     p=raw.to_h.stringify_keys
+    raise ArgumentError,'Preverite obliko vnesenih podatkov.' if p.any? { |key,value| key!='entries' && (value.is_a?(Array)||value.is_a?(Hash)) }
     design=p.fetch('design','min-01');type=p.fetch('type','annual')
     raise ArgumentError,'Neznana predloga.' unless designs.any? { |d| d['id']==design } && TYPES.key?(type)
     year=Integer(p.fetch('year',2027));month=Integer(p.fetch('month',1))
@@ -26,6 +27,10 @@ class PrintCatalog
       end
       if values['break'].present?
         raise ArgumentError,'Odmor mora biti med 0 in 1440 minutami.' unless values['break'].match?(/\A\d{1,4}\z/) && values['break'].to_i.between?(0,1440)
+      end
+      if values.values_at('date','time','end_time').all?(&:present?)
+        minutes=PlannerCalendar.minutes(values)
+        raise ArgumentError,'Odmor ne sme biti daljši od izmene.' if values['break'].to_i>minutes
       end
       values
     end
@@ -61,6 +66,6 @@ class PrintCatalog
     data_files+=(2027..2030).map { |y| "usno-moon-#{y}" } if options['type']=='lunar'
     data_hash=data_files.map { |f| Digest::SHA256.file(Rails.root.join("data/source/#{f}.json")).hexdigest }
     font_hash=Dir[Rails.root.join('app/assets/fonts/*.ttf')].sort.map { |f| Digest::SHA256.file(f).hexdigest }
-    Digest::SHA256.hexdigest([VERSION,'brand-v1','file-contract-v1.1',font_hash,data_hash,source_version(options),options.sort.to_h,owner].to_json)
+    Digest::SHA256.hexdigest([VERSION,'brand-v1','file-contract-v1.1','planner-policy-2',font_hash,data_hash,source_version(options),options.sort.to_h,owner].to_json)
   end
 end
