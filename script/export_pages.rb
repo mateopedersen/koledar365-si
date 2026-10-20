@@ -1,6 +1,7 @@
 require_relative '../config/environment'
 require 'nokogiri'
 require 'fileutils'
+require 'digest'
 ENV['OPERATOR_CONTACT']='koledar365@gmail.com'
 out=Rails.root.join(ENV.fetch('STATIC_OUT','site'));FileUtils.mkdir_p(out)
 partial=ENV['STATIC_ONLY']&.split(',')
@@ -8,13 +9,16 @@ FileUtils.cp_r(Rails.root.join('public/.'),out) unless partial
 FileUtils.mkdir_p(out.join('free/views/home'));FileUtils.mkdir_p(out.join('free/names'))
 FileUtils.cp_r(Rails.root.join('cloudflare/free/.'),out.join('free'))
 FileUtils.rm_f(out.join('free/README.md'))
+client_asset="client-#{Digest::SHA256.file(out.join('free/client.js')).hexdigest[0,16]}.js"
+FileUtils.cp(out.join('free/client.js'),out.join('free',client_asset))
 session=ActionDispatch::Integration::Session.new(Rails.application);session.host!('localhost')
 assets=nil;processed=[]
 transform=lambda do |body,path,indexable:true|
  doc=Nokogiri::HTML(body)
  sources=doc.css('script[src]').map { |node|node['src'] }
- assets||={scripts:sources.reject { |src|src.include?('holidays-') },holidays:ApplicationController.helpers.asset_path('holidays.js')}
- doc.css('script[src],meta[name="csrf-token"],meta[name="csrf-param"],meta[http-equiv="Content-Security-Policy"],input[name="authenticity_token"]').remove
+ assets||={scripts:sources.reject { |src|src.include?('holidays-')||src.include?('city_card-') },holidays:ApplicationController.helpers.asset_path('holidays.js')}
+ doc.css('script[src]').reject { |node|node['src'].include?('city_card-') }.each(&:remove)
+ doc.css('meta[name="csrf-token"],meta[name="csrf-param"],meta[name="csp-nonce"],meta[http-equiv="Content-Security-Policy"],input[name="authenticity_token"]').remove
  doc.css('[nonce]').each { |node|node.remove_attribute('nonce') }
  doc.at_css('meta[name=robots]')['content']=indexable ? 'index, follow, max-image-preview:large':'noindex, follow'
  if path.start_with?('/koledar-z-imenom/') && path!='/koledar-z-imenom/'
@@ -54,7 +58,7 @@ transform=lambda do |body,path,indexable:true|
  if path.start_with?('/koledar/','/tedenski-koledar/')
   doc.css('.calendar-toolbar .tabs a').each { |node|node['href']='/'+node['href'] if node['href'].start_with?('?') }
  end
- script=Nokogiri::XML::Node.new('script',doc);script['type']='module';script['src']='/free/client.js';doc.at_css('head').add_child(script)
+ script=Nokogiri::XML::Node.new('script',doc);script['type']='module';script['src']="/free/#{client_asset}";doc.at_css('head').add_child(script)
  doc.to_html
 end
 write=lambda do |path,html|
@@ -107,6 +111,8 @@ headers=<<~HEADERS
   Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' blob:; connect-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'
   Cache-Control: public, max-age=0, must-revalidate
 /assets/*
+  Cache-Control: public, max-age=31536000, immutable
+/free/#{client_asset}
   Cache-Control: public, max-age=31536000, immutable
 /free/engine/*
   Cache-Control: public, max-age=31536000, immutable

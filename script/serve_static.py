@@ -20,4 +20,4 @@ class Handler(SimpleHTTPRequestHandler):
 class Server(ThreadingHTTPServer):
  request_queue_size=128
  daemon_threads=True
-Server(('127.0.0.1',3651),Handler).serve_forever()
+Server(('127.0.0.1',int(os.environ.get('K365_STATIC_PORT','3651'))),Handler).serve_forever()

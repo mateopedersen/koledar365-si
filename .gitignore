@@ -23,3 +23,7 @@
 /site/free/README.md
 
 /.wrangler/
+
+/node_modules/
+/test-results/
+/playwright-report/

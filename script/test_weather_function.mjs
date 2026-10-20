@@ -1,17 +1,21 @@
 import assert from 'node:assert/strict';
 import {onRequestGet} from '../functions/vreme/[id].js';
 import cities from '../functions/cities.js';
-const city=cities[0],now=Date.now(),updated=new Date(now).toISOString();let cacheValue,requests=[],mode=200;
+const city=cities[0],now=Date.now();let cacheValue,requests=[],mode=200,release;
 globalThis.caches={default:{match:async()=>cacheValue?.clone(),put:async(key,response)=>{cacheValue=response.clone()}}};
-const data={properties:{meta:{updated_at:updated},timeseries:[{time:updated,data:{instant:{details:{air_temperature:13,wind_speed:2,relative_humidity:60}},next_1_hours:{summary:{symbol_code:'clearsky_day'}}}}]}};
-globalThis.fetch=async(url,options)=>{requests.push({url,options});return new Response(mode===304?null:JSON.stringify(data),{status:mode,headers:{Expires:new Date(now+3600000).toUTCString(),'Last-Modified':new Date(now-1000).toUTCString()}})};
-async function get(id=city.id){const pending=[];const response=await onRequestGet({request:new Request('https://koledar365.si/vreme/'+id+'/'),params:{id},waitUntil:promise=>pending.push(promise)});await Promise.all(pending);return response}
-let response=await get();assert.equal(response.status,200);let body=await response.json();assert.equal(body.city,city.id);assert.equal(body.current.temperature,13);assert.ok(Date.parse(body.expires_at)>now+3500000);assert.equal(requests.length,1);
-response=await get();assert.equal(response.status,200);assert.equal(requests.length,1,'No fetch before upstream Expires');
-let stored=await cacheValue.json();stored.expires_at=new Date(now-1).toISOString();cacheValue=Response.json(stored);mode=304;
-response=await get();assert.equal(response.status,200);assert.equal(requests.length,2);assert.equal(requests[1].options.headers['If-Modified-Since'],stored.last_modified);
+const row=(offset,temp)=>({time:new Date(now+offset).toISOString(),data:{instant:{details:{air_temperature:temp,wind_speed:2,relative_humidity:60}},next_1_hours:{summary:{symbol_code:'clearsky_day'}}}});
+const data={properties:{meta:{updated_at:new Date(now-1000).toISOString()},timeseries:[row(-2400000,13),row(1200000,15),row(4800000,16)]}};
+globalThis.fetch=async(url,options)=>{requests.push({url,options});if(mode==='slow')await new Promise(resolve=>release=resolve);const status=mode==='slow'?304:mode;return new Response(status===304?null:JSON.stringify(data),{status,headers:{Expires:new Date(now+3600000).toUTCString(),'Last-Modified':new Date(now-1000).toUTCString()}})};
+async function get(id=city.id){const pending=[];const response=await onRequestGet({request:new Request('https://koledar365.si/vreme/'+id+'/'),params:{id},waitUntil:p=>pending.push(p)});return{response,pending}}
+let result=await get(),body=await result.response.json();assert.equal(result.response.status,200);assert.equal(body.city,city.id);assert.equal(body.current.temperature,13,'Current interval must not jump ahead to the next hour');assert.equal(body.stale,false);assert.equal(requests.length,1);assert.match(result.response.headers.get('Cache-Control'),/max-age=60/);assert.ok(requests[0].options.signal instanceof AbortSignal);
+result=await get();assert.equal(result.response.status,200);assert.equal(requests.length,1,'Respect upstream Expires');
+let stored=await cacheValue.json();stored.expires_at=new Date(now-1).toISOString();cacheValue=Response.json(stored);mode='slow';
+result=await Promise.race([get(),new Promise((_,reject)=>setTimeout(()=>reject(Error('Valid cached weather waited for upstream')),500))]);body=await result.response.json();assert.equal(body.stale,true);assert.equal(body.current.temperature,13);assert.equal(requests.length,2);assert.equal(requests[1].options.headers['If-Modified-Since'],stored.last_modified);release();await Promise.all(result.pending);
+result=await get();body=await result.response.json();assert.equal(body.stale,false);assert.equal(requests.length,2,'304 refresh saved a fresh validator');
 assert.match(requests[0].url,/lat=-?\d+\.\d{4}&lon=-?\d+\.\d{4}$/);
-response=await get('invalid');assert.equal(response.status,404);assert.equal(requests.length,2);
+result=await get('invalid');assert.equal(result.response.status,404);assert.equal(requests.length,2);
 stored=await cacheValue.json();stored.expires_at=new Date(now-1).toISOString();cacheValue=Response.json(stored);mode=503;
-response=await get();assert.equal(response.status,503);assert.equal((await response.json()).error,'Sveža vremenska napoved trenutno ni na voljo. Poskusite pozneje.');
-console.log(JSON.stringify({passed:true,checks:['upstream Expires','cached read','conditional Last-Modified and 304','four-decimal coordinates','city whitelist','honest unavailable forecast']},null,2));
+result=await get();body=await result.response.json();assert.equal(result.response.status,200);assert.equal(body.stale,true,'Valid saved model survives an upstream failure');await Promise.all(result.pending);const count=requests.length;result=await get();await Promise.all(result.pending);assert.equal(requests.length,count,'Retry backoff prevents an upstream request storm');
+stored=await cacheValue.json();stored.data.properties.meta.updated_at=new Date(now-13*3600000).toISOString();cacheValue=Response.json(stored);
+result=await get();assert.equal(result.response.status,503,'A model older than twelve hours must not be presented as current');assert.equal(result.response.headers.get('Cache-Control'),'no-store');
+console.log('PASS: current interval, immediate cached weather, background conditional 304, expiry, retry backoff, source timeout, city whitelist, and rejection of obsolete data');

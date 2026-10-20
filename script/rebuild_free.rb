@@ -12,7 +12,24 @@ current=JSON.parse(File.read('site/free/runtime.json'))
 if current['payload_fingerprint']!=File.read('tmp/portable-fingerprint.txt').strip
   run!(ENV.fetch('PYTHON_BIN','python3'),'script/fetch_browser_runtime.py')
   Bundler.with_unbundled_env do
-    run!('gem','install','ruby_wasm','-v','2.10.1','--no-document')
+    # Some RubyGems installations ship a mise plugin that shells out to
+    # `mise reshim` after every install. GitHub Actions and other direct Ruby
+    # installs do not use mise, so provide only that harmless no-op hook there.
+    shim_dir=File.expand_path('tmp/build-mise-shim')
+    path_entries=ENV.fetch('PATH','').split(File::PATH_SEPARATOR)
+    unless path_entries.any?{|entry| File.executable?(File.join(entry,'mise'))}
+      FileUtils.mkdir_p(shim_dir)
+      shim=File.join(shim_dir,'mise')
+      File.write(shim,"#!/bin/sh\n[ \"$#\" -eq 1 ] && [ \"$1\" = reshim ] || exit 1\nexit 0\n")
+      FileUtils.chmod(0755,shim)
+      ENV['PATH']="#{shim_dir}#{File::PATH_SEPARATOR}#{ENV.fetch('PATH','')}"
+    end
+    begin
+      run!('gem','install','ruby_wasm','-v','2.10.1','--no-document')
+    ensure
+      ENV['PATH']=ENV['PATH'].split(File::PATH_SEPARATOR).drop_while{|entry|entry==shim_dir}.join(File::PATH_SEPARATOR)
+      FileUtils.rm_rf(shim_dir)
+    end
     run!('rbwasm','pack','tmp/browser/ruby+stdlib.wasm','--dir','tmp/portable-root::/app','--output','tmp/browser/koledar365.wasm')
   end
   ENV['WASM_SOURCE']='tmp/browser/koledar365.wasm';run!('ruby','script/package_browser.rb')
