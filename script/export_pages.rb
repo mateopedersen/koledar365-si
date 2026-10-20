@@ -159,6 +159,6 @@ headers=<<~HEADERS
   X-Robots-Tag: noindex
 HEADERS
 out.join('_headers').write(headers)
-out.join('_routes.json').write(JSON.generate({version:1,include:['/vreme/*','/horoskop/dnevno.json'],exclude:[]}))
+out.join('_routes.json').write(JSON.generate({version:1,include:['/vreme/*','/horoskop/*'],exclude:[]}))
 report={built_at:Time.current.iso8601,html_count:processed.size,paths:processed,output:out.relative_path_from(Rails.root).to_s}
 Rails.root.join(partial ? 'evidence/static-export-partial.json':'evidence/static-export.json').write(JSON.pretty_generate(report));puts report.except(:paths).to_json

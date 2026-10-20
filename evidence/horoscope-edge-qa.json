@@ -1,0 +1,107 @@
+{
+  "passed": true,
+  "deliberately_stale_templates": "2000-01-01 with STARI ZAPIS instead of readings",
+  "today": "2026-10-20",
+  "pages": [
+    {
+      "route": "/horoskop/",
+      "status": 200,
+      "date": "2026-10-20",
+      "render": "daily-html-v1",
+      "complete": true
+    },
+    {
+      "route": "/horoskop/oven/",
+      "status": 200,
+      "date": "2026-10-20",
+      "render": "daily-html-v1",
+      "complete": true
+    },
+    {
+      "route": "/horoskop/bik/",
+      "status": 200,
+      "date": "2026-10-20",
+      "render": "daily-html-v1",
+      "complete": true
+    },
+    {
+      "route": "/horoskop/dvojcka/",
+      "status": 200,
+      "date": "2026-10-20",
+      "render": "daily-html-v1",
+      "complete": true
+    },
+    {
+      "route": "/horoskop/rak/",
+      "status": 200,
+      "date": "2026-10-20",
+      "render": "daily-html-v1",
+      "complete": true
+    },
+    {
+      "route": "/horoskop/lev/",
+      "status": 200,
+      "date": "2026-10-20",
+      "render": "daily-html-v1",
+      "complete": true
+    },
+    {
+      "route": "/horoskop/devica/",
+      "status": 200,
+      "date": "2026-10-20",
+      "render": "daily-html-v1",
+      "complete": true
+    },
+    {
+      "route": "/horoskop/tehtnica/",
+      "status": 200,
+      "date": "2026-10-20",
+      "render": "daily-html-v1",
+      "complete": true
+    },
+    {
+      "route": "/horoskop/skorpijon/",
+      "status": 200,
+      "date": "2026-10-20",
+      "render": "daily-html-v1",
+      "complete": true
+    },
+    {
+      "route": "/horoskop/strelec/",
+      "status": 200,
+      "date": "2026-10-20",
+      "render": "daily-html-v1",
+      "complete": true
+    },
+    {
+      "route": "/horoskop/kozorog/",
+      "status": 200,
+      "date": "2026-10-20",
+      "render": "daily-html-v1",
+      "complete": true
+    },
+    {
+      "route": "/horoskop/vodnar/",
+      "status": 200,
+      "date": "2026-10-20",
+      "render": "daily-html-v1",
+      "complete": true
+    },
+    {
+      "route": "/horoskop/ribi/",
+      "status": 200,
+      "date": "2026-10-20",
+      "render": "daily-html-v1",
+      "complete": true
+    },
+    {
+      "route": "/horoskop/izracun-znamenja/",
+      "status": 200,
+      "date": "2026-10-20",
+      "render": "daily-html-v1",
+      "complete": true
+    }
+  ],
+  "head": true,
+  "unknown_route_404": true
+}

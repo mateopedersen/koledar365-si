@@ -4,6 +4,7 @@ import * as sky from '../public/horoscope/sky-v1.mjs';
 import {localDate,wallTimeCandidates,ascendantLongitude} from '../public/horoscope/math-v1.mjs';
 import {makeEdition,validateEdition} from '../lib/horoscope/edition.mjs';
 import {onRequestGet} from '../functions/horoskop/dnevno.json.js';
+import {datedSchema,renderDailyHTML} from '../lib/horoscope/render.mjs';
 const fixture=JSON.parse(fs.readFileSync(new URL('../evidence/horoscope-ascendant-reference.json',import.meta.url)));
 let maxError=0,assertions=0;
 for(const sample of fixture.samples){
@@ -23,6 +24,17 @@ assert.equal(localDate(new Date('2026-10-20T22:00:00Z')),'2026-10-21');assertion
 const first=validateEdition(makeEdition('2026-10-20'),'2026-10-20'),second=validateEdition(makeEdition('2026-10-21'),'2026-10-21');
 for(const sign of Object.keys(first.signs)){assert.notEqual(first.signs[sign].overview,second.signs[sign].overview,sign+' daily original text must change');assertions++;}
 assert.equal(first.sky.moon.phase,'Rastoča Luna');assertions++;
+const oldSchema='<script type="application/ld+json">'+JSON.stringify({'@graph':[{'@type':'Article','@id':'https://koledar365.si/horoskop/dvojcka/#dnevni-zapis',headline:'Old content',datePublished:'2000-01-01'},{'@type':'WebSite',name:'Koledar365'}]})+'</script>';
+const renewed=JSON.parse(datedSchema(oldSchema,second,'dvojcka').match(/>(.*)</)[1]);
+assert.equal(renewed['@graph'][0].headline,second.signs.dvojcka.title);
+assert.equal(renewed['@graph'][0].datePublished,second.generated_at);
+assert.equal(renewed['@graph'][0].description,'Razvedrilna slovenska izdaja za 2026-10-21.');
+assert.equal(renewed['@graph'][1].name,'Koledar365');
+assert.equal(datedSchema('<script type="application/ld+json">broken</script>',second,''),'<script type="application/ld+json">broken</script>');
+assert.equal((await renderDailyHTML({request:new Request('https://koledar365.si/horoskop/missing/'),next:()=>new Response('not found',{status:404})})).status,404);
+// Without the edge HTMLRewriter runtime, preserve the fallback's genuine date.
+const fallback=await renderDailyHTML({request:new Request('https://koledar365.si/horoskop/dvojcka/'),env:{ASSETS:{fetch:()=>new Response('<div data-horoscope-app data-edition-day="2000-01-01">Original dated fallback</div>',{headers:{'content-type':'text/html'}})}}});
+assert.match(await fallback.text(),/data-edition-day="2000-01-01"/);assertions+=7;
 const RealDate=globalThis.Date;
 async function at(instant,callback){
   const fixed=RealDate.parse(instant);
