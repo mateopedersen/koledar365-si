@@ -11,10 +11,16 @@ Dir[site.join('**/*.html')].sort.each do |file|
  fail_with.call('Missing Slovene language') unless doc.at_css('html')['lang']=='sl'
  fail_with.call('Expected one main heading') unless doc.css('main h1').size==1
  fail_with.call('Missing title or description') unless doc.at_css('title')&.text.to_s.length>0 && doc.at_css('meta[name=description]')&.[]('content').to_s.length>0
- preview_images=doc.css('img[src^="/prenosi/"][src*="/predogled.png"],img[src^="/predogled/"],img[data-static-preview^="/free/samples/"],img[data-preview-design]')
+ preview_images=doc.css('img[src^="/prenosi/"][src*="/predogled.webp"],img[src^="/predogled/"],img[data-static-preview^="/free/samples/"],img[data-preview-design]')
  fail_with.call('Calendar design previews must declare the optimized 212 × 300 dimensions') unless preview_images.all? { |node|node['width']=='212'&&node['height']=='300' }
  fail_with.call('Optimized preview URLs must bypass old immutable CDN cache entries') unless preview_images.all? do |node|
-  [node['src'],node['data-static-preview']].compact.any? { |url|url.include?('k365-preview=212x300-v1') }
+  [node['src'],node['data-static-preview']].compact.any? do |url|
+   if url.start_with?('/prenosi/')
+    url.include?('/predogled.webp')&&url.include?('k365-preview=212x300-webp-v1')
+   else
+    url.include?('k365-preview=212x300-v1')
+   end
+  end
  end
  photo_links=doc.css('a.sp-building-photo')
  fail_with.call('Building photo accessible names must retain their visible captions') unless photo_links.all? do |node|
