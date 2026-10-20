@@ -1,11 +1,11 @@
 <% if @section=='home' %>
 <div class="intro"><div><h1>Vaš dan. Vaši načrti.</h1><p>Slovenski koledar, prazniki in osebno načrtovanje.</p></div><a class="button subtle" href="/ustvari-koledar/"><%= ui_icon('settings') %> Ustvari svoj koledar</a></div>
 <%= render 'home' %>
-<% elsif %w[about privacy cookie_policy holidays observance].include?(@section) %>
+<% elsif %w[about privacy cookie_policy holidays observance school].include?(@section) %>
 <%= render @section %>
 <% else %>
 <div class="page-heading"><span class="eyebrow">KOLEDAR365 · SLOVENIJA</span><h1><%= @title %></h1><% unless @section=='events' && TopicContent.find(page_path.split('/').last) %><p><%= gallery_page? ? gallery_description : @description %></p><% end %></div>
 <%= render @section %>
 <% end %>
 
-<% if @page&.body.present? && @section!='observance' %><section class="panel prose"><%= simple_format(@page.body) %></section><% end %>
+<% if @page&.body.present? && !%w[observance school].include?(@section) %><section class="panel prose"><%= simple_format(@page.body) %></section><% end %>
