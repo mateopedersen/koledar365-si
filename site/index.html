@@ -426,11 +426,215 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
 #city-card .weather-facts span,#city-card .weather-hours>div,#city-card #weather-more>.muted,#city-card .today-live{color:#526174}
 /* Keep the first paint steady; motion responds to deliberate interaction. */
 #city-card:not(:hover):not(:focus-within) [class^="wx-"],#city-card:not(:hover):not(:focus-within) [class^="wx-"] *{animation-play-state:paused}
+
+/* Shared print rules for the calendar and content templates. Keep this file
+   last in the stylesheet order so page-specific screen rules cannot leak into
+   the printed document. */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 11mm 10mm;
+  }
+
+  html,
+  body {
+    width: auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: #fff !important;
+    color: #111 !important;
+    font-size: 10pt !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .skip,
+  .topbar,
+  .subnav,
+  .breadcrumb,
+  footer,
+  .left-panel,
+  .right-panel,
+  .intro > .button,
+  .search,
+  button,
+  .button,
+  .period-form,
+  .tabs,
+  .design-section,
+  .discovery,
+  dialog,
+  .category-bar,
+  .filters,
+  .year-links,
+  .calendar-toolbar,
+  .calendar-title > .button,
+  .calendar-footer > div,
+  .holiday-list-actions,
+  .observance-story-actions,
+  .actions,
+  .sp-hero,
+  .sp-quick-bar,
+  .sp-heading > button,
+  .sp-month-heading > div,
+  .sp-small,
+  .sp-selected-date,
+  .sp-save-filter,
+  .sp-favorite,
+  .sp-uni-bottom button,
+  .sp-tip > a,
+  .sp-hero-actions,
+  .sp-levels,
+  .sp-filterbar,
+  .sp-region-note a {
+    display: none !important;
+  }
+
+  .calendar-title .actions {
+    display: flex !important;
+  }
+
+  .download-workspace .context-content,
+  .download-workspace .calendar-context-view,
+  .download-workspace .context-content[hidden],
+  .download-workspace:not(.context-expanded) .context-content,
+  .download-workspace:not(.context-expanded) .calendar-context-view {
+    display: block !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    visibility: visible !important;
+  }
+
+  main {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .workspace {
+    display: block !important;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .panel {
+    max-width: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 5px !important;
+  }
+
+  .calendar-panel {
+    margin: 0 !important;
+    padding: 5px !important;
+  }
+
+  .calendar {
+    width: 100% !important;
+    table-layout: fixed !important;
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .calendar thead,
+  .calendar tbody tr,
+  .calendar td,
+  .calendar th,
+  .sp-holiday,
+  .sp-uni-card,
+  .data-table tr {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .calendar td {
+    height: 75px !important;
+  }
+
+  .calendar td,
+  .calendar th,
+  .event-label,
+  .sp-month-event,
+  .data-table td,
+  .data-table th {
+    overflow-wrap: anywhere;
+  }
+
+  .year-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .school-page,
+  .school-page main,
+  .school-page section,
+  .school-page article,
+  .school-page .sp-calendar-layout,
+  .school-page .sp-calendar-box,
+  .school-page .sp-month-aside {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  .school-page .sp-calendar-section {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .school-page button.sp-day {
+    display: block !important;
+    min-height: 38px;
+    cursor: default;
+  }
+
+  .school-page .sp-universities {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  .school-page .sp-calendar-layout {
+    overflow: visible !important;
+    grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr) !important;
+  }
+
+  .school-page .sp-calendar-box,
+  .school-page .sp-month-aside {
+    padding: 14px !important;
+  }
+
+  a {
+    color: #111 !important;
+    text-decoration: none !important;
+  }
+
+  .panel,
+  .prose {
+    max-width: none !important;
+  }
+
+  .data-table tr {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+}
 </style>
 
 
 
 <script src="/assets/city_card-59b5f990.js" defer></script>
+
 
 
 

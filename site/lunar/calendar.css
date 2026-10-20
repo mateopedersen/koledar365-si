@@ -6,3 +6,4 @@
 .lunar-moon{aspect-ratio:1;display:block;overflow:hidden}.lunar-dialog .lunar-moon{width:min(75vw,768px)}
 
 .lunar-years a,.lunar-month-links a{min-height:44px;display:inline-flex;align-items:center}
+@media print{.lunar-day{display:grid!important}.lunar-enlarge{display:block!important}}
