@@ -7,6 +7,7 @@ import json
 import re
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 from PIL import Image, ImageOps
 
@@ -18,6 +19,26 @@ SAMPLE_PATHS = sorted((ROOT / "site" / "free" / "samples").glob("*.png"))
 PATHS = PREVIEW_PATHS + SAMPLE_PATHS
 IMAGE_TAG = re.compile(r"<img\b[^>]*>", re.IGNORECASE)
 ATTRIBUTE = re.compile(r"\b(src|data-static-preview|data-preview-design|width|height)=(['\"])(.*?)\2", re.IGNORECASE)
+PREVIEW_CACHE_VERSION = "212x300-v1"
+
+
+def is_preview_url(value: str) -> bool:
+    path = urlsplit(value).path
+    return (
+        (path.startswith("/prenosi/") and path.endswith("/predogled.png"))
+        or path.startswith("/predogled/")
+        or (path.startswith("/free/samples/") and path.lower().endswith(".png"))
+    )
+
+
+def version_preview_url(value: str) -> str:
+    if not is_preview_url(value):
+        return value
+    parts = urlsplit(value)
+    query = [(key, val) for key, val in parse_qsl(parts.query, keep_blank_values=True)
+             if key != "k365-preview"]
+    query.append(("k365-preview", PREVIEW_CACHE_VERSION))
+    return urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(query), parts.fragment))
 
 if not PREVIEW_PATHS:
     raise SystemExit("No release-catalog gallery previews found under site/prenosi")
@@ -55,9 +76,8 @@ for html_path in sorted((ROOT / "site").rglob("*.html")):
         attributes = {match.group(1).lower(): match.group(3) for match in ATTRIBUTE.finditer(tag)}
         source = attributes.get("src", "")
         is_preview = (
-            (source.startswith("/prenosi/") and source.endswith("/predogled.png"))
-            or source.startswith("/predogled/")
-            or attributes.get("data-static-preview", "").startswith("/free/samples/")
+            is_preview_url(source)
+            or is_preview_url(attributes.get("data-static-preview", ""))
             or "data-preview-design" in attributes
         )
         if not is_preview:
@@ -65,6 +85,15 @@ for html_path in sorted((ROOT / "site").rglob("*.html")):
         if attributes.get("width") != str(TARGET[0]) or attributes.get("height") != str(TARGET[1]):
             html_tags[0] += 1
         changed = tag
+        for name in ("src", "data-static-preview"):
+            source_value = attributes.get(name, "")
+            replacement_value = version_preview_url(source_value)
+            if replacement_value == source_value:
+                continue
+            pattern = re.compile(rf"\b{name}=(['\"])[^'\"]*\1", re.IGNORECASE)
+            changed, count = pattern.subn(f'{name}="{replacement_value}"', changed, count=1)
+            if count:
+                attributes[name] = replacement_value
         for name, value in (("width", str(TARGET[0])), ("height", str(TARGET[1]))):
             pattern = re.compile(rf"\b{name}=(['\"])[^'\"]*\1", re.IGNORECASE)
             replacement = f'{name}="{value}"'
@@ -83,8 +112,10 @@ record = {
     "gallery_previews": len(PREVIEW_PATHS),
     "studio_sample_previews": len(SAMPLE_PATHS),
     "html_pages_with_updated_preview_dimensions": html_pages,
+    "html_pages_with_versioned_preview_urls": html_pages,
     "html_preview_tags_normalized": html_tags[0],
     "html_preview_dimensions": {"width": TARGET[0], "height": TARGET[1]},
+    "preview_cache_version": PREVIEW_CACHE_VERSION,
     "resized": resized,
     "already_optimized": already_optimized,
     "dimensions": {"width": TARGET[0], "height": TARGET[1]},

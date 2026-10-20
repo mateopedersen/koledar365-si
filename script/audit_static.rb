@@ -11,8 +11,17 @@ Dir[site.join('**/*.html')].sort.each do |file|
  fail_with.call('Missing Slovene language') unless doc.at_css('html')['lang']=='sl'
  fail_with.call('Expected one main heading') unless doc.css('main h1').size==1
  fail_with.call('Missing title or description') unless doc.at_css('title')&.text.to_s.length>0 && doc.at_css('meta[name=description]')&.[]('content').to_s.length>0
- preview_images=doc.css('img[src^="/prenosi/"][src$="/predogled.png"],img[src^="/predogled/"],img[data-static-preview^="/free/samples/"],img[data-preview-design]')
+ preview_images=doc.css('img[src^="/prenosi/"][src*="/predogled.png"],img[src^="/predogled/"],img[data-static-preview^="/free/samples/"],img[data-preview-design]')
  fail_with.call('Calendar design previews must declare the optimized 212 × 300 dimensions') unless preview_images.all? { |node|node['width']=='212'&&node['height']=='300' }
+ fail_with.call('Optimized preview URLs must bypass old immutable CDN cache entries') unless preview_images.all? do |node|
+  [node['src'],node['data-static-preview']].compact.any? { |url|url.include?('k365-preview=212x300-v1') }
+ end
+ photo_links=doc.css('a.sp-building-photo')
+ fail_with.call('Building photo accessible names must retain their visible captions') unless photo_links.all? do |node|
+  visible=node.at_css('span')&.text.to_s.gsub(/\s+/,' ').strip.downcase
+  label=node['aria-label'].to_s.gsub(/\s+/,' ').strip.downcase
+  visible.empty?||label.empty?||label.include?(visible)
+ end
  robots=doc.at_css('meta[name=robots]')&.[]('content').to_s
  unless robots.include?('noindex')
   indexable+=1;canonical=doc.at_css('link[rel=canonical]')&.[]('href').to_s
@@ -48,7 +57,7 @@ Dir[site.join('**/*.html')].sort.each do |file|
     actual=gallery.css("a[data-calendar-download=#{format}][download]").map { |node|node['href'] }.sort
     fail_with.call("Inline #{format} downloads do not match this page's exact year/month") unless actual==expected.map { |row|row.fetch('files').fetch(format) }.sort
    end
-   fail_with.call('Inline previews do not match the actual download files') unless gallery.css('img').map { |node|node['src'] }.sort==expected.map { |row|row.fetch('files').fetch('preview') }.sort
+   fail_with.call('Inline previews do not match the actual download files') unless gallery.css('img').map { |node|URI(node['src']).path }.sort==expected.map { |row|row.fetch('files').fetch('preview') }.sort
    fail_with.call('Gallery previews must use the optimized 212 × 300 thumbnail dimensions') unless gallery.css('img').all? { |node|node['width']=='212'&&node['height']=='300' }
   end
  end
