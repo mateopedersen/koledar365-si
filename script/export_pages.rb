@@ -16,8 +16,8 @@ assets=nil;processed=[]
 transform=lambda do |body,path,indexable:true|
  doc=Nokogiri::HTML(body)
  sources=doc.css('script[src]').map { |node|node['src'] }
- assets||={scripts:sources.reject { |src|src.include?('holidays-')||src.include?('city_card-') },holidays:ApplicationController.helpers.asset_path('holidays.js')}
- doc.css('script[src]').reject { |node|node['src'].include?('city_card-') }.each(&:remove)
+ assets||={scripts:sources.reject { |src|src.include?('holidays-')||src.include?('city_card-')||src.split('?',2).first=='/school/experience.mjs' },holidays:ApplicationController.helpers.asset_path('holidays.js')}
+ doc.css('script[src]').each { |script|src=script['src'];script.remove unless src.include?('city_card-')||src.split('?',2).first=='/school/experience.mjs' }
  doc.css('meta[name="csrf-token"],meta[name="csrf-param"],meta[name="csp-nonce"],meta[http-equiv="Content-Security-Policy"],input[name="authenticity_token"]').remove
  doc.css('[nonce]').each { |node|node.remove_attribute('nonce') }
  doc.at_css('meta[name=robots]')['content']=indexable ? 'index, follow, max-image-preview:large':'noindex, follow'
