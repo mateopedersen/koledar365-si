@@ -20,11 +20,32 @@ class LunarCalendarTest < ActionDispatch::IntegrationTest
   assert_select '[data-lunar]'
   assert_select '.lunar-enlarge[aria-label]'
   assert_select 'dialog button[data-close]'
+  assert_select '.lunar-download-hint a[href="#prenosi"]',count:1
+  assert_select '.lunar-downloads#prenosi',count:1
   assert_select 'a[href="/lunin-koledar/2028/marec/"]',minimum:1
   get '/lunin-koledar/2028/'
   assert_select '.lunar-mini-grid a',count:366
   get '/lunine-mene/'
   assert_response :success
   assert_select '[data-lunar]',count:0
+ end
+ test 'lunar hub presents four distinct year illustrations and all month routes' do
+  get '/lunin-koledar/'
+  assert_response :success
+  assert_select '.lunar-hub-masthead h1',count:1
+  assert_select '.lunar-year-card',count:4
+  (2027..2030).each do |year|
+   assert_select ".lunar-year-card--#{year} svg",count:1
+   assert_select ".lunar-year-card--#{year} nav[aria-label='Meseci leta #{year}'] a",count:12
+   assert_select ".lunar-year-card--#{year} a[href='/lunin-koledar/#{year}/']",minimum:1
+  end
+  assert_select '.lunar-hub-method',count:1
+  assert_select '.lunar-phases',count:0
+  assert_select '.lunar-downloads',count:0
+  get '/lunin-koledar/2028/'
+  assert_response :success
+  assert_select '.lunar-hub',count:0
+  assert_select '.lunar-download-hint a[href="#prenosi"]',count:1
+  assert_select '.lunar-downloads',minimum:1
  end
 end
