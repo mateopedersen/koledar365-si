@@ -150,6 +150,10 @@ button:hover,.button:hover{box-shadow:none}
 .calendar-table .event-label{font-size:11px;line-height:1.4}
 @media(max-width:600px){.calendar-table .event-label{font-size:10px}}
 
+/* Keep long holiday names inside narrow day cells without splitting words. */
+.calendar .date-events{min-width:0;overflow:hidden}
+.calendar .event-label{display:block;width:100%;min-width:0;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow-wrap:normal;word-break:normal;hyphens:none;line-height:1.35}
+
 /* Put the export gallery within reach before the long year or month grid. */
 .calendar-download-callout{display:grid;grid-template-columns:38px minmax(0,1fr) auto;align-items:center;gap:15px;padding:15px 18px;margin:0 0 14px;background:#fff;border:1px solid #e0e5ed;border-left:4px solid #c52c40;border-radius:7px}
 .calendar-download-icon{display:grid;place-items:center;width:36px;height:36px;color:#22588e;background:#edf3fa;border-radius:50%}
