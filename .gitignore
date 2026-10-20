@@ -16,3 +16,5 @@
 /evidence/holiday-export-path.txt
 /config/credentials/*.key
 !.env.production.example
+
+/backups/

@@ -7,3 +7,5 @@
 <div class="page-heading"><span class="eyebrow">KOLEDAR365 · SLOVENIJA</span><h1><%= @title %></h1><% unless @section=='events' && TopicContent.find(page_path.split('/').last) %><p><%= @description %></p><% end %></div>
 <%= render @section %>
 <% end %>
+
+<% if @page&.body.present? && @section!='observance' %><section class="panel prose"><%= simple_format(@page.body) %></section><% end %>

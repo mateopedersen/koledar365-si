@@ -17,7 +17,7 @@ PrintCatalog.designs.each do |design|
     FileUtils.cp(source.join(file),Rails.root.join('evidence/generated',"#{design['id']}-#{kind}#{File.extname(file)}"))
   end
   records << {id:design['id'],request_id:request.id,seconds:seconds.round(2),manifest:manifest.except('primary_dates'),files:request.files}
-  puts "#{design['id']}: #{manifest['pages']} pages, #{seconds.round(2)}s"
+  puts "#{design['id']}: #{manifest['page_count']} pages, #{seconds.round(2)}s"
   STDOUT.flush
 end
 Rails.root.join('evidence/print-renders.json').write(JSON.pretty_generate(records))

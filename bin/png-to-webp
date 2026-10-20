@@ -4,5 +4,10 @@ import sys
 from PIL import Image, ImageCms
 src,dst=sys.argv[1:3]
 image=Image.open(src).convert('RGB')
+if len(sys.argv)>3 and sys.argv[3]=='monochrome_bw':
+    from PIL import ImageChops
+    r,g,b=image.split()
+    if ImageChops.difference(r,g).getbbox() or ImageChops.difference(r,b).getbbox():
+        raise ValueError('Monochrome PDF contains chromatic pixels')
 profile=ImageCms.ImageCmsProfile(ImageCms.createProfile('sRGB')).tobytes()
 image.save(dst,'WEBP',lossless=True,method=4,icc_profile=profile)

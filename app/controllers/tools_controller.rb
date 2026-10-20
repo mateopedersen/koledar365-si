@@ -27,7 +27,13 @@ class ToolsController < ApplicationController
     when 'vacation'
       year=Integer(params[:year]);budget=Integer(params[:budget]);raise ArgumentError,'Izberite leto 2027–2030 in od 0 do 20 dni dopusta.' unless CalendarEngine::YEARS.include?(year)&&(0..20).cover?(budget)
       @result=CalendarEngine.vacations(year,budget).first(8).map { |o| "#{I18n.l(o[:from])}–#{I18n.l(o[:to])}: #{o[:total]} prostih dni, poraba dopusta: #{o[:leave]} dni." }.join("\n")
-    when 'week','ordinal','leap','countdown'
+    when 'countdown'
+      date=Date.iso8601(params[:date]);clock=params[:time].presence || '00:00';zone=params[:zone].presence || 'Europe/Ljubljana'
+      raise ArgumentError,'Vnesite veljavno uro.' unless clock.match?(/\A(?:[01]\d|2[0-3]):[0-5]\d\z/)
+      raise ArgumentError,'Izberite podprt časovni pas.' unless %w[Europe/Ljubljana Europe/London America/New_York Asia/Tokyo UTC].include?(zone)
+      h,m=clock.split(':').map(&:to_i);instant=IcsService.local_time(date.year,date.month,date.day,h,m,0,zone)
+      return render json:{result:"#{I18n.l(date)} ob #{clock} · #{zone}",countdown:{target:instant.iso8601,server_now:Time.current.iso8601,zone:zone}}
+    when 'week','ordinal','leap'
       d=Date.iso8601(params[:date]);@result=case type
       when 'week' then "Teden ISO: #{d.cweek}. Leto ISO: #{d.cwyear}. Od #{I18n.l(d-d.cwday+1)} do #{I18n.l(d-d.cwday+7)}."
       when 'ordinal' then "Dan v letu: #{d.yday}. Do konca leta ostane #{Date.new(d.year,12,31).yday-d.yday} dni."
@@ -53,6 +59,10 @@ class ToolsController < ApplicationController
     raise ArgumentError,'Največ 500 dogodkov.' if entries.size>500
     send_data IcsService.export(entries),type:'text/calendar; charset=utf-8',filename:'koledar365-moj-koledar.ics'
   end
+  def planner_ics
+    options=PrintCatalog.normalize(params.require(:options).permit(:type,:year,:month,:date,:leap_policy,entries:[:title,:date,:time,:person,:code,:end_time,:break,:notes,:room,:done]).to_h)
+    send_data PlannerCalendar.export(options),type:'text/calendar; charset=utf-8',filename:'koledar365-planer-2027-2030.ics'
+  end
   def import_ics
     render json:{events:IcsService.import(params.require(:ics).to_s)}
   end
@@ -60,7 +70,7 @@ class ToolsController < ApplicationController
     year=Integer(params[:year]);raise ArgumentError,'Leto ni podprto.' unless CalendarEngine::YEARS.include?(year)
     if params[:all]=='1'
       events=CalendarEvent.where(on:Date.new(year,1,1)..Date.new(year,12,31)).ordered.to_a
-      events=events.select { |e| e.on.month==params[:month].to_i } if params[:month].to_i.between?(1,12)
+      events=ImportantDays.filter(events,month:params[:month],category:params[:category],query:params[:q])
     else
       events=HolidayYear.new(year).filter(month:params[:month],kind:params[:kind],query:params[:q])
     end

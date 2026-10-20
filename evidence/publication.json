@@ -1,0 +1,53 @@
+{
+  "checked_at": "2026-10-20T14:27:20+02:00",
+  "version": "2.0.1",
+  "page_statuses": {
+    "held": 17,
+    "published": 326
+  },
+  "name_statuses": {
+    "published": 8561
+  },
+  "stages": [
+    {
+      "limit": 200,
+      "result": {
+        "published": 200
+      },
+      "published_total": 200
+    },
+    {
+      "limit": 1000,
+      "result": {
+        "published": 1000
+      },
+      "published_total": 1000
+    },
+    {
+      "limit": 8561,
+      "result": {
+        "published": 8561
+      },
+      "published_total": 8561
+    }
+  ],
+  "held_pages": [
+    "/godovi/",
+    "/solske-pocitnice/2027-2028/",
+    "/solske-pocitnice/2028-2029/",
+    "/solske-pocitnice/2029-2030/",
+    "/solske-pocitnice/2030-2031/",
+    "/godovi/januar/",
+    "/godovi/februar/",
+    "/godovi/marec/",
+    "/godovi/april/",
+    "/godovi/maj/",
+    "/godovi/junij/",
+    "/godovi/julij/",
+    "/godovi/avgust/",
+    "/godovi/september/",
+    "/godovi/oktober/",
+    "/godovi/november/",
+    "/godovi/december/"
+  ]
+}

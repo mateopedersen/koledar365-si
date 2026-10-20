@@ -15,7 +15,7 @@ Güncelleme: 20 Ekim 2026, Europe/Istanbul. Bu dosya yeniden başlama kaydıdır
 - 343 plan sayfası, 8.561 NFC isim kaydı, 283 takvim olayı, 264 astronomi kaydı ithal edildi.
 - 43 kaynak dosyasının SHA256 değerleri ve son eklerle eşitliği, CSV/JSON kimlikleri, 200/1.000 isim önceliği, SURS bastırılmış değerleri ve çalışma kitabı okuması: evidence/package-review.json; 21 kontrol geçti.
 - 69 resmî şehir: gerçek yerel fotoğraflar, kaynak/özgün sahip/lisans kayıtları; MET Norway hava verisi, önbellek ve güncellik durumu; Europe/Ljubljana saati.
-- Yerel kişisel olay, görev, not, ICS ve yedekleme arayüzleri mevcut. Yönetim ekranı parola korumalı; gerçek yönetici hesabı henüz oluşturulmadı.
+- Yerel kişisel olay, görev, not, ICS ve yedekleme arayüzleri mevcut. Yönetim ekranı parola korumalı; mateo hesabı oluşturuldu. Rastgele parola yalnız 0600 izinli, Git dışında storage/private-admin.txt dosyasında.
 - Eski yol kontrolü: 343 + ilk 200 isim = 543 HTTP 200; evidence/route-audit.json. Bu yalnız HTTP kontrolüdür.
 - Son tamamlanan test: 36 test, 1.571 doğrulama, sıfır hata (20 Ekim); evidence/tests-holidays.txt. Gerçek tarih, çakışan özel gün/yasal tatil statüsü, iki saat değişiminin ICS aktarımı, uzun metin reddi, kişisel veri ve şehir kontrollerini kapsar.
 - SEO taraması: 544 sayfa, sıfır sorun; evidence/seo-audit.json. Yerel render, canonical, tek H1, metadata, JSON-LD ve iç bağlantı kontrolüdür; Google sıralama veya indeks garantisi değildir.
@@ -48,7 +48,7 @@ Güncelleme: 20 Ekim 2026, Europe/Istanbul. Bu dosya yeniden başlama kaydıdır
 - Baskı önizlemeleri tür/döneme bağlandı. Yoğun özel içerik ek sayfalarda korunur; uzun/geçersiz metin ve tarihler açık hata ile reddedilir. Ancak 15 gerçek farklı düzen, bütün tür/yıl çiftlerinin gerçek raster üretimi, siyah-beyaz renk tutarlılığı, kompakt tatil baskısı, ZIP içi manifest/README ve son görsel kalite kapısı hâlâ tamamlanacak. Fotoğraf yükleme ve bazı gelişmiş planlama seçenekleri eksik.
 - ICS UTC/TZID, çok günlük süre ve yaz saati belirsizlikleri doğrulanır; desteklenmeyen tekrar kuralı sessiz veri kaybı yerine reddedilir. Ay/yıl filtreli ve konuya özel tatil ICS aktarımları doğrulandı.
 - Günlük burç sadece gerçekten hazırlanmış tarihte mevcut; sonraki günlerin editoryal üretimi ve yayın akışı tamamlanmadı.
-- Dockerfile bin/thrust referansı ve dağıtım belgeleri düzenlenecek; üretim yedek geri yükleme henüz denenmedi. Git deposuna aktarım henüz yok.
+- Dockerfile düzeltildi. PostgreSQL + web + işçi + HTTPS proxy Compose tanımı var. Üretim yedek geri yükleme henüz denenmedi; dağıtım belgeleri tamamlanacak.
 - 43 kabul maddesinin tamamı henüz geçmiş değildir; kalan maddeler gerçek kanıtla işaretlenecek.
 
 ## Yeniden başlatma
@@ -62,3 +62,29 @@ Ara scripts: work/professional_design.py ve work/metadata_and_editorial.py bir k
 
 ## İlk kurulum hatası
 İlk scaffold çağrısındaki --skip-active-mailbox yerine desteklenen seçenek --skip-action-mailbox. Oluşmuş dosyalar korunarak engine kaldırıldı, scaffold tekrar çalıştırılmadı. Kurulu yardım çıktısı work/rails-new-help-8.1.4.txt içinde.
+
+## Devam kaydı — 20 Ekim, baskı ve yönetim fazı
+- Git deposu uygulama dizininde. Eski origin/main geçmişi korunarak rails-turnkey-2027-2030 dalı açıldı. Commitler: 3545d3c temel uygulama, 098213c eski geçmişi koruma, 19325c5 Docker/PostgreSQL/CI. Ana dal değiştirilmedi.
+- Kullanıcının açık talimatıyla mateopedersen/koledar365-si deposu public yapıldı. Önce 463 geçmiş Git blob'u yaygın sır desenleri ve özel dosya adları için tarandı; eşleşme yok. Bu tarama mutlak sır-yok garantisi değildir.
+- GitHub Actions ilk denemede hesap ödeme/limit engelinde başlamadı. Depo public olduktan sonra aynı kontrolün 2. denemesi geçti: PostgreSQL testleri, SEO/kaynak taraması, gerçek Docker build, production boot, 600 ppi çıktı. https://github.com/mateopedersen/koledar365-si/actions/runs/39417500303 . Bu 19325c5 sürümünü doğrular; sonraki değişiklikler yeniden doğrulanacak.
+- Baskı v2 üzerinde çalışma sürüyor: fiziksel baskı payları, 9 punto yıllık tarihler, otomatik sayfalama, nötr siyah-beyaz raster kontrolü, tam manifest/README içeren ZIP ve anlamlı dosya adları. İlk 15 isimli raster + 180 tür/tasarım PDF üretildi. Görsel incelemede boşluk/yerleşim iyileştirmeleri uygulandı; yeni A5 hata düzeltmelerinin matrisi yeniden çalışıyor. Nihai baskı kapısı henüz geçmedi.
+- Planlayıcı: ekle/düzenle/sil/tamamla, başlangıç-bitiş/mola, sınıf, JSON yedek/geri yükleme, gerçek ICS. Gece vardiyası ve DST süre testi. Rojstni dnevi için 29 Şubat seçimi ve 2027–2030 aktarımı. Canlı saatli geri sayım + tarih/saat/zone paylaşımı.
+- Fotoğraf: gerçek dosya çözümleme, 20 MB/40 MP sınırı, EXIF kaldırma, seansa bağlı 7 günlük özel depolama, kişisel POST önizleme, diğer seansın erişimini reddetme. Rasterin yerleştirilen baskı ölçüsünde en az 600 etkili ppi hedefi; nihai PDF ölçüm kanıtı tamamlanacak.
+- Yönetim: gerçek hesap, parola değişimi, sayfa başlık/metin/meta düzenleme, kaynak kapısını koruma, günlük burç düzenleme ve atomik JSON toplu içeri aktarma; sekiz günlük hazırlık/izleme tablosu. Üretim API anahtarı olmadığından gerçek editoryal giriş kullanılır. Otomatik eski metni yeni tarihli gösterme yok.
+- Son yerel test: 45 test / 1.665 doğrulama / sıfır hata. evidence/tests-planners.txt. Tarayıcıda gece vardiyası ekleme+düzenleme ve kişisel 3 sayfalı önizleme geçti.
+- İşçi PID 80366 kontrollü kapatıldı; v2 değişiklikleri bitince güncel kodla yeniden başlatılacak. Web halen 3650; filtre parametreleri değiştiği için web yeniden başlatılmalı.
+- Sonraki somut işler: baskı son görsel/raster kapısı ve 8.561 ad glyph/sığma QA; popülerlik sırasıyla yayın; önemli gün merkezi filtreleri; üretim backup/restore ve docs; kabul matrisi; geniş tarayıcı/SEO/hız kanıtı; güncel kodu commit/push ve yeni CI.
+- Canlı alan adı için hâlâ Rails çalıştıracak host ve yayımlanacak işletmeci iletişim e-postası gerekiyor. GitHub public değişikliği CI engelini çözdü, tek başına Rails hosting sağlamıyor.
+
+## Son kalite kapısı ve yayın sayıları
+- Şablon 2.0.1: 180 tür/tasarım PDF + eşleşen gerçek WebP üretimi bitti. Bağımsız Pillow/pypdf doğrulaması: 180/180; her sayfada marka, doğru A4 fiziksel boyutu, 4961×7016 px, sRGB, BW nötr pikseller, PDF gömülü font. Çok sayfalı ZIP'te bütün sayfalar + manifest + README. evidence/export-matrix-v2.json ve export-file-verification.json.
+- Yerleşim: 1.080 kombinasyon, sıfır hata; bütün tarihlerin eksiksiz/tekil olması ve en az 8,5 punto kontrolü. Yıllık tarihler 9 punto. 15 isimli tasarım görsel olarak evidence/print-v2-contact-sheet.jpg üzerinde incelendi; kalabalık ve boşluk sorunları yeniden düzenlendi.
+- 8.561 isimde dört font glyph kontrolü ve en dar iki başlık geometrisinde Sans/Serif sığma kontrolü sorunsuz: evidence/name-layout-audit.json. Gerçek isim havuzunun en uzun adları 16 karakter civarıdır. 100 karakter özel giriş ve fotoğraf ayrı sınır kontrolleri kapsamındadır.
+- evidence/print-gate.json geçerli. 200 → 1.000 → 8.561 popülerlik sıralı isim yayını gerçekten çalıştı. 326 sayfa published, 17 held; 8.561 isim published. Bu yerel uygulama yayın durumudur; canlı alan adı veya Google indeksi iddiası değildir. evidence/publication.json.
+- SEO: 343 plan yolu + 8.561 isim + lisans sayfası = 8.905 sayfa, sıfır sorun. evidence/seo-audit.json. Tatil 58 ayrıntı/232 konu-yıl ICS tekrar sorunsuz.
+- 2029'un 12 ayı gerçek tarayıcıda açılıp görüntülendi. Nisan/Temmuz/Aralık altı satır; dış taşma yok. evidence/calendar-2029-browser.json ve calendar-2029-review.jpg.
+- 8 sayfa ailesi × 7 genişlik (320/376/390/768/1024/1440/1920) = 56 tarayıcı görünümü, dış yatay taşma yok. Uygulama tarayıcısının ölçeği nedeniyle 375 yerine 376 px kullanıldı. evidence/responsive-final.json. Core Web Vitals saha doğrulaması değildir.
+- Planlayıcıya tekrarlayan haftalık ders ekleme ve günlük saat aralığı seçimi eklendi. Desteklenmeyen özel glyph açık hata verir. İndirme dosya sözleşmesi 1.1, exact isim + SHA ve güvenli ayırt edici dosya adı taşır; baskı düzeni 2.0.1 değişmedi. Yeni sözleşme örneği istek 213: 2030, A5 yatay, BW, altı PDF/WebP sayfası; evidence/file-contract-v1.1.json. Eski 180 eşleşme sözleşme 1.0 ile gerçek raster kalite kanıtıdır.
+- Yönetim hesabı mateo, parola yalnız storage/private-admin.txt (0600). Uygulama kaynak deposuna veya rapora parola yazılmadı.
+- Son test (son pagination testi öncesi): 46 test / 1.670 doğrulama / sıfır hata. Yeni kaynak ve UI değişikliklerinin son CI commit'i henüz gönderilmedi.
+- Mimari, veri kaynakları, SEO ve deployment belgeleri docs dizininde. Şifreli age yedeği ve izole DB geri yükleme kontrolü eklendi. Yedek görevi henüz gerçek üretim hostuna kurulmadı. CI'ya PostgreSQL dump/restore kontrolü eklendi, çalışması bekleniyor.

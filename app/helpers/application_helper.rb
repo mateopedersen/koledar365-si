@@ -18,7 +18,9 @@ module ApplicationHelper
     render 'pages/month',year:year,month:month,mini:mini
   end
   def export_options(type='annual')
-    {type:type,year:@year||2027,month:@month||1,date:Date.new(@year||2027,@month||1,1).iso8601,name:@person&.exact.to_s}
+    year=(@year||2027).clamp(2027,2030)
+    date=@selected&.year==year ? @selected : Date.new(year,@month||1,1)
+    {type:type,year:year,month:@month||1,date:date.iso8601,name:@person&.exact.to_s}
   end
   def source_link(url,label='Vir')
     link_to(label,url,rel:'noopener') if url.present? && url.start_with?('https://')

@@ -47,6 +47,12 @@ class PagesController < ApplicationController
       @holiday_comparison=CalendarEngine::YEARS.map { |year| year==@year ? @holidays : HolidayYear.new(year) }
       @holiday_breaks=@holidays.breaks
     end
+    if @section=='names' && params[:page].to_i>1
+      number=params[:page].to_i.clamp(1,86)
+      @canonical="#{path}?page=#{number}"
+      @title+=" – stran #{number}"
+      @description+=" Stran #{number} seznama imen."
+    end
     @designs=PrintCatalog.designs
     @children=Page.where('path LIKE ?',"#{path}%").where.not(path:path).order(:path) if path!='/'
     render :show
@@ -67,6 +73,7 @@ class PagesController < ApplicationController
     return 'workdays' if path.start_with?('/delovni-dnevi/')
     return 'vacation' if path.start_with?('/podaljsani-vikendi/')
     return 'holidays' if path=='/prazniki/' || path.match?(%r{\A/prazniki/20(?:27|28|29|30)/\z})
+    return 'important_days' if path.start_with?('/pomembni-dnevi/') && !CalendarEvent.exists?(slug:path.split('/').last)
     return 'events' if path.start_with?('/prazniki/','/pomembni-dnevi/','/letni-casi/')||path=='/premik-ure/'
     return 'tool' if %w[/datumski-kalkulator/ /kalkulator-delovnih-dni/ /nacrtovalnik-dopusta/ /odstevanje/ /stevilka-tedna/ /dan-v-letu/ /prestopno-leto/].include?(path)
     return 'planner' if %w[/ustvari-koledar/ /prazen-koledar/ /razpored-izmen/ /solski-urnik/ /rojstnodnevni-koledar/ /dnevni-planer/ /druzinski-planer/ /koledar-za-tiskanje/].include?(path)

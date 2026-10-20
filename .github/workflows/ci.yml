@@ -40,6 +40,18 @@ jobs:
         run: bundle exec rails db:prepare && bundle exec rails test
       - name: SEO and observance contracts
         run: bundle exec ruby -r ./config/environment script/audit_seo.rb && bundle exec ruby -r ./config/environment script/audit_observances.rb
+      - name: PostgreSQL backup and isolated restore
+        env:
+          PG_CONTAINER: ${{ job.services.postgres.id }}
+        run: |
+          docker exec "$PG_CONTAINER" pg_dump -U postgres -d koledar365_test -Fc > /tmp/koledar-ci.dump
+          docker exec "$PG_CONTAINER" createdb -U postgres koledar365_restore_check
+          docker exec -i "$PG_CONTAINER" pg_restore -U postgres -d koledar365_restore_check --exit-on-error < /tmp/koledar-ci.dump
+          original=$(docker exec "$PG_CONTAINER" psql -U postgres -d koledar365_test -Atc 'SELECT count(*) FROM person_names; SELECT count(*) FROM pages; SELECT count(*) FROM calendar_events;')
+          restored=$(docker exec "$PG_CONTAINER" psql -U postgres -d koledar365_restore_check -Atc 'SELECT count(*) FROM person_names; SELECT count(*) FROM pages; SELECT count(*) FROM calendar_events;')
+          test "$original" = "$restored"
+          printf 'PostgreSQL dump/restore counts matched: %s\n' "$restored" > evidence/backup-restore-ci.txt
+          docker exec "$PG_CONTAINER" dropdb -U postgres koledar365_restore_check
       - name: Build actual production image
         run: docker build --progress=plain -t koledar365:ci .
       - name: Production boot and real 600 ppi export

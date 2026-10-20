@@ -1,6 +1,7 @@
 class PageMetadata
   # Describe the actual tool/data on a page; do not append lists of SEO keywords.
   def self.description(page, year:)
+    return page.description if page.description.present?
     path = page.path
     fixed = JSON.parse(Rails.root.join("data/page_descriptions_sl.json").read)
     return fixed[path] if fixed.key?(path)

@@ -53,3 +53,13 @@ class SeoTest < ActionDispatch::IntegrationTest
     assert_select 'a[href="https://www.ljubljana.si/sl/aktualno/novice/na-gregorjevo-se-pticki-zenijo"]'
   end
 end
+
+class NamePaginationSeoTest < ActionDispatch::IntegrationTest
+  test 'name pagination has its own canonical and real next links' do
+    get '/imena/najpogostejsa/?page=2'
+    assert_response :success
+    assert_select 'link[rel=canonical][href="https://koledar365.si/imena/najpogostejsa/?page=2"]'
+    assert_select 'a[href="?page=3"]'
+    assert_select 'h1',/stran 2/
+  end
+end

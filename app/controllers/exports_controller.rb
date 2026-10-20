@@ -1,9 +1,12 @@
 class ExportsController < ApplicationController
   rate_limit to:20,within:1.minute,only: :create
   def create
-    options=PrintCatalog.normalize(params.require(:options).permit(:type,:design,:year,:month,:date,:name,:paper,:orientation,:notes,:undated,entries:[:title,:date,:time,:person,:code,:end_time,:break,:notes]).to_h)
+    options=PrintCatalog.normalize(params.require(:options).permit(:type,:design,:year,:month,:date,:name,:paper,:orientation,:notes,:undated,:blank_layout,:ruling,:leap_policy,:start_hour,:end_hour,entries:[:title,:date,:time,:person,:code,:end_time,:break,:notes,:room,:done]).to_h)
+    if params.dig(:options,:photo_token).present?
+      options['photo']=PrivatePhoto.resolve!(params[:options][:photo_token],session[:export_owner])
+    end
     public_name=options['name'].blank?||PersonName.exists?(exact:options['name'])
-    private_file=!public_name||options['notes'].present?||options['entries'].any?
+    private_file=options['photo'].present?||!public_name||options['notes'].present?||options['entries'].any?
     owner=private_file ? (session[:export_owner]||=SecureRandom.hex(24)) : nil
     fingerprint=PrintCatalog.fingerprint(options,owner:owner)
     request=PrintRequest.create_or_find_by!(fingerprint:fingerprint) do |r|
@@ -28,7 +31,7 @@ class ExportsController < ApplicationController
     response.headers['Cache-Control']=r.private_file ? 'private, no-store':'public, max-age=31536000, immutable'
     response.headers['X-Robots-Tag']='noindex'
     types={'.pdf'=>'application/pdf','.webp'=>'image/webp','.png'=>'image/png','.zip'=>'application/zip','.json'=>'application/json'}
-    send_file(path,type:types.fetch(File.extname(name)),disposition:params[:kind]=='preview' ? 'inline':'attachment',filename:"koledar365-#{r.options['year']}-#{r.options['type']}-#{r.options['design']}#{File.extname(name)}")
+    send_file(path,type:types.fetch(File.extname(name)),disposition:params[:kind]=='preview' ? 'inline':'attachment',filename:name)
   end
   def authorized_request
     r=PrintRequest.find(params[:id])

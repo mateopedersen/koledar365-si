@@ -1,0 +1,23 @@
+{
+  "version": "2.0.1",
+  "passed": true,
+  "checked_at": "2026-10-20T14:27:15+02:00",
+  "export_pairs": 180,
+  "layout_combinations": 1080,
+  "name_candidates": 8561,
+  "evidence": {
+    "exports": {
+      "file": "export-file-verification.json",
+      "sha256": "d0b1edf00c6d57376dffd44e599c989a287dc215a66a50424fee687b86442729"
+    },
+    "layouts": {
+      "file": "print-layout-audit.json",
+      "sha256": "cae57ab3a9c42f2ee098ae08745af3a8717d5503cd37b9fb740dd5dcb5d5d54d"
+    },
+    "names": {
+      "file": "name-layout-audit.json",
+      "sha256": "eba1b5dd13ceed3ef5e86358e019d80051290cafaa6fdfd471b6f7f37e4905f6"
+    }
+  },
+  "visual_review": "15 name layouts reviewed in print-v2-contact-sheet.jpg; A5 pagination checked. No CMYK/PDF-X certification."
+}

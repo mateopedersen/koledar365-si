@@ -11,4 +11,4 @@ folder=Rails.root.join('storage/exports',r.fingerprint)
 manifest=JSON.parse(folder.join('manifest.json').read)
 raise 'Raster dimensions' unless manifest['width_px']==3496&&manifest['height_px']==4961
 raise 'Missing files' unless r.files.values.all? { |file|folder.join(file).file? }
-puts JSON.generate(production_smoke:'passed',ruby:RUBY_VERSION,rails:Rails.version,adapter:ActiveRecord::Base.connection.adapter_name,export:r.id,pages:manifest['pages']||manifest['page_count'])
+puts JSON.generate(production_smoke:'passed',ruby:RUBY_VERSION,rails:Rails.version,adapter:ActiveRecord::Base.connection.adapter_name,export:r.id,pages:manifest['page_count'])

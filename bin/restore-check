@@ -1,0 +1,20 @@
+#!/bin/sh
+# Restore into a new disposable DB only. Never overwrite the live database.
+set -eu
+umask 077
+archive=${1:?Usage: bin/restore-check backup.tar.age /path/to/age-identity}
+identity=${2:?Provide the private age identity file}
+work=$(mktemp -d)
+compose_env=${COMPOSE_ENV_FILE:-.env.production}
+check_db="koledar_restorecheck_$(date -u +%s)"
+cleanup() {
+  docker compose --env-file "$compose_env" exec -T db dropdb -U koledar --if-exists "$check_db" >/dev/null 2>&1 || true
+  rm -rf "$work"
+}
+trap cleanup EXIT INT TERM
+age -d -i "$identity" "$archive" | tar -xf - -C "$work"
+docker compose --env-file "$compose_env" exec -T db createdb -U koledar "$check_db"
+docker compose --env-file "$compose_env" exec -T db pg_restore -U koledar -d "$check_db" --exit-on-error < "$work/database.dump"
+docker compose --env-file "$compose_env" exec -T db psql -U koledar -d "$check_db" -v ON_ERROR_STOP=1 -c 'SELECT count(*) AS name_records FROM person_names; SELECT count(*) AS pages FROM pages;'
+tar -tzf "$work/storage.tar.gz" >/dev/null
+echo 'Restore check passed in an isolated database; live database was not modified.'

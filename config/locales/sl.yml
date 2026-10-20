@@ -11,11 +11,17 @@ sl:
   time:
     formats:
       default: "%d. %m. %Y ob %H:%M"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Zapis ni veljaven: %{errors}"
   errors:
     messages:
       blank: "ne sme biti prazno"
       invalid: "ni veljavno"
       taken: "je že v uporabi"
+      too_short: "je prekratko"
+      confirmation: "se ne ujema"
       too_long: "je predolgo"
       inclusion: "ni na seznamu dovoljenih vrednosti"
   days:

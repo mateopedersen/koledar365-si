@@ -1,6 +1,6 @@
 require 'nokogiri'
 require 'json'
-paths=Page.order(:path).pluck(:path)+PersonName.order(:priority).limit(200).map(&:path)+['/fotografije-in-licence/']
+paths=Page.order(:path).pluck(:path)+PersonName.order(:priority).limit(ENV.fetch('NAME_AUDIT_LIMIT','8561').to_i.clamp(1,8561)).map(&:path)+['/fotografije-in-licence/']
 known=Set.new(Page.pluck(:path)+PersonName.all.map(&:path)+['/','/isci/','/fotografije-in-licence/'])
 session=ActionDispatch::Integration::Session.new(Rails.application)
 session.host! 'localhost'
