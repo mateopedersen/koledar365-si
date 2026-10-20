@@ -14,7 +14,7 @@ class ToolsController < ApplicationController
       return render json:{result:"Razpored je pripravljen. Število dni: #{entries.size}.",entries:entries}
     when 'date'
       from=Date.iso8601(params[:from]);to=Date.iso8601(params[:to])
-      difference=(to-from).to_i.abs + (params[:inclusive]=='1' ? 1:0)
+      difference=(to-from).to_i + (params[:inclusive]=='1' ? 1:0)
       delta=Integer(params[:delta].presence||0)
       shifted=case params[:unit];when 'months' then from>>delta;when 'weeks' then from+delta*7;else from+delta;end
       @result="Razlika: #{I18n.t('day_count_acc',count:difference)}. Celih tednov: #{difference.abs/7}; preostalih dni: #{difference.abs%7}. Datum po premiku: #{I18n.l(shifted)}. Pri premiku po mesecih se dan omeji na zadnji dan ciljnega meseca."
