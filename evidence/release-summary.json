@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "pairs": 2820,
+  "pdf_files": 2820,
+  "raster_pages": 6452,
+  "independent_second_pass_pairs": 2820,
+  "template_version": "2.0.1",
+  "monthly_pairs": 720,
+  "annual_pairs": 60,
+  "catalogue": [
+    {
+      "type": "annual",
+      "scope": "",
+      "pairs": 60
+    },
+    {
+      "type": "birthday",
+      "scope": "",
+      "pairs": 60
+    },
+    {
+      "type": "blank",
+      "scope": "",
+      "pairs": 60
+    },
+    {
+      "type": "daily",
+      "scope": "",
+      "pairs": 60
+    },
+    {
+      "type": "family",
+      "scope": "",
+      "pairs": 60
+    },
+    {
+      "type": "holidays",
+      "scope": "",
+      "pairs": 60
+    },
+    {
+      "type": "lunar",
+      "scope": "month",
+      "pairs": 720
+    },
+    {
+      "type": "lunar",
+      "scope": "year",
+      "pairs": 60
+    },
+    {
+      "type": "monthly",
+      "scope": "",
+      "pairs": 720
+    },
+    {
+      "type": "school",
+      "scope": "",
+      "pairs": 60
+    },
+    {
+      "type": "shift",
+      "scope": "",
+      "pairs": 60
+    },
+    {
+      "type": "weekly",
+      "scope": "",
+      "pairs": 60
+    },
+    {
+      "type": "workdays",
+      "scope": "month",
+      "pairs": 720
+    },
+    {
+      "type": "workdays",
+      "scope": "year",
+      "pairs": 60
+    }
+  ]
+}

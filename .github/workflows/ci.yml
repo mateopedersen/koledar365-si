@@ -37,8 +37,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Read-only weather proxy checks
-        run: node script/test_weather_function.mjs
+      - name: Weather and public download contracts
+        run: node script/test_weather_function.mjs && node script/test_public_catalog.mjs
       - name: Ruby syntax
         run: find app config lib db script test -name '*.rb' -print0 | xargs -0 -n1 ruby -c
       - name: PostgreSQL schema and functional tests
@@ -73,6 +73,14 @@ jobs:
           curl -fsS http://127.0.0.1:3000/up
           docker exec koledar-ci bundle exec rails runner script/production_smoke.rb
           docker logs koledar-ci
+      - name: Rebuild free publication from a fresh SQLite database
+        if: ${{ hashFiles('site/release-manifest.json') != '' }}
+        env:
+          RAILS_ENV: development
+          OPERATOR_CONTACT: koledar365@gmail.com
+        run: |
+          unset DATABASE_URL
+          bundle exec ruby script/rebuild_free.rb
       - uses: actions/upload-artifact@v4
         if: always()
         with:

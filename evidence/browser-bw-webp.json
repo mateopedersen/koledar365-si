@@ -1,0 +1,23 @@
+{
+  "file": "koledar365-name-ana-dea210f058-2027-min-03-A4-portrait-monochrome_bw-v2.0.1-multipage-webp-600ppi.zip",
+  "passed": true,
+  "page_count": 2,
+  "pdf_sha256": "425424e3d52fba6b365c124fd017399564829feb56b8541dc0ffa7f8ee1f3d98",
+  "browser_decode_pixel_equality": "checked in browser before link was exposed",
+  "pages": [
+    {
+      "filename": "koledar365-name-ana-dea210f058-2027-min-03-A4-portrait-monochrome_bw-v2.0.1-p001.webp",
+      "width": 4961,
+      "height": 7016,
+      "grayscale_equal_channels": true,
+      "icc": "sRGB built-in"
+    },
+    {
+      "filename": "koledar365-name-ana-dea210f058-2027-min-03-A4-portrait-monochrome_bw-v2.0.1-p002.webp",
+      "width": 4961,
+      "height": 7016,
+      "grayscale_equal_channels": true,
+      "icc": "sRGB built-in"
+    }
+  ]
+}

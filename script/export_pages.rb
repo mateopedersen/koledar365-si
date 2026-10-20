@@ -3,9 +3,11 @@ require 'nokogiri'
 require 'fileutils'
 ENV['OPERATOR_CONTACT']='koledar365@gmail.com'
 out=Rails.root.join(ENV.fetch('STATIC_OUT','site'));FileUtils.mkdir_p(out)
-FileUtils.cp_r(Rails.root.join('public/.'),out)
+partial=ENV['STATIC_ONLY']&.split(',')
+FileUtils.cp_r(Rails.root.join('public/.'),out) unless partial
 FileUtils.mkdir_p(out.join('free/views/home'));FileUtils.mkdir_p(out.join('free/names'))
 FileUtils.cp_r(Rails.root.join('cloudflare/free/.'),out.join('free'))
+FileUtils.rm_f(out.join('free/README.md'))
 session=ActionDispatch::Integration::Session.new(Rails.application);session.host!('localhost')
 assets=nil;processed=[]
 transform=lambda do |body,path,indexable:true|
@@ -25,6 +27,20 @@ transform=lambda do |body,path,indexable:true|
    node['alt']='Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled.'
  end
  doc.css('.design-section > p.muted').each { |node|node.content='Sličica prikazuje vzorec postavitve. »Moj predogled« pripravi izbrano obdobje in vaše vnose na tej napravi. PDF vsebuje vektorsko besedilo, WebP pa celotno ločljivost 600 ppi. Večstranski prenos WebP je ZIP z vsemi stranmi in podatki za tisk.' }
+ doc.css('p').each do |node|
+  if node.text.include?('Za osebni predogled in prenos jih pošljemo strežniku')
+   node.content='Vnosi se shranijo na tej napravi. Osebni predogled, PDF in WebP pripravimo v brskalniku. Fotografija ostane le do zaprtja strani; strežniku je ne pošljemo.'
+  end
+ end
+ if (grid=doc.at_css('.horoscope-grid'))
+  grid.parent['data-horoscope-day']=Time.zone.today.iso8601
+  grid.css('article').each do |article|
+   paragraph=article.element_children.find { |node|node.name=='p' };next unless paragraph&&!paragraph.text.include?('Današnji horoskop še ni pripravljen.')
+   current=Nokogiri::XML::Node.new('div',doc);current['data-horoscope-current']=Time.zone.today.iso8601
+   paragraph.add_previous_sibling(current);current.add_child(paragraph)
+   stamp=article.element_children.find { |node|node.name=='small' };current.add_child(stamp) if stamp
+  end
+ end
  if path=='/kontakt/'
    panel=doc.at_css('main .prose');panel.inner_html='<h2>Pišite uredništvu</h2><p>Za vprašanje, popravek ali zahtevo glede zasebnosti pišite na <a href="mailto:koledar365@gmail.com">koledar365@gmail.com</a>. Navedite naslov strani in datum, na katerega se sporočilo nanaša.</p><a class="button primary" href="mailto:koledar365@gmail.com?subject=Koledar365%20%E2%80%93%20vpra%C5%A1anje">Odpri e-pošto</a><p>Povezava odpre vaš poštni program. Sporočilo pošljete sami; spletno mesto ga ne odda v ozadju. <a href="/zasebnost/">Obdelava podatkov in vaše pravice.</a></p>'
  end
@@ -46,13 +62,14 @@ write=lambda do |path,html|
  FileUtils.mkdir_p(file.dirname);file.write(html)
 end
 paths=Page.order(:path).map { |page|[page.path,page.status=='published'] }+PersonName.order(:priority).map { |name|[name.path,name.status=='published'] }+[['/fotografije-in-licence/',true],['/isci/',false]]
+paths=paths.select { |path,_|partial.include?(path) } if partial
 limit=ENV['STATIC_LIMIT']&.to_i;paths=paths.first(limit) if limit
 paths.each_with_index do |(path,indexable),index|
  session.get(path);raise "#{path}: #{session.response.status}" unless session.response.status==200
  html=transform.call(session.response.body,path,indexable:indexable);write.call(path,html);processed<<path
  puts "HTML #{index+1}/#{paths.size}" if index%200==0;STDOUT.flush
 end
-unless limit
+unless limit||partial
  (2026..2030).each do |year|
   (1..12).each do |month|
    %w[month week day list year].each do |view|
@@ -67,6 +84,8 @@ unless limit
    file=out.join("free/names/#{group_index}-#{page}.html");file.write(transform.call(session.response.body,"/#{group}/",indexable:true))
   end
  end
+end
+unless limit
  session.get('/te-strani-ni/');write.call('/404.html',transform.call(session.response.body,'/404.html',indexable:false))
 end
 out.join('free/assets.json').write(JSON.generate(assets))
@@ -106,4 +125,4 @@ HEADERS
 out.join('_headers').write(headers)
 out.join('_routes.json').write(JSON.generate({version:1,include:['/vreme/*'],exclude:[]}))
 report={built_at:Time.current.iso8601,html_count:processed.size,paths:processed,output:out.relative_path_from(Rails.root).to_s}
-Rails.root.join('evidence/static-export.json').write(JSON.pretty_generate(report));puts report.except(:paths).to_json
+Rails.root.join(partial ? 'evidence/static-export-partial.json':'evidence/static-export.json').write(JSON.pretty_generate(report));puts report.except(:paths).to_json

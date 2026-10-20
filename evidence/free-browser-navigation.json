@@ -1,0 +1,64 @@
+[
+  {
+    "query": "year=2028&month=2&date=2028-02-29&view=day",
+    "heading": "29. 02. 2028",
+    "links": [
+      {
+        "date": "2028-02-28",
+        "label": "Prejšnji dan"
+      },
+      {
+        "date": "2028-03-01",
+        "label": "Naslednji dan"
+      }
+    ],
+    "tabs": [
+      "2028-02-29",
+      "2028-02-29",
+      "2028-02-29",
+      "2028-02-29",
+      "2028-02-29"
+    ],
+    "passed": true
+  },
+  {
+    "query": "year=2030&month=12&date=2030-12-31&view=day",
+    "heading": "31. 12. 2030",
+    "links": [
+      {
+        "date": "2030-12-30",
+        "label": "Prejšnji dan"
+      }
+    ],
+    "tabs": [
+      "2030-12-31",
+      "2030-12-31",
+      "2030-12-31",
+      "2030-12-31",
+      "2030-12-31"
+    ],
+    "passed": true
+  },
+  {
+    "query": "year=2027&month=1&date=2027-01-01&view=week",
+    "heading": "Teden 53 · 2026",
+    "links": [
+      {
+        "date": "2026-12-25",
+        "label": "Prejšnji teden"
+      },
+      {
+        "date": "2027-01-08",
+        "label": "Naslednji teden"
+      }
+    ],
+    "tabs": [
+      "2027-01-01",
+      "2027-01-01",
+      "2027-01-01",
+      "2027-01-01",
+      "2027-01-01"
+    ],
+    "passed": true
+  }
+]

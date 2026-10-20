@@ -17,4 +17,7 @@ class Handler(SimpleHTTPRequestHandler):
   self.send_header('Cache-Control','no-store')
   self.send_header('Content-Security-Policy',"default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' blob:; connect-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'")
   super().end_headers()
-ThreadingHTTPServer(('127.0.0.1',3651),Handler).serve_forever()
+class Server(ThreadingHTTPServer):
+ request_queue_size=128
+ daemon_threads=True
+Server(('127.0.0.1',3651),Handler).serve_forever()

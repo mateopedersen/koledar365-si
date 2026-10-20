@@ -1,0 +1,61 @@
+{
+  "tested_at": "2026-10-20T13:54:23.719Z",
+  "origin": "http://127.0.0.1:3651",
+  "checks": [
+    {
+      "check": "Personal add/edit/reload, JSON backup and restore",
+      "passed": true
+    },
+    {
+      "check": "ICS export, deletion, import: one event at 18:30 preserved",
+      "passed": true
+    },
+    {
+      "check": "Leap-year difference: 2028-02-28 to 2028-03-01",
+      "passed": true,
+      "result": "Razlika: 2 dneva. Celih tednov: 0; preostalih dni: 2. Datum po premiku: 28. 02. 2028. Pri premiku po mesecih se dan omeji na zadnji dan ciljnega meseca."
+    },
+    {
+      "check": "Ana 2027 min-01 actual color PDF and 600 ppi WebP, browser decode/pixel gate passed before download",
+      "passed": true,
+      "pdf": "/Users/melihozcan/Downloads/koledar365-name-ana-dea210f058-2027-min-01-A4-portrait-color-v2.0.1.pdf",
+      "webp": "/Users/melihozcan/Downloads/koledar365-name-ana-dea210f058-2027-min-01-A4-portrait-color-v2.0.1 (1).webp"
+    },
+    {
+      "check": "Names pagination page 2 starts with Lidija and has unique head",
+      "passed": true,
+      "head": {
+        "canonical": "https://koledar365.si/koledar-z-imenom/?page=2",
+        "description": "Izberite ime iz zbirke SURS ali vnesite svoje. Pripravite osebni koledar za leto 2027, 2028, 2029 ali 2030 v eni od 15 predlog. Stran 2 seznama imen.",
+        "title": "Koledar z imenom – stran 2 · Koledar365"
+      }
+    },
+    {
+      "check": "Photo with Špela Žan Črt: local PDF generated, no POST network transmission",
+      "passed": true,
+      "pdf": "/Users/melihozcan/Downloads/koledar365-name-spela-zan-crt-e162bb74d3-2027-min-01-A4-portrait-color-v2.0.1.pdf",
+      "network_post_requests": []
+    },
+    {
+      "check": "Keyboard skip link and cookie Escape focus return",
+      "passed": true,
+      "skipFocus": {
+        "href": "#vsebina",
+        "tag": "A",
+        "text": "Na vsebino"
+      },
+      "mainFocus": "vsebina",
+      "cookieFocus": {
+        "hidden": true,
+        "tag": "BUTTON",
+        "text": "Nastavitve piškotkov"
+      },
+      "note": "Interaction verified with device emulation cleared; emulated coordinate click was not a valid interaction test."
+    },
+    {
+      "check": "February 2027 working-day download points to February PDF",
+      "passed": true,
+      "href": "/prenosi/f96785bec9bfde0b536f5dc918e57f08d25b8d5132f26a67931df2ae3723259c/koledar365-workdays-2027-02-min-01-A4-portrait-color-v2.0.1.pdf"
+    }
+  ]
+}

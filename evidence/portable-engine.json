@@ -1,0 +1,1396 @@
+{
+  "checked_at": "2026-10-20T13:39:18.463Z",
+  "engine": "Ruby 4.0.0 WASI official 2.10.1 / same renderer 2.0.1",
+  "passed": true,
+  "pairs": 225,
+  "tests": [
+    "225 actual Prawn PDF outputs",
+    "366 leap-year dates",
+    "255 workdays",
+    "TZID UTC ICS round trip",
+    "DST invalid clock refusal",
+    "malformed number refusal"
+  ],
+  "records": [
+    {
+      "type": "workdays",
+      "design": "min-01",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "design": "min-02",
+      "pages": 3,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "design": "min-03",
+      "pages": 3,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "design": "ele-01",
+      "pages": 3,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "design": "ele-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "design": "ele-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "design": "nat-01",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "design": "nat-02",
+      "pages": 3,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "design": "nat-03",
+      "pages": 3,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "design": "pla-01",
+      "pages": 5,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "design": "pla-02",
+      "pages": 3,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "design": "pla-03",
+      "pages": 4,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "design": "geo-01",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "design": "geo-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "design": "geo-03",
+      "pages": 3,
+      "passed": true
+    },
+    {
+      "type": "annual",
+      "design": "min-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "annual",
+      "design": "min-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "annual",
+      "design": "min-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "annual",
+      "design": "ele-01",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "annual",
+      "design": "ele-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "annual",
+      "design": "ele-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "annual",
+      "design": "nat-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "annual",
+      "design": "nat-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "annual",
+      "design": "nat-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "annual",
+      "design": "pla-01",
+      "pages": 4,
+      "passed": true
+    },
+    {
+      "type": "annual",
+      "design": "pla-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "annual",
+      "design": "pla-03",
+      "pages": 3,
+      "passed": true
+    },
+    {
+      "type": "annual",
+      "design": "geo-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "annual",
+      "design": "geo-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "annual",
+      "design": "geo-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "monthly",
+      "design": "min-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "monthly",
+      "design": "min-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "monthly",
+      "design": "min-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "monthly",
+      "design": "ele-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "monthly",
+      "design": "ele-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "monthly",
+      "design": "ele-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "monthly",
+      "design": "nat-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "monthly",
+      "design": "nat-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "monthly",
+      "design": "nat-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "monthly",
+      "design": "pla-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "monthly",
+      "design": "pla-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "monthly",
+      "design": "pla-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "monthly",
+      "design": "geo-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "monthly",
+      "design": "geo-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "monthly",
+      "design": "geo-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "weekly",
+      "design": "min-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "weekly",
+      "design": "min-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "weekly",
+      "design": "min-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "weekly",
+      "design": "ele-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "weekly",
+      "design": "ele-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "weekly",
+      "design": "ele-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "weekly",
+      "design": "nat-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "weekly",
+      "design": "nat-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "weekly",
+      "design": "nat-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "weekly",
+      "design": "pla-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "weekly",
+      "design": "pla-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "weekly",
+      "design": "pla-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "weekly",
+      "design": "geo-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "weekly",
+      "design": "geo-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "weekly",
+      "design": "geo-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "design": "min-01",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "design": "min-02",
+      "pages": 3,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "design": "min-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "design": "ele-01",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "design": "ele-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "design": "ele-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "design": "nat-01",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "design": "nat-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "design": "nat-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "design": "pla-01",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "design": "pla-02",
+      "pages": 3,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "design": "pla-03",
+      "pages": 3,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "design": "geo-01",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "design": "geo-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "design": "geo-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "blank",
+      "design": "min-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "blank",
+      "design": "min-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "blank",
+      "design": "min-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "blank",
+      "design": "ele-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "blank",
+      "design": "ele-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "blank",
+      "design": "ele-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "blank",
+      "design": "nat-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "blank",
+      "design": "nat-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "blank",
+      "design": "nat-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "blank",
+      "design": "pla-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "blank",
+      "design": "pla-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "blank",
+      "design": "pla-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "blank",
+      "design": "geo-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "blank",
+      "design": "geo-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "blank",
+      "design": "geo-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "shift",
+      "design": "min-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "shift",
+      "design": "min-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "shift",
+      "design": "min-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "shift",
+      "design": "ele-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "shift",
+      "design": "ele-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "shift",
+      "design": "ele-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "shift",
+      "design": "nat-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "shift",
+      "design": "nat-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "shift",
+      "design": "nat-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "shift",
+      "design": "pla-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "shift",
+      "design": "pla-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "shift",
+      "design": "pla-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "shift",
+      "design": "geo-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "shift",
+      "design": "geo-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "shift",
+      "design": "geo-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "daily",
+      "design": "min-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "daily",
+      "design": "min-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "daily",
+      "design": "min-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "daily",
+      "design": "ele-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "daily",
+      "design": "ele-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "daily",
+      "design": "ele-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "daily",
+      "design": "nat-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "daily",
+      "design": "nat-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "daily",
+      "design": "nat-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "daily",
+      "design": "pla-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "daily",
+      "design": "pla-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "daily",
+      "design": "pla-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "daily",
+      "design": "geo-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "daily",
+      "design": "geo-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "daily",
+      "design": "geo-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "family",
+      "design": "min-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "family",
+      "design": "min-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "family",
+      "design": "min-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "family",
+      "design": "ele-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "family",
+      "design": "ele-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "family",
+      "design": "ele-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "family",
+      "design": "nat-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "family",
+      "design": "nat-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "family",
+      "design": "nat-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "family",
+      "design": "pla-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "family",
+      "design": "pla-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "family",
+      "design": "pla-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "family",
+      "design": "geo-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "family",
+      "design": "geo-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "family",
+      "design": "geo-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "school",
+      "design": "min-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "school",
+      "design": "min-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "school",
+      "design": "min-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "school",
+      "design": "ele-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "school",
+      "design": "ele-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "school",
+      "design": "ele-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "school",
+      "design": "nat-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "school",
+      "design": "nat-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "school",
+      "design": "nat-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "school",
+      "design": "pla-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "school",
+      "design": "pla-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "school",
+      "design": "pla-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "school",
+      "design": "geo-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "school",
+      "design": "geo-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "school",
+      "design": "geo-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "birthday",
+      "design": "min-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "birthday",
+      "design": "min-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "birthday",
+      "design": "min-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "birthday",
+      "design": "ele-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "birthday",
+      "design": "ele-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "birthday",
+      "design": "ele-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "birthday",
+      "design": "nat-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "birthday",
+      "design": "nat-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "birthday",
+      "design": "nat-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "birthday",
+      "design": "pla-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "birthday",
+      "design": "pla-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "birthday",
+      "design": "pla-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "birthday",
+      "design": "geo-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "birthday",
+      "design": "geo-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "birthday",
+      "design": "geo-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "name",
+      "design": "min-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "name",
+      "design": "min-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "name",
+      "design": "min-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "name",
+      "design": "ele-01",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "name",
+      "design": "ele-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "name",
+      "design": "ele-03",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "name",
+      "design": "nat-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "name",
+      "design": "nat-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "name",
+      "design": "nat-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "name",
+      "design": "pla-01",
+      "pages": 4,
+      "passed": true
+    },
+    {
+      "type": "name",
+      "design": "pla-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "name",
+      "design": "pla-03",
+      "pages": 3,
+      "passed": true
+    },
+    {
+      "type": "name",
+      "design": "geo-01",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "name",
+      "design": "geo-02",
+      "pages": 1,
+      "passed": true
+    },
+    {
+      "type": "name",
+      "design": "geo-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "holidays",
+      "design": "min-01",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "holidays",
+      "design": "min-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "holidays",
+      "design": "min-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "holidays",
+      "design": "ele-01",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "holidays",
+      "design": "ele-02",
+      "pages": 3,
+      "passed": true
+    },
+    {
+      "type": "holidays",
+      "design": "ele-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "holidays",
+      "design": "nat-01",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "holidays",
+      "design": "nat-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "holidays",
+      "design": "nat-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "holidays",
+      "design": "pla-01",
+      "pages": 3,
+      "passed": true
+    },
+    {
+      "type": "holidays",
+      "design": "pla-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "holidays",
+      "design": "pla-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "holidays",
+      "design": "geo-01",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "holidays",
+      "design": "geo-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "holidays",
+      "design": "geo-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "scope": "year",
+      "design": "min-01",
+      "pages": 24,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "scope": "year",
+      "design": "min-02",
+      "pages": 36,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "scope": "year",
+      "design": "min-03",
+      "pages": 24,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "scope": "year",
+      "design": "ele-01",
+      "pages": 24,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "scope": "year",
+      "design": "ele-02",
+      "pages": 24,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "scope": "year",
+      "design": "ele-03",
+      "pages": 24,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "scope": "year",
+      "design": "nat-01",
+      "pages": 24,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "scope": "year",
+      "design": "nat-02",
+      "pages": 24,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "scope": "year",
+      "design": "nat-03",
+      "pages": 24,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "scope": "year",
+      "design": "pla-01",
+      "pages": 24,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "scope": "year",
+      "design": "pla-02",
+      "pages": 36,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "scope": "year",
+      "design": "pla-03",
+      "pages": 36,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "scope": "year",
+      "design": "geo-01",
+      "pages": 24,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "scope": "year",
+      "design": "geo-02",
+      "pages": 24,
+      "passed": true
+    },
+    {
+      "type": "lunar",
+      "scope": "year",
+      "design": "geo-03",
+      "pages": 24,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "scope": "month",
+      "design": "min-01",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "scope": "month",
+      "design": "min-02",
+      "pages": 3,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "scope": "month",
+      "design": "min-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "scope": "month",
+      "design": "ele-01",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "scope": "month",
+      "design": "ele-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "scope": "month",
+      "design": "ele-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "scope": "month",
+      "design": "nat-01",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "scope": "month",
+      "design": "nat-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "scope": "month",
+      "design": "nat-03",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "scope": "month",
+      "design": "pla-01",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "scope": "month",
+      "design": "pla-02",
+      "pages": 3,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "scope": "month",
+      "design": "pla-03",
+      "pages": 3,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "scope": "month",
+      "design": "geo-01",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "scope": "month",
+      "design": "geo-02",
+      "pages": 2,
+      "passed": true
+    },
+    {
+      "type": "workdays",
+      "scope": "month",
+      "design": "geo-03",
+      "pages": 2,
+      "passed": true
+    }
+  ]
+}

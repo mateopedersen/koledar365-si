@@ -1,6 +1,6 @@
 {
   "date": "2026-10-20",
-  "scope": "Implementation and local/CI evidence; live deployment is not complete",
+  "scope": "Free GitHub + Cloudflare Pages adaptation with preserved Rails source; final live verification pending",
   "rows": [
     {
       "id": "K01",
@@ -34,8 +34,8 @@
       "id": "K05",
       "requirement": "İletişim",
       "status": "verified",
-      "finding": "Kalıcı yönetici gelen kutusu, doğrulama/CSRF/honeypot/rate limit. SMTP gönderildi iddiası yok.",
-      "evidence": "test/integration/site_test.rb; app/controllers/tools_controller.rb"
+      "finding": "Kullanıcının doğrulanmış gerçek e-postası koledar365@gmail.com için mailto akışı. Ücretsiz sürüm gönderilmeyen/kaydedilmeyen mesaj için başarı iddiası göstermez. Native Rails gelen kutusu kaynakta korunur.",
+      "evidence": "script/export_pages.rb; site/kontakt/index.html"
     },
     {
       "id": "K06",
@@ -111,15 +111,15 @@
       "id": "K16",
       "requirement": "İç içe tablo ve kartlar",
       "status": "partial",
-      "finding": "CSS grid/flex; takvim semantik tablo, veri tablosunda yerel kaydırma. 56 görünümde dış taşma yok. 200% zoom için genişlik eşdeğeri test; ayrı tam klavye/zoom audit tamamlanmadı.",
-      "evidence": "evidence/responsive-final.json"
+      "finding": "56 native görünüm ve 24 ücretsiz görünümde dış taşma yok; klavye atlama/Escape/odak dönüşü testli. Ayrı gerçek %200 tarayıcı zoom incelemesi henüz tamamlanmadı.",
+      "evidence": "evidence/responsive-final.json; evidence/free-responsive.json; evidence/free-browser-functional.json"
     },
     {
       "id": "K17",
       "requirement": "OG görselleri",
       "status": "verified",
-      "finding": "İsim/yıl/ay için gerçek 1200×630 sosyal görsel; tatil fotoğrafı konuya bağlı.",
-      "evidence": "test/integration/seo_test.rb; app/services/social_image.rb"
+      "finding": "343 sayfa için gerçek PNG sosyal görsel. İsimlerde yanlış ad/yıl yerine nötr marka kartı; her HTML başlığı/açıklaması isme özgü.",
+      "evidence": "evidence/static-audit.json; script/package_social.rb"
     },
     {
       "id": "K18",
@@ -167,15 +167,15 @@
       "id": "K24",
       "requirement": "Bugünün tarihli burç yorumu",
       "status": "verified",
-      "finding": "Bugün 12 özgün kayıt; gerçek tarihli planlama, JSON ithal, izleme ve eksik gün durumu. API anahtarı olmadan editoryal giriş kullanılır.",
-      "evidence": "test/models/editorial_test.rb; app/views/admin/index.html.erb"
+      "finding": "12 özgün gerçek tarihli yorum; API anahtarı olmadan tarihli GitHub editoryal hazırlama ve yayın build/izleme. Ljubljana gece yarısında eski yazı önceki tarihli olarak ayrılır; eksik gün açıkça söylenir.",
+      "evidence": "data/editorial/horoscopes.json; cloudflare/free/date-context.js; .github/workflows/pages-publication.yml"
     },
     {
       "id": "K25",
       "requirement": "E E A T ve kullanıcı deneyimi",
-      "status": "partial",
-      "finding": "Gerçek işletmeci Mateo Pedersen, yöntem ve düzeltme yolu var. Yayımlanacak işletmeci iletişimi/üretim sağlayıcısı henüz gelmedi.",
-      "evidence": "app/views/pages/_privacy.html.erb; docs/seo.md"
+      "status": "verified",
+      "finding": "Gerçek sorumlu Mateo Pedersen, kullanıcı tarafından verilen iletişim e-postası, Cloudflare/GitHub/Gmail açıklaması, yöntem/kaynak/düzeltme akışı. E-E-A-T puanı veya sıralama garantisi yok.",
+      "evidence": "app/views/pages/_privacy_free.html.erb; docs/free-cloudflare.md; evidence/static-audit.json"
     },
     {
       "id": "K26",
@@ -202,8 +202,8 @@
       "id": "K29",
       "requirement": "En güncel kararlı Ruby",
       "status": "verified",
-      "finding": "Ruby 4.0.7/Rails 8.1.4; Linux Docker/PostgreSQL gerçek CI. Son commitin CI sonucu raporda güncellenir.",
-      "evidence": "evidence/production-ci.json; .github/workflows/ci.yml"
+      "finding": "Native build Ruby 4.0.7/Rails 8.1.4. Ücretsiz tarayıcı motoru resmî ruby.wasm 2.10.1 içindeki Ruby 4.0.0 ile aynı hesap/Prawn servislerini çalıştırır; sürekli Rails sunucusu iddiası yok.",
+      "evidence": "docs/free-cloudflare.md; evidence/portable-engine.json; .github/workflows/ci.yml"
     },
     {
       "id": "K30",
@@ -215,23 +215,23 @@
     {
       "id": "K31",
       "requirement": "GitHub ve Cloudflare yayını",
-      "status": "blocked",
-      "finding": "GitHub public ve kaynak dalı/PR hazır. Cloudflare DNS/Pages var; kalıcı Rails hostu verilmedi. Canlı Rails yayını yok.",
-      "evidence": "evidence/pull-request.json; docs/deployment.md"
+      "status": "in_progress",
+      "finding": "Mevcut ücretsiz Cloudflare projesinin build/output değişkenleri ayarlandı; doğrulanmış 2820 çiftin son kontrolü ve Preview/canlı HTTPS yayını sürüyor. Ücretli kaynak yok.",
+      "evidence": "docs/free-cloudflare.md; STATUS.md"
     },
     {
       "id": "K32",
       "requirement": "Gerçek 600 ppi PDF ve WebP kalitesi",
       "status": "verified",
-      "finding": "180 gerçek eşleşme, bütün sayfalarda gerçek 600 ppi boyut, sRGB ve gömülü vektör font.",
-      "evidence": "evidence/export-file-verification.json; evidence/file-contract-v1.1.json"
+      "finding": "2.820 gerçek PDF/WebP çifti; bütün sayfalarda gerçek fiziksel en az 600 ppi, sRGB, PDF gömülü font/marka; yeniden rasterleştirme ile tam piksel ve 5 mm köşe kontrolü. Browser renkli/BW/çok sayfalı ve fotoğraf PDF örnekleri ayrıca doğrulandı.",
+      "evidence": "evidence/release-summary.json; evidence/release-verification-0.json; evidence/release-extra-verification-0.json; evidence/browser-photo-and-color.json"
     },
     {
       "id": "K33",
       "requirement": "Kişisel kayıtlar ve ICS",
       "status": "verified",
-      "finding": "Seansa özel dosyalar/fotoğraf; local CRUD, yedek, gerçek ICS ve DST/gece vardiyası/29 Şubat politikası.",
-      "evidence": "test/models/planner_test.rb; test/integration/planner_test.rb"
+      "finding": "Ücretsiz sürümde özel veriler cihazda; gerçek JSON yedek/restore, ICS round trip, DST ve fotoğraf PDF işlemi. Fotoğraf/özel veriler için tarayıcı ağ kaydında POST yok.",
+      "evidence": "evidence/free-browser-functional.json; evidence/browser-photo-and-color.json"
     },
     {
       "id": "K34",
@@ -258,8 +258,8 @@
       "id": "K37",
       "requirement": "Her indirilebilir türde 15 PDF ve 15 WebP",
       "status": "verified",
-      "finding": "12 indirilebilir tür ×15 tasarımın PDF+WebP gerçek üretimi ve doğrulaması; on-demand sürdürülebilir cache.",
-      "evidence": "evidence/export-matrix-v2.json; evidence/export-file-verification.json"
+      "finding": "13 tür/ek scope için 2820 standart dönem çifti üretildi; adlar/özel dönemler 15 tasarımın gerçek Ruby motoruyla cihazda üretilir. Son bağımsız raster kontrol sayısı release raporlarından doğrulanır.",
+      "evidence": "evidence/release-catalog-0.json; evidence/release-extra-catalog-0.json; evidence/portable-engine.json"
     },
     {
       "id": "K38",
@@ -292,9 +292,9 @@
     {
       "id": "K42",
       "requirement": "Anahtar teslim çalışan site",
-      "status": "blocked",
-      "finding": "Yerelde çalışan uygulama, Docker/Compose, yönetim ve bakım hazır. Canlı host, işletmeci iletişimi ve üretim backup görevi olmadan anahtar teslim yayın tamamlandı denmez.",
-      "evidence": "docs/deployment.md; STATUS.md"
+      "status": "in_progress",
+      "finding": "Çalışan ücretsiz sürüm ve gerçek kişisel araçlar hazır. Nihai Cloudflare Preview/canlı doğrulaması ve temiz kurulum yayın workflow testi tamamlanmadan anahtar teslim yayın denmez.",
+      "evidence": "docs/free-cloudflare.md; STATUS.md"
     },
     {
       "id": "K43",
