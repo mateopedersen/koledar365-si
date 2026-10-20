@@ -1,0 +1,18 @@
+<div class="tool-cards"><% descriptions={
+  '/datumski-kalkulator/'=>['calculator','Preštejte dneve med datumoma ali poiščite datum po premiku.'],
+  '/kalkulator-delovnih-dni/'=>['briefcase','Izberite delovni teden, dnevne ure in upoštevanje praznikov.'],
+  '/nacrtovalnik-dopusta/'=>['calendar','Primerjajte porabo dopusta in skupno dolžino oddiha.'],
+  '/odstevanje/'=>['clock','Preverite, koliko časa je še do izbranega datuma.'],
+  '/stevilka-tedna/'=>['calendar','Poiščite številko tedna in leto po standardu ISO.'],
+  '/dan-v-letu/'=>['calendar','Zaporedna številka dneva in preostanek leta.'],
+  '/prestopno-leto/'=>['calculator','Preverite dolžino februarja in pravilo prestopnega leta.'],
+  '/ustvari-koledar/'=>['image','Izberite ime, leto in predlogo za svoj tiskani koledar.'],
+  '/razpored-izmen/'=>['briefcase','Razporedite ponavljajoči se cikel delovnih izmen.'],
+  '/solski-urnik/'=>['note','Uredite predmete, ure in učilnice.'],
+  '/rojstnodnevni-koledar/'=>['gift','Zberite rojstne dneve v letni pregled.'],
+  '/dnevni-planer/'=>['check','Organizirajte dnevne obveznosti, opravila in zapiske.'],
+  '/druzinski-planer/'=>['person','Povežite načrte družinskih članov v skupen pregled.'],
+  '/prazen-koledar/'=>['calendar','Pripravite prazen koledar za lastne zapise.'],
+  '/soncni-vzhod-in-zahod/'=>['sun','Izračunajte vzhod, zahod in dolžino dneva za mesto.'],
+  '/horoskop/izracun-znamenja/'=>['star','Poiščite tradicionalno sončno znamenje po datumu rojstva.']
+} %><% descriptions.each do |path,(icon,description)|;page=Page.find_by(path:path);next unless page %><a class="panel tool-card" href="<%= path %>"><span class="tool-icon"><%= ui_icon(icon) %></span><h2><%= page.title %></h2><p><%= description %></p><span class="tool-open">Odpri orodje <%= ui_icon('chevron-right') %></span></a><% end %></div>

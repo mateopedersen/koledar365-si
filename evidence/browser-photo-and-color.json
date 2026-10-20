@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "photo_pdf_sha256": "a88ae8fa0b9e30622a0da36959bb3097fab93c6d158dd7aeeeecaf6e2d6c95ec",
+  "photo_pdf_pages": 2,
+  "photos": [
+    {
+      "page": 1,
+      "pixels": [
+        1800,
+        1200
+      ],
+      "effective_ppi": [
+        1270.0000509567922,
+        1269.999926504634
+      ]
+    },
+    {
+      "page": 2,
+      "pixels": [
+        1800,
+        1200
+      ],
+      "effective_ppi": [
+        1270.0000509567922,
+        1269.999926504634
+      ]
+    }
+  ],
+  "browser_color_webp": {
+    "width": 4961,
+    "height": 7016,
+    "sRGB": true,
+    "corners_5mm_clear": true,
+    "decoded_pixel_check": "Executed by browser against the original PDF.js raster before download"
+  }
+}

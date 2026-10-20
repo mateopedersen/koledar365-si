@@ -1,0 +1,705 @@
+{
+  "checked_on": "2026-10-20",
+  "base_url": "http://127.0.0.1:3650",
+  "files_checked": 116,
+  "passed": true,
+  "issues": [],
+  "files": [
+    {
+      "path": "/images/observances/novo-leto.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/novo-leto-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/presernov-dan.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/presernov-dan-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-upora-proti-okupatorju.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-upora-proti-okupatorju-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/praznik-dela.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/praznik-dela-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-primoza-trubarja.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-primoza-trubarja-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-drzavnosti.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-drzavnosti-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-triglava.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-triglava-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-slovenskega-sporta.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-slovenskega-sporta-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-spomina-na-mrtve.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-spomina-na-mrtve-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-rudolfa-maistra.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-rudolfa-maistra-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-samostojnosti-in-enotnosti.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-samostojnosti-in-enotnosti-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/velika-noc.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/velika-noc-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/binkosti.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/binkosti-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/bozic.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/bozic-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/sveti-trije-kralji.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/sveti-trije-kralji-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/valentinovo.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/valentinovo-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/pust.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/pust-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-zena.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-zena-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/gregorjevo.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/gregorjevo-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/materinski-dan.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/materinski-dan-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/cvetna-nedelja.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/cvetna-nedelja-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/veliki-petek.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/veliki-petek-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/svetovni-dan-zemlje.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/svetovni-dan-zemlje-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-evrope.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-evrope-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/advent.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/advent-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/miklavz.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/miklavz-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/silvestrovo.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/silvestrovo-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/pomladno-enakonocje.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/pomladno-enakonocje-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/poletni-solsticij.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/poletni-solsticij-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/jesensko-enakonocje.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/jesensko-enakonocje-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/zimski-solsticij.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/zimski-solsticij-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/premik-ure.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/premik-ure-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-spomina-na-zrtve-holokavsta.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-spomina-na-zrtve-holokavsta-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/mednarodni-dan-maternega-jezika.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/mednarodni-dan-maternega-jezika-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/svetovni-dan-voda.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/svetovni-dan-voda-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/svetovni-dan-knjige-in-avtorskih-pravic.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/svetovni-dan-knjige-in-avtorskih-pravic-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/mednarodni-dan-druzin.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/mednarodni-dan-druzin-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-slovenskega-krvodajalstva.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-slovenskega-krvodajalstva-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/svetovni-dan-okolja.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/svetovni-dan-okolja-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/evropski-dan-spomina-na-zrtve-totalitarnih-rezimov.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/evropski-dan-spomina-na-zrtve-totalitarnih-rezimov-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/evropski-dan-jezikov.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/evropski-dan-jezikov-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/svetovni-dan-zivali.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/svetovni-dan-zivali-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/teden-otroka.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/teden-otroka-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/noc-carovnic.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/noc-carovnic-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/spomin-vseh-vernih-rajnih.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/spomin-vseh-vernih-rajnih-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-slovenskega-znakovnega-jezika.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-slovenskega-znakovnega-jezika-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/svetovni-dan-otrok.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/svetovni-dan-otrok-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/ta-veseli-dan-kulture.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/ta-veseli-dan-kulture-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/marijino-vnebovzetje.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/marijino-vnebovzetje-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/zdruzitev-prekmurskih-slovencev.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/zdruzitev-prekmurskih-slovencev-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/vrnitev-primorske.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/vrnitev-primorske-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-znanosti.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-znanosti-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/svetovni-dan-cebel.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/svetovni-dan-cebel-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/martinovo.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/martinovo-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-reformacije.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-reformacije-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-slovenske-hrane.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-slovenske-hrane-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/svetovni-dan-uciteljev.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/svetovni-dan-uciteljev-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-suverenosti.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    },
+    {
+      "path": "/images/observances/dan-suverenosti-480.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "sha256_matches": true
+    }
+  ]
+}

@@ -1,0 +1,1436 @@
+{
+  "reviewed_at": "2026-10-20T10:19:15.212346+00:00",
+  "scope": "Source package integrity and consistency; not a site acceptance result",
+  "files": [
+    {
+      "file": "DOGRULAMA_RAPORU.txt",
+      "bytes": 1407,
+      "sha256": "77c2462c182789d7d4a696081e9efd06930dc4394e92f528f3d083e0a11d7c11",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "lines": 17,
+      "words": 161
+    },
+    {
+      "file": "KAYNAKLAR.txt",
+      "bytes": 24946,
+      "sha256": "c71880e74af5e40f1b0963231062b93fbbdf7975667972c40c182df37fe07688",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "lines": 743,
+      "words": 1543
+    },
+    {
+      "file": "Koledar365_Arastirma_ve_Uygulama_Plani_2027_2030.xlsx",
+      "bytes": 706159,
+      "sha256": "908b2f8f6286e7cee5a18343b1a7e7e3ff04fd5faf601419752b45ecb520547b",
+      "manifest_matches": true,
+      "previous_input_matches": true
+    },
+    {
+      "file": "Koledar365_Astra_Tam_Uygulama_Promptu_TR.txt",
+      "bytes": 80738,
+      "sha256": "36b77c541af530b25d473a7af673fda9f6bfd787dce64bb741ed9297d6f07c9b",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "lines": 619,
+      "words": 9591
+    },
+    {
+      "file": "README_TR.txt",
+      "bytes": 6503,
+      "sha256": "d9acb25ecaf9d39da8311253343694e3b8f2980746dbf7203f45afe1f350ff41",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "lines": 60,
+      "words": 684
+    },
+    {
+      "file": "anasayfa-referansi.png",
+      "bytes": 2230664,
+      "sha256": "060bb1c8224aefd9bddb55f92712e0b97d873fe7bfc75f7d24ac03fcbc0ca76b",
+      "manifest_matches": true,
+      "previous_input_matches": true
+    },
+    {
+      "file": "kaynak-ham/SURS/female-data.json",
+      "bytes": 508569,
+      "sha256": "f03f4725ce74e34eaccc6cc2c996f039c480772de0bbbfb531b4e56babb10274",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "columns",
+        "comments",
+        "data",
+        "metadata"
+      ]
+    },
+    {
+      "file": "kaynak-ham/SURS/female-metadata.json",
+      "bytes": 96906,
+      "sha256": "3e988ee95f373c503aed94f62d99c23d3db6870c2e51c03c0531aedc55486eeb",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "title",
+        "variables"
+      ]
+    },
+    {
+      "file": "kaynak-ham/SURS/male-data.json",
+      "bytes": 512807,
+      "sha256": "c685ab03c385f3afd3889a9f67aaa81da6b87580b92ecf5922dacd3fc6c63a43",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "columns",
+        "comments",
+        "data",
+        "metadata"
+      ]
+    },
+    {
+      "file": "kaynak-ham/SURS/male-metadata.json",
+      "bytes": 94151,
+      "sha256": "aac6d26bcbb6c9a796d6605be36f89d18c5113725e467096e4802cb657f44f0d",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "title",
+        "variables"
+      ]
+    },
+    {
+      "file": "kaynak-ham/SURS/newborn_female-data.json",
+      "bytes": 57200,
+      "sha256": "f7f38d272602f0099c93681c5313fe06c41de109dee016fb88d7ed4e74c861d8",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "columns",
+        "comments",
+        "data",
+        "metadata"
+      ]
+    },
+    {
+      "file": "kaynak-ham/SURS/newborn_female-metadata.json",
+      "bytes": 10952,
+      "sha256": "0de43a40734aed294c614d83af79216e8f2ee06326a390c04e09b29a05ae87d2",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "title",
+        "variables"
+      ]
+    },
+    {
+      "file": "kaynak-ham/SURS/newborn_male-data.json",
+      "bytes": 54469,
+      "sha256": "430b4476406f15825f08acf7efe64cc940bd2c443a98ec398971f18bb22f7be3",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "columns",
+        "comments",
+        "data",
+        "metadata"
+      ]
+    },
+    {
+      "file": "kaynak-ham/SURS/newborn_male-metadata.json",
+      "bytes": 10268,
+      "sha256": "b0c7192e77e8b2ebaf369b65b7a13f3f66c9c9bccdfcb4b77ec356401a764ba7",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "title",
+        "variables"
+      ]
+    },
+    {
+      "file": "veriler/15-tasarim-katalogu.csv",
+      "bytes": 12296,
+      "sha256": "38f0913c9cf31f771d1bd1d8741756a8e37d4ff214df12803872a2dccee4b540",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "records": 15,
+      "columns": [
+        "id",
+        "family",
+        "name_sl",
+        "color_mode",
+        "composition",
+        "annual",
+        "monthly",
+        "weekly_shift",
+        "blank"
+      ]
+    },
+    {
+      "file": "veriler/anahtar-kelime-varyantlari.csv",
+      "bytes": 37235,
+      "sha256": "ec644b140fb5def683e0ab47b27af46f1f66cb1e0a7e0eae20145ef5e0abb686",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "records": 300,
+      "columns": [
+        "cluster_id",
+        "priority",
+        "keyword_sl",
+        "final_target_url",
+        "current_monthly_volume",
+        "keyword_difficulty",
+        "provenance",
+        "source_ids"
+      ]
+    },
+    {
+      "file": "veriler/anasayfa-referansi-bilgisi.json",
+      "bytes": 394,
+      "sha256": "0a99b61f8906ec5959b9aed1e8f042441891516175c98af7e45b57f19b916bb8",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "original_uploaded_name",
+        "packaged_name",
+        "sha256",
+        "dimensions",
+        "status",
+        "instruction"
+      ]
+    },
+    {
+      "file": "veriler/ek-onemli-gun-tarihleri-2027-2030.csv",
+      "bytes": 19389,
+      "sha256": "68431555707658a6c52f710a26a5a783db9193ab59a0158861c82c0b85d210e5",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "records": 100,
+      "columns": [
+        "id",
+        "title_sl",
+        "year",
+        "date",
+        "start_date",
+        "end_date_inclusive",
+        "end_date_exclusive",
+        "category",
+        "observance_grants_work_free",
+        "date_level_work_free_rule",
+        "standalone_page",
+        "source_url"
+      ]
+    },
+    {
+      "file": "veriler/isim-url-kaydi.csv",
+      "bytes": 2354647,
+      "sha256": "91f346933da7ff2ad0f7648126cf5e55165af62eb1d5aa44700937c13eb04efe",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "records": 8561,
+      "columns": [
+        "name_id",
+        "name_exact",
+        "ascii_slug_base",
+        "canonical_slug",
+        "canonical_path",
+        "recommended_candidate_order",
+        "research_tier",
+        "source_date",
+        "source_attribution",
+        "name_sha256",
+        "initial_collision_group_size",
+        "reservation_status",
+        "publication_status",
+        "slug_policy_version",
+        "registry_created_at"
+      ]
+    },
+    {
+      "file": "veriler/isim-url-kaydi.json",
+      "bytes": 6159666,
+      "sha256": "ea3a76d4fb368f08ee1bf5cfba32e1a4a4272a21b9b44e8dcb276364fb13bc8b",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "schema_version",
+        "registry_name",
+        "registry_created_at",
+        "scope",
+        "readme_tr",
+        "readme_en",
+        "source",
+        "allocation",
+        "validation",
+        "aliases",
+        "records"
+      ]
+    },
+    {
+      "file": "veriler/kabul-kriterleri.csv",
+      "bytes": 15651,
+      "sha256": "63545eb5c55a991c8ddbbebf01c306554b2bd750858bf602de91b7149f6ae8d6",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "records": 43,
+      "columns": [
+        "id",
+        "origin",
+        "requirement_tr",
+        "implementation_tr",
+        "acceptance_tr",
+        "status",
+        "evidence"
+      ]
+    },
+    {
+      "file": "veriler/kabul-kriterleri.json",
+      "bytes": 21952,
+      "sha256": "12cf7ac193bbbf61165a3ce14987d85dfc21440ca34b353b1616b2db8ef423fd",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": "43 records"
+    },
+    {
+      "file": "veriler/kaynak-katalogu.csv",
+      "bytes": 21878,
+      "sha256": "161232f14dce5b3e0f1cdff45d5620dc0ce638a0e8bd1ede855fa3e662d12735",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "records": 148,
+      "columns": [
+        "id",
+        "publisher",
+        "title",
+        "url",
+        "research_files"
+      ]
+    },
+    {
+      "file": "veriler/kaynak-katalogu.json",
+      "bytes": 35859,
+      "sha256": "dc33aa6f708e968105ff40036be34fa99472e6a8f4407155eef27b11619bf8bf",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": "148 records"
+    },
+    {
+      "file": "veriler/name-calendar-implementation.json",
+      "bytes": 27760,
+      "sha256": "95f8489c85e873586ab4ce4aa12e447a782759ca0fd500f6f00bac13084abbe1",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "project",
+        "review_date",
+        "scope",
+        "locale",
+        "country",
+        "identity_and_slugs",
+        "indexing",
+        "asset_capacity",
+        "render_jobs",
+        "surs_attribution_and_privacy",
+        "sources",
+        "review_verdict",
+        "calendar_year_scope",
+        "design_and_export_contract",
+        "publication_priority",
+        "raw_research_compatibility_notes"
+      ]
+    },
+    {
+      "file": "veriler/paket-ozeti.json",
+      "bytes": 3406,
+      "sha256": "941b20f5694a31fb103ebc842dd943afedf86f84a60b9cf1f5bf1384ef9958e1",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "prepared_on",
+        "country",
+        "locale",
+        "timezone",
+        "primary_years",
+        "purpose",
+        "page_plan",
+        "keyword_clusters",
+        "keyword_variants",
+        "keyword_year_editorial_expansions",
+        "verified_monthly_volume_available",
+        "exact_name_candidates",
+        "canonical_slug_records",
+        "legal_date_rows",
+        "additional_observances",
+        "standalone_special_topic_pages",
+        "print_designs",
+        "pdf_variants_per_selected_product",
+        "webp_variants_per_selected_product",
+        "color_designs",
+        "monochrome_designs",
+        "raster_ppi",
+        "brand_footer",
+        "acceptance_criteria",
+        "language_glossary_entries",
+        "source_catalogue_entries",
+        "source_snapshot_date",
+        "primary_homepage_reference",
+        "prompt_word_count"
+      ]
+    },
+    {
+      "file": "veriler/plan-ozeti.json",
+      "bytes": 1796,
+      "sha256": "8ed24adbf6dbb7eff86616aa12f9e55e2c419d71b9982225ad13c91e47347419",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "planned_core_routes",
+        "source_gated_core_routes",
+        "core_without_identified_source_gate",
+        "launch_name_candidates",
+        "growth_name_candidates",
+        "full_name_candidate_pool",
+        "primary_calendar_years",
+        "primary_core_routes",
+        "current_year_bridge_routes",
+        "school_years",
+        "planned_core_plus_launch",
+        "planned_core_plus_growth",
+        "planned_core_plus_full",
+        "name_design_families",
+        "name_layouts_per_family",
+        "name_designs_per_name",
+        "name_calendar_years",
+        "download_formats",
+        "launch_full_asset_matrix",
+        "growth_full_asset_matrix",
+        "full_asset_matrix",
+        "note",
+        "family_counts",
+        "excluded_utility_routes"
+      ]
+    },
+    {
+      "file": "veriler/print-template-specification.json",
+      "bytes": 55629,
+      "sha256": "4d9c77d09be3f56c4a9aa54acb94740e9075e2ba4ba7d905b003505844b7eeae",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "title",
+        "version",
+        "prepared_on",
+        "purpose",
+        "scope",
+        "design_catalog",
+        "cross_type_functional_requirements",
+        "paired_rendering_contract",
+        "physical_sizes",
+        "page_geometry_and_branding",
+        "color_and_bw_quality",
+        "quality_gates",
+        "rendering_operations",
+        "prompt_ready_requirements",
+        "sources",
+        "revision_note"
+      ]
+    },
+    {
+      "file": "veriler/ruby-stack-deployment.json",
+      "bytes": 15163,
+      "sha256": "032c19415b48281b6d109102b3fcf0e8ed1369d412df7c383d548311fa602961",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "researched_at",
+        "scope",
+        "recommendation",
+        "jekyll_fair_comparison",
+        "cloudflare_facts",
+        "deployment_decision",
+        "feature_implementation_recommendations",
+        "prompt_ready_english",
+        "sources"
+      ]
+    },
+    {
+      "file": "veriler/sayfa-plani.csv",
+      "bytes": 74603,
+      "sha256": "6cf574c5875695f582307e154fb0ba06eb3e9c7decee525dbc54df1a1502cf8b",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "records": 343,
+      "columns": [
+        "id",
+        "family",
+        "path",
+        "title_sl",
+        "priority",
+        "year",
+        "month",
+        "content_gate",
+        "minimum_output_tr",
+        "status",
+        "index_policy"
+      ]
+    },
+    {
+      "file": "veriler/sayfa-plani.json",
+      "bytes": 157645,
+      "sha256": "953a18587ad27e9363678c39a186efcaffd2fae6b4b00a97852b451afc764d06",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "as_of",
+        "summary",
+        "pages"
+      ]
+    },
+    {
+      "file": "veriler/slovene-language-quality.json",
+      "bytes": 14775,
+      "sha256": "54472f331e3a1cdc20e50aa1007f20af87f3101a423e92d87a76acdc82097a48",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "project",
+        "locale",
+        "language",
+        "country",
+        "researched_on",
+        "status",
+        "astra_instruction_tr",
+        "editorial_policy",
+        "pluralization",
+        "dates_numbers_and_case",
+        "names_and_font_quality",
+        "ui_glossary_note",
+        "ui_glossary",
+        "full_surface_audit",
+        "release_gate",
+        "sources"
+      ]
+    },
+    {
+      "file": "veriler/slovenia-additional-observances.json",
+      "bytes": 62904,
+      "sha256": "3502049a6b67f3c0144b1d05a2ff2d6047dea5c3b78661e68637f951e75b3aeb",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "project",
+        "researched_at",
+        "country",
+        "locale",
+        "timezone",
+        "years",
+        "scope",
+        "coverage_statement",
+        "metrics_note",
+        "existing_topic_pages_checked",
+        "counts",
+        "legal_status_method",
+        "generation_rules",
+        "observances",
+        "held_or_excluded",
+        "route_policy",
+        "validation"
+      ]
+    },
+    {
+      "file": "veriler/slovenia-growth-1000.csv",
+      "bytes": 295487,
+      "sha256": "11a841bc634423627910ce2ce088348dff4369d01b0a0bdfcfe0efa438405ef5",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "records": 1000,
+      "columns": [
+        "name_id",
+        "name_exact",
+        "ascii_slug_base",
+        "canonical_slug_proposal",
+        "ascii_collision_in_current_pool",
+        "ascii_collision_in_historical_inventory",
+        "source_attribution",
+        "resident_reference_date",
+        "newborn_reference_year",
+        "resident_male_count",
+        "resident_male_official_rank",
+        "resident_male_status",
+        "resident_female_count",
+        "resident_female_official_rank",
+        "resident_female_status",
+        "newborn_male_count",
+        "newborn_male_official_rank",
+        "newborn_male_status",
+        "newborn_female_count",
+        "newborn_female_official_rank",
+        "newborn_female_status",
+        "priority_resident_max_published_count",
+        "selection_basis",
+        "recommended_candidate_order",
+        "research_tier",
+        "publication_status"
+      ]
+    },
+    {
+      "file": "veriler/slovenia-keywords.json",
+      "bytes": 78440,
+      "sha256": "ab516e03ce1ac44354b98d0a84f648f3cd1b6c544e244155d347e5c3dee14e68",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "project",
+        "research_date",
+        "country",
+        "language",
+        "scope",
+        "correction",
+        "methodology",
+        "metrics_rejected",
+        "clusters",
+        "recommended_information_architecture",
+        "competitor_observations",
+        "lithuania_architecture_reference",
+        "sources",
+        "summary",
+        "scope_update",
+        "horoscope_requirements",
+        "final_route_mapping",
+        "package_note",
+        "final_route_manifest_count"
+      ]
+    },
+    {
+      "file": "veriler/slovenia-launch-200.csv",
+      "bytes": 57090,
+      "sha256": "f70ed735bcd7947e44cad2dc1f9de5ef6e09c9c98069f8f0fe1f9558fba90d8b",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "records": 200,
+      "columns": [
+        "name_id",
+        "name_exact",
+        "ascii_slug_base",
+        "canonical_slug_proposal",
+        "ascii_collision_in_current_pool",
+        "ascii_collision_in_historical_inventory",
+        "source_attribution",
+        "resident_reference_date",
+        "newborn_reference_year",
+        "resident_male_count",
+        "resident_male_official_rank",
+        "resident_male_status",
+        "resident_female_count",
+        "resident_female_official_rank",
+        "resident_female_status",
+        "newborn_male_count",
+        "newborn_male_official_rank",
+        "newborn_male_status",
+        "newborn_female_count",
+        "newborn_female_official_rank",
+        "newborn_female_status",
+        "priority_resident_max_published_count",
+        "selection_basis",
+        "recommended_candidate_order",
+        "research_tier",
+        "publication_status"
+      ]
+    },
+    {
+      "file": "veriler/slovenia-localisation.json",
+      "bytes": 98324,
+      "sha256": "64985bb612a569bc94dc01454715f252a1222cb88f295da2f690cb40b1085cbe",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "researched_at",
+        "country",
+        "country_code",
+        "locale",
+        "timezone",
+        "calendar",
+        "default_city",
+        "executive_notes",
+        "sources",
+        "holiday_definitions",
+        "years",
+        "school",
+        "editorial",
+        "astronomy",
+        "localisation",
+        "primary_years",
+        "coverage",
+        "bridge_2026"
+      ]
+    },
+    {
+      "file": "veriler/slovenia-name-candidates-2026.csv",
+      "bytes": 2603585,
+      "sha256": "5666b62f258b85760da8517f617e851d65bb3d7d9258f012ed662b5da23e674c",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "records": 8561,
+      "columns": [
+        "name_id",
+        "name_exact",
+        "ascii_slug_base",
+        "canonical_slug_proposal",
+        "ascii_collision_in_current_pool",
+        "ascii_collision_in_historical_inventory",
+        "source_attribution",
+        "resident_reference_date",
+        "newborn_reference_year",
+        "resident_male_count",
+        "resident_male_official_rank",
+        "resident_male_status",
+        "resident_female_count",
+        "resident_female_official_rank",
+        "resident_female_status",
+        "newborn_male_count",
+        "newborn_male_official_rank",
+        "newborn_male_status",
+        "newborn_female_count",
+        "newborn_female_official_rank",
+        "newborn_female_status",
+        "priority_resident_max_published_count",
+        "selection_basis",
+        "recommended_candidate_order",
+        "research_tier",
+        "publication_status"
+      ]
+    },
+    {
+      "file": "veriler/slovenia-names.json",
+      "bytes": 17609854,
+      "sha256": "9d16186b60bbe6c4261ce624a35b1d01ad11603b9b7095e77618acf45a4e3b67",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "project",
+        "country",
+        "country_code",
+        "locale",
+        "retrieved_at",
+        "summary",
+        "sources",
+        "methodology",
+        "population_top20",
+        "population_top30",
+        "newborn_top10",
+        "newborn_top20",
+        "launch_200",
+        "growth_1000_name_ids",
+        "candidates",
+        "resident_records",
+        "newborn_records",
+        "slug_policy",
+        "name_day_research",
+        "validation"
+      ]
+    },
+    {
+      "file": "veriler/slovenia-newborn-names-2025.csv",
+      "bytes": 197146,
+      "sha256": "316cf05dfffcb9a8162da2fcd0b4079abc6b0be5968550727732e7c842a56f1a",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "records": 1104,
+      "columns": [
+        "name_id",
+        "name_exact",
+        "source_name_code",
+        "sex",
+        "population",
+        "year",
+        "reference_date",
+        "count",
+        "official_rank",
+        "count_raw",
+        "rank_raw",
+        "disclosure_status",
+        "source_table",
+        "source_url",
+        "source_table_last_release",
+        "retrieved_at",
+        "attribution"
+      ]
+    },
+    {
+      "file": "veriler/slovenia-resident-names-2026.csv",
+      "bytes": 1854996,
+      "sha256": "cf12d12a5cfccf5fbc36b74e215a39b02464f5aa6bc923dc0ca79eb69d00ce65",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "records": 9972,
+      "columns": [
+        "name_id",
+        "name_exact",
+        "source_name_code",
+        "sex",
+        "population",
+        "year",
+        "reference_date",
+        "count",
+        "official_rank",
+        "count_raw",
+        "rank_raw",
+        "disclosure_status",
+        "source_table",
+        "source_url",
+        "source_table_last_release",
+        "retrieved_at",
+        "attribution"
+      ]
+    },
+    {
+      "file": "veriler/slovenia-seo-ux-sources.json",
+      "bytes": 11965,
+      "sha256": "1c5ba351a62b9276dbad9605eb85641f1afce153d869f0711c114d2745ee2724",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "structure": [
+        "project",
+        "retrieved_date",
+        "scope",
+        "legal_source_note",
+        "source_count",
+        "sources",
+        "scope_override",
+        "limitations",
+        "primary_calendar_years",
+        "scope_year_update"
+      ]
+    },
+    {
+      "file": "veriler/yasal-tatil-tarihleri-2027-2030.csv",
+      "bytes": 7059,
+      "sha256": "64d22bab001ded8965ec82dbe5610baa563cbc9b187f40c4340901a50a76121b",
+      "manifest_matches": true,
+      "previous_input_matches": true,
+      "records": 92,
+      "columns": [
+        "year",
+        "date",
+        "name_sl",
+        "id",
+        "weekday_sl",
+        "iso_weekday",
+        "state_holiday",
+        "work_free"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "check": "All manifest hashes",
+      "passed": true,
+      "detail": 43
+    },
+    {
+      "check": "New attachments match previously imported package",
+      "passed": true,
+      "detail": 43
+    },
+    {
+      "check": "CSV/JSON keys: sayfa-plani.csv",
+      "passed": true,
+      "detail": {
+        "csv": 343,
+        "json": 343,
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "check": "CSV/JSON keys: isim-url-kaydi.csv",
+      "passed": true,
+      "detail": {
+        "csv": 8561,
+        "json": 8561,
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "check": "CSV/JSON keys: kabul-kriterleri.csv",
+      "passed": true,
+      "detail": {
+        "csv": 43,
+        "json": 43,
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "check": "CSV/JSON keys: kaynak-katalogu.csv",
+      "passed": true,
+      "detail": {
+        "csv": 148,
+        "json": 148,
+        "missing": [],
+        "extra": []
+      }
+    },
+    {
+      "check": "Unique reserved name_id",
+      "passed": true,
+      "detail": 8561
+    },
+    {
+      "check": "Unique reserved name_exact",
+      "passed": true,
+      "detail": 8561
+    },
+    {
+      "check": "Unique reserved canonical_path",
+      "passed": true,
+      "detail": 8561
+    },
+    {
+      "check": "Unique reserved canonical_slug",
+      "passed": true,
+      "detail": 8561
+    },
+    {
+      "check": "NFC exact names and SHA256",
+      "passed": true,
+      "detail": 8561
+    },
+    {
+      "check": "Popularity order: launch 200",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "check": "Popularity order: growth 1000",
+      "passed": true,
+      "detail": 1000
+    },
+    {
+      "check": "Candidate/registry exact identities",
+      "passed": true,
+      "detail": 8561
+    },
+    {
+      "check": "All 48 monthly calendar routes",
+      "passed": true,
+      "detail": {
+        "Merkezler": 17,
+        "Takvimler": 52,
+        "Ay takvimleri": 52,
+        "İş günü takvimleri": 52,
+        "Haftalık yıllar": 4,
+        "Yıllık tatiller": 4,
+        "Uzun hafta sonları": 4,
+        "Önemli günler yılları": 4,
+        "Önemli günler ayları": 12,
+        "Okul yılları": 5,
+        "Okul tatil türleri": 5,
+        "Aylık isim günleri": 12,
+        "Özel gün ve mevsimler": 40,
+        "Ek önemli gün konuları": 18,
+        "Astronomi araç sayfaları": 5,
+        "Şehir güneş sayfaları": 8,
+        "Planlama araçları": 13,
+        "İsim dizinleri": 4,
+        "Burç": 14,
+        "Güven ve site bilgileri": 7,
+        "2026 güncel köprü": 11
+      }
+    },
+    {
+      "check": "Suppressed observations do not become zero",
+      "passed": true,
+      "detail": {
+        "published": 9245,
+        "under_5_or_no_occurrence": 1831
+      }
+    },
+    {
+      "check": "Raw SURS responses parse",
+      "passed": true,
+      "detail": {
+        "male": {
+          "observations": 10026,
+          "dimensions": [
+            "IME",
+            "MERITVE",
+            "LETO"
+          ]
+        },
+        "female": {
+          "observations": 9918,
+          "dimensions": [
+            "IME",
+            "MERITVE",
+            "LETO"
+          ]
+        },
+        "newborn_male": {
+          "observations": 1076,
+          "dimensions": [
+            "IME",
+            "MERITVE",
+            "LETO"
+          ]
+        },
+        "newborn_female": {
+          "observations": 1132,
+          "dimensions": [
+            "IME",
+            "MERITVE",
+            "LETO"
+          ]
+        }
+      }
+    },
+    {
+      "check": "Independent workday calculation",
+      "passed": true,
+      "detail": {
+        "2027": 255,
+        "2028": 250,
+        "2029": 248,
+        "2030": 249
+      }
+    },
+    {
+      "check": "Print families and colour split",
+      "passed": true,
+      "detail": {
+        "color": 10,
+        "monochrome_bw": 5
+      }
+    },
+    {
+      "check": "Keyword metrics remain unknown",
+      "passed": true,
+      "detail": 300
+    },
+    {
+      "check": "Workbook formula error cells",
+      "passed": true,
+      "detail": {
+        "Ozet": 0,
+        "Sayfalar": 0,
+        "Kelimeler": 0,
+        "Isimler": 0,
+        "Tatil_Tarihleri": 0,
+        "Onemli_Gunler": 0,
+        "Tasarimlar": 0,
+        "Kabul_Kriterleri": 0
+      }
+    }
+  ],
+  "workbook": [
+    {
+      "name": "Ozet",
+      "rows": 23,
+      "sample": [
+        [
+          "Koledar365 uygulama planı"
+        ],
+        [
+          "2027–2030. Slovenya, Slovence. Araştırma tarihi 20 Ekim 2026."
+        ],
+        [
+          "Kapsam / veri",
+          "Adet",
+          "Açıklama",
+          "Yıl",
+          "Takvim günü",
+          "Pzt–Cum",
+          "Tatil / hafta içi",
+          "İş günü"
+        ],
+        [
+          "Tam takvim yılı",
+          "4",
+          "2027, 2028, 2029, 2030",
+          "2027",
+          "365",
+          "261",
+          "6",
+          "255"
+        ]
+      ],
+      "formulas": [
+        {
+          "cell": "I7",
+          "formula": "G7-H7",
+          "cached_value": "255"
+        },
+        {
+          "cell": "I8",
+          "formula": "G8-H8",
+          "cached_value": "250"
+        },
+        {
+          "cell": "I9",
+          "formula": "G9-H9",
+          "cached_value": "248"
+        },
+        {
+          "cell": "B10",
+          "formula": "COUNTA('Sayfalar'!A7:A349)",
+          "cached_value": "343"
+        },
+        {
+          "cell": "I10",
+          "formula": "G10-H10",
+          "cached_value": "249"
+        },
+        {
+          "cell": "B11",
+          "formula": "COUNTIFS('Sayfalar'!G7:G349,\"Kaynak bekliyor\")",
+          "cached_value": "17"
+        },
+        {
+          "cell": "B12",
+          "formula": "COUNTA('Isimler'!B7:B8567)",
+          "cached_value": "8561"
+        },
+        {
+          "cell": "B13",
+          "formula": "COUNTIFS('Isimler'!A7:A8567,\"<=200\")",
+          "cached_value": "200"
+        },
+        {
+          "cell": "B14",
+          "formula": "COUNTIFS('Isimler'!A7:A8567,\"<=1000\")",
+          "cached_value": "1000"
+        },
+        {
+          "cell": "I14",
+          "formula": "ROUND(F14/25.4*H14,0)",
+          "cached_value": "3496"
+        },
+        {
+          "cell": "J14",
+          "formula": "ROUND(G14/25.4*H14,0)",
+          "cached_value": "4961"
+        },
+        {
+          "cell": "I15",
+          "formula": "ROUND(F15/25.4*H15,0)",
+          "cached_value": "4961"
+        },
+        {
+          "cell": "J15",
+          "formula": "ROUND(G15/25.4*H15,0)",
+          "cached_value": "7016"
+        },
+        {
+          "cell": "B16",
+          "formula": "COUNTA('Kelimeler'!C7:C306)",
+          "cached_value": "300"
+        },
+        {
+          "cell": "I16",
+          "formula": "ROUND(F16/25.4*H16,0)",
+          "cached_value": "7016"
+        },
+        {
+          "cell": "J16",
+          "formula": "ROUND(G16/25.4*H16,0)",
+          "cached_value": "9921"
+        },
+        {
+          "cell": "B17",
+          "formula": "COUNTA('Kabul_Kriterleri'!A7:A49)",
+          "cached_value": "43"
+        },
+        {
+          "cell": "B18",
+          "formula": "COUNTA('Tatil_Tarihleri'!A7:A98)",
+          "cached_value": "92"
+        },
+        {
+          "cell": "B19",
+          "formula": "B8*B9",
+          "cached_value": "30"
+        },
+        {
+          "cell": "B23",
+          "formula": "B13",
+          "cached_value": "200"
+        },
+        {
+          "cell": "C23",
+          "formula": "$B$10+B23",
+          "cached_value": "543"
+        },
+        {
+          "cell": "F23",
+          "formula": "B23*$B$7*$B$8*$B$9",
+          "cached_value": "24000"
+        },
+        {
+          "cell": "B24",
+          "formula": "B14",
+          "cached_value": "1000"
+        },
+        {
+          "cell": "C24",
+          "formula": "$B$10+B24",
+          "cached_value": "1343"
+        },
+        {
+          "cell": "F24",
+          "formula": "B24*$B$7*$B$8*$B$9",
+          "cached_value": "120000"
+        },
+        {
+          "cell": "B25",
+          "formula": "B12",
+          "cached_value": "8561"
+        },
+        {
+          "cell": "C25",
+          "formula": "$B$10+B25",
+          "cached_value": "8904"
+        },
+        {
+          "cell": "F25",
+          "formula": "B25*$B$7*$B$8*$B$9",
+          "cached_value": "1027320"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "Sayfalar",
+      "rows": 346,
+      "sample": [
+        [
+          "Sayfa planı 2027–2030"
+        ],
+        [
+          "Planlanan adreslerdir; yayımlanmış veya indekslenmiş sayfa sayısı değildir."
+        ],
+        [
+          "ID",
+          "Sayfa ailesi",
+          "Canonical yol",
+          "Slovence başlık",
+          "Öncelik",
+          "Yıl",
+          "Veri durumu",
+          "Asıl işlev",
+          "Kaynak koşulu",
+          "Uygulama durumu"
+        ],
+        [
+          "P001",
+          "Merkezler",
+          "/",
+          "Koledar365 – slovenski koledar",
+          "P0",
+          "Genel kalite kontrolü",
+          "Güncel ay, gün bilgisi, kişisel planlama, ana modüller.",
+          "Planlandı"
+        ]
+      ],
+      "formulas": [],
+      "errors": []
+    },
+    {
+      "name": "Kelimeler",
+      "rows": 303,
+      "sample": [
+        [
+          "Slovence anahtar kelime planı"
+        ],
+        [
+          "Hacimler doğrulanmadı. Boş hacim sıfır değildir. 41 yıl genişlemesi ayrıca işaretlendi."
+        ],
+        [
+          "Küme",
+          "Öncelik",
+          "Kelime / sorgu",
+          "Nihai hedef",
+          "Konu",
+          "Aylık hacim",
+          "Varyantın temeli",
+          "Arama niyeti",
+          "Durum",
+          " ",
+          "Kaynak URLleri"
+        ],
+        [
+          "C01",
+          "P0",
+          "koledar",
+          "/",
+          "Genel Slovence takvim",
+          "Araştırılmış konu ve editoryal varyant",
+          "Hızlı tarih kontrolü ve takvim kullanımı. Baş terim uygulama/navigasyon niyeti de taşıyabilir.",
+          "Planlandı",
+          "https://www.koledarcek.com/\nhttps://koledarko.si/\nhttps://prazniki.si/koledar-2027"
+        ]
+      ],
+      "formulas": [],
+      "errors": []
+    },
+    {
+      "name": "Isimler",
+      "rows": 8566,
+      "sample": [
+        [
+          "8.561 isim adayı",
+          "SURS kaynak tablosu",
+          "URL"
+        ],
+        [
+          "05X1005S",
+          "https://pxweb.stat.si/SiStatData/pxweb/sl/Data/-/05X1005S.PX"
+        ],
+        [
+          "Nüfus 2026. Doğumlar 2025.",
+          "05X1010S",
+          "https://pxweb.stat.si/SiStatData/pxweb/sl/Data/-/05X1010S.PX"
+        ],
+        [
+          "05X2001S",
+          "https://pxweb.stat.si/SiStatData/pxweb/sl/Data/-/05X2001S.PX"
+        ]
+      ],
+      "formulas": [],
+      "errors": []
+    },
+    {
+      "name": "Tatil_Tarihleri",
+      "rows": 95,
+      "sample": [
+        [
+          "2027–2030 yasal günler"
+        ],
+        [
+          "Resmî gün ve işten tatil ayrı alanlardır. Günler 20.10.2026 mevzuat kontrolüne göre hesaplandı."
+        ],
+        [
+          "Yıl",
+          "Tarih",
+          "Haftanın günü",
+          "Slovence ad",
+          "Resmî gün",
+          "İşten tatil",
+          "Olay ID",
+          " ",
+          "Birincil kaynak"
+        ],
+        [
+          "2027",
+          "46388",
+          "petek",
+          "novo leto",
+          "Evet",
+          "Evet",
+          "novo-leto",
+          "https://pisrs.si/pregledPredpisa?id=ZAKO865"
+        ]
+      ],
+      "formulas": [],
+      "errors": []
+    },
+    {
+      "name": "Onemli_Gunler",
+      "rows": 28,
+      "sample": [
+        [
+          "25 ek önemli gün ve kutlama"
+        ],
+        [
+          "Mevcut 40 konuya ek: 18 ayrıntı sayfası ve 7 merkez kaydı. Festival programı/tarihleri varsayılmaz."
+        ],
+        [
+          "ID",
+          "Slovence ad",
+          "Kategori",
+          "2027–2030 tarihleri",
+          "Sayfa kararı",
+          "Önerilen yol",
+          "İşten tatil açıklaması",
+          " ",
+          "Birincil kaynak"
+        ],
+        [
+          "OBS-01",
+          "Mednarodni dan spomina na žrtve holokavsta",
+          "international_commemoration",
+          "2027-01-27\n2028-01-27\n2029-01-27\n2030-01-27",
+          "Ayrı sayfa",
+          "/pomembni-dnevi/dan-spomina-na-zrtve-holokavsta/",
+          "This observance itself does not confer a statutory work-free day; evaluate other coincident holidays separately.",
+          "https://www.unesco.org/en/days/holocaust-remembrance"
+        ]
+      ],
+      "formulas": [],
+      "errors": []
+    },
+    {
+      "name": "Tasarimlar",
+      "rows": 20,
+      "sample": [
+        [
+          "15 çıktı tasarımı",
+          "Teknik kaynak",
+          "URL"
+        ],
+        [
+          "W3C",
+          "https://www.w3.org/TR/css-page-3/"
+        ],
+        [
+          "5 aile. PDF ve WebP.",
+          "W3C",
+          "https://www.w3.org/TR/css-values-4/#absolute-lengths"
+        ],
+        [
+          "Google / WebP",
+          "https://developers.google.com/speed/webp/docs/cwebp"
+        ]
+      ],
+      "formulas": [],
+      "errors": []
+    },
+    {
+      "name": "Kabul_Kriterleri",
+      "rows": 46,
+      "sample": [
+        [
+          "43 uygulama ve teslim kriteri"
+        ],
+        [
+          "K01–K21 kullanıcı sırasını korur. Hiçbir madde bu araştırma paketinde uygulanmış olarak işaretlenmedi."
+        ],
+        [
+          "ID",
+          "Gereksinim",
+          "Uygulama şartı",
+          "Kabul kontrolü",
+          "Durum",
+          "Kanıt / bağlantı"
+        ],
+        [
+          "K01",
+          "Çerez politikası ve kabul butonu",
+          "Slovence Piškotki sayfası; Sprejmi vse, Zavrni nenujne, Nastavitve; isteğe bağlı kategoriler varsayılan kapalı.",
+          "Temiz profilde onaydan önce izleyici yok; ret kalıcı; geri çekme çalışıyor; klavye ve karanlık mod okunur.",
+          "Uygulanacak",
+          "Astra dolduracak"
+        ]
+      ],
+      "formulas": [],
+      "errors": []
+    }
+  ],
+  "instruction_resolution": [
+    "Latest direct user request removes dark mode; K21 is superseded, source package remains unchanged.",
+    "Research-only scope statements describe preparation; explicit user authorization governs implementation.",
+    "Reserved names and planned routes are not published or indexed pages.",
+    "43 acceptance criteria require application evidence independently of this package review."
+  ]
+}

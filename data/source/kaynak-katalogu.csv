@@ -1,0 +1,149 @@
+﻿id,publisher,title,url,research_files
+S001,pisrs.si,"ZPDPD, neuradno prečiščeno besedilo št. 11",https://pisrs.si/pregledPredpisa?id=ZAKO865,slovenia-localisation.json;kaynak-katalogu.json
+S002,pisrs.si,"ZPDPD-I, Uradni list RS št. 1567/2026",https://pisrs.si/api/uradni-list/objava/u20261567.pdf,slovenia-localisation.json;kaynak-katalogu.json
+S003,www.gov.si,gov_holidays,https://www.gov.si/teme/drzavni-prazniki-in-dela-prosti-dnevi/,slovenia-localisation.json;kaynak-katalogu.json;slovenia-keywords.json;slovene-language-quality.json
+S004,www.gov.si,school_primary,https://www.gov.si/teme/solski-koledar-za-osnovne-sole/,slovenia-localisation.json;kaynak-katalogu.json;slovenia-keywords.json
+S005,www.gov.si,school_secondary,https://www.gov.si/teme/solski-koledar-za-srednje-sole/,slovenia-localisation.json;kaynak-katalogu.json;slovenia-keywords.json
+S006,www.arso.gov.si,Prognozirano plimovanje morja 2026,https://www.arso.gov.si/vode/morje/Plima2026_a5.pdf,slovenia-localisation.json;kaynak-katalogu.json
+S007,aa.usno.navy.mil,usno_moon,https://aa.usno.navy.mil/data/MoonPhases,slovenia-localisation.json;kaynak-katalogu.json
+S008,aa.usno.navy.mil,usno_seasons,https://aa.usno.navy.mil/data/Earth_Seasons,slovenia-localisation.json;kaynak-katalogu.json
+S009,aa.usno.navy.mil,usno_api,https://aa.usno.navy.mil/data/api,slovenia-localisation.json;kaynak-katalogu.json
+S010,aa.usno.navy.mil,usno_christian,https://aa.usno.navy.mil/api/observances/christian?year=2027,slovenia-localisation.json;kaynak-katalogu.json
+S011,eur-lex.europa.eu,"Schedule for summer-time periods 2027–2031, C/2026/1660",https://eur-lex.europa.eu/eli/C/2026/1660/oj/eng,slovenia-localisation.json;kaynak-katalogu.json
+S012,transport.ec.europa.eu,eu_dst_status,https://transport.ec.europa.eu/transport-themes/summertime_en,slovenia-localisation.json;kaynak-katalogu.json
+S013,www.stat.si,"SURS: 25. marec, materinski dan",https://www.stat.si/statweb/News/Index/14231,slovenia-localisation.json;kaynak-katalogu.json
+S014,www.stat.si,"SURS: 8. marec, mednarodni dan žensk",https://www.stat.si/StatWeb/sl/News/Index/14206,slovenia-localisation.json;kaynak-katalogu.json
+S015,www.etno-muzej.si,gregory,https://www.etno-muzej.si/sl/blog/na-gregorjevo-se-pticki-zenijo,slovenia-localisation.json;kaynak-katalogu.json
+S016,www.etno-muzej.si,nicholas,https://www.etno-muzej.si/sl/naprejvpreteklost-blog-nesnovna-dediscina/miklavz-je-eden-od-decembrskih-obdarovalcev-otrok,slovenia-localisation.json;kaynak-katalogu.json
+S017,www.gov.si,carnival,https://www.gov.si/novice/2023-02-21-pustovanje-sega-ki-je-vkoreninjena-v-zgodovino-vseh-slovenskih-pokrajin/,slovenia-localisation.json;kaynak-katalogu.json
+S018,etno-muzej.si,martin,https://etno-muzej.si/sl/razstave/pust-mozirski,slovenia-localisation.json;kaynak-katalogu.json
+S019,www.gov.si,seasonal_dates,https://www.gov.si/assets/ministrstva/MKGP/PODROCJA/HRANA/SHEME-KAKOVOSTI/SPECIFIKACIJE-EVROPSKA-KOMISIJA/Slovenska-potica-v2.pdf,slovenia-localisation.json;kaynak-katalogu.json
+S020,www.katoliska-cerkev.si,church_year,https://www.katoliska-cerkev.si/cerkveno-leto,slovenia-localisation.json;kaynak-katalogu.json
+S021,www.katoliska-cerkev.si,palm_sunday,https://www.katoliska-cerkev.si/cvetna-nedelja2026,slovenia-localisation.json;kaynak-katalogu.json
+S022,www.un.org,earth,https://www.un.org/en/observances/earth-day,slovenia-localisation.json;kaynak-katalogu.json
+S023,european-union.europa.eu,europe,https://european-union.europa.eu/principles-countries-history/europe-day_en,slovenia-localisation.json;kaynak-katalogu.json
+S024,www.fao.org,bees,https://www.fao.org/world-bee-day/en,slovenia-localisation.json;kaynak-katalogu.json
+S025,www.census.gov,U.S. Census Bureau: Easter Dates from 1600 to 2099,https://www.census.gov/data/software/x13as/genhol/easter-dates.html,slovenia-localisation.json;kaynak-katalogu.json
+S026,aa.usno.navy.mil,moon_sources_by_year,https://aa.usno.navy.mil/api/moon/phases/year?year=2027,slovenia-localisation.json;kaynak-katalogu.json
+S027,aa.usno.navy.mil,moon_sources_by_year,https://aa.usno.navy.mil/api/moon/phases/year?year=2028,slovenia-localisation.json;kaynak-katalogu.json
+S028,aa.usno.navy.mil,moon_sources_by_year,https://aa.usno.navy.mil/api/moon/phases/year?year=2029,slovenia-localisation.json;kaynak-katalogu.json
+S029,aa.usno.navy.mil,moon_sources_by_year,https://aa.usno.navy.mil/api/moon/phases/year?year=2030,slovenia-localisation.json;kaynak-katalogu.json
+S030,developers.google.com,sources,https://developers.google.com/search/docs/crawling-indexing/url-structure,name-calendar-implementation.json;kaynak-katalogu.json
+S031,developers.google.com,sources,https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls,name-calendar-implementation.json;kaynak-katalogu.json
+S032,guides.rubyonrails.org,sources,https://guides.rubyonrails.org/active_job_basics.html,name-calendar-implementation.json;ruby-stack-deployment.json;kaynak-katalogu.json
+S033,www.stat.si,sources,https://www.stat.si/StatWeb/StaticPages/Index/copyright,name-calendar-implementation.json;slovenia-names.json;kaynak-katalogu.json
+S034,www.stat.si,sources,https://www.stat.si/statweb/File/DocSysFile/7803,name-calendar-implementation.json;slovenia-names.json;kaynak-katalogu.json
+S035,developers.google.com,sources,https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag,name-calendar-implementation.json;kaynak-katalogu.json
+S036,pxweb.stat.si,"Moška imena po: IME, MERITVE, LETO",https://pxweb.stat.si/SiStatData/pxweb/sl/Data/-/05X1005S.PX,slovenia-names.json;kaynak-katalogu.json
+S037,pxweb.stat.si,"Ženska imena po: IME, MERITVE, LETO",https://pxweb.stat.si/SiStatData/pxweb/sl/Data/-/05X1010S.PX,slovenia-names.json;kaynak-katalogu.json
+S038,pxweb.stat.si,"Imena dečkov po: IME, MERITVE, LETO",https://pxweb.stat.si/SiStatData/pxweb/sl/Data/-/05X2001S.PX,slovenia-names.json;kaynak-katalogu.json
+S039,pxweb.stat.si,"Imena deklic po: IME, MERITVE, LETO",https://pxweb.stat.si/SiStatData/pxweb/sl/Data/-/05X2002S.PX,slovenia-names.json;kaynak-katalogu.json
+S040,www.stat.si,"Imena in priimki, rojstni dnevi, 1. januar 2026",https://www.stat.si/StatWeb/News/Index/14367,slovenia-names.json;kaynak-katalogu.json
+S041,www.stat.si,"Rojeni, 2025",https://www.stat.si/statweb/News/Index/14433,slovenia-names.json;kaynak-katalogu.json
+S042,Ognjišče,sources,https://revija.ognjisce.si/kdaj-imam-god/,slovenia-names.json;kaynak-katalogu.json
+S043,Ognjišče,sources,https://revija.ognjisce.si/sv-ana-26-julij/,slovenia-names.json;kaynak-katalogu.json
+S044,Slovenska škofovska konferenca,sources,https://katoliska-cerkev.si/v-splosnem-rimskem-koledarju-pet-novih-svetnikov,slovenia-names.json;kaynak-katalogu.json
+S045,www.ruby-lang.org,ruby,https://www.ruby-lang.org/en/downloads/,ruby-stack-deployment.json;kaynak-katalogu.json
+S046,rubyonrails.org,rails,https://rubyonrails.org/,ruby-stack-deployment.json;kaynak-katalogu.json
+S047,guides.rubyonrails.org,rails_docker,https://guides.rubyonrails.org/getting_started.html,ruby-stack-deployment.json;kaynak-katalogu.json
+S048,jekyllrb.com,jekyll,https://jekyllrb.com/docs/,ruby-stack-deployment.json;kaynak-katalogu.json
+S049,developers.cloudflare.com,pages_build,https://developers.cloudflare.com/pages/configuration/build-image/,ruby-stack-deployment.json;kaynak-katalogu.json
+S050,developers.cloudflare.com,pages_functions,https://developers.cloudflare.com/pages/functions/,ruby-stack-deployment.json;kaynak-katalogu.json
+S051,developers.cloudflare.com,containers_overview,https://developers.cloudflare.com/containers/,ruby-stack-deployment.json;kaynak-katalogu.json
+S052,developers.cloudflare.com,containers_faq,https://developers.cloudflare.com/containers/faq/,ruby-stack-deployment.json;kaynak-katalogu.json
+S053,developers.cloudflare.com,containers_lifecycle,https://developers.cloudflare.com/containers/concepts/architecture/,ruby-stack-deployment.json;kaynak-katalogu.json
+S054,developers.cloudflare.com,containers_pricing,https://developers.cloudflare.com/containers/platform/pricing/,ruby-stack-deployment.json;kaynak-katalogu.json
+S055,developers.cloudflare.com,workers_pricing,https://developers.cloudflare.com/workers/platform/pricing/,ruby-stack-deployment.json;kaynak-katalogu.json
+S056,developers.cloudflare.com,r2,https://developers.cloudflare.com/r2/,ruby-stack-deployment.json;kaynak-katalogu.json
+S057,W3C,w3c_paged_media,https://www.w3.org/TR/css-page-3/,print-template-specification.json;kaynak-katalogu.json
+S058,W3C,w3c_absolute_units,https://www.w3.org/TR/css-values-4/#absolute-lengths,print-template-specification.json;kaynak-katalogu.json
+S059,Google / WebP,google_cwebp,https://developers.google.com/speed/webp/docs/cwebp,print-template-specification.json;kaynak-katalogu.json
+S060,Google / WebP,google_webp_container,https://developers.google.com/speed/webp/docs/riff_container,print-template-specification.json;kaynak-katalogu.json
+S061,"PDF Association, ISO liaison",pdf_standard,https://pdfa.org/resource/iso-32000-2/,print-template-specification.json;kaynak-katalogu.json
+S062,kalendorius365.lt,lithuania_architecture_reference,https://kalendorius365.lt/paieska/,kaynak-katalogu.json;slovenia-keywords.json
+S063,www.koledarcek.com,koledarcek,https://www.koledarcek.com/,kaynak-katalogu.json;slovenia-keywords.json
+S064,www.koledarcek.com,koledarcek2027,https://www.koledarcek.com/index.php?trenutno_leto=2027,kaynak-katalogu.json;slovenia-keywords.json
+S065,www.koledarcek.com,koledarcekprint,https://www.koledarcek.com/print_version.php?trenutno_leto=2027,kaynak-katalogu.json;slovenia-keywords.json
+S066,koledarko.si,koledarko,https://koledarko.si/,kaynak-katalogu.json;slovenia-keywords.json
+S067,koled.si,koled,https://koled.si/koledar/2027,kaynak-katalogu.json;slovenia-keywords.json
+S068,koled.si,koledmonth,https://koled.si/koledar/2027/1,kaynak-katalogu.json;slovenia-keywords.json
+S069,prazniki.si,prazniki,https://prazniki.si/koledar-2027,kaynak-katalogu.json;slovenia-keywords.json
+S070,prazniki.si,praznikifree,https://prazniki.si/prazniki-dela-prosti-dnevi-2027,kaynak-katalogu.json;slovenia-keywords.json
+S071,javnipodatki.si,javnipodatki,https://javnipodatki.si/koledar,kaynak-katalogu.json;slovenia-keywords.json
+S072,poslovni.si,workdays,https://poslovni.si/pripomocki/delovni-dnevi/2027,kaynak-katalogu.json;slovenia-keywords.json
+S073,www.zvezarfr.si,accounting,https://www.zvezarfr.si/pripomocki/uporabni-podatki/g-stevilo-delovnih-dni-in-stevilo-dni-praznikov-ki-so-dela-prosti-dnevi,kaynak-katalogu.json;slovenia-keywords.json
+S074,preracunaj.si,datecalc,https://preracunaj.si/dnevi.html,kaynak-katalogu.json;slovenia-keywords.json
+S075,racunaj.net,workcalc,https://racunaj.net/kalkulator-delovnih-dni,kaynak-katalogu.json;slovenia-keywords.json
+S076,xn--tevilkatedna-unc.si,weeknumber,https://xn--tevilkatedna-unc.si/,kaynak-katalogu.json;slovenia-keywords.json
+S077,calculaterix.com,today,https://calculaterix.com/sl/danes,kaynak-katalogu.json;slovenia-keywords.json
+S078,www.lunin.net,lunin,https://www.lunin.net/koledar/lunine-mene/,kaynak-katalogu.json;slovenia-keywords.json
+S079,www.lunin.net,lunin2027,https://www.lunin.net/koledar/leto/2027/,kaynak-katalogu.json;slovenia-keywords.json
+S080,www.bodieko.si,bodieko,https://www.bodieko.si/polna-luna-in-lunin-koledar,kaynak-katalogu.json;slovenia-keywords.json
+S081,www.astrosvet.si,astrosvet,https://www.astrosvet.si/luna/lunin-mesecni-koledar2/,kaynak-katalogu.json;slovenia-keywords.json
+S082,ahrefstop.com,ahrefstop_historical,https://ahrefstop.com/websites/lunin.net,kaynak-katalogu.json;slovenia-keywords.json
+S083,www.x-calendar.com,xcalendar,https://www.x-calendar.com/sl,kaynak-katalogu.json;slovenia-keywords.json
+S084,enetko.com,enetko,https://enetko.com/sl/calendar/yearly/2027,kaynak-katalogu.json;slovenia-keywords.json
+S085,7calendar.com,sevenmonthly,https://7calendar.com/si/2027-january-monthly/p-1/,kaynak-katalogu.json;slovenia-keywords.json
+S086,7calendar.com,sevenweekly,https://7calendar.com/si/calendar-march-weekly/,kaynak-katalogu.json;slovenia-keywords.json
+S087,www.cewe.si,cewe,https://www.cewe.si/fotokoledarji.html,kaynak-katalogu.json;slovenia-keywords.json
+S088,www.enzo.si,enzophoto,https://www.enzo.si/foto-koledarji-iz-vasih-fotografij/,kaynak-katalogu.json;slovenia-keywords.json
+S089,magic-planner.com,magicplanner,https://magic-planner.com/sestavi-svoj-planer,kaynak-katalogu.json;slovenia-keywords.json
+S090,magic-planner.com,magicfamily,https://magic-planner.com/,kaynak-katalogu.json;slovenia-keywords.json
+S091,new.observatorij.org,observatory,https://new.observatorij.org/Efemeride/sonce26.html,kaynak-katalogu.json;slovenia-keywords.json
+S092,heliotempo.com,heliotempo,https://heliotempo.com/sl/soncni-vzhod-in-zahod/ljubljana/,kaynak-katalogu.json;slovenia-keywords.json
+S093,heliotempo.com,heliotempoevents,https://heliotempo.com/sl/dogodki/,kaynak-katalogu.json;slovenia-keywords.json
+S094,katoliska-cerkev.si,church,https://katoliska-cerkev.si/cerkveno-leto,kaynak-katalogu.json;slovenia-keywords.json
+S095,hozana.si,hozana,https://hozana.si/api,kaynak-katalogu.json;slovenia-keywords.json
+S096,revija.ognjisce.si,ognjisce,https://revija.ognjisce.si/category/svetniki-2026/ime-veliko-pove/page/105/,kaynak-katalogu.json;slovenia-keywords.json
+S097,fran.si,fran,https://fran.si/iskanje?AllNoHeadword=god&Query=god&View=1&hs=2168,kaynak-katalogu.json;slovenia-keywords.json
+S098,pust.si,pust,https://pust.si/,kaynak-katalogu.json;slovenia-keywords.json
+S099,www.maskarada.si,maskarada,https://www.maskarada.si/kdaj-bo-letos-pust-vse-kar-morate-vedeti-o-letosnjem-pustu/,kaynak-katalogu.json;slovenia-keywords.json
+S100,www.klubgaia.com,gaia,https://www.klubgaia.com/si/vrtnarski-nasveti/6138-koledar-vrtnih-opravil-za-leto-2026,kaynak-katalogu.json;slovenia-keywords.json
+S101,deloindom.delo.si,deloindom,https://deloindom.delo.si/setveni-koledar,kaynak-katalogu.json;slovenia-keywords.json
+S102,pedagoskidnevnik.com,schoolpdf,https://pedagoskidnevnik.com/izdelek/pdf-solski-koledar-2026-2027-a4-a3/,kaynak-katalogu.json;slovenia-keywords.json
+S103,www.timeanddate.com,timeanddate,https://www.timeanddate.com/calendar/?country=45&year=2027,kaynak-katalogu.json;slovenia-keywords.json
+S104,www.fran.si,fran_mlaj,https://www.fran.si/iskanje?AllNoHeadword=mlaj&FilteredDictionaryIds=133&Query=mlaj&View=1,kaynak-katalogu.json;slovenia-keywords.json
+S105,horoskop.si,horoskop_daily,https://horoskop.si/dnevni-horoskop-za-torek-20-oktobra-2026/,kaynak-katalogu.json;slovenia-keywords.json;slovenia-seo-ux-sources.json
+S106,www.lunin.net,lunin_zodiac,https://www.lunin.net/horoskop/,kaynak-katalogu.json;slovenia-keywords.json;slovenia-seo-ux-sources.json
+S107,UNESCO,source,https://www.unesco.org/en/days/holocaust-remembrance,kaynak-katalogu.json;slovenia-additional-observances.json
+S108,UNESCO,source,https://www.unesco.org/en/days/mother-language,kaynak-katalogu.json;slovenia-additional-observances.json
+S109,UNESCO,source,https://www.unesco.org/en/days/world-water,kaynak-katalogu.json;slovenia-additional-observances.json
+S110,UNESCO,source,https://www.unesco.org/en/days/world-book-and-copyright,kaynak-katalogu.json;slovenia-additional-observances.json
+S111,GOV.SI,source,https://www.gov.si/novice/2022-05-15-organizacija-zdruzenih-narodov-15-maj-razglasila-za-mednarodni-dan-druzin/,kaynak-katalogu.json;slovenia-additional-observances.json
+S112,GOV.SI,source,https://www.gov.si/novice/2021-06-04-minister-za-zdravje-janez-poklukar-daroval-kri-na-dan-slovenskega-krvodajalstva/,kaynak-katalogu.json;slovenia-additional-observances.json
+S113,GOV.SI,source,https://www.gov.si/novice/2022-06-03-svetovni-dan-okolja-5-junija-sporoca-zemlja-je-le-ena/,kaynak-katalogu.json;slovenia-additional-observances.json
+S114,SURS,source,https://www.stat.si/StatWeb/News/Index/14501,kaynak-katalogu.json;slovenia-additional-observances.json
+S115,GOV.SI,source,https://www.gov.si/novice/2026-08-24-23-avgust-evropski-dan-spomina-na-vse-zrtve-totalitarnih-in-avtoritarnih-rezimov/,kaynak-katalogu.json;slovenia-additional-observances.json
+S116,UNESCO,source,https://www.unesco.org/en/days/literacy,kaynak-katalogu.json;slovenia-additional-observances.json
+S117,UNESCO,source,https://www.unesco.org/en/days/peace,kaynak-katalogu.json;slovenia-additional-observances.json
+S118,GOV.SI,source,https://www.gov.si/teme/jeziki-v-vzgoji-in-izobrazevanju/,kaynak-katalogu.json;slovenia-additional-observances.json
+S119,GOV.SI,source,https://www.gov.si/novice/2026-10-01-mednarodni-dan-starejsih-cas-je-za-nov-pogled-na-dolgozivost-in-staranje/,kaynak-katalogu.json;slovenia-additional-observances.json
+S120,GOV.SI,source,https://www.gov.si/novice/2026-10-02-ob-svetovnem-dnevu-zivali-dobrobit-zivali-je-nasa-skupna-odgovornost/,kaynak-katalogu.json;slovenia-additional-observances.json
+S121,UNESCO,source,https://www.unesco.org/en/days/teachers,kaynak-katalogu.json;slovenia-additional-observances.json
+S122,Zveza prijateljev mladine Slovenije (ZPMS),source,https://www.zpms.si/programi/teden-otroka/,kaynak-katalogu.json;slovenia-additional-observances.json
+S123,SURS,source,https://www.stat.si/StatWeb/News/Index/14653,kaynak-katalogu.json;slovenia-additional-observances.json
+S124,Slovenska turistična organizacija / I feel Slovenia,source,https://www.slovenia.info/sl/dozivetja/dogodki/27688-noc-carovnic-in-veronikina-zgodba,kaynak-katalogu.json;slovenia-additional-observances.json
+S125,Slovenska škofovska konferenca / Katoliška cerkev,source,https://katoliska-cerkev.si/spomin-vseh-vernih-rajnih,kaynak-katalogu.json;slovenia-additional-observances.json
+S126,GOV.SI,source,https://www.gov.si/novice/2020-11-13-dan-slovenskega-znakovnega-jezika/,kaynak-katalogu.json;slovenia-additional-observances.json
+S127,GOV.SI,source,https://www.gov.si/teme/solska-prehrana/,kaynak-katalogu.json;slovenia-additional-observances.json
+S128,GOV.SI,secondary_source,https://www.gov.si/novice/2021-10-19-cez-mesec-dni-obelezujemo-dan-slovenske-hrane-na-mizah-bo-tradicionalni-slovenski-zajtrk/,kaynak-katalogu.json;slovenia-additional-observances.json
+S129,UNICEF Slovenija,source,https://unicef.si/svetovni-dan-otrok/,kaynak-katalogu.json;slovenia-additional-observances.json
+S130,GOV.SI,source,https://www.gov.si/novice/2025-12-03-poslanica-ministra-luke-mesca-ob-mednarodnem-dnevu-invalidov-2025/,kaynak-katalogu.json;slovenia-additional-observances.json
+S131,GOV.SI / Ministrstvo za kulturo,source,https://www.gov.si/novice/2025-12-03-ta-veseli-dan-kulture-2025-odprta-vrata-kulture-in-umetnosti/,kaynak-katalogu.json;slovenia-additional-observances.json
+S132,UNESCO,source,https://www.unesco.org/en/days/human-rights,kaynak-katalogu.json;slovenia-additional-observances.json
+S133,Društvo očetov Slovenije,evidence_sources,https://ocetje.si/ocetovski-dan-2/,kaynak-katalogu.json;slovenia-additional-observances.json
+S134,Katoliška cerkev,evidence_sources,https://www.katoliska-cerkev.si/praznik-sv-jozefa-moza-device-marije1,kaynak-katalogu.json;slovenia-additional-observances.json
+S135,Google Search Central,"E-E-A-T, About and honest freshness",https://developers.google.com/search/docs/fundamentals/creating-helpful-content,kaynak-katalogu.json;slovenia-seo-ux-sources.json
+S136,Google Search Central,Page titles,https://developers.google.com/search/docs/appearance/title-link,kaynak-katalogu.json;slovenia-seo-ux-sources.json
+S137,Google Search Central,Meta descriptions,https://developers.google.com/search/docs/appearance/snippet,kaynak-katalogu.json;slovenia-seo-ux-sources.json
+S138,Google Search Central,"Images, alt and OG preview metadata",https://developers.google.com/search/docs/appearance/google-images,kaynak-katalogu.json;slovenia-seo-ux-sources.json
+S139,Google Crawling Infrastructure,Custom 404 with correct HTTP semantics,https://developers.google.com/crawling/docs/troubleshooting/http-status-codes,kaynak-katalogu.json;slovenia-seo-ux-sources.json
+S140,Google Search Central,UX and page experience,https://developers.google.com/search/docs/appearance/page-experience,kaynak-katalogu.json;slovenia-seo-ux-sources.json
+S141,"Informacijski pooblaščenec, Slovenia",Cookies and similar tracking guidance,https://www.ip-rs.si/fileadmin/user_upload/Pdf/smernice/SMERNICE%20O%20UPORABI%20PI%C5%A0KOTKOV%20IN%20PODOBNIH%20SLEDILNIH%20TEHNOLOGIJ_2023.pdf,kaynak-katalogu.json;slovenia-seo-ux-sources.json
+S142,"Informacijski pooblaščenec, Slovenia",Dark patterns and repeated consent prompts,https://www.ip-rs.si/mnenja-zvop-2/zavajajo%C4%8Di-vzorci-pri-pi%C5%A1kotkih-1735549941,kaynak-katalogu.json;slovenia-seo-ux-sources.json
+S143,Unicode CLDR,CLDR 49 Language Plural Rules — Slovenian,https://unicode.org/cldr/charts/49/supplemental/language_plural_rules.html,kaynak-katalogu.json;slovene-language-quality.json
+S144,Unicode CLDR,CLDR 49 Locale Data Summary for Slovenian [sl],https://unicode.org/cldr/charts/49/summary/sl.html,kaynak-katalogu.json;slovene-language-quality.json
+S145,"ZRC SAZU, Inštitut za slovenski jezik Frana Ramovša",Fran — koledar,https://fran.si/iskanje?View=1&Query=koledar,kaynak-katalogu.json;slovene-language-quality.json
+S146,"ZRC SAZU, Jezikovna svetovalnica",Sklon meseca za vrstilnim števnikom pri zapisovanju datumov,https://svetovalnica.zrc-sazu.si/topic/155/sklon-meseca-za-vrstilnim-%C5%A1tevnikom-pri-zapisovanju-datumov,kaynak-katalogu.json;slovene-language-quality.json
+S147,"ZRC SAZU, Jezikovna svetovalnica",Branje decimalnih številk,https://svetovalnica.zrc-sazu.si/topic/1378/branje-decimalnih-%C5%A1tevilk,kaynak-katalogu.json;slovene-language-quality.json
+S148,"ZRC SAZU, Jezikovna svetovalnica",Kako pišemo zodiakalna znamenja?,https://svetovalnica.zrc-sazu.si/topic/798/kako-pi%C5%A1emo-zodiakalna-znamenja,kaynak-katalogu.json;slovene-language-quality.json

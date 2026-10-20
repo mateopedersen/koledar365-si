@@ -1,0 +1,40 @@
+<article class="observance-page tone-<%= @observance.theme %>">
+  <header class="observance-hero <%= 'without-photo' unless @observance.photo %>">
+    <div class="observance-intro">
+      <div class="observance-kicker"><span></span><%= @observance.category %><span class="observance-country">SLOVENIJA</span></div>
+      <h1><%= @title %></h1>
+      <p class="observance-lead"><%= @observance.lead %></p>
+      <div class="observance-status"><%= ui_icon(@observance.free? ? 'check' : 'info') %><strong><%= @observance.status %></strong></div>
+      <nav aria-label="Datumi praznika po letih" class="observance-years"><% CalendarEngine::YEARS.each do |year| %><a href="#datum-<%= year %>"><%= year %><span aria-hidden="true">↓</span></a><% end %></nav>
+      <p class="observance-scope">Datumi za štiri leta. Jasna razlika med obeležitvijo in prostim dnem.</p>
+    </div>
+    <% if (photo=@observance.photo) %>
+      <figure class="observance-photo <%= 'is-reproduction' if photo['kind']=='reproduction' %>"><img src="<%= photo['local_path'] %>" srcset="<%= photo['small_path'] %> <%= photo['small_width'] %>w, <%= photo['local_path'] %> <%= photo['width'] %>w" sizes="(max-width:760px) 100vw, 50vw" alt="<%= photo['alt_sl'] %>" width="<%= photo['width'] %>" height="<%= photo['height'] %>" fetchpriority="high"><figcaption><span><%= photo['caption_sl'] %></span><a href="/fotografije-in-licence/#praznik-<%= @observance.slug %>">Avtor in licenca <%= ui_icon('info') %></a></figcaption></figure>
+    <% end %>
+  </header>
+
+  <section class="observance-dates" aria-labelledby="observance-dates-title"><div class="observance-heading"><div><span class="eyebrow">NAČRTUJTE VNAPREJ</span><h2 id="observance-dates-title">Datumi v letih 2027–2030</h2></div><span class="observance-date-rule"><%= ui_icon('calendar') %><%= @observance.fixed? ? 'Stalen datum' : 'Datum se med leti spreminja' %></span></div>
+    <div class="observance-year-grid">
+      <% @observance.by_year.each do |year,events| %><section class="observance-year-card" id="datum-<%= year %>" aria-labelledby="datum-title-<%= year %>"><div class="observance-card-top"><h3 id="datum-title-<%= year %>"><%= year %></h3><span><%= Date.gregorian_leap?(year) ? 'Prestopno leto' : '365 dni' %></span></div>
+        <% events.each do |event| %><div class="observance-date-entry" data-observance-date="<%= event.on %>"><time datetime="<%= event.on %>"><strong><%= event.on.day %>.</strong><span><%= CalendarEngine::MONTHS[event.on.month-1] %><b><%= CalendarEngine::DAYS[event.on.cwday-1].sub(/\A./,&:upcase) %></b></span></time><% if events.size>1 %><p class="observance-event-label"><%= holiday_title(event) %></p><% end %><p class="observance-date-status"><span class="<%= 'is-free' if event.work_free %>"></span><%= holiday_status(event) %></p>
+          <% if !event.work_free && (coinciding=@observance.coincidences[event.on]).present? %><p class="observance-coincidence">Na ta datum je sicer dela prost dan zaradi drugega praznika: <%= coinciding.map(&:title).join(', ') %>.</p><% end %>
+          <a class="observance-open-date" href="<%= month_url(year,event.on.month) %>?date=<%= event.on %>&view=day">Odpri dan v koledarju <span aria-hidden="true">↗</span></a>
+        </div><% end %>
+        <a class="observance-ics" href="/prazniki/<%= year %>.ics?all=1&topic=<%= @observance.slug %>"><%= ui_icon('plus') %> Dodaj v koledar <span class="sr-only"><%= year %></span><small>ICS</small></a>
+      </section><% end %>
+    </div>
+  </section>
+
+  <div class="observance-body-grid">
+    <section class="observance-story" aria-labelledby="observance-story-title"><span class="eyebrow">O DNEVU</span><h2 id="observance-story-title">Kaj je dobro vedeti</h2><p><%= TopicContent.body(@observance.slug) %></p>
+      <% if @observance.events.first.category=='astronomical' %><div class="observance-astronomy"><h3>Natančen trenutek v Sloveniji</h3><% AstronomicalEvent.where(kind:@observance.slug).order(:instant).each do |event| %><p><strong><%= event.local_time.year %></strong><time datetime="<%= event.instant.iso8601 %>"><%= I18n.l(event.local_time) %></time><small><%= event.instant.utc.strftime('%H:%M UTC') %></small></p><% end %><p class="observance-fine">Krajevni čas: Europe/Ljubljana. Meteorološki letni časi se začnejo prvega dne marca, junija, septembra in decembra.</p></div><% end %>
+      <div class="observance-meaning"><%= ui_icon(@observance.state? ? 'shield' : 'calendar') %><div><h3><%= @observance.state? ? 'Državni praznik' : @observance.legal? ? 'Drug zakonsko določen dela prost dan' : 'Koledarski datum in pravni status' %></h3><p><%= @observance.legal? ? 'Status tega praznika določa ZPDPD. Prosti dnevi niso isto kot šolske počitnice ali individualni razpored dela.' : 'Obeležitev sama po sebi ne pomeni dodatnega prostega dne. Če na isti datum nastopi zakonski praznik, je to navedeno posebej pri datumu.' %></p></div></div>
+      <% unless @observance.legal? || @observance.events.first.category.in?(%w[astronomical civil_time]) %><p class="observance-fine">Datumi predstavljajo koledarsko obeležitev. Program posamezne prireditve, odprtje ustanov in lokalni običaji imajo lahko drugačen urnik.</p><% end %>
+      <div class="observance-story-actions"><a class="button" href="/prazniki/"><%= ui_icon('calendar') %> Vsi prazniki 2027–2030</a><button type="button" data-print><%= ui_icon('print') %> Natisni</button></div>
+    </section>
+    <aside class="observance-planning"><span class="eyebrow">OD DATUMA DO NAČRTA</span><h2>Uredite si dan po svoje.</h2><a href="/nacrtovalnik-dopusta/"><%= ui_icon('sun') %><span><strong>Načrtujte dopust</strong><small>Preverite, kako povezati proste dneve.</small></span><span aria-hidden="true">↗</span></a><a href="/kalkulator-delovnih-dni/"><%= ui_icon('briefcase') %><span><strong>Preštejte delovne dni</strong><small>Po svojem urniku in izbranem obdobju.</small></span><span aria-hidden="true">↗</span></a><a href="/solske-pocitnice/"><%= ui_icon('note') %><span><strong>Šolske počitnice</strong><small>Ločen pregled uradnih šolskih datumov.</small></span><span aria-hidden="true">↗</span></a><p>Datoteko ICS uvozite v svoj koledar. Vsi datumi obeležitev so izvoženi kot celodnevni dogodki.</p></aside>
+  </div>
+
+  <section class="observance-sources"><div class="observance-source-mark"><%= ui_icon('shield') %></div><div><span class="eyebrow">VIRI IN UREDNIŠTVO</span><h2>Podatek, ki ga lahko preverite.</h2><ul><% @observance.events.map(&:source_url).compact.uniq.each do |url| %><li><%= source_link(url,@observance.legal? ? 'ZPDPD – pravna podlaga za datum in status' : 'Izvirni vir za koledarski datum') %></li><% end %><% TopicContent.references(@observance.slug).each do |reference| %><li><%= source_link(reference['url'],reference['title']) %></li><% end %><% if @observance.legal? %><li><%= source_link(HolidayYear::AMENDMENT_URL,'ZPDPD-I – sprememba zakona iz oktobra 2026') %></li><% end %></ul><p>Preverjanje koledarskih pravil: <time datetime="2026-10-20">20. 10. 2026</time>. Datumi za prihodnja leta sledijo trenutno veljavnim pravilom.</p><div><a href="/uredniska-politika/">Uredniška pravila</a><a href="/kontakt/">Predlagajte popravek →</a></div></div></section>
+  <% if @observance.related.any? %><section class="observance-related"><div class="observance-heading"><div><span class="eyebrow">NADALJUJTE PO KOLEDARJU</span><h2>Še nekaj sorodnih dni.</h2></div><a href="/pomembni-dnevi/">Vsi pomembni dnevi →</a></div><div class="observance-related-grid"><% @observance.related.each do |event| %><a href="<%= event_path(event) %>"><% if (photo=HolidayPhotoCatalog.find(event.slug)) %><img src="<%= photo['small_path'] %>" alt="" width="<%= photo['small_width'] %>" height="<%= photo['small_height'] %>" loading="lazy" decoding="async"><% end %><span><%= CalendarEngine::MONTHS[event.on.month-1].upcase %></span><h3><%= holiday_title(event) %></h3><p><%= event.work_free ? 'Dela prost dan' : 'Ni dela prost dan' %></p><%= ui_icon('chevron-right') %></a><% end %></div></section><% end %>
+</article>

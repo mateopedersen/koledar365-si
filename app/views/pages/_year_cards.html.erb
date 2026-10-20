@@ -1,0 +1,1 @@
+<div class="year-cards"><% (2027..2030).each do |y| %><a href="/koledar/<%= y %>/"><span>KOLEDAR</span><strong><%= y %></strong><small><%= Date.gregorian_leap?(y) ? '366 dni · prestopno leto':'365 dni · 12 mesecev' %> →</small></a><% end %></div>

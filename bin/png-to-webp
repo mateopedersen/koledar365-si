@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+# Generic image encoding adapter; calendar composition and content remain in Ruby.
+import sys
+from PIL import Image, ImageCms
+src,dst=sys.argv[1:3]
+image=Image.open(src).convert('RGB')
+if len(sys.argv)>3 and sys.argv[3]=='monochrome_bw':
+    from PIL import ImageChops
+    r,g,b=image.split()
+    if ImageChops.difference(r,g).getbbox() or ImageChops.difference(r,b).getbbox():
+        raise ValueError('Monochrome PDF contains chromatic pixels')
+profile=ImageCms.ImageCmsProfile(ImageCms.createProfile('sRGB')).tobytes()
+image.save(dst,'WEBP',lossless=True,method=4,icc_profile=profile)
+# Independently decode the encoded bytes before the source raster is removed.
+from PIL import ImageChops
+with Image.open(dst) as encoded:
+    if encoded.size != image.size or ImageChops.difference(encoded.convert('RGB'), image).getbbox():
+        raise ValueError('WebP pixels differ from the source PDF raster')
+    if encoded.info.get('icc_profile') != profile:
+        raise ValueError('WebP sRGB profile was not preserved')

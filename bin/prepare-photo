@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+# Only decode and sanitize images. Calendar/business rules live in Ruby.
+import sys,json,hashlib,warnings
+from pathlib import Path
+from PIL import Image,ImageOps
+Image.MAX_IMAGE_PIXELS=40_000_000
+warnings.simplefilter('error',Image.DecompressionBombWarning)
+source,target=sys.argv[1:];target=Path(target)
+with Image.open(source) as original:
+    if original.format not in ('JPEG','PNG','WEBP') or getattr(original,'n_frames',1)!=1:
+        raise ValueError('Unsupported image')
+    if original.width*original.height>40_000_000: raise ValueError('Too many pixels')
+    photo=ImageOps.exif_transpose(original).convert('RGB')
+    if photo.width<900 or photo.height<600: raise ValueError('Photo too small')
+    photo.thumbnail((2400,2400),Image.Resampling.LANCZOS)
+    photo.info.clear()
+    photo.save(target/'photo.png',optimize=True)
+    ImageOps.grayscale(photo).convert('RGB').save(target/'gray.png',optimize=True)
+    data={'width':photo.width,'height':photo.height,'sha256':hashlib.sha256((target/'photo.png').read_bytes()).hexdigest()}
+    (target/'image.json').write_text(json.dumps(data))

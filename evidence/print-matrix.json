@@ -1,0 +1,1082 @@
+[
+  {
+    "type": "annual",
+    "design": "min-01",
+    "pages": 1,
+    "bytes": 136696
+  },
+  {
+    "type": "annual",
+    "design": "min-02",
+    "pages": 2,
+    "bytes": 157935
+  },
+  {
+    "type": "annual",
+    "design": "min-03",
+    "pages": 2,
+    "bytes": 138730
+  },
+  {
+    "type": "annual",
+    "design": "ele-01",
+    "pages": 4,
+    "bytes": 180806
+  },
+  {
+    "type": "annual",
+    "design": "ele-02",
+    "pages": 1,
+    "bytes": 165231
+  },
+  {
+    "type": "annual",
+    "design": "ele-03",
+    "pages": 2,
+    "bytes": 167155
+  },
+  {
+    "type": "annual",
+    "design": "nat-01",
+    "pages": 1,
+    "bytes": 138901
+  },
+  {
+    "type": "annual",
+    "design": "nat-02",
+    "pages": 4,
+    "bytes": 143774
+  },
+  {
+    "type": "annual",
+    "design": "nat-03",
+    "pages": 2,
+    "bytes": 139896
+  },
+  {
+    "type": "annual",
+    "design": "pla-01",
+    "pages": 4,
+    "bytes": 159865
+  },
+  {
+    "type": "annual",
+    "design": "pla-02",
+    "pages": 3,
+    "bytes": 144742
+  },
+  {
+    "type": "annual",
+    "design": "pla-03",
+    "pages": 3,
+    "bytes": 140180
+  },
+  {
+    "type": "annual",
+    "design": "geo-01",
+    "pages": 1,
+    "bytes": 138369
+  },
+  {
+    "type": "annual",
+    "design": "geo-02",
+    "pages": 2,
+    "bytes": 140181
+  },
+  {
+    "type": "annual",
+    "design": "geo-03",
+    "pages": 4,
+    "bytes": 145323
+  },
+  {
+    "type": "monthly",
+    "design": "min-01",
+    "pages": 1,
+    "bytes": 102459
+  },
+  {
+    "type": "monthly",
+    "design": "min-02",
+    "pages": 2,
+    "bytes": 98442
+  },
+  {
+    "type": "monthly",
+    "design": "min-03",
+    "pages": 1,
+    "bytes": 107617
+  },
+  {
+    "type": "monthly",
+    "design": "ele-01",
+    "pages": 1,
+    "bytes": 114113
+  },
+  {
+    "type": "monthly",
+    "design": "ele-02",
+    "pages": 1,
+    "bytes": 103981
+  },
+  {
+    "type": "monthly",
+    "design": "ele-03",
+    "pages": 1,
+    "bytes": 101329
+  },
+  {
+    "type": "monthly",
+    "design": "nat-01",
+    "pages": 1,
+    "bytes": 104050
+  },
+  {
+    "type": "monthly",
+    "design": "nat-02",
+    "pages": 1,
+    "bytes": 104133
+  },
+  {
+    "type": "monthly",
+    "design": "nat-03",
+    "pages": 1,
+    "bytes": 97051
+  },
+  {
+    "type": "monthly",
+    "design": "pla-01",
+    "pages": 1,
+    "bytes": 98227
+  },
+  {
+    "type": "monthly",
+    "design": "pla-02",
+    "pages": 2,
+    "bytes": 102653
+  },
+  {
+    "type": "monthly",
+    "design": "pla-03",
+    "pages": 2,
+    "bytes": 107384
+  },
+  {
+    "type": "monthly",
+    "design": "geo-01",
+    "pages": 1,
+    "bytes": 97936
+  },
+  {
+    "type": "monthly",
+    "design": "geo-02",
+    "pages": 1,
+    "bytes": 101629
+  },
+  {
+    "type": "monthly",
+    "design": "geo-03",
+    "pages": 1,
+    "bytes": 97808
+  },
+  {
+    "type": "weekly",
+    "design": "min-01",
+    "pages": 1,
+    "bytes": 94659
+  },
+  {
+    "type": "weekly",
+    "design": "min-02",
+    "pages": 1,
+    "bytes": 96059
+  },
+  {
+    "type": "weekly",
+    "design": "min-03",
+    "pages": 1,
+    "bytes": 99401
+  },
+  {
+    "type": "weekly",
+    "design": "ele-01",
+    "pages": 1,
+    "bytes": 105931
+  },
+  {
+    "type": "weekly",
+    "design": "ele-02",
+    "pages": 1,
+    "bytes": 102526
+  },
+  {
+    "type": "weekly",
+    "design": "ele-03",
+    "pages": 1,
+    "bytes": 100378
+  },
+  {
+    "type": "weekly",
+    "design": "nat-01",
+    "pages": 1,
+    "bytes": 96213
+  },
+  {
+    "type": "weekly",
+    "design": "nat-02",
+    "pages": 1,
+    "bytes": 96865
+  },
+  {
+    "type": "weekly",
+    "design": "nat-03",
+    "pages": 1,
+    "bytes": 97185
+  },
+  {
+    "type": "weekly",
+    "design": "pla-01",
+    "pages": 1,
+    "bytes": 97226
+  },
+  {
+    "type": "weekly",
+    "design": "pla-02",
+    "pages": 1,
+    "bytes": 94660
+  },
+  {
+    "type": "weekly",
+    "design": "pla-03",
+    "pages": 1,
+    "bytes": 96446
+  },
+  {
+    "type": "weekly",
+    "design": "geo-01",
+    "pages": 1,
+    "bytes": 97600
+  },
+  {
+    "type": "weekly",
+    "design": "geo-02",
+    "pages": 1,
+    "bytes": 99704
+  },
+  {
+    "type": "weekly",
+    "design": "geo-03",
+    "pages": 1,
+    "bytes": 96071
+  },
+  {
+    "type": "lunar",
+    "design": "min-01",
+    "pages": 2,
+    "bytes": 108811
+  },
+  {
+    "type": "lunar",
+    "design": "min-02",
+    "pages": 3,
+    "bytes": 104248
+  },
+  {
+    "type": "lunar",
+    "design": "min-03",
+    "pages": 2,
+    "bytes": 113969
+  },
+  {
+    "type": "lunar",
+    "design": "ele-01",
+    "pages": 2,
+    "bytes": 120467
+  },
+  {
+    "type": "lunar",
+    "design": "ele-02",
+    "pages": 2,
+    "bytes": 110494
+  },
+  {
+    "type": "lunar",
+    "design": "ele-03",
+    "pages": 2,
+    "bytes": 107755
+  },
+  {
+    "type": "lunar",
+    "design": "nat-01",
+    "pages": 2,
+    "bytes": 111951
+  },
+  {
+    "type": "lunar",
+    "design": "nat-02",
+    "pages": 2,
+    "bytes": 110696
+  },
+  {
+    "type": "lunar",
+    "design": "nat-03",
+    "pages": 2,
+    "bytes": 103404
+  },
+  {
+    "type": "lunar",
+    "design": "pla-01",
+    "pages": 2,
+    "bytes": 104581
+  },
+  {
+    "type": "lunar",
+    "design": "pla-02",
+    "pages": 3,
+    "bytes": 108458
+  },
+  {
+    "type": "lunar",
+    "design": "pla-03",
+    "pages": 3,
+    "bytes": 113188
+  },
+  {
+    "type": "lunar",
+    "design": "geo-01",
+    "pages": 2,
+    "bytes": 104419
+  },
+  {
+    "type": "lunar",
+    "design": "geo-02",
+    "pages": 2,
+    "bytes": 108102
+  },
+  {
+    "type": "lunar",
+    "design": "geo-03",
+    "pages": 2,
+    "bytes": 104564
+  },
+  {
+    "type": "blank",
+    "design": "min-01",
+    "pages": 1,
+    "bytes": 100195
+  },
+  {
+    "type": "blank",
+    "design": "min-02",
+    "pages": 2,
+    "bytes": 78074
+  },
+  {
+    "type": "blank",
+    "design": "min-03",
+    "pages": 1,
+    "bytes": 105311
+  },
+  {
+    "type": "blank",
+    "design": "ele-01",
+    "pages": 1,
+    "bytes": 111845
+  },
+  {
+    "type": "blank",
+    "design": "ele-02",
+    "pages": 1,
+    "bytes": 100575
+  },
+  {
+    "type": "blank",
+    "design": "ele-03",
+    "pages": 1,
+    "bytes": 77509
+  },
+  {
+    "type": "blank",
+    "design": "nat-01",
+    "pages": 1,
+    "bytes": 101794
+  },
+  {
+    "type": "blank",
+    "design": "nat-02",
+    "pages": 1,
+    "bytes": 101833
+  },
+  {
+    "type": "blank",
+    "design": "nat-03",
+    "pages": 1,
+    "bytes": 93668
+  },
+  {
+    "type": "blank",
+    "design": "pla-01",
+    "pages": 1,
+    "bytes": 95405
+  },
+  {
+    "type": "blank",
+    "design": "pla-02",
+    "pages": 2,
+    "bytes": 82592
+  },
+  {
+    "type": "blank",
+    "design": "pla-03",
+    "pages": 2,
+    "bytes": 87499
+  },
+  {
+    "type": "blank",
+    "design": "geo-01",
+    "pages": 1,
+    "bytes": 94580
+  },
+  {
+    "type": "blank",
+    "design": "geo-02",
+    "pages": 1,
+    "bytes": 98117
+  },
+  {
+    "type": "blank",
+    "design": "geo-03",
+    "pages": 1,
+    "bytes": 94453
+  },
+  {
+    "type": "shift",
+    "design": "min-01",
+    "pages": 1,
+    "bytes": 94651
+  },
+  {
+    "type": "shift",
+    "design": "min-02",
+    "pages": 1,
+    "bytes": 96051
+  },
+  {
+    "type": "shift",
+    "design": "min-03",
+    "pages": 1,
+    "bytes": 99393
+  },
+  {
+    "type": "shift",
+    "design": "ele-01",
+    "pages": 1,
+    "bytes": 105923
+  },
+  {
+    "type": "shift",
+    "design": "ele-02",
+    "pages": 1,
+    "bytes": 102518
+  },
+  {
+    "type": "shift",
+    "design": "ele-03",
+    "pages": 1,
+    "bytes": 100370
+  },
+  {
+    "type": "shift",
+    "design": "nat-01",
+    "pages": 1,
+    "bytes": 96205
+  },
+  {
+    "type": "shift",
+    "design": "nat-02",
+    "pages": 1,
+    "bytes": 96857
+  },
+  {
+    "type": "shift",
+    "design": "nat-03",
+    "pages": 1,
+    "bytes": 97177
+  },
+  {
+    "type": "shift",
+    "design": "pla-01",
+    "pages": 1,
+    "bytes": 97218
+  },
+  {
+    "type": "shift",
+    "design": "pla-02",
+    "pages": 1,
+    "bytes": 94652
+  },
+  {
+    "type": "shift",
+    "design": "pla-03",
+    "pages": 1,
+    "bytes": 96438
+  },
+  {
+    "type": "shift",
+    "design": "geo-01",
+    "pages": 1,
+    "bytes": 97592
+  },
+  {
+    "type": "shift",
+    "design": "geo-02",
+    "pages": 1,
+    "bytes": 99696
+  },
+  {
+    "type": "shift",
+    "design": "geo-03",
+    "pages": 1,
+    "bytes": 96063
+  },
+  {
+    "type": "daily",
+    "design": "min-01",
+    "pages": 1,
+    "bytes": 71904
+  },
+  {
+    "type": "daily",
+    "design": "min-02",
+    "pages": 1,
+    "bytes": 71905
+  },
+  {
+    "type": "daily",
+    "design": "min-03",
+    "pages": 1,
+    "bytes": 77167
+  },
+  {
+    "type": "daily",
+    "design": "ele-01",
+    "pages": 1,
+    "bytes": 83539
+  },
+  {
+    "type": "daily",
+    "design": "ele-02",
+    "pages": 1,
+    "bytes": 79642
+  },
+  {
+    "type": "daily",
+    "design": "ele-03",
+    "pages": 1,
+    "bytes": 56730
+  },
+  {
+    "type": "daily",
+    "design": "nat-01",
+    "pages": 1,
+    "bytes": 73468
+  },
+  {
+    "type": "daily",
+    "design": "nat-02",
+    "pages": 1,
+    "bytes": 73536
+  },
+  {
+    "type": "daily",
+    "design": "nat-03",
+    "pages": 1,
+    "bytes": 72770
+  },
+  {
+    "type": "daily",
+    "design": "pla-01",
+    "pages": 1,
+    "bytes": 74471
+  },
+  {
+    "type": "daily",
+    "design": "pla-02",
+    "pages": 1,
+    "bytes": 71905
+  },
+  {
+    "type": "daily",
+    "design": "pla-03",
+    "pages": 1,
+    "bytes": 74043
+  },
+  {
+    "type": "daily",
+    "design": "geo-01",
+    "pages": 1,
+    "bytes": 73646
+  },
+  {
+    "type": "daily",
+    "design": "geo-02",
+    "pages": 1,
+    "bytes": 77301
+  },
+  {
+    "type": "daily",
+    "design": "geo-03",
+    "pages": 1,
+    "bytes": 73491
+  },
+  {
+    "type": "family",
+    "design": "min-01",
+    "pages": 1,
+    "bytes": 94659
+  },
+  {
+    "type": "family",
+    "design": "min-02",
+    "pages": 1,
+    "bytes": 96059
+  },
+  {
+    "type": "family",
+    "design": "min-03",
+    "pages": 1,
+    "bytes": 99401
+  },
+  {
+    "type": "family",
+    "design": "ele-01",
+    "pages": 1,
+    "bytes": 105931
+  },
+  {
+    "type": "family",
+    "design": "ele-02",
+    "pages": 1,
+    "bytes": 102526
+  },
+  {
+    "type": "family",
+    "design": "ele-03",
+    "pages": 1,
+    "bytes": 100378
+  },
+  {
+    "type": "family",
+    "design": "nat-01",
+    "pages": 1,
+    "bytes": 96213
+  },
+  {
+    "type": "family",
+    "design": "nat-02",
+    "pages": 1,
+    "bytes": 96865
+  },
+  {
+    "type": "family",
+    "design": "nat-03",
+    "pages": 1,
+    "bytes": 97185
+  },
+  {
+    "type": "family",
+    "design": "pla-01",
+    "pages": 1,
+    "bytes": 97226
+  },
+  {
+    "type": "family",
+    "design": "pla-02",
+    "pages": 1,
+    "bytes": 94660
+  },
+  {
+    "type": "family",
+    "design": "pla-03",
+    "pages": 1,
+    "bytes": 96446
+  },
+  {
+    "type": "family",
+    "design": "geo-01",
+    "pages": 1,
+    "bytes": 97600
+  },
+  {
+    "type": "family",
+    "design": "geo-02",
+    "pages": 1,
+    "bytes": 99704
+  },
+  {
+    "type": "family",
+    "design": "geo-03",
+    "pages": 1,
+    "bytes": 96071
+  },
+  {
+    "type": "school",
+    "design": "min-01",
+    "pages": 1,
+    "bytes": 96982
+  },
+  {
+    "type": "school",
+    "design": "min-02",
+    "pages": 1,
+    "bytes": 96043
+  },
+  {
+    "type": "school",
+    "design": "min-03",
+    "pages": 1,
+    "bytes": 102246
+  },
+  {
+    "type": "school",
+    "design": "ele-01",
+    "pages": 1,
+    "bytes": 108624
+  },
+  {
+    "type": "school",
+    "design": "ele-02",
+    "pages": 1,
+    "bytes": 105017
+  },
+  {
+    "type": "school",
+    "design": "ele-03",
+    "pages": 1,
+    "bytes": 102608
+  },
+  {
+    "type": "school",
+    "design": "nat-01",
+    "pages": 1,
+    "bytes": 98540
+  },
+  {
+    "type": "school",
+    "design": "nat-02",
+    "pages": 1,
+    "bytes": 96849
+  },
+  {
+    "type": "school",
+    "design": "nat-03",
+    "pages": 1,
+    "bytes": 97169
+  },
+  {
+    "type": "school",
+    "design": "pla-01",
+    "pages": 1,
+    "bytes": 99550
+  },
+  {
+    "type": "school",
+    "design": "pla-02",
+    "pages": 1,
+    "bytes": 96983
+  },
+  {
+    "type": "school",
+    "design": "pla-03",
+    "pages": 1,
+    "bytes": 99131
+  },
+  {
+    "type": "school",
+    "design": "geo-01",
+    "pages": 1,
+    "bytes": 97584
+  },
+  {
+    "type": "school",
+    "design": "geo-02",
+    "pages": 1,
+    "bytes": 102379
+  },
+  {
+    "type": "school",
+    "design": "geo-03",
+    "pages": 1,
+    "bytes": 98571
+  },
+  {
+    "type": "birthday",
+    "design": "min-01",
+    "pages": 1,
+    "bytes": 136728
+  },
+  {
+    "type": "birthday",
+    "design": "min-02",
+    "pages": 1,
+    "bytes": 136753
+  },
+  {
+    "type": "birthday",
+    "design": "min-03",
+    "pages": 1,
+    "bytes": 137141
+  },
+  {
+    "type": "birthday",
+    "design": "ele-01",
+    "pages": 1,
+    "bytes": 143362
+  },
+  {
+    "type": "birthday",
+    "design": "ele-02",
+    "pages": 1,
+    "bytes": 143518
+  },
+  {
+    "type": "birthday",
+    "design": "ele-03",
+    "pages": 1,
+    "bytes": 143824
+  },
+  {
+    "type": "birthday",
+    "design": "nat-01",
+    "pages": 1,
+    "bytes": 138301
+  },
+  {
+    "type": "birthday",
+    "design": "nat-02",
+    "pages": 1,
+    "bytes": 136963
+  },
+  {
+    "type": "birthday",
+    "design": "nat-03",
+    "pages": 1,
+    "bytes": 137141
+  },
+  {
+    "type": "birthday",
+    "design": "pla-01",
+    "pages": 1,
+    "bytes": 136753
+  },
+  {
+    "type": "birthday",
+    "design": "pla-02",
+    "pages": 1,
+    "bytes": 136753
+  },
+  {
+    "type": "birthday",
+    "design": "pla-03",
+    "pages": 1,
+    "bytes": 137141
+  },
+  {
+    "type": "birthday",
+    "design": "geo-01",
+    "pages": 1,
+    "bytes": 136882
+  },
+  {
+    "type": "birthday",
+    "design": "geo-02",
+    "pages": 1,
+    "bytes": 136873
+  },
+  {
+    "type": "birthday",
+    "design": "geo-03",
+    "pages": 1,
+    "bytes": 137544
+  },
+  {
+    "type": "name",
+    "design": "min-01",
+    "pages": 1,
+    "bytes": 136708
+  },
+  {
+    "type": "name",
+    "design": "min-02",
+    "pages": 2,
+    "bytes": 157947
+  },
+  {
+    "type": "name",
+    "design": "min-03",
+    "pages": 2,
+    "bytes": 138742
+  },
+  {
+    "type": "name",
+    "design": "ele-01",
+    "pages": 4,
+    "bytes": 180818
+  },
+  {
+    "type": "name",
+    "design": "ele-02",
+    "pages": 1,
+    "bytes": 165243
+  },
+  {
+    "type": "name",
+    "design": "ele-03",
+    "pages": 2,
+    "bytes": 167167
+  },
+  {
+    "type": "name",
+    "design": "nat-01",
+    "pages": 1,
+    "bytes": 138913
+  },
+  {
+    "type": "name",
+    "design": "nat-02",
+    "pages": 4,
+    "bytes": 143786
+  },
+  {
+    "type": "name",
+    "design": "nat-03",
+    "pages": 2,
+    "bytes": 139908
+  },
+  {
+    "type": "name",
+    "design": "pla-01",
+    "pages": 4,
+    "bytes": 159877
+  },
+  {
+    "type": "name",
+    "design": "pla-02",
+    "pages": 3,
+    "bytes": 144754
+  },
+  {
+    "type": "name",
+    "design": "pla-03",
+    "pages": 3,
+    "bytes": 140192
+  },
+  {
+    "type": "name",
+    "design": "geo-01",
+    "pages": 1,
+    "bytes": 138381
+  },
+  {
+    "type": "name",
+    "design": "geo-02",
+    "pages": 2,
+    "bytes": 140193
+  },
+  {
+    "type": "name",
+    "design": "geo-03",
+    "pages": 4,
+    "bytes": 145335
+  },
+  {
+    "type": "holidays",
+    "design": "min-01",
+    "pages": 2,
+    "bytes": 113542
+  },
+  {
+    "type": "holidays",
+    "design": "min-02",
+    "pages": 2,
+    "bytes": 113574
+  },
+  {
+    "type": "holidays",
+    "design": "min-03",
+    "pages": 2,
+    "bytes": 121146
+  },
+  {
+    "type": "holidays",
+    "design": "ele-01",
+    "pages": 2,
+    "bytes": 148001
+  },
+  {
+    "type": "holidays",
+    "design": "ele-02",
+    "pages": 3,
+    "bytes": 146013
+  },
+  {
+    "type": "holidays",
+    "design": "ele-03",
+    "pages": 2,
+    "bytes": 140515
+  },
+  {
+    "type": "holidays",
+    "design": "nat-01",
+    "pages": 2,
+    "bytes": 116717
+  },
+  {
+    "type": "holidays",
+    "design": "nat-02",
+    "pages": 2,
+    "bytes": 114404
+  },
+  {
+    "type": "holidays",
+    "design": "nat-03",
+    "pages": 2,
+    "bytes": 115785
+  },
+  {
+    "type": "holidays",
+    "design": "pla-01",
+    "pages": 3,
+    "bytes": 119538
+  },
+  {
+    "type": "holidays",
+    "design": "pla-02",
+    "pages": 2,
+    "bytes": 113574
+  },
+  {
+    "type": "holidays",
+    "design": "pla-03",
+    "pages": 2,
+    "bytes": 113971
+  },
+  {
+    "type": "holidays",
+    "design": "geo-01",
+    "pages": 2,
+    "bytes": 115894
+  },
+  {
+    "type": "holidays",
+    "design": "geo-02",
+    "pages": 2,
+    "bytes": 121558
+  },
+  {
+    "type": "holidays",
+    "design": "geo-03",
+    "pages": 2,
+    "bytes": 114693
+  }
+]

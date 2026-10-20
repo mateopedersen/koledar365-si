@@ -1,0 +1,791 @@
+{
+  "checked_at": "2026-10-20T14:30:19+02:00",
+  "scope": "All existing holiday and observance detail pages; dates and topic-specific ICS for 2027–2030",
+  "passed": true,
+  "calendar_topics": 65,
+  "detail_pages": 58,
+  "photos": 58,
+  "calendar_topics_without_dedicated_detail_page": [
+    "mednarodni-dan-mladih",
+    "mednarodni-dan-pismenosti",
+    "mednarodni-dan-miru",
+    "mednarodni-dan-starejsih",
+    "svetovni-dan-hrane",
+    "mednarodni-dan-invalidov",
+    "dan-clovekovih-pravic"
+  ],
+  "ics_exports_checked": 232,
+  "issues": [],
+  "rows": [
+    {
+      "slug": "novo-leto",
+      "path": "/prazniki/novo-leto/",
+      "photo": "/images/observances/novo-leto.webp",
+      "credit": "Smihael",
+      "license": "CC BY-SA 3.0",
+      "dates": [
+        "2027-01-01",
+        "2027-01-02",
+        "2028-01-01",
+        "2028-01-02",
+        "2029-01-01",
+        "2029-01-02",
+        "2030-01-01",
+        "2030-01-02"
+      ]
+    },
+    {
+      "slug": "sveti-trije-kralji",
+      "path": "/prazniki/sveti-trije-kralji/",
+      "photo": "/images/observances/sveti-trije-kralji.webp",
+      "credit": "Pofka",
+      "license": "CC BY-SA 4.0",
+      "dates": [
+        "2027-01-06",
+        "2028-01-06",
+        "2029-01-06",
+        "2030-01-06"
+      ]
+    },
+    {
+      "slug": "dan-spomina-na-zrtve-holokavsta",
+      "path": "/pomembni-dnevi/dan-spomina-na-zrtve-holokavsta/",
+      "photo": "/images/observances/dan-spomina-na-zrtve-holokavsta.webp",
+      "credit": "Frankie Fouganthin",
+      "license": "CC BY-SA 3.0",
+      "dates": [
+        "2027-01-27",
+        "2028-01-27",
+        "2029-01-27",
+        "2030-01-27"
+      ]
+    },
+    {
+      "slug": "presernov-dan",
+      "path": "/prazniki/presernov-dan/",
+      "photo": "/images/observances/presernov-dan.webp",
+      "credit": "Žiga Živulovič / FotoBOBO",
+      "license": "Public domain",
+      "dates": [
+        "2027-02-08",
+        "2028-02-08",
+        "2029-02-08",
+        "2030-02-08"
+      ]
+    },
+    {
+      "slug": "pust",
+      "path": "/prazniki/pust/",
+      "photo": "/images/observances/pust.webp",
+      "credit": "Aleš Kravos",
+      "license": "CC BY-SA 4.0",
+      "dates": [
+        "2027-02-09",
+        "2028-02-29",
+        "2029-02-13",
+        "2030-03-05"
+      ]
+    },
+    {
+      "slug": "valentinovo",
+      "path": "/prazniki/valentinovo/",
+      "photo": "/images/observances/valentinovo.webp",
+      "credit": "Maimaid",
+      "license": "CC BY-SA 4.0",
+      "dates": [
+        "2027-02-14",
+        "2028-02-14",
+        "2029-02-14",
+        "2030-02-14"
+      ]
+    },
+    {
+      "slug": "mednarodni-dan-maternega-jezika",
+      "path": "/pomembni-dnevi/mednarodni-dan-maternega-jezika/",
+      "photo": "/images/observances/mednarodni-dan-maternega-jezika.webp",
+      "credit": "Israt Jarin",
+      "license": "CC BY-SA 4.0",
+      "dates": [
+        "2027-02-21",
+        "2028-02-21",
+        "2029-02-21",
+        "2030-02-21"
+      ]
+    },
+    {
+      "slug": "dan-zena",
+      "path": "/prazniki/dan-zena/",
+      "photo": "/images/observances/dan-zena.webp",
+      "credit": "Dean Calma / IAEA",
+      "license": "CC BY 2.0",
+      "dates": [
+        "2027-03-08",
+        "2028-03-08",
+        "2029-03-08",
+        "2030-03-08"
+      ]
+    },
+    {
+      "slug": "gregorjevo",
+      "path": "/prazniki/gregorjevo/",
+      "photo": "/images/observances/gregorjevo.webp",
+      "credit": "Danilo Tic from Slovenska Bistrica, Slovenia",
+      "license": "CC BY-SA 2.0",
+      "dates": [
+        "2027-03-12",
+        "2028-03-12",
+        "2029-03-12",
+        "2030-03-12"
+      ]
+    },
+    {
+      "slug": "pomladno-enakonocje",
+      "path": "/letni-casi/pomladno-enakonocje/",
+      "photo": "/images/observances/pomladno-enakonocje.webp",
+      "credit": "focusonmore.com",
+      "license": "CC BY 2.0",
+      "dates": [
+        "2027-03-20",
+        "2028-03-20",
+        "2029-03-20",
+        "2030-03-20"
+      ]
+    },
+    {
+      "slug": "cvetna-nedelja",
+      "path": "/prazniki/cvetna-nedelja/",
+      "photo": "/images/observances/cvetna-nedelja.webp",
+      "credit": "Neznan avtor (navedba v izvirnem arhivu)",
+      "license": "Public domain",
+      "dates": [
+        "2027-03-21",
+        "2028-04-09",
+        "2029-03-25",
+        "2030-04-14"
+      ]
+    },
+    {
+      "slug": "svetovni-dan-voda",
+      "path": "/pomembni-dnevi/svetovni-dan-voda/",
+      "photo": "/images/observances/svetovni-dan-voda.webp",
+      "credit": "Han, Bu Yong / UNC–CFC–USFK",
+      "license": "CC BY 2.0",
+      "dates": [
+        "2027-03-22",
+        "2028-03-22",
+        "2029-03-22",
+        "2030-03-22"
+      ]
+    },
+    {
+      "slug": "materinski-dan",
+      "path": "/prazniki/materinski-dan/",
+      "photo": "/images/observances/materinski-dan.webp",
+      "credit": "Peter van der Sluijs",
+      "license": "CC BY-SA 3.0",
+      "dates": [
+        "2027-03-25",
+        "2028-03-25",
+        "2029-03-25",
+        "2030-03-25"
+      ]
+    },
+    {
+      "slug": "veliki-petek",
+      "path": "/prazniki/veliki-petek/",
+      "photo": "/images/observances/veliki-petek.webp",
+      "credit": "Sl-Ziga",
+      "license": "Public domain",
+      "dates": [
+        "2027-03-26",
+        "2028-04-14",
+        "2029-03-30",
+        "2030-04-19"
+      ]
+    },
+    {
+      "slug": "premik-ure",
+      "path": "/premik-ure/",
+      "photo": "/images/observances/premik-ure.webp",
+      "credit": "Markus Spiske",
+      "license": "CC BY 2.0",
+      "dates": [
+        "2027-03-28",
+        "2027-10-31",
+        "2028-03-26",
+        "2028-10-29",
+        "2029-03-25",
+        "2029-10-28",
+        "2030-03-31",
+        "2030-10-27"
+      ]
+    },
+    {
+      "slug": "velika-noc",
+      "path": "/prazniki/velika-noc/",
+      "photo": "/images/observances/velika-noc.webp",
+      "credit": "Klemen Brumec",
+      "license": "CC0",
+      "dates": [
+        "2027-03-28",
+        "2027-03-29",
+        "2028-04-16",
+        "2028-04-17",
+        "2029-04-01",
+        "2029-04-02",
+        "2030-04-21",
+        "2030-04-22"
+      ]
+    },
+    {
+      "slug": "svetovni-dan-zemlje",
+      "path": "/prazniki/svetovni-dan-zemlje/",
+      "photo": "/images/observances/svetovni-dan-zemlje.webp",
+      "credit": "U.S. Embassy Nairobi",
+      "license": "Public domain",
+      "dates": [
+        "2027-04-22",
+        "2028-04-22",
+        "2029-04-22",
+        "2030-04-22"
+      ]
+    },
+    {
+      "slug": "svetovni-dan-knjige-in-avtorskih-pravic",
+      "path": "/pomembni-dnevi/svetovni-dan-knjige-in-avtorskih-pravic/",
+      "photo": "/images/observances/svetovni-dan-knjige-in-avtorskih-pravic.webp",
+      "credit": "Klemen Lajevec",
+      "license": "CC BY-SA 3.0",
+      "dates": [
+        "2027-04-23",
+        "2028-04-23",
+        "2029-04-23",
+        "2030-04-23"
+      ]
+    },
+    {
+      "slug": "dan-upora-proti-okupatorju",
+      "path": "/prazniki/dan-upora-proti-okupatorju/",
+      "photo": "/images/observances/dan-upora-proti-okupatorju.webp",
+      "credit": "Borut Živulovič / Foto Bobo · Vlada Republike Slovenije",
+      "license": "Public domain",
+      "dates": [
+        "2027-04-27",
+        "2028-04-27",
+        "2029-04-27",
+        "2030-04-27"
+      ]
+    },
+    {
+      "slug": "praznik-dela",
+      "path": "/prazniki/praznik-dela/",
+      "photo": "/images/observances/praznik-dela.webp",
+      "credit": "Viktar Palstsiuk",
+      "license": "CC BY-SA 4.0",
+      "dates": [
+        "2027-05-01",
+        "2027-05-02",
+        "2028-05-01",
+        "2028-05-02",
+        "2029-05-01",
+        "2029-05-02",
+        "2030-05-01",
+        "2030-05-02"
+      ]
+    },
+    {
+      "slug": "dan-evrope",
+      "path": "/prazniki/dan-evrope/",
+      "photo": "/images/observances/dan-evrope.webp",
+      "credit": "Francois Schnell",
+      "license": "CC BY 2.0",
+      "dates": [
+        "2027-05-09",
+        "2028-05-09",
+        "2029-05-09",
+        "2030-05-09"
+      ]
+    },
+    {
+      "slug": "mednarodni-dan-druzin",
+      "path": "/pomembni-dnevi/mednarodni-dan-druzin/",
+      "photo": "/images/observances/mednarodni-dan-druzin.webp",
+      "credit": "DimiTalen",
+      "license": "CC0",
+      "dates": [
+        "2027-05-15",
+        "2028-05-15",
+        "2029-05-15",
+        "2030-05-15"
+      ]
+    },
+    {
+      "slug": "binkosti",
+      "path": "/prazniki/binkosti/",
+      "photo": "/images/observances/binkosti.webp",
+      "credit": "Gerda Arendt",
+      "license": "CC0",
+      "dates": [
+        "2027-05-16",
+        "2028-06-04",
+        "2029-05-20",
+        "2030-06-09"
+      ]
+    },
+    {
+      "slug": "svetovni-dan-cebel",
+      "path": "/prazniki/svetovni-dan-cebel/",
+      "photo": "/images/observances/svetovni-dan-cebel.webp",
+      "credit": "Pavle58",
+      "license": "CC BY-SA 4.0",
+      "dates": [
+        "2027-05-20",
+        "2028-05-20",
+        "2029-05-20",
+        "2030-05-20"
+      ]
+    },
+    {
+      "slug": "dan-slovenskega-krvodajalstva",
+      "path": "/pomembni-dnevi/dan-slovenskega-krvodajalstva/",
+      "photo": "/images/observances/dan-slovenskega-krvodajalstva.webp",
+      "credit": "Neznan avtor (navedba v izvirnem arhivu)",
+      "license": "Public domain",
+      "dates": [
+        "2027-06-04",
+        "2028-06-04",
+        "2029-06-04",
+        "2030-06-04"
+      ]
+    },
+    {
+      "slug": "svetovni-dan-okolja",
+      "path": "/pomembni-dnevi/svetovni-dan-okolja/",
+      "photo": "/images/observances/svetovni-dan-okolja.webp",
+      "credit": "M.Ghiami/khoobankhabar.ir",
+      "license": "CC BY 4.0",
+      "dates": [
+        "2027-06-05",
+        "2028-06-05",
+        "2029-06-05",
+        "2030-06-05"
+      ]
+    },
+    {
+      "slug": "dan-primoza-trubarja",
+      "path": "/prazniki/dan-primoza-trubarja/",
+      "photo": "/images/observances/dan-primoza-trubarja.webp",
+      "credit": "Primož Trubar",
+      "license": "Public domain",
+      "dates": [
+        "2027-06-08",
+        "2028-06-08",
+        "2029-06-08",
+        "2030-06-08"
+      ]
+    },
+    {
+      "slug": "poletni-solsticij",
+      "path": "/letni-casi/poletni-solsticij/",
+      "photo": "/images/observances/poletni-solsticij.webp",
+      "credit": "Andrew Dunn · andrewdunnphoto.com",
+      "license": "CC BY-SA 2.0",
+      "dates": [
+        "2027-06-21",
+        "2028-06-20",
+        "2029-06-21",
+        "2030-06-21"
+      ]
+    },
+    {
+      "slug": "dan-drzavnosti",
+      "path": "/prazniki/dan-drzavnosti/",
+      "photo": "/images/observances/dan-drzavnosti.webp",
+      "credit": "Vlada Republike Slovenije from Ljubljana, Slovenia",
+      "license": "Public domain",
+      "dates": [
+        "2027-06-25",
+        "2028-06-25",
+        "2029-06-25",
+        "2030-06-25"
+      ]
+    },
+    {
+      "slug": "dan-triglava",
+      "path": "/prazniki/dan-triglava/",
+      "photo": "/images/observances/dan-triglava.webp",
+      "credit": "Christian Mathea",
+      "license": "CC BY 2.0",
+      "dates": [
+        "2027-08-07",
+        "2028-08-07",
+        "2029-08-07",
+        "2030-08-07"
+      ]
+    },
+    {
+      "slug": "marijino-vnebovzetje",
+      "path": "/prazniki/marijino-vnebovzetje/",
+      "photo": "/images/observances/marijino-vnebovzetje.webp",
+      "credit": "Janezdrilc",
+      "license": "CC0",
+      "dates": [
+        "2027-08-15",
+        "2028-08-15",
+        "2029-08-15",
+        "2030-08-15"
+      ]
+    },
+    {
+      "slug": "zdruzitev-prekmurskih-slovencev",
+      "path": "/prazniki/zdruzitev-prekmurskih-slovencev/",
+      "photo": "/images/observances/zdruzitev-prekmurskih-slovencev.webp",
+      "credit": "gov.si",
+      "license": "Public domain",
+      "dates": [
+        "2027-08-17",
+        "2028-08-17",
+        "2029-08-17",
+        "2030-08-17"
+      ]
+    },
+    {
+      "slug": "evropski-dan-spomina-na-zrtve-totalitarnih-rezimov",
+      "path": "/pomembni-dnevi/evropski-dan-spomina-na-zrtve-totalitarnih-rezimov/",
+      "photo": "/images/observances/evropski-dan-spomina-na-zrtve-totalitarnih-rezimov.webp",
+      "credit": "Mykola Swarnyk",
+      "license": "CC BY-SA 3.0",
+      "dates": [
+        "2027-08-23",
+        "2028-08-23",
+        "2029-08-23",
+        "2030-08-23"
+      ]
+    },
+    {
+      "slug": "vrnitev-primorske",
+      "path": "/prazniki/vrnitev-primorske/",
+      "photo": "/images/observances/vrnitev-primorske.webp",
+      "credit": "Daniel Novakovič / STA",
+      "license": "Public domain",
+      "dates": [
+        "2027-09-15",
+        "2028-09-15",
+        "2029-09-15",
+        "2030-09-15"
+      ]
+    },
+    {
+      "slug": "jesensko-enakonocje",
+      "path": "/letni-casi/jesensko-enakonocje/",
+      "photo": "/images/observances/jesensko-enakonocje.webp",
+      "credit": "Dreamy Pixel",
+      "license": "CC BY 4.0",
+      "dates": [
+        "2027-09-23",
+        "2028-09-22",
+        "2029-09-22",
+        "2030-09-23"
+      ]
+    },
+    {
+      "slug": "dan-slovenskega-sporta",
+      "path": "/prazniki/dan-slovenskega-sporta/",
+      "photo": "/images/observances/dan-slovenskega-sporta.webp",
+      "credit": "Vladimir Yaitskiy from Kyiv, Ukraine",
+      "license": "CC BY-SA 2.0",
+      "dates": [
+        "2027-09-23",
+        "2028-09-23",
+        "2029-09-23",
+        "2030-09-23"
+      ]
+    },
+    {
+      "slug": "evropski-dan-jezikov",
+      "path": "/pomembni-dnevi/evropski-dan-jezikov/",
+      "photo": "/images/observances/evropski-dan-jezikov.webp",
+      "credit": "Silar",
+      "license": "CC BY-SA 3.0",
+      "dates": [
+        "2027-09-26",
+        "2028-09-26",
+        "2029-09-26",
+        "2030-09-26"
+      ]
+    },
+    {
+      "slug": "svetovni-dan-zivali",
+      "path": "/pomembni-dnevi/svetovni-dan-zivali/",
+      "photo": "/images/observances/svetovni-dan-zivali.webp",
+      "credit": "U.S. Army photo by Sgt. Max Elliott",
+      "license": "Public domain",
+      "dates": [
+        "2027-10-04",
+        "2028-10-04",
+        "2029-10-04",
+        "2030-10-04"
+      ]
+    },
+    {
+      "slug": "teden-otroka",
+      "path": "/pomembni-dnevi/teden-otroka/",
+      "photo": "/images/observances/teden-otroka.webp",
+      "credit": "Vladimir Yaitskiy from Kyiv, Ukraine",
+      "license": "CC BY-SA 2.0",
+      "dates": [
+        "2027-10-04",
+        "2028-10-02",
+        "2029-10-01",
+        "2030-10-07"
+      ]
+    },
+    {
+      "slug": "svetovni-dan-uciteljev",
+      "path": "/pomembni-dnevi/svetovni-dan-uciteljev/",
+      "photo": "/images/observances/svetovni-dan-uciteljev.webp",
+      "credit": "Neznan avtor (navedba v izvirnem arhivu)",
+      "license": "Public domain",
+      "dates": [
+        "2027-10-05",
+        "2028-10-05",
+        "2029-10-05",
+        "2030-10-05"
+      ]
+    },
+    {
+      "slug": "dan-suverenosti",
+      "path": "/prazniki/dan-suverenosti/",
+      "photo": "/images/observances/dan-suverenosti.webp",
+      "credit": "Balkan's Photos",
+      "license": "CC BY 2.0",
+      "dates": [
+        "2027-10-25",
+        "2028-10-25",
+        "2029-10-25",
+        "2030-10-25"
+      ]
+    },
+    {
+      "slug": "noc-carovnic",
+      "path": "/pomembni-dnevi/noc-carovnic/",
+      "photo": "/images/observances/noc-carovnic.webp",
+      "credit": "Llez",
+      "license": "CC BY-SA 3.0",
+      "dates": [
+        "2027-10-31",
+        "2028-10-31",
+        "2029-10-31",
+        "2030-10-31"
+      ]
+    },
+    {
+      "slug": "dan-reformacije",
+      "path": "/prazniki/dan-reformacije/",
+      "photo": "/images/observances/dan-reformacije.webp",
+      "credit": "Jurij Dalmatin",
+      "license": "Public domain",
+      "dates": [
+        "2027-10-31",
+        "2028-10-31",
+        "2029-10-31",
+        "2030-10-31"
+      ]
+    },
+    {
+      "slug": "dan-spomina-na-mrtve",
+      "path": "/prazniki/dan-spomina-na-mrtve/",
+      "photo": "/images/observances/dan-spomina-na-mrtve.webp",
+      "credit": "Janezdrilc",
+      "license": "CC0",
+      "dates": [
+        "2027-11-01",
+        "2028-11-01",
+        "2029-11-01",
+        "2030-11-01"
+      ]
+    },
+    {
+      "slug": "spomin-vseh-vernih-rajnih",
+      "path": "/pomembni-dnevi/spomin-vseh-vernih-rajnih/",
+      "photo": "/images/observances/spomin-vseh-vernih-rajnih.webp",
+      "credit": "Twillisjr",
+      "license": "CC BY-SA 4.0",
+      "dates": [
+        "2027-11-02",
+        "2028-11-02",
+        "2029-11-02",
+        "2030-11-02"
+      ]
+    },
+    {
+      "slug": "dan-znanosti",
+      "path": "/prazniki/dan-znanosti/",
+      "photo": "/images/observances/dan-znanosti.webp",
+      "credit": "Danilo Škofič",
+      "license": "Public domain",
+      "dates": [
+        "2027-11-10",
+        "2028-11-10",
+        "2029-11-10",
+        "2030-11-10"
+      ]
+    },
+    {
+      "slug": "martinovo",
+      "path": "/prazniki/martinovo/",
+      "photo": "/images/observances/martinovo.webp",
+      "credit": "Romi",
+      "license": "CC0",
+      "dates": [
+        "2027-11-11",
+        "2028-11-11",
+        "2029-11-11",
+        "2030-11-11"
+      ]
+    },
+    {
+      "slug": "dan-slovenskega-znakovnega-jezika",
+      "path": "/pomembni-dnevi/dan-slovenskega-znakovnega-jezika/",
+      "photo": "/images/observances/dan-slovenskega-znakovnega-jezika.webp",
+      "credit": "Alex Proimos from Sydney, Australia",
+      "license": "CC BY 2.0",
+      "dates": [
+        "2027-11-14",
+        "2028-11-14",
+        "2029-11-14",
+        "2030-11-14"
+      ]
+    },
+    {
+      "slug": "dan-slovenske-hrane",
+      "path": "/pomembni-dnevi/dan-slovenske-hrane/",
+      "photo": "/images/observances/dan-slovenske-hrane.webp",
+      "credit": "Liat Portal / Foodie Disorder (HaJunkiyada)",
+      "license": "CC BY-SA 4.0",
+      "dates": [
+        "2027-11-19",
+        "2028-11-17",
+        "2029-11-16",
+        "2030-11-15"
+      ]
+    },
+    {
+      "slug": "svetovni-dan-otrok",
+      "path": "/pomembni-dnevi/svetovni-dan-otrok/",
+      "photo": "/images/observances/svetovni-dan-otrok.webp",
+      "credit": "The President's Office, Maldives",
+      "license": "CC BY 4.0",
+      "dates": [
+        "2027-11-20",
+        "2028-11-20",
+        "2029-11-20",
+        "2030-11-20"
+      ]
+    },
+    {
+      "slug": "dan-rudolfa-maistra",
+      "path": "/prazniki/dan-rudolfa-maistra/",
+      "photo": "/images/observances/dan-rudolfa-maistra.webp",
+      "credit": "Vlada Republike Slovenije from Ljubljana, Slovenia",
+      "license": "Public domain",
+      "dates": [
+        "2027-11-23",
+        "2028-11-23",
+        "2029-11-23",
+        "2030-11-23"
+      ]
+    },
+    {
+      "slug": "advent",
+      "path": "/prazniki/advent/",
+      "photo": "/images/observances/advent.webp",
+      "credit": "PHILIP János",
+      "license": "CC0",
+      "dates": [
+        "2027-11-28",
+        "2028-12-03",
+        "2029-12-02",
+        "2030-12-01"
+      ]
+    },
+    {
+      "slug": "ta-veseli-dan-kulture",
+      "path": "/pomembni-dnevi/ta-veseli-dan-kulture/",
+      "photo": "/images/observances/ta-veseli-dan-kulture.webp",
+      "credit": "Szilas",
+      "license": "CC BY 4.0",
+      "dates": [
+        "2027-12-03",
+        "2028-12-03",
+        "2029-12-03",
+        "2030-12-03"
+      ]
+    },
+    {
+      "slug": "miklavz",
+      "path": "/prazniki/miklavz/",
+      "photo": "/images/observances/miklavz.webp",
+      "credit": "Mravlja Matjaz",
+      "license": "CC BY-SA 4.0",
+      "dates": [
+        "2027-12-06",
+        "2028-12-06",
+        "2029-12-06",
+        "2030-12-06"
+      ]
+    },
+    {
+      "slug": "zimski-solsticij",
+      "path": "/letni-casi/zimski-solsticij/",
+      "photo": "/images/observances/zimski-solsticij.webp",
+      "credit": "Dreamy Pixel",
+      "license": "CC BY 4.0",
+      "dates": [
+        "2027-12-22",
+        "2028-12-21",
+        "2029-12-21",
+        "2030-12-21"
+      ]
+    },
+    {
+      "slug": "bozic",
+      "path": "/prazniki/bozic/",
+      "photo": "/images/observances/bozic.webp",
+      "credit": "Ajznponar",
+      "license": "CC BY-SA 4.0",
+      "dates": [
+        "2027-12-25",
+        "2028-12-25",
+        "2029-12-25",
+        "2030-12-25"
+      ]
+    },
+    {
+      "slug": "dan-samostojnosti-in-enotnosti",
+      "path": "/prazniki/dan-samostojnosti-in-enotnosti/",
+      "photo": "/images/observances/dan-samostojnosti-in-enotnosti.webp",
+      "credit": "Žiga Živulovič jr. / Bobo",
+      "license": "Public domain",
+      "dates": [
+        "2027-12-26",
+        "2028-12-26",
+        "2029-12-26",
+        "2030-12-26"
+      ]
+    },
+    {
+      "slug": "silvestrovo",
+      "path": "/prazniki/silvestrovo/",
+      "photo": "/images/observances/silvestrovo.webp",
+      "credit": "Suzi5p at Slovenian Wikipedia (Suzana Pavšič)",
+      "license": "CC BY-SA 3.0",
+      "dates": [
+        "2027-12-31",
+        "2028-12-31",
+        "2029-12-31",
+        "2030-12-31"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "project": "koledar365.si",
+  "review_date": "2026-10-20",
+  "scope": "Implementation-prompt architecture review only; no site or rendered assets created.",
+  "locale": "sl-SI",
+  "country": "SI",
+  "identity_and_slugs": {
+    "identity": "Keep persisted name_id independent of URLs, source rank, gender and year. Retain exact original name plus Unicode NFC identity; verify uniqueness of imported IDs and never merge on transliteration.",
+    "route": "/koledar-z-imenom/{persisted_slug}/",
+    "current_pool_names": 8561,
+    "initial_unsuffixed_names": 8366,
+    "initial_suffixed_names": 195,
+    "initial_collision_groups": 96,
+    "algorithm": [
+      "Compute ascii_slug_base with the documented transliteration in slovenia-names.json. Analyze the full 8,561-name pool before publishing the first 200, so future planned names already have reserved routes.",
+      "On initial registry creation, a base with one exact name receives the readable base only. Every name in a collision group receives base + hyphen + its 12-hex stable name_id suffix, excluding the si_ prefix.",
+      "Persist name_id -> slug in the database with UNIQUE(name_id) and UNIQUE(slug); keep display_name_nfc unique by exact codepoints. Put normalization code under version control, but never regenerate existing slugs during imports.",
+      "When new imports expand the inventory, an unclaimed base may be assigned directly. An already-claimed base stays with its existing owner; the newcomer receives a suffixed slug. Extend a suffix deterministically on the exceptional hash collision; do not overwrite another identity.",
+      "Never reassign a previously published slug to a different name. Corrections or deliberate migrations require a stored alias and one permanent redirect to the current canonical. Registry aliases must also be unique.",
+      "One exact spelling has one page across sex observations. Keep male/female SURS counts and ranks separate on that page. A font, accent, space or hyphen difference remains a different name."
+    ],
+    "examples": [
+      {
+        "name": "Ana",
+        "name_id": "si_dea210f058b4",
+        "url": "/koledar-z-imenom/ana/"
+      },
+      {
+        "name": "Saša",
+        "name_id": "si_9f7ef49cb845",
+        "url": "/koledar-z-imenom/sasa/",
+        "future_import_rule": "If historical Sasa becomes eligible later, Saša keeps /sasa/ and Sasa receives a suffixed route."
+      },
+      {
+        "name": "Žan",
+        "name_id": "si_b335037ff47e",
+        "url": "/koledar-z-imenom/zan-b335037ff47e/"
+      },
+      {
+        "name": "Zan",
+        "name_id": "si_2ea011bae68c",
+        "url": "/koledar-z-imenom/zan-2ea011bae68c/"
+      },
+      {
+        "name": "Ana Marija",
+        "name_id": "si_e8f09ba8645e",
+        "url": "/koledar-z-imenom/ana-marija-e8f09ba8645e/"
+      },
+      {
+        "name": "Ana-Marija",
+        "name_id": "si_50a8cf07c383",
+        "url": "/koledar-z-imenom/ana-marija-50a8cf07c383/"
+      }
+    ],
+    "base_folding_spec": {
+      "version": "si-name-slug-v1",
+      "authoritative_import_field": "For the researched 8,561 current candidates, use the already-computed ascii_slug_base field from slovenia-names.json or slovenia-name-candidates-2026.csv. Recompute only to verify, not with an approximate library slugifier.",
+      "transliteration_mapping": {
+        "đ": "d",
+        "Đ": "D",
+        "ł": "l",
+        "Ł": "L",
+        "ð": "d",
+        "Ð": "D",
+        "ø": "o",
+        "Ø": "O",
+        "æ": "ae",
+        "Æ": "AE",
+        "œ": "oe",
+        "Œ": "OE",
+        "ß": "ss",
+        "þ": "th",
+        "Þ": "TH",
+        "ı": "i"
+      },
+      "ordered_steps": [
+        "Preserve name_exact untouched for display. Compute an NFC form solely for identity, and full SHA256 over its UTF-8 bytes.",
+        "Apply the explicit per-character transliteration mapping to the name; do not drop remaining non-ASCII letters.",
+        "Normalize the transliterated text to Unicode NFKD and apply Unicode lowercase.",
+        "Remove characters whose Unicode canonical combining class is nonzero, matching Python unicodedata.combining(c).",
+        "For every remaining character: retain ASCII characters; encode a non-ASCII alphanumeric character as lowercase u followed by its Unicode codepoint in lowercase hexadecimal without padding; map other non-ASCII characters to hyphen.",
+        "Replace each run matching [^a-z0-9]+ with one hyphen; remove leading/trailing hyphens. If empty, use ime."
+      ],
+      "python_reference": "TRANSLIT = str.maketrans({'đ': 'd', 'Đ': 'D', 'ł': 'l', 'Ł': 'L', 'ð': 'd', 'Ð': 'D', 'ø': 'o', 'Ø': 'O', 'æ': 'ae', 'Æ': 'AE', 'œ': 'oe', 'Œ': 'OE', 'ß': 'ss', 'þ': 'th', 'Þ': 'TH', 'ı': 'i'})\ndef ascii_slug(name):\n    text = unicodedata.normalize('NFKD', name.translate(TRANSLIT)).lower()\n    text = ''.join(c for c in text if not unicodedata.combining(c))\n    text = ''.join(c if ord(c) < 128 else ('u%x' % ord(c) if c.isalnum() else '-') for c in text)\n    return re.sub('[^a-z0-9]+', '-', text).strip('-') or 'ime'",
+      "examples": {
+        "Žan": "zan",
+        "Zan": "zan",
+        "Saša": "sasa",
+        "Sasa": "sasa",
+        "Ádám": "adam",
+        "Đana": "dana",
+        "Anđa": "anda",
+        "Łukasz": "lukasz",
+        "Søren": "soren",
+        "Ana Marija": "ana-marija",
+        "Ana-Marija": "ana-marija",
+        "Саша": "u441u430u448u430"
+      },
+      "example_scope_note": "Some examples demonstrate normalization and are not claims that the name is present in the current public 8,561-name pool. Identity is never defined by this lossy folded base."
+    },
+    "registry_allocation_spec": {
+      "initial_pool": "All 8,561 current exact-name candidates, including not-yet-published names, are allocated/reserved in one batch.",
+      "initial_steps": [
+        "Require one record for each exact NFC name and reject duplicate IDs pointing to different names. Compute and retain name_sha256 (full 64 hex), while retaining the existing dataset name_id.",
+        "Group by ascii_slug_base. Reserve unsuffixed bases for all groups of size one first. This protects readable singleton bases from a coincidentally matching hash-suffixed candidate.",
+        "For every member of a group of size >1, ordered deterministically by UTF-8 name bytes then name_id, attempt base + hyphen + the first 12 characters of name_sha256. If globally claimed by another identity, attempt digest lengths 16, 20, 24, ..., 64.",
+        "If the complete digest-based slug still conflicts with a claimed exact string, retain the other owner and append the smallest available positive integer to the full-digest form, resolving the deterministic sorted batch under one database transaction. This is a defensive global string collision handler, not a change to any existing owner.",
+        "Assert all canonical slugs are unique and match [a-z0-9]+(?:-[a-z0-9]+)*; assert every current name_id has exactly one route. Persist slug_policy_version and reserve canonical paths for planned names."
+      ],
+      "later_imports": "Load the persisted registry and all aliases before allocating any new name. Existing name IDs keep their exact slugs even if their group later grows. For a sorted new batch, grant an unclaimed base only if the batch has one new exact name for it; otherwise use the same collision allocator. Every assignment checks global claimed strings, not only its own base group. Perform allocations transactionally with unique constraints and retry on races.",
+      "hash_identity_collision": "The imported 12-hex name IDs are unique in this dataset, but are not a mathematical guarantee for all future inputs. Compare full exact NFC names/full digests. On a future short-ID collision, preserve the existing ID; allocate the newcomer a longer digest-derived name_id and save it. Never merge identities merely because a prefix matches.",
+      "cross_runtime_note": "Do not use locale-dependent collation, ad hoc transliteration gems or database accent-insensitive uniqueness for name identity. Prefer importing the validated folded bases and full digests into Ruby. If reimplemented, test outputs against every existing candidate before enabling new imports.",
+      "registry_csv_columns": [
+        "name_id",
+        "name_exact",
+        "name_nfc",
+        "name_sha256",
+        "ascii_slug_base",
+        "initial_collision_group_size",
+        "canonical_slug",
+        "canonical_path",
+        "slug_policy_version",
+        "reservation_status",
+        "research_tier",
+        "publication_status",
+        "source_observation_date",
+        "registry_created_at"
+      ],
+      "csv_state_values": {
+        "reservation_status": "reserved",
+        "publication_status": "research_candidate_not_ready_or_published",
+        "source_observation_date": "2026-01-01",
+        "registry_created_at": "actual time the registry artifact is built"
+      },
+      "provenance_rule": "The route registry is a separate derived artifact. Do not overwrite SURS name spelling, counts, ranks, observation dates or source tables."
+    },
+    "registry_validation": {
+      "verified_names": 8561,
+      "unique_canonical_slugs": 8561,
+      "simple_unsuffixed_slugs": 8366,
+      "suffixed_slugs": 195,
+      "prefix_extension_needed": 0,
+      "largest_slug_characters": 25,
+      "validation_note": "Reviewed allocation reserves all singleton bases before collision members and checks the global route namespace. Current inventory needs no extension beyond 12 hex."
+    }
+  },
+  "indexing": {
+    "one_page_rule": "Each published exact-name page has 5 main design families with 3 genuinely different layout variants each (15 downloadable designs total), a year selector containing 2027, 2028, 2029 and 2030, and paired PDF/WebP downloads for each design. Do not create separate indexable HTML pages for name × gender × year × family × variant × file type.",
+    "default": "Server-render one usable default state and a self-referencing canonical to the persisted name route. Link to that same canonical from name directories, breadcrumbs and XML sitemaps.",
+    "variant_state": "Use form/UI state for year and design. If shareable query variants are required, make them equivalent views of the same name page with canonical to the stable name URL; never submit query combinations in sitemaps or generate crawlable faceted link grids. A canonical is a hint, not a guarantee.",
+    "downloads": "Use dedicated binary asset endpoints or object-store URLs. They are files, not additional HTML landing pages. To keep search results focused on the name page, serve X-Robots-Tag: noindex on generated PDF/image download responses and keep them crawl-accessible so the directive can be read. Do not block those URLs in robots.txt while expecting noindex to be honored.",
+    "search_and_filters": "Site search, autocomplete and arbitrary user-input names must not generate indexable empty/search-result pages. New custom names can be rendered on request without adding them automatically to the public SEO catalog.",
+    "planned_catalog": "Only verified published name pages enter navigable name-page links and XML sitemaps. Remaining records exist in the internal planned catalog; do not emit thousands of thin coming-soon pages or mark absent downloads as available.",
+    "quality": "Names and verified frequency data can support unique context, but search benefit is not guaranteed. Avoid invented name meanings, name-days, birth trends, testimonials, usage counts, ratings or authors.",
+    "preview_images": "Treat web preview thumbnails separately from download files. They may remain crawlable/indexable for image discovery if desired; do not apply a blanket noimageindex directive to the canonical name pages."
+  },
+  "asset_capacity": {
+    "dimensions_assumption": "Latest confirmed scope: exact name × 5 main design families × 3 genuinely distinct layout variants per family × 4 full calendar years (2027–2030 inclusive) × 2 paired output formats (PDF and WebP). This is 15 downloadable designs, 15 PDF + 15 WebP files per year and 120 possible binary files per name across four years. These are not additional HTML pages.",
+    "name_pool": 8561,
+    "design_count": 15,
+    "year_options": 4,
+    "output_formats": 2,
+    "theoretical_files": 1027320,
+    "launch_names": 200,
+    "launch_all_variant_files": 24000,
+    "growth_names_including_launch": 1000,
+    "growth_all_variant_files": 120000,
+    "incremental_growth_files": 96000,
+    "remaining_planned_names": 7561,
+    "note": "Counts exclude thumbnails, additional physical paper sizes/orientations, source layout files, accessibility alternatives and later renderer versions. They are capacity scenarios, not files that currently exist. Every downloadable calendar/planner product type must follow the latest 15 PDF + 15 WebP requirement; these arithmetic examples cover the name-calendar type.",
+    "supported_years": [
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "possible_files_per_name": 120,
+    "design_families": 5,
+    "output_variants_per_family": 3,
+    "downloadable_designs": 15,
+    "output_format_names": [
+      "pdf",
+      "webp"
+    ],
+    "possible_files_per_name_per_year": 30
+  },
+  "render_jobs": {
+    "stack": "If the implementation uses Ruby/Rails, use Active Job with a durable production adapter (such as Solid Queue on supported Rails). Keep render work out of request handlers. Pin the deployed renderer, fonts and template versions.",
+    "unit_of_work": "Build one immutable layout manifest per name/year/design-family/layout-variant for the supported years 2027, 2028, 2029 and 2030. Render the deterministic vector/PDF layout once and derive the matching 600 ppi WebP from that same verified layout; track and validate each output separately. Fifteen design pairs per year mean 120 files per name across four years. Do not enqueue the entire 1,027,320-file universe at launch.",
+    "manifest_fields": [
+      "schema_version",
+      "name_id",
+      "display_name_sha256",
+      "locale",
+      "country",
+      "calendar_year",
+      "time_zone",
+      "week_starts_on",
+      "template_id",
+      "template_version",
+      "renderer_version",
+      "font_bundle_sha256",
+      "paper_size",
+      "orientation",
+      "print_margin_mm",
+      "output_format",
+      "output_dpi",
+      "calendar_data_sha256",
+      "holiday_dataset_sha256",
+      "optional_lunar_dataset_sha256",
+      "export_settings_sha256",
+      "design_family_id",
+      "layout_variant_id",
+      "color_mode",
+      "branding_version",
+      "footer_content_sha256",
+      "output_pixel_width",
+      "output_pixel_height",
+      "webp_encoding_mode"
+    ],
+    "cache_key": "SHA256 of recursively key-sorted UTF-8 JSON of the immutable manifest. Each unique template_id must identify both its design family and layout variant; also include design_family_id and layout_variant_id explicitly, color mode, 600 ppi raster export settings/pixel dimensions, and brand/footer versions. Store under calendar-assets/v{schema_version}/{name_id}/{year}/{template_id}/{manifest_digest}.{extension}. Include every input that affects output bytes; never key on name/year alone.",
+    "ruby_sketch": "require 'json'\nrequire 'digest'\n\ndef canonical_value(value)\n  case value\n  when Hash\n    value.transform_keys(&:to_s).sort.to_h.transform_values { |v| canonical_value(v) }\n  when Array\n    value.map { |v| canonical_value(v) }\n  else\n    value\n  end\nend\n\nmanifest_json = JSON.generate(canonical_value(manifest))\ndigest = Digest::SHA256.hexdigest(manifest_json.encode(Encoding::UTF_8))\nobject_key = \"calendar-assets/v#{manifest.fetch('schema_version')}/#{manifest.fetch('name_id')}/#{manifest.fetch('calendar_year')}/#{manifest.fetch('template_id')}/#{digest}.#{manifest.fetch('output_format')}\"\n# Validate manifest fields before this step; enqueue only a persisted manifest/asset ID.",
+    "idempotency": [
+      "Persist RenderAsset(manifest_digest UNIQUE, manifest_json, status, lease_until, attempts, byte_size, checksum, object_key, verified_at, error_code). Use a database atomic claim/lease so two requests cannot render the same asset concurrently.",
+      "Enqueue after transaction commit. A repeated job returns immediately only if the manifest-matching verified object exists. Recover expired running leases; retry transient failures with bounded backoff, expose permanent failures to operators.",
+      "Render to a temporary object, validate it, then publish atomically and set verified/ready status. Never mark ready before the object and checksum are confirmed.",
+      "Use separate interactive and bulk queues, bounded worker concurrency and monitored memory/time limits. Deduplicate demand spikes by manifest digest.",
+      "Publish immutable objects with long cache lifetimes and a content digest. Template/font/holiday corrections create a new digest; do not silently serve old files under a new-looking name."
+    ],
+    "validation_before_ready": [
+      "Check the complete calendar date grid, weekday alignment, leap day, Slovenian month/day labels, week start and official holiday labels against deterministic fixtures for each of 2027, 2028, 2029 and 2030.",
+      "Check exact diacritics, font embedding/coverage and no missing-glyph boxes, including foreign-character names and the longest multiword names. Ensure long names fit without clipping.",
+      "Verify fifteen genuinely distinct layouts: five main families × three variants. Recolors, format changes or renamed duplicates do not count toward the fifteen. Verify the chosen color/black-and-white mix.",
+      "Check format MIME, nonempty bytes, expected pages/physical dimensions, printable margins, output checksum and successful open/render. Verify every WebP has the pixel dimensions needed for true 600 ppi at its advertised print size, and every placed PDF raster meets 600 effective ppi. Check PDF vectors/fonts separately.",
+      "Compare each PDF/WebP pair and its thumbnail against the same manifest: exact name, dates, typography, layout, safe print area and brand footer must agree.",
+      "For every advertised published name/year combination, all fifteen design pairs must have working PDF and WebP downloads (thirty files). For unprepared optional variants show a real generation state with retry behavior rather than a fake ready link."
+    ],
+    "prewarm_plan": "Prepare and QA the launch 200 in recommended_candidate_order, prioritizing the resident-popularity plus newborn-popularity candidate selection; never launch or prewarm alphabetically. If all four years (2027–2030), all fifteen designs and both formats are promised as instantly available, verify all 24,000 files before launch. Add the next 800 in the same prioritized roster after quality/resource checks: 96,000 incremental files, reaching 120,000 files for 1,000 names. Remaining 7,561 names stay planned until enabled and verified; supported on-demand generation may be used with honest state indicators. A fully rendered 8,561-name pool would contain 1,027,320 binary files, excluding thumbnails and extra renderer versions. Use bounded, resumable batches and demand-aware queues; a capacity total is not an instruction to create every future candidate asset immediately.",
+    "decoupling": "Daily horoscope content and horoscope publication dates must not invalidate every name-calendar asset. Include lunar data only when that particular calendar design displays it. Include SURS counts/version only when frequency data is printed inside the file; otherwise update page text independently.",
+    "calendar_scope_validation": "Restrict the public name-page year selector and render request allowlist to 2027, 2028, 2029 and 2030. Validate each complete January–December grid and include 29 February 2028. Preserve SURS observation dates (2026 residents / 2025 newborns) independently of calendar output years."
+  },
+  "surs_attribution_and_privacy": {
+    "source_credit_example": "Vir: SURS, stanje 1. 1. 2026. Source table linked next to the statistic; label male and female observations separately.",
+    "newborn_credit_example": "Vir: SURS, živorojeni otroci v letu 2025. Never label this as the current resident rank.",
+    "rights": "SURS permits free reproduction, adaptation, redistribution and commercial use with attribution. Identify calculations or transformations as your own; the permission does not automatically cover third-party photographs, graphics, or branding.",
+    "rights_url": "https://www.stat.si/StatWeb/StaticPages/Index/copyright",
+    "public_aggregate_only": "Import only the publicly released aggregate name data. Preserve under-5/no-occurrence suppression. Do not infer missing counts, reconstruct individual identities, or supplement the name catalog with private resident records.",
+    "user_inputs": "Keep custom names, birth dates and birth times separate from the aggregate catalog. Do not place birth-date/time/location inputs in public canonical URLs, name-cache keys or routine analytics; calculate in the browser where practical, or apply explicit server-side retention rules.",
+    "provenance": "Keep source URL, source table ID, observation date/year, source release/revision date and retrieved_at. Current male table is corrected 8 October 2026; current female table 28 May 2026; newborn tables 23 June 2026."
+  },
+  "sources": [
+    {
+      "url": "https://developers.google.com/search/docs/crawling-indexing/url-structure",
+      "supports": "Readable consistent URLs; avoid unnecessary URL complexity."
+    },
+    {
+      "url": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls",
+      "supports": "Canonical URL consolidation and consistent canonical signals."
+    },
+    {
+      "url": "https://guides.rubyonrails.org/active_job_basics.html",
+      "supports": "Background jobs, durable queues, concurrency and error handling; application idempotency design remains our engineering recommendation."
+    },
+    {
+      "url": "https://www.stat.si/StatWeb/StaticPages/Index/copyright",
+      "supports": "SURS attribution and reuse permissions."
+    },
+    {
+      "url": "https://www.stat.si/statweb/File/DocSysFile/7803",
+      "supports": "Aggregate name methodology, complete multiword identities and suppression."
+    },
+    {
+      "url": "https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag",
+      "supports": "X-Robots-Tag noindex for PDF/image files; crawlers must be allowed to access the response to read the directive."
+    }
+  ],
+  "review_verdict": "Use the readable persisted registry; do not adopt the earlier every-name-hash slug proposal wholesale. Separate name identity, page publication and asset readiness. Avoid HTML combinatorial expansion; generate verified binary assets in bounded phases.",
+  "calendar_year_scope": [
+    2027,
+    2028,
+    2029,
+    2030
+  ],
+  "design_and_export_contract": {
+    "family_variant_model": "Preserve five recognizable main design families. Each family contains three distinct layout/composition variants, producing fifteen templates. A color change, font swap, footer change, or file-format conversion by itself does not count as a distinct design.",
+    "mixed_color_and_monochrome": "Provide a deliberate mix of color and genuinely black-and-white/ink-saving templates. A workable baseline is two color variants and one black-and-white variant in every family, giving ten color plus five monochrome templates; all three must still use genuinely different layouts. This distribution is a design choice, not an additional user requirement.",
+    "paired_outputs": "For every design and supported year, PDF and WebP must show the same name, grid, holiday data, layout and brand footer. Count the pair as one design and two downloads. No fake placeholders, broken exports or identical designs renamed to reach fifteen.",
+    "webp_print_quality": "Create the downloadable WebP directly from the final high-resolution layout at 600 pixels per physical inch of the advertised print size. Validate actual pixel dimensions using round(width_mm / 25.4 × 600) and round(height_mm / 25.4 × 600). A4 portrait is 4,961 × 7,016 pixels; landscape swaps the dimensions. Prefer lossless WebP for sharp grid lines and text, with validated color handling. DPI metadata alone and upscaling a low-resolution image do not satisfy this requirement.",
+    "pdf_print_quality": "Keep text, grids and vector artwork as vector PDF content with embedded fonts and the correct physical page dimensions. Any raster image placed in the PDF must supply at least 600 effective pixels per inch at its placed size. PDF vector content is resolution independent, so do not rasterize the entire PDF merely to label it 600 dpi.",
+    "brand_footer": "Include a small, legible koledar365.si brand footer in every PDF and WebP, including black-and-white variants. Keep it inside the safe printable area, outside the calendar grid/writing space, with adequate contrast; use the same footer in preview and export. Version its text/artwork in the render manifest.",
+    "previews": "Generate lightweight preview thumbnails from the actual final layout. They may be lower resolution for fast browsing and do not count among the fifteen downloadable PDF/WebP pairs.",
+    "product_wide_compatibility": "Apply this fifteen-pair output contract to every downloadable calendar/planner product type in the main prompt. The name-page identity and URL rules remain unchanged."
+  },
+  "publication_priority": {
+    "authoritative_field": "recommended_candidate_order from the existing candidate roster and persisted registry",
+    "selection_basis": "The existing launch 200 is the exact-name union of resident top75 per sex and newborn top25 per sex, then resident-frequency fills to 200. The next800 extend that roster. Preserve this source-grounded, mixed-age selection and its current ordering.",
+    "launch_and_job_order": "Sort publication/prewarming by numeric recommended_candidate_order ascending. Do not replace this with name, slug, alphabetical directory order, database insertion order or dictionary/hash iteration.",
+    "alphabetical_exception": "An optional A–Ž directory/filter is a browsing aid only. Its display order must not change launch priority, publication readiness or asset-generation priority.",
+    "unknown_names": "Unranked newly requested names can be generated on demand with honest state indicators; do not invent popularity or automatically place them before the curated launch roster."
+  },
+  "raw_research_compatibility_notes": [
+    {
+      "file": "research/slovenia-names.json",
+      "fields": "methodology product-scope commentary",
+      "resolution": "Updated to five design families × three distinct layouts = fifteen paired PDF/WebP designs per year, 128,415 name/design combinations per year and 1,027,320 possible binary files over 2027–2030. Original statistical observations, rankings, dates, identifiers and candidate ordering are unchanged."
+    },
+    {
+      "file": "research/build_slovenia_names.py",
+      "fields": "Generated methodology product-scope commentary",
+      "resolution": "Updated to reproduce the latest fifteen-layout scope without changing source extraction or rankings."
+    },
+    {
+      "file": "work/koledar365-bundle/isim-url-kaydi.json",
+      "fields": "scope.page_rule",
+      "resolution": "Updated to five families × three distinct layouts, fifteen paired designs and four supported years. Every reserved route/ID remains unchanged. Source-file checksum refreshed solely because the source JSON scope commentary changed."
+    }
+  ]
+}

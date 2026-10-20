@@ -1,0 +1,18 @@
+source "https://rubygems.org"
+ruby "4.0.7"
+gem "rails", "8.1.4"
+gem "propshaft"
+gem "sqlite3", ">= 2.1"
+gem "pg"
+gem "puma"
+gem "prawn"
+gem "prawn-table"
+gem "rubyzip"
+gem "icalendar"
+gem "solid_queue"
+gem "bcrypt"
+gem "csv"
+gem "tzinfo-data"
+group :test do
+  gem "minitest"
+end

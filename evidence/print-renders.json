@@ -1,0 +1,1463 @@
+[
+  {
+    "id": "min-01",
+    "request_id": 18,
+    "seconds": 2.3,
+    "manifest": {
+      "pages": [
+        {
+          "page_index": 1,
+          "filename": "koledar365-name-2029-min-01-A4-portrait-color-v2.0.0.webp",
+          "sha256": "9e19e4a9ac78b162955590dda465b29640e0e6f2292ba74e37984e1508b797f8",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        }
+      ],
+      "layout": "min-01",
+      "color_mode": "color",
+      "minimum_date_size_pt": 9,
+      "printable_body_mm": {
+        "width": 186.0,
+        "height": 265.0
+      },
+      "footer_baseline_mm": 10,
+      "contract_version": "1.0",
+      "pair_id": "40ba837a0b0b07f68579ff7bda8e0392f38a405c84fcaaa785d8105768aa1aa7",
+      "identity_fields": {
+        "type": "name",
+        "period": "2029",
+        "template_id": "min-01",
+        "paper": "A4",
+        "orientation": "portrait",
+        "color_mode": "color",
+        "template_version": "2.0.0"
+      },
+      "pdf_filename": "koledar365-name-2029-min-01-A4-portrait-color-v2.0.0.pdf",
+      "pdf_sha256": "200c50d1aca1a1c44046ecbc6d31c219a2e3a34fb044eeba2aec218cbb57b0e2",
+      "page_count": 1,
+      "font_manifest": [
+        {
+          "filename": "DejaVuSans-Bold.ttf",
+          "sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSans.ttf",
+          "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif-Bold.ttf",
+          "sha256": "c47b5527bcdc8dcf9ea8c77054454c5a884beaca2f44851a2a823ee639cbf07f",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif.ttf",
+          "sha256": "42d1edeb7952f31b1f96d767ed7030b08a39e0c372b0071641518864e2bffb51",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        }
+      ],
+      "source_data_version": "c692be6faf29477fe5d918eb641e690b16d2217888c007b708ec1c74dbd859d4",
+      "generated_at": "2026-10-20T14:10:21+02:00",
+      "print_instruction_sl": "Za tisk izberite PDF in merilo 100 % oziroma dejansko velikost. Slike WebP so pripravljene za navedeno velikost papirja pri 600 ppi.",
+      "width_px": 4961,
+      "height_px": 7016,
+      "ppi": 600,
+      "template_version": "2.0.0",
+      "brand": "Koledar365 · koledar365.si"
+    },
+    "files": {
+      "pdf": "koledar365-name-2029-min-01-A4-portrait-color-v2.0.0.pdf",
+      "webp": "koledar365-name-2029-min-01-A4-portrait-color-v2.0.0.webp",
+      "preview": "predogled.png",
+      "manifest": "manifest.json"
+    }
+  },
+  {
+    "id": "min-02",
+    "request_id": 19,
+    "seconds": 3.38,
+    "manifest": {
+      "pages": [
+        {
+          "page_index": 1,
+          "filename": "koledar365-name-2029-min-02-A4-portrait-color-v2.0.0-p001.webp",
+          "sha256": "b8b451c1127b62e010897e0493c6f0ffaa51a78fdb854765fb3ecd47eca25f71",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        },
+        {
+          "page_index": 2,
+          "filename": "koledar365-name-2029-min-02-A4-portrait-color-v2.0.0-p002.webp",
+          "sha256": "0d9936fb89989b6c494b15125478611731cf91d7f33206b42deb603585de9093",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        }
+      ],
+      "layout": "min-02",
+      "color_mode": "color",
+      "minimum_date_size_pt": 9,
+      "printable_body_mm": {
+        "width": 186.0,
+        "height": 265.0
+      },
+      "footer_baseline_mm": 10,
+      "contract_version": "1.0",
+      "pair_id": "6684cc35b9b94866dfda0e00bb5a1fe32752b1c86175491b08ea8eae3f6df705",
+      "identity_fields": {
+        "type": "name",
+        "period": "2029",
+        "template_id": "min-02",
+        "paper": "A4",
+        "orientation": "portrait",
+        "color_mode": "color",
+        "template_version": "2.0.0"
+      },
+      "pdf_filename": "koledar365-name-2029-min-02-A4-portrait-color-v2.0.0.pdf",
+      "pdf_sha256": "1fc34ff7a0fb7668a8d275ff276664915c6e1869bce022e439019975d2687cf8",
+      "page_count": 2,
+      "font_manifest": [
+        {
+          "filename": "DejaVuSans-Bold.ttf",
+          "sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSans.ttf",
+          "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif-Bold.ttf",
+          "sha256": "c47b5527bcdc8dcf9ea8c77054454c5a884beaca2f44851a2a823ee639cbf07f",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif.ttf",
+          "sha256": "42d1edeb7952f31b1f96d767ed7030b08a39e0c372b0071641518864e2bffb51",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        }
+      ],
+      "source_data_version": "c692be6faf29477fe5d918eb641e690b16d2217888c007b708ec1c74dbd859d4",
+      "generated_at": "2026-10-20T14:10:25+02:00",
+      "print_instruction_sl": "Za tisk izberite PDF in merilo 100 % oziroma dejansko velikost. Slike WebP so pripravljene za navedeno velikost papirja pri 600 ppi.",
+      "width_px": 4961,
+      "height_px": 7016,
+      "ppi": 600,
+      "template_version": "2.0.0",
+      "brand": "Koledar365 · koledar365.si"
+    },
+    "files": {
+      "pdf": "koledar365-name-2029-min-02-A4-portrait-color-v2.0.0.pdf",
+      "webp": "koledar365-name-2029-min-02-A4-portrait-color-v2.0.0-multipage-webp-600ppi.zip",
+      "preview": "predogled.png",
+      "manifest": "manifest.json"
+    }
+  },
+  {
+    "id": "min-03",
+    "request_id": 20,
+    "seconds": 3.01,
+    "manifest": {
+      "pages": [
+        {
+          "page_index": 1,
+          "filename": "koledar365-name-2029-min-03-A4-portrait-monochrome_bw-v2.0.0-p001.webp",
+          "sha256": "2f0644d41f20dfd7511bf0080f5136b1d03f2384c278f1e9c36262c4040d8874",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "monochrome_bw"
+        },
+        {
+          "page_index": 2,
+          "filename": "koledar365-name-2029-min-03-A4-portrait-monochrome_bw-v2.0.0-p002.webp",
+          "sha256": "acc8787cfb868c029b654ff4dd2ed2aceec45951d6d79b7035d367e29f481cc1",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "monochrome_bw"
+        }
+      ],
+      "layout": "min-03",
+      "color_mode": "monochrome_bw",
+      "minimum_date_size_pt": 9,
+      "printable_body_mm": {
+        "width": 186.0,
+        "height": 265.0
+      },
+      "footer_baseline_mm": 10,
+      "contract_version": "1.0",
+      "pair_id": "aacc252ba62d57b9edde7434e07d52cc65229c9dd0433b05e6d8166391d91391",
+      "identity_fields": {
+        "type": "name",
+        "period": "2029",
+        "template_id": "min-03",
+        "paper": "A4",
+        "orientation": "portrait",
+        "color_mode": "monochrome_bw",
+        "template_version": "2.0.0"
+      },
+      "pdf_filename": "koledar365-name-2029-min-03-A4-portrait-monochrome_bw-v2.0.0.pdf",
+      "pdf_sha256": "2ec6452a16fb4a90e837a973af7c61da304ce12e351eb83588f34f4ff6b7bfd2",
+      "page_count": 2,
+      "font_manifest": [
+        {
+          "filename": "DejaVuSans-Bold.ttf",
+          "sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSans.ttf",
+          "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif-Bold.ttf",
+          "sha256": "c47b5527bcdc8dcf9ea8c77054454c5a884beaca2f44851a2a823ee639cbf07f",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif.ttf",
+          "sha256": "42d1edeb7952f31b1f96d767ed7030b08a39e0c372b0071641518864e2bffb51",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        }
+      ],
+      "source_data_version": "c692be6faf29477fe5d918eb641e690b16d2217888c007b708ec1c74dbd859d4",
+      "generated_at": "2026-10-20T14:10:28+02:00",
+      "print_instruction_sl": "Za tisk izberite PDF in merilo 100 % oziroma dejansko velikost. Slike WebP so pripravljene za navedeno velikost papirja pri 600 ppi.",
+      "width_px": 4961,
+      "height_px": 7016,
+      "ppi": 600,
+      "template_version": "2.0.0",
+      "brand": "Koledar365 · koledar365.si"
+    },
+    "files": {
+      "pdf": "koledar365-name-2029-min-03-A4-portrait-monochrome_bw-v2.0.0.pdf",
+      "webp": "koledar365-name-2029-min-03-A4-portrait-monochrome_bw-v2.0.0-multipage-webp-600ppi.zip",
+      "preview": "predogled.png",
+      "manifest": "manifest.json"
+    }
+  },
+  {
+    "id": "ele-01",
+    "request_id": 21,
+    "seconds": 5.05,
+    "manifest": {
+      "pages": [
+        {
+          "page_index": 1,
+          "filename": "koledar365-name-2029-ele-01-A4-portrait-color-v2.0.0-p001.webp",
+          "sha256": "5fb862d3ca95d8c0607c4853f1ad8fecbcf93f55510020035280ff6a9b7785a4",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        },
+        {
+          "page_index": 2,
+          "filename": "koledar365-name-2029-ele-01-A4-portrait-color-v2.0.0-p002.webp",
+          "sha256": "3a0222bb0641ce2432c5808ac296f86454d81fac9a98ecf38973987729a140a0",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        },
+        {
+          "page_index": 3,
+          "filename": "koledar365-name-2029-ele-01-A4-portrait-color-v2.0.0-p003.webp",
+          "sha256": "6c770960b8960a8b71bd625f3f0acf65808ee8039f73b863a21285a1156b8c63",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        },
+        {
+          "page_index": 4,
+          "filename": "koledar365-name-2029-ele-01-A4-portrait-color-v2.0.0-p004.webp",
+          "sha256": "f91256052d8ba56a4f3f713a8068423ae19c22012658fa385cf97399fd88a9bf",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        }
+      ],
+      "layout": "ele-01",
+      "color_mode": "color",
+      "minimum_date_size_pt": 9,
+      "printable_body_mm": {
+        "width": 186.0,
+        "height": 265.0
+      },
+      "footer_baseline_mm": 10,
+      "contract_version": "1.0",
+      "pair_id": "d2e11eac5ef14564663fc7707653a52e5313f28fd135f49ddcdc042a6e4e071c",
+      "identity_fields": {
+        "type": "name",
+        "period": "2029",
+        "template_id": "ele-01",
+        "paper": "A4",
+        "orientation": "portrait",
+        "color_mode": "color",
+        "template_version": "2.0.0"
+      },
+      "pdf_filename": "koledar365-name-2029-ele-01-A4-portrait-color-v2.0.0.pdf",
+      "pdf_sha256": "7bf11114fcaae0b1a9b1a23f643fd29c14341d2d75aa1913f086c236af82798b",
+      "page_count": 4,
+      "font_manifest": [
+        {
+          "filename": "DejaVuSans-Bold.ttf",
+          "sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSans.ttf",
+          "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif-Bold.ttf",
+          "sha256": "c47b5527bcdc8dcf9ea8c77054454c5a884beaca2f44851a2a823ee639cbf07f",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif.ttf",
+          "sha256": "42d1edeb7952f31b1f96d767ed7030b08a39e0c372b0071641518864e2bffb51",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        }
+      ],
+      "source_data_version": "c692be6faf29477fe5d918eb641e690b16d2217888c007b708ec1c74dbd859d4",
+      "generated_at": "2026-10-20T14:10:33+02:00",
+      "print_instruction_sl": "Za tisk izberite PDF in merilo 100 % oziroma dejansko velikost. Slike WebP so pripravljene za navedeno velikost papirja pri 600 ppi.",
+      "width_px": 4961,
+      "height_px": 7016,
+      "ppi": 600,
+      "template_version": "2.0.0",
+      "brand": "Koledar365 · koledar365.si"
+    },
+    "files": {
+      "pdf": "koledar365-name-2029-ele-01-A4-portrait-color-v2.0.0.pdf",
+      "webp": "koledar365-name-2029-ele-01-A4-portrait-color-v2.0.0-multipage-webp-600ppi.zip",
+      "preview": "predogled.png",
+      "manifest": "manifest.json"
+    }
+  },
+  {
+    "id": "ele-02",
+    "request_id": 22,
+    "seconds": 2.07,
+    "manifest": {
+      "pages": [
+        {
+          "page_index": 1,
+          "filename": "koledar365-name-2029-ele-02-A4-portrait-color-v2.0.0.webp",
+          "sha256": "8962f5d77b450bef0bd8a923a913049b9126094341d3b07e9decea093196e344",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        }
+      ],
+      "layout": "ele-02",
+      "color_mode": "color",
+      "minimum_date_size_pt": 9,
+      "printable_body_mm": {
+        "width": 186.0,
+        "height": 265.0
+      },
+      "footer_baseline_mm": 10,
+      "contract_version": "1.0",
+      "pair_id": "e2347b3f270e13255caff243c7bd461b611c1535596ccb8d4b544e8c8c91fad4",
+      "identity_fields": {
+        "type": "name",
+        "period": "2029",
+        "template_id": "ele-02",
+        "paper": "A4",
+        "orientation": "portrait",
+        "color_mode": "color",
+        "template_version": "2.0.0"
+      },
+      "pdf_filename": "koledar365-name-2029-ele-02-A4-portrait-color-v2.0.0.pdf",
+      "pdf_sha256": "d862b50c2ec0202b78681f2bd870a5484e06418f427ff84ca0d08ef5c3cf73f6",
+      "page_count": 1,
+      "font_manifest": [
+        {
+          "filename": "DejaVuSans-Bold.ttf",
+          "sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSans.ttf",
+          "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif-Bold.ttf",
+          "sha256": "c47b5527bcdc8dcf9ea8c77054454c5a884beaca2f44851a2a823ee639cbf07f",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif.ttf",
+          "sha256": "42d1edeb7952f31b1f96d767ed7030b08a39e0c372b0071641518864e2bffb51",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        }
+      ],
+      "source_data_version": "c692be6faf29477fe5d918eb641e690b16d2217888c007b708ec1c74dbd859d4",
+      "generated_at": "2026-10-20T14:10:35+02:00",
+      "print_instruction_sl": "Za tisk izberite PDF in merilo 100 % oziroma dejansko velikost. Slike WebP so pripravljene za navedeno velikost papirja pri 600 ppi.",
+      "width_px": 4961,
+      "height_px": 7016,
+      "ppi": 600,
+      "template_version": "2.0.0",
+      "brand": "Koledar365 · koledar365.si"
+    },
+    "files": {
+      "pdf": "koledar365-name-2029-ele-02-A4-portrait-color-v2.0.0.pdf",
+      "webp": "koledar365-name-2029-ele-02-A4-portrait-color-v2.0.0.webp",
+      "preview": "predogled.png",
+      "manifest": "manifest.json"
+    }
+  },
+  {
+    "id": "ele-03",
+    "request_id": 23,
+    "seconds": 2.89,
+    "manifest": {
+      "pages": [
+        {
+          "page_index": 1,
+          "filename": "koledar365-name-2029-ele-03-A4-portrait-monochrome_bw-v2.0.0-p001.webp",
+          "sha256": "0f0cae49d4bc5ed3bf711bf1b58ec9624d05d6e1bb7e9a2f3e65ab9679b01ef3",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "monochrome_bw"
+        },
+        {
+          "page_index": 2,
+          "filename": "koledar365-name-2029-ele-03-A4-portrait-monochrome_bw-v2.0.0-p002.webp",
+          "sha256": "20ad12e690fc072b7de9f2da860e80668b0daa0621b23cf2fdf2a14c496e5836",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "monochrome_bw"
+        }
+      ],
+      "layout": "ele-03",
+      "color_mode": "monochrome_bw",
+      "minimum_date_size_pt": 9,
+      "printable_body_mm": {
+        "width": 186.0,
+        "height": 265.0
+      },
+      "footer_baseline_mm": 10,
+      "contract_version": "1.0",
+      "pair_id": "3c742a2980aad3976ae80f7ea587dbc5d5f5bd8cd18332e3e1e7db7793bdb20d",
+      "identity_fields": {
+        "type": "name",
+        "period": "2029",
+        "template_id": "ele-03",
+        "paper": "A4",
+        "orientation": "portrait",
+        "color_mode": "monochrome_bw",
+        "template_version": "2.0.0"
+      },
+      "pdf_filename": "koledar365-name-2029-ele-03-A4-portrait-monochrome_bw-v2.0.0.pdf",
+      "pdf_sha256": "750973b35d5c2323371d17ee5a51a279c26f7671d9de3ac18e3cffd489ac4901",
+      "page_count": 2,
+      "font_manifest": [
+        {
+          "filename": "DejaVuSans-Bold.ttf",
+          "sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSans.ttf",
+          "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif-Bold.ttf",
+          "sha256": "c47b5527bcdc8dcf9ea8c77054454c5a884beaca2f44851a2a823ee639cbf07f",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif.ttf",
+          "sha256": "42d1edeb7952f31b1f96d767ed7030b08a39e0c372b0071641518864e2bffb51",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        }
+      ],
+      "source_data_version": "c692be6faf29477fe5d918eb641e690b16d2217888c007b708ec1c74dbd859d4",
+      "generated_at": "2026-10-20T14:10:38+02:00",
+      "print_instruction_sl": "Za tisk izberite PDF in merilo 100 % oziroma dejansko velikost. Slike WebP so pripravljene za navedeno velikost papirja pri 600 ppi.",
+      "width_px": 4961,
+      "height_px": 7016,
+      "ppi": 600,
+      "template_version": "2.0.0",
+      "brand": "Koledar365 · koledar365.si"
+    },
+    "files": {
+      "pdf": "koledar365-name-2029-ele-03-A4-portrait-monochrome_bw-v2.0.0.pdf",
+      "webp": "koledar365-name-2029-ele-03-A4-portrait-monochrome_bw-v2.0.0-multipage-webp-600ppi.zip",
+      "preview": "predogled.png",
+      "manifest": "manifest.json"
+    }
+  },
+  {
+    "id": "nat-01",
+    "request_id": 24,
+    "seconds": 1.89,
+    "manifest": {
+      "pages": [
+        {
+          "page_index": 1,
+          "filename": "koledar365-name-2029-nat-01-A4-portrait-color-v2.0.0.webp",
+          "sha256": "f5634d41f424a09a16bb63314b8808cea101d105c2cdd2725ede4fa80cb66e97",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        }
+      ],
+      "layout": "nat-01",
+      "color_mode": "color",
+      "minimum_date_size_pt": 9,
+      "printable_body_mm": {
+        "width": 186.0,
+        "height": 265.0
+      },
+      "footer_baseline_mm": 10,
+      "contract_version": "1.0",
+      "pair_id": "532e7596725c3ea4a4ee1000d83879974ed1209759341080366dc8920a2f905a",
+      "identity_fields": {
+        "type": "name",
+        "period": "2029",
+        "template_id": "nat-01",
+        "paper": "A4",
+        "orientation": "portrait",
+        "color_mode": "color",
+        "template_version": "2.0.0"
+      },
+      "pdf_filename": "koledar365-name-2029-nat-01-A4-portrait-color-v2.0.0.pdf",
+      "pdf_sha256": "9f911a09ec5b4b1d2625d30eae05bb165c1dbd31fb28259860081a544787e59a",
+      "page_count": 1,
+      "font_manifest": [
+        {
+          "filename": "DejaVuSans-Bold.ttf",
+          "sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSans.ttf",
+          "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif-Bold.ttf",
+          "sha256": "c47b5527bcdc8dcf9ea8c77054454c5a884beaca2f44851a2a823ee639cbf07f",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif.ttf",
+          "sha256": "42d1edeb7952f31b1f96d767ed7030b08a39e0c372b0071641518864e2bffb51",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        }
+      ],
+      "source_data_version": "c692be6faf29477fe5d918eb641e690b16d2217888c007b708ec1c74dbd859d4",
+      "generated_at": "2026-10-20T14:10:40+02:00",
+      "print_instruction_sl": "Za tisk izberite PDF in merilo 100 % oziroma dejansko velikost. Slike WebP so pripravljene za navedeno velikost papirja pri 600 ppi.",
+      "width_px": 4961,
+      "height_px": 7016,
+      "ppi": 600,
+      "template_version": "2.0.0",
+      "brand": "Koledar365 · koledar365.si"
+    },
+    "files": {
+      "pdf": "koledar365-name-2029-nat-01-A4-portrait-color-v2.0.0.pdf",
+      "webp": "koledar365-name-2029-nat-01-A4-portrait-color-v2.0.0.webp",
+      "preview": "predogled.png",
+      "manifest": "manifest.json"
+    }
+  },
+  {
+    "id": "nat-02",
+    "request_id": 25,
+    "seconds": 5.0,
+    "manifest": {
+      "pages": [
+        {
+          "page_index": 1,
+          "filename": "koledar365-name-2029-nat-02-A4-portrait-color-v2.0.0-p001.webp",
+          "sha256": "49834225fd65f8e049e900dde7dd0bfb3575eee35557dd9c23de857d3697de3f",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        },
+        {
+          "page_index": 2,
+          "filename": "koledar365-name-2029-nat-02-A4-portrait-color-v2.0.0-p002.webp",
+          "sha256": "a466446b19ba9dd292b14b6ab8b1a8736f62de7f37789b1bea5ad651a2874663",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        },
+        {
+          "page_index": 3,
+          "filename": "koledar365-name-2029-nat-02-A4-portrait-color-v2.0.0-p003.webp",
+          "sha256": "d68f0b96092ef416a5f6cadaaac6946b03d74bbfa08f703ee826b3c7f624e77c",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        },
+        {
+          "page_index": 4,
+          "filename": "koledar365-name-2029-nat-02-A4-portrait-color-v2.0.0-p004.webp",
+          "sha256": "a3ad5248473926006c481c3dbdef90c7e51e9ea9e534d74d12db67898bd7508f",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        }
+      ],
+      "layout": "nat-02",
+      "color_mode": "color",
+      "minimum_date_size_pt": 9,
+      "printable_body_mm": {
+        "width": 186.0,
+        "height": 265.0
+      },
+      "footer_baseline_mm": 10,
+      "contract_version": "1.0",
+      "pair_id": "fa5c12a5f05619d228f795acd037ed0125de0ba80b38fb07caae0dffc110411d",
+      "identity_fields": {
+        "type": "name",
+        "period": "2029",
+        "template_id": "nat-02",
+        "paper": "A4",
+        "orientation": "portrait",
+        "color_mode": "color",
+        "template_version": "2.0.0"
+      },
+      "pdf_filename": "koledar365-name-2029-nat-02-A4-portrait-color-v2.0.0.pdf",
+      "pdf_sha256": "c2be2054a291708973c6b1b08ce4fc44b4986f110d76da04c7acff23a228489b",
+      "page_count": 4,
+      "font_manifest": [
+        {
+          "filename": "DejaVuSans-Bold.ttf",
+          "sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSans.ttf",
+          "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif-Bold.ttf",
+          "sha256": "c47b5527bcdc8dcf9ea8c77054454c5a884beaca2f44851a2a823ee639cbf07f",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif.ttf",
+          "sha256": "42d1edeb7952f31b1f96d767ed7030b08a39e0c372b0071641518864e2bffb51",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        }
+      ],
+      "source_data_version": "c692be6faf29477fe5d918eb641e690b16d2217888c007b708ec1c74dbd859d4",
+      "generated_at": "2026-10-20T14:10:45+02:00",
+      "print_instruction_sl": "Za tisk izberite PDF in merilo 100 % oziroma dejansko velikost. Slike WebP so pripravljene za navedeno velikost papirja pri 600 ppi.",
+      "width_px": 4961,
+      "height_px": 7016,
+      "ppi": 600,
+      "template_version": "2.0.0",
+      "brand": "Koledar365 · koledar365.si"
+    },
+    "files": {
+      "pdf": "koledar365-name-2029-nat-02-A4-portrait-color-v2.0.0.pdf",
+      "webp": "koledar365-name-2029-nat-02-A4-portrait-color-v2.0.0-multipage-webp-600ppi.zip",
+      "preview": "predogled.png",
+      "manifest": "manifest.json"
+    }
+  },
+  {
+    "id": "nat-03",
+    "request_id": 26,
+    "seconds": 3.03,
+    "manifest": {
+      "pages": [
+        {
+          "page_index": 1,
+          "filename": "koledar365-name-2029-nat-03-A4-portrait-monochrome_bw-v2.0.0-p001.webp",
+          "sha256": "3d3fd783d5b22fa8156f56f6af5998a85b9b150607ef796547ed0f12effddbe2",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "monochrome_bw"
+        },
+        {
+          "page_index": 2,
+          "filename": "koledar365-name-2029-nat-03-A4-portrait-monochrome_bw-v2.0.0-p002.webp",
+          "sha256": "aa63ebf378ab44cf9178c1f0a78ddb135f2c5f2e49ada28d4cf1690035fbc80f",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "monochrome_bw"
+        }
+      ],
+      "layout": "nat-03",
+      "color_mode": "monochrome_bw",
+      "minimum_date_size_pt": 9,
+      "printable_body_mm": {
+        "width": 186.0,
+        "height": 265.0
+      },
+      "footer_baseline_mm": 10,
+      "contract_version": "1.0",
+      "pair_id": "2e9d726706cbbdee22300fd3d8748d5ed31b0583789d378ea728fe96f99f3571",
+      "identity_fields": {
+        "type": "name",
+        "period": "2029",
+        "template_id": "nat-03",
+        "paper": "A4",
+        "orientation": "portrait",
+        "color_mode": "monochrome_bw",
+        "template_version": "2.0.0"
+      },
+      "pdf_filename": "koledar365-name-2029-nat-03-A4-portrait-monochrome_bw-v2.0.0.pdf",
+      "pdf_sha256": "3cd1c9dd989e09e3a88c28bd7be9e37a6fe8642032899cae6dacc99b8a6d492d",
+      "page_count": 2,
+      "font_manifest": [
+        {
+          "filename": "DejaVuSans-Bold.ttf",
+          "sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSans.ttf",
+          "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif-Bold.ttf",
+          "sha256": "c47b5527bcdc8dcf9ea8c77054454c5a884beaca2f44851a2a823ee639cbf07f",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif.ttf",
+          "sha256": "42d1edeb7952f31b1f96d767ed7030b08a39e0c372b0071641518864e2bffb51",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        }
+      ],
+      "source_data_version": "c692be6faf29477fe5d918eb641e690b16d2217888c007b708ec1c74dbd859d4",
+      "generated_at": "2026-10-20T14:10:48+02:00",
+      "print_instruction_sl": "Za tisk izberite PDF in merilo 100 % oziroma dejansko velikost. Slike WebP so pripravljene za navedeno velikost papirja pri 600 ppi.",
+      "width_px": 4961,
+      "height_px": 7016,
+      "ppi": 600,
+      "template_version": "2.0.0",
+      "brand": "Koledar365 · koledar365.si"
+    },
+    "files": {
+      "pdf": "koledar365-name-2029-nat-03-A4-portrait-monochrome_bw-v2.0.0.pdf",
+      "webp": "koledar365-name-2029-nat-03-A4-portrait-monochrome_bw-v2.0.0-multipage-webp-600ppi.zip",
+      "preview": "predogled.png",
+      "manifest": "manifest.json"
+    }
+  },
+  {
+    "id": "pla-01",
+    "request_id": 27,
+    "seconds": 5.03,
+    "manifest": {
+      "pages": [
+        {
+          "page_index": 1,
+          "filename": "koledar365-name-2029-pla-01-A4-portrait-color-v2.0.0-p001.webp",
+          "sha256": "ab5f08aa497314403f9bb073b82902604e48b9705319cb8dc6090494b2fda035",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        },
+        {
+          "page_index": 2,
+          "filename": "koledar365-name-2029-pla-01-A4-portrait-color-v2.0.0-p002.webp",
+          "sha256": "221d1b552f7b3abb9073a5d082e461945cc5ab07ee794f63a3806a41729f6202",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        },
+        {
+          "page_index": 3,
+          "filename": "koledar365-name-2029-pla-01-A4-portrait-color-v2.0.0-p003.webp",
+          "sha256": "2950c5dc821339624acf0b5fa7027da78e5b08ab8af62c7954d253839bf02519",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        },
+        {
+          "page_index": 4,
+          "filename": "koledar365-name-2029-pla-01-A4-portrait-color-v2.0.0-p004.webp",
+          "sha256": "58467a134851ff400e11818f8ce340e75ce174b866594534744dc69224484e3c",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        }
+      ],
+      "layout": "pla-01",
+      "color_mode": "color",
+      "minimum_date_size_pt": 9,
+      "printable_body_mm": {
+        "width": 186.0,
+        "height": 265.0
+      },
+      "footer_baseline_mm": 10,
+      "contract_version": "1.0",
+      "pair_id": "b8b949c79d746b3a0883bc50357602f0530f9e4f98065fc1529923462b97a792",
+      "identity_fields": {
+        "type": "name",
+        "period": "2029",
+        "template_id": "pla-01",
+        "paper": "A4",
+        "orientation": "portrait",
+        "color_mode": "color",
+        "template_version": "2.0.0"
+      },
+      "pdf_filename": "koledar365-name-2029-pla-01-A4-portrait-color-v2.0.0.pdf",
+      "pdf_sha256": "67b151462e810a2b206de9fc3742b8641ace9e81169f63800cf58d5972ab7f54",
+      "page_count": 4,
+      "font_manifest": [
+        {
+          "filename": "DejaVuSans-Bold.ttf",
+          "sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSans.ttf",
+          "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif-Bold.ttf",
+          "sha256": "c47b5527bcdc8dcf9ea8c77054454c5a884beaca2f44851a2a823ee639cbf07f",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif.ttf",
+          "sha256": "42d1edeb7952f31b1f96d767ed7030b08a39e0c372b0071641518864e2bffb51",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        }
+      ],
+      "source_data_version": "c692be6faf29477fe5d918eb641e690b16d2217888c007b708ec1c74dbd859d4",
+      "generated_at": "2026-10-20T14:10:53+02:00",
+      "print_instruction_sl": "Za tisk izberite PDF in merilo 100 % oziroma dejansko velikost. Slike WebP so pripravljene za navedeno velikost papirja pri 600 ppi.",
+      "width_px": 4961,
+      "height_px": 7016,
+      "ppi": 600,
+      "template_version": "2.0.0",
+      "brand": "Koledar365 · koledar365.si"
+    },
+    "files": {
+      "pdf": "koledar365-name-2029-pla-01-A4-portrait-color-v2.0.0.pdf",
+      "webp": "koledar365-name-2029-pla-01-A4-portrait-color-v2.0.0-multipage-webp-600ppi.zip",
+      "preview": "predogled.png",
+      "manifest": "manifest.json"
+    }
+  },
+  {
+    "id": "pla-02",
+    "request_id": 28,
+    "seconds": 3.72,
+    "manifest": {
+      "pages": [
+        {
+          "page_index": 1,
+          "filename": "koledar365-name-2029-pla-02-A4-portrait-color-v2.0.0-p001.webp",
+          "sha256": "ef2971acb268afd84a98a00416261e39f7b688d84d5041b69cb70c02449155fa",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        },
+        {
+          "page_index": 2,
+          "filename": "koledar365-name-2029-pla-02-A4-portrait-color-v2.0.0-p002.webp",
+          "sha256": "18790d0dde600a065eb551183699d59a235ca52c9aec2b30686f9d0edd0ac6cf",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        },
+        {
+          "page_index": 3,
+          "filename": "koledar365-name-2029-pla-02-A4-portrait-color-v2.0.0-p003.webp",
+          "sha256": "1ee15a7af927dfd014734e3b363302481a2adc7efb76fc871085e670ca8fc6e1",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        }
+      ],
+      "layout": "pla-02",
+      "color_mode": "color",
+      "minimum_date_size_pt": 9,
+      "printable_body_mm": {
+        "width": 186.0,
+        "height": 265.0
+      },
+      "footer_baseline_mm": 10,
+      "contract_version": "1.0",
+      "pair_id": "b248f75e2aed2f1f919b8aa1076c4f5034bc5027ce508c162a0a8aae61958e58",
+      "identity_fields": {
+        "type": "name",
+        "period": "2029",
+        "template_id": "pla-02",
+        "paper": "A4",
+        "orientation": "portrait",
+        "color_mode": "color",
+        "template_version": "2.0.0"
+      },
+      "pdf_filename": "koledar365-name-2029-pla-02-A4-portrait-color-v2.0.0.pdf",
+      "pdf_sha256": "9c867fca734000e9bd621a713e300a7242a41c95d69c97b115350d10efc5bb71",
+      "page_count": 3,
+      "font_manifest": [
+        {
+          "filename": "DejaVuSans-Bold.ttf",
+          "sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSans.ttf",
+          "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif-Bold.ttf",
+          "sha256": "c47b5527bcdc8dcf9ea8c77054454c5a884beaca2f44851a2a823ee639cbf07f",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif.ttf",
+          "sha256": "42d1edeb7952f31b1f96d767ed7030b08a39e0c372b0071641518864e2bffb51",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        }
+      ],
+      "source_data_version": "c692be6faf29477fe5d918eb641e690b16d2217888c007b708ec1c74dbd859d4",
+      "generated_at": "2026-10-20T14:10:56+02:00",
+      "print_instruction_sl": "Za tisk izberite PDF in merilo 100 % oziroma dejansko velikost. Slike WebP so pripravljene za navedeno velikost papirja pri 600 ppi.",
+      "width_px": 4961,
+      "height_px": 7016,
+      "ppi": 600,
+      "template_version": "2.0.0",
+      "brand": "Koledar365 · koledar365.si"
+    },
+    "files": {
+      "pdf": "koledar365-name-2029-pla-02-A4-portrait-color-v2.0.0.pdf",
+      "webp": "koledar365-name-2029-pla-02-A4-portrait-color-v2.0.0-multipage-webp-600ppi.zip",
+      "preview": "predogled.png",
+      "manifest": "manifest.json"
+    }
+  },
+  {
+    "id": "pla-03",
+    "request_id": 29,
+    "seconds": 4.05,
+    "manifest": {
+      "pages": [
+        {
+          "page_index": 1,
+          "filename": "koledar365-name-2029-pla-03-A4-portrait-monochrome_bw-v2.0.0-p001.webp",
+          "sha256": "2ac36d8c6a7c24968a51b8b55c22e8e6b4167440885bb139d652fb4a29dc7d03",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "monochrome_bw"
+        },
+        {
+          "page_index": 2,
+          "filename": "koledar365-name-2029-pla-03-A4-portrait-monochrome_bw-v2.0.0-p002.webp",
+          "sha256": "0f6357f0849c81717d005a5f0f00139c9188854c3ce0654453a249c9bf32b357",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "monochrome_bw"
+        },
+        {
+          "page_index": 3,
+          "filename": "koledar365-name-2029-pla-03-A4-portrait-monochrome_bw-v2.0.0-p003.webp",
+          "sha256": "28c1cc8d9b6bcc3cc1cff1a8af16d224c41a7b601ca47eadd5fbe3a16e0f2429",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "monochrome_bw"
+        }
+      ],
+      "layout": "pla-03",
+      "color_mode": "monochrome_bw",
+      "minimum_date_size_pt": 9,
+      "printable_body_mm": {
+        "width": 186.0,
+        "height": 265.0
+      },
+      "footer_baseline_mm": 10,
+      "contract_version": "1.0",
+      "pair_id": "685cdc00f92b611b44839e778dada8a5a11fb2cd0acf4404d7e04d71031ee2c7",
+      "identity_fields": {
+        "type": "name",
+        "period": "2029",
+        "template_id": "pla-03",
+        "paper": "A4",
+        "orientation": "portrait",
+        "color_mode": "monochrome_bw",
+        "template_version": "2.0.0"
+      },
+      "pdf_filename": "koledar365-name-2029-pla-03-A4-portrait-monochrome_bw-v2.0.0.pdf",
+      "pdf_sha256": "f22983ceabf410d4e5bebc96643eb468c5bf8c16c4474b01a2feab0b5941a1d9",
+      "page_count": 3,
+      "font_manifest": [
+        {
+          "filename": "DejaVuSans-Bold.ttf",
+          "sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSans.ttf",
+          "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif-Bold.ttf",
+          "sha256": "c47b5527bcdc8dcf9ea8c77054454c5a884beaca2f44851a2a823ee639cbf07f",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif.ttf",
+          "sha256": "42d1edeb7952f31b1f96d767ed7030b08a39e0c372b0071641518864e2bffb51",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        }
+      ],
+      "source_data_version": "c692be6faf29477fe5d918eb641e690b16d2217888c007b708ec1c74dbd859d4",
+      "generated_at": "2026-10-20T14:11:00+02:00",
+      "print_instruction_sl": "Za tisk izberite PDF in merilo 100 % oziroma dejansko velikost. Slike WebP so pripravljene za navedeno velikost papirja pri 600 ppi.",
+      "width_px": 4961,
+      "height_px": 7016,
+      "ppi": 600,
+      "template_version": "2.0.0",
+      "brand": "Koledar365 · koledar365.si"
+    },
+    "files": {
+      "pdf": "koledar365-name-2029-pla-03-A4-portrait-monochrome_bw-v2.0.0.pdf",
+      "webp": "koledar365-name-2029-pla-03-A4-portrait-monochrome_bw-v2.0.0-multipage-webp-600ppi.zip",
+      "preview": "predogled.png",
+      "manifest": "manifest.json"
+    }
+  },
+  {
+    "id": "geo-01",
+    "request_id": 30,
+    "seconds": 1.88,
+    "manifest": {
+      "pages": [
+        {
+          "page_index": 1,
+          "filename": "koledar365-name-2029-geo-01-A4-portrait-color-v2.0.0.webp",
+          "sha256": "fe83d70f9c1bc27d81182b65be7016295e10d8b3973fb6bc986ee590b3047a53",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        }
+      ],
+      "layout": "geo-01",
+      "color_mode": "color",
+      "minimum_date_size_pt": 9,
+      "printable_body_mm": {
+        "width": 186.0,
+        "height": 265.0
+      },
+      "footer_baseline_mm": 10,
+      "contract_version": "1.0",
+      "pair_id": "fb8cbe63eff7b493ae7513445c96287139cf9f33ae794918291ad992c43f5631",
+      "identity_fields": {
+        "type": "name",
+        "period": "2029",
+        "template_id": "geo-01",
+        "paper": "A4",
+        "orientation": "portrait",
+        "color_mode": "color",
+        "template_version": "2.0.0"
+      },
+      "pdf_filename": "koledar365-name-2029-geo-01-A4-portrait-color-v2.0.0.pdf",
+      "pdf_sha256": "94547cd8f67a9e5d5e5a1025a98718c35ff6e42e49bf50f73c2dd73b5b70241e",
+      "page_count": 1,
+      "font_manifest": [
+        {
+          "filename": "DejaVuSans-Bold.ttf",
+          "sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSans.ttf",
+          "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif-Bold.ttf",
+          "sha256": "c47b5527bcdc8dcf9ea8c77054454c5a884beaca2f44851a2a823ee639cbf07f",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif.ttf",
+          "sha256": "42d1edeb7952f31b1f96d767ed7030b08a39e0c372b0071641518864e2bffb51",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        }
+      ],
+      "source_data_version": "c692be6faf29477fe5d918eb641e690b16d2217888c007b708ec1c74dbd859d4",
+      "generated_at": "2026-10-20T14:11:02+02:00",
+      "print_instruction_sl": "Za tisk izberite PDF in merilo 100 % oziroma dejansko velikost. Slike WebP so pripravljene za navedeno velikost papirja pri 600 ppi.",
+      "width_px": 4961,
+      "height_px": 7016,
+      "ppi": 600,
+      "template_version": "2.0.0",
+      "brand": "Koledar365 · koledar365.si"
+    },
+    "files": {
+      "pdf": "koledar365-name-2029-geo-01-A4-portrait-color-v2.0.0.pdf",
+      "webp": "koledar365-name-2029-geo-01-A4-portrait-color-v2.0.0.webp",
+      "preview": "predogled.png",
+      "manifest": "manifest.json"
+    }
+  },
+  {
+    "id": "geo-02",
+    "request_id": 31,
+    "seconds": 3.27,
+    "manifest": {
+      "pages": [
+        {
+          "page_index": 1,
+          "filename": "koledar365-name-2029-geo-02-A4-portrait-color-v2.0.0-p001.webp",
+          "sha256": "67069d560043581dc342d86082010c0db31b15f043e51d42b4a699e427e7e75e",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        },
+        {
+          "page_index": 2,
+          "filename": "koledar365-name-2029-geo-02-A4-portrait-color-v2.0.0-p002.webp",
+          "sha256": "ba947d878878bcc0e1c41e212de842964437a098ebc635cae8be5b91609c0f18",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "color"
+        }
+      ],
+      "layout": "geo-02",
+      "color_mode": "color",
+      "minimum_date_size_pt": 9,
+      "printable_body_mm": {
+        "width": 186.0,
+        "height": 265.0
+      },
+      "footer_baseline_mm": 10,
+      "contract_version": "1.0",
+      "pair_id": "e720b0c72e449a00ee63b70b1158f6ac86d0527a58ba094bbf093cf228806d6b",
+      "identity_fields": {
+        "type": "name",
+        "period": "2029",
+        "template_id": "geo-02",
+        "paper": "A4",
+        "orientation": "portrait",
+        "color_mode": "color",
+        "template_version": "2.0.0"
+      },
+      "pdf_filename": "koledar365-name-2029-geo-02-A4-portrait-color-v2.0.0.pdf",
+      "pdf_sha256": "d4fb43029b22456642a0ef6d2028e5a5e66b3707751c518412144b39962833da",
+      "page_count": 2,
+      "font_manifest": [
+        {
+          "filename": "DejaVuSans-Bold.ttf",
+          "sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSans.ttf",
+          "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif-Bold.ttf",
+          "sha256": "c47b5527bcdc8dcf9ea8c77054454c5a884beaca2f44851a2a823ee639cbf07f",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif.ttf",
+          "sha256": "42d1edeb7952f31b1f96d767ed7030b08a39e0c372b0071641518864e2bffb51",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        }
+      ],
+      "source_data_version": "c692be6faf29477fe5d918eb641e690b16d2217888c007b708ec1c74dbd859d4",
+      "generated_at": "2026-10-20T14:11:06+02:00",
+      "print_instruction_sl": "Za tisk izberite PDF in merilo 100 % oziroma dejansko velikost. Slike WebP so pripravljene za navedeno velikost papirja pri 600 ppi.",
+      "width_px": 4961,
+      "height_px": 7016,
+      "ppi": 600,
+      "template_version": "2.0.0",
+      "brand": "Koledar365 · koledar365.si"
+    },
+    "files": {
+      "pdf": "koledar365-name-2029-geo-02-A4-portrait-color-v2.0.0.pdf",
+      "webp": "koledar365-name-2029-geo-02-A4-portrait-color-v2.0.0-multipage-webp-600ppi.zip",
+      "preview": "predogled.png",
+      "manifest": "manifest.json"
+    }
+  },
+  {
+    "id": "geo-03",
+    "request_id": 32,
+    "seconds": 5.29,
+    "manifest": {
+      "pages": [
+        {
+          "page_index": 1,
+          "filename": "koledar365-name-2029-geo-03-A4-portrait-monochrome_bw-v2.0.0-p001.webp",
+          "sha256": "17789a73e0c5e6aab6f855005421376af6475281c056082147217eb48fd20878",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "monochrome_bw"
+        },
+        {
+          "page_index": 2,
+          "filename": "koledar365-name-2029-geo-03-A4-portrait-monochrome_bw-v2.0.0-p002.webp",
+          "sha256": "3cf16a7166529b953f91f98f042a7ef18360792d5faf95b49341fbf864e9fdc6",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "monochrome_bw"
+        },
+        {
+          "page_index": 3,
+          "filename": "koledar365-name-2029-geo-03-A4-portrait-monochrome_bw-v2.0.0-p003.webp",
+          "sha256": "934f2de1e753df1b54dcc4fdea996a0c46d34db34193e84787c1e155bdedde9d",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "monochrome_bw"
+        },
+        {
+          "page_index": 4,
+          "filename": "koledar365-name-2029-geo-03-A4-portrait-monochrome_bw-v2.0.0-p004.webp",
+          "sha256": "bf940a8a39cd382679e98746d9be50d3ac30c85d827b3d606d5b136fbebb71bb",
+          "width_px": 4961,
+          "height_px": 7016,
+          "width_mm": 210,
+          "height_mm": 297,
+          "nominal_ppi": 600,
+          "color_mode": "monochrome_bw"
+        }
+      ],
+      "layout": "geo-03",
+      "color_mode": "monochrome_bw",
+      "minimum_date_size_pt": 9,
+      "printable_body_mm": {
+        "width": 186.0,
+        "height": 265.0
+      },
+      "footer_baseline_mm": 10,
+      "contract_version": "1.0",
+      "pair_id": "25976ea83c9116466f7d1cb73a3cdef5dde84554b0a6fbce1d2dc3be761a9d57",
+      "identity_fields": {
+        "type": "name",
+        "period": "2029",
+        "template_id": "geo-03",
+        "paper": "A4",
+        "orientation": "portrait",
+        "color_mode": "monochrome_bw",
+        "template_version": "2.0.0"
+      },
+      "pdf_filename": "koledar365-name-2029-geo-03-A4-portrait-monochrome_bw-v2.0.0.pdf",
+      "pdf_sha256": "d20de7631210a740b4692bbe1a918c988e676280f6cf9e9192232d69670e077a",
+      "page_count": 4,
+      "font_manifest": [
+        {
+          "filename": "DejaVuSans-Bold.ttf",
+          "sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSans.ttf",
+          "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif-Bold.ttf",
+          "sha256": "c47b5527bcdc8dcf9ea8c77054454c5a884beaca2f44851a2a823ee639cbf07f",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        },
+        {
+          "filename": "DejaVuSerif.ttf",
+          "sha256": "42d1edeb7952f31b1f96d767ed7030b08a39e0c372b0071641518864e2bffb51",
+          "license": "DejaVu / Bitstream Vera; app/assets/fonts/LICENSE.txt",
+          "embedded": true
+        }
+      ],
+      "source_data_version": "c692be6faf29477fe5d918eb641e690b16d2217888c007b708ec1c74dbd859d4",
+      "generated_at": "2026-10-20T14:11:11+02:00",
+      "print_instruction_sl": "Za tisk izberite PDF in merilo 100 % oziroma dejansko velikost. Slike WebP so pripravljene za navedeno velikost papirja pri 600 ppi.",
+      "width_px": 4961,
+      "height_px": 7016,
+      "ppi": 600,
+      "template_version": "2.0.0",
+      "brand": "Koledar365 · koledar365.si"
+    },
+    "files": {
+      "pdf": "koledar365-name-2029-geo-03-A4-portrait-monochrome_bw-v2.0.0.pdf",
+      "webp": "koledar365-name-2029-geo-03-A4-portrait-monochrome_bw-v2.0.0-multipage-webp-600ppi.zip",
+      "preview": "predogled.png",
+      "manifest": "manifest.json"
+    }
+  }
+]

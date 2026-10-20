@@ -1,23 +1,51 @@
-# Koledar365.si
+# Koledar365
 
-Standalone Slovenian coming-soon site for the koledar365.si Cloudflare Pages project. This repository is intentionally independent of the Lithuanian `kalendorius365` website.
+Slovenya için 2027–2030 dönemini kapsayan, sunucuda HTML üreten tek Rails uygulaması. Ruby **4.0.7**, Rails **8.1.4**. Takvim, tatiller, iş günü ve astronomi araçları, cihazda kişisel planlar, isimli takvimler, yönetim ve kalıcı kuyrukla PDF/WebP üretimi içerir.
 
-## Build locally
+Gerçek tamamlanma durumu ve bilinen engeller **STATUS.md** içinde tutulur. Yerel uygulamanın çalışması canlı alan adına yayın yapıldığı anlamına gelmez.
 
-Requires Ruby 3.4.11. The generator uses Ruby's standard library only.
+## Yerelde başlatma
+
+Ruby 4.0.7, Bundler, PostgreSQL istemci kütüphanesi, Poppler ve Pillow/WebP desteği gerekir. Geliştirme ve testte SQLite kullanılabilir.
 
 ```sh
-ruby build.rb
+bundle install
+bundle exec rails db:prepare
+bundle exec rails server -b 127.0.0.1 -p 3650
 ```
 
-The generated `dist/` directory is committed so Cloudflare Pages can deploy the exact reviewed files without running a build or installing dependencies.
+Ayrı terminalde işçiyi başlatın:
 
-## Cloudflare Pages
+```sh
+PDFTOPPM_BIN=/usr/bin/pdftoppm PYTHON_BIN=/usr/bin/python3 bundle exec ruby bin/jobs
+```
 
-- Connect this repository to its own Pages project named `koledar365-si`.
-- Production branch: `main`.
-- Build command: leave empty.
-- Build output directory: `dist`.
-- Add `koledar365.si` as the custom domain for this project.
+Platformunuzdaki gerçek yürütülebilir dosya yollarını kullanın. Yönetim adresi `/upravljanje/`; dışa aktarma için işçi zorunludur.
 
-The page intentionally returns `noindex, nofollow` and blocks crawling while the full Slovenian site is being prepared. Remove both controls as part of the finished launch, then add the final canonical pages and sitemap.
+## Doğrulama
+
+```sh
+bundle exec rails test
+bundle exec ruby -r ./config/environment script/audit_seo.rb
+bundle exec ruby -r ./config/environment script/audit_observances.rb
+bundle exec ruby -r ./config/environment script/audit_print_layouts.rb
+```
+
+JSON kanıtları `evidence/` altındadır. Dosya koordinat kontrolü, metin/görsel kalite kontrolünün tamamının yerine geçmez. Sadece gerçekten çalıştırılmış kontrollerin sonuçları raporlanır.
+
+## Üretim
+
+Üretim imajı Poppler, Python/Pillow ve PostgreSQL bağımlılıklarını içerir. Web ve Solid Queue işçisi aynı imajı kullanır. PostgreSQL ile çıktıların bulunduğu `storage` dizini kalıcıdır. Geçici dosyalar yalnız `tmp` içindedir. Kullanıcı notları/fotoğrafları içeren çıktılar sahiplik kontrollüdür.
+
+```sh
+cp .env.production.example .env.production
+# Gerçek sırları ve işletmeci/sağlayıcı bilgilerini dosyaya girin.
+docker compose --env-file .env.production build
+docker compose --env-file .env.production up -d db migrate web worker
+```
+
+Docker kurulumu ve yetkili sunucu gerekir. Cloudflare Pages standart bir Rails sunucusu değildir. HTTPS, yedek, geri yükleme, cache ve yayın adımları `docs/deployment.md` belgesindedir. Onaysız ücretli kaynak açılmaz; eski ana dal korunur.
+
+## Kaynaklar ve lisanslar
+
+Kaynak veri `data/source/` içinde, fotoğraf atıfları `data/cities_sl.json` ve `data/holiday_photos_sl.json` içindedir. Sitede `/fotografije-in-licence/` adresinden kaynaklara ulaşılır. Avenir yalnız kullanıcı cihazında kuruluysa kullanılır; dağıtılacak lisanslı webfont sağlanmamıştır. Baskıdaki DejaVu fontlarının lisansı font dizininde bulunur.

@@ -1,0 +1,8 @@
+<% events=(@event_map || {}); weeks=CalendarEngine.weeks(year,month) %>
+<div class="month-block <%= 'mini' if mini %>">
+<% if mini %><h3><a href="<%= calendar_path(Date.new(year,month,1)) %>"><%= CalendarEngine::MONTHS[month-1].capitalize %></a></h3><% end %>
+<table class="calendar" aria-label="<%= CalendarEngine::MONTHS[month-1] %> <%= year %>"><thead><tr><th scope="col" class="weeknum">T<span class="sr-only">eden ISO</span></th><% CalendarEngine::SHORT_DAYS.each do |d| %><th scope="col"><%= d %></th><% end %></tr></thead><tbody>
+<% weeks.each do |week| %><tr><th scope="row" class="weeknum"><%= week.first.cweek %></th><% week.each do |date| %><td class="<%= 'outside' if date.month!=month %> <%= 'holiday' if events.fetch(date,[]).any?(&:work_free) %> <%= 'today' if date==@today %> <%= 'selected' if date==@selected %> <%= 'weekend' if date.cwday>5 %>" data-date="<%= date %>">
+<% if date.month==month %><a class="date-link" href="<%= mini ? calendar_path(date) : "?year=#{year}&month=#{month}&date=#{date}&view=#{@view||'month'}" %>" aria-label="<%= CalendarEngine::DAYS[date.cwday-1] %>, <%= sl_date(date) %>" <%= 'aria-current=date' if date==@today %>><span><%= date.day %></span></a><% else %><span class="outside-date"><%= date.day %></span><% end %>
+<% unless mini %><div class="date-events"><% events.fetch(date,[]).first(2).each do |event| %><a href="<%= event_path(event) %>" class="event-label <%= event.work_free ? 'free':'observance' %>"><%= event.title %></a><% end %></div><% end %>
+</td><% end %></tr><% end %></tbody></table></div>

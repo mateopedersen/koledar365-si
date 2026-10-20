@@ -1,0 +1,74 @@
+<div class="holiday-page" data-holiday-year="<%= @year %>">
+  <section class="holiday-hero" aria-labelledby="holiday-title">
+    <div class="holiday-intro">
+      <span class="eyebrow">SLOVENIJA · PRAZNIKI IN PROSTI DNEVI</span>
+      <h1 id="holiday-title">Prazniki <span><%= @year %>.</span><br>Več časa za vaše načrte.</h1>
+      <p>Vsi državni prazniki in drugi dela prosti dnevi. Na enem mestu, z jasnim odgovorom: je ta dan prost?</p>
+      <nav class="holiday-years" aria-label="Leto praznikov"><% CalendarEngine::YEARS.each do |year| %><a href="/prazniki/<%= year %>/" <%= 'aria-current=page' if year==@year %>><%= year %></a><% end %></nav>
+      <div class="holiday-hero-actions"><a href="#prazniki-seznam"><%= ui_icon('calendar') %> Pregled datumov</a><a href="#holiday-downloads" data-open-downloads><%= ui_icon('download') %> PDF in WebP</a></div>
+    </div>
+    <figure class="holiday-cover">
+      <% photo=HolidayPhotoCatalog.find('pust') %><img src="<%= photo.fetch('local_path') %>" alt="<%= photo.fetch('alt_sl') %>" width="<%= photo.fetch('width') %>" height="<%= photo.fetch('height') %>" fetchpriority="high">
+      <figcaption><span>Kurentovanje na Ptuju, 2019</span><a href="/fotografije-in-licence/#praznik-pust">Fotografija in licenca <%= ui_icon('info') %></a></figcaption>
+      <span class="holiday-cover-note">Izročilo, ki povezuje generacije.</span>
+    </figure>
+  </section>
+
+  <dl class="holiday-facts" aria-label="Povzetek leta">
+    <div><dt>Zakonsko dela prostih datumov</dt><dd><%= @holidays.free_dates.size %><%= ui_icon('calendar') %></dd></div>
+    <div><dt>Od teh od ponedeljka do petka</dt><dd><%= @holidays.weekday_free_dates.size %><span>med tednom</span></dd></div>
+    <div><dt>Od teh ob sobotah ali nedeljah</dt><dd><%= @holidays.weekend_free_dates.size %><span>ob koncu tedna</span></dd></div>
+    <div><dt>Delovnih dni v letu</dt><dd><%= @holidays.working_days %><a href="/delovni-dnevi/<%= @year %>/">Izračun <span aria-hidden="true">↗</span></a></dd></div>
+  </dl>
+
+  <div class="holiday-workspace">
+    <section class="holiday-agenda" id="prazniki-seznam" aria-labelledby="holiday-list-title">
+      <div class="holiday-section-heading"><div><span class="eyebrow">VAŠ PREGLED LETA</span><h2 id="holiday-list-title">Vsi pomembni prosti dnevi.<br>In prazniki, ko delamo.</h2></div><span class="holiday-total"><%= @holidays.events.size %> datumov</span></div>
+      <form class="holiday-filters" id="holiday-filters" method="get" action="/prazniki/<%= @year %>/">
+        <fieldset><legend class="sr-only">Vrsta praznika</legend>
+          <% [['all','Vsi prazniki',@holidays.events.size],['free','Dela prosti',@holidays.free_dates.size],['working','Niso dela prosti',@holidays.events.count { |e| !e.work_free }]].each do |value,label,count| %>
+            <label class="holiday-filter-chip"><input type="radio" name="kind" value="<%= value %>" <%= 'checked' if @holiday_kind==value %>><span><%= label %> <b><%= count %></b></span></label>
+          <% end %>
+        </fieldset>
+        <div class="holiday-filter-fields">
+          <label><span class="sr-only">Poišči praznik</span><%= ui_icon('search') %><input name="q" type="search" value="<%= @holiday_query %>" maxlength="100" placeholder="Poišči praznik ali dan v tednu"></label>
+          <label><span class="sr-only">Mesec praznikov</span><select name="month"><option value="0">Vsi meseci</option><% CalendarEngine::MONTHS.each_with_index do |month,index| %><option value="<%= index+1 %>" <%= 'selected' if @holiday_month==index+1 %>><%= month.sub(/\A./,&:upcase) %></option><% end %></select></label>
+          <button type="submit">Pokaži</button>
+        </div>
+      </form>
+      <div class="holiday-results-bar"><p id="holiday-result-count" role="status" aria-live="polite">Prikazani datumi: <strong><%= @filtered_holidays.size %></strong> od <%= @holidays.events.size %></p><a id="holiday-reset" href="/prazniki/<%= @year %>/">Počisti filtre</a></div>
+      <div id="holiday-empty" class="holiday-empty" <%= 'hidden' if @filtered_holidays.any? %>><%= ui_icon('search') %><h3>Za to izbiro ni praznikov.</h3><p>Poskusite drug mesec ali krajše ime praznika.</p></div>
+      <div class="holiday-months">
+        <% @holidays.events.group_by { |event| event.on.month }.each do |month,events| %>
+          <section class="holiday-month" data-holiday-month="<%= month %>" <%= 'hidden' unless events.any? { |event| @filtered_holidays.include?(event) } %>>
+            <h3><span><%= month.to_s.rjust(2,'0') %></span><%= CalendarEngine::MONTHS[month-1].sub(/\A./,&:upcase) %></h3>
+            <ol>
+              <% events.each do |event| %>
+                <li class="holiday-row <%= event.work_free ? 'is-free' : 'is-working' %>" data-holiday-row data-month="<%= month %>" data-free="<%= event.work_free %>" data-search="<%= HolidayYear.query("#{event.title} #{CalendarEngine::DAYS[event.on.cwday-1]}") %>" <%= 'hidden' unless @filtered_holidays.include?(event) %>>
+                  <time class="holiday-date" datetime="<%= event.on %>"><strong><%= event.on.day %></strong><span><%= CalendarEngine::SHORT_DAYS[event.on.cwday-1] %></span></time>
+                  <div class="holiday-row-copy"><a class="holiday-name" href="<%= event_path(event) %>"><%= holiday_title(event) %></a><span class="holiday-weekday"><%= CalendarEngine::DAYS[event.on.cwday-1].sub(/\A./,&:upcase) %><span aria-hidden="true"> · </span><%= holiday_origin(event) %></span></div>
+                  <div class="holiday-row-actions"><span class="holiday-badge"><span aria-hidden="true"></span><%= holiday_status(event) %></span><a href="/prazniki/<%= @year %>.ics?event=<%= event.key %>" class="holiday-add" aria-label="Dodaj v koledar: <%= event.title %>, <%= I18n.l(event.on) %>" title="Prenesi dogodek ICS"><%= ui_icon('plus') %></a></div>
+                </li>
+              <% end %>
+            </ol>
+          </section>
+        <% end %>
+      </div>
+      <div class="holiday-list-actions"><a class="button primary" id="holiday-ics" href="<%= holiday_ics_url(@year,month:@holiday_month,kind:@holiday_kind,query:@holiday_query) %>"><%= ui_icon('download') %> Prenesi prikazane datume (ICS)</a><button type="button" data-print><%= ui_icon('print') %> Natisni pregled</button></div>
+      <p class="holiday-caption">ICS lahko uvozite v Apple Calendar, Google Koledar ali Outlook. Posamezni gumb + prenese samo izbrani praznik. Datumi so celodnevni.</p>
+    </section>
+
+    <aside class="holiday-aside" aria-label="Načrtovanje prostih dni">
+      <section class="holiday-year-map"><div class="holiday-section-heading"><h2>Leto na dlani</h2><span><%= @year %></span></div><p>Izberite mesec za hiter pregled.</p><div class="holiday-mini-months"><% CalendarEngine::MONTHS.each_with_index do |month,index| %><% entries=@holidays.events.select { |e| e.on.month==index+1 } %><a href="/prazniki/<%= @year %>/?month=<%= index+1 %>#prazniki-seznam" data-select-holiday-month="<%= index+1 %>" aria-label="<%= month %>: <%= entries.size %> datumov"><strong><%= month.sub(/\A./,&:upcase) %></strong><span><% if entries.empty? %><i>Ni praznikov</i><% else %><% entries.each do |e| %><b class="<%= 'is-free' if e.work_free %>"><%= e.on.day %></b><% end %><% end %></span></a><% end %></div><div class="holiday-legend"><span><i class="free"></i>Dela prost dan</span><span><i></i>Ni dela prost dan</span></div></section>
+      <section class="holiday-breaks"><span class="eyebrow">MALO DOPUSTA, VEČ ODDIHA</span><h2>Podaljšajte si konec tedna.</h2><p>Predlogi za delovnik od ponedeljka do petka, z največ enim dnem dopusta.</p><% @holiday_breaks.each do |option| %><article><time><%= I18n.l(option[:from]) %> – <%= I18n.l(option[:to]) %></time><div><strong><%= option[:total] %></strong><span>zaporednih prostih dni<br><b>Dopust: <%= option[:leave] %></b></span></div><p><%= option[:leave_dates].empty? ? 'Brez dodatnega dopusta.' : "Dan dopusta: #{option[:leave_dates].map { |date| I18n.l(date) }.join(', ')}." %></p></article><% end %><a href="/podaljsani-vikendi/<%= @year %>/">Več možnosti za oddih <span aria-hidden="true">→</span></a></section>
+      <section class="holiday-note"><%= ui_icon('info') %><h2>Praznik ni vedno prost dan.</h2><p>Državni praznik je lahko običajen delovni dan. Tudi vsi dela prosti dnevi niso državni prazniki.</p><p>Če praznik pade na nedeljo, se ne prenese na ponedeljek. V izračunu ni nadomestnih prostih dni za praznike ob koncu tedna.</p><a href="#holiday-sources">Preverite pravno podlago →</a></section>
+    </aside>
+  </div>
+
+  <section class="holiday-comparison" aria-labelledby="holiday-compare-title"><div class="holiday-section-heading"><div><span class="eyebrow">ŠTIRI LETA, JASEN PREGLED</span><h2 id="holiday-compare-title">Kako se razporedijo prosti dnevi?</h2></div></div><div class="holiday-comparison-grid"><% @holiday_comparison.each do |period| %><a href="/prazniki/<%= period.year %>/" <%= 'aria-current=page' if period.year==@year %>><h3><%= period.year %><span aria-hidden="true">↗</span></h3><dl><div><dt>Dela prosti datumi</dt><dd><%= period.free_dates.size %></dd></div><div><dt>Od teh med tednom</dt><dd><%= period.weekday_free_dates.size %></dd></div><div><dt>Delovni dnevi</dt><dd><%= period.working_days %></dd></div></dl></a><% end %></div><p>Izračun velja za ponedeljek–petek. Prazniki na soboto ali nedeljo se ne odštejejo še enkrat. Dopust, bolniška odsotnost in individualni razporedi niso vključeni.</p></section>
+
+  <details class="holiday-downloads" id="holiday-downloads"><summary><span><%= ui_icon('download') %><strong>Prazniki <%= @year %> za tiskanje</strong><small>Celoten letni pregled · 15 predlog PDF in WebP</small></span><span class="holiday-download-arrow" aria-hidden="true">+</span></summary><%= render 'designs',type:'holidays' %></details>
+
+  <section class="holiday-culture"><div><span class="eyebrow">TRADICIJE IN OBIČAJI</span><h2>Slovenija praznuje tudi drugače.</h2><p>Gregorjevo, pust, martinovo in drugi običaji imajo svoje mesto v letu. Sami po sebi niso zakonsko dela prosti dnevi.</p></div><div class="holiday-culture-links"><% %w[gregorjevo pust martinovo miklavz].each do |slug| %><% page=Page.find_by(path:"/prazniki/#{slug}/") %><a href="<%= page.path %>"><%= page.title %><%= ui_icon('chevron-right') %></a><% end %><a href="/pomembni-dnevi/<%= @year %>/">Vsi pomembni dnevi <%= @year %><%= ui_icon('chevron-right') %></a></div></section>
+  <section class="holiday-sources" id="holiday-sources"><%= ui_icon('shield') %><div><h2>Preverjeni datumi. Razložena pravila.</h2><p>Pravna podlaga: <%= source_link(HolidayYear::LAW_URL,'Zakon o praznikih in dela prostih dnevih v Republiki Sloveniji (ZPDPD)') %>, vključno z <%= source_link(HolidayYear::AMENDMENT_URL,'novelo ZPDPD-I, veljavno od 17. oktobra 2026') %>. Upoštevani so dan Triglava ter veljavna poimenovanja praznikov.</p><p>Datumi za prihodnja leta so izračunani po trenutno veljavnem zakonu. Morebitne poznejše zakonske spremembe lahko vplivajo nanje. Velika noč se računa po gregorijanskem koledarju; binkošti so 49 dni pozneje.</p><p>Preverjeno: <time datetime="<%= HolidayYear::CHECKED_ON %>"><%= I18n.l(HolidayYear::CHECKED_ON) %></time> · <a href="/viri-in-metodologija/">Metodologija</a> · <a href="/kontakt/">Sporočite popravek</a> · <a href="/solske-pocitnice/">Šolske počitnice so ločen koledar</a></p></div></section>
+</div>

@@ -1,0 +1,301 @@
+﻿cluster_id,priority,keyword_sl,final_target_url,current_monthly_volume,keyword_difficulty,provenance,source_ids
+C01,P0,koledar,/,,,source_topic_vocabulary_and_editorial_variation,koledarcek;koledarko;prazniki
+C01,P0,slovenski koledar,/,,,source_topic_vocabulary_and_editorial_variation,koledarcek;koledarko;prazniki
+C01,P0,koledar Slovenija,/,,,source_topic_vocabulary_and_editorial_variation,koledarcek;koledarko;prazniki
+C01,P0,spletni koledar,/,,,source_topic_vocabulary_and_editorial_variation,koledarcek;koledarko;prazniki
+C01,P0,koledar s prazniki,/,,,source_topic_vocabulary_and_editorial_variation,koledarcek;koledarko;prazniki
+C01,P0,brezplačni koledar,/,,,source_topic_vocabulary_and_editorial_variation,koledarcek;koledarko;prazniki
+C01,P0,koledar danes,/,,,source_topic_vocabulary_and_editorial_variation,koledarcek;koledarko;prazniki
+C02,P0,koledar 2027,/koledar/2027/,,,source_topic_vocabulary_and_editorial_variation,koledarcek2027;prazniki;timeanddate
+C02,P0,koledar 2026,/koledar/2026/,,,source_topic_vocabulary_and_editorial_variation,koledarcek2027;prazniki;timeanddate
+C02,P0,koledar 2028,/koledar/2028/,,,source_topic_vocabulary_and_editorial_variation,koledarcek2027;prazniki;timeanddate
+C02,P0,koledar 2029,/koledar/2029/,,,source_topic_vocabulary_and_editorial_variation,koledarcek2027;prazniki;timeanddate
+C02,P0,letni koledar,/koledar/2027/,,,source_topic_vocabulary_and_editorial_variation,koledarcek2027;prazniki;timeanddate
+C02,P0,letni koledar 2027,/koledar/2027/,,,source_topic_vocabulary_and_editorial_variation,koledarcek2027;prazniki;timeanddate
+C02,P0,koledar 2027 s prazniki,/koledar/2027/,,,source_topic_vocabulary_and_editorial_variation,koledarcek2027;prazniki;timeanddate
+C02,P0,slovenski koledar 2027,/koledar/2027/,,,source_topic_vocabulary_and_editorial_variation,koledarcek2027;prazniki;timeanddate
+C02,P0,koledar 2027 Slovenija,/koledar/2027/,,,source_topic_vocabulary_and_editorial_variation,koledarcek2027;prazniki;timeanddate
+C02,P0,koledar 2030,/koledar/2030/,,,editorial_year_expansion,koledarcek2027;prazniki;timeanddate
+C02,P0,letni koledar 2030,/koledar/2030/,,,editorial_year_expansion,koledarcek2027;prazniki;timeanddate
+C02,P0,koledar 2030 s prazniki,/koledar/2030/,,,editorial_year_expansion,koledarcek2027;prazniki;timeanddate
+C03,P0,mesečni koledar,/koledar/2027/januar/,,,source_topic_vocabulary_and_editorial_variation,koledmonth;sevenmonthly;koledarko
+C03,P0,mesečni koledar 2027,/koledar/2027/januar/,,,source_topic_vocabulary_and_editorial_variation,koledmonth;sevenmonthly;koledarko
+C03,P0,koledar januar 2027,/koledar/2027/januar/,,,source_topic_vocabulary_and_editorial_variation,koledmonth;sevenmonthly;koledarko
+C03,P0,januar 2027,/koledar/2027/januar/,,,source_topic_vocabulary_and_editorial_variation,koledmonth;sevenmonthly;koledarko
+C03,P0,koledar februar 2027,/koledar/2027/januar/,,,source_topic_vocabulary_and_editorial_variation,koledmonth;sevenmonthly;koledarko
+C03,P0,koledar marec 2027,/koledar/2027/januar/,,,source_topic_vocabulary_and_editorial_variation,koledmonth;sevenmonthly;koledarko
+C03,P0,koledar april 2027,/koledar/2027/januar/,,,source_topic_vocabulary_and_editorial_variation,koledmonth;sevenmonthly;koledarko
+C03,P0,koledar maj 2027,/koledar/2027/januar/,,,source_topic_vocabulary_and_editorial_variation,koledmonth;sevenmonthly;koledarko
+C03,P0,koledar junij 2027,/koledar/2027/januar/,,,source_topic_vocabulary_and_editorial_variation,koledmonth;sevenmonthly;koledarko
+C03,P0,koledar julij 2027,/koledar/2027/januar/,,,source_topic_vocabulary_and_editorial_variation,koledmonth;sevenmonthly;koledarko
+C03,P0,koledar avgust 2027,/koledar/2027/januar/,,,source_topic_vocabulary_and_editorial_variation,koledmonth;sevenmonthly;koledarko
+C03,P0,koledar september 2027,/koledar/2027/januar/,,,source_topic_vocabulary_and_editorial_variation,koledmonth;sevenmonthly;koledarko
+C03,P0,koledar oktober 2027,/koledar/2027/januar/,,,source_topic_vocabulary_and_editorial_variation,koledmonth;sevenmonthly;koledarko
+C03,P0,koledar november 2027,/koledar/2027/januar/,,,source_topic_vocabulary_and_editorial_variation,koledmonth;sevenmonthly;koledarko
+C03,P0,koledar december 2027,/koledar/2027/januar/,,,source_topic_vocabulary_and_editorial_variation,koledmonth;sevenmonthly;koledarko
+C03,P0,mesečni koledar 2030,/koledar/2030/januar/,,,editorial_year_expansion,koledmonth;sevenmonthly;koledarko
+C03,P0,koledar januar 2030,/koledar/2030/januar/,,,editorial_year_expansion,koledmonth;sevenmonthly;koledarko
+C03,P0,koledar december 2030,/koledar/2030/januar/,,,editorial_year_expansion,koledmonth;sevenmonthly;koledarko
+C04,P1,tedenski koledar,/tedenski-koledar/,,,source_topic_vocabulary_and_editorial_variation,sevenweekly;magicplanner
+C04,P1,tedenski koledar 2027,/tedenski-koledar/,,,source_topic_vocabulary_and_editorial_variation,sevenweekly;magicplanner
+C04,P1,tedenski planer,/tedenski-koledar/,,,source_topic_vocabulary_and_editorial_variation,sevenweekly;magicplanner
+C04,P1,tedenski planer za tiskanje,/tedenski-koledar/,,,source_topic_vocabulary_and_editorial_variation,sevenweekly;magicplanner
+C04,P1,tedenski načrtovalnik,/tedenski-koledar/,,,source_topic_vocabulary_and_editorial_variation,sevenweekly;magicplanner
+C04,P1,tedenski razpored,/tedenski-koledar/,,,source_topic_vocabulary_and_editorial_variation,sevenweekly;magicplanner
+C04,P1,tedenski koledar pdf,/tedenski-koledar/,,,source_topic_vocabulary_and_editorial_variation,sevenweekly;magicplanner
+C04,P1,tedenski koledar 2030,/tedenski-koledar/,,,editorial_year_expansion,sevenweekly;magicplanner
+C05,P0,koledar za tiskanje,/koledar-za-tiskanje/,,,source_topic_vocabulary_and_editorial_variation,koledarcekprint;enetko;xcalendar;sevenmonthly
+C05,P0,koledar 2027 za tiskanje,/koledar-za-tiskanje/,,,source_topic_vocabulary_and_editorial_variation,koledarcekprint;enetko;xcalendar;sevenmonthly
+C05,P0,koledar 2027 pdf,/koledar-za-tiskanje/,,,source_topic_vocabulary_and_editorial_variation,koledarcekprint;enetko;xcalendar;sevenmonthly
+C05,P0,prazen koledar,/koledar-za-tiskanje/,,,source_topic_vocabulary_and_editorial_variation,koledarcekprint;enetko;xcalendar;sevenmonthly
+C05,P0,prazen koledar za tiskanje,/koledar-za-tiskanje/,,,source_topic_vocabulary_and_editorial_variation,koledarcekprint;enetko;xcalendar;sevenmonthly
+C05,P0,koledar A4,/koledar-za-tiskanje/,,,source_topic_vocabulary_and_editorial_variation,koledarcekprint;enetko;xcalendar;sevenmonthly
+C05,P0,koledar 2027 Excel,/koledar-za-tiskanje/,,,source_topic_vocabulary_and_editorial_variation,koledarcekprint;enetko;xcalendar;sevenmonthly
+C05,P0,koledar 2027 Word,/koledar-za-tiskanje/,,,source_topic_vocabulary_and_editorial_variation,koledarcekprint;enetko;xcalendar;sevenmonthly
+C05,P0,mesečni koledar pdf,/koledar-za-tiskanje/,,,source_topic_vocabulary_and_editorial_variation,koledarcekprint;enetko;xcalendar;sevenmonthly
+C05,P0,koledar na eni strani,/koledar-za-tiskanje/,,,source_topic_vocabulary_and_editorial_variation,koledarcekprint;enetko;xcalendar;sevenmonthly
+C05,P0,koledar 2030 za tiskanje,/koledar-za-tiskanje/,,,editorial_year_expansion,koledarcekprint;enetko;xcalendar;sevenmonthly
+C05,P0,koledar 2030 pdf,/koledar-za-tiskanje/,,,editorial_year_expansion,koledarcekprint;enetko;xcalendar;sevenmonthly
+C05,P0,koledar 2030 Excel,/koledar-za-tiskanje/,,,editorial_year_expansion,koledarcekprint;enetko;xcalendar;sevenmonthly
+C05,P0,koledar 2030 Word,/koledar-za-tiskanje/,,,editorial_year_expansion,koledarcekprint;enetko;xcalendar;sevenmonthly
+C06,P1,personaliziran koledar,/ustvari-koledar/,,,source_topic_vocabulary_and_editorial_variation,cewe;enzophoto;magicplanner;magicfamily
+C06,P1,koledar po meri,/ustvari-koledar/,,,source_topic_vocabulary_and_editorial_variation,cewe;enzophoto;magicplanner;magicfamily
+C06,P1,izdelava koledarja,/ustvari-koledar/,,,source_topic_vocabulary_and_editorial_variation,cewe;enzophoto;magicplanner;magicfamily
+C06,P1,ustvari svoj koledar,/ustvari-koledar/,,,source_topic_vocabulary_and_editorial_variation,cewe;enzophoto;magicplanner;magicfamily
+C06,P1,koledar z imenom,/ustvari-koledar/,,,source_topic_vocabulary_and_editorial_variation,cewe;enzophoto;magicplanner;magicfamily
+C06,P1,koledar z imeni,/ustvari-koledar/,,,source_topic_vocabulary_and_editorial_variation,cewe;enzophoto;magicplanner;magicfamily
+C06,P1,koledar s fotografijami,/ustvari-koledar/,,,source_topic_vocabulary_and_editorial_variation,cewe;enzophoto;magicplanner;magicfamily
+C06,P1,foto koledar,/ustvari-koledar/,,,source_topic_vocabulary_and_editorial_variation,cewe;enzophoto;magicplanner;magicfamily
+C06,P1,fotokoledar,/ustvari-koledar/,,,source_topic_vocabulary_and_editorial_variation,cewe;enzophoto;magicplanner;magicfamily
+C06,P1,osebni koledar,/ustvari-koledar/,,,source_topic_vocabulary_and_editorial_variation,cewe;enzophoto;magicplanner;magicfamily
+C07,P1,prazniki,/prazniki/2027/,,,source_topic_vocabulary_and_editorial_variation,praznikifree;govholidays;javnipodatki
+C07,P1,prazniki 2027,/prazniki/2027/,,,source_topic_vocabulary_and_editorial_variation,praznikifree;govholidays;javnipodatki
+C07,P1,prazniki Slovenija,/prazniki/2027/,,,source_topic_vocabulary_and_editorial_variation,praznikifree;govholidays;javnipodatki
+C07,P1,slovenski prazniki,/prazniki/2027/,,,source_topic_vocabulary_and_editorial_variation,praznikifree;govholidays;javnipodatki
+C07,P1,državni prazniki,/prazniki/2027/,,,source_topic_vocabulary_and_editorial_variation,praznikifree;govholidays;javnipodatki
+C07,P1,državni prazniki 2027,/prazniki/2027/,,,source_topic_vocabulary_and_editorial_variation,praznikifree;govholidays;javnipodatki
+C07,P1,koledar praznikov 2027,/prazniki/2027/,,,source_topic_vocabulary_and_editorial_variation,praznikifree;govholidays;javnipodatki
+C07,P1,prazniki 2028,/prazniki/2028/,,,source_topic_vocabulary_and_editorial_variation,praznikifree;govholidays;javnipodatki
+C07,P1,prazniki 2029,/prazniki/2029/,,,source_topic_vocabulary_and_editorial_variation,praznikifree;govholidays;javnipodatki
+C07,P1,prazniki 2030,/prazniki/2030/,,,editorial_year_expansion,praznikifree;govholidays;javnipodatki
+C07,P1,državni prazniki 2030,/prazniki/2030/,,,editorial_year_expansion,praznikifree;govholidays;javnipodatki
+C08,P1,dela prosti dnevi,/prazniki/2027/,,,source_topic_vocabulary_and_editorial_variation,govholidays;praznikifree;javnipodatki
+C08,P1,dela prosti dnevi 2027,/prazniki/2027/,,,source_topic_vocabulary_and_editorial_variation,govholidays;praznikifree;javnipodatki
+C08,P1,dela prosti dnevi 2026,/prazniki/2026/,,,source_topic_vocabulary_and_editorial_variation,govholidays;praznikifree;javnipodatki
+C08,P1,dela prosti dnevi Slovenija,/prazniki/2027/,,,source_topic_vocabulary_and_editorial_variation,govholidays;praznikifree;javnipodatki
+C08,P1,prosti dnevi 2027,/prazniki/2027/,,,source_topic_vocabulary_and_editorial_variation,govholidays;praznikifree;javnipodatki
+C08,P1,koliko dela prostih dni je 2027,/prazniki/2027/,,,source_topic_vocabulary_and_editorial_variation,govholidays;praznikifree;javnipodatki
+C08,P1,naslednji dela prost dan,/prazniki/2027/,,,source_topic_vocabulary_and_editorial_variation,govholidays;praznikifree;javnipodatki
+C08,P1,ali je danes praznik,/prazniki/2027/,,,source_topic_vocabulary_and_editorial_variation,govholidays;praznikifree;javnipodatki
+C08,P1,dela prosti dnevi 2030,/prazniki/2030/,,,editorial_year_expansion,govholidays;praznikifree;javnipodatki
+C08,P1,prosti dnevi 2030,/prazniki/2030/,,,editorial_year_expansion,govholidays;praznikifree;javnipodatki
+C09,P0,šolske počitnice,/solske-pocitnice/2026-2027/,,,source_topic_vocabulary_and_editorial_variation,govschoolprimary;govschoolsecondary;javnipodatki;schoolpdf
+C09,P0,šolske počitnice 2027,/solske-pocitnice/2026-2027/,,,source_topic_vocabulary_and_editorial_variation,govschoolprimary;govschoolsecondary;javnipodatki;schoolpdf
+C09,P0,šolski koledar 2026 2027,/solske-pocitnice/,,,source_topic_vocabulary_and_editorial_variation,govschoolprimary;govschoolsecondary;javnipodatki;schoolpdf
+C09,P0,šolski koledar 2026/2027,/solske-pocitnice/,,,source_topic_vocabulary_and_editorial_variation,govschoolprimary;govschoolsecondary;javnipodatki;schoolpdf
+C09,P0,zimske počitnice 2027,/solske-pocitnice/2026-2027/,,,source_topic_vocabulary_and_editorial_variation,govschoolprimary;govschoolsecondary;javnipodatki;schoolpdf
+C09,P0,jesenske počitnice 2026,/solske-pocitnice/,,,source_topic_vocabulary_and_editorial_variation,govschoolprimary;govschoolsecondary;javnipodatki;schoolpdf
+C09,P0,prvomajske počitnice 2027,/solske-pocitnice/2026-2027/,,,source_topic_vocabulary_and_editorial_variation,govschoolprimary;govschoolsecondary;javnipodatki;schoolpdf
+C09,P0,poletne počitnice 2027,/solske-pocitnice/2026-2027/,,,source_topic_vocabulary_and_editorial_variation,govschoolprimary;govschoolsecondary;javnipodatki;schoolpdf
+C09,P0,novoletne počitnice 2026 2027,/solske-pocitnice/,,,source_topic_vocabulary_and_editorial_variation,govschoolprimary;govschoolsecondary;javnipodatki;schoolpdf
+C09,P0,zimske počitnice Ljubljana,/solske-pocitnice/2026-2027/,,,source_topic_vocabulary_and_editorial_variation,govschoolprimary;govschoolsecondary;javnipodatki;schoolpdf
+C09,P0,zimske počitnice Maribor,/solske-pocitnice/2026-2027/,,,source_topic_vocabulary_and_editorial_variation,govschoolprimary;govschoolsecondary;javnipodatki;schoolpdf
+C10,P0,delovni dnevi,/delovni-dnevi/2027/,,,source_topic_vocabulary_and_editorial_variation,workdays;accounting;javnipodatki
+C10,P0,delovni dnevi 2027,/delovni-dnevi/2027/,,,source_topic_vocabulary_and_editorial_variation,workdays;accounting;javnipodatki
+C10,P0,delovni dnevi 2026,/delovni-dnevi/2026/,,,source_topic_vocabulary_and_editorial_variation,workdays;accounting;javnipodatki
+C10,P0,delovne ure 2027,/delovni-dnevi/2027/,,,source_topic_vocabulary_and_editorial_variation,workdays;accounting;javnipodatki
+C10,P0,mesečni fond ur 2027,/delovni-dnevi/2027/,,,source_topic_vocabulary_and_editorial_variation,workdays;accounting;javnipodatki
+C10,P0,število delovnih dni 2027,/delovni-dnevi/2027/,,,source_topic_vocabulary_and_editorial_variation,workdays;accounting;javnipodatki
+C10,P0,delovni koledar 2027,/delovni-dnevi/2027/,,,source_topic_vocabulary_and_editorial_variation,workdays;accounting;javnipodatki
+C10,P0,delovni dnevi po mesecih,/delovni-dnevi/2027/,,,source_topic_vocabulary_and_editorial_variation,workdays;accounting;javnipodatki
+C10,P0,sklad delovnih ur 2027,/delovni-dnevi/2027/,,,source_topic_vocabulary_and_editorial_variation,workdays;accounting;javnipodatki
+C10,P0,delovni dnevi 2030,/delovni-dnevi/2030/,,,editorial_year_expansion,workdays;accounting;javnipodatki
+C10,P0,delovne ure 2030,/delovni-dnevi/2030/,,,editorial_year_expansion,workdays;accounting;javnipodatki
+C10,P0,mesečni fond ur 2030,/delovni-dnevi/2030/,,,editorial_year_expansion,workdays;accounting;javnipodatki
+C11,P1,izračun dni med datumi,/datumski-kalkulator/,,,source_topic_vocabulary_and_editorial_variation,datecalc;workcalc;koledarko
+C11,P1,dnevi med datumi,/datumski-kalkulator/,,,source_topic_vocabulary_and_editorial_variation,datecalc;workcalc;koledarko
+C11,P1,koliko dni med datumoma,/datumski-kalkulator/,,,source_topic_vocabulary_and_editorial_variation,datecalc;workcalc;koledarko
+C11,P1,kalkulator datumov,/datumski-kalkulator/,,,source_topic_vocabulary_and_editorial_variation,datecalc;workcalc;koledarko
+C11,P1,kalkulator dni,/datumski-kalkulator/,,,source_topic_vocabulary_and_editorial_variation,datecalc;workcalc;koledarko
+C11,P1,izračun delovnih dni,/datumski-kalkulator/,,,source_topic_vocabulary_and_editorial_variation,datecalc;workcalc;koledarko
+C11,P1,delovni dnevi med datumi,/datumski-kalkulator/,,,source_topic_vocabulary_and_editorial_variation,datecalc;workcalc;koledarko
+C11,P1,prištevanje dni datumu,/datumski-kalkulator/,,,source_topic_vocabulary_and_editorial_variation,datecalc;workcalc;koledarko
+C11,P1,odštevanje dni od datuma,/datumski-kalkulator/,,,source_topic_vocabulary_and_editorial_variation,datecalc;workcalc;koledarko
+C11,P1,koliko dni do novega leta,/datumski-kalkulator/,,,source_topic_vocabulary_and_editorial_variation,datecalc;workcalc;koledarko
+C12,P1,številka tedna,/stevilka-tedna/,,,source_topic_vocabulary_and_editorial_variation,weeknumber;koledarcek;timeanddate
+C12,P1,kateri teden je danes,/stevilka-tedna/,,,source_topic_vocabulary_and_editorial_variation,weeknumber;koledarcek;timeanddate
+C12,P1,kateri teden v letu je,/stevilka-tedna/,,,source_topic_vocabulary_and_editorial_variation,weeknumber;koledarcek;timeanddate
+C12,P1,trenutni teden,/stevilka-tedna/,,,source_topic_vocabulary_and_editorial_variation,weeknumber;koledarcek;timeanddate
+C12,P1,koledar s številkami tednov,/stevilka-tedna/,,,source_topic_vocabulary_and_editorial_variation,weeknumber;koledarcek;timeanddate
+C12,P1,tedni v letu 2027,/stevilka-tedna/,,,source_topic_vocabulary_and_editorial_variation,weeknumber;koledarcek;timeanddate
+C12,P1,koledar 2027 tedni,/stevilka-tedna/,,,source_topic_vocabulary_and_editorial_variation,weeknumber;koledarcek;timeanddate
+C12,P1,tedni v letu 2030,/stevilka-tedna/,,,editorial_year_expansion,weeknumber;koledarcek;timeanddate
+C12,P1,koledar 2030 tedni,/stevilka-tedna/,,,editorial_year_expansion,weeknumber;koledarcek;timeanddate
+C13,P0,kateri dan je danes,/,,,source_topic_vocabulary_and_editorial_variation,today;koledarcek;koledarko
+C13,P0,današnji datum,/,,,source_topic_vocabulary_and_editorial_variation,today;koledarcek;koledarko
+C13,P0,datum danes,/,,,source_topic_vocabulary_and_editorial_variation,today;koledarcek;koledarko
+C13,P0,kateri datum je danes,/,,,source_topic_vocabulary_and_editorial_variation,today;koledarcek;koledarko
+C13,P0,kateri dan v letu je danes,/,,,source_topic_vocabulary_and_editorial_variation,today;koledarcek;koledarko
+C13,P0,koliko dni do konca leta,/,,,source_topic_vocabulary_and_editorial_variation,today;koledarcek;koledarko
+C13,P0,današnji koledar,/,,,source_topic_vocabulary_and_editorial_variation,today;koledarcek;koledarko
+C14,P0,lunin koledar,/lunin-koledar/2027/,,,source_topic_vocabulary_and_editorial_variation,lunin2027;lunin;bodieko
+C14,P0,lunin koledar 2027,/lunin-koledar/2027/,,,source_topic_vocabulary_and_editorial_variation,lunin2027;lunin;bodieko
+C14,P0,lunin koledar 2026,/lunin-koledar/2026/,,,source_topic_vocabulary_and_editorial_variation,lunin2027;lunin;bodieko
+C14,P0,lunin koledar 2028,/lunin-koledar/2028/,,,source_topic_vocabulary_and_editorial_variation,lunin2027;lunin;bodieko
+C14,P0,mesečni lunin koledar,/lunin-koledar/2027/,,,source_topic_vocabulary_and_editorial_variation,lunin2027;lunin;bodieko
+C14,P0,lunin koledar januar 2027,/lunin-koledar/2027/,,,source_topic_vocabulary_and_editorial_variation,lunin2027;lunin;bodieko
+C14,P0,lunin koledar za tiskanje,/lunin-koledar/2027/,,,source_topic_vocabulary_and_editorial_variation,lunin2027;lunin;bodieko
+C14,P0,lunarni koledar,/lunin-koledar/2027/,,,source_topic_vocabulary_and_editorial_variation,lunin2027;lunin;bodieko
+C14,P0,lunin koledar 2029,/lunin-koledar/2029/,,,editorial_year_expansion,lunin2027;lunin;bodieko
+C14,P0,lunin koledar 2030,/lunin-koledar/2030/,,,editorial_year_expansion,lunin2027;lunin;bodieko
+C15,P1,lunine mene,/lunine-mene/,,,source_topic_vocabulary_and_editorial_variation,lunin;astrosvet;ahrefstop_historical
+C15,P1,lunine mene 2027,/lunine-mene/,,,source_topic_vocabulary_and_editorial_variation,lunin;astrosvet;ahrefstop_historical
+C15,P1,lunine mene 2026,/lunine-mene/,,,source_topic_vocabulary_and_editorial_variation,lunin;astrosvet;ahrefstop_historical
+C15,P1,lunine mene danes,/lunine-mene/,,,source_topic_vocabulary_and_editorial_variation,lunin;astrosvet;ahrefstop_historical
+C15,P1,današnja luna,/lunine-mene/,,,source_topic_vocabulary_and_editorial_variation,lunin;astrosvet;ahrefstop_historical
+C15,P1,luna danes,/lunine-mene/,,,source_topic_vocabulary_and_editorial_variation,lunin;astrosvet;ahrefstop_historical
+C15,P1,lunina mena danes,/lunine-mene/,,,source_topic_vocabulary_and_editorial_variation,lunin;astrosvet;ahrefstop_historical
+C15,P1,lunine faze,/lunine-mene/,,,source_topic_vocabulary_and_editorial_variation,lunin;astrosvet;ahrefstop_historical
+C15,P1,faza lune danes,/lunine-mene/,,,source_topic_vocabulary_and_editorial_variation,lunin;astrosvet;ahrefstop_historical
+C15,P1,lunine mene 2028,/lunine-mene/,,,editorial_year_expansion,lunin;astrosvet;ahrefstop_historical
+C15,P1,lunine mene 2029,/lunine-mene/,,,editorial_year_expansion,lunin;astrosvet;ahrefstop_historical
+C15,P1,lunine mene 2030,/lunine-mene/,,,editorial_year_expansion,lunin;astrosvet;ahrefstop_historical
+C16,P1,polna luna,/polna-luna/,,,source_topic_vocabulary_and_editorial_variation,lunin;bodieko;ahrefstop_historical;astrosvet
+C16,P1,polna luna 2027,/polna-luna/,,,source_topic_vocabulary_and_editorial_variation,lunin;bodieko;ahrefstop_historical;astrosvet
+C16,P1,polna luna 2026,/polna-luna/,,,source_topic_vocabulary_and_editorial_variation,lunin;bodieko;ahrefstop_historical;astrosvet
+C16,P1,kdaj je polna luna,/polna-luna/,,,source_topic_vocabulary_and_editorial_variation,lunin;bodieko;ahrefstop_historical;astrosvet
+C16,P1,naslednja polna luna,/polna-luna/,,,source_topic_vocabulary_and_editorial_variation,lunin;bodieko;ahrefstop_historical;astrosvet
+C16,P1,polna luna danes,/polna-luna/,,,source_topic_vocabulary_and_editorial_variation,lunin;bodieko;ahrefstop_historical;astrosvet
+C16,P1,polna luna januar 2027,/polna-luna/,,,source_topic_vocabulary_and_editorial_variation,lunin;bodieko;ahrefstop_historical;astrosvet
+C16,P1,ščip,/polna-luna/,,,source_topic_vocabulary_and_editorial_variation,lunin;bodieko;ahrefstop_historical;astrosvet
+C16,P1,ščip 2027,/polna-luna/,,,source_topic_vocabulary_and_editorial_variation,lunin;bodieko;ahrefstop_historical;astrosvet
+C16,P1,polna luna 2028,/polna-luna/,,,editorial_year_expansion,lunin;bodieko;ahrefstop_historical;astrosvet
+C16,P1,polna luna 2029,/polna-luna/,,,editorial_year_expansion,lunin;bodieko;ahrefstop_historical;astrosvet
+C16,P1,polna luna 2030,/polna-luna/,,,editorial_year_expansion,lunin;bodieko;ahrefstop_historical;astrosvet
+C17,P1,mlaj,/mlaj/,,,source_topic_vocabulary_and_editorial_variation,lunin;astrosvet;koledarko;fran_mlaj
+C17,P1,mlaj 2027,/mlaj/,,,source_topic_vocabulary_and_editorial_variation,lunin;astrosvet;koledarko;fran_mlaj
+C17,P1,mlaj 2026,/mlaj/,,,source_topic_vocabulary_and_editorial_variation,lunin;astrosvet;koledarko;fran_mlaj
+C17,P1,kdaj je mlaj,/mlaj/,,,source_topic_vocabulary_and_editorial_variation,lunin;astrosvet;koledarko;fran_mlaj
+C17,P1,naslednji mlaj,/mlaj/,,,source_topic_vocabulary_and_editorial_variation,lunin;astrosvet;koledarko;fran_mlaj
+C17,P1,prazna luna,/mlaj/,,,source_topic_vocabulary_and_editorial_variation,lunin;astrosvet;koledarko;fran_mlaj
+C17,P1,prazna luna 2027,/mlaj/,,,source_topic_vocabulary_and_editorial_variation,lunin;astrosvet;koledarko;fran_mlaj
+C17,P1,mlaj januar 2027,/mlaj/,,,source_topic_vocabulary_and_editorial_variation,lunin;astrosvet;koledarko;fran_mlaj
+C17,P1,mlaj 2028,/mlaj/,,,editorial_year_expansion,lunin;astrosvet;koledarko;fran_mlaj
+C17,P1,mlaj 2029,/mlaj/,,,editorial_year_expansion,lunin;astrosvet;koledarko;fran_mlaj
+C17,P1,mlaj 2030,/mlaj/,,,editorial_year_expansion,lunin;astrosvet;koledarko;fran_mlaj
+C18,P1,sončni vzhod,/soncni-vzhod-in-zahod/ljubljana/,,,source_topic_vocabulary_and_editorial_variation,observatory;heliotempo;koledarcek
+C18,P1,sončni zahod,/soncni-vzhod-in-zahod/ljubljana/,,,source_topic_vocabulary_and_editorial_variation,observatory;heliotempo;koledarcek
+C18,P1,sončni vzhod in zahod,/soncni-vzhod-in-zahod/ljubljana/,,,source_topic_vocabulary_and_editorial_variation,observatory;heliotempo;koledarcek
+C18,P1,sončni vzhod Ljubljana,/soncni-vzhod-in-zahod/ljubljana/,,,source_topic_vocabulary_and_editorial_variation,observatory;heliotempo;koledarcek
+C18,P1,sončni zahod Ljubljana,/soncni-vzhod-in-zahod/ljubljana/,,,source_topic_vocabulary_and_editorial_variation,observatory;heliotempo;koledarcek
+C18,P1,dolžina dneva,/soncni-vzhod-in-zahod/ljubljana/,,,source_topic_vocabulary_and_editorial_variation,observatory;heliotempo;koledarcek
+C18,P1,dolžina dneva danes,/soncni-vzhod-in-zahod/ljubljana/,,,source_topic_vocabulary_and_editorial_variation,observatory;heliotempo;koledarcek
+C18,P1,sončni zahod Maribor,/soncni-vzhod-in-zahod/ljubljana/,,,source_topic_vocabulary_and_editorial_variation,observatory;heliotempo;koledarcek
+C18,P1,sončni zahod Koper,/soncni-vzhod-in-zahod/ljubljana/,,,source_topic_vocabulary_and_editorial_variation,observatory;heliotempo;koledarcek
+C19,P1,letni časi,/letni-casi/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents;koledarcek
+C19,P1,začetek pomladi 2027,/letni-casi/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents;koledarcek
+C19,P1,spomladansko enakonočje 2027,/letni-casi/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents;koledarcek
+C19,P1,poletni solsticij 2027,/letni-casi/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents;koledarcek
+C19,P1,začetek poletja 2027,/letni-casi/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents;koledarcek
+C19,P1,jesensko enakonočje 2027,/letni-casi/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents;koledarcek
+C19,P1,začetek jeseni 2027,/letni-casi/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents;koledarcek
+C19,P1,zimski solsticij 2027,/letni-casi/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents;koledarcek
+C19,P1,začetek zime 2027,/letni-casi/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents;koledarcek
+C19,P1,najdaljši dan 2027,/letni-casi/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents;koledarcek
+C19,P1,najkrajši dan 2027,/letni-casi/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents;koledarcek
+C19,P1,letni časi 2030,/letni-casi/,,,editorial_year_expansion,heliotempoevents;koledarcek
+C19,P1,spomladansko enakonočje 2030,/letni-casi/,,,editorial_year_expansion,heliotempoevents;koledarcek
+C19,P1,poletni solsticij 2030,/letni-casi/,,,editorial_year_expansion,heliotempoevents;koledarcek
+C19,P1,zimski solsticij 2030,/letni-casi/,,,editorial_year_expansion,heliotempoevents;koledarcek
+C20,P1,premik ure,/premik-ure/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents
+C20,P1,premik ure 2027,/premik-ure/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents
+C20,P1,premik ure 2026,/premik-ure/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents
+C20,P1,prestavitev ure,/premik-ure/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents
+C20,P1,zimski čas 2027,/premik-ure/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents
+C20,P1,poletni čas 2027,/premik-ure/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents
+C20,P1,kdaj se prestavi ura,/premik-ure/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents
+C20,P1,premik ure na zimski čas,/premik-ure/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents
+C20,P1,premik ure na poletni čas,/premik-ure/,,,source_topic_vocabulary_and_editorial_variation,heliotempoevents
+C20,P1,premik ure 2030,/premik-ure/,,,editorial_year_expansion,heliotempoevents
+C21,P1,godovi,/godovi/,,,source_topic_vocabulary_and_editorial_variation,fran;church;hozana;ognjisce;koledarko
+C21,P1,godovi danes,/godovi/,,,source_topic_vocabulary_and_editorial_variation,fran;church;hozana;ognjisce;koledarko
+C21,P1,kdo danes goduje,/godovi/,,,source_topic_vocabulary_and_editorial_variation,fran;church;hozana;ognjisce;koledarko
+C21,P1,godovni koledar,/godovi/,,,source_topic_vocabulary_and_editorial_variation,fran;church;hozana;ognjisce;koledarko
+C21,P1,koledar imen,/godovi/,,,source_topic_vocabulary_and_editorial_variation,fran;church;hozana;ognjisce;koledarko
+C21,P1,kdaj imam god,/godovi/,,,source_topic_vocabulary_and_editorial_variation,fran;church;hozana;ognjisce;koledarko
+C21,P1,kdaj goduje Ana,/godovi/,,,source_topic_vocabulary_and_editorial_variation,fran;church;hozana;ognjisce;koledarko
+C21,P1,kdaj goduje Marija,/godovi/,,,source_topic_vocabulary_and_editorial_variation,fran;church;hozana;ognjisce;koledarko
+C21,P1,kdaj goduje Janez,/godovi/,,,source_topic_vocabulary_and_editorial_variation,fran;church;hozana;ognjisce;koledarko
+C21,P1,god imena,/godovi/,,,source_topic_vocabulary_and_editorial_variation,fran;church;hozana;ognjisce;koledarko
+C21,P1,svetnik dneva,/godovi/,,,source_topic_vocabulary_and_editorial_variation,fran;church;hozana;ognjisce;koledarko
+C22,P1,podaljšani vikendi,/podaljsani-vikendi/2027/,,,source_topic_vocabulary_and_editorial_variation,koledarko;praznikifree
+C22,P1,podaljšani vikendi 2027,/podaljsani-vikendi/2027/,,,source_topic_vocabulary_and_editorial_variation,koledarko;praznikifree
+C22,P1,dolgi vikendi 2027,/podaljsani-vikendi/2027/,,,source_topic_vocabulary_and_editorial_variation,koledarko;praznikifree
+C22,P1,dopust 2027,/podaljsani-vikendi/2027/,,,source_topic_vocabulary_and_editorial_variation,koledarko;praznikifree
+C22,P1,načrtovanje dopusta 2027,/podaljsani-vikendi/2027/,,,source_topic_vocabulary_and_editorial_variation,koledarko;praznikifree
+C22,P1,planer dopusta,/podaljsani-vikendi/2027/,,,source_topic_vocabulary_and_editorial_variation,koledarko;praznikifree
+C22,P1,prazniki in dopust 2027,/podaljsani-vikendi/2027/,,,source_topic_vocabulary_and_editorial_variation,koledarko;praznikifree
+C22,P1,kako izkoristiti dopust 2027,/podaljsani-vikendi/2027/,,,source_topic_vocabulary_and_editorial_variation,koledarko;praznikifree
+C22,P1,podaljšani vikendi 2030,/podaljsani-vikendi/2030/,,,editorial_year_expansion,koledarko;praznikifree
+C22,P1,načrtovanje dopusta 2030,/podaljsani-vikendi/2030/,,,editorial_year_expansion,koledarko;praznikifree
+C23,P0,velika noč 2027,/prazniki/velika-noc/,,,source_topic_vocabulary_and_editorial_variation,govholidays;pust;maskarada;prazniki
+C23,P0,kdaj je velika noč 2027,/prazniki/velika-noc/,,,source_topic_vocabulary_and_editorial_variation,govholidays;pust;maskarada;prazniki
+C23,P0,velikonočni ponedeljek 2027,/prazniki/velika-noc/,,,source_topic_vocabulary_and_editorial_variation,govholidays;pust;maskarada;prazniki
+C23,P0,pust 2027,/prazniki/velika-noc/,,,source_topic_vocabulary_and_editorial_variation,govholidays;pust;maskarada;prazniki
+C23,P0,kdaj je pust 2027,/prazniki/velika-noc/,,,source_topic_vocabulary_and_editorial_variation,govholidays;pust;maskarada;prazniki
+C23,P0,pustni torek 2027,/prazniki/velika-noc/,,,source_topic_vocabulary_and_editorial_variation,govholidays;pust;maskarada;prazniki
+C23,P0,binkošti 2027,/prazniki/velika-noc/,,,source_topic_vocabulary_and_editorial_variation,govholidays;pust;maskarada;prazniki
+C23,P0,božič 2027,/prazniki/velika-noc/,,,source_topic_vocabulary_and_editorial_variation,govholidays;pust;maskarada;prazniki
+C23,P0,prešernov dan 2027,/prazniki/velika-noc/,,,source_topic_vocabulary_and_editorial_variation,govholidays;pust;maskarada;prazniki
+C23,P0,dan državnosti 2027,/prazniki/velika-noc/,,,source_topic_vocabulary_and_editorial_variation,govholidays;pust;maskarada;prazniki
+C23,P0,dan reformacije 2027,/prazniki/velika-noc/,,,source_topic_vocabulary_and_editorial_variation,govholidays;pust;maskarada;prazniki
+C23,P0,velika noč 2030,/prazniki/velika-noc/,,,editorial_year_expansion,govholidays;pust;maskarada;prazniki
+C23,P0,pust 2030,/prazniki/velika-noc/,,,editorial_year_expansion,govholidays;pust;maskarada;prazniki
+C24,P2,setveni koledar,,,,source_topic_vocabulary_and_editorial_variation,gaia;deloindom
+C24,P2,setveni koledar 2027,,,,source_topic_vocabulary_and_editorial_variation,gaia;deloindom
+C24,P2,setveni koledar 2026,,,,source_topic_vocabulary_and_editorial_variation,gaia;deloindom
+C24,P2,lunin setveni koledar,,,,source_topic_vocabulary_and_editorial_variation,gaia;deloindom
+C24,P2,vrtnarski koledar,,,,source_topic_vocabulary_and_editorial_variation,gaia;deloindom
+C24,P2,koledar vrtnih opravil,,,,source_topic_vocabulary_and_editorial_variation,gaia;deloindom
+C24,P2,setveni koledar marec,,,,source_topic_vocabulary_and_editorial_variation,gaia;deloindom
+C24,P2,setveni koledar april,,,,source_topic_vocabulary_and_editorial_variation,gaia;deloindom
+C24,P2,setveni koledar 2030,,,,editorial_year_expansion,gaia;deloindom
+C25,P1,družinski koledar,/druzinski-planer/,,,source_topic_vocabulary_and_editorial_variation,magicfamily;magicplanner;schoolpdf
+C25,P1,družinski planer,/druzinski-planer/,,,source_topic_vocabulary_and_editorial_variation,magicfamily;magicplanner;schoolpdf
+C25,P1,družinski koledar za tiskanje,/druzinski-planer/,,,source_topic_vocabulary_and_editorial_variation,magicfamily;magicplanner;schoolpdf
+C25,P1,koledar rojstnih dni,/druzinski-planer/,,,source_topic_vocabulary_and_editorial_variation,magicfamily;magicplanner;schoolpdf
+C25,P1,šolski urnik za tiskanje,/druzinski-planer/,,,source_topic_vocabulary_and_editorial_variation,magicfamily;magicplanner;schoolpdf
+C25,P1,predloga urnika,/druzinski-planer/,,,source_topic_vocabulary_and_editorial_variation,magicfamily;magicplanner;schoolpdf
+C25,P1,dnevni planer za tiskanje,/druzinski-planer/,,,source_topic_vocabulary_and_editorial_variation,magicfamily;magicplanner;schoolpdf
+C25,P1,planer za otroke,/druzinski-planer/,,,source_topic_vocabulary_and_editorial_variation,magicfamily;magicplanner;schoolpdf
+C25,P1,koledar z zapiski,/druzinski-planer/,,,source_topic_vocabulary_and_editorial_variation,magicfamily;magicplanner;schoolpdf
+C26,P0,horoskop,/horoskop/,,,source_topic_vocabulary_and_editorial_variation,horoskop_daily
+C26,P0,dnevni horoskop,/horoskop/,,,source_topic_vocabulary_and_editorial_variation,horoskop_daily
+C26,P0,horoskop danes,/horoskop/,,,source_topic_vocabulary_and_editorial_variation,horoskop_daily
+C26,P0,današnji horoskop,/horoskop/,,,source_topic_vocabulary_and_editorial_variation,horoskop_daily
+C26,P0,horoskop za danes,/horoskop/,,,source_topic_vocabulary_and_editorial_variation,horoskop_daily
+C26,P0,dnevni horoskop oven,/horoskop/,,,source_topic_vocabulary_and_editorial_variation,horoskop_daily
+C26,P0,dnevni horoskop bik,/horoskop/,,,source_topic_vocabulary_and_editorial_variation,horoskop_daily
+C26,P0,dnevni horoskop dvojčka,/horoskop/,,,source_topic_vocabulary_and_editorial_variation,horoskop_daily
+C26,P0,dnevni horoskop dvojčki,/horoskop/,,,source_topic_vocabulary_and_editorial_variation,horoskop_daily
+C26,P0,dnevni horoskop rak,/horoskop/,,,source_topic_vocabulary_and_editorial_variation,horoskop_daily
+C26,P0,dnevni horoskop lev,/horoskop/,,,source_topic_vocabulary_and_editorial_variation,horoskop_daily
+C26,P0,dnevni horoskop devica,/horoskop/,,,source_topic_vocabulary_and_editorial_variation,horoskop_daily
+C26,P0,dnevni horoskop tehtnica,/horoskop/,,,source_topic_vocabulary_and_editorial_variation,horoskop_daily
+C26,P0,dnevni horoskop škorpijon,/horoskop/,,,source_topic_vocabulary_and_editorial_variation,horoskop_daily
+C26,P0,dnevni horoskop strelec,/horoskop/,,,source_topic_vocabulary_and_editorial_variation,horoskop_daily
+C26,P0,dnevni horoskop kozorog,/horoskop/,,,source_topic_vocabulary_and_editorial_variation,horoskop_daily
+C26,P0,dnevni horoskop vodnar,/horoskop/,,,source_topic_vocabulary_and_editorial_variation,horoskop_daily
+C26,P0,dnevni horoskop ribi,/horoskop/,,,source_topic_vocabulary_and_editorial_variation,horoskop_daily
+C26,P0,dnevni horoskop ribe,/horoskop/,,,source_topic_vocabulary_and_editorial_variation,horoskop_daily
+C27,P0,horoskopska znamenja,/horoskop/izracun-znamenja/,,,source_topic_vocabulary_and_editorial_variation,lunin_zodiac;horoskop_daily
+C27,P0,astrološka znamenja,/horoskop/izracun-znamenja/,,,source_topic_vocabulary_and_editorial_variation,lunin_zodiac;horoskop_daily
+C27,P0,znamenja zodiaka,/horoskop/izracun-znamenja/,,,source_topic_vocabulary_and_editorial_variation,lunin_zodiac;horoskop_daily
+C27,P0,znamenja po datumih,/horoskop/izracun-znamenja/,,,source_topic_vocabulary_and_editorial_variation,lunin_zodiac;horoskop_daily
+C27,P0,horoskop po datumu rojstva,/horoskop/izracun-znamenja/,,,source_topic_vocabulary_and_editorial_variation,lunin_zodiac;horoskop_daily
+C27,P0,katero znamenje sem,/horoskop/izracun-znamenja/,,,source_topic_vocabulary_and_editorial_variation,lunin_zodiac;horoskop_daily
+C27,P0,izračun horoskopa,/horoskop/izracun-znamenja/,,,source_topic_vocabulary_and_editorial_variation,lunin_zodiac;horoskop_daily
+C27,P0,kalkulator horoskopa,/horoskop/izracun-znamenja/,,,source_topic_vocabulary_and_editorial_variation,lunin_zodiac;horoskop_daily
+C27,P0,izračun znamenja,/horoskop/izracun-znamenja/,,,source_topic_vocabulary_and_editorial_variation,lunin_zodiac;horoskop_daily
+C27,P0,horoskopsko znamenje datum rojstva,/horoskop/izracun-znamenja/,,,source_topic_vocabulary_and_editorial_variation,lunin_zodiac;horoskop_daily
+C27,P0,zodiakalna znamenja,/horoskop/izracun-znamenja/,,,source_topic_vocabulary_and_editorial_variation,lunin_zodiac;horoskop_daily

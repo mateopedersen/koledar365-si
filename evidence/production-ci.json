@@ -1,0 +1,70 @@
+{
+  "repo": "https://github.com/mateopedersen/koledar365-si",
+  "visibility": "public",
+  "run": "https://github.com/mateopedersen/koledar365-si/actions/runs/39423386561",
+  "attempt": 1,
+  "commit": "ff2c15e54e7122b28a18e53017ee935b0d3ae2e8",
+  "conclusion": "success",
+  "steps": [
+    {
+      "name": "Set up job",
+      "conclusion": "success"
+    },
+    {
+      "name": "Initialize containers",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/checkout@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Install image and database dependencies",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run ruby/setup-ruby@v1",
+      "conclusion": "success"
+    },
+    {
+      "name": "Ruby syntax",
+      "conclusion": "success"
+    },
+    {
+      "name": "PostgreSQL schema and functional tests",
+      "conclusion": "success"
+    },
+    {
+      "name": "SEO and observance contracts",
+      "conclusion": "success"
+    },
+    {
+      "name": "PostgreSQL backup and isolated restore",
+      "conclusion": "success"
+    },
+    {
+      "name": "Build actual production image",
+      "conclusion": "success"
+    },
+    {
+      "name": "Production boot and real 600 ppi export",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/upload-artifact@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/checkout@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Stop containers",
+      "conclusion": "success"
+    },
+    {
+      "name": "Complete job",
+      "conclusion": "success"
+    }
+  ]
+}

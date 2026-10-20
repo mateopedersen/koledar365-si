@@ -1,0 +1,91 @@
+name: Rails quality and production image
+on:
+  push:
+    branches: [main, 'rails-turnkey-*', free-cloudflare-pages]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: koledar365_test
+        ports: ['5432:5432']
+        options: --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 12
+    env:
+      RAILS_ENV: test
+      DATABASE_URL: postgres://postgres:postgres@127.0.0.1:5432/koledar365_test
+      PDFTOPPM_BIN: /usr/bin/pdftoppm
+      PYTHON_BIN: /usr/bin/python3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install image and database dependencies
+        run: sudo apt-get update -qq && sudo apt-get install -y libpq-dev poppler-utils python3-pil
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '4.0.7'
+          bundler-cache: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Weather and public download contracts
+        run: node script/test_weather_function.mjs && node script/test_public_catalog.mjs
+      - name: Ruby syntax
+        run: find app config lib db script test -name '*.rb' -print0 | xargs -0 -n1 ruby -c
+      - name: PostgreSQL schema and functional tests
+        run: bundle exec rails db:prepare && bundle exec rails test
+      - name: SEO and observance contracts
+        run: bundle exec ruby -r ./config/environment script/audit_seo.rb && bundle exec ruby -r ./config/environment script/audit_observances.rb
+      - name: PostgreSQL backup and isolated restore
+        env:
+          PG_CONTAINER: ${{ job.services.postgres.id }}
+        run: |
+          docker exec "$PG_CONTAINER" pg_dump -U postgres -d koledar365_test -Fc > /tmp/koledar-ci.dump
+          docker exec "$PG_CONTAINER" createdb -U postgres koledar365_restore_check
+          docker exec -i "$PG_CONTAINER" pg_restore -U postgres -d koledar365_restore_check --exit-on-error < /tmp/koledar-ci.dump
+          original=$(docker exec "$PG_CONTAINER" psql -U postgres -d koledar365_test -Atc 'SELECT count(*) FROM person_names; SELECT count(*) FROM pages; SELECT count(*) FROM calendar_events;')
+          restored=$(docker exec "$PG_CONTAINER" psql -U postgres -d koledar365_restore_check -Atc 'SELECT count(*) FROM person_names; SELECT count(*) FROM pages; SELECT count(*) FROM calendar_events;')
+          test "$original" = "$restored"
+          printf 'PostgreSQL dump/restore counts matched: %s\n' "$restored" > evidence/backup-restore-ci.txt
+          docker exec "$PG_CONTAINER" dropdb -U postgres koledar365_restore_check
+      - name: Build actual production image
+        run: docker build --progress=plain -t koledar365:ci .
+      - name: Production boot and real 600 ppi export
+        env:
+          SECRET_KEY_BASE: ci-only-disposable-key-2b15398d19a80159f64654a6959c5b21c6e595c7859a0221153fefef62acbe6519633420b6480f8c563a6603182df5750bfd28803c92eb8da70ef90ec70d02da
+        run: |
+          docker run -d --name koledar-ci --network host \
+            -e SECRET_KEY_BASE -e DATABASE_URL -e PREPARE_DB=1 \
+            koledar365:ci
+          for attempt in $(seq 1 40); do
+            if curl -fsS http://127.0.0.1:3000/up; then break; fi
+            sleep 2
+          done
+          curl -fsS http://127.0.0.1:3000/up
+          docker exec koledar-ci bundle exec rails runner script/production_smoke.rb
+          docker logs koledar-ci
+      - name: Rebuild free publication from a fresh SQLite database
+        if: ${{ hashFiles('site/release-manifest.json') != '' }}
+        env:
+          RAILS_ENV: development
+          OPERATOR_CONTACT: koledar365@gmail.com
+        run: |
+          unset DATABASE_URL
+          bundle exec ruby script/rebuild_free.rb
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verification-${{ github.sha }}
+          path: |
+            evidence/*.json
+            evidence/*.txt
+          retention-days: 7
