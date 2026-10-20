@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "assertions": 145,
+  "assertions": 8905,
   "independent_reference": "Swiss Ephemeris 2.10.03",
   "ascendant_samples": 48,
   "max_ascendant_error_degrees": 0.000042063561863869836,
@@ -8,5 +8,6 @@
   "midnight_rollover": true,
   "daily_signs_changed": 12,
   "solar_seasons": 60,
-  "mean_edition_compute_ms": 1.5464883199999895
+  "annual_day_comparisons": 4380,
+  "mean_edition_compute_ms": 0.11833168000000001
 }
