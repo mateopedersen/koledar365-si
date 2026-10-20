@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-20T21:17:02+02:00",
+  "checked_at": "2026-10-20T21:22:40+02:00",
   "kind": "local render audit; not a Google ranking or indexing certification",
   "tested": 345,
   "passed": true,
@@ -1323,10 +1323,10 @@
     {
       "path": "/horoskop/",
       "status": 200,
-      "title": "Dnevni horoskop · Koledar365",
-      "description": "Dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
+      "title": "Dnevni horoskop za vseh 12 znamenj · Koledar365",
+      "description": "Dnevni horoskop za vseh 12 znamenj v slovenščini. Preverite datume, spoznajte svoje znamenje ter brezplačno izračunajte ascendent in sončno znamenje.",
       "h1": [
-        "Dnevni horoskop"
+        "Dnevni horoskop.Trenutek za vas."
       ],
       "canonical": [
         "https://koledar365.si/horoskop/"
@@ -1335,16 +1335,18 @@
       "schema_types": [
         "WebSite",
         "WebPage",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebApplication",
+        "ItemList"
       ]
     },
     {
       "path": "/horoskop/bik/",
       "status": 200,
-      "title": "Bik – dnevni horoskop · Koledar365",
-      "description": "Bik – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
+      "title": "Dnevni horoskop: Bik · Koledar365",
+      "description": "Bik: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
       "h1": [
-        "Bik – dnevni horoskop"
+        "BikVaš dnevni horoskop."
       ],
       "canonical": [
         "https://koledar365.si/horoskop/bik/"
@@ -1353,16 +1355,18 @@
       "schema_types": [
         "WebSite",
         "WebPage",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebApplication",
+        "Article"
       ]
     },
     {
       "path": "/horoskop/devica/",
       "status": 200,
-      "title": "Devica – dnevni horoskop · Koledar365",
-      "description": "Devica – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
+      "title": "Dnevni horoskop: Devica · Koledar365",
+      "description": "Devica: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
       "h1": [
-        "Devica – dnevni horoskop"
+        "DevicaVaš dnevni horoskop."
       ],
       "canonical": [
         "https://koledar365.si/horoskop/devica/"
@@ -1371,16 +1375,18 @@
       "schema_types": [
         "WebSite",
         "WebPage",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebApplication",
+        "Article"
       ]
     },
     {
       "path": "/horoskop/dvojcka/",
       "status": 200,
-      "title": "Dvojčka – dnevni horoskop · Koledar365",
-      "description": "Dvojčka – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
+      "title": "Dnevni horoskop: Dvojčka · Koledar365",
+      "description": "Dvojčka: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
       "h1": [
-        "Dvojčka – dnevni horoskop"
+        "DvojčkaVaš dnevni horoskop."
       ],
       "canonical": [
         "https://koledar365.si/horoskop/dvojcka/"
@@ -1389,16 +1395,18 @@
       "schema_types": [
         "WebSite",
         "WebPage",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebApplication",
+        "Article"
       ]
     },
     {
       "path": "/horoskop/izracun-znamenja/",
       "status": 200,
-      "title": "Izračun horoskopskega znamenja · Koledar365",
-      "description": "Izračunajte tradicionalno sončno znamenje po dnevu in mesecu rojstva. Izračun je razvedrilen in ne predstavlja osebne astrološke karte.",
+      "title": "Izračun ascendenta in sončnega znamenja · Koledar365",
+      "description": "Brezplačen izračun ascendenta in sončnega znamenja po datumu, točni uri in kraju rojstva. Zgodovinski časovni pasovi, poletni čas in zasebna obdelava na napravi.",
       "h1": [
-        "Izračun horoskopskega znamenja"
+        "Vaše znamenje.Še bolj osebno."
       ],
       "canonical": [
         "https://koledar365.si/horoskop/izracun-znamenja/"
@@ -1407,16 +1415,17 @@
       "schema_types": [
         "WebSite",
         "WebPage",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebApplication"
       ]
     },
     {
       "path": "/horoskop/kozorog/",
       "status": 200,
-      "title": "Kozorog – dnevni horoskop · Koledar365",
-      "description": "Kozorog – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
+      "title": "Dnevni horoskop: Kozorog · Koledar365",
+      "description": "Kozorog: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
       "h1": [
-        "Kozorog – dnevni horoskop"
+        "KozorogVaš dnevni horoskop."
       ],
       "canonical": [
         "https://koledar365.si/horoskop/kozorog/"
@@ -1425,16 +1434,18 @@
       "schema_types": [
         "WebSite",
         "WebPage",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebApplication",
+        "Article"
       ]
     },
     {
       "path": "/horoskop/lev/",
       "status": 200,
-      "title": "Lev – dnevni horoskop · Koledar365",
-      "description": "Lev – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
+      "title": "Dnevni horoskop: Lev · Koledar365",
+      "description": "Lev: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
       "h1": [
-        "Lev – dnevni horoskop"
+        "LevVaš dnevni horoskop."
       ],
       "canonical": [
         "https://koledar365.si/horoskop/lev/"
@@ -1443,16 +1454,18 @@
       "schema_types": [
         "WebSite",
         "WebPage",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebApplication",
+        "Article"
       ]
     },
     {
       "path": "/horoskop/oven/",
       "status": 200,
-      "title": "Oven – dnevni horoskop · Koledar365",
-      "description": "Oven – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
+      "title": "Dnevni horoskop: Oven · Koledar365",
+      "description": "Oven: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
       "h1": [
-        "Oven – dnevni horoskop"
+        "OvenVaš dnevni horoskop."
       ],
       "canonical": [
         "https://koledar365.si/horoskop/oven/"
@@ -1461,16 +1474,18 @@
       "schema_types": [
         "WebSite",
         "WebPage",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebApplication",
+        "Article"
       ]
     },
     {
       "path": "/horoskop/rak/",
       "status": 200,
-      "title": "Rak – dnevni horoskop · Koledar365",
-      "description": "Rak – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
+      "title": "Dnevni horoskop: Rak · Koledar365",
+      "description": "Rak: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
       "h1": [
-        "Rak – dnevni horoskop"
+        "RakVaš dnevni horoskop."
       ],
       "canonical": [
         "https://koledar365.si/horoskop/rak/"
@@ -1479,16 +1494,18 @@
       "schema_types": [
         "WebSite",
         "WebPage",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebApplication",
+        "Article"
       ]
     },
     {
       "path": "/horoskop/ribi/",
       "status": 200,
-      "title": "Ribi – dnevni horoskop · Koledar365",
-      "description": "Ribi – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
+      "title": "Dnevni horoskop: Ribi · Koledar365",
+      "description": "Ribi: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
       "h1": [
-        "Ribi – dnevni horoskop"
+        "RibiVaš dnevni horoskop."
       ],
       "canonical": [
         "https://koledar365.si/horoskop/ribi/"
@@ -1497,16 +1514,18 @@
       "schema_types": [
         "WebSite",
         "WebPage",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebApplication",
+        "Article"
       ]
     },
     {
       "path": "/horoskop/skorpijon/",
       "status": 200,
-      "title": "Škorpijon – dnevni horoskop · Koledar365",
-      "description": "Škorpijon – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
+      "title": "Dnevni horoskop: Škorpijon · Koledar365",
+      "description": "Škorpijon: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
       "h1": [
-        "Škorpijon – dnevni horoskop"
+        "ŠkorpijonVaš dnevni horoskop."
       ],
       "canonical": [
         "https://koledar365.si/horoskop/skorpijon/"
@@ -1515,16 +1534,18 @@
       "schema_types": [
         "WebSite",
         "WebPage",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebApplication",
+        "Article"
       ]
     },
     {
       "path": "/horoskop/strelec/",
       "status": 200,
-      "title": "Strelec – dnevni horoskop · Koledar365",
-      "description": "Strelec – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
+      "title": "Dnevni horoskop: Strelec · Koledar365",
+      "description": "Strelec: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
       "h1": [
-        "Strelec – dnevni horoskop"
+        "StrelecVaš dnevni horoskop."
       ],
       "canonical": [
         "https://koledar365.si/horoskop/strelec/"
@@ -1533,16 +1554,18 @@
       "schema_types": [
         "WebSite",
         "WebPage",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebApplication",
+        "Article"
       ]
     },
     {
       "path": "/horoskop/tehtnica/",
       "status": 200,
-      "title": "Tehtnica – dnevni horoskop · Koledar365",
-      "description": "Tehtnica – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
+      "title": "Dnevni horoskop: Tehtnica · Koledar365",
+      "description": "Tehtnica: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
       "h1": [
-        "Tehtnica – dnevni horoskop"
+        "TehtnicaVaš dnevni horoskop."
       ],
       "canonical": [
         "https://koledar365.si/horoskop/tehtnica/"
@@ -1551,16 +1574,18 @@
       "schema_types": [
         "WebSite",
         "WebPage",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebApplication",
+        "Article"
       ]
     },
     {
       "path": "/horoskop/vodnar/",
       "status": 200,
-      "title": "Vodnar – dnevni horoskop · Koledar365",
-      "description": "Vodnar – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
+      "title": "Dnevni horoskop: Vodnar · Koledar365",
+      "description": "Vodnar: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
       "h1": [
-        "Vodnar – dnevni horoskop"
+        "VodnarVaš dnevni horoskop."
       ],
       "canonical": [
         "https://koledar365.si/horoskop/vodnar/"
@@ -1569,7 +1594,9 @@
       "schema_types": [
         "WebSite",
         "WebPage",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebApplication",
+        "Article"
       ]
     },
     {
