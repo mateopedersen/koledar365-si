@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-20T21:06:03+02:00",
+  "checked_at": "2026-10-20T21:17:02+02:00",
   "kind": "local render audit; not a Google ranking or indexing certification",
   "tested": 345,
   "passed": true,
@@ -6342,10 +6342,10 @@
     {
       "path": "/ustvari-koledar/",
       "status": 200,
-      "title": "Ustvari svoj koledar · Koledar365",
-      "description": "Ustvarite koledar z lastnim imenom za leta 2027–2030. Izberite eno od 15 predlog, papir in usmerjenost ter pripravite datoteki za tisk.",
+      "title": "Ustvari svoj koledar – spletni urejevalnik · Koledar365",
+      "description": "Ustvarite svoj letni ali mesečni koledar z imenom, fotografijami, logotipom in dogodki. Prilagodite pisave, barve in začetek tedna ter prenesite PDF, PNG ali SVG.",
       "h1": [
-        "Ustvari svoj koledar"
+        "Ustvarite svoj koledar.Od prve zamisli do zadnjega dne."
       ],
       "canonical": [
         "https://koledar365.si/ustvari-koledar/"
@@ -6354,7 +6354,9 @@
       "schema_types": [
         "WebSite",
         "WebPage",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "WebApplication",
+        "FAQPage"
       ]
     },
     {
