@@ -1,0 +1,33 @@
+{
+  "renderer": "lunar-ray-1",
+  "sources": {
+    "naif0012.tls": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b",
+    "de440s.bsp": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2",
+    "moon_pa_de440_200625.bpc": "60cd55aa401ea2ea97360636f567554bfe4e37bb829f901b4460a455dfaf783f",
+    "moon_de440_250416.tf": "a47c71e9c9f33796bdafb2c9d69a7ee447b6016ecad80f71cd6f3e479f9cf768",
+    "ldem_16.tif": "1ea42bf44f7e9d694f79c3afa7145f97fbf06cc67372067d9fe73dce43bad796",
+    "lroc_color_16bit_srgb_8k.tif": "db7808e878b6a55eb409bb231eab8deb477f84b5c9d7396d76ff73e5d54992d9"
+  },
+  "modelLimits": [
+    "orthographic sphere silhouette",
+    "DEM normals and sampled terrain shadows",
+    "Lommel-Seeliger approximation; no measured photometric calibration",
+    "no eclipse/atmosphere/Earthshine"
+  ],
+  "days": [
+    {
+      "date": "2026-01-01",
+      "utc": "2026-01-01T00:00:00Z",
+      "orientation": "lunar_north_up",
+      "frame": "MOON_ME_DE440_ME421",
+      "subEarthLongitude": -1.2834502221427881,
+      "subEarthLatitude": -6.556141678742139,
+      "librationIndependentDeltaDeg": 0.02411622109556344,
+      "illuminationDeltaPP": 0.0027733152836662,
+      "maskDeltaPP": 0.006971614005502058,
+      "sha256": "69ba1e60b49a7e586bccb3d801e7f9b878bade72727f4314eed6b2e0fff74388",
+      "width": 768,
+      "height": 768
+    }
+  ]
+}

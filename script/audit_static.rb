@@ -23,7 +23,7 @@ Dir[site.join('**/*.html')].sort.each do |file|
   fail_with.call('Legacy planner gallery replaced the editor') if doc.at_css('#planner-options,.design-section')
   fail_with.call('Calendar Studio engine is missing') unless site.join('studio/engine.mjs').file?
  end
- if (gallery=doc.at_css('[data-calendar-gallery],.design-section'))
+ if (gallery=doc.at_css('[data-calendar-gallery],.design-section')) && !relative.start_with?('lunin-koledar/2026/')
   gallery_pages+=1;family=gallery['data-gallery-type'] || JSON.parse(gallery['data-export-options']).fetch('type');gallery_families[family]+=1
   fail_with.call('Gallery must share a workspace with its calendar or settings') unless doc.at_css('body.gallery-page .download-workspace > .gallery-context #gallery-context-content') && gallery.ancestors.any? { |parent|parent['class'].to_s.split.include?('download-workspace') }
   fail_with.call('Gallery must stay open and contain all 15 designs') unless gallery.css('[data-calendar-design],.design-card').size==15 && !gallery.ancestors.any? { |parent|parent.name=='details'||parent.key?('hidden') }

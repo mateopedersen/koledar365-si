@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "reviewer": "Codex visual inspection",
+  "contactSheets": 13,
+  "assetsCovered": 208,
+  "findings": [],
+  "referenceComparison": {
+    "source": "https://svs.gsfc.nasa.gov/5587/",
+    "utc": "2026-01-01T00:00:00Z",
+    "surfaceLandmarks": "Mare Crisium, Mare Imbrium and Tycho on the expected side; different roll matches stated north convention",
+    "referenceSubEarthLongitude": -1.279,
+    "renderSubEarthLongitude": -1.2834502221427881,
+    "referenceSubEarthLatitude": -6.556,
+    "renderSubEarthLatitude": -6.556141678742139,
+    "assessment": "visual plausibility and orientation comparison; no measured photometric calibration claimed"
+  }
+}

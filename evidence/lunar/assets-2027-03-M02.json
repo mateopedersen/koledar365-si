@@ -1,0 +1,75 @@
+{
+  "assets": [
+    {
+      "assetId": "2027-03-M02",
+      "periodType": "monthly",
+      "year": 2027,
+      "month": 3,
+      "variantId": "M02",
+      "variantLabelSl": "Svetli mesečni koledar",
+      "status": "generated_pending_visual_qa",
+      "canonicalPageProposed": "/lunin-koledar/2027/marec/",
+      "paper": "A4",
+      "orientation": "portrait",
+      "paperMm": {
+        "width": 210,
+        "height": 297
+      },
+      "pdf": {
+        "path": "prenosi/lunin-koledar/2027/marec/lunin-koledar-marec-2027-svetli-koledar.pdf",
+        "requiredColorSpace": "CMYK",
+        "rasterMinimumEffectivePpi": 600,
+        "vectorTextAndLines": true,
+        "bytes": 7894336,
+        "sha256": "f360cf9f90e27372dd3af6a4508926f72c5ad719c096e7cefcb60ef289fa8b69",
+        "mimeType": "application/pdf",
+        "iccProfile": "default_cmyk.icc",
+        "iccSha256": "8472fa1493a024b800b67dee9424835ec0c41ab79490200ae8ec4a689fd1b9a9",
+        "minimumEffectivePpi": 600.9230769230769
+      },
+      "webp": {
+        "path": "prenosi/lunin-koledar/2027/marec/lunin-koledar-marec-2027-svetli-koledar.webp",
+        "requiredColorSpace": "sRGB",
+        "targetWidthPixels": 4961,
+        "targetHeightPixels": 7016,
+        "bytes": 1365504,
+        "sha256": "4e27bec6be0c37940a339442abb510a8fad528434edda024e51f84885f48fc03",
+        "mimeType": "image/webp",
+        "width": 4961,
+        "height": 7016,
+        "iccProfile": "sRGB"
+      },
+      "preview": {
+        "path": "slike/lunin-koledar/2027/marec/lunin-koledar-marec-2027-svetli-koledar-predogled.webp",
+        "colorSpace": "sRGB",
+        "responsiveWidths": [
+          480,
+          960,
+          1440
+        ],
+        "width": 679,
+        "height": 960,
+        "bytes": 43184,
+        "sha256": "e159ef05c4059676c35cc037ebe9e16deb66d50cbc72c080257cf2308cffee27",
+        "mimeType": "image/webp"
+      },
+      "previewAltSl": "Lunin koledar za marec 2027 z dnevnimi prikazi Lune – svetli mesečni koledar.",
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "creditText": "koledar365.si",
+      "productionManifestRequiredFields": [
+        "bytes",
+        "sha256",
+        "dataSha256",
+        "mimeType",
+        "width",
+        "height",
+        "iccProfile",
+        "fontEmbeddingCheck",
+        "renderQaStatus"
+      ],
+      "dataSha256": "ec3f3b5ebe8c96c07a7b1c4e50d755f9d1d86212d09e01c00d2a6eadf547d904",
+      "renderQaStatus": "pending",
+      "fontEmbeddingCheck": "pending"
+    }
+  ]
+}

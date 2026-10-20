@@ -35,3 +35,4 @@ if(!fs.existsSync(clientFile)||!fs.readFileSync(clientFile).equals(clientBytes))
 for(const file of files.filter(file=>file.endsWith('.html'))){const html=fs.readFileSync(file,'utf8');if(html.includes('src="/free/client.js"')||[...html.matchAll(/src="\/free\/(client-[a-f0-9]+\.js)"/g)].some(match=>match[1]!==clientName))issues.push(path.relative(site,file)+': stale browser adapter URL')}
 if(!fs.readFileSync(path.join(site,'index.html'),'utf8').includes('/free/'+clientName))issues.push('Home page is missing the fingerprint browser adapter');
 console.log(JSON.stringify({passed:!issues.length,files:files.length,pairs:catalog.length,issues},null,2));if(issues.length)process.exit(1);
+await import('./lunar/verify_static.mjs');

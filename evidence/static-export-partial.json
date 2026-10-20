@@ -1,12 +1,17 @@
 {
-  "built_at": "2026-10-20T18:32:22+02:00",
-  "html_count": 5,
+  "built_at": "2026-10-20T21:30:54+02:00",
+  "html_count": 10,
   "paths": [
-    "/prazniki/",
+    "/",
+    "/datumski-kalkulator/",
+    "/delovni-dnevi/2027/april/",
+    "/horoskop/bik/",
+    "/letni-casi/jesensko-enakonocje/",
+    "/lunin-koledar/2027/april/",
+    "/nacrtovalnik-dopusta/",
     "/prazniki/2027/",
-    "/prazniki/2028/",
-    "/prazniki/2029/",
-    "/prazniki/2030/"
+    "/solske-pocitnice/2026-2027/",
+    "/ustvari-koledar/"
   ],
-  "output": "tmp/prazniki-export"
+  "output": "site"
 }

@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "browser": "Codex in-app Chromium",
+  "tests": [
+    "Day click 2027-01-14",
+    "ArrowRight selects 2027-01-15",
+    "Back restores 2027-01-14",
+    "Full Moon filter shows one January row",
+    "Dialog opens, Escape closes, focus returns",
+    "Date input navigates to 2028-02-29 with 29 day buttons",
+    "320 px day click and dialog show 2027-08-09"
+  ],
+  "responsiveWidths": [
+    {
+      "cssPixels": 320,
+      "scrollWidth": 320,
+      "days": 31,
+      "downloadLinks": 8
+    },
+    {
+      "cssPixels": 390,
+      "scrollWidth": 390,
+      "days": 31,
+      "downloadLinks": 8
+    },
+    {
+      "cssPixels": 768,
+      "scrollWidth": 768,
+      "days": 31,
+      "downloadLinks": 8
+    },
+    {
+      "cssPixels": 1440,
+      "scrollWidth": 1440,
+      "days": 31,
+      "downloadLinks": 8
+    }
+  ],
+  "responsiveMethod": "Same rendered HTML loaded in explicitly sized iframes; CSS layout and interaction checked, not physical mobile-device certification",
+  "physicalPrint": "not_run",
+  "physicalMobileDevices": "not_run"
+}
