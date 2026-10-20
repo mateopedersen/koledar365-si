@@ -1,0 +1,70 @@
+{
+  "engine": "Chromium, responsive layout emulation; not a physical device certification",
+  "checks": [
+    {
+      "case": "2027-06-08 working holiday",
+      "result": "Običajen delovni dan"
+    },
+    {
+      "case": "2027-06-25 statutory free day",
+      "result": "Dela prost dan"
+    },
+    {
+      "case": "2027-06-26 weekend",
+      "result": "Konec tedna"
+    },
+    {
+      "case": "reject date in a different year",
+      "result": "Izberite datum v letu 2027."
+    },
+    {
+      "case": "July empty filter",
+      "result": "Prikazani datumi: 0 od 23",
+      "empty": true,
+      "exportDisabled": "true"
+    },
+    {
+      "case": "static page accent insensitive search",
+      "result": "Prikazani datumi: 1 od 23",
+      "ics": "/prazniki/2027.ics?q=presernov"
+    },
+    {
+      "case": "static reset",
+      "result": "Prikazani datumi: 23 od 23"
+    },
+    {
+      "case": "copy share link",
+      "result": "Povezava je kopirana. Vključuje izbrani mesec, filtre in datum."
+    }
+  ],
+  "layouts": [
+    {
+      "description": "block",
+      "galleryCards": 15,
+      "hero": "grid",
+      "page": 320,
+      "viewport": 320
+    },
+    {
+      "description": "block",
+      "galleryCards": 15,
+      "hero": "grid",
+      "page": 390,
+      "viewport": 390
+    },
+    {
+      "description": "block",
+      "galleryCards": 15,
+      "hero": "grid",
+      "page": 768,
+      "viewport": 768
+    },
+    {
+      "description": "block",
+      "galleryCards": 15,
+      "hero": "grid",
+      "page": 1440,
+      "viewport": 1440
+    }
+  ]
+}

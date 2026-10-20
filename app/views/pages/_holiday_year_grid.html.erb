@@ -1,0 +1,17 @@
+<section class="holiday-year-overview" aria-labelledby="holiday-overview-title">
+  <div class="holiday-section-heading"><div><span class="eyebrow">VSAK MESEC NA SVOJEM MESTU</span><h2 id="holiday-overview-title">Celo leto. En jasen pogled.</h2><p>Rdeče so označeni dela prosti prazniki, modro drugi državni prazniki.</p></div><span class="holiday-overview-year"><%= @year %></span></div>
+  <div class="holiday-year-grid">
+<% year_events=@holidays.events.group_by(&:on) %>
+<% CalendarEngine::MONTHS.each_with_index do |month,index| %>
+      <article class="holiday-calendar-month">
+        <h3><a href="/prazniki/<%= @year %>/?month=<%= index+1 %>#prazniki-seznam" data-select-holiday-month="<%= index+1 %>"><%= month.sub(/\A./,&:upcase) %><%= ui_icon('chevron-right') %></a></h3>
+        <table aria-label="<%= month %> <%= @year %>"><thead><tr><% %w[P T S Č P S N].each_with_index do |day,weekday| %><th scope="col" aria-label="<%= CalendarEngine::DAYS[weekday] %>"><%= day %></th><% end %></tr></thead><tbody>
+<% CalendarEngine.weeks(@year,index+1).each do |week| %><tr><% week.each do |date| %><td class="<%= 'is-weekend' if date.cwday>=6 %>">
+<% if date.month==index+1 %><% event=year_events[date]&.first %><% if event %><a class="<%= event.work_free ? 'is-free' : 'is-observance' %>" href="<%= event_path(event) %>" aria-label="<%= I18n.l(date) %>: <%= holiday_title(event) %> — <%= holiday_status(event) %>"><%= date.day %></a><% else %><span><%= date.day %></span><% end %><% end %>
+          </td><% end %></tr><% end %>
+        </tbody></table>
+      </article>
+<% end %>
+  </div>
+  <div class="holiday-legend"><span><i class="free"></i>Dela prost dan</span><span><i class="observance"></i>Državni praznik, ki ni dela prost</span><span><i class="weekend"></i>Konec tedna</span></div>
+</section>

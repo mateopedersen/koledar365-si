@@ -11,4 +11,23 @@ module HolidaysHelper
   def holiday_origin(event)
     event.state_holiday ? 'Državni praznik' : 'Drug zakonsko določen dela prost dan'
   end
+
+  def holiday_date_count(count)
+    ending = case count % 100
+             when 1 then 'datum'
+             when 2 then 'datuma'
+             when 3, 4 then 'datumi'
+             else 'datumov'
+             end
+    "#{count} #{ending}"
+  end
+
+  def holiday_break_label(count)
+    case count % 100
+    when 1 then 'zaporedni prosti dan'
+    when 2 then 'zaporedna prosta dneva'
+    when 3, 4 then 'zaporedni prosti dnevi'
+    else 'zaporednih prostih dni'
+    end
+  end
 end
