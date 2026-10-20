@@ -3,16 +3,14 @@
 <section class="panel date-tool" data-date-calculator>
   <div class="date-tool__intro">
     <div><span class="date-tool__eyebrow">HITRI IZRAČUN</span><h2>Izberite vrsto izračuna</h2><p>Vsi datumski izračuni so pripravljeni takoj. Rezultat lahko kopirate ali delite s povezavo.</p></div>
-    <svg class="date-tool__icon" viewBox="0 0 96 96" role="img" aria-label="Koledar in časovnica">
-      <rect x="8" y="11" width="80" height="77" rx="23" fill="#0054b8"/><path d="M28 8v15M68 8v15" stroke="#fff" stroke-width="6" stroke-linecap="round"/><rect x="23" y="33" width="50" height="40" rx="9" fill="#fff" opacity=".97"/><path d="M34 46h10m8 0h10M34 59h10m8 0h10" stroke="#0054b8" stroke-width="4" stroke-linecap="round"/><circle cx="65" cy="60" r="11" fill="#cf2439"/><path d="M65 54v7l4 2" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-    </svg>
+    <svg class="date-tool__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="/visuals/ui-material-v3.svg#calculator"/></svg>
   </div>
   <form class="date-tool__form" action="/izracun/" method="post" data-date-form>
     <%= hidden_field_tag :authenticity_token,form_authenticity_token %><input type="hidden" name="tool" value="date" data-date-tool>
     <div class="date-tabs" role="tablist" aria-label="Vrsta datumskega izračuna">
-      <button type="button" role="tab" aria-selected="true" tabindex="0" id="date-tab-difference" aria-controls="date-pane-difference" data-date-mode="difference"><span class="date-tabs__icon" aria-hidden="true">↔</span>Razlika med datumoma</button>
-      <button type="button" role="tab" aria-selected="false" tabindex="-1" id="date-tab-add" aria-controls="date-pane-add" data-date-mode="add"><span class="date-tabs__icon" aria-hidden="true">＋</span>Prištej ali odštej</button>
-      <button type="button" role="tab" aria-selected="false" tabindex="-1" id="date-tab-workdays" aria-controls="date-pane-workdays" data-date-mode="workdays"><span class="date-tabs__icon" aria-hidden="true">▦</span>Delovni dnevi</button>
+      <button type="button" role="tab" aria-selected="true" tabindex="0" id="date-tab-difference" aria-controls="date-pane-difference" data-date-mode="difference"><span class="date-tabs__icon" aria-hidden="true"><%= ui_icon('calendar') %></span>Razlika med datumoma</button>
+      <button type="button" role="tab" aria-selected="false" tabindex="-1" id="date-tab-add" aria-controls="date-pane-add" data-date-mode="add"><span class="date-tabs__icon" aria-hidden="true"><%= ui_icon('plus') %></span>Prištej ali odštej</button>
+      <button type="button" role="tab" aria-selected="false" tabindex="-1" id="date-tab-workdays" aria-controls="date-pane-workdays" data-date-mode="workdays"><span class="date-tabs__icon" aria-hidden="true"><%= ui_icon('briefcase') %></span>Delovni dnevi</button>
     </div>
     <fieldset class="date-pane" id="date-pane-difference" role="tabpanel" aria-labelledby="date-tab-difference" data-date-pane="difference">
       <legend class="visually-hidden">Izračun razlike med datumoma</legend>
