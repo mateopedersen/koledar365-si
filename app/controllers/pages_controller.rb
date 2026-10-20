@@ -16,6 +16,7 @@ class PagesController < ApplicationController
     @page=@person ? nil : Page.find_by!(path:path)
     @noindex=(@person ? @person.status : @page.status)!='published'
     @title=@person ? "Koledar z imenom #{@person.exact}" : @page.title
+    @title='Ustvari svoj koledar – spletni urejevalnik' if path=='/ustvari-koledar/'
     if path=='/'
       @year=params[:year].present? ? @year : @today.year.clamp(2026,2030)
       @month=params[:month].present? ? @month : @today.month
@@ -81,6 +82,7 @@ class PagesController < ApplicationController
     return 'important_days' if path.start_with?('/pomembni-dnevi/') && !CalendarEvent.exists?(slug:path.split('/').last)
     return 'events' if path.start_with?('/prazniki/','/pomembni-dnevi/','/letni-casi/')||path=='/premik-ure/'
     return 'tool' if %w[/datumski-kalkulator/ /kalkulator-delovnih-dni/ /nacrtovalnik-dopusta/ /odstevanje/ /stevilka-tedna/ /dan-v-letu/ /prestopno-leto/].include?(path)
+    return 'calendar_studio' if path=='/ustvari-koledar/'
     return 'planner' if %w[/ustvari-koledar/ /prazen-koledar/ /razpored-izmen/ /solski-urnik/ /rojstnodnevni-koledar/ /dnevni-planer/ /druzinski-planer/ /koledar-za-tiskanje/].include?(path)
     return 'tools_index' if path=='/orodja/'
     'info'

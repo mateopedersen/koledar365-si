@@ -10,7 +10,7 @@ class PlannerIntegrationTest < ActionDispatch::IntegrationTest
     assert_response :unprocessable_entity
   end
   test 'all planner workbenches expose working edit preview and backup controls' do
-    %w[ustvari-koledar prazen-koledar razpored-izmen solski-urnik rojstnodnevni-koledar dnevni-planer druzinski-planer].each do |slug|
+    %w[prazen-koledar razpored-izmen solski-urnik rojstnodnevni-koledar dnevni-planer druzinski-planer].each do |slug|
       get "/#{slug}/"
       assert_response :success
       assert_select '#planner-entry'
