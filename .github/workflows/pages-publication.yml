@@ -39,7 +39,7 @@ jobs:
       - name: Install PDF tools
         run: sudo apt-get update -qq && sudo apt-get install -y poppler-utils python3-pil
       - name: Rebuild public HTML with Ruby
-        run: bundle exec ruby script/rebuild_free.rb
+        run: bundle exec ruby script/rebuild_free.rb && bundle exec ruby script/verify_vector_identity.rb
       - name: Save complete verified publication
         run: |
           git config user.name 'Koledar365 publication'
