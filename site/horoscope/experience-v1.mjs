@@ -74,7 +74,7 @@ if(root){
       let sky;try{sky=await skyModule;}catch{throw Error('Izračunske knjižnice ni mogoče naložiti. Preverite povezavo in poskusite znova.');}
       const rotation=sky.Rotation_EQD_ECT(instant).rot,obliquity=Math.atan2(Math.abs(rotation[1][2]),rotation[1][1])*180/Math.PI;
       const angle=ascendantLongitude(sky.SiderealTime(instant),obliquity,lat,lon),index=signIndex(angle),rising=profiles[index],sun=profiles[signIndex(sky.SunPosition(instant).elon)];
-      const title=element('h3','Vaš ascendent: '+rising.name),list=element('dl');
+      const title=element('h3','Vaše vzhajajoče znamenje: '+rising.name),list=element('dl');
       for(const [label,value] of [['Vzhajajoče znamenje',rising.name],['Položaj v znamenju',(angle%30).toLocaleString('sl-SI',{minimumFractionDigits:2,maximumFractionDigits:2})+'°'],['Sončno znamenje',sun.name]]){const row=element('div');row.append(element('dt',label),element('dd',value));list.append(row);}
       const link=element('a','Preberite horoskop: '+rising.name+' →');link.href='/horoskop/'+rising.slug+'/';
       const note=element('p','Tropski zodiak · časovni pas '+timeZone+' · trenutek '+instant.toISOString().replace('T',' ').replace('.000Z',' UTC')+'. Geometrijski izračun; astrološka razlaga je simbolna.','z-calculation-note');
