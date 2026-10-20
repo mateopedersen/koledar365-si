@@ -1,11 +1,39 @@
 <% if !page_path.start_with?('/lunin-koledar/') || (page_path!=LunarCalendar.path && ![2027,2028,2029,2030].include?(@year)) %><%= render 'lunar_legacy' %><% else %>
 <% hub=page_path==LunarCalendar.path; month=@page.month; year=@year; rows=LunarCalendar.period(year,month); events=LunarCalendar.phases(year,month) %>
 <link rel="stylesheet" href="/lunar/calendar.css">
-<section class="lunar-experience" data-lunar data-year="<%= year %>" data-month="<%= month %>">
-<nav class="lunar-years" aria-label="Leta"><% (2027..2030).each do |y| %><a href="<%= LunarCalendar.path(y) %>" <%= 'aria-current=page' if !hub&&year==y&&!month %>><%= y %></a><% end %><a href="/viri-in-metodologija/">Viri in metodologija</a></nav>
+<section class="lunar-experience <%= 'lunar-hub' if hub %>" data-lunar data-year="<%= year %>" data-month="<%= month %>">
+<% unless hub %><nav class="lunar-years" aria-label="Leta"><% (2027..2030).each do |y| %><a href="<%= LunarCalendar.path(y) %>" <%= 'aria-current=page' if year==y&&!month %>><%= y %></a><% end %><a href="/viri-in-metodologija/">Viri in metodologija</a></nav><% end %>
 <% if hub %>
-<p>Izberite leto in mesec. Dnevni prikazi prikazujejo Luno ob 12.00 po času v Sloveniji, časi glavnih men pa trenutek posameznega dogodka.</p>
-<div class="lunar-year-links"><% (2027..2030).each do |y| %><article class="panel"><h2><a href="<%= LunarCalendar.path(y) %>">Lunin koledar <%= y %></a></h2><p><%= LunarCalendar.period(y).size %> dni · <%= LunarCalendar.phases(y).size %> glavnih luninih men</p><div class="lunar-month-links"><% (1..12).each do |m| %><a href="<%= LunarCalendar.path(y,m) %>"><%= LunarCalendar::MONTHS[m-1] %></a><% end %></div></article><% end %></div>
+<section class="lunar-hub-years" aria-labelledby="lunar-hub-years-title">
+  <div class="lunar-hub-section-head"><div><span class="lunar-hub-overline">PREGLED PO LETIH</span><h2 id="lunar-hub-years-title">Izberite svoje leto</h2></div><p>Odprite letni pregled ali skočite naravnost na izbrani mesec.</p></div>
+  <div class="lunar-year-links"><% (2027..2030).each do |y| %><% days=LunarCalendar.period(y).size; year_events=LunarCalendar.phases(y) %>
+    <article class="lunar-year-card lunar-year-card--<%= y %>">
+      <div class="lunar-year-art" aria-hidden="true">
+        <span class="lunar-year-art__label">LETNI LUNIN PREGLED</span><span class="lunar-year-art__number"><%= y %></span>
+        <% if y==2027 %>
+        <svg viewBox="0 0 360 150" focusable="false"><circle cx="248" cy="76" r="62" class="orbit"/><circle cx="248" cy="76" r="44" class="moon moon--full"/><path d="M207 47c22-18 62-20 86-3M216 92c19-16 48-18 65-7" class="crater"/><circle cx="248" cy="76" r="3" class="moon-mark"/><path d="M45 108c51-55 103-58 158-7" class="orbit orbit--red"/><circle cx="45" cy="108" r="6" class="satellite satellite--red"/><path d="M72 34h12m-6-6v12M307 115h10m-5-5v10" class="star"/></svg>
+        <% elsif y==2028 %>
+        <svg viewBox="0 0 360 150" focusable="false"><circle cx="249" cy="76" r="55" class="moon moon--half"/><path d="M249 21a55 55 0 0 0 0 110c22-16 35-36 35-55s-13-39-35-55Z" class="shadow"/><ellipse cx="249" cy="76" rx="82" ry="30" transform="rotate(-23 249 76)" class="orbit orbit--red"/><circle cx="174" cy="105" r="6" class="satellite satellite--blue"/><path d="M215 48c9-6 17-7 25-4M225 96c7-7 16-9 23-7" class="crater"/><path d="M74 39h14m-7-7v14M100 106h10m-5-5v10" class="star"/></svg>
+        <% elsif y==2029 %>
+        <svg viewBox="0 0 360 150" focusable="false"><path d="M194 77h131" class="orbit orbit--blue"/><circle cx="205" cy="77" r="31" class="moon moon--crescent"/><circle cx="221" cy="77" r="31" class="shadow shadow--crescent"/><circle cx="261" cy="77" r="31" class="moon moon--half-small"/><path d="M261 46a31 31 0 0 0 0 62c13-9 20-21 20-31s-7-22-20-31Z" class="shadow"/><circle cx="317" cy="77" r="31" class="moon moon--full-small"/><path d="M208 24c44-22 96-14 130 19" class="orbit orbit--red"/><path d="M62 48h12m-6-6v12M104 104h10m-5-5v10" class="star"/></svg>
+        <% else %>
+        <svg viewBox="0 0 360 150" focusable="false"><path d="M181 120c23-52 52-78 86-78s63 26 86 78" class="mountain"/><circle cx="267" cy="74" r="37" class="moon moon--rise"/><path d="M231 77h72c-2 19-17 34-36 34s-34-15-36-34Z" class="shadow shadow--horizon"/><path d="M210 114c30-42 77-57 139-42" class="orbit orbit--red"/><circle cx="210" cy="114" r="5" class="satellite satellite--red"/><path d="M63 36h14m-7-7v14M112 97h10m-5-5v10" class="star"/></svg><% end %>
+      </div>
+      <div class="lunar-year-card__body">
+        <div class="lunar-year-summary"><span><%= days %> dni</span><span><%= year_events.size %> glavnih luninih men</span></div>
+        <a class="lunar-year-open" href="<%= LunarCalendar.path(y) %>">Odprite letni pregled <span aria-hidden="true">↗</span></a>
+        <h3>Izberite mesec</h3>
+        <nav class="lunar-month-links" aria-label="Meseci leta <%= y %>"><% (1..12).each_with_index do |m,index| %><a href="<%= LunarCalendar.path(y,m) %>"><span><%= format('%02d',index+1) %></span><%= LunarCalendar::MONTHS[m-1] %></a><% end %></nav>
+      </div>
+    </article>
+  <% end %></div>
+</section>
+<section class="lunar-hub-method" aria-label="Kako uporabljati lunin koledar">
+  <div><span class="lunar-hub-method__index">01</span><h2>Dnevni pogled</h2><p>Na mesečni strani izberite datum za osvetljenost, fazo in večji prikaz Lune.</p></div>
+  <div><span class="lunar-hub-method__index">02</span><h2>Lunine mene</h2><p>Časi mlaja, prvega krajca, ščipa in zadnjega krajca so prikazani v lokalnem času.</p></div>
+  <div><span class="lunar-hub-method__index">03</span><h2>Za tisk in zaslon</h2><p>Na letnih in mesečnih straneh prenesite koledar kot datoteko PDF ali sliko WebP.</p></div>
+  <a href="/viri-in-metodologija/">Viri in metodologija <span aria-hidden="true">→</span></a>
+</section>
 <% else %>
 <nav class="lunar-month-links" aria-label="Meseci"><% (1..12).each do |m| %><a href="<%= LunarCalendar.path(year,m) %>" <%= 'aria-current=page' if month==m %>><%= LunarCalendar::MONTHS[m-1] %></a><% end %></nav>
 <% if month %>
@@ -20,10 +48,12 @@
 <p><%= year %>: <%= rows.size %> dni in <%= events.size %> glavnih luninih men. Vsak mesečni pregled vodi do dnevnih podatkov.</p>
 <div class="lunar-year-grid"><% (1..12).each do |m| %><article class="panel"><h2><a href="<%= LunarCalendar.path(year,m) %>"><%= LunarCalendar::MONTHS[m-1].capitalize %></a></h2><div class="lunar-mini-grid"><% LunarCalendar::SHORT.each do |s| %><span><%= s %></span><% end %><% (Date.new(year,m,1).cwday-1).times do %><span></span><% end %><% LunarCalendar.period(year,m).each do |d| %><a href="<%= LunarCalendar.path(year,m) %>#dan-<%= d['date'] %>" aria-label="<%= LunarCalendar.date_label(d['date']) %>, <%= LunarCalendar.percent(d) %>"><span><%= d['date'][-2..].to_i %></span><%= lunar_moon(d['date'],small:true) %></a><% end %></div></article><% end %></div>
 <% end %>
-<section class="panel lunar-phases"><h2>Lunine mene <%= month ? "za #{LunarCalendar::MONTHS[month-1]} " : '' %><%= year %></h2><label for="lunar-phase-filter">Prikaži meno</label><select id="lunar-phase-filter"><option value="all">Vse mene</option><% events.uniq { |e|e['phaseKey'] }.each do |e| %><option value="<%= e['phaseKey'] %>"><%= e['phaseNameSl'] %></option><% end %></select><div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">Lunina mena</th><th scope="col">Datum</th><th scope="col">Ura v Sloveniji</th></tr></thead><tbody><% events.each do |e| %><tr id="<%= e['id'] %>" data-phase="<%= e['phaseKey'] %>"><td><%= e['phaseNameSl'] %></td><td><%= LunarCalendar.date_label(e['localDate']) %></td><td><%= e['localTime'].tr(':','.') %> (UTC<%= e['localDateTime'][-6..] %>)</td></tr><% end %></tbody></table></div></section>
+<% unless hub %><section class="panel lunar-phases"><h2>Lunine mene <%= month ? "za #{LunarCalendar::MONTHS[month-1]} " : '' %><%= year %></h2><label for="lunar-phase-filter">Prikaži meno</label><select id="lunar-phase-filter"><option value="all">Vse mene</option><% events.uniq { |e|e['phaseKey'] }.each do |e| %><option value="<%= e['phaseKey'] %>"><%= e['phaseNameSl'] %></option><% end %></select><div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">Lunina mena</th><th scope="col">Datum</th><th scope="col">Ura v Sloveniji</th></tr></thead><tbody><% events.each do |e| %><tr id="<%= e['id'] %>" data-phase="<%= e['phaseKey'] %>"><td><%= e['phaseNameSl'] %></td><td><%= LunarCalendar.date_label(e['localDate']) %></td><td><%= e['localTime'].tr(':','.') %> (UTC<%= e['localDateTime'][-6..] %>)</td></tr><% end %></tbody></table></div></section><% end %>
+<% unless hub %>
 <section class="lunar-downloads" id="prenosi"><h2>Predloge za tiskanje</h2><div class="lunar-download-grid"><% LunarCalendar.downloads(year,month).each do |a| %><article class="panel"><a href="/<%= a['webp']['path'] %>"><img src="/<%= a['preview']['path'] %>" alt="<%= a['previewAltSl'] %>" width="<%= a['preview']['width'] %>" height="<%= a['preview']['height'] %>" loading="lazy"></a><h3><%= a['variantLabelSl'] %></h3><p><%= a['paper'] %> · <%= a['orientation']=='landscape' ? 'ležeče' : 'pokončno' %></p><a href="/<%= a['preview']['path'] %>">Predogled</a><div class="lunar-download-actions"><a class="button" href="/<%= a['pdf']['path'] %>" download>Prenesi PDF</a><a class="button" href="/<%= a['webp']['path'] %>" download>Prenesi WebP</a></div><small>PDF: <%= (a['pdf']['bytes']/1000000.0).round(1).to_s.tr('.',',') %> MB · WebP: <%= a['webp']['width'] %> × <%= a['webp']['height'] %> px</small></article><% end %></div></section>
 <button type="button" class="button lunar-print">Natisni</button>
 <section class="panel lunar-faq"><h2>O prikazu Lune</h2><% if month %><% ['full_moon','new_moon'].each do |kind| %><details><summary><%= kind=='full_moon' ? 'Kdaj je polna luna?' : 'Kdaj je mlaj?' %></summary><p><%= events.select { |e|e['phaseKey']==kind }.map { |e|LunarCalendar.event_label(e) }.join('; ') %>.</p></details><% end %><% end %><details><summary>Zakaj se dnevni prikaz razlikuje od trenutka mene?</summary><p>Dnevni prikaz je izračunan za 12.00. Glavna mena nastopi ob svojem času, ki je naveden v preglednici.</p></details><details><summary>Kateri časovni pas uporablja koledar?</summary><p>Vse ure so navedene po času v Sloveniji (Europe/Ljubljana). Upoštevana sta poletni in zimski čas.</p></details><details><summary>Kako uporabim datoteki PDF in WebP?</summary><p>PDF je namenjen tiskanju v navedeni velikosti. WebP vsebuje isto predlogo v barvnem prostoru sRGB. Temne predloge porabijo več črnila.</p></details></section>
+<% end %>
 <% end %>
 <p class="lunar-note">Podatki o menah: USNO. Dnevna osvetljenost: Astronomy Engine, preverjena z efemerido JPL DE440s. Površje Lune: NASA's Scientific Visualization Studio. <a href="/viri-in-metodologija/">Viri in metodologija</a>.</p>
 </section><script type="module" src="/lunar/calendar.mjs"></script>
