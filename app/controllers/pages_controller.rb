@@ -43,8 +43,8 @@ class PagesController < ApplicationController
     if @section=='horoscope'
       @horoscope_guide=HoroscopeGuide.new(@today,path.split('/').last)
       sign=@horoscope_guide.profile
-      @title=sign ? "Dnevni horoskop: #{sign['name']}" : (@horoscope_guide.calculator? ? 'Izračun ascendenta in sončnega znamenja' : 'Dnevni horoskop za vseh 12 znamenj')
-      @description=sign ? "#{sign['name']}: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva." : (@horoscope_guide.calculator? ? 'Brezplačen izračun ascendenta in sončnega znamenja po datumu, točni uri in kraju rojstva. Zgodovinski časovni pasovi, poletni čas in zasebna obdelava na napravi.' : 'Dnevni horoskop za vseh 12 znamenj v slovenščini. Preverite datume, spoznajte svoje znamenje ter brezplačno izračunajte ascendent in sončno znamenje.')
+      @title=sign ? "Dnevni horoskop: #{sign['name']}" : (@horoscope_guide.calculator? ? 'Izračun vzhajajočega znamenja (ascendenta)' : 'Dnevni horoskop za vseh 12 znamenj')
+      @description=sign ? "#{sign['name']}: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona ter brezplačen izračun vzhajajočega znamenja (ascendenta) po točni uri in kraju rojstva." : (@horoscope_guide.calculator? ? 'Brezplačno izračunajte sončno in vzhajajoče znamenje (ascendent) po datumu, točni uri in kraju rojstva. Časovni pasovi in premik ure; podatki ostanejo na vaši napravi.' : 'Dnevni horoskop za vseh 12 znamenj v slovenščini. Preverite datume, spoznajte svoje znamenje ter izračunajte sončno in vzhajajoče znamenje (ascendent).')
     end
     if @section=='events' && CalendarEvent.exists?(slug:path.split('/').last)
       @observance=ObservancePage.new(path.split('/').last)
