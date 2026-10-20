@@ -26,6 +26,15 @@ class CityTest < ActiveSupport::TestCase
     assert_equal 13.5,result[:current][:temperature]
     assert_equal 'Delno oblačno',result[:current][:description]
     assert_equal 'forecast',result[:kind]
+    future=payload['data']['properties']['timeseries'].first.deep_dup
+    future['time']=(now+1.hour).iso8601
+    future['data']['instant']['details']['air_temperature']=7
+    future['data']['next_1_hours']['summary']['symbol_code']='clearsky_night'
+    payload['data']['properties']['timeseries'] << future
+    path.write(JSON.generate(payload))
+    result=WeatherService.call(city,now:now+40.minutes)
+    assert_equal 13.5,result[:current][:temperature], 'Do not show the next hour or its night symbol before that interval starts'
+    assert_equal 'partlycloudy_day',result[:current][:symbol]
     payload['data']['properties']['meta']['updated_at']=(now-24.hours).iso8601
     path.write(JSON.generate(payload))
     assert_raises(WeatherService::Unavailable) { WeatherService.call(city,now:now) }

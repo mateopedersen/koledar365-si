@@ -1,0 +1,1047 @@
+{
+  "checked_at": "2026-10-20T17:40:18.682296+00:00",
+  "base_url": "https://koledar365.si",
+  "passed": true,
+  "city_count": 69,
+  "direct_source_count": 5,
+  "cities": [
+    {
+      "city": "ajdovscina",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 14.9,
+        "wind": 0.9,
+        "humidity": 85.9,
+        "symbol": "partlycloudy_night",
+        "description": "Delno oblačno"
+      },
+      "updated_at": "2026-10-20T17:16:59.000Z",
+      "stale": false
+    },
+    {
+      "city": "bled",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 11.9,
+        "wind": 1.9,
+        "humidity": 98.6,
+        "symbol": "fair_night",
+        "description": "Pretežno jasno"
+      },
+      "updated_at": "2026-10-20T17:16:59.000Z",
+      "stale": false
+    },
+    {
+      "city": "bovec",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12.7,
+        "wind": 2.4,
+        "humidity": 99.9,
+        "symbol": "lightrain",
+        "description": "Rahel dež"
+      },
+      "updated_at": "2026-10-20T17:16:59.000Z",
+      "stale": false
+    },
+    {
+      "city": "brezice",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12.3,
+        "wind": 2.2,
+        "humidity": 86,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "celje",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.2,
+        "wind": 2,
+        "humidity": 86.8,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "crnomelj",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.7,
+        "wind": 2.3,
+        "humidity": 79.4,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "domzale",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12.4,
+        "wind": 2.5,
+        "humidity": 85.6,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "gornja-radgona",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 14,
+        "wind": 5.4,
+        "humidity": 76.9,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:00.000Z",
+      "stale": false
+    },
+    {
+      "city": "hrastnik",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 11.8,
+        "wind": 1.8,
+        "humidity": 90.9,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:00.000Z",
+      "stale": false
+    },
+    {
+      "city": "idrija",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12.2,
+        "wind": 1.7,
+        "humidity": 93.3,
+        "symbol": "partlycloudy_night",
+        "description": "Delno oblačno"
+      },
+      "updated_at": "2026-10-20T17:16:59.000Z",
+      "stale": false
+    },
+    {
+      "city": "ilirska-bistrica",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.4,
+        "wind": 4.6,
+        "humidity": 93.6,
+        "symbol": "cloudy",
+        "description": "Oblačno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "izola",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 16.3,
+        "wind": 4.5,
+        "humidity": 77,
+        "symbol": "cloudy",
+        "description": "Oblačno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "jesenice",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 11.4,
+        "wind": 1.9,
+        "humidity": 98.6,
+        "symbol": "fair_night",
+        "description": "Pretežno jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "kamnik",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 11.6,
+        "wind": 2.1,
+        "humidity": 88.2,
+        "symbol": "fair_night",
+        "description": "Pretežno jasno"
+      },
+      "updated_at": "2026-10-20T17:17:00.000Z",
+      "stale": false
+    },
+    {
+      "city": "kocevje",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 11.1,
+        "wind": 3.1,
+        "humidity": 91.1,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:00.000Z",
+      "stale": false
+    },
+    {
+      "city": "koper",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 18.3,
+        "wind": 4.5,
+        "humidity": 73.2,
+        "symbol": "partlycloudy_night",
+        "description": "Delno oblačno"
+      },
+      "updated_at": "2026-10-20T17:17:00.000Z",
+      "stale": false
+    },
+    {
+      "city": "kostanjevica-na-krki",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.9,
+        "wind": 2.4,
+        "humidity": 81.9,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "kranj",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12.1,
+        "wind": 2.4,
+        "humidity": 93.6,
+        "symbol": "fair_night",
+        "description": "Pretežno jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "krsko",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.6,
+        "wind": 1.9,
+        "humidity": 80.5,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "lasko",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12.2,
+        "wind": 1.8,
+        "humidity": 85.9,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:16:59.000Z",
+      "stale": false
+    },
+    {
+      "city": "lendava",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.2,
+        "wind": 4.1,
+        "humidity": 81.6,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:16:59.000Z",
+      "stale": false
+    },
+    {
+      "city": "litija",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12.9,
+        "wind": 2.8,
+        "humidity": 88.7,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "ljubljana",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12.6,
+        "wind": 3.1,
+        "humidity": 85.4,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "ljutomer",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.2,
+        "wind": 3.9,
+        "humidity": 83.7,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:16:59.000Z",
+      "stale": false
+    },
+    {
+      "city": "maribor",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.3,
+        "wind": 4.1,
+        "humidity": 86.2,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "metlika",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 14,
+        "wind": 2.4,
+        "humidity": 78.3,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "murska-sobota",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.4,
+        "wind": 4.6,
+        "humidity": 81.9,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:00.000Z",
+      "stale": false
+    },
+    {
+      "city": "nova-gorica",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 15.7,
+        "wind": 1.4,
+        "humidity": 84.4,
+        "symbol": "partlycloudy_night",
+        "description": "Delno oblačno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "novo-mesto",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.6,
+        "wind": 2.4,
+        "humidity": 79.5,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "ormoz",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.1,
+        "wind": 4,
+        "humidity": 82.5,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "piran",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 17.9,
+        "wind": 5.5,
+        "humidity": 74.8,
+        "symbol": "cloudy",
+        "description": "Oblačno"
+      },
+      "updated_at": "2026-10-20T17:16:59.000Z",
+      "stale": false
+    },
+    {
+      "city": "postojna",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 11.6,
+        "wind": 3.1,
+        "humidity": 96,
+        "symbol": "partlycloudy_night",
+        "description": "Delno oblačno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "ptuj",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.5,
+        "wind": 4.3,
+        "humidity": 77.8,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:00.000Z",
+      "stale": false
+    },
+    {
+      "city": "radece",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12.7,
+        "wind": 1.8,
+        "humidity": 90.9,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "radovljica",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12.5,
+        "wind": 1.6,
+        "humidity": 91.6,
+        "symbol": "fair_night",
+        "description": "Pretežno jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "ravne-na-koroskem",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 11.3,
+        "wind": 2.8,
+        "humidity": 93.9,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "sevnica",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.6,
+        "wind": 1.9,
+        "humidity": 81,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "sezana",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.2,
+        "wind": 2.6,
+        "humidity": 85.3,
+        "symbol": "fair_night",
+        "description": "Pretežno jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "slovenska-bistrica",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.4,
+        "wind": 3.7,
+        "humidity": 86.5,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:00.000Z",
+      "stale": false
+    },
+    {
+      "city": "slovenj-gradec",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 11.9,
+        "wind": 3.3,
+        "humidity": 92.8,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "slovenske-konjice",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12.9,
+        "wind": 3.3,
+        "humidity": 83.6,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "skofja-loka",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12.4,
+        "wind": 2.4,
+        "humidity": 88.8,
+        "symbol": "fair_night",
+        "description": "Pretežno jasno"
+      },
+      "updated_at": "2026-10-20T17:16:59.000Z",
+      "stale": false
+    },
+    {
+      "city": "sostanj",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 11.8,
+        "wind": 2.8,
+        "humidity": 89.8,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T13:19:01.000Z",
+      "stale": true
+    },
+    {
+      "city": "tolmin",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.6,
+        "wind": 1.4,
+        "humidity": 98.2,
+        "symbol": "lightrainshowers_night",
+        "description": "Rahel dež"
+      },
+      "updated_at": "2026-10-20T17:17:00.000Z",
+      "stale": false
+    },
+    {
+      "city": "trbovlje",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 11.8,
+        "wind": 2.4,
+        "humidity": 87.1,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:00.000Z",
+      "stale": false
+    },
+    {
+      "city": "trzic",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12,
+        "wind": 2.2,
+        "humidity": 99.3,
+        "symbol": "fog",
+        "description": "Megla"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "velenje",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12,
+        "wind": 3.3,
+        "humidity": 87.1,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:00.000Z",
+      "stale": false
+    },
+    {
+      "city": "visnja-gora",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 11.8,
+        "wind": 2,
+        "humidity": 83.6,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:00.000Z",
+      "stale": false
+    },
+    {
+      "city": "vrhnika",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.8,
+        "wind": 3.2,
+        "humidity": 83.6,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T13:19:19.000Z",
+      "stale": true
+    },
+    {
+      "city": "zagorje-ob-savi",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12.8,
+        "wind": 2.8,
+        "humidity": 92.5,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:16:59.000Z",
+      "stale": false
+    },
+    {
+      "city": "zalec",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.6,
+        "wind": 2.3,
+        "humidity": 79.4,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "cerknica",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 11.1,
+        "wind": 3.1,
+        "humidity": 95.1,
+        "symbol": "fair_night",
+        "description": "Pretežno jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "dravograd",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12.5,
+        "wind": 2.8,
+        "humidity": 89.4,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "grosuplje",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 11.8,
+        "wind": 2,
+        "humidity": 83.6,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "logatec",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12.3,
+        "wind": 3.2,
+        "humidity": 90.4,
+        "symbol": "fair_night",
+        "description": "Pretežno jasno"
+      },
+      "updated_at": "2026-10-20T17:16:59.000Z",
+      "stale": false
+    },
+    {
+      "city": "medvode",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12.4,
+        "wind": 3.2,
+        "humidity": 82.9,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "menges",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12.4,
+        "wind": 2.1,
+        "humidity": 88.2,
+        "symbol": "fair_night",
+        "description": "Pretežno jasno"
+      },
+      "updated_at": "2026-10-20T17:17:00.000Z",
+      "stale": false
+    },
+    {
+      "city": "mezica",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 11.3,
+        "wind": 2.3,
+        "humidity": 92,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "prevalje",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 11.5,
+        "wind": 2.3,
+        "humidity": 92,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "ribnica",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 11.7,
+        "wind": 2.3,
+        "humidity": 89.5,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "rogaska-slatina",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 11.5,
+        "wind": 2.7,
+        "humidity": 90.1,
+        "symbol": "fair_night",
+        "description": "Pretežno jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "ruse",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12.7,
+        "wind": 3.3,
+        "humidity": 90.3,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "sempeter-pri-gorici",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 15.9,
+        "wind": 3,
+        "humidity": 76.7,
+        "symbol": "partlycloudy_night",
+        "description": "Delno oblačno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "sentjur",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.1,
+        "wind": 2,
+        "humidity": 87.4,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "trebnje",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 12.6,
+        "wind": 2.7,
+        "humidity": 83.9,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:16:59.000Z",
+      "stale": false
+    },
+    {
+      "city": "zelezniki",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 11.2,
+        "wind": 2.4,
+        "humidity": 89.5,
+        "symbol": "fair_night",
+        "description": "Pretežno jasno"
+      },
+      "updated_at": "2026-10-20T17:17:28.000Z",
+      "stale": false
+    },
+    {
+      "city": "ziri",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 11.7,
+        "wind": 2.5,
+        "humidity": 91.3,
+        "symbol": "fair_night",
+        "description": "Pretežno jasno"
+      },
+      "updated_at": "2026-10-20T17:17:00.000Z",
+      "stale": false
+    },
+    {
+      "city": "lenart-v-slovenskih-goricah",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.8,
+        "wind": 5.4,
+        "humidity": 80.3,
+        "symbol": "clearsky_night",
+        "description": "Jasno"
+      },
+      "updated_at": "2026-10-20T17:17:00.000Z",
+      "stale": false
+    },
+    {
+      "city": "zrece",
+      "passed": true,
+      "current": {
+        "at": "2026-10-20T17:00:00Z",
+        "temperature": 13.1,
+        "wind": 3.3,
+        "humidity": 84.8,
+        "symbol": "fair_night",
+        "description": "Pretežno jasno"
+      },
+      "updated_at": "2026-10-20T17:17:00.000Z",
+      "stale": false
+    }
+  ],
+  "direct_source_comparisons": [
+    {
+      "city": "bled",
+      "passed": true,
+      "symbol": "fair_night",
+      "temperature": 11.9,
+      "coordinates": {
+        "lat": 46.3683,
+        "lon": 14.1147,
+        "primary": "",
+        "globe": "earth"
+      },
+      "source_updated_at": "2026-10-20T17:16:59Z",
+      "same_model": true
+    },
+    {
+      "city": "bovec",
+      "passed": true,
+      "symbol": "lightrain",
+      "temperature": 12.7,
+      "coordinates": {
+        "lat": 46.33777778,
+        "lon": 13.55222222,
+        "primary": "",
+        "globe": "earth"
+      },
+      "source_updated_at": "2026-10-20T17:16:59Z",
+      "same_model": true
+    },
+    {
+      "city": "domzale",
+      "passed": true,
+      "symbol": "clearsky_night",
+      "temperature": 12.4,
+      "coordinates": {
+        "lat": 46.13944444,
+        "lon": 14.595,
+        "primary": "",
+        "globe": "earth"
+      },
+      "source_updated_at": "2026-10-20T17:17:28Z",
+      "same_model": true
+    },
+    {
+      "city": "koper",
+      "passed": true,
+      "symbol": "partlycloudy_night",
+      "temperature": 18.3,
+      "coordinates": {
+        "lat": 45.55,
+        "lon": 13.73333333,
+        "primary": "",
+        "globe": "earth"
+      },
+      "source_updated_at": "2026-10-20T17:17:00Z",
+      "same_model": true
+    },
+    {
+      "city": "maribor",
+      "passed": true,
+      "symbol": "clearsky_night",
+      "temperature": 13.3,
+      "coordinates": {
+        "lat": 46.5575,
+        "lon": 15.64555556,
+        "primary": "",
+        "globe": "earth"
+      },
+      "source_updated_at": "2026-10-20T17:17:28Z",
+      "same_model": true
+    }
+  ]
+}

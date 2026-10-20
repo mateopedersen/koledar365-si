@@ -42,7 +42,7 @@ class WeatherService
     updated=Time.iso8601(cached.dig('data','properties','meta','updated_at'))
     raise Unavailable if updated < now-12.hours
     series=cached.dig('data','properties','timeseries')
-    current=series.min_by { |row| (Time.iso8601(row['time'])-now).abs }
+    current=series.select { |row|Time.iso8601(row['time'])<=now }.last || series.first
     raise Unavailable if (Time.iso8601(current['time'])-now).abs>2.hours
     decorate=lambda do |row|
       details=row.dig('data','instant','details');symbol=row.dig('data','next_1_hours','summary','symbol_code')||row.dig('data','next_6_hours','summary','symbol_code')||'cloudy'
