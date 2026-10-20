@@ -3,7 +3,7 @@
 const card=document.getElementById('city-card');if(!card||card.dataset.liveInitialized)return;card.dataset.liveInitialized='true';
 const $=id=>card.querySelector('#'+id),select=$('city-select'),fetchWeather=window.fetch.bind(window);
 const zone='Europe/Ljubljana',timeFormat=new Intl.DateTimeFormat('sl-SI',{timeZone:zone,hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}),dayFormat=new Intl.DateTimeFormat('sl-SI',{timeZone:zone,weekday:'long',day:'numeric',month:'long',year:'numeric'}),zoneFormat=new Intl.DateTimeFormat('en-GB',{timeZone:zone,timeZoneName:'short'}),shortTime=new Intl.DateTimeFormat('sl-SI',{timeZone:zone,hour:'2-digit',minute:'2-digit'}),number=new Intl.NumberFormat('sl-SI',{maximumFractionDigits:0});
-let clockTimer,weatherTimer,request,revision=0,lastFetch=0,displayed=null;const memory=new Map(),photos=new Map();
+let clockTimer,weatherTimer,request,revision=0,lastFetch=0,displayed=null,manualCityPreference=false,manualCityChange=false,cityInitializationComplete=false;const memory=new Map(),photos=new Map();
 function clock(){
  clearTimeout(clockTimer);const now=new Date(),parts=timeFormat.formatToParts(now),part=name=>parts.find(p=>p.type===name).value,hour=part('hour'),minute=part('minute'),second=part('second');
  $('ljubljana-clock').textContent=hour+':'+minute;$('ljubljana-clock').dateTime=now.toISOString();$('city-clock-seconds').textContent=second;
@@ -12,7 +12,7 @@ function clock(){
  clockTimer=setTimeout(clock,1000-Date.now()%1000+5);
 }
 const canRemember=()=>{try{const c=JSON.parse(localStorage.getItem('k365.consent'));return c?.version===2&&c.preferences===true&&c.expiresAt>Date.now()}catch{return false}};
-const remember=()=>{if(canRemember())try{localStorage.setItem('k365.city',JSON.stringify(select.value))}catch{}};
+const remember=()=>{if(manualCityPreference&&canRemember())try{localStorage.setItem('k365.city',JSON.stringify(select.value))}catch{}};
 function chosen(id=select.value){const option=[...select.options].find(option=>option.value===id);return{id:option.value,name:option.textContent.trim(),photo:option.dataset.photo,srcset:option.dataset.photoSrcset,avif:option.dataset.photoAvif,credit:option.dataset.credit}}
 function forecastNow(body,id){
  const now=Date.now(),updated=Date.parse(body?.updated_at);if(body?.city!==id||!Number.isFinite(updated)||updated>now+300000||now-updated>=43200000||!Array.isArray(body.hours))return null;
@@ -81,8 +81,24 @@ async function refresh(force=false){
  }finally{clearTimeout(timeout);if(token===revision){delete card.dataset.pendingCity;$('city-weather').removeAttribute('aria-busy');card.classList.remove('is-refreshing');$('weather-refresh').disabled=false;request=null}}
 }
 function changeCity(){refresh()}
-try{if(canRemember()){const id=JSON.parse(localStorage.getItem('k365.city'));if([...select.options].some(o=>o.value===id))select.value=id}}catch{}
-select.addEventListener('change',changeCity);$('weather-refresh').addEventListener('click',()=>refresh(true));document.addEventListener('k365:consent',remember);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden){clock();if(Date.now()-lastFetch>60000)refresh()}});window.addEventListener('pageshow',()=>{clock();if(Date.now()-lastFetch>60000&&!request)refresh()});window.addEventListener('online',()=>refresh(true));
-clock();changeCity();
+function locationStatus(message){const status=$('city-location-status');if(status)status.textContent=message}
+function validCity(id){return typeof id==='string'&&[...select.options].some(option=>option.value===id)}
+async function initializeCity(){
+ let saved=null;try{if(canRemember())saved=JSON.parse(localStorage.getItem('k365.city'))}catch{}
+ if(validCity(saved)){
+  select.value=saved;manualCityPreference=true;locationStatus('Uporabljate svoje shranjeno mesto.');cityInitializationComplete=true;changeCity();return;
+ }
+ locationStatus('Približno lokacijo mesta določamo prek omrežja …');
+ const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),1500);let result=null;
+ try{const response=await fetch('/city-detect/',{signal:controller.signal,cache:'no-store',headers:{Accept:'application/json'}});if(response.ok)result=await response.json()}catch{}finally{clearTimeout(timeout)}
+ if(manualCityChange)return;
+ if(result&&validCity(result.city)){
+  select.value=result.city;
+  locationStatus(result.match==='nearby'?'Približna IP-lokacija: izbrano je najbližje mesto.':'Približna lokacija je določena iz IP-ja. Mesto lahko spremenite.');
+ }else locationStatus('Lokacije ni mogoče oceniti; izberite svoje mesto.');
+ cityInitializationComplete=true;changeCity();
+}
+select.addEventListener('change',()=>{manualCityChange=true;manualCityPreference=true;cityInitializationComplete=true;locationStatus('Mesto ste izbrali ročno.');remember();changeCity()});$('weather-refresh').addEventListener('click',()=>refresh(true));document.addEventListener('k365:consent',remember);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){clock();if(cityInitializationComplete&&Date.now()-lastFetch>60000)refresh()}});window.addEventListener('pageshow',()=>{clock();if(cityInitializationComplete&&Date.now()-lastFetch>60000&&!request)refresh()});window.addEventListener('online',()=>{if(cityInitializationComplete)refresh(true)});
+clock();initializeCity();
 })();

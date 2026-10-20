@@ -3,7 +3,7 @@ const NOW='2026-10-20T12:34:56Z';
 function forecast(city='ljubljana',temperature=14,symbol='clearsky_day'){
  const now=new Date(NOW).getTime();return{city,city_name:city,current:{at:new Date(now-600000).toISOString(),temperature,wind:2,humidity:64,symbol,description:symbol.includes('rain')?'Dež':symbol.includes('cloud')?'Oblačno':'Jasno'},hours:[{at:new Date(now+1800000).toISOString(),temperature:15,description:'Jasno'}],updated_at:new Date(now-3600000).toISOString(),fetched_at:NOW,expires_at:new Date(now+600000).toISOString(),stale:false,server_now:'2020-01-01T00:00:00Z'};
 }
-async function mock(page,handler){await page.clock.setFixedTime(new Date(NOW));await page.route('**/vreme/*/',async route=>{const id=new URL(route.request().url()).pathname.split('/')[2];const body=handler?await handler(id):forecast(id);if(body===null)return route.abort();await route.fulfill({json:body,headers:{'Cache-Control':'no-store'}})});}
+async function mock(page,handler,detected='ljubljana'){await page.clock.setFixedTime(new Date(NOW));await page.route('**/city-detect/',async route=>{const body=typeof detected==='function'?await detected():typeof detected==='string'?{city:detected,match:'city',approximate:true}:detected;await route.fulfill({json:body,headers:{'Cache-Control':'private, no-store'}})});await page.route('**/vreme/*/',async route=>{const id=new URL(route.request().url()).pathname.split('/')[2];const body=handler?await handler(id):forecast(id);if(body===null)return route.abort();await route.fulfill({json:body,headers:{'Cache-Control':'no-store'}})});}
 test('clock and weather start without calendar boot and ignore forecast server time',async({page})=>{
  await mock(page);await page.route('**/free/assets.json',route=>route.abort());await page.goto('/',{waitUntil:'domcontentloaded'});
  await expect(page.locator('#ljubljana-clock')).toHaveText('14:34');await expect(page.locator('#city-clock-seconds')).toHaveText('56');await expect(page.locator('#weather-temperature')).toHaveText('14°');await expect(page.locator('#city-zone')).toHaveText('CEST');
@@ -48,4 +48,24 @@ test('a failed city request retains the correctly labelled weather and restores 
 test('night symbols follow the provider and cached forecasts advance to the current hourly interval',async({page})=>{
  await mock(page,id=>{const body=forecast(id);body.current.at='2026-10-20T12:00:00Z';body.hours=[{...body.current,at:'2026-10-20T13:00:00Z',temperature:7,symbol:'clearsky_night',description:'Jasno'}];body.expires_at='2026-10-20T14:00:00Z';return body});await page.goto('/');await expect(page.locator('#weather-icon .wx-sun')).toBeVisible();await expect(page.locator('#weather-icon .wx-moon')).toHaveCount(0);
  await page.clock.setFixedTime(new Date('2026-10-20T13:05:00Z'));await page.evaluate(()=>window.dispatchEvent(new Event('pageshow')));await expect(page.locator('#weather-temperature')).toHaveText('7°');await expect(page.locator('#city-card')).toHaveAttribute('data-weather-symbol','clearsky_night');await expect(page.locator('#weather-icon .wx-moon')).toBeVisible();await expect(page.locator('#weather-icon .wx-sun')).toHaveCount(0);await expect(page.locator('#weather-description')).toContainText('noč');
+});
+
+test('first visit automatically selects the IP-detected Slovenian city without persisting it',async({page})=>{
+ await mock(page,null,'maribor');await page.addInitScript(()=>localStorage.setItem('k365.consent',JSON.stringify({version:2,preferences:true,expiresAt:Date.now()+86400000})));await page.goto('/');
+ await expect(page.locator('#city-select')).toHaveValue('maribor');await expect(page.locator('#weather-label')).toContainText('Maribor');await expect(page.locator('#city-caption')).toContainText('Maribor');await expect(page.locator('#city-location-status')).toContainText('IP-ja');
+ expect(await page.evaluate(()=>localStorage.getItem('k365.city'))).toBeNull();
+});
+
+test('an explicitly saved city takes priority over the detected network location',async({page})=>{
+ let detectionRequests=0;await mock(page,null,()=>{detectionRequests++;return{city:'maribor',match:'city',approximate:true}});await page.addInitScript(()=>{localStorage.setItem('k365.consent',JSON.stringify({version:2,preferences:true,expiresAt:Date.now()+86400000}));localStorage.setItem('k365.city',JSON.stringify('bled'))});await page.goto('/');
+ await expect(page.locator('#city-select')).toHaveValue('bled');await expect(page.locator('#weather-label')).toContainText('Bled');await expect(page.locator('#city-location-status')).toContainText('shranjeno');expect(detectionRequests).toBe(0);
+});
+
+test('a manual city choice made during IP detection cannot be overwritten by the late response',async({page})=>{
+ let detected,release;const requestSeen=new Promise(resolve=>{detected=resolve}),responseReady=new Promise(resolve=>{release=resolve});await mock(page,null,async()=>{detected();await responseReady;return{city:'maribor',match:'city',approximate:true}});await page.goto('/',{waitUntil:'domcontentloaded'});await requestSeen;
+ await page.locator('#city-select').selectOption('bled');await expect(page.locator('#weather-label')).toContainText('Bled');release();await expect(page.locator('#city-select')).toHaveValue('bled');await expect(page.locator('#city-location-status')).toContainText('ročno');await expect(page.locator('#weather-label')).toContainText('Bled');
+});
+
+test('unavailable IP location keeps the safe default and lets the visitor choose',async({page})=>{
+ await mock(page,null,{city:null,match:'unavailable',approximate:true});await page.goto('/');await expect(page.locator('#city-select')).toHaveValue('ljubljana');await expect(page.locator('#city-location-status')).toContainText('izberite');await page.locator('#city-select').selectOption('koper');await expect(page.locator('#city-select')).toHaveValue('koper');await expect(page.locator('#city-location-status')).toContainText('ročno');
 });
