@@ -1,0 +1,79 @@
+{
+  "checked_at": "2026-10-20T16:47:23.008198+00:00",
+  "scope": "Monthly calendar pages for 2027–2030",
+  "pages_checked": 48,
+  "event_links_checked": 313,
+  "unique_stylesheets": [
+    "/assets/slovenia-f54bd27f.css"
+  ],
+  "layout_rules": [
+    "single-line event labels",
+    "ellipsis on overflow",
+    "no mid-word wrapping",
+    "complete title retained as hover and link text"
+  ],
+  "manual_viewports_css_checked": [
+    {
+      "path": "/koledar/2027/februar/",
+      "width": 1378,
+      "height": 1582
+    },
+    {
+      "path": "/?date=2027-02-08&month=2&view=month&year=2027",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "issues": [],
+  "passed": true,
+  "pages": [
+    "/koledar/2027/januar/",
+    "/koledar/2027/februar/",
+    "/koledar/2027/marec/",
+    "/koledar/2027/april/",
+    "/koledar/2027/maj/",
+    "/koledar/2027/junij/",
+    "/koledar/2027/julij/",
+    "/koledar/2027/avgust/",
+    "/koledar/2027/september/",
+    "/koledar/2027/oktober/",
+    "/koledar/2027/november/",
+    "/koledar/2027/december/",
+    "/koledar/2028/januar/",
+    "/koledar/2028/februar/",
+    "/koledar/2028/marec/",
+    "/koledar/2028/april/",
+    "/koledar/2028/maj/",
+    "/koledar/2028/junij/",
+    "/koledar/2028/julij/",
+    "/koledar/2028/avgust/",
+    "/koledar/2028/september/",
+    "/koledar/2028/oktober/",
+    "/koledar/2028/november/",
+    "/koledar/2028/december/",
+    "/koledar/2029/januar/",
+    "/koledar/2029/februar/",
+    "/koledar/2029/marec/",
+    "/koledar/2029/april/",
+    "/koledar/2029/maj/",
+    "/koledar/2029/junij/",
+    "/koledar/2029/julij/",
+    "/koledar/2029/avgust/",
+    "/koledar/2029/september/",
+    "/koledar/2029/oktober/",
+    "/koledar/2029/november/",
+    "/koledar/2029/december/",
+    "/koledar/2030/januar/",
+    "/koledar/2030/februar/",
+    "/koledar/2030/marec/",
+    "/koledar/2030/april/",
+    "/koledar/2030/maj/",
+    "/koledar/2030/junij/",
+    "/koledar/2030/julij/",
+    "/koledar/2030/avgust/",
+    "/koledar/2030/september/",
+    "/koledar/2030/oktober/",
+    "/koledar/2030/november/",
+    "/koledar/2030/december/"
+  ]
+}
