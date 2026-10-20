@@ -1,0 +1,2429 @@
+{
+  "schemaVersion": 1,
+  "status": "proposed_not_live_route_inventory",
+  "existingRoutesTakePrecedence": true,
+  "pageCount": 53,
+  "note": "Metadata is example copy for completed production functionality. Publish only after features/files exist and Slovenian editorial review. No indexing or ranking guarantee.",
+  "pages": [
+    {
+      "pageId": "lunar-hub",
+      "pageType": "hub",
+      "proposedPath": "/lunin-koledar/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar 2027–2030 – lunine mene | Koledar365.si",
+      "h1Sl": "Lunin koledar 2027–2030",
+      "metaDescriptionSl": "Izberite leto in mesec za prikaz luninih men v Sloveniji. Oglejte si dnevno osvetljenost Lune ter predloge letnih in mesečnih koledarjev.",
+      "requires": [
+        "fourYearLinks",
+        "all48MonthLinks",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene",
+        "koledar luninih men",
+        "lunin koledar za tiskanje"
+      ]
+    },
+    {
+      "pageId": "lunar-2027",
+      "pageType": "annual",
+      "year": 2027,
+      "proposedPath": "/lunin-koledar/2027/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar 2027 – lunine mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar 2027",
+      "metaDescriptionSl": "Oglejte si lunine mene za leto 2027 in dnevne prikaze Lune. Na voljo so štiri predloge v PDF in WebP ter lokalni časi men za Slovenijo.",
+      "dayCount": 365,
+      "principalEventCount": 49,
+      "variantIds": [
+        "Y01",
+        "Y02",
+        "Y03",
+        "Y04"
+      ],
+      "requires": [
+        "allTwelveMonthLinks",
+        "allDailyDiscs",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar 2027",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene 2027",
+        "polna luna 2027",
+        "mlaj 2027",
+        "lunin koledar 2027 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2027-01",
+      "pageType": "monthly",
+      "year": 2027,
+      "month": 1,
+      "monthSl": "januar",
+      "proposedPath": "/lunin-koledar/2027/januar/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za januar 2027 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – januar 2027",
+      "metaDescriptionSl": "Lunin koledar za januar 2027: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "petek",
+      "lastWeekdaySl": "nedelja",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "new_moon-20270107T2024Z",
+        "first_quarter-20270115T2034Z",
+        "full_moon-20270122T1217Z",
+        "last_quarter-20270129T1055Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar januar 2027",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene januar 2027",
+        "polna luna januar 2027",
+        "mlaj januar 2027",
+        "lunin koledar januar 2027 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2027-02",
+      "pageType": "monthly",
+      "year": 2027,
+      "month": 2,
+      "monthSl": "februar",
+      "proposedPath": "/lunin-koledar/2027/februar/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za februar 2027 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – februar 2027",
+      "metaDescriptionSl": "Lunin koledar za februar 2027: 28 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 28,
+      "firstWeekdaySl": "ponedeljek",
+      "lastWeekdaySl": "nedelja",
+      "gridRows": 4,
+      "principalEventCount": 4,
+      "eventIds": [
+        "new_moon-20270206T1556Z",
+        "first_quarter-20270214T0758Z",
+        "full_moon-20270220T2323Z",
+        "last_quarter-20270228T0516Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar februar 2027",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene februar 2027",
+        "polna luna februar 2027",
+        "mlaj februar 2027",
+        "lunin koledar februar 2027 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2027-03",
+      "pageType": "monthly",
+      "year": 2027,
+      "month": 3,
+      "monthSl": "marec",
+      "proposedPath": "/lunin-koledar/2027/marec/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za marec 2027 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – marec 2027",
+      "metaDescriptionSl": "Lunin koledar za marec 2027: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "ponedeljek",
+      "lastWeekdaySl": "sreda",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "new_moon-20270308T0929Z",
+        "first_quarter-20270315T1625Z",
+        "full_moon-20270322T1044Z",
+        "last_quarter-20270330T0054Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar marec 2027",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene marec 2027",
+        "polna luna marec 2027",
+        "mlaj marec 2027",
+        "lunin koledar marec 2027 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2027-04",
+      "pageType": "monthly",
+      "year": 2027,
+      "month": 4,
+      "monthSl": "april",
+      "proposedPath": "/lunin-koledar/2027/april/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za april 2027 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – april 2027",
+      "metaDescriptionSl": "Lunin koledar za april 2027: 30 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 30,
+      "firstWeekdaySl": "četrtek",
+      "lastWeekdaySl": "petek",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "new_moon-20270406T2351Z",
+        "first_quarter-20270413T2256Z",
+        "full_moon-20270420T2227Z",
+        "last_quarter-20270428T2018Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar april 2027",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene april 2027",
+        "polna luna april 2027",
+        "mlaj april 2027",
+        "lunin koledar april 2027 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2027-05",
+      "pageType": "monthly",
+      "year": 2027,
+      "month": 5,
+      "monthSl": "maj",
+      "proposedPath": "/lunin-koledar/2027/maj/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za maj 2027 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – maj 2027",
+      "metaDescriptionSl": "Lunin koledar za maj 2027: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "sobota",
+      "lastWeekdaySl": "ponedeljek",
+      "gridRows": 6,
+      "principalEventCount": 4,
+      "eventIds": [
+        "new_moon-20270506T1058Z",
+        "first_quarter-20270513T0444Z",
+        "full_moon-20270520T1059Z",
+        "last_quarter-20270528T1358Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar maj 2027",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene maj 2027",
+        "polna luna maj 2027",
+        "mlaj maj 2027",
+        "lunin koledar maj 2027 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2027-06",
+      "pageType": "monthly",
+      "year": 2027,
+      "month": 6,
+      "monthSl": "junij",
+      "proposedPath": "/lunin-koledar/2027/junij/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za junij 2027 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – junij 2027",
+      "metaDescriptionSl": "Lunin koledar za junij 2027: 30 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 30,
+      "firstWeekdaySl": "torek",
+      "lastWeekdaySl": "sreda",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "new_moon-20270604T1940Z",
+        "first_quarter-20270611T1056Z",
+        "full_moon-20270619T0044Z",
+        "last_quarter-20270627T0454Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar junij 2027",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene junij 2027",
+        "polna luna junij 2027",
+        "mlaj junij 2027",
+        "lunin koledar junij 2027 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2027-07",
+      "pageType": "monthly",
+      "year": 2027,
+      "month": 7,
+      "monthSl": "julij",
+      "proposedPath": "/lunin-koledar/2027/julij/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za julij 2027 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – julij 2027",
+      "metaDescriptionSl": "Lunin koledar za julij 2027: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "četrtek",
+      "lastWeekdaySl": "sobota",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "new_moon-20270704T0302Z",
+        "first_quarter-20270710T1839Z",
+        "full_moon-20270718T1545Z",
+        "last_quarter-20270726T1655Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar julij 2027",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene julij 2027",
+        "polna luna julij 2027",
+        "mlaj julij 2027",
+        "lunin koledar julij 2027 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2027-08",
+      "pageType": "monthly",
+      "year": 2027,
+      "month": 8,
+      "monthSl": "avgust",
+      "proposedPath": "/lunin-koledar/2027/avgust/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za avgust 2027 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – avgust 2027",
+      "metaDescriptionSl": "Lunin koledar za avgust 2027: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "nedelja",
+      "lastWeekdaySl": "torek",
+      "gridRows": 6,
+      "principalEventCount": 5,
+      "eventIds": [
+        "new_moon-20270802T1005Z",
+        "first_quarter-20270809T0454Z",
+        "full_moon-20270817T0729Z",
+        "last_quarter-20270825T0227Z",
+        "new_moon-20270831T1741Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar avgust 2027",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene avgust 2027",
+        "polna luna avgust 2027",
+        "mlaj avgust 2027",
+        "lunin koledar avgust 2027 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2027-09",
+      "pageType": "monthly",
+      "year": 2027,
+      "month": 9,
+      "monthSl": "september",
+      "proposedPath": "/lunin-koledar/2027/september/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za september 2027 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – september 2027",
+      "metaDescriptionSl": "Lunin koledar za september 2027: 30 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 30,
+      "firstWeekdaySl": "sreda",
+      "lastWeekdaySl": "četrtek",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "first_quarter-20270907T1831Z",
+        "full_moon-20270915T2303Z",
+        "last_quarter-20270923T1020Z",
+        "new_moon-20270930T0236Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar september 2027",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene september 2027",
+        "polna luna september 2027",
+        "mlaj september 2027",
+        "lunin koledar september 2027 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2027-10",
+      "pageType": "monthly",
+      "year": 2027,
+      "month": 10,
+      "monthSl": "oktober",
+      "proposedPath": "/lunin-koledar/2027/oktober/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za oktober 2027 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – oktober 2027",
+      "metaDescriptionSl": "Lunin koledar za oktober 2027: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "petek",
+      "lastWeekdaySl": "nedelja",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "first_quarter-20271007T1147Z",
+        "full_moon-20271015T1347Z",
+        "last_quarter-20271022T1729Z",
+        "new_moon-20271029T1336Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar oktober 2027",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene oktober 2027",
+        "polna luna oktober 2027",
+        "mlaj oktober 2027",
+        "lunin koledar oktober 2027 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2027-11",
+      "pageType": "monthly",
+      "year": 2027,
+      "month": 11,
+      "monthSl": "november",
+      "proposedPath": "/lunin-koledar/2027/november/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za november 2027 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – november 2027",
+      "metaDescriptionSl": "Lunin koledar za november 2027: 30 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 30,
+      "firstWeekdaySl": "ponedeljek",
+      "lastWeekdaySl": "torek",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "first_quarter-20271106T0800Z",
+        "full_moon-20271114T0326Z",
+        "last_quarter-20271121T0048Z",
+        "new_moon-20271128T0324Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar november 2027",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene november 2027",
+        "polna luna november 2027",
+        "mlaj november 2027",
+        "lunin koledar november 2027 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2027-12",
+      "pageType": "monthly",
+      "year": 2027,
+      "month": 12,
+      "monthSl": "december",
+      "proposedPath": "/lunin-koledar/2027/december/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za december 2027 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – december 2027",
+      "metaDescriptionSl": "Lunin koledar za december 2027: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "sreda",
+      "lastWeekdaySl": "petek",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "first_quarter-20271206T0522Z",
+        "full_moon-20271213T1609Z",
+        "last_quarter-20271220T0911Z",
+        "new_moon-20271227T2012Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar december 2027",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene december 2027",
+        "polna luna december 2027",
+        "mlaj december 2027",
+        "lunin koledar december 2027 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2028",
+      "pageType": "annual",
+      "year": 2028,
+      "proposedPath": "/lunin-koledar/2028/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar 2028 – lunine mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar 2028",
+      "metaDescriptionSl": "Oglejte si lunine mene za leto 2028 in dnevne prikaze Lune. Na voljo so štiri predloge v PDF in WebP ter lokalni časi men za Slovenijo.",
+      "dayCount": 366,
+      "principalEventCount": 50,
+      "variantIds": [
+        "Y01",
+        "Y02",
+        "Y03",
+        "Y04"
+      ],
+      "requires": [
+        "allTwelveMonthLinks",
+        "allDailyDiscs",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar 2028",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene 2028",
+        "polna luna 2028",
+        "mlaj 2028",
+        "lunin koledar 2028 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2028-01",
+      "pageType": "monthly",
+      "year": 2028,
+      "month": 1,
+      "monthSl": "januar",
+      "proposedPath": "/lunin-koledar/2028/januar/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za januar 2028 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – januar 2028",
+      "metaDescriptionSl": "Lunin koledar za januar 2028: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "sobota",
+      "lastWeekdaySl": "ponedeljek",
+      "gridRows": 6,
+      "principalEventCount": 4,
+      "eventIds": [
+        "first_quarter-20280105T0140Z",
+        "full_moon-20280112T0403Z",
+        "last_quarter-20280118T1926Z",
+        "new_moon-20280126T1512Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar januar 2028",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene januar 2028",
+        "polna luna januar 2028",
+        "mlaj januar 2028",
+        "lunin koledar januar 2028 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2028-02",
+      "pageType": "monthly",
+      "year": 2028,
+      "month": 2,
+      "monthSl": "februar",
+      "proposedPath": "/lunin-koledar/2028/februar/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za februar 2028 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – februar 2028",
+      "metaDescriptionSl": "Lunin koledar za februar 2028: 29 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 29,
+      "firstWeekdaySl": "torek",
+      "lastWeekdaySl": "torek",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "first_quarter-20280203T1910Z",
+        "full_moon-20280210T1504Z",
+        "last_quarter-20280217T0808Z",
+        "new_moon-20280225T1037Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar februar 2028",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene februar 2028",
+        "polna luna februar 2028",
+        "mlaj februar 2028",
+        "lunin koledar februar 2028 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2028-03",
+      "pageType": "monthly",
+      "year": 2028,
+      "month": 3,
+      "monthSl": "marec",
+      "proposedPath": "/lunin-koledar/2028/marec/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za marec 2028 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – marec 2028",
+      "metaDescriptionSl": "Lunin koledar za marec 2028: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "sreda",
+      "lastWeekdaySl": "petek",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "first_quarter-20280304T0902Z",
+        "full_moon-20280311T0106Z",
+        "last_quarter-20280317T2323Z",
+        "new_moon-20280326T0431Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar marec 2028",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene marec 2028",
+        "polna luna marec 2028",
+        "mlaj marec 2028",
+        "lunin koledar marec 2028 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2028-04",
+      "pageType": "monthly",
+      "year": 2028,
+      "month": 4,
+      "monthSl": "april",
+      "proposedPath": "/lunin-koledar/2028/april/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za april 2028 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – april 2028",
+      "metaDescriptionSl": "Lunin koledar za april 2028: 30 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 30,
+      "firstWeekdaySl": "sobota",
+      "lastWeekdaySl": "nedelja",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "first_quarter-20280402T1915Z",
+        "full_moon-20280409T1026Z",
+        "last_quarter-20280416T1637Z",
+        "new_moon-20280424T1947Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar april 2028",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene april 2028",
+        "polna luna april 2028",
+        "mlaj april 2028",
+        "lunin koledar april 2028 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2028-05",
+      "pageType": "monthly",
+      "year": 2028,
+      "month": 5,
+      "monthSl": "maj",
+      "proposedPath": "/lunin-koledar/2028/maj/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za maj 2028 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – maj 2028",
+      "metaDescriptionSl": "Lunin koledar za maj 2028: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "ponedeljek",
+      "lastWeekdaySl": "sreda",
+      "gridRows": 5,
+      "principalEventCount": 5,
+      "eventIds": [
+        "first_quarter-20280502T0226Z",
+        "full_moon-20280508T1949Z",
+        "last_quarter-20280516T1043Z",
+        "new_moon-20280524T0816Z",
+        "first_quarter-20280531T0736Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar maj 2028",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene maj 2028",
+        "polna luna maj 2028",
+        "mlaj maj 2028",
+        "lunin koledar maj 2028 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2028-06",
+      "pageType": "monthly",
+      "year": 2028,
+      "month": 6,
+      "monthSl": "junij",
+      "proposedPath": "/lunin-koledar/2028/junij/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za junij 2028 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – junij 2028",
+      "metaDescriptionSl": "Lunin koledar za junij 2028: 30 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 30,
+      "firstWeekdaySl": "četrtek",
+      "lastWeekdaySl": "petek",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "full_moon-20280607T0609Z",
+        "last_quarter-20280615T0427Z",
+        "new_moon-20280622T1827Z",
+        "first_quarter-20280629T1210Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar junij 2028",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene junij 2028",
+        "polna luna junij 2028",
+        "mlaj junij 2028",
+        "lunin koledar junij 2028 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2028-07",
+      "pageType": "monthly",
+      "year": 2028,
+      "month": 7,
+      "monthSl": "julij",
+      "proposedPath": "/lunin-koledar/2028/julij/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za julij 2028 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – julij 2028",
+      "metaDescriptionSl": "Lunin koledar za julij 2028: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "sobota",
+      "lastWeekdaySl": "ponedeljek",
+      "gridRows": 6,
+      "principalEventCount": 4,
+      "eventIds": [
+        "full_moon-20280706T1811Z",
+        "last_quarter-20280714T2056Z",
+        "new_moon-20280722T0302Z",
+        "first_quarter-20280728T1740Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar julij 2028",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene julij 2028",
+        "polna luna julij 2028",
+        "mlaj julij 2028",
+        "lunin koledar julij 2028 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2028-08",
+      "pageType": "monthly",
+      "year": 2028,
+      "month": 8,
+      "monthSl": "avgust",
+      "proposedPath": "/lunin-koledar/2028/avgust/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za avgust 2028 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – avgust 2028",
+      "metaDescriptionSl": "Lunin koledar za avgust 2028: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "torek",
+      "lastWeekdaySl": "četrtek",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "full_moon-20280805T0810Z",
+        "last_quarter-20280813T1145Z",
+        "new_moon-20280820T1044Z",
+        "first_quarter-20280827T0136Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar avgust 2028",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene avgust 2028",
+        "polna luna avgust 2028",
+        "mlaj avgust 2028",
+        "lunin koledar avgust 2028 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2028-09",
+      "pageType": "monthly",
+      "year": 2028,
+      "month": 9,
+      "monthSl": "september",
+      "proposedPath": "/lunin-koledar/2028/september/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za september 2028 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – september 2028",
+      "metaDescriptionSl": "Lunin koledar za september 2028: 30 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 30,
+      "firstWeekdaySl": "petek",
+      "lastWeekdaySl": "sobota",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "full_moon-20280903T2347Z",
+        "last_quarter-20280912T0046Z",
+        "new_moon-20280918T1824Z",
+        "first_quarter-20280925T1310Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar september 2028",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene september 2028",
+        "polna luna september 2028",
+        "mlaj september 2028",
+        "lunin koledar september 2028 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2028-10",
+      "pageType": "monthly",
+      "year": 2028,
+      "month": 10,
+      "monthSl": "oktober",
+      "proposedPath": "/lunin-koledar/2028/oktober/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za oktober 2028 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – oktober 2028",
+      "metaDescriptionSl": "Lunin koledar za oktober 2028: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "nedelja",
+      "lastWeekdaySl": "torek",
+      "gridRows": 6,
+      "principalEventCount": 4,
+      "eventIds": [
+        "full_moon-20281003T1625Z",
+        "last_quarter-20281011T1157Z",
+        "new_moon-20281018T0257Z",
+        "first_quarter-20281025T0453Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar oktober 2028",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene oktober 2028",
+        "polna luna oktober 2028",
+        "mlaj oktober 2028",
+        "lunin koledar oktober 2028 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2028-11",
+      "pageType": "monthly",
+      "year": 2028,
+      "month": 11,
+      "monthSl": "november",
+      "proposedPath": "/lunin-koledar/2028/november/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za november 2028 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – november 2028",
+      "metaDescriptionSl": "Lunin koledar za november 2028: 30 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 30,
+      "firstWeekdaySl": "sreda",
+      "lastWeekdaySl": "četrtek",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "full_moon-20281102T0917Z",
+        "last_quarter-20281109T2126Z",
+        "new_moon-20281116T1318Z",
+        "first_quarter-20281124T0014Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar november 2028",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene november 2028",
+        "polna luna november 2028",
+        "mlaj november 2028",
+        "lunin koledar november 2028 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2028-12",
+      "pageType": "monthly",
+      "year": 2028,
+      "month": 12,
+      "monthSl": "december",
+      "proposedPath": "/lunin-koledar/2028/december/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za december 2028 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – december 2028",
+      "metaDescriptionSl": "Lunin koledar za december 2028: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "petek",
+      "lastWeekdaySl": "nedelja",
+      "gridRows": 5,
+      "principalEventCount": 5,
+      "eventIds": [
+        "full_moon-20281202T0140Z",
+        "last_quarter-20281209T0539Z",
+        "new_moon-20281216T0206Z",
+        "first_quarter-20281223T2145Z",
+        "full_moon-20281231T1648Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar december 2028",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene december 2028",
+        "polna luna december 2028",
+        "mlaj december 2028",
+        "lunin koledar december 2028 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2029",
+      "pageType": "annual",
+      "year": 2029,
+      "proposedPath": "/lunin-koledar/2029/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar 2029 – lunine mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar 2029",
+      "metaDescriptionSl": "Oglejte si lunine mene za leto 2029 in dnevne prikaze Lune. Na voljo so štiri predloge v PDF in WebP ter lokalni časi men za Slovenijo.",
+      "dayCount": 365,
+      "principalEventCount": 49,
+      "variantIds": [
+        "Y01",
+        "Y02",
+        "Y03",
+        "Y04"
+      ],
+      "requires": [
+        "allTwelveMonthLinks",
+        "allDailyDiscs",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar 2029",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene 2029",
+        "polna luna 2029",
+        "mlaj 2029",
+        "lunin koledar 2029 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2029-01",
+      "pageType": "monthly",
+      "year": 2029,
+      "month": 1,
+      "monthSl": "januar",
+      "proposedPath": "/lunin-koledar/2029/januar/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za januar 2029 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – januar 2029",
+      "metaDescriptionSl": "Lunin koledar za januar 2029: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "ponedeljek",
+      "lastWeekdaySl": "sreda",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "last_quarter-20290107T1326Z",
+        "new_moon-20290114T1724Z",
+        "first_quarter-20290122T1923Z",
+        "full_moon-20290130T0603Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar januar 2029",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene januar 2029",
+        "polna luna januar 2029",
+        "mlaj januar 2029",
+        "lunin koledar januar 2029 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2029-02",
+      "pageType": "monthly",
+      "year": 2029,
+      "month": 2,
+      "monthSl": "februar",
+      "proposedPath": "/lunin-koledar/2029/februar/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za februar 2029 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – februar 2029",
+      "metaDescriptionSl": "Lunin koledar za februar 2029: 28 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 28,
+      "firstWeekdaySl": "četrtek",
+      "lastWeekdaySl": "sreda",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "last_quarter-20290205T2152Z",
+        "new_moon-20290213T1031Z",
+        "first_quarter-20290221T1510Z",
+        "full_moon-20290228T1710Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar februar 2029",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene februar 2029",
+        "polna luna februar 2029",
+        "mlaj februar 2029",
+        "lunin koledar februar 2029 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2029-03",
+      "pageType": "monthly",
+      "year": 2029,
+      "month": 3,
+      "monthSl": "marec",
+      "proposedPath": "/lunin-koledar/2029/marec/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za marec 2029 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – marec 2029",
+      "metaDescriptionSl": "Lunin koledar za marec 2029: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "četrtek",
+      "lastWeekdaySl": "sobota",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "last_quarter-20290307T0751Z",
+        "new_moon-20290315T0419Z",
+        "first_quarter-20290323T0733Z",
+        "full_moon-20290330T0226Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar marec 2029",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene marec 2029",
+        "polna luna marec 2029",
+        "mlaj marec 2029",
+        "lunin koledar marec 2029 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2029-04",
+      "pageType": "monthly",
+      "year": 2029,
+      "month": 4,
+      "monthSl": "april",
+      "proposedPath": "/lunin-koledar/2029/april/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za april 2029 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – april 2029",
+      "metaDescriptionSl": "Lunin koledar za april 2029: 30 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 30,
+      "firstWeekdaySl": "nedelja",
+      "lastWeekdaySl": "ponedeljek",
+      "gridRows": 6,
+      "principalEventCount": 4,
+      "eventIds": [
+        "last_quarter-20290405T1951Z",
+        "new_moon-20290413T2140Z",
+        "first_quarter-20290421T1950Z",
+        "full_moon-20290428T1037Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar april 2029",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene april 2029",
+        "polna luna april 2029",
+        "mlaj april 2029",
+        "lunin koledar april 2029 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2029-05",
+      "pageType": "monthly",
+      "year": 2029,
+      "month": 5,
+      "monthSl": "maj",
+      "proposedPath": "/lunin-koledar/2029/maj/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za maj 2029 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – maj 2029",
+      "metaDescriptionSl": "Lunin koledar za maj 2029: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "torek",
+      "lastWeekdaySl": "četrtek",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "last_quarter-20290505T0948Z",
+        "new_moon-20290513T1342Z",
+        "first_quarter-20290521T0416Z",
+        "full_moon-20290527T1837Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar maj 2029",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene maj 2029",
+        "polna luna maj 2029",
+        "mlaj maj 2029",
+        "lunin koledar maj 2029 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2029-06",
+      "pageType": "monthly",
+      "year": 2029,
+      "month": 6,
+      "monthSl": "junij",
+      "proposedPath": "/lunin-koledar/2029/junij/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za junij 2029 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – junij 2029",
+      "metaDescriptionSl": "Lunin koledar za junij 2029: 30 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 30,
+      "firstWeekdaySl": "petek",
+      "lastWeekdaySl": "sobota",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "last_quarter-20290604T0119Z",
+        "new_moon-20290612T0350Z",
+        "first_quarter-20290619T0954Z",
+        "full_moon-20290626T0322Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar junij 2029",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene junij 2029",
+        "polna luna junij 2029",
+        "mlaj junij 2029",
+        "lunin koledar junij 2029 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2029-07",
+      "pageType": "monthly",
+      "year": 2029,
+      "month": 7,
+      "monthSl": "julij",
+      "proposedPath": "/lunin-koledar/2029/julij/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za julij 2029 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – julij 2029",
+      "metaDescriptionSl": "Lunin koledar za julij 2029: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "nedelja",
+      "lastWeekdaySl": "torek",
+      "gridRows": 6,
+      "principalEventCount": 4,
+      "eventIds": [
+        "last_quarter-20290703T1757Z",
+        "new_moon-20290711T1551Z",
+        "first_quarter-20290718T1414Z",
+        "full_moon-20290725T1336Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar julij 2029",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene julij 2029",
+        "polna luna julij 2029",
+        "mlaj julij 2029",
+        "lunin koledar julij 2029 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2029-08",
+      "pageType": "monthly",
+      "year": 2029,
+      "month": 8,
+      "monthSl": "avgust",
+      "proposedPath": "/lunin-koledar/2029/avgust/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za avgust 2029 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – avgust 2029",
+      "metaDescriptionSl": "Lunin koledar za avgust 2029: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "sreda",
+      "lastWeekdaySl": "petek",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "last_quarter-20290802T1115Z",
+        "new_moon-20290810T0156Z",
+        "first_quarter-20290816T1855Z",
+        "full_moon-20290824T0151Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar avgust 2029",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene avgust 2029",
+        "polna luna avgust 2029",
+        "mlaj avgust 2029",
+        "lunin koledar avgust 2029 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2029-09",
+      "pageType": "monthly",
+      "year": 2029,
+      "month": 9,
+      "monthSl": "september",
+      "proposedPath": "/lunin-koledar/2029/september/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za september 2029 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – september 2029",
+      "metaDescriptionSl": "Lunin koledar za september 2029: 30 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 30,
+      "firstWeekdaySl": "sobota",
+      "lastWeekdaySl": "nedelja",
+      "gridRows": 5,
+      "principalEventCount": 5,
+      "eventIds": [
+        "last_quarter-20290901T0433Z",
+        "new_moon-20290908T1044Z",
+        "first_quarter-20290915T0129Z",
+        "full_moon-20290922T1629Z",
+        "last_quarter-20290930T2057Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar september 2029",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene september 2029",
+        "polna luna september 2029",
+        "mlaj september 2029",
+        "lunin koledar september 2029 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2029-10",
+      "pageType": "monthly",
+      "year": 2029,
+      "month": 10,
+      "monthSl": "oktober",
+      "proposedPath": "/lunin-koledar/2029/oktober/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za oktober 2029 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – oktober 2029",
+      "metaDescriptionSl": "Lunin koledar za oktober 2029: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "ponedeljek",
+      "lastWeekdaySl": "sreda",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "new_moon-20291007T1914Z",
+        "first_quarter-20291014T1109Z",
+        "full_moon-20291022T0927Z",
+        "last_quarter-20291030T1132Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar oktober 2029",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene oktober 2029",
+        "polna luna oktober 2029",
+        "mlaj oktober 2029",
+        "lunin koledar oktober 2029 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2029-11",
+      "pageType": "monthly",
+      "year": 2029,
+      "month": 11,
+      "monthSl": "november",
+      "proposedPath": "/lunin-koledar/2029/november/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za november 2029 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – november 2029",
+      "metaDescriptionSl": "Lunin koledar za november 2029: 30 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 30,
+      "firstWeekdaySl": "četrtek",
+      "lastWeekdaySl": "petek",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "new_moon-20291106T0424Z",
+        "first_quarter-20291113T0035Z",
+        "full_moon-20291121T0403Z",
+        "last_quarter-20291128T2348Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar november 2029",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene november 2029",
+        "polna luna november 2029",
+        "mlaj november 2029",
+        "lunin koledar november 2029 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2029-12",
+      "pageType": "monthly",
+      "year": 2029,
+      "month": 12,
+      "monthSl": "december",
+      "proposedPath": "/lunin-koledar/2029/december/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za december 2029 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – december 2029",
+      "metaDescriptionSl": "Lunin koledar za december 2029: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "sobota",
+      "lastWeekdaySl": "ponedeljek",
+      "gridRows": 6,
+      "principalEventCount": 4,
+      "eventIds": [
+        "new_moon-20291205T1452Z",
+        "first_quarter-20291212T1749Z",
+        "full_moon-20291220T2246Z",
+        "last_quarter-20291228T0949Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar december 2029",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene december 2029",
+        "polna luna december 2029",
+        "mlaj december 2029",
+        "lunin koledar december 2029 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2030",
+      "pageType": "annual",
+      "year": 2030,
+      "proposedPath": "/lunin-koledar/2030/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar 2030 – lunine mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar 2030",
+      "metaDescriptionSl": "Oglejte si lunine mene za leto 2030 in dnevne prikaze Lune. Na voljo so štiri predloge v PDF in WebP ter lokalni časi men za Slovenijo.",
+      "dayCount": 365,
+      "principalEventCount": 50,
+      "variantIds": [
+        "Y01",
+        "Y02",
+        "Y03",
+        "Y04"
+      ],
+      "requires": [
+        "allTwelveMonthLinks",
+        "allDailyDiscs",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar 2030",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene 2030",
+        "polna luna 2030",
+        "mlaj 2030",
+        "lunin koledar 2030 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2030-01",
+      "pageType": "monthly",
+      "year": 2030,
+      "month": 1,
+      "monthSl": "januar",
+      "proposedPath": "/lunin-koledar/2030/januar/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za januar 2030 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – januar 2030",
+      "metaDescriptionSl": "Lunin koledar za januar 2030: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "torek",
+      "lastWeekdaySl": "četrtek",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "new_moon-20300104T0249Z",
+        "first_quarter-20300111T1406Z",
+        "full_moon-20300119T1554Z",
+        "last_quarter-20300126T1814Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar januar 2030",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene januar 2030",
+        "polna luna januar 2030",
+        "mlaj januar 2030",
+        "lunin koledar januar 2030 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2030-02",
+      "pageType": "monthly",
+      "year": 2030,
+      "month": 2,
+      "monthSl": "februar",
+      "proposedPath": "/lunin-koledar/2030/februar/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za februar 2030 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – februar 2030",
+      "metaDescriptionSl": "Lunin koledar za februar 2030: 28 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 28,
+      "firstWeekdaySl": "petek",
+      "lastWeekdaySl": "četrtek",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "new_moon-20300202T1607Z",
+        "first_quarter-20300210T1149Z",
+        "full_moon-20300218T0620Z",
+        "last_quarter-20300225T0158Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar februar 2030",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene februar 2030",
+        "polna luna februar 2030",
+        "mlaj februar 2030",
+        "lunin koledar februar 2030 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2030-03",
+      "pageType": "monthly",
+      "year": 2030,
+      "month": 3,
+      "monthSl": "marec",
+      "proposedPath": "/lunin-koledar/2030/marec/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za marec 2030 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – marec 2030",
+      "metaDescriptionSl": "Lunin koledar za marec 2030: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "petek",
+      "lastWeekdaySl": "nedelja",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "new_moon-20300304T0634Z",
+        "first_quarter-20300312T0847Z",
+        "full_moon-20300319T1756Z",
+        "last_quarter-20300326T0951Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar marec 2030",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene marec 2030",
+        "polna luna marec 2030",
+        "mlaj marec 2030",
+        "lunin koledar marec 2030 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2030-04",
+      "pageType": "monthly",
+      "year": 2030,
+      "month": 4,
+      "monthSl": "april",
+      "proposedPath": "/lunin-koledar/2030/april/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za april 2030 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – april 2030",
+      "metaDescriptionSl": "Lunin koledar za april 2030: 30 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 30,
+      "firstWeekdaySl": "ponedeljek",
+      "lastWeekdaySl": "torek",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "new_moon-20300402T2202Z",
+        "first_quarter-20300411T0257Z",
+        "full_moon-20300418T0320Z",
+        "last_quarter-20300424T1839Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar april 2030",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene april 2030",
+        "polna luna april 2030",
+        "mlaj april 2030",
+        "lunin koledar april 2030 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2030-05",
+      "pageType": "monthly",
+      "year": 2030,
+      "month": 5,
+      "monthSl": "maj",
+      "proposedPath": "/lunin-koledar/2030/maj/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za maj 2030 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – maj 2030",
+      "metaDescriptionSl": "Lunin koledar za maj 2030: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "sreda",
+      "lastWeekdaySl": "petek",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "new_moon-20300502T1412Z",
+        "first_quarter-20300510T1711Z",
+        "full_moon-20300517T1119Z",
+        "last_quarter-20300524T0457Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar maj 2030",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene maj 2030",
+        "polna luna maj 2030",
+        "mlaj maj 2030",
+        "lunin koledar maj 2030 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2030-06",
+      "pageType": "monthly",
+      "year": 2030,
+      "month": 6,
+      "monthSl": "junij",
+      "proposedPath": "/lunin-koledar/2030/junij/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za junij 2030 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – junij 2030",
+      "metaDescriptionSl": "Lunin koledar za junij 2030: 30 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 30,
+      "firstWeekdaySl": "sobota",
+      "lastWeekdaySl": "nedelja",
+      "gridRows": 5,
+      "principalEventCount": 5,
+      "eventIds": [
+        "new_moon-20300601T0621Z",
+        "first_quarter-20300609T0336Z",
+        "full_moon-20300615T1841Z",
+        "last_quarter-20300622T1719Z",
+        "new_moon-20300630T2134Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar junij 2030",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene junij 2030",
+        "polna luna junij 2030",
+        "mlaj junij 2030",
+        "lunin koledar junij 2030 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2030-07",
+      "pageType": "monthly",
+      "year": 2030,
+      "month": 7,
+      "monthSl": "julij",
+      "proposedPath": "/lunin-koledar/2030/julij/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za julij 2030 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – julij 2030",
+      "metaDescriptionSl": "Lunin koledar za julij 2030: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "ponedeljek",
+      "lastWeekdaySl": "sreda",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "first_quarter-20300708T1102Z",
+        "full_moon-20300715T0212Z",
+        "last_quarter-20300722T0807Z",
+        "new_moon-20300730T1111Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar julij 2030",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene julij 2030",
+        "polna luna julij 2030",
+        "mlaj julij 2030",
+        "lunin koledar julij 2030 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2030-08",
+      "pageType": "monthly",
+      "year": 2030,
+      "month": 8,
+      "monthSl": "avgust",
+      "proposedPath": "/lunin-koledar/2030/avgust/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za avgust 2030 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – avgust 2030",
+      "metaDescriptionSl": "Lunin koledar za avgust 2030: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "četrtek",
+      "lastWeekdaySl": "sobota",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "first_quarter-20300806T1643Z",
+        "full_moon-20300813T1044Z",
+        "last_quarter-20300821T0115Z",
+        "new_moon-20300828T2307Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar avgust 2030",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene avgust 2030",
+        "polna luna avgust 2030",
+        "mlaj avgust 2030",
+        "lunin koledar avgust 2030 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2030-09",
+      "pageType": "monthly",
+      "year": 2030,
+      "month": 9,
+      "monthSl": "september",
+      "proposedPath": "/lunin-koledar/2030/september/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za september 2030 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – september 2030",
+      "metaDescriptionSl": "Lunin koledar za september 2030: 30 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 30,
+      "firstWeekdaySl": "nedelja",
+      "lastWeekdaySl": "ponedeljek",
+      "gridRows": 6,
+      "principalEventCount": 4,
+      "eventIds": [
+        "first_quarter-20300904T2155Z",
+        "full_moon-20300911T2118Z",
+        "last_quarter-20300919T1956Z",
+        "new_moon-20300927T0954Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar september 2030",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene september 2030",
+        "polna luna september 2030",
+        "mlaj september 2030",
+        "lunin koledar september 2030 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2030-10",
+      "pageType": "monthly",
+      "year": 2030,
+      "month": 10,
+      "monthSl": "oktober",
+      "proposedPath": "/lunin-koledar/2030/oktober/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za oktober 2030 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – oktober 2030",
+      "metaDescriptionSl": "Lunin koledar za oktober 2030: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "torek",
+      "lastWeekdaySl": "četrtek",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "first_quarter-20301004T0356Z",
+        "full_moon-20301011T1047Z",
+        "last_quarter-20301019T1450Z",
+        "new_moon-20301026T2017Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar oktober 2030",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene oktober 2030",
+        "polna luna oktober 2030",
+        "mlaj oktober 2030",
+        "lunin koledar oktober 2030 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2030-11",
+      "pageType": "monthly",
+      "year": 2030,
+      "month": 11,
+      "monthSl": "november",
+      "proposedPath": "/lunin-koledar/2030/november/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za november 2030 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – november 2030",
+      "metaDescriptionSl": "Lunin koledar za november 2030: 30 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 30,
+      "firstWeekdaySl": "petek",
+      "lastWeekdaySl": "sobota",
+      "gridRows": 5,
+      "principalEventCount": 4,
+      "eventIds": [
+        "first_quarter-20301102T1156Z",
+        "full_moon-20301110T0330Z",
+        "last_quarter-20301118T0832Z",
+        "new_moon-20301125T0646Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar november 2030",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene november 2030",
+        "polna luna november 2030",
+        "mlaj november 2030",
+        "lunin koledar november 2030 PDF"
+      ]
+    },
+    {
+      "pageId": "lunar-2030-12",
+      "pageType": "monthly",
+      "year": 2030,
+      "month": 12,
+      "monthSl": "december",
+      "proposedPath": "/lunin-koledar/2030/december/",
+      "currentPath": null,
+      "routeStatus": "must_audit_existing_routes_first",
+      "titleSl": "Lunin koledar za december 2030 – mene in PDF | Koledar365.si",
+      "h1Sl": "Lunin koledar – december 2030",
+      "metaDescriptionSl": "Lunin koledar za december 2030: 31 dni, dnevna osvetljenost Lune in lokalni časi men za Slovenijo. Prenesite štiri predloge v PDF in WebP.",
+      "dayCount": 31,
+      "firstWeekdaySl": "nedelja",
+      "lastWeekdaySl": "torek",
+      "gridRows": 6,
+      "principalEventCount": 5,
+      "eventIds": [
+        "first_quarter-20301201T2257Z",
+        "full_moon-20301209T2240Z",
+        "last_quarter-20301218T0001Z",
+        "new_moon-20301224T1732Z",
+        "first_quarter-20301231T1336Z"
+      ],
+      "variantIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "requires": [
+        "mondayFirstGrid",
+        "dailyInspector",
+        "allPrincipalEvents",
+        "fourDownloadVariants",
+        "previousNextWithinScope",
+        "annualLink",
+        "methodologyLink"
+      ],
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "primaryQueryCandidateSl": "lunin koledar december 2030",
+      "secondaryQueryCandidatesSl": [
+        "lunine mene december 2030",
+        "polna luna december 2030",
+        "mlaj december 2030",
+        "lunin koledar december 2030 PDF"
+      ]
+    }
+  ]
+}

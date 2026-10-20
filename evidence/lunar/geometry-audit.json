@@ -1,0 +1,5854 @@
+{
+  "status": "passed",
+  "days": 1461,
+  "maximumBrightLimbDeltaDeg": 0.05228710394393943,
+  "maximumLibrationDeltaDeg": 0.027570905579511917,
+  "maximumMaskDeltaPercentagePoints": 0.010985305576882709,
+  "maximumIlluminationDeltaPercentagePoints": 0.003610403069465029,
+  "records": [
+    {
+      "date": "2027-01-01",
+      "brightLimbIndependentDeltaDeg": 0.000151539457135641
+    },
+    {
+      "date": "2027-01-02",
+      "brightLimbIndependentDeltaDeg": 0.00018096213065632583
+    },
+    {
+      "date": "2027-01-03",
+      "brightLimbIndependentDeltaDeg": 0.0002142807470590924
+    },
+    {
+      "date": "2027-01-04",
+      "brightLimbIndependentDeltaDeg": 0.00025590640530026576
+    },
+    {
+      "date": "2027-01-05",
+      "brightLimbIndependentDeltaDeg": 0.0003161416824752905
+    },
+    {
+      "date": "2027-01-06",
+      "brightLimbIndependentDeltaDeg": 0.0004251472382748034
+    },
+    {
+      "date": "2027-01-07",
+      "brightLimbIndependentDeltaDeg": 0.0005423982023557983
+    },
+    {
+      "date": "2027-01-08",
+      "brightLimbIndependentDeltaDeg": 0.0007537692530945606
+    },
+    {
+      "date": "2027-01-09",
+      "brightLimbIndependentDeltaDeg": 0.0001514112460938577
+    },
+    {
+      "date": "2027-01-10",
+      "brightLimbIndependentDeltaDeg": 9.717886825910682e-06
+    },
+    {
+      "date": "2027-01-11",
+      "brightLimbIndependentDeltaDeg": 5.3715570231815946e-05
+    },
+    {
+      "date": "2027-01-12",
+      "brightLimbIndependentDeltaDeg": 9.025357368841469e-05
+    },
+    {
+      "date": "2027-01-13",
+      "brightLimbIndependentDeltaDeg": 0.0001141608501598057
+    },
+    {
+      "date": "2027-01-14",
+      "brightLimbIndependentDeltaDeg": 0.00013109651104059594
+    },
+    {
+      "date": "2027-01-15",
+      "brightLimbIndependentDeltaDeg": 0.00014391798231372377
+    },
+    {
+      "date": "2027-01-16",
+      "brightLimbIndependentDeltaDeg": 0.00015444150503185483
+    },
+    {
+      "date": "2027-01-17",
+      "brightLimbIndependentDeltaDeg": 0.0001642372672563397
+    },
+    {
+      "date": "2027-01-18",
+      "brightLimbIndependentDeltaDeg": 0.00017524517002698303
+    },
+    {
+      "date": "2027-01-19",
+      "brightLimbIndependentDeltaDeg": 0.00019083216341186926
+    },
+    {
+      "date": "2027-01-20",
+      "brightLimbIndependentDeltaDeg": 0.0002196250044619319
+    },
+    {
+      "date": "2027-01-21",
+      "brightLimbIndependentDeltaDeg": 0.0003018224687707516
+    },
+    {
+      "date": "2027-01-22",
+      "brightLimbIndependentDeltaDeg": 0.0015749614510411902
+    },
+    {
+      "date": "2027-01-23",
+      "brightLimbIndependentDeltaDeg": 3.0031684445930296e-06
+    },
+    {
+      "date": "2027-01-24",
+      "brightLimbIndependentDeltaDeg": 8.087217349839193e-05
+    },
+    {
+      "date": "2027-01-25",
+      "brightLimbIndependentDeltaDeg": 0.0001134020637039157
+    },
+    {
+      "date": "2027-01-26",
+      "brightLimbIndependentDeltaDeg": 0.0001343375705573635
+    },
+    {
+      "date": "2027-01-27",
+      "brightLimbIndependentDeltaDeg": 0.00015075599537794915
+    },
+    {
+      "date": "2027-01-28",
+      "brightLimbIndependentDeltaDeg": 0.00016488962376115524
+    },
+    {
+      "date": "2027-01-29",
+      "brightLimbIndependentDeltaDeg": 0.0001775377847366144
+    },
+    {
+      "date": "2027-01-30",
+      "brightLimbIndependentDeltaDeg": 0.00018900682522371426
+    },
+    {
+      "date": "2027-01-31",
+      "brightLimbIndependentDeltaDeg": 0.00019950834862925149
+    },
+    {
+      "date": "2027-02-01",
+      "brightLimbIndependentDeltaDeg": 0.0002093791522952415
+    },
+    {
+      "date": "2027-02-02",
+      "brightLimbIndependentDeltaDeg": 0.000219309978263027
+    },
+    {
+      "date": "2027-02-03",
+      "brightLimbIndependentDeltaDeg": 0.00023089669002729352
+    },
+    {
+      "date": "2027-02-04",
+      "brightLimbIndependentDeltaDeg": 0.0002485346388994003
+    },
+    {
+      "date": "2027-02-05",
+      "brightLimbIndependentDeltaDeg": 0.0002896343574434468
+    },
+    {
+      "date": "2027-02-06",
+      "brightLimbIndependentDeltaDeg": 0.0005143819795137006
+    },
+    {
+      "date": "2027-02-07",
+      "brightLimbIndependentDeltaDeg": 1.2468121269648691e-05
+    },
+    {
+      "date": "2027-02-08",
+      "brightLimbIndependentDeltaDeg": 0.00011262411371149028
+    },
+    {
+      "date": "2027-02-09",
+      "brightLimbIndependentDeltaDeg": 0.00013517794633344238
+    },
+    {
+      "date": "2027-02-10",
+      "brightLimbIndependentDeltaDeg": 0.00014184356666646636
+    },
+    {
+      "date": "2027-02-11",
+      "brightLimbIndependentDeltaDeg": 0.00014200347698078986
+    },
+    {
+      "date": "2027-02-12",
+      "brightLimbIndependentDeltaDeg": 0.00013846839851794357
+    },
+    {
+      "date": "2027-02-13",
+      "brightLimbIndependentDeltaDeg": 0.00013232341004254522
+    },
+    {
+      "date": "2027-02-14",
+      "brightLimbIndependentDeltaDeg": 0.00012391973774583676
+    },
+    {
+      "date": "2027-02-15",
+      "brightLimbIndependentDeltaDeg": 0.00011301812460828842
+    },
+    {
+      "date": "2027-02-16",
+      "brightLimbIndependentDeltaDeg": 9.851200547927874e-05
+    },
+    {
+      "date": "2027-02-17",
+      "brightLimbIndependentDeltaDeg": 7.748952612018911e-05
+    },
+    {
+      "date": "2027-02-18",
+      "brightLimbIndependentDeltaDeg": 4.192680773940083e-05
+    },
+    {
+      "date": "2027-02-19",
+      "brightLimbIndependentDeltaDeg": 3.803839143756704e-05
+    },
+    {
+      "date": "2027-02-20",
+      "brightLimbIndependentDeltaDeg": 0.00042211891627630393
+    },
+    {
+      "date": "2027-02-21",
+      "brightLimbIndependentDeltaDeg": 0.0007528617831553674
+    },
+    {
+      "date": "2027-02-22",
+      "brightLimbIndependentDeltaDeg": 0.0003653544231383421
+    },
+    {
+      "date": "2027-02-23",
+      "brightLimbIndependentDeltaDeg": 0.0002878561176942185
+    },
+    {
+      "date": "2027-02-24",
+      "brightLimbIndependentDeltaDeg": 0.00025580924574342134
+    },
+    {
+      "date": "2027-02-25",
+      "brightLimbIndependentDeltaDeg": 0.0002383934927934206
+    },
+    {
+      "date": "2027-02-26",
+      "brightLimbIndependentDeltaDeg": 0.00022685931213572985
+    },
+    {
+      "date": "2027-02-27",
+      "brightLimbIndependentDeltaDeg": 0.00021762622850474145
+    },
+    {
+      "date": "2027-02-28",
+      "brightLimbIndependentDeltaDeg": 0.0002089024845304266
+    },
+    {
+      "date": "2027-03-01",
+      "brightLimbIndependentDeltaDeg": 0.0001996707670741671
+    },
+    {
+      "date": "2027-03-02",
+      "brightLimbIndependentDeltaDeg": 0.000189280068326525
+    },
+    {
+      "date": "2027-03-03",
+      "brightLimbIndependentDeltaDeg": 0.0001772431274957853
+    },
+    {
+      "date": "2027-03-04",
+      "brightLimbIndependentDeltaDeg": 0.00016311884442643532
+    },
+    {
+      "date": "2027-03-05",
+      "brightLimbIndependentDeltaDeg": 0.00014654515544521018
+    },
+    {
+      "date": "2027-03-06",
+      "brightLimbIndependentDeltaDeg": 0.00012897018007151928
+    },
+    {
+      "date": "2027-03-07",
+      "brightLimbIndependentDeltaDeg": 0.00015092511657144314
+    },
+    {
+      "date": "2027-03-08",
+      "brightLimbIndependentDeltaDeg": 0.003100510746094187
+    },
+    {
+      "date": "2027-03-09",
+      "brightLimbIndependentDeltaDeg": 0.0003820226763195933
+    },
+    {
+      "date": "2027-03-10",
+      "brightLimbIndependentDeltaDeg": 0.00022671182597377992
+    },
+    {
+      "date": "2027-03-11",
+      "brightLimbIndependentDeltaDeg": 0.00017369165664149477
+    },
+    {
+      "date": "2027-03-12",
+      "brightLimbIndependentDeltaDeg": 0.0001415882588844397
+    },
+    {
+      "date": "2027-03-13",
+      "brightLimbIndependentDeltaDeg": 0.00011614252048275375
+    },
+    {
+      "date": "2027-03-14",
+      "brightLimbIndependentDeltaDeg": 9.264554319088347e-05
+    },
+    {
+      "date": "2027-03-15",
+      "brightLimbIndependentDeltaDeg": 6.861646488687256e-05
+    },
+    {
+      "date": "2027-03-16",
+      "brightLimbIndependentDeltaDeg": 4.183220912068464e-05
+    },
+    {
+      "date": "2027-03-17",
+      "brightLimbIndependentDeltaDeg": 9.127460316449287e-06
+    },
+    {
+      "date": "2027-03-18",
+      "brightLimbIndependentDeltaDeg": 3.541328385381348e-05
+    },
+    {
+      "date": "2027-03-19",
+      "brightLimbIndependentDeltaDeg": 0.00010535175039194655
+    },
+    {
+      "date": "2027-03-20",
+      "brightLimbIndependentDeltaDeg": 0.00024128082600327616
+    },
+    {
+      "date": "2027-03-21",
+      "brightLimbIndependentDeltaDeg": 0.0006399945673649654
+    },
+    {
+      "date": "2027-03-22",
+      "brightLimbIndependentDeltaDeg": 0.0005931903189377863
+    },
+    {
+      "date": "2027-03-23",
+      "brightLimbIndependentDeltaDeg": 0.0007446575697258595
+    },
+    {
+      "date": "2027-03-24",
+      "brightLimbIndependentDeltaDeg": 0.00047264459996654296
+    },
+    {
+      "date": "2027-03-25",
+      "brightLimbIndependentDeltaDeg": 0.00036171999721545944
+    },
+    {
+      "date": "2027-03-26",
+      "brightLimbIndependentDeltaDeg": 0.0002999461341346432
+    },
+    {
+      "date": "2027-03-27",
+      "brightLimbIndependentDeltaDeg": 0.0002582260492545174
+    },
+    {
+      "date": "2027-03-28",
+      "brightLimbIndependentDeltaDeg": 0.0002271481600359948
+    },
+    {
+      "date": "2027-03-29",
+      "brightLimbIndependentDeltaDeg": 0.00019936157548272604
+    },
+    {
+      "date": "2027-03-30",
+      "brightLimbIndependentDeltaDeg": 0.0001739491870580423
+    },
+    {
+      "date": "2027-03-31",
+      "brightLimbIndependentDeltaDeg": 0.0001496463570731521
+    },
+    {
+      "date": "2027-04-01",
+      "brightLimbIndependentDeltaDeg": 0.00012575025783689853
+    },
+    {
+      "date": "2027-04-02",
+      "brightLimbIndependentDeltaDeg": 0.00010188776619202145
+    },
+    {
+      "date": "2027-04-03",
+      "brightLimbIndependentDeltaDeg": 7.83099898171713e-05
+    },
+    {
+      "date": "2027-04-04",
+      "brightLimbIndependentDeltaDeg": 5.8381627013659454e-05
+    },
+    {
+      "date": "2027-04-05",
+      "brightLimbIndependentDeltaDeg": 6.949757843699444e-05
+    },
+    {
+      "date": "2027-04-06",
+      "brightLimbIndependentDeltaDeg": 0.0005847800151741467
+    },
+    {
+      "date": "2027-04-07",
+      "brightLimbIndependentDeltaDeg": 0.0016435032457025045
+    },
+    {
+      "date": "2027-04-08",
+      "brightLimbIndependentDeltaDeg": 0.00039571701836393913
+    },
+    {
+      "date": "2027-04-09",
+      "brightLimbIndependentDeltaDeg": 0.0001984821039968665
+    },
+    {
+      "date": "2027-04-10",
+      "brightLimbIndependentDeltaDeg": 0.00011916513733467582
+    },
+    {
+      "date": "2027-04-11",
+      "brightLimbIndependentDeltaDeg": 7.044146792622996e-05
+    },
+    {
+      "date": "2027-04-12",
+      "brightLimbIndependentDeltaDeg": 3.208221315276205e-05
+    },
+    {
+      "date": "2027-04-13",
+      "brightLimbIndependentDeltaDeg": 3.64721208256924e-06
+    },
+    {
+      "date": "2027-04-14",
+      "brightLimbIndependentDeltaDeg": 4.1424254021649176e-05
+    },
+    {
+      "date": "2027-04-15",
+      "brightLimbIndependentDeltaDeg": 8.592654222638885e-05
+    },
+    {
+      "date": "2027-04-16",
+      "brightLimbIndependentDeltaDeg": 0.00014423697163579163
+    },
+    {
+      "date": "2027-04-17",
+      "brightLimbIndependentDeltaDeg": 0.00023053156937180574
+    },
+    {
+      "date": "2027-04-18",
+      "brightLimbIndependentDeltaDeg": 0.0003810814812368335
+    },
+    {
+      "date": "2027-04-19",
+      "brightLimbIndependentDeltaDeg": 0.0007258970671557563
+    },
+    {
+      "date": "2027-04-20",
+      "brightLimbIndependentDeltaDeg": 0.0020460826900148277
+    },
+    {
+      "date": "2027-04-21",
+      "brightLimbIndependentDeltaDeg": 0.0006651638453831765
+    },
+    {
+      "date": "2027-04-22",
+      "brightLimbIndependentDeltaDeg": 0.0006274496659557371
+    },
+    {
+      "date": "2027-04-23",
+      "brightLimbIndependentDeltaDeg": 0.0004391682655295881
+    },
+    {
+      "date": "2027-04-24",
+      "brightLimbIndependentDeltaDeg": 0.0003319157777639248
+    },
+    {
+      "date": "2027-04-25",
+      "brightLimbIndependentDeltaDeg": 0.00026171265363927887
+    },
+    {
+      "date": "2027-04-26",
+      "brightLimbIndependentDeltaDeg": 0.00021001621439609153
+    },
+    {
+      "date": "2027-04-27",
+      "brightLimbIndependentDeltaDeg": 0.00016863867296024182
+    },
+    {
+      "date": "2027-04-28",
+      "brightLimbIndependentDeltaDeg": 0.00013368229139132382
+    },
+    {
+      "date": "2027-04-29",
+      "brightLimbIndependentDeltaDeg": 0.00010322785786343047
+    },
+    {
+      "date": "2027-04-30",
+      "brightLimbIndependentDeltaDeg": 7.634942238610165e-05
+    },
+    {
+      "date": "2027-05-01",
+      "brightLimbIndependentDeltaDeg": 5.28085573705539e-05
+    },
+    {
+      "date": "2027-05-02",
+      "brightLimbIndependentDeltaDeg": 3.3466719742136775e-05
+    },
+    {
+      "date": "2027-05-03",
+      "brightLimbIndependentDeltaDeg": 2.260929110775578e-05
+    },
+    {
+      "date": "2027-05-04",
+      "brightLimbIndependentDeltaDeg": 4.0820910726324655e-05
+    },
+    {
+      "date": "2027-05-05",
+      "brightLimbIndependentDeltaDeg": 0.0002518740691925814
+    },
+    {
+      "date": "2027-05-06",
+      "brightLimbIndependentDeltaDeg": 0.0033695915433327173
+    },
+    {
+      "date": "2027-05-07",
+      "brightLimbIndependentDeltaDeg": 0.0006099407877968588
+    },
+    {
+      "date": "2027-05-08",
+      "brightLimbIndependentDeltaDeg": 0.00016459682231584338
+    },
+    {
+      "date": "2027-05-09",
+      "brightLimbIndependentDeltaDeg": 4.645826956561905e-05
+    },
+    {
+      "date": "2027-05-10",
+      "brightLimbIndependentDeltaDeg": 1.3053120710537769e-05
+    },
+    {
+      "date": "2027-05-11",
+      "brightLimbIndependentDeltaDeg": 5.580300972951591e-05
+    },
+    {
+      "date": "2027-05-12",
+      "brightLimbIndependentDeltaDeg": 9.426695390857276e-05
+    },
+    {
+      "date": "2027-05-13",
+      "brightLimbIndependentDeltaDeg": 0.00013444808547546927
+    },
+    {
+      "date": "2027-05-14",
+      "brightLimbIndependentDeltaDeg": 0.0001811751607192491
+    },
+    {
+      "date": "2027-05-15",
+      "brightLimbIndependentDeltaDeg": 0.00024072199201441435
+    },
+    {
+      "date": "2027-05-16",
+      "brightLimbIndependentDeltaDeg": 0.00032437544143704145
+    },
+    {
+      "date": "2027-05-17",
+      "brightLimbIndependentDeltaDeg": 0.00045776113654483197
+    },
+    {
+      "date": "2027-05-18",
+      "brightLimbIndependentDeltaDeg": 0.0007164107233563755
+    },
+    {
+      "date": "2027-05-19",
+      "brightLimbIndependentDeltaDeg": 0.001436788485591478
+    },
+    {
+      "date": "2027-05-20",
+      "brightLimbIndependentDeltaDeg": 0.002827591888376446
+    },
+    {
+      "date": "2027-05-21",
+      "brightLimbIndependentDeltaDeg": 0.0007456570144768193
+    },
+    {
+      "date": "2027-05-22",
+      "brightLimbIndependentDeltaDeg": 0.0005043475762818161
+    },
+    {
+      "date": "2027-05-23",
+      "brightLimbIndependentDeltaDeg": 0.00034195879374010474
+    },
+    {
+      "date": "2027-05-24",
+      "brightLimbIndependentDeltaDeg": 0.00024213188146404718
+    },
+    {
+      "date": "2027-05-25",
+      "brightLimbIndependentDeltaDeg": 0.00017383484785682413
+    },
+    {
+      "date": "2027-05-26",
+      "brightLimbIndependentDeltaDeg": 0.00012322992290592083
+    },
+    {
+      "date": "2027-05-27",
+      "brightLimbIndependentDeltaDeg": 8.378750789006517e-05
+    },
+    {
+      "date": "2027-05-28",
+      "brightLimbIndependentDeltaDeg": 5.220086632107268e-05
+    },
+    {
+      "date": "2027-05-29",
+      "brightLimbIndependentDeltaDeg": 2.6747393604864556e-05
+    },
+    {
+      "date": "2027-05-30",
+      "brightLimbIndependentDeltaDeg": 6.695307320114807e-06
+    },
+    {
+      "date": "2027-05-31",
+      "brightLimbIndependentDeltaDeg": 7.6353803137863e-06
+    },
+    {
+      "date": "2027-06-01",
+      "brightLimbIndependentDeltaDeg": 1.3757379520029644e-05
+    },
+    {
+      "date": "2027-06-02",
+      "brightLimbIndependentDeltaDeg": 1.5060967086810706e-06
+    },
+    {
+      "date": "2027-06-03",
+      "brightLimbIndependentDeltaDeg": 8.598031877227186e-05
+    },
+    {
+      "date": "2027-06-04",
+      "brightLimbIndependentDeltaDeg": 0.0011230154613315335
+    },
+    {
+      "date": "2027-06-05",
+      "brightLimbIndependentDeltaDeg": 0.0006698718782445212
+    },
+    {
+      "date": "2027-06-06",
+      "brightLimbIndependentDeltaDeg": 1.8458810757238098e-05
+    },
+    {
+      "date": "2027-06-07",
+      "brightLimbIndependentDeltaDeg": 7.667902684715955e-05
+    },
+    {
+      "date": "2027-06-08",
+      "brightLimbIndependentDeltaDeg": 0.00011780890338286554
+    },
+    {
+      "date": "2027-06-09",
+      "brightLimbIndependentDeltaDeg": 0.00014792227514703882
+    },
+    {
+      "date": "2027-06-10",
+      "brightLimbIndependentDeltaDeg": 0.00017664693586993963
+    },
+    {
+      "date": "2027-06-11",
+      "brightLimbIndependentDeltaDeg": 0.0002078791991948492
+    },
+    {
+      "date": "2027-06-12",
+      "brightLimbIndependentDeltaDeg": 0.00024450266454323355
+    },
+    {
+      "date": "2027-06-13",
+      "brightLimbIndependentDeltaDeg": 0.00029014537670946083
+    },
+    {
+      "date": "2027-06-14",
+      "brightLimbIndependentDeltaDeg": 0.00035109460031890194
+    },
+    {
+      "date": "2027-06-15",
+      "brightLimbIndependentDeltaDeg": 0.00044054475029042806
+    },
+    {
+      "date": "2027-06-16",
+      "brightLimbIndependentDeltaDeg": 0.0005920965167547365
+    },
+    {
+      "date": "2027-06-17",
+      "brightLimbIndependentDeltaDeg": 0.0009220121489761368
+    },
+    {
+      "date": "2027-06-18",
+      "brightLimbIndependentDeltaDeg": 0.0021562090660154354
+    },
+    {
+      "date": "2027-06-19",
+      "brightLimbIndependentDeltaDeg": 0.0006614528771251571
+    },
+    {
+      "date": "2027-06-20",
+      "brightLimbIndependentDeltaDeg": 0.000585233830378229
+    },
+    {
+      "date": "2027-06-21",
+      "brightLimbIndependentDeltaDeg": 0.00032056105013111846
+    },
+    {
+      "date": "2027-06-22",
+      "brightLimbIndependentDeltaDeg": 0.00018755783349888588
+    },
+    {
+      "date": "2027-06-23",
+      "brightLimbIndependentDeltaDeg": 0.00010833507053575886
+    },
+    {
+      "date": "2027-06-24",
+      "brightLimbIndependentDeltaDeg": 5.5857776800394277e-05
+    },
+    {
+      "date": "2027-06-25",
+      "brightLimbIndependentDeltaDeg": 1.8988842469980227e-05
+    },
+    {
+      "date": "2027-06-26",
+      "brightLimbIndependentDeltaDeg": 7.558259653706045e-06
+    },
+    {
+      "date": "2027-06-27",
+      "brightLimbIndependentDeltaDeg": 2.649349181638172e-05
+    },
+    {
+      "date": "2027-06-28",
+      "brightLimbIndependentDeltaDeg": 3.912979337883371e-05
+    },
+    {
+      "date": "2027-06-29",
+      "brightLimbIndependentDeltaDeg": 4.5721317889046986e-05
+    },
+    {
+      "date": "2027-06-30",
+      "brightLimbIndependentDeltaDeg": 4.5070773012412246e-05
+    },
+    {
+      "date": "2027-07-01",
+      "brightLimbIndependentDeltaDeg": 3.2195436489246276e-05
+    },
+    {
+      "date": "2027-07-02",
+      "brightLimbIndependentDeltaDeg": 1.4292320599906816e-05
+    },
+    {
+      "date": "2027-07-03",
+      "brightLimbIndependentDeltaDeg": 0.00028002070945376545
+    },
+    {
+      "date": "2027-07-04",
+      "brightLimbIndependentDeltaDeg": 0.0004310697845824052
+    },
+    {
+      "date": "2027-07-05",
+      "brightLimbIndependentDeltaDeg": 0.00020645262441121304
+    },
+    {
+      "date": "2027-07-06",
+      "brightLimbIndependentDeltaDeg": 0.00020735739497013128
+    },
+    {
+      "date": "2027-07-07",
+      "brightLimbIndependentDeltaDeg": 0.0002095404612987295
+    },
+    {
+      "date": "2027-07-08",
+      "brightLimbIndependentDeltaDeg": 0.00021719245143003718
+    },
+    {
+      "date": "2027-07-09",
+      "brightLimbIndependentDeltaDeg": 0.00022921884618654076
+    },
+    {
+      "date": "2027-07-10",
+      "brightLimbIndependentDeltaDeg": 0.0002451415296604864
+    },
+    {
+      "date": "2027-07-11",
+      "brightLimbIndependentDeltaDeg": 0.00026512102584774766
+    },
+    {
+      "date": "2027-07-12",
+      "brightLimbIndependentDeltaDeg": 0.00029005393474790253
+    },
+    {
+      "date": "2027-07-13",
+      "brightLimbIndependentDeltaDeg": 0.00032210098720497626
+    },
+    {
+      "date": "2027-07-14",
+      "brightLimbIndependentDeltaDeg": 0.00036604651441507485
+    },
+    {
+      "date": "2027-07-15",
+      "brightLimbIndependentDeltaDeg": 0.0004332183505084686
+    },
+    {
+      "date": "2027-07-16",
+      "brightLimbIndependentDeltaDeg": 0.0005563523735077069
+    },
+    {
+      "date": "2027-07-17",
+      "brightLimbIndependentDeltaDeg": 0.0008797328967489193
+    },
+    {
+      "date": "2027-07-18",
+      "brightLimbIndependentDeltaDeg": 0.0038892742471432484
+    },
+    {
+      "date": "2027-07-19",
+      "brightLimbIndependentDeltaDeg": 0.0006735258225774032
+    },
+    {
+      "date": "2027-07-20",
+      "brightLimbIndependentDeltaDeg": 0.0002278841392069353
+    },
+    {
+      "date": "2027-07-21",
+      "brightLimbIndependentDeltaDeg": 8.278320603949396e-05
+    },
+    {
+      "date": "2027-07-22",
+      "brightLimbIndependentDeltaDeg": 1.3465237145737774e-05
+    },
+    {
+      "date": "2027-07-23",
+      "brightLimbIndependentDeltaDeg": 2.5208631143414095e-05
+    },
+    {
+      "date": "2027-07-24",
+      "brightLimbIndependentDeltaDeg": 4.787119848970178e-05
+    },
+    {
+      "date": "2027-07-25",
+      "brightLimbIndependentDeltaDeg": 6.060896868120835e-05
+    },
+    {
+      "date": "2027-07-26",
+      "brightLimbIndependentDeltaDeg": 6.625797388437604e-05
+    },
+    {
+      "date": "2027-07-27",
+      "brightLimbIndependentDeltaDeg": 6.603494693990797e-05
+    },
+    {
+      "date": "2027-07-28",
+      "brightLimbIndependentDeltaDeg": 5.9966522599097516e-05
+    },
+    {
+      "date": "2027-07-29",
+      "brightLimbIndependentDeltaDeg": 4.649771435083494e-05
+    },
+    {
+      "date": "2027-07-30",
+      "brightLimbIndependentDeltaDeg": 2.0518232304311823e-05
+    },
+    {
+      "date": "2027-07-31",
+      "brightLimbIndependentDeltaDeg": 3.502611622252516e-05
+    },
+    {
+      "date": "2027-08-01",
+      "brightLimbIndependentDeltaDeg": 0.0002087760290407914
+    },
+    {
+      "date": "2027-08-02",
+      "brightLimbIndependentDeltaDeg": 0.05228710394393943
+    },
+    {
+      "date": "2027-08-03",
+      "brightLimbIndependentDeltaDeg": 0.0005023929294907248
+    },
+    {
+      "date": "2027-08-04",
+      "brightLimbIndependentDeltaDeg": 0.0003367423651070567
+    },
+    {
+      "date": "2027-08-05",
+      "brightLimbIndependentDeltaDeg": 0.00028666188705983586
+    },
+    {
+      "date": "2027-08-06",
+      "brightLimbIndependentDeltaDeg": 0.00026604822224385316
+    },
+    {
+      "date": "2027-08-07",
+      "brightLimbIndependentDeltaDeg": 0.00025736520831287635
+    },
+    {
+      "date": "2027-08-08",
+      "brightLimbIndependentDeltaDeg": 0.00025462711576551555
+    },
+    {
+      "date": "2027-08-09",
+      "brightLimbIndependentDeltaDeg": 0.00025519536853835234
+    },
+    {
+      "date": "2027-08-10",
+      "brightLimbIndependentDeltaDeg": 0.00025778075121252186
+    },
+    {
+      "date": "2027-08-11",
+      "brightLimbIndependentDeltaDeg": 0.00026184365310655267
+    },
+    {
+      "date": "2027-08-12",
+      "brightLimbIndependentDeltaDeg": 0.0002674471461148187
+    },
+    {
+      "date": "2027-08-13",
+      "brightLimbIndependentDeltaDeg": 0.00027541184903157045
+    },
+    {
+      "date": "2027-08-14",
+      "brightLimbIndependentDeltaDeg": 0.00028789508894533355
+    },
+    {
+      "date": "2027-08-15",
+      "brightLimbIndependentDeltaDeg": 0.0003093520437573716
+    },
+    {
+      "date": "2027-08-16",
+      "brightLimbIndependentDeltaDeg": 0.0003244223000820057
+    },
+    {
+      "date": "2027-08-17",
+      "brightLimbIndependentDeltaDeg": 0.006607313640074608
+    },
+    {
+      "date": "2027-08-18",
+      "brightLimbIndependentDeltaDeg": 0.00014976750927075955
+    },
+    {
+      "date": "2027-08-19",
+      "brightLimbIndependentDeltaDeg": 2.776167784190875e-05
+    },
+    {
+      "date": "2027-08-20",
+      "brightLimbIndependentDeltaDeg": 7.323496870981216e-05
+    },
+    {
+      "date": "2027-08-21",
+      "brightLimbIndependentDeltaDeg": 8.810280073134891e-05
+    },
+    {
+      "date": "2027-08-22",
+      "brightLimbIndependentDeltaDeg": 9.063487686944427e-05
+    },
+    {
+      "date": "2027-08-23",
+      "brightLimbIndependentDeltaDeg": 8.640798063197508e-05
+    },
+    {
+      "date": "2027-08-24",
+      "brightLimbIndependentDeltaDeg": 7.745371831902048e-05
+    },
+    {
+      "date": "2027-08-25",
+      "brightLimbIndependentDeltaDeg": 6.431283077290573e-05
+    },
+    {
+      "date": "2027-08-26",
+      "brightLimbIndependentDeltaDeg": 4.643058855435811e-05
+    },
+    {
+      "date": "2027-08-27",
+      "brightLimbIndependentDeltaDeg": 2.1739669733733535e-05
+    },
+    {
+      "date": "2027-08-28",
+      "brightLimbIndependentDeltaDeg": 1.494199557328102e-05
+    },
+    {
+      "date": "2027-08-29",
+      "brightLimbIndependentDeltaDeg": 7.735836769029447e-05
+    },
+    {
+      "date": "2027-08-30",
+      "brightLimbIndependentDeltaDeg": 0.00021130588089590674
+    },
+    {
+      "date": "2027-08-31",
+      "brightLimbIndependentDeltaDeg": 0.00029876809492179746
+    },
+    {
+      "date": "2027-09-01",
+      "brightLimbIndependentDeltaDeg": 0.0011194317221452366
+    },
+    {
+      "date": "2027-09-02",
+      "brightLimbIndependentDeltaDeg": 0.0005033350276733017
+    },
+    {
+      "date": "2027-09-03",
+      "brightLimbIndependentDeltaDeg": 0.00036097358713504946
+    },
+    {
+      "date": "2027-09-04",
+      "brightLimbIndependentDeltaDeg": 0.0002982675447640304
+    },
+    {
+      "date": "2027-09-05",
+      "brightLimbIndependentDeltaDeg": 0.0002618816718040762
+    },
+    {
+      "date": "2027-09-06",
+      "brightLimbIndependentDeltaDeg": 0.00023638224831756816
+    },
+    {
+      "date": "2027-09-07",
+      "brightLimbIndependentDeltaDeg": 0.00021543570508697485
+    },
+    {
+      "date": "2027-09-08",
+      "brightLimbIndependentDeltaDeg": 0.00019572068174511514
+    },
+    {
+      "date": "2027-09-09",
+      "brightLimbIndependentDeltaDeg": 0.00017495588417659746
+    },
+    {
+      "date": "2027-09-10",
+      "brightLimbIndependentDeltaDeg": 0.0001508938306642449
+    },
+    {
+      "date": "2027-09-11",
+      "brightLimbIndependentDeltaDeg": 0.00012021519052041185
+    },
+    {
+      "date": "2027-09-12",
+      "brightLimbIndependentDeltaDeg": 7.59045086056176e-05
+    },
+    {
+      "date": "2027-09-13",
+      "brightLimbIndependentDeltaDeg": 2.429224196021096e-06
+    },
+    {
+      "date": "2027-09-14",
+      "brightLimbIndependentDeltaDeg": 0.0002053372525665509
+    },
+    {
+      "date": "2027-09-15",
+      "brightLimbIndependentDeltaDeg": 0.0015428216128157146
+    },
+    {
+      "date": "2027-09-16",
+      "brightLimbIndependentDeltaDeg": 0.0009682490042735026
+    },
+    {
+      "date": "2027-09-17",
+      "brightLimbIndependentDeltaDeg": 8.284902605737443e-05
+    },
+    {
+      "date": "2027-09-18",
+      "brightLimbIndependentDeltaDeg": 0.00013464009339259064
+    },
+    {
+      "date": "2027-09-19",
+      "brightLimbIndependentDeltaDeg": 0.00012682318896395373
+    },
+    {
+      "date": "2027-09-20",
+      "brightLimbIndependentDeltaDeg": 0.00010942505252842238
+    },
+    {
+      "date": "2027-09-21",
+      "brightLimbIndependentDeltaDeg": 8.946982794100222e-05
+    },
+    {
+      "date": "2027-09-22",
+      "brightLimbIndependentDeltaDeg": 6.802592639587601e-05
+    },
+    {
+      "date": "2027-09-23",
+      "brightLimbIndependentDeltaDeg": 4.472113982956216e-05
+    },
+    {
+      "date": "2027-09-24",
+      "brightLimbIndependentDeltaDeg": 1.834770077380199e-05
+    },
+    {
+      "date": "2027-09-25",
+      "brightLimbIndependentDeltaDeg": 1.3517765182768926e-05
+    },
+    {
+      "date": "2027-09-26",
+      "brightLimbIndependentDeltaDeg": 5.580000419058706e-05
+    },
+    {
+      "date": "2027-09-27",
+      "brightLimbIndependentDeltaDeg": 0.00011959918987258789
+    },
+    {
+      "date": "2027-09-28",
+      "brightLimbIndependentDeltaDeg": 0.000234107833307462
+    },
+    {
+      "date": "2027-09-29",
+      "brightLimbIndependentDeltaDeg": 0.0004327979659706216
+    },
+    {
+      "date": "2027-09-30",
+      "brightLimbIndependentDeltaDeg": 0.00202585819010892
+    },
+    {
+      "date": "2027-10-01",
+      "brightLimbIndependentDeltaDeg": 0.0006754047966524013
+    },
+    {
+      "date": "2027-10-02",
+      "brightLimbIndependentDeltaDeg": 0.0004050645476354475
+    },
+    {
+      "date": "2027-10-03",
+      "brightLimbIndependentDeltaDeg": 0.00029467101433056087
+    },
+    {
+      "date": "2027-10-04",
+      "brightLimbIndependentDeltaDeg": 0.00023079429126937612
+    },
+    {
+      "date": "2027-10-05",
+      "brightLimbIndependentDeltaDeg": 0.0001852514346865064
+    },
+    {
+      "date": "2027-10-06",
+      "brightLimbIndependentDeltaDeg": 0.00014763272346840495
+    },
+    {
+      "date": "2027-10-07",
+      "brightLimbIndependentDeltaDeg": 0.00011296131344806781
+    },
+    {
+      "date": "2027-10-08",
+      "brightLimbIndependentDeltaDeg": 7.820250777967885e-05
+    },
+    {
+      "date": "2027-10-09",
+      "brightLimbIndependentDeltaDeg": 4.082914358605194e-05
+    },
+    {
+      "date": "2027-10-10",
+      "brightLimbIndependentDeltaDeg": 2.293560811494899e-06
+    },
+    {
+      "date": "2027-10-11",
+      "brightLimbIndependentDeltaDeg": 5.675266405091861e-05
+    },
+    {
+      "date": "2027-10-12",
+      "brightLimbIndependentDeltaDeg": 0.00013549094828135821
+    },
+    {
+      "date": "2027-10-13",
+      "brightLimbIndependentDeltaDeg": 0.0002776747074619834
+    },
+    {
+      "date": "2027-10-14",
+      "brightLimbIndependentDeltaDeg": 0.0006668317029152604
+    },
+    {
+      "date": "2027-10-15",
+      "brightLimbIndependentDeltaDeg": 0.0024599413675900905
+    },
+    {
+      "date": "2027-10-16",
+      "brightLimbIndependentDeltaDeg": 0.00018238964133843183
+    },
+    {
+      "date": "2027-10-17",
+      "brightLimbIndependentDeltaDeg": 0.0002182475081440316
+    },
+    {
+      "date": "2027-10-18",
+      "brightLimbIndependentDeltaDeg": 0.00015814893163224042
+    },
+    {
+      "date": "2027-10-19",
+      "brightLimbIndependentDeltaDeg": 0.00010985626596493603
+    },
+    {
+      "date": "2027-10-20",
+      "brightLimbIndependentDeltaDeg": 7.073229772913692e-05
+    },
+    {
+      "date": "2027-10-21",
+      "brightLimbIndependentDeltaDeg": 3.638171128272916e-05
+    },
+    {
+      "date": "2027-10-22",
+      "brightLimbIndependentDeltaDeg": 3.6110058090343955e-06
+    },
+    {
+      "date": "2027-10-23",
+      "brightLimbIndependentDeltaDeg": 3.0387751166927046e-05
+    },
+    {
+      "date": "2027-10-24",
+      "brightLimbIndependentDeltaDeg": 6.904587789335892e-05
+    },
+    {
+      "date": "2027-10-25",
+      "brightLimbIndependentDeltaDeg": 0.00011800273324524824
+    },
+    {
+      "date": "2027-10-26",
+      "brightLimbIndependentDeltaDeg": 0.00018896789418931803
+    },
+    {
+      "date": "2027-10-27",
+      "brightLimbIndependentDeltaDeg": 0.0003130327619089712
+    },
+    {
+      "date": "2027-10-28",
+      "brightLimbIndependentDeltaDeg": 0.0006066657271901477
+    },
+    {
+      "date": "2027-10-29",
+      "brightLimbIndependentDeltaDeg": 0.0009443805047908427
+    },
+    {
+      "date": "2027-10-30",
+      "brightLimbIndependentDeltaDeg": 0.0007083329195722854
+    },
+    {
+      "date": "2027-10-31",
+      "brightLimbIndependentDeltaDeg": 0.0003843504704832412
+    },
+    {
+      "date": "2027-11-01",
+      "brightLimbIndependentDeltaDeg": 0.0002488960131472595
+    },
+    {
+      "date": "2027-11-02",
+      "brightLimbIndependentDeltaDeg": 0.00017044379887920513
+    },
+    {
+      "date": "2027-11-03",
+      "brightLimbIndependentDeltaDeg": 0.00011540698025669371
+    },
+    {
+      "date": "2027-11-04",
+      "brightLimbIndependentDeltaDeg": 7.15078672897107e-05
+    },
+    {
+      "date": "2027-11-05",
+      "brightLimbIndependentDeltaDeg": 3.3189490864060645e-05
+    },
+    {
+      "date": "2027-11-06",
+      "brightLimbIndependentDeltaDeg": 2.5247550752283132e-06
+    },
+    {
+      "date": "2027-11-07",
+      "brightLimbIndependentDeltaDeg": 3.7592381346485126e-05
+    },
+    {
+      "date": "2027-11-08",
+      "brightLimbIndependentDeltaDeg": 7.385544125781962e-05
+    },
+    {
+      "date": "2027-11-09",
+      "brightLimbIndependentDeltaDeg": 0.0001139554022415723
+    },
+    {
+      "date": "2027-11-10",
+      "brightLimbIndependentDeltaDeg": 0.00016290768542148726
+    },
+    {
+      "date": "2027-11-11",
+      "brightLimbIndependentDeltaDeg": 0.00023233811754153066
+    },
+    {
+      "date": "2027-11-12",
+      "brightLimbIndependentDeltaDeg": 0.00035685172287003297
+    },
+    {
+      "date": "2027-11-13",
+      "brightLimbIndependentDeltaDeg": 0.0006698763234282978
+    },
+    {
+      "date": "2027-11-14",
+      "brightLimbIndependentDeltaDeg": 0.000657894887524435
+    },
+    {
+      "date": "2027-11-15",
+      "brightLimbIndependentDeltaDeg": 0.0003167273847850538
+    },
+    {
+      "date": "2027-11-16",
+      "brightLimbIndependentDeltaDeg": 0.00014379935873876093
+    },
+    {
+      "date": "2027-11-17",
+      "brightLimbIndependentDeltaDeg": 6.109433172696299e-05
+    },
+    {
+      "date": "2027-11-18",
+      "brightLimbIndependentDeltaDeg": 8.59853471979477e-06
+    },
+    {
+      "date": "2027-11-19",
+      "brightLimbIndependentDeltaDeg": 3.164305994118877e-05
+    },
+    {
+      "date": "2027-11-20",
+      "brightLimbIndependentDeltaDeg": 6.719227047824461e-05
+    },
+    {
+      "date": "2027-11-21",
+      "brightLimbIndependentDeltaDeg": 0.00010244644357726429
+    },
+    {
+      "date": "2027-11-22",
+      "brightLimbIndependentDeltaDeg": 0.00014118181070443825
+    },
+    {
+      "date": "2027-11-23",
+      "brightLimbIndependentDeltaDeg": 0.0001883446788610854
+    },
+    {
+      "date": "2027-11-24",
+      "brightLimbIndependentDeltaDeg": 0.0002530375086280401
+    },
+    {
+      "date": "2027-11-25",
+      "brightLimbIndependentDeltaDeg": 0.00035720981406939245
+    },
+    {
+      "date": "2027-11-26",
+      "brightLimbIndependentDeltaDeg": 0.0005739697212447936
+    },
+    {
+      "date": "2027-11-27",
+      "brightLimbIndependentDeltaDeg": 0.0013257203266903161
+    },
+    {
+      "date": "2027-11-28",
+      "brightLimbIndependentDeltaDeg": 3.452683682780844e-05
+    },
+    {
+      "date": "2027-11-29",
+      "brightLimbIndependentDeltaDeg": 0.0003754372014839191
+    },
+    {
+      "date": "2027-11-30",
+      "brightLimbIndependentDeltaDeg": 0.0002069463533302951
+    },
+    {
+      "date": "2027-12-01",
+      "brightLimbIndependentDeltaDeg": 0.00011238987423212166
+    },
+    {
+      "date": "2027-12-02",
+      "brightLimbIndependentDeltaDeg": 5.099187745827294e-05
+    },
+    {
+      "date": "2027-12-03",
+      "brightLimbIndependentDeltaDeg": 6.082961334641368e-06
+    },
+    {
+      "date": "2027-12-04",
+      "brightLimbIndependentDeltaDeg": 2.948162898519513e-05
+    },
+    {
+      "date": "2027-12-05",
+      "brightLimbIndependentDeltaDeg": 5.9187433009810775e-05
+    },
+    {
+      "date": "2027-12-06",
+      "brightLimbIndependentDeltaDeg": 8.498911154219968e-05
+    },
+    {
+      "date": "2027-12-07",
+      "brightLimbIndependentDeltaDeg": 0.00010825664327285267
+    },
+    {
+      "date": "2027-12-08",
+      "brightLimbIndependentDeltaDeg": 0.00013032452363859193
+    },
+    {
+      "date": "2027-12-09",
+      "brightLimbIndependentDeltaDeg": 0.00015299240328658925
+    },
+    {
+      "date": "2027-12-10",
+      "brightLimbIndependentDeltaDeg": 0.00017939562798119368
+    },
+    {
+      "date": "2027-12-11",
+      "brightLimbIndependentDeltaDeg": 0.0002164602615550848
+    },
+    {
+      "date": "2027-12-12",
+      "brightLimbIndependentDeltaDeg": 0.00028342441754602987
+    },
+    {
+      "date": "2027-12-13",
+      "brightLimbIndependentDeltaDeg": 9.960918362139637e-05
+    },
+    {
+      "date": "2027-12-14",
+      "brightLimbIndependentDeltaDeg": 0.00026776188326493866
+    },
+    {
+      "date": "2027-12-15",
+      "brightLimbIndependentDeltaDeg": 1.9809918455848674e-05
+    },
+    {
+      "date": "2027-12-16",
+      "brightLimbIndependentDeltaDeg": 5.194420549514689e-05
+    },
+    {
+      "date": "2027-12-17",
+      "brightLimbIndependentDeltaDeg": 9.046994063055536e-05
+    },
+    {
+      "date": "2027-12-18",
+      "brightLimbIndependentDeltaDeg": 0.00011843875040540297
+    },
+    {
+      "date": "2027-12-19",
+      "brightLimbIndependentDeltaDeg": 0.00014283434575190768
+    },
+    {
+      "date": "2027-12-20",
+      "brightLimbIndependentDeltaDeg": 0.00016684178439163588
+    },
+    {
+      "date": "2027-12-21",
+      "brightLimbIndependentDeltaDeg": 0.00019259157016904283
+    },
+    {
+      "date": "2027-12-22",
+      "brightLimbIndependentDeltaDeg": 0.00022233235785051875
+    },
+    {
+      "date": "2027-12-23",
+      "brightLimbIndependentDeltaDeg": 0.00025965514976178383
+    },
+    {
+      "date": "2027-12-24",
+      "brightLimbIndependentDeltaDeg": 0.0003120594699339563
+    },
+    {
+      "date": "2027-12-25",
+      "brightLimbIndependentDeltaDeg": 0.0003992882199952419
+    },
+    {
+      "date": "2027-12-26",
+      "brightLimbIndependentDeltaDeg": 0.0005960431225275897
+    },
+    {
+      "date": "2027-12-27",
+      "brightLimbIndependentDeltaDeg": 0.0015384919481391535
+    },
+    {
+      "date": "2027-12-28",
+      "brightLimbIndependentDeltaDeg": 0.0006770026098195103
+    },
+    {
+      "date": "2027-12-29",
+      "brightLimbIndependentDeltaDeg": 0.0001961537167574079
+    },
+    {
+      "date": "2027-12-30",
+      "brightLimbIndependentDeltaDeg": 5.2718055627565263e-05
+    },
+    {
+      "date": "2027-12-31",
+      "brightLimbIndependentDeltaDeg": 1.6402719836605684e-05
+    },
+    {
+      "date": "2028-01-01",
+      "brightLimbIndependentDeltaDeg": 5.750246353386501e-05
+    },
+    {
+      "date": "2028-01-02",
+      "brightLimbIndependentDeltaDeg": 8.446933986760996e-05
+    },
+    {
+      "date": "2028-01-03",
+      "brightLimbIndependentDeltaDeg": 0.00010284605957622261
+    },
+    {
+      "date": "2028-01-04",
+      "brightLimbIndependentDeltaDeg": 0.00011529414075539535
+    },
+    {
+      "date": "2028-01-05",
+      "brightLimbIndependentDeltaDeg": 0.00012327826314617596
+    },
+    {
+      "date": "2028-01-06",
+      "brightLimbIndependentDeltaDeg": 0.00012767972270921746
+    },
+    {
+      "date": "2028-01-07",
+      "brightLimbIndependentDeltaDeg": 0.0001290145709731405
+    },
+    {
+      "date": "2028-01-08",
+      "brightLimbIndependentDeltaDeg": 0.00012739234139758082
+    },
+    {
+      "date": "2028-01-09",
+      "brightLimbIndependentDeltaDeg": 0.00012206109119006214
+    },
+    {
+      "date": "2028-01-10",
+      "brightLimbIndependentDeltaDeg": 0.00010950900531270236
+    },
+    {
+      "date": "2028-01-11",
+      "brightLimbIndependentDeltaDeg": 7.345468083030937e-05
+    },
+    {
+      "date": "2028-01-12",
+      "brightLimbIndependentDeltaDeg": 0.0006263152340295619
+    },
+    {
+      "date": "2028-01-13",
+      "brightLimbIndependentDeltaDeg": 0.00023085527794819427
+    },
+    {
+      "date": "2028-01-14",
+      "brightLimbIndependentDeltaDeg": 0.0002008298575617573
+    },
+    {
+      "date": "2028-01-15",
+      "brightLimbIndependentDeltaDeg": 0.00019406394940801874
+    },
+    {
+      "date": "2028-01-16",
+      "brightLimbIndependentDeltaDeg": 0.00019433304476024205
+    },
+    {
+      "date": "2028-01-17",
+      "brightLimbIndependentDeltaDeg": 0.0001979192610122027
+    },
+    {
+      "date": "2028-01-18",
+      "brightLimbIndependentDeltaDeg": 0.00020348271974057752
+    },
+    {
+      "date": "2028-01-19",
+      "brightLimbIndependentDeltaDeg": 0.00021043149178012754
+    },
+    {
+      "date": "2028-01-20",
+      "brightLimbIndependentDeltaDeg": 0.00021855828703110092
+    },
+    {
+      "date": "2028-01-21",
+      "brightLimbIndependentDeltaDeg": 0.00022806518629181483
+    },
+    {
+      "date": "2028-01-22",
+      "brightLimbIndependentDeltaDeg": 0.00023987170283135129
+    },
+    {
+      "date": "2028-01-23",
+      "brightLimbIndependentDeltaDeg": 0.00025661716017566505
+    },
+    {
+      "date": "2028-01-24",
+      "brightLimbIndependentDeltaDeg": 0.00028667388576764097
+    },
+    {
+      "date": "2028-01-25",
+      "brightLimbIndependentDeltaDeg": 0.0003709524740997949
+    },
+    {
+      "date": "2028-01-26",
+      "brightLimbIndependentDeltaDeg": 0.0021311300985757953
+    },
+    {
+      "date": "2028-01-27",
+      "brightLimbIndependentDeltaDeg": 2.5045683088364967e-05
+    },
+    {
+      "date": "2028-01-28",
+      "brightLimbIndependentDeltaDeg": 0.00010483547208650634
+    },
+    {
+      "date": "2028-01-29",
+      "brightLimbIndependentDeltaDeg": 0.00012923407021503408
+    },
+    {
+      "date": "2028-01-30",
+      "brightLimbIndependentDeltaDeg": 0.000137523976633247
+    },
+    {
+      "date": "2028-01-31",
+      "brightLimbIndependentDeltaDeg": 0.00013812216386099863
+    },
+    {
+      "date": "2028-02-01",
+      "brightLimbIndependentDeltaDeg": 0.00013379022584558697
+    },
+    {
+      "date": "2028-02-02",
+      "brightLimbIndependentDeltaDeg": 0.00012562177892050386
+    },
+    {
+      "date": "2028-02-03",
+      "brightLimbIndependentDeltaDeg": 0.00011399551303270528
+    },
+    {
+      "date": "2028-02-04",
+      "brightLimbIndependentDeltaDeg": 9.875801043790489e-05
+    },
+    {
+      "date": "2028-02-05",
+      "brightLimbIndependentDeltaDeg": 7.896098992432599e-05
+    },
+    {
+      "date": "2028-02-06",
+      "brightLimbIndependentDeltaDeg": 5.197303164550249e-05
+    },
+    {
+      "date": "2028-02-07",
+      "brightLimbIndependentDeltaDeg": 1.089629844841511e-05
+    },
+    {
+      "date": "2028-02-08",
+      "brightLimbIndependentDeltaDeg": 6.562490830219758e-05
+    },
+    {
+      "date": "2028-02-09",
+      "brightLimbIndependentDeltaDeg": 0.0002828729003567787
+    },
+    {
+      "date": "2028-02-10",
+      "brightLimbIndependentDeltaDeg": 0.003856247324904416
+    },
+    {
+      "date": "2028-02-11",
+      "brightLimbIndependentDeltaDeg": 0.0005102807041339474
+    },
+    {
+      "date": "2028-02-12",
+      "brightLimbIndependentDeltaDeg": 0.00034593972227980885
+    },
+    {
+      "date": "2028-02-13",
+      "brightLimbIndependentDeltaDeg": 0.00028230862199052353
+    },
+    {
+      "date": "2028-02-14",
+      "brightLimbIndependentDeltaDeg": 0.0002500896789570106
+    },
+    {
+      "date": "2028-02-15",
+      "brightLimbIndependentDeltaDeg": 0.000230703083161643
+    },
+    {
+      "date": "2028-02-16",
+      "brightLimbIndependentDeltaDeg": 0.0002172705258374208
+    },
+    {
+      "date": "2028-02-17",
+      "brightLimbIndependentDeltaDeg": 0.00020658548049823366
+    },
+    {
+      "date": "2028-02-18",
+      "brightLimbIndependentDeltaDeg": 0.0001969463085629286
+    },
+    {
+      "date": "2028-02-19",
+      "brightLimbIndependentDeltaDeg": 0.00018739403100198615
+    },
+    {
+      "date": "2028-02-20",
+      "brightLimbIndependentDeltaDeg": 0.00017746387311490253
+    },
+    {
+      "date": "2028-02-21",
+      "brightLimbIndependentDeltaDeg": 0.00016743285374332117
+    },
+    {
+      "date": "2028-02-22",
+      "brightLimbIndependentDeltaDeg": 0.00016000183865116924
+    },
+    {
+      "date": "2028-02-23",
+      "brightLimbIndependentDeltaDeg": 0.0001708973518645962
+    },
+    {
+      "date": "2028-02-24",
+      "brightLimbIndependentDeltaDeg": 0.00035886147315977723
+    },
+    {
+      "date": "2028-02-25",
+      "brightLimbIndependentDeltaDeg": 0.0056737594289870685
+    },
+    {
+      "date": "2028-02-26",
+      "brightLimbIndependentDeltaDeg": 0.0006835401547391484
+    },
+    {
+      "date": "2028-02-27",
+      "brightLimbIndependentDeltaDeg": 0.0003241726034275416
+    },
+    {
+      "date": "2028-02-28",
+      "brightLimbIndependentDeltaDeg": 0.00022301144642256077
+    },
+    {
+      "date": "2028-02-29",
+      "brightLimbIndependentDeltaDeg": 0.00017007303145533115
+    },
+    {
+      "date": "2028-03-01",
+      "brightLimbIndependentDeltaDeg": 0.00013229462817321291
+    },
+    {
+      "date": "2028-03-02",
+      "brightLimbIndependentDeltaDeg": 0.00010004402884078445
+    },
+    {
+      "date": "2028-03-03",
+      "brightLimbIndependentDeltaDeg": 6.928492354063565e-05
+    },
+    {
+      "date": "2028-03-04",
+      "brightLimbIndependentDeltaDeg": 3.7516840308171595e-05
+    },
+    {
+      "date": "2028-03-05",
+      "brightLimbIndependentDeltaDeg": 2.0692435782621033e-06
+    },
+    {
+      "date": "2028-03-06",
+      "brightLimbIndependentDeltaDeg": 4.146416068806502e-05
+    },
+    {
+      "date": "2028-03-07",
+      "brightLimbIndependentDeltaDeg": 0.00010223437817558079
+    },
+    {
+      "date": "2028-03-08",
+      "brightLimbIndependentDeltaDeg": 0.00020384407929441295
+    },
+    {
+      "date": "2028-03-09",
+      "brightLimbIndependentDeltaDeg": 0.00043224761884630425
+    },
+    {
+      "date": "2028-03-10",
+      "brightLimbIndependentDeltaDeg": 0.0014328190684409492
+    },
+    {
+      "date": "2028-03-11",
+      "brightLimbIndependentDeltaDeg": 0.000665447909256045
+    },
+    {
+      "date": "2028-03-12",
+      "brightLimbIndependentDeltaDeg": 0.0005300299046098189
+    },
+    {
+      "date": "2028-03-13",
+      "brightLimbIndependentDeltaDeg": 0.00037709093277271677
+    },
+    {
+      "date": "2028-03-14",
+      "brightLimbIndependentDeltaDeg": 0.00029907925954830716
+    },
+    {
+      "date": "2028-03-15",
+      "brightLimbIndependentDeltaDeg": 0.0002506474492065536
+    },
+    {
+      "date": "2028-03-16",
+      "brightLimbIndependentDeltaDeg": 0.00021563801809065808
+    },
+    {
+      "date": "2028-03-17",
+      "brightLimbIndependentDeltaDeg": 0.00018712103877760455
+    },
+    {
+      "date": "2028-03-18",
+      "brightLimbIndependentDeltaDeg": 0.00016167698959179688
+    },
+    {
+      "date": "2028-03-19",
+      "brightLimbIndependentDeltaDeg": 0.00013740289796260186
+    },
+    {
+      "date": "2028-03-20",
+      "brightLimbIndependentDeltaDeg": 0.00011310741277270608
+    },
+    {
+      "date": "2028-03-21",
+      "brightLimbIndependentDeltaDeg": 8.802973135857428e-05
+    },
+    {
+      "date": "2028-03-22",
+      "brightLimbIndependentDeltaDeg": 6.203402466553598e-05
+    },
+    {
+      "date": "2028-03-23",
+      "brightLimbIndependentDeltaDeg": 3.759682022064226e-05
+    },
+    {
+      "date": "2028-03-24",
+      "brightLimbIndependentDeltaDeg": 3.609339029253533e-05
+    },
+    {
+      "date": "2028-03-25",
+      "brightLimbIndependentDeltaDeg": 0.000355154636537236
+    },
+    {
+      "date": "2028-03-26",
+      "brightLimbIndependentDeltaDeg": 0.002361188965068095
+    },
+    {
+      "date": "2028-03-27",
+      "brightLimbIndependentDeltaDeg": 0.0005496941158185109
+    },
+    {
+      "date": "2028-03-28",
+      "brightLimbIndependentDeltaDeg": 0.0002518647357874215
+    },
+    {
+      "date": "2028-03-29",
+      "brightLimbIndependentDeltaDeg": 0.00014302552366984855
+    },
+    {
+      "date": "2028-03-30",
+      "brightLimbIndependentDeltaDeg": 8.09099937555402e-05
+    },
+    {
+      "date": "2028-03-31",
+      "brightLimbIndependentDeltaDeg": 3.562550764968364e-05
+    },
+    {
+      "date": "2028-04-01",
+      "brightLimbIndependentDeltaDeg": 2.920631516190042e-06
+    },
+    {
+      "date": "2028-04-02",
+      "brightLimbIndependentDeltaDeg": 3.96229015393601e-05
+    },
+    {
+      "date": "2028-04-03",
+      "brightLimbIndependentDeltaDeg": 7.814720342480541e-05
+    },
+    {
+      "date": "2028-04-04",
+      "brightLimbIndependentDeltaDeg": 0.00012288690746231623
+    },
+    {
+      "date": "2028-04-05",
+      "brightLimbIndependentDeltaDeg": 0.0001812597814705441
+    },
+    {
+      "date": "2028-04-06",
+      "brightLimbIndependentDeltaDeg": 0.000269173071728801
+    },
+    {
+      "date": "2028-04-07",
+      "brightLimbIndependentDeltaDeg": 0.00043040185829568145
+    },
+    {
+      "date": "2028-04-08",
+      "brightLimbIndependentDeltaDeg": 0.0008361867315329619
+    },
+    {
+      "date": "2028-04-09",
+      "brightLimbIndependentDeltaDeg": 0.0001768463792188868
+    },
+    {
+      "date": "2028-04-10",
+      "brightLimbIndependentDeltaDeg": 0.0009010907073161434
+    },
+    {
+      "date": "2028-04-11",
+      "brightLimbIndependentDeltaDeg": 0.0005015179327756414
+    },
+    {
+      "date": "2028-04-12",
+      "brightLimbIndependentDeltaDeg": 0.00033966765673199006
+    },
+    {
+      "date": "2028-04-13",
+      "brightLimbIndependentDeltaDeg": 0.0002503207675772501
+    },
+    {
+      "date": "2028-04-14",
+      "brightLimbIndependentDeltaDeg": 0.00019049077621957622
+    },
+    {
+      "date": "2028-04-15",
+      "brightLimbIndependentDeltaDeg": 0.00014483464138947966
+    },
+    {
+      "date": "2028-04-16",
+      "brightLimbIndependentDeltaDeg": 0.00010658419452624912
+    },
+    {
+      "date": "2028-04-17",
+      "brightLimbIndependentDeltaDeg": 7.228208409060244e-05
+    },
+    {
+      "date": "2028-04-18",
+      "brightLimbIndependentDeltaDeg": 3.99236913040113e-05
+    },
+    {
+      "date": "2028-04-19",
+      "brightLimbIndependentDeltaDeg": 8.109646785214863e-06
+    },
+    {
+      "date": "2028-04-20",
+      "brightLimbIndependentDeltaDeg": 2.4527215543912462e-05
+    },
+    {
+      "date": "2028-04-21",
+      "brightLimbIndependentDeltaDeg": 5.989494263758388e-05
+    },
+    {
+      "date": "2028-04-22",
+      "brightLimbIndependentDeltaDeg": 0.00010092354261814762
+    },
+    {
+      "date": "2028-04-23",
+      "brightLimbIndependentDeltaDeg": 0.00014587225325612962
+    },
+    {
+      "date": "2028-04-24",
+      "brightLimbIndependentDeltaDeg": 8.535387928532145e-05
+    },
+    {
+      "date": "2028-04-25",
+      "brightLimbIndependentDeltaDeg": 0.0006255886602275496
+    },
+    {
+      "date": "2028-04-26",
+      "brightLimbIndependentDeltaDeg": 0.00017502286752346663
+    },
+    {
+      "date": "2028-04-27",
+      "brightLimbIndependentDeltaDeg": 5.2755102842638735e-05
+    },
+    {
+      "date": "2028-04-28",
+      "brightLimbIndependentDeltaDeg": 7.863485677717108e-06
+    },
+    {
+      "date": "2028-04-29",
+      "brightLimbIndependentDeltaDeg": 4.897154528293868e-05
+    },
+    {
+      "date": "2028-04-30",
+      "brightLimbIndependentDeltaDeg": 8.262952340487573e-05
+    },
+    {
+      "date": "2028-05-01",
+      "brightLimbIndependentDeltaDeg": 0.00011413150087946633
+    },
+    {
+      "date": "2028-05-02",
+      "brightLimbIndependentDeltaDeg": 0.00014700114505217243
+    },
+    {
+      "date": "2028-05-03",
+      "brightLimbIndependentDeltaDeg": 0.0001848862144697705
+    },
+    {
+      "date": "2028-05-04",
+      "brightLimbIndependentDeltaDeg": 0.00023322188849306258
+    },
+    {
+      "date": "2028-05-05",
+      "brightLimbIndependentDeltaDeg": 0.00030241152512644476
+    },
+    {
+      "date": "2028-05-06",
+      "brightLimbIndependentDeltaDeg": 0.0004171638350385365
+    },
+    {
+      "date": "2028-05-07",
+      "brightLimbIndependentDeltaDeg": 0.0006534319731485994
+    },
+    {
+      "date": "2028-05-08",
+      "brightLimbIndependentDeltaDeg": 0.0011006535910098592
+    },
+    {
+      "date": "2028-05-09",
+      "brightLimbIndependentDeltaDeg": 0.0014419171776012263
+    },
+    {
+      "date": "2028-05-10",
+      "brightLimbIndependentDeltaDeg": 0.0005891245346276719
+    },
+    {
+      "date": "2028-05-11",
+      "brightLimbIndependentDeltaDeg": 0.0003306526799065068
+    },
+    {
+      "date": "2028-05-12",
+      "brightLimbIndependentDeltaDeg": 0.0002079009120734554
+    },
+    {
+      "date": "2028-05-13",
+      "brightLimbIndependentDeltaDeg": 0.00013325291581622878
+    },
+    {
+      "date": "2028-05-14",
+      "brightLimbIndependentDeltaDeg": 8.07223075867114e-05
+    },
+    {
+      "date": "2028-05-15",
+      "brightLimbIndependentDeltaDeg": 4.008827829693473e-05
+    },
+    {
+      "date": "2028-05-16",
+      "brightLimbIndependentDeltaDeg": 6.646769747931103e-06
+    },
+    {
+      "date": "2028-05-17",
+      "brightLimbIndependentDeltaDeg": 2.1944676660723417e-05
+    },
+    {
+      "date": "2028-05-18",
+      "brightLimbIndependentDeltaDeg": 4.6923764330131235e-05
+    },
+    {
+      "date": "2028-05-19",
+      "brightLimbIndependentDeltaDeg": 6.904858548750781e-05
+    },
+    {
+      "date": "2028-05-20",
+      "brightLimbIndependentDeltaDeg": 8.889355078167682e-05
+    },
+    {
+      "date": "2028-05-21",
+      "brightLimbIndependentDeltaDeg": 0.0001067005759409767
+    },
+    {
+      "date": "2028-05-22",
+      "brightLimbIndependentDeltaDeg": 0.0001201105788481982
+    },
+    {
+      "date": "2028-05-23",
+      "brightLimbIndependentDeltaDeg": 9.19271925852172e-05
+    },
+    {
+      "date": "2028-05-24",
+      "brightLimbIndependentDeltaDeg": 0.0009871800235998762
+    },
+    {
+      "date": "2028-05-25",
+      "brightLimbIndependentDeltaDeg": 3.740505059113275e-05
+    },
+    {
+      "date": "2028-05-26",
+      "brightLimbIndependentDeltaDeg": 7.844225370945423e-05
+    },
+    {
+      "date": "2028-05-27",
+      "brightLimbIndependentDeltaDeg": 0.0001189697827044256
+    },
+    {
+      "date": "2028-05-28",
+      "brightLimbIndependentDeltaDeg": 0.00014457587769811653
+    },
+    {
+      "date": "2028-05-29",
+      "brightLimbIndependentDeltaDeg": 0.0001662071548480526
+    },
+    {
+      "date": "2028-05-30",
+      "brightLimbIndependentDeltaDeg": 0.00018781897864528219
+    },
+    {
+      "date": "2028-05-31",
+      "brightLimbIndependentDeltaDeg": 0.00021191462826664065
+    },
+    {
+      "date": "2028-06-01",
+      "brightLimbIndependentDeltaDeg": 0.00024112216118510332
+    },
+    {
+      "date": "2028-06-02",
+      "brightLimbIndependentDeltaDeg": 0.00027941508324147435
+    },
+    {
+      "date": "2028-06-03",
+      "brightLimbIndependentDeltaDeg": 0.0003343916391429502
+    },
+    {
+      "date": "2028-06-04",
+      "brightLimbIndependentDeltaDeg": 0.00042379719224072687
+    },
+    {
+      "date": "2028-06-05",
+      "brightLimbIndependentDeltaDeg": 0.0006019443923435119
+    },
+    {
+      "date": "2028-06-06",
+      "brightLimbIndependentDeltaDeg": 0.0011429649057106417
+    },
+    {
+      "date": "2028-06-07",
+      "brightLimbIndependentDeltaDeg": 0.0010070488134772404
+    },
+    {
+      "date": "2028-06-08",
+      "brightLimbIndependentDeltaDeg": 0.0006132707792971814
+    },
+    {
+      "date": "2028-06-09",
+      "brightLimbIndependentDeltaDeg": 0.0002802179716354658
+    },
+    {
+      "date": "2028-06-10",
+      "brightLimbIndependentDeltaDeg": 0.00014479139161949206
+    },
+    {
+      "date": "2028-06-11",
+      "brightLimbIndependentDeltaDeg": 7.024454549764414e-05
+    },
+    {
+      "date": "2028-06-12",
+      "brightLimbIndependentDeltaDeg": 2.2418801705725855e-05
+    },
+    {
+      "date": "2028-06-13",
+      "brightLimbIndependentDeltaDeg": 1.0896395622239652e-05
+    },
+    {
+      "date": "2028-06-14",
+      "brightLimbIndependentDeltaDeg": 3.495861619740026e-05
+    },
+    {
+      "date": "2028-06-15",
+      "brightLimbIndependentDeltaDeg": 5.220095232516542e-05
+    },
+    {
+      "date": "2028-06-16",
+      "brightLimbIndependentDeltaDeg": 6.366443616911965e-05
+    },
+    {
+      "date": "2028-06-17",
+      "brightLimbIndependentDeltaDeg": 6.951042502123528e-05
+    },
+    {
+      "date": "2028-06-18",
+      "brightLimbIndependentDeltaDeg": 6.896377101384132e-05
+    },
+    {
+      "date": "2028-06-19",
+      "brightLimbIndependentDeltaDeg": 5.93146176584014e-05
+    },
+    {
+      "date": "2028-06-20",
+      "brightLimbIndependentDeltaDeg": 3.1650836604057986e-05
+    },
+    {
+      "date": "2028-06-21",
+      "brightLimbIndependentDeltaDeg": 5.4424286815901723e-05
+    },
+    {
+      "date": "2028-06-22",
+      "brightLimbIndependentDeltaDeg": 0.0007901774866070355
+    },
+    {
+      "date": "2028-06-23",
+      "brightLimbIndependentDeltaDeg": 0.0003635409597677608
+    },
+    {
+      "date": "2028-06-24",
+      "brightLimbIndependentDeltaDeg": 0.00028367434120468715
+    },
+    {
+      "date": "2028-06-25",
+      "brightLimbIndependentDeltaDeg": 0.00025145448410057725
+    },
+    {
+      "date": "2028-06-26",
+      "brightLimbIndependentDeltaDeg": 0.00023975665067155205
+    },
+    {
+      "date": "2028-06-27",
+      "brightLimbIndependentDeltaDeg": 0.000237524417059376
+    },
+    {
+      "date": "2028-06-28",
+      "brightLimbIndependentDeltaDeg": 0.00024115666545299064
+    },
+    {
+      "date": "2028-06-29",
+      "brightLimbIndependentDeltaDeg": 0.0002495007036031893
+    },
+    {
+      "date": "2028-06-30",
+      "brightLimbIndependentDeltaDeg": 0.0002626253487960639
+    },
+    {
+      "date": "2028-07-01",
+      "brightLimbIndependentDeltaDeg": 0.0002817243306481032
+    },
+    {
+      "date": "2028-07-02",
+      "brightLimbIndependentDeltaDeg": 0.00030982692595671324
+    },
+    {
+      "date": "2028-07-03",
+      "brightLimbIndependentDeltaDeg": 0.0003541846324424114
+    },
+    {
+      "date": "2028-07-04",
+      "brightLimbIndependentDeltaDeg": 0.0004350208613459472
+    },
+    {
+      "date": "2028-07-05",
+      "brightLimbIndependentDeltaDeg": 0.0006340505821640363
+    },
+    {
+      "date": "2028-07-06",
+      "brightLimbIndependentDeltaDeg": 0.001999997711322976
+    },
+    {
+      "date": "2028-07-07",
+      "brightLimbIndependentDeltaDeg": 0.0006940493605611664
+    },
+    {
+      "date": "2028-07-08",
+      "brightLimbIndependentDeltaDeg": 0.0001743678670322879
+    },
+    {
+      "date": "2028-07-09",
+      "brightLimbIndependentDeltaDeg": 4.0133750133009016e-05
+    },
+    {
+      "date": "2028-07-10",
+      "brightLimbIndependentDeltaDeg": 2.0483669345594535e-05
+    },
+    {
+      "date": "2028-07-11",
+      "brightLimbIndependentDeltaDeg": 5.350469558607074e-05
+    },
+    {
+      "date": "2028-07-12",
+      "brightLimbIndependentDeltaDeg": 7.243423544878169e-05
+    },
+    {
+      "date": "2028-07-13",
+      "brightLimbIndependentDeltaDeg": 8.256485727997642e-05
+    },
+    {
+      "date": "2028-07-14",
+      "brightLimbIndependentDeltaDeg": 8.623669046414761e-05
+    },
+    {
+      "date": "2028-07-15",
+      "brightLimbIndependentDeltaDeg": 8.438384577402758e-05
+    },
+    {
+      "date": "2028-07-16",
+      "brightLimbIndependentDeltaDeg": 7.70165452195215e-05
+    },
+    {
+      "date": "2028-07-17",
+      "brightLimbIndependentDeltaDeg": 6.312952140774541e-05
+    },
+    {
+      "date": "2028-07-18",
+      "brightLimbIndependentDeltaDeg": 3.973791294242801e-05
+    },
+    {
+      "date": "2028-07-19",
+      "brightLimbIndependentDeltaDeg": 1.6539858620490122e-06
+    },
+    {
+      "date": "2028-07-20",
+      "brightLimbIndependentDeltaDeg": 9.114573890656175e-05
+    },
+    {
+      "date": "2028-07-21",
+      "brightLimbIndependentDeltaDeg": 0.0004343715455661368
+    },
+    {
+      "date": "2028-07-22",
+      "brightLimbIndependentDeltaDeg": 0.0014342658413681875
+    },
+    {
+      "date": "2028-07-23",
+      "brightLimbIndependentDeltaDeg": 0.0004576434110390437
+    },
+    {
+      "date": "2028-07-24",
+      "brightLimbIndependentDeltaDeg": 0.0003256892167371461
+    },
+    {
+      "date": "2028-07-25",
+      "brightLimbIndependentDeltaDeg": 0.00027539200169712785
+    },
+    {
+      "date": "2028-07-26",
+      "brightLimbIndependentDeltaDeg": 0.0002502538196722526
+    },
+    {
+      "date": "2028-07-27",
+      "brightLimbIndependentDeltaDeg": 0.00023616828514150257
+    },
+    {
+      "date": "2028-07-28",
+      "brightLimbIndependentDeltaDeg": 0.0002278501316936854
+    },
+    {
+      "date": "2028-07-29",
+      "brightLimbIndependentDeltaDeg": 0.00022281410900859555
+    },
+    {
+      "date": "2028-07-30",
+      "brightLimbIndependentDeltaDeg": 0.00021971979978729905
+    },
+    {
+      "date": "2028-07-31",
+      "brightLimbIndependentDeltaDeg": 0.00021780946815397328
+    },
+    {
+      "date": "2028-08-01",
+      "brightLimbIndependentDeltaDeg": 0.00021671549887969377
+    },
+    {
+      "date": "2028-08-02",
+      "brightLimbIndependentDeltaDeg": 0.00021647365511512362
+    },
+    {
+      "date": "2028-08-03",
+      "brightLimbIndependentDeltaDeg": 0.0002177204554243417
+    },
+    {
+      "date": "2028-08-04",
+      "brightLimbIndependentDeltaDeg": 0.00021900498222748865
+    },
+    {
+      "date": "2028-08-05",
+      "brightLimbIndependentDeltaDeg": 0.0005639649172337613
+    },
+    {
+      "date": "2028-08-06",
+      "brightLimbIndependentDeltaDeg": 0.0001250679899271745
+    },
+    {
+      "date": "2028-08-07",
+      "brightLimbIndependentDeltaDeg": 0.00015037919541782685
+    },
+    {
+      "date": "2028-08-08",
+      "brightLimbIndependentDeltaDeg": 0.00015137183510205432
+    },
+    {
+      "date": "2028-08-09",
+      "brightLimbIndependentDeltaDeg": 0.00014550680447200648
+    },
+    {
+      "date": "2028-08-10",
+      "brightLimbIndependentDeltaDeg": 0.0001358963983193462
+    },
+    {
+      "date": "2028-08-11",
+      "brightLimbIndependentDeltaDeg": 0.00012343493801836303
+    },
+    {
+      "date": "2028-08-12",
+      "brightLimbIndependentDeltaDeg": 0.00010829487024466289
+    },
+    {
+      "date": "2028-08-13",
+      "brightLimbIndependentDeltaDeg": 9.021539520404076e-05
+    },
+    {
+      "date": "2028-08-14",
+      "brightLimbIndependentDeltaDeg": 6.846305450380896e-05
+    },
+    {
+      "date": "2028-08-15",
+      "brightLimbIndependentDeltaDeg": 4.142149799690742e-05
+    },
+    {
+      "date": "2028-08-16",
+      "brightLimbIndependentDeltaDeg": 5.40428985118524e-06
+    },
+    {
+      "date": "2028-08-17",
+      "brightLimbIndependentDeltaDeg": 4.886054711050747e-05
+    },
+    {
+      "date": "2028-08-18",
+      "brightLimbIndependentDeltaDeg": 0.00015026499630721446
+    },
+    {
+      "date": "2028-08-19",
+      "brightLimbIndependentDeltaDeg": 0.0004447450157840649
+    },
+    {
+      "date": "2028-08-20",
+      "brightLimbIndependentDeltaDeg": 0.0016188090205275785
+    },
+    {
+      "date": "2028-08-21",
+      "brightLimbIndependentDeltaDeg": 0.0005598781295930166
+    },
+    {
+      "date": "2028-08-22",
+      "brightLimbIndependentDeltaDeg": 0.0003571620530919972
+    },
+    {
+      "date": "2028-08-23",
+      "brightLimbIndependentDeltaDeg": 0.0002764614736747717
+    },
+    {
+      "date": "2028-08-24",
+      "brightLimbIndependentDeltaDeg": 0.00023234976606545388
+    },
+    {
+      "date": "2028-08-25",
+      "brightLimbIndependentDeltaDeg": 0.00020286997312268795
+    },
+    {
+      "date": "2028-08-26",
+      "brightLimbIndependentDeltaDeg": 0.00017968007125546137
+    },
+    {
+      "date": "2028-08-27",
+      "brightLimbIndependentDeltaDeg": 0.00015862707618907734
+    },
+    {
+      "date": "2028-08-28",
+      "brightLimbIndependentDeltaDeg": 0.00013704651249213384
+    },
+    {
+      "date": "2028-08-29",
+      "brightLimbIndependentDeltaDeg": 0.00011251658523292463
+    },
+    {
+      "date": "2028-08-30",
+      "brightLimbIndependentDeltaDeg": 8.175492246209615e-05
+    },
+    {
+      "date": "2028-08-31",
+      "brightLimbIndependentDeltaDeg": 3.858592003780359e-05
+    },
+    {
+      "date": "2028-09-01",
+      "brightLimbIndependentDeltaDeg": 3.252118494856404e-05
+    },
+    {
+      "date": "2028-09-02",
+      "brightLimbIndependentDeltaDeg": 0.000188086159340628
+    },
+    {
+      "date": "2028-09-03",
+      "brightLimbIndependentDeltaDeg": 0.0008190473621425554
+    },
+    {
+      "date": "2028-09-04",
+      "brightLimbIndependentDeltaDeg": 0.00024197211058663015
+    },
+    {
+      "date": "2028-09-05",
+      "brightLimbIndependentDeltaDeg": 0.0003358012378384956
+    },
+    {
+      "date": "2028-09-06",
+      "brightLimbIndependentDeltaDeg": 0.00025355422047823595
+    },
+    {
+      "date": "2028-09-07",
+      "brightLimbIndependentDeltaDeg": 0.0001987452391745137
+    },
+    {
+      "date": "2028-09-08",
+      "brightLimbIndependentDeltaDeg": 0.00015755217043533776
+    },
+    {
+      "date": "2028-09-09",
+      "brightLimbIndependentDeltaDeg": 0.0001229041302224232
+    },
+    {
+      "date": "2028-09-10",
+      "brightLimbIndependentDeltaDeg": 9.127736728942182e-05
+    },
+    {
+      "date": "2028-09-11",
+      "brightLimbIndependentDeltaDeg": 6.054344459016647e-05
+    },
+    {
+      "date": "2028-09-12",
+      "brightLimbIndependentDeltaDeg": 2.8955722569889986e-05
+    },
+    {
+      "date": "2028-09-13",
+      "brightLimbIndependentDeltaDeg": 5.6581805552013975e-06
+    },
+    {
+      "date": "2028-09-14",
+      "brightLimbIndependentDeltaDeg": 4.705591311449098e-05
+    },
+    {
+      "date": "2028-09-15",
+      "brightLimbIndependentDeltaDeg": 0.00010322340179413914
+    },
+    {
+      "date": "2028-09-16",
+      "brightLimbIndependentDeltaDeg": 0.0001950815460531885
+    },
+    {
+      "date": "2028-09-17",
+      "brightLimbIndependentDeltaDeg": 0.00039881662081597824
+    },
+    {
+      "date": "2028-09-18",
+      "brightLimbIndependentDeltaDeg": 0.0010676442681187837
+    },
+    {
+      "date": "2028-09-19",
+      "brightLimbIndependentDeltaDeg": 0.0007961995099492469
+    },
+    {
+      "date": "2028-09-20",
+      "brightLimbIndependentDeltaDeg": 0.00041544767753975975
+    },
+    {
+      "date": "2028-09-21",
+      "brightLimbIndependentDeltaDeg": 0.00027807854587535985
+    },
+    {
+      "date": "2028-09-22",
+      "brightLimbIndependentDeltaDeg": 0.00020675036478223774
+    },
+    {
+      "date": "2028-09-23",
+      "brightLimbIndependentDeltaDeg": 0.00015927119704883808
+    },
+    {
+      "date": "2028-09-24",
+      "brightLimbIndependentDeltaDeg": 0.00012149127792326908
+    },
+    {
+      "date": "2028-09-25",
+      "brightLimbIndependentDeltaDeg": 8.71470129482077e-05
+    },
+    {
+      "date": "2028-09-26",
+      "brightLimbIndependentDeltaDeg": 5.269191382240024e-05
+    },
+    {
+      "date": "2028-09-27",
+      "brightLimbIndependentDeltaDeg": 1.5283760774309485e-05
+    },
+    {
+      "date": "2028-09-28",
+      "brightLimbIndependentDeltaDeg": 2.8526949108709232e-05
+    },
+    {
+      "date": "2028-09-29",
+      "brightLimbIndependentDeltaDeg": 8.45773827791163e-05
+    },
+    {
+      "date": "2028-09-30",
+      "brightLimbIndependentDeltaDeg": 0.00016552267172187385
+    },
+    {
+      "date": "2028-10-01",
+      "brightLimbIndependentDeltaDeg": 0.00030677728457817466
+    },
+    {
+      "date": "2028-10-02",
+      "brightLimbIndependentDeltaDeg": 0.0006525711683593727
+    },
+    {
+      "date": "2028-10-03",
+      "brightLimbIndependentDeltaDeg": 0.0019133243411602052
+    },
+    {
+      "date": "2028-10-04",
+      "brightLimbIndependentDeltaDeg": 0.0002794067429192637
+    },
+    {
+      "date": "2028-10-05",
+      "brightLimbIndependentDeltaDeg": 0.00028526185985811026
+    },
+    {
+      "date": "2028-10-06",
+      "brightLimbIndependentDeltaDeg": 0.00019480445487829456
+    },
+    {
+      "date": "2028-10-07",
+      "brightLimbIndependentDeltaDeg": 0.00012992484391816106
+    },
+    {
+      "date": "2028-10-08",
+      "brightLimbIndependentDeltaDeg": 8.082204237780388e-05
+    },
+    {
+      "date": "2028-10-09",
+      "brightLimbIndependentDeltaDeg": 4.0375669271952574e-05
+    },
+    {
+      "date": "2028-10-10",
+      "brightLimbIndependentDeltaDeg": 4.46843861823254e-06
+    },
+    {
+      "date": "2028-10-11",
+      "brightLimbIndependentDeltaDeg": 2.9716758632503115e-05
+    },
+    {
+      "date": "2028-10-12",
+      "brightLimbIndependentDeltaDeg": 6.481083428866441e-05
+    },
+    {
+      "date": "2028-10-13",
+      "brightLimbIndependentDeltaDeg": 0.00010435815090659162
+    },
+    {
+      "date": "2028-10-14",
+      "brightLimbIndependentDeltaDeg": 0.00015475229417916125
+    },
+    {
+      "date": "2028-10-15",
+      "brightLimbIndependentDeltaDeg": 0.00023047581848345544
+    },
+    {
+      "date": "2028-10-16",
+      "brightLimbIndependentDeltaDeg": 0.00037460356764995595
+    },
+    {
+      "date": "2028-10-17",
+      "brightLimbIndependentDeltaDeg": 0.0007679725842706375
+    },
+    {
+      "date": "2028-10-18",
+      "brightLimbIndependentDeltaDeg": 0.0009424157048556481
+    },
+    {
+      "date": "2028-10-19",
+      "brightLimbIndependentDeltaDeg": 0.00047166294598355307
+    },
+    {
+      "date": "2028-10-20",
+      "brightLimbIndependentDeltaDeg": 0.00025986209527673054
+    },
+    {
+      "date": "2028-10-21",
+      "brightLimbIndependentDeltaDeg": 0.00016173486505977053
+    },
+    {
+      "date": "2028-10-22",
+      "brightLimbIndependentDeltaDeg": 0.00010053322375824791
+    },
+    {
+      "date": "2028-10-23",
+      "brightLimbIndependentDeltaDeg": 5.445012067184507e-05
+    },
+    {
+      "date": "2028-10-24",
+      "brightLimbIndependentDeltaDeg": 1.507395637645459e-05
+    },
+    {
+      "date": "2028-10-25",
+      "brightLimbIndependentDeltaDeg": 2.1653898556905915e-05
+    },
+    {
+      "date": "2028-10-26",
+      "brightLimbIndependentDeltaDeg": 5.825647861001926e-05
+    },
+    {
+      "date": "2028-10-27",
+      "brightLimbIndependentDeltaDeg": 9.698236348754108e-05
+    },
+    {
+      "date": "2028-10-28",
+      "brightLimbIndependentDeltaDeg": 0.00014081943848509582
+    },
+    {
+      "date": "2028-10-29",
+      "brightLimbIndependentDeltaDeg": 0.00019777744194016122
+    },
+    {
+      "date": "2028-10-30",
+      "brightLimbIndependentDeltaDeg": 0.0002762087283940673
+    },
+    {
+      "date": "2028-10-31",
+      "brightLimbIndependentDeltaDeg": 0.00041568632647681625
+    },
+    {
+      "date": "2028-11-01",
+      "brightLimbIndependentDeltaDeg": 0.0007830673742716954
+    },
+    {
+      "date": "2028-11-02",
+      "brightLimbIndependentDeltaDeg": 0.0006599949470285082
+    },
+    {
+      "date": "2028-11-03",
+      "brightLimbIndependentDeltaDeg": 0.0003333234091655868
+    },
+    {
+      "date": "2028-11-04",
+      "brightLimbIndependentDeltaDeg": 0.00015812566539352702
+    },
+    {
+      "date": "2028-11-05",
+      "brightLimbIndependentDeltaDeg": 6.474433871517249e-05
+    },
+    {
+      "date": "2028-11-06",
+      "brightLimbIndependentDeltaDeg": 6.687727534426813e-06
+    },
+    {
+      "date": "2028-11-07",
+      "brightLimbIndependentDeltaDeg": 3.525150856376058e-05
+    },
+    {
+      "date": "2028-11-08",
+      "brightLimbIndependentDeltaDeg": 6.9299071583373e-05
+    },
+    {
+      "date": "2028-11-09",
+      "brightLimbIndependentDeltaDeg": 9.988985334530298e-05
+    },
+    {
+      "date": "2028-11-10",
+      "brightLimbIndependentDeltaDeg": 0.00013024456563925924
+    },
+    {
+      "date": "2028-11-11",
+      "brightLimbIndependentDeltaDeg": 0.00016381989121327933
+    },
+    {
+      "date": "2028-11-12",
+      "brightLimbIndependentDeltaDeg": 0.00020600649406787852
+    },
+    {
+      "date": "2028-11-13",
+      "brightLimbIndependentDeltaDeg": 0.0002680345783971916
+    },
+    {
+      "date": "2028-11-14",
+      "brightLimbIndependentDeltaDeg": 0.0003813831615957497
+    },
+    {
+      "date": "2028-11-15",
+      "brightLimbIndependentDeltaDeg": 0.0006864424611592312
+    },
+    {
+      "date": "2028-11-16",
+      "brightLimbIndependentDeltaDeg": 0.0019481930294205085
+    },
+    {
+      "date": "2028-11-17",
+      "brightLimbIndependentDeltaDeg": 0.00042080898060703475
+    },
+    {
+      "date": "2028-11-18",
+      "brightLimbIndependentDeltaDeg": 0.00019456678643337
+    },
+    {
+      "date": "2028-11-19",
+      "brightLimbIndependentDeltaDeg": 9.09281878875845e-05
+    },
+    {
+      "date": "2028-11-20",
+      "brightLimbIndependentDeltaDeg": 2.9912897218764556e-05
+    },
+    {
+      "date": "2028-11-21",
+      "brightLimbIndependentDeltaDeg": 1.3029984813783813e-05
+    },
+    {
+      "date": "2028-11-22",
+      "brightLimbIndependentDeltaDeg": 4.679256863937553e-05
+    },
+    {
+      "date": "2028-11-23",
+      "brightLimbIndependentDeltaDeg": 7.524847774220689e-05
+    },
+    {
+      "date": "2028-11-24",
+      "brightLimbIndependentDeltaDeg": 0.00010034015775772787
+    },
+    {
+      "date": "2028-11-25",
+      "brightLimbIndependentDeltaDeg": 0.0001232175769132482
+    },
+    {
+      "date": "2028-11-26",
+      "brightLimbIndependentDeltaDeg": 0.00014477104576826605
+    },
+    {
+      "date": "2028-11-27",
+      "brightLimbIndependentDeltaDeg": 0.0001659848990698265
+    },
+    {
+      "date": "2028-11-28",
+      "brightLimbIndependentDeltaDeg": 0.00018833116524774596
+    },
+    {
+      "date": "2028-11-29",
+      "brightLimbIndependentDeltaDeg": 0.0002143755355632493
+    },
+    {
+      "date": "2028-11-30",
+      "brightLimbIndependentDeltaDeg": 0.0002473699785525696
+    },
+    {
+      "date": "2028-12-01",
+      "brightLimbIndependentDeltaDeg": 0.00020721440367310606
+    },
+    {
+      "date": "2028-12-02",
+      "brightLimbIndependentDeltaDeg": 0.0009458549119187865
+    },
+    {
+      "date": "2028-12-03",
+      "brightLimbIndependentDeltaDeg": 6.095542835282686e-05
+    },
+    {
+      "date": "2028-12-04",
+      "brightLimbIndependentDeltaDeg": 5.8363611259437675e-05
+    },
+    {
+      "date": "2028-12-05",
+      "brightLimbIndependentDeltaDeg": 0.0001053385806812912
+    },
+    {
+      "date": "2028-12-06",
+      "brightLimbIndependentDeltaDeg": 0.00013283702543276377
+    },
+    {
+      "date": "2028-12-07",
+      "brightLimbIndependentDeltaDeg": 0.00015314966509549777
+    },
+    {
+      "date": "2028-12-08",
+      "brightLimbIndependentDeltaDeg": 0.00017094666378625334
+    },
+    {
+      "date": "2028-12-09",
+      "brightLimbIndependentDeltaDeg": 0.00018885378830191257
+    },
+    {
+      "date": "2028-12-10",
+      "brightLimbIndependentDeltaDeg": 0.0002091694714465575
+    },
+    {
+      "date": "2028-12-11",
+      "brightLimbIndependentDeltaDeg": 0.00023502993434476593
+    },
+    {
+      "date": "2028-12-12",
+      "brightLimbIndependentDeltaDeg": 0.00027241702082392294
+    },
+    {
+      "date": "2028-12-13",
+      "brightLimbIndependentDeltaDeg": 0.00033636897126143595
+    },
+    {
+      "date": "2028-12-14",
+      "brightLimbIndependentDeltaDeg": 0.00048170084787102496
+    },
+    {
+      "date": "2028-12-15",
+      "brightLimbIndependentDeltaDeg": 0.0011750579865861255
+    },
+    {
+      "date": "2028-12-16",
+      "brightLimbIndependentDeltaDeg": 0.00014771472814345543
+    },
+    {
+      "date": "2028-12-17",
+      "brightLimbIndependentDeltaDeg": 0.00013113115514329365
+    },
+    {
+      "date": "2028-12-18",
+      "brightLimbIndependentDeltaDeg": 2.2686865861487604e-05
+    },
+    {
+      "date": "2028-12-19",
+      "brightLimbIndependentDeltaDeg": 3.219385345687442e-05
+    },
+    {
+      "date": "2028-12-20",
+      "brightLimbIndependentDeltaDeg": 6.566232647742254e-05
+    },
+    {
+      "date": "2028-12-21",
+      "brightLimbIndependentDeltaDeg": 8.810337703835103e-05
+    },
+    {
+      "date": "2028-12-22",
+      "brightLimbIndependentDeltaDeg": 0.00010357547836292724
+    },
+    {
+      "date": "2028-12-23",
+      "brightLimbIndependentDeltaDeg": 0.0001138605513233415
+    },
+    {
+      "date": "2028-12-24",
+      "brightLimbIndependentDeltaDeg": 0.00011973159328704241
+    },
+    {
+      "date": "2028-12-25",
+      "brightLimbIndependentDeltaDeg": 0.00012136755634628571
+    },
+    {
+      "date": "2028-12-26",
+      "brightLimbIndependentDeltaDeg": 0.00011841321372685343
+    },
+    {
+      "date": "2028-12-27",
+      "brightLimbIndependentDeltaDeg": 0.00010969419639650368
+    },
+    {
+      "date": "2028-12-28",
+      "brightLimbIndependentDeltaDeg": 9.205502226450335e-05
+    },
+    {
+      "date": "2028-12-29",
+      "brightLimbIndependentDeltaDeg": 5.5700962406035615e-05
+    },
+    {
+      "date": "2028-12-30",
+      "brightLimbIndependentDeltaDeg": 4.4452603532363355e-05
+    },
+    {
+      "date": "2028-12-31",
+      "brightLimbIndependentDeltaDeg": 0.0012338323110157035
+    },
+    {
+      "date": "2029-01-01",
+      "brightLimbIndependentDeltaDeg": 0.00045818359939175934
+    },
+    {
+      "date": "2029-01-02",
+      "brightLimbIndependentDeltaDeg": 0.00030499649204784873
+    },
+    {
+      "date": "2029-01-03",
+      "brightLimbIndependentDeltaDeg": 0.00025874783119661515
+    },
+    {
+      "date": "2029-01-04",
+      "brightLimbIndependentDeltaDeg": 0.00023733723463692513
+    },
+    {
+      "date": "2029-01-05",
+      "brightLimbIndependentDeltaDeg": 0.00022584358094945856
+    },
+    {
+      "date": "2029-01-06",
+      "brightLimbIndependentDeltaDeg": 0.00021953943161179268
+    },
+    {
+      "date": "2029-01-07",
+      "brightLimbIndependentDeltaDeg": 0.00021651143237022552
+    },
+    {
+      "date": "2029-01-08",
+      "brightLimbIndependentDeltaDeg": 0.00021592494294964126
+    },
+    {
+      "date": "2029-01-09",
+      "brightLimbIndependentDeltaDeg": 0.00021751279035697735
+    },
+    {
+      "date": "2029-01-10",
+      "brightLimbIndependentDeltaDeg": 0.00022148849467384935
+    },
+    {
+      "date": "2029-01-11",
+      "brightLimbIndependentDeltaDeg": 0.00022876104878832848
+    },
+    {
+      "date": "2029-01-12",
+      "brightLimbIndependentDeltaDeg": 0.0002415956893173643
+    },
+    {
+      "date": "2029-01-13",
+      "brightLimbIndependentDeltaDeg": 0.0002627157511483347
+    },
+    {
+      "date": "2029-01-14",
+      "brightLimbIndependentDeltaDeg": 0.00033632118652349163
+    },
+    {
+      "date": "2029-01-15",
+      "brightLimbIndependentDeltaDeg": 0.0001833649611171495
+    },
+    {
+      "date": "2029-01-16",
+      "brightLimbIndependentDeltaDeg": 5.737607341416151e-05
+    },
+    {
+      "date": "2029-01-17",
+      "brightLimbIndependentDeltaDeg": 0.0001039371155684421
+    },
+    {
+      "date": "2029-01-18",
+      "brightLimbIndependentDeltaDeg": 0.00011999971192722114
+    },
+    {
+      "date": "2029-01-19",
+      "brightLimbIndependentDeltaDeg": 0.00012482166525273897
+    },
+    {
+      "date": "2029-01-20",
+      "brightLimbIndependentDeltaDeg": 0.00012336852697103495
+    },
+    {
+      "date": "2029-01-21",
+      "brightLimbIndependentDeltaDeg": 0.00011733252844692288
+    },
+    {
+      "date": "2029-01-22",
+      "brightLimbIndependentDeltaDeg": 0.0001072571456006699
+    },
+    {
+      "date": "2029-01-23",
+      "brightLimbIndependentDeltaDeg": 9.307406540415286e-05
+    },
+    {
+      "date": "2029-01-24",
+      "brightLimbIndependentDeltaDeg": 7.416176521246598e-05
+    },
+    {
+      "date": "2029-01-25",
+      "brightLimbIndependentDeltaDeg": 4.9018905599496065e-05
+    },
+    {
+      "date": "2029-01-26",
+      "brightLimbIndependentDeltaDeg": 1.4193951898278101e-05
+    },
+    {
+      "date": "2029-01-27",
+      "brightLimbIndependentDeltaDeg": 3.89198391417267e-05
+    },
+    {
+      "date": "2029-01-28",
+      "brightLimbIndependentDeltaDeg": 0.00013602100591469934
+    },
+    {
+      "date": "2029-01-29",
+      "brightLimbIndependentDeltaDeg": 0.00037773078281588823
+    },
+    {
+      "date": "2029-01-30",
+      "brightLimbIndependentDeltaDeg": 0.003017504495801404
+    },
+    {
+      "date": "2029-01-31",
+      "brightLimbIndependentDeltaDeg": 0.0006382741901234112
+    },
+    {
+      "date": "2029-02-01",
+      "brightLimbIndependentDeltaDeg": 0.00038906439215224964
+    },
+    {
+      "date": "2029-02-02",
+      "brightLimbIndependentDeltaDeg": 0.0002978973953986497
+    },
+    {
+      "date": "2029-02-03",
+      "brightLimbIndependentDeltaDeg": 0.00024954055299986067
+    },
+    {
+      "date": "2029-02-04",
+      "brightLimbIndependentDeltaDeg": 0.00021826788162115918
+    },
+    {
+      "date": "2029-02-05",
+      "brightLimbIndependentDeltaDeg": 0.00019486758679931881
+    },
+    {
+      "date": "2029-02-06",
+      "brightLimbIndependentDeltaDeg": 0.00017494669819484443
+    },
+    {
+      "date": "2029-02-07",
+      "brightLimbIndependentDeltaDeg": 0.0001557776514005127
+    },
+    {
+      "date": "2029-02-08",
+      "brightLimbIndependentDeltaDeg": 0.00013497071478241196
+    },
+    {
+      "date": "2029-02-09",
+      "brightLimbIndependentDeltaDeg": 0.00010935432754877183
+    },
+    {
+      "date": "2029-02-10",
+      "brightLimbIndependentDeltaDeg": 7.279643094193489e-05
+    },
+    {
+      "date": "2029-02-11",
+      "brightLimbIndependentDeltaDeg": 8.428099135926459e-06
+    },
+    {
+      "date": "2029-02-12",
+      "brightLimbIndependentDeltaDeg": 0.00015832155418138427
+    },
+    {
+      "date": "2029-02-13",
+      "brightLimbIndependentDeltaDeg": 0.0001240766307546437
+    },
+    {
+      "date": "2029-02-14",
+      "brightLimbIndependentDeltaDeg": 0.00041151693244501075
+    },
+    {
+      "date": "2029-02-15",
+      "brightLimbIndependentDeltaDeg": 0.0002784000230917627
+    },
+    {
+      "date": "2029-02-16",
+      "brightLimbIndependentDeltaDeg": 0.00021690254504846962
+    },
+    {
+      "date": "2029-02-17",
+      "brightLimbIndependentDeltaDeg": 0.00017643935814248835
+    },
+    {
+      "date": "2029-02-18",
+      "brightLimbIndependentDeltaDeg": 0.00014393281628599652
+    },
+    {
+      "date": "2029-02-19",
+      "brightLimbIndependentDeltaDeg": 0.00011449104596295001
+    },
+    {
+      "date": "2029-02-20",
+      "brightLimbIndependentDeltaDeg": 8.568865007418935e-05
+    },
+    {
+      "date": "2029-02-21",
+      "brightLimbIndependentDeltaDeg": 5.59364522132455e-05
+    },
+    {
+      "date": "2029-02-22",
+      "brightLimbIndependentDeltaDeg": 2.3729532074412418e-05
+    },
+    {
+      "date": "2029-02-23",
+      "brightLimbIndependentDeltaDeg": 1.309929274384558e-05
+    },
+    {
+      "date": "2029-02-24",
+      "brightLimbIndependentDeltaDeg": 5.868317998647399e-05
+    },
+    {
+      "date": "2029-02-25",
+      "brightLimbIndependentDeltaDeg": 0.00012234426657187214
+    },
+    {
+      "date": "2029-02-26",
+      "brightLimbIndependentDeltaDeg": 0.00022969592546928652
+    },
+    {
+      "date": "2029-02-27",
+      "brightLimbIndependentDeltaDeg": 0.0004803121371423913
+    },
+    {
+      "date": "2029-02-28",
+      "brightLimbIndependentDeltaDeg": 0.0012871351724186297
+    },
+    {
+      "date": "2029-03-01",
+      "brightLimbIndependentDeltaDeg": 0.0008131545461651513
+    },
+    {
+      "date": "2029-03-02",
+      "brightLimbIndependentDeltaDeg": 0.00043624835666378203
+    },
+    {
+      "date": "2029-03-03",
+      "brightLimbIndependentDeltaDeg": 0.0002987144893609184
+    },
+    {
+      "date": "2029-03-04",
+      "brightLimbIndependentDeltaDeg": 0.00022706502335267942
+    },
+    {
+      "date": "2029-03-05",
+      "brightLimbIndependentDeltaDeg": 0.00018052554850100933
+    },
+    {
+      "date": "2029-03-06",
+      "brightLimbIndependentDeltaDeg": 0.00014512035718894367
+    },
+    {
+      "date": "2029-03-07",
+      "brightLimbIndependentDeltaDeg": 0.00011460409666597116
+    },
+    {
+      "date": "2029-03-08",
+      "brightLimbIndependentDeltaDeg": 8.557338958326e-05
+    },
+    {
+      "date": "2029-03-09",
+      "brightLimbIndependentDeltaDeg": 5.566904047782373e-05
+    },
+    {
+      "date": "2029-03-10",
+      "brightLimbIndependentDeltaDeg": 2.2651022163699963e-05
+    },
+    {
+      "date": "2029-03-11",
+      "brightLimbIndependentDeltaDeg": 1.623126939875874e-05
+    },
+    {
+      "date": "2029-03-12",
+      "brightLimbIndependentDeltaDeg": 6.43370507873442e-05
+    },
+    {
+      "date": "2029-03-13",
+      "brightLimbIndependentDeltaDeg": 0.0001176664084141521
+    },
+    {
+      "date": "2029-03-14",
+      "brightLimbIndependentDeltaDeg": 4.373612830477214e-05
+    },
+    {
+      "date": "2029-03-15",
+      "brightLimbIndependentDeltaDeg": 0.002164518837844298
+    },
+    {
+      "date": "2029-03-16",
+      "brightLimbIndependentDeltaDeg": 0.0006723017649221674
+    },
+    {
+      "date": "2029-03-17",
+      "brightLimbIndependentDeltaDeg": 0.0003403473480716457
+    },
+    {
+      "date": "2029-03-18",
+      "brightLimbIndependentDeltaDeg": 0.0002076098874113086
+    },
+    {
+      "date": "2029-03-19",
+      "brightLimbIndependentDeltaDeg": 0.00013066565855979206
+    },
+    {
+      "date": "2029-03-20",
+      "brightLimbIndependentDeltaDeg": 7.576518322593984e-05
+    },
+    {
+      "date": "2029-03-21",
+      "brightLimbIndependentDeltaDeg": 3.1035988399708e-05
+    },
+    {
+      "date": "2029-03-22",
+      "brightLimbIndependentDeltaDeg": 8.99987594493723e-06
+    },
+    {
+      "date": "2029-03-23",
+      "brightLimbIndependentDeltaDeg": 4.771292208261002e-05
+    },
+    {
+      "date": "2029-03-24",
+      "brightLimbIndependentDeltaDeg": 8.822271723829544e-05
+    },
+    {
+      "date": "2029-03-25",
+      "brightLimbIndependentDeltaDeg": 0.00013280684714800373
+    },
+    {
+      "date": "2029-03-26",
+      "brightLimbIndependentDeltaDeg": 0.00019342152899071152
+    },
+    {
+      "date": "2029-03-27",
+      "brightLimbIndependentDeltaDeg": 0.0002880985743445308
+    },
+    {
+      "date": "2029-03-28",
+      "brightLimbIndependentDeltaDeg": 0.0004805916711916325
+    },
+    {
+      "date": "2029-03-29",
+      "brightLimbIndependentDeltaDeg": 0.0011080449260134628
+    },
+    {
+      "date": "2029-03-30",
+      "brightLimbIndependentDeltaDeg": 0.0006263126570900113
+    },
+    {
+      "date": "2029-03-31",
+      "brightLimbIndependentDeltaDeg": 0.0004951514518722888
+    },
+    {
+      "date": "2029-04-01",
+      "brightLimbIndependentDeltaDeg": 0.00029716722133343865
+    },
+    {
+      "date": "2029-04-02",
+      "brightLimbIndependentDeltaDeg": 0.00019970255715406893
+    },
+    {
+      "date": "2029-04-03",
+      "brightLimbIndependentDeltaDeg": 0.0001392287579449203
+    },
+    {
+      "date": "2029-04-04",
+      "brightLimbIndependentDeltaDeg": 9.494143398569577e-05
+    },
+    {
+      "date": "2029-04-05",
+      "brightLimbIndependentDeltaDeg": 5.834629908463285e-05
+    },
+    {
+      "date": "2029-04-06",
+      "brightLimbIndependentDeltaDeg": 2.5345364605300347e-05
+    },
+    {
+      "date": "2029-04-07",
+      "brightLimbIndependentDeltaDeg": 6.379279938073523e-06
+    },
+    {
+      "date": "2029-04-08",
+      "brightLimbIndependentDeltaDeg": 3.8462789859750046e-05
+    },
+    {
+      "date": "2029-04-09",
+      "brightLimbIndependentDeltaDeg": 7.241338667540731e-05
+    },
+    {
+      "date": "2029-04-10",
+      "brightLimbIndependentDeltaDeg": 0.00010978600829503193
+    },
+    {
+      "date": "2029-04-11",
+      "brightLimbIndependentDeltaDeg": 0.00015066168023736282
+    },
+    {
+      "date": "2029-04-12",
+      "brightLimbIndependentDeltaDeg": 0.0001731983402919468
+    },
+    {
+      "date": "2029-04-13",
+      "brightLimbIndependentDeltaDeg": 0.0003494261877676763
+    },
+    {
+      "date": "2029-04-14",
+      "brightLimbIndependentDeltaDeg": 0.0014535053296356182
+    },
+    {
+      "date": "2029-04-15",
+      "brightLimbIndependentDeltaDeg": 0.00038914518648880403
+    },
+    {
+      "date": "2029-04-16",
+      "brightLimbIndependentDeltaDeg": 0.00014941207811602908
+    },
+    {
+      "date": "2029-04-17",
+      "brightLimbIndependentDeltaDeg": 4.694623112300178e-05
+    },
+    {
+      "date": "2029-04-18",
+      "brightLimbIndependentDeltaDeg": 1.386246043466599e-05
+    },
+    {
+      "date": "2029-04-19",
+      "brightLimbIndependentDeltaDeg": 5.7427874736504236e-05
+    },
+    {
+      "date": "2029-04-20",
+      "brightLimbIndependentDeltaDeg": 9.28904013335341e-05
+    },
+    {
+      "date": "2029-04-21",
+      "brightLimbIndependentDeltaDeg": 0.00012487461947330303
+    },
+    {
+      "date": "2029-04-22",
+      "brightLimbIndependentDeltaDeg": 0.00015670481460006158
+    },
+    {
+      "date": "2029-04-23",
+      "brightLimbIndependentDeltaDeg": 0.00019205687738121924
+    },
+    {
+      "date": "2029-04-24",
+      "brightLimbIndependentDeltaDeg": 0.00023682236377453592
+    },
+    {
+      "date": "2029-04-25",
+      "brightLimbIndependentDeltaDeg": 0.0003032028835150413
+    },
+    {
+      "date": "2029-04-26",
+      "brightLimbIndependentDeltaDeg": 0.0004239901037976779
+    },
+    {
+      "date": "2029-04-27",
+      "brightLimbIndependentDeltaDeg": 0.0007296279690081064
+    },
+    {
+      "date": "2029-04-28",
+      "brightLimbIndependentDeltaDeg": 0.0002608181315508773
+    },
+    {
+      "date": "2029-04-29",
+      "brightLimbIndependentDeltaDeg": 0.0006549285754431367
+    },
+    {
+      "date": "2029-04-30",
+      "brightLimbIndependentDeltaDeg": 0.0002957044937659248
+    },
+    {
+      "date": "2029-05-01",
+      "brightLimbIndependentDeltaDeg": 0.0001606584820592616
+    },
+    {
+      "date": "2029-05-02",
+      "brightLimbIndependentDeltaDeg": 8.696011087749866e-05
+    },
+    {
+      "date": "2029-05-03",
+      "brightLimbIndependentDeltaDeg": 3.7469613829443915e-05
+    },
+    {
+      "date": "2029-05-04",
+      "brightLimbIndependentDeltaDeg": 4.106493634026265e-07
+    },
+    {
+      "date": "2029-05-05",
+      "brightLimbIndependentDeltaDeg": 3.1999520956560445e-05
+    },
+    {
+      "date": "2029-05-06",
+      "brightLimbIndependentDeltaDeg": 5.988280696556103e-05
+    },
+    {
+      "date": "2029-05-07",
+      "brightLimbIndependentDeltaDeg": 8.552088146984715e-05
+    },
+    {
+      "date": "2029-05-08",
+      "brightLimbIndependentDeltaDeg": 0.0001099517789100446
+    },
+    {
+      "date": "2029-05-09",
+      "brightLimbIndependentDeltaDeg": 0.00013416544462074853
+    },
+    {
+      "date": "2029-05-10",
+      "brightLimbIndependentDeltaDeg": 0.0001594082595488544
+    },
+    {
+      "date": "2029-05-11",
+      "brightLimbIndependentDeltaDeg": 0.00018721026498269566
+    },
+    {
+      "date": "2029-05-12",
+      "brightLimbIndependentDeltaDeg": 0.00020964744066986896
+    },
+    {
+      "date": "2029-05-13",
+      "brightLimbIndependentDeltaDeg": 0.0005148721285195279
+    },
+    {
+      "date": "2029-05-14",
+      "brightLimbIndependentDeltaDeg": 0.0001909768696748415
+    },
+    {
+      "date": "2029-05-15",
+      "brightLimbIndependentDeltaDeg": 3.7508755838189245e-05
+    },
+    {
+      "date": "2029-05-16",
+      "brightLimbIndependentDeltaDeg": 0.00010120863936435853
+    },
+    {
+      "date": "2029-05-17",
+      "brightLimbIndependentDeltaDeg": 0.0001336727555667494
+    },
+    {
+      "date": "2029-05-18",
+      "brightLimbIndependentDeltaDeg": 0.00015548303304058209
+    },
+    {
+      "date": "2029-05-19",
+      "brightLimbIndependentDeltaDeg": 0.00017288874170162671
+    },
+    {
+      "date": "2029-05-20",
+      "brightLimbIndependentDeltaDeg": 0.0001888238745664239
+    },
+    {
+      "date": "2029-05-21",
+      "brightLimbIndependentDeltaDeg": 0.00020539013203801915
+    },
+    {
+      "date": "2029-05-22",
+      "brightLimbIndependentDeltaDeg": 0.00022488542097676145
+    },
+    {
+      "date": "2029-05-23",
+      "brightLimbIndependentDeltaDeg": 0.0002508018481535146
+    },
+    {
+      "date": "2029-05-24",
+      "brightLimbIndependentDeltaDeg": 0.000289873498218185
+    },
+    {
+      "date": "2029-05-25",
+      "brightLimbIndependentDeltaDeg": 0.0003586274841609338
+    },
+    {
+      "date": "2029-05-26",
+      "brightLimbIndependentDeltaDeg": 0.0005144282889375518
+    },
+    {
+      "date": "2029-05-27",
+      "brightLimbIndependentDeltaDeg": 0.0010631957174780382
+    },
+    {
+      "date": "2029-05-28",
+      "brightLimbIndependentDeltaDeg": 0.0008748513490104415
+    },
+    {
+      "date": "2029-05-29",
+      "brightLimbIndependentDeltaDeg": 0.00024183734961980008
+    },
+    {
+      "date": "2029-05-30",
+      "brightLimbIndependentDeltaDeg": 8.852481738585993e-05
+    },
+    {
+      "date": "2029-05-31",
+      "brightLimbIndependentDeltaDeg": 1.7372544164118153e-05
+    },
+    {
+      "date": "2029-06-01",
+      "brightLimbIndependentDeltaDeg": 2.541802339806054e-05
+    },
+    {
+      "date": "2029-06-02",
+      "brightLimbIndependentDeltaDeg": 5.479542602415677e-05
+    },
+    {
+      "date": "2029-06-03",
+      "brightLimbIndependentDeltaDeg": 7.632187373474153e-05
+    },
+    {
+      "date": "2029-06-04",
+      "brightLimbIndependentDeltaDeg": 9.238261600330588e-05
+    },
+    {
+      "date": "2029-06-05",
+      "brightLimbIndependentDeltaDeg": 0.00010401594374798151
+    },
+    {
+      "date": "2029-06-06",
+      "brightLimbIndependentDeltaDeg": 0.00011148204015398733
+    },
+    {
+      "date": "2029-06-07",
+      "brightLimbIndependentDeltaDeg": 0.00011432671780653436
+    },
+    {
+      "date": "2029-06-08",
+      "brightLimbIndependentDeltaDeg": 0.00011103278603741273
+    },
+    {
+      "date": "2029-06-09",
+      "brightLimbIndependentDeltaDeg": 9.753978685012044e-05
+    },
+    {
+      "date": "2029-06-10",
+      "brightLimbIndependentDeltaDeg": 6.0253368332041646e-05
+    },
+    {
+      "date": "2029-06-11",
+      "brightLimbIndependentDeltaDeg": 8.361814752788632e-05
+    },
+    {
+      "date": "2029-06-12",
+      "brightLimbIndependentDeltaDeg": 0.0009537206738627901
+    },
+    {
+      "date": "2029-06-13",
+      "brightLimbIndependentDeltaDeg": 0.0003535588331260442
+    },
+    {
+      "date": "2029-06-14",
+      "brightLimbIndependentDeltaDeg": 0.00028056111494834113
+    },
+    {
+      "date": "2029-06-15",
+      "brightLimbIndependentDeltaDeg": 0.0002536544870395119
+    },
+    {
+      "date": "2029-06-16",
+      "brightLimbIndependentDeltaDeg": 0.00024045344315481998
+    },
+    {
+      "date": "2029-06-17",
+      "brightLimbIndependentDeltaDeg": 0.0002334961442329586
+    },
+    {
+      "date": "2029-06-18",
+      "brightLimbIndependentDeltaDeg": 0.00023041615986585384
+    },
+    {
+      "date": "2029-06-19",
+      "brightLimbIndependentDeltaDeg": 0.00023057511720026014
+    },
+    {
+      "date": "2029-06-20",
+      "brightLimbIndependentDeltaDeg": 0.00023426606117027404
+    },
+    {
+      "date": "2029-06-21",
+      "brightLimbIndependentDeltaDeg": 0.00024272340255038216
+    },
+    {
+      "date": "2029-06-22",
+      "brightLimbIndependentDeltaDeg": 0.000258896486826643
+    },
+    {
+      "date": "2029-06-23",
+      "brightLimbIndependentDeltaDeg": 0.00029029805000391207
+    },
+    {
+      "date": "2029-06-24",
+      "brightLimbIndependentDeltaDeg": 0.00036198106093365823
+    },
+    {
+      "date": "2029-06-25",
+      "brightLimbIndependentDeltaDeg": 0.0006374034651912552
+    },
+    {
+      "date": "2029-06-26",
+      "brightLimbIndependentDeltaDeg": 0.0010903971270863622
+    },
+    {
+      "date": "2029-06-27",
+      "brightLimbIndependentDeltaDeg": 0.00011000304164099362
+    },
+    {
+      "date": "2029-06-28",
+      "brightLimbIndependentDeltaDeg": 8.939356064274762e-06
+    },
+    {
+      "date": "2029-06-29",
+      "brightLimbIndependentDeltaDeg": 5.489652718893012e-05
+    },
+    {
+      "date": "2029-06-30",
+      "brightLimbIndependentDeltaDeg": 7.822323041750678e-05
+    },
+    {
+      "date": "2029-07-01",
+      "brightLimbIndependentDeltaDeg": 9.065375692784983e-05
+    },
+    {
+      "date": "2029-07-02",
+      "brightLimbIndependentDeltaDeg": 9.610685987126999e-05
+    },
+    {
+      "date": "2029-07-03",
+      "brightLimbIndependentDeltaDeg": 9.606709673448677e-05
+    },
+    {
+      "date": "2029-07-04",
+      "brightLimbIndependentDeltaDeg": 9.094095372574884e-05
+    },
+    {
+      "date": "2029-07-05",
+      "brightLimbIndependentDeltaDeg": 8.033097526549682e-05
+    },
+    {
+      "date": "2029-07-06",
+      "brightLimbIndependentDeltaDeg": 6.283458685629739e-05
+    },
+    {
+      "date": "2029-07-07",
+      "brightLimbIndependentDeltaDeg": 3.524793788756142e-05
+    },
+    {
+      "date": "2029-07-08",
+      "brightLimbIndependentDeltaDeg": 9.963435473991922e-06
+    },
+    {
+      "date": "2029-07-09",
+      "brightLimbIndependentDeltaDeg": 9.425595334278114e-05
+    },
+    {
+      "date": "2029-07-10",
+      "brightLimbIndependentDeltaDeg": 0.00030851636734041676
+    },
+    {
+      "date": "2029-07-11",
+      "brightLimbIndependentDeltaDeg": 0.0019120428992778216
+    },
+    {
+      "date": "2029-07-12",
+      "brightLimbIndependentDeltaDeg": 0.0009067228851904474
+    },
+    {
+      "date": "2029-07-13",
+      "brightLimbIndependentDeltaDeg": 0.00048416505148907163
+    },
+    {
+      "date": "2029-07-14",
+      "brightLimbIndependentDeltaDeg": 0.0003619460750314829
+    },
+    {
+      "date": "2029-07-15",
+      "brightLimbIndependentDeltaDeg": 0.0003031927027450365
+    },
+    {
+      "date": "2029-07-16",
+      "brightLimbIndependentDeltaDeg": 0.00026834302983047564
+    },
+    {
+      "date": "2029-07-17",
+      "brightLimbIndependentDeltaDeg": 0.00024514699504152304
+    },
+    {
+      "date": "2029-07-18",
+      "brightLimbIndependentDeltaDeg": 0.00022857641113205318
+    },
+    {
+      "date": "2029-07-19",
+      "brightLimbIndependentDeltaDeg": 0.00021619759124291704
+    },
+    {
+      "date": "2029-07-20",
+      "brightLimbIndependentDeltaDeg": 0.0002066767091832844
+    },
+    {
+      "date": "2029-07-21",
+      "brightLimbIndependentDeltaDeg": 0.00019915320962127225
+    },
+    {
+      "date": "2029-07-22",
+      "brightLimbIndependentDeltaDeg": 0.00019275044985533896
+    },
+    {
+      "date": "2029-07-23",
+      "brightLimbIndependentDeltaDeg": 0.0001848727739570677
+    },
+    {
+      "date": "2029-07-24",
+      "brightLimbIndependentDeltaDeg": 0.00015248538451828608
+    },
+    {
+      "date": "2029-07-25",
+      "brightLimbIndependentDeltaDeg": 0.0014418060326306659
+    },
+    {
+      "date": "2029-07-26",
+      "brightLimbIndependentDeltaDeg": 5.9414225972886925e-05
+    },
+    {
+      "date": "2029-07-27",
+      "brightLimbIndependentDeltaDeg": 7.66582489859502e-05
+    },
+    {
+      "date": "2029-07-28",
+      "brightLimbIndependentDeltaDeg": 9.892995583982156e-05
+    },
+    {
+      "date": "2029-07-29",
+      "brightLimbIndependentDeltaDeg": 0.00010153381296618136
+    },
+    {
+      "date": "2029-07-30",
+      "brightLimbIndependentDeltaDeg": 9.6302265092163e-05
+    },
+    {
+      "date": "2029-07-31",
+      "brightLimbIndependentDeltaDeg": 8.607310235220211e-05
+    },
+    {
+      "date": "2029-08-01",
+      "brightLimbIndependentDeltaDeg": 7.164850904928244e-05
+    },
+    {
+      "date": "2029-08-02",
+      "brightLimbIndependentDeltaDeg": 5.306668276716664e-05
+    },
+    {
+      "date": "2029-08-03",
+      "brightLimbIndependentDeltaDeg": 2.9761656918481094e-05
+    },
+    {
+      "date": "2029-08-04",
+      "brightLimbIndependentDeltaDeg": 3.0553326269000536e-07
+    },
+    {
+      "date": "2029-08-05",
+      "brightLimbIndependentDeltaDeg": 3.830781992064658e-05
+    },
+    {
+      "date": "2029-08-06",
+      "brightLimbIndependentDeltaDeg": 9.252144295146536e-05
+    },
+    {
+      "date": "2029-08-07",
+      "brightLimbIndependentDeltaDeg": 0.00017787120964385394
+    },
+    {
+      "date": "2029-08-08",
+      "brightLimbIndependentDeltaDeg": 0.00034073530071054847
+    },
+    {
+      "date": "2029-08-09",
+      "brightLimbIndependentDeltaDeg": 0.0007342555039144827
+    },
+    {
+      "date": "2029-08-10",
+      "brightLimbIndependentDeltaDeg": 0.002285283992875975
+    },
+    {
+      "date": "2029-08-11",
+      "brightLimbIndependentDeltaDeg": 0.0007631832013998974
+    },
+    {
+      "date": "2029-08-12",
+      "brightLimbIndependentDeltaDeg": 0.00046431158128257266
+    },
+    {
+      "date": "2029-08-13",
+      "brightLimbIndependentDeltaDeg": 0.0003423624648917212
+    },
+    {
+      "date": "2029-08-14",
+      "brightLimbIndependentDeltaDeg": 0.00027447836430383177
+    },
+    {
+      "date": "2029-08-15",
+      "brightLimbIndependentDeltaDeg": 0.00022931375849566393
+    },
+    {
+      "date": "2029-08-16",
+      "brightLimbIndependentDeltaDeg": 0.00019497606814411483
+    },
+    {
+      "date": "2029-08-17",
+      "brightLimbIndependentDeltaDeg": 0.0001655165106626555
+    },
+    {
+      "date": "2029-08-18",
+      "brightLimbIndependentDeltaDeg": 0.00013686912635080262
+    },
+    {
+      "date": "2029-08-19",
+      "brightLimbIndependentDeltaDeg": 0.00010472065042677059
+    },
+    {
+      "date": "2029-08-20",
+      "brightLimbIndependentDeltaDeg": 6.164092263816201e-05
+    },
+    {
+      "date": "2029-08-21",
+      "brightLimbIndependentDeltaDeg": 1.1849243378492247e-05
+    },
+    {
+      "date": "2029-08-22",
+      "brightLimbIndependentDeltaDeg": 0.00019585871194749416
+    },
+    {
+      "date": "2029-08-23",
+      "brightLimbIndependentDeltaDeg": 0.0012131205653531651
+    },
+    {
+      "date": "2029-08-24",
+      "brightLimbIndependentDeltaDeg": 0.0018623555257022417
+    },
+    {
+      "date": "2029-08-25",
+      "brightLimbIndependentDeltaDeg": 6.230910548765678e-05
+    },
+    {
+      "date": "2029-08-26",
+      "brightLimbIndependentDeltaDeg": 6.305731108113832e-05
+    },
+    {
+      "date": "2029-08-27",
+      "brightLimbIndependentDeltaDeg": 7.433546221591314e-05
+    },
+    {
+      "date": "2029-08-28",
+      "brightLimbIndependentDeltaDeg": 6.368731601469335e-05
+    },
+    {
+      "date": "2029-08-29",
+      "brightLimbIndependentDeltaDeg": 4.571277270315477e-05
+    },
+    {
+      "date": "2029-08-30",
+      "brightLimbIndependentDeltaDeg": 2.3933754675908858e-05
+    },
+    {
+      "date": "2029-08-31",
+      "brightLimbIndependentDeltaDeg": 7.395212833216647e-07
+    },
+    {
+      "date": "2029-09-01",
+      "brightLimbIndependentDeltaDeg": 2.8398664028372878e-05
+    },
+    {
+      "date": "2029-09-02",
+      "brightLimbIndependentDeltaDeg": 5.991418191797493e-05
+    },
+    {
+      "date": "2029-09-03",
+      "brightLimbIndependentDeltaDeg": 9.721812753582526e-05
+    },
+    {
+      "date": "2029-09-04",
+      "brightLimbIndependentDeltaDeg": 0.00014414046984256856
+    },
+    {
+      "date": "2029-09-05",
+      "brightLimbIndependentDeltaDeg": 0.00020843350708332764
+    },
+    {
+      "date": "2029-09-06",
+      "brightLimbIndependentDeltaDeg": 0.0003056352805970164
+    },
+    {
+      "date": "2029-09-07",
+      "brightLimbIndependentDeltaDeg": 0.00042408631054513535
+    },
+    {
+      "date": "2029-09-08",
+      "brightLimbIndependentDeltaDeg": 0.0031345117424166347
+    },
+    {
+      "date": "2029-09-09",
+      "brightLimbIndependentDeltaDeg": 0.001225803395186631
+    },
+    {
+      "date": "2029-09-10",
+      "brightLimbIndependentDeltaDeg": 0.0005601664166761111
+    },
+    {
+      "date": "2029-09-11",
+      "brightLimbIndependentDeltaDeg": 0.0003508092241020222
+    },
+    {
+      "date": "2029-09-12",
+      "brightLimbIndependentDeltaDeg": 0.000247000994136215
+    },
+    {
+      "date": "2029-09-13",
+      "brightLimbIndependentDeltaDeg": 0.0001813013989249157
+    },
+    {
+      "date": "2029-09-14",
+      "brightLimbIndependentDeltaDeg": 0.00013184811129463014
+    },
+    {
+      "date": "2029-09-15",
+      "brightLimbIndependentDeltaDeg": 8.889081055940551e-05
+    },
+    {
+      "date": "2029-09-16",
+      "brightLimbIndependentDeltaDeg": 4.6492274236697995e-05
+    },
+    {
+      "date": "2029-09-17",
+      "brightLimbIndependentDeltaDeg": 8.806009077488852e-07
+    },
+    {
+      "date": "2029-09-18",
+      "brightLimbIndependentDeltaDeg": 6.154703396532568e-05
+    },
+    {
+      "date": "2029-09-19",
+      "brightLimbIndependentDeltaDeg": 0.00015389758999617698
+    },
+    {
+      "date": "2029-09-20",
+      "brightLimbIndependentDeltaDeg": 0.00033486083091816
+    },
+    {
+      "date": "2029-09-21",
+      "brightLimbIndependentDeltaDeg": 0.0008841456985351215
+    },
+    {
+      "date": "2029-09-22",
+      "brightLimbIndependentDeltaDeg": 0.004437044242024513
+    },
+    {
+      "date": "2029-09-23",
+      "brightLimbIndependentDeltaDeg": 0.0010319084858565475
+    },
+    {
+      "date": "2029-09-24",
+      "brightLimbIndependentDeltaDeg": 0.00010064906069828794
+    },
+    {
+      "date": "2029-09-25",
+      "brightLimbIndependentDeltaDeg": 3.5948417576037173e-06
+    },
+    {
+      "date": "2029-09-26",
+      "brightLimbIndependentDeltaDeg": 1.4354719723996823e-07
+    },
+    {
+      "date": "2029-09-27",
+      "brightLimbIndependentDeltaDeg": 1.5946339999572956e-05
+    },
+    {
+      "date": "2029-09-28",
+      "brightLimbIndependentDeltaDeg": 3.7825490437626286e-05
+    },
+    {
+      "date": "2029-09-29",
+      "brightLimbIndependentDeltaDeg": 6.196089566401497e-05
+    },
+    {
+      "date": "2029-09-30",
+      "brightLimbIndependentDeltaDeg": 8.759417062265129e-05
+    },
+    {
+      "date": "2029-10-01",
+      "brightLimbIndependentDeltaDeg": 0.00011507563078794192
+    },
+    {
+      "date": "2029-10-02",
+      "brightLimbIndependentDeltaDeg": 0.00014559702060523705
+    },
+    {
+      "date": "2029-10-03",
+      "brightLimbIndependentDeltaDeg": 0.0001815444553301404
+    },
+    {
+      "date": "2029-10-04",
+      "brightLimbIndependentDeltaDeg": 0.0002274708007234949
+    },
+    {
+      "date": "2029-10-05",
+      "brightLimbIndependentDeltaDeg": 0.0002913553469738872
+    },
+    {
+      "date": "2029-10-06",
+      "brightLimbIndependentDeltaDeg": 0.00037045847653871533
+    },
+    {
+      "date": "2029-10-07",
+      "brightLimbIndependentDeltaDeg": 0.0004731786826255302
+    },
+    {
+      "date": "2029-10-08",
+      "brightLimbIndependentDeltaDeg": 0.0019332857650624646
+    },
+    {
+      "date": "2029-10-09",
+      "brightLimbIndependentDeltaDeg": 0.0005976209341440608
+    },
+    {
+      "date": "2029-10-10",
+      "brightLimbIndependentDeltaDeg": 0.0003057846121237162
+    },
+    {
+      "date": "2029-10-11",
+      "brightLimbIndependentDeltaDeg": 0.00018052981033633841
+    },
+    {
+      "date": "2029-10-12",
+      "brightLimbIndependentDeltaDeg": 0.00010674844648406179
+    },
+    {
+      "date": "2029-10-13",
+      "brightLimbIndependentDeltaDeg": 5.359911668278983e-05
+    },
+    {
+      "date": "2029-10-14",
+      "brightLimbIndependentDeltaDeg": 9.179455219054944e-06
+    },
+    {
+      "date": "2029-10-15",
+      "brightLimbIndependentDeltaDeg": 3.251340746146525e-05
+    },
+    {
+      "date": "2029-10-16",
+      "brightLimbIndependentDeltaDeg": 7.56727044119998e-05
+    },
+    {
+      "date": "2029-10-17",
+      "brightLimbIndependentDeltaDeg": 0.00012502308055672984
+    },
+    {
+      "date": "2029-10-18",
+      "brightLimbIndependentDeltaDeg": 0.0001890241501314449
+    },
+    {
+      "date": "2029-10-19",
+      "brightLimbIndependentDeltaDeg": 0.00028859241447776185
+    },
+    {
+      "date": "2029-10-20",
+      "brightLimbIndependentDeltaDeg": 0.0004955930970140798
+    },
+    {
+      "date": "2029-10-21",
+      "brightLimbIndependentDeltaDeg": 0.0012413207204815535
+    },
+    {
+      "date": "2029-10-22",
+      "brightLimbIndependentDeltaDeg": 0.005634683083030723
+    },
+    {
+      "date": "2029-10-23",
+      "brightLimbIndependentDeltaDeg": 0.0004454617564420005
+    },
+    {
+      "date": "2029-10-24",
+      "brightLimbIndependentDeltaDeg": 0.00010411187153636092
+    },
+    {
+      "date": "2029-10-25",
+      "brightLimbIndependentDeltaDeg": 7.914018516430588e-05
+    },
+    {
+      "date": "2029-10-26",
+      "brightLimbIndependentDeltaDeg": 9.135213679201115e-05
+    },
+    {
+      "date": "2029-10-27",
+      "brightLimbIndependentDeltaDeg": 0.00011004160708694144
+    },
+    {
+      "date": "2029-10-28",
+      "brightLimbIndependentDeltaDeg": 0.0001304877611971733
+    },
+    {
+      "date": "2029-10-29",
+      "brightLimbIndependentDeltaDeg": 0.0001501877833902654
+    },
+    {
+      "date": "2029-10-30",
+      "brightLimbIndependentDeltaDeg": 0.00017042345558593297
+    },
+    {
+      "date": "2029-10-31",
+      "brightLimbIndependentDeltaDeg": 0.00019239730005438105
+    },
+    {
+      "date": "2029-11-01",
+      "brightLimbIndependentDeltaDeg": 0.00021836643134065525
+    },
+    {
+      "date": "2029-11-02",
+      "brightLimbIndependentDeltaDeg": 0.00025271015806538344
+    },
+    {
+      "date": "2029-11-03",
+      "brightLimbIndependentDeltaDeg": 0.0003046968693638519
+    },
+    {
+      "date": "2029-11-04",
+      "brightLimbIndependentDeltaDeg": 0.00039664205093004057
+    },
+    {
+      "date": "2029-11-05",
+      "brightLimbIndependentDeltaDeg": 0.0005414711128821637
+    },
+    {
+      "date": "2029-11-06",
+      "brightLimbIndependentDeltaDeg": 0.002920079394698405
+    },
+    {
+      "date": "2029-11-07",
+      "brightLimbIndependentDeltaDeg": 0.0005091744878029658
+    },
+    {
+      "date": "2029-11-08",
+      "brightLimbIndependentDeltaDeg": 0.0002028094559705096
+    },
+    {
+      "date": "2029-11-09",
+      "brightLimbIndependentDeltaDeg": 8.85882956254136e-05
+    },
+    {
+      "date": "2029-11-10",
+      "brightLimbIndependentDeltaDeg": 2.569355280002128e-05
+    },
+    {
+      "date": "2029-11-11",
+      "brightLimbIndependentDeltaDeg": 1.7023366694957076e-05
+    },
+    {
+      "date": "2029-11-12",
+      "brightLimbIndependentDeltaDeg": 5.018875330620176e-05
+    },
+    {
+      "date": "2029-11-13",
+      "brightLimbIndependentDeltaDeg": 7.827752932598742e-05
+    },
+    {
+      "date": "2029-11-14",
+      "brightLimbIndependentDeltaDeg": 0.00010344339531798141
+    },
+    {
+      "date": "2029-11-15",
+      "brightLimbIndependentDeltaDeg": 0.00012704158268661558
+    },
+    {
+      "date": "2029-11-16",
+      "brightLimbIndependentDeltaDeg": 0.00015053352956329036
+    },
+    {
+      "date": "2029-11-17",
+      "brightLimbIndependentDeltaDeg": 0.00017652531815315342
+    },
+    {
+      "date": "2029-11-18",
+      "brightLimbIndependentDeltaDeg": 0.00021180407105703125
+    },
+    {
+      "date": "2029-11-19",
+      "brightLimbIndependentDeltaDeg": 0.00028386880126163305
+    },
+    {
+      "date": "2029-11-20",
+      "brightLimbIndependentDeltaDeg": 0.0006565957565101144
+    },
+    {
+      "date": "2029-11-21",
+      "brightLimbIndependentDeltaDeg": 0.0018189206242311684
+    },
+    {
+      "date": "2029-11-22",
+      "brightLimbIndependentDeltaDeg": 0.0002553092673736046
+    },
+    {
+      "date": "2029-11-23",
+      "brightLimbIndependentDeltaDeg": 0.00020212013288301023
+    },
+    {
+      "date": "2029-11-24",
+      "brightLimbIndependentDeltaDeg": 0.00019831226688893366
+    },
+    {
+      "date": "2029-11-25",
+      "brightLimbIndependentDeltaDeg": 0.00020161899919912685
+    },
+    {
+      "date": "2029-11-26",
+      "brightLimbIndependentDeltaDeg": 0.00020643714813672887
+    },
+    {
+      "date": "2029-11-27",
+      "brightLimbIndependentDeltaDeg": 0.00021184936832696621
+    },
+    {
+      "date": "2029-11-28",
+      "brightLimbIndependentDeltaDeg": 0.0002180815566248384
+    },
+    {
+      "date": "2029-11-29",
+      "brightLimbIndependentDeltaDeg": 0.0002259393674535204
+    },
+    {
+      "date": "2029-11-30",
+      "brightLimbIndependentDeltaDeg": 0.00023693648140010737
+    },
+    {
+      "date": "2029-12-01",
+      "brightLimbIndependentDeltaDeg": 0.0002539363385380966
+    },
+    {
+      "date": "2029-12-02",
+      "brightLimbIndependentDeltaDeg": 0.00028308481336125624
+    },
+    {
+      "date": "2029-12-03",
+      "brightLimbIndependentDeltaDeg": 0.000341080557859641
+    },
+    {
+      "date": "2029-12-04",
+      "brightLimbIndependentDeltaDeg": 0.000498258391814943
+    },
+    {
+      "date": "2029-12-05",
+      "brightLimbIndependentDeltaDeg": 0.0017983331563868887
+    },
+    {
+      "date": "2029-12-06",
+      "brightLimbIndependentDeltaDeg": 0.0003775501712368623
+    },
+    {
+      "date": "2029-12-07",
+      "brightLimbIndependentDeltaDeg": 8.424585703892262e-05
+    },
+    {
+      "date": "2029-12-08",
+      "brightLimbIndependentDeltaDeg": 2.402135407919559e-06
+    },
+    {
+      "date": "2029-12-09",
+      "brightLimbIndependentDeltaDeg": 4.513344720180612e-05
+    },
+    {
+      "date": "2029-12-10",
+      "brightLimbIndependentDeltaDeg": 7.109181095188433e-05
+    },
+    {
+      "date": "2029-12-11",
+      "brightLimbIndependentDeltaDeg": 8.833897754811915e-05
+    },
+    {
+      "date": "2029-12-12",
+      "brightLimbIndependentDeltaDeg": 9.976947259815461e-05
+    },
+    {
+      "date": "2029-12-13",
+      "brightLimbIndependentDeltaDeg": 0.00010635732320452007
+    },
+    {
+      "date": "2029-12-14",
+      "brightLimbIndependentDeltaDeg": 0.00010815593128654655
+    },
+    {
+      "date": "2029-12-15",
+      "brightLimbIndependentDeltaDeg": 0.00010450036978681965
+    },
+    {
+      "date": "2029-12-16",
+      "brightLimbIndependentDeltaDeg": 9.366439545033245e-05
+    },
+    {
+      "date": "2029-12-17",
+      "brightLimbIndependentDeltaDeg": 7.156994485058021e-05
+    },
+    {
+      "date": "2029-12-18",
+      "brightLimbIndependentDeltaDeg": 2.7134593665323337e-05
+    },
+    {
+      "date": "2029-12-19",
+      "brightLimbIndependentDeltaDeg": 8.167369617240183e-05
+    },
+    {
+      "date": "2029-12-20",
+      "brightLimbIndependentDeltaDeg": 0.0006586912010675405
+    },
+    {
+      "date": "2029-12-21",
+      "brightLimbIndependentDeltaDeg": 0.0009117294168845547
+    },
+    {
+      "date": "2029-12-22",
+      "brightLimbIndependentDeltaDeg": 0.0004377512825044505
+    },
+    {
+      "date": "2029-12-23",
+      "brightLimbIndependentDeltaDeg": 0.00033398391730088406
+    },
+    {
+      "date": "2029-12-24",
+      "brightLimbIndependentDeltaDeg": 0.00028662177732030614
+    },
+    {
+      "date": "2029-12-25",
+      "brightLimbIndependentDeltaDeg": 0.0002582073482528813
+    },
+    {
+      "date": "2029-12-26",
+      "brightLimbIndependentDeltaDeg": 0.00023843578827609235
+    },
+    {
+      "date": "2029-12-27",
+      "brightLimbIndependentDeltaDeg": 0.0002234387997361864
+    },
+    {
+      "date": "2029-12-28",
+      "brightLimbIndependentDeltaDeg": 0.00021156425606250195
+    },
+    {
+      "date": "2029-12-29",
+      "brightLimbIndependentDeltaDeg": 0.00020212089657434262
+    },
+    {
+      "date": "2029-12-30",
+      "brightLimbIndependentDeltaDeg": 0.00019495145093628707
+    },
+    {
+      "date": "2029-12-31",
+      "brightLimbIndependentDeltaDeg": 0.0001904509630890061
+    },
+    {
+      "date": "2030-01-01",
+      "brightLimbIndependentDeltaDeg": 0.0001903668260752056
+    },
+    {
+      "date": "2030-01-02",
+      "brightLimbIndependentDeltaDeg": 0.0002028724717320074
+    },
+    {
+      "date": "2030-01-03",
+      "brightLimbIndependentDeltaDeg": 0.0003233793645165406
+    },
+    {
+      "date": "2030-01-04",
+      "brightLimbIndependentDeltaDeg": 0.00046832486123093986
+    },
+    {
+      "date": "2030-01-05",
+      "brightLimbIndependentDeltaDeg": 0.00016528124649539677
+    },
+    {
+      "date": "2030-01-06",
+      "brightLimbIndependentDeltaDeg": 0.0001510202539520833
+    },
+    {
+      "date": "2030-01-07",
+      "brightLimbIndependentDeltaDeg": 0.0001453848713026673
+    },
+    {
+      "date": "2030-01-08",
+      "brightLimbIndependentDeltaDeg": 0.00013987260800263357
+    },
+    {
+      "date": "2030-01-09",
+      "brightLimbIndependentDeltaDeg": 0.00013278751882239703
+    },
+    {
+      "date": "2030-01-10",
+      "brightLimbIndependentDeltaDeg": 0.0001232370128434468
+    },
+    {
+      "date": "2030-01-11",
+      "brightLimbIndependentDeltaDeg": 0.00011043594548709734
+    },
+    {
+      "date": "2030-01-12",
+      "brightLimbIndependentDeltaDeg": 9.346542753974063e-05
+    },
+    {
+      "date": "2030-01-13",
+      "brightLimbIndependentDeltaDeg": 7.096141095530584e-05
+    },
+    {
+      "date": "2030-01-14",
+      "brightLimbIndependentDeltaDeg": 4.0494152074188605e-05
+    },
+    {
+      "date": "2030-01-15",
+      "brightLimbIndependentDeltaDeg": 2.9146465863050253e-06
+    },
+    {
+      "date": "2030-01-16",
+      "brightLimbIndependentDeltaDeg": 7.115998093354392e-05
+    },
+    {
+      "date": "2030-01-17",
+      "brightLimbIndependentDeltaDeg": 0.00020024458086709274
+    },
+    {
+      "date": "2030-01-18",
+      "brightLimbIndependentDeltaDeg": 0.00056238671555775
+    },
+    {
+      "date": "2030-01-19",
+      "brightLimbIndependentDeltaDeg": 0.0036862127688266355
+    },
+    {
+      "date": "2030-01-20",
+      "brightLimbIndependentDeltaDeg": 0.0005601402783668163
+    },
+    {
+      "date": "2030-01-21",
+      "brightLimbIndependentDeltaDeg": 0.00041173682620865293
+    },
+    {
+      "date": "2030-01-22",
+      "brightLimbIndependentDeltaDeg": 0.00031648439488662916
+    },
+    {
+      "date": "2030-01-23",
+      "brightLimbIndependentDeltaDeg": 0.00025954414377338253
+    },
+    {
+      "date": "2030-01-24",
+      "brightLimbIndependentDeltaDeg": 0.00022052712705544764
+    },
+    {
+      "date": "2030-01-25",
+      "brightLimbIndependentDeltaDeg": 0.00019088180530957288
+    },
+    {
+      "date": "2030-01-26",
+      "brightLimbIndependentDeltaDeg": 0.00016655583488045522
+    },
+    {
+      "date": "2030-01-27",
+      "brightLimbIndependentDeltaDeg": 0.00014536295037714808
+    },
+    {
+      "date": "2030-01-28",
+      "brightLimbIndependentDeltaDeg": 0.0001259586496189513
+    },
+    {
+      "date": "2030-01-29",
+      "brightLimbIndependentDeltaDeg": 0.00010753351239145559
+    },
+    {
+      "date": "2030-01-30",
+      "brightLimbIndependentDeltaDeg": 9.046807389267997e-05
+    },
+    {
+      "date": "2030-01-31",
+      "brightLimbIndependentDeltaDeg": 8.188595325009373e-05
+    },
+    {
+      "date": "2030-02-01",
+      "brightLimbIndependentDeltaDeg": 0.00015683419226775186
+    },
+    {
+      "date": "2030-02-02",
+      "brightLimbIndependentDeltaDeg": 0.0028542186871050035
+    },
+    {
+      "date": "2030-02-03",
+      "brightLimbIndependentDeltaDeg": 0.0010210755697812601
+    },
+    {
+      "date": "2030-02-04",
+      "brightLimbIndependentDeltaDeg": 0.00039409185603744845
+    },
+    {
+      "date": "2030-02-05",
+      "brightLimbIndependentDeltaDeg": 0.0002489574869457556
+    },
+    {
+      "date": "2030-02-06",
+      "brightLimbIndependentDeltaDeg": 0.00018119122066195814
+    },
+    {
+      "date": "2030-02-07",
+      "brightLimbIndependentDeltaDeg": 0.00013637815567335565
+    },
+    {
+      "date": "2030-02-08",
+      "brightLimbIndependentDeltaDeg": 9.969740165161056e-05
+    },
+    {
+      "date": "2030-02-09",
+      "brightLimbIndependentDeltaDeg": 6.530918699354515e-05
+    },
+    {
+      "date": "2030-02-10",
+      "brightLimbIndependentDeltaDeg": 3.0106193776191503e-05
+    },
+    {
+      "date": "2030-02-11",
+      "brightLimbIndependentDeltaDeg": 8.353559735496674e-06
+    },
+    {
+      "date": "2030-02-12",
+      "brightLimbIndependentDeltaDeg": 5.3094582000312585e-05
+    },
+    {
+      "date": "2030-02-13",
+      "brightLimbIndependentDeltaDeg": 0.00010927443921104896
+    },
+    {
+      "date": "2030-02-14",
+      "brightLimbIndependentDeltaDeg": 0.00018759189100592266
+    },
+    {
+      "date": "2030-02-15",
+      "brightLimbIndependentDeltaDeg": 0.0003151231968558932
+    },
+    {
+      "date": "2030-02-16",
+      "brightLimbIndependentDeltaDeg": 0.0005845114882276903
+    },
+    {
+      "date": "2030-02-17",
+      "brightLimbIndependentDeltaDeg": 0.001557227948524087
+    },
+    {
+      "date": "2030-02-18",
+      "brightLimbIndependentDeltaDeg": 0.0015203519677982058
+    },
+    {
+      "date": "2030-02-19",
+      "brightLimbIndependentDeltaDeg": 0.0004695224798183517
+    },
+    {
+      "date": "2030-02-20",
+      "brightLimbIndependentDeltaDeg": 0.00035759929477308106
+    },
+    {
+      "date": "2030-02-21",
+      "brightLimbIndependentDeltaDeg": 0.00027065553476290916
+    },
+    {
+      "date": "2030-02-22",
+      "brightLimbIndependentDeltaDeg": 0.00021251949652878466
+    },
+    {
+      "date": "2030-02-23",
+      "brightLimbIndependentDeltaDeg": 0.00017045068284460285
+    },
+    {
+      "date": "2030-02-24",
+      "brightLimbIndependentDeltaDeg": 0.00013753960195117543
+    },
+    {
+      "date": "2030-02-25",
+      "brightLimbIndependentDeltaDeg": 0.00011011439630692621
+    },
+    {
+      "date": "2030-02-26",
+      "brightLimbIndependentDeltaDeg": 8.62250633417716e-05
+    },
+    {
+      "date": "2030-02-27",
+      "brightLimbIndependentDeltaDeg": 6.514769034993151e-05
+    },
+    {
+      "date": "2030-02-28",
+      "brightLimbIndependentDeltaDeg": 4.801846304758328e-05
+    },
+    {
+      "date": "2030-03-01",
+      "brightLimbIndependentDeltaDeg": 4.216765927367305e-05
+    },
+    {
+      "date": "2030-03-02",
+      "brightLimbIndependentDeltaDeg": 8.930111567906351e-05
+    },
+    {
+      "date": "2030-03-03",
+      "brightLimbIndependentDeltaDeg": 0.0006121774942471347
+    },
+    {
+      "date": "2030-03-04",
+      "brightLimbIndependentDeltaDeg": 0.003963504087636238
+    },
+    {
+      "date": "2030-03-05",
+      "brightLimbIndependentDeltaDeg": 0.0007612917419237419
+    },
+    {
+      "date": "2030-03-06",
+      "brightLimbIndependentDeltaDeg": 0.0003032408806689091
+    },
+    {
+      "date": "2030-03-07",
+      "brightLimbIndependentDeltaDeg": 0.00015463805638660233
+    },
+    {
+      "date": "2030-03-08",
+      "brightLimbIndependentDeltaDeg": 7.588355015286652e-05
+    },
+    {
+      "date": "2030-03-09",
+      "brightLimbIndependentDeltaDeg": 2.1070625848551572e-05
+    },
+    {
+      "date": "2030-03-10",
+      "brightLimbIndependentDeltaDeg": 2.4005989132547256e-05
+    },
+    {
+      "date": "2030-03-11",
+      "brightLimbIndependentDeltaDeg": 6.532342013088055e-05
+    },
+    {
+      "date": "2030-03-12",
+      "brightLimbIndependentDeltaDeg": 0.0001063817869066952
+    },
+    {
+      "date": "2030-03-13",
+      "brightLimbIndependentDeltaDeg": 0.00015035719076195164
+    },
+    {
+      "date": "2030-03-14",
+      "brightLimbIndependentDeltaDeg": 0.00020156333613385868
+    },
+    {
+      "date": "2030-03-15",
+      "brightLimbIndependentDeltaDeg": 0.0002676792611850942
+    },
+    {
+      "date": "2030-03-16",
+      "brightLimbIndependentDeltaDeg": 0.0003656149645507867
+    },
+    {
+      "date": "2030-03-17",
+      "brightLimbIndependentDeltaDeg": 0.0005429061976087723
+    },
+    {
+      "date": "2030-03-18",
+      "brightLimbIndependentDeltaDeg": 0.0009970781620722846
+    },
+    {
+      "date": "2030-03-19",
+      "brightLimbIndependentDeltaDeg": 0.0031922698820778805
+    },
+    {
+      "date": "2030-03-20",
+      "brightLimbIndependentDeltaDeg": 0.0005123954273926756
+    },
+    {
+      "date": "2030-03-21",
+      "brightLimbIndependentDeltaDeg": 0.0004112961162263673
+    },
+    {
+      "date": "2030-03-22",
+      "brightLimbIndependentDeltaDeg": 0.00027399186899401684
+    },
+    {
+      "date": "2030-03-23",
+      "brightLimbIndependentDeltaDeg": 0.0001920072508312387
+    },
+    {
+      "date": "2030-03-24",
+      "brightLimbIndependentDeltaDeg": 0.000137623926661945
+    },
+    {
+      "date": "2030-03-25",
+      "brightLimbIndependentDeltaDeg": 9.774620181701721e-05
+    },
+    {
+      "date": "2030-03-26",
+      "brightLimbIndependentDeltaDeg": 6.618548712822303e-05
+    },
+    {
+      "date": "2030-03-27",
+      "brightLimbIndependentDeltaDeg": 3.993217353581713e-05
+    },
+    {
+      "date": "2030-03-28",
+      "brightLimbIndependentDeltaDeg": 1.7767675132063232e-05
+    },
+    {
+      "date": "2030-03-29",
+      "brightLimbIndependentDeltaDeg": 9.417402679900988e-08
+    },
+    {
+      "date": "2030-03-30",
+      "brightLimbIndependentDeltaDeg": 9.492138246969262e-06
+    },
+    {
+      "date": "2030-03-31",
+      "brightLimbIndependentDeltaDeg": 2.73924285920657e-06
+    },
+    {
+      "date": "2030-04-01",
+      "brightLimbIndependentDeltaDeg": 0.00011740963984152586
+    },
+    {
+      "date": "2030-04-02",
+      "brightLimbIndependentDeltaDeg": 0.0013356497121606026
+    },
+    {
+      "date": "2030-04-03",
+      "brightLimbIndependentDeltaDeg": 0.001933561018859109
+    },
+    {
+      "date": "2030-04-04",
+      "brightLimbIndependentDeltaDeg": 0.00032008524706839125
+    },
+    {
+      "date": "2030-04-05",
+      "brightLimbIndependentDeltaDeg": 6.568339551904501e-05
+    },
+    {
+      "date": "2030-04-06",
+      "brightLimbIndependentDeltaDeg": 2.9839236958650872e-05
+    },
+    {
+      "date": "2030-04-07",
+      "brightLimbIndependentDeltaDeg": 8.44269545723364e-05
+    },
+    {
+      "date": "2030-04-08",
+      "brightLimbIndependentDeltaDeg": 0.00012380133119904713
+    },
+    {
+      "date": "2030-04-09",
+      "brightLimbIndependentDeltaDeg": 0.00015656928394491842
+    },
+    {
+      "date": "2030-04-10",
+      "brightLimbIndependentDeltaDeg": 0.00018677472803574346
+    },
+    {
+      "date": "2030-04-11",
+      "brightLimbIndependentDeltaDeg": 0.0002172434483327379
+    },
+    {
+      "date": "2030-04-12",
+      "brightLimbIndependentDeltaDeg": 0.00025101618498979406
+    },
+    {
+      "date": "2030-04-13",
+      "brightLimbIndependentDeltaDeg": 0.0002927536565380251
+    },
+    {
+      "date": "2030-04-14",
+      "brightLimbIndependentDeltaDeg": 0.00035162265129429215
+    },
+    {
+      "date": "2030-04-15",
+      "brightLimbIndependentDeltaDeg": 0.0004500140101413308
+    },
+    {
+      "date": "2030-04-16",
+      "brightLimbIndependentDeltaDeg": 0.0006621351590752056
+    },
+    {
+      "date": "2030-04-17",
+      "brightLimbIndependentDeltaDeg": 0.0014403893744088236
+    },
+    {
+      "date": "2030-04-18",
+      "brightLimbIndependentDeltaDeg": 0.00031588272696581043
+    },
+    {
+      "date": "2030-04-19",
+      "brightLimbIndependentDeltaDeg": 0.00046334163170058673
+    },
+    {
+      "date": "2030-04-20",
+      "brightLimbIndependentDeltaDeg": 0.0002436341230236394
+    },
+    {
+      "date": "2030-04-21",
+      "brightLimbIndependentDeltaDeg": 0.0001400658511556685
+    },
+    {
+      "date": "2030-04-22",
+      "brightLimbIndependentDeltaDeg": 7.928854671490626e-05
+    },
+    {
+      "date": "2030-04-23",
+      "brightLimbIndependentDeltaDeg": 3.810844032159366e-05
+    },
+    {
+      "date": "2030-04-24",
+      "brightLimbIndependentDeltaDeg": 7.4679033730262745e-06
+    },
+    {
+      "date": "2030-04-25",
+      "brightLimbIndependentDeltaDeg": 1.6613332775250456e-05
+    },
+    {
+      "date": "2030-04-26",
+      "brightLimbIndependentDeltaDeg": 3.580410412951096e-05
+    },
+    {
+      "date": "2030-04-27",
+      "brightLimbIndependentDeltaDeg": 5.03607953419305e-05
+    },
+    {
+      "date": "2030-04-28",
+      "brightLimbIndependentDeltaDeg": 5.9007794675380865e-05
+    },
+    {
+      "date": "2030-04-29",
+      "brightLimbIndependentDeltaDeg": 5.702766367221557e-05
+    },
+    {
+      "date": "2030-04-30",
+      "brightLimbIndependentDeltaDeg": 2.67581019102181e-05
+    },
+    {
+      "date": "2030-05-01",
+      "brightLimbIndependentDeltaDeg": 0.0001376557792696076
+    },
+    {
+      "date": "2030-05-02",
+      "brightLimbIndependentDeltaDeg": 0.002934718382761048
+    },
+    {
+      "date": "2030-05-03",
+      "brightLimbIndependentDeltaDeg": 0.00018752107712316501
+    },
+    {
+      "date": "2030-05-04",
+      "brightLimbIndependentDeltaDeg": 0.0001329961013425418
+    },
+    {
+      "date": "2030-05-05",
+      "brightLimbIndependentDeltaDeg": 0.00018534518690671575
+    },
+    {
+      "date": "2030-05-06",
+      "brightLimbIndependentDeltaDeg": 0.00020673724191055953
+    },
+    {
+      "date": "2030-05-07",
+      "brightLimbIndependentDeltaDeg": 0.00022027985551176243
+    },
+    {
+      "date": "2030-05-08",
+      "brightLimbIndependentDeltaDeg": 0.00023103669053625708
+    },
+    {
+      "date": "2030-05-09",
+      "brightLimbIndependentDeltaDeg": 0.0002409199006478957
+    },
+    {
+      "date": "2030-05-10",
+      "brightLimbIndependentDeltaDeg": 0.0002512493658173298
+    },
+    {
+      "date": "2030-05-11",
+      "brightLimbIndependentDeltaDeg": 0.00026354257371963286
+    },
+    {
+      "date": "2030-05-12",
+      "brightLimbIndependentDeltaDeg": 0.00028017360713761263
+    },
+    {
+      "date": "2030-05-13",
+      "brightLimbIndependentDeltaDeg": 0.0003056049942813388
+    },
+    {
+      "date": "2030-05-14",
+      "brightLimbIndependentDeltaDeg": 0.000349779895714164
+    },
+    {
+      "date": "2030-05-15",
+      "brightLimbIndependentDeltaDeg": 0.00044136518809523295
+    },
+    {
+      "date": "2030-05-16",
+      "brightLimbIndependentDeltaDeg": 0.000716329160013629
+    },
+    {
+      "date": "2030-05-17",
+      "brightLimbIndependentDeltaDeg": 0.0036320989188141084
+    },
+    {
+      "date": "2030-05-18",
+      "brightLimbIndependentDeltaDeg": 0.0004406645434755774
+    },
+    {
+      "date": "2030-05-19",
+      "brightLimbIndependentDeltaDeg": 0.00015096167533101834
+    },
+    {
+      "date": "2030-05-20",
+      "brightLimbIndependentDeltaDeg": 5.2109947489498154e-05
+    },
+    {
+      "date": "2030-05-21",
+      "brightLimbIndependentDeltaDeg": 1.6092834016490087e-06
+    },
+    {
+      "date": "2030-05-22",
+      "brightLimbIndependentDeltaDeg": 2.9422916725252435e-05
+    },
+    {
+      "date": "2030-05-23",
+      "brightLimbIndependentDeltaDeg": 5.0271592726858216e-05
+    },
+    {
+      "date": "2030-05-24",
+      "brightLimbIndependentDeltaDeg": 6.447723541214145e-05
+    },
+    {
+      "date": "2030-05-25",
+      "brightLimbIndependentDeltaDeg": 7.32662367681769e-05
+    },
+    {
+      "date": "2030-05-26",
+      "brightLimbIndependentDeltaDeg": 7.657914829906076e-05
+    },
+    {
+      "date": "2030-05-27",
+      "brightLimbIndependentDeltaDeg": 7.314097518928975e-05
+    },
+    {
+      "date": "2030-05-28",
+      "brightLimbIndependentDeltaDeg": 5.9607748909229485e-05
+    },
+    {
+      "date": "2030-05-29",
+      "brightLimbIndependentDeltaDeg": 2.7391766991513578e-05
+    },
+    {
+      "date": "2030-05-30",
+      "brightLimbIndependentDeltaDeg": 5.14702517762089e-05
+    },
+    {
+      "date": "2030-05-31",
+      "brightLimbIndependentDeltaDeg": 0.0003443328666890011
+    },
+    {
+      "date": "2030-06-01",
+      "brightLimbIndependentDeltaDeg": 0.0017756269226083532
+    },
+    {
+      "date": "2030-06-02",
+      "brightLimbIndependentDeltaDeg": 0.0005529408347513254
+    },
+    {
+      "date": "2030-06-03",
+      "brightLimbIndependentDeltaDeg": 0.0003945973274426251
+    },
+    {
+      "date": "2030-06-04",
+      "brightLimbIndependentDeltaDeg": 0.00033461419852187646
+    },
+    {
+      "date": "2030-06-05",
+      "brightLimbIndependentDeltaDeg": 0.00030240866891517726
+    },
+    {
+      "date": "2030-06-06",
+      "brightLimbIndependentDeltaDeg": 0.00028166449914124314
+    },
+    {
+      "date": "2030-06-07",
+      "brightLimbIndependentDeltaDeg": 0.0002668280932880407
+    },
+    {
+      "date": "2030-06-08",
+      "brightLimbIndependentDeltaDeg": 0.00025575447824621733
+    },
+    {
+      "date": "2030-06-09",
+      "brightLimbIndependentDeltaDeg": 0.00024777594487090937
+    },
+    {
+      "date": "2030-06-10",
+      "brightLimbIndependentDeltaDeg": 0.00024313853299418042
+    },
+    {
+      "date": "2030-06-11",
+      "brightLimbIndependentDeltaDeg": 0.00024303443365170097
+    },
+    {
+      "date": "2030-06-12",
+      "brightLimbIndependentDeltaDeg": 0.0002504299466750126
+    },
+    {
+      "date": "2030-06-13",
+      "brightLimbIndependentDeltaDeg": 0.000273469922831282
+    },
+    {
+      "date": "2030-06-14",
+      "brightLimbIndependentDeltaDeg": 0.00034397908660821486
+    },
+    {
+      "date": "2030-06-15",
+      "brightLimbIndependentDeltaDeg": 0.0008284497457680118
+    },
+    {
+      "date": "2030-06-16",
+      "brightLimbIndependentDeltaDeg": 0.00024401799726092577
+    },
+    {
+      "date": "2030-06-17",
+      "brightLimbIndependentDeltaDeg": 7.890587312431308e-06
+    },
+    {
+      "date": "2030-06-18",
+      "brightLimbIndependentDeltaDeg": 4.735541830314105e-05
+    },
+    {
+      "date": "2030-06-19",
+      "brightLimbIndependentDeltaDeg": 7.042804898560462e-05
+    },
+    {
+      "date": "2030-06-20",
+      "brightLimbIndependentDeltaDeg": 8.136422016491451e-05
+    },
+    {
+      "date": "2030-06-21",
+      "brightLimbIndependentDeltaDeg": 8.544278676936301e-05
+    },
+    {
+      "date": "2030-06-22",
+      "brightLimbIndependentDeltaDeg": 8.421896831123377e-05
+    },
+    {
+      "date": "2030-06-23",
+      "brightLimbIndependentDeltaDeg": 7.782850323678758e-05
+    },
+    {
+      "date": "2030-06-24",
+      "brightLimbIndependentDeltaDeg": 6.551883231509237e-05
+    },
+    {
+      "date": "2030-06-25",
+      "brightLimbIndependentDeltaDeg": 4.5495286002505964e-05
+    },
+    {
+      "date": "2030-06-26",
+      "brightLimbIndependentDeltaDeg": 1.4078964852615172e-05
+    },
+    {
+      "date": "2030-06-27",
+      "brightLimbIndependentDeltaDeg": 3.682916621983168e-05
+    },
+    {
+      "date": "2030-06-28",
+      "brightLimbIndependentDeltaDeg": 0.00012856750106493564
+    },
+    {
+      "date": "2030-06-29",
+      "brightLimbIndependentDeltaDeg": 0.00033928840107932956
+    },
+    {
+      "date": "2030-06-30",
+      "brightLimbIndependentDeltaDeg": 0.0012742330638388921
+    },
+    {
+      "date": "2030-07-01",
+      "brightLimbIndependentDeltaDeg": 0.001419694301716845
+    },
+    {
+      "date": "2030-07-02",
+      "brightLimbIndependentDeltaDeg": 0.0006433669482248661
+    },
+    {
+      "date": "2030-07-03",
+      "brightLimbIndependentDeltaDeg": 0.0004471491516824244
+    },
+    {
+      "date": "2030-07-04",
+      "brightLimbIndependentDeltaDeg": 0.0003556953620886816
+    },
+    {
+      "date": "2030-07-05",
+      "brightLimbIndependentDeltaDeg": 0.0003004633774708054
+    },
+    {
+      "date": "2030-07-06",
+      "brightLimbIndependentDeltaDeg": 0.0002618798264393263
+    },
+    {
+      "date": "2030-07-07",
+      "brightLimbIndependentDeltaDeg": 0.0002323037053599819
+    },
+    {
+      "date": "2030-07-08",
+      "brightLimbIndependentDeltaDeg": 0.0002081818475403452
+    },
+    {
+      "date": "2030-07-09",
+      "brightLimbIndependentDeltaDeg": 0.00018762928419846503
+    },
+    {
+      "date": "2030-07-10",
+      "brightLimbIndependentDeltaDeg": 0.00016944958474596206
+    },
+    {
+      "date": "2030-07-11",
+      "brightLimbIndependentDeltaDeg": 0.0001526225952943605
+    },
+    {
+      "date": "2030-07-12",
+      "brightLimbIndependentDeltaDeg": 0.00013582053031768737
+    },
+    {
+      "date": "2030-07-13",
+      "brightLimbIndependentDeltaDeg": 0.00011636911054324628
+    },
+    {
+      "date": "2030-07-14",
+      "brightLimbIndependentDeltaDeg": 9.417753841489684e-05
+    },
+    {
+      "date": "2030-07-15",
+      "brightLimbIndependentDeltaDeg": 0.000375208251824688
+    },
+    {
+      "date": "2030-07-16",
+      "brightLimbIndependentDeltaDeg": 0.00017684226520486845
+    },
+    {
+      "date": "2030-07-17",
+      "brightLimbIndependentDeltaDeg": 0.00014265891638842731
+    },
+    {
+      "date": "2030-07-18",
+      "brightLimbIndependentDeltaDeg": 0.00012389921988642527
+    },
+    {
+      "date": "2030-07-19",
+      "brightLimbIndependentDeltaDeg": 0.00010819056598165844
+    },
+    {
+      "date": "2030-07-20",
+      "brightLimbIndependentDeltaDeg": 9.210415754523638e-05
+    },
+    {
+      "date": "2030-07-21",
+      "brightLimbIndependentDeltaDeg": 7.390841983578866e-05
+    },
+    {
+      "date": "2030-07-22",
+      "brightLimbIndependentDeltaDeg": 5.2262640934941373e-05
+    },
+    {
+      "date": "2030-07-23",
+      "brightLimbIndependentDeltaDeg": 2.5709032314580327e-05
+    },
+    {
+      "date": "2030-07-24",
+      "brightLimbIndependentDeltaDeg": 7.822339028962233e-06
+    },
+    {
+      "date": "2030-07-25",
+      "brightLimbIndependentDeltaDeg": 5.192634603190527e-05
+    },
+    {
+      "date": "2030-07-26",
+      "brightLimbIndependentDeltaDeg": 0.00011390491630436372
+    },
+    {
+      "date": "2030-07-27",
+      "brightLimbIndependentDeltaDeg": 0.0002111223570011589
+    },
+    {
+      "date": "2030-07-28",
+      "brightLimbIndependentDeltaDeg": 0.0003956351210945286
+    },
+    {
+      "date": "2030-07-29",
+      "brightLimbIndependentDeltaDeg": 0.0009061617940915312
+    },
+    {
+      "date": "2030-07-30",
+      "brightLimbIndependentDeltaDeg": 0.0017164664295421517
+    },
+    {
+      "date": "2030-07-31",
+      "brightLimbIndependentDeltaDeg": 0.0007935082080905431
+    },
+    {
+      "date": "2030-08-01",
+      "brightLimbIndependentDeltaDeg": 0.0005021299916734279
+    },
+    {
+      "date": "2030-08-02",
+      "brightLimbIndependentDeltaDeg": 0.0003612077319985474
+    },
+    {
+      "date": "2030-08-03",
+      "brightLimbIndependentDeltaDeg": 0.00027949475250466094
+    },
+    {
+      "date": "2030-08-04",
+      "brightLimbIndependentDeltaDeg": 0.0002243024740664623
+    },
+    {
+      "date": "2030-08-05",
+      "brightLimbIndependentDeltaDeg": 0.00018281180933854557
+    },
+    {
+      "date": "2030-08-06",
+      "brightLimbIndependentDeltaDeg": 0.00014894509732243932
+    },
+    {
+      "date": "2030-08-07",
+      "brightLimbIndependentDeltaDeg": 0.0001192260231448472
+    },
+    {
+      "date": "2030-08-08",
+      "brightLimbIndependentDeltaDeg": 9.108662069934326e-05
+    },
+    {
+      "date": "2030-08-09",
+      "brightLimbIndependentDeltaDeg": 6.183176964213999e-05
+    },
+    {
+      "date": "2030-08-10",
+      "brightLimbIndependentDeltaDeg": 2.738399024337923e-05
+    },
+    {
+      "date": "2030-08-11",
+      "brightLimbIndependentDeltaDeg": 2.0447817178137484e-05
+    },
+    {
+      "date": "2030-08-12",
+      "brightLimbIndependentDeltaDeg": 9.404364476495175e-05
+    },
+    {
+      "date": "2030-08-13",
+      "brightLimbIndependentDeltaDeg": 0.0007943810418282737
+    },
+    {
+      "date": "2030-08-14",
+      "brightLimbIndependentDeltaDeg": 0.0004283798850792664
+    },
+    {
+      "date": "2030-08-15",
+      "brightLimbIndependentDeltaDeg": 0.00022472160068787161
+    },
+    {
+      "date": "2030-08-16",
+      "brightLimbIndependentDeltaDeg": 0.0001482944319377566
+    },
+    {
+      "date": "2030-08-17",
+      "brightLimbIndependentDeltaDeg": 0.00010192993212854162
+    },
+    {
+      "date": "2030-08-18",
+      "brightLimbIndependentDeltaDeg": 6.559437883879582e-05
+    },
+    {
+      "date": "2030-08-19",
+      "brightLimbIndependentDeltaDeg": 3.239132553289892e-05
+    },
+    {
+      "date": "2030-08-20",
+      "brightLimbIndependentDeltaDeg": 1.018804596242262e-06
+    },
+    {
+      "date": "2030-08-21",
+      "brightLimbIndependentDeltaDeg": 3.686130398250498e-05
+    },
+    {
+      "date": "2030-08-22",
+      "brightLimbIndependentDeltaDeg": 7.731645089847916e-05
+    },
+    {
+      "date": "2030-08-23",
+      "brightLimbIndependentDeltaDeg": 0.00012554502146144841
+    },
+    {
+      "date": "2030-08-24",
+      "brightLimbIndependentDeltaDeg": 0.00018746054468010698
+    },
+    {
+      "date": "2030-08-25",
+      "brightLimbIndependentDeltaDeg": 0.00027603603751913397
+    },
+    {
+      "date": "2030-08-26",
+      "brightLimbIndependentDeltaDeg": 0.0004255015292073949
+    },
+    {
+      "date": "2030-08-27",
+      "brightLimbIndependentDeltaDeg": 0.0007592123728841216
+    },
+    {
+      "date": "2030-08-28",
+      "brightLimbIndependentDeltaDeg": 0.002026320059144382
+    },
+    {
+      "date": "2030-08-29",
+      "brightLimbIndependentDeltaDeg": 0.000305610470462625
+    },
+    {
+      "date": "2030-08-30",
+      "brightLimbIndependentDeltaDeg": 0.0004948495218854987
+    },
+    {
+      "date": "2030-08-31",
+      "brightLimbIndependentDeltaDeg": 0.0003325255351853684
+    },
+    {
+      "date": "2030-09-01",
+      "brightLimbIndependentDeltaDeg": 0.00023512892158805698
+    },
+    {
+      "date": "2030-09-02",
+      "brightLimbIndependentDeltaDeg": 0.00017120196625342032
+    },
+    {
+      "date": "2030-09-03",
+      "brightLimbIndependentDeltaDeg": 0.0001244991901216963
+    },
+    {
+      "date": "2030-09-04",
+      "brightLimbIndependentDeltaDeg": 8.714552365063355e-05
+    },
+    {
+      "date": "2030-09-05",
+      "brightLimbIndependentDeltaDeg": 5.4757733778387774e-05
+    },
+    {
+      "date": "2030-09-06",
+      "brightLimbIndependentDeltaDeg": 2.4375725388381397e-05
+    },
+    {
+      "date": "2030-09-07",
+      "brightLimbIndependentDeltaDeg": 6.623578997277946e-06
+    },
+    {
+      "date": "2030-09-08",
+      "brightLimbIndependentDeltaDeg": 4.1432053166090554e-05
+    },
+    {
+      "date": "2030-09-09",
+      "brightLimbIndependentDeltaDeg": 8.498746700524862e-05
+    },
+    {
+      "date": "2030-09-10",
+      "brightLimbIndependentDeltaDeg": 0.00014211562631771812
+    },
+    {
+      "date": "2030-09-11",
+      "brightLimbIndependentDeltaDeg": 4.143126091094018e-06
+    },
+    {
+      "date": "2030-09-12",
+      "brightLimbIndependentDeltaDeg": 0.0008235532067999429
+    },
+    {
+      "date": "2030-09-13",
+      "brightLimbIndependentDeltaDeg": 0.00026348342495907673
+    },
+    {
+      "date": "2030-09-14",
+      "brightLimbIndependentDeltaDeg": 0.00011764410578507523
+    },
+    {
+      "date": "2030-09-15",
+      "brightLimbIndependentDeltaDeg": 4.581373826795243e-05
+    },
+    {
+      "date": "2030-09-16",
+      "brightLimbIndependentDeltaDeg": 3.1808411620204424e-06
+    },
+    {
+      "date": "2030-09-17",
+      "brightLimbIndependentDeltaDeg": 4.325394269244498e-05
+    },
+    {
+      "date": "2030-09-18",
+      "brightLimbIndependentDeltaDeg": 7.98731361442151e-05
+    },
+    {
+      "date": "2030-09-19",
+      "brightLimbIndependentDeltaDeg": 0.00011590753877044335
+    },
+    {
+      "date": "2030-09-20",
+      "brightLimbIndependentDeltaDeg": 0.00015352438055060702
+    },
+    {
+      "date": "2030-09-21",
+      "brightLimbIndependentDeltaDeg": 0.00019529964973230562
+    },
+    {
+      "date": "2030-09-22",
+      "brightLimbIndependentDeltaDeg": 0.0002455077311935838
+    },
+    {
+      "date": "2030-09-23",
+      "brightLimbIndependentDeltaDeg": 0.00031268956297481054
+    },
+    {
+      "date": "2030-09-24",
+      "brightLimbIndependentDeltaDeg": 0.00041707993895556683
+    },
+    {
+      "date": "2030-09-25",
+      "brightLimbIndependentDeltaDeg": 0.000620644699154127
+    },
+    {
+      "date": "2030-09-26",
+      "brightLimbIndependentDeltaDeg": 0.0012277109730689517
+    },
+    {
+      "date": "2030-09-27",
+      "brightLimbIndependentDeltaDeg": 0.0028324460543842633
+    },
+    {
+      "date": "2030-09-28",
+      "brightLimbIndependentDeltaDeg": 0.0004972638802769325
+    },
+    {
+      "date": "2030-09-29",
+      "brightLimbIndependentDeltaDeg": 0.00030498318113814094
+    },
+    {
+      "date": "2030-09-30",
+      "brightLimbIndependentDeltaDeg": 0.00018837132179783111
+    },
+    {
+      "date": "2030-10-01",
+      "brightLimbIndependentDeltaDeg": 0.0001178861512585172
+    },
+    {
+      "date": "2030-10-02",
+      "brightLimbIndependentDeltaDeg": 6.952197958298711e-05
+    },
+    {
+      "date": "2030-10-03",
+      "brightLimbIndependentDeltaDeg": 3.264382002043931e-05
+    },
+    {
+      "date": "2030-10-04",
+      "brightLimbIndependentDeltaDeg": 1.9753381366172107e-06
+    },
+    {
+      "date": "2030-10-05",
+      "brightLimbIndependentDeltaDeg": 2.5456566902448685e-05
+    },
+    {
+      "date": "2030-10-06",
+      "brightLimbIndependentDeltaDeg": 5.162326033314457e-05
+    },
+    {
+      "date": "2030-10-07",
+      "brightLimbIndependentDeltaDeg": 7.825580058806736e-05
+    },
+    {
+      "date": "2030-10-08",
+      "brightLimbIndependentDeltaDeg": 0.0001075395265388579
+    },
+    {
+      "date": "2030-10-09",
+      "brightLimbIndependentDeltaDeg": 0.00014277540822149604
+    },
+    {
+      "date": "2030-10-10",
+      "brightLimbIndependentDeltaDeg": 0.0001786848713436484
+    },
+    {
+      "date": "2030-10-11",
+      "brightLimbIndependentDeltaDeg": 0.0006704061372602155
+    },
+    {
+      "date": "2030-10-12",
+      "brightLimbIndependentDeltaDeg": 0.00017216424160437782
+    },
+    {
+      "date": "2030-10-13",
+      "brightLimbIndependentDeltaDeg": 9.522931236460863e-06
+    },
+    {
+      "date": "2030-10-14",
+      "brightLimbIndependentDeltaDeg": 7.472870831293221e-05
+    },
+    {
+      "date": "2030-10-15",
+      "brightLimbIndependentDeltaDeg": 0.00011407106211436258
+    },
+    {
+      "date": "2030-10-16",
+      "brightLimbIndependentDeltaDeg": 0.00014398254973002622
+    },
+    {
+      "date": "2030-10-17",
+      "brightLimbIndependentDeltaDeg": 0.00016964174488975914
+    },
+    {
+      "date": "2030-10-18",
+      "brightLimbIndependentDeltaDeg": 0.00019339447533184284
+    },
+    {
+      "date": "2030-10-19",
+      "brightLimbIndependentDeltaDeg": 0.00021683120399984546
+    },
+    {
+      "date": "2030-10-20",
+      "brightLimbIndependentDeltaDeg": 0.00024164091655620723
+    },
+    {
+      "date": "2030-10-21",
+      "brightLimbIndependentDeltaDeg": 0.00027032021603190515
+    },
+    {
+      "date": "2030-10-22",
+      "brightLimbIndependentDeltaDeg": 0.00030738413829567435
+    },
+    {
+      "date": "2030-10-23",
+      "brightLimbIndependentDeltaDeg": 0.00036247219094320826
+    },
+    {
+      "date": "2030-10-24",
+      "brightLimbIndependentDeltaDeg": 0.0004610795693338332
+    },
+    {
+      "date": "2030-10-25",
+      "brightLimbIndependentDeltaDeg": 0.0007010411928831672
+    },
+    {
+      "date": "2030-10-26",
+      "brightLimbIndependentDeltaDeg": 0.001998321200318287
+    },
+    {
+      "date": "2030-10-27",
+      "brightLimbIndependentDeltaDeg": 0.0006807825034513826
+    },
+    {
+      "date": "2030-10-28",
+      "brightLimbIndependentDeltaDeg": 0.00027663226654794926
+    },
+    {
+      "date": "2030-10-29",
+      "brightLimbIndependentDeltaDeg": 0.00012857919941211549
+    },
+    {
+      "date": "2030-10-30",
+      "brightLimbIndependentDeltaDeg": 5.529050008590275e-05
+    },
+    {
+      "date": "2030-10-31",
+      "brightLimbIndependentDeltaDeg": 1.0528716927638015e-05
+    },
+    {
+      "date": "2030-11-01",
+      "brightLimbIndependentDeltaDeg": 2.0658499579440104e-05
+    },
+    {
+      "date": "2030-11-02",
+      "brightLimbIndependentDeltaDeg": 4.439049021698338e-05
+    },
+    {
+      "date": "2030-11-03",
+      "brightLimbIndependentDeltaDeg": 6.343229557614904e-05
+    },
+    {
+      "date": "2030-11-04",
+      "brightLimbIndependentDeltaDeg": 7.894465906588266e-05
+    },
+    {
+      "date": "2030-11-05",
+      "brightLimbIndependentDeltaDeg": 9.115127249970101e-05
+    },
+    {
+      "date": "2030-11-06",
+      "brightLimbIndependentDeltaDeg": 9.945368452690673e-05
+    },
+    {
+      "date": "2030-11-07",
+      "brightLimbIndependentDeltaDeg": 0.00010177182363690918
+    },
+    {
+      "date": "2030-11-08",
+      "brightLimbIndependentDeltaDeg": 9.142652163518505e-05
+    },
+    {
+      "date": "2030-11-09",
+      "brightLimbIndependentDeltaDeg": 4.322111942656193e-05
+    },
+    {
+      "date": "2030-11-10",
+      "brightLimbIndependentDeltaDeg": 0.0007939268398047261
+    },
+    {
+      "date": "2030-11-11",
+      "brightLimbIndependentDeltaDeg": 0.00031435008042990376
+    },
+    {
+      "date": "2030-11-12",
+      "brightLimbIndependentDeltaDeg": 0.0002675303887258451
+    },
+    {
+      "date": "2030-11-13",
+      "brightLimbIndependentDeltaDeg": 0.00025501264747163077
+    },
+    {
+      "date": "2030-11-14",
+      "brightLimbIndependentDeltaDeg": 0.00025140015611668787
+    },
+    {
+      "date": "2030-11-15",
+      "brightLimbIndependentDeltaDeg": 0.0002509405654791408
+    },
+    {
+      "date": "2030-11-16",
+      "brightLimbIndependentDeltaDeg": 0.0002518105912656665
+    },
+    {
+      "date": "2030-11-17",
+      "brightLimbIndependentDeltaDeg": 0.00025353538126182684
+    },
+    {
+      "date": "2030-11-18",
+      "brightLimbIndependentDeltaDeg": 0.00025634175690925076
+    },
+    {
+      "date": "2030-11-19",
+      "brightLimbIndependentDeltaDeg": 0.000261072927372652
+    },
+    {
+      "date": "2030-11-20",
+      "brightLimbIndependentDeltaDeg": 0.00026948081784894384
+    },
+    {
+      "date": "2030-11-21",
+      "brightLimbIndependentDeltaDeg": 0.0002851561011425474
+    },
+    {
+      "date": "2030-11-22",
+      "brightLimbIndependentDeltaDeg": 0.0003165293955476045
+    },
+    {
+      "date": "2030-11-23",
+      "brightLimbIndependentDeltaDeg": 0.00038990350310541544
+    },
+    {
+      "date": "2030-11-24",
+      "brightLimbIndependentDeltaDeg": 0.0006575578598244647
+    },
+    {
+      "date": "2030-11-25",
+      "brightLimbIndependentDeltaDeg": 0.0020866448797676185
+    },
+    {
+      "date": "2030-11-26",
+      "brightLimbIndependentDeltaDeg": 0.00019647739614470083
+    },
+    {
+      "date": "2030-11-27",
+      "brightLimbIndependentDeltaDeg": 3.934913365810644e-05
+    },
+    {
+      "date": "2030-11-28",
+      "brightLimbIndependentDeltaDeg": 1.7978864207179868e-05
+    },
+    {
+      "date": "2030-11-29",
+      "brightLimbIndependentDeltaDeg": 4.7044280933050686e-05
+    },
+    {
+      "date": "2030-11-30",
+      "brightLimbIndependentDeltaDeg": 6.371955674921992e-05
+    },
+    {
+      "date": "2030-12-01",
+      "brightLimbIndependentDeltaDeg": 7.315069154856246e-05
+    },
+    {
+      "date": "2030-12-02",
+      "brightLimbIndependentDeltaDeg": 7.702593063640961e-05
+    },
+    {
+      "date": "2030-12-03",
+      "brightLimbIndependentDeltaDeg": 7.538820989339001e-05
+    },
+    {
+      "date": "2030-12-04",
+      "brightLimbIndependentDeltaDeg": 6.700410796156575e-05
+    },
+    {
+      "date": "2030-12-05",
+      "brightLimbIndependentDeltaDeg": 4.885574031732176e-05
+    },
+    {
+      "date": "2030-12-06",
+      "brightLimbIndependentDeltaDeg": 1.4066868146755951e-05
+    },
+    {
+      "date": "2030-12-07",
+      "brightLimbIndependentDeltaDeg": 5.5730495034822525e-05
+    },
+    {
+      "date": "2030-12-08",
+      "brightLimbIndependentDeltaDeg": 0.00023051069695156912
+    },
+    {
+      "date": "2030-12-09",
+      "brightLimbIndependentDeltaDeg": 0.0012076709045345524
+    },
+    {
+      "date": "2030-12-10",
+      "brightLimbIndependentDeltaDeg": 0.0011794598083838537
+    },
+    {
+      "date": "2030-12-11",
+      "brightLimbIndependentDeltaDeg": 0.0005777553181474104
+    },
+    {
+      "date": "2030-12-12",
+      "brightLimbIndependentDeltaDeg": 0.00042946798566845246
+    },
+    {
+      "date": "2030-12-13",
+      "brightLimbIndependentDeltaDeg": 0.0003606656800911878
+    },
+    {
+      "date": "2030-12-14",
+      "brightLimbIndependentDeltaDeg": 0.00031895860900021944
+    },
+    {
+      "date": "2030-12-15",
+      "brightLimbIndependentDeltaDeg": 0.00028941110821278926
+    },
+    {
+      "date": "2030-12-16",
+      "brightLimbIndependentDeltaDeg": 0.00026630916386238823
+    },
+    {
+      "date": "2030-12-17",
+      "brightLimbIndependentDeltaDeg": 0.00024717699483289834
+    },
+    {
+      "date": "2030-12-18",
+      "brightLimbIndependentDeltaDeg": 0.00023098950057942602
+    },
+    {
+      "date": "2030-12-19",
+      "brightLimbIndependentDeltaDeg": 0.0002175055072370924
+    },
+    {
+      "date": "2030-12-20",
+      "brightLimbIndependentDeltaDeg": 0.00020706026532479882
+    },
+    {
+      "date": "2030-12-21",
+      "brightLimbIndependentDeltaDeg": 0.00020088271770646315
+    },
+    {
+      "date": "2030-12-22",
+      "brightLimbIndependentDeltaDeg": 0.00020284870799969212
+    },
+    {
+      "date": "2030-12-23",
+      "brightLimbIndependentDeltaDeg": 0.00023007783525486047
+    },
+    {
+      "date": "2030-12-24",
+      "brightLimbIndependentDeltaDeg": 0.0005462006552363619
+    },
+    {
+      "date": "2030-12-25",
+      "brightLimbIndependentDeltaDeg": 3.193650189814434e-05
+    },
+    {
+      "date": "2030-12-26",
+      "brightLimbIndependentDeltaDeg": 7.395976962243367e-05
+    },
+    {
+      "date": "2030-12-27",
+      "brightLimbIndependentDeltaDeg": 8.348014392822733e-05
+    },
+    {
+      "date": "2030-12-28",
+      "brightLimbIndependentDeltaDeg": 8.37083570388586e-05
+    },
+    {
+      "date": "2030-12-29",
+      "brightLimbIndependentDeltaDeg": 7.899123306742695e-05
+    },
+    {
+      "date": "2030-12-30",
+      "brightLimbIndependentDeltaDeg": 7.013029073732469e-05
+    },
+    {
+      "date": "2030-12-31",
+      "brightLimbIndependentDeltaDeg": 5.683348030061097e-05
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "assets": [
+    {
+      "assetId": "2027-03-M04",
+      "periodType": "monthly",
+      "year": 2027,
+      "month": 3,
+      "variantId": "M04",
+      "variantLabelSl": "Tedenski pregled",
+      "status": "generated_pending_visual_qa",
+      "canonicalPageProposed": "/lunin-koledar/2027/marec/",
+      "paper": "A4",
+      "orientation": "landscape",
+      "paperMm": {
+        "width": 297,
+        "height": 210
+      },
+      "pdf": {
+        "path": "prenosi/lunin-koledar/2027/marec/lunin-koledar-marec-2027-tedenski-pregled.pdf",
+        "requiredColorSpace": "CMYK",
+        "rasterMinimumEffectivePpi": 600,
+        "vectorTextAndLines": true,
+        "bytes": 2878863,
+        "sha256": "385f742d77289d22499cebe27936ff2dcc4e599de90bd3c9bd7304a4494c9f2a",
+        "mimeType": "application/pdf",
+        "iccProfile": "default_cmyk.icc",
+        "iccSha256": "8472fa1493a024b800b67dee9424835ec0c41ab79490200ae8ec4a689fd1b9a9",
+        "minimumEffectivePpi": 600.0
+      },
+      "webp": {
+        "path": "prenosi/lunin-koledar/2027/marec/lunin-koledar-marec-2027-tedenski-pregled.webp",
+        "requiredColorSpace": "sRGB",
+        "targetWidthPixels": 7016,
+        "targetHeightPixels": 4961,
+        "bytes": 800282,
+        "sha256": "5a74771a336feca1a7cb94c4f68e74012b75756bbe80485af4c6b69734e6fa42",
+        "mimeType": "image/webp",
+        "width": 7016,
+        "height": 4961,
+        "iccProfile": "sRGB"
+      },
+      "preview": {
+        "path": "slike/lunin-koledar/2027/marec/lunin-koledar-marec-2027-tedenski-pregled-predogled.webp",
+        "colorSpace": "sRGB",
+        "responsiveWidths": [
+          480,
+          960,
+          1440
+        ],
+        "width": 960,
+        "height": 679,
+        "bytes": 35172,
+        "sha256": "cb6e9132366f382ef45f605d67367a40c38b8c71e46c6d6b939ef8276a7afc02",
+        "mimeType": "image/webp"
+      },
+      "previewAltSl": "Lunin koledar za marec 2027 z dnevnimi prikazi Lune – tedenski pregled.",
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "creditText": "koledar365.si",
+      "productionManifestRequiredFields": [
+        "bytes",
+        "sha256",
+        "dataSha256",
+        "mimeType",
+        "width",
+        "height",
+        "iccProfile",
+        "fontEmbeddingCheck",
+        "renderQaStatus"
+      ],
+      "dataSha256": "ec3f3b5ebe8c96c07a7b1c4e50d755f9d1d86212d09e01c00d2a6eadf547d904",
+      "renderQaStatus": "pending",
+      "fontEmbeddingCheck": "pending"
+    }
+  ]
+}

@@ -11,6 +11,10 @@ module SeoHelper
   end
 
   def seo_image
+    if @section=='lunar' && page_path.start_with?('/lunin-koledar/')
+      day=LunarCalendar.period(@year,@page.month).max_by { |d|d['illuminationFraction'] }
+      return {url:site_origin+"/lunar/atlas/#{day['date'][0,7]}-cover.webp",width:768,height:768,alt:"Luna #{LunarCalendar.date_label(day['date'])} ob 12.00 po času v Sloveniji"}
+    end
     photo=seo_photo
     return {url:site_origin+photo['local_path'],width:photo['width'],height:photo['height'],alt:photo['alt_sl']} if photo
     record=@person || @page
@@ -25,6 +29,7 @@ module SeoHelper
     parent = "/#{page_path.split("/").reject(&:blank?).first}/"
     record = Page.find_by(path: parent) if parent != page_path
     rows << [record.title, record.path] if record
+    rows << ["Lunin koledar #{@page.year}", LunarCalendar.path(@page.year)] if @section=='lunar' && @page&.month && page_path.start_with?('/lunin-koledar/')
     rows << [@title, page_path]
     rows
   end

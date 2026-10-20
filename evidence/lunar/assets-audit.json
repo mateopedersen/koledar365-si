@@ -1,0 +1,3126 @@
+{
+  "status": "passed",
+  "count": 208,
+  "results": [
+    {
+      "assetId": "2027-Y01",
+      "status": "passed",
+      "images": 365,
+      "minimumPpi": 601.1338407442976,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        9921,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 15.621923831959167,
+      "pdfBytes": 15512239
+    },
+    {
+      "assetId": "2027-Y02",
+      "status": "passed",
+      "images": 365,
+      "minimumPpi": 603.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        9921,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.5911363041486717,
+      "pdfBytes": 6800091
+    },
+    {
+      "assetId": "2027-Y03",
+      "status": "passed",
+      "images": 365,
+      "minimumPpi": 602.5263157894736,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        9921
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.8540318675566025,
+      "pdfBytes": 8590699
+    },
+    {
+      "assetId": "2027-Y04",
+      "status": "passed",
+      "images": 365,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        9921,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.9923337913885617,
+      "pdfBytes": 7959073
+    },
+    {
+      "assetId": "2027-01-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.16822242203137,
+      "pdfBytes": 4000394
+    },
+    {
+      "assetId": "2027-01-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8513371710469655,
+      "pdfBytes": 2067084
+    },
+    {
+      "assetId": "2027-01-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.935145051106357,
+      "pdfBytes": 2348554
+    },
+    {
+      "assetId": "2027-01-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9807831829597247,
+      "pdfBytes": 1700090
+    },
+    {
+      "assetId": "2027-02-M01",
+      "status": "passed",
+      "images": 28,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.282003741254044,
+      "pdfBytes": 3732495
+    },
+    {
+      "assetId": "2027-02-M02",
+      "status": "passed",
+      "images": 28,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.701592272208959,
+      "pdfBytes": 1931961
+    },
+    {
+      "assetId": "2027-02-M03",
+      "status": "passed",
+      "images": 28,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8942558314988787,
+      "pdfBytes": 2193376
+    },
+    {
+      "assetId": "2027-02-M04",
+      "status": "passed",
+      "images": 28,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.7106773874609424,
+      "pdfBytes": 1591994
+    },
+    {
+      "assetId": "2027-03-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.172626835746545,
+      "pdfBytes": 4104429
+    },
+    {
+      "assetId": "2027-03-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8169968685083557,
+      "pdfBytes": 2105457
+    },
+    {
+      "assetId": "2027-03-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9743121225587972,
+      "pdfBytes": 2396634
+    },
+    {
+      "assetId": "2027-03-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.974403759167967,
+      "pdfBytes": 1731599
+    },
+    {
+      "assetId": "2027-04-M01",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.221254181350915,
+      "pdfBytes": 4076599
+    },
+    {
+      "assetId": "2027-04-M02",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.7808703410879954,
+      "pdfBytes": 2078406
+    },
+    {
+      "assetId": "2027-04-M03",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.902375661867802,
+      "pdfBytes": 2366569
+    },
+    {
+      "assetId": "2027-04-M04",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9346134898734657,
+      "pdfBytes": 1710341
+    },
+    {
+      "assetId": "2027-05-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.181087719660876,
+      "pdfBytes": 4234536
+    },
+    {
+      "assetId": "2027-05-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8106181337136598,
+      "pdfBytes": 2148336
+    },
+    {
+      "assetId": "2027-05-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8836714586412289,
+      "pdfBytes": 2444546
+    },
+    {
+      "assetId": "2027-05-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9833000892251194,
+      "pdfBytes": 1764673
+    },
+    {
+      "assetId": "2027-06-M01",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.236673591087133,
+      "pdfBytes": 4195680
+    },
+    {
+      "assetId": "2027-06-M02",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.760629329915908,
+      "pdfBytes": 2123381
+    },
+    {
+      "assetId": "2027-06-M03",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8844613937721555,
+      "pdfBytes": 2420682
+    },
+    {
+      "assetId": "2027-06-M04",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9049845492408974,
+      "pdfBytes": 1742810
+    },
+    {
+      "assetId": "2027-07-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.189775283608416,
+      "pdfBytes": 4270785
+    },
+    {
+      "assetId": "2027-07-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8168383991842274,
+      "pdfBytes": 2164201
+    },
+    {
+      "assetId": "2027-07-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9145822783065831,
+      "pdfBytes": 2465293
+    },
+    {
+      "assetId": "2027-07-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.958599889071473,
+      "pdfBytes": 1775843
+    },
+    {
+      "assetId": "2027-08-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.202091795078495,
+      "pdfBytes": 4223090
+    },
+    {
+      "assetId": "2027-08-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8915949248476456,
+      "pdfBytes": 2157027
+    },
+    {
+      "assetId": "2027-08-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9575315991277298,
+      "pdfBytes": 2455396
+    },
+    {
+      "assetId": "2027-08-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.0516668561408586,
+      "pdfBytes": 1771594
+    },
+    {
+      "assetId": "2027-09-M01",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.19190669601794,
+      "pdfBytes": 4165376
+    },
+    {
+      "assetId": "2027-09-M02",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8447234882543226,
+      "pdfBytes": 2116990
+    },
+    {
+      "assetId": "2027-09-M03",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9783372433916568,
+      "pdfBytes": 2409166
+    },
+    {
+      "assetId": "2027-09-M04",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.03608277610696,
+      "pdfBytes": 1739316
+    },
+    {
+      "assetId": "2027-10-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.155012970369683,
+      "pdfBytes": 4166434
+    },
+    {
+      "assetId": "2027-10-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.873937997154442,
+      "pdfBytes": 2128602
+    },
+    {
+      "assetId": "2027-10-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9556558046279933,
+      "pdfBytes": 2421855
+    },
+    {
+      "assetId": "2027-10-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.0380453842364363,
+      "pdfBytes": 1750135
+    },
+    {
+      "assetId": "2027-11-M01",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.18249292916766,
+      "pdfBytes": 4048699
+    },
+    {
+      "assetId": "2027-11-M02",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8218666997385256,
+      "pdfBytes": 2070998
+    },
+    {
+      "assetId": "2027-11-M03",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9670680074549483,
+      "pdfBytes": 2358197
+    },
+    {
+      "assetId": "2027-11-M04",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9913048570847844,
+      "pdfBytes": 1704365
+    },
+    {
+      "assetId": "2027-12-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.165831257729685,
+      "pdfBytes": 4041715
+    },
+    {
+      "assetId": "2027-12-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8910468276852799,
+      "pdfBytes": 2081388
+    },
+    {
+      "assetId": "2027-12-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.0045949214026604,
+      "pdfBytes": 2366395
+    },
+    {
+      "assetId": "2027-12-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.0688215049762815,
+      "pdfBytes": 1714055
+    },
+    {
+      "assetId": "2028-Y01",
+      "status": "passed",
+      "images": 366,
+      "minimumPpi": 601.1338407442976,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        9921,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 15.565139379662348,
+      "pdfBytes": 15847257
+    },
+    {
+      "assetId": "2028-Y02",
+      "status": "passed",
+      "images": 366,
+      "minimumPpi": 603.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        9921,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.59164441826986,
+      "pdfBytes": 6889249
+    },
+    {
+      "assetId": "2028-Y03",
+      "status": "passed",
+      "images": 366,
+      "minimumPpi": 602.5263157894736,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        9921
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.807178379793221,
+      "pdfBytes": 8718285
+    },
+    {
+      "assetId": "2028-Y04",
+      "status": "passed",
+      "images": 366,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        9921,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.962369127077608,
+      "pdfBytes": 8076518
+    },
+    {
+      "assetId": "2028-01-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.16006194083582,
+      "pdfBytes": 3996985
+    },
+    {
+      "assetId": "2028-01-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8617530841230963,
+      "pdfBytes": 2065818
+    },
+    {
+      "assetId": "2028-01-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.911474557061014,
+      "pdfBytes": 2348231
+    },
+    {
+      "assetId": "2028-01-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.038132197866176,
+      "pdfBytes": 1702093
+    },
+    {
+      "assetId": "2028-02-M01",
+      "status": "passed",
+      "images": 29,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.21703304085408,
+      "pdfBytes": 3809950
+    },
+    {
+      "assetId": "2028-02-M02",
+      "status": "passed",
+      "images": 29,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.7656579749687367,
+      "pdfBytes": 1969685
+    },
+    {
+      "assetId": "2028-02-M03",
+      "status": "passed",
+      "images": 29,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8789418383130596,
+      "pdfBytes": 2238026
+    },
+    {
+      "assetId": "2028-02-M04",
+      "status": "passed",
+      "images": 29,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.940647726137448,
+      "pdfBytes": 1623957
+    },
+    {
+      "assetId": "2028-03-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.169368568643055,
+      "pdfBytes": 4005493
+    },
+    {
+      "assetId": "2028-03-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8572129379868194,
+      "pdfBytes": 2065449
+    },
+    {
+      "assetId": "2028-03-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9349390409849903,
+      "pdfBytes": 2346194
+    },
+    {
+      "assetId": "2028-03-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.994404654864147,
+      "pdfBytes": 1699985
+    },
+    {
+      "assetId": "2028-04-M01",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.1984835174678,
+      "pdfBytes": 3972930
+    },
+    {
+      "assetId": "2028-04-M02",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8001136845151355,
+      "pdfBytes": 2040193
+    },
+    {
+      "assetId": "2028-04-M03",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8385793569590425,
+      "pdfBytes": 2318805
+    },
+    {
+      "assetId": "2028-04-M04",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9573359239622843,
+      "pdfBytes": 1678609
+    },
+    {
+      "assetId": "2028-05-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.182782996930516,
+      "pdfBytes": 4190487
+    },
+    {
+      "assetId": "2028-05-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8543715141054924,
+      "pdfBytes": 2136371
+    },
+    {
+      "assetId": "2028-05-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.956654850367063,
+      "pdfBytes": 2431000
+    },
+    {
+      "assetId": "2028-05-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.970760687205669,
+      "pdfBytes": 1755860
+    },
+    {
+      "assetId": "2028-06-M01",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.21303134592131,
+      "pdfBytes": 4154942
+    },
+    {
+      "assetId": "2028-06-M02",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.7983240146480775,
+      "pdfBytes": 2109433
+    },
+    {
+      "assetId": "2028-06-M03",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.857432728049415,
+      "pdfBytes": 2400841
+    },
+    {
+      "assetId": "2028-06-M04",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9494885919311553,
+      "pdfBytes": 1733096
+    },
+    {
+      "assetId": "2028-07-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.177832897542693,
+      "pdfBytes": 4403871
+    },
+    {
+      "assetId": "2028-07-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8204046479741764,
+      "pdfBytes": 2220398
+    },
+    {
+      "assetId": "2028-07-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8392249472056001,
+      "pdfBytes": 2531704
+    },
+    {
+      "assetId": "2028-07-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.979424136256059,
+      "pdfBytes": 1819770
+    },
+    {
+      "assetId": "2028-08-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.161124718803073,
+      "pdfBytes": 4472999
+    },
+    {
+      "assetId": "2028-08-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8644949479290471,
+      "pdfBytes": 2250460
+    },
+    {
+      "assetId": "2028-08-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.927179900577724,
+      "pdfBytes": 2565541
+    },
+    {
+      "assetId": "2028-08-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.969523592981876,
+      "pdfBytes": 1840761
+    },
+    {
+      "assetId": "2028-09-M01",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.214259138684774,
+      "pdfBytes": 4305574
+    },
+    {
+      "assetId": "2028-09-M02",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8809612887001037,
+      "pdfBytes": 2171311
+    },
+    {
+      "assetId": "2028-09-M03",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9389875877179383,
+      "pdfBytes": 2475410
+    },
+    {
+      "assetId": "2028-09-M04",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.0322884692896785,
+      "pdfBytes": 1779712
+    },
+    {
+      "assetId": "2028-10-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.175506843463314,
+      "pdfBytes": 4482772
+    },
+    {
+      "assetId": "2028-10-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8849974334859463,
+      "pdfBytes": 2251128
+    },
+    {
+      "assetId": "2028-10-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9135728976115918,
+      "pdfBytes": 2568508
+    },
+    {
+      "assetId": "2028-10-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.0637615105571574,
+      "pdfBytes": 1845075
+    },
+    {
+      "assetId": "2028-11-M01",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.19772286471198,
+      "pdfBytes": 4216983
+    },
+    {
+      "assetId": "2028-11-M02",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.864221760594191,
+      "pdfBytes": 2137466
+    },
+    {
+      "assetId": "2028-11-M03",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9351050892767943,
+      "pdfBytes": 2435071
+    },
+    {
+      "assetId": "2028-11-M04",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9957657685589971,
+      "pdfBytes": 1753376
+    },
+    {
+      "assetId": "2028-12-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.210678765455064,
+      "pdfBytes": 4342716
+    },
+    {
+      "assetId": "2028-12-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9701385228592,
+      "pdfBytes": 2198117
+    },
+    {
+      "assetId": "2028-12-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.0217971110353212,
+      "pdfBytes": 2503281
+    },
+    {
+      "assetId": "2028-12-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.0567547549409704,
+      "pdfBytes": 1801845
+    },
+    {
+      "assetId": "2029-Y01",
+      "status": "passed",
+      "images": 365,
+      "minimumPpi": 601.1338407442976,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        9921,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 15.600918073550583,
+      "pdfBytes": 15716670
+    },
+    {
+      "assetId": "2029-Y02",
+      "status": "passed",
+      "images": 365,
+      "minimumPpi": 603.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        9921,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.5899849496139247,
+      "pdfBytes": 6848240
+    },
+    {
+      "assetId": "2029-Y03",
+      "status": "passed",
+      "images": 365,
+      "minimumPpi": 602.5263157894736,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        9921
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.832420167517341,
+      "pdfBytes": 8661307
+    },
+    {
+      "assetId": "2029-Y04",
+      "status": "passed",
+      "images": 365,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        9921,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.972411006412773,
+      "pdfBytes": 8021840
+    },
+    {
+      "assetId": "2029-01-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.172999583156777,
+      "pdfBytes": 4258769
+    },
+    {
+      "assetId": "2029-01-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8234117756487769,
+      "pdfBytes": 2166476
+    },
+    {
+      "assetId": "2029-01-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9494165917382362,
+      "pdfBytes": 2467556
+    },
+    {
+      "assetId": "2029-01-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9655356779903335,
+      "pdfBytes": 1777288
+    },
+    {
+      "assetId": "2029-02-M01",
+      "status": "passed",
+      "images": 28,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.28965126413736,
+      "pdfBytes": 3574952
+    },
+    {
+      "assetId": "2029-02-M02",
+      "status": "passed",
+      "images": 28,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.7485760153232945,
+      "pdfBytes": 1864580
+    },
+    {
+      "assetId": "2029-02-M03",
+      "status": "passed",
+      "images": 28,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8622319370807883,
+      "pdfBytes": 2113648
+    },
+    {
+      "assetId": "2029-02-M04",
+      "status": "passed",
+      "images": 28,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9171436248824398,
+      "pdfBytes": 1540701
+    },
+    {
+      "assetId": "2029-03-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.156782314823428,
+      "pdfBytes": 4156645
+    },
+    {
+      "assetId": "2029-03-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8459064962087937,
+      "pdfBytes": 2125708
+    },
+    {
+      "assetId": "2029-03-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9252327948821297,
+      "pdfBytes": 2419412
+    },
+    {
+      "assetId": "2029-03-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9734677566600178,
+      "pdfBytes": 1746948
+    },
+    {
+      "assetId": "2029-04-M01",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.19673312043324,
+      "pdfBytes": 3955178
+    },
+    {
+      "assetId": "2029-04-M02",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.7960148409967032,
+      "pdfBytes": 2035469
+    },
+    {
+      "assetId": "2029-04-M03",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8384687729306834,
+      "pdfBytes": 2314310
+    },
+    {
+      "assetId": "2029-04-M04",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9396094075658767,
+      "pdfBytes": 1675252
+    },
+    {
+      "assetId": "2029-05-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.15223286722682,
+      "pdfBytes": 4178899
+    },
+    {
+      "assetId": "2029-05-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8082276584090369,
+      "pdfBytes": 2135085
+    },
+    {
+      "assetId": "2029-05-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9121828460401615,
+      "pdfBytes": 2429765
+    },
+    {
+      "assetId": "2029-05-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9460160467415606,
+      "pdfBytes": 1755527
+    },
+    {
+      "assetId": "2029-06-M01",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.211338824639913,
+      "pdfBytes": 4036497
+    },
+    {
+      "assetId": "2029-06-M02",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8032899609683164,
+      "pdfBytes": 2071876
+    },
+    {
+      "assetId": "2029-06-M03",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8729410184065565,
+      "pdfBytes": 2355522
+    },
+    {
+      "assetId": "2029-06-M04",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9392308036806223,
+      "pdfBytes": 1703060
+    },
+    {
+      "assetId": "2029-07-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.16342527999118,
+      "pdfBytes": 4285721
+    },
+    {
+      "assetId": "2029-07-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8155971709780658,
+      "pdfBytes": 2178340
+    },
+    {
+      "assetId": "2029-07-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8593312594521785,
+      "pdfBytes": 2480151
+    },
+    {
+      "assetId": "2029-07-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.978522583601181,
+      "pdfBytes": 1787465
+    },
+    {
+      "assetId": "2029-08-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.18295834668265,
+      "pdfBytes": 4336618
+    },
+    {
+      "assetId": "2029-08-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.845808658626071,
+      "pdfBytes": 2196441
+    },
+    {
+      "assetId": "2029-08-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9545148254942692,
+      "pdfBytes": 2501945
+    },
+    {
+      "assetId": "2029-08-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9804510863761167,
+      "pdfBytes": 1800242
+    },
+    {
+      "assetId": "2029-09-M01",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.26516327507863,
+      "pdfBytes": 4239112
+    },
+    {
+      "assetId": "2029-09-M02",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.929528002563069,
+      "pdfBytes": 2142838
+    },
+    {
+      "assetId": "2029-09-M03",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.011954099015768,
+      "pdfBytes": 2443701
+    },
+    {
+      "assetId": "2029-09-M04",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.0513791998677124,
+      "pdfBytes": 1759615
+    },
+    {
+      "assetId": "2029-10-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.19395784026981,
+      "pdfBytes": 4376145
+    },
+    {
+      "assetId": "2029-10-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8540766233632013,
+      "pdfBytes": 2205230
+    },
+    {
+      "assetId": "2029-10-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.011037732924069,
+      "pdfBytes": 2513726
+    },
+    {
+      "assetId": "2029-10-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.011722596003128,
+      "pdfBytes": 1807144
+    },
+    {
+      "assetId": "2029-11-M01",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.241337412195936,
+      "pdfBytes": 4245982
+    },
+    {
+      "assetId": "2029-11-M02",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8541568915208577,
+      "pdfBytes": 2144606
+    },
+    {
+      "assetId": "2029-11-M03",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.980035276649545,
+      "pdfBytes": 2445844
+    },
+    {
+      "assetId": "2029-11-M04",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.011147283456836,
+      "pdfBytes": 1760086
+    },
+    {
+      "assetId": "2029-12-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.194471832077635,
+      "pdfBytes": 4264608
+    },
+    {
+      "assetId": "2029-12-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8981510763856593,
+      "pdfBytes": 2164002
+    },
+    {
+      "assetId": "2029-12-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9833472855238272,
+      "pdfBytes": 2463130
+    },
+    {
+      "assetId": "2029-12-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.075587111620969,
+      "pdfBytes": 1774161
+    },
+    {
+      "assetId": "2030-Y01",
+      "status": "passed",
+      "images": 365,
+      "minimumPpi": 601.1338407442976,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        9921,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 15.605981219735638,
+      "pdfBytes": 15397204
+    },
+    {
+      "assetId": "2030-Y02",
+      "status": "passed",
+      "images": 365,
+      "minimumPpi": 603.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        9921,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.6000958644156524,
+      "pdfBytes": 6762299
+    },
+    {
+      "assetId": "2030-Y03",
+      "status": "passed",
+      "images": 365,
+      "minimumPpi": 602.5263157894736,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        9921
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.8752993718099726,
+      "pdfBytes": 8539973
+    },
+    {
+      "assetId": "2030-Y04",
+      "status": "passed",
+      "images": 365,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        9921,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 3.0044755267635126,
+      "pdfBytes": 7922322
+    },
+    {
+      "assetId": "2030-01-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.18922236346662,
+      "pdfBytes": 4161137
+    },
+    {
+      "assetId": "2030-01-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.840911267513444,
+      "pdfBytes": 2123808
+    },
+    {
+      "assetId": "2030-01-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9494779124767032,
+      "pdfBytes": 2417744
+    },
+    {
+      "assetId": "2030-01-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9664985513836784,
+      "pdfBytes": 1744892
+    },
+    {
+      "assetId": "2030-02-M01",
+      "status": "passed",
+      "images": 28,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.33193122431333,
+      "pdfBytes": 3928066
+    },
+    {
+      "assetId": "2030-02-M02",
+      "status": "passed",
+      "images": 28,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.7500962873393344,
+      "pdfBytes": 1999423
+    },
+    {
+      "assetId": "2030-02-M03",
+      "status": "passed",
+      "images": 28,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.853471683943268,
+      "pdfBytes": 2278074
+    },
+    {
+      "assetId": "2030-02-M04",
+      "status": "passed",
+      "images": 28,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9230490186959353,
+      "pdfBytes": 1645880
+    },
+    {
+      "assetId": "2030-03-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.187555335076496,
+      "pdfBytes": 4011987
+    },
+    {
+      "assetId": "2030-03-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8548138502189289,
+      "pdfBytes": 2065885
+    },
+    {
+      "assetId": "2030-03-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9360969005467192,
+      "pdfBytes": 2348760
+    },
+    {
+      "assetId": "2030-03-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.0015964061913274,
+      "pdfBytes": 1702650
+    },
+    {
+      "assetId": "2030-04-M01",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.198109047564913,
+      "pdfBytes": 3907428
+    },
+    {
+      "assetId": "2030-04-M02",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.7634824667472793,
+      "pdfBytes": 2014833
+    },
+    {
+      "assetId": "2030-04-M03",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9139687264233818,
+      "pdfBytes": 2292807
+    },
+    {
+      "assetId": "2030-04-M04",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9170357968423264,
+      "pdfBytes": 1662970
+    },
+    {
+      "assetId": "2030-05-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.14562607440479,
+      "pdfBytes": 3907269
+    },
+    {
+      "assetId": "2030-05-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.813612170444093,
+      "pdfBytes": 2033255
+    },
+    {
+      "assetId": "2030-05-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9177626887421324,
+      "pdfBytes": 2307798
+    },
+    {
+      "assetId": "2030-05-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9501017993158258,
+      "pdfBytes": 1677793
+    },
+    {
+      "assetId": "2030-06-M01",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.239897408337555,
+      "pdfBytes": 3884128
+    },
+    {
+      "assetId": "2030-06-M02",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8554584069698943,
+      "pdfBytes": 2012993
+    },
+    {
+      "assetId": "2030-06-M03",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9085911043589399,
+      "pdfBytes": 2286274
+    },
+    {
+      "assetId": "2030-06-M04",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9638869080223373,
+      "pdfBytes": 1659285
+    },
+    {
+      "assetId": "2030-07-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.11963021527713,
+      "pdfBytes": 3959744
+    },
+    {
+      "assetId": "2030-07-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.791626963211002,
+      "pdfBytes": 2057087
+    },
+    {
+      "assetId": "2030-07-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9241930983164357,
+      "pdfBytes": 2335851
+    },
+    {
+      "assetId": "2030-07-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9516837365688635,
+      "pdfBytes": 1694856
+    },
+    {
+      "assetId": "2030-08-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.15659973060215,
+      "pdfBytes": 4062670
+    },
+    {
+      "assetId": "2030-08-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8661864357148517,
+      "pdfBytes": 2088195
+    },
+    {
+      "assetId": "2030-08-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.946776354998846,
+      "pdfBytes": 2376290
+    },
+    {
+      "assetId": "2030-08-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.016219335324535,
+      "pdfBytes": 1718717
+    },
+    {
+      "assetId": "2030-09-M01",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.209666628771828,
+      "pdfBytes": 4095107
+    },
+    {
+      "assetId": "2030-09-M02",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8679330432655705,
+      "pdfBytes": 2089048
+    },
+    {
+      "assetId": "2030-09-M03",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.941956131557099,
+      "pdfBytes": 2378905
+    },
+    {
+      "assetId": "2030-09-M04",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.0770260819837603,
+      "pdfBytes": 1716725
+    },
+    {
+      "assetId": "2030-10-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.163862793125187,
+      "pdfBytes": 4282737
+    },
+    {
+      "assetId": "2030-10-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8615615429400194,
+      "pdfBytes": 2170832
+    },
+    {
+      "assetId": "2030-10-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9582374766171622,
+      "pdfBytes": 2472927
+    },
+    {
+      "assetId": "2030-10-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.0148840590194883,
+      "pdfBytes": 1782496
+    },
+    {
+      "assetId": "2030-11-M01",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.227152340695266,
+      "pdfBytes": 4242552
+    },
+    {
+      "assetId": "2030-11-M02",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.8491072320576554,
+      "pdfBytes": 2145181
+    },
+    {
+      "assetId": "2030-11-M03",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9194455640646693,
+      "pdfBytes": 2444328
+    },
+    {
+      "assetId": "2030-11-M04",
+      "status": "passed",
+      "images": 30,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.0184213699328573,
+      "pdfBytes": 1758594
+    },
+    {
+      "assetId": "2030-12-M01",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.9230769230769,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 17.216480465210815,
+      "pdfBytes": 4405547
+    },
+    {
+      "assetId": "2030-12-M02",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.4117647058823,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        4961,
+        7016
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 1.9459657499560765,
+      "pdfBytes": 2216383
+    },
+    {
+      "assetId": "2030-12-M03",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 601.2972972972973,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.0019939574957712,
+      "pdfBytes": 2527415
+    },
+    {
+      "assetId": "2030-12-M04",
+      "status": "passed",
+      "images": 31,
+      "minimumPpi": 600.0,
+      "fontsEmbedded": true,
+      "cmykOnly": true,
+      "outputIntent": true,
+      "webpPixels": [
+        7016,
+        4961
+      ],
+      "pairMeanRgbDifferenceAfterCmykProof": 2.1150538967951302,
+      "pdfBytes": 1817556
+    }
+  ]
+}

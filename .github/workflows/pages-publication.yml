@@ -7,6 +7,11 @@ on:
     branches: [main]
     paths:
       - 'data/editorial/**'
+      - 'data/lunar/**'
+      - 'public/lunar/**'
+      - 'public/prenosi/lunin-koledar/**'
+      - 'public/slike/lunin-koledar/**'
+      - 'script/lunar/**'
       - 'app/**'
       - 'config/locales/**'
       - 'lib/portable/**'

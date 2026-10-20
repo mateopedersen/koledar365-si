@@ -6,6 +6,7 @@ def run!(*command)
 end
 run!('bundle','exec','rails','db:prepare')
 run!('bundle','exec','ruby','script/restore_editorial.rb')
+run!('bundle','exec','ruby','script/lunar/prepare.rb')
 run!('bundle','exec','rails','assets:precompile')
 run!('bundle','exec','ruby','script/build_portable.rb')
 current=JSON.parse(File.read('site/free/runtime.json'))

@@ -47,7 +47,7 @@ class CalendarNavigationTest < ActionDispatch::IntegrationTest
   end
  end
  test 'all gallery families put controls beside an open complete gallery' do
-  ['/koledar-z-imenom/ana/','/prazen-koledar/','/tedenski-koledar/2028/','/delovni-dnevi/2028/','/lunin-koledar/2028/','/prazniki/2028/'].each do |path|
+  ['/koledar-z-imenom/ana/','/prazen-koledar/','/tedenski-koledar/2028/','/delovni-dnevi/2028/','/prazniki/2028/'].each do |path|
    get path
    assert_response :success
    assert_select 'body.gallery-page'

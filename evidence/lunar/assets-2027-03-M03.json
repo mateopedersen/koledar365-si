@@ -1,0 +1,75 @@
+{
+  "assets": [
+    {
+      "assetId": "2027-03-M03",
+      "periodType": "monthly",
+      "year": 2027,
+      "month": 3,
+      "variantId": "M03",
+      "variantLabelSl": "Opazovalni dnevnik",
+      "status": "generated_pending_visual_qa",
+      "canonicalPageProposed": "/lunin-koledar/2027/marec/",
+      "paper": "A4",
+      "orientation": "landscape",
+      "paperMm": {
+        "width": 297,
+        "height": 210
+      },
+      "pdf": {
+        "path": "prenosi/lunin-koledar/2027/marec/lunin-koledar-marec-2027-opazovalni-dnevnik.pdf",
+        "requiredColorSpace": "CMYK",
+        "rasterMinimumEffectivePpi": 600,
+        "vectorTextAndLines": true,
+        "bytes": 4201829,
+        "sha256": "ef7230238e2c2235a3de491505a1f4780563a4bad0609e1d4f811123ad5c00da",
+        "mimeType": "application/pdf",
+        "iccProfile": "default_cmyk.icc",
+        "iccSha256": "8472fa1493a024b800b67dee9424835ec0c41ab79490200ae8ec4a689fd1b9a9",
+        "minimumEffectivePpi": 601.2972972972973
+      },
+      "webp": {
+        "path": "prenosi/lunin-koledar/2027/marec/lunin-koledar-marec-2027-opazovalni-dnevnik.webp",
+        "requiredColorSpace": "sRGB",
+        "targetWidthPixels": 7016,
+        "targetHeightPixels": 4961,
+        "bytes": 931480,
+        "sha256": "aa9bbf4c592491b58d591fc0db752c1373b38cecf775470f6670ed1c0d25b481",
+        "mimeType": "image/webp",
+        "width": 7016,
+        "height": 4961,
+        "iccProfile": "sRGB"
+      },
+      "preview": {
+        "path": "slike/lunin-koledar/2027/marec/lunin-koledar-marec-2027-opazovalni-dnevnik-predogled.webp",
+        "colorSpace": "sRGB",
+        "responsiveWidths": [
+          480,
+          960,
+          1440
+        ],
+        "width": 960,
+        "height": 679,
+        "bytes": 36034,
+        "sha256": "e403e09bbfa895cc3eb7e9a91a2fdc689c7cbbb499282f61e61320262fcce877",
+        "mimeType": "image/webp"
+      },
+      "previewAltSl": "Lunin koledar za marec 2027 z dnevnimi prikazi Lune – opazovalni dnevnik.",
+      "slovenianEditorialStatus": "example_copy_final_production_review_required",
+      "creditText": "koledar365.si",
+      "productionManifestRequiredFields": [
+        "bytes",
+        "sha256",
+        "dataSha256",
+        "mimeType",
+        "width",
+        "height",
+        "iccProfile",
+        "fontEmbeddingCheck",
+        "renderQaStatus"
+      ],
+      "dataSha256": "ec3f3b5ebe8c96c07a7b1c4e50d755f9d1d86212d09e01c00d2a6eadf547d904",
+      "renderQaStatus": "pending",
+      "fontEmbeddingCheck": "pending"
+    }
+  ]
+}

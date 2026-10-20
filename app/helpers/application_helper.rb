@@ -1,7 +1,8 @@
 module ApplicationHelper
   include IllustrationHelper
   def gallery_page?
-    %w[planner name lunar holidays].include?(@section) ||
+    %w[planner name holidays].include?(@section) ||
+      (@section == 'lunar' && !page_path.start_with?('/lunin-koledar/')) ||
       (@section == 'workdays' && @year != 2026) ||
       (@section == 'calendar' && @page&.year && @year.between?(2027,2030))
   end
