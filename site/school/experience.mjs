@@ -105,7 +105,7 @@ function initSchoolPage(root) {
       upcoming = rows.filter(row => row.end >= today).sort((a,b)=>a.start.localeCompare(b.start))[0];
       $('[data-countdown-label]').textContent = 'Naslednje izpitno ali prosto obdobje';
     } else {upcoming = activeBreaks().find(row => row.end >= today); $('[data-countdown-label]').textContent = 'Naslednje šolske počitnice';}
-    $('[data-next-name]').textContent = upcoming ? upcoming.name : 'Preverite koledar naslednjega leta';
+    $('[data-next-name]').textContent = upcoming ? upcoming.name : level === 'university' ? 'Brez potrjenih prihodnjih terminov' : 'Preverite koledar naslednjega leta';
     $('[data-next-date]').textContent = upcoming ? rangeText(upcoming) : 'Datumi še niso preverjeni';
     $('[data-countdown]').textContent = upcoming ? Math.max(0, daysInclusive(today,upcoming.start)-1) : '—';
     $('[data-countdown-unit]').textContent = !upcoming ? 'brez napovedi' : upcoming.start <= today ? 'obdobje že poteka' : level === 'university' ? 'dni do začetka' : 'dni do oddiha';
