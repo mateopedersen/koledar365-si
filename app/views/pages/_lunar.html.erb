@@ -1,4 +1,4 @@
-<% if !page_path.start_with?('/lunin-koledar/') %><%= render 'lunar_legacy' %><% else %>
+<% if !page_path.start_with?('/lunin-koledar/') || (page_path!=LunarCalendar.path && ![2027,2028,2029,2030].include?(@year)) %><%= render 'lunar_legacy' %><% else %>
 <% hub=page_path==LunarCalendar.path; month=@page.month; year=@year; rows=LunarCalendar.period(year,month); events=LunarCalendar.phases(year,month) %>
 <link rel="stylesheet" href="/lunar/calendar.css">
 <section class="lunar-experience" data-lunar data-year="<%= year %>" data-month="<%= month %>">

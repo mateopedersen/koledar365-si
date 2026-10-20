@@ -29,7 +29,8 @@ end
 end
 unknown=links.reject do |path|
  known.include?(path) || path.match?(%r{\A/prazniki/20(?:27|28|29|30)\.ics\z}) ||
-  (path.start_with?('/prenosi/') && PublicCalendarGallery.public_file(path))
+  (path.start_with?('/prenosi/') && PublicCalendarGallery.public_file(path)) ||
+  (path.match?(%r{\A/(?:prenosi|slike)/lunin-koledar/}) && Rails.root.join('public',path.delete_prefix('/')).file?)
 end
 issues<<{problem:'unresolved_internal_links',paths:unknown.to_a} if unknown.any?
 result={checked_at:Time.current.iso8601,kind:'local render audit; not a Google ranking or indexing certification',tested:rows.size,passed:issues.empty?,issues:issues,rows:rows}

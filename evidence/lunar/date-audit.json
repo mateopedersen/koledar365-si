@@ -1,0 +1,53 @@
+{
+  "method": "Independent parser of raw USNO annual JSON; JavaScript Intl/ICU Europe/Ljubljana conversion; no generator import",
+  "node": "v24.19.0",
+  "icu": "78.3",
+  "checkedDayCount": 1461,
+  "uniqueDayCount": 1461,
+  "checkedEventCount": 198,
+  "outputEventCount": 198,
+  "eventsWithUTtoLocalDateShift": 10,
+  "maxFractionIdentityDifference": 5.026623839388122e-9,
+  "calendarWeekdayAndNoonChecks": 1461,
+  "errors": [],
+  "boundaryExample": {
+    "phase": "full_moon",
+    "utc": "2027-02-20T23:23:00Z",
+    "date": "2027-02-21",
+    "time": "00:23",
+    "offset": 60
+  },
+  "march2027Events": [
+    {
+      "phase": "new_moon",
+      "utc": "2027-03-08T09:29:00Z",
+      "date": "2027-03-08",
+      "time": "10:29",
+      "offset": 60
+    },
+    {
+      "phase": "first_quarter",
+      "utc": "2027-03-15T16:25:00Z",
+      "date": "2027-03-15",
+      "time": "17:25",
+      "offset": 60
+    },
+    {
+      "phase": "full_moon",
+      "utc": "2027-03-22T10:44:00Z",
+      "date": "2027-03-22",
+      "time": "11:44",
+      "offset": 60
+    },
+    {
+      "phase": "last_quarter",
+      "utc": "2027-03-30T00:54:00Z",
+      "date": "2027-03-30",
+      "time": "02:54",
+      "offset": 120
+    }
+  ],
+  "leapDays": [
+    "2028-02-29"
+  ]
+}

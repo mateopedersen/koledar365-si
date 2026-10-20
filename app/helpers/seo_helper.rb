@@ -11,7 +11,7 @@ module SeoHelper
   end
 
   def seo_image
-    if @section=='lunar' && page_path.start_with?('/lunin-koledar/')
+    if @section=='lunar' && page_path.start_with?('/lunin-koledar/') && (2027..2030).cover?(@year.to_i)
       day=LunarCalendar.period(@year,@page.month).max_by { |d|d['illuminationFraction'] }
       return {url:site_origin+"/lunar/atlas/#{day['date'][0,7]}-cover.webp",width:768,height:768,alt:"Luna #{LunarCalendar.date_label(day['date'])} ob 12.00 po času v Sloveniji"}
     end
