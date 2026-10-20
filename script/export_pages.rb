@@ -21,8 +21,8 @@ assets=nil;processed=[];style_sets={}
 transform=lambda do |body,path,indexable:true|
  doc=Nokogiri::HTML(body)
  sources=doc.css('script[src]').map { |node|node['src'] }
- assets||={scripts:sources.reject { |src|src.include?('holidays-')||src.include?('city_card-')||src.include?('vacation-')||src.split('?',2).first=='/school/experience.mjs'||src.split('?',2).first=='/lunar/calendar.mjs' },holidays:ApplicationController.helpers.asset_path('holidays.js'),vacation:ApplicationController.helpers.asset_path('vacation.js')}
- doc.css('script[src]').each { |script|src=script['src'];script.remove unless src.include?('city_card-')||src.split('?',2).first=='/school/experience.mjs' }
+ assets||={scripts:sources.reject { |src|src.include?('holidays-')||src.include?('city_card-')||src.include?('vacation-')||src.start_with?('/studio/')||src.split('?',2).first=='/school/experience.mjs'||src.split('?',2).first=='/lunar/calendar.mjs' },holidays:ApplicationController.helpers.asset_path('holidays.js'),vacation:ApplicationController.helpers.asset_path('vacation.js')}
+ doc.css('script[src]').each { |script|src=script['src'];script.remove unless src.include?('city_card-')||src.start_with?('/studio/')||src.split('?',2).first=='/school/experience.mjs' }
  doc.css('meta[name="csrf-token"],meta[name="csrf-param"],meta[name="csp-nonce"],meta[http-equiv="Content-Security-Policy"],input[name="authenticity_token"]').remove
  if doc.at_css('[data-lunar]')
    lunar_script=Nokogiri::XML::Node.new('script',doc);lunar_script['type']='module';lunar_script['src']='/lunar/calendar.mjs';doc.at_css('head').add_child(lunar_script)

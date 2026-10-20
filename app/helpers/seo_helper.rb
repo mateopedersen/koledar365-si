@@ -80,6 +80,25 @@ module SeoHelper
             "acceptedAnswer" => { "@type" => "Answer", "text" => answer } }
         } }
     end
+    if page_path == "/ustvari-koledar/"
+      graph << { "@type" => "WebApplication", "@id" => "#{canonical_url}#application",
+        "name" => "Koledar365 Ustvarjalni studio", "url" => canonical_url, "description" => @description,
+        "applicationCategory" => "DesignApplication", "operatingSystem" => "Any",
+        "isAccessibleForFree" => true, "inLanguage" => "sl",
+        "featureList" => ["Letni in mesečni koledar", "Imena, fotografije, logotipi in besedilni elementi",
+          "Pisave, barve in postavitev", "Začetek tedna v ponedeljek ali nedeljo",
+          "Dogodki in uvoz ICS ali CSV", "Prenos PDF, PNG in SVG", "Shranjevanje in odpiranje projektov"] }
+      questions = [
+        ["Ali lahko dodam svoje ime, fotografije in logotip?", "Da. Uredite naslov, ime ali podjetje, podnaslov in nogo. Dodajte glavno fotografijo ter samostojne slike in besedila, ki jih lahko premikate, vrtite in povečujete."],
+        ["Ali se lahko teden začne v nedeljo?", "V zavihku Postavitev izberite ponedeljek ali nedeljo. Spremenite lahko tudi jezik koledarja, leto, mesec, velikost papirja in usmerjenost."],
+        ["Kako shranim koledar in nadaljujem pozneje?", "Osnutek se samodejno shranjuje v tem brskalniku, če je shramba na voljo. Z možnostjo Projekt → Shrani projekt prenesete datoteko JSON z nastavitvami, dogodki in fotografijami. Pozneje jo odprete z možnostjo Odpri projekt."],
+        ["Kateri format je najboljši za tisk?", "PDF je pripravljen v izbrani velikosti papirja, pri 150 ali 300 dpi. Mesečni PDF lahko vsebuje vseh 12 mesecev in dodaten seznam vaših dogodkov. Za vektorsko urejanje izberite SVG; PNG je primeren za deljenje posamezne strani. Pri tisku izberite merilo 100 % in enako velikost papirja."],
+        ["Kam se pošljejo moje fotografije?", "Fotografije in projekt se obdelajo v brskalniku. Urejevalnik jih ne pošlje na strežnik. Osnutek lahko izbrišete v meniju Projekt; prenesene datoteke ostanejo tam, kamor jih shranite sami."]
+      ]
+      graph << { "@type" => "FAQPage", "@id" => "#{canonical_url}#faq", "mainEntity" => questions.map { |question, answer|
+        { "@type" => "Question", "name" => question, "acceptedAnswer" => { "@type" => "Answer", "text" => answer } }
+      } }
+    end
     { "@context" => "https://schema.org", "@graph" => graph }
   end
 end

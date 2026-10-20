@@ -17,6 +17,12 @@ Dir[site.join('**/*.html')].sort.each do |file|
   fail_with.call('Canonical must use the production origin') unless canonical.start_with?('https://koledar365.si/')
  end
  fail_with.call('Server-only form or CSRF material leaked into static output') if doc.at_css('meta[name=csrf-token],input[name=authenticity_token]')
+ if relative=='ustvari-koledar/index.html'
+  fail_with.call('Calendar Studio editor is missing') unless doc.at_css('#calendar-studio #studio-paper') && doc.css('[data-panel]').size==6
+  fail_with.call('Calendar Studio module was removed during export') unless doc.at_css('script[type=module][src^="/studio/studio.mjs"]')
+  fail_with.call('Legacy planner gallery replaced the editor') if doc.at_css('#planner-options,.design-section')
+  fail_with.call('Calendar Studio engine is missing') unless site.join('studio/engine.mjs').file?
+ end
  if (gallery=doc.at_css('[data-calendar-gallery],.design-section')) && !relative.start_with?('lunin-koledar/2026/')
   gallery_pages+=1;family=gallery['data-gallery-type'] || JSON.parse(gallery['data-export-options']).fetch('type');gallery_families[family]+=1
   fail_with.call('Gallery must share a workspace with its calendar or settings') unless doc.at_css('body.gallery-page .download-workspace > .gallery-context #gallery-context-content') && gallery.ancestors.any? { |parent|parent['class'].to_s.split.include?('download-workspace') }
