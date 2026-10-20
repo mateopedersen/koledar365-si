@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "downloads": [
+    {
+      "path": "/prenosi/808f79d8289ef9968f73d07fb15d2214c45b58a5d0d7f7b8d059baf713c2fa7b/koledar365-monthly-2028-02-min-01-A4-portrait-color-v2.0.1.pdf",
+      "sha256": "c9aca106d85c6869ec8103c90eb54f54dd28e75e474cdbe226ad89962afaa2b6",
+      "bytes": 102322,
+      "passed": true,
+      "filename": "koledar365-monthly-2028-02-min-01-A4-portrait-color-v2.0.1.pdf"
+    },
+    {
+      "path": "/prenosi/808f79d8289ef9968f73d07fb15d2214c45b58a5d0d7f7b8d059baf713c2fa7b/koledar365-monthly-2028-02-min-01-A4-portrait-color-v2.0.1.webp",
+      "sha256": "6db932de3afa5d07722219971bce47ca28f795d7c642a8e8012efd3857bac982",
+      "bytes": 58154,
+      "passed": true,
+      "pixels": [
+        4961,
+        7016
+      ],
+      "srgb_profile": true,
+      "filename": "koledar365-monthly-2028-02-min-01-A4-portrait-color-v2.0.1.webp"
+    },
+    {
+      "path": "/prenosi/789e30a1a8f4cb9b43f3feb526a8d23afd7ba7aacb20fab06660f2fea454e865/koledar365-monthly-2028-02-min-02-A4-portrait-color-v2.0.1-multipage-webp-600ppi.zip",
+      "sha256": "cdc13d75e8a3d2f4633cc51cd95fadbd5e6d0089a5abd8808aef0e8e0f160e0f",
+      "bytes": 113642,
+      "passed": true,
+      "zip_integrity": true,
+      "pages": 2,
+      "nominal_ppi": [
+        600,
+        600
+      ],
+      "filename": "koledar365-monthly-2028-02-min-02-A4-portrait-color-v2.0.1-multipage-webp-600ppi.zip"
+    }
+  ]
+}

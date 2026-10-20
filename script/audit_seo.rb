@@ -27,7 +27,10 @@ end
 [:title,:description].each do |key|
  rows.group_by { |r|r[key] }.select { |_,v|v.size>1 }.each { |text,items|issues<<{problem:"duplicate_#{key}",paths:items.map { |r|r[:path] },text:text} }
 end
-unknown=links.reject { |p|known.include?(p)||p.match?(%r{\A/prazniki/20(?:27|28|29|30)\.ics\z}) }
+unknown=links.reject do |path|
+ known.include?(path) || path.match?(%r{\A/prazniki/20(?:27|28|29|30)\.ics\z}) ||
+  (path.start_with?('/prenosi/') && PublicCalendarGallery.public_file(path))
+end
 issues<<{problem:'unresolved_internal_links',paths:unknown.to_a} if unknown.any?
 result={checked_at:Time.current.iso8601,kind:'local render audit; not a Google ranking or indexing certification',tested:rows.size,passed:issues.empty?,issues:issues,rows:rows}
 Rails.root.join('evidence/seo-audit.json').write(JSON.pretty_generate(result))
