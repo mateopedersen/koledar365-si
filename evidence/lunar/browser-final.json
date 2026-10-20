@@ -1,0 +1,168 @@
+{
+  "checkedAt": "2026-10-20T18:52:12.457Z",
+  "base": "http://127.0.0.1:8668",
+  "passed": true,
+  "checks": [
+    {
+      "name": "chromium 320 /lunin-koledar/",
+      "passed": true
+    },
+    {
+      "name": "chromium 320 /lunin-koledar/2028/",
+      "passed": true
+    },
+    {
+      "name": "chromium 320 /lunin-koledar/2028/februar/",
+      "passed": true
+    },
+    {
+      "name": "chromium 390 /lunin-koledar/",
+      "passed": true
+    },
+    {
+      "name": "chromium 390 /lunin-koledar/2028/",
+      "passed": true
+    },
+    {
+      "name": "chromium 390 /lunin-koledar/2028/februar/",
+      "passed": true
+    },
+    {
+      "name": "chromium 768 /lunin-koledar/",
+      "passed": true
+    },
+    {
+      "name": "chromium 768 /lunin-koledar/2028/",
+      "passed": true
+    },
+    {
+      "name": "chromium 768 /lunin-koledar/2028/februar/",
+      "passed": true
+    },
+    {
+      "name": "chromium 1440 /lunin-koledar/",
+      "passed": true
+    },
+    {
+      "name": "chromium 1440 /lunin-koledar/2028/",
+      "passed": true
+    },
+    {
+      "name": "chromium 1440 /lunin-koledar/2028/februar/",
+      "passed": true
+    },
+    {
+      "name": "chromium leap-day details",
+      "passed": true
+    },
+    {
+      "name": "chromium leap-day atlas",
+      "passed": true
+    },
+    {
+      "name": "chromium modal opens",
+      "passed": true
+    },
+    {
+      "name": "chromium keyboard close and focus",
+      "passed": true
+    },
+    {
+      "name": "chromium day31 atlas",
+      "passed": true
+    },
+    {
+      "name": "chromium same monthly image",
+      "passed": true
+    },
+    {
+      "name": "chromium optimized city photo",
+      "passed": true
+    },
+    {
+      "name": "chromium original photo fallback",
+      "passed": true
+    },
+    {
+      "name": "webkit 320 /lunin-koledar/",
+      "passed": true
+    },
+    {
+      "name": "webkit 320 /lunin-koledar/2028/",
+      "passed": true
+    },
+    {
+      "name": "webkit 320 /lunin-koledar/2028/februar/",
+      "passed": true
+    },
+    {
+      "name": "webkit 390 /lunin-koledar/",
+      "passed": true
+    },
+    {
+      "name": "webkit 390 /lunin-koledar/2028/",
+      "passed": true
+    },
+    {
+      "name": "webkit 390 /lunin-koledar/2028/februar/",
+      "passed": true
+    },
+    {
+      "name": "webkit 768 /lunin-koledar/",
+      "passed": true
+    },
+    {
+      "name": "webkit 768 /lunin-koledar/2028/",
+      "passed": true
+    },
+    {
+      "name": "webkit 768 /lunin-koledar/2028/februar/",
+      "passed": true
+    },
+    {
+      "name": "webkit 1440 /lunin-koledar/",
+      "passed": true
+    },
+    {
+      "name": "webkit 1440 /lunin-koledar/2028/",
+      "passed": true
+    },
+    {
+      "name": "webkit 1440 /lunin-koledar/2028/februar/",
+      "passed": true
+    },
+    {
+      "name": "webkit leap-day details",
+      "passed": true
+    },
+    {
+      "name": "webkit leap-day atlas",
+      "passed": true
+    },
+    {
+      "name": "webkit modal opens",
+      "passed": true
+    },
+    {
+      "name": "webkit keyboard close and focus",
+      "passed": true
+    },
+    {
+      "name": "webkit day31 atlas",
+      "passed": true
+    },
+    {
+      "name": "webkit same monthly image",
+      "passed": true
+    },
+    {
+      "name": "webkit optimized city photo",
+      "passed": true
+    },
+    {
+      "name": "webkit original photo fallback",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

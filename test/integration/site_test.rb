@@ -53,8 +53,8 @@ class CityPageTest < ActionDispatch::IntegrationTest
   test 'city selector exposes every city and the complete attribution page' do
     get '/'
     assert_select '#city-select option',count:69
-    assert_select '#city-photo[src^="/images/responsive/ljubljana-"][srcset][width="960"][height="480"]'
-    assert_select '#city-photo-avif[type="image/avif"][srcset]'
+    assert_select '#city-photo[src="/images/cities/ljubljana.jpg"][srcset][width][height]'
+    assert_select '#city-photo-avif[type="image/avif"][srcset^="/images/responsive/ljubljana-960-"]'
     get '/fotografije-in-licence/'
     assert_response :success
     assert_select 'h1',text:'Fotografije in licence'
