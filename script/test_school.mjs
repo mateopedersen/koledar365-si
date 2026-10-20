@@ -46,3 +46,9 @@ test('countdown day follows Ljubljana at midnight and the daylight-saving bounda
  assert.equal(ljubljanaToday(new Date('2026-10-20T22:30:00Z')),'2026-10-21');
  assert.equal(ljubljanaToday(new Date('2026-10-25T23:30:00Z')),'2026-10-26');
 });
+
+test('event identities stay stable between individual and combined imports',()=>{
+ const event={id:'nu-0',uid:'academic-2026-2027-nu-0',name:'NU · Zimski semester',start:'2026-10-01',end:'2027-01-14',url:'https://www.nova-uni.si/'};
+ const single=buildICS([event],'single'),all=buildICS([event],'all');
+ assert.equal(single.match(/UID:(.+)/)[1],all.match(/UID:(.+)/)[1]);
+});

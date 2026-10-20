@@ -28,7 +28,7 @@ export function buildICS(events, scope, now = new Date()) {
   const lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Koledar365//Solski in studijski koledar//SL', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH', 'X-WR-CALNAME:Koledar365 · ' + icsEscape(scope)];
   for (const row of events) {
     if (!validDate(row.start) || !validDate(row.end) || row.start > row.end) throw new Error('Neveljaven datum izvoza.');
-    lines.push('BEGIN:VEVENT', 'UID:' + icsEscape(scope.replace(/[^a-zA-Z0-9]/g, '-') + '-' + row.id + '@koledar365.si'), 'DTSTAMP:' + stamp, 'DTSTART;VALUE=DATE:' + row.start.replace(/-/g, ''), 'DTEND;VALUE=DATE:' + addDays(row.end, 1).replace(/-/g, ''), 'SUMMARY:' + icsEscape(row.name), 'DESCRIPTION:' + icsEscape(row.description || 'Uradni termini 2026/2027. Enkraten uvoz; za spremembe preverite vir in obvestila ustanove.'), 'URL:' + row.url, 'TRANSP:TRANSPARENT', 'END:VEVENT');
+    lines.push('BEGIN:VEVENT', 'UID:' + icsEscape((row.uid || scope.replace(/[^a-zA-Z0-9]/g, '-') + '-' + row.id) + '@koledar365.si'), 'DTSTAMP:' + stamp, 'DTSTART;VALUE=DATE:' + row.start.replace(/-/g, ''), 'DTEND;VALUE=DATE:' + addDays(row.end, 1).replace(/-/g, ''), 'SUMMARY:' + icsEscape(row.name), 'DESCRIPTION:' + icsEscape(row.description || 'Uradni termini 2026/2027. Enkraten uvoz; za spremembe preverite vir in obvestila ustanove.'), 'URL:' + row.url, 'TRANSP:TRANSPARENT', 'END:VEVENT');
   }
   return lines.concat('END:VCALENDAR', '').map(foldLine).join('\r\n');
 }
@@ -68,7 +68,7 @@ function initSchoolPage(root) {
   function selectedCalendar(uni) {return uni.calendars?.find(calendar=>calendar.id===selectedFaculties[uni.id]);}
   function universityEvents(uni) {
     const calendar=selectedCalendar(uni), periods=calendar?calendar.periods:uni.periods;
-    return periods.map((row,index)=>({id:uni.id+'-'+(calendar?calendar.id+'-':'')+index,name:uni.short+(calendar?' · '+calendar.id.toUpperCase():'')+' · '+row[0],start:row[1],end:row[2],kind:row[3],url:calendar?calendar.url:uni.url,description:(calendar?calendar.name+'. '+calendar.note+' ':'')+uni.scopeNote+(row[3]==='exam'?' Izpitno obdobje ni počitniško obdobje.':'')}));
+    return periods.map((row,index)=>({id:uni.id+'-'+(calendar?calendar.id+'-':'')+index,uid:'academic-2026-2027-'+uni.id+'-'+(calendar?calendar.id+'-':'')+index,name:uni.short+(calendar?' · '+calendar.id.toUpperCase():'')+' · '+row[0],start:row[1],end:row[2],kind:row[3],url:calendar?calendar.url:uni.url,description:(calendar?calendar.name+'. '+calendar.note+' ':'')+uni.scopeNote+(row[3]==='exam'?' Izpitno obdobje ni počitniško obdobje.':'')}));
   }
   function matchingUniversities() {
     const query=$('[data-university-search]').value.trim().normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
@@ -87,7 +87,7 @@ function initSchoolPage(root) {
   }
   function exportAll() {
     if (level === 'university') {const universities = matchingUniversities(); return download(universities.flatMap(universityEvents), 'Univerze-2026-2027-' + university);}
-    const rows = activeBreaks().map(row => ({...row, url:data.sources[level]}));
+    const rows = activeBreaks().map(row => ({...row, uid:'school-2026-2027-'+level+'-'+region+'-'+row.id, url:data.sources[level]}));
     rows.push(...data.freeDays.map(day => ({id:'free-' + day, name:'Pouka prost dan', start:day, end:day, url:data.sources[level]})));
     download(rows, 'Sola-2026-2027-' + level + '-' + region);
   }
@@ -144,7 +144,7 @@ function initSchoolPage(root) {
     else if (target.hasAttribute('data-saved-only')) {savedOnly=!savedOnly;renderCards();}
     else if (target.hasAttribute('data-favorite')) {const id=target.dataset.favorite;if(favorites.has(id))favorites.delete(id);else favorites.add(id);let persisted=true;try {localStorage.setItem('koledar365-school-favorites',JSON.stringify([...favorites]));}catch {persisted=false;}renderCards();const replacement=$(`[data-favorite="${id}"]`);if(replacement)replacement.focus({preventScroll:true});else $('[data-saved-only]').focus({preventScroll:true});toast(persisted?'Shranjene počitnice so posodobljene.':'Izbira velja do zaprtja strani; brskalnik ne dovoli shranjevanja.');}
     else if(target.hasAttribute('data-export-all')) exportAll();
-    else if(target.hasAttribute('data-export-break')) {const row=activeBreaks().find(row=>row.id===target.dataset.exportBreak);if(row)download([{...row,url:data.sources[level]}],'Sola-2026-2027-'+level+'-'+region+'-'+row.id);}
+    else if(target.hasAttribute('data-export-break')) {const row=activeBreaks().find(row=>row.id===target.dataset.exportBreak);if(row)download([{...row,uid:'school-2026-2027-'+level+'-'+region+'-'+row.id,url:data.sources[level]}],'Sola-2026-2027-'+level+'-'+region+'-'+row.id);}
     else if(target.hasAttribute('data-export-university')) {const uni=data.universities.find(row=>row.id===target.dataset.exportUniversity);if(uni)download(universityEvents(uni),'Studij-2026-2027-'+uni.id);}
     else if(target.hasAttribute('data-prev-month')||target.hasAttribute('data-next-month')) {const [year,num]=month.split('-').map(Number),next=new Date(Date.UTC(year,num-1+(target.hasAttribute('data-prev-month')?-1:1),1,12));const nextMonth=isoDay(next).slice(0,7);if(nextMonth>='2026-09'&&nextMonth<='2027-08')month=nextMonth;renderCalendar();}
     else if(target.hasAttribute('data-this-month')) {month=today<'2026-09-01'?'2026-09':today>'2027-08-31'?'2027-08':today.slice(0,7);renderCalendar();if(today<'2026-09-01'||today>'2027-08-31')toast('Današnji dan je zunaj preverjenega šolskega leta.');}
