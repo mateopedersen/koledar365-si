@@ -27,18 +27,18 @@
 <meta name="twitter:image" content="https://koledar365.si/druzabno/pages/1/6f91260932517b45a2d4.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl"},{"@type":"WebPage","@id":"https://koledar365.si/#webpage","url":"https://koledar365.si/","name":"Koledar365 – slovenski koledar","description":"Slovenski koledar s prazniki, osebnimi dogodki in orodji za načrtovanje. Preglejte leta 2027–2030, izberite mesto in pripravite koledar za tiskanje.","inLanguage":"sl","isPartOf":{"@id":"https://koledar365.si/#website"}}]}</script>
 
+<meta name="csp-nonce" content="0QvKun7bNl+j5YDHlr2iJJGamh3ORd0F">
 <link rel="stylesheet" href="/assets/application-e12463e6.css">
 <link rel="stylesheet" href="/assets/experience-b5e27fe8.css">
 <link rel="stylesheet" href="/assets/slovenia-6c23c5bf.css">
-<link rel="stylesheet" href="/assets/city_card-4cefd57c.css">
-<script src="/assets/city_card-a5c6adce.js" defer></script>
+
 
 
 
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
-<script type="module" src="/free/client-70a41d40ffe068f9.js"></script>
+<script type="module" src="/free/client.js"></script>
 </head>
-<body>
+<body class="">
 <a class="skip" href="#vsebina">Na vsebino</a>
 <header class="topbar"><a class="brand" href="/" aria-label="Koledar365 – domov"><span class="brand-symbol"><svg viewbox="0 0 40 40" aria-hidden="true"><rect x="5" y="7" width="30" height="29" rx="6" fill="#08264d"></rect><rect x="9" y="15" width="22" height="17" rx="2" fill="white"></rect><path d="M13 5v6m14-6v6" stroke="#08264d" stroke-width="4" stroke-linecap="round"></path><path d="M11 9h18" stroke="#408dff" stroke-width="2"></path><rect x="23" y="19" width="5" height="5" rx="1.4" fill="#ff334e"></rect></svg></span> Koledar<span>365</span></a>
 <nav aria-label="Glavna navigacija"><a href="/koledar/">Koledar</a><a href="/prazniki/">Prazniki</a><a href="/solske-pocitnice/">Šolske počitnice</a><a href="/koledar-z-imenom/">Imena</a></nav>
@@ -59,112 +59,91 @@
 <a class="button subtle" href="/ustvari-koledar/"><svg class="ui-icon icon-settings" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h5m4 0h9M3 12h11m4 0h3M3 18h4m4 0h10"></path><circle cx="10" cy="6" r="2"></circle><circle cx="16" cy="12" r="2"></circle><circle cx="9" cy="18" r="2"></circle></svg> Ustvari svoj koledar</a>
 </div>
 <!-- BEGIN app/views/pages/_home.html.erb
---><div class="workspace" data-home-year="2030" data-home-month="4" data-home-view="year">
+--><div class="workspace">
 <aside class="left-panel"><!-- BEGIN app/views/pages/_city_card.html.erb
---><section class="panel today-panel" id="city-card" data-cities-url="/cities.json" data-weather-state="loading">
-  <header class="today-heading">
-    <span class="today-location" aria-hidden="true"><svg viewbox="0 0 48 56" fill="none"><defs><lineargradient id="today-pin-red" x1="9" y1="4" x2="37" y2="43" gradientunits="userSpaceOnUse"><stop stop-color="#ff6673"></stop><stop offset="1" stop-color="#c9203b"></stop></lineargradient></defs><ellipse cx="24" cy="51" rx="10" ry="3" fill="#c9203b" opacity=".13"></ellipse><path d="M24 3C13.5 3 6 10.4 6 20.2c0 12 18 27.3 18 27.3s18-15.3 18-27.3C42 10.4 34.5 3 24 3Z" fill="url(#today-pin-red)"></path><circle cx="24" cy="20" r="7.5" fill="white"></circle><path d="M12 18a12.5 12.5 0 0 1 10-9" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity=".5"></path></svg></span>
-    <div>
-<span class="today-eyebrow">Tukaj in zdaj</span><h2>Danes v Sloveniji</h2>
-</div>
-    <span class="today-live" title="Krajevni čas v Sloveniji"><i aria-hidden="true"></i> V živo</span>
-  </header>
-  <figure class="city-photo"><img id="city-photo" src="/images/cities/ljubljana.jpg" alt="Ljubljana – pogled na mesto" width="960" height="600" fetchpriority="high"><figcaption><span id="city-caption">Ljubljana, Slovenija</span><a id="city-credit" href="/fotografije-in-licence/#ljubljana" aria-label="Avtor in licenca fotografije"><svg class="ui-icon icon-info" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6"></path><circle cx="12" cy="7" r=".9" fill="currentColor" stroke="none"></circle></svg></a></figcaption></figure>
-  <div class="today-body">
-    <p class="today-date" id="city-today">Torek, 20. oktober 2026</p>
-    <div class="time-row">
-      <svg class="city-clock" viewbox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#f2f6fc" stroke="#d5e1ef"></circle><circle cx="32" cy="32" r="25" fill="white"></circle><path d="M32 9v3m23 20h-3M32 55v-3M9 32h3M20.5 12l1.5 2.6m21.5-2.6L42 14.6M52 20.5 49.4 22M52 43.5 49.4 42M43.5 52 42 49.4M20.5 52l1.5-2.6M12 43.5l2.6-1.5M12 20.5l2.6 1.5" stroke="#9cadc3" stroke-width="1.5" stroke-linecap="round"></path><path class="clock-hour-hand" d="M32 32V20" stroke="#153355" stroke-width="3.2" stroke-linecap="round"></path><path class="clock-minute-hand" d="M32 32V14" stroke="#153355" stroke-width="2.2" stroke-linecap="round"></path><path class="clock-second-hand" d="M32 38V11" stroke="#df3e53" stroke-width="1.2" stroke-linecap="round"></path><circle cx="32" cy="32" r="3" fill="#df3e53"></circle></svg>
-      <div class="clock-readout">
-<span class="clock-caption">Krajevni čas</span><div class="clock-digits">
-<time id="ljubljana-clock" aria-label="Krajevni čas v Sloveniji">—:—</time><span id="city-clock-seconds" aria-hidden="true">00</span>
-</div>
-</div>
-      <span class="clock-zone" id="city-zone">Ljubljana</span>
-    </div>
-    <div class="city-picker">
-<label for="city-select">Vaše mesto</label><div class="city-select-shell">
-<svg class="ui-icon icon-pin" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 9c0 5.5-7 12-7 12S5 14.5 5 9a7 7 0 1 1 14 0Z"></path><circle cx="12" cy="9" r="2.5"></circle></svg><select id="city-select" aria-label="Izberite mesto v Sloveniji"><option value="ajdovscina" data-photo="/images/cities/ajdovscina.jpg" data-credit="/fotografije-in-licence/#ajdovscina">Ajdovščina</option>
-<option value="bled" data-photo="/images/cities/bled.jpg" data-credit="/fotografije-in-licence/#bled">Bled</option>
-<option value="bovec" data-photo="/images/cities/bovec.jpg" data-credit="/fotografije-in-licence/#bovec">Bovec</option>
-<option value="brezice" data-photo="/images/cities/brezice.jpg" data-credit="/fotografije-in-licence/#brezice">Brežice</option>
-<option value="celje" data-photo="/images/cities/celje.jpg" data-credit="/fotografije-in-licence/#celje">Celje</option>
-<option value="cerknica" data-photo="/images/cities/cerknica.jpg" data-credit="/fotografije-in-licence/#cerknica">Cerknica</option>
-<option value="crnomelj" data-photo="/images/cities/crnomelj.jpg" data-credit="/fotografije-in-licence/#crnomelj">Črnomelj</option>
-<option value="domzale" data-photo="/images/cities/domzale.jpg" data-credit="/fotografije-in-licence/#domzale">Domžale</option>
-<option value="dravograd" data-photo="/images/cities/dravograd.jpg" data-credit="/fotografije-in-licence/#dravograd">Dravograd</option>
-<option value="gornja-radgona" data-photo="/images/cities/gornja-radgona.jpg" data-credit="/fotografije-in-licence/#gornja-radgona">Gornja Radgona</option>
-<option value="grosuplje" data-photo="/images/cities/grosuplje.jpg" data-credit="/fotografije-in-licence/#grosuplje">Grosuplje</option>
-<option value="hrastnik" data-photo="/images/cities/hrastnik.jpg" data-credit="/fotografije-in-licence/#hrastnik">Hrastnik</option>
-<option value="idrija" data-photo="/images/cities/idrija.jpg" data-credit="/fotografije-in-licence/#idrija">Idrija</option>
-<option value="ilirska-bistrica" data-photo="/images/cities/ilirska-bistrica.jpg" data-credit="/fotografije-in-licence/#ilirska-bistrica">Ilirska Bistrica</option>
-<option value="izola" data-photo="/images/cities/izola.jpg" data-credit="/fotografije-in-licence/#izola">Izola</option>
-<option value="jesenice" data-photo="/images/cities/jesenice.jpg" data-credit="/fotografije-in-licence/#jesenice">Jesenice</option>
-<option value="kamnik" data-photo="/images/cities/kamnik.jpg" data-credit="/fotografije-in-licence/#kamnik">Kamnik</option>
-<option value="kocevje" data-photo="/images/cities/kocevje.jpg" data-credit="/fotografije-in-licence/#kocevje">Kočevje</option>
-<option value="koper" data-photo="/images/cities/koper.jpg" data-credit="/fotografije-in-licence/#koper">Koper</option>
-<option value="kostanjevica-na-krki" data-photo="/images/cities/kostanjevica-na-krki.jpg" data-credit="/fotografije-in-licence/#kostanjevica-na-krki">Kostanjevica na Krki</option>
-<option value="kranj" data-photo="/images/cities/kranj.jpg" data-credit="/fotografije-in-licence/#kranj">Kranj</option>
-<option value="krsko" data-photo="/images/cities/krsko.jpg" data-credit="/fotografije-in-licence/#krsko">Krško</option>
-<option value="lasko" data-photo="/images/cities/lasko.jpg" data-credit="/fotografije-in-licence/#lasko">Laško</option>
-<option value="lenart-v-slovenskih-goricah" data-photo="/images/cities/lenart-v-slovenskih-goricah.jpg" data-credit="/fotografije-in-licence/#lenart-v-slovenskih-goricah">Lenart v Slovenskih goricah</option>
-<option value="lendava" data-photo="/images/cities/lendava.jpg" data-credit="/fotografije-in-licence/#lendava">Lendava</option>
-<option value="litija" data-photo="/images/cities/litija.jpg" data-credit="/fotografije-in-licence/#litija">Litija</option>
-<option value="ljubljana" data-photo="/images/cities/ljubljana.jpg" data-credit="/fotografije-in-licence/#ljubljana" selected>Ljubljana</option>
-<option value="ljutomer" data-photo="/images/cities/ljutomer.jpg" data-credit="/fotografije-in-licence/#ljutomer">Ljutomer</option>
-<option value="logatec" data-photo="/images/cities/logatec.jpg" data-credit="/fotografije-in-licence/#logatec">Logatec</option>
-<option value="maribor" data-photo="/images/cities/maribor.jpg" data-credit="/fotografije-in-licence/#maribor">Maribor</option>
-<option value="medvode" data-photo="/images/cities/medvode.jpg" data-credit="/fotografije-in-licence/#medvode">Medvode</option>
-<option value="menges" data-photo="/images/cities/menges.jpg" data-credit="/fotografije-in-licence/#menges">Mengeš</option>
-<option value="metlika" data-photo="/images/cities/metlika.jpg" data-credit="/fotografije-in-licence/#metlika">Metlika</option>
-<option value="mezica" data-photo="/images/cities/mezica.jpg" data-credit="/fotografije-in-licence/#mezica">Mežica</option>
-<option value="murska-sobota" data-photo="/images/cities/murska-sobota.jpg" data-credit="/fotografije-in-licence/#murska-sobota">Murska Sobota</option>
-<option value="nova-gorica" data-photo="/images/cities/nova-gorica.jpg" data-credit="/fotografije-in-licence/#nova-gorica">Nova Gorica</option>
-<option value="novo-mesto" data-photo="/images/cities/novo-mesto.jpg" data-credit="/fotografije-in-licence/#novo-mesto">Novo mesto</option>
-<option value="ormoz" data-photo="/images/cities/ormoz.jpg" data-credit="/fotografije-in-licence/#ormoz">Ormož</option>
-<option value="piran" data-photo="/images/cities/piran.jpg" data-credit="/fotografije-in-licence/#piran">Piran</option>
-<option value="postojna" data-photo="/images/cities/postojna.jpg" data-credit="/fotografije-in-licence/#postojna">Postojna</option>
-<option value="prevalje" data-photo="/images/cities/prevalje.jpg" data-credit="/fotografije-in-licence/#prevalje">Prevalje</option>
-<option value="ptuj" data-photo="/images/cities/ptuj.jpg" data-credit="/fotografije-in-licence/#ptuj">Ptuj</option>
-<option value="radece" data-photo="/images/cities/radece.jpg" data-credit="/fotografije-in-licence/#radece">Radeče</option>
-<option value="radovljica" data-photo="/images/cities/radovljica.jpg" data-credit="/fotografije-in-licence/#radovljica">Radovljica</option>
-<option value="ravne-na-koroskem" data-photo="/images/cities/ravne-na-koroskem.jpg" data-credit="/fotografije-in-licence/#ravne-na-koroskem">Ravne na Koroškem</option>
-<option value="ribnica" data-photo="/images/cities/ribnica.jpg" data-credit="/fotografije-in-licence/#ribnica">Ribnica</option>
-<option value="rogaska-slatina" data-photo="/images/cities/rogaska-slatina.jpg" data-credit="/fotografije-in-licence/#rogaska-slatina">Rogaška Slatina</option>
-<option value="ruse" data-photo="/images/cities/ruse.jpg" data-credit="/fotografije-in-licence/#ruse">Ruše</option>
-<option value="sempeter-pri-gorici" data-photo="/images/cities/sempeter-pri-gorici.jpg" data-credit="/fotografije-in-licence/#sempeter-pri-gorici">Šempeter pri Gorici</option>
-<option value="sentjur" data-photo="/images/cities/sentjur.jpg" data-credit="/fotografije-in-licence/#sentjur">Šentjur</option>
-<option value="sevnica" data-photo="/images/cities/sevnica.jpg" data-credit="/fotografije-in-licence/#sevnica">Sevnica</option>
-<option value="sezana" data-photo="/images/cities/sezana.jpg" data-credit="/fotografije-in-licence/#sezana">Sežana</option>
-<option value="skofja-loka" data-photo="/images/cities/skofja-loka.jpg" data-credit="/fotografije-in-licence/#skofja-loka">Škofja Loka</option>
-<option value="slovenj-gradec" data-photo="/images/cities/slovenj-gradec.jpg" data-credit="/fotografije-in-licence/#slovenj-gradec">Slovenj Gradec</option>
-<option value="slovenska-bistrica" data-photo="/images/cities/slovenska-bistrica.jpg" data-credit="/fotografije-in-licence/#slovenska-bistrica">Slovenska Bistrica</option>
-<option value="slovenske-konjice" data-photo="/images/cities/slovenske-konjice.jpg" data-credit="/fotografije-in-licence/#slovenske-konjice">Slovenske Konjice</option>
-<option value="sostanj" data-photo="/images/cities/sostanj.jpg" data-credit="/fotografije-in-licence/#sostanj">Šoštanj</option>
-<option value="tolmin" data-photo="/images/cities/tolmin.jpg" data-credit="/fotografije-in-licence/#tolmin">Tolmin</option>
-<option value="trbovlje" data-photo="/images/cities/trbovlje.jpg" data-credit="/fotografije-in-licence/#trbovlje">Trbovlje</option>
-<option value="trebnje" data-photo="/images/cities/trebnje.jpg" data-credit="/fotografije-in-licence/#trebnje">Trebnje</option>
-<option value="trzic" data-photo="/images/cities/trzic.jpg" data-credit="/fotografije-in-licence/#trzic">Tržič</option>
-<option value="velenje" data-photo="/images/cities/velenje.jpg" data-credit="/fotografije-in-licence/#velenje">Velenje</option>
-<option value="visnja-gora" data-photo="/images/cities/visnja-gora.jpg" data-credit="/fotografije-in-licence/#visnja-gora">Višnja Gora</option>
-<option value="vrhnika" data-photo="/images/cities/vrhnika.jpg" data-credit="/fotografije-in-licence/#vrhnika">Vrhnika</option>
-<option value="zagorje-ob-savi" data-photo="/images/cities/zagorje-ob-savi.jpg" data-credit="/fotografije-in-licence/#zagorje-ob-savi">Zagorje ob Savi</option>
-<option value="zalec" data-photo="/images/cities/zalec.jpg" data-credit="/fotografije-in-licence/#zalec">Žalec</option>
-<option value="zelezniki" data-photo="/images/cities/zelezniki.jpg" data-credit="/fotografije-in-licence/#zelezniki">Železniki</option>
-<option value="ziri" data-photo="/images/cities/ziri.jpg" data-credit="/fotografije-in-licence/#ziri">Žiri</option>
-<option value="zrece" data-photo="/images/cities/zrece.jpg" data-credit="/fotografije-in-licence/#zrece">Zreče</option></select><svg class="ui-icon icon-chevron-right" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg>
+--><section class="panel today-panel" id="city-card" data-cities-url="/cities.json"><h2>
+<svg class="ui-icon icon-pin" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 9c0 5.5-7 12-7 12S5 14.5 5 9a7 7 0 1 1 14 0Z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Danes v Sloveniji</h2>
+<figure class="city-photo"><img id="city-photo" src="/images/cities/ljubljana.jpg" alt="Ljubljana – pogled na mesto" width="960" height="600" fetchpriority="high"><figcaption><span id="city-caption">Ljubljana, Slovenija</span><a id="city-credit" href="/fotografije-in-licence/#ljubljana" aria-label="Avtor in licenca fotografije"><svg class="ui-icon icon-info" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6"></path><circle cx="12" cy="7" r=".9" fill="currentColor" stroke="none"></circle></svg></a></figcaption></figure>
+<p class="today-date" id="city-today">Torek, 20. oktober 2026</p>
+<div class="time-row">
+<time id="ljubljana-clock" aria-label="Krajevni čas">18:24</time><div class="city-picker">
+<label for="city-select" class="sr-only">Izberite mesto v Sloveniji</label><select id="city-select"><option value="ajdovscina">Ajdovščina</option>
+<option value="bled">Bled</option>
+<option value="bovec">Bovec</option>
+<option value="brezice">Brežice</option>
+<option value="celje">Celje</option>
+<option value="cerknica">Cerknica</option>
+<option value="crnomelj">Črnomelj</option>
+<option value="domzale">Domžale</option>
+<option value="dravograd">Dravograd</option>
+<option value="gornja-radgona">Gornja Radgona</option>
+<option value="grosuplje">Grosuplje</option>
+<option value="hrastnik">Hrastnik</option>
+<option value="idrija">Idrija</option>
+<option value="ilirska-bistrica">Ilirska Bistrica</option>
+<option value="izola">Izola</option>
+<option value="jesenice">Jesenice</option>
+<option value="kamnik">Kamnik</option>
+<option value="kocevje">Kočevje</option>
+<option value="koper">Koper</option>
+<option value="kostanjevica-na-krki">Kostanjevica na Krki</option>
+<option value="kranj">Kranj</option>
+<option value="krsko">Krško</option>
+<option value="lasko">Laško</option>
+<option value="lenart-v-slovenskih-goricah">Lenart v Slovenskih goricah</option>
+<option value="lendava">Lendava</option>
+<option value="litija">Litija</option>
+<option value="ljubljana" selected>Ljubljana</option>
+<option value="ljutomer">Ljutomer</option>
+<option value="logatec">Logatec</option>
+<option value="maribor">Maribor</option>
+<option value="medvode">Medvode</option>
+<option value="menges">Mengeš</option>
+<option value="metlika">Metlika</option>
+<option value="mezica">Mežica</option>
+<option value="murska-sobota">Murska Sobota</option>
+<option value="nova-gorica">Nova Gorica</option>
+<option value="novo-mesto">Novo mesto</option>
+<option value="ormoz">Ormož</option>
+<option value="piran">Piran</option>
+<option value="postojna">Postojna</option>
+<option value="prevalje">Prevalje</option>
+<option value="ptuj">Ptuj</option>
+<option value="radece">Radeče</option>
+<option value="radovljica">Radovljica</option>
+<option value="ravne-na-koroskem">Ravne na Koroškem</option>
+<option value="ribnica">Ribnica</option>
+<option value="rogaska-slatina">Rogaška Slatina</option>
+<option value="ruse">Ruše</option>
+<option value="sempeter-pri-gorici">Šempeter pri Gorici</option>
+<option value="sentjur">Šentjur</option>
+<option value="sevnica">Sevnica</option>
+<option value="sezana">Sežana</option>
+<option value="skofja-loka">Škofja Loka</option>
+<option value="slovenj-gradec">Slovenj Gradec</option>
+<option value="slovenska-bistrica">Slovenska Bistrica</option>
+<option value="slovenske-konjice">Slovenske Konjice</option>
+<option value="sostanj">Šoštanj</option>
+<option value="tolmin">Tolmin</option>
+<option value="trbovlje">Trbovlje</option>
+<option value="trebnje">Trebnje</option>
+<option value="trzic">Tržič</option>
+<option value="velenje">Velenje</option>
+<option value="visnja-gora">Višnja Gora</option>
+<option value="vrhnika">Vrhnika</option>
+<option value="zagorje-ob-savi">Zagorje ob Savi</option>
+<option value="zalec">Žalec</option>
+<option value="zelezniki">Železniki</option>
+<option value="ziri">Žiri</option>
+<option value="zrece">Zreče</option></select><span id="city-zone">Europe/Ljubljana</span>
 </div>
 </div>
-    <details class="weather-details" id="city-weather"><summary><span class="weather-icon" id="weather-icon" aria-hidden="true"><svg class="weather-loading" viewbox="0 0 100 100"><circle cx="50" cy="50" r="23" fill="none" stroke="#dce7f2" stroke-width="4"></circle><path d="M50 27a23 23 0 0 1 23 23" fill="none" stroke="#7195bb" stroke-width="4" stroke-linecap="round"></path></svg></span><span class="weather-summary"><b id="weather-label">Vreme · Ljubljana</b><small id="weather-description">Pridobivamo napoved …</small></span><strong id="weather-temperature">—</strong><svg class="ui-icon icon-chevron-right" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></summary><div id="weather-more"><p class="muted">Modelna napoved: MET Norway. Fotografija prikazuje mesto, ne trenutnega vremena.</p></div></details>
-    <div class="weather-source">
-<span class="status-dot" aria-hidden="true"></span><div>
-<small id="weather-updated" role="status">Povezujemo se z vremenskim virom …</small><small id="weather-published">Modelna napoved · MET Norway</small>
+<details class="weather-details" id="city-weather"><summary><span class="weather-icon" id="weather-icon"><svg class="ui-icon icon-sun" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" fill="#f8e8bd" stroke="#ac7715"></circle><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" stroke="#ac7715"></path></svg></span><span class="weather-summary"><b id="weather-label">Vreme · Ljubljana</b><small id="weather-description">Pridobivamo napoved …</small></span><strong id="weather-temperature">—</strong><svg class="ui-icon icon-chevron-right" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></summary><div id="weather-more"><p class="muted">Napoved se pridobiva iz vira MET Norway.</p></div></details>
+<div class="weather-source">
+<span class="status-dot" aria-hidden="true"></span><small id="weather-updated" role="status">Povezujemo se z vremenskim virom …</small>
 </div>
-<button type="button" id="weather-refresh" aria-label="Osveži vremensko napoved" title="Osveži napoved"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"></path><path d="M6.1 6.5A8 8 0 0 1 20 12M4 12a8 8 0 0 0 13.9 5.5"></path></svg></button>
-</div>
-    <a class="line-link" href="/godovi/"><span><svg class="ui-icon icon-person" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="7" r="3.5"></circle><path d="M4 21v-2a8 8 0 0 1 16 0v2M4 21h16"></path></svg> Godovi danes</span><svg class="ui-icon icon-chevron-right" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a>
-    <a class="card-credit" href="/fotografije-in-licence/">Fotografije, vremenski vir in licence</a>
-  </div>
-</section>
+<a class="line-link" href="/godovi/"><span><svg class="ui-icon icon-person" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="7" r="3.5"></circle><path d="M4 21v-2a8 8 0 0 1 16 0v2M4 21h16"></path></svg> Godovi danes</span><svg class="ui-icon icon-chevron-right" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7"></path></svg></a>
+<a class="card-credit" href="/fotografije-in-licence/">Fotografije, vremenski vir in licence</a></section>
 <!-- END app/views/pages/_city_card.html.erb -->
 <section class="panel"><h2>
 <svg class="ui-icon icon-calendar" viewbox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4.5" width="18" height="17" rx="2"></rect><path d="M7 2v5m10-5v5M3 10h18"></path><path d="M7 14h2m3 0h2M7 18h2m3 0h2"></path><rect x="16" y="16" width="3" height="3" rx=".5" fill="#cd3044" stroke="none"></rect></svg> Prihajajoči prazniki</h2>

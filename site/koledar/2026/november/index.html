@@ -27,17 +27,18 @@
 <meta name="twitter:image" content="https://koledar365.si/druzabno/pages/335/44c88695a74bc4f4d68d.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl"},{"@type":"WebPage","@id":"https://koledar365.si/koledar/2026/november/#webpage","url":"https://koledar365.si/koledar/2026/november/","name":"Koledar – november 2026","description":"Slovenski koledar za november 2026: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.","inLanguage":"sl","isPartOf":{"@id":"https://koledar365.si/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://koledar365.si/"},{"@type":"ListItem","position":2,"name":"Letni koledarji","item":"https://koledar365.si/koledar/"},{"@type":"ListItem","position":3,"name":"Koledar – november 2026","item":"https://koledar365.si/koledar/2026/november/"}]}]}</script>
 
+<meta name="csp-nonce" content="2Y30Znn482WCFbG1/ysE/eFZduZuu/8o">
 <link rel="stylesheet" href="/assets/application-e12463e6.css">
 <link rel="stylesheet" href="/assets/experience-b5e27fe8.css">
 <link rel="stylesheet" href="/assets/slovenia-6c23c5bf.css">
 
 
 
-<link rel="stylesheet" href="/assets/calendar_gallery-ed40aab4.css">
+
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
-<script type="module" src="/free/client-70a41d40ffe068f9.js"></script>
+<script type="module" src="/free/client.js"></script>
 </head>
-<body>
+<body class="">
 <a class="skip" href="#vsebina">Na vsebino</a>
 <header class="topbar"><a class="brand" href="/" aria-label="Koledar365 – domov"><span class="brand-symbol"><svg viewbox="0 0 40 40" aria-hidden="true"><rect x="5" y="7" width="30" height="29" rx="6" fill="#08264d"></rect><rect x="9" y="15" width="22" height="17" rx="2" fill="white"></rect><path d="M13 5v6m14-6v6" stroke="#08264d" stroke-width="4" stroke-linecap="round"></path><path d="M11 9h18" stroke="#408dff" stroke-width="2"></path><rect x="23" y="19" width="5" height="5" rx="1.4" fill="#ff334e"></rect></svg></span> Koledar<span>365</span></a>
 <nav aria-label="Glavna navigacija"><a href="/koledar/">Koledar</a><a href="/prazniki/">Prazniki</a><a href="/solske-pocitnice/">Šolske počitnice</a><a href="/koledar-z-imenom/">Imena</a></nav>
@@ -55,8 +56,11 @@
 <p>Slovenski koledar za november 2026: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.</p>
 </div>
 <!-- BEGIN app/views/pages/_calendar.html.erb
--->  <section class="panel">
-    <!-- BEGIN app/views/pages/_calendar_controls.html.erb
+-->
+  <section class="panel gallery-context " aria-label="Koledarski pregled">
+
+    <div class="context-content" id="gallery-context-content">
+      <!-- BEGIN app/views/pages/_calendar_controls.html.erb
 --><div class="calendar-title">
 <div class="actions">
 <a class="button square" href="/?date=2026-10-01&amp;month=10&amp;view=month&amp;year=2026" aria-label="Prejšnji mesec">‹</a><h2>November 2026</h2>
@@ -85,7 +89,8 @@
 </form>
 </div>
 <!-- END app/views/pages/_calendar_controls.html.erb -->
-    <!-- BEGIN app/views/pages/_calendar_view.html.erb
+      <div class="calendar-context-view" tabindex="0" role="region" aria-label="Datumi in prazniki">
+<!-- BEGIN app/views/pages/_calendar_view.html.erb
 --><!-- BEGIN app/views/pages/_month.html.erb
 --><div class="month-block ">
 
@@ -293,13 +298,15 @@
 </div>
 <!-- END app/views/pages/_month.html.erb -->
 <!-- END app/views/pages/_calendar_view.html.erb -->
-    <div class="actions">
-      <button data-print>Natisni</button>
-      <a class="button" href="/koledar-za-tiskanje/?date=2026-11-01&amp;month=11&amp;type=monthly&amp;year=2026">Prenesi PDF in WebP</a>
-      <a href="/koledar/2026/">Letni pregled</a>
+</div>
+      <div class="actions context-actions">
+        <button data-print>Natisni</button>
+        <a class="button" href="/koledar-za-tiskanje/">15 predlog za prenos</a>
+        <a href="/koledar/2026/">Letni pregled</a>
+      </div>
+<nav class="actions context-month-navigation" aria-label="Sosednja meseca"></nav>
     </div>
   </section>
-<nav class="actions"></nav>
 
 <!-- END app/views/pages/_calendar.html.erb -->
 

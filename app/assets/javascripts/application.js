@@ -74,3 +74,19 @@ $$('[data-calendar-gallery]').forEach(gallery=>{
   gallery.querySelector('[data-gallery-count]').textContent=cards.filter(card=>!card.hidden).length+' / '+cards.length+' predlog';
  }));
 });
+
+// Expanding context keeps every design available and preserves all form values.
+$$('[data-download-workspace]').forEach(workspace=>{
+ const button=workspace.querySelector('[data-context-expand]');if(!button)return;
+ const content=workspace.querySelector('#gallery-context-content'),mobile=window.matchMedia('(max-width:650px)');
+ const syncContext=()=>{content.hidden=mobile.matches&&!workspace.classList.contains('context-expanded')};
+ syncContext();mobile.addEventListener('change',syncContext);
+ button.hidden=false;
+ button.addEventListener('click',()=>{
+  const expanded=workspace.classList.toggle('context-expanded');
+  button.setAttribute('aria-expanded',String(expanded));syncContext();
+  button.replaceChildren(document.createTextNode(expanded?'Nazaj k galeriji':button.dataset.expandLabel));
+  const arrow=document.createElement('span');arrow.setAttribute('aria-hidden','true');arrow.textContent=expanded?'↙':'↗';button.append(arrow);
+  if(!expanded)workspace.scrollIntoView({block:'start',behavior:'auto'});
+ });
+});

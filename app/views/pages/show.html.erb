@@ -4,7 +4,7 @@
 <% elsif %w[about privacy cookie_policy holidays observance].include?(@section) %>
 <%= render @section %>
 <% else %>
-<div class="page-heading"><span class="eyebrow">KOLEDAR365 · SLOVENIJA</span><h1><%= @title %></h1><% unless @section=='events' && TopicContent.find(page_path.split('/').last) %><p><%= @description %></p><% end %></div>
+<div class="page-heading"><span class="eyebrow">KOLEDAR365 · SLOVENIJA</span><h1><%= @title %></h1><% unless @section=='events' && TopicContent.find(page_path.split('/').last) %><p><%= gallery_page? ? gallery_description : @description %></p><% end %></div>
 <%= render @section %>
 <% end %>
 

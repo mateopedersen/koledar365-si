@@ -6,8 +6,6 @@
   Cache-Control: public, max-age=0, must-revalidate
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
-/free/client-70a41d40ffe068f9.js
-  Cache-Control: public, max-age=31536000, immutable
 /free/engine/*
   Cache-Control: public, max-age=31536000, immutable
 /prenosi/*

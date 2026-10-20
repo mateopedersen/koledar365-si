@@ -3,7 +3,7 @@ require 'nokogiri';require 'json';require 'pathname';require 'uri';require 'set'
 root=Pathname.new(File.expand_path('..',__dir__));site=root.join('site');issues=[];targets=Set.new;html_count=0;indexable=0
 catalog=JSON.parse(site.join('free/catalog.json').read)
 months=%w[januar februar marec april maj junij julij avgust september oktober november december]
-calendar_galleries=0
+calendar_galleries=0;gallery_pages=0;gallery_families=Hash.new(0)
 Dir[site.join('**/*.html')].sort.each do |file|
  relative=Pathname.new(file).relative_path_from(site).to_s;next if relative.start_with?('free/')
  doc=Nokogiri::HTML(File.read(file));html_count+=1
@@ -17,6 +17,13 @@ Dir[site.join('**/*.html')].sort.each do |file|
   fail_with.call('Canonical must use the production origin') unless canonical.start_with?('https://koledar365.si/')
  end
  fail_with.call('Server-only form or CSRF material leaked into static output') if doc.at_css('meta[name=csrf-token],input[name=authenticity_token]')
+ if (gallery=doc.at_css('[data-calendar-gallery],.design-section'))
+  gallery_pages+=1;family=gallery['data-gallery-type'] || JSON.parse(gallery['data-export-options']).fetch('type');gallery_families[family]+=1
+  fail_with.call('Gallery must share a workspace with its calendar or settings') unless doc.at_css('body.gallery-page .download-workspace > .gallery-context #gallery-context-content') && gallery.ancestors.any? { |parent|parent['class'].to_s.split.include?('download-workspace') }
+  fail_with.call('Gallery must stay open and contain all 15 designs') unless gallery.css('[data-calendar-design],.design-card').size==15 && !gallery.ancestors.any? { |parent|parent.name=='details'||parent.key?('hidden') }
+  fail_with.call('Expected one practical download paragraph and an accessible context control') unless doc.css('.page-heading > p').size==1 && doc.at_css('.page-heading > p').text.include?('600 ppi') && doc.at_css('[data-context-expand][aria-expanded=false][aria-controls=gallery-context-content]')
+  fail_with.call('Gallery layout stylesheet is missing') unless doc.css('link[rel=stylesheet]').any? { |node|node['href'].include?('calendar_gallery-') }
+ end
  if (period=relative.match(%r{\Akoledar/(202[7-9]|2030)/(?:([a-z]+)/)?index\.html\z}))
   year=period[1].to_i;month=period[2] && months.index(period[2]).to_i+1;type=month ? 'monthly':'annual'
   gallery=doc.at_css('#calendar-designs[data-calendar-gallery]');calendar_galleries+=1
@@ -56,5 +63,5 @@ sitemap_paths.each do |url|
  end
 end
 issues << {path:'/koledar/',issue:'Expected inline galleries on all four years and 48 months'} unless calendar_galleries==52
-record={checked_at:Time.now.utc.iso8601,html:html_count,indexable:indexable,internal_targets:targets.size,sitemap_urls:sitemap_paths.size,calendar_galleries:calendar_galleries,passed:issues.empty?,issues:issues}
+record={checked_at:Time.now.utc.iso8601,html:html_count,indexable:indexable,internal_targets:targets.size,sitemap_urls:sitemap_paths.size,calendar_galleries:calendar_galleries,gallery_pages:gallery_pages,gallery_families:gallery_families,passed:issues.empty?,issues:issues}
 root.join('evidence/static-audit.json').write(JSON.pretty_generate(record));puts record.except(:issues).to_json;puts issues.first(30).to_json unless issues.empty?;exit(issues.empty? ? 0:1)
