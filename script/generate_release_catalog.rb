@@ -47,7 +47,8 @@ entries.each_with_index do |raw,i|
   rescue => error
     rows << {options:options,fingerprint:fingerprint,status:'failed',error:error.message}
   end
-  report_path.write(JSON.pretty_generate({template_version:PrintCatalog::VERSION,shard:index,shards:shards,expected:entries.size,completed:rows.size,results:rows}))
+  temporary=Pathname.new(report_path.to_s+'.tmp')
+  temporary.write(JSON.pretty_generate({template_version:PrintCatalog::VERSION,shard:index,shards:shards,expected:entries.size,completed:rows.size,results:rows}));File.rename(temporary,report_path)
   puts "#{index}: #{i+1}/#{entries.size} #{raw.values.join(' ')} #{rows.last[:status]}";STDOUT.flush
 end
 exit(rows.any? { |row|row[:status]!='passed' } ? 1:0)

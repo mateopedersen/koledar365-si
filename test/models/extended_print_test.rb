@@ -1,5 +1,6 @@
 require 'test_helper'
 class ExtendedPrintTest < ActiveSupport::TestCase
+ setup { FileUtils.mkdir_p(Rails.root.join('tmp')) }
  test 'annual lunar output includes all days once and every phase month' do
   options=PrintCatalog.normalize(type:'lunar',lunar_scope:'year',year:2028,design:'min-01')
   assert_equal '2028',PrintCatalog.identity(options)['period']
