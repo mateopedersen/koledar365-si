@@ -22,10 +22,10 @@ transform=lambda do |body,path,indexable:true|
  doc.css('[nonce]').each { |node|node.remove_attribute('nonce') }
  # One cached stylesheet on internal pages; the home screen renders immediately
  # with its complete CSS in the document, before any image or script completes.
- links=doc.css('link[rel="stylesheet"][href^="/assets/"]')
+ links=doc.css('link[rel="stylesheet"][href^="/"]')
  unless links.empty?
   key=links.map { |node|node['href'] }.join('|')
-  styles=style_sets[key] ||= links.map { |node|out.join(node['href'].delete_prefix('/')).read }.join("\n")
+  styles=style_sets[key] ||= links.map { |node|out.join(node['href'].split('?',2).first.delete_prefix('/')).read }.join("\n")
   if path=='/'
    style=Nokogiri::XML::Node.new('style',doc);style['data-page-styles']='home';style.content=styles;links.first.add_previous_sibling(style)
   else

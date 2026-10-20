@@ -161,3 +161,5 @@
 .download-workspace .calendar-context .calendar .outside-date{color:#626e80;opacity:1}
 .calendar-gallery-heading .eyebrow,.calendar-gallery-toolbar>[data-gallery-count],.calendar-design-info h3>span,.design-card .design-number{color:#526174}
 @media(max-width:650px){.download-workspace:not(.context-expanded) .context-content{display:none!important}}
+
+.download-workspace .context-content>a:not(.button){display:inline-flex;align-items:center;min-height:28px;margin-top:4px}

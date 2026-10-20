@@ -179,3 +179,5 @@ a{color:#0054b8}
 .left-panel .check{min-height:28px;align-items:center}
 .left-panel .check input{width:18px;height:18px}
 .date-check small,.date-shortcuts>span,.date-submit-row>span,.date-guide__eyebrow,.date-related a>span,.date-hint,.date-weekdays small{color:#526174}
+
+main :where(p,li,dd,figcaption) a:not(.button):not(.card-credit){text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}

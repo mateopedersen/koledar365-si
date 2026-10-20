@@ -5,12 +5,14 @@ Bu dosya birincil devam kaydıdır; önceki çalışma günlüğü docs/status-h
 
 ## PageSpeed ve erişilebilirlik — devam ediyor
 
-- Mobil PageSpeed başlangıcı: 95 performans / 94 erişilebilirlik / 100 en iyi uygulamalar / 100 SEO. Gerçek rapor: https://pagespeed.web.dev/analysis/https-koledar365-si/gmd1vmgtnk?form_factor=mobile . Anahtarsız Google API günlük kotası 0 dönüyor; web arayüzü çalışıyor.
-- Çalışma dalı `improve-pagespeed-accessibility`. Bu optimizasyonlar henüz canlıya yayımlanmadı. 69 gerçek şehir fotoğrafı için içerik özetli AVIF/WebP boyutları hazır; özgün lisanslı JPG'ler korunur. Ana sayfa CSS'i ilk HTML'de, iç sayfalarda tek önbellekli CSS varlığı; başlangıçtaki assets.json beklemesi kaldırıldı. Takvim bağlantıları 24 px hedef alanı ve daha yüksek kontrast alır.
-- Cloudflare zone RUM ayarı AB dışı ziyaretçilere otomatik betik ekliyordu; Disable seçilip Update kaydedildi. Canlı HTML'de beacon.min.js artık yok. Pages Web Analytics zaten kapalıydı; CSP gevşetilmedi.
-- İlk yerel mobil Lighthouse 13.5.0: 100 performans / 97 erişilebilirlik / 100 en iyi uygulamalar / 100 SEO; CLS 0. Kalan hava durumu metin rengi düzeltildi. Tüm kategoriler ve sayfa türleri için ölçüm devam ediyor; ölçülmemiş URL'ler 100 diye kabul edilmez.
-- Yerel statik deneme: http://127.0.0.1:3655/ (tmp/qa/perf-site ve kaynak/public/site yedeği), `tmp/qa/rebuild_perf.sh`. Ölçüm: `tmp/qa/run_audits.py`, raporlar `tmp/qa/pagespeed/templates-round-1/`; çalışan ana süreç session 50542. İki QA sunucusu yalnız bu işe ait: 3654 ve 3655; asıl 3650 sunucusu korunur.
-- Sonraki işler: sayfa türleri ve 52 dönem için mobil/masaüstü ölçümleri, kalan kontrast/işlev hatalarını giderme, tüm yayımlı URL'lerin denetimi, kaynakları ana dala taşıma, tam Ruby üretimi/Cloudflare yayını, gerçek PageSpeed'de mobil ve masaüstü son ölçüm ve kanıtları kaydetme.
+- Kaynak optimizasyonu yerel `582a7c76f2` commitinde; güncel `origin/main` (okul ve üniversite takvimleri + tarih hesaplayıcı rengi) `856fc5dd1f` ile korunarak birleştirildi. Henüz bu optimizasyon canlı değil.
+- Gerçek mobil başlangıç: 95 / 94 / 100 / 100. Google raporu: https://pagespeed.web.dev/analysis/https-koledar365-si/gmd1vmgtnk?form_factor=mobile . Anahtarsız PSI API kota 0; web arayüzü çalışır.
+- 69 şehir + 58 özel gün fotoğrafı için 856 içerik özetli AVIF/WebP web kopyası üretildi. Özgün lisanslı fotoğraflar, PDF/WebP 600 ppi katalog baytları korunur. Şehir fotoğrafında 256 KB JPG yerine uygun AVIF örneği 42 KB.
+- Ana sayfa CSS'i HTML'de; iç sayfalarda tek CSS. assets.json başlangıç beklemesi kaldırıldı. Gerçek başlangıç hatasına neden olan TDZ düzeltildi; istemci hazırlığı tüm tanımlardan sonra başlar. Mobil galeri içeriği CSS ile ilk boyamada kararlı; no-JS yedeği korunur. Kontrast ve dokunma hedefleri düzeltildi.
+- Cloudflare zone RUM otomatik betik ekliyordu; Disable + Update kaydedildi ve yeniden yüklemede Disable=1 doğrulandı. Canlı HTML'de beacon yok; CSP gevşetilmedi.
+- Yerel ilk tur 26 Lighthouse raporu: `tmp/qa/pagespeed/templates-round-1/`. İkinci tur mobilde aylık/yıllık/isim/boş/ay/tatil detayı/hakkında/gizlilik türlerinde erişilebilirlik 100 oldu. Bazı ölçümler yerel HTTP sunucusunun dar bağlantı kuyruğundan reset aldı; bu sunucu 128 kuyrukla düzeltildi. Ham raporlar saklandı; 100 olmayan ölçümler gizlenmez.
+- İkinci tur durduruldu; son kaynaklar ve yeni ana dal birleşimi için tam Ruby üretimi çalışıyor: session 27477, `tmp/qa/pagespeed/full-build.log`; Rails testleri session 36482, `tmp/qa/pagespeed/rails-tests.log`. Geliştirme DB'si `tmp/qa/pre-performance-development.sqlite3` yedeği alındı. Mevcut 3650 sunucusu korunur. Yeni QA gzip sunucusu 3655 session 50762; 3654 eski QA sunucusu da yalnız bu işe aittir.
+- Sıradaki: tam üretimin/testlerin sonucunu denetle; son çıktıyı mobil/masaüstü ve bütün sayfa aileleri/52 dönem için ölç; kalan gerçek sorunları düzelt; kaynakları yayınla ve Cloudflare sonrasında resmi PSI + tüm URL/varlık taramasıyla doğrula. Henüz bütün URL'ler 100 olarak raporlanamaz.
 
 ## Aylık takvim metinleri — canlıda doğrulandı
 

@@ -4,7 +4,7 @@
     <div><span class="eyebrow">ZBIRKA ZA TISKANJE</span><h2 id="calendar-gallery-title"><%= period.capitalize %>: 15 predlog</h2></div>
     <span class="calendar-gallery-quality"><%= ui_icon('print') %><span>A4 · Pokončno<small>Podpis Koledar365 na vsaki strani</small></span></span>
   </header>
-  <div class="calendar-gallery-toolbar" data-gallery-filters hidden>
+  <div class="calendar-gallery-toolbar" data-gallery-filters>
     <div class="calendar-gallery-filters" role="group" aria-label="Barve predlog">
       <button type="button" data-gallery-filter="all" aria-pressed="true">Vse predloge</button>
       <button type="button" data-gallery-filter="color" aria-pressed="false">Barvne</button>
@@ -12,6 +12,7 @@
     </div>
     <span data-gallery-count role="status">15 predlog</span>
   </div>
+  <noscript><style>.calendar-gallery-toolbar{display:none!important}</style></noscript>
   <div class="calendar-gallery-grid">
     <% rows.each_with_index do |row, index| %>
       <% design = row.fetch('design'); files = row.fetch('files'); pages = row.fetch('page_count'); zipped = files.fetch('webp').end_with?('.zip') %>
