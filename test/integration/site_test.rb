@@ -7,6 +7,7 @@ class SiteTest < ActionDispatch::IntegrationTest
     assert_select 'h1',count:1
     assert_select 'table.calendar'
     assert_select 'a[href="/koledar/2030/"]'
+    assert_select 'link[rel="preload"][as="image"][type="image/avif"][imagesrcset][imagesizes][fetchpriority="high"]'
     refute_includes response.body,'Sestanek'
   end
   test 'all 48 monthly calendar routes render correct headings' do
