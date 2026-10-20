@@ -4,7 +4,7 @@ set -euo pipefail
 git config user.name 'Koledar365 publication'
 git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
 for attempt in 1 2 3; do
-  git add site functions/cities.js public/horoscope/daily.json data/editorial/horoscopes.json
+  git add site functions/cities.js public/horoscope/daily.json data/editorial/horoscopes.json data/editorial/pages.json
   if git diff --cached --quiet; then exit 0; fi
   git commit -m 'Publish verified calendar and dated editorial content'
   if git push origin HEAD:main; then exit 0; fi
