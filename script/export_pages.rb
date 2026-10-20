@@ -5,7 +5,12 @@ require 'digest'
 ENV['OPERATOR_CONTACT']='koledar365@gmail.com'
 out=Rails.root.join(ENV.fetch('STATIC_OUT','site'));FileUtils.mkdir_p(out)
 partial=ENV['STATIC_ONLY']&.split(',')
-FileUtils.cp_r(Rails.root.join('public/.'),out) unless partial
+unless partial
+ # These generated atlases and photo variants must mirror their source directories.
+ # Retaining superseded variants would eventually exceed the Pages Free file limit.
+ %w[lunar/atlas images/responsive].each { |relative| FileUtils.rm_rf(out.join(relative)) }
+ FileUtils.cp_r(Rails.root.join('public/.'),out)
+end
 FileUtils.mkdir_p(out.join('free/views/home'));FileUtils.mkdir_p(out.join('free/names'))
 FileUtils.cp_r(Rails.root.join('cloudflare/free/.'),out.join('free'))
 FileUtils.rm_f(out.join('free/README.md'))

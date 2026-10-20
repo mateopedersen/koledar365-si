@@ -4,7 +4,7 @@ if(root){
  const gen=['januarja','februarja','marca','aprila','maja','junija','julija','avgusta','septembra','oktobra','novembra','decembra'];
  const label=d=>{const [y,m,day]=d.split('-').map(Number);return `${day}. ${gen[m-1]} ${y}`};
  const percent=d=>new Intl.NumberFormat('sl-SI',{minimumFractionDigits:1,maximumFractionDigits:1}).format(d.illuminationFraction*100)+'\u00a0%';
- const moon=(svg,date,alt)=>{const i=(Number(date.slice(-2))-1)%7;svg.setAttribute('viewBox',`${i%3*768} ${Math.floor(i/3)*768} 768 768`);svg.querySelector('image').setAttribute('href',`/lunar/atlas/${date.slice(0,7)}-${Math.floor((Number(date.slice(-2))-1)/7)+1}.webp`);svg.setAttribute('aria-label',alt)};
+ const moon=(svg,date,alt)=>{const i=Number(date.slice(-2))-1;svg.setAttribute('viewBox',`${i%6*768} ${Math.floor(i/6)*768} 768 768`);svg.querySelector('image').setAttribute('href',`/lunar/atlas/${date.slice(0,7)}-1.webp`);svg.setAttribute('aria-label',alt)};
  const event=e=>`${e.phaseNameSl} · ${label(e.localDate)} ob ${e.localTime.replace(':','.')} (UTC${e.localDateTime.slice(-6)})`;
  root.querySelector('.lunar-print')?.addEventListener('click',()=>window.print());
  root.querySelector('#lunar-phase-filter')?.addEventListener('change',e=>root.querySelectorAll('[data-phase]').forEach(r=>{r.hidden=e.target.value!=='all'&&r.dataset.phase!==e.target.value}));

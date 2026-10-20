@@ -20,29 +20,24 @@ for source in sorted((PUBLIC / "images").rglob("*")):
         image = image.convert("RGBA" if "A" in image.getbands() else "RGB")
         largest = min(image.width, 960)
         variants = []
-        for width in sorted({w for w in (320, 480, 640, 800, largest) if w <= largest}):
-            # The city card displays a wide, centre-cropped photo in every layout.
+        for width in (largest,):
+            # One high-quality AVIF per source keeps the Pages Free asset count bounded.
+            # The original image remains the broadly compatible fallback.
             height = round(width / 2)
             resized = ImageOps.fit(image, (width, height), Image.Resampling.LANCZOS)
-            temporary = OUT / ".image.webp"
-            resized.save(temporary, "WEBP", quality=72, method=6, exact=True)
-            digest = hashlib.sha256(temporary.read_bytes()).hexdigest()[:16]
-            destination = OUT / f"{source.stem}-{width}-{digest}.webp"
-            temporary.replace(destination)
-            used.add(destination)
             avif_temporary = OUT / ".image.avif"
             resized.save(avif_temporary, "AVIF", quality=45, speed=6)
             avif_digest = hashlib.sha256(avif_temporary.read_bytes()).hexdigest()[:16]
             avif_destination = OUT / f"{source.stem}-{width}-{avif_digest}.avif"
             avif_temporary.replace(avif_destination)
             used.add(avif_destination)
-            variants.append({"src": "/" + str(destination.relative_to(PUBLIC)), "avif": "/" + str(avif_destination.relative_to(PUBLIC)), "width": width, "height": height, "bytes": destination.stat().st_size, "avif_bytes": avif_destination.stat().st_size})
+            variants.append({"avif": "/" + str(avif_destination.relative_to(PUBLIC)), "width": width, "height": height, "avif_bytes": avif_destination.stat().st_size})
         images["/" + str(source.relative_to(PUBLIC))] = {
             "source_sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
-            "src": variants[-1]["src"],
-            "srcset": ", ".join(f"{v['src']} {v['width']}w" for v in variants),
+            "src": "/" + str(source.relative_to(PUBLIC)),
+            "srcset": "/" + str(source.relative_to(PUBLIC)) + f" {image.width}w",
             "avif_srcset": ", ".join(f"{v['avif']} {v['width']}w" for v in variants),
-            "width": variants[-1]["width"], "height": variants[-1]["height"],
+            "width": image.width, "height": image.height,
             "variants": variants,
         }
 # Holiday photographs keep their complete composition and existing WebP fallback.
@@ -51,7 +46,7 @@ for photo in json.loads((ROOT / "data/holiday_photos_sl.json").read_text())["pho
     with Image.open(source) as original:
         image = ImageOps.exif_transpose(original).convert("RGB")
         variants = []
-        for width in sorted({min(image.width, w) for w in (480, 800, 1280)}):
+        for width in (min(image.width, 1280),):
             height = round(width * image.height / image.width)
             resized = image.resize((width, height), Image.Resampling.LANCZOS)
             temporary = OUT / ".holiday.avif"

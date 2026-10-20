@@ -8,7 +8,9 @@
   Cache-Control: public, max-age=31536000, immutable
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
-/free/client-70a41d40ffe068f9.js
+/images/responsive/*
+  Cache-Control: public, max-age=31536000, immutable
+/free/client-c7e86c9d6ffb1e57.js
   Cache-Control: public, max-age=31536000, immutable
 /free/engine/*
   Cache-Control: public, max-age=31536000, immutable
