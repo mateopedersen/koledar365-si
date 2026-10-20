@@ -29,6 +29,15 @@ module SeoHelper
     rows
   end
 
+  def date_calculator_faq
+    [
+      ["Kako izračunam število dni med datumoma?", "Vnesite začetni in končni datum ter izberite »Razlika med datumoma«. Rezultat pokaže skupno število koledarskih dni, tedne in preostale dni. Če vključite oba izbrana dneva, se všteta tudi začetni in končni datum."],
+      ["Kako kalkulator prišteje mesece?", "Meseci se prištevajo po koledarju. Če ciljni mesec nima izbranega dne, kalkulator uporabi zadnji dan ciljnega meseca. Tako se 31. januar pri prištevanju enega meseca premakne na zadnji dan februarja."],
+      ["Kako se štejejo delovni dnevi v Sloveniji?", "V načinu »Delovni dnevi« izberete dneve tedna, dnevne ure in ali naj kalkulator izloči zakonsko dela proste praznike. Podatki za praznike so na voljo za leta 2027–2030."],
+      ["Ali lahko rezultat delim?", "Da. Gumb »Kopiraj povezavo« ustvari povezavo z izbranimi datumi in nastavitvami. Za datumske izračune račun ni potreben."]
+    ]
+  end
+
   def structured_data
     return nil if @not_found || controller_name.in?(%w[admin exports]) || action_name == "search"
     graph = [
@@ -52,6 +61,19 @@ module SeoHelper
       graph << { "@type" => "BreadcrumbList", "itemListElement" => breadcrumbs.each_with_index.map { |(name, path), i|
         { "@type" => "ListItem", "position" => i + 1, "name" => name, "item" => "#{site_origin}#{path}" }
       } }
+    end
+    if page_path == "/datumski-kalkulator/"
+      graph << { "@type" => "WebApplication", "@id" => "#{canonical_url}#application",
+        "name" => @title, "url" => canonical_url, "description" => @description,
+        "applicationCategory" => "UtilitiesApplication", "operatingSystem" => "Any",
+        "isAccessibleForFree" => true, "inLanguage" => "sl",
+        "featureList" => ["Razlika med datumoma", "Prištevanje in odštevanje dni, tednov in mesecev",
+          "Štetje delovnih dni in slovenskih praznikov", "Deljiva povezava do nastavitev"] }
+      graph << { "@type" => "FAQPage", "@id" => "#{canonical_url}#faq",
+        "mainEntity" => date_calculator_faq.map { |question, answer|
+          { "@type" => "Question", "name" => question,
+            "acceptedAnswer" => { "@type" => "Answer", "text" => answer } }
+        } }
     end
     { "@context" => "https://schema.org", "@graph" => graph }
   end
