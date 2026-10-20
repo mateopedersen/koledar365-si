@@ -27,7 +27,7 @@
 <meta name="twitter:image" content="https://koledar365.si/images/observances/pust.webp">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl"},{"@type":"WebPage","@id":"https://koledar365.si/prazniki/2030/#webpage","url":"https://koledar365.si/prazniki/2030/","name":"Prazniki in dela prosti dnevi 2030","description":"Prazniki v Sloveniji za leto 2030, z datumi in dnevi v tednu. Jasna ločitev državnih praznikov in zakonskih dela prostih dni.","inLanguage":"sl","isPartOf":{"@id":"https://koledar365.si/#website"},"primaryImageOfPage":{"@id":"https://koledar365.si/images/observances/pust.webp#image"}},{"@type":"ImageObject","@id":"https://koledar365.si/images/observances/pust.webp#image","contentUrl":"https://koledar365.si/images/observances/pust.webp","caption":"Kurenti na Kurentovanju na Ptuju, 2019.","width":1280,"height":854,"creditText":"Aleš Kravos","license":"https://creativecommons.org/licenses/by-sa/4.0","acquireLicensePage":"https://commons.wikimedia.org/wiki/File:Ale%C5%A1_Kravos_Kurentovanje_Ptuj_2019.jpg"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://koledar365.si/"},{"@type":"ListItem","position":2,"name":"Prazniki in dela prosti dnevi","item":"https://koledar365.si/prazniki/"},{"@type":"ListItem","position":3,"name":"Prazniki in dela prosti dnevi 2030","item":"https://koledar365.si/prazniki/2030/"}]}]}</script>
 
-<link rel="stylesheet" href="/assets/web-859e27cce2ae43d7.css">
+<link rel="stylesheet" href="/assets/web-157ab5b5d648c27a.css">
 
 
 
@@ -2481,7 +2481,7 @@
     <div class="cookie-bar-copy">
       <span class="cookie-bar-eyebrow">Vaša zasebnost</span>
       <h2 id="cookie-title">Vi odločate, kaj si zapomnimo.</h2>
-      <p id="cookie-intro">Koledar za delovanje uporablja nujno hrambo. Z vašim dovoljenjem si do 180 dni zapomnimo izbrano mesto za fotografijo in vreme ob naslednjem obisku. Upravljavec je Mateo Pedersen. Analitike in oglasnih sledilnikov ne uporabljamo. <a href="/piskotki/">Kako uporabljamo hrambo</a></p>
+      <p id="cookie-intro">Koledar uporablja nujno hrambo. Z vašim dovoljenjem do 180 dni shranimo izbrano mesto za lokalni čas in vreme. Analitike in oglasnih sledilnikov ne uporabljamo. <a href="/piskotki/">Podrobnosti</a></p>
     </div>
     <div class="cookie-actions" role="group" aria-label="Izbira nastavitev zasebnosti">
       <button type="button" data-consent="necessary"><svg class="ui-icon icon-shield" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#shield"></use></svg> Ne shrani mesta</button>
@@ -2512,6 +2512,21 @@
   </details>
   <output id="cookie-status" role="status"></output>
 </section>
+<script>
+(()=>{
+  const bar=document.getElementById('cookies');
+  if(!bar)return;
+  let hasValidChoice=false;
+  try{
+    const choice=JSON.parse(localStorage.getItem('k365.consent')||'null');
+    hasValidChoice=choice?.version===2&&Number.isFinite(choice.expiresAt)&&choice.expiresAt>Date.now();
+  }catch{}
+  if(!hasValidChoice){
+    bar.hidden=false;
+    document.documentElement.style.setProperty('--cookie-space',`${bar.getBoundingClientRect().height}px`);
+  }
+})();
+</script>
 <!-- END app/views/layouts/_cookies.html.erb -->
 </body>
 </html><!-- END app/views/layouts/application.html.erb -->

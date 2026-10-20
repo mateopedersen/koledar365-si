@@ -28,7 +28,7 @@
 <meta name="twitter:image" content="https://koledar365.si/images/observances/dan-spomina-na-zrtve-holokavsta.webp">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl"},{"@type":"WebPage","@id":"https://koledar365.si/pomembni-dnevi/dan-spomina-na-zrtve-holokavsta/#webpage","url":"https://koledar365.si/pomembni-dnevi/dan-spomina-na-zrtve-holokavsta/","name":"Mednarodni dan spomina na žrtve holokavsta","description":"Mednarodni dan spomina na žrtve holokavsta je 27. januarja.","inLanguage":"sl","isPartOf":{"@id":"https://koledar365.si/#website"},"primaryImageOfPage":{"@id":"https://koledar365.si/images/observances/dan-spomina-na-zrtve-holokavsta.webp#image"}},{"@type":"ImageObject","@id":"https://koledar365.si/images/observances/dan-spomina-na-zrtve-holokavsta.webp#image","contentUrl":"https://koledar365.si/images/observances/dan-spomina-na-zrtve-holokavsta.webp","caption":"Spominska slovesnost na trgu Raoula Wallenberga v Stockholmu, 27. januarja 2013.","width":853,"height":1280,"creditText":"Frankie Fouganthin","license":"https://creativecommons.org/licenses/by-sa/3.0","acquireLicensePage":"https://commons.wikimedia.org/wiki/File:F%C3%B6rintelsens_minnesdag_p%C3%A5_Raoul_Wallenbergs_torg.jpg"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://koledar365.si/"},{"@type":"ListItem","position":2,"name":"Pomembni dnevi in praznovanja v Sloveniji","item":"https://koledar365.si/pomembni-dnevi/"},{"@type":"ListItem","position":3,"name":"Mednarodni dan spomina na žrtve holokavsta","item":"https://koledar365.si/pomembni-dnevi/dan-spomina-na-zrtve-holokavsta/"}]}]}</script>
 
-<link rel="stylesheet" href="/assets/web-b3bfa6afd36b7c2f.css">
+<link rel="stylesheet" href="/assets/web-1dbcfea0a7f98710.css">
 
 
 
@@ -190,7 +190,7 @@
     <div class="cookie-bar-copy">
       <span class="cookie-bar-eyebrow">Vaša zasebnost</span>
       <h2 id="cookie-title">Vi odločate, kaj si zapomnimo.</h2>
-      <p id="cookie-intro">Koledar za delovanje uporablja nujno hrambo. Z vašim dovoljenjem si do 180 dni zapomnimo izbrano mesto za fotografijo in vreme ob naslednjem obisku. Upravljavec je Mateo Pedersen. Analitike in oglasnih sledilnikov ne uporabljamo. <a href="/piskotki/">Kako uporabljamo hrambo</a></p>
+      <p id="cookie-intro">Koledar uporablja nujno hrambo. Z vašim dovoljenjem do 180 dni shranimo izbrano mesto za lokalni čas in vreme. Analitike in oglasnih sledilnikov ne uporabljamo. <a href="/piskotki/">Podrobnosti</a></p>
     </div>
     <div class="cookie-actions" role="group" aria-label="Izbira nastavitev zasebnosti">
       <button type="button" data-consent="necessary"><svg class="ui-icon icon-shield" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#shield"></use></svg> Ne shrani mesta</button>
@@ -221,6 +221,21 @@
   </details>
   <output id="cookie-status" role="status"></output>
 </section>
+<script>
+(()=>{
+  const bar=document.getElementById('cookies');
+  if(!bar)return;
+  let hasValidChoice=false;
+  try{
+    const choice=JSON.parse(localStorage.getItem('k365.consent')||'null');
+    hasValidChoice=choice?.version===2&&Number.isFinite(choice.expiresAt)&&choice.expiresAt>Date.now();
+  }catch{}
+  if(!hasValidChoice){
+    bar.hidden=false;
+    document.documentElement.style.setProperty('--cookie-space',`${bar.getBoundingClientRect().height}px`);
+  }
+})();
+</script>
 <!-- END app/views/layouts/_cookies.html.erb -->
 </body>
 </html><!-- END app/views/layouts/application.html.erb -->
