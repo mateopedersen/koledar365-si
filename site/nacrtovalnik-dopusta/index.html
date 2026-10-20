@@ -6,13 +6,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Načrtovalnik dopusta · Koledar365</title>
-<meta name="description" content="Primerjajte porabo dopusta s skupno dolžino oddiha. Načrtovalnik upošteva izbrane delovne dni in slovenske praznike.">
+<meta name="description" content="Načrtujte dopust v Sloveniji z najboljšimi podaljšanimi vikendi za leta 2027–2030. Izberite proračun dni dopusta, optimizirajte več oddihov in prenesite načrt v svoj koledar.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="https://koledar365.si/nacrtovalnik-dopusta/">
 <meta property="og:title" content="Načrtovalnik dopusta · Koledar365">
-<meta property="og:description" content="Primerjajte porabo dopusta s skupno dolžino oddiha. Načrtovalnik upošteva izbrane delovne dni in slovenske praznike.">
+<meta property="og:description" content="Načrtujte dopust v Sloveniji z najboljšimi podaljšanimi vikendi za leta 2027–2030. Izberite proračun dni dopusta, optimizirajte več oddihov in prenesite načrt v svoj koledar.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Koledar365">
 <meta property="og:locale" content="sl_SI">
@@ -23,11 +23,12 @@
 <meta property="og:image:alt" content="Načrtovalnik dopusta">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Načrtovalnik dopusta · Koledar365">
-<meta name="twitter:description" content="Primerjajte porabo dopusta s skupno dolžino oddiha. Načrtovalnik upošteva izbrane delovne dni in slovenske praznike.">
+<meta name="twitter:description" content="Načrtujte dopust v Sloveniji z najboljšimi podaljšanimi vikendi za leta 2027–2030. Izberite proračun dni dopusta, optimizirajte več oddihov in prenesite načrt v svoj koledar.">
 <meta name="twitter:image" content="https://koledar365.si/druzabno/pages/297/bc43ecdfa59180ca39cc.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl"},{"@type":"WebPage","@id":"https://koledar365.si/nacrtovalnik-dopusta/#webpage","url":"https://koledar365.si/nacrtovalnik-dopusta/","name":"Načrtovalnik dopusta","description":"Primerjajte porabo dopusta s skupno dolžino oddiha. Načrtovalnik upošteva izbrane delovne dni in slovenske praznike.","inLanguage":"sl","isPartOf":{"@id":"https://koledar365.si/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://koledar365.si/"},{"@type":"ListItem","position":2,"name":"Načrtovalnik dopusta","item":"https://koledar365.si/nacrtovalnik-dopusta/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl"},{"@type":"WebPage","@id":"https://koledar365.si/nacrtovalnik-dopusta/#webpage","url":"https://koledar365.si/nacrtovalnik-dopusta/","name":"Načrtovalnik dopusta","description":"Načrtujte dopust v Sloveniji z najboljšimi podaljšanimi vikendi za leta 2027–2030. Izberite proračun dni dopusta, optimizirajte več oddihov in prenesite načrt v svoj koledar.","inLanguage":"sl","isPartOf":{"@id":"https://koledar365.si/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://koledar365.si/"},{"@type":"ListItem","position":2,"name":"Načrtovalnik dopusta","item":"https://koledar365.si/nacrtovalnik-dopusta/"}]}]}</script>
 
-<link rel="stylesheet" href="/assets/web-11b188f9d0b69bd2.css">
+<link rel="stylesheet" href="/assets/web-c7ad30823f11eea3.css">
+
 
 
 
@@ -38,11 +39,12 @@
 
 
 <link rel="icon" href="/visuals/brand-calendar-v3.svg" type="image/svg+xml">
-<script type="application/json" id="k365-static-config">{"scripts":["/assets/application-f2799a47.js","/assets/planners-2e3430d8.js"],"holidays":"/assets/holidays-0af57d2c.js"}</script><link rel="preload" as="script" href="/assets/application-f2799a47.js">
+<script type="application/json" id="k365-static-config">{"scripts":["/assets/application-f2799a47.js","/assets/planners-2e3430d8.js"],"holidays":"/assets/holidays-0af57d2c.js","vacation":"/assets/vacation-ecc923a5.js"}</script><link rel="preload" as="script" href="/assets/application-f2799a47.js">
 <link rel="preload" as="script" href="/assets/planners-2e3430d8.js">
+<link rel="preload" as="script" href="/assets/vacation-ecc923a5.js">
 <link rel="modulepreload" href="/free/catalog-match.js">
 <link rel="modulepreload" href="/free/date-context.js">
-<script type="module" src="/free/client-c7e86c9d6ffb1e57.js"></script>
+<script type="module" src="/free/client-e48f4d36e892954b.js"></script>
 </head>
 <body class="">
 <a class="skip" href="#vsebina">Na vsebino</a>
@@ -57,21 +59,151 @@
 <nav class="breadcrumb" aria-label="Drobtinice"><a href="/">Domov</a><span aria-hidden="true">›</span><span aria-current="page">Načrtovalnik dopusta</span></nav>
 
 <!-- BEGIN app/views/pages/show.html.erb
---><div class="page-heading">
-<span class="eyebrow">KOLEDAR365 · SLOVENIJA</span><h1>Načrtovalnik dopusta</h1>
-<p>Primerjajte porabo dopusta s skupno dolžino oddiha. Načrtovalnik upošteva izbrane delovne dni in slovenske praznike.</p>
+--><!-- BEGIN app/views/pages/_vacation_planner.html.erb
+--><script type="application/json" id="vacation-holiday-data">[{"date":"2027-01-01","title":"novo leto","slug":"novo-leto"},{"date":"2027-01-02","title":"novo leto","slug":"novo-leto"},{"date":"2027-02-08","title":"Prešernov dan, slovenski kulturni praznik","slug":"presernov-dan"},{"date":"2027-03-28","title":"velikonočna nedelja","slug":"velika-noc"},{"date":"2027-03-29","title":"velikonočni ponedeljek","slug":"velika-noc"},{"date":"2027-04-27","title":"dan upora proti okupatorju","slug":"dan-upora-proti-okupatorju"},{"date":"2027-05-01","title":"praznik dela","slug":"praznik-dela"},{"date":"2027-05-02","title":"praznik dela","slug":"praznik-dela"},{"date":"2027-05-16","title":"binkoštna nedelja, binkošti","slug":"binkosti"},{"date":"2027-06-25","title":"dan državnosti","slug":"dan-drzavnosti"},{"date":"2027-08-15","title":"Marijino vnebovzetje","slug":"marijino-vnebovzetje"},{"date":"2027-10-31","title":"dan reformacije","slug":"dan-reformacije"},{"date":"2027-11-01","title":"dan spomina na mrtve","slug":"dan-spomina-na-mrtve"},{"date":"2027-12-25","title":"božič","slug":"bozic"},{"date":"2027-12-26","title":"dan samostojnosti in enotnosti","slug":"dan-samostojnosti-in-enotnosti"},{"date":"2028-01-01","title":"novo leto","slug":"novo-leto"},{"date":"2028-01-02","title":"novo leto","slug":"novo-leto"},{"date":"2028-02-08","title":"Prešernov dan, slovenski kulturni praznik","slug":"presernov-dan"},{"date":"2028-04-16","title":"velikonočna nedelja","slug":"velika-noc"},{"date":"2028-04-17","title":"velikonočni ponedeljek","slug":"velika-noc"},{"date":"2028-04-27","title":"dan upora proti okupatorju","slug":"dan-upora-proti-okupatorju"},{"date":"2028-05-01","title":"praznik dela","slug":"praznik-dela"},{"date":"2028-05-02","title":"praznik dela","slug":"praznik-dela"},{"date":"2028-06-04","title":"binkoštna nedelja, binkošti","slug":"binkosti"},{"date":"2028-06-25","title":"dan državnosti","slug":"dan-drzavnosti"},{"date":"2028-08-15","title":"Marijino vnebovzetje","slug":"marijino-vnebovzetje"},{"date":"2028-10-31","title":"dan reformacije","slug":"dan-reformacije"},{"date":"2028-11-01","title":"dan spomina na mrtve","slug":"dan-spomina-na-mrtve"},{"date":"2028-12-25","title":"božič","slug":"bozic"},{"date":"2028-12-26","title":"dan samostojnosti in enotnosti","slug":"dan-samostojnosti-in-enotnosti"},{"date":"2029-01-01","title":"novo leto","slug":"novo-leto"},{"date":"2029-01-02","title":"novo leto","slug":"novo-leto"},{"date":"2029-02-08","title":"Prešernov dan, slovenski kulturni praznik","slug":"presernov-dan"},{"date":"2029-04-01","title":"velikonočna nedelja","slug":"velika-noc"},{"date":"2029-04-02","title":"velikonočni ponedeljek","slug":"velika-noc"},{"date":"2029-04-27","title":"dan upora proti okupatorju","slug":"dan-upora-proti-okupatorju"},{"date":"2029-05-01","title":"praznik dela","slug":"praznik-dela"},{"date":"2029-05-02","title":"praznik dela","slug":"praznik-dela"},{"date":"2029-05-20","title":"binkoštna nedelja, binkošti","slug":"binkosti"},{"date":"2029-06-25","title":"dan državnosti","slug":"dan-drzavnosti"},{"date":"2029-08-15","title":"Marijino vnebovzetje","slug":"marijino-vnebovzetje"},{"date":"2029-10-31","title":"dan reformacije","slug":"dan-reformacije"},{"date":"2029-11-01","title":"dan spomina na mrtve","slug":"dan-spomina-na-mrtve"},{"date":"2029-12-25","title":"božič","slug":"bozic"},{"date":"2029-12-26","title":"dan samostojnosti in enotnosti","slug":"dan-samostojnosti-in-enotnosti"},{"date":"2030-01-01","title":"novo leto","slug":"novo-leto"},{"date":"2030-01-02","title":"novo leto","slug":"novo-leto"},{"date":"2030-02-08","title":"Prešernov dan, slovenski kulturni praznik","slug":"presernov-dan"},{"date":"2030-04-21","title":"velikonočna nedelja","slug":"velika-noc"},{"date":"2030-04-22","title":"velikonočni ponedeljek","slug":"velika-noc"},{"date":"2030-04-27","title":"dan upora proti okupatorju","slug":"dan-upora-proti-okupatorju"},{"date":"2030-05-01","title":"praznik dela","slug":"praznik-dela"},{"date":"2030-05-02","title":"praznik dela","slug":"praznik-dela"},{"date":"2030-06-09","title":"binkoštna nedelja, binkošti","slug":"binkosti"},{"date":"2030-06-25","title":"dan državnosti","slug":"dan-drzavnosti"},{"date":"2030-08-15","title":"Marijino vnebovzetje","slug":"marijino-vnebovzetje"},{"date":"2030-10-31","title":"dan reformacije","slug":"dan-reformacije"},{"date":"2030-11-01","title":"dan spomina na mrtve","slug":"dan-spomina-na-mrtve"},{"date":"2030-12-25","title":"božič","slug":"bozic"},{"date":"2030-12-26","title":"dan samostojnosti in enotnosti","slug":"dan-samostojnosti-in-enotnosti"}]</script>
+<div class="vacation-page" data-vacation-planner data-default-year="2027" data-default-budget="5">
+  <header class="vacation-hero">
+    <div class="vacation-hero__copy">
+      <p class="vacation-eyebrow"><img width="36" height="22" alt="" class="country-flag" aria-hidden="true" src="/visuals/slovenia-fabric-v3.svg"><span>Načrt za Slovenijo · 2027–2030</span></p>
+      <h1>Manj dopusta.<br><span>Več skupnega oddiha.</span>
+</h1>
+      <p class="vacation-hero__lead">Povežite vikende s slovenskimi prazniki in hitro odkrijte, kdaj se vam en dan dopusta najbolj obrestuje.</p>
+      <div class="vacation-hero__proof" aria-label="Lastnosti načrtovalnika">
+        <span><svg class="ui-icon icon-check" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#check"></use></svg> Uradni dela prosti dnevi</span>
+        <span><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calendar"></use></svg> Načrt za celo leto</span>
+        <span><svg class="ui-icon icon-shield" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#shield"></use></svg> Brez prijave</span>
+      </div>
+    </div>
+    <div class="vacation-hero__visual" aria-hidden="true">
+      <svg viewbox="0 0 620 390" role="presentation" focusable="false">
+        <defs>
+          <lineargradient id="vacation-sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eff6fc"></stop><stop offset="1" stop-color="#d8e9f5"></stop></lineargradient>
+          <lineargradient id="vacation-lake" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#a9cddd"></stop><stop offset="1" stop-color="#d6e7e9"></stop></lineargradient>
+          <lineargradient id="vacation-paper" x1="0" y1="0" x2="0.9" y2="1"><stop stop-color="#fff"></stop><stop offset="1" stop-color="#f7f9fb"></stop></lineargradient>
+        </defs>
+        <rect x="26" y="19" width="568" height="350" rx="23" fill="url(#vacation-sky)"></rect>
+        <circle cx="503" cy="83" r="33" fill="#f5d593"></circle>
+        <path d="m26 227 95-108 42 46 95-115 87 107 59-72 190 156v128H26Z" fill="#c4d9e5"></path>
+        <path d="m153 174 105-124 58 72-39-20-17 19-20-9-24 24-21-8-21 19-20-5Z" fill="#f8fbfd"></path>
+        <path d="m320 157 84-96 64 67-34-15-21 17-17-7-23 20-18-6-20 20-16-4Z" fill="#edf4f8"></path>
+        <path d="M26 245q94-36 180 0t190 0 198 0v124H26Z" fill="#8eb5c3" opacity=".64"></path>
+        <path d="M26 279q102-23 194 0t184 0 190 0v90H26Z" fill="url(#vacation-lake)"></path>
+        <path d="M26 302q100-20 192 0t188 0 188 0" fill="none" stroke="#f8fbfb" stroke-width="3" opacity=".68"></path>
+        <path d="M26 325q91-14 180 0t190 0 198 0" fill="none" stroke="#f8fbfb" stroke-width="2" opacity=".52"></path>
+        <g fill="#355f65"><path d="m74 269 17-50 17 50Zm27 0 20-63 20 63Zm377 0 21-62 21 62Zm35 0 17-49 17 49Z"></path><path d="M84 256h15v13H84zm27-4h16v17h-16zm375 0h16v17h-16zm31 5h15v12h-15z" fill="#244a53"></path></g>
+        <g transform="rotate(-4 210 178)">
+          <rect x="81" y="73" width="242" height="214" rx="15" fill="#14365c" opacity=".13"></rect>
+          <rect x="73" y="63" width="242" height="214" rx="15" fill="url(#vacation-paper)" stroke="#d7e2eb"></rect>
+          <path d="M88 63h212a15 15 0 0 1 15 15v34H73V78a15 15 0 0 1 15-15Z" fill="#173a61"></path>
+          <text x="95" y="91" fill="#fff" font-size="12" font-weight="700" font-family="system-ui,sans-serif" letter-spacing="1.2">DNEVI ZA ODDIH</text>
+          <text x="95" y="147" fill="#203750" font-size="28" font-weight="800" font-family="system-ui,sans-serif">2027</text>
+          <g fill="#dfe8ef"><rect x="95" y="166" width="24" height="20" rx="5"></rect><rect x="129" y="166" width="24" height="20" rx="5"></rect><rect x="163" y="166" width="24" height="20" rx="5"></rect><rect x="197" y="166" width="24" height="20" rx="5"></rect><rect x="231" y="166" width="24" height="20" rx="5"></rect><rect x="265" y="166" width="24" height="20" rx="5"></rect><rect x="95" y="195" width="24" height="20" rx="5"></rect><rect x="129" y="195" width="24" height="20" rx="5"></rect><rect x="163" y="195" width="24" height="20" rx="5"></rect><rect x="197" y="195" width="24" height="20" rx="5"></rect><rect x="231" y="195" width="24" height="20" rx="5"></rect><rect x="265" y="195" width="24" height="20" rx="5"></rect></g>
+          <rect x="197" y="166" width="24" height="20" rx="5" fill="#c82c42"></rect><rect x="231" y="195" width="24" height="20" rx="5" fill="#1768b2"></rect>
+          <path d="M97 240h147" stroke="#dbe4eb" stroke-width="5" stroke-linecap="round"></path><path d="M97 240h91" stroke="#1768b2" stroke-width="5" stroke-linecap="round"></path>
+        </g>
+        <g transform="rotate(5 444 237)"><rect x="376" y="194" width="149" height="95" rx="13" fill="#fff" stroke="#d7e1e9"></rect><circle cx="402" cy="220" r="10" fill="#f7e4b9"></circle><path d="M399 220h6m-3-3v6" stroke="#9a6a16" stroke-width="1.5" stroke-linecap="round"></path><text x="421" y="224" fill="#718195" font-size="9" font-weight="700" font-family="system-ui,sans-serif" letter-spacing=".6">PRAZNIK</text><text x="396" y="255" fill="#243b54" font-size="13" font-weight="750" font-family="system-ui,sans-serif">Več časa zase</text><path d="M396 269h94" stroke="#e5ebef" stroke-width="3" stroke-linecap="round"></path></g>
+      </svg>
+      <div class="vacation-hero__note">
+<span><svg class="ui-icon icon-sun" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#sun"></use></svg></span><div>
+<strong>Malo načrtovanja.</strong><small>Veliko več prostega časa.</small>
 </div>
-<!-- BEGIN app/views/pages/_tool.html.erb
---><section class="panel tool-panel"><form class="api-form" action="/izracun/" method="post">
-<input type="hidden" name="tool" value="vacation">
-<label>Leto<select name="year"><option>2027</option>
-<option>2028</option>
-<option>2029</option>
-<option>2030</option></select></label><label>Največ dni dopusta<input type="number" name="budget" value="3" min="0" max="20" required></label><p>Izračun uporablja delovni teden ponedeljek–petek.</p>
-<button class="primary">Izračunaj</button><output class="result" aria-live="polite"></output>
-</form>
-<p><a href="/viri-in-metodologija/">Kako računamo</a></p></section>
-<!-- END app/views/pages/_tool.html.erb -->
+</div>
+    </div>
+  </header>
+
+  <div class="vacation-workspace">
+    <form class="vacation-controls" id="vacation-controls" aria-label="Nastavitve načrta dopusta">
+      <div class="vacation-section-kicker">
+<span>01</span> TVOJ OKVIR</div>
+      <h2>Začni s svojim letom.</h2>
+      <fieldset class="vacation-year-field">
+        <legend>Izberi leto</legend>
+        <div class="vacation-year-options">
+          <label><input type="radio" name="year" value="2027" checked><span>2027</span></label><label><input type="radio" name="year" value="2028"><span>2028</span></label><label><input type="radio" name="year" value="2029"><span>2029</span></label><label><input type="radio" name="year" value="2030"><span>2030</span></label>
+        </div>
+      </fieldset>
+      <div class="vacation-budget-field">
+        <div class="vacation-budget-heading">
+<label for="vacation-budget">Koliko dni dopusta imaš?</label><output id="vacation-budget-value" for="vacation-budget">5 dni</output>
+</div>
+        <input id="vacation-budget" name="budget" type="range" min="0" max="30" value="5" step="1" aria-describedby="vacation-budget-help">
+        <div class="vacation-range-labels">
+<span>0 dni</span><span>30 dni</span>
+</div>
+        <p id="vacation-budget-help">Izračunaj načrt glede na število dni, ki jih želiš porabiti.</p>
+        <div class="vacation-presets" role="group" aria-label="Hitre izbire števila dni dopusta">
+          <button type="button" data-budget-preset="3">3 dni</button><button type="button" data-budget-preset="5" aria-pressed="true">5 dni</button><button type="button" data-budget-preset="10">10 dni</button><button type="button" data-budget-preset="20">20 dni</button>
+        </div>
+      </div>
+      <div class="vacation-control-footnote">
+<svg class="ui-icon icon-briefcase" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#briefcase"></use></svg><p>Privzeto štejemo ponedeljek–petek kot delovne dni. Vikendi in zakonsko dela prosti prazniki ne porabijo dopusta.</p>
+</div>
+      <button class="vacation-reset" type="button" data-vacation-reset><svg class="ui-icon icon-refresh" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#refresh"></use></svg> Znova optimiziraj moj načrt</button>
+    </form>
+
+    <section class="vacation-results" aria-labelledby="vacation-results-title" aria-busy="true">
+      <div class="vacation-summary">
+        <div class="vacation-summary__top">
+<span class="vacation-section-kicker"><span>02</span> NAJBOLJŠA RAZPOREDITEV</span><span class="vacation-summary__flag"><img width="36" height="22" alt="" class="country-flag" aria-hidden="true" src="/visuals/slovenia-fabric-v3.svg"> Slovenija</span>
+</div>
+        <h2 id="vacation-results-title">
+<span data-vacation-year>2027</span>: tvoj načrt oddiha</h2>
+        <p data-vacation-summary aria-live="polite">Iščemo najboljše priložnosti …</p>
+        <div class="vacation-metrics">
+          <div>
+<strong data-vacation-total>—</strong><span>dni skupnega oddiha</span>
+</div>
+          <div>
+<strong data-vacation-spent>—</strong><span>dni dopusta porabljenih</span>
+</div>
+          <div>
+<strong data-vacation-breaks>—</strong><span>ločeni oddihi</span>
+</div>
+        </div>
+        <div class="vacation-efficiency">
+<span><svg class="ui-icon icon-star" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#star"></use></svg></span><span data-vacation-efficiency>Pripravljamo predlog za izbrani proračun.</span>
+</div>
+      </div>
+
+      <div class="vacation-plan-card">
+        <div class="vacation-card-heading">
+<div>
+<span class="vacation-section-kicker">TVOJ LETNI NAČRT</span><h3>Oddihi, ki jih lahko povežeš</h3>
+</div>
+<span class="vacation-plan-badge" data-vacation-mode>Optimalen načrt</span>
+</div>
+        <p class="vacation-plan-caption" data-vacation-plan-caption>Najboljši izbor glede na število dni dopusta, ki si ga nastavil.</p>
+        <div class="vacation-plan-list" data-vacation-plan-list><p class="vacation-loading">Pripravljamo tvoj osebni načrt …</p></div>
+        <div class="vacation-plan-actions">
+<button class="primary" type="button" data-vacation-export disabled><svg class="ui-icon icon-download" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#download"></use></svg> Prenesi v koledar</button><button type="button" data-vacation-copy disabled><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#note"></use></svg> Kopiraj načrt</button>
+</div>
+        <p class="vacation-status" data-vacation-status aria-live="polite"></p>
+      </div>
+    </section>
+  </div>
+
+  <section class="vacation-suggestions" aria-labelledby="vacation-suggestions-title">
+    <div class="vacation-section-heading">
+<div>
+<span class="vacation-section-kicker"><span>03</span> ŠE VEČ IDEJ</span><h2 id="vacation-suggestions-title">Najboljši posamezni oddihi</h2>
+<p>Predlogi so razvrščeni po tem, koliko prostega časa dobiš za porabljen dan dopusta.</p>
+</div>
+<span class="vacation-suggestion-count" data-vacation-suggestion-count>— priložnosti</span>
+</div>
+    <div class="vacation-suggestion-grid" data-vacation-suggestions><p class="vacation-loading">Tukaj se bodo prikazale najboljše priložnosti v letu.</p></div>
+  </section>
+
+  <aside class="vacation-method">
+    <span class="vacation-method__icon"><svg class="ui-icon icon-info" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#info"></use></svg></span>
+    <div>
+<h2>Kako računamo?</h2>
+<p>Predlog upošteva uradne zakonsko dela proste dni v Sloveniji ter običajen delovni teden od ponedeljka do petka. Praznik, ki pade na soboto ali nedeljo, se ne prenese na naslednji delovni dan. Tvoj dejanski urnik in odobritev delodajalca lahko vplivata na uporabo dopusta.</p>
+<a href="https://www.gov.si/teme/drzavni-prazniki-in-dela-prosti-dnevi/" target="_blank" rel="noopener noreferrer">Uradni pregled praznikov pri GOV.SI <span aria-hidden="true">↗</span></a><span class="vacation-method__divider">·</span><a href="/viri-in-metodologija/">Viri in metodologija koledarja</a>
+</div>
+  </aside>
+  <noscript><p class="vacation-noscript">Za prilagojene predloge vključite JavaScript v brskalniku. Slovenija ima v koledarju praznike ločene od dela prostih dni.</p></noscript>
+</div>
+<!-- END app/views/pages/_vacation_planner.html.erb -->
 
 
 <!-- END app/views/pages/show.html.erb -->
