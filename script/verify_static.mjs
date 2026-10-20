@@ -2,6 +2,18 @@ import fs from 'node:fs';import path from 'node:path';import crypto from 'node:c
 const root=path.resolve(import.meta.dirname,'..'),site=path.join(root,'site'),manifest=JSON.parse(fs.readFileSync(path.join(site,'release-manifest.json')));
 const issues=[];function scan(directory){return fs.readdirSync(directory,{withFileTypes:true}).flatMap(entry=>entry.isDirectory()?scan(path.join(directory,entry.name)):[path.join(directory,entry.name)])}
 const files=scan(site);if(files.length>20000)issues.push('Cloudflare Free file limit exceeded');
+const webImages=JSON.parse(fs.readFileSync(path.join(root,'data/web_image_variants.json')));
+for(const [source,image] of Object.entries(webImages)){
+ const original=path.join(site,source);
+ if(!fs.existsSync(original)||crypto.createHash('sha256').update(fs.readFileSync(original)).digest('hex')!==image.source_sha256)issues.push(source+': licensed source photo changed');
+ for(const variant of image.variants)for(const [key,sizeKey] of [['src','bytes'],['avif','avif_bytes']]){
+  if(!variant[key])continue;
+  const file=path.join(site,variant[key]);if(!fs.existsSync(file)){issues.push(variant[key]+': responsive photo missing');continue}
+  const bytes=fs.readFileSync(file),digest=crypto.createHash('sha256').update(bytes).digest('hex').slice(0,16);
+  if(bytes.length!==variant[sizeKey]||!path.basename(file).includes('-'+digest+'.'))issues.push(variant[key]+': responsive photo hash or size mismatch');
+  if(key==='avif'){const offset=bytes.indexOf('ispe');if(offset<0||bytes.readUInt32BE(offset+8)!==variant.width||bytes.readUInt32BE(offset+12)!==variant.height)issues.push(variant[key]+': unexpected image dimensions')}
+ }
+}
 for(const file of files){const relative=path.relative(site,file).replaceAll(path.sep,'/'),size=fs.statSync(file).size;if(size>25*1024*1024)issues.push(relative+': file exceeds 25 MiB');if(/(?:private-admin|\.sqlite3|\.env|master\.key|credentials|\.dump)$/.test(relative))issues.push(relative+': private artifact');const expected=manifest.files[relative];if(relative==='release-manifest.json')continue;if(!expected)issues.push(relative+': unlisted output');else if(expected.size!==size||expected.sha256!==crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'))issues.push(relative+': hash mismatch')}
 for(const [file,hash] of Object.entries(manifest.sources||{})){const absolute=path.join(root,file);if(!fs.existsSync(absolute)||crypto.createHash('sha256').update(fs.readFileSync(absolute)).digest('hex')!==hash)issues.push(file+': source changed after release build')}
 const catalog=JSON.parse(fs.readFileSync(path.join(site,'free/catalog.json')));for(let year=2027;year<=2030;year++){for(let month=1;month<=12;month++){const rows=catalog.filter(row=>row.options.type==='monthly'&&row.options.year===year&&row.options.month===month);if(rows.length!==15)issues.push(`${year}-${month}: expected 15 monthly pairs`)}if(catalog.filter(row=>row.options.type==='annual'&&row.options.year===year).length!==15)issues.push(year+': expected 15 annual pairs')}

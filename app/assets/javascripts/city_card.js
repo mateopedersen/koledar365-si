@@ -13,7 +13,7 @@ function clock(){
 }
 const canRemember=()=>{try{const c=JSON.parse(localStorage.getItem('k365.consent'));return c?.version===2&&c.preferences===true&&c.expiresAt>Date.now()}catch{return false}};
 const remember=()=>{if(canRemember())try{localStorage.setItem('k365.city',JSON.stringify(select.value))}catch{}};
-function chosen(){const option=select.selectedOptions[0];return{id:option.value,name:option.textContent.trim(),photo:option.dataset.photo,credit:option.dataset.credit}}
+function chosen(){const option=select.selectedOptions[0];return{id:option.value,name:option.textContent.trim(),photo:option.dataset.photo,srcset:option.dataset.photoSrcset,avif:option.dataset.photoAvif,credit:option.dataset.credit}}
 function usable(body,id){const now=Date.now(),updated=Date.parse(body?.updated_at),at=Date.parse(body?.current?.at);return body?.city===id&&Number.isFinite(body.current.temperature)&&Number.isFinite(updated)&&updated<=now+300000&&now-updated<43200000&&Number.isFinite(at)&&Math.abs(now-at)<7200000&&Array.isArray(body.hours)}
 function cached(id){let record=memory.get(id);if(!record)try{record=JSON.parse(sessionStorage.getItem('k365.weather.v1:'+id))}catch{}return record&&Date.now()-record.savedAt<1800000&&usable(record.body,id)?record.body:null}
 function keep(body){const record={savedAt:Date.now(),body};memory.set(body.city,record);try{sessionStorage.setItem('k365.weather.v1:'+body.city,JSON.stringify(record))}catch{}}
@@ -57,7 +57,7 @@ async function refresh(force=false){
 }
 function changeCity(){
  const city=chosen();remember();text('weather-label','Vreme · '+city.name);text('city-caption',city.name+', Slovenija');$('city-credit').href=city.credit;
- const photo=$('city-photo');if(city.photo&&photo.getAttribute('src')!==city.photo)photo.src=city.photo;photo.alt=city.name+' – pogled na mesto';refresh();
+ const photo=$('city-photo');if(city.photo&&photo.getAttribute('src')!==city.photo){$('city-photo-avif').srcset=city.avif||'';photo.srcset=city.srcset||'';photo.src=city.photo;}photo.alt=city.name+' – pogled na mesto';refresh();
 }
 try{if(canRemember()){const id=JSON.parse(localStorage.getItem('k365.city'));if([...select.options].some(o=>o.value===id))select.value=id}}catch{}
 select.addEventListener('change',changeCity);$('weather-refresh').addEventListener('click',()=>refresh(true));document.addEventListener('k365:consent',remember);

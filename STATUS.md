@@ -3,6 +3,15 @@
 Güncelleme: 20.10.2026 20:12 +0300. Takvim metni düzeltmesi: 7d49796b4; otomatik statik yayın: 1fe95b074; Cloudflare Pages dağıtımı: f7ca7688-c429-45f4-ab8b-82d42cab497e (başarılı).
 Bu dosya birincil devam kaydıdır; önceki çalışma günlüğü docs/status-history-2026-10-20.md içinde korunur.
 
+## PageSpeed ve erişilebilirlik — devam ediyor
+
+- Mobil PageSpeed başlangıcı: 95 performans / 94 erişilebilirlik / 100 en iyi uygulamalar / 100 SEO. Gerçek rapor: https://pagespeed.web.dev/analysis/https-koledar365-si/gmd1vmgtnk?form_factor=mobile . Anahtarsız Google API günlük kotası 0 dönüyor; web arayüzü çalışıyor.
+- Çalışma dalı `improve-pagespeed-accessibility`. Bu optimizasyonlar henüz canlıya yayımlanmadı. 69 gerçek şehir fotoğrafı için içerik özetli AVIF/WebP boyutları hazır; özgün lisanslı JPG'ler korunur. Ana sayfa CSS'i ilk HTML'de, iç sayfalarda tek önbellekli CSS varlığı; başlangıçtaki assets.json beklemesi kaldırıldı. Takvim bağlantıları 24 px hedef alanı ve daha yüksek kontrast alır.
+- Cloudflare zone RUM ayarı AB dışı ziyaretçilere otomatik betik ekliyordu; Disable seçilip Update kaydedildi. Canlı HTML'de beacon.min.js artık yok. Pages Web Analytics zaten kapalıydı; CSP gevşetilmedi.
+- İlk yerel mobil Lighthouse 13.5.0: 100 performans / 97 erişilebilirlik / 100 en iyi uygulamalar / 100 SEO; CLS 0. Kalan hava durumu metin rengi düzeltildi. Tüm kategoriler ve sayfa türleri için ölçüm devam ediyor; ölçülmemiş URL'ler 100 diye kabul edilmez.
+- Yerel statik deneme: http://127.0.0.1:3655/ (tmp/qa/perf-site ve kaynak/public/site yedeği), `tmp/qa/rebuild_perf.sh`. Ölçüm: `tmp/qa/run_audits.py`, raporlar `tmp/qa/pagespeed/templates-round-1/`; çalışan ana süreç session 50542. İki QA sunucusu yalnız bu işe ait: 3654 ve 3655; asıl 3650 sunucusu korunur.
+- Sonraki işler: sayfa türleri ve 52 dönem için mobil/masaüstü ölçümleri, kalan kontrast/işlev hatalarını giderme, tüm yayımlı URL'lerin denetimi, kaynakları ana dala taşıma, tam Ruby üretimi/Cloudflare yayını, gerçek PageSpeed'de mobil ve masaüstü son ölçüm ve kanıtları kaydetme.
+
 ## Aylık takvim metinleri — canlıda doğrulandı
 
 - Ortak ay şablonunda uzun tatil ve özel gün adları dar gün hücrelerinde tek satırda üç noktayla kısalır; kelimeler bölünmez ve komşu hücreye taşmaz. Tam ad bağlantı metninde ve `title` niteliğinde korunur. Kural ana sayfanın takvim ızgarasında da geçerlidir. İki olaylı dar hücrede dikey kesme kaldırıldı.

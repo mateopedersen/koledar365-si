@@ -18,7 +18,7 @@ if(cookieBar){
  let cookieOpener=null;
  const closeCookies=()=>{cookieBar.hidden=true;$('#cookie-settings').open=false;$('[data-consent-settings]').setAttribute('aria-expanded','false');if(cookieOpener?.isConnected)cookieOpener.focus()};
  const openCookies=(event)=>{preferences.checked=rememberCityAllowed();cookieBar.hidden=false;if(event){cookieOpener=event.currentTarget;$('[data-consent-settings]').focus()}};
- new ResizeObserver(()=>document.documentElement.style.setProperty('--cookie-space',cookieBar.hidden?'0px':cookieBar.getBoundingClientRect().height+'px')).observe(cookieBar);
+ new ResizeObserver(([entry])=>{const height=entry.borderBoxSize?.[0]?.blockSize??entry.contentRect.height;requestAnimationFrame(()=>document.documentElement.style.setProperty('--cookie-space',cookieBar.hidden?'0px':height+'px'))}).observe(cookieBar);
  if(!currentConsent())openCookies();
  $$('[data-cookie-open]').forEach(b=>b.addEventListener('click',openCookies));
  $('[data-cookie-close]').addEventListener('click',closeCookies);

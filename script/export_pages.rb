@@ -12,7 +12,7 @@ FileUtils.rm_f(out.join('free/README.md'))
 client_asset="client-#{Digest::SHA256.file(out.join('free/client.js')).hexdigest[0,16]}.js"
 FileUtils.cp(out.join('free/client.js'),out.join('free',client_asset))
 session=ActionDispatch::Integration::Session.new(Rails.application);session.host!('localhost')
-assets=nil;processed=[]
+assets=nil;processed=[];style_sets={}
 transform=lambda do |body,path,indexable:true|
  doc=Nokogiri::HTML(body)
  sources=doc.css('script[src]').map { |node|node['src'] }
@@ -20,6 +20,32 @@ transform=lambda do |body,path,indexable:true|
  doc.css('script[src]').reject { |node|node['src'].include?('city_card-') }.each(&:remove)
  doc.css('meta[name="csrf-token"],meta[name="csrf-param"],meta[name="csp-nonce"],meta[http-equiv="Content-Security-Policy"],input[name="authenticity_token"]').remove
  doc.css('[nonce]').each { |node|node.remove_attribute('nonce') }
+ # One cached stylesheet on internal pages; the home screen renders immediately
+ # with its complete CSS in the document, before any image or script completes.
+ links=doc.css('link[rel="stylesheet"][href^="/assets/"]')
+ unless links.empty?
+  key=links.map { |node|node['href'] }.join('|')
+  styles=style_sets[key] ||= links.map { |node|out.join(node['href'].delete_prefix('/')).read }.join("\n")
+  if path=='/'
+   style=Nokogiri::XML::Node.new('style',doc);style['data-page-styles']='home';style.content=styles;links.first.add_previous_sibling(style)
+  else
+   css_path="/assets/web-#{Digest::SHA256.hexdigest(styles)[0,16]}.css"
+   out.join(css_path.delete_prefix('/')).write(styles) unless out.join(css_path.delete_prefix('/')).exist?
+   link=Nokogiri::XML::Node.new('link',doc);link['rel']='stylesheet';link['href']=css_path;links.first.add_previous_sibling(link)
+  end
+  links.each(&:remove)
+ end
+ # Keep the existing Ruby renderer as the source of truth for both content and UI.
+ # Discover the small interactive scripts during HTML parsing, without an extra
+ # assets.json round trip or a serial module dependency waterfall.
+ config=Nokogiri::XML::Node.new('script',doc);config['type']='application/json';config['id']='k365-static-config';config.content=JSON.generate(assets);doc.at_css('head').add_child(config)
+ (assets[:scripts]+[assets[:holidays]]).each do |src|
+  next if src==assets[:holidays]&&!doc.at_css('#holiday-filters')
+  preload=Nokogiri::XML::Node.new('link',doc);preload['rel']='preload';preload['as']='script';preload['href']=src;doc.at_css('head').add_child(preload)
+ end
+ %w[catalog-match.js date-context.js].each do |src|
+  preload=Nokogiri::XML::Node.new('link',doc);preload['rel']='modulepreload';preload['href']="/free/#{src}";doc.at_css('head').add_child(preload)
+ end
  doc.at_css('meta[name=robots]')['content']=indexable ? 'index, follow, max-image-preview:large':'noindex, follow'
  if path.start_with?('/koledar-z-imenom/') && path!='/koledar-z-imenom/'
    doc.css('meta[property="og:image"],meta[name="twitter:image"]').each { |node|node['content']='https://koledar365.si/og.png' }
@@ -111,6 +137,8 @@ headers=<<~HEADERS
   Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' blob:; connect-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'
   Cache-Control: public, max-age=0, must-revalidate
 /assets/*
+  Cache-Control: public, max-age=31536000, immutable
+/images/responsive/*
   Cache-Control: public, max-age=31536000, immutable
 /free/#{client_asset}
   Cache-Control: public, max-age=31536000, immutable

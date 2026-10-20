@@ -6,7 +6,7 @@
     <div class="actions"><a class="button primary" href="/"><%= ui_icon('calendar') %> Odprite svoj dan</a><a class="button" href="/orodja/">Raziščite orodja <%= ui_icon('chevron-right') %></a></div>
   </div>
   <div class="story-visual">
-    <figure><img src="/images/cities/ljubljana.jpg" width="960" height="640" alt="Ljubljana – pogled na slovensko prestolnico"><figcaption>Ljubljana, Slovenija <a href="/fotografije-in-licence/#ljubljana">Fotografija in avtor</a></figcaption></figure>
+    <figure><%= render 'responsive_photo', path: '/images/cities/ljubljana.jpg', alt: 'Ljubljana – pogled na slovensko prestolnico', sizes: '(max-width:760px) 100vw, 50vw' %><figcaption>Ljubljana, Slovenija <a href="/fotografije-in-licence/#ljubljana">Fotografija in avtor</a></figcaption></figure>
 
   </div>
 </section>

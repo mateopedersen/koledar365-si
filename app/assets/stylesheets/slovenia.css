@@ -163,3 +163,19 @@ button:hover,.button:hover{box-shadow:none}
 .calendar-download-copy p{margin:3px 0 0;color:#5e6b7e;font-size:13px;line-height:1.5}
 .calendar-download-callout>.button{white-space:nowrap;min-height:40px}
 @media(max-width:650px){.calendar-download-callout{grid-template-columns:32px minmax(0,1fr);gap:8px 11px;padding:12px}.calendar-download-icon{width:30px;height:30px}.calendar-download-copy h2{font-size:16px}.calendar-download-copy p{font-size:12px}.calendar-download-callout>.button{grid-column:2;justify-self:start;min-height:38px}}
+
+/* Readable secondary text and comfortable, separate calendar touch targets. */
+html{--muted:#526174}
+.intro p,.feature p,.feature-grid p{color:var(--muted)}
+.calendar .weeknum{color:#526174}
+.calendar .outside-date{color:#626e80;opacity:1}
+.calendar a.event-label{min-height:24px;max-height:none;padding:4px 0;box-sizing:border-box}
+.calendar .date-link{min-height:28px}
+footer .brand.small span{color:#bd233b}
+footer>a,footer>.text-button{min-height:28px;display:inline-flex;align-items:center}
+.card-credit{min-height:28px;padding:5px 0;color:#526174}
+a{color:#0054b8}
+.eyebrow,.design-number,.story-visual figcaption,.story-links small,.privacy-facts span{color:#526174}
+.left-panel .check{min-height:28px;align-items:center}
+.left-panel .check input{width:18px;height:18px}
+.date-check small,.date-shortcuts>span,.date-submit-row>span,.date-guide__eyebrow,.date-related a>span,.date-hint,.date-weekdays small{color:#526174}

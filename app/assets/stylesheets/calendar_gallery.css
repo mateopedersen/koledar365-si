@@ -155,3 +155,9 @@
 @media print{.gallery-page .page-heading p,.context-heading,.context-actions,.context-month-navigation,.design-section,.calendar-gallery{display:none!important}.download-workspace{display:block}.download-workspace .gallery-context{position:static;border:0;padding:0}.download-workspace .context-content,.download-workspace .calendar-context-view{display:block!important;max-height:none!important;overflow:visible!important}.download-workspace .calendar-context .year-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}.download-workspace .calendar-context .date-events{display:block!important;max-height:none!important}}
 
 @media(max-width:650px){.download-workspace:not(.context-expanded) .context-heading{border:0;padding:0;margin:0}.download-workspace:not(.context-expanded) .gallery-context{padding:10px 12px}.download-workspace .context-content[hidden]{display:none!important}}
+
+.download-workspace:not(.context-expanded) .calendar-context .calendar a.event-label{font-size:9px;min-height:24px;max-height:none;padding:4px 0;line-height:1.35}
+.download-workspace:not(.context-expanded) .calendar-context .calendar .date-link{min-height:28px}
+.download-workspace .calendar-context .calendar .outside-date{color:#626e80;opacity:1}
+.calendar-gallery-heading .eyebrow,.calendar-gallery-toolbar>[data-gallery-count],.calendar-design-info h3>span,.design-card .design-number{color:#526174}
+@media(max-width:650px){.download-workspace:not(.context-expanded) .context-content{display:none!important}}
