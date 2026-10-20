@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import bundledProfiles from '../lib/horoscope/profiles.mjs';
+assert.deepEqual(bundledProfiles,JSON.parse(fs.readFileSync(new URL('../data/horoscope/signs.json',import.meta.url))));
 import * as sky from '../public/horoscope/sky-v1.mjs';
 import {localDate,wallTimeCandidates,ascendantLongitude} from '../public/horoscope/math-v1.mjs';
 import {makeEdition,validateEdition} from '../lib/horoscope/edition.mjs';
