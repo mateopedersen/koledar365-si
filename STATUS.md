@@ -111,3 +111,10 @@ Daha ayrıntılı kurtarma komutları ve faz kayıtları: docs/status-history-20
 - Son CI turu, mobil güneş aracı etkileşimlerinde çerez karar paneli ile küçük ekrandaki içerik aralıklarının düğmeleri kapatabildiğini gösterdi. Ortak paragraf boşluğu kuralı kaldırıldı; mobil çerez tercihleri 190 px'i aşmayan, üç seçeneği de görünür 44 px dokunma alanlarıyla sunan alt şeride dönüştürüldü. Güneş aracı testleri önce gerekli olmayan yer hatırlamasını reddedip sonra aracı sınayacak şekilde güncellendi.
 - Son kaynakla Chromium, WebKit, Android Chromium ve iPhone WebKit'te güneş/şehir ve mobil çerez akışları 16/16 geçti. Tam GitHub CI ve canlı yayın bu düzeltmenin ardından yeniden doğrulanacak.
 - Kaynak değişiklikleri `app/views/layouts/application.html.erb`, `app/assets/stylesheets/readability.css` ve `script/verify_readability_coverage.py` dosyalarında; son mobil düzeltmeler `test/browser/sun-experience.spec.mjs` içindedir. `fix/sitewide-readability-20261021` dalı, kaynak PR'si ve Cloudflare Pages yayını CI doğrulamasından sonra tamamlanmalı.
+
+
+## 2026-10-21 devam eden yayın notu
+
+- Son ana dal değişikliği `/imena/` ve `/koledar-z-imenom/` rotalarını yayından çıkardı; bu çalışma ağacındaki kullanıcı tarafından yapılmış değişiklik olarak korundu.
+- CI, artık 404 dönen altı eski isim giriş sayfasını SEO denetiminin aktif sayfa listesinde tuttuğu için başarısız oldu. `script/audit_seo.rb`, uygulamanın `PagesController::REMOVED_NAME_PATHS` kuralını kullanacak şekilde düzeltildi ve 2026-10-21'de `127a9b4` commit'i olarak kaydedildi.
+- Üretim HTML'si henüz Cloudflare'da doğrulanmadı. Yeni CI ve Pages üretimi tamamlanana, ardından canlı ana sayfa ve takvim URL'leri okunabilirlik katmanıyla HTTP 200 dönene kadar yayın tamamlanmış sayılmayacak.

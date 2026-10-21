@@ -7,7 +7,6 @@ const pagePaths = [
   '/prazen-koledar/',
   '/prazniki/',
   '/prazniki/marijino-vnebovzetje/',
-  '/koledar-z-imenom/ana/',
   '/solske-pocitnice/',
 ];
 

@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  REMOVED_NAME_PATHS = %r{\A/(?:koledar-z-imenom|imena)(?:/|\z)}
   before_action :context
   def context
     @all_page_paths=Page.pluck(:path).to_set
@@ -10,6 +11,7 @@ class PagesController < ApplicationController
   end
   def show
     path=request.original_fullpath.split('?').first;path='/' if path.blank?
+    raise ActiveRecord::RecordNotFound if path.match?(REMOVED_NAME_PATHS)
     return redirect_to("#{path}/",status: :moved_permanently) unless path.end_with?('/')
     @canonical=path
     @person=PersonName.find_by!(slug:path.split('/')[2]) if path.start_with?('/koledar-z-imenom/')&&path.split('/').length==3
@@ -100,7 +102,6 @@ class PagesController < ApplicationController
     return 'privacy' if path=='/zasebnost/'
     return 'cookie_policy' if path=='/piskotki/'
     return 'calendar' if path.start_with?('/koledar/')||path=='/mesecni-koledar/'||path.start_with?('/tedenski-koledar/')
-    return 'names' if path.start_with?('/imena/')||path=='/koledar-z-imenom/'
     return 'horoscope' if path.start_with?('/horoskop/')
     return 'school' if path.start_with?('/solske-pocitnice/')
     return 'held' if path.start_with?('/godovi/')
@@ -124,12 +125,12 @@ class PagesController < ApplicationController
   def sitemap
     response.headers['Cache-Control']='public, max-age=3600'
     base=ENV.fetch('SITE_URL','https://koledar365.si')
-    render xml: %(<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>#{base}/sitemap-pages.xml</loc></sitemap><sitemap><loc>#{base}/sitemap-names.xml</loc></sitemap></sitemapindex>)
+    render xml: %(<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>#{base}/sitemap-pages.xml</loc></sitemap></sitemapindex>)
   end
   def sitemap_part
-    raise ActiveRecord::RecordNotFound unless %w[pages names].include?(params[:kind])
+    raise ActiveRecord::RecordNotFound unless params[:kind]=='pages'
     base=ENV.fetch('SITE_URL','https://koledar365.si')
-    rows=params[:kind]=='names' ? PersonName.published.map { |n| [n.path,n.updated_at] } : Page.published.map { |p| [p.path,p.updated_at] }
+    rows=Page.published.reject { |p| p.path.match?(REMOVED_NAME_PATHS) }.map { |p| [p.path,p.updated_at] }
     if params[:kind]=='pages'
       rows.concat(SunEngine::CITIES.keys.map { |city_id| ["/soncni-vzhod-in-zahod/#{city_id}/",Date.new(2026,10,21)] })
       rows=rows.uniq { |path,_| path }

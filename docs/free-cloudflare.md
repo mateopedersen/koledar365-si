@@ -8,6 +8,8 @@ GitHub's existing authenticated write permissions protect editing. `/upravljanje
 
 Cloudflare Pages configuration: production branch main, build command `node script/verify_static.mjs`, output `site`, root repository directory. Set build variable `SKIP_DEPENDENCY_INSTALL=1`; Node is pinned by `.node-version`. The prepared output and hashes are committed. Preview deployments must be checked for noindex before production. `_routes.json` sends only `/vreme/*` to Functions; other public assets remain static. No token/binding is needed for the weather proxy.
 
+Production release order: wait for `Prepare verified Pages publication` to finish and commit its verified `site/` snapshot to `main`, then verify the Cloudflare Pages production deployment for that snapshot. A Pages build triggered before the generated snapshot reaches `main` can publish the previous `site/`; confirm the public URL after deployment before reporting it live.
+
 `script/rebuild_free.rb` rebuilds public HTML from source and editorial JSON, preserves real name lastmod timestamps, checks cached print source versions, refreshes the browser Ruby package only when its deterministic payload changes, and refuses to finalize an incomplete/unverified catalogue. A changed holiday rule requires regeneration and both PDF/WebP checks before publication. Existing print fingerprints do not depend on daily horoscopes.
 
 Rollback uses Cloudflare Pages' previous verified deployment and the matching Git commit. Public content backups are Git history; personal users must export their own JSON/ICS before clearing browser data. No automatic cross-device synchronization is claimed.

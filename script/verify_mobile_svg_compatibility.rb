@@ -133,7 +133,9 @@ Dir[File.join(root, 'site/**/*.html')].each do |path|
   end
   page_count += 1
 end
-assert.call(page_count > 8900, "Expected a full static export, checked only #{page_count} pages")
+static_audit = JSON.parse(File.read(File.join(root, 'evidence/static-audit.json')))
+expected_pages = static_audit.fetch('html') + Dir[File.join(root, 'site/free/views/**/*.html')].length
+assert.call(page_count >= expected_pages, "Expected a full static export (#{expected_pages} pages), checked only #{page_count} pages")
 puts JSON.generate(passed: true, checked_pages: page_count, fingerprinted_svg_references: svg_reference_count,
   fallback_symbols: symbol_count, valid_svg_documents: assets.length)
 end

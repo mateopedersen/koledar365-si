@@ -32,6 +32,12 @@ class SeoTest < ActionDispatch::IntegrationTest
     get '/sitemap-pages.xml'
     assert_includes response.body,'https://koledar365.si/koledar/2027/'
     refute_includes response.body,'https://koledar365.si/godovi/'
+    refute_includes response.body,'/koledar-z-imenom/'
+    refute_includes response.body,'/imena/'
+    get '/sitemap.xml'
+    refute_includes response.body,'sitemap-names.xml'
+    get '/sitemap-names.xml'
+    assert_response :not_found
     get '/sitemap-random.xml'
     assert_response :not_found
   end
@@ -91,27 +97,25 @@ class SeoTest < ActionDispatch::IntegrationTest
   end
 end
 
-class NamePaginationSeoTest < ActionDispatch::IntegrationTest
-  test 'name pagination has its own canonical and real next links' do
-    get '/imena/najpogostejsa/?page=2'
-    assert_response :success
-    assert_select 'link[rel=canonical][href="https://koledar365.si/imena/najpogostejsa/?page=2"]'
-    assert_select 'a[href="?page=3"]'
-    assert_select 'h1',/stran 2/
+class RemovedNameDirectoryTest < ActionDispatch::IntegrationTest
+  test 'name directory and its individual pages are removed without placeholders' do
+    ['/koledar-z-imenom/','/koledar-z-imenom/ana/','/koledar-z-imenom/ana/?page=2',
+     '/imena/','/imena/najpogostejsa/','/imena/zenska/?page=2'].each do |path|
+      get path
+      assert_response :not_found
+      assert_select 'a[href="/koledar-z-imenom/"]',count:0
+      assert_select 'a[href="/imena/najpogostejsa/"]',count:0
+    end
+    get '/'
+    assert_select 'a[href="/koledar-z-imenom/"]',count:0
+    assert_select 'a[href="/imena/"]',count:0
+    get '/isci/',params:{q:'Ana'}
+    assert_no_match %r{/koledar-z-imenom/|/imena/},response.body
   end
 end
 
 class SocialImageTest < ActionDispatch::IntegrationTest
-  test 'social images identify the actual name and calendar period' do
-    person=PersonName.order(:priority).first
-    get person.path
-    assert_select 'meta[property="og:image"]' do |elements|
-      url=elements.first['content'];assert_includes url,"/druzabno/names/#{person.id}/"
-      get URI(url).request_uri
-      assert_response :success
-      assert_equal 'image/png',response.media_type
-      assert_equal [1200,630],response.body.byteslice(16,8).unpack('N2')
-    end
+  test 'social images identify the calendar period' do
     get '/koledar/2029/april/'
     assert_select 'meta[property="og:image:alt"][content="Koledar – april 2029"]'
   end

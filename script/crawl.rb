@@ -1,6 +1,6 @@
 require 'net/http'
 require 'nokogiri'
-paths=Page.order(:id).pluck(:path)+PersonName.order(:priority).limit(200).map(&:path)
+paths=Page.order(:id).pluck(:path).reject { |path| path.match?(PagesController::REMOVED_NAME_PATHS) }
 results=paths.map do |path|
   start=Process.clock_gettime(Process::CLOCK_MONOTONIC)
   response=Net::HTTP.get_response(URI("http://127.0.0.1:3650#{path}"))

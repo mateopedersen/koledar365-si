@@ -26,7 +26,10 @@
     <div class="observance-heading"><div><span class="eyebrow">NAPREJ ALI NAZAJ?</span><h2 id="clock-change-visual-title">Kako premaknemo uro?</h2></div><a class="clock-change-download" href="<%= ClockChangeSchedule::IMAGE_BASE %>-2400.webp" download>Prenesi sliko <span aria-hidden="true">↓</span></a></div>
     <figure class="clock-change-figure">
       <a href="<%= ClockChangeSchedule::IMAGE_BASE %>-2400.webp" aria-label="Odpri večjo infografiko premika ure">
+        <picture>
+        <source media="(max-width:600px)" type="image/webp" srcset="<%= ClockChangeSchedule::IMAGE_BASE %>-mobile.webp" width="640" height="1000">
         <img src="<%= ClockChangeSchedule::IMAGE_PATH %>" srcset="<%= ClockChangeSchedule::IMAGE_BASE %>-640.webp 640w, <%= ClockChangeSchedule::IMAGE_PATH %> 1200w, <%= ClockChangeSchedule::IMAGE_BASE %>-2400.webp 2400w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1400px) calc(100vw - 64px), 1320px" width="1200" height="720" alt="<%= ClockChangeSchedule::IMAGE_ALT %>" fetchpriority="high" decoding="async">
+        </picture>
       </a>
       <figcaption>Spomladi uro premaknemo za eno uro naprej, jeseni pa za eno uro nazaj. Prikazan je lokalni čas v Sloveniji. Infografika: Koledar365.</figcaption>
     </figure>

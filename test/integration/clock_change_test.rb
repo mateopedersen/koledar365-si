@@ -58,7 +58,10 @@ class ClockChangeTest < ActionDispatch::IntegrationTest
   end
 
   test '2026 calendar download contains both verified all day transitions' do
-    events=IcsService.import(Rails.root.join('public/premik-ure/premik-ure-2026.ics').read)
+    calendar=Rails.root.join('public/premik-ure/premik-ure-2026.ics').binread
+    assert_equal calendar.scan(/\n/).length,calendar.scan(/\r\n/).length
+    assert calendar.split("\r\n").all? { |line|line.bytesize<=75 }
+    events=IcsService.import(calendar.force_encoding('UTF-8'))
     assert_equal ['2026-03-29','2026-10-25'],events.map { |row|row['date'] }
     assert events.all? { |row|row['time'].empty? }
   end

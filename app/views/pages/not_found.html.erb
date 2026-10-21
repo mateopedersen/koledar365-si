@@ -1,10 +1,10 @@
 <section class="lost-page">
   <div class="lost-copy"><span class="eyebrow">NAPAKA 404 · STRAN NI NAJDENA</span><h1>Tukaj ni strani.<br>Načrti ostanejo.</h1><p>Povezava je morda zastarela ali pa naslov ni pravilen. Poiščite želeno vsebino ali odprite koledar.</p>
-    <form action="/isci/" class="lost-search" role="search"><label for="lost-search">Poiščite koledar, ime ali orodje</label><div><input id="lost-search" name="q" type="search" placeholder="Na primer: koledar 2030" maxlength="120"><button type="submit" class="primary" aria-label="Poišči po spletnem mestu"><%= ui_icon('search') %></button></div></form>
+    <form action="/isci/" class="lost-search" role="search"><label for="lost-search">Poiščite koledar ali orodje</label><div><input id="lost-search" name="q" type="search" placeholder="Na primer: koledar 2030" maxlength="120"><button type="submit" class="primary" aria-label="Poišči po spletnem mestu"><%= ui_icon('search') %></button></div></form>
     <a class="button primary" href="/"><%= ui_icon('calendar') %> Nazaj na začetno stran</a>
   </div>
   <div class="lost-visual" aria-hidden="true">
     <div class="lost-calendar"><div class="lost-calendar-top"><span>KOLEDAR365</span><span>STRAN NI NAJDENA</span></div><div class="lost-number">404<span></span></div><div class="lost-calendar-bottom"><span>Nov začetek je vedno mogoč.</span><%= ui_icon('compass') %></div></div>
   </div>
 </section>
-<section class="lost-routes"><div class="section-heading"><div><span class="eyebrow">NAZAJ NA PRAVO POT</span><h2>Začnite z letom.</h2></div><a href="/orodja/">Vsa orodja <%= ui_icon('chevron-right') %></a></div><%= render 'pages/year_cards' %><div class="actions"><a href="/prazniki/">Prazniki v Sloveniji</a><a href="/koledar-z-imenom/">Koledar z imenom</a><a href="/kontakt/">Sporočite nedelujočo povezavo</a></div></section>
+<section class="lost-routes"><div class="section-heading"><div><span class="eyebrow">NAZAJ NA PRAVO POT</span><h2>Začnite z letom.</h2></div><a href="/orodja/">Vsa orodja <%= ui_icon('chevron-right') %></a></div><%= render 'pages/year_cards' %><div class="actions"><a href="/prazniki/">Prazniki v Sloveniji</a><a href="/kontakt/">Sporočite nedelujočo povezavo</a></div></section>
