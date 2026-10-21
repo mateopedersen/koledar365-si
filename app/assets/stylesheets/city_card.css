@@ -6,7 +6,7 @@
 #city-card .today-eyebrow{display:block;font-size:8px;line-height:1.4;letter-spacing:1.7px;text-transform:uppercase;font-weight:800;color:#9d4c5b;margin:0 0 3px}
 #city-card .today-heading h2{font-size:17px;line-height:1.2;letter-spacing:-.5px;margin:0;color:#173052}
 #city-card .today-live{margin-left:auto;white-space:nowrap;align-self:flex-start;font-size:8px;font-weight:650;letter-spacing:.1px;color:#657b8a;display:flex;gap:4px;align-items:center;margin-top:2px}
-#city-card .today-live i{width:5px;height:5px;border-radius:50%;background:#38a182;box-shadow:0 0 0 3px #38a18213}
+#city-card .today-live i{width:5px;height:5px;border-radius:50%;background:#0054b8;box-shadow:0 0 0 3px #0054b813}
 #city-card .city-photo{display:block;position:relative;grid-column:auto;grid-row:auto;height:155px;margin:0;border-radius:0;background:#e4edf6}
 #city-card .city-photo:after{content:'';position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 1px 0 #ffffff30}
 #city-card .city-photo img{height:100%;width:100%;object-fit:cover}
@@ -59,7 +59,7 @@
 #city-card #weather-refresh{display:grid;place-items:center;flex:none;width:28px;height:28px;min-height:28px;padding:6px;border:1px solid #e5ecf4;border-radius:50%;background:#f8fafd;color:#7f95ae;box-shadow:none;cursor:pointer}
 #city-card #weather-refresh:hover{background:#e9f0f8;color:#244d76}
 #city-card #weather-refresh svg{width:14px;height:14px}
-#city-card[data-weather-state=ready] .status-dot{background:#35a88a;box-shadow:0 0 0 3px #35a88a10}
+#city-card[data-weather-state=ready] .status-dot{background:#0054b8;box-shadow:0 0 0 3px #0054b810}
 #city-card[data-weather-state=saved] .status-dot,#city-card[data-weather-state=unavailable] .status-dot{background:#d69b4c}
 #city-card.is-refreshing #weather-refresh svg{animation:wx-spin 1.5s linear infinite}
 #city-card .line-link{align-items:center;padding:12px 2px 10px;border-top:1px solid #e9eef4;font-size:12px;color:#3b5573;font-weight:650}

@@ -95,3 +95,9 @@ PATH="/Users/melihozcan/.cache/codex-runtimes/codex-primary-runtime/dependencies
 PDFTOPPM_BIN=/Users/melihozcan/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override/pdftoppm
 PYTHON_BIN=/Users/melihozcan/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3
 Daha ayrıntılı kurtarma komutları ve faz kayıtları: docs/status-history-2026-10-20.md.
+
+## 2026-10-21 Slovenya ulusal renk paleti düzeltmesi
+
+- Ana görsel sistemdeki yeşil vurgu ve durum renkleri bayrak paletinin mavisi/kırmızısına taşındı; açık yüzeyler beyaz ve açık mavi kaldı. Ana takvim, bugün işareti, şehir/hava durumu kartı, tatil ve özel gün sayfaları, sayaçlar, tatil planlayıcıları, gizlilik sayfası ve görsel bileşenler gözden geçirildi.
+- Kaynak stil denetimi `app/assets/stylesheets` altındaki 14 CSS dosyasını taradı; yeşil baskın hex rengi kalmadı. `git diff --check` temiz.
+- Değişiklikler `fix/slovenian-national-palette-20261021` dalında; statik yayın ve canlı doğrulama bu kayıt güncellendiğinde henüz tamamlanmadı.

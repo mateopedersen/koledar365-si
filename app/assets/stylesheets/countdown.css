@@ -1,4 +1,4 @@
-.countdown-page{--cd-navy:#153b5b;--cd-blue:#1266a3;--cd-red:#c93449;--cd-green:#198b70;--cd-ink:#1c344a;--cd-muted:#6c7c8d;--cd-line:#e2e9ef;--cd-soft:#f4f7f9;max-width:1370px;margin:10px auto 55px;color:var(--cd-ink)}
+.countdown-page{--cd-navy:#153b5b;--cd-blue:#1266a3;--cd-red:#c93449;--cd-ink:#1c344a;--cd-muted:#6c7c8d;--cd-line:#e2e9ef;--cd-soft:#f4f7f9;max-width:1370px;margin:10px auto 55px;color:var(--cd-ink)}
 .countdown-page [hidden]{display:none!important}
 .countdown-hero{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);align-items:center;gap:34px;min-height:420px;padding:38px 43px;border:1px solid #dfe7ed;border-radius:15px;background:linear-gradient(114deg,#fff 0%,#fff 51%,#f1f6f9 100%);overflow:hidden}
 .countdown-hero__copy{position:relative;z-index:2;max-width:610px;padding:5px 0}
@@ -41,7 +41,7 @@
 .countdown-shortcuts button:hover{transform:translateY(-2px);border-color:#c7d9e5;box-shadow:0 6px 15px #1d3b5510}
 .countdown-shortcut__icon{display:grid;place-items:center;width:38px;height:38px;border-radius:7px}
 .countdown-shortcut__icon .ui-icon{width:21px;height:21px}
-.countdown-shortcut__icon.is-red{background:#fff0f1;color:#bc3347}.countdown-shortcut__icon.is-blue{background:#eef5fa;color:#1d6699}.countdown-shortcut__icon.is-green{background:#ebf7f3;color:#188b70}.countdown-shortcut__icon.is-navy{background:#eff2f6;color:#274660}
+.countdown-shortcut__icon.is-red{background:#fff0f1;color:#bc3347}.countdown-shortcut__icon.is-blue{background:#eef5fa;color:#1d6699}.countdown-shortcut__icon.is-green{background:#edf4fa;color:#0054b8}.countdown-shortcut__icon.is-navy{background:#eff2f6;color:#274660}
 .countdown-shortcuts strong,.countdown-shortcuts small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .countdown-shortcuts strong{color:#29435d;font-size:11px;font-weight:850}
 .countdown-shortcuts small{margin-top:3px;color:#7a8997;font-size:9px}
@@ -60,11 +60,11 @@
 .countdown-saved-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
 .countdown-saved-card{position:relative;min-width:0;padding:16px 16px 13px;border:1px solid #dfe7ec;border-radius:8px;background:#fff;box-shadow:0 3px 11px #18374e08}
 .countdown-saved-card:before{position:absolute;top:0;left:15px;right:15px;height:2px;background:linear-gradient(90deg,#1c6b9e 0 54%,#e0e9ef 54%);content:""}
-.countdown-saved-card--school:before{background:linear-gradient(90deg,#2c9078 0 54%,#e0e9ef 54%)}
+.countdown-saved-card--school:before{background:linear-gradient(90deg,#0054b8 0 54%,#e0e9ef 54%)}
 .countdown-saved-card--custom:before{background:linear-gradient(90deg,#c7364b 0 54%,#e0e9ef 54%)}
 .countdown-saved-card__head{display:flex;align-items:flex-start;gap:9px;min-width:0}
 .countdown-saved-card__icon{display:grid;place-items:center;flex:0 0 30px;width:30px;height:30px;border-radius:6px;background:#edf4f8;color:#1e6695}
-.countdown-saved-card--school .countdown-saved-card__icon{background:#eaf6f1;color:#19846d}.countdown-saved-card--custom .countdown-saved-card__icon{background:#fff0f1;color:#bd3749}
+.countdown-saved-card--school .countdown-saved-card__icon{background:#edf4fa;color:#0054b8}.countdown-saved-card--custom .countdown-saved-card__icon{background:#fff0f1;color:#bd3749}
 .countdown-saved-card__icon .ui-icon{width:16px;height:16px}
 .countdown-saved-card__copy{min-width:0;flex:1}
 .countdown-saved-card__copy strong{display:block;overflow:hidden;color:#29425a;font-size:11px;font-weight:850;text-overflow:ellipsis;white-space:nowrap}
@@ -109,13 +109,13 @@
 .countdown-event-card__body p{margin:0;color:#7b8996;font-size:8px;line-height:1.55}
 .countdown-event-card__tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
 .countdown-event-card__tags span{display:inline-flex;padding:2px 5px;border-radius:3px;background:#edf4f8;color:#37617e;font-size:7px;font-weight:800}
-.countdown-event-card__tags .is-red{background:#fff0f1;color:#aa3547}.countdown-event-card__tags .is-green{background:#eaf6f1;color:#187c66}.countdown-event-card__tags .is-gold{background:#fff6e8;color:#8e682b}
+.countdown-event-card__tags .is-red{background:#fff0f1;color:#aa3547}.countdown-event-card__tags .is-green{background:#edf4fa;color:#0054b8}.countdown-event-card__tags .is-gold{background:#fff6e8;color:#8e682b}
 .countdown-event-card__actions{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
 .countdown-event-card__distance{color:#637b8e;font-size:8px;font-weight:800;white-space:nowrap}
 .countdown-event-card__actions button{min-height:27px;padding:4px 7px;border-radius:4px;font-size:8px;font-weight:800;white-space:nowrap}
-.countdown-event-card__actions button.is-added{border-color:#c8e6dc;background:#edf8f3;color:#247c65}
-.countdown-event-card--school .countdown-event-card__date{background:#f0f7f5;border-color:#dbece5}
-.countdown-event-card--school .countdown-event-card__date small{color:#19836d}
+.countdown-event-card__actions button.is-added{border-color:#dbe4ed;background:#edf4fa;color:#0054b8}
+.countdown-event-card--school .countdown-event-card__date{background:#edf4fa;border-color:#dbe4ed}
+.countdown-event-card--school .countdown-event-card__date small{color:#0054b8}
 .countdown-no-results{display:flex;flex-direction:column;gap:3px;padding:25px;border:1px dashed #d9e3e9;border-radius:7px;background:#fbfcfd;text-align:center}
 .countdown-no-results strong{color:#40596d;font-size:11px}
 .countdown-no-results span{color:#81909c;font-size:9px}
@@ -127,7 +127,7 @@
 .countdown-custom__intro>p{font-size:11px}
 .countdown-custom__promises{display:flex;flex-wrap:wrap;gap:8px 17px;margin-top:20px}
 .countdown-custom__promises span{display:flex;align-items:center;gap:6px;color:#5b7385;font-size:9px;font-weight:750}
-.countdown-custom__promises i{display:grid;place-items:center;width:16px;height:16px;border-radius:50%;background:#e4f3ec;color:#25826b;font-size:9px;font-style:normal;font-weight:900}
+.countdown-custom__promises i{display:grid;place-items:center;width:16px;height:16px;border-radius:50%;background:#edf4fa;color:#0054b8;font-size:9px;font-style:normal;font-weight:900}
 .countdown-custom-form{padding:20px 21px 16px;border:1px solid #e0e7ec;border-radius:8px;background:#fff;box-shadow:0 5px 15px #1839510b}
 .countdown-custom-form__heading{display:flex;align-items:center;gap:10px;margin-bottom:14px}
 .countdown-custom-form__icon{display:grid;place-items:center;width:34px;height:34px;border-radius:6px;background:#eef4f8;color:#1f648f}
@@ -140,7 +140,7 @@
 .countdown-custom-form input:focus,.countdown-custom-form select:focus{border-color:#5a99c2;outline:3px solid #d9ebf7}
 .countdown-custom-form__row{display:grid;grid-template-columns:1fr .68fr;gap:9px}
 .countdown-custom-form__submit{width:100%;margin-top:4px;border-radius:5px}
-.countdown-custom-status{display:block;min-height:15px;margin-top:7px;color:#277461;font-size:9px}
+.countdown-custom-status{display:block;min-height:15px;margin-top:7px;color:#0054b8;font-size:9px}
 .countdown-custom-status.is-error{color:#b53245}
 
 .countdown-sources{display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;margin-top:25px;padding:18px 20px;border:1px solid #e3e9ed;border-radius:8px;background:#f8fafb}
