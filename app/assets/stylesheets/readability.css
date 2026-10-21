@@ -189,6 +189,9 @@
       padding: 10px 0 8px;
     }
     #cookies .cookie-bar-icon { display: none; }
+    /* Keep the grid wrapper from becoming the hit target over its own controls. */
+    #cookies .cookie-bar-main { pointer-events: none; }
+    #cookies .cookie-actions { pointer-events: auto; }
     #cookies .cookie-bar-copy {
       grid-column: 1;
       grid-row: 1;
