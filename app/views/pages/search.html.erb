@@ -1,1 +1,40 @@
-<div class="page-heading"><h1>Iskanje</h1><p><%= @q.blank? ? 'Vpišite ime, leto, mesec, praznik ali orodje.':"Rezultati za »#{@q}«" %></p></div><section class="panel"><% if @results.empty? %><p>Ni zadetkov. Poskusite krajši zapis, drugo ime ali leto od 2027 do 2030.</p><% else %><p><%= t('results',count:@results.size) %></p><ul class="search-results"><% @results.each do |r| %><li><a href="<%= r[:path] %>"><strong><%= r[:title] %></strong><small><%= r[:type] %></small></a></li><% end %></ul><% end %></section>
+<section class="search-page" data-search-page>
+  <div class="page-heading">
+    <h1>Iskanje po Koledar365</h1>
+    <p data-search-heading><%= @q.blank? ? 'Poiščite med koledarji, prazniki, imeni in orodji.' : "Rezultati za »#{@q}«" %></p>
+  </div>
+
+  <form action="/isci/" class="search-page-form" role="search" data-site-search>
+    <label for="search-page-input">Kaj iščete?</label>
+    <div class="search-page-field">
+      <input id="search-page-input" data-search-input name="q" type="search" autocomplete="off" maxlength="120" placeholder="Npr. božič, Ana, polna luna ali 25. december 2027" value="<%= @q %>">
+      <button class="primary" type="submit">Poišči</button>
+    </div>
+    <div class="site-search-suggestions" data-search-suggestions hidden>
+      <p class="site-search-status" data-search-status role="status" aria-live="polite" hidden></p>
+      <div id="site-search-suggestions-page" data-search-options role="listbox" aria-label="Predlogi iskanja"></div>
+    </div>
+  </form>
+
+  <section class="panel search-results-panel" data-search-results aria-live="polite" aria-busy="false">
+    <% if @results.any? %>
+      <p class="search-summary"><%= t('results', count: @results.size) %></p>
+      <ul class="search-results">
+        <% @results.each do |result| %>
+          <li class="search-result"><a href="<%= result[:path] %>"><span class="site-search-option__copy"><strong><%= result[:title] %></strong><small><%= result[:type] %></small></span><span class="site-search-option__arrow" aria-hidden="true">↗</span></a></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p class="search-empty-copy">Začnite z iskanjem ali izberite priljubljeno temo.</p>
+      <nav class="search-shortcuts" aria-label="Priljubljene teme">
+        <a class="site-search-option" href="/prazniki/"><span class="site-search-option__copy"><strong>Prazniki v Sloveniji</strong><small>Datumi in dela prosti dnevi</small></span></a>
+        <a class="site-search-option" href="/solske-pocitnice/"><span class="site-search-option__copy"><strong>Šolske počitnice</strong><small>Šolski koledar in regije</small></span></a>
+        <a class="site-search-option" href="/koledar/2027/"><span class="site-search-option__copy"><strong>Koledar 2027</strong><small>Letni in mesečni pregledi</small></span></a>
+        <a class="site-search-option" href="/polna-luna/"><span class="site-search-option__copy"><strong>Polna luna</strong><small>Lunine mene in datumi</small></span></a>
+        <a class="site-search-option" href="/soncni-vzhod-in-zahod/ljubljana/"><span class="site-search-option__copy"><strong>Sončni vzhod in zahod</strong><small>Izberite slovensko mesto</small></span></a>
+        <a class="site-search-option" href="/koledar-z-imenom/"><span class="site-search-option__copy"><strong>Imena in godovi</strong><small>Koledarji z imenom</small></span></a>
+      </nav>
+    <% end %>
+    <noscript><p class="notice">Za takojšnje predloge vklopite JavaScript. Povezave do glavnih koledarjev so na voljo zgoraj.</p></noscript>
+  </section>
+</section>

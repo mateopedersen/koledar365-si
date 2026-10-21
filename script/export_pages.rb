@@ -142,7 +142,29 @@ unless limit
  session.get('/te-strani-ni/');write.call('/404.html',transform.call(session.response.body,'/404.html',indexable:false))
 end
 out.join('free/assets.json').write(JSON.generate(assets))
-search=Page.published.map { |p|{title:p.title,path:p.path,type:'Koledar in orodja',folded:PersonName.fold(p.title+' '+p.path),priority:0} }+SunEngine::CITIES.map { |id,values|{title:"Sončni vzhod in zahod – #{values[0]}",path:"/soncni-vzhod-in-zahod/#{id}/",type:'Sončni časi',folded:PersonName.fold(values[0]+' sončni vzhod zahod mesto'),priority:1} }+PersonName.published.order(:priority).map { |p|{title:"Ime: #{p.exact}",path:p.path,type:'Koledar z imenom',folded:p.folded,priority:p.priority} }
+search=Page.published.map do |page|
+ keywords=case page.path
+ when %r{\A/prazniki/} then 'prazniki državni praznik dela prost dan dela prosti dnevi javni praznik'
+ when %r{\A/solske-pocitnice/} then 'šolske počitnice šolski koledar zimske jesenske zimske prvomajske poletne počitnice osnovna šola srednja šola'
+ when %r{\A/lunin-koledar/}, %r{\A/(?:lunine-mene|polna-luna|mlaj)/} then 'luna lunine mene mlaj polna luna ščip prvi krajec zadnji krajec lunacija'
+ when %r{\A/delovni-dnevi/} then 'delovni dnevi delovne ure delovnik prazniki dela prost dan'
+ when %r{\A/podaljsani-vikendi/}, %r{\A/nacrtovalnik-dopusta/} then 'podaljšani vikendi dopust prosti dnevi oddih prazniki'
+ when %r{\A/soncni-vzhod-in-zahod/}, %r{\A/dolzina-dneva/} then 'sončni vzhod sončni zahod zlata ura dolžina dneva mesto'
+ when %r{\A/(?:koledar-z-imenom|imena|godovi)/} then 'ime imena god godovi koledar z imenom godovni koledar'
+ when %r{\A/(?:koledar|mesecni-koledar|tedenski-koledar|prazen-koledar)/} then 'koledar datum dnevi mesec leto tedenski mesečni letni koledar'
+ else ''
+ end
+ {title:page.title,path:page.path,type:'Koledar in orodja',folded:PersonName.fold([page.title,page.path,page.description,keywords].compact.join(' ')),priority:0}
+end
+search+=SunEngine::CITIES.map { |id,values|{title:"Sončni vzhod in zahod – #{values[0]}",path:"/soncni-vzhod-in-zahod/#{id}/",type:'Sončni časi',folded:PersonName.fold("#{values[0]} sončni vzhod sončni zahod zlata ura dolžina dneva mesto"),priority:1} }
+search+=PersonName.published.order(:priority).map { |person|{title:"Ime: #{person.exact}",path:person.path,type:'Koledar z imenom',folded:PersonName.fold("#{person.exact} ime koledar z imenom"),priority:person.priority} }
+search+=CalendarEvent.ordered.map do |event|
+ path=["/prazniki/#{event.slug}/","/pomembni-dnevi/#{event.slug}/","/letni-casi/#{event.slug}/"].find { |candidate|Page.exists?(path:candidate) }||"/pomembni-dnevi/#{event.on.year}/"
+ tags=[event.title,event.on.iso8601,"#{event.on.day}. #{CalendarEngine::MONTHS.fetch(event.on.month-1)} #{event.on.year}",CalendarEngine::DAYS.fetch(event.on.cwday-1),event.category,'praznik']
+ tags<<'dela prost dan dela prosti dan' if event.work_free
+ tags<<'državni praznik' if event.state_holiday
+ {title:event.title.sub(/\A./) { |letter|letter.upcase },path:path,type:'Prazniki in dnevi',folded:PersonName.fold(tags.compact.join(' ')),priority:event.work_free ? -2 : 2}
+end
 out.join('free/search.json').write(JSON.generate(search))
 events=CalendarEvent.all.map { |event|event.attributes.merge('path'=>['/prazniki/','/pomembni-dnevi/','/letni-casi/'].map { |prefix|prefix+event.slug+'/' }.find { |path|Page.exists?(path:path) }||"/pomembni-dnevi/#{event.on.year}/") }
 out.join('free/events.json').write(events.to_json)
