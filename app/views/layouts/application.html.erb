@@ -32,7 +32,7 @@
 <% if @clock_change %><%= stylesheet_link_tag 'clock_change' %><script type="module" src="/premik-ure/experience.mjs"></script><% end %>
 <% if gallery_page? %><%= stylesheet_link_tag 'calendar_gallery' %><% end %>
 <% if page_path == '/razpored-izmen/' %><%= stylesheet_link_tag 'shift_schedule' %><%= javascript_include_tag 'shift_schedule',defer:true %><% end %>
-<% if @section=='school' %><link rel="stylesheet" href="/school/experience.css?v=20261020-3"><script type="module" src="/school/experience.mjs?v=20261020-3"></script><% end %>
+<% if @section=='school' %><link rel="stylesheet" href="/school/experience.css?v=20261022-1"><script type="module" src="/school/experience.mjs?v=20261022-1"></script><% end %>
 <%= stylesheet_link_tag 'print' %>
 <%= stylesheet_link_tag 'readability' %>
 <link rel="icon" href="<%= IllustrationHelper.versioned_svg_url('/visuals/brand-calendar-v3.svg') %>" type="image/svg+xml">

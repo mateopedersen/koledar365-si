@@ -88,11 +88,18 @@ test('each published monthly calendar prints on one A4 page',async({page},info)=
 });
 
 test('school print keeps its calendar section together and removes its interactive month picker',async({page},info)=>{
+  await page.addInitScript(()=>{window.print=()=>{};});
   await page.goto('/solske-pocitnice/2026-2027/',{waitUntil:'load'});
   await expect(page.locator('[data-calendar-day]')).not.toHaveCount(0);
+  await page.locator('[data-school-calendar-print]').click();
+  await expect(page.locator('body')).toHaveClass(/school-calendar-printing/);
   await page.emulateMedia({media:'print'});
   const section=page.locator('.sp-calendar-section');
   await expect(page.locator('[data-calendar-day]').first()).toBeVisible();
+  await expect(section).toBeVisible();
+  await expect(page.locator('.sp-holiday-grid')).toBeHidden();
+  await expect(page.locator('.sp-universities')).toBeHidden();
+  await expect(page.locator('.sp-month-aside [data-month-events]')).toBeVisible();
   const breakInside=await section.evaluate(node=>getComputedStyle(node).breakInside);
   expect(['avoid','avoid-page']).toContain(breakInside);
   await expect(page.locator('.sp-month-heading > div')).toHaveCSS('display','none');
