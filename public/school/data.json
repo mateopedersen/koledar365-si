@@ -12,7 +12,8 @@
       "tag": "Čas za jesenske dogodivščine",
       "season": "autumn",
       "start": "2026-10-26",
-      "end": "2026-10-30"
+      "end": "2026-10-30",
+      "photo": "autumn"
     },
     {
       "id": "newyear",
@@ -24,7 +25,8 @@
       "secondary": [
         "2026-12-28",
         "2026-12-31"
-      ]
+      ],
+      "photo": "newyear"
     },
     {
       "id": "winter-east",
@@ -33,7 +35,8 @@
       "season": "winter",
       "start": "2027-02-15",
       "end": "2027-02-19",
-      "region": "east"
+      "region": "east",
+      "photo": "winterEast"
     },
     {
       "id": "winter-west",
@@ -42,7 +45,8 @@
       "season": "winter",
       "start": "2027-02-22",
       "end": "2027-02-26",
-      "region": "west"
+      "region": "west",
+      "photo": "winterWest"
     },
     {
       "id": "may",
@@ -54,7 +58,8 @@
       "secondary": [
         "2027-04-28",
         "2027-04-30"
-      ]
+      ],
+      "photo": "spring"
     },
     {
       "id": "summer",
@@ -62,7 +67,8 @@
       "tag": "Najdaljši odmor v letu",
       "season": "summer",
       "start": "2027-06-28",
-      "end": "2027-08-31"
+      "end": "2027-08-31",
+      "photo": "summer"
     }
   ],
   "freeDays": [
@@ -649,5 +655,77 @@
     "universities": 7,
     "internationalAssociations": 2,
     "note": "Vsi veljavni nadrejeni zavodi v hierarhični evidenci NAKVIS. EMUNI in Evropska univerza sta mednarodni zvezi univerz; ne predstavljamo ju kot devet akreditiranih univerz."
+  },
+  "photos": {
+    "hero": {
+      "path": "/school/photos/hero-bled-c5b4afc6.jpg",
+      "title": "Bled on a spring day 2017.jpg",
+      "alt": "Pomladni pogled na Blejsko jezero, Blejski grad in Julijske Alpe.",
+      "author": "Dreamy Pixel",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Bled_on_a_spring_day_2017.jpg",
+      "changes": "Pomanjšana fotografija, uporabljena z izrezom za pasico; vsebina ni retuširana."
+    },
+    "autumn": {
+      "path": "/school/photos/autumn-zavrsnica-5f1a0392.jpg",
+      "title": "Autumn path in Završnica valley in Slovenia.jpg",
+      "alt": "Jesenska pešpot med oranžnimi in rumenimi drevesi v dolini Završnice v Sloveniji.",
+      "author": "Dreamy Pixel",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Autumn_path_in_Zavr%C5%A1nica_valley_in_Slovenia.jpg",
+      "changes": "Pomanjšana fotografija, uporabljena z izrezom za kartico; vsebina ni retuširana."
+    },
+    "newyear": {
+      "path": "/school/photos/ljubljana-holidays-7690f2f1.jpg",
+      "title": "Ljubljana Christmas Market Lights (24941684308).jpg",
+      "alt": "Praznično osvetljeno staro mestno jedro Ljubljane ob reki Ljubljanici.",
+      "author": "Oleg Brovko from Trieste, Italy",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Ljubljana_Christmas_Market_Lights_(24941684308).jpg",
+      "changes": "Pomanjšana fotografija, uporabljena z izrezom za kartico; ta prilagoditev je objavljena pod CC BY-SA 2.0."
+    },
+    "winterEast": {
+      "path": "/school/photos/winter-pohorje-0f6b02e3.jpg",
+      "title": "Virgin snow on Pohorje (8247178274).jpg",
+      "alt": "Zasneženo smučišče na Pohorju z vlečnicami in razgledom proti Mariboru.",
+      "author": "breki74 from Maribor, Slovenia",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Virgin_snow_on_Pohorje_(8247178274).jpg",
+      "changes": "Pomanjšana fotografija, uporabljena z izrezom za kartico; ta prilagoditev je objavljena pod CC BY-SA 2.0."
+    },
+    "winterWest": {
+      "path": "/school/photos/winter-kranjska-gora-924bb2aa.jpg",
+      "title": "RTCKranjskaGora.JPG",
+      "alt": "Zimski pogled na zasneženo dolino in sedežnico v Kranjski Gori.",
+      "author": "Žiga at Slovenian Wikipedia",
+      "license": "Javna domena",
+      "licenseUrl": null,
+      "source": "https://commons.wikimedia.org/wiki/File:RTCKranjskaGora.JPG",
+      "changes": "Pomanjšana fotografija, uporabljena z izrezom za kartico; izvirna datoteka je v javni domeni."
+    },
+    "spring": {
+      "path": "/school/photos/spring-golica-311a2679.jpg",
+      "title": "Narcise-Golica1.jpg",
+      "alt": "Beli cvetovi narcis na gorskem travniku na Golici pri Jesenicah.",
+      "author": "Sl-Ziga",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Narcise-Golica1.jpg",
+      "changes": "Pomanjšana fotografija, uporabljena z izrezom za kartico; ta prilagoditev je objavljena pod CC BY-SA 3.0."
+    },
+    "summer": {
+      "path": "/school/photos/summer-piran-6cdae1cb.jpg",
+      "title": "Piran beach 01.jpg",
+      "alt": "Poletni obiskovalci na obali Pirana ob čisti modri vodi Jadranskega morja.",
+      "author": "Clemens Stockner",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Piran_beach_01.jpg",
+      "changes": "Pomanjšana fotografija, uporabljena z izrezom za kartico; ta prilagoditev je objavljena pod CC BY-SA 4.0."
+    }
   }
 }
