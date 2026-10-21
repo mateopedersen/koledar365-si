@@ -14,6 +14,11 @@ body.shift-page .shift-hero__benefits span:nth-child(3) i{background:#5876a0;box
 body.shift-page .shift-hero__art{max-width:470px;justify-self:end;width:100%;filter:drop-shadow(0 16px 18px #173a6310)}
 body.shift-page .shift-hero__art svg{display:block;width:100%;height:auto}
 body.shift-page .shift-download-workspace{display:grid;gap:22px;max-width:1320px;margin:0 auto}
+body.shift-page .shift-hero__copy.page-heading{margin-bottom:0}
+body.shift-page .shift-hero__copy.page-heading h1{font-size:clamp(34px,4.2vw,58px);margin:12px 0 18px;line-height:1.06;letter-spacing:-2px}
+body.shift-page .shift-hero__copy.page-heading>p{font-size:clamp(16px,1.6vw,19px);line-height:1.75;margin:0}
+body.shift-page .shift-settings-context{position:static;margin:0;padding:18px;border:1px solid #dce7f2;border-radius:16px;background:#fff;box-shadow:none}
+body.shift-page .shift-settings-context .context-content{max-height:none;min-height:0;overflow:visible;padding:0}
 body.shift-page .shift-workbench{max-width:none;margin:0;padding:clamp(20px,3vw,38px);border:1px solid #dce7f2;border-radius:22px;background:#fff;box-shadow:0 12px 36px #173a630b}
 body.shift-page .shift-workbench__heading{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:25px;padding-bottom:21px;border-bottom:1px solid #e6edf4}
 body.shift-page .shift-workbench__heading h2{margin:7px 0 5px;font-size:clamp(23px,2.3vw,31px);letter-spacing:-.8px;color:#10274b}

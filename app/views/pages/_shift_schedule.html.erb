@@ -75,7 +75,10 @@
     <output id="planner-entry-status" role="status"></output>
   </section>
 
-  <details class="shift-print-settings panel">
+  <section class="gallery-context panel shift-settings-context" aria-label="Nastavitve koledarja za tisk">
+    <%= render 'context_heading', title: 'Nastavitve koledarja za tisk', expand: 'Razširi nastavitve' %>
+    <div class="context-content" id="gallery-context-content">
+  <details class="shift-print-settings panel" open>
     <summary><span><strong>Nastavitve koledarja za tisk</strong><small>Obdobje, velikost papirja, osebni podatki in fotografija</small></span><span aria-hidden="true">＋</span></summary>
     <div class="shift-print-settings__body">
       <form id="planner-options" data-planner-type="shift">
@@ -98,6 +101,8 @@
       </form>
     </div>
   </details>
+    </div>
+  </section>
 
   <%= render 'designs',type:'shift' %>
 </div>
