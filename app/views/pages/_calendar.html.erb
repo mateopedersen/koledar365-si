@@ -22,6 +22,7 @@
 <% if @page.month %><nav class="actions context-month-navigation" aria-label="Sosednja meseca"><% d=Date.new(@year,@month,1);[d.prev_month,d.next_month].each do |n| %><% if CalendarEngine::INTERACTIVE_YEARS.include?(n.year) %><a href="<%= calendar_path(n) %>"><%= CalendarEngine::MONTHS[n.month-1] %> <%= n.year %></a><% end %><% end %></nav><% end %>
     </div>
   </section>
+  <% if with_gallery %><div class="calendar-downloads"><% end %>
   <%= render 'calendar_spreadsheet' %>
   <% if with_gallery %>
     <% if CalendarEngine::YEARS.include?(@year) && PublicCalendarGallery.available? %>
@@ -29,6 +30,6 @@
     <% else %>
       <div id="calendar-designs"><%= render 'designs', type: download_type %></div>
     <% end %>
-  </div>
+  </div></div>
   <% end %>
 <% else %><%= render 'year_cards' %><div class="link-grid"><% @children.limit(65).each do |p| %><a href="<%= p.path %>"><%= p.title %></a><% end %></div><% end %>
