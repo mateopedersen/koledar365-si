@@ -3,7 +3,8 @@
 <section class="panel date-tool" data-date-calculator>
   <div class="date-tool__intro">
     <div><span class="date-tool__eyebrow">HITRI IZRAČUN</span><h2>Izberite vrsto izračuna</h2><p>Vsi datumski izračuni so pripravljeni takoj. Rezultat lahko kopirate ali delite s povezavo.</p></div>
-    <svg class="date-tool__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="/visuals/ui-material-v3.svg#calculator"/></svg>
+    <% calculator_icon = "#{IllustrationHelper.versioned_svg_url('/visuals/ui-material-v3.svg')}#calculator" %>
+    <svg class="date-tool__icon" viewBox="0 0 64 64" aria-hidden="true" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="<%= calculator_icon %>" xlink:href="<%= calculator_icon %>"/></svg>
   </div>
   <form class="date-tool__form" action="/izracun/" method="post" data-date-form>
     <%= hidden_field_tag :authenticity_token,form_authenticity_token %><input type="hidden" name="tool" value="date" data-date-tool>

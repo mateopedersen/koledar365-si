@@ -12,11 +12,12 @@
 <div class="date-hero">
   <div class="date-hero__copy"><span class="eyebrow">KOLEDAR365 · DATUMSKA ORODJA</span><h1><%= @title %></h1><p><%= @description %></p><div class="date-hero__tags"><span><i></i> Takojšen izračun</span><span><i></i> Slovenski prazniki</span><span><i></i> Povezava za deljenje</span></div></div>
   <div class="date-hero__art" aria-hidden="true">
-    <svg viewBox="0 0 380 260" role="presentation" focusable="false">
+    <svg viewBox="0 0 380 260" role="presentation" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs><linearGradient id="dateScene" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#e8f0fa"/></linearGradient></defs>
 <ellipse cx="185" cy="230" rx="125" ry="12" fill="#15385d" opacity=".08"/><circle cx="300" cy="64" r="39" fill="#eaf2fb"/>
-<g transform="rotate(-7 164 120)"><use href="/visuals/ui-material-v3.svg#calendar" x="44" y="-3" width="245" height="245"/></g>
-<rect x="226" y="116" width="111" height="111" rx="24" fill="url(#dateScene)" stroke="#d8e4f0"/><use href="/visuals/ui-material-v3.svg#clock" x="238" y="121" width="88" height="88"/>
+<% date_icon_calendar = "#{IllustrationHelper.versioned_svg_url('/visuals/ui-material-v3.svg')}#calendar"; date_icon_clock = "#{IllustrationHelper.versioned_svg_url('/visuals/ui-material-v3.svg')}#clock" %>
+<g transform="rotate(-7 164 120)"><use href="<%= date_icon_calendar %>" xlink:href="<%= date_icon_calendar %>" x="44" y="-3" width="245" height="245"/></g>
+<rect x="226" y="116" width="111" height="111" rx="24" fill="url(#dateScene)" stroke="#d8e4f0"/><use href="<%= date_icon_clock %>" xlink:href="<%= date_icon_clock %>" x="238" y="121" width="88" height="88"/>
 <path d="M306 35v13m-6-6h12M49 170v10m-5-5h10" stroke="#97b3d0" stroke-width="2" stroke-linecap="round"/>
 </svg>
   </div>

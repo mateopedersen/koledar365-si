@@ -3,6 +3,7 @@ require 'nokogiri'
 require 'fileutils'
 require 'digest'
 require 'base64'
+require_relative '../lib/svg_asset_references'
 ENV['OPERATOR_CONTACT']='koledar365@gmail.com'
 out=Rails.root.join(ENV.fetch('STATIC_OUT','site'));FileUtils.mkdir_p(out)
 partial=ENV['STATIC_ONLY']&.split(',')
@@ -12,6 +13,7 @@ unless partial
  %w[lunar/atlas images/responsive].each { |relative| FileUtils.rm_rf(out.join(relative)) }
  FileUtils.cp_r(Rails.root.join('public/.'),out)
 end
+SvgAssetReferences.materialize_fingerprinted_assets!(Rails.root.join('public'),out)
 FileUtils.mkdir_p(out.join('free/views/home'));FileUtils.mkdir_p(out.join('free/names'))
 FileUtils.cp_r(Rails.root.join('cloudflare/free/.'),out.join('free'))
 FileUtils.rm_f(out.join('free/README.md'))
@@ -102,6 +104,8 @@ elsif path=='/delovni-dnevi/'
  if path.start_with?('/koledar/','/tedenski-koledar/')
   doc.css('.calendar-toolbar .tabs a').each { |node|node['href']='/'+node['href'] if node['href'].start_with?('?') }
  end
+ # Version every referenced local SVG and add old-WebKit symbol fallbacks.
+ SvgAssetReferences.rewrite_document!(doc, Rails.root.join('public'))
  script=Nokogiri::XML::Node.new('script',doc);script['type']='module';script['src']="/free/#{client_asset}";doc.at_css('head').add_child(script)
  doc.to_html
 end
@@ -158,6 +162,12 @@ headers=<<~HEADERS
   Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-#{cookie_script_hash}'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' blob:; connect-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'
   Cache-Control: public, max-age=0, must-revalidate
 /visuals/*
+  Cache-Control: public, max-age=31536000, immutable
+/horoscope/art/*
+  Cache-Control: public, max-age=31536000, immutable
+/school/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+/school/logos/*.svg
   Cache-Control: public, max-age=31536000, immutable
 /assets/*
   Cache-Control: public, max-age=31536000, immutable

@@ -45,6 +45,8 @@ const icon = name => `<svg class="sp-icon" aria-hidden="true"><use href="#sp-${n
 function initSchoolPage(root) {
   if (root.dataset.held === 'true') return;
   const data = JSON.parse(root.querySelector('#sp-data').textContent);
+  const svgAssets = JSON.parse(root.dataset.svgAssets || '{}');
+  const schoolArt = season => svgAssets[season] || `/school/${season}.svg`;
   const $ = selector => root.querySelector(selector), $$ = selector => [...root.querySelectorAll(selector)];
   const params = new URLSearchParams(location.search);
   let level = ['primary','secondary','university'].includes(params.get('level')) ? params.get('level') : 'primary';
@@ -93,7 +95,7 @@ function initSchoolPage(root) {
   }
   function renderCards() {
     const cards = activeBreaks().filter(row => !savedOnly || favorites.has(row.id));
-    $('[data-holiday-grid]').innerHTML = cards.map(row => `<article class="sp-holiday sp-${row.season}" data-break-id="${row.id}"><div class="sp-card-art"><img src="/school/${row.season}.svg" width="640" height="420" alt="" loading="lazy"><span class="sp-season-tag">${{autumn:'JESEN',festive:'PRAZNIČNI ČAS',winter:'ZIMA',spring:'POMLAD',summer:'POLETJE'}[row.season]}</span><button type="button" class="sp-favorite" data-favorite="${row.id}" aria-label="${favorites.has(row.id)?'Odstrani iz shranjenih':'Shrani'}: ${escapeHTML(row.name)}" aria-pressed="${favorites.has(row.id)}">${icon('heart')}</button></div><div class="sp-card-content"><small>${escapeHTML(row.tag)}</small><h3>${escapeHTML(row.name)}</h3><div class="sp-card-date">${icon('calendar')}<time datetime="${row.start}">${rangeText(row)}</time></div><div class="sp-card-bottom"><span><strong>${daysInclusive(row.start,row.end)}</strong> koledarskih dni <small>uradnega obdobja</small></span><button type="button" data-export-break="${row.id}" aria-label="Izvozi: ${escapeHTML(row.name)}">${icon('download')}</button></div></div></article>`).join('') + (!savedOnly ? tip : '');
+    $('[data-holiday-grid]').innerHTML = cards.map(row => `<article class="sp-holiday sp-${row.season}" data-break-id="${row.id}"><div class="sp-card-art"><img src="${schoolArt(row.season)}" width="640" height="420" alt="" loading="lazy"><span class="sp-season-tag">${{autumn:'JESEN',festive:'PRAZNIČNI ČAS',winter:'ZIMA',spring:'POMLAD',summer:'POLETJE'}[row.season]}</span><button type="button" class="sp-favorite" data-favorite="${row.id}" aria-label="${favorites.has(row.id)?'Odstrani iz shranjenih':'Shrani'}: ${escapeHTML(row.name)}" aria-pressed="${favorites.has(row.id)}">${icon('heart')}</button></div><div class="sp-card-content"><small>${escapeHTML(row.tag)}</small><h3>${escapeHTML(row.name)}</h3><div class="sp-card-date">${icon('calendar')}<time datetime="${row.start}">${rangeText(row)}</time></div><div class="sp-card-bottom"><span><strong>${daysInclusive(row.start,row.end)}</strong> koledarskih dni <small>uradnega obdobja</small></span><button type="button" data-export-break="${row.id}" aria-label="Izvozi: ${escapeHTML(row.name)}">${icon('download')}</button></div></div></article>`).join('') + (!savedOnly ? tip : '');
     $('[data-empty]').hidden = !savedOnly || cards.length > 0;
     $('[data-saved-only]').setAttribute('aria-pressed', String(savedOnly)); $('[data-saved-count]').textContent = favorites.size;
   }
