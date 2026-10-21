@@ -79,8 +79,9 @@ Dir[site.join('**/*.html')].sort.each do |file|
     actual=gallery.css("a[data-calendar-download=#{format}][download]").map { |node|node['href'] }.sort
     fail_with.call("Inline #{format} downloads do not match this page's exact year/month") unless actual==expected.map { |row|row.fetch('files').fetch(format) }.sort
    end
-   fail_with.call('Inline previews do not match the actual download files') unless gallery.css('img').map { |node|URI(node['src']).path }.sort==expected.map { |row|row.fetch('files').fetch('preview') }.sort
-   fail_with.call('Gallery previews must use the optimized 212 × 300 thumbnail dimensions') unless gallery.css('img').all? { |node|node['width']=='212'&&node['height']=='300' }
+   previews=gallery.css('.calendar-design-image img')
+   fail_with.call('Inline previews do not match the actual download files') unless previews.map { |node|URI(node['src']).path }.sort==expected.map { |row|row.fetch('files').fetch('preview') }.sort
+   fail_with.call('Gallery previews must use the optimized 212 × 300 thumbnail dimensions') unless previews.all? { |node|node['width']=='212'&&node['height']=='300' }
   end
  end
  doc.css('source[srcset],img[srcset]').each do |node|

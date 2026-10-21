@@ -63,6 +63,29 @@ test('the mobile privacy choice stays a compact, usable bottom ribbon',async({pa
  await expect(banner).toBeHidden();
 });
 
+test('the sky, Sun visibility, and moving clouds follow the real solar altitude',async({page})=>{
+ await page.goto('/soncni-vzhod-in-zahod/?city=ljubljana&date=2027-07-15');
+ const scene=page.locator('[data-sun-scene]');
+ const sun=page.locator('[data-sun-object]');
+ const clouds=page.locator('[data-sun-cloud="upper"]');
+ const skyStops=scene.locator('#sun-sky stop');
+ const setMinute=async(minute)=>page.locator('[data-sun-time]').evaluate((slider,value)=>{slider.value=String(value);slider.dispatchEvent(new Event('input',{bubbles:true}))},minute);
+ const noonTransform=await clouds.getAttribute('transform');
+ await setMinute(60);
+ await expect(scene).toHaveAttribute('data-sun-phase','night');
+ await expect(sun).toHaveCSS('opacity','0');
+ const nightColors=await skyStops.evaluateAll(stops=>stops.map(stop=>stop.getAttribute('stop-color')));
+ const cloudAtNight=await clouds.getAttribute('transform');
+ await setMinute(720);
+ await expect(scene).toHaveAttribute('data-sun-phase','day');
+ await expect(sun).toHaveCSS('opacity','1');
+ await expect(page.locator('[data-sun-position]')).toContainText('azimut');
+ const dayColors=await skyStops.evaluateAll(stops=>stops.map(stop=>stop.getAttribute('stop-color')));
+ expect(dayColors).not.toEqual(nightColors);
+ expect(cloudAtNight).not.toBe(noonTransform);
+ await expect(page.locator('[data-sun-reflection]')).toHaveAttribute('d',/^M/);
+});
+
 test('the nearest-city button uses the approved browser position locally',async({page,context})=>{
  await context.grantPermissions(['geolocation']);
  await context.setGeolocation({latitude:46.0511,longitude:14.5051});

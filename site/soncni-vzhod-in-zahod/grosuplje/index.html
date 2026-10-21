@@ -27,14 +27,14 @@
 <meta name="twitter:image" content="https://koledar365.si/og.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl"},{"@type":"WebPage","@id":"https://koledar365.si/soncni-vzhod-in-zahod/grosuplje/#webpage","url":"https://koledar365.si/soncni-vzhod-in-zahod/grosuplje/","name":"Sončni vzhod in zahod – Grosuplje","description":"Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Grosuplje. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.","inLanguage":"sl","isPartOf":{"@id":"https://koledar365.si/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://koledar365.si/"},{"@type":"ListItem","position":2,"name":"Sončni vzhod in zahod","item":"https://koledar365.si/soncni-vzhod-in-zahod/"},{"@type":"ListItem","position":3,"name":"Sončni vzhod in zahod – Grosuplje","item":"https://koledar365.si/soncni-vzhod-in-zahod/grosuplje/"}]}]}</script>
 
-<link rel="stylesheet" href="/assets/web-ca5dec1f594ca54e.css">
+<link rel="stylesheet" href="/assets/web-81e1c4b33b719382.css">
 
 
 
 
 
 
-<script src="/assets/sun-52c57036.js" defer></script>
+<script src="/assets/sun-c27ba61d.js" defer></script>
 
 
 
@@ -185,42 +185,65 @@
       <div class="sun-scene-wrap">
         <svg class="sun-scene" viewbox="0 0 720 390" role="img" aria-labelledby="sun-scene-title sun-scene-description" data-sun-scene>
           <title id="sun-scene-title">Pot Sonca za Grosuplje</title>
-          <desc id="sun-scene-description">Sonce se giblje po izračunani dnevni poti med vzhodom in zahodom. Čas lahko izberete z drsnikom.</desc>
+          <desc id="sun-scene-description">Sonce se premika po izračunani poti nad ilustrativno alpsko panoramo. Barve neba, mrak, svetlobni sij in oblaki se spreminjajo z izbrano uro. Čas lahko izberete z drsnikom.</desc>
           <defs>
-            <lineargradient id="sun-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12375f"></stop><stop offset=".64" stop-color="#2872a4"></stop><stop offset="1" stop-color="#f0a58a"></stop></lineargradient>
-            <lineargradient id="sun-horizon" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#4578a2"></stop><stop offset="1" stop-color="#1a3d61"></stop></lineargradient>
-            <lineargradient id="sun-land" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#173b5d"></stop><stop offset="1" stop-color="#0e2947"></stop></lineargradient>
-            <radialgradient id="sun-corona" cx="50%" cy="50%"><stop stop-color="#fff7ce" stop-opacity=".98"></stop><stop offset=".18" stop-color="#ffe2a0" stop-opacity=".72"></stop><stop offset=".56" stop-color="#ffb277" stop-opacity=".26"></stop><stop offset="1" stop-color="#ff775e" stop-opacity="0"></stop></radialgradient>
-            <radialgradient id="sun-disc" cx="36%" cy="28%"><stop stop-color="#fffde5"></stop><stop offset=".32" stop-color="#ffd975"></stop><stop offset=".69" stop-color="#ff9a50"></stop><stop offset="1" stop-color="#e64a45"></stop></radialgradient>
-            <radialgradient id="sun-grain"><stop stop-color="#fff0b7" stop-opacity=".48"></stop><stop offset="1" stop-color="#dd433d" stop-opacity=".07"></stop></radialgradient>
-            <filter id="sun-soft-glow" x="-200%" y="-200%" width="500%" height="500%"><fegaussianblur stddeviation="15"></fegaussianblur></filter>
-            <filter id="sun-sharp-glow" x="-100%" y="-100%" width="300%" height="300%"><fegaussianblur stddeviation="4"></fegaussianblur></filter>
-            <clippath id="sun-disc-clip"><circle r="24"></circle></clippath>
+            <lineargradient id="sun-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#10264a"></stop><stop offset=".42" stop-color="#315678"></stop><stop offset=".78" stop-color="#90717b"></stop><stop offset="1" stop-color="#eaa079"></stop></lineargradient>
+            <lineargradient id="sun-alpine-range" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#a6bdcc"></stop><stop offset=".32" stop-color="#587590"></stop><stop offset="1" stop-color="#253e59"></stop></lineargradient>
+            <lineargradient id="sun-foothills" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#354f65"></stop><stop offset=".48" stop-color="#1e3b51"></stop><stop offset="1" stop-color="#142f48"></stop></lineargradient>
+            <lineargradient id="sun-lake" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#527c91" stop-opacity=".9"></stop><stop offset="1" stop-color="#142f4b"></stop></lineargradient>
+            <lineargradient id="sun-reflection" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff0c6" stop-opacity=".82"></stop><stop offset=".34" stop-color="#ffb777" stop-opacity=".37"></stop><stop offset="1" stop-color="#f29272" stop-opacity="0"></stop></lineargradient>
+            <radialgradient id="sun-corona" cx="50%" cy="50%"><stop stop-color="#fffbe4" stop-opacity=".97"></stop><stop offset=".12" stop-color="#fff1c7" stop-opacity=".82"></stop><stop offset=".3" stop-color="#ffc681" stop-opacity=".46"></stop><stop offset=".62" stop-color="#ff996e" stop-opacity=".18"></stop><stop offset="1" stop-color="#ff8066" stop-opacity="0"></stop></radialgradient>
+            <radialgradient id="sun-disc" cx="34%" cy="24%"><stop stop-color="#fffef0"></stop><stop offset=".2" stop-color="#fff6d5"></stop><stop offset=".55" stop-color="#ffd786"></stop><stop offset=".84" stop-color="#fba45e"></stop><stop offset="1" stop-color="#d9654f"></stop></radialgradient>
+            <radialgradient id="sun-limb-shade"><stop offset=".62" stop-color="#fff" stop-opacity="0"></stop><stop offset=".91" stop-color="#a83c36" stop-opacity=".07"></stop><stop offset="1" stop-color="#612b3b" stop-opacity=".22"></stop></radialgradient>
+            <radialgradient id="sun-horizon-glow" cx="50%" cy="50%"><stop stop-color="#ffe4b2" stop-opacity=".68"></stop><stop offset=".24" stop-color="#ffb38c" stop-opacity=".25"></stop><stop offset="1" stop-color="#f18982" stop-opacity="0"></stop></radialgradient>
+            <lineargradient id="sun-cloud-light" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff" stop-opacity=".58"></stop><stop offset=".44" stop-color="#e8eff3" stop-opacity=".29"></stop><stop offset="1" stop-color="#a5b8cb" stop-opacity=".08"></stop></lineargradient>
+            <filter id="sun-atmosphere-blur" x="-35%" y="-80%" width="170%" height="260%"><fegaussianblur stddeviation="16"></fegaussianblur></filter>
+            <filter id="sun-corona-blur" x="-100%" y="-100%" width="300%" height="300%"><fegaussianblur stddeviation="9"></fegaussianblur></filter>
+            <filter id="sun-cloud-blur" x="-25%" y="-50%" width="150%" height="200%"><fegaussianblur stddeviation="7"></fegaussianblur></filter>
+            <clippath id="sun-disc-clip"><circle r="27"></circle></clippath>
+            <pattern id="sun-water-lines" width="46" height="10" patternunits="userSpaceOnUse"><path d="M2 2h23m8 5h11" stroke="#c4d7df" stroke-opacity=".19" stroke-width=".7" stroke-linecap="round"></path></pattern>
           </defs>
           <rect width="720" height="390" fill="url(#sun-sky)" data-sun-sky></rect>
-          <g class="sun-stars" fill="#fff"><circle cx="100" cy="75" r="1.4"></circle><circle cx="199" cy="49" r="1"></circle><circle cx="602" cy="68" r="1.6"></circle><circle cx="533" cy="104" r="1"></circle><circle cx="334" cy="48" r="1.2"></circle></g>
-          <path d="M30 286 Q118 268 207 282T390 280T575 278T690 284" fill="none" stroke="#fff" stroke-opacity=".14" stroke-width="1"></path>
-          <path d="M38 300 Q152 282 270 293T487 291T685 298" fill="none" stroke="#ffe4bd" stroke-opacity=".56" stroke-width="1.2" stroke-dasharray="3 7" data-sun-horizon-line></path>
-          <path d="M38 300 Q152 282 270 293T487 291T685 298 L720 390H0Z" fill="url(#sun-horizon)"></path>
-          <path d="M0 327 75 296 122 315 204 278 268 313 348 289 411 319 487 280 548 311 621 287 720 321V390H0Z" fill="url(#sun-land)"></path>
-          <path d="M204 278 226 290 238 286 251 302" fill="none" stroke="#9bbbd5" stroke-opacity=".42" stroke-width="2"></path>
-          <path d="M487 280 507 292 519 287 537 302" fill="none" stroke="#9bbbd5" stroke-opacity=".34" stroke-width="2"></path>
-          <path d="M0 351 Q106 327 200 352T387 350T561 344T720 354V390H0Z" fill="#0b2440" opacity=".7"></path>
-          <path d="M360 88V300" stroke="#fff" stroke-opacity=".13" stroke-dasharray="3 7"></path>
-          <path d="" fill="none" stroke="#fff0c2" stroke-opacity=".68" stroke-width="2.5" stroke-linecap="round" data-sun-path></path>
-          <g class="sun-object" data-sun-object transform="translate(360 185)" aria-hidden="true">
-            <circle r="41" fill="url(#sun-corona)" class="sun-corona-pulse"></circle>
-            <circle r="28" fill="#ffb961" opacity=".68" filter="url(#sun-sharp-glow)"></circle>
-            <g class="sun-flare" fill="none" stroke="#fff1c8" stroke-linecap="round"><path d="M0-34c-2-11 4-13 6-19m-32 24c-11-4-16-1-20 4m47 20c8 3 14 2 19-3m-35 20c3 9 1 13-4 18" stroke-width="2.2" opacity=".78"></path></g>
-            <circle r="24" fill="url(#sun-disc)"></circle>
-        <g clip-path="url(#sun-disc-clip)"><image href="/images/solar/sdo-hmiic-photosphere-2026-10-21.jpg" x="-25.6" y="-25.6" width="51.2" height="51.2" preserveaspectratio="xMidYMid slice"></image><circle r="24" fill="url(#sun-disc)" opacity=".13"></circle><circle r="24" fill="url(#sun-grain)" opacity=".3"></circle>
-              <path d="M-17-7c6-5 11-5 15-1m8 14c4-4 9-4 13-1m-24-20c5-2 8-2 12 0" fill="none" stroke="#fff5ce" stroke-width="1.4" stroke-linecap="round" opacity=".5"></path>
-              <ellipse cx="-7" cy="-3" rx="2.1" ry="1.2" fill="#e85d45" opacity=".55"></ellipse><ellipse cx="9" cy="8" rx="2.6" ry="1.3" fill="#e85d45" opacity=".4"></ellipse>
-            </g>
-            <circle r="25" fill="none" stroke="#fff3cf" stroke-opacity=".68" stroke-width=".8"></circle>
+          <ellipse cx="360" cy="294" rx="440" ry="154" fill="url(#sun-horizon-glow)" opacity=".34" data-sun-horizon-glow></ellipse>
+          <g class="sun-stars" fill="#fff" aria-hidden="true"><circle cx="69" cy="78" r="1.3"></circle><circle cx="132" cy="128" r=".8"></circle><circle cx="198" cy="47" r="1.2"></circle><circle cx="266" cy="95" r=".8"></circle><circle cx="331" cy="60" r="1"></circle><circle cx="402" cy="110" r=".8"></circle><circle cx="489" cy="48" r="1.1"></circle><circle cx="571" cy="92" r=".8"></circle><circle cx="641" cy="62" r="1.3"></circle><circle cx="607" cy="145" r=".7"></circle><circle cx="90" cy="165" r=".7"></circle><circle cx="430" cy="70" r=".6"></circle></g>
+          <g class="sun-clouds" data-sun-cloud="upper" transform="translate(0 0)" aria-hidden="true">
+            <path d="M30 142c9-10 22-13 35-9 4-15 21-24 36-17 9-14 34-13 42 5 16-1 27 10 27 21Z" fill="#d9e6ee" opacity=".14" filter="url(#sun-cloud-blur)"></path>
+            <path d="M28 139c8-9 19-11 31-8 4-13 18-20 31-15 8-12 28-11 36 4 13-1 22 8 22 18Z" fill="url(#sun-cloud-light)" opacity=".43"></path>
+            <path d="M432 114c9-10 21-12 34-8 4-14 20-21 33-15 8-13 29-12 37 4 14-1 24 9 24 19Z" fill="#dbe6ed" opacity=".12" filter="url(#sun-cloud-blur)"></path>
+            <path d="M438 111c8-8 18-10 29-7 4-12 17-18 29-13 7-11 25-10 32 4 12-1 21 8 21 16Z" fill="url(#sun-cloud-light)" opacity=".39"></path>
           </g>
-          <g class="sun-scene-labels" fill="#f4f8fc" font-family="Avenir, 'Avenir Next', system-ui, sans-serif" font-size="12" font-weight="600"><text x="40" y="323">VZHOD</text><text x="625" y="323">ZAHOD</text><text x="360" y="328" text-anchor="middle">JUG · SONČNO POLDNE</text></g>
-          <g data-sun-pointer transform="translate(360 240)"><circle r="7" fill="#fff" stroke="#c92f45" stroke-width="3"></circle><path d="M0 9v14" stroke="#fff" stroke-width="2" stroke-linecap="round"></path></g>
+          <g class="sun-clouds" data-sun-cloud="lower" transform="translate(0 0)" aria-hidden="true">
+            <path d="M190 215c9-11 25-15 40-9 6-17 25-24 41-15 11-15 34-12 42 6 17-2 30 10 30 23Z" fill="#e0e8ed" opacity=".14" filter="url(#sun-cloud-blur)"></path>
+            <path d="M193 211c8-10 22-12 34-7 5-14 21-19 34-12 9-12 27-10 34 5 14-2 24 8 24 18Z" fill="url(#sun-cloud-light)" opacity=".31"></path>
+            <path d="M506 191c8-9 20-12 32-7 4-13 18-19 30-12 8-11 26-9 32 5 13-1 22 7 22 17Z" fill="#e0e8ed" opacity=".12" filter="url(#sun-cloud-blur)"></path>
+            <path d="M510 188c7-8 17-9 27-6 4-11 15-15 26-10 7-9 21-8 27 4 11-1 19 6 19 14Z" fill="url(#sun-cloud-light)" opacity=".3"></path>
+          </g>
+          <ellipse cx="360" cy="300" rx="0" ry="0" fill="url(#sun-horizon-glow)" opacity="0" data-sun-scatter></ellipse>
+          <path d="M35 300 Q185 299 360 300 T685 300" fill="none" stroke="#fff0d9" stroke-opacity=".42" stroke-width="1.2" stroke-dasharray="2 7" data-sun-horizon-line></path>
+          <path d="M360 92V300" stroke="#fff" stroke-opacity=".12" stroke-dasharray="3 8"></path>
+          <path d="" fill="none" stroke="#fff0c2" stroke-opacity=".3" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2 6" data-sun-path></path>
+          <g class="sun-object" data-sun-object transform="translate(360 160)" aria-hidden="true">
+            <circle r="81" fill="url(#sun-corona)" class="sun-corona-halo" filter="url(#sun-corona-blur)"></circle>
+            <circle r="66" fill="url(#sun-corona)" class="sun-corona-pulse"></circle>
+            <circle r="30" fill="#ffe2a2" opacity=".42" filter="url(#sun-corona-blur)"></circle>
+            <circle r="27" fill="url(#sun-disc)"></circle>
+            <g clip-path="url(#sun-disc-clip)"><image href="/images/solar/sdo-hmiic-photosphere-2026-10-21.jpg" x="-29" y="-29" width="58" height="58" preserveaspectratio="xMidYMid slice"></image><circle r="27" fill="url(#sun-disc)" opacity=".12"></circle><circle r="27" fill="url(#sun-limb-shade)"></circle>
+              <ellipse cx="-8" cy="-5" rx="2.1" ry="1.2" fill="#793b39" opacity=".54"></ellipse><ellipse cx="10" cy="8" rx="2.6" ry="1.35" fill="#793b39" opacity=".44"></ellipse><ellipse cx="4" cy="-14" rx="1.3" ry=".8" fill="#8e453b" opacity=".38"></ellipse>
+            </g>
+            <circle r="27.5" fill="none" stroke="#fff8e3" stroke-opacity=".67" stroke-width=".8"></circle>
+          </g>
+          <g class="sun-alps" aria-hidden="true">
+            <path d="M0 307 42 296 80 301 116 291 137 300 174 292 218 302 264 286 300 294 329 275 348 284 360 266 376 283 394 276 429 295 466 282 501 298 545 287 579 300 612 290 653 298 720 292V390H0Z" fill="url(#sun-alpine-range)" opacity=".74"></path>
+            <path d="m310 291 19-16 19 9 12-18 16 17 18-7 22 19-31-8-13 8-12-11-13 9-18-10-13 9Z" fill="#e9f1f0" opacity=".72"></path>
+            <path d="M0 321 50 307 94 314 136 305 184 315 228 304 274 314 323 300 365 311 412 301 458 314 505 303 550 315 594 305 643 316 686 304 720 314V390H0Z" fill="url(#sun-foothills)"></path>
+            <path d="M0 320 50 307 94 314 136 305 184 315 228 304 274 314 323 300 365 311 412 301 458 314 505 303 550 315 594 305 643 316 686 304 720 314" fill="none" stroke="#b4c9ce" stroke-opacity=".46" stroke-width="1.1"></path>
+            <path d="M0 334 Q170 325 330 337T720 332V390H0Z" fill="url(#sun-lake)" opacity=".78"></path>
+            <path d="M0 334 Q170 325 330 337T720 332V390H0Z" fill="url(#sun-water-lines)" opacity=".55"></path>
+            <path d="M0 350 Q102 339 201 350T389 351T565 343T720 352V390H0Z" fill="#18334a" opacity=".78"></path>
+            <g fill="#102b40" opacity=".94"><path d="m42 351 9-24 9 24h-5l8 15H39l8-15Zm34 1 7-20 8 20h-4l7 14H69l7-14Zm540 2 10-28 10 28h-6l9 17h-27l9-17Zm34-1 8-22 8 22h-5l7 14h-20l7-14Zm-71 4 7-19 7 19h-4l7 12h-18l7-12Z"></path></g>
+          </g>
+          <path d="" fill="none" stroke="url(#sun-reflection)" stroke-width="13" stroke-linecap="round" opacity="0" filter="url(#sun-atmosphere-blur)" data-sun-reflection></path>
+          <g class="sun-scene-labels" fill="#f4f8fc" font-family="Avenir, 'Avenir Next', system-ui, sans-serif" font-size="11" font-weight="650"><text x="39" y="326">VZHOD</text><text x="626" y="326">ZAHOD</text><text x="360" y="326" text-anchor="middle">JUG · SONČNO POLDNE</text></g>
         </svg>
       </div>
       <div class="sun-timeline">
@@ -237,7 +260,7 @@
 <button type="button" data-sun-play aria-pressed="false"><span aria-hidden="true">▶</span> Predvajaj dnevno pot</button>
 </div>
       </div>
-      <p class="sun-scene-note">Pot je geometrijsko izračunana za izbrani datum in koordinate; griči, stavbe, oblačnost in lokalni relief niso vključeni. Površinska fotografija: NASA/SDO HMI Continuum, 21. 10. 2026.</p>
+      <p class="sun-scene-note">Položaj Sonca je astronomsko izračunan za izbrani datum in kraj. Alpska panorama in oblaki so ilustrativni, ne prikazujejo lokalnega reliefa ali dejanskega vremena. Površinska fotografija: NASA/SDO HMI Continuum, 21. 10. 2026.</p>
     </div>
 
     <aside class="sun-day-card" aria-label="Sončni časi in dnevna svetloba">

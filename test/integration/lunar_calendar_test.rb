@@ -29,16 +29,24 @@ class LunarCalendarTest < ActionDispatch::IntegrationTest
   assert_response :success
   assert_select '[data-lunar]',count:0
  end
- test 'lunar hub presents four distinct year illustrations and all month routes' do
+ test 'lunar hub presents authentic NASA Moon photographs and all month routes' do
   get '/lunin-koledar/'
   assert_response :success
   assert_select '.lunar-hub-masthead h1',count:1
+  assert_select ".lunar-hub-masthead__art img[src='/lunar/photos/artemis-earthset.jpg'][alt='']",count:1
+  assert_select '.lunar-hub-masthead__art svg',count:0
   assert_select '.lunar-year-card',count:4
-  (2027..2030).each do |year|
-   assert_select ".lunar-year-card--#{year} svg",count:1
+  photos={2027=>'artemis-curve.jpg',2028=>'artemis-earthset.jpg',2029=>'apollo-17-moon.jpg',2030=>'apollo-8-lunar-surface.jpg'}
+  photos.each do |year,photo|
+   assert_select ".lunar-year-card--#{year} .lunar-year-art img[src='/lunar/photos/#{photo}'][alt]",count:1
+   assert_select ".lunar-year-card--#{year} .lunar-year-art svg",count:0
    assert_select ".lunar-year-card--#{year} nav[aria-label='Meseci leta #{year}'] a",count:12
    assert_select ".lunar-year-card--#{year} a[href='/lunin-koledar/#{year}/']",minimum:1
   end
+  assert_select "a[href='/lunin-koledar/2027/januar/']" do |links|
+   assert_equal '01Januar',links.first.text.strip.gsub(/\s+/, '')
+  end
+  assert_select "a[href='https://images.nasa.gov/details/art002e020904']",minimum:1
   assert_select '.lunar-hub-method',count:1
   assert_select '.lunar-phases',count:0
   assert_select '.lunar-downloads',count:0
