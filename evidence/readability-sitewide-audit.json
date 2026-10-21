@@ -1,0 +1,73 @@
+{
+  "checked_at": "2026-10-21T09:59:06.100964+00:00",
+  "sitemaps": {
+    "sitemap-pages.xml": {
+      "url_count": 388,
+      "sha256": "7cf73863126abdb190f15ff517b5aecf4946159d7268b9fed7c7d3477f2c4e9f"
+    },
+    "sitemap-names.xml": {
+      "url_count": 8561,
+      "sha256": "540d488458fb181c563454dd7e462df2c04cc6bf46ae2d20187f2af09f307f98"
+    }
+  },
+  "url_count": 8949,
+  "unique_url_count": 8949,
+  "route_families": {
+    "dan-v-letu": 1,
+    "datumski-kalkulator": 1,
+    "delovni-dnevi": 54,
+    "dnevni-planer": 1,
+    "dolzina-dneva": 1,
+    "druzinski-planer": 1,
+    "fotografije-in-licence": 1,
+    "home": 1,
+    "horoskop": 14,
+    "imena": 5,
+    "kalkulator-delovnih-dni": 1,
+    "koledar": 57,
+    "koledar-z-imenom": 8562,
+    "koledar-za-tiskanje": 1,
+    "kontakt": 1,
+    "letni-casi": 5,
+    "lunin-koledar": 57,
+    "lunine-mene": 1,
+    "mesecni-koledar": 1,
+    "mlaj": 1,
+    "nacrtovalnik-dopusta": 1,
+    "o-nas": 1,
+    "odstevanje": 1,
+    "orodja": 1,
+    "piskotki": 1,
+    "podaljsani-vikendi": 5,
+    "pogoji-uporabe": 1,
+    "polna-luna": 1,
+    "pomembni-dnevi": 35,
+    "prazen-koledar": 1,
+    "prazniki": 41,
+    "premik-ure": 1,
+    "prestopno-leto": 1,
+    "razpored-izmen": 1,
+    "rojstnodnevni-koledar": 1,
+    "solske-pocitnice": 7,
+    "solski-urnik": 1,
+    "soncni-vzhod-in-zahod": 70,
+    "stevilka-tedna": 1,
+    "tedenski-koledar": 6,
+    "uredniska-politika": 1,
+    "ustvari-koledar": 1,
+    "viri-in-metodologija": 1,
+    "zasebnost": 1
+  },
+  "missing_html_count": 0,
+  "missing_html_examples": [],
+  "missing_readability_count": 0,
+  "missing_readability_examples": [],
+  "special_pages": {
+    "/404.html": {
+      "exists": true,
+      "readability_covered": true
+    }
+  },
+  "css_bundles_checked": 15,
+  "passed": true
+}
