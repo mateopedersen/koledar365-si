@@ -163,3 +163,38 @@
 @media(max-width:650px){.download-workspace:not(.context-expanded) .context-content{display:none!important}}
 
 .download-workspace .context-content>a:not(.button){display:inline-flex;align-items:center;min-height:28px;margin-top:4px}
+
+/* Distinguish the file type at a glance and keep the download action legible. */
+.calendar-download-action,
+.design-card .calendar-download-action,
+.download-workspace .design-card .calendar-download-action,
+.calendar-design-downloads .calendar-download-action,
+.download-workspace .calendar-design-downloads .calendar-download-action{
+  display:flex;align-items:center;justify-content:center;gap:7px;width:100%;min-width:0;min-height:50px;
+  padding:7px 9px;border:2px solid currentColor!important;border-radius:10px;text-align:left;text-decoration:none;line-height:1.05;
+  box-shadow:0 2px 6px #17324d0b,inset 0 1px 0 #ffffffd9;transition:background .16s,border-color .16s,box-shadow .16s,transform .16s
+}
+.calendar-download-action--pdf,
+.design-card .calendar-download-action--pdf,
+.download-workspace .design-card .calendar-download-action--pdf,
+.calendar-design-downloads .calendar-download-action--pdf,
+.download-workspace .calendar-design-downloads .calendar-download-action--pdf{color:#98283a;border-color:#e3b4bd!important;background:linear-gradient(180deg,#fff,#fff6f7)}
+.calendar-download-action--webp,
+.design-card .calendar-download-action--webp,
+.download-workspace .design-card .calendar-download-action--webp,
+.calendar-design-downloads .calendar-download-action--webp,
+.download-workspace .calendar-design-downloads .calendar-download-action--webp{color:#174f82;border-color:#b6cadd!important;background:linear-gradient(180deg,#fff,#f3f8fd)}
+.calendar-download-action__icon,.design-card .calendar-download-action__icon,.download-workspace .design-card .calendar-download-action__icon{display:block;flex:0 0 26px;width:26px;height:26px;max-width:none;max-height:none;margin:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;object-fit:contain}
+.calendar-download-action__copy{display:grid;gap:3px;min-width:0;line-height:1.05}
+.calendar-download-action__copy strong{display:block;color:inherit;font-size:12px;font-weight:850;line-height:1.1;white-space:nowrap}
+.calendar-download-action__copy small{display:block;color:inherit;font-size:9px;font-weight:700;line-height:1.1;opacity:.78;white-space:nowrap}
+.calendar-download-action--webp .calendar-download-action__copy strong{font-size:11px}
+.calendar-download-action:hover,.calendar-download-action:focus-visible{transform:translateY(-1px);text-decoration:none;box-shadow:0 4px 10px #17324d18,inset 0 1px 0 #ffffffd9}
+.calendar-download-action--pdf:hover,.calendar-download-action--pdf:focus-visible{color:#862032;border-color:#c86a79;background:#fff0f2}
+.calendar-download-action--webp:hover,.calendar-download-action--webp:focus-visible{color:#123f69;border-color:#7198ba;background:#eaf4ff}
+.calendar-download-action:focus-visible{outline:3px solid #1764ad55;outline-offset:2px}
+.design-card h3,.calendar-design-info h3,.download-workspace .design-card h3{display:grid;grid-template-columns:32px minmax(0,1fr);align-items:center;gap:10px;min-width:0;min-height:40px;line-height:1.2}
+.design-card h3>.design-number,.calendar-design-info h3>.design-number,.download-workspace .design-card h3>.design-number{display:grid;place-items:center;flex:none;width:32px;min-width:32px;height:32px;margin:0;border:1px solid #dfe6ee;border-radius:9px;background:#f2f5f8;color:#485b70;font-size:13px;font-weight:850;letter-spacing:0;font-variant-numeric:tabular-nums;line-height:1}
+.design-card h3>.design-title,.calendar-design-info h3>.design-title,.download-workspace .design-card h3>.design-title{display:block;min-width:0;color:#172941;font-size:inherit;font-weight:800;line-height:1.22;letter-spacing:-.2px;overflow-wrap:break-word;word-break:normal;hyphens:auto}
+@media(max-width:650px){.design-card h3,.calendar-design-info h3,.download-workspace .design-card h3{gap:9px;min-height:38px}.design-card .calendar-download-action,.download-workspace .design-card .calendar-download-action{flex-direction:column;gap:3px;min-height:58px;padding:5px}.design-card .calendar-download-action__icon,.download-workspace .design-card .calendar-download-action__icon{flex-basis:22px;width:22px;height:22px}.design-card .calendar-download-action__copy,.download-workspace .design-card .calendar-download-action__copy{justify-items:center;gap:2px}.design-card .calendar-download-action__copy strong,.download-workspace .design-card .calendar-download-action__copy strong{font-size:11px}.design-card .calendar-download-action--webp .calendar-download-action__copy strong,.download-workspace .design-card .calendar-download-action--webp .calendar-download-action__copy strong{font-size:10px}.design-card .calendar-download-action__copy small,.download-workspace .design-card .calendar-download-action__copy small{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.calendar-download-action{transition:none}}

@@ -61,6 +61,25 @@ class CalendarNavigationTest < ActionDispatch::IntegrationTest
    end if path=='/prazen-koledar/'
   end
  end
+ test 'calendar galleries separate design numbers and names and label distinct file icons' do
+  get '/koledar/2027/februar/'
+  assert_response :success
+  assert_select '.calendar-design-info h3 .design-number[aria-hidden=true]',count:15
+  assert_select '.calendar-design-info h3 .design-title',count:15
+  assert_select '.calendar-design-downloads .calendar-download-action--pdf img[src="/visuals/download-pdf-v1.svg"][alt=""]',count:15
+  assert_select '.calendar-design-downloads .calendar-download-action--webp img[src="/visuals/download-webp-v1.svg"][alt=""]',count:15
+  assert_select '.calendar-design-downloads .calendar-download-action__copy strong','PDF'
+  assert_select '.calendar-design-downloads .calendar-download-action__copy small','Prenesi'
+
+  get '/koledar-za-tiskanje/'
+  assert_response :success
+  assert_select '.design-card h3 .design-number[aria-hidden=true]',count:15
+  assert_select '.design-card h3 .design-title',count:15
+  assert_select '.design-card .calendar-download-action--pdf img[src="/visuals/download-pdf-v1.svg"][alt=""]',count:15
+  assert_select '.design-card .calendar-download-action--webp img[src="/visuals/download-webp-v1.svg"][alt=""]',count:15
+  assert_select '.design-card .calendar-download-action__copy strong','PDF'
+  assert_select '.design-card .calendar-download-action__copy small','Prenesi'
+ end
  test 'gallery download URLs serve real files and reject unknown artifacts' do
   row=PublicCalendarGallery.rows_for(year:2028,month:2).find { |r|r.dig('files','webp').end_with?('.zip') }
   get row.fetch('files').fetch('pdf')

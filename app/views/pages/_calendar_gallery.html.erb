@@ -22,12 +22,12 @@
           <span><%= pages == 1 ? '1 stran' : "#{pages} strani" %></span>
         </a>
         <div class="calendar-design-info">
-          <h3><span><%= '%02d' % (index + 1) %></span><%= design['name_sl'] %></h3>
+          <h3><span class="design-number" aria-hidden="true"><%= '%02d' % (index + 1) %></span><span class="design-title"><%= design['name_sl'] %></span></h3>
           <p class="calendar-design-meta"><i class="<%= design['color_mode'] == 'monochrome_bw' ? 'mono' : 'color' %>" aria-hidden="true"></i><%= design['color_mode'] == 'monochrome_bw' ? 'Črno-belo' : 'Barvno' %> · A4 · Pokončno</p>
           <a class="button calendar-design-preview" href="<%= files.fetch('pdf') %>" target="_blank" rel="noopener">Odpri predogled <span aria-hidden="true">↗</span></a>
           <div class="calendar-design-downloads">
-            <a class="button" href="<%= files.fetch('pdf') %>" download="<%= File.basename(files.fetch('pdf')) %>" data-calendar-download="pdf" aria-label="Prenesi PDF: <%= design['name_sl'] %> – <%= period %>"><%= ui_icon('download') %>Prenesi PDF</a>
-            <a class="button" href="<%= files.fetch('webp') %>" download="<%= File.basename(files.fetch('webp')) %>" data-calendar-download="webp" aria-label="Prenesi <%= zipped ? 'WebP ZIP' : 'WebP' %>: <%= design['name_sl'] %> – <%= period %>"><%= ui_icon('download') %><%= zipped ? 'WebP ZIP' : 'Prenesi WebP' %></a>
+            <a class="button calendar-download-action calendar-download-action--pdf" href="<%= files.fetch('pdf') %>" download="<%= File.basename(files.fetch('pdf')) %>" data-calendar-download="pdf" aria-label="Prenesi PDF: <%= design['name_sl'] %> – <%= period %>"><%= calendar_file_icon('pdf') %><span class="calendar-download-action__copy"><strong>PDF</strong><small>Prenesi</small></span></a>
+            <a class="button calendar-download-action calendar-download-action--webp" href="<%= files.fetch('webp') %>" download="<%= File.basename(files.fetch('webp')) %>" data-calendar-download="webp" aria-label="Prenesi <%= zipped ? 'WebP ZIP' : 'WebP' %>: <%= design['name_sl'] %> – <%= period %>"><%= calendar_file_icon('webp') %><span class="calendar-download-action__copy"><strong><%= zipped ? 'WebP ZIP' : 'WebP' %></strong><small>Prenesi</small></span></a>
           </div>
           <small class="calendar-design-note"><%= zipped ? "Vseh #{pages} strani WebP v eni datoteki ZIP." : 'PDF in WebP z enako postavitvijo.' %></small>
         </div>
