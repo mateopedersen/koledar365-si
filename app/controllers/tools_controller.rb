@@ -26,6 +26,32 @@ class ToolsController < ApplicationController
       workdays={calendar_days:v[:calendar_days],working_days:v[:working_days],hours:(v[:working_days]*hours).round(2),excluded_holidays:v[:excluded_holidays].map(&:iso8601)}
       @result="Koledarski dnevi: #{workdays[:calendar_days]}. Delovni dnevi: #{workdays[:working_days]}. Ure: #{workdays[:hours]}. Izločeni prazniki: #{v[:excluded_holidays].map { |d| I18n.l(d) }.join(', ').presence||'ni jih'}."
       return render json:{result:@result,workdays:workdays}
+    when 'workday_shift'
+      from=Date.iso8601(params[:from]);delta=Integer(params[:delta])
+      raise ArgumentError,'Izberite največ 1.000 delovnih dni naprej ali nazaj.' unless (-1000..1000).cover?(delta)
+      raise ArgumentError,'Izberite izhodiščni datum med letoma 2027 in 2030.' unless CalendarEngine::YEARS.include?(from.year)
+      week=Array(params[:weekdays]).map(&:to_i)
+      raise ArgumentError,'Izberite vsaj en delovni dan.' if week.empty?||(week-[1,2,3,4,5,6,7]).any?
+      exclude_holidays=params[:exclude_holidays]=='1'
+      holidays=if exclude_holidays
+        CalendarEvent.where(on:Date.new(2027,1,1)..Date.new(2030,12,31),work_free:true).pluck(:on)
+      else
+        []
+      end
+      target=from;counted=0;skipped=[];direction=delta.negative? ? -1 : 1
+      while counted<delta.abs
+        target+=direction
+        raise ArgumentError,'Izračun bi presegel podprta leta 2027–2030.' unless CalendarEngine::YEARS.include?(target.year)
+        next unless week.include?(target.cwday)
+        if holidays.include?(target)
+          skipped << target
+        else
+          counted+=1
+        end
+      end
+      shift={start_date:from.iso8601,target_date:target.iso8601,calendar_days:(target-from).to_i.abs,working_days:counted,excluded_holidays:skipped.map(&:iso8601)}
+      @result="Datum po delovnih dneh: #{I18n.l(target)}. Odmik: #{shift[:calendar_days]} koledarskih dni."
+      return render json:{result:@result,workday_shift:shift}
     when 'vacation'
       year=Integer(params[:year]);budget=Integer(params[:budget]);raise ArgumentError,'Izberite leto 2027–2030 in od 0 do 20 dni dopusta.' unless CalendarEngine::YEARS.include?(year)&&(0..20).cover?(budget)
       @result=CalendarEngine.vacations(year,budget).first(8).map { |o| "#{I18n.l(o[:from])}–#{I18n.l(o[:to])}: prosti dnevi skupaj: #{o[:total]}, poraba dopusta: #{I18n.t('day_count_acc',count:o[:leave])}." }.join("\n")
