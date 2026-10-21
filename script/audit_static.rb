@@ -69,6 +69,12 @@ Dir[site.join('**/*.html')].sort.each do |file|
   end
   fail_with.call('Gallery layout stylesheet is missing') unless has_gallery_styles
  end
+ if relative=='kalkulator-delovnih-dni/index.html'
+  fail_with.call('Workday calculator must retain both interactive modes') unless doc.at_css('[data-workday-calculator]') && doc.css('[data-wdc-mode]').map { |node|node['data-wdc-mode'] }.sort==%w[range shift] && doc.css('[data-wdc-form]').map { |node|node['data-wdc-form'] }.sort==%w[range shift]
+  static_scripts=JSON.parse(doc.at_css('#k365-static-config')&.text.to_s).fetch('scripts',[]) rescue []
+  workdays_script=static_scripts.find { |src|File.basename(URI(src).path).match?(/\Aworkdays(?:-|\.)/) }
+  fail_with.call('Workday calculator script must be emitted and available') unless workdays_script && site.join(URI(workdays_script).path.delete_prefix('/')).file?
+ end
  if (period=relative.match(%r{\Akoledar/(202[7-9]|2030)/(?:([a-z]+)/)?index\.html\z}))
   year=period[1].to_i;month=period[2] && months.index(period[2]).to_i+1;type=month ? 'monthly':'annual'
   gallery=doc.at_css('#calendar-designs[data-calendar-gallery]');calendar_galleries+=1
