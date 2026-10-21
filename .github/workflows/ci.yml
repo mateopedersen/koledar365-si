@@ -92,6 +92,8 @@ jobs:
           unset DATABASE_URL
           bundle exec ruby script/rebuild_free.rb
           ruby script/test_pages_cache_headers.rb
+          bundle exec ruby script/verify_vector_identity.rb
+          bundle exec ruby script/verify_mobile_svg_compatibility.rb
           node script/test_family_static.cjs
       - uses: pnpm/action-setup@v4
       - name: Install and prepare static browser checks
