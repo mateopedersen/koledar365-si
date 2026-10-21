@@ -7,8 +7,8 @@ class CalendarNavigationTest < ActionDispatch::IntegrationTest
   get '/',params:{year:2030,month:12,date:'2030-12-31',view:'day'}
   assert_select 'a[aria-label="Naslednji dan"]',count:0
   get '/',params:{year:2026,month:1,view:'year'}
-  assert_select '.year-grid table',count:3
-  assert_select '#personal-planner[data-selected-date^="2026-10-"]'
+  assert_select '.year-grid table',count:12
+  assert_select '#personal-planner[data-selected-date^="2026-01-"]'
  end
  test 'weekly navigation moves one ISO week across the year boundary' do
   get '/',params:{year:2027,month:1,date:'2027-01-01',view:'week'}
@@ -47,7 +47,7 @@ class CalendarNavigationTest < ActionDispatch::IntegrationTest
   end
  end
  test 'all gallery families put controls beside an open complete gallery' do
-  ['/prazen-koledar/','/tedenski-koledar/2028/','/delovni-dnevi/2028/','/prazniki/2028/'].each do |path|
+  ['/prazen-koledar/','/prazniki/2028/'].each do |path|
    get path
    assert_response :success
    assert_select 'body.gallery-page'

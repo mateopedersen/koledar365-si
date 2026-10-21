@@ -26,8 +26,9 @@ assets=nil;processed=[];style_sets={}
 transform=lambda do |body,path,indexable:true|
  doc=Nokogiri::HTML(body)
  sources=doc.css('script[src]').map { |node|node['src'] }
- assets||={scripts:sources.reject { |src|src.include?('holidays-')||src.include?('city_card-')||src.include?('vacation-')||src.include?('countdown-')||src.start_with?('/studio/','/horoscope/','/premik-ure/')||src.split('?',2).first=='/school/experience.mjs'||src.split('?',2).first=='/lunar/calendar.mjs' },holidays:ApplicationController.helpers.asset_path('holidays.js'),vacation:ApplicationController.helpers.asset_path('vacation.js'),countdown:ApplicationController.helpers.asset_path('countdown.js'),shift:ApplicationController.helpers.asset_path('shift_schedule.js')}
- doc.css('script[src]').each { |script|src=script['src'];script.remove unless src.include?('city_card-')||src.include?('sun-')||src.start_with?('/studio/','/horoscope/','/premik-ure/')||src.split('?',2).first=='/school/experience.mjs' }
+ kept_scripts=doc.css('script[type="module"][src],script[data-static-keep][src]').map { |node|node['src'] }
+ assets||={scripts:sources.reject { |src|kept_scripts.include?(src)||src.include?('holidays-')||src.include?('city_card-')||src.include?('vacation-')||src.include?('countdown-')||src.start_with?('/studio/','/horoscope/','/premik-ure/')||src.split('?',2).first=='/school/experience.mjs'||src.split('?',2).first=='/lunar/calendar.mjs' },holidays:ApplicationController.helpers.asset_path('holidays.js'),vacation:ApplicationController.helpers.asset_path('vacation.js'),countdown:ApplicationController.helpers.asset_path('countdown.js'),shift:ApplicationController.helpers.asset_path('shift_schedule.js')}
+ doc.css('script[src]').each { |script|src=script['src'];script.remove unless kept_scripts.include?(src)||src.include?('city_card-')||src.include?('sun-')||src.start_with?('/studio/','/horoscope/','/premik-ure/')||src.split('?',2).first=='/school/experience.mjs' }
  doc.css('meta[name="csrf-token"],meta[name="csrf-param"],meta[name="csp-nonce"],meta[http-equiv="Content-Security-Policy"],input[name="authenticity_token"]').remove
  if doc.at_css('[data-lunar]')
    lunar_script=Nokogiri::XML::Node.new('script',doc);lunar_script['type']='module';lunar_script['src']='/lunar/calendar.mjs';doc.at_css('head').add_child(lunar_script)
@@ -56,7 +57,7 @@ transform=lambda do |body,path,indexable:true|
  if path=='/druzinski-planer/'
   family_scripts=sources.select { |src|src.include?('/family_planner') }
   page_assets=assets.merge(scripts:(assets[:scripts]+family_scripts).uniq)
-elsif ['/delovni-dnevi/','/kalkulator-delovnih-dni/'].include?(path)
+elsif path=='/kalkulator-delovnih-dni/' || path.match?(%r{\A/delovni-dnevi/(?:20(?:2[6-9]|30)/)?\z})
   workdays_scripts=sources.select { |src|src.match?(%r{(?:\A|/)workdays-[^/]+\.js(?:\?.*)?\z}) }
   page_assets=assets.merge(scripts:(assets[:scripts]+workdays_scripts).uniq)
  end
@@ -145,13 +146,19 @@ search=Page.published.reject { |page|page.path.match?(removed_name_path) }.map d
  when %r{\A/soncni-vzhod-in-zahod/}, %r{\A/dolzina-dneva/} then 'sončni vzhod sončni zahod zlata ura dolžina dneva mesto'
  when '/premik-ure/' then 'premik ure prestavitev ure poletni čas zimski čas naprej nazaj menjava ure'
  when %r{\A/godovi/} then 'god godovi godovni koledar'
+ when %r{\A/(?:solski-koledar|solski-urnik|studijski-koledar|matura|npz)/} then 'šolski študijski koledar urnik matura NPZ izpiti predmeti roki rezultati dosežki'
+ when '/setveni-koledar/' then 'setveni koledar vrt vrtnarski setev sajenje sadike zelenjava moj vrt'
+ when %r{\A/izplacila-} then 'izplačila nakazila pokojnine socialni transferji otroški dodatek CSD ZPIZ štipendije socialna pomoč'
+ when '/soncni-mrk/' then 'sončni mrk sončev mrk delni popolni vidnost Slovenija opazovanje'
+ when '/lunin-mrk/' then 'lunin mrk popolni delni polsenčni Luna vidnost Slovenija'
+ when '/perzeidi/' then 'perzeidi meteorski roj utrinki avgust opazovanje Slovenija'
  when %r{\A/(?:koledar|mesecni-koledar|tedenski-koledar|prazen-koledar)/} then 'koledar datum dnevi mesec leto tedenski mesečni letni koledar'
  else ''
  end
  {title:page.title,path:page.path,type:'Koledar in orodja',folded:PersonName.fold([page.title,page.path,page.description,keywords].compact.join(' ')),priority:0}
 end
 search+=SunEngine::CITIES.map { |id,values|{title:"Sončni vzhod in zahod – #{values[0]}",path:"/soncni-vzhod-in-zahod/#{id}/",type:'Sončni časi',folded:PersonName.fold("#{values[0]} sončni vzhod sončni zahod zlata ura dolžina dneva mesto"),priority:1} }
-search+=PersonName.published.order(:priority).map { |person|{title:"Ime: #{person.exact}",path:person.path,type:'Koledar z imenom',folded:PersonName.fold("#{person.exact} ime koledar z imenom"),priority:person.priority} }
+# Retired name URLs stay out of public search, just as they stay out of the sitemap.
 search+=CalendarEvent.ordered.map do |event|
  path=["/prazniki/#{event.slug}/","/pomembni-dnevi/#{event.slug}/","/letni-casi/#{event.slug}/"].find { |candidate|Page.exists?(path:candidate) }||"/pomembni-dnevi/#{event.on.year}/"
  tags=[event.title,event.on.iso8601,"#{event.on.day}. #{CalendarEngine::MONTHS.fetch(event.on.month-1)} #{event.on.year}",CalendarEngine::DAYS.fetch(event.on.cwday-1),event.category,'praznik']

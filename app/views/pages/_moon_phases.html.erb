@@ -1,0 +1,50 @@
+<% kind = page_path == '/mlaj/' ? 'new_moon' : page_path == '/lunine-mene/' ? 'all' : 'full_moon' %>
+<% schedule = LunarPhaseSchedule.new(kind: kind, year: params[:year]); upcoming = schedule.next_event %>
+<article class="astronomy-page moon-phase-page" data-astronomy="moon">
+  <header class="astro-hero">
+    <div class="astro-intro">
+      <span class="eyebrow">LUNA · SLOVENSKI LOKALNI ČAS</span>
+      <h1><%= schedule.title %></h1>
+      <p><% if kind == 'full_moon' %>Kdaj bo naslednja polna luna? Poglejte točen trenutek ščipa, odštevanje in vse polne lune v izbranem letu.<% elsif kind == 'new_moon' %>Kdaj nastopi naslednji mlaj? Poglejte datum, uro in letni pregled trenutkov, ko se začne nov cikel Luninih men.<% else %>Mlaj, prvi krajec, polna luna in zadnji krajec. Vse štiri glavne mene z datumi in urami za Slovenijo.<% end %></p>
+      <nav class="astro-sibling-nav" aria-label="Lunine mene"><a href="/polna-luna/" <%= 'aria-current=page' if kind == 'full_moon' %>>Polna luna</a><a href="/mlaj/" <%= 'aria-current=page' if kind == 'new_moon' %>>Mlaj</a><a href="/lunine-mene/" <%= 'aria-current=page' if kind == 'all' %>>Vse mene</a></nav>
+    </div>
+    <section class="astro-next" aria-labelledby="astro-next-title">
+      <span class="eyebrow" id="astro-next-title"><%= schedule.next_label %></span>
+      <div data-next-event <%= 'hidden' unless upcoming %>>
+        <time class="astro-next-date" data-next-date datetime="<%= upcoming&.dig('utc') %>"><%= astro_date(upcoming['date']) if upcoming %></time>
+        <span class="astro-next-time" data-next-time><%= "#{upcoming['time']} #{upcoming['zone']}" if upcoming %></span>
+        <p class="astro-next-context" data-next-context><%= upcoming&.dig('label') %> · Europe/Ljubljana</p>
+        <div class="astro-countdown"><span>Do dogodka</span><strong data-countdown="<%= upcoming&.dig('utc') %>"><%= astro_countdown(upcoming['utc']) if upcoming %></strong></div>
+      </div>
+      <p data-next-empty <%= 'hidden' if upcoming %>>Pregled sega do konca leta 2030. Za poznejši dogodek potrebujemo novo efemerido.</p>
+    </section>
+  </header>
+
+  <section class="astro-calendar" aria-labelledby="astro-table-title">
+    <div class="astro-section-heading"><div><span class="eyebrow">LETNI PREGLED</span><h2 id="astro-table-title"><span data-year-title><%= kind == 'full_moon' ? 'Polne lune' : kind == 'new_moon' ? 'Mlaji' : 'Lunine mene' %> <%= schedule.year %></span></h2></div><span class="astro-zone-note">CET / CEST · Europe/Ljubljana</span></div>
+    <form class="astro-toolbar" action="<%= schedule.path %>" method="get" data-astro-form>
+      <label for="astro-year">Leto<select id="astro-year" name="year" data-astro-year><% LunarPhaseSchedule::YEARS.each do |year| %><option value="<%= year %>" <%= 'selected' if year == schedule.year %>><%= year %></option><% end %></select></label>
+      <button type="submit" class="astro-apply">Prikaži leto</button>
+      <div class="astro-toolbar-actions"><a class="astro-button" data-astro-ics href="<%= schedule.file_path %>" download><%= ui_icon('download') %> Prenesi ICS</a><button type="button" data-astro-print><%= ui_icon('print') %> Natisni / PDF</button></div>
+    </form>
+    <p class="astro-tool-note">Izvoz vsebuje samo izbrano leto. Za PDF v oknu za tiskanje izberite »Shrani kot PDF«.</p>
+    <div class="astro-table-wrap" role="region" tabindex="0" aria-label="Letna tabela Luninih men">
+      <table class="astro-table"><caption class="sr-only">Datumi in lokalne ure Luninih men; UTC je naveden za primerjavo.</caption><thead><tr><th scope="col">Datum</th><th scope="col">Lunina mena</th><th scope="col">Ura v Sloveniji</th><th scope="col">UTC*</th></tr></thead><tbody data-moon-rows><% schedule.for_year.each do |event| %><tr <%= 'class=is-upcoming' if upcoming && event['id'] == upcoming['id'] %>><th scope="row"><time datetime="<%= event['utc'] %>"><%= astro_date(event['date']) %></time></th><td><span class="astro-phase-dot phase-<%= event['kind'] %>" aria-hidden="true"></span><%= event['label'] %></td><td><strong><%= event['time'] %></strong> <span class="astro-muted"><%= event['zone'] %></span></td><td><%= Time.iso8601(event['utc']).strftime('%H:%M') %><% if event['utc'][0,10] != event['date'] %><small class="astro-utc-date"><%= astro_date(event['utc']) %></small><% end %></td></tr><% end %></tbody></table>
+    </div>
+    <p class="astro-note">Trenutek mene je enak za vso Slovenijo. Razlikuje se krajevni čas vzhoda in zahoda Lune. Poletni in zimski čas sta upoštevana samodejno.</p>
+  </section>
+
+  <figure class="astro-explainer-figure"><picture><source media="(max-width:600px)" type="image/webp" srcset="/images/astronomy/lunine-mene-slovenija-mobile.webp" width="640" height="780"><img src="/images/astronomy/lunine-mene-slovenija-1200.webp" srcset="/images/astronomy/lunine-mene-slovenija-640.webp 640w, /images/astronomy/lunine-mene-slovenija-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 32px), 1100px" width="1200" height="630" loading="lazy" decoding="async" alt="Štiri glavne Lunine mene: mlaj, prvi krajec, polna luna in zadnji krajec, prikazane za severno poloblo."></picture><figcaption>Štiri glavne mene v zaporedju. Shema prikazuje osvetljeni del Lune, kot ga običajno vidimo s severne poloble; orientacija na nebu se spreminja. Ilustracija: Koledar365.</figcaption></figure>
+
+  <div class="astro-reading-layout">
+    <section class="astro-reading" aria-labelledby="moon-explained"><span class="eyebrow">KAKO BRATI KOLEDAR</span><h2 id="moon-explained">Datum mene in opazovanje Lune</h2>
+      <h3>Ali je polna luna cel dan?</h3><p>Astronomski ščip označuje trenutek, ko je razlika navideznih ekliptičnih dolžin Lune in Sonca 180°. Luna je lahko s prostim očesom videti skoraj polna tudi pred tem trenutkom in po njem. Ura v tabeli ni ura Luninega vzhoda.</p>
+      <h3>Kaj pomeni mlaj?</h3><p>Ob mlaju je Luna na nebu v smeri Sonca; njena osvetljena stran je večinoma obrnjena stran od nas. Mrk ne nastopi ob vsakem mlaju, ker je Lunina tirnica nagnjena glede na Zemljino orbitalno ravnino.</p>
+      <h3>Zakaj sta v tabeli CET in CEST?</h3><p>Pozimi uporabljamo UTC+1 (CET), poleti UTC+2 (CEST). Prehod upošteva časovni pas Europe/Ljubljana, zato se ura ne preračunava z enakim zamikom za vse leto.</p>
+      <h3>Ali gre za napoved vpliva na počutje?</h3><p>Ne. Tabela je astronomska efemerida. Ne napoveduje zdravja, počutja ali primernih dni za zdravljenje in vrtnarjenje.</p>
+    </section>
+    <aside class="astro-related"><span class="eyebrow">NADALJUJTE RAZISKOVANJE</span><h2>Luna, mrki in nočno nebo</h2><a href="/lunin-koledar/"><strong>Lunin koledar za tiskanje</strong><span>Letni in mesečni prikazi 2027–2030 →</span></a><a href="/lunin-mrk/"><strong>Lunin mrk</strong><span>Ali bo viden nad vašim obzorjem? →</span></a><a href="/perzeidi/"><strong>Perzeidi</strong><span>Temne noči in vpliv mesečine →</span></a><a href="/premik-ure/"><strong>Premik ure</strong><span>Poletni in zimski čas v Sloveniji →</span></a></aside>
+  </div>
+  <section class="astro-method" aria-labelledby="moon-sources-title"><span class="eyebrow">VIRI IN METODA</span><h2 id="moon-sources-title">Preverljive ure, jasno naveden časovni pas</h2><p>Numerični podatki: <%= link_to("izvirna tabela USNO #{schedule.year}", "https://aa.usno.navy.mil/api/moon/phases/year?year=#{schedule.year}", rel: "noopener", data: {moon_source: true}) %> in podatki za leta 2026–2030, natančnost na minuto. Vir uporablja UT1; stolpec UTC* ga predstavlja približno, brez dodatnih sekund. Lokalni čas izračunamo s časovnim pasom Europe/Ljubljana. Odštevanje primerja absolutna časovna trenutka.</p><p>Razlaga Lunine orbite in mrkov: <%= source_link(AstronomySchedule::SOURCES.fetch('lunar_explainer')[1], 'Cosmolab – Lunini mrki') %>. Podatki in pretvorba preverjeni <time datetime="2026-10-21">21. 10. 2026</time>.</p><p><a href="/viri-in-metodologija/">Viri in metodologija</a> · <a href="/uredniska-politika/">Uredniška politika</a> · <a href="/kontakt/">Sporočite popravek</a></p></section>
+  <script type="application/json" data-astronomy-payload><%= raw json_escape(schedule.payload.to_json) %></script>
+</article>

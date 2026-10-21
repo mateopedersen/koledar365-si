@@ -3,8 +3,8 @@ module ApplicationHelper
   def gallery_page?
     %w[planner name holidays].include?(@section) ||
       (@section == 'lunar' && !page_path.start_with?('/lunin-koledar/')) ||
-      (@section == 'workdays' && @year != 2026) ||
-      (@section == 'calendar' && @page&.year && @year.between?(2027,2030))
+      (@section == 'workdays' && CalendarEngine::INTERACTIVE_YEARS.include?(@year)) ||
+      (@section == 'calendar' && @page&.year && CalendarEngine::INTERACTIVE_YEARS.include?(@year))
   end
   def gallery_description
     return 'Načrtujte družinski teden, delite pregled z domačimi v tem brskalniku in prenesite koledar PDF ali WebP, pripravljen pri 600 ppi.' if page_path == '/druzinski-planer/'
@@ -17,7 +17,7 @@ module ApplicationHelper
   end
   def sl_date(d) = I18n.l(d.to_date,format: :long)
   def month_url(year,month,family='koledar') = "/#{family}/#{year}/#{CalendarEngine::MONTHS[month-1]}/"
-  def calendar_path(date) = date.year==2026 ? "/?year=2026&month=#{date.month}" : month_url(date.year,date.month)
+  def calendar_path(date) = date.year==2026 ? "/?year=2026&month=#{date.month}&date=#{date.iso8601}" : month_url(date.year,date.month)
   def canonical_url
     site_origin+page_path
   end
@@ -32,7 +32,7 @@ module ApplicationHelper
     render 'pages/month',year:year,month:month,mini:mini
   end
   def export_options(type='annual')
-    year=(@year||2027).clamp(2027,2030)
+    year=CalendarEngine::INTERACTIVE_YEARS.include?(@year) ? @year : 2027
     date=@selected&.year==year ? @selected : Date.new(year,@month||1,1)
     values={type:type,year:year,month:@month||1,date:date.iso8601,name:@person&.exact.to_s}
     values[:lunar_scope]='year' if type=='lunar' && !@page&.month

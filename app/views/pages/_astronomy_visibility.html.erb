@@ -1,0 +1,18 @@
+<% track = local.fetch('track', []); unless track.empty? %>
+  <% [false, true].each do |compact| %>
+  <% width = compact ? 400 : 800; x0 = compact ? 40 : 45; span = compact ? 320 : 710; font = compact ? 16 : 14 %>
+  <% start = Time.iso8601(track.first[0]).to_f; finish = Time.iso8601(track.last[0]).to_f; low = [track.map(&:last).min - 4, -5].min.floor; high = [track.map(&:last).max + 4, 5].max.ceil %>
+  <% x = ->(utc) { x0 + (Time.iso8601(utc).to_f - start) / (finish - start) * span }; y = ->(alt) { 20 + (high - alt).to_f / (high - low) * 150 }; zero = y.call(0) %>
+  <svg class="astro-altitude-chart astro-altitude-chart--<%= compact ? 'mobile' : 'desktop' %>" viewBox="0 0 <%= width %> 210" role="img" aria-label="Višina središča <%= kind == 'solar' ? 'Sonca' : 'Lune' %> nad ravnim obzorjem med mrkom; rdeča črtkana črta označuje obzorje.">
+    <rect x="<%= x0 %>" y="20" width="<%= span %>" height="150" rx="3" fill="#f1f6fb"/>
+    <rect x="<%= x0 %>" y="<%= zero.round(2) %>" width="<%= span %>" height="<%= (170 - zero).round(2) %>" fill="#e8ecf1"/>
+    <% local.fetch('windows').each do |window| %><rect x="<%= x.call(window['start']).round(2) %>" y="20" width="<%= (x.call(window['end']) - x.call(window['start'])).round(2) %>" height="150" fill="#005da4" opacity=".065"/><% end %>
+    <line x1="<%= x0 %>" x2="<%= x0 + span %>" y1="<%= zero.round(2) %>" y2="<%= zero.round(2) %>" stroke="#c52d45" stroke-width="1.5" stroke-dasharray="6 5"/>
+    <text x="5" y="<%= (zero + 5).round(2) %>" fill="#9d263c" font-size="<%= font %>">0°</text>
+    <% if (zero + 5 - 31).abs > font + 3 %><text x="5" y="31" fill="#607083" font-size="<%= font - 1 %>"><%= high %>°</text><% end %>
+    <% if (170 - zero - 5).abs > font + 3 %><text x="5" y="170" fill="#607083" font-size="<%= font - 1 %>"><%= low %>°</text><% end %>
+    <path d="<%= track.each_with_index.map { |(utc, alt), i| "#{i.zero? ? 'M' : 'L'}#{x.call(utc).round(2)},#{y.call(alt).round(2)}" }.join(' ') %>" fill="none" stroke="#005da4" stroke-width="3.5" stroke-linecap="round"/>
+    <% (compact ? [0,11,21,32] : [0,8,16,24,32]).each do |index| %><text x="<%= x.call(track[index][0]).round(2) %>" y="196" fill="#38506a" font-size="<%= font %>" text-anchor="middle"><%= astro_time(track[index][0]) %></text><% end %>
+  </svg>
+  <% end %>
+<% end %>

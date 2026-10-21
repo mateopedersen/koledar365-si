@@ -13,6 +13,9 @@ module SeoHelper
 
   def seo_image
     return {url:site_origin+ClockChangeSchedule::IMAGE_PATH,width:1200,height:720,alt:ClockChangeSchedule::IMAGE_ALT} if @clock_change
+    if (image=ExpansionCatalog.image(page_path))
+      return {url:site_origin+image.fetch('path'),width:image.fetch('width'),height:image.fetch('height'),alt:image.fetch('alt')}
+    end
     if @section=='lunar' && page_path.start_with?('/lunin-koledar/') && (2027..2030).cover?(@year.to_i)
       day=LunarCalendar.period(@year,@page.month).max_by { |d|d['illuminationFraction'] }
       return {url:site_origin+"/lunar/atlas/#{day['date'][0,7]}-cover.webp",width:768,height:768,alt:"Luna #{LunarCalendar.date_label(day['date'])} ob 12.00 po času v Sloveniji"}
@@ -20,7 +23,7 @@ module SeoHelper
     photo=seo_photo
     return {url:site_origin+photo['local_path'],width:photo['width'],height:photo['height'],alt:photo['alt_sl']} if photo
     record=@person || @page
-    return {url:"#{site_origin}/og.png",width:1200,height:630,alt:'Koledar365 – slovenski koledarji za leta 2027–2030'} unless record
+    return {url:"#{site_origin}/og.png",width:1200,height:630,alt:'Koledar365 – slovenski koledarji in načrtovanje'} unless record
     kind=@person ? 'names' : 'pages'
     {url:"#{site_origin}/druzabno/#{kind}/#{record.id}/#{SocialImage.key(record)}.png",width:1200,height:630,alt:@title}
   end
@@ -40,7 +43,7 @@ module SeoHelper
     [
       ["Kako izračunam število dni med datumoma?", "Vnesite začetni in končni datum ter izberite »Razlika med datumoma«. Rezultat pokaže skupno število koledarskih dni, tedne in preostale dni. Če vključite oba izbrana dneva, se všteta tudi začetni in končni datum."],
       ["Kako kalkulator prišteje mesece?", "Meseci se prištevajo po koledarju. Če ciljni mesec nima izbranega dne, kalkulator uporabi zadnji dan ciljnega meseca. Tako se 31. januar pri prištevanju enega meseca premakne na zadnji dan februarja."],
-      ["Kako se štejejo delovni dnevi v Sloveniji?", "V načinu »Delovni dnevi« izberete dneve tedna, dnevne ure in ali naj kalkulator izloči zakonsko dela proste praznike. Podatki za praznike so na voljo za leta 2027–2030."],
+      ["Kako se štejejo delovni dnevi v Sloveniji?", "V načinu »Delovni dnevi« izberete dneve tedna, dnevne ure in ali naj kalkulator izloči zakonsko dela proste praznike. Podatki za praznike so na voljo za leta 2026–2030."],
       ["Ali lahko rezultat delim?", "Da. Gumb »Kopiraj povezavo« ustvari povezavo z izbranimi datumi in nastavitvami. Za datumske izračune račun ni potreben."]
     ]
   end
@@ -54,6 +57,35 @@ module SeoHelper
         "name" => @title, "description" => @description,
         "inLanguage" => "sl", "isPartOf" => { "@id" => "#{site_origin}/#website" } }
     ]
+    organization={"@type"=>"Organization","@id"=>"#{site_origin}/#organization","name"=>"Koledar365","url"=>"#{site_origin}/","email"=>"koledar365@gmail.com"}
+    graph << organization
+    graph[0]['publisher']={"@id"=>organization.fetch('@id')}
+    graph[1]['publisher']={"@id"=>organization.fetch('@id')}
+    if ExpansionCatalog.page(page_path)
+      graph[1]['dateModified']=ExpansionCatalog::REVIEWED_ON
+      graph[1]['author']={"@id"=>organization.fetch('@id')}
+      citations=expansion_citations
+      graph[1]['citation']=citations unless citations.empty?
+    end
+    if (illustration=ExpansionCatalog.image(page_path))
+      image_url=site_origin+illustration.fetch('path')
+      graph << {"@type"=>"ImageObject","@id"=>"#{image_url}#image","contentUrl"=>image_url,"url"=>image_url,
+        "width"=>illustration.fetch('width'),"height"=>illustration.fetch('height'),"name"=>illustration.fetch('alt'),
+        "caption"=>illustration['caption']||illustration.fetch('alt'),"inLanguage"=>'sl',
+        "creditText"=>illustration['credit']||illustration['creator']||'Koledar365',"creator"=>{"@id"=>organization.fetch('@id')}}
+      graph[1]['primaryImageOfPage']={"@id"=>"#{image_url}#image"}
+    end
+    if (features=expansion_tool_features)
+      graph << {"@type"=>'WebApplication',"@id"=>"#{canonical_url}#application","name"=>@title,"description"=>@description,
+        "url"=>canonical_url,"applicationCategory"=>'UtilitiesApplication',"operatingSystem"=>'Any',
+        "isAccessibleForFree"=>true,"inLanguage"=>'sl',"featureList"=>features,"publisher"=>{"@id"=>organization.fetch('@id')}}
+    end
+    questions=expansion_questions
+    if questions.any?
+      graph << {"@type"=>'FAQPage',"@id"=>"#{canonical_url}#faq","mainEntity"=>questions.map{|question,answer|
+        {"@type"=>'Question',"name"=>question,"acceptedAnswer"=>{"@type"=>'Answer',"text"=>answer}}
+      }}
+    end
     photos=[seo_photo]
     photos.concat(@observance.related.map { |event|HolidayPhotoCatalog.find(event.slug) }) if @observance && !@clock_change
     photos.concat(@holiday_photos) if @holiday_photos
@@ -132,5 +164,39 @@ module SeoHelper
       } }
     end
     { "@context" => "https://schema.org", "@graph" => graph }
+  end
+
+  # Only questions rendered in the same page are eligible for FAQ markup.
+  def expansion_questions
+    return GardenCalendar.faq if @section=='garden_calendar'
+    return @payment_calendar.faq if @section=='payment_calendar' && @payment_calendar
+    return @education_calendar.questions if @section=='education_calendar' && @education_calendar
+    []
+  end
+
+  def expansion_citations
+    return GardenCalendar.sources.values.map{|source|source.fetch('url')} if @section=='garden_calendar'
+    return [@payment_calendar.source.fetch('url')] if @section=='payment_calendar' && @payment_calendar
+    return @education_calendar.sources.map{|source|source.fetch('url')} if @section=='education_calendar' && @education_calendar
+    if @section=='astronomy_events'
+      kind=AstronomySchedule::PATHS.key(page_path)
+      return AstronomySchedule.new(kind:kind).sources.map(&:last)
+    end
+    []
+  end
+
+  def expansion_tool_features
+    case @section
+    when 'garden_calendar' then ['Pregled 16 vrtnin po mesecih in opravilih','Osebni setveni načrt v brskalniku','Tisk, varnostna kopija JSON in izvoz ICS']
+    when 'payment_calendar' then ['Uradno objavljeni datumi izplačil','Filtri po prejemkih in mesecih','Koledar za tisk in izvoz ICS']
+    when 'education_calendar' then ['Uradni roki z izbiro šole, razreda ali izpita','Seznam in dvanajstmesečni pregled','Osebni izbor datumov, tisk in izvoz ICS']
+    when 'school_timetable' then ['Predmeti, ure, učilnice in učitelji','Opozorila ob prekrivanju ur','Tedensko ponavljanje, tisk, JSON in ICS']
+    when 'moon_phases' then ['Lunine mene v času Europe/Ljubljana','Naslednji trenutek in letni pregled','Tisk in koledar ICS']
+    when 'astronomy_events' then ['Lokalne razmere za osem slovenskih krajev','Prikaz nad obzorjem in časovni potek','Koledar za tisk in izvoz ICS']
+    when 'calendar'
+      return ['Izbira leta, meseca ali tedna ISO','Osebni zapiski','PDF in urejevalna preglednica XLSX'] if page_path=='/mesecni-koledar/'
+      return ['Izbira datuma ali tedna ISO','Osebni zapiski za vsak dan','Tedenski planer za tisk in PDF'] if page_path=='/tedenski-koledar/'
+      nil
+    end
   end
 end

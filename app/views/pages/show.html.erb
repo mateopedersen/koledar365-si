@@ -1,11 +1,11 @@
 <% if @section=='home' %>
-<div class="intro"><div><h1>Vaš dan. Vaši načrti.</h1><p>Slovenski koledar, prazniki in osebno načrtovanje.</p></div><a class="button subtle" href="/ustvari-koledar/"><%= ui_icon('settings') %> Ustvari svoj koledar</a></div>
+<div class="intro"><div><h1>Slovenski koledar za vaše načrte.</h1><p>Prazniki, osebni dogodki in orodja za vsak dan.</p></div><a class="button subtle" href="/ustvari-koledar/"><%= ui_icon('settings') %> Ustvari svoj koledar</a></div>
 <%= render 'home' %>
 <% elsif @section=='tool' && page_path=='/nacrtovalnik-dopusta/' %>
 <%= render 'vacation_planner' %>
 <% elsif @section=='tool' && page_path=='/odstevanje/' %>
 <%= render 'countdown' %>
-<% elsif %w[about privacy cookie_policy holidays observance school calendar_studio horoscope].include?(@section) %>
+<% elsif %w[about privacy cookie_policy holidays observance school calendar_studio horoscope methodology garden_calendar payment_calendar education_calendar school_timetable moon_phases astronomy_events].include?(@section) %>
 <%= render @section %>
 <% else %>
 <% if page_path=='/datumski-kalkulator/' %>
@@ -56,7 +56,7 @@
 </svg>
   </div>
 </section>
-<% elsif page_path=='/delovni-dnevi/' && (2027..2030).cover?(@year) %>
+<% elsif @section=='workdays' && !@page.month %>
 <section class="workdays-hero" aria-labelledby="workdays-title">
   <div class="workdays-hero__copy">
     <span class="workdays-kicker"><i aria-hidden="true"></i> KOLEDAR365 <span>·</span> SLOVENIJA</span>
@@ -97,4 +97,4 @@
 <%= render @section %>
 <% end %>
 
-<% if @page&.body.present? && !%w[observance school horoscope calendar_studio].include?(@section) %><section class="panel prose"><%= simple_format(@page.body) %></section><% end %>
+<% if @page&.body.present? && !%w[observance school horoscope calendar_studio methodology garden_calendar payment_calendar education_calendar school_timetable moon_phases astronomy_events].include?(@section) %><section class="panel prose"><%= simple_format(@page.body) %></section><% end %>

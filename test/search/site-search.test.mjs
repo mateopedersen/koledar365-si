@@ -25,7 +25,8 @@ test('ranks cities, dates, and categories correctly', () => {
   assert.equal(resultCategory({ path: '/koledar/2028/' }), 'Koledarji');
   assert.equal(parseDateQuery('25. december 2027').path, '/?year=2027&month=12&date=2027-12-25&view=day');
   assert.equal(parseDateQuery('2027-02-30'), null);
-  assert.equal(parseDateQuery('1. januar 2026'), null);
+  assert.equal(parseDateQuery('1. januar 2026').path, '/?year=2026&month=1&date=2026-01-01&view=day');
+  assert.equal(parseDateQuery('31. december 2025'), null);
 });
 
 test('deduplicates by destination and respects the result limit', () => {

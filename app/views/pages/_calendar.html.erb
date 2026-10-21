@@ -1,5 +1,11 @@
-<% if @page.year %>
-  <% with_gallery = @year.between?(2027,2030); weekly = page_path.start_with?('/tedenski-koledar/') %>
+<% if page_path.start_with?('/tedenski-koledar/') %>
+  <% selected_week=calendar_hub_period(weekly:true);@selected=selected_week.fetch(:date);@year=@selected.year;@month=@selected.month %>
+  <%= render 'calendar_hub',weekly:true %>
+  <% if @page.year %><div id="calendar-designs"><%= render 'designs',type:'weekly' %></div><% end %>
+<% elsif page_path=='/mesecni-koledar/' %>
+  <%= render 'calendar_hub',weekly:false %>
+<% elsif @page.year %>
+  <% with_gallery = CalendarEngine::INTERACTIVE_YEARS.include?(@year); weekly = false %>
   <% @view = 'week' if weekly %>
   <% download_type = weekly ? 'weekly' : (@page.month ? 'monthly' : 'annual') %>
 <% if with_gallery %><div class="download-workspace" data-download-workspace><% end %>
@@ -13,11 +19,12 @@
         <a class="button" href="<%= with_gallery ? '#calendar-designs' : '/koledar-za-tiskanje/' %>">15 predlog za prenos</a>
         <a href="/koledar/<%= @year %>/">Letni pregled</a>
       </div>
-<% if @page.month %><nav class="actions context-month-navigation" aria-label="Sosednja meseca"><% d=Date.new(@year,@month,1);[d.prev_month,d.next_month].each do |n| %><% if CalendarEngine::YEARS.include?(n.year) %><a href="<%= month_url(n.year,n.month) %>"><%= CalendarEngine::MONTHS[n.month-1] %> <%= n.year %></a><% end %><% end %></nav><% end %>
+<% if @page.month %><nav class="actions context-month-navigation" aria-label="Sosednja meseca"><% d=Date.new(@year,@month,1);[d.prev_month,d.next_month].each do |n| %><% if CalendarEngine::INTERACTIVE_YEARS.include?(n.year) %><a href="<%= calendar_path(n) %>"><%= CalendarEngine::MONTHS[n.month-1] %> <%= n.year %></a><% end %><% end %></nav><% end %>
     </div>
   </section>
+  <%= render 'calendar_spreadsheet' %>
   <% if with_gallery %>
-    <% if !weekly && PublicCalendarGallery.available? %>
+    <% if CalendarEngine::YEARS.include?(@year) && PublicCalendarGallery.available? %>
       <%= render 'calendar_gallery', year: @year, month: @page.month, rows: PublicCalendarGallery.rows_for(year: @year, month: @page.month) %>
     <% else %>
       <div id="calendar-designs"><%= render 'designs', type: download_type %></div>

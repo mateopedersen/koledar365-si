@@ -32,13 +32,12 @@ class PagesController < ApplicationController
       @page.title
     end
     @title='Ustvari svoj koledar – spletni urejevalnik' if path=='/ustvari-koledar/'
-    if path=='/'
+    @title=ExpansionCatalog.page(path).fetch(:title) if ExpansionCatalog.page(path)
+    if %w[/ /mesecni-koledar/ /tedenski-koledar/].include?(path)
       @year=params[:year].present? ? @year : @today.year.clamp(2026,2030)
       @month=params[:month].present? ? @month : @today.month
     elsif path=='/delovni-dnevi/'
-      # The landing page is the new year overview, even if its legacy Page row
-      # still carries the retired 2026 gallery year.
-      @year=CalendarEngine::YEARS.include?(@year) ? @year : 2027
+      @year=params[:year].present? ? @year : @today.year.clamp(2026,2030)
     elsif @page
       @year=@page.year if @page.year.to_i.between?(2026,2030)
       @month=@page.month if @page.month
@@ -60,16 +59,28 @@ class PagesController < ApplicationController
     end
     @selected=Date.iso8601(params[:date].to_s) rescue nil
     if path=='/'
-      @month=[@month,10].max if @year==2026
-      @selected=nil if @selected && !(@selected.between?(Date.new(2026,10,1),Date.new(2030,12,31)))
+      @selected=nil if @selected && !(@selected.between?(Date.new(2026,1,1),Date.new(2030,12,31)))
       @year,@month=@selected.year,@selected.month if @selected
+    end
+    if path.start_with?('/tedenski-koledar/') && @selected&.between?(Date.new(2026,1,1),Date.new(2030,12,31))
+      @year,@month=@selected.year,@selected.month
     end
     @selected||=(@today.year==@year&&@today.month==@month ? @today : Date.new(@year,@month,1))
     @view=%w[month week day list year].include?(params[:view]) ? params[:view] : (path.match?(%r{^/koledar/\d{4}/$}) ? 'year':'month')
-    @events=CalendarEvent.where(on:Date.new(@year,1,1)..Date.new(@year,12,31)).ordered.to_a
+    range_start=[Date.new(@year,1,1),@selected-(@selected.cwday-1)].min
+    range_end=[Date.new(@year,12,31),@selected+(7-@selected.cwday)].max
+    @events=CalendarEvent.where(on:range_start..range_end).ordered.to_a
+    (range_start.year..range_end.year).each do |year|
+      CalendarEngine.statutory_work_free_events(year).each do |attributes|
+        next unless attributes[:on].between?(range_start,range_end)
+        @events<<CalendarEvent.new(attributes) unless @events.any?{|event|event.key==attributes[:key]}
+      end
+    end
     @event_map=@events.group_by(&:on)
     @upcoming=CalendarEvent.where(on:@today..).where(category:'legal').ordered.limit(3)
     @section=section_for(path)
+    @education_calendar=EducationCalendar.new(path:path) if @section=='education_calendar'
+    @payment_calendar=PaymentCalendar.new(path:path,today:@today) if @section=='payment_calendar'
     @horoscope_guide=HoroscopeGuide.new(@today,path.split('/')[2].to_s) if @section=='horoscope'
     if @section=='events' && CalendarEvent.exists?(slug:path.split('/').last)
       @observance=ObservancePage.new(path.split('/').last)
@@ -101,6 +112,13 @@ class PagesController < ApplicationController
     return 'about' if path=='/o-nas/'
     return 'privacy' if path=='/zasebnost/'
     return 'cookie_policy' if path=='/piskotki/'
+    return 'methodology' if path=='/viri-in-metodologija/'
+    return 'garden_calendar' if path==GardenCalendar::PATH
+    return 'payment_calendar' if PaymentCalendar.paths.include?(path)
+    return 'education_calendar' if EducationCalendar.paths.include?(path)
+    return 'school_timetable' if path=='/solski-urnik/'
+    return 'moon_phases' if LunarPhaseSchedule::PATHS.value?(path)
+    return 'astronomy_events' if AstronomySchedule::PATHS.value?(path)
     return 'calendar' if path.start_with?('/koledar/')||path=='/mesecni-koledar/'||path.start_with?('/tedenski-koledar/')
     return 'horoscope' if path.start_with?('/horoskop/')
     return 'school' if path.start_with?('/solske-pocitnice/')
@@ -119,7 +137,7 @@ class PagesController < ApplicationController
     'info'
   end
   def search
-    @title='Iskanje';@noindex=true;@description='Poiščite koledar, praznik, ime ali orodje na Koledar365.';@q=params[:q].to_s.strip.truncate(120)
+    @title='Iskanje';@noindex=true;@description='Poiščite koledar, praznik, dogodek ali orodje na Koledar365.';@q=params[:q].to_s.strip.truncate(120)
     @results=SearchService.call(@q)
   end
   def sitemap
@@ -142,6 +160,8 @@ class PagesController < ApplicationController
           x.url do
             x.loc(base+path);x.lastmod(time.iso8601)
             x['image'].image { x['image'].loc(base+ClockChangeSchedule::IMAGE_PATH) } if path=='/premik-ure/'
+            image=ExpansionCatalog.image(path)
+            x['image'].image { x['image'].loc(base+image.fetch('path')) } if image
           end
         end
       end

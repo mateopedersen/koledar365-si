@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Koledar365//Astronomija SL//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Koledar365 · Astronomija
+X-WR-TIMEZONE:Europe/Ljubljana
+BEGIN:VEVENT
+DTSTAMP:20261021T000000Z
+UID:perseids-2029-08-11-murska-sobota@koledar365.si
+DTSTART:20290811T201500Z
+DTEND:20290812T014700Z
+DESCRIPTION:Načrtovana noč okoli običajnega avgustovskega viška aktivno
+ sti\, ne napoved točne ure maksimuma. Čas označuje astronomsko temo (So
+ nce pod −18°). Preverite mesečino\, oblake in krajevno obzorje.
+SUMMARY:Perzeidi: opazovalna noč · Murska Sobota
+TRANSP:TRANSPARENT
+URL;VALUE=URI:https://koledar365.si/perzeidi/?year=2029&city=murska-sobota
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261021T000000Z
+UID:perseids-2029-08-12-murska-sobota@koledar365.si
+DTSTART:20290812T201200Z
+DTEND:20290813T014900Z
+DESCRIPTION:Načrtovana noč okoli običajnega avgustovskega viška aktivno
+ sti\, ne napoved točne ure maksimuma. Čas označuje astronomsko temo (So
+ nce pod −18°). Preverite mesečino\, oblake in krajevno obzorje.
+SUMMARY:Perzeidi: opazovalna noč · Murska Sobota
+TRANSP:TRANSPARENT
+URL;VALUE=URI:https://koledar365.si/perzeidi/?year=2029&city=murska-sobota
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261021T000000Z
+UID:perseids-2029-08-13-murska-sobota@koledar365.si
+DTSTART:20290813T201000Z
+DTEND:20290814T015100Z
+DESCRIPTION:Načrtovana noč okoli običajnega avgustovskega viška aktivno
+ sti\, ne napoved točne ure maksimuma. Čas označuje astronomsko temo (So
+ nce pod −18°). Preverite mesečino\, oblake in krajevno obzorje.
+SUMMARY:Perzeidi: opazovalna noč · Murska Sobota
+TRANSP:TRANSPARENT
+URL;VALUE=URI:https://koledar365.si/perzeidi/?year=2029&city=murska-sobota
+END:VEVENT
+END:VCALENDAR
