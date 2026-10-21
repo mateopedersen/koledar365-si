@@ -16,6 +16,7 @@
 <% if page_path == '/datumski-kalkulator/' %><%= stylesheet_link_tag 'date_calculator' %><% end %>
 <% if page_path == '/nacrtovalnik-dopusta/' %><%= stylesheet_link_tag 'vacation' %><%= javascript_include_tag 'vacation',defer:true %><% end %>
 <% if page_path == '/odstevanje/' %><%= stylesheet_link_tag 'countdown' %><%= javascript_include_tag 'countdown',defer:true %><% end %>
+<% if @section=='horoscope' %><%= stylesheet_link_tag 'horoscope' %><script type="module" src="/horoscope/experience-v1.mjs"></script><% end %>
 <% if page_path == '/ustvari-koledar/' %><link rel="stylesheet" href="/studio/studio.css?v=20261020-1"><script type="module" src="/studio/studio.mjs?v=20261020-1"></script><% end %>
 <% if @section=='holidays' %><%= stylesheet_link_tag 'holidays' %><%= javascript_include_tag 'holidays',defer:true %><% end %>
 <% if @section=='observance' %><%= stylesheet_link_tag 'observances' %><% end %>

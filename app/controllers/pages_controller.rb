@@ -40,6 +40,7 @@ class PagesController < ApplicationController
     @event_map=@events.group_by(&:on)
     @upcoming=CalendarEvent.where(on:@today..).where(category:'legal').ordered.limit(3)
     @section=section_for(path)
+    @horoscope_guide=HoroscopeGuide.new(@today,path.split('/')[2].to_s) if @section=='horoscope'
     if @section=='events' && CalendarEvent.exists?(slug:path.split('/').last)
       @observance=ObservancePage.new(path.split('/').last)
       @section='observance'
