@@ -190,8 +190,8 @@
 .calendar-download-action__copy small{display:block;color:inherit;font-size:9px;font-weight:700;line-height:1.1;opacity:.78;white-space:nowrap}
 .calendar-download-action--webp .calendar-download-action__copy strong{font-size:11px}
 .calendar-download-action:hover,.calendar-download-action:focus-visible{transform:translateY(-1px);text-decoration:none;box-shadow:0 4px 10px #17324d18,inset 0 1px 0 #ffffffd9}
-.calendar-download-action--pdf:hover,.calendar-download-action--pdf:focus-visible{color:#862032;border-color:#c86a79;background:#fff0f2}
-.calendar-download-action--webp:hover,.calendar-download-action--webp:focus-visible{color:#123f69;border-color:#7198ba;background:#eaf4ff}
+.calendar-download-action--pdf:hover,.calendar-download-action--pdf:focus-visible{color:#862032;border-color:#c86a79!important;background:#fff0f2}
+.calendar-download-action--webp:hover,.calendar-download-action--webp:focus-visible{color:#123f69;border-color:#7198ba!important;background:#eaf4ff}
 .calendar-download-action:focus-visible{outline:3px solid #1764ad55;outline-offset:2px}
 .design-card h3,.calendar-design-info h3,.download-workspace .design-card h3{display:grid;grid-template-columns:32px minmax(0,1fr);align-items:center;gap:10px;min-width:0;min-height:40px;line-height:1.2}
 .design-card h3>.design-number,.calendar-design-info h3>.design-number,.download-workspace .design-card h3>.design-number{display:grid;place-items:center;flex:none;width:32px;min-width:32px;height:32px;margin:0;border:1px solid #dfe6ee;border-radius:9px;background:#f2f5f8;color:#485b70;font-size:13px;font-weight:850;letter-spacing:0;font-variant-numeric:tabular-nums;line-height:1}

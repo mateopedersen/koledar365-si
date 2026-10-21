@@ -1,8 +1,8 @@
 import { expect, test } from '@playwright/test';
 
 const galleryPages = [
-  { path: '/koledar-za-tiskanje/', card: '.design-card', heading: '.design-card h3' },
-  { path: '/koledar/2027/januar/', card: '.calendar-design-card', heading: '.calendar-design-info h3' },
+  { path: '/koledar-za-tiskanje/', card: '.design-card', heading: '.design-card h3', formatAttribute: 'data-format' },
+  { path: '/koledar/2027/januar/', card: '.calendar-design-card', heading: '.calendar-design-info h3', formatAttribute: 'data-calendar-download' },
 ];
 
 for (const gallery of galleryPages) {
@@ -40,8 +40,8 @@ for (const gallery of galleryPages) {
     await expect(actions.nth(1).locator('small')).toHaveText('Prenesi');
     await expect(actions.nth(0).locator('img')).toHaveAttribute('src', '/visuals/download-pdf-v1.svg');
     await expect(actions.nth(1).locator('img')).toHaveAttribute('src', '/visuals/download-webp-v1.svg');
-    await expect(actions.nth(0)).toHaveAttribute('data-format', 'pdf');
-    await expect(actions.nth(1)).toHaveAttribute('data-format', 'webp');
+    await expect(actions.nth(0)).toHaveAttribute(gallery.formatAttribute, 'pdf');
+    await expect(actions.nth(1)).toHaveAttribute(gallery.formatAttribute, 'webp');
 
     for (const width of [320, 390, 768, 1280]) {
       await page.setViewportSize({ width, height: 900 });
