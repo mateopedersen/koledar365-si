@@ -6,13 +6,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Razpored izmen · Koledar365</title>
-<meta name="description" content="Sestavite ponavljajoči se razpored izmen od izbranega datuma. Nastavite cikel in pripravite mesečni pregled za tiskanje.">
+<meta name="description" content="Sestavite ponavljajoči se razpored izmen, preverite ga v mesečnem predogledu ter shranite ali izvozite za koledar in tisk.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="https://koledar365.si/razpored-izmen/">
 <meta property="og:title" content="Razpored izmen · Koledar365">
-<meta property="og:description" content="Sestavite ponavljajoči se razpored izmen od izbranega datuma. Nastavite cikel in pripravite mesečni pregled za tiskanje.">
+<meta property="og:description" content="Sestavite ponavljajoči se razpored izmen, preverite ga v mesečnem predogledu ter shranite ali izvozite za koledar in tisk.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Koledar365">
 <meta property="og:locale" content="sl_SI">
@@ -23,11 +23,12 @@
 <meta property="og:image:alt" content="Razpored izmen">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Razpored izmen · Koledar365">
-<meta name="twitter:description" content="Sestavite ponavljajoči se razpored izmen od izbranega datuma. Nastavite cikel in pripravite mesečni pregled za tiskanje.">
+<meta name="twitter:description" content="Sestavite ponavljajoči se razpored izmen, preverite ga v mesečnem predogledu ter shranite ali izvozite za koledar in tisk.">
 <meta name="twitter:image" content="https://koledar365.si/druzabno/pages/303/1541b1cb91ce7743149b.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl"},{"@type":"WebPage","@id":"https://koledar365.si/razpored-izmen/#webpage","url":"https://koledar365.si/razpored-izmen/","name":"Razpored izmen","description":"Sestavite ponavljajoči se razpored izmen od izbranega datuma. Nastavite cikel in pripravite mesečni pregled za tiskanje.","inLanguage":"sl","isPartOf":{"@id":"https://koledar365.si/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://koledar365.si/"},{"@type":"ListItem","position":2,"name":"Razpored izmen","item":"https://koledar365.si/razpored-izmen/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl"},{"@type":"WebPage","@id":"https://koledar365.si/razpored-izmen/#webpage","url":"https://koledar365.si/razpored-izmen/","name":"Razpored izmen","description":"Sestavite ponavljajoči se razpored izmen, preverite ga v mesečnem predogledu ter shranite ali izvozite za koledar in tisk.","inLanguage":"sl","isPartOf":{"@id":"https://koledar365.si/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://koledar365.si/"},{"@type":"ListItem","position":2,"name":"Razpored izmen","item":"https://koledar365.si/razpored-izmen/"}]}]}</script>
 
-<link rel="stylesheet" href="/assets/web-d4a81e66b4c30ec5.css">
+<link rel="stylesheet" href="/assets/web-6993e8e00cf9b482.css">
+
 
 
 
@@ -46,13 +47,14 @@
 
 
 <link rel="icon" href="/visuals/brand-calendar-v3.svg" type="image/svg+xml">
-<script type="application/json" id="k365-static-config">{"scripts":["/assets/application-f2799a47.js","/assets/planners-2e3430d8.js"],"holidays":"/assets/holidays-0af57d2c.js","vacation":"/assets/vacation-ecc923a5.js","countdown":"/assets/countdown-164dee2d.js"}</script><link rel="preload" as="script" href="/assets/application-f2799a47.js">
+<script type="application/json" id="k365-static-config">{"scripts":["/assets/application-f427bb33.js","/assets/planners-2e3430d8.js"],"holidays":"/assets/holidays-0af57d2c.js","vacation":"/assets/vacation-ecc923a5.js","countdown":"/assets/countdown-164dee2d.js","shift":"/assets/shift_schedule-f9b9ee17.js"}</script><link rel="preload" as="script" href="/assets/application-f427bb33.js">
 <link rel="preload" as="script" href="/assets/planners-2e3430d8.js">
+<link rel="preload" as="script" href="/assets/shift_schedule-f9b9ee17.js">
 <link rel="modulepreload" href="/free/catalog-match.js">
 <link rel="modulepreload" href="/free/date-context.js">
-<script type="module" src="/free/client-55012017ef44613f.js"></script>
+<script type="module" src="/free/client-3ed1ee205f15940d.js"></script>
 </head>
-<body class="gallery-page">
+<body class="gallery-page shift-page">
 <a class="skip" href="#vsebina">Na vsebino</a>
 <header class="topbar"><a class="brand" href="/" aria-label="Koledar365 – domov"><span class="brand-symbol"><img width="44" height="44" alt="" class="brand-mark" aria-hidden="true" src="/visuals/brand-calendar-v3.svg"></span> Koledar<span>365</span></a>
 <nav aria-label="Glavna navigacija"><a href="/koledar/">Koledar</a><a href="/prazniki/">Prazniki</a><a href="/solske-pocitnice/">Šolske počitnice</a><a href="/koledar-z-imenom/">Imena</a></nav>
@@ -60,32 +62,173 @@
 <label class="sr-only" for="search">Poišči datum, ime ali orodje</label><input id="search" name="q" type="search" placeholder="Poišči datum, ime ali orodje" value=""><button aria-label="Išči"><svg class="ui-icon icon-search" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#search"></use></svg></button>
 </form>
 <span class="country"><img width="36" height="22" alt="" class="country-flag" aria-hidden="true" src="/visuals/slovenia-fabric-v3.svg"> Slovenija</span></header>
-<nav class="subnav" aria-label="Koledarji in orodja"><a href="/koledar/2027/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calendar"></use></svg> 2027</a><a href="/koledar/2028/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calendar"></use></svg> 2028</a><a href="/koledar/2029/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calendar"></use></svg> 2029</a><a href="/koledar/2030/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calendar"></use></svg> 2030</a><a href="/lunin-koledar/"><svg class="ui-icon icon-moon" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#moon"></use></svg> Sonce in Luna</a><a href="/delovni-dnevi/"><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#note"></use></svg> Delovni dnevi</a><a href="/koledar-za-tiskanje/"><svg class="ui-icon icon-print" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#print"></use></svg> Koledarji PDF</a><a href="/datumski-kalkulator/"><svg class="ui-icon icon-calculator" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calculator"></use></svg> Datumski kalkulator</a><a href="/horoskop/"><img width="24" height="24" alt="" class="ui-icon icon-zodiac" aria-hidden="true" src="/horoscope/art/wheel-icon-v1.svg"> Dnevni horoskop</a><a href="/orodja/"><svg class="ui-icon icon-grid" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#grid"></use></svg> Vsa orodja</a></nav>
+<nav class="subnav" aria-label="Koledarji in orodja"><div class="subnav-track">
+<a href="/koledar/2027/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calendar"></use></svg> 2027</a><a href="/koledar/2028/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calendar"></use></svg> 2028</a><a href="/koledar/2029/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calendar"></use></svg> 2029</a><a href="/koledar/2030/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calendar"></use></svg> 2030</a><a href="/lunin-koledar/"><svg class="ui-icon icon-moon" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#moon"></use></svg> Sonce in Luna</a><a href="/delovni-dnevi/"><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#note"></use></svg> Delovni dnevi</a><a href="/koledar-za-tiskanje/"><svg class="ui-icon icon-print" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#print"></use></svg> Koledarji PDF</a><a href="/datumski-kalkulator/"><svg class="ui-icon icon-calculator" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#calculator"></use></svg> Datumski kalkulator</a><a href="/horoskop/"><img width="24" height="24" alt="" class="ui-icon icon-zodiac" aria-hidden="true" src="/horoscope/art/wheel-icon-v1.svg"> Dnevni horoskop</a><a href="/orodja/"><svg class="ui-icon icon-grid" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#grid"></use></svg> Vsa orodja</a>
+</div></nav>
 <main id="vsebina" tabindex="-1">
 <nav class="breadcrumb" aria-label="Drobtinice"><a href="/">Domov</a><span aria-hidden="true">›</span><span aria-current="page">Razpored izmen</span></nav>
 
 <!-- BEGIN app/views/pages/show.html.erb
---><div class="page-heading">
-<span class="eyebrow">KOLEDAR365 · SLOVENIJA</span><h1>Razpored izmen</h1>
-<p>V galeriji izberite eno od 15 predlog: PDF za tisk in ujemajoči se WebP pri 600 ppi, s podpisom Koledar365 na vsaki strani. Večstranski WebP je v datoteki ZIP; PDF tiskajte v merilu 100 %.</p>
-</div>
+--><section class="shift-hero" aria-labelledby="shift-hero-title">
+  <div class="shift-hero__copy page-heading">
+    <span class="eyebrow">KOLEDAR365 · ORODJE ZA DELO</span>
+    <h1 id="shift-hero-title">Razpored izmen, pripravljen za vaš ritem</h1>
+    <p>Vnesite zaporedje izmen in obdobje. Takoj preverite mesečni pregled, nato razpored shranite, izvozite ali natisnite kot PDF ali WebP pri 600 ppi.</p>
+    <div class="shift-hero__benefits" aria-label="Prednosti orodja">
+      <span><i aria-hidden="true"></i> Takojšen predogled</span>
+      <span><i aria-hidden="true"></i> Brez registracije</span>
+      <span><i aria-hidden="true"></i> PDF, WebP in ICS</span>
+    </div>
+  </div>
+  <div class="shift-hero__art" aria-hidden="true">
+    <svg viewbox="0 0 470 330" focusable="false">
+      <defs>
+        <lineargradient id="shiftPaper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"></stop><stop offset="1" stop-color="#eef4fb"></stop></lineargradient>
+        <lineargradient id="shiftBlue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4a9dde"></stop><stop offset="1" stop-color="#005da4"></stop></lineargradient>
+        <lineargradient id="shiftRed" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f06b75"></stop><stop offset="1" stop-color="#c52d45"></stop></lineargradient>
+      </defs>
+      <circle cx="337" cy="89" r="72" fill="#dceaf6"></circle><circle cx="337" cy="89" r="49" fill="#fff"></circle>
+      <path d="M309 89h56M337 61v56" stroke="#c52d45" stroke-width="5" stroke-linecap="round"></path>
+      <g transform="rotate(-5 220 170)">
+        <rect x="72" y="39" width="272" height="244" rx="20" fill="url(#shiftPaper)" stroke="#d6e3ef" stroke-width="2"></rect>
+        <path d="M72 69a30 30 0 0 1 30-30h212a30 30 0 0 1 30 30v24H72z" fill="url(#shiftBlue)"></path>
+        <path d="M107 31v19m202-19v19" stroke="#15365c" stroke-width="8" stroke-linecap="round"></path>
+        <g fill="#6a819a" font-family="system-ui,sans-serif" font-size="12" font-weight="700" text-anchor="middle"><text x="119" y="119">PON</text><text x="171" y="119">TOR</text><text x="223" y="119">SRE</text><text x="275" y="119">ČET</text><text x="327" y="119">PET</text></g>
+        <g stroke="#dbe5ef" stroke-width="1.5"><path d="M94 133h229M94 179h229M94 225h229"></path><path d="M145 127v121m52-121v121m52-121v121m52-121v121"></path></g>
+        <g><rect x="101" y="143" width="36" height="25" rx="7" fill="url(#shiftBlue)"></rect><rect x="154" y="189" width="36" height="25" rx="7" fill="url(#shiftRed)"></rect><rect x="207" y="143" width="36" height="25" rx="7" fill="url(#shiftBlue)"></rect><rect x="260" y="189" width="36" height="25" rx="7" fill="url(#shiftRed)"></rect><rect x="313" y="143" width="8" height="25" rx="4" fill="#dce5ee"></rect></g>
+      </g>
+      <rect x="26" y="254" width="145" height="42" rx="13" fill="#fff" stroke="#e0e8f0"></rect><circle cx="48" cy="275" r="7" fill="#005da4"></circle><text x="64" y="280" fill="#354e69" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Dnevna izmena</text>
+      <rect x="195" y="254" width="137" height="42" rx="13" fill="#fff" stroke="#e0e8f0"></rect><circle cx="217" cy="275" r="7" fill="#c52d45"></circle><text x="233" y="280" fill="#354e69" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Nočna izmena</text>
+    </svg>
+  </div>
+</section>
+
 <!-- BEGIN app/views/pages/_planner.html.erb
--->
-<div class="download-workspace" data-download-workspace>
-<section class="panel planner-workbench gallery-context">
-  <!-- BEGIN app/views/pages/_context_heading.html.erb
---><header class="context-heading"><h2>Prilagodite svoj koledar</h2>
+--><!-- BEGIN app/views/pages/_shift_schedule.html.erb
+--><div class="download-workspace shift-download-workspace" data-download-workspace>
+  <section class="shift-workbench panel" data-planner-fields="shift" aria-labelledby="shift-builder-title">
+    <header class="shift-workbench__heading">
+      <div>
+<span class="eyebrow">PREPROSTO NAČRTOVANJE</span><h2 id="shift-builder-title">Sestavite svoj razpored</h2>
+<p>Začnite s preverjenim vzorcem ali vpišite svoj cikel.</p>
+</div>
+      <span class="shift-workbench__flag" aria-hidden="true"><i></i><i></i><i></i></span>
+    </header>
+    <div class="shift-layout">
+      <div class="shift-builder">
+        <fieldset class="shift-presets">
+          <legend>Izberite vzorec</legend>
+          <div class="shift-preset-list">
+            <button type="button" class="shift-preset is-selected" data-shift-cycle="D,D,N,N,Prosto,Prosto" aria-pressed="true"><strong>2 dnevni · 2 nočni</strong><small>2 dni dela · 2 dni prosto</small></button>
+            <button type="button" class="shift-preset" data-shift-cycle="D,D,D,D,Prosto,Prosto" aria-pressed="false"><strong>4 dni · 2 prosta</strong><small>Daljši delovni blok</small></button>
+            <button type="button" class="shift-preset" data-shift-cycle="D,D,D,D,D,Prosto,Prosto" aria-pressed="false"><strong>5 dni · 2 prosta</strong><small>Delovni teden</small></button>
+            <button type="button" class="shift-preset" data-shift-cycle="Jutranja,Popoldanska,Nočna,Prosto" aria-pressed="false"><strong>Jutranja · popoldanska · nočna</strong><small>Kroženje po treh izmenah</small></button>
+          </div>
+          <p class="shift-preset-note">Vzorec lahko po izbiri kadar koli spremenite.</p>
+        </fieldset>
+
+        <form class="api-form shift-form" id="shift-form" action="/izracun/" method="post">
+          
+          <input name="tool" type="hidden" value="shift">
+          <div class="shift-form__dates">
+            <label>Prvi dan cikla<input type="date" name="from" value="2027-01-04" required><small>Od tega dne se vzorec ponavlja.</small></label>
+            <label>Do vključno<input type="date" name="to" value="2027-01-31" required><small>Izberite največ 100 dni.</small></label>
+          </div>
+          <label class="shift-cycle-label" for="shift-cycle">Zaporedje izmen</label>
+          <input id="shift-cycle" name="cycle" value="D,D,N,N,Prosto,Prosto" maxlength="629" autocomplete="off" required aria-describedby="shift-cycle-help">
+          <small id="shift-cycle-help" class="shift-help">Oznake ločite z vejicami. Primer: D,D,N,N,Prosto,Prosto. Vsaka oznaka velja en dan.</small>
+          <details class="shift-legend">
+            <summary>Kaj pomenijo oznake?</summary>
+            <p><strong>D</strong> je dnevna izmena, <strong>N</strong> nočna izmena, <strong>Prosto</strong> pa prost dan. Uporabite lahko tudi svoje kratke oznake.</p>
+          </details>
+          <label class="shift-person">Ime zaposlenega <span>(neobvezno)</span><input name="person" maxlength="80" placeholder="npr. Ana"></label>
+          <button class="primary shift-submit" type="submit"><svg viewbox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v15H4zM8 3v5m8-5v5M4 10h16M8 14h3m-3 3h7"></path></svg> Ustvari razpored <span aria-hidden="true">→</span></button>
+          <output class="result shift-result" aria-live="polite">Spremembe vzorca si lahko ogledate v predogledu, še preden jih dodate v načrt.</output>
+          <p class="shift-privacy-note">Shranjene osebne vnose ohranimo. Nov cikel osveži samo prejšnje samodejno ustvarjene izmene v izbranem obdobju.</p>
+        </form>
+
+        <details class="shift-custom-entries">
+          <summary>Dodajte ali uredite posamezno izmeno</summary>
+          <p>Vnos lahko dopolnite z uro, odmorom, osebo in opombo. Vaši podatki ostanejo v načrtu v tem brskalniku.</p>
+          <form id="planner-entry">
+<input type="hidden" name="entry_id"><div class="filters">
+            <label>Datum<input name="date" type="date" value="2027-01-04" required></label>
+            <label>Začetek<input name="time" type="time"></label><label>Konec<input name="end_time" type="time"></label>
+            <label>Odmor (minute)<input name="break" type="number" min="0" max="1440" step="1"></label>
+            <label>Oseba<input name="person" maxlength="80"></label><label>Naslov / izmena<input name="title" maxlength="200" required></label>
+            <label>Koda izmene<input name="code" maxlength="20"></label><label>Opombe<input name="notes" maxlength="200"></label>
+          </div>
+<label class="check"><input name="done" type="checkbox" value="1">Opravljeno</label><div class="actions">
+<button id="save-planner-entry">Dodaj izmeno</button><button id="cancel-planner-entry" type="button" hidden>Prekliči urejanje</button>
+</div>
+</form>
+          <p class="muted">Če je ura konca pred uro začetka, se izmena konča naslednji dan. Odmor se upošteva v izvozu.</p>
+        </details>
+      </div>
+
+      <aside class="shift-preview panel" aria-labelledby="shift-preview-title">
+        <div class="shift-preview__top">
+<div>
+<span class="eyebrow">PREDOGLED V ŽIVO</span><h2 id="shift-preview-title">Vaš mesečni pregled</h2>
+</div>
+<span class="shift-preview__badge">BREZ SHRANJEVANJA</span>
+</div>
+        <div class="shift-stats" aria-label="Povzetek izmen">
+          <div>
+<span class="shift-stat-icon" aria-hidden="true">▦</span><span><strong id="shift-stat-days">28</strong><small>dni obdobja</small></span>
+</div>
+          <div>
+<span class="shift-stat-icon shift-stat-icon--blue" aria-hidden="true">●</span><span><strong id="shift-stat-work">20</strong><small>izmen</small></span>
+</div>
+          <div>
+<span class="shift-stat-icon shift-stat-icon--red" aria-hidden="true">●</span><span><strong id="shift-stat-night">10</strong><small>nočnih</small></span>
+</div>
+          <div>
+<span class="shift-stat-icon shift-stat-icon--off" aria-hidden="true">○</span><span><strong id="shift-stat-free">8</strong><small>prosti dnevi</small></span>
+</div>
+        </div>
+        <div class="shift-calendar-toolbar">
+<button type="button" id="shift-month-prev" aria-label="Prejšnji mesec">‹</button><strong id="shift-month-title">januar 2027</strong><button type="button" id="shift-month-next" aria-label="Naslednji mesec">›</button>
+</div>
+        <div class="shift-calendar" id="shift-calendar" role="grid" aria-label="Mesečni predogled razporeda izmen"></div>
+        <div class="shift-calendar-legend" aria-label="Legenda izmen">
+<span><i class="shift-dot shift-dot--day"></i>Dnevna</span><span><i class="shift-dot shift-dot--night"></i>Nočna</span><span><i class="shift-dot shift-dot--off"></i>Prosto</span>
+</div>
+        <p id="shift-preview-status" class="shift-preview-status" role="status">Predogled se posodobi ob vsaki spremembi datuma ali vzorca.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="shift-saved panel" aria-labelledby="shift-saved-title">
+    <div>
+<span class="eyebrow">VAŠ NAČRT</span><h2 id="shift-saved-title">Vse izmene na enem mestu</h2>
+<p>Posamezne izmene lahko uredite, izvozite v koledarsko aplikacijo ali shranite varnostno kopijo.</p>
+</div>
+    <a class="button shift-saved__link" href="#design-gallery">Izberi predlogo za tisk <span aria-hidden="true">↓</span></a>
+    <div id="planner-entries" aria-live="polite"></div>
+    <div class="actions shift-saved__actions">
+<button id="planner-ics" type="button">Izvozi v koledar (ICS)</button><button id="planner-backup" type="button">Prenesi varnostno kopijo</button><label class="file-button">Obnovi kopijo<input id="planner-restore" type="file" accept="application/json,.json"></label>
+</div>
+    <output id="planner-entry-status" role="status"></output>
+  </section>
+
+  <section class="gallery-context panel shift-settings-context" aria-label="Nastavitve koledarja za tisk">
+    <!-- BEGIN app/views/pages/_context_heading.html.erb
+--><header class="context-heading"><h2>Nastavitve koledarja za tisk</h2>
 <button type="button" data-context-expand aria-expanded="false" aria-controls="gallery-context-content" data-expand-label="Razširi nastavitve">Razširi nastavitve <span aria-hidden="true">↗</span></button></header>
 <noscript><style>.download-workspace [data-context-expand]{display:none!important}@media(max-width:650px){.download-workspace:not(.context-expanded) .context-content{display:block!important}.download-workspace [data-context-expand]{display:none!important}}</style></noscript>
 <!-- END app/views/pages/_context_heading.html.erb -->
-  <div class="context-content" id="gallery-context-content">
-  <form id="planner-options" data-planner-type="shift">
-    <div class="filters">
-      <label>Leto<select name="year"><option selected>2027</option>
+    <div class="context-content" id="gallery-context-content">
+  <details class="shift-print-settings panel" open>
+    <summary><span><strong>Nastavitve koledarja za tisk</strong><small>Obdobje, velikost papirja, osebni podatki in fotografija</small></span><span aria-hidden="true">＋</span></summary>
+    <div class="shift-print-settings__body">
+      <form id="planner-options" data-planner-type="shift">
+        <div class="filters">
+          <label>Leto<select name="year"><option selected>2027</option>
 <option>2028</option>
 <option>2029</option>
 <option>2030</option></select></label>
-      <label>Mesec<select name="month"><option value="1" selected>januar</option>
+          <label>Mesec<select name="month"><option value="1" selected>januar</option>
 <option value="2">februar</option>
 <option value="3">marec</option>
 <option value="4">april</option>
@@ -97,84 +240,40 @@
 <option value="10">oktober</option>
 <option value="11">november</option>
 <option value="12">december</option></select></label>
-      <label>Izbrani datum<input type="date" name="date" min="2027-01-01" max="2030-12-31" value="2027-01-01" required></label>
-      <label>Vrsta<select name="type"><option value="annual">Letni koledar</option>
-<option value="workdays">Koledar delovnih dni</option>
-<option value="monthly">Mesečni koledar</option>
-<option value="weekly">Tedenski koledar</option>
-<option value="lunar">Lunin koledar</option>
-<option value="blank">Prazen koledar</option>
-<option value="shift" selected>Razpored izmen</option>
-<option value="daily">Dnevni planer</option>
-<option value="family">Družinski planer</option>
-<option value="school">Šolski urnik</option>
-<option value="birthday">Rojstnodnevni koledar</option>
-<option value="name">Koledar z imenom</option>
-<option value="holidays">Prazniki in dela prosti dnevi</option></select></label>
-    </div>
-    <details class="planner-advanced"><summary>Ime, zapiski in dodatne možnosti</summary>
-    <label>Ime (neobvezno)<input name="name" maxlength="100" placeholder="Ana"></label>
-    <label>Osebni zapiski (neobvezno)<textarea name="notes" maxlength="2000" rows="2"></textarea></label>
-    <div class="filters" data-planner-fields="blank">
-      <label>Datumi<select name="undated"><option value="1">Brez datumov</option>
-<option value="0">Z datumi</option></select></label>
-      <label>Razporeditev<select name="blank_layout"><option value="monthly">Mesečna mreža</option>
-<option value="weekly">Tedenski načrt</option></select></label>
-      <label>Prostor za zapiske<select name="ruling"><option value="lined">Črte</option>
+          <label>Izbrani datum<input type="date" name="date" min="2027-01-01" max="2030-12-31" value="2027-01-01" required></label>
+          <input type="hidden" name="type" value="shift">
+        </div>
+        <details class="planner-advanced"><summary>Ime, zapiski in dodatne možnosti</summary>
+          <label>Ime (neobvezno)<input name="name" maxlength="100" placeholder="Ana"></label>
+          <label>Osebni zapiski (neobvezno)<textarea name="notes" maxlength="2000" rows="2"></textarea></label>
+          <div data-planner-fields="blank" class="filters">
+<label>Datumi<select name="undated"><option value="1">Brez datumov</option>
+<option value="0">Z datumi</option></select></label><label>Razporeditev<select name="blank_layout"><option value="monthly">Mesečna mreža</option>
+<option value="weekly">Tedenski načrt</option></select></label><label>Prostor za zapiske<select name="ruling"><option value="lined">Črte</option>
 <option value="plain">Brez črt</option>
 <option value="dotted">Pike</option></select></label>
-    </div>
-    <div data-planner-fields="birthday">
-<label>29. februar v neprestopnem letu<select name="leap_policy"><option value="feb28">28. februar</option>
-<option value="march1">1. marec</option>
-<option value="leap_only">Samo prestopna leta</option></select></label><p>Izvirni rojstni datum ostane shranjen. Izvoz ICS vsebuje izbrane rojstne dneve za leta 2027–2030.</p>
 </div>
-    <div data-planner-fields="daily" class="filters">
+          <div data-planner-fields="birthday"><label>29. februar v neprestopnem letu<select name="leap_policy"><option value="feb28">28. februar</option>
+<option value="march1">1. marec</option>
+<option value="leap_only">Samo prestopna leta</option></select></label></div>
+          <div data-planner-fields="daily" class="filters">
 <label>Prva ura<input name="start_hour" type="number" min="0" max="23" value="7" required></label><label>Zadnja ura<input name="end_hour" type="number" min="0" max="23" value="21" required></label>
 </div>
-    <details class="photo-upload"><summary>Dodajte svojo fotografijo</summary><p>JPEG, PNG ali WebP do 20 MB, najmanj 900 × 600 slikovnih pik. Fotografija se natisne v glavi koledarja pri najmanj 600 ppi. Podatke o lokaciji odstranimo.</p>
+          <details class="photo-upload"><summary>Dodajte svojo fotografijo</summary><p>JPEG, PNG ali WebP do 20 MB, najmanj 900 × 600 slikovnih pik. Podatke o lokaciji odstranimo.</p>
 <label>Fotografija<input id="calendar-photo" type="file" accept="image/jpeg,image/png,image/webp"></label><input type="hidden" name="photo_token" value=""><button id="remove-photo" type="button" hidden>Odstrani fotografijo</button><output id="photo-status" role="status"></output></details>
-    <p class="muted">Vnosi se shranijo na tej napravi. Osebni predogled, PDF in WebP pripravimo v brskalniku. Fotografija ostane le do zaprtja strani; strežniku je ne pošljemo.</p>
-    </details>
-    <button type="button" id="save-planner">Shrani nastavitve</button><output id="planner-message" role="status"></output>
-  </form>
-  <details class="planner-inputs"><summary>Dodajte obveznosti ali osebne vnose</summary><p>Dodajte obveznosti, izmene, predmete ali rojstne dneve. Kratek pregled v mreži dopolnjuje celoten seznam vseh vnosov v PDF-ju.</p>
-    <form id="planner-entry">
-<input type="hidden" name="entry_id"><div class="filters">
-      <label>Datum<input name="date" type="date" value="2027-01-04" required></label>
-      <label>Začetek<input name="time" type="time"></label><label>Konec<input name="end_time" type="time"></label>
-      <label>Odmor (minute)<input name="break" type="number" min="0" max="1440" step="1"></label>
-      <label>Oseba<input name="person" maxlength="80"></label><label>Naslov / predmet<input name="title" maxlength="200" required></label>
-      <label>Koda izmene<input name="code" maxlength="20"></label><label>Učilnica<input name="room" maxlength="80"></label>
+        </details>
+        <p class="muted">Vnosi so shranjeni v lokalnem načrtu v vašem brskalniku. Datoteke za tisk pripravimo ob izvozu.</p>
+        <button type="button" id="save-planner">Shrani nastavitve tiskanja</button><output id="planner-message" role="status"></output>
+      </form>
     </div>
-<label>Opombe<input name="notes" maxlength="200"></label><label class="check"><input name="done" type="checkbox" value="1">Opravljeno</label><div data-planner-fields="school">
-<label class="check"><input id="repeat-school" type="checkbox">Ponovi vsak teden na isti dan</label><label>Do datuma<input id="repeat-school-until" type="date" value="2027-06-24"></label>
-</div>
-<div class="actions">
-<button id="save-planner-entry">Dodaj vnos</button><button id="cancel-planner-entry" type="button" hidden>Prekliči urejanje</button>
-</div>
-</form>
-    <p class="muted">Konec pred začetkom pomeni naslednji dan. ICS ohrani celotno časovno obdobje; odmor je zapisan v opisu.</p>
-    <div id="planner-entries" aria-live="polite"></div>
-    <div class="actions">
-<button id="planner-ics" type="button">Izvozi vnose ICS</button><button id="planner-backup" type="button">Varnostna kopija</button><label class="file-button">Obnovi kopijo<input id="planner-restore" type="file" accept="application/json,.json"></label>
-</div>
-<output id="planner-entry-status" role="status"></output>
   </details>
-  <section data-planner-fields="shift"><h2>Ponavljajoči se razpored</h2>
-<form class="api-form" id="shift-form" action="/izracun/" method="post">
-<input name="tool" type="hidden" value="shift"><div class="filters">
-<label>Začetek cikla<input type="date" name="from" value="2027-01-04" required></label><label>Konec obdobja<input type="date" name="to" value="2027-01-31" required></label><label>Cikel (ločite z vejico)<input name="cycle" value="D,D,N,N,Prosto,Prosto" required></label><label>Oseba<input name="person" maxlength="80"></label>
-</div>
-<p>Izračun zamenja trenutne vnose. Po potrebi prej shranite varnostno kopijo.</p>
-<button>Izračunaj razpored</button><output class="result" aria-live="polite"></output>
-</form></section>
-</div>
-</section>
-<!-- BEGIN app/views/pages/_designs.html.erb
+    </div>
+  </section>
+
+  <!-- BEGIN app/views/pages/_designs.html.erb
 --><section class="design-section" id="design-gallery" aria-labelledby="design-gallery-title" data-export-options='{"type":"shift","year":2027,"month":1,"date":"2027-01-01","name":""}'>
   <header class="section-heading"><div>
-<span class="eyebrow">ZBIRKA ZA TISKANJE</span><h2 id="design-gallery-title">15 predlog za vaš koledar</h2>
+<span class="eyebrow">PREDLOGE ZA VAŠE IZMENE</span><h2 id="design-gallery-title">15 predlog za tiskanje razporeda</h2>
 </div>
 <span class="gallery-format-label">PDF + WebP · 600 ppi</span></header>
   <div class="filters design-settings">
@@ -339,6 +438,7 @@
 </section>
 <!-- END app/views/pages/_designs.html.erb -->
 </div>
+<!-- END app/views/pages/_shift_schedule.html.erb -->
 <!-- END app/views/pages/_planner.html.erb -->
 
 
@@ -355,7 +455,7 @@
     <div class="cookie-bar-copy">
       <span class="cookie-bar-eyebrow">Vaša zasebnost</span>
       <h2 id="cookie-title">Vi odločate, kaj si zapomnimo.</h2>
-      <p id="cookie-intro">Koledar uporablja nujno hrambo. Z vašim dovoljenjem do 180 dni shranimo izbrano mesto za lokalni čas in vreme. Analitike in oglasnih sledilnikov ne uporabljamo. <a href="/piskotki/">Podrobnosti</a></p>
+      <p id="cookie-intro">Z vašim dovoljenjem si do 180 dni zapomnimo izbrano mesto za krajevni čas in vreme. Analitike ali oglasnih sledilnikov ne uporabljamo. <a href="/piskotki/">Podrobnosti</a></p>
     </div>
     <div class="cookie-actions" role="group" aria-label="Izbira nastavitev zasebnosti">
       <button type="button" data-consent="necessary"><span class="cookie-action-icon"><svg class="ui-icon icon-shield" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><use href="/visuals/ui-material-v3.svg#shield"></use></svg></span><span>Ne shrani mesta</span></button>
