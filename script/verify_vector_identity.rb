@@ -19,10 +19,11 @@ end
 files=Dir[File.join(site,'**/*.html')]
 counts=Hash.new(0); failures=[];stylesheet_cache={}
 asset_url=lambda do |path|
- asset=File.join(site,path.delete_prefix('/'))
+ source_path=path.sub(/\.[a-f0-9]{16}\.svg\z/, '.svg')
+ asset=File.join(site,source_path.delete_prefix('/'))
  next nil unless File.file?(asset)
  hash=Digest::SHA256.file(asset).hexdigest[0,16]
- fingerprinted=path.sub(/\.svg\z/, ".#{hash}.svg")
+ fingerprinted=source_path.sub(/\.svg\z/, ".#{hash}.svg")
  next nil unless File.file?(File.join(site,fingerprinted.delete_prefix('/')))
  fingerprinted
 end
