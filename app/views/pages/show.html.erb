@@ -55,7 +55,7 @@
 </svg>
   </div>
 </section>
-<% elsif @section=='workdays' && @page&.month.nil? && (2027..2030).cover?(@year) %>
+<% elsif page_path=='/delovni-dnevi/' && (2027..2030).cover?(@year) %>
 <section class="workdays-hero" aria-labelledby="workdays-title">
   <div class="workdays-hero__copy">
     <span class="workdays-kicker"><i aria-hidden="true"></i> KOLEDAR365 <span>·</span> SLOVENIJA</span>

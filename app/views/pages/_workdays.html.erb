@@ -1,4 +1,4 @@
-<% if @page&.month.nil? && (2027..2030).cover?(@year) %>
+<% if page_path == '/delovni-dnevi/' && (2027..2030).cover?(@year) %>
 <% year_start = Date.new(@year, 1, 1); year_end = Date.new(@year, 12, 31) %>
 <% legal_dates = CalendarEvent.where(category: 'legal', work_free: true, on: year_start..year_end).pluck(:on).uniq.sort %>
 <% months = (1..12).map do |month|

@@ -51,9 +51,9 @@ class SiteTest < ActionDispatch::IntegrationTest
 
     get '/delovni-dnevi/2029/'
     assert_response :success
-    assert_select '[data-workdays-dashboard][data-year="2029"]'
-    assert_select '[data-workdays-dashboard] [data-year-days]', text: '248'
-    assert_select '[data-workdays-card]', count: 12
+    assert_select 'body.gallery-page'
+    assert_select '.page-heading p', text: ApplicationController.helpers.gallery_description
+    assert_select '.gallery-context .data-table tbody tr', count: 12
     get '/delovni-dnevi/2029/september/'
     assert_response :success
     assert_select '.gallery-context .data-table tbody tr', count: 1
