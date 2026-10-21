@@ -54,7 +54,7 @@ transform=lambda do |body,path,indexable:true|
  if path=='/druzinski-planer/'
   family_scripts=sources.select { |src|src.include?('/family_planner') }
   page_assets=assets.merge(scripts:(assets[:scripts]+family_scripts).uniq)
-elsif path=='/delovni-dnevi/'
+elsif ['/delovni-dnevi/','/kalkulator-delovnih-dni/'].include?(path)
   workdays_scripts=sources.select { |src|src.match?(%r{(?:\A|/)workdays-[^/]+\.js(?:\?.*)?\z}) }
   page_assets=assets.merge(scripts:(assets[:scripts]+workdays_scripts).uniq)
  end
