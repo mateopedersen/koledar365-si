@@ -77,5 +77,8 @@ end
 raise 'Site export is incomplete' unless counts[:pages]>8900
 report={passed:failures.empty?,symbols:symbols.size,checked:counts,assets:Dir[File.join(site,'visuals/*.svg')].to_h { |p|[File.basename(p),{bytes:File.size(p),sha256:Digest::SHA256.file(p).hexdigest}] },failures:failures}
 File.write(File.join(root,'evidence/vector-identity-audit.json'),JSON.pretty_generate(report))
-puts JSON.generate(report.reject { |k,_|k==:assets })
+summary=report.reject { |k,_|[:assets,:failures].include?(k) }
+summary[:failure_counts]=failures.group_by { |failure|failure[:reason] }.transform_values(&:length)
+summary[:failure_samples]=failures.first(30)
+puts JSON.pretty_generate(summary)
 abort 'Vector identity audit failed' unless failures.empty?

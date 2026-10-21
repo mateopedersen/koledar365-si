@@ -54,6 +54,14 @@ jobs:
         run: sudo apt-get update -qq && sudo apt-get install -y poppler-utils python3-pil
       - name: Rebuild public HTML with Ruby
         run: node script/generate_daily_horoscope.mjs && bundle exec ruby script/rebuild_free.rb && bundle exec ruby script/verify_vector_identity.rb && bundle exec ruby script/verify_mobile_svg_compatibility.rb
+      - name: Keep vector identity audit details
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vector-identity-audit-${{ github.sha }}
+          path: evidence/vector-identity-audit.json
+          if-no-files-found: ignore
+          retention-days: 7
       - name: Save complete verified publication
         run: |
           bash script/save_pages_publication.sh
