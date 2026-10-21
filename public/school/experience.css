@@ -25,3 +25,23 @@
 
 /* Keep expandable reference links above the small-text contrast threshold. */
 .school-page .sp-sources > details > summary { color: #00438f; }
+
+/* Real Slovenian holiday photography with legible, linked attribution. */
+.sp-photo-credit{position:absolute;z-index:2;right:0;bottom:0;left:0;display:flex;flex-wrap:wrap;align-items:center;gap:4px;padding:24px 10px 8px;background:linear-gradient(180deg,#0b254e00 0%,#0b254e14 24%,#0b254ee8 100%);color:#fff;font-size:10px;font-weight:700;line-height:1.35}
+.sp-photo-credit a,.sp-photo-credit a:visited{color:#fff!important;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+.sp-photo-credit a:hover{color:#fff!important;text-decoration-thickness:2px}
+.sp-photo-credit a:focus-visible{outline:2px solid #fff;border-radius:2px}
+.sp-photo-credit-hero{top:10px;right:10px;bottom:auto;left:auto;max-width:calc(100% - 20px);border:1px solid #ffffff70;border-radius:999px;padding:7px 11px;background:#0b254edb;box-shadow:0 3px 12px #0b254e40;font-size:10px}
+.sp-photo-attributions{margin:18px 0 24px;padding:16px 18px;border:1px solid #dce6f3;border-radius:11px;background:#f4f7fc}
+.school-page .sp-photo-attributions h3{font-size:16px;line-height:1.4;margin:0 0 6px;letter-spacing:-.2px}
+.school-page .sp-photo-attributions>p{font-size:12px;line-height:1.6;margin:0 0 10px;color:#465977}
+.sp-photo-sources{display:grid;gap:6px;margin:0;padding-left:19px}
+.sp-photo-sources li{font-size:11px;line-height:1.6;color:#34465f}
+.sp-photo-sources a{font-weight:700;text-decoration:underline;text-underline-offset:2px}
+
+/* University dates need the same strong contrast on desktop and mobile. */
+.school-page .sp-uni-periods>div{align-items:flex-start;flex-direction:column;gap:4px;padding:12px 0}
+.school-page .sp-period-type{font-size:14px!important;font-weight:700;color:#34465f;line-height:1.5}
+.school-page .sp-uni-periods strong{display:block;padding-left:11px;font-size:16px!important;font-weight:800;color:#1b3458;line-height:1.5;white-space:normal}
+@media(max-width:700px){.sp-photo-credit{font-size:9px;padding:22px 8px 7px}.sp-photo-credit-hero{font-size:9px;padding:6px 9px}.sp-photo-attributions{padding:14px}.school-page .sp-photo-attributions>p{font-size:11px}.sp-photo-sources li{font-size:10px}.school-page .sp-period-type{font-size:13px!important}.school-page .sp-uni-periods strong{font-size:15px!important}}
+@media(max-width:380px){.school-page .sp-period-type{font-size:12px!important}.school-page .sp-uni-periods strong{font-size:14px!important}}
