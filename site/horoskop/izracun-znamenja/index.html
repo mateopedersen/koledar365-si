@@ -109,7 +109,7 @@
 
 <!-- BEGIN app/views/pages/show.html.erb
 --><!-- BEGIN app/views/pages/_horoscope.html.erb
---><div class="z-page" data-horoscope-app data-sign="" data-edition-day="2026-10-21">
+--><div class="z-page" data-horoscope-app data-sign="" data-edition-day="2026-10-22">
 <script type="application/json" id="zodiac-profiles">[{"slug":"oven","name":"Oven","rising":"Vzhajajoče znamenje v Ovnu simbolno opisuje neposreden, živahen in samostojen pristop. Prvi vtis pogosto povezujemo s pobudo in pripravljenostjo poskusiti."},{"slug":"bik","name":"Bik","rising":"Vzhajajoče znamenje v Biku simbolno opisuje miren, premišljen in prizemljen nastop. Povezujemo ga s stalnostjo ter željo, da se stvari razvijajo v svojem ritmu."},{"slug":"dvojcka","name":"Dvojčka","rising":"Vzhajajoče znamenje v Dvojčkih simbolno opisuje radoveden, komunikativen in prilagodljiv prvi vtis. V ospredju so vprašanja, učenje in lahkotno navezovanje stikov."},{"slug":"rak","name":"Rak","rising":"Vzhajajoče znamenje v Raku simbolno opisuje pozoren, zadržan in zaščitniški način vstopanja v nove okoliščine. Občutek varnosti je pri prvem stiku pogosto pomemben."},{"slug":"lev","name":"Lev","rising":"Vzhajajoče znamenje v Levu simbolno opisuje topel, ustvarjalen in opazen nastop. Povezujemo ga z željo po osebnem izrazu in z velikodušno držo do okolice."},{"slug":"devica","name":"Devica","rising":"Vzhajajoče znamenje v Devici simbolno opisuje pozoren, premišljen in praktičen pristop. Prvi vtis povezujemo z opazovanjem podrobnosti ter pripravljenostjo pomagati."},{"slug":"tehtnica","name":"Tehtnica","rising":"Vzhajajoče znamenje v Tehtnici simbolno opisuje prijazen, umirjen in povezovalen nastop. Povezujemo ga s posluhom za razmerja, pravičnost in način, kako se srečajo različni pogledi."},{"slug":"skorpijon","name":"Škorpijon","rising":"Vzhajajoče znamenje v Škorpijonu simbolno opisuje zbran, previden in intenziven prvi vtis. Povezujemo ga z opazovanjem ozadja ter željo po pristnem zaupanju."},{"slug":"strelec","name":"Strelec","rising":"Vzhajajoče znamenje v Strelcu simbolno opisuje odprt, radoveden in neposreden nastop. Povezujemo ga z raziskovanjem ter s pripravljenostjo stopiti iz znanega okolja."},{"slug":"kozorog","name":"Kozorog","rising":"Vzhajajoče znamenje v Kozorogu simbolno opisuje zadržan, odgovoren in premišljen prvi vtis. Povezujemo ga z jasnimi mejami ter postopnim pridobivanjem zaupanja."},{"slug":"vodnar","name":"Vodnar","rising":"Vzhajajoče znamenje v Vodnarju simbolno opisuje samostojen, izviren in nekoliko nekonvencionalen pristop. V ospredju sta lasten pogled in zanimanje za ljudi z različnimi izkušnjami."},{"slug":"ribi","name":"Ribi","rising":"Vzhajajoče znamenje v Ribah simbolno opisuje nežen, prilagodljiv in intuitiven prvi vtis. Povezujemo ga z domišljijo ter s pozornostjo do razpoloženja v okolici."}]</script>
 <section class="z-hero ">
   <div class="z-hero-copy">
@@ -129,10 +129,10 @@
 </section>
 <div class="z-daily-bar" aria-label="Datum in astronomski podatki dnevne izdaje">
 <div>
-<span class="z-live-dot" aria-hidden="true"></span><span data-edition-status>Današnja izdaja</span><time data-edition-date datetime="2026-10-21">21. oktober 2026</time>
+<span class="z-live-dot" aria-hidden="true"></span><span data-edition-status>Današnja izdaja</span><time data-edition-date datetime="2026-10-22">22. oktober 2026</time>
 </div>
 <div class="z-sky">
-<span><svg class="ui-icon icon-moon" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#moon" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#moon"></use></svg><b data-moon-sign>Luna v Vodnarju</b></span><span data-moon-phase>Rastoča Luna · 75 % osvetljenosti</span>
+<span><svg class="ui-icon icon-moon" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#moon" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#moon"></use></svg><b data-moon-sign>Luna v Ribah</b></span><span data-moon-phase>Rastoča Luna · 84 % osvetljenosti</span>
 </div>
 </div>
 <p class="z-refresh-note" data-refresh-note role="status" hidden></p>
@@ -148,7 +148,7 @@
     <fieldset disabled data-birth-fields>
 <legend class="sr-only">Podatki za izračun vzhajajočega znamenja</legend>
       <div class="z-form-pair">
-<label for="z-birth-date">Datum rojstva<input id="z-birth-date" type="date" min="1900-01-01" max="2026-10-21" required data-birth-date></label><label for="z-birth-time">Točna ura rojstva<input id="z-birth-time" type="time" required data-birth-time><small>Ura, zapisana ob rojstvu.</small></label>
+<label for="z-birth-date">Datum rojstva<input id="z-birth-date" type="date" min="1900-01-01" max="2026-10-22" required data-birth-date></label><label for="z-birth-time">Točna ura rojstva<input id="z-birth-time" type="time" required data-birth-time><small>Ura, zapisana ob rojstvu.</small></label>
 </div>
       <label for="z-birth-place">Kraj rojstva<select id="z-birth-place" data-birth-place><option value="46.0569|14.5058|Europe/Ljubljana">Ljubljana, Slovenija</option></select></label>
       <details class="z-manual-place" data-manual-place><summary>Drug kraj ali ročni vnos koordinat</summary><p>Če svojega kraja ne najdete na seznamu, vnesite njegove koordinate in časovni pas IANA. Vzhodna dolžina in severna širina sta pozitivni.</p>
@@ -197,7 +197,7 @@
 <span class="z-card-arrow" aria-hidden="true">↗</span>
 </div>
 <p class="z-card-date">21. marec – 19. april</p>
-<p class="z-card-excerpt" data-card-copy>Vaše mesto v skupni zgodbi</p>
+<p class="z-card-excerpt" data-card-copy>Mir med dvema korakoma</p>
 <span class="z-card-link">Preberite dnevni horoskop <span aria-hidden="true">→</span></span>
 </div></a></article><article class="z-card" role="listitem" data-sign-card="bik" data-element="Zemlja"><a href="/horoskop/bik/"><div class="z-card-art">
 <span class="z-card-number" aria-hidden="true">02</span><img src="/horoscope/art/bik-v1.9c2dccc0d73f70ae.svg" width="320" height="310" loading="lazy" decoding="async" alt="Vektorska ilustracija bika z dolgima rogovoma, čvrstim čelom in srebrno modrimi sencami."><span class="z-element">Zemlja</span>
@@ -208,7 +208,7 @@
 <span class="z-card-arrow" aria-hidden="true">↗</span>
 </div>
 <p class="z-card-date">20. april – 20. maj</p>
-<p class="z-card-excerpt" data-card-copy>Korak, ki nekaj gradi</p>
+<p class="z-card-excerpt" data-card-copy>Vaše mesto v skupni zgodbi</p>
 <span class="z-card-link">Preberite dnevni horoskop <span aria-hidden="true">→</span></span>
 </div></a></article><article class="z-card" role="listitem" data-sign-card="dvojcka" data-element="Zrak"><a href="/horoskop/dvojcka/"><div class="z-card-art">
 <span class="z-card-number" aria-hidden="true">03</span><img src="/horoscope/art/dvojcka-v1.8af35c9460bb01d1.svg" width="320" height="310" loading="lazy" decoding="async" alt="Vektorska ilustracija dveh klasičnih človeških profilov, povezanih z modrim in rdečim lokom."><span class="z-element">Zrak</span>
@@ -219,7 +219,7 @@
 <span class="z-card-arrow" aria-hidden="true">↗</span>
 </div>
 <p class="z-card-date">21. maj – 20. junij</p>
-<p class="z-card-excerpt" data-card-copy>Pogled onkraj znanega</p>
+<p class="z-card-excerpt" data-card-copy>Korak, ki nekaj gradi</p>
 <span class="z-card-link">Preberite dnevni horoskop <span aria-hidden="true">→</span></span>
 </div></a></article><article class="z-card" role="listitem" data-sign-card="rak" data-element="Voda"><a href="/horoskop/rak/"><div class="z-card-art">
 <span class="z-card-number" aria-hidden="true">04</span><img src="/horoscope/art/rak-v1.e2202bcadd1b4244.svg" width="320" height="310" loading="lazy" decoding="async" alt="Vektorska ilustracija raka z razčlenjenim oklepom, dvignjenima kleščama in osmimi nogami."><span class="z-element">Voda</span>
@@ -230,7 +230,7 @@
 <span class="z-card-arrow" aria-hidden="true">↗</span>
 </div>
 <p class="z-card-date">21. junij – 22. julij</p>
-<p class="z-card-excerpt" data-card-copy>Iskreno pod površje</p>
+<p class="z-card-excerpt" data-card-copy>Pogled onkraj znanega</p>
 <span class="z-card-link">Preberite dnevni horoskop <span aria-hidden="true">→</span></span>
 </div></a></article><article class="z-card" role="listitem" data-sign-card="lev" data-element="Ogenj"><a href="/horoskop/lev/"><div class="z-card-art">
 <span class="z-card-number" aria-hidden="true">05</span><img src="/horoscope/art/lev-v1.fb230134114343b4.svg" width="320" height="310" loading="lazy" decoding="async" alt="Vektorska ilustracija levje glave z večplastno grivo, izrazitimi očmi in svetlim gobcem."><span class="z-element">Ogenj</span>
@@ -241,7 +241,7 @@
 <span class="z-card-arrow" aria-hidden="true">↗</span>
 </div>
 <p class="z-card-date">23. julij – 22. avgust</p>
-<p class="z-card-excerpt" data-card-copy>Srečanje dveh pogledov</p>
+<p class="z-card-excerpt" data-card-copy>Iskreno pod površje</p>
 <span class="z-card-link">Preberite dnevni horoskop <span aria-hidden="true">→</span></span>
 </div></a></article><article class="z-card" role="listitem" data-sign-card="devica" data-element="Zemlja"><a href="/horoskop/devica/"><div class="z-card-art">
 <span class="z-card-number" aria-hidden="true">06</span><img src="/horoscope/art/devica-v1.9125f54939544eff.svg" width="320" height="310" loading="lazy" decoding="async" alt="Vektorska ilustracija klasičnega ženskega profila z valovitimi lasmi in žitnimi klasi."><span class="z-element">Zemlja</span>
@@ -252,7 +252,7 @@
 <span class="z-card-arrow" aria-hidden="true">↗</span>
 </div>
 <p class="z-card-date">23. avgust – 22. september</p>
-<p class="z-card-excerpt" data-card-copy>Manj zapletov, več dobrega ritma</p>
+<p class="z-card-excerpt" data-card-copy>Srečanje dveh pogledov</p>
 <span class="z-card-link">Preberite dnevni horoskop <span aria-hidden="true">→</span></span>
 </div></a></article><article class="z-card" role="listitem" data-sign-card="tehtnica" data-element="Zrak"><a href="/horoskop/tehtnica/"><div class="z-card-art">
 <span class="z-card-number" aria-hidden="true">07</span><img src="/horoscope/art/tehtnica-v1.273e355be8be10ae.svg" width="320" height="310" loading="lazy" decoding="async" alt="Vektorska ilustracija uravnotežene tehtnice z dvema posodama, srebrnim stebrom in modro prečko."><span class="z-element">Zrak</span>
@@ -263,7 +263,7 @@
 <span class="z-card-arrow" aria-hidden="true">↗</span>
 </div>
 <p class="z-card-date">23. september – 22. oktober</p>
-<p class="z-card-excerpt" data-card-copy>Nekaj zgolj iz veselja</p>
+<p class="z-card-excerpt" data-card-copy>Manj zapletov, več dobrega ritma</p>
 <span class="z-card-link">Preberite dnevni horoskop <span aria-hidden="true">→</span></span>
 </div></a></article><article class="z-card" role="listitem" data-sign-card="skorpijon" data-element="Voda"><a href="/horoskop/skorpijon/"><div class="z-card-art">
 <span class="z-card-number" aria-hidden="true">08</span><img src="/horoscope/art/skorpijon-v1.5323fc9e1d000a3a.svg" width="320" height="310" loading="lazy" decoding="async" alt="Vektorska ilustracija škorpijona s členjenim telesom, razprtima kleščama in dvignjenim repom."><span class="z-element">Voda</span>
@@ -274,7 +274,7 @@
 <span class="z-card-arrow" aria-hidden="true">↗</span>
 </div>
 <p class="z-card-date">23. oktober – 21. november</p>
-<p class="z-card-excerpt" data-card-copy>Vaša mirna osnova</p>
+<p class="z-card-excerpt" data-card-copy>Nekaj zgolj iz veselja</p>
 <span class="z-card-link">Preberite dnevni horoskop <span aria-hidden="true">→</span></span>
 </div></a></article><article class="z-card" role="listitem" data-sign-card="strelec" data-element="Ogenj"><a href="/horoskop/strelec/"><div class="z-card-art">
 <span class="z-card-number" aria-hidden="true">09</span><img src="/horoscope/art/strelec-v1.a163f4dc41db0425.svg" width="320" height="310" loading="lazy" decoding="async" alt="Vektorska ilustracija mitološkega kentavra z napetim lokom, človeškim trupom in konjskim telesom."><span class="z-element">Ogenj</span>
@@ -285,7 +285,7 @@
 <span class="z-card-arrow" aria-hidden="true">↗</span>
 </div>
 <p class="z-card-date">22. november – 21. december</p>
-<p class="z-card-excerpt" data-card-copy>En dober pogovor</p>
+<p class="z-card-excerpt" data-card-copy>Vaša mirna osnova</p>
 <span class="z-card-link">Preberite dnevni horoskop <span aria-hidden="true">→</span></span>
 </div></a></article><article class="z-card" role="listitem" data-sign-card="kozorog" data-element="Zemlja"><a href="/horoskop/kozorog/"><div class="z-card-art">
 <span class="z-card-number" aria-hidden="true">10</span><img src="/horoscope/art/kozorog-v1.3a0dc7fdb6d96bdc.svg" width="320" height="310" loading="lazy" decoding="async" alt="Vektorska ilustracija gorskega kozoroga z dolgima nazaj zavitima rogovoma in podrobnim kožuhom."><span class="z-element">Zemlja</span>
@@ -296,7 +296,7 @@
 <span class="z-card-arrow" aria-hidden="true">↗</span>
 </div>
 <p class="z-card-date">22. december – 19. januar</p>
-<p class="z-card-excerpt" data-card-copy>Vrednost je tudi v preprostosti</p>
+<p class="z-card-excerpt" data-card-copy>En dober pogovor</p>
 <span class="z-card-link">Preberite dnevni horoskop <span aria-hidden="true">→</span></span>
 </div></a></article><article class="z-card" role="listitem" data-sign-card="vodnar" data-element="Zrak"><a href="/horoskop/vodnar/"><div class="z-card-art">
 <span class="z-card-number" aria-hidden="true">11</span><img src="/horoscope/art/vodnar-v1.e581239bfd7258af.svg" width="320" height="310" loading="lazy" decoding="async" alt="Vektorska ilustracija nagnjene klasične amfore z dvema ročajema in tekočimi modrimi vodnimi curki."><span class="z-element">Zrak</span>
@@ -307,7 +307,7 @@
 <span class="z-card-arrow" aria-hidden="true">↗</span>
 </div>
 <p class="z-card-date">20. januar – 18. februar</p>
-<p class="z-card-excerpt" data-card-copy>Prostor za vaš prvi korak</p>
+<p class="z-card-excerpt" data-card-copy>Vrednost je tudi v preprostosti</p>
 <span class="z-card-link">Preberite dnevni horoskop <span aria-hidden="true">→</span></span>
 </div></a></article><article class="z-card" role="listitem" data-sign-card="ribi" data-element="Voda"><a href="/horoskop/ribi/"><div class="z-card-art">
 <span class="z-card-number" aria-hidden="true">12</span><img src="/horoscope/art/ribi-v1.ddbca4e88c3b6d61.svg" width="320" height="310" loading="lazy" decoding="async" alt="Vektorska ilustracija dveh rib z vidnimi plavutmi in luskami, ki plavata v nasprotnih smereh."><span class="z-element">Voda</span>
@@ -318,7 +318,7 @@
 <span class="z-card-arrow" aria-hidden="true">↗</span>
 </div>
 <p class="z-card-date">19. februar – 20. marec</p>
-<p class="z-card-excerpt" data-card-copy>Mir med dvema korakoma</p>
+<p class="z-card-excerpt" data-card-copy>Prostor za vaš prvi korak</p>
 <span class="z-card-link">Preberite dnevni horoskop <span aria-hidden="true">→</span></span>
 </div></a></article>
 </div>
