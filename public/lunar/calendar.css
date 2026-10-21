@@ -90,7 +90,7 @@
 .lunar-hub-section-head>p{font-size:16px}
 .lunar-year-summary{font-size:13px;font-weight:600}
 .lunar-year-open{min-height:48px;font-size:15px}
-.lunar-year-card__body h3{margin-bottom:11px;color:#1c304b;font-size:14px;letter-spacing:.045em}
+.lunar-year-card__body h3{margin-bottom:11px;color:#1c304b;font-size:14px;font-weight:800;letter-spacing:.01em;text-transform:none}
 .lunar-hub .lunar-month-links a{min-height:48px;padding:8px 10px;border-color:#d2dce9;background:#f8fafd;color:#1f3553;font-size:14px;font-weight:700;transition:transform .15s ease,background .15s ease,border-color .15s ease,color .15s ease}
 .lunar-hub .lunar-month-links a span{color:#526b89;font-size:11px;font-weight:800}
 .lunar-hub .lunar-month-links a:hover{transform:translateY(-1px);border-color:#005da4;background:#eaf3fb;color:#034d86}
