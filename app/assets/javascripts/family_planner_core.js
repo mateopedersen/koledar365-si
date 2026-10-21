@@ -40,16 +40,19 @@
   if(!input||typeof input!=='object'||Array.isArray(input)||input.version!==1)throw new Error('Varnostna kopija ni podprte oblike.');
   const members=input.members,events=input.events,meals=input.meals,groceries=input.groceries;
   if(!Array.isArray(members)||members.length>8||!Array.isArray(events)||events.length>300||!Array.isArray(meals)||meals.length>120||!Array.isArray(groceries)||groceries.length>300)throw new Error('Varnostna kopija vsebuje preveč podatkov.');
-  const memberIds=new Set();
+  const memberIds=new Set(),memberNames=new Set();
   const cleanMembers=members.map(member=>{
    if(!member||!idIsValid(member.id))throw new Error('Varnostna kopija vsebuje neveljavnega člana.');
    const name=safeText(member.name,40),color=colors.includes(member.color)?member.color:'blue';
-   if(!name||memberIds.has(member.id))throw new Error('Preverite imena članov družine v kopiji.');
-   memberIds.add(member.id);
+   const foldedName=name.toLocaleLowerCase('sl');
+   if(!name||memberIds.has(member.id)||memberNames.has(foldedName))throw new Error('Preverite imena članov družine v kopiji.');
+   memberIds.add(member.id);memberNames.add(foldedName);
    return {id:member.id,name,color};
   });
+  const eventIds=new Set();
   const cleanEvents=events.map(event=>{
-   if(!event||!idIsValid(event.id)||!validISO(event.date)||!kinds.includes(event.kind))throw new Error('Varnostna kopija vsebuje neveljaven načrt.');
+   if(!event||!idIsValid(event.id)||eventIds.has(event.id)||!validISO(event.date)||!kinds.includes(event.kind))throw new Error('Varnostna kopija vsebuje neveljaven načrt.');
+   eventIds.add(event.id);
    const title=safeText(event.title,120),time=event.time||'',endTime=event.endTime||'',repeat=event.repeat==='weekly'?'weekly':'none';
    if(!title||(time&&!validTime(time))||(endTime&&!validTime(endTime))||(endTime&&(!time||endTime<=time)))throw new Error('Preverite naslov, datum in ure v kopiji.');
    if(event.memberId&&!memberIds.has(event.memberId))throw new Error('Načrt je povezan z manjkajočim članom družine.');
@@ -57,17 +60,19 @@
    const reminder=reminderValues.includes(Number(event.reminder))?Number(event.reminder):0;
    return {id:event.id,title,date:event.date,time,endTime,kind:event.kind,memberId:event.memberId||'',repeat,reminder,doneDates};
   });
-  const mealIds=new Set();
+  const mealIds=new Set(),mealDates=new Set();
   const cleanMeals=meals.map(meal=>{
    if(!meal||!idIsValid(meal.id)||!validISO(meal.date))throw new Error('Varnostna kopija vsebuje neveljaven obrok.');
    const title=safeText(meal.title,100);
-   if(!title||mealIds.has(meal.date))throw new Error('Na vsak dan lahko shranite en glavni obrok. Preverite jedilnik v kopiji.');
-   mealIds.add(meal.date);
+   if(!title||mealIds.has(meal.id)||mealDates.has(meal.date))throw new Error('Na vsak dan lahko shranite en glavni obrok. Preverite jedilnik v kopiji.');
+   mealIds.add(meal.id);mealDates.add(meal.date);
    const ingredients=Array.isArray(meal.ingredients)?meal.ingredients.map(item=>safeText(item,80)).filter(Boolean).slice(0,30):[];
    return {id:meal.id,date:meal.date,title,ingredients};
   });
+  const groceryIds=new Set();
   const cleanGroceries=groceries.map(item=>{
-   if(!item||!idIsValid(item.id))throw new Error('Varnostna kopija vsebuje neveljaven izdelek.');
+   if(!item||!idIsValid(item.id)||groceryIds.has(item.id))throw new Error('Varnostna kopija vsebuje neveljaven izdelek.');
+   groceryIds.add(item.id);
    const name=safeText(item.name,100);
    if(!name)throw new Error('Varnostna kopija vsebuje prazen izdelek.');
    return {id:item.id,name,quantity:safeText(item.quantity,30),category:safeText(item.category,40)||'Ostalo',bought:!!item.bought};
