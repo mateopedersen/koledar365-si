@@ -38,8 +38,8 @@ for (const gallery of galleryPages) {
     await expect(actions.nth(0).locator('small')).toHaveText('Prenesi');
     await expect(actions.nth(1).locator('strong')).toHaveText(/WebP/);
     await expect(actions.nth(1).locator('small')).toHaveText('Prenesi');
-    await expect(actions.nth(0).locator('img')).toHaveAttribute('src', '/visuals/download-pdf-v1.svg');
-    await expect(actions.nth(1).locator('img')).toHaveAttribute('src', '/visuals/download-webp-v1.svg');
+    await expect(actions.nth(0).locator('img')).toHaveAttribute('src', /\/visuals\/download-pdf-v1\.[a-f0-9]{16}\.svg$/);
+    await expect(actions.nth(1).locator('img')).toHaveAttribute('src', /\/visuals\/download-webp-v1\.[a-f0-9]{16}\.svg$/);
     await expect(actions.nth(0)).toHaveAttribute(gallery.formatAttribute, 'pdf');
     await expect(actions.nth(1)).toHaveAttribute(gallery.formatAttribute, 'webp');
 
