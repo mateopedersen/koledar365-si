@@ -45,7 +45,25 @@ class SeoTest < ActionDispatch::IntegrationTest
     get '/soncni-vzhod-in-zahod/'
     assert_response :success
     assert_select '[data-sun-city] option',count:69
-    assert_select '.sun-city-link',count:69
+    assert_select '.sun-city-link',count:69 do |cards|
+      city_index=CityCatalog.all.index_by { |city|city.fetch('id') }
+      cards.each do |card|
+        link=card.at_css('.sun-city-link__main')
+        id=link['href'].match(%r{/soncni-vzhod-in-zahod/([a-z0-9-]+)/})[1]
+        city=city_index.fetch(id)
+        mark=card.at_css('.sun-city-link__mark')
+        assert_equal 'svg',mark.name
+        title_id=mark['aria-labelledby'].split.first
+        assert_equal "Fotografija mesta #{city.fetch('name')}",mark.at_css("title##{title_id}").text
+        assert_includes mark.to_html,'href="data:image/jpeg;base64,'
+        assert Rails.root.join('data','city-marks',"#{id}.svg").file?
+        refute Rails.root.join('public','images','city-marks',"#{id}.svg").exist?
+        credit=card.at_css('.sun-city-link__credit')
+        assert_equal "/fotografije-in-licence/##{id}",credit['href']
+        assert_includes credit.text,city.dig('photo','author')
+        assert_includes credit.text,city.dig('photo','license')
+      end
+    end
     assert_select 'a[href="/soncni-vzhod-in-zahod/zrece/"]',minimum:1
     assert_select '[data-sun-scene]'
     assert_select 'script[src*="sun"]'

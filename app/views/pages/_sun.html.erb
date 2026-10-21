@@ -5,6 +5,7 @@
   date = @today unless date.year.between?(1901, 2099)
   sun = SunEngine.calculate(date, city_id)
   city_names = SunEngine::CITIES
+  city_catalog = CityCatalog.all.index_by { |city| city.fetch('id') }
 %>
 
 <% if page_path == '/soncni-vzhod-in-zahod/' %>
@@ -194,14 +195,20 @@
   <section class="sun-city-section" aria-labelledby="sun-cities-title">
     <div class="sun-city-heading"><div><span class="sun-step">04 <i aria-hidden="true"></i> PO MESTIH</span><h2 id="sun-cities-title">Sončni časi v vseh slovenskih mestih</h2><p>Izberite mesto za lasten dnevni lok, vzhod, zahod in trajanje svetlega dela dneva.</p></div>
       <label class="sun-city-search"><span class="sr-only">Filtrirajte seznam mest</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.4"/><path d="m15.5 15.5 5 5"/></svg><input type="search" placeholder="Poiščite mesto …" autocomplete="off" data-sun-city-filter></label></div>
-    <p class="sun-city-count" data-sun-city-count>69 mest</p>
+    <p class="sun-city-count" data-sun-city-count>69 mest · <a href="/fotografije-in-licence/#fotografije-mest">fotografije, avtorji in licence</a></p>
     <div class="sun-city-grid" data-sun-city-grid>
       <% city_names.each do |id, values| %>
-        <a class="sun-city-link" href="/soncni-vzhod-in-zahod/<%= id %>/" data-city-name="<%= values[0].downcase %>">
-          <span class="sun-city-link__mark" aria-hidden="true"><svg viewBox="0 0 38 38"><path d="M6 29h26M8 27a11 11 0 0 1 22 0"/><circle cx="19" cy="18" r="4.6"/><path d="M19 4v3m-10.6.4 2.1 2.1m17-2.1-2.1 2.1M4.8 18h3m22.4 0h3"/></svg></span>
-          <span><strong><%= values[0] %></strong><small><%= format('%.4f° N · %.4f° E', values[1], values[2]) %></small></span>
-          <span class="sun-city-link__arrow" aria-hidden="true">↗</span>
-        </a>
+        <% photo = city_catalog.fetch(id).fetch('photo') %>
+        <article class="sun-city-link" data-city-name="<%= values[0].downcase %>">
+          <a class="sun-city-link__main" href="/soncni-vzhod-in-zahod/<%= id %>/">
+            <%= raw(Rails.root.join('data', 'city-marks', "#{id}.svg").read) %>
+            <span class="sun-city-link__copy"><strong><%= values[0] %></strong><small><%= format('%.4f° N · %.4f° E', values[1], values[2]) %></small></span>
+            <span class="sun-city-link__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="sun-city-link__credit" href="/fotografije-in-licence/#<%= id %>" aria-label="Avtor fotografije: <%= photo.fetch('author') %>; licenca: <%= photo.fetch('license') %>; vir in podrobnosti za mesto <%= values[0] %>">
+            <span>Foto: <%= photo.fetch('author') %></span><b><%= photo.fetch('license') %></b>
+          </a>
+        </article>
       <% end %>
     </div>
     <p class="sun-city-empty" hidden data-sun-city-empty>Za iskani niz ni zadetkov. Poskusite z drugim imenom mesta.</p>
