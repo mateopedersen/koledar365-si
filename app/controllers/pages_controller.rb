@@ -33,6 +33,10 @@ class PagesController < ApplicationController
     if path=='/'
       @year=params[:year].present? ? @year : @today.year.clamp(2026,2030)
       @month=params[:month].present? ? @month : @today.month
+    elsif path=='/delovni-dnevi/'
+      # The landing page is the new year overview, even if its legacy Page row
+      # still carries the retired 2026 gallery year.
+      @year=CalendarEngine::YEARS.include?(@year) ? @year : 2027
     elsif @page
       @year=@page.year if @page.year.to_i.between?(2026,2030)
       @month=@page.month if @page.month

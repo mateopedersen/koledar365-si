@@ -46,7 +46,14 @@ Dir[site.join('**/*.html')].sort.each do |file|
    dashboard=doc.at_css('body.gallery-page .workdays-dashboard[data-workdays-dashboard][data-year="2027"]')
    fail_with.call('Workdays landing page must keep its interactive annual dashboard') unless dashboard && doc.css('[data-workdays-card]').size==12
    fail_with.call('Workdays dashboard must expose weekday, hours and holiday controls') unless doc.at_css('[data-workdays-controls] input[type=number][data-workdays-hours]') && doc.css('[data-workdays-controls] input[type=checkbox]').size==8
-   fail_with.call('Workdays dashboard assets must be present') unless doc.at_css('link[rel=stylesheet][href*="workdays"]') && doc.at_css('script[src*="workdays"]')
+   static_scripts=JSON.parse(doc.at_css('#k365-static-config')&.text.to_s).fetch('scripts',[]) rescue []
+   has_workdays_script=static_scripts.any? { |src|File.basename(URI(src).path).match?(/\Aworkdays(?:-|\.)/) }
+   has_workdays_styles=doc.css('link[rel=stylesheet][href^="/"]').any? do |node|
+    href=node['href'].split('?',2).first
+    file=site.join(href.delete_prefix('/'))
+    file.file? && file.read.include?('.workdays-dashboard')
+   end
+   fail_with.call('Workdays dashboard assets must be present') unless has_workdays_styles && has_workdays_script
    fail_with.call('Workdays gallery must remain visible below the annual dashboard') unless doc.at_css('#design-gallery .gallery-format-label')&.text.to_s.include?('600 ppi') && gallery.css('.design-card').size==15
    fail_with.call('Workdays dashboard should use its full-width layout') if dashboard&.ancestors&.any? { |parent|parent['class'].to_s.split.include?('download-workspace') }
   else

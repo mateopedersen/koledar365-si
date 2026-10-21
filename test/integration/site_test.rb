@@ -35,6 +35,9 @@ class SiteTest < ActionDispatch::IntegrationTest
     assert_response :unprocessable_entity
   end
   test 'workdays landing page presents correct annual data and an adjustable monthly overview' do
+    # Production's legacy Page row still labels this landing page as 2026.
+    # Its overview must remain the 2027 dashboard regardless of that old value.
+    Page.find_by!(path:'/delovni-dnevi/').update_column(:year,2026)
     get '/delovni-dnevi/'
     assert_response :success
     assert_select 'html[lang=sl]'
