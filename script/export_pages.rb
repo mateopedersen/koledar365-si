@@ -162,25 +162,35 @@ headers=<<~HEADERS
   Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-#{cookie_script_hash}'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' blob:; connect-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'
   Cache-Control: public, max-age=0, must-revalidate
 /visuals/*
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 /horoscope/art/*
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 /school/*.svg
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 /school/logos/*.svg
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 /assets/*
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 /images/responsive/*
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 /free/#{client_asset}
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 /free/engine/*
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 /prenosi/*
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
   X-Robots-Tag: noindex
 /prenosi/lunin-koledar/*
+  ! Cache-Control
   Cache-Control: public, max-age=3600
   X-Robots-Tag: noindex
 /free/views/*
