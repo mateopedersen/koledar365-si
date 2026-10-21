@@ -194,6 +194,12 @@
       grid-row: 1;
       position: relative;
       z-index: 1;
+      pointer-events: none;
+    }
+    #cookies .cookie-bar-copy a {
+      position: relative;
+      z-index: 3;
+      pointer-events: auto;
     }
     #cookies .cookie-bar-copy h2 {
       margin: 0 0 2px;
