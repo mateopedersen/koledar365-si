@@ -1,5 +1,6 @@
 import {matchPublicCalendar} from './catalog-match.js';
 import {ljubljanaDate,horoscopeDisposition} from './date-context.js';
+import {normalizeSearchText,resultCategory,searchRecords} from './site-search.mjs';
 // Cloudflare Pages host adapter. Calendar rules and PDF composition remain Ruby.
 const nativeFetch=window.fetch.bind(window),params=new URLSearchParams(location.search);
 const $=selector=>document.querySelector(selector),$$=selector=>[...document.querySelectorAll(selector)];
@@ -80,10 +81,76 @@ async function prepare(){
  const nameYear=Number(params.get('year'));if(nameYear>=2027&&nameYear<=2030){for(const section of $$('[data-export-options]')){const value=JSON.parse(section.dataset.exportOptions);value.year=nameYear;value.date=`${nameYear}-${String(value.month||1).padStart(2,'0')}-01`;section.dataset.exportOptions=JSON.stringify(value)}}
  if($('#holiday-filters')){const form=$('#holiday-filters');for(const key of ['month','q','kind'])if(params.has(key))form.elements[key].value=params.get(key)}
  await prepareViews({year,month,view,selected,today});
- if(location.pathname==='/isci/')await search();
  for(const src of config.scripts)await loadScript(src);if($('#holiday-filters'))await loadScript(config.holidays);if($('[data-vacation-planner]'))await loadScript(config.vacation);if($('[data-countdown-root]'))await loadScript(config.countdown);if($('#shift-form'))await loadScript(config.shift);
 }
-async function search(){const query=(params.get('q')||'').trim().slice(0,120),normalize=x=>x.normalize('NFD').replace(/\p{M}/gu,'').toLocaleLowerCase('sl'),needle=normalize(query),tokens=needle.split(/\s+/);$('#search').value=query;const panel=$('main section.panel'),heading=$('.page-heading p');heading.textContent=query?'Rezultati za »'+query+'«':'Vpišite ime, leto, mesec, praznik ali orodje.';panel.replaceChildren();if(!query)return;const data=await nativeFetch('/free/search.json').then(r=>r.json());const results=data.map(row=>({...row,score:row.folded===needle?200:tokens.filter(token=>row.folded.includes(token)).length*10})).filter(row=>row.score>0).sort((a,b)=>b.score-a.score||a.priority-b.priority).slice(0,50);const summary=document.createElement('p');summary.textContent=results.length?'Prikazani zadetki: '+results.length:'Ni zadetkov. Poskusite krajši zapis, drugo ime ali leto od 2027 do 2030.';panel.append(summary);const list=document.createElement('ul');list.className='search-results';for(const result of results){const li=document.createElement('li'),a=document.createElement('a'),strong=document.createElement('strong'),small=document.createElement('small');a.href=result.path;strong.textContent=result.title;small.textContent=result.type;a.append(strong,small);li.append(a);list.append(li)}panel.append(list)}
+const popularSearches=[
+ {title:'Prazniki v Sloveniji',detail:'Datumi in dela prosti dnevi',path:'/prazniki/',type:'Prazniki'},
+ {title:'Šolske počitnice',detail:'Šolski koledar in regije',path:'/solske-pocitnice/',type:'Koledarji'},
+ {title:'Koledar 2027',detail:'Letni in mesečni pregledi',path:'/koledar/2027/',type:'Koledarji'},
+ {title:'Polna luna',detail:'Lunine mene in datumi',path:'/polna-luna/',type:'Luna'},
+ {title:'Sončni vzhod in zahod',detail:'Izberite slovensko mesto',path:'/soncni-vzhod-in-zahod/ljubljana/',type:'Sončni časi'},
+ {title:'Imena in godovi',detail:'Koledarji z imenom',path:'/koledar-z-imenom/',type:'Imena'}
+];
+let searchIndexPromise;
+function loadSearchIndex(){return searchIndexPromise ||= nativeFetch('/free/search.json',{cache:'force-cache'}).then(response=>{if(!response.ok)throw Error('Iskalnega seznama ni mogoče naložiti.');return response.json()}).then(rows=>{if(!Array.isArray(rows))throw Error('Iskalni seznam ni v pravilni obliki.');return rows}).catch(error=>{searchIndexPromise=null;throw error})}
+function makeSearchLink(result,index,asOption=false){const link=element('a',undefined,'site-search-option');link.href=result.path;if(asOption){link.id=`site-search-option-${index}`;link.setAttribute('role','option');link.setAttribute('aria-selected','false')}const copy=element('span',undefined,'site-search-option__copy'),title=element('strong',result.title),detail=element('small',result.detail||result.category||result.type||resultCategory(result));copy.append(title,detail);link.append(copy,element('span','↗','site-search-option__arrow'));return link}
+function attachSearchSuggestions(form){
+ const input=form.querySelector('[data-search-input]'),popup=form.querySelector('[data-search-suggestions]'),list=popup?.querySelector('[data-search-options]'),status=popup?.querySelector('[data-search-status]');if(!input||!popup||!list||!status)return;
+ let activeIndex=-1,timer=0,request=0;
+ const close=()=>{popup.hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');activeIndex=-1};
+ const open=()=>{popup.hidden=false;input.setAttribute('aria-expanded','true')};
+ const render=(rows,message)=>{list.replaceChildren();activeIndex=-1;status.textContent=message||'';status.hidden=!message;list.hidden=!rows.length;if(!message)rows.forEach((row,index)=>list.append(makeSearchLink(row,index,true)));open()};
+ const update=async()=>{
+  const query=input.value.trim().slice(0,120),sequence=++request;
+  if(!query){render(popularSearches);return}
+  if(normalizeSearchText(query).length<2){render([],'Vnesite vsaj dve črki za iskanje.');return}
+  render([],'Iščemo po koledarjih, imenih, praznikih in orodjih …');
+  try{const data=await loadSearchIndex();if(sequence!==request)return;const {results}=searchRecords(data,query,{limit:6});const rows=results.map(row=>({...row,detail:row.category||row.type}));
+   if(rows.length){rows.push({title:`Prikaži vse rezultate za »${query}«`,detail:'Odpri seznam rezultatov',path:`/isci/?${new URLSearchParams({q:query})}`,type:'Vsi rezultati'});render(rows)}
+   else render([{title:`Išči »${query}«`,detail:'Odpri iskanje po celotni vsebini',path:`/isci/?${new URLSearchParams({q:query})}`,type:'Iskanje'}]);
+  }catch{if(sequence===request)render([{title:'Odpri stran z rezultati',detail:'Iskanje bomo ponovili na strani z rezultati',path:`/isci/?${new URLSearchParams({q:query})}`,type:'Iskanje'}])}
+ };
+ input.setAttribute('role','combobox');input.setAttribute('aria-autocomplete','list');input.setAttribute('aria-controls',list.id);input.setAttribute('aria-expanded','false');
+ input.addEventListener('focus',()=>{clearTimeout(timer);timer=setTimeout(update,100)});
+ input.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(update,90)});
+ input.addEventListener('keydown',event=>{
+  const options=[...list.querySelectorAll('[role="option"]')];
+  if(event.key==='ArrowDown'&&options.length){event.preventDefault();activeIndex=Math.min(activeIndex+1,options.length-1)}
+  else if(event.key==='ArrowUp'&&options.length){event.preventDefault();activeIndex=Math.max(activeIndex-1,0)}
+  else if(event.key==='Escape'&&!popup.hidden){close();return}
+  else if(event.key==='Enter'&&activeIndex>=0&&options[activeIndex]){event.preventDefault();location.assign(options[activeIndex].href);return}
+  else return;
+  options.forEach((option,index)=>option.setAttribute('aria-selected',String(index===activeIndex)));
+  input.setAttribute('aria-activedescendant',options[activeIndex].id);
+ });
+ popup.addEventListener('click',event=>{if(event.target.closest('a[role="option"]'))close()});
+ document.addEventListener('pointerdown',event=>{if(!form.contains(event.target))close()});
+ form.addEventListener('submit',close);
+}
+function initializeSearchSuggestions(){ $$('[data-site-search]').forEach(attachSearchSuggestions); }
+function initializeSearchResults(){
+ const page=$('[data-search-page]');if(!page)return;
+ const query=(params.get('q')||'').trim().slice(0,120),heading=$('[data-search-heading]',page),panel=$('[data-search-results]',page),headerInput=$('#search'),pageInput=$('[data-search-input]',page);
+ if(headerInput)headerInput.value=query;
+ if(pageInput)pageInput.value=query;
+ if(heading)heading.textContent=query?`Rezultati za »${query}«`:'Poiščite med koledarji, prazniki, imeni in orodji.';
+ if(!panel)return;
+ const renderEmpty=()=>{panel.replaceChildren(element('p','Začnite z iskanjem ali izberite eno od priljubljenih tem.','search-empty-copy'));const links=element('div',undefined,'search-shortcuts');popularSearches.forEach((item,index)=>links.append(makeSearchLink(item,`popular-${index}`)));panel.append(links)};
+ if(!query){renderEmpty();return}
+ panel.setAttribute('aria-busy','true');panel.replaceChildren(element('p','Iščemo po koledarjih, praznikih, imenih in orodjih …','search-loading'));
+ loadSearchIndex().then(data=>{
+  const {results,total}=searchRecords(data,query,{limit:10000});panel.removeAttribute('aria-busy');panel.replaceChildren();
+  if(!total){panel.append(element('p',`Za »${query}« nismo našli zadetkov. Poskusite krajši izraz ali preverite zapis.`,'search-empty-copy'));const links=element('div',undefined,'search-shortcuts');popularSearches.slice(0,4).forEach((item,index)=>links.append(makeSearchLink(item,`empty-${index}`)));panel.append(links);return}
+  const categoryCounts=new Map();for(const row of results)categoryCounts.set(row.category,(categoryCounts.get(row.category)||0)+1);
+  panel.append(element('p',`Najdenih ${total.toLocaleString('sl-SI')} rezultatov. Izberite kategorijo ali odprite želeni zadetek.`,'search-summary'));
+  const filters=element('div',undefined,'search-filters');filters.setAttribute('role','group');filters.setAttribute('aria-label','Filtriraj rezultate');
+  const list=element('ul',undefined,'search-results'),showMore=element('button','Pokaži še zadetke','search-more');let activeCategory='Vse',visibleCount=50;
+  const renderRows=()=>{list.replaceChildren();const filtered=activeCategory==='Vse'?results:results.filter(row=>row.category===activeCategory);filtered.slice(0,visibleCount).forEach((row,index)=>{const li=element('li',undefined,'search-result');li.append(makeSearchLink({...row,detail:row.category},`result-${index}`));list.append(li)});showMore.hidden=filtered.length<=visibleCount;showMore.textContent=`Pokaži še ${Math.min(50,filtered.length-visibleCount)} zadetkov`;};
+  const addFilter=(name,count)=>{const button=element('button',`${name} · ${count}`,'search-filter'+(activeCategory===name?' is-active':''));button.type='button';button.dataset.category=name;button.setAttribute('aria-pressed',String(activeCategory===name));button.addEventListener('click',()=>{activeCategory=name;visibleCount=50;filters.querySelectorAll('button').forEach(item=>{const active=item.dataset.category===name;item.classList.toggle('is-active',active);item.setAttribute('aria-pressed',String(active))});renderRows()});filters.append(button)};
+  addFilter('Vse',total);for(const [name,count] of categoryCounts)addFilter(name,count);
+  showMore.type='button';showMore.addEventListener('click',()=>{visibleCount+=50;renderRows()});panel.append(filters,list,showMore);renderRows();
+ }).catch(()=>{panel.removeAttribute('aria-busy');panel.replaceChildren(element('p','Iskanja trenutno ni mogoče naložiti. Preverite povezavo in poskusite znova.','search-error'));const retry=element('button','Poskusi znova','search-more');retry.type='button';retry.addEventListener('click',()=>{searchIndexPromise=null;initializeSearchResults()});panel.append(retry)});
+}
 // Download selected statutory/important dates without a server-side Ruby process.
 document.addEventListener('click',async event=>{const link=event.target.closest('a[href]');if(!link)return;const url=new URL(link.href,location.href);if(url.origin!==location.origin||!/^\/prazniki\/20(?:27|28|29|30)\.ics$/.test(url.pathname))return;if(!url.search)return;event.preventDefault();try{const data=Object.fromEntries(url.searchParams);data.year=url.pathname.match(/\d{4}/)[0];const result=await call(url.pathname,data),a=document.createElement('a');a.href=objectUrl(new Blob([bytes(result.binary)],{type:'text/calendar'}));a.download=result.filename;a.click()}catch(error){const output=document.createElement('p');output.setAttribute('role','alert');output.className='error';output.textContent=error.message;link.after(output)}},true);
 let eventData;
@@ -133,4 +200,5 @@ document.addEventListener('click',event=>{const link=event.target.closest('.cale
 setInterval(synchronizeLocalDay,60000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)synchronizeLocalDay()});synchronizeLocalDay();
 
 // Start after every helper has been initialized, including cached configuration.
+initializeSearchSuggestions();initializeSearchResults();
 prepare().then(()=>{document.documentElement.dataset.freeReady='true';synchronizeLocalDay()}).catch(error=>{document.documentElement.dataset.freeReady='error';const notice=document.createElement('p');notice.className='notice';notice.textContent=error.message+' Poskusite osvežiti stran.';$('#vsebina')?.prepend(notice)});
