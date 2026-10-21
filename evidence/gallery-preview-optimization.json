@@ -1,21 +1,27 @@
 {
-  "checked_at": "2026-10-20T20:39:54Z",
-  "gallery_previews": 2820,
+  "checked_at": "2026-10-21T19:21:18.414931+00:00",
+  "gallery_previews": 2040,
+  "gallery_previews_converted_to_webp": 0,
+  "gallery_previews_already_webp": 2040,
   "studio_sample_previews": 15,
-  "html_pages_with_updated_preview_dimensions": 8689,
-  "html_preview_tags_normalized": 130335,
+  "html_pages_with_updated_preview_dimensions": 0,
+  "html_pages_with_versioned_preview_urls": 76,
+  "html_preview_tags_normalized": 0,
+  "html_preview_urls_updated": 2280,
   "html_preview_dimensions": {
     "width": 212,
     "height": 300
   },
-  "resized": 2835,
-  "already_optimized": 0,
+  "preview_cache_version_png": "212x300-v1",
+  "preview_cache_version_webp": "212x300-webp-v1",
+  "resized": 0,
+  "already_optimized": 2055,
   "dimensions": {
     "width": 212,
     "height": 300
   },
-  "bytes_before": 44035238,
-  "bytes_after": 31316214,
-  "bytes_saved": 12719024,
+  "bytes_before": 7832998,
+  "bytes_after": 7832998,
+  "bytes_saved": 0,
   "print_pdf_webp_files_modified": 0
 }

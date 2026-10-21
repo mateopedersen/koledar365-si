@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {matchPublicCalendar} from '../cloudflare/free/catalog-match.js';
-const row=options=>({options:{year:2028,month:1,design:'min-01',...options}});
+const row=options=>({options:{year:2028,month:1,design:'min-01',paper:'A4',orientation:'portrait',...options}});
 const request={year:2028,month:2,design:'min-01',type:'workdays',workday_scope:'month'};
 assert.equal(matchPublicCalendar(row({type:'workdays',workday_scope:'month'}),request),false,'February must never download January workdays');
 assert.equal(matchPublicCalendar(row({type:'workdays',workday_scope:'month',month:2}),request),true);
@@ -9,6 +9,10 @@ assert.equal(matchPublicCalendar(row({type:'lunar',lunar_scope:'year'}),{...requ
 assert.equal(matchPublicCalendar(row({type:'lunar'}),{...request,type:'lunar',workday_scope:undefined}),false);
 assert.equal(matchPublicCalendar(row({type:'weekly',date:'2028-01-01'}),{...request,type:'weekly',workday_scope:undefined,date:'2028-02-29'}),false);
 assert.equal(matchPublicCalendar(row({type:'monthly',month:2}),{...request,type:'monthly',workday_scope:undefined,year:2029}),false);
+const collectionRow=row({type:'annual',year:2027,paper:'A3',orientation:'landscape'});
+assert.equal(matchPublicCalendar(collectionRow,{year:2027,type:'annual',design:'min-01',paper:'A4',orientation:'portrait'}),false,'A3 collection records must not be reused as standard A4 downloads');
+assert.equal(matchPublicCalendar(collectionRow,{year:2027,type:'annual',design:'min-01',paper:'A3',orientation:'landscape'}),true,'A3 landscape downloads must match only their exact paper and orientation');
+assert.equal(matchPublicCalendar(row({type:'annual',year:2027,paper:'A3',orientation:'portrait'}),{year:2027,type:'annual',design:'min-01',paper:'A3',orientation:'landscape'}),false,'A3 portrait downloads must not be reused for landscape requests');
 console.log('Public catalogue: month, year, scope and exact weekly date contracts passed.');
 const {ljubljanaDate,horoscopeDisposition}=await import('../cloudflare/free/date-context.js');
 assert.equal(ljubljanaDate(new Date('2026-10-20T22:30:00Z')),'2026-10-21');

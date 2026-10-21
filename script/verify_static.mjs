@@ -50,3 +50,4 @@ else{
 }
 console.log(JSON.stringify({passed:!issues.length,files:files.length,pairs:catalog.length,issues},null,2));if(issues.length)process.exit(1);
 await import('./lunar/verify_static.mjs');
+await import('./verify_calendar_collection_static.mjs');

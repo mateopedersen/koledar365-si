@@ -2,18 +2,46 @@
   "passed": true,
   "symbols": 38,
   "checked": {
-    "pages": 9637,
-    "icon_instances": 394555,
+    "pages": 702,
+    "icon_instances": 23989,
     "home_fragments": 300
   },
   "assets": {
+    "brand-calendar-v3.71d101697df6153f.svg": {
+      "bytes": 3198,
+      "sha256": "71d101697df6153f92d13ec2fdf1fb6d68849b92df92ccf22ef8fc6cec83c13a"
+    },
     "brand-calendar-v3.svg": {
       "bytes": 3198,
       "sha256": "71d101697df6153f92d13ec2fdf1fb6d68849b92df92ccf22ef8fc6cec83c13a"
     },
+    "download-pdf-v1.5107a18b1d05d37b.svg": {
+      "bytes": 865,
+      "sha256": "5107a18b1d05d37b97fb535ec75e3cb8b4251d2e138e88d0beb8f981b3b191ef"
+    },
+    "download-pdf-v1.svg": {
+      "bytes": 865,
+      "sha256": "5107a18b1d05d37b97fb535ec75e3cb8b4251d2e138e88d0beb8f981b3b191ef"
+    },
+    "download-webp-v1.3b162881caf6fab3.svg": {
+      "bytes": 752,
+      "sha256": "3b162881caf6fab3488aab2def6ff2e40e1a479f1908cd9ea3f04309dcfe9700"
+    },
+    "download-webp-v1.svg": {
+      "bytes": 752,
+      "sha256": "3b162881caf6fab3488aab2def6ff2e40e1a479f1908cd9ea3f04309dcfe9700"
+    },
+    "slovenia-fabric-v3.95b82b3f8fbaebac.svg": {
+      "bytes": 1936,
+      "sha256": "95b82b3f8fbaebac34bbc03d5f04ab4ba03e6107e755f8e21daf4d532da6efb9"
+    },
     "slovenia-fabric-v3.svg": {
       "bytes": 1936,
       "sha256": "95b82b3f8fbaebac34bbc03d5f04ab4ba03e6107e755f8e21daf4d532da6efb9"
+    },
+    "ui-material-v3.a6bd8ea18ae2c0bc.svg": {
+      "bytes": 35276,
+      "sha256": "a6bd8ea18ae2c0bc0e84ab99687f37c0ce99290ab9e08a22349dd92c1fe40c9a"
     },
     "ui-material-v3.svg": {
       "bytes": 35276,
