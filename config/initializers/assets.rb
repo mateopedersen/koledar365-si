@@ -7,6 +7,7 @@ Rails.application.config.assets.precompile += %w[date_calculator.css]
 Rails.application.config.assets.precompile += %w[horoscope.css]
 Rails.application.config.assets.precompile += %w[countdown.css countdown.js]
 Rails.application.config.assets.precompile += %w[sun.css sun.js]
+Rails.application.config.assets.precompile += %w[workdays.css workdays.js]
 
 # Add additional assets to the asset load path.
 # Rails.application.config.assets.paths << Emoji.images_path

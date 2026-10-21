@@ -1,0 +1,70 @@
+import { expect, test } from '@playwright/test';
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+
+const root = new URL('../../', import.meta.url);
+const styles = readFileSync(fileURLToPath(new URL('app/assets/stylesheets/workdays.css', root)), 'utf8');
+const script = readFileSync(fileURLToPath(new URL('app/assets/javascripts/workdays.js', root)), 'utf8');
+const holidayDates = ['2027-01-01', '2027-01-02', '2027-02-08', '2027-03-28', '2027-03-29', '2027-04-27', '2027-05-01', '2027-05-02', '2027-05-16', '2027-06-25', '2027-08-15', '2027-10-31', '2027-11-01', '2027-12-25', '2027-12-26'];
+
+const pageMarkup = () => {
+  const months = Array.from({ length: 12 }, (_, index) => {
+    const month = index + 1;
+    const holidays = holidayDates.filter((date) => Number(date.slice(5, 7)) === month);
+    return `<a class="workdays-month-card" data-workdays-card data-month="${month}" data-holidays='${JSON.stringify(holidays)}' style="--month-progress:70%"><span>${String(month).padStart(2, '0')}</span><h3>Mesec ${month}</h3><div class="workdays-month-card__count"><strong data-month-days>0</strong><span data-month-day-label>delovnih dni</span></div><div class="workdays-month-card__meter"><span></span></div><div class="workdays-month-card__details"><span><strong data-month-hours>0</strong> ur</span><span><strong data-month-holidays>0</strong> izločenih praznikov</span></div></a>`;
+  }).join('');
+
+  return `<!doctype html><html lang="sl"><head><meta name="viewport" content="width=device-width, initial-scale=1"><style>:root{--surface:#fff;--line:#dae6f2;--shadow:0 3px 20px #1a487407;--ink:#10274b;--muted:#617596;--soft:#edf4fd;--blue:#0769f9}*{box-sizing:border-box}body{margin:0;padding:16px;background:#f0f6fc;color:var(--ink);font:15px system-ui}main{max-width:1200px;margin:auto}.workdays-hero{min-height:230px}.workdays-dashboard{margin-top:16px}.workdays-controls__intro,.workdays-controls p{display:block}.workdays-weekdays label{display:inline-flex}.workdays-weekdays input{position:absolute;width:1px;height:1px;opacity:0}.workdays-holidays input{accent-color:#075da9}.workdays-month-grid{margin-top:14px}.workdays-discovery{margin-top:16px}</style><style>${styles}</style></head><body><main><section class="workdays-hero"><div class="workdays-hero__copy"><span class="workdays-kicker"><i></i> KOLEDAR365 · SLOVENIJA</span><h1>Delovni dnevi in ure</h1><p>Prilagodite izračun svojemu urniku.</p></div><div class="workdays-hero__visual"></div></section><section class="workdays-dashboard" data-workdays-dashboard data-year="2027"><div class="workdays-summary" aria-live="polite"><article><div><strong data-year-days>0</strong><span data-year-days-label>delovnih dni v letu</span></div></article><article><div><strong><span data-year-hours>0</span> ur</strong></div></article><article><div><strong data-year-holidays>0</strong></div></article><article><div><strong>365</strong></div></article></div><div class="workdays-controls" data-workdays-controls><div class="workdays-controls__intro"><h3>Prilagodi svojemu urniku</h3><p>Takojšen izračun</p></div><fieldset class="workdays-weekdays"><legend>Delovni dnevi v tednu</legend>${['pon', 'tor', 'sre', 'čet', 'pet', 'sob', 'ned'].map((day, index) => `<label><input type="checkbox" value="${index + 1}" ${index < 5 ? 'checked' : ''}><span>${day}</span></label>`).join('')}</fieldset><label class="workdays-hours">Ure na dan<input data-workdays-hours type="number" min="0" max="24" step="0.25" value="8"><span>ur</span><small id="workdays-hours-error" data-workdays-error role="alert" hidden></small></label><label class="workdays-holidays"><input type="checkbox" checked data-workdays-exclude><span><strong>Odštej praznike</strong><small>Zakonski dela prosti dnevi</small></span></label><button type="button" data-workdays-reset>Ponastavi</button></div><div class="workdays-month-grid">${months}</div></section></main><script>${script}</script></body></html>`;
+};
+
+test('schedule controls instantly recalculate month and year totals', async ({ page }) => {
+  await page.setContent(pageMarkup());
+  const january = page.locator('[data-workdays-card][data-month="1"]');
+
+  await expect(january.locator('[data-month-days]')).toHaveText('20');
+  await expect(january.locator('[data-month-hours]')).toHaveText('160');
+  await expect(january.locator('[data-month-holidays]')).toHaveText('1');
+  await expect(page.locator('[data-year-days]')).toHaveText('255');
+
+  await page.locator('[data-workdays-exclude]').uncheck();
+  await expect(january.locator('[data-month-days]')).toHaveText('21');
+  await expect(january.locator('[data-month-holidays]')).toHaveText('0');
+
+  await page.locator('[data-workdays-hours]').fill('25');
+  await expect(page.locator('[data-workdays-error]')).toBeVisible();
+  await expect(page.locator('[data-workdays-hours]')).toHaveAttribute('aria-invalid', 'true');
+
+  await page.locator('[data-workdays-hours]').fill('7.5');
+  await expect(page.locator('[data-workdays-error]')).toBeHidden();
+  await expect(january.locator('[data-month-hours]')).toHaveText('157,5');
+
+  await page.locator('.workdays-weekdays input[value="6"]').check();
+  await expect(january.locator('[data-month-days]')).toHaveText('26');
+  await expect(january.locator('[data-month-hours]')).toHaveText('195');
+
+  await page.locator('[data-workdays-reset]').click();
+  await expect(january.locator('[data-month-days]')).toHaveText('20');
+  await expect(january.locator('[data-month-hours]')).toHaveText('160');
+  await expect(page.locator('[data-year-days]')).toHaveText('255');
+});
+
+test('workdays overview fits narrow mobile and desktop viewports', async ({ page }) => {
+  await page.setContent(pageMarkup());
+  for (const width of [320, 390, 768, 1280]) {
+    await page.setViewportSize({ width, height: 900 });
+    const layout = await page.evaluate(() => ({
+      client: document.documentElement.clientWidth,
+      scroll: document.documentElement.scrollWidth,
+      cards: getComputedStyle(document.querySelector('.workdays-month-grid')).gridTemplateColumns,
+      boxes: ['body', 'main', '.workdays-dashboard', '.workdays-controls', '.workdays-weekdays', '.workdays-weekdays legend'].map((selector) => { const rect = document.querySelector(selector).getBoundingClientRect(); return [selector, Math.round(rect.left), Math.round(rect.right), Math.round(rect.width)]; }),
+      overflow: [...document.querySelectorAll('body *')].map((element) => ({
+        tag: element.tagName.toLowerCase(),
+        className: typeof element.className === 'string' ? element.className : '',
+        right: Math.round(element.getBoundingClientRect().right),
+        width: Math.round(element.getBoundingClientRect().width),
+      })).filter((element) => element.width && element.right > document.documentElement.clientWidth + 1).slice(0, 8),
+    }));
+    expect(layout.scroll, `horizontal overflow at ${width}px: ${JSON.stringify(layout)}`).toBeLessThanOrEqual(width);
+    expect(layout.cards).not.toBe('none');
+  }
+});

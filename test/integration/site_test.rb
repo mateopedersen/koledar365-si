@@ -34,6 +34,34 @@ class SiteTest < ActionDispatch::IntegrationTest
     post '/izracun/',params:{tool:'week',date:'2029-02-29'},as: :json
     assert_response :unprocessable_entity
   end
+  test 'workdays landing page presents correct annual data and an adjustable monthly overview' do
+    get '/delovni-dnevi/'
+    assert_response :success
+    assert_select 'html[lang=sl]'
+    assert_select 'h1#workdays-title', text: 'Delovni dnevi in ure'
+    assert_select '[data-workdays-dashboard][data-year="2027"]'
+    assert_select '[data-workdays-dashboard] [data-year-days]', text: '255'
+    assert_select '[data-workdays-card]', count: 12
+    assert_select '[data-workdays-card][data-month="1"][href="/delovni-dnevi/2027/januar/"]'
+    assert_select '[data-workdays-controls] input[type="number"][data-workdays-hours]'
+    assert_select '[data-workdays-controls] input[type="checkbox"][data-workdays-exclude][checked]'
+    assert_select 'script[src*="workdays"]'
+    assert_select 'link[rel="stylesheet"][href*="workdays"]'
+    assert_select '#design-gallery[data-export-options]'
+
+    get '/delovni-dnevi/2029/'
+    assert_response :success
+    assert_select '[data-workdays-dashboard][data-year="2029"]'
+    assert_select '[data-workdays-dashboard] [data-year-days]', text: '248'
+    assert_select '[data-workdays-card]', count: 12
+    get '/delovni-dnevi/2029/september/'
+    assert_response :success
+    assert_select '.gallery-context .data-table tbody tr', count: 1
+    get '/delovni-dnevi/2026/'
+    assert_response :success
+    assert_includes response.body, 'prehodno obdobje od 20. oktobra'
+    assert_select '[data-workdays-dashboard]', count: 0
+  end
   test 'contact is persisted and administrator requires authentication' do
     assert_difference('ContactMessage.count',1) do
       post '/kontakt/',params:{name:'QA test',email:'qa@example.com',message:'Preverjanje obrazca za stik.'},as: :json
