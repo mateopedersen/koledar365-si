@@ -1,0 +1,132 @@
+.vacation-page{--vacation-navy:#183452;--vacation-blue:#0758a8;--vacation-red:#be3347;--vacation-muted:#65758a;--vacation-line:#e3e9ef;max-width:1440px;margin:8px auto 46px;color:#1e344e}
+.vacation-hero{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(390px,.98fr);align-items:center;gap:36px;min-height:420px;padding:32px 42px 29px;border:1px solid #e0e7ed;border-radius:13px;background:linear-gradient(112deg,#fff 0%,#fff 48%,#eff5f8 100%);overflow:hidden}
+.vacation-eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 18px;color:#66778a;font-size:11px;font-weight:850;letter-spacing:1.55px;text-transform:uppercase}
+.vacation-eyebrow .country-flag,.vacation-summary__flag .country-flag{width:29px;height:18px;object-fit:cover;border-radius:3px;box-shadow:0 1px 3px #162e4524}
+.vacation-hero h1{font-size:clamp(39px,4.4vw,65px);line-height:1.04;letter-spacing:-2.7px;font-weight:900;margin:0 0 18px;color:#1b304a}
+.vacation-hero h1 span{color:#0758a8}
+.vacation-hero__lead{max-width:610px;margin:0;color:#607188;font-size:17px;line-height:1.8}
+.vacation-hero__proof{display:flex;flex-wrap:wrap;gap:13px 21px;margin-top:23px}
+.vacation-hero__proof>span{display:inline-flex;align-items:center;gap:7px;color:#405771;font-size:12px;font-weight:700}
+.vacation-hero__proof .ui-icon{width:17px;height:17px;color:#1667af}
+.vacation-hero__proof>span:first-child .ui-icon{color:#b92e43}
+.vacation-hero__visual{position:relative;min-width:0;max-width:620px;width:100%;justify-self:end;padding:0 4px 20px 0}
+.vacation-hero__visual>svg{display:block;width:100%;height:auto;filter:drop-shadow(0 18px 20px #193b5712)}
+.vacation-hero__note{position:absolute;right:2px;bottom:0;display:flex;align-items:center;gap:11px;padding:12px 17px;background:#fff;border:1px solid #e1e7ec;border-radius:9px;box-shadow:0 7px 20px #18345212}
+.vacation-hero__note>span{width:38px;height:38px;display:grid;place-items:center;border-radius:8px;background:#fff4df}
+.vacation-hero__note>span .ui-icon{width:22px;height:22px;color:#a4772e}
+.vacation-hero__note div{display:grid;gap:1px}
+.vacation-hero__note strong{font-size:12px;color:#233b55}
+.vacation-hero__note small{font-size:11px;color:#718096}
+.vacation-workspace{display:grid;grid-template-columns:minmax(290px,355px) minmax(0,1fr);gap:18px;align-items:start;margin-top:22px}
+.vacation-controls,.vacation-plan-card,.vacation-method{background:#fff;border:1px solid var(--vacation-line);border-radius:11px}
+.vacation-controls{padding:25px 25px 21px;box-shadow:0 4px 14px #1e385409}
+.vacation-section-kicker{display:inline-flex;align-items:center;gap:8px;color:#718095;font-size:10px;font-weight:850;letter-spacing:1.35px}
+.vacation-section-kicker>span:first-child{display:inline-grid;place-items:center;width:23px;height:23px;border-radius:5px;background:#edf3f8;color:#245b8b;font-size:10px;letter-spacing:0}
+.vacation-controls>h2{margin:14px 0 24px;font-size:24px;letter-spacing:-.7px;color:#203750}
+.vacation-year-field{border:0;padding:0;margin:0 0 25px;min-width:0}
+.vacation-year-field legend,.vacation-budget-heading label{display:block;margin:0 0 10px;font-size:12px;font-weight:800;color:#344a63}
+.vacation-year-options{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.vacation-year-options label{position:relative;margin:0;min-width:0;cursor:pointer}
+.vacation-year-options input{position:absolute;width:1px;height:1px;opacity:0}
+.vacation-year-options span{display:grid;place-items:center;min-height:43px;border:1px solid #dce4ec;border-radius:6px;background:#fff;color:#3b536e;font-size:14px;font-weight:800;transition:background .15s,color .15s,border-color .15s}
+.vacation-year-options input:checked+span{background:#174e85;border-color:#174e85;color:#fff;box-shadow:0 3px 8px #174e8522}
+.vacation-year-options input:focus-visible+span{outline:3px solid #1d8dff;outline-offset:3px}
+.vacation-budget-field{border-top:1px solid #e9edf1;padding-top:21px}
+.vacation-budget-heading{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.vacation-budget-heading label{margin-bottom:0}
+.vacation-budget-heading output{display:inline-flex;align-items:center;justify-content:center;min-width:68px;padding:6px 10px;border-radius:6px;background:#fff1f2;color:#ad2f43;font-size:13px;font-weight:850;font-variant-numeric:tabular-nums}
+.vacation-budget-field input[type=range]{display:block;width:100%;height:23px;margin:15px 0 0;accent-color:#155b9c;cursor:pointer}
+.vacation-range-labels{display:flex;justify-content:space-between;margin-top:0;color:#8190a1;font-size:10px;font-weight:650}
+.vacation-budget-field>p{margin:10px 0 13px;color:#758397;font-size:11px;line-height:1.65}
+.vacation-presets{display:flex;flex-wrap:wrap;gap:6px}
+.vacation-presets button{min-height:32px;padding:6px 10px;border-radius:5px;color:#52677f;font-size:11px;font-weight:750;background:#f7f9fb}
+.vacation-presets button[aria-pressed=true]{border-color:#d9e8f4;background:#edf5fa;color:#155b9c}
+.vacation-control-footnote{display:grid;grid-template-columns:22px minmax(0,1fr);align-items:start;gap:9px;margin-top:21px;padding:13px 12px;background:#f4f7f9;border:1px solid #e7edf1;border-radius:7px}
+.vacation-control-footnote>.ui-icon{width:19px;height:19px;color:#54718e}
+.vacation-control-footnote p{margin:0;color:#66778b;font-size:11px;line-height:1.7}
+.vacation-reset{width:100%;margin-top:15px;min-height:37px;padding:7px 10px;border-color:transparent;background:transparent;color:#49617b;font-size:11px}
+.vacation-reset .ui-icon{width:17px;height:17px}
+.vacation-results{min-width:0}
+.vacation-summary{position:relative;overflow:hidden;padding:25px 27px 23px;border-radius:11px;background:linear-gradient(116deg,#163754 0%,#1c4c72 100%);color:#fff}
+.vacation-summary:after{content:"";position:absolute;right:-38px;bottom:-102px;width:260px;height:210px;border:1px solid #ffffff20;border-radius:50%;box-shadow:0 0 0 22px #ffffff09,0 0 0 45px #ffffff07;pointer-events:none}
+.vacation-summary__top{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.vacation-summary .vacation-section-kicker{color:#d5e2eb}
+.vacation-summary .vacation-section-kicker>span:first-child{background:#ffffff1a;color:#fff}
+.vacation-summary__flag{display:inline-flex;align-items:center;gap:7px;color:#dce6ed;font-size:11px;font-weight:750}
+.vacation-summary h2{position:relative;z-index:1;margin:14px 0 5px;color:#fff;font-size:25px;letter-spacing:-.7px}
+.vacation-summary>p{position:relative;z-index:1;margin:0;color:#d7e3eb;font-size:13px;line-height:1.65}
+.vacation-metrics{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:22px;border-top:1px solid #ffffff29}
+.vacation-metrics>div{display:flex;flex-direction:column;gap:2px;min-width:0;padding:15px 12px 1px 0}
+.vacation-metrics>div+div{padding-left:17px;border-left:1px solid #ffffff2a}
+.vacation-metrics strong{color:#fff;font-size:31px;font-weight:850;line-height:1.1;letter-spacing:-1px;font-variant-numeric:tabular-nums}
+.vacation-metrics span{color:#c5d5e1;font-size:10px;line-height:1.5}
+.vacation-efficiency{position:relative;z-index:1;display:flex;align-items:center;gap:8px;margin-top:14px;color:#fff;font-size:11px;font-weight:700}
+.vacation-efficiency>span:first-child{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:#ffffff18}
+.vacation-efficiency .ui-icon{width:15px;height:15px;color:#f1cf85}
+.vacation-plan-card{margin-top:14px;padding:21px 23px 17px}
+.vacation-card-heading{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.vacation-card-heading h3{margin:7px 0 0;color:#203750;font-size:18px;letter-spacing:-.35px}
+.vacation-plan-badge{display:inline-flex;align-items:center;min-height:27px;padding:5px 9px;border-radius:5px;background:#eaf3f9;color:#245d88;font-size:10px;font-weight:800;white-space:nowrap}
+.vacation-plan-caption{margin:7px 0 16px;color:#718095;font-size:11px;line-height:1.65}
+.vacation-plan-list{display:grid;gap:0}
+.vacation-plan-item{display:grid;grid-template-columns:43px minmax(0,1fr) auto;align-items:center;gap:13px;padding:14px 0;border-top:1px solid #edf0f3}
+.vacation-break-date{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:0 0 43px;width:43px;height:49px;border:1px solid #e6ebef;border-radius:6px;background:#f5f7f9;color:#223f5d}
+.vacation-break-date small{font-size:9px;font-weight:850;letter-spacing:.55px;color:#b73549}
+.vacation-break-date strong{font-size:19px;font-weight:850;line-height:1.1;font-variant-numeric:tabular-nums}
+.vacation-plan-item__copy{min-width:0}
+.vacation-plan-item__copy h4{margin:0 0 3px;color:#263d56;font-size:12px;font-weight:800;line-height:1.45}
+.vacation-plan-item__copy>p{margin:0 0 5px;color:#7a8999;font-size:10px;text-transform:capitalize}
+.vacation-break-holidays{display:flex;flex-wrap:wrap;gap:4px}
+.vacation-break-holidays>span{display:inline-block;max-width:100%;overflow:hidden;padding:3px 6px;border-radius:4px;background:#fff2f3;color:#a83246;font-size:9px;font-weight:750;text-overflow:ellipsis;white-space:nowrap}
+.vacation-break-holidays>.vacation-weekend-tag{background:#eef4f8;color:#55708a}
+.vacation-plan-item__details{display:flex;flex-direction:column;align-items:flex-end;gap:3px;text-align:right;white-space:nowrap}
+.vacation-plan-item__details strong{color:#16558e;font-size:12px;font-variant-numeric:tabular-nums}
+.vacation-plan-item__details>span{color:#778697;font-size:10px}
+.vacation-remove-period{min-height:25px;padding:2px 6px;border:0;background:transparent;color:#8a5760;font-size:9px}
+.vacation-plan-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px;padding-top:14px;border-top:1px solid #edf0f3}
+.vacation-plan-actions button{min-height:37px;padding:8px 11px;border-radius:5px;font-size:10px}
+.vacation-plan-actions .ui-icon{width:16px;height:16px}
+.vacation-plan-actions .primary{background:#17558d;border-color:#17558d}
+.vacation-plan-actions .primary:hover{background:#103f6c}
+.vacation-status{min-height:16px;margin:9px 0 0;color:#0054b8;font-size:10px;line-height:1.5}
+.vacation-empty-plan{display:grid;justify-items:center;gap:4px;padding:24px 10px;border-top:1px solid #edf0f3;text-align:center}
+.vacation-empty-plan>span{color:#b73549;font-size:23px}
+.vacation-empty-plan strong{color:#334b63;font-size:12px}
+.vacation-empty-plan p{margin:0;color:#7a8999;font-size:10px}
+.vacation-loading,.vacation-empty-suggestions{margin:0;padding:18px;color:#728195;font-size:12px}
+.vacation-suggestions{margin-top:35px}
+.vacation-section-heading{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:15px}
+.vacation-section-heading h2{margin:8px 0 5px;color:#203750;font-size:25px;letter-spacing:-.7px}
+.vacation-section-heading p{max-width:680px;margin:0;color:#708096;font-size:12px;line-height:1.7}
+.vacation-suggestion-count{margin-bottom:4px;padding:6px 9px;border:1px solid #e0e7ed;border-radius:5px;background:#fff;color:#5c7188;font-size:10px;font-weight:750;white-space:nowrap}
+.vacation-suggestion-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.vacation-suggestion-card{display:flex;flex-direction:column;min-width:0;padding:17px;background:#fff;border:1px solid #e0e7ed;border-radius:9px;transition:border-color .15s,transform .15s,box-shadow .15s}
+.vacation-suggestion-card:hover{transform:translateY(-2px);border-color:#c8d8e5;box-shadow:0 6px 18px #173b5c0b}
+.vacation-suggestion-card.is-in-plan{border-color:#abc9dd;background:linear-gradient(180deg,#f0f6fa,#fff 58%)}
+.vacation-suggestion-card__top{display:flex;align-items:center;gap:11px;min-width:0}
+.vacation-suggestion-card__top h3{margin:0 0 3px;color:#253d57;font-size:13px;line-height:1.4;letter-spacing:-.1px}
+.vacation-suggestion-card__top p{margin:0;color:#7a899a;font-size:10px;text-transform:capitalize}
+.vacation-suggestion-card__stats{display:flex;align-items:stretch;gap:0;margin:17px 0 12px;padding:12px 0;border-top:1px solid #edf0f2;border-bottom:1px solid #edf0f2}
+.vacation-suggestion-card__stats>div{display:flex;align-items:baseline;gap:5px;padding-right:14px}
+.vacation-suggestion-card__stats>div+div{padding-left:14px;border-left:1px solid #e7ebef}
+.vacation-suggestion-card__stats strong{color:#125b9b;font-size:22px;line-height:1;font-variant-numeric:tabular-nums}
+.vacation-suggestion-card__stats span{color:#718095;font-size:10px}
+.vacation-suggestion-card .vacation-break-holidays{min-height:23px;margin-bottom:12px}
+.vacation-add-period{width:100%;min-height:36px;margin-top:auto;padding:7px 9px;border-radius:5px;background:#f4f7f9;color:#365774;font-size:10px;font-weight:800}
+.vacation-add-period:hover:not(:disabled){background:#edf4f8}
+.vacation-add-period.is-selected{background:#e7f1f7;border-color:#c3d8e7;color:#1a588a}
+.vacation-add-period:disabled{cursor:not-allowed;opacity:.6}
+.vacation-method{display:grid;grid-template-columns:35px minmax(0,1fr);gap:13px;margin-top:24px;padding:20px 22px;background:#f7f9fa;border-color:#e7ebef}
+.vacation-method__icon{display:grid;place-items:center;width:33px;height:33px;border-radius:7px;background:#e8eef3}
+.vacation-method__icon .ui-icon{width:18px;height:18px;color:#496681}
+.vacation-method h2{margin:1px 0 6px;color:#334b64;font-size:14px}
+.vacation-method p{margin:0 0 9px;color:#708094;font-size:11px;line-height:1.8}
+.vacation-method a{color:#17588f;font-size:10px;font-weight:750;text-decoration:underline;text-underline-offset:2px}
+.vacation-method__divider{padding:0 8px;color:#a2acb7;font-size:11px}
+.vacation-noscript{padding:12px 15px;border:1px solid #eed9a9;border-radius:6px;background:#fff9eb;color:#66572e;font-size:12px}
+
+@media(max-width:1080px){.vacation-hero{grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:20px;padding:28px}.vacation-hero h1{font-size:clamp(38px,5vw,55px)}.vacation-workspace{grid-template-columns:minmax(270px,320px) minmax(0,1fr);gap:13px}.vacation-controls{padding:21px}.vacation-plan-card{padding:18px}.vacation-suggestion-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.vacation-page{margin-top:4px}.vacation-hero{grid-template-columns:1fr;gap:5px;padding:24px 22px 18px}.vacation-hero__copy{position:relative;z-index:1}.vacation-hero__lead{font-size:15px;line-height:1.7}.vacation-hero__proof{gap:9px 15px;margin-top:17px}.vacation-hero__proof>span{font-size:10px}.vacation-hero__visual{justify-self:center;max-width:490px;margin-top:-2px;padding-bottom:16px}.vacation-hero__note{right:3px;bottom:0;padding:8px 11px}.vacation-hero__note>span{width:32px;height:32px}.vacation-hero__note strong{font-size:10px}.vacation-hero__note small{font-size:9px}.vacation-workspace{grid-template-columns:1fr;gap:13px;margin-top:14px}.vacation-controls{padding:20px}.vacation-controls>h2{font-size:22px;margin-bottom:19px}.vacation-year-field{margin-bottom:20px}.vacation-summary{padding:21px 20px}.vacation-summary h2{font-size:22px}.vacation-metrics strong{font-size:28px}.vacation-plan-card{padding:18px}.vacation-suggestions{margin-top:26px}.vacation-section-heading h2{font-size:22px}.vacation-section-heading p{font-size:11px}.vacation-suggestion-grid{gap:9px}.vacation-suggestion-card{padding:14px}.vacation-method{margin-top:17px;padding:17px}}
+@media(max-width:480px){.vacation-hero{padding:21px 16px 13px;border-radius:8px}.vacation-eyebrow{font-size:9px;letter-spacing:1.1px;gap:7px;margin-bottom:14px}.vacation-eyebrow .country-flag{width:25px;height:16px}.vacation-hero h1{font-size:clamp(35px,9vw,46px);letter-spacing:-1.9px;margin-bottom:12px}.vacation-hero__lead{font-size:13px}.vacation-hero__proof{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px}.vacation-hero__proof>span:last-child{grid-column:1/-1}.vacation-hero__visual{width:calc(100% + 18px);margin-left:-9px}.vacation-hero__note{right:4px}.vacation-controls{padding:18px 16px}.vacation-section-kicker{font-size:9px;letter-spacing:1px}.vacation-year-options{gap:5px}.vacation-year-options span{min-height:40px;font-size:12px}.vacation-budget-heading label{font-size:11px}.vacation-presets button{flex:1;padding:5px 7px;font-size:10px}.vacation-control-footnote p{font-size:10px}.vacation-summary{padding:19px 15px}.vacation-summary__top{align-items:flex-start}.vacation-summary__flag{font-size:9px;gap:5px}.vacation-summary__flag .country-flag{width:22px;height:14px}.vacation-summary h2{font-size:19px;line-height:1.35;margin-top:11px}.vacation-summary>p{font-size:11px}.vacation-metrics{margin-top:17px}.vacation-metrics>div{padding:12px 6px 0 0}.vacation-metrics>div+div{padding-left:9px}.vacation-metrics strong{font-size:25px}.vacation-metrics span{font-size:8px}.vacation-efficiency{font-size:10px;line-height:1.5}.vacation-plan-card{padding:16px 13px}.vacation-card-heading{align-items:flex-start;gap:8px}.vacation-card-heading h3{font-size:16px}.vacation-plan-badge{padding:5px 6px;font-size:8px}.vacation-plan-caption{font-size:10px}.vacation-plan-item{grid-template-columns:37px minmax(0,1fr) auto;gap:8px;padding:12px 0}.vacation-break-date{width:37px;height:44px;flex-basis:37px}.vacation-break-date strong{font-size:17px}.vacation-plan-item__copy h4{font-size:10px}.vacation-plan-item__copy>p{font-size:8px}.vacation-break-holidays>span{font-size:8px}.vacation-plan-item__details strong{font-size:10px}.vacation-plan-item__details>span{font-size:8px}.vacation-remove-period{font-size:8px}.vacation-plan-actions{display:grid;grid-template-columns:1fr 1fr}.vacation-plan-actions button{min-height:40px;padding:7px 5px;font-size:9px}.vacation-section-heading{align-items:flex-start}.vacation-section-heading h2{font-size:19px}.vacation-section-heading p{font-size:10px}.vacation-suggestion-count{font-size:8px;padding:5px 6px}.vacation-suggestion-grid{grid-template-columns:1fr}.vacation-suggestion-card{padding:15px}.vacation-suggestion-card__top h3{font-size:13px}.vacation-suggestion-card__stats{margin:12px 0 9px}.vacation-method{grid-template-columns:26px minmax(0,1fr);gap:9px;padding:14px 12px}.vacation-method__icon{width:25px;height:25px}.vacation-method h2{font-size:13px}.vacation-method p{font-size:10px}.vacation-method a{font-size:9px}.vacation-method__divider{padding:0 4px}}
+@media(prefers-reduced-motion:reduce){.vacation-year-options span,.vacation-suggestion-card{transition:none}.vacation-suggestion-card:hover{transform:none}}
+@media print{.vacation-hero__visual,.vacation-controls,.vacation-plan-actions,.vacation-remove-period,.vacation-add-period{display:none!important}.vacation-page{max-width:none}.vacation-workspace{display:block}.vacation-summary,.vacation-plan-card,.vacation-suggestion-card,.vacation-method{break-inside:avoid}.vacation-summary{background:#fff;color:#1e344e;border:1px solid #d3dce4}.vacation-summary h2,.vacation-summary .vacation-metrics strong,.vacation-summary .vacation-efficiency{color:#1e344e}.vacation-summary>p,.vacation-summary .vacation-section-kicker,.vacation-summary__flag,.vacation-summary .vacation-metrics span{color:#475d74}}
