@@ -201,7 +201,7 @@
         <% photo = city_catalog.fetch(id).fetch('photo') %>
         <article class="sun-city-link" data-city-name="<%= values[0].downcase %>">
           <a class="sun-city-link__main" href="/soncni-vzhod-in-zahod/<%= id %>/">
-            <img class="sun-city-link__mark" src="/images/city-marks/<%= id %>.svg" alt="Fotografija mesta <%= values[0] %>" width="58" height="46" loading="lazy" decoding="async">
+            <%= raw(Rails.root.join('data', 'city-marks', "#{id}.svg").read) %>
             <span class="sun-city-link__copy"><strong><%= values[0] %></strong><small><%= format('%.4f° N · %.4f° E', values[1], values[2]) %></small></span>
             <span class="sun-city-link__arrow" aria-hidden="true">↗</span>
           </a>
