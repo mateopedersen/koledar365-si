@@ -49,7 +49,7 @@ def local_file(path):
 urls = []
 sitemap_meta = {}
 families = Counter()
-for sitemap in ('sitemap-pages.xml', 'sitemap-names.xml'):
+for sitemap in ('sitemap-pages.xml',):
     sitemap_path = SITE / sitemap
     raw = sitemap_path.read_bytes()
     root = ET.fromstring(raw)

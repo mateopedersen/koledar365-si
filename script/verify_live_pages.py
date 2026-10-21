@@ -20,7 +20,7 @@ args = parser.parse_args()
 origin = urlsplit(args.origin)
 if origin.scheme != 'https':
     raise SystemExit('HTTPS is required for the live check.')
-paths = sorted({urlsplit(node.text).path for name in ['sitemap-pages.xml', 'sitemap-names.xml']
+paths = sorted({urlsplit(node.text).path for name in ['sitemap-pages.xml']
                 for node in ET.parse(ROOT / 'site' / name).getroot().iter()
                 if node.tag.endswith('}loc')})
 local = threading.local()
@@ -57,7 +57,7 @@ record = {'started_at': started, 'finished_at': datetime.now(timezone.utc).isofo
           'origin': args.origin, 'method': 'HEAD', 'url_count': len(paths),
           'passed': all(row['status'] == 200 for row in rows),
           'sitemap_sha256': {name: hashlib.sha256((ROOT / 'site' / name).read_bytes()).hexdigest()
-                             for name in ['sitemap-pages.xml', 'sitemap-names.xml']},
+                             for name in ['sitemap-pages.xml']},
           'results': sorted(rows, key=lambda row: row['path'])}
 output = ROOT / args.output
 output.parent.mkdir(parents=True, exist_ok=True)

@@ -45,7 +45,6 @@ function editDistanceAtMostOne(left, right) {
 
 export function resultCategory(result) {
   const path = result.path || '';
-  if (path.startsWith('/koledar-z-imenom/') || path.startsWith('/imena/')) return 'Imena';
   if (path.startsWith('/soncni-vzhod-in-zahod/')) return 'Sončni časi';
   if (/^\/(lunin-koledar|lunine-mene|polna-luna|mlaj)\//.test(path)) return 'Luna';
   if (/^\/(prazniki|pomembni-dnevi|letni-casi|godovi)\//.test(path)) return 'Prazniki in dnevi';

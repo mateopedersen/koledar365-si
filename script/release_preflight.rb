@@ -4,6 +4,5 @@ errors << 'Üretim PostgreSQL kullanmalıdır.' unless ActiveRecord::Base.connec
 errors << 'Yönetici hesabı yok.' if Admin.count.zero?
 gate=Rails.root.join('evidence/print-gate.json')
 errors << 'Güncel baskı kalite kapısı yok.' unless gate.file? && JSON.parse(gate.read).values_at('version','passed')==[PrintCatalog::VERSION,true]
-errors << 'İlk 200 isim yayımlanmamış.' if PersonName.published.count<200
 puts({checked_at:Time.current.iso8601,ready:errors.empty?,errors:errors}.to_json)
 exit(errors.empty? ? 0 : 1)

@@ -76,9 +76,9 @@ files.each do |file|
   fail_page.call("Missing or stale SVG version #{ref}") unless versioned_ref.call(ref,path)
  end
  counts[:home_fragments]+=1 if file.include?('/free/views/')
- counts[:name_fragments]+=1 if file.include?('/free/names/')
 end
-raise 'Site export is incomplete' unless counts[:pages]>8900
+raise 'Site export is incomplete' unless counts[:pages]>300
+raise 'Removed name pages remain in the static output' if Dir[File.join(site,'koledar-z-imenom/**/*'),File.join(site,'imena/**/*'),File.join(site,'free/names/**/*')].any?
 report={passed:failures.empty?,symbols:symbols.size,checked:counts,assets:Dir[File.join(site,'visuals/*.svg')].to_h { |p|[File.basename(p),{bytes:File.size(p),sha256:Digest::SHA256.file(p).hexdigest}] },failures:failures}
 File.write(File.join(root,'evidence/vector-identity-audit.json'),JSON.pretty_generate(report))
 summary=report.reject { |k,_|[:assets,:failures].include?(k) }

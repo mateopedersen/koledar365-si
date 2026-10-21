@@ -8,13 +8,15 @@ ENV['OPERATOR_CONTACT']='koledar365@gmail.com'
 out=Rails.root.join(ENV.fetch('STATIC_OUT','site'));FileUtils.mkdir_p(out)
 partial=ENV['STATIC_ONLY']&.split(',')
 unless partial
+ # Retire the removed name directory and its public preview fragments.
+ %w[koledar-z-imenom imena free/names sitemap-names.xml].each { |relative| FileUtils.rm_rf(out.join(relative)) }
  # These generated atlases and photo variants must mirror their source directories.
  # Retaining superseded variants would eventually exceed the Pages Free file limit.
  %w[lunar/atlas images/responsive].each { |relative| FileUtils.rm_rf(out.join(relative)) }
  FileUtils.cp_r(Rails.root.join('public/.'),out)
 end
 SvgAssetReferences.materialize_fingerprinted_assets!(Rails.root.join('public'),out)
-FileUtils.mkdir_p(out.join('free/views/home'));FileUtils.mkdir_p(out.join('free/names'))
+FileUtils.mkdir_p(out.join('free/views/home'))
 FileUtils.cp_r(Rails.root.join('cloudflare/free/.'),out.join('free'))
 FileUtils.rm_f(out.join('free/README.md'))
 client_asset="client-#{Digest::SHA256.file(out.join('free/client.js')).hexdigest[0,16]}.js"
@@ -67,10 +69,6 @@ elsif ['/delovni-dnevi/','/kalkulator-delovnih-dni/'].include?(path)
   preload=Nokogiri::XML::Node.new('link',doc);preload['rel']='modulepreload';preload['href']="/free/#{src}";doc.at_css('head').add_child(preload)
  end
  doc.at_css('meta[name=robots]')['content']=indexable ? 'index, follow, max-image-preview:large':'noindex, follow'
- if path.start_with?('/koledar-z-imenom/') && path!='/koledar-z-imenom/'
-   doc.css('meta[property="og:image"],meta[name="twitter:image"]').each { |node|node['content']='https://koledar365.si/og.png' }
-   doc.at_css('meta[property="og:image:alt"]')['content']='Koledar365 – 15 predlog koledarjev za leta 2027–2030'
- end
  # Public previews are a clearly marked sample; the private preview uses the same Ruby renderer locally.
  doc.css('[data-preview-design]').each do |node|
    design=node['data-preview-design'];node['src']="/free/samples/#{design}.png";node['data-static-preview']=node['src']
@@ -113,7 +111,8 @@ write=lambda do |path,html|
  file=out.join(path.delete_prefix('/'));file=file.join('index.html') if path.end_with?('/')
  FileUtils.mkdir_p(file.dirname);file.write(html)
 end
-paths=Page.order(:path).map { |page|[page.path,page.status=='published'] }+PersonName.order(:priority).map { |name|[name.path,name.status=='published'] }+SunEngine::CITIES.keys.map { |city_id|["/soncni-vzhod-in-zahod/#{city_id}/",true] }+[['/fotografije-in-licence/',true],['/isci/',false]]
+removed_name_path=%r{\A/(?:koledar-z-imenom|imena)(?:/|\z)}
+paths=Page.order(:path).reject { |page|page.path.match?(removed_name_path) }.map { |page|[page.path,page.status=='published'] }+SunEngine::CITIES.keys.map { |city_id|["/soncni-vzhod-in-zahod/#{city_id}/",true] }+[['/fotografije-in-licence/',true],['/isci/',false]]
 paths=paths.map { |path,indexable|path.match?(%r{\A/soncni-vzhod-in-zahod/[a-z0-9-]+/\z}) ? [path,true] : [path,indexable] }.uniq { |path,_|path }
 paths=paths.select { |path,_|partial.include?(path) } if partial
 limit=ENV['STATIC_LIMIT']&.to_i;paths=paths.first(limit) if limit
@@ -131,18 +130,12 @@ unless limit||partial
    end
   end
  end
- %w[koledar-z-imenom imena/najpogostejsa imena/moska imena/zenska imena/novorojencki].each_with_index do |group,group_index|
-  (1..86).each do |page|
-   session.get("/#{group}/",params:{page:page});doc=Nokogiri::HTML(session.response.body)
-   file=out.join("free/names/#{group_index}-#{page}.html");file.write(transform.call(session.response.body,"/#{group}/",indexable:true))
-  end
- end
 end
 unless limit
  session.get('/te-strani-ni/');write.call('/404.html',transform.call(session.response.body,'/404.html',indexable:false))
 end
 out.join('free/assets.json').write(JSON.generate(assets))
-search=Page.published.map do |page|
+search=Page.published.reject { |page|page.path.match?(removed_name_path) }.map do |page|
  keywords=case page.path
  when %r{\A/prazniki/} then 'prazniki državni praznik dela prost dan dela prosti dnevi javni praznik'
  when %r{\A/solske-pocitnice/} then 'šolske počitnice šolski koledar zimske jesenske zimske prvomajske poletne počitnice osnovna šola srednja šola'
@@ -150,7 +143,7 @@ search=Page.published.map do |page|
  when %r{\A/delovni-dnevi/} then 'delovni dnevi delovne ure delovnik prazniki dela prost dan'
  when %r{\A/podaljsani-vikendi/}, %r{\A/nacrtovalnik-dopusta/} then 'podaljšani vikendi dopust prosti dnevi oddih prazniki'
  when %r{\A/soncni-vzhod-in-zahod/}, %r{\A/dolzina-dneva/} then 'sončni vzhod sončni zahod zlata ura dolžina dneva mesto'
- when %r{\A/(?:koledar-z-imenom|imena|godovi)/} then 'ime imena god godovi koledar z imenom godovni koledar'
+ when %r{\A/godovi/} then 'god godovi godovni koledar'
  when %r{\A/(?:koledar|mesecni-koledar|tedenski-koledar|prazen-koledar)/} then 'koledar datum dnevi mesec leto tedenski mesečni letni koledar'
  else ''
  end
@@ -168,7 +161,7 @@ end
 out.join('free/search.json').write(JSON.generate(search))
 events=CalendarEvent.all.map { |event|event.attributes.merge('path'=>['/prazniki/','/pomembni-dnevi/','/letni-casi/'].map { |prefix|prefix+event.slug+'/' }.find { |path|Page.exists?(path:path) }||"/pomembni-dnevi/#{event.on.year}/") }
 out.join('free/events.json').write(events.to_json)
-%w[sitemap.xml sitemap-pages.xml sitemap-names.xml robots.txt].each { |path|session.get('/'+path);write.call('/'+path,session.response.body) }
+%w[sitemap.xml sitemap-pages.xml robots.txt].each { |path|session.get('/'+path);write.call('/'+path,session.response.body) }
 (2027..2030).each { |year|session.get("/prazniki/#{year}.ics");write.call("/prazniki/#{year}.ics",session.response.body) }
 css=Dir[out.join('assets/holidays-*.css')].first;FileUtils.cp(css,out.join('free/holidays.css')) if css
 cities=CityCatalog.all.map { |city|city.slice('id','name','coordinates') }
@@ -216,8 +209,6 @@ headers=<<~HEADERS
   Cache-Control: public, max-age=3600
   X-Robots-Tag: noindex
 /free/views/*
-  X-Robots-Tag: noindex
-/free/names/*
   X-Robots-Tag: noindex
 /404.html
   X-Robots-Tag: noindex
