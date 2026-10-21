@@ -303,13 +303,14 @@ button:hover,.button:hover{box-shadow:none}
 @media(max-width:700px){.stats>div{column-gap:8px;padding:0 8px}.stats dt{font-size:13px}.year-cards strong{font-size:30px}.lost-routes .year-cards strong{font-size:30px}.intro h1{font-size:28px}.calendar-title h2{font-size:21px!important}.time-row time{font-size:34px}}
 @media(max-width:480px){.stats{padding:12px 0}.stats>div{grid-template-columns:1fr;grid-template-rows:26px 19px;justify-items:center;padding:0 4px}.stats>div>span{display:none}.stats dd{grid-column:1;line-height:26px;font-size:22px}.stats dt{grid-column:1;font-size:12px;line-height:19px}.intro h1{font-size:27px}.intro p{font-size:14px}.calendar-title h2{font-size:20px!important}.calendar-title .actions{gap:5px}.calendar-title .square{width:28px;min-height:34px;height:34px}.category-chip{font-size:11px;padding:6px 8px}.data-table th{font-size:12px}}
 
-/* Calendar labels remain readable alongside compact day numbers. */
-.calendar-table .event-label{font-size:11px;line-height:1.4}
-@media(max-width:600px){.calendar-table .event-label{font-size:10px}}
-
-/* Keep long holiday names inside narrow day cells without splitting words. */
-.calendar .date-events{min-width:0;overflow:hidden}
-.calendar .event-label{display:block;width:100%;min-width:0;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow-wrap:normal;word-break:normal;hyphens:none;line-height:1.35}
+/* Full holiday labels wrap inside date cells and keep a clear touch target. */
+.calendar .date-events{display:grid;align-content:start;gap:2px;min-width:0;overflow:visible;padding:2px 3px 4px}
+.calendar a.event-label{position:relative;display:block;width:100%;min-width:0;max-width:100%;height:auto;min-height:28px;max-height:none;overflow:visible;padding:4px 3px 4px 10px;border-radius:4px;box-sizing:border-box;white-space:normal;overflow-wrap:anywhere;word-break:normal;hyphens:auto;line-height:1.3;text-overflow:clip;text-decoration:none}
+.calendar a.event-label:before{position:absolute;top:.32em;left:3px;margin:0;line-height:1}
+.calendar a.event-label.free{background:#fff0f2;color:#9c2638;font-weight:700}
+.calendar a.event-label.observance{background:#f1f5f8;color:#3c526c}
+.calendar a.event-label:hover{text-decoration:underline;text-underline-offset:2px}
+.calendar a.event-label:focus-visible{position:relative;z-index:1;outline:2px solid #0756ad;outline-offset:1px}
 
 /* Put the export gallery within reach before the long year or month grid. */
 .calendar-download-callout{display:grid;grid-template-columns:38px minmax(0,1fr) auto;align-items:center;gap:15px;padding:15px 18px;margin:0 0 14px;background:#fff;border:1px solid #e0e5ed;border-left:4px solid #c52c40;border-radius:7px}
@@ -1012,6 +1013,7 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
 <link rel="preload" as="image" type="image/avif" imagesrcset="/images/responsive/ljubljana-960-6be528deda019fe8.avif 960w" imagesizes="(max-width:650px) calc(100vw - 18px), (max-width:1000px) 40vw, 320px" fetchpriority="high">
 <script src="/assets/city_card-3a6a4d7f.js" defer></script>
 <link rel="preload" as="image" type="image/avif" imagesrcset="/images/responsive/ljubljana-960-6be528deda019fe8.avif 960w" imagesizes="(max-width:650px) calc(100vw - 18px), (max-width:1000px) 40vw, 320px" fetchpriority="high">
+
 
 
 

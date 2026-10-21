@@ -12,7 +12,8 @@
 <meta name="theme-color" content="#ffffff">
 
 
-<link rel="stylesheet" href="/assets/web-d7eff956fac80aec.css">
+<link rel="stylesheet" href="/assets/web-2fd4b04dcd16be43.css">
+
 
 
 
@@ -93,43 +94,108 @@
 
 
 <!-- BEGIN app/views/pages/not_found.html.erb
---><section class="lost-page">
+--><section class="lost-page" data-not-found aria-labelledby="not-found-title">
   <div class="lost-copy">
-<span class="eyebrow">NAPAKA 404 · STRAN NI NAJDENA</span><h1>Tukaj ni strani.<br>Načrti ostanejo.</h1>
-<p>Povezava je morda zastarela ali pa naslov ni pravilen. Poiščite želeno vsebino ali odprite koledar.</p>
+    <p class="lost-kicker"><span aria-hidden="true"></span> 404 <span class="lost-kicker__divider">/</span> STRAN NI NAJDENA</p>
+    <h1 id="not-found-title">Tukaj se vaša pot <em>za trenutek ustavi.</em>
+</h1>
+    <p class="lost-lead">Naslova ne najdemo. Morda je povezava zastarela ali pa se je naslov spremenil. Poiščite, kar potrebujete, in nadaljujte načrtovanje.</p>
+
     <form action="/isci/" class="lost-search" role="search">
-<label for="lost-search">Poiščite koledar ali orodje</label><div>
-<input id="lost-search" name="q" type="search" placeholder="Na primer: koledar 2030" maxlength="120"><button type="submit" class="primary" aria-label="Poišči po spletnem mestu"><svg class="ui-icon icon-search" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#search" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#search"></use></svg></button>
-</div>
-</form>
-    <a class="button primary" href="/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar"></use></svg> Nazaj na začetno stran</a>
+      <label for="not-found-query">Kaj želite najti?</label>
+      <div class="lost-search__control">
+        <svg class="ui-icon icon-search" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#search" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#search"></use></svg>
+        <input id="not-found-query" name="q" type="search" placeholder="Koledar, praznik, ime ali orodje" maxlength="120" autocomplete="off">
+        <button type="submit" class="primary" aria-label="Poišči na Koledar365">Išči <svg class="ui-icon icon-chevron-right" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right"></use></svg></button>
+      </div>
+      <p class="lost-search__hint">Hitro iskanje: <a href="/isci/?q=prazniki">prazniki</a><span aria-hidden="true">·</span><a href="/isci/?q=lunin+koledar">lunin koledar</a><span aria-hidden="true">·</span><a href="/isci/?q=imena">imena</a></p>
+    </form>
+
+    <div class="lost-actions">
+      <a class="lost-action lost-action--primary" href="/koledar/2027/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar"></use></svg> Odpri koledar</a>
+      <a class="lost-action lost-action--secondary" href="/"><svg class="ui-icon icon-compass" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#compass" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#compass"></use></svg> Na začetno stran</a>
+    </div>
   </div>
-  <div class="lost-visual" aria-hidden="true">
-    <div class="lost-calendar">
-<div class="lost-calendar-top">
-<span>KOLEDAR365</span><span>STRAN NI NAJDENA</span>
+
+  <figure class="lost-art" aria-labelledby="lost-art-caption">
+    <div class="lost-art__topline">
+<span><i aria-hidden="true"></i> ISKANJE POTI</span><span>KOLEDAR365 · 404</span>
 </div>
-<div class="lost-number">404<span></span>
-</div>
-<div class="lost-calendar-bottom">
-<span>Nov začetek je vedno mogoč.</span><svg class="ui-icon icon-compass" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#compass" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#compass"></use></svg>
-</div>
-</div>
-  </div>
+    <svg viewbox="0 0 600 430" role="img" aria-labelledby="lost-art-title lost-art-description" xmlns="http://www.w3.org/2000/svg">
+      <title id="lost-art-title">Koledar na slepi ulici</title>
+      <desc id="lost-art-description">Odprta koledarska stran s številko 404 leži ob prekinjeni poti, ki se znova nadaljuje proti označenemu cilju.</desc>
+      <defs>
+        <lineargradient id="lost-sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0a1c37"></stop><stop offset=".58" stop-color="#123966"></stop><stop offset="1" stop-color="#0754a7"></stop></lineargradient>
+        <radialgradient id="lost-glow"><stop stop-color="#5da9ff" stop-opacity=".34"></stop><stop offset="1" stop-color="#5da9ff" stop-opacity="0"></stop></radialgradient>
+        <lineargradient id="lost-paper" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"></stop><stop offset="1" stop-color="#eaf2fb"></stop></lineargradient>
+        <lineargradient id="lost-route" x1=".1" y1="1" x2=".9" y2="0"><stop stop-color="#e44b5e"></stop><stop offset="1" stop-color="#8bc5ff"></stop></lineargradient>
+        <filter id="lost-shadow" x="-.3" y="-.3" width="1.6" height="1.7"><fedropshadow dx="0" dy="18" stddeviation="16" flood-color="#020b18" flood-opacity=".36"></fedropshadow></filter>
+        <pattern id="lost-grid" width="32" height="32" patternunits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#b7d7ff" stroke-opacity=".055"></path></pattern>
+      </defs>
+      <rect width="600" height="430" rx="28" fill="url(#lost-sky)"></rect>
+      <rect width="600" height="430" rx="28" fill="url(#lost-grid)"></rect>
+      <circle cx="420" cy="170" r="220" fill="url(#lost-glow)"></circle>
+      <g fill="#dcecff" opacity=".86"><circle cx="75" cy="83" r="2"></circle><circle cx="125" cy="138" r="1.5"></circle><circle cx="501" cy="75" r="2"></circle><circle cx="535" cy="254" r="1.5"></circle><circle cx="97" cy="326" r="1.5"></circle><circle cx="458" cy="350" r="2"></circle></g>
+      <path d="M38 282C125 212 168 333 248 262S370 143 457 207s66 116 112 72" fill="none" stroke="#a8d2ff" stroke-opacity=".17" stroke-width="1.5" stroke-dasharray="3 8"></path>
+      <path d="M49 304c64-62 106-50 153-29m24-3c54-32 82-104 136-108" fill="none" stroke="url(#lost-route)" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 10"></path>
+      <circle cx="49" cy="304" r="7" fill="#e44b5e"></circle><circle cx="49" cy="304" r="14" fill="none" stroke="#ff9aa6" stroke-opacity=".55"></circle>
+      <circle cx="362" cy="164" r="8" fill="#f4c85b"></circle><circle cx="362" cy="164" r="17" fill="none" stroke="#ffe79a" stroke-opacity=".46"></circle>
+      <g filter="url(#lost-shadow)" transform="rotate(-5 305 218)">
+        <rect x="151" y="88" width="294" height="279" rx="17" fill="url(#lost-paper)"></rect>
+        <path d="M168 88h260a17 17 0 0 1 17 17v39H151v-39a17 17 0 0 1 17-17" fill="#fff"></path>
+        <circle cx="180" cy="111" r="3.5" fill="#c8d7e8"></circle><circle cx="193" cy="111" r="3.5" fill="#c8d7e8"></circle><circle cx="206" cy="111" r="3.5" fill="#c8d7e8"></circle>
+        <text x="421" y="115" text-anchor="end" fill="#617895" font-family="Avenir,system-ui,sans-serif" font-size="9" font-weight="800" letter-spacing="1.4">KOLEDAR365</text>
+        <path d="M176 145h243" stroke="#d9e4f0"></path>
+        <text x="179" y="169" fill="#607590" font-family="Avenir,system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="1.8">NASLOV NI NA ZEMLJEVIDU</text>
+        <text x="177" y="255" fill="#142d4a" font-family="Avenir,system-ui,sans-serif" font-size="91" font-weight="850" letter-spacing="-8">404</text>
+        <path d="M177 273h241" stroke="#d9e4f0"></path>
+        <text x="179" y="297" fill="#617895" font-family="Avenir,system-ui,sans-serif" font-size="10">Pot do prave strani se nadaljuje.</text>
+        <g fill="#cbd9e8"><rect x="179" y="318" width="24" height="18" rx="5"></rect><rect x="211" y="318" width="24" height="18" rx="5"></rect><rect x="243" y="318" width="24" height="18" rx="5"></rect></g>
+        <rect x="275" y="318" width="24" height="18" rx="5" fill="#0054b8"></rect><rect x="307" y="318" width="24" height="18" rx="5" fill="#cf2439"></rect>
+        <g fill="#cbd9e8"><rect x="339" y="318" width="24" height="18" rx="5"></rect><rect x="371" y="318" width="24" height="18" rx="5"></rect><rect x="403" y="318" width="15" height="18" rx="5"></rect></g>
+      </g>
+      <g transform="translate(422 282)">
+        <circle r="42" fill="#0d2a4c" stroke="#9dc8f5" stroke-opacity=".48"></circle>
+        <circle r="31" fill="none" stroke="#dbeeff" stroke-opacity=".36" stroke-dasharray="2 5"></circle>
+        <path d="M0-25 7 0 0 25-7 0Z" fill="#fff"></path><path d="M0-25 7 0 0 3Z" fill="#e64a5d"></path>
+        <circle r="4" fill="#f6d16b"></circle>
+        <text x="0" y="-48" text-anchor="middle" fill="#d5eaff" font-family="Avenir,system-ui,sans-serif" font-size="8" font-weight="800" letter-spacing="1">NAPREJ</text>
+      </g>
+      <g transform="translate(50 365)"><rect width="166" height="34" rx="17" fill="#ffffff" fill-opacity=".1" stroke="#ffffff" stroke-opacity=".18"></rect><circle cx="18" cy="17" r="4" fill="#f4c85b"></circle><text x="31" y="21" fill="#e4f1ff" font-family="Avenir,system-ui,sans-serif" font-size="10" font-weight="700">ISKANJE VAM POMAGA NAPREJ</text></g>
+    </svg>
+    <figcaption id="lost-art-caption"><span><strong>Ni slepa ulica.</strong> Samo napačen naslov.</span><span>SLOVENIJA</span></figcaption>
+  </figure>
 </section>
-<section class="lost-routes"><div class="section-heading">
-<div>
-<span class="eyebrow">NAZAJ NA PRAVO POT</span><h2>Začnite z letom.</h2>
+
+<section class="lost-routes" aria-labelledby="lost-routes-title">
+  <div class="lost-routes__heading">
+    <div>
+<p class="lost-section-kicker">NAJBOLJ PRILJUBLJENE POTI</p>
+<h2 id="lost-routes-title">Kam želite naprej?</h2>
 </div>
-<a href="/orodja/">Vsa orodja <svg class="ui-icon icon-chevron-right" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right"></use></svg></a>
+    <p>Do uporabnih koledarjev in orodij pridete z enim klikom.</p>
+  </div>
+  <div class="lost-destinations">
+    <a class="lost-destination lost-destination--blue" href="/koledar/2027/">
+      <span class="lost-destination__icon"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar"></use></svg></span><span class="lost-destination__copy"><strong>Letni koledar</strong><small>Prazniki, tedni in pregled leta.</small></span><svg class="ui-icon icon-chevron-right" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right"></use></svg>
+    </a>
+    <a class="lost-destination lost-destination--red" href="/lunin-koledar/">
+      <span class="lost-destination__icon"><svg class="ui-icon icon-moon" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#moon" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#moon"></use></svg></span><span class="lost-destination__copy"><strong>Luna in sončni časi</strong><small>Lunine mene in sončni vzhodi.</small></span><svg class="ui-icon icon-chevron-right" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right"></use></svg>
+    </a>
+    <a class="lost-destination lost-destination--blue" href="/prazniki/">
+      <span class="lost-destination__icon"><svg class="ui-icon icon-star" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#star" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#star"></use></svg></span><span class="lost-destination__copy"><strong>Prazniki v Sloveniji</strong><small>Dela prosti dnevi in pomembni datumi.</small></span><svg class="ui-icon icon-chevron-right" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right"></use></svg>
+    </a>
+    <a class="lost-destination lost-destination--red" href="/orodja/">
+      <span class="lost-destination__icon"><svg class="ui-icon icon-grid" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#grid" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#grid"></use></svg></span><span class="lost-destination__copy"><strong>Vsa orodja</strong><small>Načrtujte, računajte in ustvarjajte.</small></span><svg class="ui-icon icon-chevron-right" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right"></use></svg>
+    </a>
+  </div>
+  <div class="lost-years">
+<span>IZBERITE LETO</span><div>
+<a href="/koledar/2027/">2027<svg class="ui-icon icon-chevron-right" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right"></use></svg></a><a href="/koledar/2028/">2028<svg class="ui-icon icon-chevron-right" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right"></use></svg></a><a href="/koledar/2029/">2029<svg class="ui-icon icon-chevron-right" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right"></use></svg></a><a href="/koledar/2030/">2030<svg class="ui-icon icon-chevron-right" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#chevron-right"></use></svg></a>
 </div>
-<!-- BEGIN app/views/pages/_year_cards.html.erb
---><div class="year-cards">
-<a href="/koledar/2027/"><span>KOLEDAR</span><strong>2027</strong><small>365 dni · 12 mesecev →</small></a><a href="/koledar/2028/"><span>KOLEDAR</span><strong>2028</strong><small>366 dni · prestopno leto →</small></a><a href="/koledar/2029/"><span>KOLEDAR</span><strong>2029</strong><small>365 dni · 12 mesecev →</small></a><a href="/koledar/2030/"><span>KOLEDAR</span><strong>2030</strong><small>365 dni · 12 mesecev →</small></a>
 </div>
-<!-- END app/views/pages/_year_cards.html.erb --><div class="actions">
-<a href="/prazniki/">Prazniki v Sloveniji</a><a href="/kontakt/">Sporočite nedelujočo povezavo</a>
-</div></section>
+  <p class="lost-report">Ste prišli sem prek naše povezave? <a href="/kontakt/">Sporočite nam, kaj se je zgodilo.</a></p>
+</section>
 <!-- END app/views/pages/not_found.html.erb -->
 </main>
 <footer><a class="brand small" href="/"><span class="brand-symbol"><img width="44" height="44" alt="" class="brand-mark" aria-hidden="true" src="/visuals/brand-calendar-v3.71d101697df6153f.svg"></span> Koledar<span>365</span></a><a href="/o-nas/">O nas</a><a href="/zasebnost/">Zasebnost</a><a href="/viri-in-metodologija/">Viri in metodologija</a><a href="/kontakt/">Kontakt</a><a href="/fotografije-in-licence/">Fotografije in licence</a><a href="/pogoji-uporabe/">Pogoji uporabe</a><button class="text-button" data-cookie-open>Nastavitve piškotkov</button><span>© 2026 Koledar365</span></footer>
