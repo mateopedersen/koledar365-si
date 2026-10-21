@@ -109,3 +109,59 @@
 @media(max-width:760px){.sun-masthead{min-height:290px;padding:30px 22px 100px;border-radius:16px}.sun-masthead__copy{width:100%}.sun-masthead p{max-width:580px;font-size:15px}.sun-masthead__ornament{right:-50px;width:340px;opacity:.65}.sun-masthead__scroll{right:20px;bottom:18px}.sun-masthead__facts{gap:9px 15px}.sun-controls{grid-template-columns:1fr;padding:20px;gap:17px}.sun-controls__heading h2{font-size:21px}.sun-form{grid-template-columns:1fr}.sun-dashboard{grid-template-columns:1fr}.sun-day-card{padding:17px}.sun-event{min-height:48px}.sun-city-heading{align-items:stretch;flex-direction:column;gap:13px}.sun-city-search{width:100%}.sun-city-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sun-visual-card__top{padding:17px 15px 4px}.sun-scene-wrap{padding:4px 5px 0}.sun-timeline{margin:0 12px 12px;padding:12px}.sun-scene-note{padding:0 14px 13px}}
 @media(max-width:420px){.sun-masthead h1{font-size:34px}.sun-masthead__facts{max-width:290px}.sun-zone{font-size:8px;padding:6px 7px}.sun-visual-card__top h2{font-size:16px}.sun-timeline__ends{font-size:8px}.sun-play-row{align-items:flex-start;flex-direction:column}.sun-play-row button{width:100%}.sun-city-grid{gap:7px}.sun-city-link{gap:7px;padding:8px}.sun-city-link__mark{width:30px;height:30px}.sun-city-link__mark svg{width:23px;height:23px}.sun-city-link strong{font-size:10px}.sun-city-link small{font-size:7px}}
 @media(prefers-reduced-motion:reduce){.sun-corona-pulse,.sun-corona-halo{animation:none!important}.sun-object,.sun-clouds,.sun-clouds [data-cloud-warm],.sun-scene #sun-sky stop,.sun-scene [data-sun-reflection],.sun-city-link{transition:none!important}.sun-city-link:hover{transform:none}}
+
+/* Strengthen contrast and legibility across the solar tool. */
+.sun-kicker,.sun-step{font-size:11px}
+.sun-controls__heading p{color:#465d78;font-size:15px}
+.sun-form>label{color:#263f5d;font-size:13px}
+.sun-city-control select,.sun-date-row input{font-size:15px}
+.sun-control-help{color:#4d627b;font-size:12px}
+.sun-submit{font-size:14px}
+.sun-today{font-size:13px}
+.sun-form-status{color:#465d78;font-size:12px}
+.sun-zone{color:#f1f6fb;font-size:11px}
+.sun-timeline__meta{color:#e1ebf5;font-size:12px}
+.sun-timeline__meta .sun-time-note{color:#d0dfed;font-size:11px}
+.sun-timeline__ends{color:#d0dfed;font-size:11px}
+.sun-play-row p{color:#f1f6fb;font-size:12px}
+.sun-play-row button{font-size:12px}
+.sun-scene-note{color:#d0dfed;font-size:11px}
+.sun-day-card__head .sun-step{max-width:180px;font-size:10px}
+.sun-day-card__head .sun-step b{font-size:12px}
+.sun-day-number small{color:#405873;font-size:11px;font-weight:700}
+.sun-event>div small{color:#435973;font-size:11px}
+.sun-event>div strong{font-size:15px}
+.sun-event>small{color:#435973;font-size:10px;font-weight:650}
+.sun-date-caption{color:#435973;font-size:12px;font-weight:600}
+.sun-share{font-size:12px}
+.sun-method summary{color:#1f3d5c;font-size:14px}
+.sun-method>div{color:#405873;font-size:13px}
+.sun-method code{font-size:12px}
+.sun-city-heading p{color:#405873;font-size:15px}
+.sun-city-search input{color:#193654;font-size:14px;font-weight:600}
+.sun-city-search input::placeholder{color:#526982;opacity:1}
+.sun-city-count{margin-bottom:12px;color:#324b65;font-size:13px;font-weight:700}
+.sun-city-count a{color:#155c9b;text-decoration:underline;text-underline-offset:2px}
+.sun-city-grid{gap:11px}
+.sun-city-link{display:flex;min-width:0;flex-direction:column;align-items:stretch;gap:7px;padding:11px 12px;border:1px solid #cedbea;border-radius:12px;background:#fff;color:#173452;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
+.sun-city-link[hidden]{display:none}
+.sun-city-link:hover{transform:translateY(-2px);border-color:#6d9cc8;background:#fff;box-shadow:0 7px 18px #12365316}
+.sun-city-link__main{display:flex;min-width:0;align-items:center;gap:11px;color:#173452;text-decoration:none}
+.sun-city-link__main:hover{color:#142f4e;text-decoration:none}
+.sun-city-link__main:focus-visible,.sun-city-link__credit:focus-visible{outline:3px solid #d73549;outline-offset:3px;border-radius:5px}
+.sun-city-link__mark{display:block;width:58px;height:46px;flex:none;object-fit:cover;border:1px solid #d8e2ed;border-radius:9px;background:#eaf1f8;box-shadow:0 1px 3px #102d5018}
+.sun-city-link__copy{display:grid;gap:4px;min-width:0}
+.sun-city-link__copy strong{overflow:hidden;color:#142f4e;font-size:15px;font-weight:800;line-height:1.25;text-overflow:ellipsis;white-space:nowrap}
+.sun-city-link__copy small{color:#405873;font-size:12px;font-weight:650;font-variant-numeric:tabular-nums;line-height:1.3;white-space:normal}
+.sun-city-link__arrow{margin-left:auto;color:#c52d43;font-size:21px;font-weight:800}
+.sun-city-link__credit{display:flex;justify-content:space-between;align-items:baseline;gap:7px;padding-top:6px;border-top:1px solid #e6edf4;color:#344c65;font-size:10px;font-weight:700;line-height:1.3;text-decoration:none}
+.sun-city-link__credit span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sun-city-link__credit b{flex:none;color:#274762;font-size:9px;font-weight:750}
+.sun-city-link__credit:hover{color:#0e568f;text-decoration:underline;text-underline-offset:2px}
+.sun-city-empty{color:#334c66;font-size:14px;font-weight:650}
+.sun-city-neighbors h2{color:#142f4e;font-size:17px}
+.sun-city-neighbors a{color:#174b79;font-size:12px;font-weight:650}
+.sun-city-neighbors .sun-city-neighbors__all{color:#fff}
+@media(max-width:760px){.sun-city-heading p{font-size:14px}.sun-city-link__main{gap:9px}.sun-city-link__copy strong{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;text-overflow:clip;white-space:normal}.sun-city-link__copy small{white-space:normal}}
+@media(max-width:420px){.sun-city-grid{gap:8px}.sun-city-link{gap:7px;padding:9px}.sun-city-link__main{gap:7px}.sun-city-link__mark{width:48px;height:42px}.sun-city-link__copy strong{font-size:13px}.sun-city-link__copy small{font-size:10.5px}.sun-city-link__credit{align-items:flex-start;flex-direction:column;gap:2px;font-size:10px}.sun-city-link__credit span{overflow:visible;text-overflow:clip;white-space:normal;overflow-wrap:anywhere}.sun-city-link__credit b{font-size:9px}}
+@media(max-width:520px){.sun-city-grid{grid-template-columns:1fr;gap:9px}.sun-city-link{gap:7px;padding:11px 12px}.sun-city-link__main{position:relative;gap:12px;padding-right:28px}.sun-city-link__mark{width:64px;height:50px}.sun-city-link__copy strong{display:block;max-width:none;overflow:visible;font-size:16px;line-height:1.3;text-overflow:clip;white-space:normal;overflow-wrap:anywhere}.sun-city-link__copy small{font-size:12px;line-height:1.35;white-space:normal}.sun-city-link__arrow{position:absolute;top:50%;right:0;margin:0;transform:translateY(-50%)}.sun-city-link__credit{align-items:center;flex-direction:row;gap:9px;font-size:11px}.sun-city-link__credit span{flex:1;overflow:visible;text-overflow:clip;white-space:normal;overflow-wrap:anywhere}.sun-city-link__credit b{font-size:10px}}

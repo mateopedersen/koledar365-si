@@ -34,6 +34,35 @@ test('the city list is searchable without accents and the layout fits a phone',a
  const widths=await page.evaluate(()=>({inner:innerWidth,body:document.body.scrollWidth,scene:document.querySelector('[data-sun-scene]').getBoundingClientRect().width}));
  expect(widths.body).toBeLessThanOrEqual(widths.inner);
  expect(widths.scene).toBeLessThan(widths.inner);
+ expect(await page.locator('.sun-city-grid').evaluate((grid)=>getComputedStyle(grid).gridTemplateColumns.split(' ').length)).toBe(1);
+});
+
+test('all 69 city cards show their own embedded photo and linked photo credits',async({page})=>{
+ await page.goto('/soncni-vzhod-in-zahod/');
+ const result=await page.locator('.sun-city-link').evaluateAll(async(cards)=>{
+  const images=cards.map((card)=>card.querySelector('.sun-city-link__mark'));
+  images.forEach((image)=>{image.loading='eager'});
+  await Promise.all(images.map((image)=>image.decode()));
+  return cards.map((card)=>({
+   id:card.querySelector('.sun-city-link__main')?.getAttribute('href').split('/').filter(Boolean).at(-1),
+   name:card.querySelector('.sun-city-link__copy strong')?.textContent.trim(),
+   image:card.querySelector('.sun-city-link__mark')?.getAttribute('src'),
+   alt:card.querySelector('.sun-city-link__mark')?.getAttribute('alt'),
+   credit:card.querySelector('.sun-city-link__credit')?.getAttribute('href'),
+   naturalWidth:card.querySelector('.sun-city-link__mark')?.naturalWidth,
+   text:card.querySelector('.sun-city-link__credit')?.textContent.trim()
+  }));
+ });
+ expect(result).toHaveLength(69);
+ expect(new Set(result.map((city)=>city.image)).size).toBe(69);
+ expect(result.every((city)=>city.image===`/images/city-marks/${city.id}.svg`&&city.naturalWidth===160&&city.alt.includes(city.name)&&city.credit===`/fotografije-in-licence/#${city.id}`&&city.text.length>8)).toBe(true);
+ const firstMain=page.locator('.sun-city-link__main').first();
+ await firstMain.focus();
+ await expect(firstMain).toBeFocused();
+ const firstCredit=page.locator('.sun-city-link__credit').first();
+ await page.keyboard.press('Tab');
+ await expect(firstCredit).toBeFocused();
+ await expect(firstCredit).toHaveCSS('outline-style','solid');
 });
 
 test('the sky, Sun visibility, and moving clouds follow the real solar altitude',async({page})=>{
