@@ -16,9 +16,11 @@ Hazırlık tarihi: 21 Ekim 2026. Üretim yayını, kullanıcının son Work / As
 
 PR açıklaması son doğrulanmış kaynak, yayın commitleri ve test çalıştırmalarının güncel kaydını taşır. PR'de daha yeni commit varsa yalnızca önceki bir yeşil çalıştırmaya dayanarak yayın yapmayın; güncel kaynakla hazırlanmış statik çıktının parmak izleri uyuşmalıdır. PR bu hazırlık sırasında ana dala birleştirilmez ve Cloudflare üretim dağıtımı yapılmaz.
 
-Son kaynak değişikliklerinden sonra başarılı tam hazırlık: [39676624281](https://github.com/mateopedersen/koledar365-si/actions/runs/39676624281), kaynak `5e48babcc9423a7fa8dae8c10f02ee758d742751`, hazırlanmış yayın commiti `d26bdf12e41178b3d7a7dbe9cbc37cf8595e7a9d`. Bu yayından sonraki son dokümantasyon commiti yalnızca bu yayın devri kaydını günceller; üretim kaynaklarını veya `site/` çıktısını değiştirmez. Güncel PR başındaki tam CI sonucu ayrıca başarılı olmalıdır.
+Son kaynak değişikliklerinden sonra başarılı tam hazırlık: [39679314396](https://github.com/mateopedersen/koledar365-si/actions/runs/39679314396), kaynak `5ebb3ab68ab7bb8d3f932be405beec7763dfae64`, hazırlanmış yayın commiti `cb98676529da0828c3c1b8846bfaaa3d022f4540`. Bu yayından sonraki son dokümantasyon commiti yalnızca bu yayın devri kaydını günceller; üretim kaynaklarını veya `site/` çıktısını değiştirmez. Güncel PR başındaki tam CI sonucu ayrıca başarılı olmalıdır.
 
 Bu tam hazırlıkta 397 indekslenebilir canonical URL, 421 HTML dosyası, 4.073 iç hedef, 52 takvim galerisi ve 126 galeri sayfası denetlendi. Yeni A3 koleksiyonu için 780 kayıt, 52 dönem sayfası, 1.560 yönlendirme ve 790 görsel sitemap kaydı kontrol edildi. Bunlar hazırlanmış çıktının sayılarıdır; canlı alan adının gerçekten bu çıktıyı sunduğu yayın sonrasında ayrıca doğrulanacaktır.
+
+Ana dalın `fad92bc7eeffd40b84eb59aca96ff9bbfb413e02` sürümü, genişleme dalına iki ebeveynli `5ebb3ab68ab7bb8d3f932be405beec7763dfae64` commitiyle dahil edildi. Mevcut A3 koleksiyonu, mobilde görünür önceki/sonraki ay gezinmesi, 12 aylık yıl indeksi ve kaldırılmış isim adreslerine ait Cloudflare Functions korumaları korunur. 2026 ayları mevcut ana sayfa sorgularına, 2027–2030 ayları kanonik aylık adreslerine gider. Functions için 14 include yolu ve eski arama/sitemap/robots içeriğinin geri dönmesini engelleyen denetimler pakete dahildir.
 
 ## Hazırlanan kullanıcı deneyimi
 
@@ -70,6 +72,7 @@ Google Trends Slovence arayüzü Slovenya/12 ay ve 5 yıl karşılaştırmaları
 - WebKit'in ilk Ruby-WASM hesaplamasında mevcut yoğun durumun bitmesini bekleyen test düzeltmesi, sonuç değerleri/timeout/retry kuralları değiştirilmeden eklendi.
 - Dört profil kontrolünde bulunan galeri yerleşimi düzeltildi: Excel paneli ve galeri aynı sağ sütunda toplandı. 1280 piksel ekranda en dar indirme düğmesi 31,8 pikselden 125,8 piksele çıktı; 320/390/768/1280 piksel ölçümlerinde yatay taşma yok.
 - Ders programında WebKit'in görünmez JSON dosya seçici içeriğini taşma hesabına katması, yalnız ilgili input'a `overflow:hidden` eklenerek giderildi. Aynı DOM'da 320 piksel viewport için scroll genişliği 339'dan 320'ye indi; görünür etiket ve klavye odağı korundu. Bu iki yerleşim düzeltmesinde testler veya işlev JavaScript'i değiştirilmedi.
+- Son ana dal birleştirmesinde dört takvim sayfası 1280 ve 320 piksel genişlikte kontrol edildi: yatay taşma ve JavaScript hatası yok; ay gezinmesi mobilde görünür, yıllık indekslerin 12 bağlantısı doğru, Ocak 2026 ve Aralık 2030 sınırları korunuyor.
 
 Son kabul kapısı PR başındaki tam GitHub CI'dır: PostgreSQL testleri, SEO, yedek/geri yükleme, üretim Docker imajı, 600 ppi çıktı, taze SQLite'dan tam statik derleme ve dört tarayıcı profili. En güncel sonucunu PR kontrollerinden okuyun.
 
