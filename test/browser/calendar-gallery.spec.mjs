@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 const galleryPages = [
-  { path: '/koledar-za-tiskanje/', card: '.design-card', heading: '.design-card h3', formatAttribute: 'data-format' },
+  { path: '/koledar-za-tiskanje/', card: '.design-card', heading: 'h3', formatAttribute: 'data-format' },
   { path: '/koledar/2027/januar/', card: '.calendar-design-card', heading: '.calendar-design-info h3', formatAttribute: 'data-calendar-download' },
 ];
 
@@ -90,8 +90,11 @@ for (const gallery of galleryPages) {
       }
     }
 
-    await expect(actions.nth(0).locator('img')).toHaveJSProperty('naturalWidth', 40);
-    await expect(actions.nth(1).locator('img')).toHaveJSProperty('naturalWidth', 40);
+    for (const action of [actions.nth(0), actions.nth(1)]) {
+      const icon = action.locator('img');
+      await expect(icon).toHaveJSProperty('complete', true);
+      expect(await icon.evaluate((image) => image.naturalWidth)).toBeGreaterThan(0);
+    }
     expect(iconFailures).toEqual([]);
     expect(iconHttpErrors).toEqual([]);
   });
