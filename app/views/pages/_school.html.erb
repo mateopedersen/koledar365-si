@@ -1,15 +1,16 @@
-<% school_data=JSON.parse(Rails.root.join('public/school/data.json').read); held=@page.status=='held'; level=params[:level]=='secondary' ? 'secondary' : 'primary'; region=params[:region]=='east' ? 'east' : 'west' %>
-<div class="school-page" data-school-page data-held="<%= held %>">
-<svg class="sp-symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
-<symbol id="sp-calendar" viewBox="0 0 24 24"><use href="/visuals/ui-material-v3.svg#calendar" width="24" height="24"/></symbol>
-<symbol id="sp-arrow" viewBox="0 0 24 24"><use href="/visuals/ui-material-v3.svg#arrow" width="24" height="24"/></symbol>
-<symbol id="sp-download" viewBox="0 0 24 24"><use href="/visuals/ui-material-v3.svg#download" width="24" height="24"/></symbol>
-<symbol id="sp-pin" viewBox="0 0 24 24"><use href="/visuals/ui-material-v3.svg#pin" width="24" height="24"/></symbol>
-<symbol id="sp-check" viewBox="0 0 24 24"><use href="/visuals/ui-material-v3.svg#check" width="24" height="24"/></symbol>
-<symbol id="sp-school" viewBox="0 0 24 24"><use href="/visuals/ui-material-v3.svg#school" width="24" height="24"/></symbol>
-<symbol id="sp-sun" viewBox="0 0 24 24"><use href="/visuals/ui-material-v3.svg#sun" width="24" height="24"/></symbol>
-<symbol id="sp-list" viewBox="0 0 24 24"><use href="/visuals/ui-material-v3.svg#note" width="24" height="24"/></symbol>
-<symbol id="sp-heart" viewBox="0 0 24 24"><use href="/visuals/ui-material-v3.svg#heart" width="24" height="24"/></symbol>
+<% school_data=JSON.parse(Rails.root.join('public/school/data.json').read); held=@page.status=='held'; level=params[:level]=='secondary' ? 'secondary' : 'primary'; region=params[:region]=='east' ? 'east' : 'west'; school_svg_assets=%w[autumn festive winter spring summer].to_h { |season|[season,IllustrationHelper.versioned_svg_url("/school/#{season}.svg")] } %>
+<div class="school-page" data-school-page data-held="<%= held %>" data-svg-assets="<%= school_svg_assets.to_json %>">
+<svg class="sp-symbols" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"><defs>
+<% sprite_url = IllustrationHelper.versioned_svg_url('/visuals/ui-material-v3.svg') %>
+<symbol id="sp-calendar" viewBox="0 0 24 24"><use href="<%= sprite_url %>#calendar" xlink:href="<%= sprite_url %>#calendar" width="24" height="24"/></symbol>
+<symbol id="sp-arrow" viewBox="0 0 24 24"><use href="<%= sprite_url %>#arrow" xlink:href="<%= sprite_url %>#arrow" width="24" height="24"/></symbol>
+<symbol id="sp-download" viewBox="0 0 24 24"><use href="<%= sprite_url %>#download" xlink:href="<%= sprite_url %>#download" width="24" height="24"/></symbol>
+<symbol id="sp-pin" viewBox="0 0 24 24"><use href="<%= sprite_url %>#pin" xlink:href="<%= sprite_url %>#pin" width="24" height="24"/></symbol>
+<symbol id="sp-check" viewBox="0 0 24 24"><use href="<%= sprite_url %>#check" xlink:href="<%= sprite_url %>#check" width="24" height="24"/></symbol>
+<symbol id="sp-school" viewBox="0 0 24 24"><use href="<%= sprite_url %>#school" xlink:href="<%= sprite_url %>#school" width="24" height="24"/></symbol>
+<symbol id="sp-sun" viewBox="0 0 24 24"><use href="<%= sprite_url %>#sun" xlink:href="<%= sprite_url %>#sun" width="24" height="24"/></symbol>
+<symbol id="sp-list" viewBox="0 0 24 24"><use href="<%= sprite_url %>#note" xlink:href="<%= sprite_url %>#note" width="24" height="24"/></symbol>
+<symbol id="sp-heart" viewBox="0 0 24 24"><use href="<%= sprite_url %>#heart" xlink:href="<%= sprite_url %>#heart" width="24" height="24"/></symbol>
 </defs></svg>
 <% if held %>
 <section class="sp-held"><span class="sp-kicker">NAČRTUJTE Z ZANESLJIVIMI PODATKI</span><h1><%= @title %></h1><p>Uradni termini za to šolsko leto še niso potrjeni v naši zbirki. Ko bodo preverjeni, jih bomo dodali. Datumov ne napovedujemo.</p><a class="sp-primary" href="/solske-pocitnice/">Odpri preverjeno leto 2026/2027 <span aria-hidden="true">→</span></a><p><a href="<%= school_data['sources']['primary'] %>">Preverite objave ministrstva ↗</a></p></section>

@@ -38,5 +38,4 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
 @media(max-width:700px){
   .subnav{justify-content:flex-start;gap:8px;padding:10px 12px;background:#f4f6f9;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
   .subnav a{min-height:44px;padding:8px 11px;border-color:#c8d5e5;border-radius:11px;box-shadow:0 1px 3px #17294117;font-size:13px;scroll-snap-align:start}
-  .ui-icon{filter:saturate(1.18) contrast(1.1) drop-shadow(0 1px 1px #1729412e)!important}
 }
