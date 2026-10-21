@@ -59,6 +59,19 @@ test('the sky, Sun visibility, and moving clouds follow the real solar altitude'
  await expect(page.locator('[data-sun-reflection]')).toHaveAttribute('d',/^M/);
 });
 
+test('the animated solar disc shows observed surface detail and warm horizon light',async({page})=>{
+ await page.goto('/soncni-vzhod-in-zahod/?city=ljubljana&date=2027-07-15');
+ const scene=page.locator('[data-sun-scene]');
+ await expect(scene.locator('[data-sun-disc-photo]')).toHaveAttribute('href','/images/solar/sdo-hmiic-photosphere-2026-10-21.jpg');
+ await expect(scene.locator('#sun-surface-detail feTurbulence')).toHaveAttribute('baseFrequency','.72');
+ await page.locator('[data-sun-time]').evaluate((slider)=>{slider.value='360';slider.dispatchEvent(new Event('input',{bubbles:true}))});
+ const sepia=await page.locator('[data-sun-object]').evaluate((sun)=>Number(sun.style.filter.match(/sepia\(([\d.]+)/)?.[1]||0));
+ const warmCloud=await scene.locator('[data-cloud-warm]').first().evaluate((cloud)=>Number(cloud.style.opacity));
+ expect(sepia).toBeGreaterThan(0);
+ expect(warmCloud).toBeGreaterThan(0);
+ await expect(scene.locator('[data-sun-scatter]')).toHaveAttribute('rx',/^[1-9]/);
+});
+
 test('the nearest-city button uses the approved browser position locally',async({page,context})=>{
  await context.grantPermissions(['geolocation']);
  await context.setGeolocation({latitude:46.0511,longitude:14.5051});
