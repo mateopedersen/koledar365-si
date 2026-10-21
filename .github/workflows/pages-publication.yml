@@ -19,6 +19,9 @@ on:
       - 'data/horoscope/**'
       - 'public/horoscope/**'
       - 'functions/horoskop/**'
+      - 'cloudflare/free/**'
+      - 'script/**'
+      - 'config/initializers/**'
       - '.github/workflows/pages-publication.yml'
       - 'script/save_pages_publication.sh'
 permissions:

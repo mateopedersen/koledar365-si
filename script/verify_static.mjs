@@ -34,5 +34,19 @@ const clientBytes=fs.readFileSync(path.join(root,'cloudflare/free/client.js')),c
 if(!fs.existsSync(clientFile)||!fs.readFileSync(clientFile).equals(clientBytes))issues.push('Fingerprint browser adapter is missing or differs from source');
 for(const file of files.filter(file=>file.endsWith('.html'))){const html=fs.readFileSync(file,'utf8');if(html.includes('src="/free/client.js"')||[...html.matchAll(/src="\/free\/(client-[a-f0-9]+\.js)"/g)].some(match=>match[1]!==clientName))issues.push(path.relative(site,file)+': stale browser adapter URL')}
 if(!fs.readFileSync(path.join(site,'index.html'),'utf8').includes('/free/'+clientName))issues.push('Home page is missing the fingerprint browser adapter');
+const countdownPagePath=path.join(site,'odstevanje/index.html');
+if(!fs.existsSync(countdownPagePath))issues.push('Countdown page is missing');
+else{
+ const html=fs.readFileSync(countdownPagePath,'utf8'),configMatch=html.match(/<script type="application\/json" id="k365-static-config">([\s\S]*?)<\/script>/);
+ if(!html.includes('data-countdown-root'))issues.push('Countdown page is missing its interactive root');
+ if(!configMatch)issues.push('Countdown page is missing its static asset config');
+ else{
+  const config=JSON.parse(configMatch[1]),countdownFile=config.countdown&&path.join(site,new URL(config.countdown,'https://koledar365.si').pathname.slice(1));
+  if(!countdownFile||!fs.existsSync(countdownFile))issues.push('Countdown page asset is missing from the static publication');
+  else if(!fs.readFileSync(countdownFile,'utf8').includes('[data-countdown-root]'))issues.push('Countdown asset does not initialize the countdown page');
+ }
+ const cssHref=html.match(/<link rel="stylesheet" href="([^"]+)"/),cssFile=cssHref&&path.join(site,new URL(cssHref[1],'https://koledar365.si').pathname.slice(1));
+ if(!cssFile||!fs.existsSync(cssFile)||!fs.readFileSync(cssFile,'utf8').includes('.countdown-hero'))issues.push('Countdown styles are missing from the static publication');
+}
 console.log(JSON.stringify({passed:!issues.length,files:files.length,pairs:catalog.length,issues},null,2));if(issues.length)process.exit(1);
 await import('./lunar/verify_static.mjs');

@@ -5,6 +5,7 @@ Rails.application.config.assets.version = "1.0"
 
 Rails.application.config.assets.precompile += %w[date_calculator.css]
 Rails.application.config.assets.precompile += %w[horoscope.css]
+Rails.application.config.assets.precompile += %w[countdown.css countdown.js]
 
 # Add additional assets to the asset load path.
 # Rails.application.config.assets.paths << Emoji.images_path
