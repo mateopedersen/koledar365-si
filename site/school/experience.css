@@ -45,3 +45,80 @@
 .school-page .sp-uni-periods strong{display:block;padding-left:11px;font-size:16px!important;font-weight:800;color:#1b3458;line-height:1.5;white-space:normal}
 @media(max-width:700px){.sp-photo-credit{font-size:9px;padding:22px 8px 7px}.sp-photo-credit-hero{font-size:9px;padding:6px 9px}.sp-photo-attributions{padding:14px}.school-page .sp-photo-attributions>p{font-size:11px}.sp-photo-sources li{font-size:10px}.school-page .sp-period-type{font-size:13px!important}.school-page .sp-uni-periods strong{font-size:15px!important}}
 @media(max-width:380px){.school-page .sp-period-type{font-size:12px!important}.school-page .sp-uni-periods strong{font-size:14px!important}}
+@media print {
+  /* Print only the monthly school calendar associated with this action. */
+  body.school-calendar-printing main > :not(.school-page),
+  body.school-calendar-printing .school-page > :not(.sp-calendar-section):not(.sp-symbols) {
+    display: none !important;
+  }
+
+  body.school-calendar-printing .school-page,
+  body.school-calendar-printing .sp-calendar-section {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body.school-calendar-printing .sp-calendar-section > .sp-heading {
+    display: block !important;
+    margin: 0 0 7mm !important;
+  }
+
+  body.school-calendar-printing .sp-calendar-section > .sp-heading h2 {
+    margin: 2mm 0 !important;
+    font-size: 22pt !important;
+  }
+
+  body.school-calendar-printing .sp-calendar-layout {
+    display: block !important;
+    overflow: visible !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 4mm !important;
+  }
+
+  body.school-calendar-printing .sp-calendar-box,
+  body.school-calendar-printing .sp-month-aside {
+    padding: 6mm !important;
+    border: 0 !important;
+    background: #fff !important;
+  }
+
+  body.school-calendar-printing .sp-month-heading {
+    margin-bottom: 4mm !important;
+  }
+
+  body.school-calendar-printing .sp-calendar-days {
+    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+    gap: 2mm !important;
+  }
+
+  body.school-calendar-printing .school-page button.sp-day {
+    display: block !important;
+    min-height: 11mm !important;
+    padding: 2mm !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 2mm !important;
+    color: #17324f !important;
+    text-align: center !important;
+  }
+
+  body.school-calendar-printing .sp-month-aside {
+    border-top: 1px solid #d8e0e8 !important;
+  }
+
+  body.school-calendar-printing .sp-month-event {
+    padding: 3mm 0 !important;
+    break-inside: avoid-page;
+  }
+
+  body.school-calendar-printing .sp-small,
+  body.school-calendar-printing .sp-selected-date:not(.is-selected) {
+    display: none !important;
+  }
+
+  body.school-calendar-printing .sp-legend {
+    margin-top: 4mm !important;
+  }
+}
