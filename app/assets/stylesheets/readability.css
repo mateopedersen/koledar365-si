@@ -189,7 +189,12 @@
       padding: 10px 0 8px;
     }
     #cookies .cookie-bar-icon { display: none; }
-    #cookies .cookie-bar-copy { grid-column: 1; grid-row: 1; }
+    #cookies .cookie-bar-copy {
+      grid-column: 1;
+      grid-row: 1;
+      position: relative;
+      z-index: 1;
+    }
     #cookies .cookie-bar-copy h2 {
       margin: 0 0 2px;
       color: #172941;
@@ -218,6 +223,8 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 6px;
       margin: 0;
+      position: relative;
+      z-index: 2;
     }
     #cookies .cookie-actions button,
     #cookies .cookie-actions [data-consent-settings] {
