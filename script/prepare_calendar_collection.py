@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import hashlib
 import json
-import os
 import shutil
 import zipfile
 from pathlib import Path
@@ -55,15 +54,33 @@ def main() -> None:
         raise SystemExit("The supplied collection quality gate contains errors or warnings.")
 
     design_ids = {ordinal: design["id"] for ordinal, design in enumerate(designs, 1)}
-    old_rows = [row for row in catalog if row.get("options", {}).get("type") in ("monthly", "annual")
+    legacy_rows = [row for row in catalog if row.get("options", {}).get("type") in ("monthly", "annual")
                 and 2027 <= row["options"].get("year", 0) <= 2030
                 and row["options"].get("paper") == "A4" and row["options"].get("orientation") == "portrait"
                 and not row["options"].get("name") and not row["options"].get("notes") and not row["options"].get("entries")]
-    if len(old_rows) != 780:
-        raise SystemExit(f"Expected exactly 780 existing records to replace; found {len(old_rows)}.")
+    prepared_rows = [row for row in catalog if row.get("collection") == "calendar-2027-2030"]
+    already_prepared = False
+    if len(legacy_rows) == 780 and not prepared_rows:
+        old_rows = legacy_rows
+    elif len(prepared_rows) == 780 and not legacy_rows:
+        # The publication workflow starts from the last committed site snapshot,
+        # which may already contain this collection. Reuse its stable catalog
+        # rows and the committed legacy URL map so a clean rebuild is repeatable.
+        old_rows = prepared_rows
+        already_prepared = True
+    else:
+        raise SystemExit(f"Expected 780 legacy records or 780 prepared collection records; found {len(legacy_rows)}/{len(prepared_rows)}.")
     old_by_key = {key(row): row for row in old_rows}
     if len(old_by_key) != 780:
         raise SystemExit("The existing gallery records do not have unique period/design keys.")
+    legacy_by_key = {}
+    if already_prepared:
+        prior_records = json.loads((ROOT / "evidence" / "calendar-collection-records.json").read_text(encoding="utf-8"))
+        for prior in prior_records:
+            prior_key = (prior["type"], prior["year"], prior["month"], prior["design"])
+            legacy_by_key[prior_key] = prior
+        if len(legacy_by_key) != 780:
+            raise SystemExit("The committed collection report must preserve all 780 legacy URL mappings.")
 
     qc_by_pair = {(row["pdf"], row["webp"]): row for row in qc["datoteke"]}
     preview_by_source = {row["source"]: row for row in previews["previews"]}
@@ -100,13 +117,18 @@ def main() -> None:
         width = int(record["sirina_px"])
         height = int(record["visina_px"])
         orientation = "landscape" if width > height else "portrait"
-        fingerprint = hashlib.sha256(
+        fingerprint = old["fingerprint"] if already_prepared else hashlib.sha256(
             ("koledar365-collection-v1\0" + old["fingerprint"] + "\0"
              + qrow["pdf_sha256"] + "\0" + qrow["webp_sha256"]).encode("utf-8")
         ).hexdigest()
-        pdf_url = url_for(BASE_URL + "/original", record["pdf"])
-        webp_url = url_for(BASE_URL + "/original", record["webp"])
-        preview_url = url_for(BASE_URL + "/preview", record["webp"])
+        expected_pdf_url = url_for(BASE_URL + "/original", record["pdf"])
+        expected_webp_url = url_for(BASE_URL + "/original", record["webp"])
+        expected_preview_url = url_for(BASE_URL + "/preview", record["webp"])
+        pdf_url = old["files"]["pdf"] if already_prepared else expected_pdf_url
+        webp_url = old["files"]["webp"] if already_prepared else expected_webp_url
+        preview_url = old["files"]["preview"] if already_prepared else expected_preview_url
+        if (pdf_url, webp_url, preview_url) != (expected_pdf_url, expected_webp_url, expected_preview_url):
+            raise SystemExit(f"Prepared catalogue paths changed unexpectedly for {record['pdf']}.")
         output_pdf = SITE / pdf_url.lstrip("/")
         output_webp = SITE / webp_url.lstrip("/")
         output_preview = SITE / preview_url.lstrip("/")
@@ -116,15 +138,17 @@ def main() -> None:
         if sha256(output_pdf) != qrow["pdf_sha256"] or sha256(output_webp) != qrow["webp_sha256"]:
             raise SystemExit(f"Staged originals differ from source bytes: {record['pdf']}.")
 
-        old_pdf = old["files"]["pdf"]
-        old_webp = old["files"]["webp"]
-        old_preview = old["files"]["preview"]
+        prior = legacy_by_key.get(match_key, {})
+        old_pdf = prior["old_pdf_url"] if already_prepared else old["files"]["pdf"]
+        old_webp = prior["old_webp_url"] if already_prepared else old["files"]["webp"]
+        old_preview = old_pdf.rsplit("/", 1)[0] + "/predogled.webp" if already_prepared else old["files"]["preview"]
         old_asset_urls.update((old_pdf, old_webp, old_preview))
         legacy_webp_url = webp_url
-        legacy_zip_url = None
+        legacy_zip_url = old.get("legacy_webp_url") if already_prepared else None
         if old_webp.endswith(".zip"):
-            zip_name = fingerprint + ".zip"
-            legacy_zip_url = url_for(BASE_URL + "/compatibility", zip_name)
+            if not legacy_zip_url:
+                zip_name = fingerprint + ".zip"
+                legacy_zip_url = url_for(BASE_URL + "/compatibility", zip_name)
             zip_path = SITE / legacy_zip_url.lstrip("/")
             zip_path.parent.mkdir(parents=True, exist_ok=True)
             with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_STORED) as archive:
@@ -256,15 +280,22 @@ def main() -> None:
             "pdf_sha256", "webp_sha256", "pdf_bytes", "webp_bytes", "pdf_url", "webp_url", "preview_url",
             "preview_width", "preview_height", "old_pdf_url", "old_webp_url", "compatibility_zip_url")) + "\n" for row in map_rows),
         encoding="utf-8")
-    (evidence / "calendar-collection-redirects.json").write_text(json.dumps({
-        "count": len(redirects), "redirects": redirects, "removed_files": removed_files,
-        "backup_archive": "work/backups/koledar-2027-2030-before-e053917b0ca5.tar.gz",
-        "backup_commit": os.popen("git rev-parse HEAD").read().strip(),
+    backup_manifest = json.loads((evidence / "calendar-collection-backup-manifest.json").read_text(encoding="utf-8"))
+    previous_removals = []
+    report_path = evidence / "calendar-collection-redirects.json"
+    if report_path.is_file():
+        previous_removals = json.loads(report_path.read_text(encoding="utf-8")).get("removed_files", [])
+    removal_report = removed_files or previous_removals
+    (report_path).write_text(json.dumps({
+        "count": len(redirects), "redirects": redirects, "removed_files": removal_report,
+        "backup_archive": "../backups/koledar-2027-2030-before-e053917b0ca5.tar.gz (local workspace)",
+        "backup_manifest": "evidence/calendar-collection-backup-manifest.json",
+        "backup_commit": backup_manifest["source_commit"],
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({
         "collection_records": len(replacement_rows), "catalog_records": len(updated_catalog),
         "redirects": len(redirects), "redirect_rules_total": len(existing),
-        "old_files_removed": len(removed_files), "old_bytes_removed": sum(row["bytes"] for row in removed_files),
+        "old_files_removed": len(removal_report), "old_bytes_removed": sum(row["bytes"] for row in removal_report),
         "new_originals_bytes": sum(row["pdf_bytes"] + row["webp_bytes"] for row in map_rows),
     }))
 
