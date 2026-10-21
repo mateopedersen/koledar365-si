@@ -61,7 +61,7 @@ Source links to Vrt Obilja and the Gaia/Marija Thun calendar are provided as ori
 
 Slovene astronomy source URLs are recorded in `AstronomySchedule::SOURCES`; computed contacts/local conditions are clearly identified as a model. USNO and Astronomy Engine are identified as technical data/computation dependencies, not passed off as Slovene editorial sources. Checking sample events against Slovene observations is not described as independently confirming every future event. Lunar UT1/UTC precision, local horizon assumptions and local-time conversion are explained.
 
-2026 nonworking dates follow PISRS ZPDPD and the government OPSI dataset. Future years follow current legal rules and may change if the law changes. The existing pre-rendered 2027–2030 PDF/WebP catalog remains unchanged.
+2026 nonworking dates follow PISRS ZPDPD and the government OPSI dataset. Future years follow current legal rules and may change if the law changes. The supplied 2027–2030 A3 PDF/WebP collection subsequently merged through PR #55 is preserved, including its original files, 52 period galleries, image metadata and 1,560 legacy-file redirects. The generic editable calendar renderer remains available for configurations outside that exact A3 collection.
 
 ## SEO and trust implementation
 
