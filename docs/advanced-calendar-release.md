@@ -10,12 +10,13 @@ Hazırlık tarihi: 21 Ekim 2026. Üretim yayını, kullanıcının son Work / As
 - [Tam Work / Astra 6 yayın talimatı](WORK-ASTRA6-DEPLOY-PROMPT.md)
 - [Tasarım önizlemeleri](previews/README.md)
 - [Araştırma, kaynaklar ve SEO kararları](advanced-calendar-research-and-seo.md)
+- [27 sayfanın gerçek HTML başlıkları ve meta açıklamaları](advanced-calendar-metadata.md)
 - [Eğitim verilerinin ayrıntılı kaydı](education-calendar-2026-2027.md)
 - [Tam canonical URL envanteri](advanced-calendar-live-urls.txt)
 
 PR açıklaması son doğrulanmış kaynak, yayın commitleri ve test çalıştırmalarının güncel kaydını taşır. PR'de daha yeni commit varsa yalnızca önceki bir yeşil çalıştırmaya dayanarak yayın yapmayın; güncel kaynakla hazırlanmış statik çıktının parmak izleri uyuşmalıdır. PR bu hazırlık sırasında ana dala birleştirilmez ve Cloudflare üretim dağıtımı yapılmaz.
 
-İlk başarılı tam hazırlık: [39669518635](https://github.com/mateopedersen/koledar365-si/actions/runs/39669518635), kaynak `7bf16f639b72c4b0e93031ca532ce44c672d49c7`, çıktı `db1be8ba0884373ad41b3ec2bbce2f0d7b883690`. Bu kayıt tam derlemenin kapsamını kanıtlar; sonraki test/dokümantasyon düzeltmelerinden sonra en güncel başarılı hazırlık ve CI sonucunu PR üzerinden kullanın.
+Son kaynak değişikliklerinden sonra başarılı tam hazırlık: [39670661700](https://github.com/mateopedersen/koledar365-si/actions/runs/39670661700), kaynak `67369487f6d06923b44633eaef0331e0c052fe8f`, hazırlanmış yayın commiti `915ecbdee49a48537f76d6771eae195afcbaf2a8`. Bu yayından sonraki son dokümantasyon commiti yalnızca bu kayıt ile metadata tablosunu tamamlar; üretim kaynaklarını veya `site/` çıktısını değiştirmez. Güncel PR başındaki tam CI sonucu ayrıca başarılı olmalıdır.
 
 Bu tam hazırlıkta 397 indekslenebilir canonical URL, 421 HTML dosyası, 4.073 iç hedef, 52 takvim galerisi ve 126 galeri sayfası denetlendi. Yeni A3 koleksiyonu için 780 kayıt, 52 dönem sayfası, 1.560 yönlendirme ve 790 görsel sitemap kaydı kontrol edildi. Bunlar hazırlanmış çıktının sayılarıdır; canlı alan adının gerçekten bu çıktıyı sunduğu yayın sonrasında ayrıca doğrulanacaktır.
 

@@ -12,7 +12,7 @@ Aşağıdaki görevi uygula. Sadece plan veya komut önerisi verme; izinli eriş
 - Tasarım, içerik ve araçlar hazırdır. Profesyonel Slovence arayüzü, Slovenya'nın mavi/kırmızı/beyaz renkleri, özgün görseller, kaynak gösterimi ve SEO düzeni korunmalıdır.
 - Ana dala sonradan eklenmiş 2027–2030 A3 takvim koleksiyonu da bu çalışmayla birleştirilmiştir. Koleksiyonu, özgün dosyalarını, 52 dönem × 15 tasarımı, görsel SEO verilerini ve eski dosyaların yönlendirmelerini koru.
 
-Önce `docs/advanced-calendar-release.md`, `docs/free-cloudflare.md`, `docs/advanced-calendar-research-and-seo.md` ve `docs/education-calendar-2026-2027.md` dosyalarını oku. Geçerli PR başını, kontrolleri ve hazırlanmış yayın commitini GitHub'dan yeniden doğrula. Belgede yazan eski bir SHA'yı körlemesine yayımlama.
+Önce `docs/advanced-calendar-release.md`, `docs/free-cloudflare.md`, `docs/advanced-calendar-research-and-seo.md`, `docs/advanced-calendar-metadata.md` ve `docs/education-calendar-2026-2027.md` dosyalarını oku. Geçerli PR başını, kontrolleri ve hazırlanmış yayın commitini GitHub'dan yeniden doğrula. Belgede yazan eski bir SHA'yı körlemesine yayımlama.
 
 ## Tamamlanmış kapsamı koru
 
