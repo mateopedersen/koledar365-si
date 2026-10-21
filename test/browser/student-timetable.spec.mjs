@@ -6,10 +6,12 @@ async function quietConsent(page, withLegacyEntry = false) {
       version: 2, choice: 'essential', preferences: false, analytics: false,
       advertising: false, at: new Date().toISOString(), expiresAt: Date.now() + 86400000,
     }));
-    localStorage.removeItem('k365.student.timetable.v1');
-    if (withLegacyEntry) localStorage.setItem('k365.entries./solski-urnik/', JSON.stringify([
-      { entry_id: 'legacy-entry', title: 'Stari zapisek', date: '2027-03-29', source: 'legacy' },
-    ]));
+    if (withLegacyEntry && !localStorage.getItem('student-timetable-test-fixture')) {
+      localStorage.setItem('k365.entries./solski-urnik/', JSON.stringify([
+        { entry_id: 'legacy-entry', title: 'Stari zapisek', date: '2027-03-29', source: 'legacy' },
+      ]));
+      localStorage.setItem('student-timetable-test-fixture', 'installed');
+    }
   }, { withLegacyEntry });
 }
 
