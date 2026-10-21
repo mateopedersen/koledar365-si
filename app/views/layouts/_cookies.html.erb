@@ -1,17 +1,22 @@
 <section id="cookies" class="cookie-bar" aria-labelledby="cookie-title" aria-describedby="cookie-intro" hidden>
   <div class="cookie-bar-main">
-    <div class="cookie-bar-icon" aria-hidden="true"><%= ui_icon('cookie') %></div>
+    <div class="cookie-bar-icon" aria-hidden="true">
+      <%= ui_icon('cookie') %>
+      <span class="cookie-flag"><%= slovenia_flag %></span>
+    </div>
     <div class="cookie-bar-copy">
       <span class="cookie-bar-eyebrow">Vaša zasebnost</span>
       <h2 id="cookie-title">Vi odločate, kaj si zapomnimo.</h2>
       <p id="cookie-intro">Koledar uporablja nujno hrambo. Z vašim dovoljenjem do 180 dni shranimo izbrano mesto za lokalni čas in vreme. Analitike in oglasnih sledilnikov ne uporabljamo. <a href="/piskotki/">Podrobnosti</a></p>
     </div>
     <div class="cookie-actions" role="group" aria-label="Izbira nastavitev zasebnosti">
-      <button type="button" data-consent="necessary"><%= ui_icon('shield') %> Ne shrani mesta</button>
-      <button type="button" data-consent="all"><%= ui_icon('pin') %> Zapomni si mesto</button>
-      <button type="button" data-consent-settings aria-expanded="false" aria-controls="cookie-settings"><%= ui_icon('settings') %> Nastavitve</button>
+      <button type="button" data-consent="necessary"><span class="cookie-action-icon"><%= ui_icon('shield') %></span><span>Ne shrani mesta</span></button>
+      <button type="button" data-consent="all"><span class="cookie-action-icon"><%= ui_icon('pin') %></span><span>Zapomni si mesto</span></button>
+      <button type="button" data-consent-settings aria-expanded="false" aria-controls="cookie-settings"><span class="cookie-action-icon"><%= ui_icon('settings') %></span><span>Nastavitve</span></button>
     </div>
-    <button type="button" class="cookie-close" data-cookie-close aria-label="Zapri brez spremembe nastavitev">×</button>
+    <button type="button" class="cookie-close" data-cookie-close aria-label="Zapri brez spremembe nastavitev">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
   </div>
   <details id="cookie-settings">
     <summary>Podrobne nastavitve</summary>
