@@ -46,6 +46,7 @@
 
 
 
+
 <link rel="icon" href="/visuals/brand-calendar-v3.svg" type="image/svg+xml">
 <script type="application/json" id="k365-static-config">{"scripts":["/assets/application-f427bb33.js","/assets/planners-2e3430d8.js"],"holidays":"/assets/holidays-0af57d2c.js","vacation":"/assets/vacation-ecc923a5.js","countdown":"/assets/countdown-164dee2d.js","shift":"/assets/shift_schedule-f9b9ee17.js"}</script><link rel="preload" as="script" href="/assets/application-f427bb33.js">
 <link rel="preload" as="script" href="/assets/planners-2e3430d8.js">
@@ -73,35 +74,38 @@
 <p>V galeriji izberite eno od 15 predlog: PDF za tisk in ujemajoči se WebP pri 600 ppi, s podpisom Koledar365 na vsaki strani. Večstranski WebP je v datoteki ZIP; PDF tiskajte v merilu 100 %.</p>
 </div>
 <!-- BEGIN app/views/pages/_workdays.html.erb
---><div class="download-workspace" data-download-workspace>
-<section class="panel gallery-context">
-<!-- BEGIN app/views/pages/_context_heading.html.erb
+--><div class="download-workspace">
+  <section class="panel gallery-context">
+    <!-- BEGIN app/views/pages/_context_heading.html.erb
 --><header class="context-heading"><h2>Delovni dnevi</h2>
 <button type="button" data-context-expand aria-expanded="false" aria-controls="gallery-context-content" data-expand-label="Razširi pregled">Razširi pregled <span aria-hidden="true">↗</span></button></header>
 <noscript><style>.download-workspace [data-context-expand]{display:none!important}@media(max-width:650px){.download-workspace:not(.context-expanded) .context-content{display:block!important}.download-workspace [data-context-expand]{display:none!important}}</style></noscript>
 <!-- END app/views/pages/_context_heading.html.erb -->
-<div class="context-content" id="gallery-context-content">
+    <div class="context-content" id="gallery-context-content">
 <!-- BEGIN app/views/pages/_year_selector.html.erb
 --><nav class="year-links" aria-label="Izbira leta"><a class="" href="/delovni-dnevi/2027/januar/">2027</a><a class="" href="/delovni-dnevi/2028/januar/">2028</a><a class="" href="/delovni-dnevi/2029/januar/">2029</a><a class="active" href="/delovni-dnevi/2030/januar/">2030</a></nav>
-<!-- END app/views/pages/_year_selector.html.erb --><div class="table-wrap"><table class="data-table">
+<!-- END app/views/pages/_year_selector.html.erb -->
+      <div class="table-wrap"><table class="data-table">
 <thead><tr>
 <th>Mesec</th>
 <th>Koledarski dnevi</th>
 <th>Delovni dnevi</th>
 <th>Ure (8 ur/dan)</th>
 </tr></thead>
-<tbody><tr>
-<td><a href="/delovni-dnevi/2030/januar/">januar</a></td>
+<tbody>
+        <tr>
+<td><a href="/delovni-dnevi/2030/januar/">Januar</a></td>
 <td>31</td>
 <td>21</td>
 <td>168</td>
-</tr></tbody>
+</tr>
+      </tbody>
 </table></div>
-<p>Privzeti delovni teden traja od ponedeljka do petka; zakonski dela prosti dnevi so izločeni samo enkrat. Izračun ne določa vaših pogodbenih pravic.</p>
-<a class="button primary" href="/kalkulator-delovnih-dni/">Prilagodi delovni teden in ure</a><a href="/viri-in-metodologija/">Metodologija</a>
-</div></section>
-
-<!-- BEGIN app/views/pages/_designs.html.erb
+      <p>Privzeti delovni teden traja od ponedeljka do petka; zakonski dela prosti dnevi se izločijo samo enkrat. Izračun ne določa vaših pogodbenih pravic.</p>
+<a class="button primary" href="/kalkulator-delovnih-dni/">Prilagodi delovni teden in ure</a> <a href="/viri-in-metodologija/">Metodologija</a>
+    </div>
+  </section>
+  <!-- BEGIN app/views/pages/_designs.html.erb
 --><section class="design-section" id="design-gallery" aria-labelledby="design-gallery-title" data-export-options='{"type":"workdays","year":2030,"month":1,"date":"2030-01-01","name":"","workday_scope":"month"}'>
   <header class="section-heading"><div>
 <span class="eyebrow">ZBIRKA ZA TISKANJE</span><h2 id="design-gallery-title">15 predlog za vaš koledar</h2>
