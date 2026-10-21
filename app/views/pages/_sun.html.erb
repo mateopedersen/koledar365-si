@@ -1,1 +1,179 @@
-<% city=params[:city].presence || page_path.split('/')[2] || 'ljubljana';city='ljubljana' unless SunEngine::CITIES.key?(city);date=(Date.iso8601(params[:date]) rescue @today);sun=SunEngine.calculate(date,city) %><section class="panel tool-panel"><form class="filters"><label>Kraj<select name="city"><% SunEngine::CITIES.each do |key,value| %><option value="<%= key %>" <%= 'selected' if key==city %>><%= value.first %></option><% end %></select></label><label>Datum<input type="date" name="date" value="<%= date %>" required></label><button class="primary">Izračunaj</button></form><h2><%= sun[:name] %> · <%= sl_date(date) %></h2><div class="sun-result"><div><%= ui_icon('sun') %><strong><%= sun[:rise].strftime('%H:%M') %></strong><span>Sončni vzhod</span></div><div><%= ui_icon('moon') %><strong><%= sun[:set].strftime('%H:%M') %></strong><span>Sončni zahod</span></div><div><%= ui_icon('clock') %><strong><%= sun[:minutes]/60 %> h <%= sun[:minutes]%60 %> min</strong><span>Dolžina dneva</span></div></div><p>Približen izračun za koordinate <%= sun[:latitude] %>° N, <%= sun[:longitude] %>° E. Časi so v časovnem pasu Europe/Ljubljana. Relief, vreme in višina opazovalca lahko spremenijo dejanski trenutek vzhoda ali zahoda.</p><p><a href="https://gml.noaa.gov/grad/solcalc/solareqns.PDF">Metoda NOAA: splošne enačbe Sončeve lege</a>. Rezultat je zaokrožen na minuto; za natančna opazovanja uporabite lokalne efemeride.</p></section><div class="link-grid"><% SunEngine::CITIES.each do |key,value| %><a href="/soncni-vzhod-in-zahod/<%= key %>/"><%= value.first %></a><% end %></div>
+<%
+  city_id = @sun_city_id || params[:city].presence || 'ljubljana'
+  city_id = 'ljubljana' unless SunEngine.city?(city_id)
+  date = (Date.iso8601(params[:date].to_s) rescue @today)
+  date = @today unless date.year.between?(1901, 2099)
+  sun = SunEngine.calculate(date, city_id)
+  city_names = SunEngine::CITIES
+%>
+
+<% if page_path == '/soncni-vzhod-in-zahod/' %>
+  <section class="sun-masthead" aria-labelledby="sun-title">
+    <div class="sun-masthead__copy">
+      <span class="sun-kicker"><span aria-hidden="true"></span> SONCE NAD SLOVENIJO</span>
+      <h1 id="sun-title">Sončni vzhod in zahod</h1>
+      <p>Izberite eno od 69 slovenskih mest, nastavite datum in raziščite pot Sonca od jutranjega svita do večernega mraka.</p>
+      <div class="sun-masthead__facts" aria-label="Značilnosti izračuna">
+        <span><b>69</b> mest</span><span>lokalni čas <b>Europe/Ljubljana</b></span><span>prosta simulacija</span>
+      </div>
+    </div>
+    <a class="sun-masthead__scroll" href="#izracun"><span aria-hidden="true">↓</span> Izberite mesto in datum</a>
+    <div class="sun-masthead__ornament" aria-hidden="true">
+      <svg viewBox="0 0 600 220" focusable="false">
+        <defs><linearGradient id="masthead-sun" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff4c7"/><stop offset=".55" stop-color="#ff9a66"/><stop offset="1" stop-color="#d82f45"/></linearGradient></defs>
+        <path d="M20 197C127 146 203 124 304 125s187 27 276 72" fill="none" stroke="#fff" stroke-opacity=".24" stroke-width="2" stroke-dasharray="4 8"/>
+        <path d="M57 194C155 148 221 134 304 135s156 22 241 60" fill="none" stroke="#6da9df" stroke-opacity=".72" stroke-width="1.5"/>
+        <circle cx="304" cy="135" r="59" fill="#ec4546" opacity=".12"/><circle cx="304" cy="135" r="42" fill="url(#masthead-sun)"/>
+        <path d="M265 145c12-9 28-10 39-2m17-25c9-10 18-13 28-12m-59 48c9-4 17-4 26 1" fill="none" stroke="#fff8db" stroke-width="2" stroke-linecap="round" opacity=".48"/>
+        <path d="M25 198h550" stroke="#fff" stroke-opacity=".3"/>
+        <circle cx="105" cy="171" r="3" fill="#fff"/><circle cx="478" cy="156" r="3" fill="#e64451"/><circle cx="204" cy="145" r="2" fill="#8dbfea"/>
+      </svg>
+    </div>
+  </section>
+<% end %>
+
+<section class="sun-experience" id="izracun" aria-labelledby="sun-experience-title"
+  data-sun-experience
+  data-latitude="<%= sun[:latitude] %>"
+  data-longitude="<%= sun[:longitude] %>"
+  data-declination="<%= sun[:declination] %>"
+  data-solar-noon="<%= sun[:solar_noon].strftime('%H:%M') %>"
+  data-selected-date="<%= date.iso8601 %>"
+  data-selected-city="<%= city_id %>">
+  <div class="sun-controls">
+    <div class="sun-controls__heading">
+      <span class="sun-step">01 <i aria-hidden="true"></i> KRAJ IN DATUM</span>
+      <h2 id="sun-experience-title">Načrtujte dan po sončni svetlobi</h2>
+      <p>Ura, zora in zahod se preračunajo za izbrani kraj in datum. Vsi prikazani časi so lokalni.</p>
+    </div>
+    <form class="sun-form" action="/soncni-vzhod-in-zahod/" method="get" data-sun-form>
+      <label for="sun-city">Mesto</label>
+      <div class="sun-city-control">
+        <select id="sun-city" name="city" data-sun-city>
+          <% city_names.each do |id, values| %>
+            <option value="<%= id %>" data-lat="<%= values[1] %>" data-lon="<%= values[2] %>" <%= 'selected' if id == city_id %>><%= values[0] %></option>
+          <% end %>
+        </select>
+        <button class="sun-locate" type="button" data-sun-locate aria-label="Poišči najbližje mesto glede na mojo lokacijo" title="Poišči najbližje mesto">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        </button>
+      </div>
+      <span class="sun-control-help">Izbor lahko poiščete tudi s tipkanjem imena mesta.</span>
+      <label for="sun-date">Datum</label>
+      <div class="sun-date-row">
+        <button type="button" class="sun-date-step" data-sun-prev aria-label="Prejšnji dan">‹</button>
+        <input id="sun-date" name="date" type="date" min="1901-01-01" max="2099-12-31" value="<%= date.iso8601 %>" required data-sun-date>
+        <button type="button" class="sun-date-step" data-sun-next aria-label="Naslednji dan">›</button>
+      </div>
+      <button class="sun-submit" type="submit"><span aria-hidden="true">↗</span> Prikaži sončno pot</button>
+      <button class="sun-today" type="button" data-sun-live>Danes · trenutni čas</button>
+      <p class="sun-form-status" role="status" aria-live="polite" data-sun-status></p>
+    </form>
+  </div>
+
+  <div class="sun-dashboard">
+    <div class="sun-visual-card">
+      <div class="sun-visual-card__top">
+        <div><span class="sun-step">02 <i aria-hidden="true"></i> SONČNA POT</span><h2 data-sun-heading><%= sun[:name] %> · <%= sl_date(date) %></h2></div>
+        <span class="sun-zone"><span aria-hidden="true"></span> Europe/Ljubljana</span>
+      </div>
+      <div class="sun-scene-wrap">
+        <svg class="sun-scene" viewBox="0 0 720 390" role="img" aria-labelledby="sun-scene-title sun-scene-description" data-sun-scene>
+          <title id="sun-scene-title">Pot Sonca za <%= sun[:name] %></title>
+          <desc id="sun-scene-description">Sonce se giblje po izračunani dnevni poti med vzhodom in zahodom. Čas lahko izberete z drsnikom.</desc>
+          <defs>
+            <linearGradient id="sun-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12375f"/><stop offset=".64" stop-color="#2872a4"/><stop offset="1" stop-color="#f0a58a"/></linearGradient>
+            <linearGradient id="sun-horizon" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#4578a2"/><stop offset="1" stop-color="#1a3d61"/></linearGradient>
+            <linearGradient id="sun-land" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#173b5d"/><stop offset="1" stop-color="#0e2947"/></linearGradient>
+            <radialGradient id="sun-corona" cx="50%" cy="50%"><stop stop-color="#fff7ce" stop-opacity=".98"/><stop offset=".18" stop-color="#ffe2a0" stop-opacity=".72"/><stop offset=".56" stop-color="#ffb277" stop-opacity=".26"/><stop offset="1" stop-color="#ff775e" stop-opacity="0"/></radialGradient>
+            <radialGradient id="sun-disc" cx="36%" cy="28%"><stop stop-color="#fffde5"/><stop offset=".32" stop-color="#ffd975"/><stop offset=".69" stop-color="#ff9a50"/><stop offset="1" stop-color="#e64a45"/></radialGradient>
+            <radialGradient id="sun-grain"><stop stop-color="#fff0b7" stop-opacity=".48"/><stop offset="1" stop-color="#dd433d" stop-opacity=".07"/></radialGradient>
+            <filter id="sun-soft-glow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="15"/></filter>
+            <filter id="sun-sharp-glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="4"/></filter>
+            <clipPath id="sun-disc-clip"><circle r="24"/></clipPath>
+          </defs>
+          <rect width="720" height="390" fill="url(#sun-sky)" data-sun-sky/>
+          <g class="sun-stars" fill="#fff"><circle cx="100" cy="75" r="1.4"/><circle cx="199" cy="49" r="1"/><circle cx="602" cy="68" r="1.6"/><circle cx="533" cy="104" r="1"/><circle cx="334" cy="48" r="1.2"/></g>
+          <path d="M30 286 Q118 268 207 282T390 280T575 278T690 284" fill="none" stroke="#fff" stroke-opacity=".14" stroke-width="1"/>
+          <path d="M38 300 Q152 282 270 293T487 291T685 298" fill="none" stroke="#ffe4bd" stroke-opacity=".56" stroke-width="1.2" stroke-dasharray="3 7" data-sun-horizon-line/>
+          <path d="M38 300 Q152 282 270 293T487 291T685 298 L720 390H0Z" fill="url(#sun-horizon)"/>
+          <path d="M0 327 75 296 122 315 204 278 268 313 348 289 411 319 487 280 548 311 621 287 720 321V390H0Z" fill="url(#sun-land)"/>
+          <path d="M204 278 226 290 238 286 251 302" fill="none" stroke="#9bbbd5" stroke-opacity=".42" stroke-width="2"/>
+          <path d="M487 280 507 292 519 287 537 302" fill="none" stroke="#9bbbd5" stroke-opacity=".34" stroke-width="2"/>
+          <path d="M0 351 Q106 327 200 352T387 350T561 344T720 354V390H0Z" fill="#0b2440" opacity=".7"/>
+          <path d="M360 88V300" stroke="#fff" stroke-opacity=".13" stroke-dasharray="3 7"/>
+          <path d="" fill="none" stroke="#fff0c2" stroke-opacity=".68" stroke-width="2.5" stroke-linecap="round" data-sun-path/>
+          <g class="sun-object" data-sun-object transform="translate(360 185)" aria-hidden="true">
+            <circle r="41" fill="url(#sun-corona)" class="sun-corona-pulse"/>
+            <circle r="28" fill="#ffb961" opacity=".68" filter="url(#sun-sharp-glow)"/>
+            <g class="sun-flare" fill="none" stroke="#fff1c8" stroke-linecap="round"><path d="M0-34c-2-11 4-13 6-19m-32 24c-11-4-16-1-20 4m47 20c8 3 14 2 19-3m-35 20c3 9 1 13-4 18" stroke-width="2.2" opacity=".78"/></g>
+            <circle r="24" fill="url(#sun-disc)"/>
+        <g clip-path="url(#sun-disc-clip)"><image href="/images/solar/sdo-hmiic-photosphere-2026-10-21.jpg" x="-25.6" y="-25.6" width="51.2" height="51.2" preserveAspectRatio="xMidYMid slice"/><circle r="24" fill="url(#sun-disc)" opacity=".13"/><circle r="24" fill="url(#sun-grain)" opacity=".3"/>
+              <path d="M-17-7c6-5 11-5 15-1m8 14c4-4 9-4 13-1m-24-20c5-2 8-2 12 0" fill="none" stroke="#fff5ce" stroke-width="1.4" stroke-linecap="round" opacity=".5"/>
+              <ellipse cx="-7" cy="-3" rx="2.1" ry="1.2" fill="#e85d45" opacity=".55"/><ellipse cx="9" cy="8" rx="2.6" ry="1.3" fill="#e85d45" opacity=".4"/>
+            </g>
+            <circle r="25" fill="none" stroke="#fff3cf" stroke-opacity=".68" stroke-width=".8"/>
+          </g>
+          <g class="sun-scene-labels" fill="#f4f8fc" font-family="Avenir, 'Avenir Next', system-ui, sans-serif" font-size="12" font-weight="600"><text x="40" y="323">VZHOD</text><text x="625" y="323">ZAHOD</text><text x="360" y="328" text-anchor="middle">JUG · SONČNO POLDNE</text></g>
+          <g data-sun-pointer transform="translate(360 240)"><circle r="7" fill="#fff" stroke="#c92f45" stroke-width="3"/><path d="M0 9v14" stroke="#fff" stroke-width="2" stroke-linecap="round"/></g>
+        </svg>
+      </div>
+      <div class="sun-timeline">
+        <div class="sun-timeline__meta"><span>Izbrana ura</span><output data-sun-clock aria-live="polite">—:—</output><span class="sun-time-note">po slovenskem času</span></div>
+        <label class="sr-only" for="sun-time">Izberite čas za prikaz položaja Sonca</label>
+        <input id="sun-time" type="range" min="0" max="1439" step="5" value="720" data-sun-time>
+        <div class="sun-timeline__ends"><span>00.00 · noč</span><span>12.00 · poldne</span><span>23.55 · noč</span></div>
+        <div class="sun-play-row"><p data-sun-position role="status" aria-live="polite">Izračunani položaj Sonca</p><button type="button" data-sun-play aria-pressed="false"><span aria-hidden="true">▶</span> Predvajaj dnevno pot</button></div>
+      </div>
+      <p class="sun-scene-note">Pot je geometrijsko izračunana za izbrani datum in koordinate; griči, stavbe, oblačnost in lokalni relief niso vključeni. Površinska fotografija: NASA/SDO HMI Continuum, 21. 10. 2026.</p>
+    </div>
+
+    <aside class="sun-day-card" aria-label="Sončni časi in dnevna svetloba">
+      <div class="sun-day-card__head"><span class="sun-step">03 <i aria-hidden="true"></i> SONČNI ČASI ZA <b data-sun-city-name><%= sun[:name] %></b></span><span class="sun-day-number" data-sun-day-number><%= sun[:minutes] / 60 %><small>h</small> <%= (sun[:minutes] % 60) %><small>min svetlobe</small></span></div>
+      <div class="sun-event-list">
+        <div class="sun-event sun-event--twilight"><span class="sun-event__icon" aria-hidden="true">◌</span><div><small>Jutranji civilni mrak</small><strong data-sun-value="civil-dawn"><%= sun[:civil_dawn].strftime('%H:%M') %></strong></div><small>–6°</small></div>
+        <div class="sun-event sun-event--rise"><span class="sun-event__icon" aria-hidden="true">↗</span><div><small>Sončni vzhod</small><strong data-sun-value="sunrise"><%= sun[:rise].strftime('%H:%M') %></strong></div><small>obzorje</small></div>
+        <div class="sun-event sun-event--golden"><span class="sun-event__icon" aria-hidden="true">✦</span><div><small>Jutranja zlata ura</small><strong><span data-sun-value="golden-morning-start"><%= sun[:golden_morning_start].strftime('%H:%M') %></span>–<span data-sun-value="golden-morning-end"><%= sun[:golden_morning_end].strftime('%H:%M') %></span></strong></div><small>−4° do +6°</small></div>
+        <div class="sun-event sun-event--noon"><span class="sun-event__icon" aria-hidden="true">☼</span><div><small>Sončno poldne</small><strong data-sun-value="solar-noon"><%= sun[:solar_noon].strftime('%H:%M') %></strong></div><small>najvišja lega</small></div>
+        <div class="sun-event sun-event--golden"><span class="sun-event__icon" aria-hidden="true">✦</span><div><small>Večerna zlata ura</small><strong><span data-sun-value="golden-evening-start"><%= sun[:golden_evening_start].strftime('%H:%M') %></span>–<span data-sun-value="golden-evening-end"><%= sun[:golden_evening_end].strftime('%H:%M') %></span></strong></div><small>+6° do −4°</small></div>
+        <div class="sun-event sun-event--set"><span class="sun-event__icon" aria-hidden="true">↘</span><div><small>Sončni zahod</small><strong data-sun-value="sunset"><%= sun[:set].strftime('%H:%M') %></strong></div><small>obzorje</small></div>
+        <div class="sun-event sun-event--twilight"><span class="sun-event__icon" aria-hidden="true">◌</span><div><small>Večerni civilni mrak</small><strong data-sun-value="civil-dusk"><%= sun[:civil_dusk].strftime('%H:%M') %></strong></div><small>–6°</small></div>
+      </div>
+      <p class="sun-date-caption" data-sun-date-caption><%= sl_date(date) %> · <%= sun[:name] %></p>
+      <button class="sun-share" type="button" data-sun-share><span aria-hidden="true">↗</span> Kopiraj povezavo do izračuna</button>
+    </aside>
+  </div>
+
+  <details class="sun-method">
+    <summary>Kako so izračunani sončni časi?</summary>
+    <div><p>Izračun Sončevega navideznega položaja temelji na Meeusovih astronomskih enačbah, ki jih kot osnovo navaja tudi NOAA; dogodek se določi z izračunom prehoda čez izbrano višino obzorja. Vzhod in zahod uporabljata standardno višino −0,833° (približek atmosferskega loma in navideznega polmera Sonca); rezultati so zaokroženi na minuto. Zlata ura je prikazana med višinama Sonca −4° in +6°, civilni mrak pa do −6°.</p>
+    <p>Časovni pas je <code>Europe/Ljubljana</code>, zato se poletni in zimski čas upoštevata za vsak datum posebej. Koordinate so iz <a href="https://www.gov.si/assets/ministrstva/MOP/Dokumenti/Urbani-razvoj/naselja_s_statusom_mesta.pdf" rel="noopener">uradnega seznama slovenskih naselij s statusom mesta</a>. Sončeva površinska slika je opazovanje <a href="https://sdo.gsfc.nasa.gov/data/channels.php" rel="noopener">NASA/SDO HMI Continuum</a> z dne 21. oktobra 2026; prikazuje izmerjeno fotosfero, ne napovedi za izbrani datum. NOAA pojasnjuje uporabljeno astronomsko osnovo v <a href="https://gml.noaa.gov/grad/solcalc/calcdetails.html" rel="noopener">Solar Calculation Details</a>; časi so primerjani z <a href="https://aa.usno.navy.mil/data/api.html" rel="noopener">USNO-jevo astronomsko API-referenco</a>. Izračunano obzorje je geometrijsko; lokalni teren, nadmorska višina, vreme in dejanski lom svetlobe lahko opazovani trenutek nekoliko spremenijo.</p></div>
+  </details>
+</section>
+
+<% if page_path == '/soncni-vzhod-in-zahod/' %>
+  <section class="sun-city-section" aria-labelledby="sun-cities-title">
+    <div class="sun-city-heading"><div><span class="sun-step">04 <i aria-hidden="true"></i> PO MESTIH</span><h2 id="sun-cities-title">Sončni časi v vseh slovenskih mestih</h2><p>Izberite mesto za lasten dnevni lok, vzhod, zahod in trajanje svetlega dela dneva.</p></div>
+      <label class="sun-city-search"><span class="sr-only">Filtrirajte seznam mest</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.4"/><path d="m15.5 15.5 5 5"/></svg><input type="search" placeholder="Poiščite mesto …" autocomplete="off" data-sun-city-filter></label></div>
+    <p class="sun-city-count" data-sun-city-count>69 mest</p>
+    <div class="sun-city-grid" data-sun-city-grid>
+      <% city_names.each do |id, values| %>
+        <a class="sun-city-link" href="/soncni-vzhod-in-zahod/<%= id %>/" data-city-name="<%= values[0].downcase %>">
+          <span class="sun-city-link__mark" aria-hidden="true"><svg viewBox="0 0 38 38"><path d="M6 29h26M8 27a11 11 0 0 1 22 0"/><circle cx="19" cy="18" r="4.6"/><path d="M19 4v3m-10.6.4 2.1 2.1m17-2.1-2.1 2.1M4.8 18h3m22.4 0h3"/></svg></span>
+          <span><strong><%= values[0] %></strong><small><%= format('%.4f° N · %.4f° E', values[1], values[2]) %></small></span>
+          <span class="sun-city-link__arrow" aria-hidden="true">↗</span>
+        </a>
+      <% end %>
+    </div>
+    <p class="sun-city-empty" hidden data-sun-city-empty>Za iskani niz ni zadetkov. Poskusite z drugim imenom mesta.</p>
+  </section>
+<% else %>
+  <nav class="sun-city-neighbors" aria-label="Druga slovenska mesta">
+    <h2>Sončni časi še v drugih mestih</h2>
+    <% city_names.each do |id, values| %>
+      <% next if id == city_id %>
+      <a href="/soncni-vzhod-in-zahod/<%= id %>/"><%= values[0] %></a>
+    <% end %>
+    <a class="sun-city-neighbors__all" href="/soncni-vzhod-in-zahod/">Vseh 69 mest</a>
+  </nav>
+<% end %>

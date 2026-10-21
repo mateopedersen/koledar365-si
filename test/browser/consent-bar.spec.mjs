@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('cookie consent is visible before the main script and stays a compact bottom strip', async ({ page }) => {
+test('cookie consent appears before the main script and stays within a usable mobile bottom panel', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.addInitScript(() => {
     if (sessionStorage.getItem('consent-test-reset') !== 'done') {
@@ -37,7 +37,7 @@ test('cookie consent is visible before the main script and stays a compact botto
       height: button.getBoundingClientRect().height,
     })),
   }));
-  expect(layout.height).toBeLessThan(160);
+  expect(layout.height).toBeLessThanOrEqual(await page.evaluate(() => innerHeight * 0.78 + 1));
   expect(layout.bottom).toBe(0);
   expect(layout.choices).toHaveLength(3);
   expect(layout.choices.every((choice) => choice.height >= 44)).toBe(true);

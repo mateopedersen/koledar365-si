@@ -1,7 +1,8 @@
 require 'nokogiri'
 require 'json'
-paths=Page.order(:path).pluck(:path)+PersonName.order(:priority).limit(ENV.fetch('NAME_AUDIT_LIMIT','8561').to_i.clamp(1,8561)).map(&:path)+['/fotografije-in-licence/']
-known=Set.new(Page.pluck(:path)+PersonName.all.map(&:path)+['/','/isci/','/fotografije-in-licence/'])
+sun_city_paths=SunEngine::CITIES.keys.map { |city_id| "/soncni-vzhod-in-zahod/#{city_id}/" }
+paths=(Page.order(:path).pluck(:path)+sun_city_paths+PersonName.order(:priority).limit(ENV.fetch('NAME_AUDIT_LIMIT','8561').to_i.clamp(1,8561)).map(&:path)+['/fotografije-in-licence/']).uniq
+known=Set.new(Page.pluck(:path)+sun_city_paths+PersonName.all.map(&:path)+['/','/isci/','/fotografije-in-licence/'])
 session=ActionDispatch::Integration::Session.new(Rails.application)
 session.host! 'localhost'
 rows=[];issues=[];links=Set.new

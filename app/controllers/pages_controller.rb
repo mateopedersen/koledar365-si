@@ -13,9 +13,22 @@ class PagesController < ApplicationController
     return redirect_to("#{path}/",status: :moved_permanently) unless path.end_with?('/')
     @canonical=path
     @person=PersonName.find_by!(slug:path.split('/')[2]) if path.start_with?('/koledar-z-imenom/')&&path.split('/').length==3
-    @page=@person ? nil : Page.find_by!(path:path)
-    @noindex=(@person ? @person.status : @page.status)!='published'
-    @title=@person ? "Koledar z imenom #{@person.exact}" : @page.title
+    sun_city_match=path.match(%r{\A/soncni-vzhod-in-zahod/([a-z0-9-]+)/\z})
+    @sun_city_id=sun_city_match[1] if sun_city_match && SunEngine.city?(sun_city_match[1])
+    @page=@person ? nil : Page.find_by(path:path)
+    raise ActiveRecord::RecordNotFound unless @page || @person || @sun_city_id
+    @noindex=if @sun_city_id
+      false
+    else
+      (@person ? @person.status : @page.status)!='published'
+    end
+    @title=if @person
+      "Koledar z imenom #{@person.exact}"
+    elsif @sun_city_id
+      "Sončni vzhod in zahod – #{SunEngine::CITIES.fetch(@sun_city_id).first}"
+    else
+      @page.title
+    end
     @title='Ustvari svoj koledar – spletni urejevalnik' if path=='/ustvari-koledar/'
     if path=='/'
       @year=params[:year].present? ? @year : @today.year.clamp(2026,2030)
@@ -27,7 +40,14 @@ class PagesController < ApplicationController
     if path=='/prazniki/'
       @year=CalendarEngine::YEARS.include?(params[:year].to_i) ? params[:year].to_i : 2027
     end
-    @description=@person ? PageMetadata.name_description(@person) : PageMetadata.description(@page,year:@year)
+    @description=if @person
+      PageMetadata.name_description(@person)
+    elsif @sun_city_id
+      city_name=SunEngine::CITIES.fetch(@sun_city_id).first
+      "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto #{city_name}. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času."
+    else
+      PageMetadata.description(@page,year:@year)
+    end
     @selected=Date.iso8601(params[:date].to_s) rescue nil
     if path=='/'
       @month=[@month,10].max if @year==2026
@@ -102,6 +122,10 @@ class PagesController < ApplicationController
     raise ActiveRecord::RecordNotFound unless %w[pages names].include?(params[:kind])
     base=ENV.fetch('SITE_URL','https://koledar365.si')
     rows=params[:kind]=='names' ? PersonName.published.map { |n| [n.path,n.updated_at] } : Page.published.map { |p| [p.path,p.updated_at] }
+    if params[:kind]=='pages'
+      rows.concat(SunEngine::CITIES.keys.map { |city_id| ["/soncni-vzhod-in-zahod/#{city_id}/",Date.new(2026,10,21)] })
+      rows=rows.uniq { |path,_| path }
+    end
     rows << ['/fotografije-in-licence/',Date.new(2026,10,20)] if params[:kind]=='pages' && Page.published.exists?(path:'/')
     xml=Nokogiri::XML::Builder.new(encoding:'UTF-8') { |x| x.urlset(xmlns:'http://www.sitemaps.org/schemas/sitemap/0.9') { rows.each { |path,time| x.url { x.loc(base+path);x.lastmod(time.iso8601) } } } }
     render xml:xml.to_xml

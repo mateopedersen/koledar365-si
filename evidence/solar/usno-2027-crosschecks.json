@@ -1,0 +1,47 @@
+{
+  "source": "https://aa.usno.navy.mil/api/rstt/oneday",
+  "api_version": "4.0.1",
+  "retrieved_on": "2026-10-21",
+  "location": "Ljubljana",
+  "coordinates": [46.0511, 14.5051],
+  "time_zone": "Europe/Ljubljana",
+  "references": [
+    {
+      "date": "2027-01-15",
+      "daylight_saving": false,
+      "begin_civil_twilight": "07:07",
+      "sunrise": "07:40",
+      "solar_transit": "12:11",
+      "sunset": "16:43",
+      "end_civil_twilight": "17:16"
+    },
+    {
+      "date": "2027-07-15",
+      "daylight_saving": true,
+      "begin_civil_twilight": "04:48",
+      "sunrise": "05:25",
+      "solar_transit": "13:08",
+      "sunset": "20:50",
+      "end_civil_twilight": "21:27"
+    },
+    {
+      "date": "2027-03-28",
+      "daylight_saving": true,
+      "begin_civil_twilight": "06:20",
+      "sunrise": "06:50",
+      "solar_transit": "13:07",
+      "sunset": "19:25",
+      "end_civil_twilight": "19:55"
+    },
+    {
+      "date": "2027-10-31",
+      "daylight_saving": false,
+      "begin_civil_twilight": "06:09",
+      "sunrise": "06:41",
+      "solar_transit": "11:46",
+      "sunset": "16:50",
+      "end_civil_twilight": "17:21"
+    }
+  ],
+  "note": "USNO's independently calculated times are used as regression references. The implementation uses apparent solar coordinates and rounds calculated event times to the nearest minute; each displayed event is within one minute of these reference times."
+}

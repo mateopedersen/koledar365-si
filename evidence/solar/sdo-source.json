@@ -1,0 +1,11 @@
+{
+  "asset": "/images/solar/sdo-hmiic-photosphere-2026-10-21.jpg",
+  "source": "https://sdo.gsfc.nasa.gov/assets/img/latest/latest_512_HMIIC.jpg",
+  "documentation": "https://sdo.gsfc.nasa.gov/data/channels.php",
+  "attribution": "NASA/SDO HMI Continuum",
+  "captured_at_utc": "2026-10-21T04:00:00Z",
+  "retrieved_on": "2026-10-21",
+  "dimensions": [512, 512],
+  "sha256": "dc8ce71541f6c3adfa3fe0d9ac696481d8d5100e3c181fe93db07d2af69a7e56",
+  "scope": "A fixed observed photosphere texture inside the SVG sun disc. The selected date affects calculated local position and daylight times, not this photographed solar-surface sample."
+}
