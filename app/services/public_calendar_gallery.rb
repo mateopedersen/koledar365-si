@@ -27,7 +27,9 @@ class PublicCalendarGallery
   def self.index
     @index ||= JSON.parse(CATALOG.read).select do |row|
       options = row.fetch('options')
-      %w[annual monthly].include?(options['type']) && options['paper'] == 'A4' && options['orientation'] == 'portrait' && options['name'].blank? && options['notes'].blank? && options['entries'].blank?
+      collection_row = row['collection'] == 'calendar-2027-2030'
+      regular_row = options['paper'] == 'A4' && options['orientation'] == 'portrait' && options['name'].blank? && options['notes'].blank? && options['entries'].blank?
+      %w[annual monthly].include?(options['type']) && (collection_row || regular_row)
     end.group_by do |row|
       options = row.fetch('options')
       [options['type'], options['year'], options['type'] == 'monthly' ? options['month'] : nil]

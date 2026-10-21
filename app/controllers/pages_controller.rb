@@ -148,7 +148,8 @@ class PagesController < ApplicationController
   def sitemap_part
     raise ActiveRecord::RecordNotFound unless params[:kind]=='pages'
     base=ENV.fetch('SITE_URL','https://koledar365.si')
-    rows=Page.published.reject { |p| p.path.match?(REMOVED_NAME_PATHS) }.map { |p| [p.path,p.updated_at] }
+    page_rows=Page.published.reject { |p| p.path.match?(REMOVED_NAME_PATHS) }
+    rows=page_rows.map { |p| [p.path,p.updated_at] }
     if params[:kind]=='pages'
       rows.concat(SunEngine::CITIES.keys.map { |city_id| ["/soncni-vzhod-in-zahod/#{city_id}/",Date.new(2026,10,21)] })
       rows=rows.uniq { |path,_| path }
@@ -156,12 +157,23 @@ class PagesController < ApplicationController
     rows << ['/fotografije-in-licence/',Date.new(2026,10,20)] if params[:kind]=='pages' && Page.published.exists?(path:'/')
     xml=Nokogiri::XML::Builder.new(encoding:'UTF-8') do |x|
       x.urlset('xmlns'=>'http://www.sitemaps.org/schemas/sitemap/0.9','xmlns:image'=>'http://www.google.com/schemas/sitemap-image/1.1') do
-        rows.each do |path,time|
+          collection_pages=page_rows.select { |p| p.path.start_with?('/koledar/') && (2027..2030).cover?(p.year.to_i) }.index_by(&:path)
+          rows.each do |path,time|
           x.url do
             x.loc(base+path);x.lastmod(time.iso8601)
             x['image'].image { x['image'].loc(base+ClockChangeSchedule::IMAGE_PATH) } if path=='/premik-ure/'
             image=ExpansionCatalog.image(path)
             x['image'].image { x['image'].loc(base+image.fetch('path')) } if image
+              if (calendar_page=collection_pages[path])
+                PublicCalendarGallery.rows_for(year: calendar_page.year, month: calendar_page.month).each do |row|
+                  seo=row.fetch('collection_seo')
+                  x['image'].image do
+                    x['image'].loc(base+row.dig('files','webp'))
+                    x['image'].title(seo.fetch('title'))
+                    x['image'].caption(seo.fetch('alt'))
+                  end
+                end
+              end
           end
         end
       end

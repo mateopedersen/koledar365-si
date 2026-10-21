@@ -35,6 +35,9 @@ if current['payload_fingerprint']!=File.read('tmp/portable-fingerprint.txt').str
   end
   ENV['WASM_SOURCE']='tmp/browser/koledar365.wasm';run!('ruby','script/package_browser.rb')
 end
+# Make the replacement catalogue and immutable image assets available to the
+# renderer before it generates the 52 public gallery pages and image sitemap.
+run!(ENV.fetch('PYTHON_BIN','python3'),'script/prepare_calendar_collection.py')
 run!('bundle','exec','ruby','script/export_pages.rb')
 run!('bundle','exec','ruby','script/build_admin_page.rb')
 run!('bundle','exec','ruby','script/package_social.rb')

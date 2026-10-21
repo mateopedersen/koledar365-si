@@ -20,6 +20,7 @@ on:
       - 'public/images/payments/**'
       - 'public/lunar/**'
       - 'public/prenosi/lunin-koledar/**'
+      - 'data/calendar-collection/**'
       - 'public/slike/lunin-koledar/**'
       - 'public/premik-ure/**'
       - 'public/images/premik-ure/**'

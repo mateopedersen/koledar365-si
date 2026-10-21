@@ -13,6 +13,8 @@ Dir[site.join('**/*.html')].sort.each do |file|
  fail_with.call('Missing title or description') unless doc.at_css('title')&.text.to_s.length>0 && doc.at_css('meta[name=description]')&.[]('content').to_s.length>0
  preview_images=doc.css('img[src^="/prenosi/"][src*="/predogled.webp"],img[src^="/predogled/"],img[data-static-preview^="/free/samples/"],img[data-preview-design]')
  fail_with.call('Calendar design previews must declare the optimized 212 × 300 dimensions') unless preview_images.all? { |node|node['width']=='212'&&node['height']=='300' }
+ collection_previews=doc.css('img[src^="/koledarji/2027-2030/preview/"]')
+ fail_with.call('Collection thumbnails must declare their full-page 300 px dimensions') unless collection_previews.all? { |node|node['width'].to_i<=300&&node['height'].to_i<=300&&node['width'].to_i.positive?&&node['height'].to_i.positive? }
  fail_with.call('Optimized preview URLs must bypass old immutable CDN cache entries') unless preview_images.all? do |node|
   [node['src'],node['data-static-preview']].compact.any? do |url|
    if url.start_with?('/prenosi/')
@@ -64,7 +66,11 @@ Dir[site.join('**/*.html')].sort.each do |file|
    fail_with.call('Weekly workspace module must survive static export') unless doc.at_css('script[type=module][src="/calendar-tools/experience.mjs"]') && site.join('calendar-tools/experience.mjs').file?
   else
    fail_with.call('Gallery must share a workspace with its calendar or settings') unless doc.at_css('body.gallery-page .download-workspace > .gallery-context #gallery-context-content') && gallery.ancestors.any? { |parent|parent['class'].to_s.split.include?('download-workspace') }
-   fail_with.call('Expected one practical download paragraph and an accessible context control') unless doc.css('.page-heading > p').size==1 && doc.at_css('.page-heading > p').text.include?('600 ppi') && doc.at_css('[data-context-expand][aria-expanded=false][aria-controls=gallery-context-content]')
+   description=doc.at_css('.page-heading > p')&.text.to_s
+   fail_with.call('Expected one practical download paragraph and an accessible context control') unless doc.css('.page-heading > p').size==1 && (description.include?('600 ppi')||description.include?('600 dpi')) && doc.at_css('[data-context-expand][aria-expanded=false][aria-controls=gallery-context-content]')
+   if relative.match?(%r{\Akoledar/20(?:27|28|29|30)/})
+    fail_with.call('Collection gallery description must state A3, CMYK FOGRA39 and 600 dpi') unless description.include?('A3')&&description.include?('CMYK FOGRA39')&&description.include?('600 dpi')
+   end
   end
   fail_with.call('Gallery must stay open and contain all 15 designs') unless gallery.css('[data-calendar-design],.design-card').size==15 && !gallery.ancestors.any? { |parent|parent.name=='details'||parent.key?('hidden') }
   has_gallery_styles=doc.css('link[rel=stylesheet]').any? do |node|
@@ -106,7 +112,14 @@ Dir[site.join('**/*.html')].sort.each do |file|
    end
    previews=gallery.css('.calendar-design-image img')
    fail_with.call('Inline previews do not match the actual download files') unless previews.map { |node|URI(node['src']).path }.sort==expected.map { |row|row.fetch('files').fetch('preview') }.sort
-   fail_with.call('Gallery previews must use the optimized 212 × 300 thumbnail dimensions') unless previews.all? { |node|node['width']=='212'&&node['height']=='300' }
+   if expected.all? { |row|row['collection']=='calendar-2027-2030' }
+    expected_by_preview=expected.to_h { |row|[row.dig('files','preview'),[row['preview_width'].to_s,row['preview_height'].to_s]] }
+    fail_with.call('Collection preview dimensions do not match their uncropped full-page thumbnails') unless previews.all? { |node|expected_by_preview[URI(node['src']).path]==[node['width'],node['height']] }
+    fail_with.call('Collection cards must preserve supplied Slovene alt text') unless previews.all? { |node|expected.any? { |row|row.dig('files','preview')==URI(node['src']).path&&row.dig('collection_seo','alt')==node['alt'] } }
+    fail_with.call('Collection gallery must describe A3 orientation and full-resolution downloads') unless gallery.css('.calendar-design-meta').all? { |node|node.text.include?('A3')&&node.text.include?('600 dpi') }
+   else
+    fail_with.call('Gallery previews must use the optimized 212 × 300 thumbnail dimensions') unless previews.all? { |node|node['width']=='212'&&node['height']=='300' }
+   end
   end
  end
  doc.css('source[srcset],img[srcset]').each do |node|

@@ -32,15 +32,21 @@ class CalendarNavigationTest < ActionDispatch::IntegrationTest
    assert_select '.download-workspace > .calendar-context [data-context-expand][aria-expanded=false]'
    assert_select '.context-actions a[href="#calendar-designs"]','15 predlog za prenos'
    assert_select '.panel .calendar',minimum:1
+   expected=PublicCalendarGallery.rows_for(year:year,month:month)
    assert_select '#calendar-designs[data-gallery-year="'+year.to_s+'"][data-gallery-type="'+(month ? 'monthly' : 'annual')+'"]' do
     assert_select '[data-calendar-design]',count:15
-    assert_select 'img[src^="/prenosi/"]',count:15
+    assert_select 'img[src^="/koledarji/2027-2030/preview/"]',count:15 do |images|
+     assert_equal expected.map { |row|row.dig('files','preview') }.sort,images.map { |image|image['src'] }.sort
+     assert images.all? { |image|image['alt'].present?&&image['title'].present? }
+    end
     %w[pdf webp].each do |format|
      assert_select 'a[data-calendar-download="'+format+'"][download]',count:15 do |links|
       assert_equal 15,links.map { |a|a['href'] }.uniq.size
-      links.each { |a|assert_includes a['href'],month ? "monthly-#{year}-#{'%02d' % month}-" : "annual-#{year}-" }
+      assert_equal expected.map { |row|row.dig('files',format) }.sort,links.map { |a|a['href'] }.sort
+      links.each { |a|assert_includes a['href'],"/original/#{year}/";assert a['href'].end_with?(format=='pdf' ? '.pdf' : '.webp') }
      end
     end
+    assert_select '.calendar-design-meta',text:/A3.*600 dpi/,count:15
     assert_select 'a[href^="/koledar-za-tiskanje/"]',count:0
    end
    assert_operator response.body.index('class="panel gallery-context'),:<,response.body.index('id="calendar-designs"')
@@ -81,15 +87,15 @@ class CalendarNavigationTest < ActionDispatch::IntegrationTest
   assert_select '.design-card .calendar-download-action__copy small','Prenesi'
  end
  test 'gallery download URLs serve real files and reject unknown artifacts' do
-  row=PublicCalendarGallery.rows_for(year:2028,month:2).find { |r|r.dig('files','webp').end_with?('.zip') }
-  get row.fetch('files').fetch('pdf')
-  assert_response :success
-  assert_equal 'application/pdf',response.media_type
-  assert response.body.start_with?('%PDF-')
-  get row.fetch('files').fetch('webp')
-  assert_response :success
-  assert_equal 'application/zip',response.media_type
-  assert response.body.start_with?("PK")
+  row=PublicCalendarGallery.rows_for(year:2028,month:2).first
+  pdf=PublicCalendarGallery.public_file(row.dig('files','pdf'))
+  webp=PublicCalendarGallery.public_file(row.dig('files','webp'))
+  assert_equal 'application/pdf',Rack::Mime.mime_type('.pdf')
+  assert_equal 'image/webp',Rack::Mime.mime_type('.webp')
+  assert pdf.file? && pdf.binread(5)=='%PDF-'
+  header=webp.binread(12)
+  assert webp.file? && header.start_with?('RIFF') && header.byteslice(8,4)=='WEBP'
+  assert_equal 'A3',row.dig('options','paper')
   get '/prenosi/'+('0'*64)+'/unknown.pdf'
   assert_response :not_found
  end
