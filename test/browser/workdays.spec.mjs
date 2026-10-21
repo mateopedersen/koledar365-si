@@ -118,3 +118,25 @@ test('workday calculator handles both modes, shares settings, and fits mobile', 
     expect(layout.scroll, `workday calculator horizontal overflow at ${width}px`).toBeLessThanOrEqual(width);
   }
 });
+
+test('exported calculator loads its script and calculates around a Slovenian holiday', async ({ page }) => {
+  await page.goto('/kalkulator-delovnih-dni/');
+  await expect(page.locator('[data-wdc-mode="range"]')).toHaveAttribute('aria-selected', 'true');
+  const scripts = await page.evaluate(() => JSON.parse(document.querySelector('#k365-static-config').textContent).scripts);
+  expect(scripts.some((src) => src.includes('/workdays-') && src.endsWith('.js'))).toBe(true);
+
+  await page.locator('[data-wdc-form="range"] input[name="from"]').fill('2027-04-26');
+  await page.locator('[data-wdc-form="range"] input[name="to"]').fill('2027-04-27');
+  await page.locator('[data-wdc-form="range"] [type="submit"]').click();
+  await expect(page.locator('[data-wdc-primary]')).toHaveText('1');
+  await expect(page.locator('[data-wdc-stat="hours"]')).toHaveText('8 ur');
+  await expect(page.locator('[data-wdc-stat="holidays"]')).toHaveText('1');
+  await expect(page.locator('[data-wdc-status]')).toHaveText('Izračun je pripravljen.');
+
+  await page.locator('[data-wdc-mode="shift"]').click();
+  await page.locator('[data-wdc-form="shift"] input[name="from"]').fill('2027-04-26');
+  await page.locator('[data-wdc-form="shift"] input[name="delta"]').fill('1');
+  await page.locator('[data-wdc-form="shift"] [type="submit"]').click();
+  await expect(page.locator('[data-wdc-primary]')).toContainText('28. april 2027');
+  await expect(page.locator('[data-wdc-status]')).toHaveText('Izračun je pripravljen.');
+});
