@@ -38,7 +38,7 @@ jobs:
         with:
           node-version: '24'
       - name: Weather and public download contracts
-        run: node script/test_weather_function.mjs && node script/test_city_detection.mjs && node script/test_public_catalog.mjs && node script/test_horoscope.mjs && node script/test_vacation_planner.cjs
+        run: node script/test_weather_function.mjs && node script/test_city_detection.mjs && node script/test_public_catalog.mjs && node script/test_horoscope.mjs && node script/test_vacation_planner.cjs && node script/test_family_planner.cjs && node --check app/assets/javascripts/family_planner.js && node --check app/assets/javascripts/family_planner_core.js
       - name: Cloudflare Pages Functions compiler compatibility
         run: npx --yes wrangler@3.114.17 pages functions build functions --outdir=tmp/cloudflare-functions
       - name: Astronomical lunar date and phase data
