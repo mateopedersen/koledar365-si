@@ -16,8 +16,8 @@
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="<%= seo_title %>"><meta name="twitter:description" content="<%= @description %>"><meta name="twitter:image" content="<%= sharing_image[:url] %>">
 <% end %>
 <% if (schema=structured_data) %><script type="application/ld+json" nonce="<%= content_security_policy_nonce %>"><%= raw json_escape(schema.to_json) %></script><% end %>
-<%= csrf_meta_tags %><%= csp_meta_tag %><%= stylesheet_link_tag 'application', 'experience', 'slovenia', 'vector_identity' %><%= javascript_include_tag 'application','planners',defer:true %><% if @section=='home' %><%= stylesheet_link_tag 'city_card' %><%= javascript_include_tag 'city_card',defer:true %><% end %>
-<% if @section=='home' -%><% home_city=CityCatalog.default; home_image=WebImageCatalog.find(home_city.dig('photo','local_path')) %><link rel="preload" as="image" type="image/avif" imagesrcset="<%= home_image.fetch('avif_srcset') %>" imagesizes="<%= WebImageCatalog::CITY_SIZES %>" fetchpriority="high"><% end -%>
+<%= csrf_meta_tags %><%= csp_meta_tag %><%= stylesheet_link_tag 'application', 'experience', 'slovenia', 'vector_identity' %><%= javascript_include_tag 'application','planners',defer:true %><% if @section=='home' %><% city_image=WebImageCatalog.find(CityCatalog.default.dig('photo','local_path')) %><% if city_image %><link rel="preload" as="image" type="image/avif" imagesrcset="<%= city_image['avif_srcset'] %>" imagesizes="<%= WebImageCatalog::CITY_SIZES %>" fetchpriority="high"><% end %><%= stylesheet_link_tag 'city_card' %><%= javascript_include_tag 'city_card',defer:true %><% end %>
+<% if @section=='home' -%><% home_city=CityCatalog.default; home_image=WebImageCatalog.find(home_city.dig('photo','local_path')) %><% if home_image %><link rel="preload" as="image" type="image/avif" imagesrcset="<%= home_image.fetch('avif_srcset') %>" imagesizes="<%= WebImageCatalog::CITY_SIZES %>" fetchpriority="high"><% end %><% end -%>
 <% if page_path == '/druzinski-planer/' %><%= stylesheet_link_tag 'family_planner' %><%= javascript_include_tag 'family_planner_core', 'family_planner', defer:true %><% end %>
 <% if @section=='sun' -%><%= stylesheet_link_tag 'sun' %><%= javascript_include_tag 'sun',defer:true %><% end -%>
 <% if page_path == '/datumski-kalkulator/' %><%= stylesheet_link_tag 'date_calculator' %><% end %>
@@ -26,6 +26,7 @@
 <% if @section=='horoscope' %><%= stylesheet_link_tag 'horoscope' %><script type="module" src="/horoscope/experience-v1.mjs"></script><% end %>
 <% if page_path == '/ustvari-koledar/' %><link rel="stylesheet" href="/studio/studio.css?v=20261020-1"><script type="module" src="/studio/studio.mjs?v=20261020-1"></script><% end %>
 <% if @section=='holidays' %><%= stylesheet_link_tag 'holidays' %><%= javascript_include_tag 'holidays',defer:true %><% end %>
+<% if page_path=='/delovni-dnevi/' && (2027..2030).cover?(@year) %><%= stylesheet_link_tag 'workdays' %><%= javascript_include_tag 'workdays',defer:true %><% end %>
 <% if @section=='observance' %><%= stylesheet_link_tag 'observances' %><% end %>
 <% if gallery_page? %><%= stylesheet_link_tag 'calendar_gallery' %><% end %>
 <% if page_path == '/razpored-izmen/' %><%= stylesheet_link_tag 'shift_schedule' %><%= javascript_include_tag 'shift_schedule',defer:true %><% end %>
