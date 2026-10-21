@@ -41,6 +41,25 @@ class SeoTest < ActionDispatch::IntegrationTest
     assert_includes response.body,'BEGIN:VCALENDAR'
     refute_includes response.body,'BEGIN:VEVENT'
   end
+  test 'sunrise hub and all 69 city pages render the interactive experience' do
+    get '/soncni-vzhod-in-zahod/'
+    assert_response :success
+    assert_select '[data-sun-city] option',count:69
+    assert_select '.sun-city-link',count:69
+    assert_select 'a[href="/soncni-vzhod-in-zahod/zrece/"]',minimum:1
+    assert_select '[data-sun-scene]'
+    assert_select 'script[src*="sun"]'
+
+    get '/soncni-vzhod-in-zahod/ajdovscina/',params:{date:'2027-07-15'}
+    assert_response :success
+    assert_select 'title',/Sončni vzhod in zahod – Ajdovščina/
+    assert_select 'link[rel=canonical][href="https://koledar365.si/soncni-vzhod-in-zahod/ajdovscina/"]'
+    assert_select '[data-sun-city] option[selected][value="ajdovscina"]'
+    assert_select '[data-sun-value="sunrise"]'
+
+    get '/soncni-vzhod-in-zahod/unknown-place/'
+    assert_response :not_found
+  end
   test 'legal pages contain an accessible nonmodal consent bar with opt in off' do
     get '/piskotki/'
     assert_response :success
