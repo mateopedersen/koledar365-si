@@ -1,0 +1,205 @@
+import {matchPublicCalendar} from './catalog-match.js';
+import {ljubljanaDate,horoscopeDisposition} from './date-context.js';
+import {normalizeSearchText,resultCategory,searchRecords} from './site-search.mjs';
+// Cloudflare Pages host adapter. Calendar rules and PDF composition remain Ruby.
+const nativeFetch=window.fetch.bind(window),params=new URLSearchParams(location.search);
+const $=selector=>document.querySelector(selector),$$=selector=>[...document.querySelectorAll(selector)];
+let worker,sequence=0,pending=new Map(),photos=new Map(),jobs=new Map(),registryPromise;
+const renderCache=new Map();
+async function renderResult(options){if(options.photo_token&&!photos.has(options.photo_token))throw Error('Fotografijo ponovno izberite. Po zaprtju strani ni več shranjena.');const sorted=value=>Array.isArray(value)?value.map(sorted):value&&typeof value==='object'?Object.fromEntries(Object.keys(value).sort().map(key=>[key,sorted(value[key])])):value;const key=JSON.stringify(sorted(options));if(!renderCache.has(key)){if(renderCache.size>=3)renderCache.delete(renderCache.keys().next().value);const work=call('/izvozi/',{options,photo:photos.get(options.photo_token)}).catch(error=>{renderCache.delete(key);throw error});renderCache.set(key,work)}return renderCache.get(key)}
+const urls=new Set();
+function objectUrl(blob){const url=URL.createObjectURL(blob);urls.add(url);return url}
+function bytes(base64){return Uint8Array.from(atob(base64),c=>c.charCodeAt(0))}
+function call(path,data){worker ||= new Worker('/free/ruby-worker.js');return new Promise((resolve,reject)=>{const id=++sequence;pending.set(id,{resolve,reject});worker.onmessage=e=>{const task=pending.get(e.data.id);if(!task)return;pending.delete(e.data.id);e.data.error?task.reject(Error(e.data.error)):task.resolve(e.data.result)};worker.onerror=()=>{for(const task of pending.values())task.reject(Error('Brskalnik ni mogel pripraviti izračuna. Osvežite stran in poskusite znova.'));pending.clear();worker.terminate();worker=null};worker.postMessage({id,path,data})})}
+const loadScript=src=>new Promise((resolve,reject)=>{const el=document.createElement('script');el.src=src;el.onload=resolve;el.onerror=()=>reject(Error('Datoteke ni mogoče naložiti.'));document.head.append(el)});
+let pdfLibrary;
+async function pdfDocument(pdf){pdfLibrary ||= await import('/free/vendor/pdf.min.mjs');pdfLibrary.GlobalWorkerOptions.workerSrc='/free/vendor/pdf.worker.min.mjs';return pdfLibrary.getDocument({data:pdf.slice(),isEvalSupported:false,wasmUrl:'/free/vendor/pdf-wasm/'}).promise}
+async function renderPage(document,index,scale){const page=await document.getPage(index),viewport=page.getViewport({scale}),canvas=window.document.createElement('canvas');canvas.width=Math.ceil(viewport.width);canvas.height=Math.ceil(viewport.height);const context=canvas.getContext('2d',{willReadFrequently:true});if(!context)throw Error('Brskalnik ne podpira slike te velikosti. Poskusite v namiznem brskalniku.');context.fillStyle='#fff';context.fillRect(0,0,canvas.width,canvas.height);await page.render({canvasContext:context,viewport,background:'rgb(255,255,255)'}).promise;return {canvas,context,page}}
+const canvasBlob=(canvas,type='image/png')=>new Promise((resolve,reject)=>canvas.toBlob(value=>value?resolve(value):reject(Error('Slike ni mogoče pripraviti. Poskusite v namiznem brskalniku.')),type));
+async function sha(value){return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',value)),v=>v.toString(16).padStart(2,'0')).join('')}
+function iccWebp(buffer,profile){const original=new Uint8Array(buffer),icc=new Uint8Array(profile),view=new DataView(original.buffer);const chunks=[];let flags=0,w=0,h=0;for(let at=12;at<original.length;){const length=view.getUint32(at+4,true),name=String.fromCharCode(...original.slice(at,at+4));if(name==='VP8X'){flags=original[at+8];w=original[at+12]|original[at+13]<<8|original[at+14]<<16;h=original[at+15]|original[at+16]<<8|original[at+17]<<16}else if(name!=='ICCP')chunks.push(original.slice(at,at+8+length+(length&1)));at+=8+length+(length&1)}return {original,chunks,flags,w,h,icc}}
+function addIcc(buffer,profile,width,height){const info=iccWebp(buffer,profile),header=new Uint8Array(30),v=new DataView(header.buffer);header.set(new TextEncoder().encode('RIFF'),0);header.set(new TextEncoder().encode('WEBPVP8X'),8);v.setUint32(16,10,true);header[20]=info.flags|0x20;const w=width-1,h=height-1;for(let i=0;i<3;i++){header[24+i]=(w>>(8*i))&255;header[27+i]=(h>>(8*i))&255}const icc=new Uint8Array(8+profile.byteLength+(profile.byteLength&1));icc.set(new TextEncoder().encode('ICCP'));new DataView(icc.buffer).setUint32(4,profile.byteLength,true);icc.set(new Uint8Array(profile),8);const total=30+icc.length+info.chunks.reduce((n,x)=>n+x.length,0);v.setUint32(4,total-8,true);return new Blob([header,icc,...info.chunks],{type:'image/webp'})}
+async function rasterExport(result,pdf){
+ const document=await pdfDocument(pdf),pageCount=document.numPages;const {default:encode}=await import('/free/vendor/webp/encode.js');if(!window.JSZip)await loadScript('/free/vendor/jszip.min.js');const zip=new JSZip(),profile=await nativeFetch('/free/srgb.icc').then(r=>r.arrayBuffer());const pages=[],blobs=[];
+ for(let index=1;index<=document.numPages;index++){
+  const {canvas,context,page}=await renderPage(document,index,600/72);
+  const pixels=context.getImageData(0,0,canvas.width,canvas.height);
+  if(result.identity.color_mode==='monochrome_bw'){for(let i=0;i<pixels.data.length;i+=4){if(pixels.data[i]!==pixels.data[i+1]||pixels.data[i]!==pixels.data[i+2])throw Error('Črno-bela predloga vsebuje barvne pike. Prenesite PDF.')}}
+  const encoded=await encode(pixels,{lossless:1,exact:1,method:4,thread_level:0,low_memory:1});
+  const blob=addIcc(encoded,profile,canvas.width,canvas.height);
+  const decoded=await createImageBitmap(blob);if(decoded.width!==canvas.width||decoded.height!==canvas.height)throw Error('Velikost pretvorjene slike ni pravilna.');context.drawImage(decoded,0,0);decoded.close();const check=context.getImageData(0,0,canvas.width,canvas.height);for(let i=0;i<check.data.length;i++){if(check.data[i]!==pixels.data[i])throw Error('Pretvorjena slika se ne ujema z izvirnim PDF-jem. Prenesite PDF.')}
+  const filename=result.filename+(document.numPages>1?'-p'+String(index).padStart(3,'0'):'')+'.webp';
+  pages.push({page_index:index,filename,sha256:await sha(await blob.arrayBuffer()),width_px:canvas.width,height_px:canvas.height,width_mm:(page.view[2]-page.view[0])*25.4/72,height_mm:(page.view[3]-page.view[1])*25.4/72,nominal_ppi:600,color_mode:result.identity.color_mode});blobs.push(blob);zip.file(filename,blob);canvas.width=canvas.height=1;
+ }
+ const manifest={contract_version:'1.1',identity_fields:result.identity,pdf_filename:result.filename+'.pdf',pdf_sha256:await sha(pdf),page_count:document.numPages,pages,source_data_version:result.source_version,template_version:'2.0.1',brand:'Koledar365 · koledar365.si',generated_at:new Date().toISOString(),color_space:'sRGB',encoding:'lossless WebP',fonts_used:result.proof.fonts_used,print_instruction_sl:'Za tisk izberite PDF in dejansko velikost (100 %). WebP je izrisan iz istega PDF-ja pri 600 ppi.'};
+ zip.file('manifest.json',JSON.stringify(manifest,null,2));zip.file('README.txt','Koledar365 · koledar365.si\n\nVse strani so izrisane iz istega PDF-ja pri 600 ppi. Barvni prostor sRGB. Za tisk izberite PDF in merilo 100 %.\nVrstni red p001, p002 …; podatki in kontrolne vsote: manifest.json.');await document.destroy();return {webp:objectUrl(pageCount===1?blobs[0]:await zip.generateAsync({type:'blob',compression:'STORE'})),manifest:objectUrl(new Blob([JSON.stringify(manifest,null,2)],{type:'application/json'}))};
+}
+async function photoUpload(data){const file=data.get('photo');if(!file||file.size>20*1024*1024||!['image/jpeg','image/png','image/webp'].includes(file.type))throw Error('Izberite fotografijo JPEG, PNG ali WebP do 20 MB.');const image=await createImageBitmap(file);if(image.width<900||image.height<600||image.width*image.height>40000000)throw Error('Fotografija potrebuje najmanj 900 × 600 pik in največ 40 milijonov pik.');const ratio=Math.min(1,1800/Math.max(image.width,image.height)),canvas=document.createElement('canvas');canvas.width=Math.round(image.width*ratio);canvas.height=Math.round(image.height*ratio);const context=canvas.getContext('2d',{willReadFrequently:true});context.fillStyle='#fff';context.fillRect(0,0,canvas.width,canvas.height);context.drawImage(image,0,0,canvas.width,canvas.height);image.close();const color=canvas.toDataURL('image/jpeg',.96).split(',')[1],pixels=context.getImageData(0,0,canvas.width,canvas.height);for(let i=0;i<pixels.data.length;i+=4){const gray=Math.round(.2126*pixels.data[i]+.7152*pixels.data[i+1]+.0722*pixels.data[i+2]);pixels.data[i]=pixels.data[i+1]=pixels.data[i+2]=gray}context.putImageData(pixels,0,0);const gray=canvas.toDataURL('image/jpeg',.96).split(',')[1],token=crypto.randomUUID();photos.clear();photos.set(token,{color,gray});const result={token,width:canvas.width,height:canvas.height};canvas.width=canvas.height=1;return result}
+async function registry(){return registryPromise ||= (async()=>{for(let attempt=0;attempt<2;attempt++){try{const response=await nativeFetch('/free/catalog.json');if(!response.ok)throw Error();return await response.json()}catch{if(attempt===1)throw Error('Kataloga trenutno ni mogoče naložiti. Poskusite znova.');await new Promise(resolve=>setTimeout(resolve,300))}}})().catch(error=>{registryPromise=null;throw error})}
+async function exportCalendar(data){const options=data.options,personal=options.name||options.notes||options.entries?.length||options.photo_token;const standard=!personal&&(!options.paper||options.paper==='A4')&&(!options.orientation||options.orientation==='portrait')&&!options.undated&&!options.blank_layout&&!options.ruling;const entries=standard&&options.type!=='name'?await registry():[];const match=standard&&entries.find(row=>matchPublicCalendar(row,options));
+ const id=String(++sequence);if(match){jobs.set(id,{id,status:'complete',files:match.files});return {id,status:'complete',url:'/izvozi/'+id+'/'}}
+ const result=await renderResult(options),pdf=bytes(result.pdf),files={pdf:objectUrl(new Blob([pdf],{type:'application/pdf'}))};
+ if(data.format==='webp')Object.assign(files,await rasterExport(result,pdf));jobs.set(id,{id,status:'complete',files,filenames:{pdf:result.filename+'.pdf',webp:result.filename+(result.proof.pages>1?'-multipage-webp-600ppi.zip':'.webp')}});return {id,status:'complete',url:'/izvozi/'+id+'/'};
+}
+function response(body,status=200){return new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store'}})}
+window.fetch=async(input,init={})=>{const url=new URL(typeof input==='string'?input:input.url,location.href);if(url.origin!==location.origin)return nativeFetch(input,init);const path=url.pathname;
+ try{
+  if(/^\/izvozi\/\d+\/$/.test(path)&&!init.method){const job=jobs.get(path.split('/')[2]);return response(job||{error:'Izvoz ni več na voljo. Pripravite ga znova.'},job?200:404)}
+  if(init.method?.toUpperCase()!=='POST')return nativeFetch(input,init);
+  if(path==='/fotografija/')return response(await photoUpload(init.body),201);
+  const data=JSON.parse(init.body||'{}');if(path==='/izvozi/')return response(await exportCalendar(data),202);
+  if(path==='/zasebni-predogled/'){const result=await renderResult(data.options),document=await pdfDocument(bytes(result.pdf)),page=await document.getPage(1),{canvas}=await renderPage(document,1,1000/Math.max(...page.view.slice(2))),blob=await canvasBlob(canvas);canvas.width=canvas.height=1;await document.destroy();return new Response(blob,{headers:{'Content-Type':'image/png','X-Page-Count':String(result.proof.pages),'Cache-Control':'no-store'}})}
+  if(['/izracun/','/ics/izvoz/','/ics/uvoz/','/planer/ics/'].includes(path)){const result=await call(path,data);return result.binary?new Response(bytes(result.binary),{headers:{'Content-Type':result.mime,'Cache-Control':'no-store'}}):response(result)}
+  return nativeFetch(input,init);
+ }catch(error){return response({error:error.message||'Zahteva ni uspela.'},422)}
+};
+const previewTasks=new WeakMap();
+const previewObserver=new IntersectionObserver(entries=>{for(const entry of entries){if(!entry.isIntersecting)continue;previewObserver.unobserve(entry.target);const task=previewTasks.get(entry.target);if(task)task().catch(()=>{entry.target.alt='Predogleda ni bilo mogoče pripraviti. Uporabite gumb Moj predogled ali prenesite PDF.'})}},{rootMargin:'150px'});
+window.K365Free={preview(image,options){
+ const key=JSON.stringify(options);if(image.dataset.freePreviewKey===key)return;image.dataset.freePreviewKey=key;
+ if(image.dataset.objectUrl){URL.revokeObjectURL(image.dataset.objectUrl);delete image.dataset.objectUrl}
+ previewTasks.set(image,async()=>{
+  const eligible=!options.name&&!options.photo_token&&!options.notes&&options.paper==='A4'&&options.orientation==='portrait'&&!['blank','daily','weekly','shift','school','family','name'].includes(options.type);const rows=eligible?await registry():[],match=eligible&&rows.find(row=>matchPublicCalendar(row,options));
+  if(match){image.src=match.files.preview;image.alt=options.year+' – '+options.design+' – predogled izbranega koledarja';return}
+  const result=await renderResult({...options,entries:[]}),pdf=await pdfDocument(bytes(result.pdf)),page=await pdf.getPage(1),{canvas}=await renderPage(pdf,1,600/Math.max(...page.view.slice(2))),blob=await canvasBlob(canvas);canvas.width=canvas.height=1;await pdf.destroy();
+  if(image.dataset.freePreviewKey===key&&!image.dataset.objectUrl){image.src=objectUrl(blob);image.alt=(options.name?'Ime: '+options.name+'. ':'')+options.year+' – '+options.design+' – stran 1 od '+result.proof.pages}
+ });previewObserver.observe(image);
+}};
+async function prepare(){
+ const embedded=$('#k365-static-config');const config=embedded?JSON.parse(embedded.textContent):await nativeFetch('/free/assets.json').then(r=>r.json());
+ const targetYear=Number(params.get('year')),originalMonth=$('.important-controls form')?.elements.month.value;
+ if((targetYear>=2027&&targetYear<=2030||targetYear===2026&&['/koledar/','/delovni-dnevi/'].includes(location.pathname))&&['/lunin-koledar/','/delovni-dnevi/','/pomembni-dnevi/','/prazniki/','/podaljsani-vikendi/','/koledar/'].includes(location.pathname)){const target=location.pathname+targetYear+'/';const r=await nativeFetch(target);if(r.ok){const doc=new DOMParser().parseFromString(await r.text(),'text/html');const main=doc.querySelector('#vsebina');if(main){$('#vsebina').replaceChildren(...main.childNodes);adoptHead(doc)}}if(originalMonth&&originalMonth!=='0'&&!params.has('month'))params.set('month',originalMonth)}
+ const dateParts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Ljubljana',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const part=name=>dateParts.find(value=>value.type===name).value;const today=part('year')+'-'+part('month')+'-'+part('day');let year=Number(params.get('year')||today.slice(0,4)),month=Number(params.get('month')||today.slice(5,7));year=Math.min(2030,Math.max(2026,year||2027));month=Math.min(12,Math.max(1,month||1));const view=['month','week','day','list','year'].includes(params.get('view'))?params.get('view'):'month';
+ let selected=params.get('date');const validSelected=/^\d{4}-\d{2}-\d{2}$/.test(selected||'')&&Number.isFinite(Date.parse(selected+'T12:00Z'))&&new Date(selected+'T12:00Z').toISOString().slice(0,10)===selected&&selected>='2026-01-01'&&selected<='2030-12-31';if(!validSelected)selected=year===Number(today.slice(0,4))&&month===Number(today.slice(5,7))?today:`${year}-${String(month).padStart(2,'0')}-01`;if(location.pathname==='/'&&validSelected){year=Number(selected.slice(0,4));month=Number(selected.slice(5,7))}
+ const initialHome=$('.workspace');
+ if(location.pathname==='/'&&!(initialHome?.dataset.homeYear===String(year)&&initialHome.dataset.homeMonth===String(month)&&initialHome.dataset.homeView===view)){
+  const html=await nativeFetch(`/free/views/home/${year}-${String(month).padStart(2,'0')}-${view}.html`).then(r=>{if(!r.ok)throw Error('Prikaza ni mogoče naložiti.');return r.text()});const template=new DOMParser().parseFromString(html,'text/html');const liveCard=$('#city-card'),incoming=template.querySelector('#city-card');if(liveCard&&incoming)incoming.replaceWith(liveCard);$('#vsebina').replaceChildren(...template.querySelector('#vsebina').childNodes);
+ }
+ const fixedYear=location.pathname.match(/\/(?:koledar|prazniki|pomembni-dnevi)\/(202[7-9]|2030)\//);if(fixedYear)year=Number(fixedYear[1]);else if($('.important-controls'))year=Number(params.get('year')||2027);
+
+ const personal=$('#personal-planner');if(personal){personal.dataset.selectedDate=selected;$('#personal-form').elements.date.value=selected;$('#personal-title').parentElement.querySelector('p strong').textContent=new Intl.DateTimeFormat('sl-SI',{timeZone:'UTC',day:'numeric',month:'long',year:'numeric'}).format(new Date(selected+'T12:00Z'));const day=new Date(selected+'T12:00Z'),iso=new Date(day);iso.setUTCDate(iso.getUTCDate()+4-(iso.getUTCDay()||7));const week=Math.ceil((((iso-new Date(Date.UTC(iso.getUTCFullYear(),0,1)))/86400000)+1)/7);const stats=$$('.stats dd');if(stats.length){stats[0].textContent=week;stats[1].textContent=Math.round((day-new Date(Date.UTC(day.getUTCFullYear(),0,1,12)))/86400000)+1;stats[2].textContent=new Date(Date.UTC(year,month,0)).getUTCDate()}}
+ const exportYear=Number(params.get('year'));if(!location.pathname.match(/^\/koledar\/\d{4}\//)&&!$('[data-calendar-experience]')&&exportYear>=2026&&exportYear<=2030){for(const section of $$('[data-export-options]')){const value=JSON.parse(section.dataset.exportOptions),requestedMonth=Number(params.get('month'));value.year=exportYear;if(requestedMonth>=1&&requestedMonth<=12)value.month=requestedMonth;value.date=validSelected&&Number(selected.slice(0,4))===exportYear?selected:`${exportYear}-${String(value.month||1).padStart(2,'0')}-01`;if(validSelected&&value.date===selected)value.month=Number(selected.slice(5,7));section.dataset.exportOptions=JSON.stringify(value)}}
+ const selectedDownload=$('[data-selected-calendar-download]');if(selectedDownload){selectedDownload.href='/koledar-za-tiskanje/?'+new URLSearchParams({year,month,date:selected,type:({year:'annual',week:'weekly',day:'daily'})[view]||'monthly'})}
+ const selectedEditor=$('[data-selected-calendar-editor]');if(selectedEditor){selectedEditor.href=['week','day'].includes(view)?'/koledar-za-tiskanje/?'+new URLSearchParams({year,month,date:selected,type:view==='week'?'weekly':'daily'}):'/ustvari-koledar/?'+new URLSearchParams({year,month,view:view==='year'?'year':'month'})}
+ const printForm=$('#planner-options');if(printForm){for(const key of ['type','year','month']){const field=printForm.elements[key],value=params.get(key);if(field&&value&&[...field.options].some(option=>option.value===value))field.value=value}if(validSelected&&params.has('date')){printForm.elements.date.value=selected;printForm.elements.year.value=selected.slice(0,4);printForm.elements.month.value=String(Number(selected.slice(5,7)))}else if(params.has('year')||params.has('month')){printForm.elements.date.value=`${printForm.elements.year.value}-${String(printForm.elements.month.value).padStart(2,'0')}-01`}}
+ if($('#holiday-filters')){const form=$('#holiday-filters');for(const key of ['month','q','kind'])if(params.has(key))form.elements[key].value=params.get(key)}
+ await prepareViews({year,month,view,selected,today});
+ document.dispatchEvent(new CustomEvent('k365:calendar-content-ready'));
+ for(const src of config.scripts)await loadScript(src);if($('#holiday-filters'))await loadScript(config.holidays);if($('[data-vacation-planner]'))await loadScript(config.vacation);if($('[data-countdown-root]'))await loadScript(config.countdown);if($('#shift-form'))await loadScript(config.shift);
+}
+const popularSearches=[
+ {title:'Prazniki v Sloveniji',detail:'Datumi in dela prosti dnevi',path:'/prazniki/',type:'Prazniki'},
+ {title:'Šolske počitnice',detail:'Šolski koledar in regije',path:'/solske-pocitnice/',type:'Koledarji'},
+ {title:'Koledar 2027',detail:'Letni in mesečni pregledi',path:'/koledar/2027/',type:'Koledarji'},
+ {title:'Polna luna',detail:'Lunine mene in datumi',path:'/polna-luna/',type:'Luna'},
+ {title:'Sončni vzhod in zahod',detail:'Izberite slovensko mesto',path:'/soncni-vzhod-in-zahod/ljubljana/',type:'Sončni časi'}
+];
+let searchIndexPromise;
+function loadSearchIndex(){return searchIndexPromise ||= nativeFetch('/free/search.json',{cache:'force-cache'}).then(response=>{if(!response.ok)throw Error('Iskalnega seznama ni mogoče naložiti.');return response.json()}).then(rows=>{if(!Array.isArray(rows))throw Error('Iskalni seznam ni v pravilni obliki.');return rows}).catch(error=>{searchIndexPromise=null;throw error})}
+function makeSearchLink(result,index,asOption=false){const link=element('a',undefined,'site-search-option');link.href=result.path;if(asOption){link.id=`site-search-option-${index}`;link.setAttribute('role','option');link.setAttribute('aria-selected','false')}const copy=element('span',undefined,'site-search-option__copy'),title=element('strong',result.title),detail=element('small',result.detail||result.category||result.type||resultCategory(result));copy.append(title,detail);link.append(copy,element('span','↗','site-search-option__arrow'));return link}
+function attachSearchSuggestions(form){
+ const input=form.querySelector('[data-search-input]'),popup=form.querySelector('[data-search-suggestions]'),list=popup?.querySelector('[data-search-options]'),status=popup?.querySelector('[data-search-status]');if(!input||!popup||!list||!status)return;
+ let activeIndex=-1,timer=0,request=0;
+ const close=()=>{popup.hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');activeIndex=-1};
+ const open=()=>{popup.hidden=false;input.setAttribute('aria-expanded','true')};
+ const render=(rows,message)=>{list.replaceChildren();activeIndex=-1;status.textContent=message||'';status.hidden=!message;list.hidden=!rows.length;if(!message)rows.forEach((row,index)=>list.append(makeSearchLink(row,index,true)));open()};
+ const update=async()=>{
+  const query=input.value.trim().slice(0,120),sequence=++request;
+  if(!query){render(popularSearches);return}
+  if(normalizeSearchText(query).length<2){render([],'Vnesite vsaj dve črki za iskanje.');return}
+  render([],'Iščemo po koledarjih, imenih, praznikih in orodjih …');
+  try{const data=await loadSearchIndex();if(sequence!==request)return;const {results}=searchRecords(data,query,{limit:6});const rows=results.map(row=>({...row,detail:row.category||row.type}));
+   if(rows.length){rows.push({title:`Prikaži vse rezultate za »${query}«`,detail:'Odpri seznam rezultatov',path:`/isci/?${new URLSearchParams({q:query})}`,type:'Vsi rezultati'});render(rows)}
+   else render([{title:`Išči »${query}«`,detail:'Odpri iskanje po celotni vsebini',path:`/isci/?${new URLSearchParams({q:query})}`,type:'Iskanje'}]);
+  }catch{if(sequence===request)render([{title:'Odpri stran z rezultati',detail:'Iskanje bomo ponovili na strani z rezultati',path:`/isci/?${new URLSearchParams({q:query})}`,type:'Iskanje'}])}
+ };
+ input.setAttribute('role','combobox');input.setAttribute('aria-autocomplete','list');input.setAttribute('aria-controls',list.id);input.setAttribute('aria-expanded','false');
+ input.addEventListener('focus',()=>{clearTimeout(timer);timer=setTimeout(update,100)});
+ input.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(update,90)});
+ input.addEventListener('keydown',event=>{
+  const options=[...list.querySelectorAll('[role="option"]')];
+  if(event.key==='ArrowDown'&&options.length){event.preventDefault();activeIndex=Math.min(activeIndex+1,options.length-1)}
+  else if(event.key==='ArrowUp'&&options.length){event.preventDefault();activeIndex=Math.max(activeIndex-1,0)}
+  else if(event.key==='Escape'&&!popup.hidden){close();return}
+  else if(event.key==='Enter'&&activeIndex>=0&&options[activeIndex]){event.preventDefault();location.assign(options[activeIndex].href);return}
+  else return;
+  options.forEach((option,index)=>option.setAttribute('aria-selected',String(index===activeIndex)));
+  input.setAttribute('aria-activedescendant',options[activeIndex].id);
+ });
+ popup.addEventListener('click',event=>{if(event.target.closest('a[role="option"]'))close()});
+ document.addEventListener('pointerdown',event=>{if(!form.contains(event.target))close()});
+ form.addEventListener('submit',close);
+}
+function initializeSearchSuggestions(){ $$('[data-site-search]').forEach(attachSearchSuggestions); }
+function initializeSearchResults(){
+ const page=$('[data-search-page]');if(!page)return;
+ const query=(params.get('q')||'').trim().slice(0,120),heading=$('[data-search-heading]',page),panel=$('[data-search-results]',page),headerInput=$('#search'),pageInput=$('[data-search-input]',page);
+ if(headerInput)headerInput.value=query;
+ if(pageInput)pageInput.value=query;
+ if(heading)heading.textContent=query?`Rezultati za »${query}«`:'Poiščite med koledarji, prazniki, imeni in orodji.';
+ if(!panel)return;
+ const renderEmpty=()=>{panel.replaceChildren(element('p','Začnite z iskanjem ali izberite eno od priljubljenih tem.','search-empty-copy'));const links=element('div',undefined,'search-shortcuts');popularSearches.forEach((item,index)=>links.append(makeSearchLink(item,`popular-${index}`)));panel.append(links)};
+ if(!query){renderEmpty();return}
+ panel.setAttribute('aria-busy','true');panel.replaceChildren(element('p','Iščemo po koledarjih, praznikih, imenih in orodjih …','search-loading'));
+ loadSearchIndex().then(data=>{
+  const {results,total}=searchRecords(data,query,{limit:10000});panel.removeAttribute('aria-busy');panel.replaceChildren();
+  if(!total){panel.append(element('p',`Za »${query}« nismo našli zadetkov. Poskusite krajši izraz ali preverite zapis.`,'search-empty-copy'));const links=element('div',undefined,'search-shortcuts');popularSearches.slice(0,4).forEach((item,index)=>links.append(makeSearchLink(item,`empty-${index}`)));panel.append(links);return}
+  const categoryCounts=new Map();for(const row of results)categoryCounts.set(row.category,(categoryCounts.get(row.category)||0)+1);
+  panel.append(element('p',`Najdenih ${total.toLocaleString('sl-SI')} rezultatov. Izberite kategorijo ali odprite želeni zadetek.`,'search-summary'));
+  const filters=element('div',undefined,'search-filters');filters.setAttribute('role','group');filters.setAttribute('aria-label','Filtriraj rezultate');
+  const list=element('ul',undefined,'search-results'),showMore=element('button','Pokaži še zadetke','search-more');let activeCategory='Vse',visibleCount=50;
+  const renderRows=()=>{list.replaceChildren();const filtered=activeCategory==='Vse'?results:results.filter(row=>row.category===activeCategory);filtered.slice(0,visibleCount).forEach((row,index)=>{const li=element('li',undefined,'search-result');li.append(makeSearchLink({...row,detail:row.category},`result-${index}`));list.append(li)});showMore.hidden=filtered.length<=visibleCount;showMore.textContent=`Pokaži še ${Math.min(50,filtered.length-visibleCount)} zadetkov`;};
+  const addFilter=(name,count)=>{const button=element('button',`${name} · ${count}`,'search-filter'+(activeCategory===name?' is-active':''));button.type='button';button.dataset.category=name;button.setAttribute('aria-pressed',String(activeCategory===name));button.addEventListener('click',()=>{activeCategory=name;visibleCount=50;filters.querySelectorAll('button').forEach(item=>{const active=item.dataset.category===name;item.classList.toggle('is-active',active);item.setAttribute('aria-pressed',String(active))});renderRows()});filters.append(button)};
+  addFilter('Vse',total);for(const [name,count] of categoryCounts)addFilter(name,count);
+  showMore.type='button';showMore.addEventListener('click',()=>{visibleCount+=50;renderRows()});panel.append(filters,list,showMore);renderRows();
+ }).catch(()=>{panel.removeAttribute('aria-busy');panel.replaceChildren(element('p','Iskanja trenutno ni mogoče naložiti. Preverite povezavo in poskusite znova.','search-error'));const retry=element('button','Poskusi znova','search-more');retry.type='button';retry.addEventListener('click',()=>{searchIndexPromise=null;initializeSearchResults()});panel.append(retry)});
+}
+// Download selected statutory/important dates without a server-side Ruby process.
+document.addEventListener('click',async event=>{const link=event.target.closest('a[href]');if(!link)return;const url=new URL(link.href,location.href);if(url.origin!==location.origin||!/^\/prazniki\/20(?:27|28|29|30)\.ics$/.test(url.pathname))return;if(!url.search)return;event.preventDefault();try{const data=Object.fromEntries(url.searchParams);data.year=url.pathname.match(/\d{4}/)[0];const result=await call(url.pathname,data),a=document.createElement('a');a.href=objectUrl(new Blob([bytes(result.binary)],{type:'text/calendar'}));a.download=result.filename;a.click()}catch(error){const output=document.createElement('p');output.setAttribute('role','alert');output.className='error';output.textContent=error.message;link.after(output)}},true);
+let eventData;
+const events=()=>eventData ||= nativeFetch('/free/events.json').then(r=>r.json());
+const element=(tag,text,cls)=>{const node=document.createElement(tag);if(text!==undefined)node.textContent=text;if(cls)node.className=cls;return node};
+function adoptHead(doc){document.title=doc.title;for(const selector of ['meta[name=description]','link[rel=canonical]','meta[property=\"og:title\"]','meta[property=\"og:description\"]','meta[property=\"og:url\"]','meta[property=\"og:image\"]','meta[property=\"og:image:width\"]','meta[property=\"og:image:height\"]','meta[property=\"og:image:alt\"]','meta[name=\"twitter:image\"]','meta[name=\"twitter:title\"]','meta[name=\"twitter:description\"]']){const old=document.querySelector(selector),next=doc.querySelector(selector);if(old&&next)old.replaceWith(document.importNode(next,true))}document.querySelectorAll('head script[type=\"application/ld+json\"]').forEach(node=>node.remove());for(const schema of doc.querySelectorAll('head script[type=\"application/ld+json\"]'))document.head.append(document.importNode(schema,true))}
+const dateLabel=date=>new Intl.DateTimeFormat('sl-SI',{timeZone:'UTC',day:'numeric',month:'long',year:'numeric'}).format(new Date(date+'T12:00Z'));
+async function prepareViews({year,month,view,selected,today}){
+ for(const cell of $$('td[data-date]')){cell.classList.toggle('selected',cell.dataset.date===selected);cell.classList.toggle('today',cell.dataset.date===today);const link=cell.querySelector('.date-link');if(link){link.removeAttribute('aria-current');if(cell.dataset.date===today)link.setAttribute('aria-current','date')}}
+ if(location.pathname==='/'){const d=new Date(selected+'T12:00Z'),mode=view,title=$('.calendar-title h2');let previous=new Date(d),following=new Date(d);if(mode==='week'){const iso=new Date(d);iso.setUTCDate(iso.getUTCDate()+4-(iso.getUTCDay()||7));const number=Math.ceil((((iso-new Date(Date.UTC(iso.getUTCFullYear(),0,1)))/86400000)+1)/7);title.textContent=`Teden ${number} · ${iso.getUTCFullYear()}`;previous.setUTCDate(previous.getUTCDate()-7);following.setUTCDate(following.getUTCDate()+7)}else if(mode==='day'){title.textContent=new Intl.DateTimeFormat('sl-SI',{timeZone:'UTC',day:'2-digit',month:'2-digit',year:'numeric'}).format(d);previous.setUTCDate(previous.getUTCDate()-1);following.setUTCDate(following.getUTCDate()+1)}else if(mode==='year'){previous=new Date(Date.UTC(year-1,month-1,1,12));following=new Date(Date.UTC(year+1,month-1,1,12))}else{previous=new Date(Date.UTC(year,month-2,1,12));following=new Date(Date.UTC(year,month,1,12))}const labels={week:['Prejšnji teden','Naslednji teden'],day:['Prejšnji dan','Naslednji dan'],year:['Prejšnje leto','Naslednje leto']};$$('.calendar-title a.square').forEach(link=>link.remove());[previous,following].forEach((date,index)=>{const iso=date.toISOString().slice(0,10);if(iso<'2026-01-01'||iso>'2030-12-31')return;const link=element('a',index?'›':'‹','button square');link.setAttribute('aria-label',(labels[mode]||['Prejšnji mesec','Naslednji mesec'])[index]);link.href='/?'+new URLSearchParams({year:date.getUTCFullYear(),month:date.getUTCMonth()+1,date:iso,view:mode});if(index)title.after(link);else title.before(link)});const todayLink=$$('.calendar-title a.button').find(link=>link.textContent.trim()==='Danes');if(todayLink)todayLink.href='/?'+new URLSearchParams({year:today.slice(0,4),month:Number(today.slice(5,7)),date:today,view:mode})}
+ if(location.pathname==='/')for(const link of $$('.calendar-toolbar .tabs a')){const mode=new URL(link.href).searchParams.get('view');link.href='/?'+new URLSearchParams({year,month,date:selected,view:mode});}
+ const week=$('.week-view');if(week&&location.pathname==='/'){
+  const rows=await events(),first=new Date(selected+'T12:00Z');if(view==='week')first.setUTCDate(first.getUTCDate()-(first.getUTCDay()||7)+1);week.replaceChildren();
+  for(let index=0;index<(view==='day'?1:7);index++){const current=new Date(first);current.setUTCDate(first.getUTCDate()+index);const day=current.toISOString().slice(0,10);if(day<'2026-01-01'||day>'2030-12-31')continue;const section=element('section'),heading=element('h3'),link=element('a',new Intl.DateTimeFormat('sl-SI',{weekday:'long',day:'numeric',timeZone:'UTC'}).format(current));link.href=`/?year=${current.getUTCFullYear()}&month=${current.getUTCMonth()+1}&date=${day}&view=day`;heading.append(link);section.append(heading);for(const row of rows.filter(row=>row.on===day)){const a=element('a',row.title);a.href=row.path;section.append(a)}section.append(element('p','Načrte dodajte v razdelku Moj dan.','muted'));week.append(section)}
+ }
+ const important=$('.important-controls');if(important){
+  const form=important.querySelector('form');for(const key of ['month','category','q','display'])if(params.has(key)&&form.elements[key])form.elements[key].value=params.get(key);
+  const normalized=value=>value.normalize('NFD').replace(/\p{M}/gu,'').toLocaleLowerCase('sl').trim();
+  const update=async()=>{const all=(await events()).filter(row=>row.on.startsWith(year+'-'));const category=row=>row.category==='legal'?'legal':/environment|astronomical|civil_time/.test(row.category)?'nature':/international|european/.test(row.category)?'international':/religious|folk|traditional/.test(row.category)?'tradition':'culture';const data=new FormData(form),month=Number(data.get('month')),kind=data.get('category'),query=normalized(data.get('q')||''),rows=all.filter(row=>(!month||Number(row.on.slice(5,7))===month)&&(kind==='all'||category(row)===kind)&&normalized(row.title).includes(query));const output=$('#important-free-results')||element('div',undefined);output.id='important-free-results';let next=important.nextElementSibling;while(next&&!next.classList.contains('related-topics')){const following=next.nextElementSibling;next.remove();next=following}important.after(output);output.replaceChildren();
+   if(!rows.length)output.append(element('p','V izboru ni dni. Poskusite drug mesec, vrsto ali krajši iskalni izraz.','panel empty'));
+   else if(data.get('display')==='calendar'){
+    output.className='important-months';const months=[...new Set(rows.map(row=>Number(row.on.slice(5,7))))];for(const month of months){const section=element('section',undefined,'panel'),heading=element('h2',new Intl.DateTimeFormat('sl-SI',{month:'long',timeZone:'UTC'}).format(new Date(Date.UTC(year,month-1,1)))+' '+year),wrap=element('div',undefined,'table-wrap'),table=element('table',undefined,'important-calendar'),thead=element('thead'),head=element('tr');for(const day of ['pon','tor','sre','čet','pet','sob','ned'])head.append(element('th',day));thead.append(head);table.append(thead);const body=element('tbody'),first=new Date(Date.UTC(year,month-1,1,12)),last=new Date(Date.UTC(year,month,0,12));first.setUTCDate(1-(first.getUTCDay()||7)+1);for(let date=new Date(first);date<=last;){const tr=element('tr');for(let col=0;col<7;col++){const td=element('td'),iso=date.toISOString().slice(0,10);if(date.getUTCMonth()+1===month){const a=element('a',date.getUTCDate(),'important-date');a.href=`/?year=${year}&month=${month}&date=${iso}`;td.append(a);for(const row of rows.filter(row=>row.on===iso)){const event=element('a',row.title,'important-event');event.href=row.path;td.append(event)}}tr.append(td);date.setUTCDate(date.getUTCDate()+1)}body.append(tr)}table.append(body);wrap.append(table);section.append(heading,wrap);output.append(section)}
+   }else{output.className='panel';const wrap=element('div',undefined,'table-wrap'),table=element('table',undefined,'data-table'),thead=element('thead'),head=element('tr');for(const label of ['Datum','Pomembni dan','Vrsta','Status dneva'])head.append(element('th',label));thead.append(head);table.append(thead);const body=element('tbody'),labels={legal:'Prazniki po zakonu',nature:'Narava, letni časi in ura',international:'Mednarodni in evropski dnevi',tradition:'Izročilo in verski dnevi',culture:'Kultura in družba'};for(const row of rows){const tr=element('tr'),date=element('td'),a=element('a',dateLabel(row.on));a.href=`/?year=${year}&month=${Number(row.on.slice(5,7))}&date=${row.on}`;date.append(a);const title=element('td'),link=element('a',row.title);link.href=row.path;title.append(link);tr.append(date,title,element('td',labels[category(row)]),element('td',row.work_free?'Dela prost dan':all.some(x=>x.on===row.on&&x.work_free)?'Sovpada z dela prostim dnem':'Ni dela prost dan'));body.append(tr)}table.append(body);wrap.append(table);output.append(wrap)}
+   const count=important.querySelector('form + p');if(count)count.textContent=`Prikazani datumi: ${rows.length}. Mednarodni ali kulturni dan sam po sebi ne pomeni dela prostega dne.`;const ics=important.querySelector('a[href$="ics"],a[href*=".ics?"]');if(ics)ics.href=`/prazniki/${year}.ics?all=1&month=${month}&category=${encodeURIComponent(kind)}&q=${encodeURIComponent(data.get('q')||'')}`;
+  };
+  form.addEventListener('submit',event=>{event.preventDefault();const data=new URLSearchParams(new FormData(form));history.replaceState(null,'',location.pathname+'?'+data);update()});await update();
+ }
+}
+
+// Re-evaluate moving labels on open pages without changing the date of published text.
+function synchronizeLocalDay(){
+ const today=ljubljanaDate();
+ for(const panel of $$('[data-horoscope-day]')){
+  if(panel.dataset.liveDay===today)continue;panel.dataset.liveDay=today;
+  const heading=panel.querySelector('.section-heading h2');if(heading)heading.textContent='Dnevni horoskop za '+dateLabel(today);
+  for(const article of panel.querySelectorAll('.horoscope-grid article')){
+   const current=article.querySelector('[data-horoscope-current]');if(!current)continue;
+   const day=current.dataset.horoscopeCurrent,state=horoscopeDisposition(day,today);if(state==='today')continue;
+   if(state==='previous'){const details=element('details'),summary=element('summary','Prejšnji horoskop: '+dateLabel(day));details.append(summary,current);delete current.dataset.horoscopeCurrent;article.append(details)}else current.remove();
+   const notice=element('p','Današnji horoskop še ni pripravljen. '),refresh=element('a','Osveži stran');refresh.href=location.pathname;notice.append(refresh);article.querySelector('h3').after(notice);
+  }
+ }
+}
+document.addEventListener('click',event=>{const link=event.target.closest('.calendar-title a.button');if(!link||link.textContent.trim()!=='Danes')return;const date=ljubljanaDate(),bounded=date<'2026-01-01'?'2026-01-01':date>'2030-12-31'?'2030-12-31':date,view=new URL(link.href).searchParams.get('view')||'month';link.href='/?'+new URLSearchParams({year:bounded.slice(0,4),month:Number(bounded.slice(5,7)),date:bounded,view})},true);
+setInterval(synchronizeLocalDay,60000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)synchronizeLocalDay()});synchronizeLocalDay();
+
+// Start after every helper has been initialized, including cached configuration.
+initializeSearchSuggestions();initializeSearchResults();
+prepare().then(()=>{document.documentElement.dataset.freeReady='true';synchronizeLocalDay()}).catch(error=>{document.documentElement.dataset.freeReady='error';const notice=document.createElement('p');notice.className='notice';notice.textContent=error.message+' Poskusite osvežiti stran.';$('#vsebina')?.prepend(notice)});

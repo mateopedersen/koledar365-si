@@ -1,0 +1,3254 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-21",
+  "schoolYear": "2026/2027",
+  "schoolRange": [
+    "2026-09-01",
+    "2027-08-31"
+  ],
+  "studyRange": [
+    "2026-10-01",
+    "2027-09-30"
+  ],
+  "maturaRange": [
+    "2026-09-01",
+    "2027-09-30"
+  ],
+  "categories": {
+    "teaching": "Pouk",
+    "break": "Počitnice in prosti dnevi",
+    "holiday": "Prazniki",
+    "assessment": "Ocenjevalna obdobja",
+    "information": "Informativni datumi",
+    "exam": "Izpitna obdobja",
+    "application": "Prijave in roki",
+    "written": "Pisni izpiti",
+    "oral": "Ustni izpiti",
+    "practical": "Praktični del",
+    "results": "Rezultati in vpogledi",
+    "semester": "Semestri"
+  },
+  "subjects": {
+    "sl": "Slovenščina",
+    "it_m": "Italijanščina kot materinščina",
+    "hu_m": "Madžarščina kot materinščina",
+    "en": "Angleščina",
+    "math": "Matematika",
+    "de": "Nemščina",
+    "fr": "Francoščina",
+    "es": "Španščina",
+    "ru": "Ruščina",
+    "it": "Italijanščina",
+    "la": "Latinščina",
+    "gr": "Grščina",
+    "psych": "Psihologija",
+    "soc": "Sociologija",
+    "geo": "Geografija",
+    "phil": "Filozofija",
+    "history": "Zgodovina",
+    "art_history": "Umetnostna zgodovina",
+    "bio": "Biologija",
+    "physics": "Fizika",
+    "chem": "Kemija",
+    "mech": "Mehanika",
+    "electro": "Elektrotehnika",
+    "computing": "Računalništvo",
+    "biotech": "Biotehnologija",
+    "economics": "Ekonomija",
+    "materials": "Materiali",
+    "art": "Likovna teorija",
+    "music": "Glasba",
+    "composition": "Glasbeni stavek",
+    "dance": "Sodobni ples",
+    "theatre": "Zgodovina in teorija gledališča in filma",
+    "informatics": "Informatika",
+    "sl_prekmurje": "Slovenščina v Prekmurju",
+    "sl_istria": "Slovenščina v Slovenski Istri",
+    "hu_prekmurje": "Madžarščina v Prekmurju",
+    "it_istria": "Italijanščina v Slovenski Istri",
+    "second": "Drugi predmet",
+    "sl_second": "Slovenščina kot drugi jezik",
+    "it_foreign": "Italijanščina kot tuji ali drugi jezik"
+  },
+  "institutions": [
+    {
+      "id": "ul",
+      "name": "Univerza v Ljubljani",
+      "url": "https://www.uni-lj.si/assets/Sluzba-za-1-in-2-stopnjo/Studijski-koledar/2026-2027/Studijski_koledar-2026_2027-besedilo.pdf",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete.",
+      "scope": "university"
+    },
+    {
+      "id": "um",
+      "name": "Univerza v Mariboru",
+      "url": "https://moja.um.si/student/Strani/studijski-koledar.aspx",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete.",
+      "scope": "university"
+    },
+    {
+      "id": "up",
+      "name": "Univerza na Primorskem",
+      "url": "https://www.upr.si/si/studij--vpis/studijski-koledar/",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete.",
+      "scope": "university"
+    },
+    {
+      "id": "ung",
+      "name": "Univerza v Novi Gorici",
+      "url": "https://ung.si/sl/studij/akademski-koledar/",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete.",
+      "scope": "university"
+    },
+    {
+      "id": "nu",
+      "name": "Nova univerza",
+      "url": "https://www.nova-uni.si/studijski-koledar-nove-univerze-za-studijsko-leto-2026-2027-2/",
+      "note": "Univerzitetni okvir. Članice lahko prilagodijo izvedbo. Spomladanska šola 3.–7. 5. in jesenska šola 13.–17. 9. 2027 nista počitnici.",
+      "scope": "university"
+    },
+    {
+      "id": "unm-fis",
+      "name": "UNM · FIŠ · Fakulteta za informacijske študije",
+      "url": "https://www.fis.unm.si/urnik-in-studijski-koledar/",
+      "note": "Samo FIŠ. V poletnem počitniškem obdobju ni zagovorov zaključnih nalog.",
+      "scope": "faculty"
+    },
+    {
+      "id": "unm-fei",
+      "name": "UNM · FEI · Fakulteta za ekonomijo in informatiko",
+      "url": "https://fei.uni-nm.si/uploads/_custom/01_unmfei/studijski_koledar/Studijski_koledar_2026-2027.pdf",
+      "note": "Samo FEI. Koledar je bil sprejet 24. 9. 2026.",
+      "scope": "faculty"
+    }
+  ],
+  "sources": [
+    {
+      "id": "gov-primary",
+      "title": "Ministrstvo za vzgojo in izobraževanje · osnovne šole",
+      "url": "https://www.gov.si/teme/solski-koledar-za-osnovne-sole/",
+      "language": "sl",
+      "checkedAt": "2026-10-21"
+    },
+    {
+      "id": "gov-secondary",
+      "title": "Ministrstvo za vzgojo in izobraževanje · srednje šole",
+      "url": "https://www.gov.si/teme/solski-koledar-za-srednje-sole/",
+      "language": "sl",
+      "checkedAt": "2026-10-21"
+    },
+    {
+      "id": "ric-general",
+      "title": "Državni izpitni center · splošna matura 2027",
+      "url": "https://www.ric.si/splosna-matura/koledar-splosne-mature/",
+      "language": "sl",
+      "checkedAt": "2026-10-21"
+    },
+    {
+      "id": "ric-vocational",
+      "title": "Državni izpitni center · poklicna matura 2027",
+      "url": "https://www.ric.si/poklicna-matura/koledar-poklicne-mature/",
+      "language": "sl",
+      "checkedAt": "2026-10-21"
+    },
+    {
+      "id": "ric-npz",
+      "title": "Državni izpitni center · NPZ 2026/2027",
+      "url": "https://www.ric.si/nacionalno-preverjanje-znanja/koledar-npz/",
+      "language": "sl",
+      "checkedAt": "2026-10-21"
+    },
+    {
+      "id": "university-ul",
+      "title": "Univerza v Ljubljani · študijski koledar 2026/2027",
+      "url": "https://www.uni-lj.si/assets/Sluzba-za-1-in-2-stopnjo/Studijski-koledar/2026-2027/Studijski_koledar-2026_2027-besedilo.pdf",
+      "language": "sl",
+      "checkedAt": "2026-10-21"
+    },
+    {
+      "id": "university-um",
+      "title": "Univerza v Mariboru · študijski koledar 2026/2027",
+      "url": "https://moja.um.si/student/Strani/studijski-koledar.aspx",
+      "language": "sl",
+      "checkedAt": "2026-10-21"
+    },
+    {
+      "id": "university-up",
+      "title": "Univerza na Primorskem · študijski koledar 2026/2027",
+      "url": "https://www.upr.si/si/studij--vpis/studijski-koledar/",
+      "language": "sl",
+      "checkedAt": "2026-10-21"
+    },
+    {
+      "id": "university-ung",
+      "title": "Univerza v Novi Gorici · študijski koledar 2026/2027",
+      "url": "https://ung.si/sl/studij/akademski-koledar/",
+      "language": "sl",
+      "checkedAt": "2026-10-21"
+    },
+    {
+      "id": "university-nu",
+      "title": "Nova univerza · študijski koledar 2026/2027",
+      "url": "https://www.nova-uni.si/studijski-koledar-nove-univerze-za-studijsko-leto-2026-2027-2/",
+      "language": "sl",
+      "checkedAt": "2026-10-21"
+    },
+    {
+      "id": "university-unm-fis",
+      "title": "FIŠ · Fakulteta za informacijske študije · študijski koledar 2026/2027",
+      "url": "https://www.fis.unm.si/urnik-in-studijski-koledar/",
+      "language": "sl",
+      "checkedAt": "2026-10-21"
+    },
+    {
+      "id": "university-unm-fei",
+      "title": "FEI · Fakulteta za ekonomijo in informatiko · študijski koledar 2026/2027",
+      "url": "https://fei.uni-nm.si/uploads/_custom/01_unmfei/studijski_koledar/Studijski_koledar_2026-2027.pdf",
+      "language": "sl",
+      "checkedAt": "2026-10-21"
+    },
+    {
+      "id": "gov-holidays",
+      "title": "GOV.SI · državni prazniki in dela prosti dnevi",
+      "url": "https://www.gov.si/teme/drzavni-prazniki-in-dela-prosti-dnevi/",
+      "language": "sl",
+      "checkedAt": "2026-10-21"
+    }
+  ],
+  "events": [
+    {
+      "id": "matura-general-external-practical",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Prijava drugih kandidatov k praktičnemu delu",
+      "start": "2026-09-01",
+      "end": "2026-09-01",
+      "session": "spring",
+      "category": "application",
+      "source": "ric-general",
+      "note": "Prijava na gimnaziji za praktični del izpita."
+    },
+    {
+      "id": "npz-9-third-decision",
+      "kind": "npz",
+      "grades": [
+        9
+      ],
+      "title": "Določitev tretjega predmeta po šolah",
+      "start": "2026-09-01",
+      "end": "2026-09-01",
+      "category": "information",
+      "source": "ric-npz"
+    },
+    {
+      "id": "school-primary-start",
+      "kind": "school",
+      "level": "primary",
+      "title": "Začetek pouka",
+      "start": "2026-09-01",
+      "end": "2026-09-01",
+      "category": "teaching",
+      "source": "gov-primary"
+    },
+    {
+      "id": "school-secondary-start",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Začetek pouka",
+      "start": "2026-09-01",
+      "end": "2026-09-01",
+      "category": "teaching",
+      "source": "gov-secondary"
+    },
+    {
+      "id": "study-nu-0",
+      "kind": "study",
+      "institution": "nu",
+      "title": "Zimski semester",
+      "start": "2026-10-01",
+      "end": "2027-01-14",
+      "category": "semester",
+      "source": "university-nu",
+      "note": "Univerzitetni okvir. Članice lahko prilagodijo izvedbo. Spomladanska šola 3.–7. 5. in jesenska šola 13.–17. 9. 2027 nista počitnici."
+    },
+    {
+      "id": "study-ul-0",
+      "kind": "study",
+      "institution": "ul",
+      "title": "Zimski semester",
+      "start": "2026-10-01",
+      "end": "2027-01-15",
+      "category": "semester",
+      "source": "university-ul",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "study-um-0",
+      "kind": "study",
+      "institution": "um",
+      "title": "Zimski semester",
+      "start": "2026-10-01",
+      "end": "2027-01-22",
+      "category": "semester",
+      "source": "university-um",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "study-ung-0",
+      "kind": "study",
+      "institution": "ung",
+      "title": "Zimski semester",
+      "start": "2026-10-01",
+      "end": "2027-01-22",
+      "category": "semester",
+      "source": "university-ung",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "study-unm-fei-0",
+      "kind": "study",
+      "institution": "unm-fei",
+      "title": "Zimski semester",
+      "start": "2026-10-01",
+      "end": "2027-01-15",
+      "category": "semester",
+      "source": "university-unm-fei",
+      "note": "Samo FEI. Koledar je bil sprejet 24. 9. 2026."
+    },
+    {
+      "id": "study-unm-fis-0",
+      "kind": "study",
+      "institution": "unm-fis",
+      "title": "Zimski semester",
+      "start": "2026-10-01",
+      "end": "2027-01-22",
+      "category": "semester",
+      "source": "university-unm-fis",
+      "note": "Samo FIŠ. V poletnem počitniškem obdobju ni zagovorov zaključnih nalog."
+    },
+    {
+      "id": "study-up-0",
+      "kind": "study",
+      "institution": "up",
+      "title": "Jesenski semester",
+      "start": "2026-10-01",
+      "end": "2027-01-22",
+      "category": "semester",
+      "source": "university-up",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "npz-3-school-data",
+      "kind": "npz",
+      "grades": [
+        3
+      ],
+      "title": "Šole posredujejo podatke za NPZ",
+      "start": "2026-10-15",
+      "end": "2026-10-15",
+      "category": "application",
+      "source": "ric-npz",
+      "note": "Administrativni rok za šole. Učenec se ne prijavlja sam."
+    },
+    {
+      "id": "npz-6-school-data",
+      "kind": "npz",
+      "grades": [
+        6
+      ],
+      "title": "Šole posredujejo podatke za NPZ",
+      "start": "2026-10-15",
+      "end": "2026-10-15",
+      "category": "application",
+      "source": "ric-npz",
+      "note": "Administrativni rok za šole. Učenec se ne prijavlja sam."
+    },
+    {
+      "id": "npz-9-school-data",
+      "kind": "npz",
+      "grades": [
+        9
+      ],
+      "title": "Šole posredujejo podatke za NPZ",
+      "start": "2026-10-15",
+      "end": "2026-10-15",
+      "category": "application",
+      "source": "ric-npz",
+      "note": "Administrativni rok za šole. Učenec se ne prijavlja sam."
+    },
+    {
+      "id": "school-primary-autumn",
+      "kind": "school",
+      "level": "primary",
+      "title": "Jesenske počitnice",
+      "start": "2026-10-26",
+      "end": "2026-10-30",
+      "category": "break",
+      "source": "gov-primary"
+    },
+    {
+      "id": "school-secondary-autumn",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Jesenske počitnice",
+      "start": "2026-10-26",
+      "end": "2026-10-30",
+      "category": "break",
+      "source": "gov-secondary"
+    },
+    {
+      "id": "school-primary-holiday-2026-10-31",
+      "kind": "school",
+      "level": "primary",
+      "title": "Dan reformacije",
+      "start": "2026-10-31",
+      "end": "2026-10-31",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-secondary-holiday-2026-10-31",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Dan reformacije",
+      "start": "2026-10-31",
+      "end": "2026-10-31",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-primary-holiday-2026-11-01",
+      "kind": "school",
+      "level": "primary",
+      "title": "Dan spomina na mrtve",
+      "start": "2026-11-01",
+      "end": "2026-11-01",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-secondary-holiday-2026-11-01",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Dan spomina na mrtve",
+      "start": "2026-11-01",
+      "end": "2026-11-01",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "matura-general-preapplication",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Rok za predprijavo",
+      "start": "2026-11-15",
+      "end": "2026-11-15",
+      "session": "spring",
+      "category": "application",
+      "source": "ric-general"
+    },
+    {
+      "id": "matura-general-special-needs",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Vloga za prilagoditve pri opravljanju mature",
+      "start": "2026-11-15",
+      "end": "2026-11-15",
+      "session": "both",
+      "category": "application",
+      "source": "ric-general",
+      "note": "Rok za uveljavljanje pravic kandidatov s posebnimi potrebami za spomladanski in jesenski rok."
+    },
+    {
+      "id": "matura-vocational-preapplication",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Rok za predprijavo",
+      "start": "2026-11-15",
+      "end": "2026-11-15",
+      "session": "spring",
+      "category": "application",
+      "source": "ric-vocational"
+    },
+    {
+      "id": "school-primary-holiday-2026-12-25",
+      "kind": "school",
+      "level": "primary",
+      "title": "Božič",
+      "start": "2026-12-25",
+      "end": "2026-12-25",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-primary-newyear",
+      "kind": "school",
+      "level": "primary",
+      "title": "Novoletne počitnice",
+      "start": "2026-12-25",
+      "end": "2027-01-02",
+      "category": "break",
+      "source": "gov-primary"
+    },
+    {
+      "id": "school-secondary-holiday-2026-12-25",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Božič",
+      "start": "2026-12-25",
+      "end": "2026-12-25",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "study-nu-5",
+      "kind": "study",
+      "institution": "nu",
+      "title": "Božično-novoletne počitnice",
+      "start": "2026-12-25",
+      "end": "2026-12-31",
+      "category": "break",
+      "source": "university-nu",
+      "note": "Univerzitetni okvir. Članice lahko prilagodijo izvedbo. Spomladanska šola 3.–7. 5. in jesenska šola 13.–17. 9. 2027 nista počitnici."
+    },
+    {
+      "id": "study-unm-fis-5",
+      "kind": "study",
+      "institution": "unm-fis",
+      "title": "Božično-novoletne počitnice",
+      "start": "2026-12-25",
+      "end": "2027-01-01",
+      "category": "break",
+      "source": "university-unm-fis",
+      "note": "Samo FIŠ. V poletnem počitniškem obdobju ni zagovorov zaključnih nalog."
+    },
+    {
+      "id": "school-primary-holiday-2026-12-26",
+      "kind": "school",
+      "level": "primary",
+      "title": "Dan samostojnosti in enotnosti",
+      "start": "2026-12-26",
+      "end": "2026-12-26",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-secondary-holiday-2026-12-26",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Dan samostojnosti in enotnosti",
+      "start": "2026-12-26",
+      "end": "2026-12-26",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-secondary-newyear",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Novoletne počitnice",
+      "start": "2026-12-28",
+      "end": "2026-12-31",
+      "category": "break",
+      "source": "gov-secondary"
+    },
+    {
+      "id": "study-ung-5",
+      "kind": "study",
+      "institution": "ung",
+      "title": "Brez pedagoških aktivnosti",
+      "start": "2026-12-28",
+      "end": "2026-12-31",
+      "category": "break",
+      "source": "university-ung",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "study-unm-fei-5",
+      "kind": "study",
+      "institution": "unm-fei",
+      "title": "Brez pedagoškega procesa",
+      "start": "2026-12-28",
+      "end": "2026-12-31",
+      "category": "break",
+      "source": "university-unm-fei",
+      "note": "Samo FEI. Koledar je bil sprejet 24. 9. 2026."
+    },
+    {
+      "id": "school-primary-holiday-2027-01-01",
+      "kind": "school",
+      "level": "primary",
+      "title": "Novo leto",
+      "start": "2027-01-01",
+      "end": "2027-01-01",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-secondary-holiday-2027-01-01",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Novo leto",
+      "start": "2027-01-01",
+      "end": "2027-01-01",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-primary-holiday-2027-01-02",
+      "kind": "school",
+      "level": "primary",
+      "title": "Novo leto",
+      "start": "2027-01-02",
+      "end": "2027-01-02",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-secondary-holiday-2027-01-02",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Novo leto",
+      "start": "2027-01-02",
+      "end": "2027-01-02",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-secondary-assessment1",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Zaključek 1. ocenjevalnega obdobja",
+      "start": "2027-01-15",
+      "end": "2027-01-15",
+      "category": "assessment",
+      "source": "gov-secondary",
+      "note": "Velja za šole z dvema ocenjevalnima obdobjema. Pri drugačni razporeditvi preverite letni delovni načrt šole."
+    },
+    {
+      "id": "study-nu-1",
+      "kind": "study",
+      "institution": "nu",
+      "title": "Zimsko izpitno obdobje",
+      "start": "2027-01-15",
+      "end": "2027-02-12",
+      "category": "exam",
+      "source": "university-nu",
+      "note": "Univerzitetni okvir. Članice lahko prilagodijo izvedbo. Spomladanska šola 3.–7. 5. in jesenska šola 13.–17. 9. 2027 nista počitnici."
+    },
+    {
+      "id": "study-ul-1",
+      "kind": "study",
+      "institution": "ul",
+      "title": "Zimsko izpitno obdobje",
+      "start": "2027-01-18",
+      "end": "2027-02-12",
+      "category": "exam",
+      "source": "university-ul",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "study-unm-fei-1",
+      "kind": "study",
+      "institution": "unm-fei",
+      "title": "Zimsko izpitno obdobje",
+      "start": "2027-01-18",
+      "end": "2027-02-12",
+      "category": "exam",
+      "source": "university-unm-fei",
+      "note": "Samo FEI. Koledar je bil sprejet 24. 9. 2026."
+    },
+    {
+      "id": "study-um-1",
+      "kind": "study",
+      "institution": "um",
+      "title": "Zimsko izpitno obdobje",
+      "start": "2027-01-25",
+      "end": "2027-02-19",
+      "category": "exam",
+      "source": "university-um",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "study-ung-1",
+      "kind": "study",
+      "institution": "ung",
+      "title": "Zimsko izpitno obdobje",
+      "start": "2027-01-25",
+      "end": "2027-02-12",
+      "category": "exam",
+      "source": "university-ung",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "study-unm-fis-1",
+      "kind": "study",
+      "institution": "unm-fis",
+      "title": "Zimsko izpitno obdobje",
+      "start": "2027-01-25",
+      "end": "2027-02-12",
+      "category": "exam",
+      "source": "university-unm-fis",
+      "note": "Samo FIŠ. V poletnem počitniškem obdobju ni zagovorov zaključnih nalog."
+    },
+    {
+      "id": "study-up-1",
+      "kind": "study",
+      "institution": "up",
+      "title": "Zimsko izpitno obdobje",
+      "start": "2027-01-25",
+      "end": "2027-02-19",
+      "category": "exam",
+      "source": "university-up",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "school-primary-assessment1",
+      "kind": "school",
+      "level": "primary",
+      "title": "Zaključek 1. ocenjevalnega obdobja",
+      "start": "2027-01-29",
+      "end": "2027-01-29",
+      "category": "assessment",
+      "source": "gov-primary"
+    },
+    {
+      "id": "school-secondary-winter-exams",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Zimski izpitni rok",
+      "start": "2027-02-01",
+      "end": "2027-03-01",
+      "category": "exam",
+      "source": "gov-secondary",
+      "note": "Izpitno obdobje. Natančen razpored določi šola."
+    },
+    {
+      "id": "school-primary-holiday-2027-02-08",
+      "kind": "school",
+      "level": "primary",
+      "title": "Prešernov dan",
+      "start": "2027-02-08",
+      "end": "2027-02-08",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-secondary-holiday-2027-02-08",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Prešernov dan",
+      "start": "2027-02-08",
+      "end": "2027-02-08",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-primary-information",
+      "kind": "school",
+      "level": "primary",
+      "title": "Informativna dneva za vpis v srednje šole",
+      "start": "2027-02-12",
+      "end": "2027-02-13",
+      "category": "information",
+      "source": "gov-primary",
+      "grades": [
+        9
+      ]
+    },
+    {
+      "id": "school-secondary-information",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Informativna dneva za vpis v srednje šole",
+      "start": "2027-02-12",
+      "end": "2027-02-13",
+      "category": "information",
+      "source": "gov-secondary"
+    },
+    {
+      "id": "school-primary-winter-east",
+      "kind": "school",
+      "level": "primary",
+      "title": "Zimske počitnice",
+      "start": "2027-02-15",
+      "end": "2027-02-19",
+      "category": "break",
+      "source": "gov-primary",
+      "region": "east"
+    },
+    {
+      "id": "school-secondary-winter-east",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Zimske počitnice",
+      "start": "2027-02-15",
+      "end": "2027-02-19",
+      "category": "break",
+      "source": "gov-secondary",
+      "region": "east"
+    },
+    {
+      "id": "study-nu-2",
+      "kind": "study",
+      "institution": "nu",
+      "title": "Poletni semester",
+      "start": "2027-02-15",
+      "end": "2027-05-28",
+      "category": "semester",
+      "source": "university-nu",
+      "note": "Univerzitetni okvir. Članice lahko prilagodijo izvedbo. Spomladanska šola 3.–7. 5. in jesenska šola 13.–17. 9. 2027 nista počitnici."
+    },
+    {
+      "id": "study-ul-2",
+      "kind": "study",
+      "institution": "ul",
+      "title": "Poletni semester",
+      "start": "2027-02-15",
+      "end": "2027-06-02",
+      "category": "semester",
+      "source": "university-ul",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "study-ung-2",
+      "kind": "study",
+      "institution": "ung",
+      "title": "Poletni semester",
+      "start": "2027-02-15",
+      "end": "2027-06-04",
+      "category": "semester",
+      "source": "university-ung",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "study-unm-fei-2",
+      "kind": "study",
+      "institution": "unm-fei",
+      "title": "Poletni semester",
+      "start": "2027-02-15",
+      "end": "2027-06-04",
+      "category": "semester",
+      "source": "university-unm-fei",
+      "note": "Samo FEI. Koledar je bil sprejet 24. 9. 2026."
+    },
+    {
+      "id": "study-unm-fis-2",
+      "kind": "study",
+      "institution": "unm-fis",
+      "title": "Poletni semester",
+      "start": "2027-02-15",
+      "end": "2027-06-04",
+      "category": "semester",
+      "source": "university-unm-fis",
+      "note": "Samo FIŠ. V poletnem počitniškem obdobju ni zagovorov zaključnih nalog."
+    },
+    {
+      "id": "school-primary-winter-west",
+      "kind": "school",
+      "level": "primary",
+      "title": "Zimske počitnice",
+      "start": "2027-02-22",
+      "end": "2027-02-26",
+      "category": "break",
+      "source": "gov-primary",
+      "region": "west"
+    },
+    {
+      "id": "school-secondary-winter-west",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Zimske počitnice",
+      "start": "2027-02-22",
+      "end": "2027-02-26",
+      "category": "break",
+      "source": "gov-secondary",
+      "region": "west"
+    },
+    {
+      "id": "study-um-2",
+      "kind": "study",
+      "institution": "um",
+      "title": "Poletni semester",
+      "start": "2027-02-22",
+      "end": "2027-06-11",
+      "category": "semester",
+      "source": "university-um",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "study-up-2",
+      "kind": "study",
+      "institution": "up",
+      "title": "Spomladanski semester",
+      "start": "2027-02-22",
+      "end": "2027-06-04",
+      "category": "semester",
+      "source": "university-up",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "npz-3-language",
+      "kind": "npz",
+      "grades": [
+        3
+      ],
+      "title": "Slovenščina / italijanščina / madžarščina",
+      "start": "2027-03-22",
+      "end": "2027-03-22",
+      "category": "written",
+      "source": "ric-npz"
+    },
+    {
+      "id": "npz-6-language",
+      "kind": "npz",
+      "grades": [
+        6
+      ],
+      "title": "Slovenščina / italijanščina / madžarščina",
+      "start": "2027-03-22",
+      "end": "2027-03-22",
+      "category": "written",
+      "source": "ric-npz"
+    },
+    {
+      "id": "npz-9-language",
+      "kind": "npz",
+      "grades": [
+        9
+      ],
+      "title": "Slovenščina / italijanščina / madžarščina",
+      "start": "2027-03-22",
+      "end": "2027-03-22",
+      "category": "written",
+      "source": "ric-npz"
+    },
+    {
+      "id": "npz-6-foreign",
+      "kind": "npz",
+      "grades": [
+        6
+      ],
+      "title": "Tuji jezik · angleščina ali nemščina",
+      "start": "2027-03-24",
+      "end": "2027-03-24",
+      "category": "written",
+      "source": "ric-npz"
+    },
+    {
+      "id": "npz-9-third",
+      "kind": "npz",
+      "grades": [
+        9
+      ],
+      "title": "Tretji predmet",
+      "start": "2027-03-24",
+      "end": "2027-03-24",
+      "category": "written",
+      "source": "ric-npz",
+      "note": "Predmet se razlikuje po šolah. Preverite predmet, določen za vašo šolo."
+    },
+    {
+      "id": "school-primary-holiday-2027-03-28",
+      "kind": "school",
+      "level": "primary",
+      "title": "Velika noč",
+      "start": "2027-03-28",
+      "end": "2027-03-28",
+      "category": "holiday",
+      "source": "gov-holidays",
+      "note": "Premični praznik: datum velike noči 2027 je izračunan po gregorijanskem koledarju."
+    },
+    {
+      "id": "school-secondary-holiday-2027-03-28",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Velika noč",
+      "start": "2027-03-28",
+      "end": "2027-03-28",
+      "category": "holiday",
+      "source": "gov-holidays",
+      "note": "Premični praznik: datum velike noči 2027 je izračunan po gregorijanskem koledarju."
+    },
+    {
+      "id": "school-primary-holiday-2027-03-29",
+      "kind": "school",
+      "level": "primary",
+      "title": "Velikonočni ponedeljek",
+      "start": "2027-03-29",
+      "end": "2027-03-29",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-secondary-holiday-2027-03-29",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Velikonočni ponedeljek",
+      "start": "2027-03-29",
+      "end": "2027-03-29",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "matura-general-application",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Rok za prijavo · spomladanski rok",
+      "start": "2027-03-30",
+      "end": "2027-03-30",
+      "session": "spring",
+      "category": "application",
+      "source": "ric-general"
+    },
+    {
+      "id": "matura-vocational-application",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Rok za prijavo · spomladanski rok",
+      "start": "2027-03-30",
+      "end": "2027-03-30",
+      "session": "spring",
+      "category": "application",
+      "source": "ric-vocational"
+    },
+    {
+      "id": "npz-3-math",
+      "kind": "npz",
+      "grades": [
+        3
+      ],
+      "title": "Matematika",
+      "start": "2027-04-01",
+      "end": "2027-04-01",
+      "category": "written",
+      "source": "ric-npz"
+    },
+    {
+      "id": "npz-6-math",
+      "kind": "npz",
+      "grades": [
+        6
+      ],
+      "title": "Matematika",
+      "start": "2027-04-01",
+      "end": "2027-04-01",
+      "category": "written",
+      "source": "ric-npz"
+    },
+    {
+      "id": "npz-9-math",
+      "kind": "npz",
+      "grades": [
+        9
+      ],
+      "title": "Matematika",
+      "start": "2027-04-01",
+      "end": "2027-04-01",
+      "category": "written",
+      "source": "ric-npz"
+    },
+    {
+      "id": "matura-general-practical-submission",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Oddaja izdelkov praktičnega dela",
+      "start": "2027-04-15",
+      "end": "2027-04-15",
+      "session": "spring",
+      "category": "practical",
+      "source": "ric-general",
+      "note": "Seminarske naloge, laboratorijske vaje in poročila po pravilih predmeta."
+    },
+    {
+      "id": "npz-9-results",
+      "kind": "npz",
+      "grades": [
+        9
+      ],
+      "title": "Seznanitev z dosežki NPZ",
+      "start": "2027-04-20",
+      "end": "2027-04-20",
+      "category": "results",
+      "source": "ric-npz"
+    },
+    {
+      "id": "npz-9-view",
+      "kind": "npz",
+      "grades": [
+        9
+      ],
+      "title": "Vpogled v ovrednotene preizkuse in poizvedbe",
+      "start": "2027-04-20",
+      "end": "2027-04-22",
+      "category": "results",
+      "source": "ric-npz"
+    },
+    {
+      "id": "school-primary-april-free",
+      "kind": "school",
+      "level": "primary",
+      "title": "Pouka prost dan",
+      "start": "2027-04-26",
+      "end": "2027-04-26",
+      "category": "break",
+      "source": "gov-primary"
+    },
+    {
+      "id": "school-secondary-april-free",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Pouka prost dan",
+      "start": "2027-04-26",
+      "end": "2027-04-26",
+      "category": "break",
+      "source": "gov-secondary"
+    },
+    {
+      "id": "study-unm-fei-6",
+      "kind": "study",
+      "institution": "unm-fei",
+      "title": "Brez pedagoškega procesa",
+      "start": "2027-04-26",
+      "end": "2027-04-26",
+      "category": "break",
+      "source": "university-unm-fei",
+      "note": "Samo FEI. Koledar je bil sprejet 24. 9. 2026."
+    },
+    {
+      "id": "study-unm-fis-6",
+      "kind": "study",
+      "institution": "unm-fis",
+      "title": "Prvomajske počitnice",
+      "start": "2027-04-26",
+      "end": "2027-04-30",
+      "category": "break",
+      "source": "university-unm-fis",
+      "note": "Samo FIŠ. V poletnem počitniškem obdobju ni zagovorov zaključnih nalog."
+    },
+    {
+      "id": "school-primary-holiday-2027-04-27",
+      "kind": "school",
+      "level": "primary",
+      "title": "Dan upora proti okupatorju",
+      "start": "2027-04-27",
+      "end": "2027-04-27",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-primary-may",
+      "kind": "school",
+      "level": "primary",
+      "title": "Prvomajske počitnice",
+      "start": "2027-04-27",
+      "end": "2027-05-02",
+      "category": "break",
+      "source": "gov-primary"
+    },
+    {
+      "id": "school-secondary-holiday-2027-04-27",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Dan upora proti okupatorju",
+      "start": "2027-04-27",
+      "end": "2027-04-27",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-secondary-may",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Prvomajske počitnice",
+      "start": "2027-04-28",
+      "end": "2027-04-30",
+      "category": "break",
+      "source": "gov-secondary"
+    },
+    {
+      "id": "study-ung-6",
+      "kind": "study",
+      "institution": "ung",
+      "title": "Brez pedagoških aktivnosti",
+      "start": "2027-04-28",
+      "end": "2027-04-30",
+      "category": "break",
+      "source": "university-ung",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "study-unm-fei-7",
+      "kind": "study",
+      "institution": "unm-fei",
+      "title": "Brez pedagoškega procesa",
+      "start": "2027-04-28",
+      "end": "2027-04-30",
+      "category": "break",
+      "source": "university-unm-fei",
+      "note": "Samo FEI. Koledar je bil sprejet 24. 9. 2026."
+    },
+    {
+      "id": "matura-general-change-subject",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Sprememba predmeta ali ravni zaradi omejitve vpisa",
+      "start": "2027-04-29",
+      "end": "2027-04-29",
+      "session": "spring",
+      "category": "application",
+      "source": "ric-general"
+    },
+    {
+      "id": "school-primary-holiday-2027-05-01",
+      "kind": "school",
+      "level": "primary",
+      "title": "Praznik dela",
+      "start": "2027-05-01",
+      "end": "2027-05-01",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-secondary-holiday-2027-05-01",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Praznik dela",
+      "start": "2027-05-01",
+      "end": "2027-05-01",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-primary-holiday-2027-05-02",
+      "kind": "school",
+      "level": "primary",
+      "title": "Praznik dela",
+      "start": "2027-05-02",
+      "end": "2027-05-02",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-secondary-holiday-2027-05-02",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Praznik dela",
+      "start": "2027-05-02",
+      "end": "2027-05-02",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "npz-6-results",
+      "kind": "npz",
+      "grades": [
+        6
+      ],
+      "title": "Seznanitev z dosežki NPZ",
+      "start": "2027-05-03",
+      "end": "2027-05-03",
+      "category": "results",
+      "source": "ric-npz"
+    },
+    {
+      "id": "npz-6-view",
+      "kind": "npz",
+      "grades": [
+        6
+      ],
+      "title": "Vpogled v ovrednotene preizkuse in poizvedbe",
+      "start": "2027-05-03",
+      "end": "2027-05-05",
+      "category": "results",
+      "source": "ric-npz"
+    },
+    {
+      "id": "matura-general-2027-05-04-hu_m",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Madžarščina kot materinščina · izpitna pola 1 · esej",
+      "start": "2027-05-04",
+      "end": "2027-05-04",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "hu_m"
+      ]
+    },
+    {
+      "id": "matura-general-2027-05-04-it_m",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Italijanščina kot materinščina · izpitna pola 1 · esej",
+      "start": "2027-05-04",
+      "end": "2027-05-04",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "it_m"
+      ]
+    },
+    {
+      "id": "matura-general-2027-05-04-sl",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Slovenščina · izpitna pola 1 · esej",
+      "start": "2027-05-04",
+      "end": "2027-05-04",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "sl"
+      ]
+    },
+    {
+      "id": "npz-3-results",
+      "kind": "npz",
+      "grades": [
+        3
+      ],
+      "title": "Seznanitev z dosežki NPZ",
+      "start": "2027-05-06",
+      "end": "2027-05-06",
+      "category": "results",
+      "source": "ric-npz"
+    },
+    {
+      "id": "npz-3-view",
+      "kind": "npz",
+      "grades": [
+        3
+      ],
+      "title": "Vpogled v ovrednotene preizkuse in poizvedbe",
+      "start": "2027-05-06",
+      "end": "2027-05-10",
+      "category": "results",
+      "source": "ric-npz"
+    },
+    {
+      "id": "matura-general-2027-05-10-composition",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Glasbeni stavek · izpitna pola A",
+      "start": "2027-05-10",
+      "end": "2027-05-10",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "composition"
+      ]
+    },
+    {
+      "id": "matura-general-performance",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Izvedba nastopov",
+      "start": "2027-05-10",
+      "end": "2027-05-22",
+      "session": "spring",
+      "category": "practical",
+      "source": "ric-general",
+      "subjects": [
+        "music",
+        "dance"
+      ],
+      "note": "Osebni termin določi šola."
+    },
+    {
+      "id": "matura-general-practical-results",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Točke praktičnega dela",
+      "start": "2027-05-11",
+      "end": "2027-05-11",
+      "session": "spring",
+      "category": "results",
+      "source": "ric-general"
+    },
+    {
+      "id": "npz-9-updated",
+      "kind": "npz",
+      "grades": [
+        9
+      ],
+      "title": "Dosežki po poizvedbah",
+      "start": "2027-05-11",
+      "end": "2027-05-11",
+      "category": "results",
+      "source": "ric-npz"
+    },
+    {
+      "id": "npz-6-updated",
+      "kind": "npz",
+      "grades": [
+        6
+      ],
+      "title": "Dosežki po poizvedbah",
+      "start": "2027-05-13",
+      "end": "2027-05-13",
+      "category": "results",
+      "source": "ric-npz"
+    },
+    {
+      "id": "matura-general-practical-appeal",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Rok za ugovor na točke praktičnega dela",
+      "start": "2027-05-14",
+      "end": "2027-05-14",
+      "session": "spring",
+      "category": "results",
+      "source": "ric-general"
+    },
+    {
+      "id": "school-primary-holiday-2027-05-16",
+      "kind": "school",
+      "level": "primary",
+      "title": "Binkošti",
+      "start": "2027-05-16",
+      "end": "2027-05-16",
+      "category": "holiday",
+      "source": "gov-holidays",
+      "note": "Premični praznik: binkošti so 49 dni po veliki noči. Datum za leto 2027 je izračunan."
+    },
+    {
+      "id": "school-secondary-holiday-2027-05-16",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Binkošti",
+      "start": "2027-05-16",
+      "end": "2027-05-16",
+      "category": "holiday",
+      "source": "gov-holidays",
+      "note": "Premični praznik: binkošti so 49 dni po veliki noči. Datum za leto 2027 je izračunan."
+    },
+    {
+      "id": "matura-general-late-application",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Naknadna prijava iz upravičenih razlogov",
+      "start": "2027-05-19",
+      "end": "2027-05-19",
+      "session": "spring",
+      "category": "application",
+      "source": "ric-general"
+    },
+    {
+      "id": "matura-vocational-late-application",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Naknadna prijava iz upravičenih razlogov",
+      "start": "2027-05-19",
+      "end": "2027-05-19",
+      "session": "spring",
+      "category": "application",
+      "source": "ric-vocational"
+    },
+    {
+      "id": "npz-3-updated",
+      "kind": "npz",
+      "grades": [
+        3
+      ],
+      "title": "Dosežki po poizvedbah",
+      "start": "2027-05-19",
+      "end": "2027-05-19",
+      "category": "results",
+      "source": "ric-npz"
+    },
+    {
+      "id": "school-secondary-final-assessment",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Zaključek 2. ocenjevalnega obdobja · zaključni letniki",
+      "start": "2027-05-20",
+      "end": "2027-05-20",
+      "category": "assessment",
+      "source": "gov-secondary",
+      "stage": "final"
+    },
+    {
+      "id": "school-secondary-final-end",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Zaključek pouka in razdelitev spričeval · zaključni letniki",
+      "start": "2027-05-21",
+      "end": "2027-05-21",
+      "category": "teaching",
+      "source": "gov-secondary",
+      "stage": "final"
+    },
+    {
+      "id": "school-secondary-improvement",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Izpiti za izboljšanje ocen · zaključni letniki",
+      "start": "2027-05-24",
+      "end": "2027-05-26",
+      "category": "exam",
+      "source": "gov-secondary",
+      "stage": "final"
+    },
+    {
+      "id": "school-secondary-preparation",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Priprava na maturo in zaključni izpit",
+      "start": "2027-05-24",
+      "end": "2027-05-28",
+      "category": "exam",
+      "source": "gov-secondary",
+      "stage": "final"
+    },
+    {
+      "id": "matura-general-withdrawal",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Zadnji dan za odjavo",
+      "start": "2027-05-27",
+      "end": "2027-05-27",
+      "session": "spring",
+      "category": "application",
+      "source": "ric-general",
+      "note": "Tudi zadnji dan za predložitev dokazil o izpolnjevanju pogojev."
+    },
+    {
+      "id": "matura-vocational-withdrawal",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Zadnji dan za odjavo",
+      "start": "2027-05-27",
+      "end": "2027-05-27",
+      "session": "spring",
+      "category": "application",
+      "source": "ric-vocational"
+    },
+    {
+      "id": "school-secondary-vocational-exams-start",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Začetek dopolnilnih in popravnih izpitov · poklicni programi",
+      "start": "2027-05-27",
+      "end": "2027-05-27",
+      "category": "exam",
+      "source": "gov-secondary",
+      "stage": "final",
+      "note": "Za zaključne letnike nižjega in srednjega poklicnega izobraževanja. Objavljen je začetek obdobja; razpored določi šola."
+    },
+    {
+      "id": "matura-general-2027-05-29-en",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Angleščina · pisni izpit",
+      "start": "2027-05-29",
+      "end": "2027-05-29",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "en"
+      ]
+    },
+    {
+      "id": "matura-vocational-2027-05-29-en",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Angleščina · pisni izpit",
+      "start": "2027-05-29",
+      "end": "2027-05-29",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-vocational",
+      "subjects": [
+        "en"
+      ]
+    },
+    {
+      "id": "matura-general-2027-05-31-hu_m",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Madžarščina kot materinščina · izpitna pola 2",
+      "start": "2027-05-31",
+      "end": "2027-05-31",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "hu_m"
+      ]
+    },
+    {
+      "id": "matura-general-2027-05-31-it_m",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Italijanščina kot materinščina · izpitna pola 2",
+      "start": "2027-05-31",
+      "end": "2027-05-31",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "it_m"
+      ]
+    },
+    {
+      "id": "matura-general-2027-05-31-sl",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Slovenščina · izpitna pola 2",
+      "start": "2027-05-31",
+      "end": "2027-05-31",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "sl"
+      ]
+    },
+    {
+      "id": "matura-vocational-2027-05-31-hu_m",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Madžarščina kot materinščina · pisni izpit",
+      "start": "2027-05-31",
+      "end": "2027-05-31",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-vocational",
+      "subjects": [
+        "hu_m"
+      ]
+    },
+    {
+      "id": "matura-vocational-2027-05-31-it_m",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Italijanščina kot materinščina · pisni izpit",
+      "start": "2027-05-31",
+      "end": "2027-05-31",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-vocational",
+      "subjects": [
+        "it_m"
+      ]
+    },
+    {
+      "id": "matura-vocational-2027-05-31-sl",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Slovenščina · pisni izpit",
+      "start": "2027-05-31",
+      "end": "2027-05-31",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-vocational",
+      "subjects": [
+        "sl"
+      ]
+    },
+    {
+      "id": "study-nu-3",
+      "kind": "study",
+      "institution": "nu",
+      "title": "Poletno izpitno obdobje",
+      "start": "2027-05-31",
+      "end": "2027-07-09",
+      "category": "exam",
+      "source": "university-nu",
+      "note": "Univerzitetni okvir. Članice lahko prilagodijo izvedbo. Spomladanska šola 3.–7. 5. in jesenska šola 13.–17. 9. 2027 nista počitnici."
+    },
+    {
+      "id": "matura-general-2027-06-01-psych",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Psihologija · pisni izpit",
+      "start": "2027-06-01",
+      "end": "2027-06-01",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "psych"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-02-soc",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Sociologija · pisni izpit",
+      "start": "2027-06-02",
+      "end": "2027-06-02",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "soc"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-03-geo",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Geografija · pisni izpit",
+      "start": "2027-06-03",
+      "end": "2027-06-03",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "geo"
+      ]
+    },
+    {
+      "id": "study-ul-3",
+      "kind": "study",
+      "institution": "ul",
+      "title": "Spomladansko izpitno obdobje",
+      "start": "2027-06-03",
+      "end": "2027-06-30",
+      "category": "exam",
+      "source": "university-ul",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "matura-general-2027-06-04-phil",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Filozofija · pisni izpit",
+      "start": "2027-06-04",
+      "end": "2027-06-04",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "phil"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-05-math",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Matematika · pisni izpit",
+      "start": "2027-06-05",
+      "end": "2027-06-05",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "math"
+      ]
+    },
+    {
+      "id": "matura-vocational-2027-06-05-math",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Matematika · pisni izpit",
+      "start": "2027-06-05",
+      "end": "2027-06-05",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-vocational",
+      "subjects": [
+        "math"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-07-gr",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Grščina · pisni izpit",
+      "start": "2027-06-07",
+      "end": "2027-06-07",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "gr"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-07-la",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Latinščina · pisni izpit",
+      "start": "2027-06-07",
+      "end": "2027-06-07",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "la"
+      ]
+    },
+    {
+      "id": "matura-vocational-2027-06-07-second",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Drugi predmet · pisni izpit",
+      "start": "2027-06-07",
+      "end": "2027-06-07",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-vocational",
+      "subjects": [
+        "second"
+      ],
+      "note": "Strokovni predmet je odvisen od izobraževalnega programa."
+    },
+    {
+      "id": "study-ung-3",
+      "kind": "study",
+      "institution": "ung",
+      "title": "Pomladansko izpitno obdobje",
+      "start": "2027-06-07",
+      "end": "2027-07-02",
+      "category": "exam",
+      "source": "university-ung",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "study-unm-fei-3",
+      "kind": "study",
+      "institution": "unm-fei",
+      "title": "Poletno izpitno obdobje",
+      "start": "2027-06-07",
+      "end": "2027-07-02",
+      "category": "exam",
+      "source": "university-unm-fei",
+      "note": "Samo FEI. Koledar je bil sprejet 24. 9. 2026."
+    },
+    {
+      "id": "study-unm-fis-3",
+      "kind": "study",
+      "institution": "unm-fis",
+      "title": "Poletno izpitno obdobje",
+      "start": "2027-06-07",
+      "end": "2027-07-02",
+      "category": "exam",
+      "source": "university-unm-fis",
+      "note": "Samo FIŠ. V poletnem počitniškem obdobju ni zagovorov zaključnih nalog."
+    },
+    {
+      "id": "study-up-3",
+      "kind": "study",
+      "institution": "up",
+      "title": "Poletno izpitno obdobje",
+      "start": "2027-06-07",
+      "end": "2027-07-09",
+      "category": "exam",
+      "source": "university-up",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "matura-general-2027-06-08-art",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Likovna teorija · pisni izpit",
+      "start": "2027-06-08",
+      "end": "2027-06-08",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "art"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-08-biotech",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Biotehnologija · pisni izpit",
+      "start": "2027-06-08",
+      "end": "2027-06-08",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "biotech"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-08-computing",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Računalništvo · pisni izpit",
+      "start": "2027-06-08",
+      "end": "2027-06-08",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "computing"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-08-dance",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Sodobni ples · pisni izpit",
+      "start": "2027-06-08",
+      "end": "2027-06-08",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "dance"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-08-economics",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Ekonomija · pisni izpit",
+      "start": "2027-06-08",
+      "end": "2027-06-08",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "economics"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-08-electro",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Elektrotehnika · pisni izpit",
+      "start": "2027-06-08",
+      "end": "2027-06-08",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "electro"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-08-materials",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Materiali · pisni izpit",
+      "start": "2027-06-08",
+      "end": "2027-06-08",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "materials"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-08-mech",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Mehanika · pisni izpit",
+      "start": "2027-06-08",
+      "end": "2027-06-08",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "mech"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-08-music",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Glasba · pisni izpit",
+      "start": "2027-06-08",
+      "end": "2027-06-08",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "music"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-08-theatre",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Zgodovina in teorija gledališča in filma · pisni izpit",
+      "start": "2027-06-08",
+      "end": "2027-06-08",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "theatre"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-09-art_history",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Umetnostna zgodovina · pisni izpit",
+      "start": "2027-06-09",
+      "end": "2027-06-09",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "art_history"
+      ]
+    },
+    {
+      "id": "matura-general-oral",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Ustni izpiti · uradno obdobje",
+      "start": "2027-06-09",
+      "end": "2027-06-23",
+      "session": "spring",
+      "category": "oral",
+      "source": "ric-general",
+      "note": "To ni osebni termin. Razpored določi šola; izjemoma so ustni izpiti mogoči tudi 29. maja in 5. junija."
+    },
+    {
+      "id": "matura-vocational-oral",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Ustni izpiti in četrti predmet · uradno obdobje",
+      "start": "2027-06-09",
+      "end": "2027-06-23",
+      "session": "spring",
+      "category": "oral",
+      "source": "ric-vocational",
+      "note": "Osebni termin določi šola. Izjemoma so izpiti mogoči tudi 29. maja in 5. junija."
+    },
+    {
+      "id": "matura-general-2027-06-10-history",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Zgodovina · pisni izpit",
+      "start": "2027-06-10",
+      "end": "2027-06-10",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "history"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-11-de",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Nemščina · pisni izpit",
+      "start": "2027-06-11",
+      "end": "2027-06-11",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "de"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-11-fr",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Francoščina · pisni izpit",
+      "start": "2027-06-11",
+      "end": "2027-06-11",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "fr"
+      ]
+    },
+    {
+      "id": "matura-vocational-2027-06-11-de",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Nemščina · pisni izpit",
+      "start": "2027-06-11",
+      "end": "2027-06-11",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-vocational",
+      "subjects": [
+        "de"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-14-bio",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Biologija · pisni izpit",
+      "start": "2027-06-14",
+      "end": "2027-06-14",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "bio"
+      ]
+    },
+    {
+      "id": "matura-vocational-2027-06-14-it_foreign",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Italijanščina kot tuji ali drugi jezik · pisni izpit",
+      "start": "2027-06-14",
+      "end": "2027-06-14",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-vocational",
+      "subjects": [
+        "it_foreign"
+      ]
+    },
+    {
+      "id": "matura-vocational-2027-06-14-sl_second",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Slovenščina kot drugi jezik · pisni izpit",
+      "start": "2027-06-14",
+      "end": "2027-06-14",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-vocational",
+      "subjects": [
+        "sl_second"
+      ]
+    },
+    {
+      "id": "study-um-3",
+      "kind": "study",
+      "institution": "um",
+      "title": "Poletno izpitno obdobje",
+      "start": "2027-06-14",
+      "end": "2027-07-09",
+      "category": "exam",
+      "source": "university-um",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "matura-general-2027-06-15-hu_prekmurje",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Madžarščina v Prekmurju · pisni izpit",
+      "start": "2027-06-15",
+      "end": "2027-06-15",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "hu_prekmurje"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-15-informatics",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Informatika · pisni izpit",
+      "start": "2027-06-15",
+      "end": "2027-06-15",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "informatics"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-15-it",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Italijanščina · pisni izpit",
+      "start": "2027-06-15",
+      "end": "2027-06-15",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "it"
+      ],
+      "note": "RIC opozarja, da se datum pisnega izpita iz italijanščine lahko spremeni glede na prijave."
+    },
+    {
+      "id": "matura-general-2027-06-15-it_istria",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Italijanščina v Slovenski Istri · pisni izpit",
+      "start": "2027-06-15",
+      "end": "2027-06-15",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "it_istria"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-15-sl_istria",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Slovenščina v Slovenski Istri · pisni izpit",
+      "start": "2027-06-15",
+      "end": "2027-06-15",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "sl_istria"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-15-sl_prekmurje",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Slovenščina v Prekmurju · pisni izpit",
+      "start": "2027-06-15",
+      "end": "2027-06-15",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "sl_prekmurje"
+      ]
+    },
+    {
+      "id": "npz-9-certificate",
+      "kind": "npz",
+      "grades": [
+        9
+      ],
+      "title": "Obvestilo o dosežkih ob razdelitvi spričeval",
+      "start": "2027-06-15",
+      "end": "2027-06-15",
+      "category": "results",
+      "source": "ric-npz"
+    },
+    {
+      "id": "school-primary-end9",
+      "kind": "school",
+      "level": "primary",
+      "title": "Zaključek pouka in razdelitev spričeval · 9. razred",
+      "start": "2027-06-15",
+      "end": "2027-06-15",
+      "category": "teaching",
+      "source": "gov-primary",
+      "grades": [
+        9
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-16-physics",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Fizika · pisni izpit",
+      "start": "2027-06-16",
+      "end": "2027-06-16",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "physics"
+      ]
+    },
+    {
+      "id": "school-primary-exams9",
+      "kind": "school",
+      "level": "primary",
+      "title": "Predmetni in popravni izpiti · 9. razred",
+      "start": "2027-06-16",
+      "end": "2027-06-30",
+      "category": "exam",
+      "source": "gov-primary",
+      "grades": [
+        9
+      ],
+      "note": "Prvi rok. Posamezne termine določi šola."
+    },
+    {
+      "id": "matura-general-2027-06-17-es",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Španščina · pisni izpit",
+      "start": "2027-06-17",
+      "end": "2027-06-17",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "es"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-17-ru",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Ruščina · pisni izpit",
+      "start": "2027-06-17",
+      "end": "2027-06-17",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "ru"
+      ]
+    },
+    {
+      "id": "matura-general-2027-06-18-chem",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Kemija · pisni izpit",
+      "start": "2027-06-18",
+      "end": "2027-06-18",
+      "session": "spring",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "chem"
+      ]
+    },
+    {
+      "id": "school-secondary-other-assessment",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Zaključek 2. ocenjevalnega obdobja · drugi letniki",
+      "start": "2027-06-23",
+      "end": "2027-06-23",
+      "category": "assessment",
+      "source": "gov-secondary",
+      "stage": "other"
+    },
+    {
+      "id": "npz-3-certificate",
+      "kind": "npz",
+      "grades": [
+        3
+      ],
+      "title": "Obvestilo o dosežkih ob razdelitvi spričeval",
+      "start": "2027-06-24",
+      "end": "2027-06-24",
+      "category": "results",
+      "source": "ric-npz"
+    },
+    {
+      "id": "npz-6-certificate",
+      "kind": "npz",
+      "grades": [
+        6
+      ],
+      "title": "Obvestilo o dosežkih ob razdelitvi spričeval",
+      "start": "2027-06-24",
+      "end": "2027-06-24",
+      "category": "results",
+      "source": "ric-npz"
+    },
+    {
+      "id": "school-primary-end1-8",
+      "kind": "school",
+      "level": "primary",
+      "title": "Zaključek pouka in razdelitev spričeval · 1.–8. razred",
+      "start": "2027-06-24",
+      "end": "2027-06-24",
+      "category": "teaching",
+      "source": "gov-primary",
+      "grades": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "school-secondary-other-end",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Zaključek pouka in razdelitev spričeval · drugi letniki",
+      "start": "2027-06-24",
+      "end": "2027-06-24",
+      "category": "teaching",
+      "source": "gov-secondary",
+      "stage": "other"
+    },
+    {
+      "id": "school-primary-holiday-2027-06-25",
+      "kind": "school",
+      "level": "primary",
+      "title": "Dan državnosti",
+      "start": "2027-06-25",
+      "end": "2027-06-25",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-secondary-holiday-2027-06-25",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Dan državnosti",
+      "start": "2027-06-25",
+      "end": "2027-06-25",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-primary-exams1-8",
+      "kind": "school",
+      "level": "primary",
+      "title": "Predmetni in popravni izpiti · 1.–8. razred",
+      "start": "2027-06-28",
+      "end": "2027-07-09",
+      "category": "exam",
+      "source": "gov-primary",
+      "grades": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "note": "Prvi rok. Posamezne termine določi šola."
+    },
+    {
+      "id": "school-primary-summer",
+      "kind": "school",
+      "level": "primary",
+      "title": "Poletne počitnice",
+      "start": "2027-06-28",
+      "end": "2027-08-31",
+      "category": "break",
+      "source": "gov-primary"
+    },
+    {
+      "id": "school-secondary-spring-exams-start",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Začetek spomladanskega izpitnega roka",
+      "start": "2027-06-28",
+      "end": "2027-06-28",
+      "category": "exam",
+      "source": "gov-secondary",
+      "note": "Objavljen je začetni datum. Razpored izpitov določi šola."
+    },
+    {
+      "id": "school-secondary-summer",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Poletne počitnice",
+      "start": "2027-06-28",
+      "end": "2027-08-31",
+      "category": "break",
+      "source": "gov-secondary"
+    },
+    {
+      "id": "study-unm-fis-7",
+      "kind": "study",
+      "institution": "unm-fis",
+      "title": "Poletne počitnice",
+      "start": "2027-07-05",
+      "end": "2027-08-13",
+      "category": "break",
+      "source": "university-unm-fis",
+      "note": "Samo FIŠ. V poletnem počitniškem obdobju ni zagovorov zaključnih nalog."
+    },
+    {
+      "id": "matura-vocational-results",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Seznanitev z uspehom · spomladanski rok",
+      "start": "2027-07-08",
+      "end": "2027-07-08",
+      "session": "spring",
+      "category": "results",
+      "source": "ric-vocational"
+    },
+    {
+      "id": "matura-vocational-autumn-application",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Rok za prijavo · jesenski rok",
+      "start": "2027-07-09",
+      "end": "2027-07-09",
+      "session": "autumn",
+      "category": "application",
+      "source": "ric-vocational"
+    },
+    {
+      "id": "matura-vocational-view",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Rok za pisno zahtevo za vpogled",
+      "start": "2027-07-11",
+      "end": "2027-07-11",
+      "session": "spring",
+      "category": "results",
+      "source": "ric-vocational"
+    },
+    {
+      "id": "study-nu-6",
+      "kind": "study",
+      "institution": "nu",
+      "title": "Poletne počitnice",
+      "start": "2027-07-12",
+      "end": "2027-08-13",
+      "category": "break",
+      "source": "university-nu",
+      "note": "Univerzitetni okvir. Članice lahko prilagodijo izvedbo. Spomladanska šola 3.–7. 5. in jesenska šola 13.–17. 9. 2027 nista počitnici."
+    },
+    {
+      "id": "matura-general-results",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Seznanitev z uspehom · spomladanski rok",
+      "start": "2027-07-13",
+      "end": "2027-07-13",
+      "session": "spring",
+      "category": "results",
+      "source": "ric-general"
+    },
+    {
+      "id": "matura-general-view",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Elektronski vpogled in ugovor",
+      "start": "2027-07-13",
+      "end": "2027-07-15",
+      "session": "spring",
+      "category": "results",
+      "source": "ric-general"
+    },
+    {
+      "id": "matura-general-autumn-application",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Rok za prijavo · jesenski rok",
+      "start": "2027-07-14",
+      "end": "2027-07-14",
+      "session": "autumn",
+      "category": "application",
+      "source": "ric-general"
+    },
+    {
+      "id": "study-um-4",
+      "kind": "study",
+      "institution": "um",
+      "title": "Jesensko izpitno obdobje",
+      "start": "2027-08-09",
+      "end": "2027-09-03",
+      "category": "exam",
+      "source": "university-um",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "matura-general-autumn-late",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Naknadna prijava iz upravičenih razlogov",
+      "start": "2027-08-11",
+      "end": "2027-08-11",
+      "session": "autumn",
+      "category": "application",
+      "source": "ric-general"
+    },
+    {
+      "id": "matura-vocational-autumn-late",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Naknadna prijava iz upravičenih razlogov",
+      "start": "2027-08-11",
+      "end": "2027-08-11",
+      "session": "autumn",
+      "category": "application",
+      "source": "ric-vocational"
+    },
+    {
+      "id": "school-primary-holiday-2027-08-15",
+      "kind": "school",
+      "level": "primary",
+      "title": "Marijino vnebovzetje",
+      "start": "2027-08-15",
+      "end": "2027-08-15",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-secondary-holiday-2027-08-15",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Marijino vnebovzetje",
+      "start": "2027-08-15",
+      "end": "2027-08-15",
+      "category": "holiday",
+      "source": "gov-holidays"
+    },
+    {
+      "id": "school-secondary-autumn-exams",
+      "kind": "school",
+      "level": "secondary",
+      "title": "Jesenski izpitni rok",
+      "start": "2027-08-16",
+      "end": "2027-09-27",
+      "category": "exam",
+      "source": "gov-secondary",
+      "note": "Obdobje se nadaljuje v septembru 2027. Natančen razpored določi šola."
+    },
+    {
+      "id": "study-nu-4",
+      "kind": "study",
+      "institution": "nu",
+      "title": "Jesensko izpitno obdobje",
+      "start": "2027-08-16",
+      "end": "2027-09-10",
+      "category": "exam",
+      "source": "university-nu",
+      "note": "Univerzitetni okvir. Članice lahko prilagodijo izvedbo. Spomladanska šola 3.–7. 5. in jesenska šola 13.–17. 9. 2027 nista počitnici."
+    },
+    {
+      "id": "study-ung-4",
+      "kind": "study",
+      "institution": "ung",
+      "title": "Jesensko izpitno obdobje",
+      "start": "2027-08-16",
+      "end": "2027-09-10",
+      "category": "exam",
+      "source": "university-ung",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "study-unm-fei-4",
+      "kind": "study",
+      "institution": "unm-fei",
+      "title": "Jesensko izpitno obdobje",
+      "start": "2027-08-16",
+      "end": "2027-09-10",
+      "category": "exam",
+      "source": "university-unm-fei",
+      "note": "Samo FEI. Koledar je bil sprejet 24. 9. 2026."
+    },
+    {
+      "id": "study-unm-fis-4",
+      "kind": "study",
+      "institution": "unm-fis",
+      "title": "Jesensko izpitno obdobje",
+      "start": "2027-08-16",
+      "end": "2027-09-10",
+      "category": "exam",
+      "source": "university-unm-fis",
+      "note": "Samo FIŠ. V poletnem počitniškem obdobju ni zagovorov zaključnih nalog."
+    },
+    {
+      "id": "study-up-4",
+      "kind": "study",
+      "institution": "up",
+      "title": "Jesensko izpitno obdobje",
+      "start": "2027-08-16",
+      "end": "2027-09-10",
+      "category": "exam",
+      "source": "university-up",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "matura-general-autumn-practical-submission",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Oddaja izdelkov praktičnega dela",
+      "start": "2027-08-17",
+      "end": "2027-08-17",
+      "session": "autumn",
+      "category": "practical",
+      "source": "ric-general"
+    },
+    {
+      "id": "school-primary-exams-autumn",
+      "kind": "school",
+      "level": "primary",
+      "title": "Predmetni in popravni izpiti · drugi rok",
+      "start": "2027-08-18",
+      "end": "2027-08-31",
+      "category": "exam",
+      "source": "gov-primary",
+      "note": "Posamezne termine določi šola."
+    },
+    {
+      "id": "matura-general-autumn-withdrawal",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Zadnji dan za odjavo",
+      "start": "2027-08-19",
+      "end": "2027-08-19",
+      "session": "autumn",
+      "category": "application",
+      "source": "ric-general",
+      "note": "Tudi zadnji dan za predložitev dokazil o izpolnjevanju pogojev."
+    },
+    {
+      "id": "matura-vocational-autumn-withdrawal",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Zadnji dan za odjavo",
+      "start": "2027-08-19",
+      "end": "2027-08-19",
+      "session": "autumn",
+      "category": "application",
+      "source": "ric-vocational"
+    },
+    {
+      "id": "matura-general-autumn-electives-2027-08-21",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Tuji jeziki in izbirni predmeti · preverite šolski razpored",
+      "start": "2027-08-21",
+      "end": "2027-08-21",
+      "session": "autumn",
+      "category": "written",
+      "source": "ric-general",
+      "note": "Predmet in osebni termin preverite v šolskem razporedu. RIC za ta dan ne določa enega predmeta za vse kandidate.",
+      "schoolSchedule": true,
+      "subjects": [
+        "art",
+        "art_history",
+        "bio",
+        "biotech",
+        "chem",
+        "computing",
+        "dance",
+        "de",
+        "economics",
+        "electro",
+        "en",
+        "es",
+        "fr",
+        "geo",
+        "gr",
+        "history",
+        "hu_prekmurje",
+        "informatics",
+        "it",
+        "it_istria",
+        "la",
+        "materials",
+        "mech",
+        "music",
+        "phil",
+        "physics",
+        "psych",
+        "ru",
+        "sl_istria",
+        "sl_prekmurje",
+        "soc",
+        "theatre"
+      ]
+    },
+    {
+      "id": "matura-general-autumn-oral",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Ustni izpiti · uradno obdobje",
+      "start": "2027-08-21",
+      "end": "2027-09-02",
+      "session": "autumn",
+      "category": "oral",
+      "source": "ric-general",
+      "note": "To ni osebni termin. Razpored določi šola."
+    },
+    {
+      "id": "matura-vocational-autumn-oral",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Ustni izpiti in četrti predmet · uradno obdobje",
+      "start": "2027-08-21",
+      "end": "2027-09-02",
+      "session": "autumn",
+      "category": "oral",
+      "source": "ric-vocational",
+      "note": "Osebni termin določi šola."
+    },
+    {
+      "id": "matura-general-autumn-hu_m",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Madžarščina kot materinščina · izpitni poli 1 in 2",
+      "start": "2027-08-23",
+      "end": "2027-08-23",
+      "session": "autumn",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "hu_m"
+      ]
+    },
+    {
+      "id": "matura-general-autumn-it_m",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Italijanščina kot materinščina · izpitni poli 1 in 2",
+      "start": "2027-08-23",
+      "end": "2027-08-23",
+      "session": "autumn",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "it_m"
+      ]
+    },
+    {
+      "id": "matura-general-autumn-sl",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Slovenščina · izpitni poli 1 in 2",
+      "start": "2027-08-23",
+      "end": "2027-08-23",
+      "session": "autumn",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "sl"
+      ]
+    },
+    {
+      "id": "matura-vocational-2027-08-23-hu_m",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Madžarščina kot materinščina · pisni izpit",
+      "start": "2027-08-23",
+      "end": "2027-08-23",
+      "session": "autumn",
+      "category": "written",
+      "source": "ric-vocational",
+      "subjects": [
+        "hu_m"
+      ]
+    },
+    {
+      "id": "matura-vocational-2027-08-23-it_m",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Italijanščina kot materinščina · pisni izpit",
+      "start": "2027-08-23",
+      "end": "2027-08-23",
+      "session": "autumn",
+      "category": "written",
+      "source": "ric-vocational",
+      "subjects": [
+        "it_m"
+      ]
+    },
+    {
+      "id": "matura-vocational-2027-08-23-sl",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Slovenščina · pisni izpit",
+      "start": "2027-08-23",
+      "end": "2027-08-23",
+      "session": "autumn",
+      "category": "written",
+      "source": "ric-vocational",
+      "subjects": [
+        "sl"
+      ]
+    },
+    {
+      "id": "study-ul-4",
+      "kind": "study",
+      "institution": "ul",
+      "title": "Jesensko izpitno obdobje",
+      "start": "2027-08-23",
+      "end": "2027-09-17",
+      "category": "exam",
+      "source": "university-ul",
+      "note": "Preverjen univerzitetni okvir 2026/2027. Članice lahko določijo drugačno izvedbo; preverite koledar svoje fakultete."
+    },
+    {
+      "id": "matura-general-autumn-math",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Matematika · pisni izpit",
+      "start": "2027-08-24",
+      "end": "2027-08-24",
+      "session": "autumn",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "math"
+      ]
+    },
+    {
+      "id": "matura-vocational-2027-08-24-math",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Matematika · pisni izpit",
+      "start": "2027-08-24",
+      "end": "2027-08-24",
+      "session": "autumn",
+      "category": "written",
+      "source": "ric-vocational",
+      "subjects": [
+        "math"
+      ]
+    },
+    {
+      "id": "matura-general-autumn-electives-2027-08-25",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Tuji jeziki in izbirni predmeti · preverite šolski razpored",
+      "start": "2027-08-25",
+      "end": "2027-08-25",
+      "session": "autumn",
+      "category": "written",
+      "source": "ric-general",
+      "note": "Predmet in osebni termin preverite v šolskem razporedu. RIC za ta dan ne določa enega predmeta za vse kandidate.",
+      "schoolSchedule": true,
+      "subjects": [
+        "art",
+        "art_history",
+        "bio",
+        "biotech",
+        "chem",
+        "computing",
+        "dance",
+        "de",
+        "economics",
+        "electro",
+        "en",
+        "es",
+        "fr",
+        "geo",
+        "gr",
+        "history",
+        "hu_prekmurje",
+        "informatics",
+        "it",
+        "it_istria",
+        "la",
+        "materials",
+        "mech",
+        "music",
+        "phil",
+        "physics",
+        "psych",
+        "ru",
+        "sl_istria",
+        "sl_prekmurje",
+        "soc",
+        "theatre"
+      ]
+    },
+    {
+      "id": "matura-vocational-2027-08-25-de",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Nemščina · pisni izpit",
+      "start": "2027-08-25",
+      "end": "2027-08-25",
+      "session": "autumn",
+      "category": "written",
+      "source": "ric-vocational",
+      "subjects": [
+        "de"
+      ]
+    },
+    {
+      "id": "matura-vocational-2027-08-25-en",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Angleščina · pisni izpit",
+      "start": "2027-08-25",
+      "end": "2027-08-25",
+      "session": "autumn",
+      "category": "written",
+      "source": "ric-vocational",
+      "subjects": [
+        "en"
+      ]
+    },
+    {
+      "id": "matura-vocational-2027-08-25-it_foreign",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Italijanščina kot tuji ali drugi jezik · pisni izpit",
+      "start": "2027-08-25",
+      "end": "2027-08-25",
+      "session": "autumn",
+      "category": "written",
+      "source": "ric-vocational",
+      "subjects": [
+        "it_foreign"
+      ]
+    },
+    {
+      "id": "matura-vocational-2027-08-25-sl_second",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Slovenščina kot drugi jezik · pisni izpit",
+      "start": "2027-08-25",
+      "end": "2027-08-25",
+      "session": "autumn",
+      "category": "written",
+      "source": "ric-vocational",
+      "subjects": [
+        "sl_second"
+      ]
+    },
+    {
+      "id": "matura-general-autumn-composition",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Glasbeni stavek · izpitna pola A",
+      "start": "2027-08-26",
+      "end": "2027-08-26",
+      "session": "autumn",
+      "category": "written",
+      "source": "ric-general",
+      "subjects": [
+        "composition"
+      ]
+    },
+    {
+      "id": "matura-vocational-2027-08-26-second",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Drugi predmet · pisni izpit",
+      "start": "2027-08-26",
+      "end": "2027-08-26",
+      "session": "autumn",
+      "category": "written",
+      "source": "ric-vocational",
+      "subjects": [
+        "second"
+      ],
+      "note": "Strokovni predmet je odvisen od izobraževalnega programa."
+    },
+    {
+      "id": "matura-general-autumn-electives-2027-08-27",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Tuji jeziki in izbirni predmeti · preverite šolski razpored",
+      "start": "2027-08-27",
+      "end": "2027-08-27",
+      "session": "autumn",
+      "category": "written",
+      "source": "ric-general",
+      "note": "Predmet in osebni termin preverite v šolskem razporedu. RIC za ta dan ne določa enega predmeta za vse kandidate.",
+      "schoolSchedule": true,
+      "subjects": [
+        "art",
+        "art_history",
+        "bio",
+        "biotech",
+        "chem",
+        "computing",
+        "dance",
+        "de",
+        "economics",
+        "electro",
+        "en",
+        "es",
+        "fr",
+        "geo",
+        "gr",
+        "history",
+        "hu_prekmurje",
+        "informatics",
+        "it",
+        "it_istria",
+        "la",
+        "materials",
+        "mech",
+        "music",
+        "phil",
+        "physics",
+        "psych",
+        "ru",
+        "sl_istria",
+        "sl_prekmurje",
+        "soc",
+        "theatre"
+      ]
+    },
+    {
+      "id": "matura-general-autumn-electives-2027-08-30",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Tuji jeziki in izbirni predmeti · preverite šolski razpored",
+      "start": "2027-08-30",
+      "end": "2027-08-30",
+      "session": "autumn",
+      "category": "written",
+      "source": "ric-general",
+      "note": "Predmet in osebni termin preverite v šolskem razporedu. RIC za ta dan ne določa enega predmeta za vse kandidate.",
+      "schoolSchedule": true,
+      "subjects": [
+        "art",
+        "art_history",
+        "bio",
+        "biotech",
+        "chem",
+        "computing",
+        "dance",
+        "de",
+        "economics",
+        "electro",
+        "en",
+        "es",
+        "fr",
+        "geo",
+        "gr",
+        "history",
+        "hu_prekmurje",
+        "informatics",
+        "it",
+        "it_istria",
+        "la",
+        "materials",
+        "mech",
+        "music",
+        "phil",
+        "physics",
+        "psych",
+        "ru",
+        "sl_istria",
+        "sl_prekmurje",
+        "soc",
+        "theatre"
+      ]
+    },
+    {
+      "id": "matura-general-autumn-electives-2027-08-31",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Tuji jeziki in izbirni predmeti · preverite šolski razpored",
+      "start": "2027-08-31",
+      "end": "2027-08-31",
+      "session": "autumn",
+      "category": "written",
+      "source": "ric-general",
+      "note": "Predmet in osebni termin preverite v šolskem razporedu. RIC za ta dan ne določa enega predmeta za vse kandidate.",
+      "schoolSchedule": true,
+      "subjects": [
+        "art",
+        "art_history",
+        "bio",
+        "biotech",
+        "chem",
+        "computing",
+        "dance",
+        "de",
+        "economics",
+        "electro",
+        "en",
+        "es",
+        "fr",
+        "geo",
+        "gr",
+        "history",
+        "hu_prekmurje",
+        "informatics",
+        "it",
+        "it_istria",
+        "la",
+        "materials",
+        "mech",
+        "music",
+        "phil",
+        "physics",
+        "psych",
+        "ru",
+        "sl_istria",
+        "sl_prekmurje",
+        "soc",
+        "theatre"
+      ]
+    },
+    {
+      "id": "matura-general-autumn-performance",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Izvedba nastopov",
+      "start": "2027-08-31",
+      "end": "2027-09-02",
+      "session": "autumn",
+      "category": "practical",
+      "source": "ric-general",
+      "subjects": [
+        "music",
+        "dance"
+      ],
+      "note": "Osebni termin določi šola."
+    },
+    {
+      "id": "matura-general-autumn-practical-results",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Točke praktičnega dela",
+      "start": "2027-09-01",
+      "end": "2027-09-01",
+      "session": "autumn",
+      "category": "results",
+      "source": "ric-general"
+    },
+    {
+      "id": "matura-general-autumn-practical-appeal",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Rok za ugovor na točke praktičnega dela",
+      "start": "2027-09-04",
+      "end": "2027-09-04",
+      "session": "autumn",
+      "category": "results",
+      "source": "ric-general"
+    },
+    {
+      "id": "matura-vocational-autumn-results",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Seznanitev z uspehom · jesenski rok",
+      "start": "2027-09-08",
+      "end": "2027-09-08",
+      "session": "autumn",
+      "category": "results",
+      "source": "ric-vocational"
+    },
+    {
+      "id": "matura-vocational-autumn-view",
+      "kind": "matura",
+      "examType": "vocational",
+      "title": "Rok za pisno zahtevo za vpogled",
+      "start": "2027-09-11",
+      "end": "2027-09-11",
+      "session": "autumn",
+      "category": "results",
+      "source": "ric-vocational"
+    },
+    {
+      "id": "matura-general-autumn-results",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Seznanitev z uspehom · jesenski rok",
+      "start": "2027-09-16",
+      "end": "2027-09-16",
+      "session": "autumn",
+      "category": "results",
+      "source": "ric-general"
+    },
+    {
+      "id": "matura-general-autumn-view",
+      "kind": "matura",
+      "examType": "general",
+      "title": "Elektronski vpogled in ugovor",
+      "start": "2027-09-16",
+      "end": "2027-09-20",
+      "session": "autumn",
+      "category": "results",
+      "source": "ric-general"
+    }
+  ]
+}

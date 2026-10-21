@@ -47,7 +47,14 @@ let dbPromise;
 function database(){return dbPromise??=new Promise((resolve,reject)=>{const req=indexedDB.open('koledar365-studio',1);req.onupgradeneeded=()=>req.result.createObjectStore('projects');req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);req.onblocked=()=>reject(Error('Shramba je zasedena.'));});}
 async function stored(mode,fn){const db=await database();return new Promise((resolve,reject)=>{const tx=db.transaction('projects',mode),req=fn(tx.objectStore('projects'));let result;req.onsuccess=()=>result=req.result;tx.oncomplete=()=>resolve(result);tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||Error('Shranjevanje ni uspelo.'));});}
 async function saveDraft(){try{await stored('readwrite',s=>s.put(clone(state),'draft'));$('#studio-save-state').textContent=`Shranjeno na tej napravi · ${new Intl.DateTimeFormat('sl-SI',{hour:'2-digit',minute:'2-digit'}).format(new Date())}`;}catch{$('#studio-save-state').textContent='Samodejna shramba ni na voljo';tell('Osnutka ni mogoče shraniti v brskalnik. V meniju Projekt prenesite kopijo JSON.',true);}}
-async function initialize(){try{const draft=await stored('readonly',s=>s.get('draft'));if(draft){state=normalize(draft);$('#studio-save-state').textContent='Vaš osnutek je obnovljen';tell('Dobrodošli nazaj. Vaš koledar vas je počakal.');}}catch{$('#studio-save-state').textContent='Osnutek lahko shranite kot datoteko';}render();}
+async function initialize(){try{const draft=await stored('readonly',s=>s.get('draft'));if(draft){state=normalize(draft);$('#studio-save-state').textContent='Vaš osnutek je obnovljen';tell('Dobrodošli nazaj. Vaš koledar vas je počakal.');}}catch{$('#studio-save-state').textContent='Osnutek lahko shranite kot datoteko';}
+  const period=new URLSearchParams(location.search),year=Number(period.get('year')),month=Number(period.get('month'));
+  if(period.has('year')&&Number.isInteger(year)&&year>=1900&&year<=2100)state.year=year;
+  if(period.has('month')&&Number.isInteger(month)&&month>=1&&month<=12)state.month=month;
+  if(['month','year'].includes(period.get('view')))state.view=period.get('view');
+  else if(period.get('type')==='monthly')state.view='month';
+  else if(period.get('type')==='annual')state.view='year';
+  render();}
 
 root.addEventListener('click',e=>{
   const tab=e.target.closest('[data-tab]');if(tab)switchTab(tab.dataset.tab);
