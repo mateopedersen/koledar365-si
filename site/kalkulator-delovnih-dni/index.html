@@ -27,7 +27,7 @@
 <meta name="twitter:image" content="https://koledar365.si/druzabno/pages/296/d02ee0a263661bc1fb1d.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl"},{"@type":"WebPage","@id":"https://koledar365.si/kalkulator-delovnih-dni/#webpage","url":"https://koledar365.si/kalkulator-delovnih-dni/","name":"Kalkulator delovnih dni","description":"Preštejte delovne dni med datumoma. Izberite delovni teden, dnevne ure in upoštevanje zakonskih dela prostih dni v Sloveniji.","inLanguage":"sl","isPartOf":{"@id":"https://koledar365.si/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://koledar365.si/"},{"@type":"ListItem","position":2,"name":"Kalkulator delovnih dni","item":"https://koledar365.si/kalkulator-delovnih-dni/"}]}]}</script>
 
-<link rel="stylesheet" href="/assets/web-b710c3b385cf6eff.css">
+<link rel="stylesheet" href="/assets/web-be26e36212531f72.css">
 
 
 
@@ -107,20 +107,116 @@
 <p>Preštejte delovne dni med datumoma. Izberite delovni teden, dnevne ure in upoštevanje zakonskih dela prostih dni v Sloveniji.</p>
 </div>
 <!-- BEGIN app/views/pages/_tool.html.erb
---><section class="panel tool-panel"><form class="api-form" action="/izracun/" method="post">
-<input type="hidden" name="tool" value="workdays">
-<div class="form-row">
-<label>Začetni datum<input type="date" name="from" value="2027-01-01" required></label><label>Končni datum<input type="date" name="to" value="2027-12-31" required></label>
+--><section class="workday-tool" data-workday-calculator aria-labelledby="workday-tool-title">
+  <div class="workday-tool__intro">
+    <div>
+<span class="workday-tool__eyebrow"><span aria-hidden="true">▦</span> ORODJE ZA NAČRTOVANJE</span><h2 id="workday-tool-title">Roki in delovne dni, izračunani po slovenskem koledarju</h2>
+<p>Preštejte delovne dni med datumoma ali poiščite datum po določenem številu delovnih dni. Prilagodite svoj urnik in po želji izključite slovenske dela proste praznike.</p>
 </div>
-<fieldset>
-<legend>Delovni dnevi v tednu</legend>
-<label class="check"><input type="checkbox" name="weekdays[]" value="1" checked>ponedeljek</label><label class="check"><input type="checkbox" name="weekdays[]" value="2" checked>torek</label><label class="check"><input type="checkbox" name="weekdays[]" value="3" checked>sreda</label><label class="check"><input type="checkbox" name="weekdays[]" value="4" checked>četrtek</label><label class="check"><input type="checkbox" name="weekdays[]" value="5" checked>petek</label><label class="check"><input type="checkbox" name="weekdays[]" value="6">sobota</label><label class="check"><input type="checkbox" name="weekdays[]" value="7">nedelja</label>
-</fieldset>
-<label>Dnevne ure<input type="number" min="0" max="24" step="0.25" name="hours" value="8" required></label><label class="check"><input type="checkbox" name="exclude_holidays" value="1" checked>Izloči zakonske dela proste dneve</label><label class="check"><input type="checkbox" name="include_start" value="1" checked>Vključi začetni datum</label><label class="check"><input type="checkbox" name="include_end" value="1" checked>Vključi končni datum</label>
+    <div class="workday-tool__quick-facts" aria-label="Značilnosti kalkulatorja">
+<span><strong>01</strong> obdobje</span><span><strong>02</strong> datum roka</span><span><strong>2027–2030</strong> koledar</span>
+</div>
+  </div>
 
-<button class="primary">Izračunaj</button><output class="result" aria-live="polite"></output>
-</form>
-<p><a href="/viri-in-metodologija/">Kako računamo</a></p></section>
+  <div class="workday-tool__workspace">
+    <div class="workday-tool__calculator">
+      <div class="workday-tool__tabs" role="tablist" aria-label="Vrsta izračuna delovnih dni">
+        <button type="button" role="tab" id="wdc-tab-range" aria-selected="true" aria-controls="wdc-panel-range" data-wdc-mode="range"><span aria-hidden="true">↔</span><span><strong>Dnevi med datumoma</strong><small>Obdobje, ure in prazniki</small></span></button>
+        <button type="button" role="tab" id="wdc-tab-shift" aria-selected="false" aria-controls="wdc-panel-shift" data-wdc-mode="shift" tabindex="-1"><span aria-hidden="true">→</span><span><strong>Datum čez delovne dni</strong><small>Rok naprej ali nazaj</small></span></button>
+      </div>
+
+      <div class="workday-tool__panel" id="wdc-panel-range" role="tabpanel" aria-labelledby="wdc-tab-range" data-wdc-panel="range">
+        <form action="/izracun/" method="post" data-wdc-form="range">
+          <input type="hidden" name="tool" value="workdays">
+          <div class="wdc-date-row">
+            <label>Od <input type="date" name="from" value="2027-01-01" min="2027-01-01" max="2030-12-31" required data-wdc-from></label>
+            <span class="wdc-date-row__connector" aria-hidden="true">→</span>
+            <label>Do <input type="date" name="to" value="2027-12-31" min="2027-01-01" max="2030-12-31" required data-wdc-to></label>
+          </div>
+          <div class="wdc-presets" aria-label="Hitro izberi obdobje">
+<span>Hitri izbor</span><button type="button" data-wdc-preset="week">7 dni</button><button type="button" data-wdc-preset="month">30 dni</button><button type="button" data-wdc-preset="quarter">90 dni</button><button type="button" data-wdc-preset="year">Celo leto</button>
+</div>
+          <fieldset class="wdc-weekdays">
+<legend>Kateri dnevi so za vas delovni?</legend>
+<div>
+<label><input type="checkbox" name="weekdays[]" value="1" checked><span>Pon</span></label><label><input type="checkbox" name="weekdays[]" value="2" checked><span>Tor</span></label><label><input type="checkbox" name="weekdays[]" value="3" checked><span>Sre</span></label><label><input type="checkbox" name="weekdays[]" value="4" checked><span>Čet</span></label><label><input type="checkbox" name="weekdays[]" value="5" checked><span>Pet</span></label><label><input type="checkbox" name="weekdays[]" value="6"><span>Sob</span></label><label><input type="checkbox" name="weekdays[]" value="7"><span>Ned</span></label>
+</div>
+</fieldset>
+          <div class="wdc-settings">
+            <label class="wdc-hours">Delovnih ur na dan<input type="number" name="hours" min="0" max="24" step="0.25" value="8" inputmode="decimal" required></label>
+            <label class="wdc-check"><input type="checkbox" name="exclude_holidays" value="1" checked><span><strong>Izključi dela proste praznike</strong><small>Uporabi uradni slovenski koledar</small></span></label>
+          </div>
+          <div class="wdc-boundaries">
+<span>Mejna datuma</span><label><input type="checkbox" name="include_start" value="1" checked><span>Vključi začetek</span></label><label><input type="checkbox" name="include_end" value="1" checked><span>Vključi konec</span></label>
+</div>
+          <button class="wdc-submit" type="submit"><span aria-hidden="true">✦</span> Izračunaj obdobje <b aria-hidden="true">→</b></button>
+        </form>
+      </div>
+
+      <div class="workday-tool__panel" id="wdc-panel-shift" role="tabpanel" aria-labelledby="wdc-tab-shift" data-wdc-panel="shift" hidden>
+        <form action="/izracun/" method="post" data-wdc-form="shift">
+          <input type="hidden" name="tool" value="workday_shift">
+          <div class="wdc-date-row wdc-date-row--shift">
+<label>Izhodiščni datum<input type="date" name="from" value="2027-01-01" min="2027-01-01" max="2030-12-31" required></label><label>Število delovnih dni<input type="number" name="delta" min="-1000" max="1000" step="1" value="10" required inputmode="numeric"></label>
+</div>
+          <p class="wdc-hint">Pozitivno število poišče datum naprej, negativno pa nazaj. Izhodiščni datum se ne šteje; začne se z naslednjim koledarskim dnem.</p>
+          <fieldset class="wdc-weekdays">
+<legend>Kateri dnevi so za vas delovni?</legend>
+<div>
+<label><input type="checkbox" name="weekdays[]" value="1" checked><span>Pon</span></label><label><input type="checkbox" name="weekdays[]" value="2" checked><span>Tor</span></label><label><input type="checkbox" name="weekdays[]" value="3" checked><span>Sre</span></label><label><input type="checkbox" name="weekdays[]" value="4" checked><span>Čet</span></label><label><input type="checkbox" name="weekdays[]" value="5" checked><span>Pet</span></label><label><input type="checkbox" name="weekdays[]" value="6"><span>Sob</span></label><label><input type="checkbox" name="weekdays[]" value="7"><span>Ned</span></label>
+</div>
+</fieldset>
+          <label class="wdc-check wdc-check--single"><input type="checkbox" name="exclude_holidays" value="1" checked><span><strong>Izključi dela proste praznike</strong><small>Upošteva le praznike, ki so po zakonu dela prosti.</small></span></label>
+          <button class="wdc-submit" type="submit"><span aria-hidden="true">✦</span> Poišči datum <b aria-hidden="true">→</b></button>
+        </form>
+      </div>
+    </div>
+
+    <aside class="wdc-result" data-wdc-result aria-live="polite" aria-atomic="true">
+      <div class="wdc-result__top">
+<span class="wdc-result__icon" aria-hidden="true"><svg viewbox="0 0 32 32"><path d="M8 4v5m16-5v5M5 12h22M7 7h18a2 2 0 0 1 2 2v17H5V9a2 2 0 0 1 2-2Z"></path><path d="m11 19 3 3 7-7"></path></svg></span><span class="workday-tool__eyebrow">VAŠ IZRAČUN</span>
+</div>
+      <h2 data-wdc-title>Pregled vašega obdobja</h2>
+<p class="wdc-result__summary" data-wdc-summary>Vnesite datuma in urnik, nato izberite »Izračunaj obdobje«.</p>
+      <div class="wdc-result__primary">
+<strong data-wdc-primary>—</strong><span data-wdc-caption>delovnih dni</span>
+</div>
+      <div class="wdc-result__stats">
+<div>
+<span data-wdc-label="calendar">Koledarski dnevi</span><strong data-wdc-stat="calendar">—</strong>
+</div>
+<div>
+<span data-wdc-label="hours">Skupaj delovnih ur</span><strong data-wdc-stat="hours">—</strong>
+</div>
+<div>
+<span data-wdc-label="holidays">Izločeni prazniki</span><strong data-wdc-stat="holidays">—</strong>
+</div>
+</div>
+      <p class="wdc-result__detail" data-wdc-detail>Rezultat se prikaže tukaj in ga lahko kopirate ali delite.</p>
+      <div class="wdc-result__actions">
+<button type="button" data-wdc-copy>⧉ Kopiraj rezultat</button><button type="button" data-wdc-share>↗ Deli izračun</button>
+</div>
+      <p class="wdc-result__status" data-wdc-status role="status"></p>
+    </aside>
+  </div>
+
+  <div class="workday-tool__trust">
+<span aria-hidden="true">✓</span><p><strong>Ločimo praznik od prostega dne.</strong> Nekateri državni prazniki v Sloveniji niso dela prosti. Kalkulator odšteje samo uradno določene dela proste praznike in jih ne prenese na ponedeljek, če padejo na vikend. <a href="https://www.gov.si/teme/drzavni-prazniki-in-dela-prosti-dnevi/" target="_blank" rel="noopener">Preverite seznam GOV.SI ↗</a></p>
+</div>
+</section>
+
+<section class="wdc-guide" aria-label="Kako uporabljati kalkulator delovnih dni">
+  <div>
+<span class="workday-tool__eyebrow">VEČ KOT EN SAM SEŠTEVEK</span><h2>Načrtujte roke, izmene in dopust z manj ugibanja</h2>
+<p>Kalkulator je namenjen hitremu informativnemu štetju. Nastavite svoj delovni teden — na primer tudi soboto — ter število ur na dan. Deljene povezave ohranijo izbrani način in vnose, da lahko rezultat pošljete naprej.</p>
+</div>
+  <div class="wdc-guide__links">
+<a href="/delovni-dnevi/"><span>▦</span><strong>Letni pregled</strong><small>Primerjajte delovne dneve po mesecih.</small><b aria-hidden="true">↗</b></a><a href="/nacrtovalnik-dopusta/"><span>✦</span><strong>Načrtovalnik dopusta</strong><small>Odkrijte, kako s prazniki sestaviti daljši oddih.</small><b aria-hidden="true">↗</b></a><a href="/prazniki/"><span>◇</span><strong>Slovenski prazniki</strong><small>Oglejte si datume in uradni status praznikov.</small><b aria-hidden="true">↗</b></a>
+</div>
+</section>
+<section class="wdc-faq"><h2>Najpogostejša vprašanja</h2>
+<details><summary>Kaj šteje kot delovni dan v tem izračunu?</summary><p>Privzeto so to dnevi od ponedeljka do petka. Izberete lahko svoj urnik, nato pa se pri vključenem prazničnem filtru odštejejo zakonsko določeni dela prosti dnevi, ki padejo na izbrani delovni dan.</p></details><details><summary>Ali se praznik, ki pade na soboto ali nedeljo, prenese?</summary><p>Kalkulator praznika ne prenese samodejno na ponedeljek. V Sloveniji niso vsi državni prazniki dela prosti dnevi; upoštevamo koledar dela prostih dni, objavljen na GOV.SI.</p></details><details><summary>Ali je rezultat uradni izračun zakonskega roka ali dopusta?</summary><p>Ne. Orodje poda informativno štetje po izbranih pravilih. Predpisani roki, kolektivne pogodbe, izmenski urniki in pravila delodajalca lahko uporabljajo drugačna pravila.</p></details></section>
+
 <!-- END app/views/pages/_tool.html.erb -->
 
 
