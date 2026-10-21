@@ -27,7 +27,7 @@
 <% if @section=='horoscope' %><%= stylesheet_link_tag 'horoscope' %><script type="module" src="/horoscope/experience-v1.mjs"></script><% end %>
 <% if page_path == '/ustvari-koledar/' %><link rel="stylesheet" href="/studio/studio.css?v=20261020-1"><script type="module" src="/studio/studio.mjs?v=20261020-1"></script><% end %>
 <% if @section=='holidays' %><%= stylesheet_link_tag 'holidays' %><%= javascript_include_tag 'holidays',defer:true %><% end %>
-<% if page_path=='/delovni-dnevi/' && (2027..2030).cover?(@year) %><%= stylesheet_link_tag 'workdays' %><%= javascript_include_tag 'workdays',defer:true %><% end %>
+<% if page_path == '/kalkulator-delovnih-dni/' || (page_path == '/delovni-dnevi/' && (2027..2030).cover?(@year)) %><%= stylesheet_link_tag 'workdays' %><%= javascript_include_tag 'workdays',defer:true %><% end %>
 <% if @section=='observance' %><%= stylesheet_link_tag 'observances' %><% end %>
 <% if gallery_page? %><%= stylesheet_link_tag 'calendar_gallery' %><% end %>
 <% if page_path == '/razpored-izmen/' %><%= stylesheet_link_tag 'shift_schedule' %><%= javascript_include_tag 'shift_schedule',defer:true %><% end %>
