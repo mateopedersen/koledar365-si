@@ -96,4 +96,4 @@
 <%= render @section %>
 <% end %>
 
-<% if @page&.body.present? && !%w[observance school calendar_studio].include?(@section) %><section class="panel prose"><%= simple_format(@page.body) %></section><% end %>
+<% if @page&.body.present? && !%w[observance school horoscope calendar_studio].include?(@section) %><section class="panel prose"><%= simple_format(@page.body) %></section><% end %>

@@ -6,6 +6,11 @@
 <meta name="description" content="<%= @description || 'Slovenski koledarji, prazniki in orodja za osebno načrtovanje.' %>">
 <meta name="robots" content="<%= @noindex || !Rails.env.production? ? 'noindex, follow' : 'index, follow, max-image-preview:large' %>">
 <meta name="color-scheme" content="light"><meta name="theme-color" content="#ffffff">
+<% hero_image_path = if @section == 'home' then CityCatalog.default.dig('photo', 'local_path') elsif @section == 'observance' then @observance&.photo&.dig('local_path') end %>
+<% if (hero_image = WebImageCatalog.find(hero_image_path)) %>
+<% hero_sizes = @section == 'home' ? WebImageCatalog::CITY_SIZES : '(max-width:760px) 100vw, 50vw' %>
+<link rel="preload" as="image" type="image/avif" href="<%= hero_image.fetch('variants').first.fetch('avif') %>" imagesrcset="<%= hero_image.fetch('avif_srcset') %>" imagesizes="<%= hero_sizes %>" fetchpriority="high">
+<% end %>
 <% unless @not_found %><% sharing_image=seo_image %><link rel="canonical" href="<%= canonical_url %>">
 <meta property="og:title" content="<%= seo_title %>"><meta property="og:description" content="<%= @description %>"><meta property="og:type" content="website"><meta property="og:site_name" content="Koledar365"><meta property="og:locale" content="sl_SI"><meta property="og:url" content="<%= canonical_url %>"><meta property="og:image" content="<%= sharing_image[:url] %>"><meta property="og:image:width" content="<%= sharing_image[:width] %>"><meta property="og:image:height" content="<%= sharing_image[:height] %>"><meta property="og:image:alt" content="<%= sharing_image[:alt] %>">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="<%= seo_title %>"><meta name="twitter:description" content="<%= @description %>"><meta name="twitter:image" content="<%= sharing_image[:url] %>">
@@ -25,6 +30,7 @@
 <% if gallery_page? %><%= stylesheet_link_tag 'calendar_gallery' %><% end %>
 <% if page_path == '/razpored-izmen/' %><%= stylesheet_link_tag 'shift_schedule' %><%= javascript_include_tag 'shift_schedule',defer:true %><% end %>
 <% if @section=='school' %><link rel="stylesheet" href="/school/experience.css?v=20261020-3"><script type="module" src="/school/experience.mjs?v=20261020-3"></script><% end %>
+<% if @section=='horoscope' %><%= stylesheet_link_tag 'horoscope' %><script type="module" src="/horoscope/experience-v1.mjs"></script><% end %>
 <%= stylesheet_link_tag 'print' %>
 <link rel="icon" href="/visuals/brand-calendar-v3.svg" type="image/svg+xml">
 </head>
@@ -34,7 +40,7 @@
 <nav aria-label="Glavna navigacija"><a href="/koledar/">Koledar</a><a href="/prazniki/">Prazniki</a><a href="/solske-pocitnice/">Šolske počitnice</a><a href="/koledar-z-imenom/">Imena</a></nav>
 <form action="/isci/" class="search" role="search"><label class="sr-only" for="search">Poišči datum, ime ali orodje</label><input id="search" name="q" type="search" placeholder="Poišči datum, ime ali orodje" value="<%= @q %>"><button aria-label="Išči"><%= ui_icon('search') %></button></form>
 <span class="country"><%= slovenia_flag %> Slovenija</span></header>
-<nav class="subnav" aria-label="Koledarji in orodja"><% (2027..2030).each do |year| %><a href="/koledar/<%= year %>/"><%= ui_icon('calendar') %> <%= year %></a><% end %><a href="/lunin-koledar/"><%= ui_icon('moon') %> Sonce in Luna</a><a href="/delovni-dnevi/"><%= ui_icon('note') %> Delovni dnevi</a><a href="/koledar-za-tiskanje/"><%= ui_icon('print') %> Koledarji PDF</a><a href="/datumski-kalkulator/"><%= ui_icon('calculator') %> Datumski kalkulator</a><a href="/horoskop/"><%= horoscope_icon %> Dnevni horoskop</a><a href="/orodja/"><%= ui_icon('grid') %> Vsa orodja</a></nav>
+<nav class="subnav" aria-label="Koledarji in orodja"><div class="subnav-track"><% (2027..2030).each do |year| %><a href="/koledar/<%= year %>/"><%= ui_icon('calendar') %> <%= year %></a><% end %><a href="/lunin-koledar/"><%= ui_icon('moon') %> Sonce in Luna</a><a href="/delovni-dnevi/"><%= ui_icon('note') %> Delovni dnevi</a><a href="/koledar-za-tiskanje/"><%= ui_icon('print') %> Koledarji PDF</a><a href="/datumski-kalkulator/"><%= ui_icon('calculator') %> Datumski kalkulator</a><a href="/horoskop/"><%= horoscope_icon %> Dnevni horoskop</a><a href="/orodja/"><%= ui_icon('grid') %> Vsa orodja</a></div></nav>
 <main id="vsebina" tabindex="-1">
 <% unless breadcrumbs.empty? %><nav class="breadcrumb" aria-label="Drobtinice"><% breadcrumbs.each_with_index do |(label,path),i| %><% if i>0 %><span aria-hidden="true">›</span><% end %><% if i==breadcrumbs.size-1 %><span aria-current="page"><%= label %></span><% else %><a href="<%= path %>"><%= label %></a><% end %><% end %></nav><% end %>
 <% if flash[:notice] %><p class="notice" role="status"><%= flash[:notice] %></p><% end %><% if flash[:alert] %><p class="error" role="alert"><%= flash[:alert] %></p><% end %>
