@@ -124,3 +124,12 @@ Daha ayrıntılı kurtarma komutları ve faz kayıtları: docs/status-history-20
 
 - Güncel ana dal `1d9472d` üzerine yeniden üretildi; `script/audit_static.rb` 382 sitemap URL'si, 52 yıllık/aylık takvim galerisi ve 124 galeri sayfasını doğruladı. Kaynak katalogda 2.820 PDF/WebP çifti eşleşti; tüm statik doğrulama ve Cloudflare dosya denetimleri geçti.
 - Yayın derlemesi Cloudflare'a ulaşmadan önce GitHub olay gecikmesiyle eski commit `f35f9a7` dağıtılmıştı. Eski kaynakta kalan bir retry kuyruğa alınıp iptal edildi; canlı site henüz yeni okunabilirlik sürümünü sunmuyor. Doğru güncel commit'in Cloudflare Pages'e alınması ve canlı doğrulama beklemede.
+
+## 2026-10-21 Saat değişimi sayfası ve özgün infografikler
+
+- Mevcut `/premik-ure/` adresi, Slovence `Premik ure 2026–2030: poletni in zimski čas` başlığı ve resmî kaynaklarla doğrulanmış 10 geçiş tarihiyle güncellendi. Kaynak değişikliği PR #54 ile `47a877d902bbdfc7ac374c9143804db7133254ca` commit'inde ana dala alındı.
+- İlkbaharda 02:00 → 03:00, sonbaharda 03:00 → 02:00 geçişini anlatan özgün yatay ve mobil dikey SVG/WebP infografikleri eklendi. Gerçek HTML görseli, Slovence alt metin, Open Graph, ImageObject ve görsel sitemap kaydı birlikte sunulur.
+- Sonraki değişim kartı 01:00 UTC anında ilerler; 2026 ICS indirmesi ve mevcut yazdırma/2027–2030 ICS seçenekleri korunur.
+- Tam CI başarılı: 80 Rails testi, 5.046 doğrulama, Chromium/WebKit/Android/iPhone profillerinde 141 tarayıcı testi. PostgreSQL, Docker, 600 ppi çıktı, SEO ve temiz statik üretim kontrolleri geçti: https://github.com/mateopedersen/koledar365-si/actions/runs/39637451946 .
+- Doğrulanmış yayın üretimi başarılı: https://github.com/mateopedersen/koledar365-si/actions/runs/39639733905 . Hazır `site/` snapshot'ı `ffacae4b97960bec6315132b5743ce48960e4fab` commit'inde kaydedildi.
+- Bu kayıt, doğrulanmış statik çıktıyı içeren ana dalın mevcut Cloudflare Pages otomatik dağıtımına alınması içindir. Ücretli kaynak veya yeni yayın projesi oluşturulmadı.
