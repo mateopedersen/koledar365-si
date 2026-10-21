@@ -162,6 +162,11 @@
   }
 
   @media (max-width: 480px) {
+    /* Keep the two horizontally scrollable navigation rows compact on narrow
+       phones; the larger type belongs to the reading content and controls. */
+    .topbar nav a,
+    .subnav a { font-size: 12px; }
+    .topbar nav a { font-weight: 650; }
     #vsebina .calendar th { font-size: 12px; }
     #vsebina .calendar .date-link { font-size: 14px; }
     #vsebina .calendar .event-label { font-size: 10px; }
