@@ -185,7 +185,6 @@
       max-height: min(36dvh, 190px);
       overflow-y: auto;
       padding: 0 12px max(6px, env(safe-area-inset-bottom));
-      pointer-events: none;
     }
     #cookies .cookie-bar-main {
       grid-template-columns: minmax(0, 1fr) 32px;
@@ -193,8 +192,6 @@
       padding: 10px 0 8px;
     }
     #cookies .cookie-bar-icon { display: none; }
-    /* Keep the grid wrapper from becoming the hit target over its own controls. */
-    #cookies .cookie-bar-main { pointer-events: none; }
     #cookies .cookie-actions,
     #cookies .cookie-actions button,
     #cookies .cookie-actions button *,
