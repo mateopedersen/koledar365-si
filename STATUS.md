@@ -100,4 +100,11 @@ Daha ayrıntılı kurtarma komutları ve faz kayıtları: docs/status-history-20
 
 - Ana görsel sistemdeki yeşil vurgu ve durum renkleri bayrak paletinin mavisi/kırmızısına taşındı; açık yüzeyler beyaz ve açık mavi kaldı. Ana takvim, bugün işareti, şehir/hava durumu kartı, tatil ve özel gün sayfaları, sayaçlar, tatil planlayıcıları, gizlilik sayfası ve görsel bileşenler gözden geçirildi.
 - Kaynak stil denetimi `app/assets/stylesheets` altındaki 14 CSS dosyasını taradı; yeşil baskın hex rengi kalmadı. `git diff --check` temiz.
-- Değişiklikler `fix/slovenian-national-palette-20261021` dalında; statik yayın ve canlı doğrulama bu kayıt güncellendiğinde henüz tamamlanmadı.
+- Değişiklikler PR #31 ile ana dala alındı ve Cloudflare'da yayımlandı; canlı gizlilik sayfası yeni `web-cbe802e1ac740692.css` dosyasını HTTP 200 ile yükledi.
+
+## 2026-10-21 Site genelinde okunabilirlik düzenlemesi
+
+- Ortak `readability.css` katmanı, tüm sayfa ve özellik stillerinden sonra yüklenir. Gövde 17 px, ana metin 16–17 px, yardımcı metin en az 14 px; yoğun takvim etiketleri taşmayı önleyen ayrı ölçülerde tutulur. Açık temada kontrast metin tonları #405067 ve Slovenya bayrağı mavisi #084f95 olarak doğrulandı; fotoğraf üzerindeki kaynak yazıları beyaz kalır.
+- Canlı sitemap kaynakları 388 genel URL ve 8.561 isim URL'si içeriyor. Üretilmiş statik çıktıda tüm 8.949 benzersiz sitemap URL'si, 15 ortak CSS paketi ve 404 sayfası okunabilirlik katmanını yükler; eksik HTML/stil bağlantısı yok. Denetim: `evidence/readability-sitewide-audit.json`.
+- Üretim derlemesi: 8.973 HTML ve 19.923 dosya; `script/audit_static.rb`, `script/verify_static.mjs`, 2.820/2.820 PDF-WebP çifti ve 208 lunar çift doğrulandı. Chrome masaüstü ekran görüntüleri ana sayfa, iş günü ve tatil ayrıntısında; 390 px mobil viewport kontrolünde yatay sayfa taşması yok. Rails testi 73 test / 4.149 doğrulama / 0 hata geçti.
+- Kaynak değişiklikleri `app/views/layouts/application.html.erb`, `app/assets/stylesheets/readability.css` ve `script/verify_readability_coverage.py` dosyalarında. `fix/sitewide-readability-20261021` dalı, kaynak PR'si ve Cloudflare Pages yayını bu doğrulamalardan sonra tamamlanmalı.
