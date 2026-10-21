@@ -1,6 +1,5 @@
 <% if !page_path.start_with?('/lunin-koledar/') || (page_path!=LunarCalendar.path && ![2027,2028,2029,2030].include?(@year)) %><%= render 'lunar_legacy' %><% else %>
 <% hub=page_path==LunarCalendar.path; month=@page.month; year=@year; rows=LunarCalendar.period(year,month); events=LunarCalendar.phases(year,month) %>
-<link rel="stylesheet" href="/lunar/calendar.css?v=20261021-1">
 <section class="lunar-experience <%= 'lunar-hub' if hub %>" data-lunar data-year="<%= year %>" data-month="<%= month %>">
 <% unless hub %><nav class="lunar-years" aria-label="Leta"><% (2027..2030).each do |y| %><a href="<%= LunarCalendar.path(y) %>" <%= 'aria-current=page' if year==y&&!month %>><%= y %></a><% end %><a href="/viri-in-metodologija/">Viri in metodologija</a></nav><% end %>
 <% if hub %>

@@ -38,7 +38,9 @@ class HoroscopeTest < ActionDispatch::IntegrationTest
     assert_select '.z-card-date',count:12
     get '/'
     assert_select '.subnav a[href="/horoskop/"]',text:'Dnevni horoskop'
-    assert_select '.subnav a[href="/horoskop/"] img[src="/horoscope/art/wheel-icon-v1.svg"]'
+    assert_select '.subnav a[href="/horoskop/"] img' do |icons|
+      assert_match %r{\A/horoscope/art/wheel-icon-v1\.[a-f0-9]{16}\.svg\z},icons.first['src']
+    end
     assert_select '.home-zodiac-link[href="/horoskop/"]'
   end
   test 'an old edition remains dated instead of being relabeled as today' do

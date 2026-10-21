@@ -20,6 +20,7 @@
   const scatter = root.querySelector('[data-sun-scatter]');
   const reflection = root.querySelector('[data-sun-reflection]');
   const clouds = [...root.querySelectorAll('[data-sun-cloud]')];
+  const warmClouds = [...root.querySelectorAll('[data-cloud-warm]')];
   const playButton = root.querySelector('[data-sun-play]');
   const cityFilter = document.querySelector('[data-sun-city-filter]');
   const cityCount = document.querySelector('[data-sun-city-count]');
@@ -242,19 +243,27 @@
     scene.dataset.sunPhase = phase;
     root.style.setProperty('--sun-land-light', String(Math.max(0, Math.min(1, (elevation + 7) / 25))));
     if (stars) stars.style.opacity = elevation < -6 ? String(Math.min(.96, .45 + (-elevation - 6) / 28)) : '.02';
-    if (horizonGlow) horizonGlow.style.opacity = elevation < -13 ? '.025' : String(Math.max(.06, Math.min(.62, .48 - Math.max(0, elevation - 2) * .035)));
+    const nearHorizon = Math.exp(-Math.abs(elevation) / 8.5);
+    if (horizonGlow) {
+      horizonGlow.setAttribute('cx', position.x.toFixed(1));
+      horizonGlow.style.opacity = elevation < -13 ? '.015' : String(.04 + nearHorizon * .48);
+    }
     if (scatter) {
       scatter.setAttribute('cx', position.x.toFixed(1));
-      scatter.setAttribute('cy', '300');
-      scatter.setAttribute('rx', String(Math.max(42, 205 - Math.max(0, elevation) * 9)));
-      scatter.setAttribute('ry', String(Math.max(28, 82 - Math.max(0, elevation) * 2.1)));
-      scatter.style.opacity = elevation < -13 ? '.015' : String(Math.max(.06, Math.min(.58, .52 - Math.max(0, elevation) * .045)));
+      scatter.setAttribute('cy', String(Math.max(240, Math.min(302, position.y + 12))));
+      scatter.setAttribute('rx', String(54 + nearHorizon * 116));
+      scatter.setAttribute('ry', String(30 + nearHorizon * 42));
+      scatter.style.opacity = elevation < -13 ? '.008' : String(.025 + nearHorizon * .46);
     }
     clouds.forEach((cloud, index) => {
-      const phaseShift = minute / 1440 * (index === 0 ? 108 : -74);
-      cloud.setAttribute('transform', `translate(${phaseShift.toFixed(1)} 0)`);
+      const phase = minute / 1440 * Math.PI * 2 + index * 1.8;
+      const phaseShift = minute / 1440 * (index === 0 ? 28 : -20) + Math.sin(phase) * 2.2;
+      const lift = Math.cos(phase) * 1.1;
+      cloud.setAttribute('transform', `translate(${phaseShift.toFixed(1)} ${lift.toFixed(1)})`);
       cloud.style.opacity = elevation < -8 ? '.23' : elevation < 0 ? '.48' : '.76';
     });
+    const cloudWarmth = Math.max(0, 1 - Math.abs(elevation - 1) / 8);
+    warmClouds.forEach((cloud) => { cloud.style.opacity = String(cloudWarmth * .82); });
   };
   const paintSun = (minute) => {
     if (!activeModel) return;
@@ -264,6 +273,8 @@
     const visibility = Math.max(0, Math.min(1, (position.elevation + 2.1) / 1.4));
     sunObject.setAttribute('transform', `translate(${x.toFixed(1)} ${y.toFixed(1)})`);
     sunObject.style.opacity = String(visibility);
+    const atmosphericReddening = Math.max(0, Math.min(.5, (11 - position.elevation) / 18));
+    sunObject.style.filter = `sepia(${atmosphericReddening}) saturate(${1 + atmosphericReddening * .55})`;
     setSky(activeModel, position, minute);
     if (reflection) {
       reflection.setAttribute('d', `M${x.toFixed(1)} 332 Q${(x - 9).toFixed(1)} 344 ${x.toFixed(1)} 357`);
