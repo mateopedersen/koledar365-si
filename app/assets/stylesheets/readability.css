@@ -98,6 +98,9 @@
   #vsebina .stats dd,
   #vsebina .stats strong { font-weight: 800; }
 
+  /* Keep light copy on the dark solar hero legible against its blue gradient. */
+  #vsebina .sun-masthead p { color: #e0ecf8 !important; }
+
   #vsebina .page-heading p,
   #vsebina .intro p,
   #vsebina .story-copy > p,
@@ -191,7 +194,18 @@
     #cookies .cookie-bar-icon { display: none; }
     /* Keep the grid wrapper from becoming the hit target over its own controls. */
     #cookies .cookie-bar-main { pointer-events: none; }
-    #cookies .cookie-actions { pointer-events: auto; }
+    #cookies .cookie-actions,
+    #cookies .cookie-actions button,
+    #cookies .cookie-actions button *,
+    #cookies .cookie-close,
+    #cookies .cookie-close * {
+      pointer-events: auto !important;
+    }
+    #cookies .cookie-actions button,
+    #cookies .cookie-close {
+      position: relative;
+      z-index: 1001;
+    }
     #cookies .cookie-bar-copy {
       grid-column: 1;
       grid-row: 1;
