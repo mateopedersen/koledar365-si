@@ -75,7 +75,11 @@ symbol_count = 0
 svg_reference_count = 0
 Dir[File.join(root, 'site/**/*.html')].each do |path|
   page = Nokogiri::HTML(File.read(path))
-  id_collisions = page.xpath('//*[@id]').map { |node|node['id'] }.to_set & paint_definition_ids
+  injected_paint_defs = page.at_css("svg[#{SvgAssetReferences::UI_PAINT_DEFS_ATTRIBUTE}]")
+  page_ids = page.xpath('//*[@id]').reject do |node|
+    injected_paint_defs && (node == injected_paint_defs || node.ancestors.include?(injected_paint_defs))
+  end.map { |node|node['id'] }.to_set
+  id_collisions = page_ids & paint_definition_ids
   assert.call(id_collisions.empty?, "SVG paint definition ID collision in #{path}: #{id_collisions.to_a.join(', ')}")
   SvgAssetReferences.rewrite_document!(page, public_root)
   external_uses = page.css('use[href]').select { |use|use['href'].include?('ui-material-v3.') }
