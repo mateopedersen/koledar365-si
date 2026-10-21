@@ -61,7 +61,7 @@ Dir[site.join('**/*.html')].sort.each do |file|
    fail_with.call('Workdays dashboard assets must be present') unless has_workdays_styles && has_workdays_script
    fail_with.call('Workdays gallery must remain visible below the annual dashboard') unless doc.at_css('#design-gallery .gallery-format-label')&.text.to_s.include?('600 ppi') && gallery.css('.design-card').size==15
    fail_with.call('Workdays dashboard should use its full-width layout') if dashboard&.ancestors&.any? { |parent|parent['class'].to_s.split.include?('download-workspace') }
-  elsif relative.match?(%r{\Atedenski-koledar/20(?:2[7-9]|30)/index\.html\z})
+  elsif relative.match?(%r{\Atedenski-koledar/20(?:2[6-9]|30)/index\.html\z})
    fail_with.call('Weekly downloads require the real selectable week workspace') unless doc.at_css('[data-calendar-experience=weekly] [data-week-selection]') && doc.css('[data-day-notes]').size==7 && doc.at_css('[data-calendar-pdf]')
    fail_with.call('Weekly workspace module must survive static export') unless doc.at_css('script[type=module][src="/calendar-tools/experience.mjs"]') && site.join('calendar-tools/experience.mjs').file?
   else
