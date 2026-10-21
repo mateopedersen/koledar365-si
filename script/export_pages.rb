@@ -52,6 +52,9 @@ transform=lambda do |body,path,indexable:true|
  if path=='/druzinski-planer/'
   family_scripts=sources.select { |src|src.include?('/family_planner') }
   page_assets=assets.merge(scripts:(assets[:scripts]+family_scripts).uniq)
+elsif path=='/delovni-dnevi/'
+  workdays_scripts=sources.select { |src|src.match?(%r{(?:\A|/)workdays-[^/]+\.js(?:\?.*)?\z}) }
+  page_assets=assets.merge(scripts:(assets[:scripts]+workdays_scripts).uniq)
  end
  config=Nokogiri::XML::Node.new('script',doc);config['type']='application/json';config['id']='k365-static-config';config.content=JSON.generate(page_assets);doc.at_css('head').add_child(config)
  (page_assets[:scripts]+[assets[:holidays]]+(doc.at_css('[data-vacation-planner]') ? [assets[:vacation]] : [])+(doc.at_css('[data-countdown-root]') ? [assets[:countdown]] : [])+(doc.at_css('#shift-form') ? [assets[:shift]] : [])).each do |src|
