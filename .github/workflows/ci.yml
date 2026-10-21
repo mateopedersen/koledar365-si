@@ -88,6 +88,11 @@ jobs:
           unset DATABASE_URL
           bundle exec ruby script/rebuild_free.rb
           node script/test_family_static.cjs
+      - uses: pnpm/action-setup@v4
+      - name: Install and prepare static browser checks
+        run: pnpm install --frozen-lockfile && pnpm exec playwright install --with-deps chromium webkit
+      - name: Browser checks against the freshly rebuilt publication
+        run: pnpm test:city-card
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -95,27 +100,5 @@ jobs:
           path: |
             evidence/*.json
             evidence/*.txt
-          retention-days: 7
-  city-card-browser:
-    runs-on: ubuntu-latest
-    timeout-minutes: 12
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-          cache: pnpm
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm exec playwright install --with-deps chromium webkit
-      - name: Live city card timing, races, responsive layout and accessibility
-        run: pnpm test:city-card
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: city-card-browser-${{ github.sha }}
-          path: test-results/
+            test-results/
           retention-days: 7
