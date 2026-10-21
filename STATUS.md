@@ -118,3 +118,9 @@ Daha ayrıntılı kurtarma komutları ve faz kayıtları: docs/status-history-20
 - Son ana dal değişikliği `/imena/` ve `/koledar-z-imenom/` rotalarını yayından çıkardı; bu çalışma ağacındaki kullanıcı tarafından yapılmış değişiklik olarak korundu.
 - CI, artık 404 dönen altı eski isim giriş sayfasını SEO denetiminin aktif sayfa listesinde tuttuğu için başarısız oldu. `script/audit_seo.rb`, uygulamanın `PagesController::REMOVED_NAME_PATHS` kuralını kullanacak şekilde düzeltildi ve 2026-10-21'de `127a9b4` commit'i olarak kaydedildi.
 - Üretim HTML'si henüz Cloudflare'da doğrulanmadı. Yeni CI ve Pages üretimi tamamlanana, ardından canlı ana sayfa ve takvim URL'leri okunabilirlik katmanıyla HTTP 200 dönene kadar yayın tamamlanmış sayılmayacak.
+
+
+## 2026-10-21 yayın kuyruğu
+
+- Güncel ana dal `1d9472d` üzerine yeniden üretildi; `script/audit_static.rb` 382 sitemap URL'si, 52 yıllık/aylık takvim galerisi ve 124 galeri sayfasını doğruladı. Kaynak katalogda 2.820 PDF/WebP çifti eşleşti; tüm statik doğrulama ve Cloudflare dosya denetimleri geçti.
+- Yayın derlemesi Cloudflare'a ulaşmadan önce GitHub olay gecikmesiyle eski commit `f35f9a7` dağıtılmıştı. Eski kaynakta kalan bir retry kuyruğa alınıp iptal edildi; canlı site henüz yeni okunabilirlik sürümünü sunmuyor. Doğru güncel commit'in Cloudflare Pages'e alınması ve canlı doğrulama beklemede.
