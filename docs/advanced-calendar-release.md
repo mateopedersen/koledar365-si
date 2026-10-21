@@ -16,7 +16,7 @@ Hazırlık tarihi: 21 Ekim 2026. Üretim yayını, kullanıcının son Work / As
 
 PR açıklaması son doğrulanmış kaynak, yayın commitleri ve test çalıştırmalarının güncel kaydını taşır. PR'de daha yeni commit varsa yalnızca önceki bir yeşil çalıştırmaya dayanarak yayın yapmayın; güncel kaynakla hazırlanmış statik çıktının parmak izleri uyuşmalıdır. PR bu hazırlık sırasında ana dala birleştirilmez ve Cloudflare üretim dağıtımı yapılmaz.
 
-Son kaynak değişikliklerinden sonra başarılı tam hazırlık: [39670661700](https://github.com/mateopedersen/koledar365-si/actions/runs/39670661700), kaynak `67369487f6d06923b44633eaef0331e0c052fe8f`, hazırlanmış yayın commiti `915ecbdee49a48537f76d6771eae195afcbaf2a8`. Bu yayından sonraki son dokümantasyon commiti yalnızca bu kayıt ile metadata tablosunu tamamlar; üretim kaynaklarını veya `site/` çıktısını değiştirmez. Güncel PR başındaki tam CI sonucu ayrıca başarılı olmalıdır.
+Son kaynak değişikliklerinden sonra başarılı tam hazırlık: [39676624281](https://github.com/mateopedersen/koledar365-si/actions/runs/39676624281), kaynak `5e48babcc9423a7fa8dae8c10f02ee758d742751`, hazırlanmış yayın commiti `d26bdf12e41178b3d7a7dbe9cbc37cf8595e7a9d`. Bu yayından sonraki son dokümantasyon commiti yalnızca bu yayın devri kaydını günceller; üretim kaynaklarını veya `site/` çıktısını değiştirmez. Güncel PR başındaki tam CI sonucu ayrıca başarılı olmalıdır.
 
 Bu tam hazırlıkta 397 indekslenebilir canonical URL, 421 HTML dosyası, 4.073 iç hedef, 52 takvim galerisi ve 126 galeri sayfası denetlendi. Yeni A3 koleksiyonu için 780 kayıt, 52 dönem sayfası, 1.560 yönlendirme ve 790 görsel sitemap kaydı kontrol edildi. Bunlar hazırlanmış çıktının sayılarıdır; canlı alan adının gerçekten bu çıktıyı sunduğu yayın sonrasında ayrıca doğrulanacaktır.
 
@@ -68,6 +68,8 @@ Google Trends Slovence arayüzü Slovenya/12 ay ve 5 yıl karşılaştırmaları
 - 12 tasarım önizlemesi: görünür eksik görsel, sayfa hatası veya yatay taşma yok.
 - Gerçek yıllık/aylık XLSX dosyaları bağımsız olarak açılarak tarih, formül ve hücre türleri kontrol edildi.
 - WebKit'in ilk Ruby-WASM hesaplamasında mevcut yoğun durumun bitmesini bekleyen test düzeltmesi, sonuç değerleri/timeout/retry kuralları değiştirilmeden eklendi.
+- Dört profil kontrolünde bulunan galeri yerleşimi düzeltildi: Excel paneli ve galeri aynı sağ sütunda toplandı. 1280 piksel ekranda en dar indirme düğmesi 31,8 pikselden 125,8 piksele çıktı; 320/390/768/1280 piksel ölçümlerinde yatay taşma yok.
+- Ders programında WebKit'in görünmez JSON dosya seçici içeriğini taşma hesabına katması, yalnız ilgili input'a `overflow:hidden` eklenerek giderildi. Aynı DOM'da 320 piksel viewport için scroll genişliği 339'dan 320'ye indi; görünür etiket ve klavye odağı korundu. Bu iki yerleşim düzeltmesinde testler veya işlev JavaScript'i değiştirilmedi.
 
 Son kabul kapısı PR başındaki tam GitHub CI'dır: PostgreSQL testleri, SEO, yedek/geri yükleme, üretim Docker imajı, 600 ppi çıktı, taze SQLite'dan tam statik derleme ve dört tarayıcı profili. En güncel sonucunu PR kontrollerinden okuyun.
 
