@@ -11,6 +11,7 @@ Aşağıdaki görevi uygula. Sadece plan veya komut önerisi verme; izinli eriş
 - Mevcut ücretsiz mimariyi koru: Ruby/Rails derlemesi GitHub'da yapılır; Cloudflare Pages doğrulanmış `site/` çıktısını yayımlar.
 - Tasarım, içerik ve araçlar hazırdır. Profesyonel Slovence arayüzü, Slovenya'nın mavi/kırmızı/beyaz renkleri, özgün görseller, kaynak gösterimi ve SEO düzeni korunmalıdır.
 - Ana dala sonradan eklenmiş 2027–2030 A3 takvim koleksiyonu da bu çalışmayla birleştirilmiştir. Koleksiyonu, özgün dosyalarını, 52 dönem × 15 tasarımı, görsel SEO verilerini ve eski dosyaların yönlendirmelerini koru.
+- Ana dalın görünür aylar arası gezinmesi ve kaldırılmış isim adresleri için eklediği Cloudflare Functions korumaları da korunmalıdır. Emekli isim adreslerini, eski arama kaydını veya eski sitemap/robots önbelleğini geri getirme; mevcut 14 Functions include yolunu ve ilgili doğrulama kurallarını koru.
 
 Önce `docs/advanced-calendar-release.md`, `docs/free-cloudflare.md`, `docs/advanced-calendar-research-and-seo.md`, `docs/advanced-calendar-metadata.md` ve `docs/education-calendar-2026-2027.md` dosyalarını oku. Geçerli PR başını, kontrolleri ve hazırlanmış yayın commitini GitHub'dan yeniden doğrula. Belgede yazan eski bir SHA'yı körlemesine yayımlama.
 

@@ -34,6 +34,18 @@ const clientBytes=fs.readFileSync(path.join(root,'cloudflare/free/client.js')),c
 if(!fs.existsSync(clientFile)||!fs.readFileSync(clientFile).equals(clientBytes))issues.push('Fingerprint browser adapter is missing or differs from source');
 for(const file of files.filter(file=>file.endsWith('.html'))){const html=fs.readFileSync(file,'utf8');if(html.includes('src="/free/client.js"')||[...html.matchAll(/src="\/free\/(client-[a-f0-9]+\.js)"/g)].some(match=>match[1]!==clientName))issues.push(path.relative(site,file)+': stale browser adapter URL')}
 if(!fs.readFileSync(path.join(site,'index.html'),'utf8').includes('/free/'+clientName))issues.push('Home page is missing the fingerprint browser adapter');
+const retiredNamePath=/^\/(?:koledar-z-imenom|imena)(?:\/|$)/;
+for(const relative of Object.keys(manifest.files))if(/^(?:koledar-z-imenom|imena|free\/names)(?:\/|$)|^sitemap-names\.xml$/.test(relative))issues.push(relative+': retired name output is still published');
+for(const relative of ['sitemap.xml','sitemap-pages.xml']){
+ const xml=fs.readFileSync(path.join(site,relative),'utf8');
+ if(xml.includes('sitemap-names.xml')||/\/(?:koledar-z-imenom|imena)\//.test(xml))issues.push(relative+': retired names are still in a sitemap');
+}
+const searchIndex=JSON.parse(fs.readFileSync(path.join(site,'free/search.json'),'utf8'));
+if(searchIndex.some(row=>retiredNamePath.test(row.path||'')))issues.push('Search still publishes retired name records');
+for(const file of files.filter(file=>file.endsWith('.html'))){if(/href=["']\/(?:koledar-z-imenom|imena)(?:\/|["'])/.test(fs.readFileSync(file,'utf8')))issues.push(path.relative(site,file)+': link to a retired name page')}
+if(files.some(file=>/\/free\/client-[a-f0-9]+\.js$/.test(file)&&path.basename(file)!==clientName))issues.push('Obsolete browser adapters are still published');
+const invocationRoutes=JSON.parse(fs.readFileSync(path.join(site,'_routes.json'),'utf8')).include;
+for(const route of ['/koledar-z-imenom','/koledar-z-imenom/*','/imena','/imena/*','/free/names','/free/names/*','/free/search.json','/sitemap-names.xml','/sitemap.xml','/sitemap-pages.xml','/robots.txt'])if(!invocationRoutes.includes(route))issues.push(route+': missing edge retirement or sitemap route');
 const countdownPagePath=path.join(site,'odstevanje/index.html');
 if(!fs.existsSync(countdownPagePath))issues.push('Countdown page is missing');
 else{

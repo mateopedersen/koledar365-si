@@ -19,6 +19,8 @@ SvgAssetReferences.materialize_fingerprinted_assets!(Rails.root.join('public'),o
 FileUtils.mkdir_p(out.join('free/views/home'))
 FileUtils.cp_r(Rails.root.join('cloudflare/free/.'),out.join('free'))
 FileUtils.rm_f(out.join('free/README.md'))
+# Keep only the current browser adapter; old fingerprints can retain retired page logic.
+Dir[out.join('free/client-*.js')].each { |file|FileUtils.rm_f(file) }
 client_asset="client-#{Digest::SHA256.file(out.join('free/client.js')).hexdigest[0,16]}.js"
 FileUtils.cp(out.join('free/client.js'),out.join('free',client_asset))
 session=ActionDispatch::Integration::Session.new(Rails.application);session.host!('localhost')
@@ -227,7 +229,7 @@ headers=<<~HEADERS
   X-Robots-Tag: noindex
 HEADERS
 out.join('_headers').write(headers)
-out.join('_routes.json').write(JSON.generate({version:1,include:['/vreme/*','/horoskop/*','/city-detect*'],exclude:[]}))
+out.join('_routes.json').write(JSON.generate({version:1,include:['/vreme/*','/horoskop/*','/city-detect*','/koledar-z-imenom','/koledar-z-imenom/*','/imena','/imena/*','/free/names','/free/names/*','/free/search.json','/sitemap-names.xml','/sitemap.xml','/sitemap-pages.xml','/robots.txt'],exclude:[]}))
 # Re-materialize after all page and asset transforms so the final static tree
 # always contains every content-addressed SVG referenced by generated CSS/HTML.
 SvgAssetReferences.materialize_fingerprinted_assets!(Rails.root.join('public'),out)
