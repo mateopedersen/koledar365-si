@@ -15,8 +15,11 @@
   const scene = root.querySelector('[data-sun-scene]');
   const sunObject = root.querySelector('[data-sun-object]');
   const path = root.querySelector('[data-sun-path]');
-  const pointer = root.querySelector('[data-sun-pointer]');
   const stars = root.querySelector('.sun-stars');
+  const horizonGlow = root.querySelector('[data-sun-horizon-glow]');
+  const scatter = root.querySelector('[data-sun-scatter]');
+  const reflection = root.querySelector('[data-sun-reflection]');
+  const clouds = [...root.querySelectorAll('[data-sun-cloud]')];
   const playButton = root.querySelector('[data-sun-play]');
   const cityFilter = document.querySelector('[data-sun-city-filter]');
   const cityCount = document.querySelector('[data-sun-city-count]');
@@ -195,33 +198,77 @@
   };
   const formatMinute = (minute) => `${String(Math.floor(minute / 60)).padStart(2, '0')}:${String(minute % 60).padStart(2, '0')}`;
   const direction = (azimuth) => ['sever', 'severovzhodu', 'vzhodu', 'jugovzhodu', 'jugu', 'jugozahodu', 'zahodu', 'severozahodu'][Math.round(azimuth / 45) % 8];
+  const skyPalettes = {
+    night: ['#07162b', '#102744', '#1c3650', '#2b3e52'],
+    dawnBlue: ['#102440', '#294565', '#52647b', '#967887'],
+    dawnWarm: ['#284866', '#735f78', '#cf786f', '#ffc18b'],
+    dawnGold: ['#315e8a', '#77829a', '#df9875', '#ffe0a9'],
+    day: ['#15548d', '#287eaf', '#77b8cf', '#d3eaf0'],
+    duskGold: ['#315d85', '#7d778e', '#e09473', '#ffd7a0'],
+    duskWarm: ['#2b4561', '#765c72', '#c76d68', '#f5a174'],
+    duskBlue: ['#10233e', '#2b4260', '#515d76', '#8d7485']
+  };
+  const mixColor = (first, second, amount) => {
+    const a = first.match(/[\da-f]{2}/gi).map((value) => parseInt(value, 16));
+    const b = second.match(/[\da-f]{2}/gi).map((value) => parseInt(value, 16));
+    return `#${a.map((value, index) => Math.round(value + (b[index] - value) * amount).toString(16).padStart(2, '0')).join('')}`;
+  };
+  const blendPalettes = (first, second, amount) => first.map((color, index) => mixColor(color, second[index], amount));
+  const smoothstep = (value) => { const t = Math.max(0, Math.min(1, value)); return t * t * (3 - 2 * t); };
   const setSky = (model, position, minute) => {
     const stops = scene.querySelectorAll('#sun-sky stop');
-    const localHour = minute / 60;
-    const distance = Math.abs(minute - model.localNoon);
+    const ascending = minute <= model.localNoon;
+    const elevation = position.elevation;
     let colors;
     let phase;
-    if (position.elevation < -6) {
-      phase = 'night'; colors = ['#091a35', '#16385c', '#263e63'];
-    } else if (position.elevation < 8 && localHour < model.localNoon / 60) {
-      phase = 'dawn'; colors = ['#153459', '#537da0', '#efa27f'];
-    } else if (position.elevation < 8 && localHour > model.localNoon / 60) {
-      phase = 'dusk'; colors = ['#153459', '#5b7697', '#e88471'];
+    if (elevation < -13) {
+      colors = skyPalettes.night; phase = 'night';
+    } else if (elevation < -5) {
+      colors = blendPalettes(skyPalettes.night, ascending ? skyPalettes.dawnBlue : skyPalettes.duskBlue, smoothstep((elevation + 13) / 8));
+      phase = 'blue-hour';
+    } else if (elevation < 0) {
+      colors = blendPalettes(ascending ? skyPalettes.dawnBlue : skyPalettes.duskBlue, ascending ? skyPalettes.dawnWarm : skyPalettes.duskWarm, smoothstep((elevation + 5) / 5));
+      phase = ascending ? 'dawn' : 'dusk';
+    } else if (elevation < 8) {
+      colors = blendPalettes(ascending ? skyPalettes.dawnWarm : skyPalettes.duskWarm, ascending ? skyPalettes.dawnGold : skyPalettes.duskGold, smoothstep(elevation / 8));
+      phase = ascending ? 'golden-morning' : 'golden-evening';
+    } else if (elevation < 18) {
+      colors = blendPalettes(ascending ? skyPalettes.dawnGold : skyPalettes.duskGold, skyPalettes.day, smoothstep((elevation - 8) / 10));
+      phase = 'day';
     } else {
-      phase = 'day'; colors = distance < 100 ? ['#174777', '#4b93bf', '#b8d8e5'] : ['#153d68', '#3c83b3', '#9ec8dc'];
+      colors = skyPalettes.day; phase = 'day';
     }
     stops.forEach((stop, index) => stop.setAttribute('stop-color', colors[index]));
     scene.dataset.sunPhase = phase;
-    if (stars) stars.style.opacity = position.elevation < -5 ? '.9' : '.06';
+    root.style.setProperty('--sun-land-light', String(Math.max(0, Math.min(1, (elevation + 7) / 25))));
+    if (stars) stars.style.opacity = elevation < -6 ? String(Math.min(.96, .45 + (-elevation - 6) / 28)) : '.02';
+    if (horizonGlow) horizonGlow.style.opacity = elevation < -13 ? '.025' : String(Math.max(.06, Math.min(.62, .48 - Math.max(0, elevation - 2) * .035)));
+    if (scatter) {
+      scatter.setAttribute('cx', position.x.toFixed(1));
+      scatter.setAttribute('cy', '300');
+      scatter.setAttribute('rx', String(Math.max(42, 205 - Math.max(0, elevation) * 9)));
+      scatter.setAttribute('ry', String(Math.max(28, 82 - Math.max(0, elevation) * 2.1)));
+      scatter.style.opacity = elevation < -13 ? '.015' : String(Math.max(.06, Math.min(.58, .52 - Math.max(0, elevation) * .045)));
+    }
+    clouds.forEach((cloud, index) => {
+      const phaseShift = minute / 1440 * (index === 0 ? 108 : -74);
+      cloud.setAttribute('transform', `translate(${phaseShift.toFixed(1)} 0)`);
+      cloud.style.opacity = elevation < -8 ? '.23' : elevation < 0 ? '.48' : '.76';
+    });
   };
   const paintSun = (minute) => {
     if (!activeModel) return;
     const position = positionAt(activeModel, minute);
-    const x = Math.max(32, Math.min(688, position.x));
-    const y = Math.max(66, Math.min(365, position.y));
+    const x = Math.max(30, Math.min(690, position.x));
+    const y = Math.max(37, Math.min(374, position.y));
+    const visibility = Math.max(0, Math.min(1, (position.elevation + 2.1) / 1.4));
     sunObject.setAttribute('transform', `translate(${x.toFixed(1)} ${y.toFixed(1)})`);
-    pointer.setAttribute('transform', `translate(${x.toFixed(1)} ${Math.min(300, y + 30).toFixed(1)})`);
+    sunObject.style.opacity = String(visibility);
     setSky(activeModel, position, minute);
+    if (reflection) {
+      reflection.setAttribute('d', `M${x.toFixed(1)} 332 Q${(x - 9).toFixed(1)} 344 ${x.toFixed(1)} 357`);
+      reflection.style.opacity = position.elevation > -0.83 ? String(Math.max(.06, Math.min(.42, (11 - position.elevation) / 28))) : '0';
+    }
     clockOutput.textContent = formatMinute(minute);
     slider.setAttribute('aria-valuetext', `${formatMinute(minute)} po času v Sloveniji`);
     if (position.elevation < -0.833) {
@@ -229,7 +276,7 @@
         ? 'Sonce je pod obzorjem; simulacija prikazuje nočno nebo.'
         : `Sonce je pod obzorjem, ${Math.abs(position.elevation).toFixed(1)}° pod obzorjem.`;
     } else {
-      positionText.textContent = `Sonce je ${position.elevation.toFixed(1)}° nad obzorjem, proti ${direction(position.azimuth)}.`;
+      positionText.textContent = `Sonce je ${position.elevation.toFixed(1)}° nad obzorjem, proti ${direction(position.azimuth)}; azimut ${Math.round(position.azimuth)}°.`;
     }
   };
   const updateUrl = (replace = false) => {
