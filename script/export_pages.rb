@@ -48,8 +48,13 @@ transform=lambda do |body,path,indexable:true|
  # Keep the existing Ruby renderer as the source of truth for both content and UI.
  # Discover the small interactive scripts during HTML parsing, without an extra
  # assets.json round trip or a serial module dependency waterfall.
- config=Nokogiri::XML::Node.new('script',doc);config['type']='application/json';config['id']='k365-static-config';config.content=JSON.generate(assets);doc.at_css('head').add_child(config)
- (assets[:scripts]+[assets[:holidays]]+(doc.at_css('[data-vacation-planner]') ? [assets[:vacation]] : [])).each do |src|
+ page_assets=assets
+ if path=='/druzinski-planer/'
+  family_scripts=sources.select { |src|src.include?('/family_planner') }
+  page_assets=assets.merge(scripts:(assets[:scripts]+family_scripts).uniq)
+ end
+ config=Nokogiri::XML::Node.new('script',doc);config['type']='application/json';config['id']='k365-static-config';config.content=JSON.generate(page_assets);doc.at_css('head').add_child(config)
+ (page_assets[:scripts]+[assets[:holidays]]+(doc.at_css('[data-vacation-planner]') ? [assets[:vacation]] : [])).each do |src|
   next if src==assets[:holidays]&&!doc.at_css('#holiday-filters')
   preload=Nokogiri::XML::Node.new('link',doc);preload['rel']='preload';preload['as']='script';preload['href']=src;doc.at_css('head').add_child(preload)
  end

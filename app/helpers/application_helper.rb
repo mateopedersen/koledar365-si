@@ -7,9 +7,14 @@ module ApplicationHelper
       (@section == 'calendar' && @page&.year && @year.between?(2027,2030))
   end
   def gallery_description
+    return 'Načrtujte družinski teden, delite pregled z domačimi v tem brskalniku in ustvarite koledar za tisk ali iCalendar.' if page_path == '/druzinski-planer/'
     'V galeriji izberite eno od 15 predlog: PDF za tisk in ujemajoči se WebP pri 600 ppi, s podpisom Koledar365 na vsaki strani. Večstranski WebP je v datoteki ZIP; PDF tiskajte v merilu 100 %.'
   end
-  def page_path = @canonical || (request.path == "/" ? "/" : request.path.delete_suffix("/")+"/")
+  def page_path
+    return @canonical if @canonical
+    path=request&.path
+    path.nil? || path=="/" ? "/" : path.delete_suffix("/")+"/"
+  end
   def sl_date(d) = I18n.l(d.to_date,format: :long)
   def month_url(year,month,family='koledar') = "/#{family}/#{year}/#{CalendarEngine::MONTHS[month-1]}/"
   def calendar_path(date) = date.year==2026 ? "/?year=2026&month=#{date.month}" : month_url(date.year,date.month)
