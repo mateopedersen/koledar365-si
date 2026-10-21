@@ -22,6 +22,19 @@ class SiteTest < ActionDispatch::IntegrationTest
   test 'unknown route is a true 404 and search is noindex' do
     get '/neobstojeca-stran/'
     assert_response :not_found
+    assert_select '[data-not-found][aria-labelledby="not-found-title"]',count:1
+    assert_select 'h1#not-found-title',text:/za trenutek ustavi/
+    assert_select 'form.lost-search[action="/isci/"][role="search"]' do
+      assert_select 'input#not-found-query[name="q"][type="search"]',count:1
+      assert_select 'button[aria-label="Poišči na Koledar365"]',count:1
+    end
+    assert_select 'svg[role="img"][aria-labelledby="lost-art-title lost-art-description"]',count:1
+    %w[/koledar/2027/ /lunin-koledar/ /prazniki/ /orodja/ /].each do |path|
+      assert_select "a[href='#{path}']",minimum:1
+    end
+    (2027..2030).each { |year|assert_select "a[href='/koledar/#{year}/']",minimum:1 }
+    assert_select 'a[href="/kontakt/"]',text:/Sporočite nam/
+    assert_select 'meta[name=robots][content="noindex, follow"]'
     get '/isci/',params:{q:'Žan'}
     assert_response :success
     assert_select 'meta[name=robots][content="noindex, follow"]'
