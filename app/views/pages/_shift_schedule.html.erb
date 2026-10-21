@@ -1,0 +1,103 @@
+<div class="download-workspace shift-download-workspace" data-download-workspace>
+  <section class="shift-workbench panel" data-planner-fields="shift" aria-labelledby="shift-builder-title">
+    <header class="shift-workbench__heading">
+      <div><span class="eyebrow">PREPROSTO NAČRTOVANJE</span><h2 id="shift-builder-title">Sestavite svoj razpored</h2><p>Začnite s preverjenim vzorcem ali vpišite svoj cikel.</p></div>
+      <span class="shift-workbench__flag" aria-hidden="true"><i></i><i></i><i></i></span>
+    </header>
+    <div class="shift-layout">
+      <div class="shift-builder">
+        <fieldset class="shift-presets">
+          <legend>Izberite vzorec</legend>
+          <div class="shift-preset-list">
+            <button type="button" class="shift-preset is-selected" data-shift-cycle="D,D,N,N,Prosto,Prosto" aria-pressed="true"><strong>2 dnevni · 2 nočni</strong><small>2 dni dela · 2 dni prosto</small></button>
+            <button type="button" class="shift-preset" data-shift-cycle="D,D,D,D,Prosto,Prosto" aria-pressed="false"><strong>4 dni · 2 prosta</strong><small>Daljši delovni blok</small></button>
+            <button type="button" class="shift-preset" data-shift-cycle="D,D,D,D,D,Prosto,Prosto" aria-pressed="false"><strong>5 dni · 2 prosta</strong><small>Delovni teden</small></button>
+            <button type="button" class="shift-preset" data-shift-cycle="Jutranja,Popoldanska,Nočna,Prosto" aria-pressed="false"><strong>Jutranja · popoldanska · nočna</strong><small>Kroženje po treh izmenah</small></button>
+          </div>
+          <p class="shift-preset-note">Vzorec lahko po izbiri kadar koli spremenite.</p>
+        </fieldset>
+
+        <form class="api-form shift-form" id="shift-form" action="/izracun/" method="post">
+          <%= hidden_field_tag :authenticity_token,form_authenticity_token %>
+          <input name="tool" type="hidden" value="shift">
+          <div class="shift-form__dates">
+            <label>Prvi dan cikla<input type="date" name="from" value="2027-01-04" required><small>Od tega dne se vzorec ponavlja.</small></label>
+            <label>Do vključno<input type="date" name="to" value="2027-01-31" required><small>Izberite največ 100 dni.</small></label>
+          </div>
+          <label class="shift-cycle-label" for="shift-cycle">Zaporedje izmen</label>
+          <input id="shift-cycle" name="cycle" value="D,D,N,N,Prosto,Prosto" maxlength="629" autocomplete="off" required aria-describedby="shift-cycle-help">
+          <small id="shift-cycle-help" class="shift-help">Oznake ločite z vejicami. Primer: D,D,N,N,Prosto,Prosto. Vsaka oznaka velja en dan.</small>
+          <details class="shift-legend">
+            <summary>Kaj pomenijo oznake?</summary>
+            <p><strong>D</strong> je dnevna izmena, <strong>N</strong> nočna izmena, <strong>Prosto</strong> pa prost dan. Uporabite lahko tudi svoje kratke oznake.</p>
+          </details>
+          <label class="shift-person">Ime zaposlenega <span>(neobvezno)</span><input name="person" maxlength="80" placeholder="npr. Ana"></label>
+          <button class="primary shift-submit" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v15H4zM8 3v5m8-5v5M4 10h16M8 14h3m-3 3h7"/></svg> Ustvari razpored <span aria-hidden="true">→</span></button>
+          <output class="result shift-result" aria-live="polite">Spremembe vzorca si lahko ogledate v predogledu, še preden jih dodate v načrt.</output>
+          <p class="shift-privacy-note">Shranjene osebne vnose ohranimo. Nov cikel osveži samo prejšnje samodejno ustvarjene izmene v izbranem obdobju.</p>
+        </form>
+
+        <details class="shift-custom-entries">
+          <summary>Dodajte ali uredite posamezno izmeno</summary>
+          <p>Vnos lahko dopolnite z uro, odmorom, osebo in opombo. Vaši podatki ostanejo v načrtu v tem brskalniku.</p>
+          <form id="planner-entry"><input type="hidden" name="entry_id"><div class="filters">
+            <label>Datum<input name="date" type="date" value="2027-01-04" required></label>
+            <label>Začetek<input name="time" type="time"></label><label>Konec<input name="end_time" type="time"></label>
+            <label>Odmor (minute)<input name="break" type="number" min="0" max="1440" step="1"></label>
+            <label>Oseba<input name="person" maxlength="80"></label><label>Naslov / izmena<input name="title" maxlength="200" required></label>
+            <label>Koda izmene<input name="code" maxlength="20"></label><label>Opombe<input name="notes" maxlength="200"></label>
+          </div><label class="check"><input name="done" type="checkbox" value="1">Opravljeno</label><div class="actions"><button id="save-planner-entry">Dodaj izmeno</button><button id="cancel-planner-entry" type="button" hidden>Prekliči urejanje</button></div></form>
+          <p class="muted">Če je ura konca pred uro začetka, se izmena konča naslednji dan. Odmor se upošteva v izvozu.</p>
+        </details>
+      </div>
+
+      <aside class="shift-preview panel" aria-labelledby="shift-preview-title">
+        <div class="shift-preview__top"><div><span class="eyebrow">PREDOGLED V ŽIVO</span><h2 id="shift-preview-title">Vaš mesečni pregled</h2></div><span class="shift-preview__badge">BREZ SHRANJEVANJA</span></div>
+        <div class="shift-stats" aria-label="Povzetek izmen">
+          <div><span class="shift-stat-icon" aria-hidden="true">▦</span><span><strong id="shift-stat-days">28</strong><small>dni obdobja</small></span></div>
+          <div><span class="shift-stat-icon shift-stat-icon--blue" aria-hidden="true">●</span><span><strong id="shift-stat-work">20</strong><small>izmen</small></span></div>
+          <div><span class="shift-stat-icon shift-stat-icon--red" aria-hidden="true">●</span><span><strong id="shift-stat-night">10</strong><small>nočnih</small></span></div>
+          <div><span class="shift-stat-icon shift-stat-icon--off" aria-hidden="true">○</span><span><strong id="shift-stat-free">8</strong><small>prosti dnevi</small></span></div>
+        </div>
+        <div class="shift-calendar-toolbar"><button type="button" id="shift-month-prev" aria-label="Prejšnji mesec">‹</button><strong id="shift-month-title">januar 2027</strong><button type="button" id="shift-month-next" aria-label="Naslednji mesec">›</button></div>
+        <div class="shift-calendar" id="shift-calendar" role="grid" aria-label="Mesečni predogled razporeda izmen"></div>
+        <div class="shift-calendar-legend" aria-label="Legenda izmen"><span><i class="shift-dot shift-dot--day"></i>Dnevna</span><span><i class="shift-dot shift-dot--night"></i>Nočna</span><span><i class="shift-dot shift-dot--off"></i>Prosto</span></div>
+        <p id="shift-preview-status" class="shift-preview-status" role="status">Predogled se posodobi ob vsaki spremembi datuma ali vzorca.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="shift-saved panel" aria-labelledby="shift-saved-title">
+    <div><span class="eyebrow">VAŠ NAČRT</span><h2 id="shift-saved-title">Vse izmene na enem mestu</h2><p>Posamezne izmene lahko uredite, izvozite v koledarsko aplikacijo ali shranite varnostno kopijo.</p></div>
+    <a class="button shift-saved__link" href="#design-gallery">Izberi predlogo za tisk <span aria-hidden="true">↓</span></a>
+    <div id="planner-entries" aria-live="polite"></div>
+    <div class="actions shift-saved__actions"><button id="planner-ics" type="button">Izvozi v koledar (ICS)</button><button id="planner-backup" type="button">Prenesi varnostno kopijo</button><label class="file-button">Obnovi kopijo<input id="planner-restore" type="file" accept="application/json,.json"></label></div>
+    <output id="planner-entry-status" role="status"></output>
+  </section>
+
+  <details class="shift-print-settings panel">
+    <summary><span><strong>Nastavitve koledarja za tisk</strong><small>Obdobje, velikost papirja, osebni podatki in fotografija</small></span><span aria-hidden="true">＋</span></summary>
+    <div class="shift-print-settings__body">
+      <form id="planner-options" data-planner-type="shift">
+        <div class="filters">
+          <label>Leto<select name="year"><% (2027..2030).each do |y| %><option <%= 'selected' if y==@year %>><%= y %></option><% end %></select></label>
+          <label>Mesec<select name="month"><% CalendarEngine::MONTHS.each_with_index do |m,i| %><option value="<%= i+1 %>" <%= 'selected' if i+1==@month %>><%= m %></option><% end %></select></label>
+          <label>Izbrani datum<input type="date" name="date" min="2027-01-01" max="2030-12-31" value="<%= @selected&.year==@year && @year!=2026 ? @selected : Date.new(@year==2026 ? 2027 : @year,@month,1) %>" required></label>
+          <input type="hidden" name="type" value="shift">
+        </div>
+        <details class="planner-advanced"><summary>Ime, zapiski in dodatne možnosti</summary>
+          <label>Ime (neobvezno)<input name="name" maxlength="100" placeholder="Ana"></label>
+          <label>Osebni zapiski (neobvezno)<textarea name="notes" maxlength="2000" rows="2"></textarea></label>
+          <div data-planner-fields="blank" class="filters"><label>Datumi<select name="undated"><option value="1">Brez datumov</option><option value="0">Z datumi</option></select></label><label>Razporeditev<select name="blank_layout"><option value="monthly">Mesečna mreža</option><option value="weekly">Tedenski načrt</option></select></label><label>Prostor za zapiske<select name="ruling"><option value="lined">Črte</option><option value="plain">Brez črt</option><option value="dotted">Pike</option></select></label></div>
+          <div data-planner-fields="birthday"><label>29. februar v neprestopnem letu<select name="leap_policy"><option value="feb28">28. februar</option><option value="march1">1. marec</option><option value="leap_only">Samo prestopna leta</option></select></label></div>
+          <div data-planner-fields="daily" class="filters"><label>Prva ura<input name="start_hour" type="number" min="0" max="23" value="7" required></label><label>Zadnja ura<input name="end_hour" type="number" min="0" max="23" value="21" required></label></div>
+          <details class="photo-upload"><summary>Dodajte svojo fotografijo</summary><p>JPEG, PNG ali WebP do 20 MB, najmanj 900 × 600 slikovnih pik. Podatke o lokaciji odstranimo.</p><label>Fotografija<input id="calendar-photo" type="file" accept="image/jpeg,image/png,image/webp"></label><input type="hidden" name="photo_token" value=""><button id="remove-photo" type="button" hidden>Odstrani fotografijo</button><output id="photo-status" role="status"></output></details>
+        </details>
+        <p class="muted">Vnosi so shranjeni v lokalnem načrtu v vašem brskalniku. Datoteke za tisk pripravimo ob izvozu.</p>
+        <button type="button" id="save-planner">Shrani nastavitve tiskanja</button><output id="planner-message" role="status"></output>
+      </form>
+    </div>
+  </details>
+
+  <%= render 'designs',type:'shift' %>
+</div>

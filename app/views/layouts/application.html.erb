@@ -16,6 +16,7 @@
 <% if page_path == '/druzinski-planer/' %><%= stylesheet_link_tag 'family_planner' %><%= javascript_include_tag 'family_planner_core', 'family_planner', defer:true %><% end %>
 <% if @section=='sun' -%><%= stylesheet_link_tag 'sun' %><%= javascript_include_tag 'sun',defer:true %><% end -%>
 <% if page_path == '/datumski-kalkulator/' %><%= stylesheet_link_tag 'date_calculator' %><% end %>
+<% if page_path == '/razpored-izmen/' %><%= stylesheet_link_tag 'shift_schedule' %><%= javascript_include_tag 'shift_schedule',defer:true %><% end %>
 <% if page_path == '/nacrtovalnik-dopusta/' %><%= stylesheet_link_tag 'vacation' %><%= javascript_include_tag 'vacation',defer:true %><% end %>
 <% if page_path == '/odstevanje/' %><%= stylesheet_link_tag 'countdown' %><%= javascript_include_tag 'countdown',defer:true %><% end %>
 <% if @section=='horoscope' %><%= stylesheet_link_tag 'horoscope' %><script type="module" src="/horoscope/experience-v1.mjs"></script><% end %>
@@ -27,7 +28,7 @@
 <%= stylesheet_link_tag 'print' %>
 <link rel="icon" href="/visuals/brand-calendar-v3.svg" type="image/svg+xml">
 </head>
-<body class="<%= [gallery_page? ? 'gallery-page' : nil, @section=='holidays' ? 'holiday-guide' : nil, @section=='home' ? 'home-page' : nil, page_path=='/druzinski-planer/' ? 'family-planner-page' : nil].compact.join(' ') %>">
+<body class="<%= [gallery_page? ? 'gallery-page' : nil, @section=='holidays' ? 'holiday-guide' : nil, @section=='home' ? 'home-page' : nil, page_path=='/druzinski-planer/' ? 'family-planner-page' : nil, page_path=='/razpored-izmen/' ? 'shift-page' : nil].compact.join(' ') %>">
 <a class="skip" href="#vsebina">Na vsebino</a>
 <header class="topbar"><a class="brand" href="/" aria-label="Koledar365 – domov"><span class="brand-symbol"><%= brand_symbol %></span> Koledar<span>365</span></a>
 <nav aria-label="Glavna navigacija"><a href="/koledar/">Koledar</a><a href="/prazniki/">Prazniki</a><a href="/solske-pocitnice/">Šolske počitnice</a><a href="/koledar-z-imenom/">Imena</a></nav>
