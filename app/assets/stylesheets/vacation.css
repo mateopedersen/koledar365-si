@@ -88,7 +88,7 @@
 .vacation-plan-actions .ui-icon{width:16px;height:16px}
 .vacation-plan-actions .primary{background:#17558d;border-color:#17558d}
 .vacation-plan-actions .primary:hover{background:#103f6c}
-.vacation-status{min-height:16px;margin:9px 0 0;color:#50734f;font-size:10px;line-height:1.5}
+.vacation-status{min-height:16px;margin:9px 0 0;color:#0054b8;font-size:10px;line-height:1.5}
 .vacation-empty-plan{display:grid;justify-items:center;gap:4px;padding:24px 10px;border-top:1px solid #edf0f3;text-align:center}
 .vacation-empty-plan>span{color:#b73549;font-size:23px}
 .vacation-empty-plan strong{color:#334b63;font-size:12px}

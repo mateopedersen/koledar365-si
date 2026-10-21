@@ -1,7 +1,7 @@
 .observance-page{--observance-accent:#826044;--observance-pale:#faf4eb;--observance-line:#e6d7c4;--observance-ink:#433b35;max-width:1320px;margin:0 auto}
 .observance-page.tone-faith{--observance-accent:#80566e;--observance-pale:#f6eff3;--observance-line:#e4d1dd;--observance-ink:#433346}
 .observance-page.tone-civic{--observance-accent:#a94854;--observance-pale:#faf0f1;--observance-line:#e8ccd0;--observance-ink:#4c3038}
-.observance-page.tone-nature{--observance-accent:#3d7260;--observance-pale:#eef5f0;--observance-line:#caddd0;--observance-ink:#2e4b40}
+.observance-page.tone-nature{--observance-accent:#0054b8;--observance-pale:#edf4fa;--observance-line:#d2dfed;--observance-ink:#263e56}
 .observance-page.tone-community{--observance-accent:#3f7181;--observance-pale:#eef5f7;--observance-line:#c9dfe5;--observance-ink:#304954}
 .observance-page.tone-memorial{--observance-accent:#6b6580;--observance-pale:#f1f0f5;--observance-line:#d9d5e2;--observance-ink:#3c394d}
 .observance-hero{display:grid;grid-template-columns:1fr 1.05fr;background:var(--observance-pale);border:1px solid var(--observance-line);border-radius:12px;overflow:hidden;margin:22px 0 40px}
