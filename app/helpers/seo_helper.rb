@@ -7,10 +7,12 @@ module SeoHelper
   end
 
   def seo_photo
+    return nil if @clock_change
     @observance&.photo || (@section=='holidays' ? HolidayPhotoCatalog.find('pust') : nil)
   end
 
   def seo_image
+    return {url:site_origin+ClockChangeSchedule::IMAGE_PATH,width:1200,height:720,alt:ClockChangeSchedule::IMAGE_ALT} if @clock_change
     if @section=='lunar' && page_path.start_with?('/lunin-koledar/') && (2027..2030).cover?(@year.to_i)
       day=LunarCalendar.period(@year,@page.month).max_by { |d|d['illuminationFraction'] }
       return {url:site_origin+"/lunar/atlas/#{day['date'][0,7]}-cover.webp",width:768,height:768,alt:"Luna #{LunarCalendar.date_label(day['date'])} ob 12.00 po času v Sloveniji"}
@@ -53,7 +55,7 @@ module SeoHelper
         "inLanguage" => "sl", "isPartOf" => { "@id" => "#{site_origin}/#website" } }
     ]
     photos=[seo_photo]
-    photos.concat(@observance.related.map { |event|HolidayPhotoCatalog.find(event.slug) }) if @observance
+    photos.concat(@observance.related.map { |event|HolidayPhotoCatalog.find(event.slug) }) if @observance && !@clock_change
     photos.concat(@holiday_photos) if @holiday_photos
     photos.compact.uniq { |photo|photo['local_path'] }.each do |photo|
       graph << {"@type"=>"ImageObject","@id"=>"#{site_origin}#{photo['local_path']}#image",
@@ -62,6 +64,15 @@ module SeoHelper
         "license"=>photo['license_url'],"acquireLicensePage"=>photo['source']}
     end
     graph[1]['primaryImageOfPage']={"@id"=>"#{site_origin}#{seo_photo['local_path']}#image"} if seo_photo
+    if @clock_change
+      image_url=site_origin+ClockChangeSchedule::IMAGE_PATH
+      graph << {"@type"=>"ImageObject","@id"=>"#{image_url}#image",
+        "contentUrl"=>image_url,"url"=>image_url,"width"=>1200,"height"=>720,
+        "name"=>'Premik ure v Sloveniji – poletni in zimski čas',
+        "caption"=>ClockChangeSchedule::IMAGE_ALT,"inLanguage"=>'sl',
+        "creditText"=>'Koledar365',"creator"=>{"@type"=>'Organization',"name"=>'Koledar365'}}
+      graph[1]['primaryImageOfPage']={"@id"=>"#{image_url}#image"}
+    end
     unless breadcrumbs.empty?
       graph << { "@type" => "BreadcrumbList", "itemListElement" => breadcrumbs.each_with_index.map { |(name, path), i|
         { "@type" => "ListItem", "position" => i + 1, "name" => name, "item" => "#{site_origin}#{path}" }

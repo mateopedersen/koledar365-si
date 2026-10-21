@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Koledar365//Premik ure//SL
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:premik-ure-20260329@koledar365.si
+DTSTAMP:20261021T000000Z
+DTSTART;VALUE=DATE:20260329
+DTEND;VALUE=DATE:20260330
+SUMMARY:Premik ure na poletni čas
+DESCRIPTION:Slovenija: 02:00 → 03:00. Eno uro naprej.\nCelodnevni opomni
+ k. Podrobnosti: https://koledar365.si/premik-ure/
+URL:https://koledar365.si/premik-ure/
+END:VEVENT
+BEGIN:VEVENT
+UID:premik-ure-20261025@koledar365.si
+DTSTAMP:20261021T000000Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261026
+SUMMARY:Premik ure na zimski čas
+DESCRIPTION:Slovenija: 03:00 → 02:00. Eno uro nazaj.\nCelodnevni opomnik
+ . Podrobnosti: https://koledar365.si/premik-ure/
+URL:https://koledar365.si/premik-ure/
+END:VEVENT
+END:VCALENDAR

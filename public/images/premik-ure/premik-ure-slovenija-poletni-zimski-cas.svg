@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="dst-title dst-description" xml:lang="sl">
+<title id="dst-title">Premik ure v Sloveniji</title>
+<desc id="dst-description">Zadnjo nedeljo v marcu uro premaknemo z 02:00 na 03:00, eno uro naprej. Zadnjo nedeljo v oktobru uro premaknemo s 03:00 na 02:00, eno uro nazaj. Prikazani so štirje analogni prikazi ur: 02:00, 03:00, 03:00 in 02:00. Lokalni čas v Sloveniji.</desc>
+<rect width="1200" height="720" fill="#f5f8fb"/>
+<g font-family="DejaVu Sans, Liberation Sans, sans-serif">
+<path d="M 60 39 H 111" stroke="#005da4" stroke-width="5" stroke-linecap="round"/>
+<path d="M 122 39 H 143" stroke="#c52d45" stroke-width="5" stroke-linecap="round"/>
+<text x="60" y="107" font-size="44" font-weight="700" fill="#17344d" text-anchor="start">Premik ure v Sloveniji</text>
+<g>
+<rect x="60" y="158" width="524" height="468" rx="22" fill="#ffffff" stroke="#dbe5ec" stroke-width="1.5"/>
+<path d="M 84 159 H 560" stroke="#005da4" stroke-width="4" stroke-linecap="round"/>
+<text x="322" y="207" font-size="22" font-weight="700" fill="#005da4" text-anchor="middle">PREHOD NA POLETNI ČAS</text>
+<text x="322" y="245" font-size="21" font-weight="400" fill="#526a7d" text-anchor="middle">Zadnja nedelja v marcu</text>
+<g aria-label="02:00">
+<circle cx="203" cy="355" r="78" fill="#ffffff" stroke="#d4e0e9" stroke-width="2"/>
+<line x1="203.000" y1="293.000" x2="203.000" y2="287.000" stroke="#7b91a4" stroke-width="2" stroke-linecap="round"/>
+<line x1="235.000" y1="299.574" x2="237.000" y2="296.110" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="258.426" y1="323.000" x2="261.890" y2="321.000" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="265.000" y1="355.000" x2="271.000" y2="355.000" stroke="#7b91a4" stroke-width="2" stroke-linecap="round"/>
+<line x1="258.426" y1="387.000" x2="261.890" y2="389.000" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="235.000" y1="410.426" x2="237.000" y2="413.890" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="203.000" y1="417.000" x2="203.000" y2="423.000" stroke="#7b91a4" stroke-width="2" stroke-linecap="round"/>
+<line x1="171.000" y1="410.426" x2="169.000" y2="413.890" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="147.574" y1="387.000" x2="144.110" y2="389.000" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="141.000" y1="355.000" x2="135.000" y2="355.000" stroke="#7b91a4" stroke-width="2" stroke-linecap="round"/>
+<line x1="147.574" y1="323.000" x2="144.110" y2="321.000" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="171.000" y1="299.574" x2="169.000" y2="296.110" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<text x="203" y="308" font-size="15" font-weight="400" fill="#526a7d" text-anchor="middle">12</text>
+<text x="254" y="360" font-size="15" font-weight="400" fill="#526a7d" text-anchor="middle">3</text>
+<text x="203" y="413" font-size="15" font-weight="400" fill="#526a7d" text-anchor="middle">6</text>
+<text x="152" y="360" font-size="15" font-weight="400" fill="#526a7d" text-anchor="middle">9</text>
+<line class="minute-hand" x1="203" y1="355" x2="203" y2="316" stroke="#17344d" stroke-width="4" stroke-linecap="round"/>
+<line class="hour-hand" x1="203" y1="355" x2="235.909" y2="336.000" stroke="#005da4" stroke-width="6" stroke-linecap="round"/>
+<circle cx="203" cy="355" r="5" fill="#005da4"/>
+</g>
+<g aria-label="03:00">
+<circle cx="441" cy="355" r="78" fill="#ffffff" stroke="#d4e0e9" stroke-width="2"/>
+<line x1="441.000" y1="293.000" x2="441.000" y2="287.000" stroke="#7b91a4" stroke-width="2" stroke-linecap="round"/>
+<line x1="473.000" y1="299.574" x2="475.000" y2="296.110" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="496.426" y1="323.000" x2="499.890" y2="321.000" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="503.000" y1="355.000" x2="509.000" y2="355.000" stroke="#7b91a4" stroke-width="2" stroke-linecap="round"/>
+<line x1="496.426" y1="387.000" x2="499.890" y2="389.000" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="473.000" y1="410.426" x2="475.000" y2="413.890" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="441.000" y1="417.000" x2="441.000" y2="423.000" stroke="#7b91a4" stroke-width="2" stroke-linecap="round"/>
+<line x1="409.000" y1="410.426" x2="407.000" y2="413.890" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="385.574" y1="387.000" x2="382.110" y2="389.000" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="379.000" y1="355.000" x2="373.000" y2="355.000" stroke="#7b91a4" stroke-width="2" stroke-linecap="round"/>
+<line x1="385.574" y1="323.000" x2="382.110" y2="321.000" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="409.000" y1="299.574" x2="407.000" y2="296.110" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<text x="441" y="308" font-size="15" font-weight="400" fill="#526a7d" text-anchor="middle">12</text>
+<text x="492" y="360" font-size="15" font-weight="400" fill="#526a7d" text-anchor="middle">3</text>
+<text x="441" y="413" font-size="15" font-weight="400" fill="#526a7d" text-anchor="middle">6</text>
+<text x="390" y="360" font-size="15" font-weight="400" fill="#526a7d" text-anchor="middle">9</text>
+<line class="minute-hand" x1="441" y1="355" x2="441" y2="316" stroke="#17344d" stroke-width="4" stroke-linecap="round"/>
+<line class="hour-hand" x1="441" y1="355" x2="479.000" y2="355.000" stroke="#005da4" stroke-width="6" stroke-linecap="round"/>
+<circle cx="441" cy="355" r="5" fill="#005da4"/>
+</g>
+<path d="M 298 355 H 344 M 334 345 L 344 355 L 334 365" fill="none" stroke="#005da4" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="322" y="483" font-size="34" font-weight="700" fill="#17344d" text-anchor="middle">02:00 → 03:00</text>
+<rect x="121" y="521" width="402" height="58" rx="12" fill="#edf5fc"/>
+<text x="322" y="558" font-size="22" font-weight="700" fill="#005da4" text-anchor="middle">ENO URO NAPREJ</text>
+</g>
+<g>
+<rect x="616" y="158" width="524" height="468" rx="22" fill="#ffffff" stroke="#dbe5ec" stroke-width="1.5"/>
+<path d="M 640 159 H 1116" stroke="#c52d45" stroke-width="4" stroke-linecap="round"/>
+<text x="878" y="207" font-size="22" font-weight="700" fill="#c52d45" text-anchor="middle">PREHOD NA ZIMSKI ČAS</text>
+<text x="878" y="245" font-size="21" font-weight="400" fill="#526a7d" text-anchor="middle">Zadnja nedelja v oktobru</text>
+<g aria-label="03:00">
+<circle cx="759" cy="355" r="78" fill="#ffffff" stroke="#d4e0e9" stroke-width="2"/>
+<line x1="759.000" y1="293.000" x2="759.000" y2="287.000" stroke="#7b91a4" stroke-width="2" stroke-linecap="round"/>
+<line x1="791.000" y1="299.574" x2="793.000" y2="296.110" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="814.426" y1="323.000" x2="817.890" y2="321.000" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="821.000" y1="355.000" x2="827.000" y2="355.000" stroke="#7b91a4" stroke-width="2" stroke-linecap="round"/>
+<line x1="814.426" y1="387.000" x2="817.890" y2="389.000" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="791.000" y1="410.426" x2="793.000" y2="413.890" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="759.000" y1="417.000" x2="759.000" y2="423.000" stroke="#7b91a4" stroke-width="2" stroke-linecap="round"/>
+<line x1="727.000" y1="410.426" x2="725.000" y2="413.890" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="703.574" y1="387.000" x2="700.110" y2="389.000" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="697.000" y1="355.000" x2="691.000" y2="355.000" stroke="#7b91a4" stroke-width="2" stroke-linecap="round"/>
+<line x1="703.574" y1="323.000" x2="700.110" y2="321.000" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="727.000" y1="299.574" x2="725.000" y2="296.110" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<text x="759" y="308" font-size="15" font-weight="400" fill="#526a7d" text-anchor="middle">12</text>
+<text x="810" y="360" font-size="15" font-weight="400" fill="#526a7d" text-anchor="middle">3</text>
+<text x="759" y="413" font-size="15" font-weight="400" fill="#526a7d" text-anchor="middle">6</text>
+<text x="708" y="360" font-size="15" font-weight="400" fill="#526a7d" text-anchor="middle">9</text>
+<line class="minute-hand" x1="759" y1="355" x2="759" y2="316" stroke="#17344d" stroke-width="4" stroke-linecap="round"/>
+<line class="hour-hand" x1="759" y1="355" x2="797.000" y2="355.000" stroke="#c52d45" stroke-width="6" stroke-linecap="round"/>
+<circle cx="759" cy="355" r="5" fill="#c52d45"/>
+</g>
+<g aria-label="02:00">
+<circle cx="997" cy="355" r="78" fill="#ffffff" stroke="#d4e0e9" stroke-width="2"/>
+<line x1="997.000" y1="293.000" x2="997.000" y2="287.000" stroke="#7b91a4" stroke-width="2" stroke-linecap="round"/>
+<line x1="1029.000" y1="299.574" x2="1031.000" y2="296.110" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="1052.426" y1="323.000" x2="1055.890" y2="321.000" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="1059.000" y1="355.000" x2="1065.000" y2="355.000" stroke="#7b91a4" stroke-width="2" stroke-linecap="round"/>
+<line x1="1052.426" y1="387.000" x2="1055.890" y2="389.000" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="1029.000" y1="410.426" x2="1031.000" y2="413.890" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="997.000" y1="417.000" x2="997.000" y2="423.000" stroke="#7b91a4" stroke-width="2" stroke-linecap="round"/>
+<line x1="965.000" y1="410.426" x2="963.000" y2="413.890" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="941.574" y1="387.000" x2="938.110" y2="389.000" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="935.000" y1="355.000" x2="929.000" y2="355.000" stroke="#7b91a4" stroke-width="2" stroke-linecap="round"/>
+<line x1="941.574" y1="323.000" x2="938.110" y2="321.000" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="965.000" y1="299.574" x2="963.000" y2="296.110" stroke="#7b91a4" stroke-width="1.5" stroke-linecap="round"/>
+<text x="997" y="308" font-size="15" font-weight="400" fill="#526a7d" text-anchor="middle">12</text>
+<text x="1048" y="360" font-size="15" font-weight="400" fill="#526a7d" text-anchor="middle">3</text>
+<text x="997" y="413" font-size="15" font-weight="400" fill="#526a7d" text-anchor="middle">6</text>
+<text x="946" y="360" font-size="15" font-weight="400" fill="#526a7d" text-anchor="middle">9</text>
+<line class="minute-hand" x1="997" y1="355" x2="997" y2="316" stroke="#17344d" stroke-width="4" stroke-linecap="round"/>
+<line class="hour-hand" x1="997" y1="355" x2="1029.909" y2="336.000" stroke="#c52d45" stroke-width="6" stroke-linecap="round"/>
+<circle cx="997" cy="355" r="5" fill="#c52d45"/>
+</g>
+<path d="M 854 355 H 900 M 890 345 L 900 355 L 890 365" fill="none" stroke="#c52d45" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="878" y="483" font-size="34" font-weight="700" fill="#17344d" text-anchor="middle">03:00 → 02:00</text>
+<rect x="677" y="521" width="402" height="58" rx="12" fill="#fceff2"/>
+<text x="878" y="558" font-size="22" font-weight="700" fill="#c52d45" text-anchor="middle">ENO URO NAZAJ</text>
+</g>
+<text x="600" y="682" font-size="18" font-weight="400" fill="#526a7d" text-anchor="middle">Lokalni čas v Sloveniji · koledar365.si</text>
+</g>
+</svg>

@@ -1,3 +1,6 @@
+<% if @clock_change %>
+<%= render 'clock_change' %>
+<% else %>
 <article class="observance-page tone-<%= @observance.theme %>">
   <header class="observance-hero <%= 'without-photo' unless @observance.photo %>">
     <div class="observance-intro">
@@ -38,3 +41,4 @@
   <section class="observance-sources"><div class="observance-source-mark"><%= ui_icon('shield') %></div><div><span class="eyebrow">VIRI IN UREDNIŠTVO</span><h2>Podatek, ki ga lahko preverite.</h2><ul><% @observance.events.map(&:source_url).compact.uniq.each do |url| %><li><%= source_link(url,@observance.legal? ? 'ZPDPD – pravna podlaga za datum in status' : 'Izvirni vir za koledarski datum') %></li><% end %><% TopicContent.references(@observance.slug).each do |reference| %><li><%= source_link(reference['url'],reference['title']) %></li><% end %><% if @observance.legal? %><li><%= source_link(HolidayYear::AMENDMENT_URL,'ZPDPD-I – sprememba zakona iz oktobra 2026') %></li><% end %></ul><p>Preverjanje koledarskih pravil: <time datetime="2026-10-20">20. 10. 2026</time>. Datumi za prihodnja leta sledijo trenutno veljavnim pravilom.</p><div><a href="/uredniska-politika/">Uredniška pravila</a><a href="/kontakt/">Predlagajte popravek →</a></div></div></section>
   <% if @observance.related.any? %><section class="observance-related"><div class="observance-heading"><div><span class="eyebrow">NADALJUJTE PO KOLEDARJU</span><h2>Še nekaj sorodnih dni.</h2></div><a href="/pomembni-dnevi/">Vsi pomembni dnevi →</a></div><div class="observance-related-grid"><% @observance.related.each do |event| %><a href="<%= event_path(event) %>"><% if (photo=HolidayPhotoCatalog.find(event.slug)) %><img src="<%= photo['small_path'] %>" alt="" width="<%= photo['small_width'] %>" height="<%= photo['small_height'] %>" loading="lazy" decoding="async"><% end %><span><%= CalendarEngine::MONTHS[event.on.month-1].upcase %></span><h3><%= holiday_title(event) %></h3><p><%= event.work_free ? 'Dela prost dan' : 'Ni dela prost dan' %></p><%= ui_icon('chevron-right') %></a><% end %></div></section><% end %>
 </article>
+<% end %>
