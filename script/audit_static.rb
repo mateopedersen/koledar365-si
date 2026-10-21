@@ -42,9 +42,18 @@ Dir[site.join('**/*.html')].sort.each do |file|
  end
  if (gallery=doc.at_css('[data-calendar-gallery],.design-section')) && !relative.start_with?('lunin-koledar/2026/')
   gallery_pages+=1;family=gallery['data-gallery-type'] || JSON.parse(gallery['data-export-options']).fetch('type');gallery_families[family]+=1
-  fail_with.call('Gallery must share a workspace with its calendar or settings') unless doc.at_css('body.gallery-page .download-workspace > .gallery-context #gallery-context-content') && gallery.ancestors.any? { |parent|parent['class'].to_s.split.include?('download-workspace') }
+  if relative=='delovni-dnevi/index.html'
+   dashboard=doc.at_css('body.gallery-page .workdays-dashboard[data-workdays-dashboard][data-year="2027"]')
+   fail_with.call('Workdays landing page must keep its interactive annual dashboard') unless dashboard && doc.css('[data-workdays-card]').size==12
+   fail_with.call('Workdays dashboard must expose weekday, hours and holiday controls') unless doc.at_css('[data-workdays-controls] input[type=number][data-workdays-hours]') && doc.css('[data-workdays-controls] input[type=checkbox]').size==8
+   fail_with.call('Workdays dashboard assets must be present') unless doc.at_css('link[rel=stylesheet][href*="workdays"]') && doc.at_css('script[src*="workdays"]')
+   fail_with.call('Workdays gallery must remain visible below the annual dashboard') unless doc.at_css('#design-gallery .gallery-format-label')&.text.to_s.include?('600 ppi') && gallery.css('.design-card').size==15
+   fail_with.call('Workdays dashboard should use its full-width layout') if dashboard&.ancestors&.any? { |parent|parent['class'].to_s.split.include?('download-workspace') }
+  else
+   fail_with.call('Gallery must share a workspace with its calendar or settings') unless doc.at_css('body.gallery-page .download-workspace > .gallery-context #gallery-context-content') && gallery.ancestors.any? { |parent|parent['class'].to_s.split.include?('download-workspace') }
+   fail_with.call('Expected one practical download paragraph and an accessible context control') unless doc.css('.page-heading > p').size==1 && doc.at_css('.page-heading > p').text.include?('600 ppi') && doc.at_css('[data-context-expand][aria-expanded=false][aria-controls=gallery-context-content]')
+  end
   fail_with.call('Gallery must stay open and contain all 15 designs') unless gallery.css('[data-calendar-design],.design-card').size==15 && !gallery.ancestors.any? { |parent|parent.name=='details'||parent.key?('hidden') }
-  fail_with.call('Expected one practical download paragraph and an accessible context control') unless doc.css('.page-heading > p').size==1 && doc.at_css('.page-heading > p').text.include?('600 ppi') && doc.at_css('[data-context-expand][aria-expanded=false][aria-controls=gallery-context-content]')
   has_gallery_styles=doc.css('link[rel=stylesheet]').any? do |node|
    href=node['href'].split('?',2).first
    next false unless href.start_with?('/') && site.join(href.delete_prefix('/')).file?
