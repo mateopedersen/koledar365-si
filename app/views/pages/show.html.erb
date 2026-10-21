@@ -5,7 +5,7 @@
 <%= render 'vacation_planner' %>
 <% elsif @section=='tool' && page_path=='/odstevanje/' %>
 <%= render 'countdown' %>
-<% elsif %w[about privacy cookie_policy holidays observance school calendar_studio].include?(@section) %>
+<% elsif %w[about privacy cookie_policy holidays observance school calendar_studio horoscope].include?(@section) %>
 <%= render @section %>
 <% else %>
 <% if page_path=='/datumski-kalkulator/' %>
