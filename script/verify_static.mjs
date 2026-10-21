@@ -29,6 +29,14 @@ for(let year=2027;year<=2030;year++){
 for(const relative of Object.keys(manifest.files))if(!fs.existsSync(path.join(site,relative)))issues.push(relative+': manifest output missing');
 for(const row of catalog)for(const filename of Object.values(row.files)){if(!fs.existsSync(path.join(site,filename)))issues.push(filename+': missing catalog asset')}
 for(const relative of ['index.html','404.html','free/client.js','free/ruby-worker.js','free/runtime.json','zasebnost/index.html','upravljanje/index.html','_routes.json'])if(!fs.existsSync(path.join(site,relative)))issues.push(relative+': missing release file');
+const notFoundPath=path.join(site,'404.html');
+if(fs.existsSync(notFoundPath)){
+ const notFound=fs.readFileSync(notFoundPath,'utf8');
+ for(const marker of ['data-not-found','not-found-title','not-found-query','lost-art-description','/koledar/2027/','/lunin-koledar/','/prazniki/','/orodja/'])if(!notFound.includes(marker))issues.push('404 page is missing recovery content: '+marker);
+ const stylesheet=notFound.match(/<link[^>]+rel="stylesheet"[^>]+href="([^"]+)"/);
+ const stylesheetPath=stylesheet&&path.join(site,new URL(stylesheet[1],'https://koledar365.si').pathname.slice(1));
+ if(!stylesheetPath||!fs.existsSync(stylesheetPath)||!fs.readFileSync(stylesheetPath,'utf8').includes('.lost-destinations'))issues.push('404 page is missing its responsive recovery-page stylesheet');
+}
 // A new publication must bypass any previously cached stable browser adapter.
 const clientBytes=fs.readFileSync(path.join(root,'cloudflare/free/client.js')),clientName='client-'+crypto.createHash('sha256').update(clientBytes).digest('hex').slice(0,16)+'.js',clientFile=path.join(site,'free',clientName);
 if(!fs.existsSync(clientFile)||!fs.readFileSync(clientFile).equals(clientBytes))issues.push('Fingerprint browser adapter is missing or differs from source');

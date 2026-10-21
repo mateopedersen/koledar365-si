@@ -35,6 +35,7 @@
 <% if @section=='school' %><link rel="stylesheet" href="/school/experience.css?v=20261022-1"><script type="module" src="/school/experience.mjs?v=20261022-1"></script><% end %>
 <%= stylesheet_link_tag 'print' %>
 <%= stylesheet_link_tag 'readability' %>
+<% if @not_found %><%= stylesheet_link_tag 'not_found' %><% end %>
 <link rel="icon" href="<%= IllustrationHelper.versioned_svg_url('/visuals/brand-calendar-v3.svg') %>" type="image/svg+xml">
 </head>
 <body class="<%= [gallery_page? ? 'gallery-page' : nil, @section=='holidays' ? 'holiday-guide' : nil, @section=='home' ? 'home-page' : nil, page_path=='/druzinski-planer/' ? 'family-planner-page' : nil, page_path=='/razpored-izmen/' ? 'shift-page' : nil].compact.join(' ') %>">
