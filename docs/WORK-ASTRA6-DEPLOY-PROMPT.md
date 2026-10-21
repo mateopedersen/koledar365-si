@@ -13,6 +13,7 @@ Aşağıdaki görevi uygula. Sadece plan veya komut önerisi verme; izinli eriş
 - Ana dala sonradan eklenmiş 2027–2030 A3 takvim koleksiyonu da bu çalışmayla birleştirilmiştir. Koleksiyonu, özgün dosyalarını, 52 dönem × 15 tasarımı, görsel SEO verilerini ve eski dosyaların yönlendirmelerini koru.
 - Ana dalın görünür aylar arası gezinmesi ve kaldırılmış isim adresleri için eklediği Cloudflare Functions korumaları da korunmalıdır. Emekli isim adreslerini, eski arama kaydını veya eski sitemap/robots önbelleğini geri getirme; mevcut 14 Functions include yolunu ve ilgili doğrulama kurallarını koru.
 - Okul tatili sayfalarına ana dalda eklenen yedi Slovenya fotoğrafını, açıklayıcı alt metinlerini, görünür yazar/lisans bağlantılarını ve ayrıntılı atıflarını koru. Bu fotoğraflar, genişlemenin Slovence SEO başlıkları ve okul/üniversite takvimi bağlantılarıyla birlikte hazırlanmıştır.
+- Ana dalın seçili okul ayını tek başına yazdıran davranışı, takvim hücrelerinde tam görünen tatil adları ve yeni 404 kurtarma tasarımı da korunmalıdır. 404 sayfasındaki öneriler aktif takvim araçlarına gider; kaldırılmış isim dizinlerini yeniden tanıtma. Tarihli günlük yayın kayıtlarını geriye alma.
 
 Önce `docs/advanced-calendar-release.md`, `docs/free-cloudflare.md`, `docs/advanced-calendar-research-and-seo.md`, `docs/advanced-calendar-metadata.md` ve `docs/education-calendar-2026-2027.md` dosyalarını oku. Geçerli PR başını, kontrolleri ve hazırlanmış yayın commitini GitHub'dan yeniden doğrula. Belgede yazan eski bir SHA'yı körlemesine yayımlama.
 

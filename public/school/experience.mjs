@@ -131,6 +131,7 @@ function initSchoolPage(root) {
     if (holidays.length) $('[data-month-events]').insertAdjacentHTML('beforeend',`<div class="sp-month-event"><strong>Prazniki</strong><span>${holidays.map(dateText).join(' · ')}</span></div>`);
     $('[data-prev-month]').disabled = month === '2026-09'; $('[data-next-month]').disabled = month === '2027-08';
     $('[data-selected-date]').textContent = 'Izberite dan v koledarju.';
+    $('[data-selected-date]').classList.remove('is-selected');
   }
   function calculate() {const form=$('[data-planner]'); try {const result = countSchoolDays(data, level === 'secondary' ? level : 'primary',region,form.elements.from.value,form.elements.to.value); $('[data-planner-result]').innerHTML = `<strong>${result.free}</strong> od ${result.total} dni brez rednega pouka. <span>Preostali dnevi: ${result.teaching}.</span>`;} catch(error) {$('[data-planner-result]').textContent = error.message;}}
   function renderState() {
@@ -153,7 +154,8 @@ function initSchoolPage(root) {
     else if(target.hasAttribute('data-export-university')) {const uni=data.universities.find(row=>row.id===target.dataset.exportUniversity);if(uni)download(universityEvents(uni),'Studij-2026-2027-'+uni.id);}
     else if(target.hasAttribute('data-prev-month')||target.hasAttribute('data-next-month')) {const [year,num]=month.split('-').map(Number),next=new Date(Date.UTC(year,num-1+(target.hasAttribute('data-prev-month')?-1:1),1,12));const nextMonth=isoDay(next).slice(0,7);if(nextMonth>='2026-09'&&nextMonth<='2027-08')month=nextMonth;renderCalendar();}
     else if(target.hasAttribute('data-this-month')) {month=today<'2026-09-01'?'2026-09':today>'2027-08-31'?'2027-08':today.slice(0,7);renderCalendar();if(today<'2026-09-01'||today>'2027-08-31')toast('Današnji dan je zunaj preverjenega šolskega leta.');}
-    else if(target.hasAttribute('data-calendar-day')) {$$('[data-calendar-day]').forEach(button=>button.setAttribute('aria-pressed',String(button===target)));const day=target.dataset.calendarDay,events=calendarEvents().filter(row=>day>=row.start&&day<=row.end);const weekday=new Date(dayValue(day)).getUTCDay();$('[data-selected-date]').textContent=longDate(day)+' · '+(events.length?events.map(row=>row.name).join(', '):data.publicHolidays.includes(day)?'Praznik':weekday===0||weekday===6?'Vikend':'Dan rednega pouka (splošni koledar)');}
+    else if(target.hasAttribute('data-calendar-day')) {$$('[data-calendar-day]').forEach(button=>button.setAttribute('aria-pressed',String(button===target)));const day=target.dataset.calendarDay,events=calendarEvents().filter(row=>day>=row.start&&day<=row.end);const weekday=new Date(dayValue(day)).getUTCDay();$('[data-selected-date]').textContent=longDate(day)+' · '+(events.length?events.map(row=>row.name).join(', '):data.publicHolidays.includes(day)?'Praznik':weekday===0||weekday===6?'Vikend':'Dan rednega pouka (splošni koledar)');$('[data-selected-date]').classList.add('is-selected');}
+    else if(target.hasAttribute('data-school-calendar-print')) {document.body.classList.add('school-calendar-printing');window.addEventListener('afterprint',()=>document.body.classList.remove('school-calendar-printing'),{once:true});window.print();}
     else if(target.hasAttribute('data-print')) window.print();
   });
   $('[data-region-select]').addEventListener('change',event=>{region=event.target.value;renderState();updateURL();});
