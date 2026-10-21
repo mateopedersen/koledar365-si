@@ -63,6 +63,19 @@ module SeoHelper
         "width"=>photo['width'],"height"=>photo['height'],"creditText"=>photo['author'],
         "license"=>photo['license_url'],"acquireLicensePage"=>photo['source']}
     end
+    if @section == 'calendar' && @page && page_path.start_with?('/koledar/') && (2027..2030).cover?(@year.to_i)
+      collection_rows = PublicCalendarGallery.rows_for(year: @year, month: @page.month)
+      graph << { "@type" => "ItemList", "name" => @title, "numberOfItems" => collection_rows.size,
+        "itemListElement" => collection_rows.each_with_index.map { |row, index|
+          image = row.fetch('collection_seo')
+          { "@type" => "ListItem", "position" => index + 1,
+            "item" => { "@type" => "ImageObject", "name" => image.fetch('title'),
+              "description" => image.fetch('alt'), "contentUrl" => site_origin + row.dig('files', 'webp'),
+              "url" => site_origin + row.dig('files', 'preview'),
+              "width" => row.dig('manifest', 'width_px'), "height" => row.dig('manifest', 'height_px'),
+              "inLanguage" => "sl" } }
+        } }
+    end
     graph[1]['primaryImageOfPage']={"@id"=>"#{site_origin}#{seo_photo['local_path']}#image"} if seo_photo
     if @clock_change
       image_url=site_origin+ClockChangeSchedule::IMAGE_PATH

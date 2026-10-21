@@ -205,6 +205,9 @@ headers=<<~HEADERS
   ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
   X-Robots-Tag: noindex
+/koledarji/2027-2030/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
 /prenosi/lunin-koledar/*
   ! Cache-Control
   Cache-Control: public, max-age=3600

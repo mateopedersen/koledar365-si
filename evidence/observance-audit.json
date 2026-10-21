@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-20T18:00:00+02:00",
+  "checked_at": "2026-10-21T21:24:22+02:00",
   "scope": "All existing holiday and observance detail pages; dates and topic-specific ICS for 2027–2030",
   "passed": true,
   "calendar_topics": 65,
@@ -20,7 +20,7 @@
     {
       "slug": "novo-leto",
       "path": "/prazniki/novo-leto/",
-      "photo": "/images/observances/novo-leto.webp",
+      "image": "/images/observances/novo-leto.webp",
       "credit": "Smihael",
       "license": "CC BY-SA 3.0",
       "dates": [
@@ -37,7 +37,7 @@
     {
       "slug": "sveti-trije-kralji",
       "path": "/prazniki/sveti-trije-kralji/",
-      "photo": "/images/observances/sveti-trije-kralji.webp",
+      "image": "/images/observances/sveti-trije-kralji.webp",
       "credit": "Pofka",
       "license": "CC BY-SA 4.0",
       "dates": [
@@ -50,7 +50,7 @@
     {
       "slug": "dan-spomina-na-zrtve-holokavsta",
       "path": "/pomembni-dnevi/dan-spomina-na-zrtve-holokavsta/",
-      "photo": "/images/observances/dan-spomina-na-zrtve-holokavsta.webp",
+      "image": "/images/observances/dan-spomina-na-zrtve-holokavsta.webp",
       "credit": "Frankie Fouganthin",
       "license": "CC BY-SA 3.0",
       "dates": [
@@ -63,7 +63,7 @@
     {
       "slug": "presernov-dan",
       "path": "/prazniki/presernov-dan/",
-      "photo": "/images/observances/presernov-dan.webp",
+      "image": "/images/observances/presernov-dan.webp",
       "credit": "Žiga Živulovič / FotoBOBO",
       "license": "Public domain",
       "dates": [
@@ -76,7 +76,7 @@
     {
       "slug": "pust",
       "path": "/prazniki/pust/",
-      "photo": "/images/observances/pust.webp",
+      "image": "/images/observances/pust.webp",
       "credit": "Aleš Kravos",
       "license": "CC BY-SA 4.0",
       "dates": [
@@ -89,7 +89,7 @@
     {
       "slug": "valentinovo",
       "path": "/prazniki/valentinovo/",
-      "photo": "/images/observances/valentinovo.webp",
+      "image": "/images/observances/valentinovo.webp",
       "credit": "Maimaid",
       "license": "CC BY-SA 4.0",
       "dates": [
@@ -102,7 +102,7 @@
     {
       "slug": "mednarodni-dan-maternega-jezika",
       "path": "/pomembni-dnevi/mednarodni-dan-maternega-jezika/",
-      "photo": "/images/observances/mednarodni-dan-maternega-jezika.webp",
+      "image": "/images/observances/mednarodni-dan-maternega-jezika.webp",
       "credit": "Israt Jarin",
       "license": "CC BY-SA 4.0",
       "dates": [
@@ -115,7 +115,7 @@
     {
       "slug": "dan-zena",
       "path": "/prazniki/dan-zena/",
-      "photo": "/images/observances/dan-zena.webp",
+      "image": "/images/observances/dan-zena.webp",
       "credit": "Dean Calma / IAEA",
       "license": "CC BY 2.0",
       "dates": [
@@ -128,7 +128,7 @@
     {
       "slug": "gregorjevo",
       "path": "/prazniki/gregorjevo/",
-      "photo": "/images/observances/gregorjevo.webp",
+      "image": "/images/observances/gregorjevo.webp",
       "credit": "Danilo Tic from Slovenska Bistrica, Slovenia",
       "license": "CC BY-SA 2.0",
       "dates": [
@@ -141,7 +141,7 @@
     {
       "slug": "pomladno-enakonocje",
       "path": "/letni-casi/pomladno-enakonocje/",
-      "photo": "/images/observances/pomladno-enakonocje.webp",
+      "image": "/images/observances/pomladno-enakonocje.webp",
       "credit": "focusonmore.com",
       "license": "CC BY 2.0",
       "dates": [
@@ -154,7 +154,7 @@
     {
       "slug": "cvetna-nedelja",
       "path": "/prazniki/cvetna-nedelja/",
-      "photo": "/images/observances/cvetna-nedelja.webp",
+      "image": "/images/observances/cvetna-nedelja.webp",
       "credit": "Neznan avtor (navedba v izvirnem arhivu)",
       "license": "Public domain",
       "dates": [
@@ -167,7 +167,7 @@
     {
       "slug": "svetovni-dan-voda",
       "path": "/pomembni-dnevi/svetovni-dan-voda/",
-      "photo": "/images/observances/svetovni-dan-voda.webp",
+      "image": "/images/observances/svetovni-dan-voda.webp",
       "credit": "Han, Bu Yong / UNC–CFC–USFK",
       "license": "CC BY 2.0",
       "dates": [
@@ -180,7 +180,7 @@
     {
       "slug": "materinski-dan",
       "path": "/prazniki/materinski-dan/",
-      "photo": "/images/observances/materinski-dan.webp",
+      "image": "/images/observances/materinski-dan.webp",
       "credit": "Peter van der Sluijs",
       "license": "CC BY-SA 3.0",
       "dates": [
@@ -193,7 +193,7 @@
     {
       "slug": "veliki-petek",
       "path": "/prazniki/veliki-petek/",
-      "photo": "/images/observances/veliki-petek.webp",
+      "image": "/images/observances/veliki-petek.webp",
       "credit": "Sl-Ziga",
       "license": "Public domain",
       "dates": [
@@ -206,10 +206,12 @@
     {
       "slug": "premik-ure",
       "path": "/premik-ure/",
-      "photo": "/images/observances/premik-ure.webp",
-      "credit": "Markus Spiske",
-      "license": "CC BY 2.0",
+      "image": "/images/premik-ure/premik-ure-slovenija-poletni-zimski-cas-1200.webp",
+      "credit": "Koledar365",
+      "license": null,
       "dates": [
+        "2026-03-29",
+        "2026-10-25",
         "2027-03-28",
         "2027-10-31",
         "2028-03-26",
@@ -223,7 +225,7 @@
     {
       "slug": "velika-noc",
       "path": "/prazniki/velika-noc/",
-      "photo": "/images/observances/velika-noc.webp",
+      "image": "/images/observances/velika-noc.webp",
       "credit": "Klemen Brumec",
       "license": "CC0",
       "dates": [
@@ -240,7 +242,7 @@
     {
       "slug": "svetovni-dan-zemlje",
       "path": "/prazniki/svetovni-dan-zemlje/",
-      "photo": "/images/observances/svetovni-dan-zemlje.webp",
+      "image": "/images/observances/svetovni-dan-zemlje.webp",
       "credit": "U.S. Embassy Nairobi",
       "license": "Public domain",
       "dates": [
@@ -253,7 +255,7 @@
     {
       "slug": "svetovni-dan-knjige-in-avtorskih-pravic",
       "path": "/pomembni-dnevi/svetovni-dan-knjige-in-avtorskih-pravic/",
-      "photo": "/images/observances/svetovni-dan-knjige-in-avtorskih-pravic.webp",
+      "image": "/images/observances/svetovni-dan-knjige-in-avtorskih-pravic.webp",
       "credit": "Klemen Lajevec",
       "license": "CC BY-SA 3.0",
       "dates": [
@@ -266,7 +268,7 @@
     {
       "slug": "dan-upora-proti-okupatorju",
       "path": "/prazniki/dan-upora-proti-okupatorju/",
-      "photo": "/images/observances/dan-upora-proti-okupatorju.webp",
+      "image": "/images/observances/dan-upora-proti-okupatorju.webp",
       "credit": "Borut Živulovič / Foto Bobo · Vlada Republike Slovenije",
       "license": "Public domain",
       "dates": [
@@ -279,7 +281,7 @@
     {
       "slug": "praznik-dela",
       "path": "/prazniki/praznik-dela/",
-      "photo": "/images/observances/praznik-dela.webp",
+      "image": "/images/observances/praznik-dela.webp",
       "credit": "Viktar Palstsiuk",
       "license": "CC BY-SA 4.0",
       "dates": [
@@ -296,7 +298,7 @@
     {
       "slug": "dan-evrope",
       "path": "/prazniki/dan-evrope/",
-      "photo": "/images/observances/dan-evrope.webp",
+      "image": "/images/observances/dan-evrope.webp",
       "credit": "Francois Schnell",
       "license": "CC BY 2.0",
       "dates": [
@@ -309,7 +311,7 @@
     {
       "slug": "mednarodni-dan-druzin",
       "path": "/pomembni-dnevi/mednarodni-dan-druzin/",
-      "photo": "/images/observances/mednarodni-dan-druzin.webp",
+      "image": "/images/observances/mednarodni-dan-druzin.webp",
       "credit": "DimiTalen",
       "license": "CC0",
       "dates": [
@@ -322,7 +324,7 @@
     {
       "slug": "binkosti",
       "path": "/prazniki/binkosti/",
-      "photo": "/images/observances/binkosti.webp",
+      "image": "/images/observances/binkosti.webp",
       "credit": "Gerda Arendt",
       "license": "CC0",
       "dates": [
@@ -335,7 +337,7 @@
     {
       "slug": "svetovni-dan-cebel",
       "path": "/prazniki/svetovni-dan-cebel/",
-      "photo": "/images/observances/svetovni-dan-cebel.webp",
+      "image": "/images/observances/svetovni-dan-cebel.webp",
       "credit": "Pavle58",
       "license": "CC BY-SA 4.0",
       "dates": [
@@ -348,7 +350,7 @@
     {
       "slug": "dan-slovenskega-krvodajalstva",
       "path": "/pomembni-dnevi/dan-slovenskega-krvodajalstva/",
-      "photo": "/images/observances/dan-slovenskega-krvodajalstva.webp",
+      "image": "/images/observances/dan-slovenskega-krvodajalstva.webp",
       "credit": "Neznan avtor (navedba v izvirnem arhivu)",
       "license": "Public domain",
       "dates": [
@@ -361,7 +363,7 @@
     {
       "slug": "svetovni-dan-okolja",
       "path": "/pomembni-dnevi/svetovni-dan-okolja/",
-      "photo": "/images/observances/svetovni-dan-okolja.webp",
+      "image": "/images/observances/svetovni-dan-okolja.webp",
       "credit": "M.Ghiami/khoobankhabar.ir",
       "license": "CC BY 4.0",
       "dates": [
@@ -374,7 +376,7 @@
     {
       "slug": "dan-primoza-trubarja",
       "path": "/prazniki/dan-primoza-trubarja/",
-      "photo": "/images/observances/dan-primoza-trubarja.webp",
+      "image": "/images/observances/dan-primoza-trubarja.webp",
       "credit": "Primož Trubar",
       "license": "Public domain",
       "dates": [
@@ -387,7 +389,7 @@
     {
       "slug": "poletni-solsticij",
       "path": "/letni-casi/poletni-solsticij/",
-      "photo": "/images/observances/poletni-solsticij.webp",
+      "image": "/images/observances/poletni-solsticij.webp",
       "credit": "Andrew Dunn · andrewdunnphoto.com",
       "license": "CC BY-SA 2.0",
       "dates": [
@@ -400,7 +402,7 @@
     {
       "slug": "dan-drzavnosti",
       "path": "/prazniki/dan-drzavnosti/",
-      "photo": "/images/observances/dan-drzavnosti.webp",
+      "image": "/images/observances/dan-drzavnosti.webp",
       "credit": "Vlada Republike Slovenije from Ljubljana, Slovenia",
       "license": "Public domain",
       "dates": [
@@ -413,7 +415,7 @@
     {
       "slug": "dan-triglava",
       "path": "/prazniki/dan-triglava/",
-      "photo": "/images/observances/dan-triglava.webp",
+      "image": "/images/observances/dan-triglava.webp",
       "credit": "Christian Mathea",
       "license": "CC BY 2.0",
       "dates": [
@@ -426,7 +428,7 @@
     {
       "slug": "marijino-vnebovzetje",
       "path": "/prazniki/marijino-vnebovzetje/",
-      "photo": "/images/observances/marijino-vnebovzetje.webp",
+      "image": "/images/observances/marijino-vnebovzetje.webp",
       "credit": "Janezdrilc",
       "license": "CC0",
       "dates": [
@@ -439,7 +441,7 @@
     {
       "slug": "zdruzitev-prekmurskih-slovencev",
       "path": "/prazniki/zdruzitev-prekmurskih-slovencev/",
-      "photo": "/images/observances/zdruzitev-prekmurskih-slovencev.webp",
+      "image": "/images/observances/zdruzitev-prekmurskih-slovencev.webp",
       "credit": "gov.si",
       "license": "Public domain",
       "dates": [
@@ -452,7 +454,7 @@
     {
       "slug": "evropski-dan-spomina-na-zrtve-totalitarnih-rezimov",
       "path": "/pomembni-dnevi/evropski-dan-spomina-na-zrtve-totalitarnih-rezimov/",
-      "photo": "/images/observances/evropski-dan-spomina-na-zrtve-totalitarnih-rezimov.webp",
+      "image": "/images/observances/evropski-dan-spomina-na-zrtve-totalitarnih-rezimov.webp",
       "credit": "Mykola Swarnyk",
       "license": "CC BY-SA 3.0",
       "dates": [
@@ -465,7 +467,7 @@
     {
       "slug": "vrnitev-primorske",
       "path": "/prazniki/vrnitev-primorske/",
-      "photo": "/images/observances/vrnitev-primorske.webp",
+      "image": "/images/observances/vrnitev-primorske.webp",
       "credit": "Daniel Novakovič / STA",
       "license": "Public domain",
       "dates": [
@@ -478,7 +480,7 @@
     {
       "slug": "jesensko-enakonocje",
       "path": "/letni-casi/jesensko-enakonocje/",
-      "photo": "/images/observances/jesensko-enakonocje.webp",
+      "image": "/images/observances/jesensko-enakonocje.webp",
       "credit": "Dreamy Pixel",
       "license": "CC BY 4.0",
       "dates": [
@@ -491,7 +493,7 @@
     {
       "slug": "dan-slovenskega-sporta",
       "path": "/prazniki/dan-slovenskega-sporta/",
-      "photo": "/images/observances/dan-slovenskega-sporta.webp",
+      "image": "/images/observances/dan-slovenskega-sporta.webp",
       "credit": "Vladimir Yaitskiy from Kyiv, Ukraine",
       "license": "CC BY-SA 2.0",
       "dates": [
@@ -504,7 +506,7 @@
     {
       "slug": "evropski-dan-jezikov",
       "path": "/pomembni-dnevi/evropski-dan-jezikov/",
-      "photo": "/images/observances/evropski-dan-jezikov.webp",
+      "image": "/images/observances/evropski-dan-jezikov.webp",
       "credit": "Silar",
       "license": "CC BY-SA 3.0",
       "dates": [
@@ -517,7 +519,7 @@
     {
       "slug": "svetovni-dan-zivali",
       "path": "/pomembni-dnevi/svetovni-dan-zivali/",
-      "photo": "/images/observances/svetovni-dan-zivali.webp",
+      "image": "/images/observances/svetovni-dan-zivali.webp",
       "credit": "U.S. Army photo by Sgt. Max Elliott",
       "license": "Public domain",
       "dates": [
@@ -530,7 +532,7 @@
     {
       "slug": "teden-otroka",
       "path": "/pomembni-dnevi/teden-otroka/",
-      "photo": "/images/observances/teden-otroka.webp",
+      "image": "/images/observances/teden-otroka.webp",
       "credit": "Vladimir Yaitskiy from Kyiv, Ukraine",
       "license": "CC BY-SA 2.0",
       "dates": [
@@ -543,7 +545,7 @@
     {
       "slug": "svetovni-dan-uciteljev",
       "path": "/pomembni-dnevi/svetovni-dan-uciteljev/",
-      "photo": "/images/observances/svetovni-dan-uciteljev.webp",
+      "image": "/images/observances/svetovni-dan-uciteljev.webp",
       "credit": "Neznan avtor (navedba v izvirnem arhivu)",
       "license": "Public domain",
       "dates": [
@@ -556,7 +558,7 @@
     {
       "slug": "dan-suverenosti",
       "path": "/prazniki/dan-suverenosti/",
-      "photo": "/images/observances/dan-suverenosti.webp",
+      "image": "/images/observances/dan-suverenosti.webp",
       "credit": "Balkan's Photos",
       "license": "CC BY 2.0",
       "dates": [
@@ -569,7 +571,7 @@
     {
       "slug": "noc-carovnic",
       "path": "/pomembni-dnevi/noc-carovnic/",
-      "photo": "/images/observances/noc-carovnic.webp",
+      "image": "/images/observances/noc-carovnic.webp",
       "credit": "Llez",
       "license": "CC BY-SA 3.0",
       "dates": [
@@ -582,7 +584,7 @@
     {
       "slug": "dan-reformacije",
       "path": "/prazniki/dan-reformacije/",
-      "photo": "/images/observances/dan-reformacije.webp",
+      "image": "/images/observances/dan-reformacije.webp",
       "credit": "Jurij Dalmatin",
       "license": "Public domain",
       "dates": [
@@ -595,7 +597,7 @@
     {
       "slug": "dan-spomina-na-mrtve",
       "path": "/prazniki/dan-spomina-na-mrtve/",
-      "photo": "/images/observances/dan-spomina-na-mrtve.webp",
+      "image": "/images/observances/dan-spomina-na-mrtve.webp",
       "credit": "Janezdrilc",
       "license": "CC0",
       "dates": [
@@ -608,7 +610,7 @@
     {
       "slug": "spomin-vseh-vernih-rajnih",
       "path": "/pomembni-dnevi/spomin-vseh-vernih-rajnih/",
-      "photo": "/images/observances/spomin-vseh-vernih-rajnih.webp",
+      "image": "/images/observances/spomin-vseh-vernih-rajnih.webp",
       "credit": "Twillisjr",
       "license": "CC BY-SA 4.0",
       "dates": [
@@ -621,7 +623,7 @@
     {
       "slug": "dan-znanosti",
       "path": "/prazniki/dan-znanosti/",
-      "photo": "/images/observances/dan-znanosti.webp",
+      "image": "/images/observances/dan-znanosti.webp",
       "credit": "Danilo Škofič",
       "license": "Public domain",
       "dates": [
@@ -634,7 +636,7 @@
     {
       "slug": "martinovo",
       "path": "/prazniki/martinovo/",
-      "photo": "/images/observances/martinovo.webp",
+      "image": "/images/observances/martinovo.webp",
       "credit": "Romi",
       "license": "CC0",
       "dates": [
@@ -647,7 +649,7 @@
     {
       "slug": "dan-slovenskega-znakovnega-jezika",
       "path": "/pomembni-dnevi/dan-slovenskega-znakovnega-jezika/",
-      "photo": "/images/observances/dan-slovenskega-znakovnega-jezika.webp",
+      "image": "/images/observances/dan-slovenskega-znakovnega-jezika.webp",
       "credit": "Alex Proimos from Sydney, Australia",
       "license": "CC BY 2.0",
       "dates": [
@@ -660,7 +662,7 @@
     {
       "slug": "dan-slovenske-hrane",
       "path": "/pomembni-dnevi/dan-slovenske-hrane/",
-      "photo": "/images/observances/dan-slovenske-hrane.webp",
+      "image": "/images/observances/dan-slovenske-hrane.webp",
       "credit": "Liat Portal / Foodie Disorder (HaJunkiyada)",
       "license": "CC BY-SA 4.0",
       "dates": [
@@ -673,7 +675,7 @@
     {
       "slug": "svetovni-dan-otrok",
       "path": "/pomembni-dnevi/svetovni-dan-otrok/",
-      "photo": "/images/observances/svetovni-dan-otrok.webp",
+      "image": "/images/observances/svetovni-dan-otrok.webp",
       "credit": "The President's Office, Maldives",
       "license": "CC BY 4.0",
       "dates": [
@@ -686,7 +688,7 @@
     {
       "slug": "dan-rudolfa-maistra",
       "path": "/prazniki/dan-rudolfa-maistra/",
-      "photo": "/images/observances/dan-rudolfa-maistra.webp",
+      "image": "/images/observances/dan-rudolfa-maistra.webp",
       "credit": "Vlada Republike Slovenije from Ljubljana, Slovenia",
       "license": "Public domain",
       "dates": [
@@ -699,7 +701,7 @@
     {
       "slug": "advent",
       "path": "/prazniki/advent/",
-      "photo": "/images/observances/advent.webp",
+      "image": "/images/observances/advent.webp",
       "credit": "PHILIP János",
       "license": "CC0",
       "dates": [
@@ -712,7 +714,7 @@
     {
       "slug": "ta-veseli-dan-kulture",
       "path": "/pomembni-dnevi/ta-veseli-dan-kulture/",
-      "photo": "/images/observances/ta-veseli-dan-kulture.webp",
+      "image": "/images/observances/ta-veseli-dan-kulture.webp",
       "credit": "Szilas",
       "license": "CC BY 4.0",
       "dates": [
@@ -725,7 +727,7 @@
     {
       "slug": "miklavz",
       "path": "/prazniki/miklavz/",
-      "photo": "/images/observances/miklavz.webp",
+      "image": "/images/observances/miklavz.webp",
       "credit": "Mravlja Matjaz",
       "license": "CC BY-SA 4.0",
       "dates": [
@@ -738,7 +740,7 @@
     {
       "slug": "zimski-solsticij",
       "path": "/letni-casi/zimski-solsticij/",
-      "photo": "/images/observances/zimski-solsticij.webp",
+      "image": "/images/observances/zimski-solsticij.webp",
       "credit": "Dreamy Pixel",
       "license": "CC BY 4.0",
       "dates": [
@@ -751,7 +753,7 @@
     {
       "slug": "bozic",
       "path": "/prazniki/bozic/",
-      "photo": "/images/observances/bozic.webp",
+      "image": "/images/observances/bozic.webp",
       "credit": "Ajznponar",
       "license": "CC BY-SA 4.0",
       "dates": [
@@ -764,7 +766,7 @@
     {
       "slug": "dan-samostojnosti-in-enotnosti",
       "path": "/prazniki/dan-samostojnosti-in-enotnosti/",
-      "photo": "/images/observances/dan-samostojnosti-in-enotnosti.webp",
+      "image": "/images/observances/dan-samostojnosti-in-enotnosti.webp",
       "credit": "Žiga Živulovič jr. / Bobo",
       "license": "Public domain",
       "dates": [
@@ -777,7 +779,7 @@
     {
       "slug": "silvestrovo",
       "path": "/prazniki/silvestrovo/",
-      "photo": "/images/observances/silvestrovo.webp",
+      "image": "/images/observances/silvestrovo.webp",
       "credit": "Suzi5p at Slovenian Wikipedia (Suzana Pavšič)",
       "license": "CC BY-SA 3.0",
       "dates": [

@@ -8,6 +8,7 @@ module ApplicationHelper
   end
   def gallery_description
     return 'Načrtujte družinski teden, delite pregled z domačimi v tem brskalniku in prenesite koledar PDF ali WebP, pripravljen pri 600 ppi.' if page_path == '/druzinski-planer/'
+    return 'Izberite med 15 izvirnimi slovenskimi oblikovanji za tisk. Vsak koledar je na voljo kot vektorski PDF A3 CMYK FOGRA39 in WebP celotne strani v sRGB pri 600 dpi.' if @section == 'calendar' && @page&.path&.start_with?('/koledar/') && @year.to_i.between?(2027, 2030)
     'V galeriji izberite eno od 15 predlog: PDF za tisk in ujemajoči se WebP pri 600 ppi, s podpisom Koledar365 na vsaki strani. Večstranski WebP je v datoteki ZIP; PDF tiskajte v merilu 100 %.'
   end
   def page_path

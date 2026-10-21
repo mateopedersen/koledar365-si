@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-10-20T21:22:40+02:00",
+  "checked_at": "2026-10-21T21:24:19+02:00",
   "kind": "local render audit; not a Google ranking or indexing certification",
-  "tested": 345,
+  "tested": 399,
   "passed": true,
   "issues": [],
   "rows": [
@@ -64,7 +64,7 @@
       "path": "/delovni-dnevi/",
       "status": 200,
       "title": "Delovni dnevi in ure · Koledar365",
-      "description": "Pregled delovnih dni in ur v Sloveniji za leta 2027–2030. Za lasten urnik uporabite kalkulator z izbiro delovnih dni in praznikov.",
+      "description": "Pregled delovnih dni in ur v Sloveniji za leta 2027–2030. Prilagodite izračun svojemu tedenskemu urniku ter upoštevajte zakonske praznike.",
       "h1": [
         "Delovni dnevi in ure"
       ],
@@ -1072,7 +1072,7 @@
       "path": "/druzinski-planer/",
       "status": 200,
       "title": "Družinski planer · Koledar365",
-      "description": "Združite dogodke družinskih članov v mesečnem pregledu. Dodajte imena, datume in zapiske ter pripravite planer za tiskanje.",
+      "description": "Družinski teden načrtujte skupaj. PDF za tisk ali WebP za zaslon prenesite spodaj; koledar je pripravljen v visoki ločljivosti 600 ppi.",
       "h1": [
         "Družinski planer"
       ],
@@ -1323,8 +1323,8 @@
     {
       "path": "/horoskop/",
       "status": 200,
-      "title": "Dnevni horoskop za vseh 12 znamenj · Koledar365",
-      "description": "Dnevni horoskop za vseh 12 znamenj v slovenščini. Preverite datume, spoznajte svoje znamenje ter brezplačno izračunajte ascendent in sončno znamenje.",
+      "title": "Dnevni horoskop · Koledar365",
+      "description": "Dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
       "h1": [
         "Dnevni horoskop.Trenutek za vas."
       ],
@@ -1343,8 +1343,8 @@
     {
       "path": "/horoskop/bik/",
       "status": 200,
-      "title": "Dnevni horoskop: Bik · Koledar365",
-      "description": "Bik: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
+      "title": "Bik – dnevni horoskop · Koledar365",
+      "description": "Bik – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
       "h1": [
         "BikVaš dnevni horoskop."
       ],
@@ -1363,8 +1363,8 @@
     {
       "path": "/horoskop/devica/",
       "status": 200,
-      "title": "Dnevni horoskop: Devica · Koledar365",
-      "description": "Devica: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
+      "title": "Devica – dnevni horoskop · Koledar365",
+      "description": "Devica – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
       "h1": [
         "DevicaVaš dnevni horoskop."
       ],
@@ -1383,8 +1383,8 @@
     {
       "path": "/horoskop/dvojcka/",
       "status": 200,
-      "title": "Dnevni horoskop: Dvojčka · Koledar365",
-      "description": "Dvojčka: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
+      "title": "Dvojčka – dnevni horoskop · Koledar365",
+      "description": "Dvojčka – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
       "h1": [
         "DvojčkaVaš dnevni horoskop."
       ],
@@ -1403,8 +1403,8 @@
     {
       "path": "/horoskop/izracun-znamenja/",
       "status": 200,
-      "title": "Izračun ascendenta in sončnega znamenja · Koledar365",
-      "description": "Brezplačen izračun ascendenta in sončnega znamenja po datumu, točni uri in kraju rojstva. Zgodovinski časovni pasovi, poletni čas in zasebna obdelava na napravi.",
+      "title": "Izračun horoskopskega znamenja · Koledar365",
+      "description": "Brezplačno izračunajte sončno in vzhajajoče znamenje (ascendent) glede na datum, točno uro in kraj rojstva. Izračun je geometrijski in namenjen razvedrilu.",
       "h1": [
         "Vaše znamenje.Še bolj osebno."
       ],
@@ -1422,8 +1422,8 @@
     {
       "path": "/horoskop/kozorog/",
       "status": 200,
-      "title": "Dnevni horoskop: Kozorog · Koledar365",
-      "description": "Kozorog: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
+      "title": "Kozorog – dnevni horoskop · Koledar365",
+      "description": "Kozorog – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
       "h1": [
         "KozorogVaš dnevni horoskop."
       ],
@@ -1442,8 +1442,8 @@
     {
       "path": "/horoskop/lev/",
       "status": 200,
-      "title": "Dnevni horoskop: Lev · Koledar365",
-      "description": "Lev: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
+      "title": "Lev – dnevni horoskop · Koledar365",
+      "description": "Lev – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
       "h1": [
         "LevVaš dnevni horoskop."
       ],
@@ -1462,8 +1462,8 @@
     {
       "path": "/horoskop/oven/",
       "status": 200,
-      "title": "Dnevni horoskop: Oven · Koledar365",
-      "description": "Oven: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
+      "title": "Oven – dnevni horoskop · Koledar365",
+      "description": "Oven – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
       "h1": [
         "OvenVaš dnevni horoskop."
       ],
@@ -1482,8 +1482,8 @@
     {
       "path": "/horoskop/rak/",
       "status": 200,
-      "title": "Dnevni horoskop: Rak · Koledar365",
-      "description": "Rak: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
+      "title": "Rak – dnevni horoskop · Koledar365",
+      "description": "Rak – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
       "h1": [
         "RakVaš dnevni horoskop."
       ],
@@ -1502,8 +1502,8 @@
     {
       "path": "/horoskop/ribi/",
       "status": 200,
-      "title": "Dnevni horoskop: Ribi · Koledar365",
-      "description": "Ribi: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
+      "title": "Ribi – dnevni horoskop · Koledar365",
+      "description": "Ribi – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
       "h1": [
         "RibiVaš dnevni horoskop."
       ],
@@ -1522,8 +1522,8 @@
     {
       "path": "/horoskop/skorpijon/",
       "status": 200,
-      "title": "Dnevni horoskop: Škorpijon · Koledar365",
-      "description": "Škorpijon: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
+      "title": "Škorpijon – dnevni horoskop · Koledar365",
+      "description": "Škorpijon – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
       "h1": [
         "ŠkorpijonVaš dnevni horoskop."
       ],
@@ -1542,8 +1542,8 @@
     {
       "path": "/horoskop/strelec/",
       "status": 200,
-      "title": "Dnevni horoskop: Strelec · Koledar365",
-      "description": "Strelec: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
+      "title": "Strelec – dnevni horoskop · Koledar365",
+      "description": "Strelec – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
       "h1": [
         "StrelecVaš dnevni horoskop."
       ],
@@ -1562,8 +1562,8 @@
     {
       "path": "/horoskop/tehtnica/",
       "status": 200,
-      "title": "Dnevni horoskop: Tehtnica · Koledar365",
-      "description": "Tehtnica: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
+      "title": "Tehtnica – dnevni horoskop · Koledar365",
+      "description": "Tehtnica – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
       "h1": [
         "TehtnicaVaš dnevni horoskop."
       ],
@@ -1582,8 +1582,8 @@
     {
       "path": "/horoskop/vodnar/",
       "status": 200,
-      "title": "Dnevni horoskop: Vodnar · Koledar365",
-      "description": "Vodnar: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona in brezplačen izračun ascendenta po točni uri in kraju rojstva.",
+      "title": "Vodnar – dnevni horoskop · Koledar365",
+      "description": "Vodnar – dnevni horoskop. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno.",
       "h1": [
         "VodnarVaš dnevni horoskop."
       ],
@@ -1600,96 +1600,6 @@
       ]
     },
     {
-      "path": "/imena/",
-      "status": 200,
-      "title": "Imena v Sloveniji · Koledar365",
-      "description": "Imena v Sloveniji po podatkih SURS: pogostost med prebivalci in novorojenčki, izvirni zapis imen ter povezave do osebnih koledarjev.",
-      "h1": [
-        "Imena v Sloveniji"
-      ],
-      "canonical": [
-        "https://koledar365.si/imena/"
-      ],
-      "robots": "noindex, follow",
-      "schema_types": [
-        "WebSite",
-        "WebPage",
-        "BreadcrumbList"
-      ]
-    },
-    {
-      "path": "/imena/moska/",
-      "status": 200,
-      "title": "Moška imena · Koledar365",
-      "description": "Moška imena med prebivalci Slovenije po podatkih SURS na 1. januar 2026. Poiščite ime, preverite pogostost in ustvarite svoj koledar.",
-      "h1": [
-        "Moška imena"
-      ],
-      "canonical": [
-        "https://koledar365.si/imena/moska/"
-      ],
-      "robots": "noindex, follow",
-      "schema_types": [
-        "WebSite",
-        "WebPage",
-        "BreadcrumbList"
-      ]
-    },
-    {
-      "path": "/imena/najpogostejsa/",
-      "status": 200,
-      "title": "Najpogostejša imena · Koledar365",
-      "description": "Najpogostejša imena prebivalcev Slovenije po zbirki SURS za leto 2026. Razvrstitev ohranja izvirne zapise in nerazkrite podatke.",
-      "h1": [
-        "Najpogostejša imena"
-      ],
-      "canonical": [
-        "https://koledar365.si/imena/najpogostejsa/"
-      ],
-      "robots": "noindex, follow",
-      "schema_types": [
-        "WebSite",
-        "WebPage",
-        "BreadcrumbList"
-      ]
-    },
-    {
-      "path": "/imena/novorojencki/",
-      "status": 200,
-      "title": "Imena novorojenčkov · Koledar365",
-      "description": "Imena otrok, rojenih v Sloveniji leta 2025, po podatkih SURS. Pregled ločuje deklice in dečke ter označuje nerazkrite vrednosti.",
-      "h1": [
-        "Imena novorojenčkov"
-      ],
-      "canonical": [
-        "https://koledar365.si/imena/novorojencki/"
-      ],
-      "robots": "noindex, follow",
-      "schema_types": [
-        "WebSite",
-        "WebPage",
-        "BreadcrumbList"
-      ]
-    },
-    {
-      "path": "/imena/zenska/",
-      "status": 200,
-      "title": "Ženska imena · Koledar365",
-      "description": "Ženska imena med prebivalkami Slovenije po podatkih SURS na 1. januar 2026. Oglejte si pogostost in izberite koledar z imenom.",
-      "h1": [
-        "Ženska imena"
-      ],
-      "canonical": [
-        "https://koledar365.si/imena/zenska/"
-      ],
-      "robots": "noindex, follow",
-      "schema_types": [
-        "WebSite",
-        "WebPage",
-        "BreadcrumbList"
-      ]
-    },
-    {
       "path": "/kalkulator-delovnih-dni/",
       "status": 200,
       "title": "Kalkulator delovnih dni · Koledar365",
@@ -1699,24 +1609,6 @@
       ],
       "canonical": [
         "https://koledar365.si/kalkulator-delovnih-dni/"
-      ],
-      "robots": "noindex, follow",
-      "schema_types": [
-        "WebSite",
-        "WebPage",
-        "BreadcrumbList"
-      ]
-    },
-    {
-      "path": "/koledar-z-imenom/",
-      "status": 200,
-      "title": "Koledar z imenom · Koledar365",
-      "description": "Izberite ime iz zbirke SURS ali vnesite svoje. Pripravite osebni koledar za leto 2027, 2028, 2029 ali 2030 v eni od 15 predlog.",
-      "h1": [
-        "Koledar z imenom"
-      ],
-      "canonical": [
-        "https://koledar365.si/koledar-z-imenom/"
       ],
       "robots": "noindex, follow",
       "schema_types": [
@@ -1758,6 +1650,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -1848,6 +1741,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -1866,6 +1760,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -1884,6 +1779,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -1902,6 +1798,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -1920,6 +1817,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -1938,6 +1836,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -1956,6 +1855,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -1974,6 +1874,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -1992,6 +1893,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2010,6 +1912,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2028,6 +1931,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2046,6 +1950,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2064,6 +1969,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2082,6 +1988,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2100,6 +2007,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2118,6 +2026,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2136,6 +2045,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2154,6 +2064,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2172,6 +2083,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2190,6 +2102,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2208,6 +2121,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2226,6 +2140,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2244,6 +2159,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2262,6 +2178,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2280,6 +2197,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2298,6 +2216,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2316,6 +2235,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2334,6 +2254,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2352,6 +2273,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2370,6 +2292,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2388,6 +2311,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2406,6 +2330,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2424,6 +2349,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2442,6 +2368,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2460,6 +2387,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2478,6 +2406,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2496,6 +2425,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2514,6 +2444,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2532,6 +2463,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2550,6 +2482,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2568,6 +2501,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2586,6 +2520,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2604,6 +2539,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2622,6 +2558,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2640,6 +2577,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2658,6 +2596,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2676,6 +2615,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2694,6 +2634,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2712,6 +2653,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2730,6 +2672,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2748,6 +2691,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -2766,6 +2710,7 @@
       "schema_types": [
         "WebSite",
         "WebPage",
+        "ItemList",
         "BreadcrumbList"
       ]
     },
@@ -4015,7 +3960,7 @@
       "title": "Odštevanje do datuma · Koledar365",
       "description": "Preverite, koliko dni je še do izbranega datuma. Uporabno za načrtovanje rojstnega dne, dopusta ali drugega pomembnega dne.",
       "h1": [
-        "Odštevanje do datuma"
+        "Pomembni dnevi.Čisto blizu."
       ],
       "canonical": [
         "https://koledar365.si/odstevanje/"
@@ -5774,10 +5719,10 @@
     {
       "path": "/premik-ure/",
       "status": 200,
-      "title": "Premik ure · Koledar365",
-      "description": "Po veljavnem evropskem razporedu uro premaknemo zadnjo nedeljo v marcu in oktobru. Spomladi ob 2.",
+      "title": "Premik ure 2026–2030: poletni in zimski čas · Koledar365",
+      "description": "Datumi premika ure v Sloveniji za leta 2026–2030. Spomladi uro premaknemo z 2. na 3. uro, jeseni pa s 3. na 2. uro.",
       "h1": [
-        "Premik ure"
+        "Premik ure v Sloveniji"
       ],
       "canonical": [
         "https://koledar365.si/premik-ure/"
@@ -5812,9 +5757,9 @@
       "path": "/razpored-izmen/",
       "status": 200,
       "title": "Razpored izmen · Koledar365",
-      "description": "Sestavite ponavljajoči se razpored izmen od izbranega datuma. Nastavite cikel in pripravite mesečni pregled za tiskanje.",
+      "description": "Sestavite ponavljajoči se razpored izmen, preverite ga v mesečnem predogledu ter shranite ali izvozite za koledar in tisk.",
       "h1": [
-        "Razpored izmen"
+        "Razpored izmen, pripravljen za vaš ritem"
       ],
       "canonical": [
         "https://koledar365.si/razpored-izmen/"
@@ -6064,7 +6009,7 @@
       "path": "/soncni-vzhod-in-zahod/",
       "status": 200,
       "title": "Sončni vzhod in zahod · Koledar365",
-      "description": "Izberite slovensko mesto in datum za izračun sončnega vzhoda, zahoda ter dolžine dneva. Časi upoštevajo slovenski časovni pas.",
+      "description": "Izberite med 69 slovenskimi mesti in datumom preverite sončni vzhod, zahod, zlato uro ter dolžino dneva. Raziščite izračunano pot Sonca po lokalnem času.",
       "h1": [
         "Sončni vzhod in zahod"
       ],
@@ -6082,7 +6027,7 @@
       "path": "/soncni-vzhod-in-zahod/celje/",
       "status": 200,
       "title": "Sončni vzhod in zahod – Celje · Koledar365",
-      "description": "Sončni vzhod in zahod – Celje: izberite datum in izračunajte krajevni čas vzhoda, zahoda ter dolžino dneva.",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Celje. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
       "h1": [
         "Sončni vzhod in zahod – Celje"
       ],
@@ -6100,7 +6045,7 @@
       "path": "/soncni-vzhod-in-zahod/koper/",
       "status": 200,
       "title": "Sončni vzhod in zahod – Koper · Koledar365",
-      "description": "Sončni vzhod in zahod – Koper: izberite datum in izračunajte krajevni čas vzhoda, zahoda ter dolžino dneva.",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Koper. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
       "h1": [
         "Sončni vzhod in zahod – Koper"
       ],
@@ -6118,7 +6063,7 @@
       "path": "/soncni-vzhod-in-zahod/kranj/",
       "status": 200,
       "title": "Sončni vzhod in zahod – Kranj · Koledar365",
-      "description": "Sončni vzhod in zahod – Kranj: izberite datum in izračunajte krajevni čas vzhoda, zahoda ter dolžino dneva.",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Kranj. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
       "h1": [
         "Sončni vzhod in zahod – Kranj"
       ],
@@ -6136,7 +6081,7 @@
       "path": "/soncni-vzhod-in-zahod/ljubljana/",
       "status": 200,
       "title": "Sončni vzhod in zahod – Ljubljana · Koledar365",
-      "description": "Sončni vzhod in zahod – Ljubljana: izberite datum in izračunajte krajevni čas vzhoda, zahoda ter dolžino dneva.",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Ljubljana. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
       "h1": [
         "Sončni vzhod in zahod – Ljubljana"
       ],
@@ -6154,7 +6099,7 @@
       "path": "/soncni-vzhod-in-zahod/maribor/",
       "status": 200,
       "title": "Sončni vzhod in zahod – Maribor · Koledar365",
-      "description": "Sončni vzhod in zahod – Maribor: izberite datum in izračunajte krajevni čas vzhoda, zahoda ter dolžino dneva.",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Maribor. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
       "h1": [
         "Sončni vzhod in zahod – Maribor"
       ],
@@ -6172,7 +6117,7 @@
       "path": "/soncni-vzhod-in-zahod/murska-sobota/",
       "status": 200,
       "title": "Sončni vzhod in zahod – Murska Sobota · Koledar365",
-      "description": "Sončni vzhod in zahod – Murska Sobota: izberite datum in izračunajte krajevni čas vzhoda, zahoda ter dolžino dneva.",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Murska Sobota. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
       "h1": [
         "Sončni vzhod in zahod – Murska Sobota"
       ],
@@ -6190,7 +6135,7 @@
       "path": "/soncni-vzhod-in-zahod/nova-gorica/",
       "status": 200,
       "title": "Sončni vzhod in zahod – Nova Gorica · Koledar365",
-      "description": "Sončni vzhod in zahod – Nova Gorica: izberite datum in izračunajte krajevni čas vzhoda, zahoda ter dolžino dneva.",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Nova Gorica. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
       "h1": [
         "Sončni vzhod in zahod – Nova Gorica"
       ],
@@ -6208,7 +6153,7 @@
       "path": "/soncni-vzhod-in-zahod/novo-mesto/",
       "status": 200,
       "title": "Sončni vzhod in zahod – Novo mesto · Koledar365",
-      "description": "Sončni vzhod in zahod – Novo mesto: izberite datum in izračunajte krajevni čas vzhoda, zahoda ter dolžino dneva.",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Novo mesto. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
       "h1": [
         "Sončni vzhod in zahod – Novo mesto"
       ],
@@ -6408,7 +6353,7 @@
       "path": "/zasebnost/",
       "status": 200,
       "title": "Zasebnost · Koledar365",
-      "description": "Katere podatke obdeluje Koledar365, zakaj in kako dolgo? Pojasnila o lokalnih načrtih, zasebnih izvozih, kontaktu in pravicah po GDPR.",
+      "description": "Preberite, kako Koledar365 varuje zasebnost: lokalni koledarji, podatki ob obisku, piškotki, ponudniki, roki hrambe in vaše pravice po GDPR.",
       "h1": [
         "Vaši načrti.Vaši podatki."
       ],
@@ -6423,15 +6368,1095 @@
       ]
     },
     {
-      "path": "/koledar-z-imenom/marija/",
+      "path": "/soncni-vzhod-in-zahod/ajdovscina/",
       "status": 200,
-      "title": "Koledar z imenom Marija · Koledar365",
-      "description": "Koledar z imenom Marija za leta 2027–2030: 15 predlog PDF in WebP, izbira barv in podatki o pogostosti imena iz zbirke SURS.",
+      "title": "Sončni vzhod in zahod – Ajdovščina · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Ajdovščina. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
       "h1": [
-        "Koledar z imenom Marija"
+        "Sončni vzhod in zahod – Ajdovščina"
       ],
       "canonical": [
-        "https://koledar365.si/koledar-z-imenom/marija/"
+        "https://koledar365.si/soncni-vzhod-in-zahod/ajdovscina/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/bled/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Bled · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Bled. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Bled"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/bled/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/bovec/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Bovec · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Bovec. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Bovec"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/bovec/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/brezice/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Brežice · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Brežice. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Brežice"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/brezice/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/cerknica/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Cerknica · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Cerknica. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Cerknica"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/cerknica/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/crnomelj/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Črnomelj · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Črnomelj. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Črnomelj"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/crnomelj/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/domzale/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Domžale · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Domžale. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Domžale"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/domzale/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/dravograd/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Dravograd · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Dravograd. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Dravograd"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/dravograd/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/gornja-radgona/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Gornja Radgona · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Gornja Radgona. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Gornja Radgona"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/gornja-radgona/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/grosuplje/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Grosuplje · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Grosuplje. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Grosuplje"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/grosuplje/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/hrastnik/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Hrastnik · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Hrastnik. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Hrastnik"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/hrastnik/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/idrija/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Idrija · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Idrija. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Idrija"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/idrija/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/ilirska-bistrica/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Ilirska Bistrica · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Ilirska Bistrica. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Ilirska Bistrica"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/ilirska-bistrica/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/izola/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Izola · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Izola. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Izola"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/izola/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/jesenice/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Jesenice · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Jesenice. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Jesenice"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/jesenice/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/kamnik/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Kamnik · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Kamnik. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Kamnik"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/kamnik/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/kocevje/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Kočevje · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Kočevje. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Kočevje"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/kocevje/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/kostanjevica-na-krki/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Kostanjevica na Krki · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Kostanjevica na Krki. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Kostanjevica na Krki"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/kostanjevica-na-krki/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/krsko/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Krško · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Krško. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Krško"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/krsko/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/lasko/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Laško · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Laško. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Laško"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/lasko/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/lenart-v-slovenskih-goricah/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Lenart v Slovenskih goricah · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Lenart v Slovenskih goricah. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Lenart v Slovenskih goricah"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/lenart-v-slovenskih-goricah/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/lendava/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Lendava · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Lendava. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Lendava"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/lendava/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/litija/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Litija · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Litija. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Litija"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/litija/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/ljutomer/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Ljutomer · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Ljutomer. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Ljutomer"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/ljutomer/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/logatec/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Logatec · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Logatec. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Logatec"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/logatec/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/medvode/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Medvode · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Medvode. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Medvode"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/medvode/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/menges/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Mengeš · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Mengeš. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Mengeš"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/menges/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/metlika/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Metlika · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Metlika. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Metlika"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/metlika/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/mezica/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Mežica · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Mežica. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Mežica"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/mezica/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/ormoz/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Ormož · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Ormož. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Ormož"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/ormoz/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/piran/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Piran · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Piran. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Piran"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/piran/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/postojna/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Postojna · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Postojna. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Postojna"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/postojna/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/prevalje/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Prevalje · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Prevalje. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Prevalje"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/prevalje/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/ptuj/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Ptuj · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Ptuj. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Ptuj"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/ptuj/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/radece/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Radeče · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Radeče. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Radeče"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/radece/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/radovljica/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Radovljica · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Radovljica. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Radovljica"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/radovljica/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/ravne-na-koroskem/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Ravne na Koroškem · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Ravne na Koroškem. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Ravne na Koroškem"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/ravne-na-koroskem/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/ribnica/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Ribnica · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Ribnica. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Ribnica"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/ribnica/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/rogaska-slatina/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Rogaška Slatina · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Rogaška Slatina. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Rogaška Slatina"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/rogaska-slatina/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/ruse/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Ruše · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Ruše. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Ruše"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/ruse/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/sempeter-pri-gorici/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Šempeter pri Gorici · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Šempeter pri Gorici. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Šempeter pri Gorici"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/sempeter-pri-gorici/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/sentjur/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Šentjur · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Šentjur. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Šentjur"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/sentjur/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/sevnica/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Sevnica · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Sevnica. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Sevnica"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/sevnica/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/sezana/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Sežana · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Sežana. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Sežana"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/sezana/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/skofja-loka/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Škofja Loka · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Škofja Loka. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Škofja Loka"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/skofja-loka/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/slovenj-gradec/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Slovenj Gradec · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Slovenj Gradec. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Slovenj Gradec"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/slovenj-gradec/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/slovenska-bistrica/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Slovenska Bistrica · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Slovenska Bistrica. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Slovenska Bistrica"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/slovenska-bistrica/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/slovenske-konjice/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Slovenske Konjice · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Slovenske Konjice. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Slovenske Konjice"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/slovenske-konjice/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/sostanj/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Šoštanj · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Šoštanj. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Šoštanj"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/sostanj/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/tolmin/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Tolmin · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Tolmin. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Tolmin"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/tolmin/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/trbovlje/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Trbovlje · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Trbovlje. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Trbovlje"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/trbovlje/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/trebnje/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Trebnje · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Trebnje. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Trebnje"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/trebnje/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/trzic/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Tržič · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Tržič. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Tržič"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/trzic/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/velenje/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Velenje · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Velenje. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Velenje"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/velenje/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/visnja-gora/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Višnja Gora · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Višnja Gora. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Višnja Gora"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/visnja-gora/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/vrhnika/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Vrhnika · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Vrhnika. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Vrhnika"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/vrhnika/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/zagorje-ob-savi/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Zagorje ob Savi · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Zagorje ob Savi. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Zagorje ob Savi"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/zagorje-ob-savi/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/zalec/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Žalec · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Žalec. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Žalec"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/zalec/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/zelezniki/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Železniki · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Železniki. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Železniki"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/zelezniki/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/ziri/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Žiri · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Žiri. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Žiri"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/ziri/"
+      ],
+      "robots": "noindex, follow",
+      "schema_types": [
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/zrece/",
+      "status": 200,
+      "title": "Sončni vzhod in zahod – Zreče · Koledar365",
+      "description": "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto Zreče. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času.",
+      "h1": [
+        "Sončni vzhod in zahod – Zreče"
+      ],
+      "canonical": [
+        "https://koledar365.si/soncni-vzhod-in-zahod/zrece/"
       ],
       "robots": "noindex, follow",
       "schema_types": [
