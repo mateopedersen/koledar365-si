@@ -7,6 +7,11 @@ require_relative '../lib/svg_asset_references'
 root = File.expand_path('..', __dir__)
 public_root = File.join(root, 'public')
 assert = lambda { |condition, message|raise message unless condition }
+page_source_ids = lambda do |document|
+  document.xpath('//*[@id]').reject do |node|
+    node.ancestors('svg').any? { |ancestor|ancestor[SvgAssetReferences::UI_PAINT_DEFS_ATTRIBUTE] == '' }
+  end.map { |node|node['id'] }.to_set
+end
 assets = Dir[File.join(public_root, '**/*.svg')]
 assets.each { |path|Nokogiri::XML(File.read(path)) { |config|config.strict } }
 sprite_path = '/visuals/ui-material-v3.svg'
@@ -50,6 +55,17 @@ inline_paint_defs = fixture.at_css("svg[#{SvgAssetReferences::UI_PAINT_DEFS_ATTR
 assert.call(inline_paint_defs, 'External sprite paint definitions must be available in the caller document')
 assert.call(inline_paint_defs.element_children.map { |node|node['id'] }.to_set == paint_definition_ids,
   'Caller document paint definitions must match the shared UI sprite')
+assert.call((page_source_ids.call(fixture) & paint_definition_ids).empty?,
+  'Injected paint definition IDs must not count as authored page ID collisions')
+collision_fixture = Nokogiri::HTML(<<~HTML)
+  <html><body>
+    <svg><defs><linearGradient id="k-paper"></linearGradient></defs></svg>
+    <svg><use href="/visuals/ui-material-v3.svg#calendar"></use></svg>
+  </body></html>
+HTML
+SvgAssetReferences.rewrite_document!(collision_fixture, public_root)
+assert.call((page_source_ids.call(collision_fixture) & paint_definition_ids).include?('k-paper'),
+  'Authored paint definition IDs must still be reported as page collisions')
 references = fixture.css('img[src],link[href]').to_h do |node|
   reference = node['src'] || node['href']
   [URI.parse(reference).path, reference]
@@ -75,7 +91,7 @@ symbol_count = 0
 svg_reference_count = 0
 Dir[File.join(root, 'site/**/*.html')].each do |path|
   page = Nokogiri::HTML(File.read(path))
-  id_collisions = page.xpath('//*[@id]').map { |node|node['id'] }.to_set & paint_definition_ids
+  id_collisions = page_source_ids.call(page) & paint_definition_ids
   assert.call(id_collisions.empty?, "SVG paint definition ID collision in #{path}: #{id_collisions.to_a.join(', ')}")
   SvgAssetReferences.rewrite_document!(page, public_root)
   external_uses = page.css('use[href]').select { |use|use['href'].include?('ui-material-v3.') }
