@@ -31,8 +31,29 @@ class SiteTest < ActionDispatch::IntegrationTest
     post '/izracun/',params:{tool:'workdays',from:'2029-01-01',to:'2029-12-31',hours:'8',weekdays:%w[1 2 3 4 5],exclude_holidays:'1',include_start:'1',include_end:'1'},as: :json
     assert_response :success
     assert_includes response.parsed_body['result'],'248'
+    post '/izracun/',params:{tool:'workday_shift',from:'2027-04-26',delta:'1',weekdays:%w[1 2 3 4 5],exclude_holidays:'1'},as: :json
+    assert_response :success
+    assert_equal '2027-04-28',response.parsed_body.dig('workday_shift','target_date')
+    assert_equal ['2027-04-27'],response.parsed_body.dig('workday_shift','excluded_holidays')
+    post '/izracun/',params:{tool:'workday_shift',from:'2027-04-26',delta:'1',weekdays:[],exclude_holidays:'1'},as: :json
+    assert_response :unprocessable_entity
+    post '/izracun/',params:{tool:'workday_shift',from:'2030-12-31',delta:'1',weekdays:%w[1 2 3 4 5],exclude_holidays:'1'},as: :json
+    assert_response :unprocessable_entity
     post '/izracun/',params:{tool:'week',date:'2029-02-29'},as: :json
     assert_response :unprocessable_entity
+  end
+  test 'workday calculator offers both date counting modes and official holiday guidance' do
+    get '/kalkulator-delovnih-dni/'
+    assert_response :success
+    assert_select '[data-workday-calculator]'
+    assert_select '[data-wdc-mode="range"]'
+    assert_select '[data-wdc-mode="shift"]'
+    assert_select '[data-wdc-form="range"] input[name="weekdays[]"]',count:7
+    assert_select '[data-wdc-form="shift"] input[name="delta"][min="-1000"][max="1000"]'
+    assert_select 'a[href="https://www.gov.si/teme/drzavni-prazniki-in-dela-prosti-dnevi/"]'
+    assert_select 'script[src*="workdays"]'
+    assert_select 'link[rel="stylesheet"][href*="workdays"]'
+    assert_select '.tool-panel',count:0
   end
   test 'workdays landing page presents correct annual data and an adjustable monthly overview' do
     # Production's legacy Page row still labels this landing page as 2026.
