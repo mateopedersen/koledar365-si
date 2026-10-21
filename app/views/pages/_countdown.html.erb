@@ -1,0 +1,120 @@
+<section class="countdown-page" data-countdown-root data-today="<%= @today.iso8601 %>" aria-labelledby="countdown-title">
+  <script type="application/json" data-countdown-events nonce="<%= content_security_policy_nonce %>"><%= raw json_escape(@countdown_events.to_json) %></script>
+
+  <header class="countdown-hero">
+    <div class="countdown-hero__copy">
+      <p class="countdown-eyebrow"><%= slovenia_flag %><span>ČAS JE ZA NASLEDNJE LEPE NAČRTE</span></p>
+      <h1 id="countdown-title">Pomembni dnevi.<br><em>Čisto blizu.</em></h1>
+      <p class="countdown-hero__lead">Odštevajte do slovenskih praznikov, šolskih počitnic, božiča ali svojega posebnega dne. Izberite, kar vam pomeni, in imejte datum vedno pri roki.</p>
+      <div class="countdown-hero__proof" aria-label="Značilnosti odštevanja">
+        <span><%= ui_icon('calendar') %> Slovenski prazniki</span>
+        <span><%= ui_icon('school') %> Šolski termini po regijah</span>
+        <span><%= ui_icon('shield') %> Vaši zaznamki ostanejo pri vas</span>
+      </div>
+      <div class="countdown-hero__actions"><a class="countdown-primary" href="#izberi-dogodek">Izberi datum <span aria-hidden="true">↓</span></a><a class="countdown-secondary" href="#moj-seznam">Moj seznam</a></div>
+    </div>
+
+    <div class="countdown-hero__scene" aria-label="Naslednji pomemben datum">
+      <svg class="countdown-mountains" viewBox="0 0 650 380" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="cd-sky" x1="317" y1="0" x2="317" y2="380" gradientUnits="userSpaceOnUse"><stop stop-color="#EAF3FA"/><stop offset="1" stop-color="#F9FBFD"/></linearGradient>
+          <linearGradient id="cd-mountain-blue" x1="310" y1="75" x2="310" y2="300" gradientUnits="userSpaceOnUse"><stop stop-color="#B9D4E5"/><stop offset="1" stop-color="#6F99B5"/></linearGradient>
+          <linearGradient id="cd-mountain-dark" x1="333" y1="143" x2="333" y2="335" gradientUnits="userSpaceOnUse"><stop stop-color="#47718E"/><stop offset="1" stop-color="#153F63"/></linearGradient>
+        </defs>
+        <rect width="650" height="380" rx="22" fill="url(#cd-sky)"/>
+        <circle cx="500" cy="78" r="37" fill="#fff"/><circle cx="500" cy="78" r="49" stroke="#fff" stroke-opacity=".62" stroke-width="2"/>
+        <path d="M0 261 111 166l53 48 76-97 53 59 74-108 73 94 56-44 75 74 79-46v234H0V261Z" fill="url(#cd-mountain-blue)"/>
+        <path d="m240 117 53 59-36-14-18 21-20-14-27 6 48-58Zm127-49 73 94-49-22-25 18-25-22-29 3 55-71Z" fill="#F9FCFE"/>
+        <path d="m0 299 96-61 59 28 86-55 57 39 75-55 68 45 62-33 73 41 74-31v163H0V299Z" fill="url(#cd-mountain-dark)"/>
+        <path d="m0 320 117-28 68 24 76-30 78 31 91-26 74 27 78-18 68 14v66H0v-60Z" fill="#123652"/>
+        <path d="M0 350c92-23 168-24 251-9 100 18 199 18 399-13v52H0v-30Z" fill="#EAF2F7"/>
+        <path d="M0 350c95-25 175-22 251-9" stroke="#D5364B" stroke-width="3" stroke-linecap="round" opacity=".75"/>
+      </svg>
+
+      <article class="countdown-feature" data-feature-card>
+        <div class="countdown-feature__top"><span class="countdown-feature__dot"></span><span data-feature-kicker>NASLEDNJI POMEMBEN DAN</span><%= slovenia_flag %></div>
+        <h2 data-feature-title>Pripravljamo vaš naslednji datum …</h2>
+        <p class="countdown-feature__date" data-feature-date>Izberite dogodek iz koledarja</p>
+        <div class="countdown-clock" role="timer" aria-live="off" aria-label="Odštevanje do izbranega datuma">
+          <div><strong data-feature-days>—</strong><span>dní</span></div><i aria-hidden="true">:</i>
+          <div><strong data-feature-hours>—</strong><span>ur</span></div><i aria-hidden="true">:</i>
+          <div><strong data-feature-minutes>—</strong><span>min</span></div><i aria-hidden="true">:</i>
+          <div><strong data-feature-seconds>—</strong><span>sek</span></div>
+        </div>
+        <p class="countdown-feature__status" data-feature-status>Čas se osvežuje vsako sekundo.</p>
+        <button type="button" class="countdown-feature__save" data-feature-save>+ Dodaj v moj seznam</button>
+      </article>
+      <span class="countdown-scene__caption"><span>46° 22′ N</span><span>Triglavski narodni park</span></span>
+    </div>
+  </header>
+
+  <nav class="countdown-shortcuts" aria-label="Hitri izbor odštevanja">
+    <button type="button" data-quick="holiday"><span class="countdown-shortcut__icon is-red"><%= ui_icon('calendar') %></span><span><strong>Naslednji praznik</strong><small>Prosti dnevi v Sloveniji</small></span><span class="countdown-shortcut__arrow" aria-hidden="true">↗</span></button>
+    <button type="button" data-quick="school"><span class="countdown-shortcut__icon is-blue"><%= ui_icon('school') %></span><span><strong>Šolske počitnice</strong><small>Izberite svojo regijo</small></span><span class="countdown-shortcut__arrow" aria-hidden="true">↗</span></button>
+    <button type="button" data-quick="christmas"><span class="countdown-shortcut__icon is-green"><%= ui_icon('star') %></span><span><strong>Božič</strong><small>Najlepši čas v letu</small></span><span class="countdown-shortcut__arrow" aria-hidden="true">↗</span></button>
+    <button type="button" data-quick="custom"><span class="countdown-shortcut__icon is-navy"><%= ui_icon('plus') %></span><span><strong>Moj poseben datum</strong><small>Rojstni dan, potovanje …</small></span><span class="countdown-shortcut__arrow" aria-hidden="true">↗</span></button>
+  </nav>
+
+  <section class="countdown-saved" id="moj-seznam" aria-labelledby="countdown-saved-title">
+    <div class="countdown-section-heading">
+      <div><span class="countdown-kicker"><span class="countdown-kicker__number">01</span> VAŠ OSEBNI PREGLED</span><h2 id="countdown-saved-title">Moji odštevalniki</h2><p>Shranite več datumov in spremljajte vse na enem mestu. Zaznamki ostanejo v tem brskalniku.</p></div>
+      <div class="countdown-saved__actions"><span class="countdown-saved__count" data-saved-count>0 shranjenih</span><button type="button" data-export-ics disabled>Dodaj v koledar (.ics)</button></div>
+    </div>
+    <div class="countdown-saved-grid" data-saved-list aria-live="polite"></div>
+    <div class="countdown-empty" data-saved-empty><span class="countdown-empty__icon"><%= ui_icon('star') %></span><div><strong>Začnite s svojim prvim odštevanjem</strong><p>Dodajte prihajajoči praznik, počitnice ali datum, ki je pomemben samo za vas.</p></div><a href="#izberi-dogodek">Poglej datume <span aria-hidden="true">→</span></a></div>
+    <p class="countdown-storage-note"><%= ui_icon('shield') %> Osebni datumi se shranijo samo v tej napravi. V javni povezavi delite le tisti datum, ki ga izberete.</p>
+  </section>
+
+  <section class="countdown-catalog" id="izberi-dogodek" aria-labelledby="countdown-catalog-title">
+    <div class="countdown-section-heading countdown-catalog__heading">
+      <div><span class="countdown-kicker"><span class="countdown-kicker__number">02</span> PRIHODNOST JE V KOLEDARJU</span><h2 id="countdown-catalog-title">Do česa odštevamo?</h2><p>Prebrskajte dela proste praznike, šolske počitnice in priljubljene datume. Vsakemu lahko dodate svoj odštevalnik.</p></div>
+      <label class="countdown-search"><span class="sr-only">Poišči dogodek</span><%= ui_icon('search') %><input type="search" placeholder="Poišči dogodek …" data-event-search></label>
+    </div>
+
+    <div class="countdown-filterbar">
+      <div class="countdown-filters" role="group" aria-label="Filtriraj dogodke">
+        <button type="button" data-event-filter="all" aria-pressed="true">Vsi datumi</button>
+        <button type="button" data-event-filter="holiday" aria-pressed="false">Slovenski prazniki</button>
+        <button type="button" data-event-filter="school" aria-pressed="false">Šolski koledar</button>
+        <button type="button" data-event-filter="favorite" aria-pressed="false">Moj izbor</button>
+      </div>
+      <div class="countdown-school-controls" data-region-control>
+        <label class="countdown-region">Stopnja
+          <select data-school-level><option value="primary">Osnovna šola</option><option value="secondary">Srednja šola</option></select>
+        </label>
+        <label class="countdown-region">Regija
+          <select data-school-region><option value="east">Vzhodna skupina</option><option value="west">Zahodna skupina</option></select>
+        </label>
+      </div>
+    </div>
+
+    <p class="countdown-results" data-event-count aria-live="polite"></p>
+    <div class="countdown-event-grid" data-event-list></div>
+    <div class="countdown-no-results" data-no-events hidden><strong>Ni zadetkov za ta izbor.</strong><span>Spremenite filter ali poiščite drug dogodek.</span></div>
+    <button type="button" class="countdown-load-more" data-load-more hidden>Pokaži še dogodke <span aria-hidden="true">↓</span></button>
+  </section>
+
+  <section class="countdown-custom" id="moj-datum" aria-labelledby="countdown-custom-title">
+    <div class="countdown-custom__intro"><span class="countdown-kicker"><span class="countdown-kicker__number">03</span> NEKAJ ČISTO VAŠEGA</span><h2>Dodajte svoj datum</h2><p>Rojstni dan, težko pričakovano potovanje, obletnica ali prvi dan v novi službi. Ustvarite osebni odštevalnik v nekaj sekundah.</p>
+      <div class="countdown-custom__promises"><span><i>✓</i> Shranjeno zasebno</span><span><i>✓</i> Deljiva povezava</span><span><i>✓</i> Opomnik v koledarju</span></div>
+    </div>
+    <form class="countdown-custom-form" data-custom-form>
+      <div class="countdown-custom-form__heading"><span class="countdown-custom-form__icon"><%= ui_icon('calendar') %></span><div><strong>Ustvari odštevanje</strong><small>Izpolnite ime in datum dogodka.</small></div></div>
+      <label>Ime dogodka<input type="text" name="title" maxlength="64" placeholder="npr. Poletne počitnice" required data-custom-title></label>
+      <div class="countdown-custom-form__row"><label>Datum<input type="date" name="date" min="<%= @today.iso8601 %>" value="<%= (@today+1).iso8601 %>" required data-custom-date></label><label>Ura<input type="time" name="time" value="00:00" required data-custom-time></label></div>
+      <label>Časovni pas<select name="zone" data-custom-zone><option value="Europe/Ljubljana" selected>Slovenija · Ljubljana</option><option value="Europe/Vienna">Avstrija · Dunaj</option><option value="Europe/London">Združeno kraljestvo · London</option><option value="America/New_York">ZDA · New York</option><option value="UTC">UTC</option></select></label>
+      <button class="countdown-primary countdown-custom-form__submit" type="submit">Začni odštevati <span aria-hidden="true">→</span></button>
+      <output class="countdown-custom-status" data-custom-status aria-live="polite"></output>
+    </form>
+  </section>
+
+  <footer class="countdown-sources">
+    <span class="countdown-sources__icon"><%= ui_icon('info') %></span>
+    <div><strong>Preverjeni datumi, jasen vir.</strong><p>Zakonske praznike povzemamo po slovenskem uradnem koledarju. Šolski termini za osnovne in srednje šole sledijo objavljenemu koledarju 2026/27; zimske počitnice se razlikujejo po regiji. Datume za naslednje šolsko leto označimo kot predvidene, dokler jih ministrstvo uradno ne objavi.</p>
+      <a href="https://www.gov.si/teme/drzavni-prazniki-in-dela-prosti-dnevi/" target="_blank" rel="noopener">Državni prazniki · GOV.SI <span aria-hidden="true">↗</span></a>
+      <a href="<%= CountdownCatalog::SCHOOL_SOURCE %>" target="_blank" rel="noopener">Šolski koledar za osnovne šole · GOV.SI <span aria-hidden="true">↗</span></a>
+      <a href="<%= CountdownCatalog::SECONDARY_SCHOOL_SOURCE %>" target="_blank" rel="noopener">Šolski koledar za srednje šole · GOV.SI <span aria-hidden="true">↗</span></a>
+      <a href="/viri-in-metodologija/">Viri in metodologija</a>
+    </div>
+  </footer>
+</section>

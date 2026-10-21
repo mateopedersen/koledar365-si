@@ -40,12 +40,6 @@ class PagesController < ApplicationController
     @event_map=@events.group_by(&:on)
     @upcoming=CalendarEvent.where(on:@today..).where(category:'legal').ordered.limit(3)
     @section=section_for(path)
-    if @section=='horoscope'
-      @horoscope_guide=HoroscopeGuide.new(@today,path.split('/').last)
-      sign=@horoscope_guide.profile
-      @title=sign ? "Dnevni horoskop: #{sign['name']}" : (@horoscope_guide.calculator? ? 'Izračun vzhajajočega znamenja (ascendenta)' : 'Dnevni horoskop za vseh 12 znamenj')
-      @description=sign ? "#{sign['name']}: današnji horoskop, ljubezen, delo in počutje. Datumi znamenja, sončna sezona ter brezplačen izračun vzhajajočega znamenja (ascendenta) po točni uri in kraju rojstva." : (@horoscope_guide.calculator? ? 'Brezplačno izračunajte sončno in vzhajajoče znamenje (ascendent) po datumu, točni uri in kraju rojstva. Časovni pasovi in premik ure; podatki ostanejo na vaši napravi.' : 'Dnevni horoskop za vseh 12 znamenj v slovenščini. Preverite datume, spoznajte svoje znamenje ter izračunajte sončno in vzhajajoče znamenje (ascendent).')
-    end
     if @section=='events' && CalendarEvent.exists?(slug:path.split('/').last)
       @observance=ObservancePage.new(path.split('/').last)
       @section='observance'
@@ -66,6 +60,7 @@ class PagesController < ApplicationController
       @description+=" Stran #{number} seznama imen."
     end
     @designs=PrintCatalog.designs
+    @countdown_events=CountdownCatalog.events(today:@today) if path=='/odstevanje/'
     @children=Page.where('path LIKE ?',"#{path}%").where.not(path:path).order(:path) if path!='/'
     render :show
   end
