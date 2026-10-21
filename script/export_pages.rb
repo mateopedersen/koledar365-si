@@ -19,6 +19,8 @@ SvgAssetReferences.materialize_fingerprinted_assets!(Rails.root.join('public'),o
 FileUtils.mkdir_p(out.join('free/views/home'))
 FileUtils.cp_r(Rails.root.join('cloudflare/free/.'),out.join('free'))
 FileUtils.rm_f(out.join('free/README.md'))
+# Keep only the current browser adapter; old fingerprints can retain retired page logic.
+Dir[out.join('free/client-*.js')].each { |file|FileUtils.rm_f(file) }
 client_asset="client-#{Digest::SHA256.file(out.join('free/client.js')).hexdigest[0,16]}.js"
 FileUtils.cp(out.join('free/client.js'),out.join('free',client_asset))
 session=ActionDispatch::Integration::Session.new(Rails.application);session.host!('localhost')
@@ -151,7 +153,6 @@ search=Page.published.reject { |page|page.path.match?(removed_name_path) }.map d
  {title:page.title,path:page.path,type:'Koledar in orodja',folded:PersonName.fold([page.title,page.path,page.description,keywords].compact.join(' ')),priority:0}
 end
 search+=SunEngine::CITIES.map { |id,values|{title:"Sončni vzhod in zahod – #{values[0]}",path:"/soncni-vzhod-in-zahod/#{id}/",type:'Sončni časi',folded:PersonName.fold("#{values[0]} sončni vzhod sončni zahod zlata ura dolžina dneva mesto"),priority:1} }
-search+=PersonName.published.order(:priority).map { |person|{title:"Ime: #{person.exact}",path:person.path,type:'Koledar z imenom',folded:PersonName.fold("#{person.exact} ime koledar z imenom"),priority:person.priority} }
 search+=CalendarEvent.ordered.map do |event|
  path=["/prazniki/#{event.slug}/","/pomembni-dnevi/#{event.slug}/","/letni-casi/#{event.slug}/"].find { |candidate|Page.exists?(path:candidate) }||"/pomembni-dnevi/#{event.on.year}/"
  tags=[event.title,event.on.iso8601,"#{event.on.day}. #{CalendarEngine::MONTHS.fetch(event.on.month-1)} #{event.on.year}",CalendarEngine::DAYS.fetch(event.on.cwday-1),event.category,'praznik']
@@ -220,7 +221,7 @@ headers=<<~HEADERS
   X-Robots-Tag: noindex
 HEADERS
 out.join('_headers').write(headers)
-out.join('_routes.json').write(JSON.generate({version:1,include:['/vreme/*','/horoskop/*','/city-detect*'],exclude:[]}))
+out.join('_routes.json').write(JSON.generate({version:1,include:['/vreme/*','/horoskop/*','/city-detect*','/koledar-z-imenom','/koledar-z-imenom/*','/imena','/imena/*','/free/names','/free/names/*','/free/search.json','/sitemap-names.xml','/sitemap.xml','/sitemap-pages.xml','/robots.txt'],exclude:[]}))
 # Re-materialize after all page and asset transforms so the final static tree
 # always contains every content-addressed SVG referenced by generated CSS/HTML.
 SvgAssetReferences.materialize_fingerprinted_assets!(Rails.root.join('public'),out)
