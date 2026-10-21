@@ -22,7 +22,7 @@ assets=nil;processed=[];style_sets={}
 transform=lambda do |body,path,indexable:true|
  doc=Nokogiri::HTML(body)
  sources=doc.css('script[src]').map { |node|node['src'] }
- assets||={scripts:sources.reject { |src|src.include?('holidays-')||src.include?('city_card-')||src.include?('vacation-')||src.include?('countdown-')||src.start_with?('/studio/','/horoscope/')||src.split('?',2).first=='/school/experience.mjs'||src.split('?',2).first=='/lunar/calendar.mjs' },holidays:ApplicationController.helpers.asset_path('holidays.js'),vacation:ApplicationController.helpers.asset_path('vacation.js'),countdown:ApplicationController.helpers.asset_path('countdown.js')}
+ assets||={scripts:sources.reject { |src|src.include?('holidays-')||src.include?('city_card-')||src.include?('vacation-')||src.include?('countdown-')||src.start_with?('/studio/','/horoscope/')||src.split('?',2).first=='/school/experience.mjs'||src.split('?',2).first=='/lunar/calendar.mjs' },holidays:ApplicationController.helpers.asset_path('holidays.js'),vacation:ApplicationController.helpers.asset_path('vacation.js'),countdown:ApplicationController.helpers.asset_path('countdown.js'),shift:ApplicationController.helpers.asset_path('shift_schedule.js')}
  doc.css('script[src]').each { |script|src=script['src'];script.remove unless src.include?('city_card-')||src.include?('sun-')||src.start_with?('/studio/','/horoscope/')||src.split('?',2).first=='/school/experience.mjs' }
  doc.css('meta[name="csrf-token"],meta[name="csrf-param"],meta[name="csp-nonce"],meta[http-equiv="Content-Security-Policy"],input[name="authenticity_token"]').remove
  if doc.at_css('[data-lunar]')
@@ -54,7 +54,7 @@ transform=lambda do |body,path,indexable:true|
   page_assets=assets.merge(scripts:(assets[:scripts]+family_scripts).uniq)
  end
  config=Nokogiri::XML::Node.new('script',doc);config['type']='application/json';config['id']='k365-static-config';config.content=JSON.generate(page_assets);doc.at_css('head').add_child(config)
- (page_assets[:scripts]+[assets[:holidays]]+(doc.at_css('[data-vacation-planner]') ? [assets[:vacation]] : [])+(doc.at_css('[data-countdown-root]') ? [assets[:countdown]] : [])).each do |src|
+ (page_assets[:scripts]+[assets[:holidays]]+(doc.at_css('[data-vacation-planner]') ? [assets[:vacation]] : [])+(doc.at_css('[data-countdown-root]') ? [assets[:countdown]] : [])+(doc.at_css('#shift-form') ? [assets[:shift]] : [])).each do |src|
   next if src==assets[:holidays]&&!doc.at_css('#holiday-filters')
   preload=Nokogiri::XML::Node.new('link',doc);preload['rel']='preload';preload['as']='script';preload['href']=src;doc.at_css('head').add_child(preload)
  end
