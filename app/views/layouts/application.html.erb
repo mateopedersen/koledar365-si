@@ -6,7 +6,7 @@
 <meta name="description" content="<%= @description || 'Slovenski koledarji, prazniki in orodja za osebno načrtovanje.' %>">
 <meta name="robots" content="<%= @noindex || !Rails.env.production? ? 'noindex, follow' : 'index, follow, max-image-preview:large' %>">
 <meta name="color-scheme" content="light"><meta name="theme-color" content="#ffffff">
-<% hero_image_path = if @section == 'home' then CityCatalog.default.dig('photo', 'local_path') elsif @section == 'observance' then @observance&.photo&.dig('local_path') end %>
+<% hero_image_path = if @section == 'home' then CityCatalog.default.dig('photo', 'local_path') elsif @section == 'observance' && !@clock_change then @observance&.photo&.dig('local_path') end %>
 <% if (hero_image = WebImageCatalog.find(hero_image_path)) %>
 <% hero_sizes = @section == 'home' ? WebImageCatalog::CITY_SIZES : '(max-width:760px) 100vw, 50vw' %>
 <link rel="preload" as="image" type="image/avif" href="<%= hero_image.fetch('variants').first.fetch('avif') %>" imagesrcset="<%= hero_image.fetch('avif_srcset') %>" imagesizes="<%= hero_sizes %>" fetchpriority="high">
@@ -29,6 +29,7 @@
 <% if @section=='holidays' %><%= stylesheet_link_tag 'holidays' %><%= javascript_include_tag 'holidays',defer:true %><% end %>
 <% if page_path == '/kalkulator-delovnih-dni/' || (page_path == '/delovni-dnevi/' && (2027..2030).cover?(@year)) %><%= stylesheet_link_tag 'workdays' %><%= javascript_include_tag 'workdays',defer:true %><% end %>
 <% if @section=='observance' %><%= stylesheet_link_tag 'observances' %><% end %>
+<% if @clock_change %><%= stylesheet_link_tag 'clock_change' %><script type="module" src="/premik-ure/experience.mjs"></script><% end %>
 <% if gallery_page? %><%= stylesheet_link_tag 'calendar_gallery' %><% end %>
 <% if page_path == '/razpored-izmen/' %><%= stylesheet_link_tag 'shift_schedule' %><%= javascript_include_tag 'shift_schedule',defer:true %><% end %>
 <% if @section=='school' %><link rel="stylesheet" href="/school/experience.css?v=20261020-3"><script type="module" src="/school/experience.mjs?v=20261020-3"></script><% end %>

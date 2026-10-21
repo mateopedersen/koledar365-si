@@ -11,6 +11,8 @@ on:
       - 'public/lunar/**'
       - 'public/prenosi/lunin-koledar/**'
       - 'public/slike/lunin-koledar/**'
+      - 'public/premik-ure/**'
+      - 'public/images/premik-ure/**'
       - 'script/lunar/**'
       - 'app/**'
       - 'config/locales/**'

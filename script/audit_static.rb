@@ -114,7 +114,7 @@ targets.sort.each do |path|
  target=site.join(path.delete_prefix('/'));target=target.join('index.html') if path.end_with?('/')
  issues << {path:path,issue:'Missing internal link or asset'} unless target.file?
 end
-sitemap_paths=Dir[site.join('sitemap-*.xml')].flat_map { |file|Nokogiri::XML(File.read(file)).remove_namespaces!.css('url loc').map(&:text) }
+sitemap_paths=Dir[site.join('sitemap-*.xml')].flat_map { |file|Nokogiri::XML(File.read(file)).remove_namespaces!.css('url > loc').map(&:text) }
 sitemap_paths.each do |url|
  path=URI(url).path;file=site.join(path.delete_prefix('/'),'index.html')
  if !file.file?||Nokogiri::HTML(file.read).at_css('meta[name=robots]')&.[]('content').to_s.include?('noindex')

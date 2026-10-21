@@ -54,6 +54,10 @@ class PagesController < ApplicationController
     else
       PageMetadata.description(@page,year:@year)
     end
+    if path=='/premik-ure/'
+      @clock_change=ClockChangeSchedule.new
+      @title=ClockChangeSchedule::TITLE
+    end
     @selected=Date.iso8601(params[:date].to_s) rescue nil
     if path=='/'
       @month=[@month,10].max if @year==2026
@@ -132,7 +136,16 @@ class PagesController < ApplicationController
       rows=rows.uniq { |path,_| path }
     end
     rows << ['/fotografije-in-licence/',Date.new(2026,10,20)] if params[:kind]=='pages' && Page.published.exists?(path:'/')
-    xml=Nokogiri::XML::Builder.new(encoding:'UTF-8') { |x| x.urlset(xmlns:'http://www.sitemaps.org/schemas/sitemap/0.9') { rows.each { |path,time| x.url { x.loc(base+path);x.lastmod(time.iso8601) } } } }
+    xml=Nokogiri::XML::Builder.new(encoding:'UTF-8') do |x|
+      x.urlset('xmlns'=>'http://www.sitemaps.org/schemas/sitemap/0.9','xmlns:image'=>'http://www.google.com/schemas/sitemap-image/1.1') do
+        rows.each do |path,time|
+          x.url do
+            x.loc(base+path);x.lastmod(time.iso8601)
+            x['image'].image { x['image'].loc(base+ClockChangeSchedule::IMAGE_PATH) } if path=='/premik-ure/'
+          end
+        end
+      end
+    end
     render xml:xml.to_xml
   end
   def robots

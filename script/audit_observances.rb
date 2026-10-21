@@ -27,21 +27,32 @@ events.each do |slug,entries|
   session.get(path)
   doc=Nokogiri::HTML(session.response.body)
   issues<<{slug:slug,problem:'page_status',status:session.response.status} unless session.response.status==200
-  issues<<{slug:slug,problem:'missing_photo'} unless doc.at_css('.observance-photo img')&.[]('src')==photo['local_path']
+  clock_change=slug=='premik-ure'
+  image_path=clock_change ? ClockChangeSchedule::IMAGE_PATH : photo['local_path']
+  image_selector=clock_change ? '.clock-change-figure img' : '.observance-photo img'
+  expected_dates=clock_change ? ClockChangeSchedule.transitions.map { |row|row[:date].iso8601 } : entries.map { |event|event.on.iso8601 }
+  expected_years=clock_change ? ClockChangeSchedule::YEARS : CalendarEngine::YEARS
+  issues<<{slug:slug,problem:'missing_image'} unless doc.at_css(image_selector)&.[]('src')==image_path
   issues<<{slug:slug,problem:'city_photo_on_detail'} if doc.css('.observance-page img').any? { |image|image['src'].to_s.include?('/cities/') }
-  issues<<{slug:slug,problem:'wrong_dates'} unless doc.css('[data-observance-date]').map { |node|node['data-observance-date'] }==entries.map { |event|event.on.iso8601 }
-  issues<<{slug:slug,problem:'four_years'} unless doc.css('.observance-year-card').map { |node|node['id'] }==CalendarEngine::YEARS.map { |year|"datum-#{year}" }
-  issues<<{slug:slug,problem:'attribution_link'} unless doc.at_css(".observance-photo a[href='/fotografije-in-licence/#praznik-#{slug}']")
-  issues<<{slug:slug,problem:'sharing_image'} unless doc.at_css('meta[property="og:image"]')&.[]('content')=="https://koledar365.si#{photo['local_path']}"
+  issues<<{slug:slug,problem:'wrong_dates'} unless doc.css('[data-observance-date]').map { |node|node['data-observance-date'] }==expected_dates
+  issues<<{slug:slug,problem:'year_coverage'} unless doc.css('.observance-year-card').map { |node|node['id'] }==expected_years.map { |year|"datum-#{year}" }
+  issues<<{slug:slug,problem:'attribution_link'} unless clock_change || doc.at_css(".observance-photo a[href='/fotografije-in-licence/#praznik-#{slug}']")
+  issues<<{slug:slug,problem:'sharing_image'} unless doc.at_css('meta[property="og:image"]')&.[]('content')=="https://koledar365.si#{image_path}"
   image_schemas=JSON.parse(doc.at_css('script[type="application/ld+json"]').text).fetch('@graph').select { |node|node['@type']=='ImageObject' }
-  issues<<{slug:slug,problem:'photo_schema'} unless image_schemas.any? { |node|node['contentUrl']=="https://koledar365.si#{photo['local_path']}" && node['creditText']==photo['author'] && node['license']==photo['license_url'] }
+  expected_credit=clock_change ? 'Koledar365' : photo['author']
+  issues<<{slug:slug,problem:'image_schema'} unless image_schemas.any? { |node|node['contentUrl']=="https://koledar365.si#{image_path}" && node['creditText']==expected_credit && (clock_change || node['license']==photo['license_url']) }
+  if clock_change
+    issues<<{slug:slug,problem:'infographic_asset'} unless Rails.root.join('public',image_path.delete_prefix('/')).file?
+    issues<<{slug:slug,problem:'infographic_alt'} unless doc.at_css(image_selector)&.[]('alt')==ClockChangeSchedule::IMAGE_ALT
+    issues<<{slug:slug,problem:'slovenian_sources'} unless ClockChangeSchedule::SOURCES.all? { |_,url|doc.css('.observance-sources a').any? { |link|link['href']==url } }
+  end
   entries.group_by { |event|event.on.year }.each do |year,year_events|
     session.get("/prazniki/#{year}.ics",params:{all:'1',topic:slug})
     exported=IcsService.import(session.response.body)
     issues<<{slug:slug,year:year,problem:'ics_dates'} unless exported.map { |event|event['date'] }==year_events.map { |event|event.on.iso8601 }
     issues<<{slug:slug,year:year,problem:'ics_titles'} unless exported.map { |event|event['title'] }==year_events.map(&:title)
   end
-  rows<<{slug:slug,path:path,photo:photo['local_path'],credit:photo['author'],license:photo['license'],dates:entries.map { |event|event.on.iso8601 }}
+  rows<<{slug:slug,path:path,image:image_path,credit:expected_credit,license:clock_change ? nil : photo['license'],dates:expected_dates}
 end
 session.get('/fotografije-in-licence/')
 license_doc=Nokogiri::HTML(session.response.body)

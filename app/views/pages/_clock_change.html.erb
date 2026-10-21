@@ -1,0 +1,83 @@
+<article class="observance-page clock-change-page tone-nature" data-clock-change>
+  <header class="clock-change-hero">
+    <div class="clock-change-intro">
+      <span class="eyebrow">SLOVENIJA · POLETNI IN ZIMSKI ČAS</span>
+      <h1>Premik ure v Sloveniji</h1>
+      <p>V Sloveniji uro premaknemo dvakrat na leto: zadnjo nedeljo v marcu za eno uro naprej, zadnjo nedeljo v oktobru pa za eno uro nazaj.</p>
+      <nav class="clock-change-years" aria-label="Premik ure po letih">
+        <% ClockChangeSchedule::YEARS.each do |year| %><a href="#datum-<%= year %>"><%= year %><span aria-hidden="true">↓</span></a><% end %>
+      </nav>
+    </div>
+    <% upcoming=@clock_change.next_change %>
+    <section class="clock-change-next" aria-labelledby="clock-change-next-title">
+      <span class="eyebrow" id="clock-change-next-title">Naslednji premik ure</span>
+      <div data-clock-change-upcoming <%= 'hidden' unless upcoming %>>
+        <time class="clock-change-next-date" data-next-date datetime="<%= upcoming&.dig(:date)&.iso8601 %>"><%= upcoming&.dig(:date_label) %></time>
+        <strong class="clock-change-next-hours" data-next-hours><%= upcoming&.dig(:before) %> → <%= upcoming&.dig(:after) %></strong>
+        <p class="clock-change-direction" data-next-direction>Eno uro <%= upcoming&.dig(:direction) %></p>
+        <p data-next-sentence><%= upcoming&.dig(:sentence) %></p>
+        <a data-next-year href="#datum-<%= upcoming&.dig(:date)&.year %>">Vsi datumi za to leto <span aria-hidden="true">↓</span></a>
+      </div>
+      <p data-clock-change-empty <%= 'hidden' if upcoming %>>Pregled zajema leta 2026–2030. Za naslednja leta preverite najnovejši uradni razpored.</p>
+    </section>
+  </header>
+
+  <section class="clock-change-visual" aria-labelledby="clock-change-visual-title">
+    <div class="observance-heading"><div><span class="eyebrow">NAPREJ ALI NAZAJ?</span><h2 id="clock-change-visual-title">Kako premaknemo uro?</h2></div><a class="clock-change-download" href="<%= ClockChangeSchedule::IMAGE_BASE %>-2400.webp" download>Prenesi sliko <span aria-hidden="true">↓</span></a></div>
+    <figure class="clock-change-figure">
+      <a href="<%= ClockChangeSchedule::IMAGE_BASE %>-2400.webp" aria-label="Odpri večjo infografiko premika ure">
+        <picture>
+        <source media="(max-width:600px)" type="image/webp" srcset="<%= ClockChangeSchedule::IMAGE_BASE %>-mobile.webp" width="640" height="1000">
+        <img src="<%= ClockChangeSchedule::IMAGE_PATH %>" srcset="<%= ClockChangeSchedule::IMAGE_BASE %>-640.webp 640w, <%= ClockChangeSchedule::IMAGE_PATH %> 1200w, <%= ClockChangeSchedule::IMAGE_BASE %>-2400.webp 2400w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1400px) calc(100vw - 64px), 1320px" width="1200" height="720" alt="<%= ClockChangeSchedule::IMAGE_ALT %>" fetchpriority="high" decoding="async">
+        </picture>
+      </a>
+      <figcaption>Spomladi uro premaknemo za eno uro naprej, jeseni pa za eno uro nazaj. Prikazan je lokalni čas v Sloveniji. Infografika: Koledar365.</figcaption>
+    </figure>
+  </section>
+
+  <section class="observance-dates" aria-labelledby="observance-dates-title">
+    <div class="observance-heading"><div><span class="eyebrow">KDAJ PREMAKNEMO URO?</span><h2 id="observance-dates-title">Premik ure v letih 2026–2030</h2></div><span class="observance-date-rule"><%= ui_icon('calendar') %> Vsi premiki so v nedeljo</span></div>
+    <div class="observance-year-grid clock-change-year-grid">
+      <% @clock_change.by_year.each do |year,changes| %>
+        <section class="observance-year-card" id="datum-<%= year %>" aria-labelledby="datum-title-<%= year %>">
+          <div class="observance-card-top"><h3 id="datum-title-<%= year %>"><%= year %></h3></div>
+          <% changes.each do |change| %>
+            <% date=change[:date] %>
+            <div class="observance-date-entry clock-change-entry is-<%= change[:season] %>" data-observance-date="<%= date.iso8601 %>">
+              <p class="clock-change-period"><%= change[:period] %></p>
+              <time datetime="<%= date.iso8601 %>"><strong><%= date.day %>.</strong><span><%= CalendarEngine::MONTHS.fetch(date.month-1) %><b>Nedelja</b></span></time>
+              <p class="clock-change-hours"><strong><%= change[:before] %> → <%= change[:after] %></strong><span>Eno uro <%= change[:direction] %></span></p>
+              <% if year >= 2027 %>
+                <a class="observance-open-date" href="<%= month_url(year,date.month) %>?date=<%= date.iso8601 %>&view=day">Odpri dan v koledarju <span aria-hidden="true">↗</span></a>
+              <% elsif date >= Date.new(2026,10,1) %>
+                <a class="observance-open-date" href="/?year=2026&month=<%= date.month %>&date=<%= date.iso8601 %>&view=day">Odpri dan v koledarju <span aria-hidden="true">↗</span></a>
+              <% end %>
+            </div>
+          <% end %>
+          <% ics_path=year==2026 ? '/premik-ure/premik-ure-2026.ics' : "/prazniki/#{year}.ics?all=1&topic=premik-ure" %>
+          <a class="observance-ics" href="<%= ics_path %>" <%= 'download' if year==2026 %>><%= ui_icon('plus') %> Dodaj v koledar <span class="sr-only"><%= year %></span><small>ICS</small></a>
+        </section>
+      <% end %>
+    </div>
+    <p class="clock-change-note">Datoteka ICS doda oba premika kot celodnevna dogodka. Ure na tej strani so navedene po lokalnem času v Sloveniji.</p>
+  </section>
+
+  <div class="observance-body-grid">
+    <section class="observance-story clock-change-questions" aria-labelledby="clock-change-questions-title">
+      <span class="eyebrow">POLETNI IN ZIMSKI ČAS</span><h2 id="clock-change-questions-title">Pogosta vprašanja o premiku ure</h2>
+      <h3>Kdaj premaknemo uro naprej?</h3>
+      <p>Zadnjo nedeljo v marcu ob 2. uri uro premaknemo na 3. uro. Takrat se začne poletni čas. Ta koledarski dan traja 23 ur.</p>
+      <h3>Kdaj premaknemo uro nazaj?</h3>
+      <p>Zadnjo nedeljo v oktobru ob 3. uri uro premaknemo na 2. uro. Takrat se vrnemo na standardni oziroma zimski čas. Ura med 2. in 3. uro se ponovi, koledarski dan pa traja 25 ur.</p>
+      <h3>Ali je premik ure ukinjen?</h3>
+      <p>Ne. Po pojasnilu Sveta EU končna odločitev o odpravi sezonskega premikanja ure še ni sprejeta. Sedanji sistem ostaja v veljavi. Evropska komisija je objavila razpored za leta 2027–2031; tukaj prikazujemo datume do leta 2030.</p>
+      <h3>Kateri časovni pas uporablja Slovenija?</h3>
+      <p>Pozimi velja srednjeevropski čas (CET, UTC+1), poleti pa srednjeevropski poletni čas (CEST, UTC+2). Oba premika se zgodita ob 01:00 UTC, zato sta krajevni uri spomladi in jeseni različni.</p>
+      <div class="observance-story-actions"><button type="button" data-print><%= ui_icon('print') %> Natisni datume</button><a class="button" href="<%= ClockChangeSchedule::IMAGE_BASE %>-2400.webp" download><%= ui_icon('download') %> Prenesi infografiko</a></div>
+    </section>
+    <aside class="observance-planning"><span class="eyebrow">ČAS IN KOLEDAR</span><h2>Načrtujte svoj dan.</h2><a href="/soncni-vzhod-in-zahod/"><%= ui_icon('sun') %><span><strong>Sončni vzhod in zahod</strong><small>Preverite ure za izbrani kraj in datum.</small></span><span aria-hidden="true">↗</span></a><a href="/dolzina-dneva/"><%= ui_icon('clock') %><span><strong>Dolžina dneva</strong><small>Koliko časa je Sonce nad obzorjem?</small></span><span aria-hidden="true">↗</span></a><a href="/koledar/"><%= ui_icon('calendar') %><span><strong>Slovenski koledar</strong><small>Datumi, tedni in prazniki na enem mestu.</small></span><span aria-hidden="true">↗</span></a></aside>
+  </div>
+
+  <section class="observance-sources"><div class="observance-source-mark"><%= ui_icon('shield') %></div><div><span class="eyebrow">URADNI VIRI V SLOVENŠČINI</span><h2>Viri in preverjanje datumov</h2><ul><% ClockChangeSchedule::SOURCES.each do |title,url| %><li><%= source_link(url,title) %></li><% end %></ul><p>Preverjeno: <time datetime="2026-10-21">21. 10. 2026</time>. Datumi veljajo po sedanji ureditvi. Ob spremembi zakonodaje bomo podatke posodobili.</p><div><a href="/uredniska-politika/">Uredniška pravila</a><a href="/kontakt/">Predlagajte popravek →</a></div></div></section>
+  <script type="application/json" id="clock-change-data"><%= raw json_escape(@clock_change.payload.to_json) %></script>
+</article>

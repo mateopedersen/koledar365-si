@@ -47,6 +47,8 @@ jobs:
         run: npx --yes wrangler@3.114.17 pages functions build functions --outdir=tmp/cloudflare-functions
       - name: Astronomical lunar date and phase data
         run: node script/lunar/audit_dates.mjs
+      - name: Clock change instant boundaries
+        run: node script/test_clock_change.mjs
       - name: Calendar Studio date, import and export contracts
         run: node script/test_calendar_studio.mjs
       - name: Ruby syntax
