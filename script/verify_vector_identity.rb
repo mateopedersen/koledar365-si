@@ -19,10 +19,13 @@ end
 files=Dir[File.join(site,'**/*.html')]
 counts=Hash.new(0); failures=[];stylesheet_cache={}
 asset_url=lambda do |path|
- asset=File.join(site,path.delete_prefix('/'))
+ # References may already carry the content fingerprint added during the
+ # export. Resolve them against the original asset before recomputing it.
+ source_path=path.sub(/\.[a-f0-9]{16}\.svg\z/, '.svg')
+ asset=File.join(site,source_path.delete_prefix('/'))
  next nil unless File.file?(asset)
  hash=Digest::SHA256.file(asset).hexdigest[0,16]
- fingerprinted=path.sub(/\.svg\z/, ".#{hash}.svg")
+ fingerprinted=source_path.sub(/\.svg\z/, ".#{hash}.svg")
  next nil unless File.file?(File.join(site,fingerprinted.delete_prefix('/')))
  fingerprinted
 end
@@ -35,7 +38,8 @@ files.each do |file|
  next unless html.include?('class="topbar"')
  counts[:pages]+=1
  doc=Nokogiri::HTML(html)
- fail_page=lambda { |reason|failures<<{path:file.delete_prefix(site),reason:reason} }
+ page_file=file
+ fail_page=lambda { |reason|failures<<{path:page_file.delete_prefix(site),reason:reason} }
  %w[header footer].each do |tag|
   n=doc.at_css("#{tag} .brand-mark")
   fail_page.call("Missing #{tag} logo") unless n && versioned_ref.call(n['src'], '/visuals/brand-calendar-v3.svg') && n['width'] && n['height']
@@ -45,9 +49,9 @@ files.each do |file|
  fail_page.call('Missing or stale SVG favicon') unless doc.at_css('link[rel="icon"][type="image/svg+xml"]')&.then { |node|versioned_ref.call(node['href'], '/visuals/brand-calendar-v3.svg') }
  fail_page.call('Legacy emoji flag') if doc.at_css('.country')&.text.to_s.include?('🇸🇮')
  styles=doc.css('style').map(&:text)+doc.css('link[rel=stylesheet]').filter_map do |node|
-  href=node['href'].split('?',2).first;file=File.join(site,href)
-  next unless href.start_with?('/') && File.file?(file)
-  stylesheet_cache[href] ||= File.read(file)
+  href=node['href'].split('?',2).first;stylesheet_file=File.join(site,href)
+  next unless href.start_with?('/') && File.file?(stylesheet_file)
+  stylesheet_cache[href] ||= File.read(stylesheet_file)
  end
  fail_page.call('Missing optical stylesheet') unless styles.any? { |css|css.include?('.brand-mark{') && css.include?('.country-flag{') }
  doc.css('svg.ui-icon').each do |n|
