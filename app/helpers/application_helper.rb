@@ -7,7 +7,7 @@ module ApplicationHelper
       (@section == 'calendar' && @page&.year && @year.between?(2027,2030))
   end
   def gallery_description
-    return 'Načrtujte družinski teden, delite pregled z domačimi v tem brskalniku in ustvarite koledar za tisk ali iCalendar.' if page_path == '/druzinski-planer/'
+    return 'Načrtujte družinske dogodke, opravila, obroke in nakupe. Zapisi ostanejo v tej napravi; natisljive predloge prenesete kot PDF ali WebP pri 600 ppi.' if page_path == '/druzinski-planer/'
     'V galeriji izberite eno od 15 predlog: PDF za tisk in ujemajoči se WebP pri 600 ppi, s podpisom Koledar365 na vsaki strani. Večstranski WebP je v datoteki ZIP; PDF tiskajte v merilu 100 %.'
   end
   def page_path
