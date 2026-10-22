@@ -40,6 +40,22 @@ class SiteTest < ActionDispatch::IntegrationTest
     assert_select 'meta[name=robots][content="noindex, follow"]'
     assert_includes response.body,'Žan'
   end
+  test 'terms page presents personal operator, practical rules and current legal references' do
+    get '/pogoji-uporabe/'
+    assert_response :success
+    assert_select 'html[lang=sl]'
+    assert_select 'body.terms-page'
+    assert_select 'h1#terms-title',count:1,text:/Pravila naj bodo jasna/
+    assert_select 'nav[aria-label="Vsebina pogojev uporabe"] a[href="#ponudnik"]'
+    %w[ponudnik storitve podatki gradiva uporabnik zunanje-strani popravki zakonodaja].each do |section|
+      assert_select "section##{section}",count:1
+    end
+    assert_select 'a[href="mailto:koledar365@gmail.com"]',minimum:1
+    assert_select 'a[href="/zasebnost/"]',minimum:1
+    assert_select 'a[href="/fotografije-in-licence/"]',minimum:1
+    assert_select 'a[href^="https://pisrs.si/"]',minimum:3
+    assert_select 'meta[name="description"][content*="Pogoji uporabe Koledar365"]',count:1
+  end
   test 'workday endpoint computes and validates' do
     post '/izracun/',params:{tool:'workdays',from:'2029-01-01',to:'2029-12-31',hours:'8',weekdays:%w[1 2 3 4 5],exclude_holidays:'1',include_start:'1',include_end:'1'},as: :json
     assert_response :success

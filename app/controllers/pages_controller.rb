@@ -99,6 +99,7 @@ class PagesController < ApplicationController
     return 'name' if @person
     return 'home' if path=='/'
     return 'about' if path=='/o-nas/'
+    return 'terms' if path=='/pogoji-uporabe/'
     return 'privacy' if path=='/zasebnost/'
     return 'cookie_policy' if path=='/piskotki/'
     return 'calendar' if path.start_with?('/koledar/')||path=='/mesecni-koledar/'||path.start_with?('/tedenski-koledar/')
