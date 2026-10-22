@@ -18,14 +18,14 @@
 <meta property="og:site_name" content="Koledar365">
 <meta property="og:locale" content="sl_SI">
 <meta property="og:url" content="https://koledar365.si/">
-<meta property="og:image" content="https://koledar365.si/druzabno/pages/1/5b5b2b44eea914d2026e.png">
+<meta property="og:image" content="https://koledar365.si/druzabno/pages/1/691c787aee955ab91538.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Slovenski koledar 2026–2030: prazniki in načrtovanje">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Slovenski koledar 2026–2030: prazniki in načrtovanje · Koledar365">
 <meta name="twitter:description" content="Slovenski koledar s prazniki, številkami tednov in osebnimi zapiski. Izberite leto med 2026 in 2030, mesec ali teden ter pripravite svoj koledar za tisk.">
-<meta name="twitter:image" content="https://koledar365.si/druzabno/pages/1/5b5b2b44eea914d2026e.png">
+<meta name="twitter:image" content="https://koledar365.si/druzabno/pages/1/691c787aee955ab91538.png">
 <meta name="twitter:image:alt" content="Slovenski koledar 2026–2030: prazniki in načrtovanje">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl-SI","publisher":{"@id":"https://koledar365.si/#organization"}},{"@type":"WebPage","@id":"https://koledar365.si/#webpage","url":"https://koledar365.si/","name":"Slovenski koledar 2026–2030: prazniki in načrtovanje","description":"Slovenski koledar s prazniki, številkami tednov in osebnimi zapiski. Izberite leto med 2026 in 2030, mesec ali teden ter pripravite svoj koledar za tisk.","inLanguage":"sl-SI","isPartOf":{"@id":"https://koledar365.si/#website"},"publisher":{"@id":"https://koledar365.si/#organization"},"author":{"@id":"https://koledar365.si/#organization"}},{"@type":"Organization","@id":"https://koledar365.si/#organization","name":"Koledar365","url":"https://koledar365.si/","email":"koledar365@gmail.com"}]}</script>
 
@@ -76,6 +76,22 @@ button:hover,.button:hover{box-shadow:0 3px 9px #1165c31a;transform:translateY(-
 .period-links a[aria-current=page]{background:#0b4b9b;border-color:#0b4b9b;color:#fff}
 .period-links a:focus-visible{outline:3px solid var(--red);outline-offset:3px}
 @media(max-width:600px){.period-links{padding:16px}.period-links h2{font-size:19px}.period-links>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.period-links a{font-size:14px;padding:10px}.filters input,.filters select,.filters textarea,.calendar-experience__selection input,.calendar-experience__selection select{font-size:16px}}
+
+/* Home discovery: fill the third feature column and keep every card on one surface. */
+.home-discovery .feature-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.home-discovery .feature-grid>div,.home-discovery .feature-grid>.feature{display:flex;flex-direction:column;align-items:flex-start;min-width:0;min-height:176px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow)}
+.home-discovery .feature-grid>div .year-links{margin-top:auto;padding-top:10px;margin-bottom:0}
+.home-discovery .feature-grid>.feature>span{margin-top:auto;padding-top:12px;font-weight:750}
+.home-discovery .feature-grid>.feature:hover{background:var(--surface);border-color:#b9cde8;box-shadow:0 10px 26px #183d7210;text-decoration:none}
+.home-discovery .feature-grid>.feature:focus-visible,.home-discovery .feature-grid .holiday-feature__footer a:focus-visible{outline:3px solid #0868fb;outline-offset:3px}
+.home-discovery .holiday-feature__date{display:flex;flex-wrap:wrap;gap:6px 10px;margin:4px 0 0;color:var(--muted)}
+.home-discovery .holiday-feature__date time{color:var(--ink);font-size:21px;font-weight:850;font-variant-numeric:tabular-nums}
+.home-discovery .holiday-feature__date span{align-self:center;font-weight:700}
+.home-discovery .holiday-feature__footer{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;margin-top:auto;padding-top:12px}
+.home-discovery .holiday-feature__footer a{font-weight:750}
+.home-discovery .holiday-feature__footer>span{color:var(--muted);font-size:13px;font-weight:700;white-space:nowrap}
+.home-discovery .feature-grid>.feature--holiday h3 .ui-icon{color:var(--red)}
+@media(max-width:850px){.home-discovery .feature-grid{grid-template-columns:minmax(0,1fr)}}
 
 /* Light-only visual system: original vector illustrations and editorial pages. */
 html{color-scheme:only light}
@@ -1953,7 +1969,7 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
 </div>
 </section>
 <!-- END app/views/pages/_expansion_discovery.html.erb -->
-<section class="panel discovery"><div class="section-heading">
+<section class="panel discovery home-discovery"><div class="section-heading">
 <h2>Več možnosti. Vse na enem mestu.</h2>
 <a href="/orodja/">Vsa orodja →</a>
 </div>
@@ -1970,6 +1986,14 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
 <svg class="ui-icon icon-calculator" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calculator" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calculator"></use></svg> Datumski kalkulator</h3>
 <p>Preštejte dneve in poiščite pravi datum.</p>
 <span>Izračunaj →</span></a>
+<article class="feature feature--holiday">
+<h3>
+<svg class="ui-icon icon-holidays" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#holidays" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#holidays"></use></svg> Naslednji dela prost dan</h3>
+<p class="holiday-feature__date"><time datetime="2026-10-31">31. 10.</time><span>Dan reformacije</span></p>
+<div class="holiday-feature__footer">
+<a href="/prazniki/dan-reformacije/">Podrobnosti praznika →</a><span>Čez 9 dni</span>
+</div>
+</article>
 </div>
 <div class="quick-links">
 <a href="/horoskop/" class="home-zodiac-link"><img width="24" height="24" alt="" class="ui-icon icon-zodiac" aria-hidden="true" src="/horoscope/art/wheel-icon-v1.f0a3a103957daf9e.svg"> Dnevni horoskop in znamenja</a><a href="/pomembni-dnevi/"><svg class="ui-icon icon-gift" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#gift" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#gift"></use></svg> Pomembni dnevi</a><a href="/lunin-koledar/"><svg class="ui-icon icon-moon" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#moon" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#moon"></use></svg> Lunin koledar</a><a href="/nacrtovalnik-dopusta/"><svg class="ui-icon icon-vacation" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#vacation" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#vacation"></use></svg> Načrtovalnik dopusta</a><a href="/prazen-koledar/"><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#note" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#note"></use></svg> Prazen koledar</a>
