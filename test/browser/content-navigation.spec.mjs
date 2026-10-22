@@ -30,3 +30,11 @@ test('school shortcuts retain real targets after changing education level and sa
  await expect(page.locator('#pocitnice-summer')).toBeVisible();
  await expect(page.locator('[data-saved-only]')).toHaveAttribute('aria-pressed','false');
 });
+
+
+test('legacy school URLs preserve their selected level and open the consolidated section',async({page})=>{
+ await page.goto('/solske-pocitnice/jesenske/?level=secondary');
+ await expect(page).toHaveURL(/\/solske-pocitnice\/\?level=secondary#pocitnice-autumn$/);
+ await expect(page.locator('#pocitnice-autumn')).toBeVisible();
+ await expect(page.locator('[data-level="secondary"]')).toHaveAttribute('aria-pressed','true');
+});
