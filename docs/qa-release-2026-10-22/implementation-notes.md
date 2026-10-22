@@ -37,3 +37,5 @@ Rails statik yayını; 2026 arşivi ve 2027–2030 dönemleri korunur. PR #58 il
 16. Ana dalın SEO ve tablet iyileştirmeleri 35b274eade içinde birleştirildi. Semantik takvim tabloları, editoryal kaynak açıklamaları ve sl-SI dili korundu. Son uygulama testi: 130 test, 13.828 assertion, sıfır hata. Sitemap tarihleri içerik parmak iziyle doğrulanır; stale/future tarih yayını durdurur.
 
 17. Birleşmiş matrisin ilk koşusunda `/delovni-dnevi/2028/` görsel decode işlemi bir kez EncodingError verdi; sayfanın sekiz genişlikte yeniden kontrolü ve tüm görsellerin gerçek yüklenmesi geçti. Kontrol, sonraki iki çizim karesinde bir kez daha decode yapar ve ilk hatayı raporda saklar. Başarılı decode zorunlu kalır; ikinci hata kaynak URL'siyle testi durdurur. İlk başarısız koşu da kanıtta saklanır.
+
+18. Son okul çizelgesi baskı kontrolünde sabit yatay named-page kuralı bulundu. Kağıt boyutu/yönü `auto` yapıldı, dikey görev paneli aşağıya alındı. 35ea4a5365 build çıktısında 108 gerçek export/baskı akışı ve dosya ayrıştırması geçti. Dört okul baskısı görsel olarak incelendi; seçilen 7–11 Şubat 2028 haftası ve örnek dersler PDF metninde doğrulandı.
