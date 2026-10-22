@@ -1,12 +1,12 @@
 [
   {
     "path": "/",
-    "title": "Koledar365 – slovenski koledar",
-    "description": null,
+    "title": "Slovenski koledar 2026–2030: prazniki in načrtovanje",
+    "description": "Slovenski koledar s prazniki, številkami tednov in osebnimi zapiski. Izberite leto 2026–2030, mesec ali teden ter pripravite svoj koledar za tisk.",
     "body": null,
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-20 14:27:16 +0200"
+    "updated_at": "2026-10-21 17:00:00 +0000"
   },
   {
     "path": "/dan-v-letu/",
@@ -28,12 +28,12 @@
   },
   {
     "path": "/delovni-dnevi/",
-    "title": "Delovni dnevi in ure",
-    "description": null,
+    "title": "Delovni dnevi in ure 2026–2030 v Sloveniji",
+    "description": "Letni pregled delovnih dni in ur za Slovenijo. Izberite leto 2026–2030, delovni teden in dnevne ure ter preverite vpliv dela prostih praznikov.",
     "body": null,
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-20 14:27:16 +0200"
+    "updated_at": "2026-10-21 17:00:00 +0000"
   },
   {
     "path": "/delovni-dnevi/2026/",
@@ -711,6 +711,24 @@
     "updated_at": "2026-10-20 14:27:16 +0200"
   },
   {
+    "path": "/izplacila-pokojnin/",
+    "body": null,
+    "created_at": "2026-10-21 17:00:00 +0000",
+    "title": "Izplačila pokojnin 2026: datumi in naslednje nakazilo",
+    "description": "Preverite naslednje izplačilo pokojnine in vseh 12 datumov ZPIZ za leto 2026. Pregled po mesecih, koledar za tisk in brezplačen prenos ICS.",
+    "status": "published",
+    "updated_at": "2026-10-21 17:00:00 +0000"
+  },
+  {
+    "path": "/izplacila-socialnih-transferjev/",
+    "body": null,
+    "created_at": "2026-10-21 17:00:00 +0000",
+    "title": "Izplačila socialnih transferjev 2026: koledar CSD",
+    "description": "Datumi CSD za otroški in varstveni dodatek, socialno pomoč, štipendije ter druge prejemke. Filtrirajte izplačila in prenesite koledar ICS.",
+    "status": "published",
+    "updated_at": "2026-10-21 17:00:00 +0000"
+  },
+  {
     "path": "/kalkulator-delovnih-dni/",
     "title": "Kalkulator delovnih dni",
     "description": null,
@@ -1311,7 +1329,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2026/",
@@ -1356,7 +1374,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2027/april/",
@@ -1365,7 +1383,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2027/avgust/",
@@ -1374,7 +1392,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2027/december/",
@@ -1383,7 +1401,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2027/februar/",
@@ -1392,7 +1410,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2027/januar/",
@@ -1401,7 +1419,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2027/julij/",
@@ -1410,7 +1428,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2027/junij/",
@@ -1419,7 +1437,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2027/maj/",
@@ -1428,7 +1446,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2027/marec/",
@@ -1437,7 +1455,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2027/november/",
@@ -1446,7 +1464,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2027/oktober/",
@@ -1455,7 +1473,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2027/september/",
@@ -1464,7 +1482,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2028/",
@@ -1473,7 +1491,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2028/april/",
@@ -1482,7 +1500,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2028/avgust/",
@@ -1491,7 +1509,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2028/december/",
@@ -1500,7 +1518,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2028/februar/",
@@ -1509,7 +1527,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2028/januar/",
@@ -1518,7 +1536,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2028/julij/",
@@ -1527,7 +1545,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2028/junij/",
@@ -1536,7 +1554,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2028/maj/",
@@ -1545,7 +1563,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2028/marec/",
@@ -1554,7 +1572,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2028/november/",
@@ -1563,7 +1581,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2028/oktober/",
@@ -1572,7 +1590,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2028/september/",
@@ -1581,7 +1599,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2029/",
@@ -1590,7 +1608,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2029/april/",
@@ -1599,7 +1617,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2029/avgust/",
@@ -1608,7 +1626,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2029/december/",
@@ -1617,7 +1635,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2029/februar/",
@@ -1626,7 +1644,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2029/januar/",
@@ -1635,7 +1653,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2029/julij/",
@@ -1644,7 +1662,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2029/junij/",
@@ -1653,7 +1671,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2029/maj/",
@@ -1662,7 +1680,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2029/marec/",
@@ -1671,7 +1689,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2029/november/",
@@ -1680,7 +1698,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2029/oktober/",
@@ -1689,7 +1707,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2029/september/",
@@ -1698,7 +1716,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2030/",
@@ -1707,7 +1725,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2030/april/",
@@ -1716,7 +1734,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2030/avgust/",
@@ -1725,7 +1743,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2030/december/",
@@ -1734,7 +1752,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2030/februar/",
@@ -1743,7 +1761,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2030/januar/",
@@ -1752,7 +1770,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2030/julij/",
@@ -1761,7 +1779,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2030/junij/",
@@ -1770,7 +1788,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2030/maj/",
@@ -1779,7 +1797,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2030/marec/",
@@ -1788,7 +1806,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2030/november/",
@@ -1797,7 +1815,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2030/oktober/",
@@ -1806,7 +1824,7 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
   },
   {
     "path": "/lunin-koledar/2030/september/",
@@ -1815,43 +1833,115 @@
     "body": "",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-22 09:20:24 +0200"
+    "updated_at": "2026-10-22 09:27:09 +0200"
+  },
+  {
+    "path": "/lunin-mrk/",
+    "body": null,
+    "created_at": "2026-10-21 17:00:00 +0000",
+    "title": "Lunin mrk v Sloveniji: datumi, potek in vidnost",
+    "description": "Lunini mrki 2026–2030 v Sloveniji: začetek, maksimum, konec in vidnost za izbrano mesto. Lokalni čas, razlaga pojava in koledar za opazovanje.",
+    "status": "published",
+    "updated_at": "2026-10-21 17:00:00 +0000"
   },
   {
     "path": "/lunine-mene/",
-    "title": "Lunine mene",
-    "description": null,
+    "title": "Lunine mene 2026–2030: datumi in ure v Sloveniji",
+    "description": "Mlaj, prvi krajec, polna luna in zadnji krajec v slovenskem času. Naslednja Lunina mena, letni pregled, razlaga faz ter koledar za tisk in ICS.",
     "body": null,
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-20 14:27:16 +0200"
+    "updated_at": "2026-10-21 17:00:00 +0000"
+  },
+  {
+    "path": "/matura/2027/",
+    "body": null,
+    "created_at": "2026-10-21 17:00:00 +0000",
+    "title": "Matura 2027: datumi izpitov, prijav in rezultatov",
+    "description": "Koledar mature 2027 po uradnih datumih RIC. Ločena splošna in poklicna matura, izbor predmetov, spomladanski in jesenski rok, tisk ter ICS.",
+    "status": "published",
+    "updated_at": "2026-10-21 17:00:00 +0000"
+  },
+  {
+    "path": "/matura/2027/poklicna/",
+    "body": null,
+    "created_at": "2026-10-21 17:00:00 +0000",
+    "title": "Poklicna matura 2027: datumi izpitov in rezultatov",
+    "description": "Koledar poklicne mature 2027: pisni izpiti, drugi in četrti predmet, ustno obdobje, prijave ter rezultati. Izbor predmetov, tisk in prenos ICS.",
+    "status": "published",
+    "updated_at": "2026-10-21 17:00:00 +0000"
+  },
+  {
+    "path": "/matura/2027/splosna/",
+    "body": null,
+    "created_at": "2026-10-21 17:00:00 +0000",
+    "title": "Splošna matura 2027: koledar izpitov po predmetih",
+    "description": "Datumi splošne mature 2027: esej, pisni izpiti po predmetih, ustni roki, prijave in rezultati. Sestavite svoj pregled ter ga natisnite ali izvozite v ICS.",
+    "status": "published",
+    "updated_at": "2026-10-21 17:00:00 +0000"
   },
   {
     "path": "/mesecni-koledar/",
-    "title": "Mesečni koledarji",
-    "description": null,
+    "title": "Mesečni koledar za tiskanje: PDF in Excel",
+    "description": "Izberite leto in mesec, dodajte zapiske ter primerjajte postavitve mesečnega koledarja. Prenesite PDF ali pravi Excel XLSX s slovenskimi prazniki.",
     "body": null,
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-20 14:27:16 +0200"
+    "updated_at": "2026-10-21 17:00:00 +0000"
   },
   {
     "path": "/mlaj/",
-    "title": "Mlaj oziroma prazna luna",
-    "description": null,
+    "title": "Mlaj: naslednji datum in čas v Sloveniji",
+    "description": "Preverite naslednji mlaj in njegove datume za leta 2026–2030. Trenutki v slovenskem času CET/CEST, odštevanje, razlaga in prenos koledarja ICS.",
     "body": null,
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-20 14:27:16 +0200"
+    "updated_at": "2026-10-21 17:00:00 +0000"
   },
   {
     "path": "/nacrtovalnik-dopusta/",
-    "title": "Načrtovalnik dopusta",
-    "description": null,
+    "title": "Načrtovalnik dopusta 2027–2030: prazniki in oddihi",
+    "description": "Načrtujte dopust ob slovenskih praznikih za leta 2027–2030. Primerjajte porabo dni dopusta, daljše oddihe ter prenesite osebni načrt v koledar.",
     "body": null,
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-20 14:27:16 +0200"
+    "updated_at": "2026-10-21 17:00:00 +0000"
+  },
+  {
+    "path": "/npz/",
+    "body": null,
+    "created_at": "2026-10-21 17:00:00 +0000",
+    "title": "NPZ 2027: datumi za 3., 6. in 9. razred",
+    "description": "Datumi NPZ 2027 za 3., 6. in 9. razred. Preverjanja, objava dosežkov, vpogledi in poizvedbe po razredih, s tiskom in koledarjem ICS.",
+    "status": "published",
+    "updated_at": "2026-10-21 17:00:00 +0000"
+  },
+  {
+    "path": "/npz/3-razred/",
+    "body": null,
+    "created_at": "2026-10-21 17:00:00 +0000",
+    "title": "NPZ 2027 za 3. razred: datumi in rezultati",
+    "description": "NPZ v 3. razredu 2027: jezik 22. marca, matematika 1. aprila in dosežki 6. maja. Uradni roki, vpogledi, tisk in prenos datumov v koledar.",
+    "status": "published",
+    "updated_at": "2026-10-21 17:00:00 +0000"
+  },
+  {
+    "path": "/npz/6-razred/",
+    "body": null,
+    "created_at": "2026-10-21 17:00:00 +0000",
+    "title": "NPZ 2027 za 6. razred: predmeti, datumi in dosežki",
+    "description": "NPZ za 6. razred 2027: jezik 22. marca, tuji jezik 24. marca, matematika 1. aprila in dosežki 3. maja. Tisk in izvoz uradnih datumov ICS.",
+    "status": "published",
+    "updated_at": "2026-10-21 17:00:00 +0000"
+  },
+  {
+    "path": "/npz/9-razred/",
+    "body": null,
+    "created_at": "2026-10-21 17:00:00 +0000",
+    "title": "NPZ 2027 za 9. razred: tretji predmet in datumi",
+    "description": "Datumi NPZ za 9. razred 2027: jezik, matematika, tretji predmet, dosežki in vpogledi. Preverite koledar in ga shranite kot PDF ali ICS.",
+    "status": "published",
+    "updated_at": "2026-10-21 17:00:00 +0000"
   },
   {
     "path": "/o-nas/",
@@ -1864,12 +1954,12 @@
   },
   {
     "path": "/odstevanje/",
-    "title": "Odštevanje do datuma",
-    "description": null,
+    "title": "Odštevanje do datuma: prazniki in vaši dogodki",
+    "description": "Koliko dni je do izbranega datuma? Odštevajte do praznikov, šolskih počitnic ali svojega dogodka. Shranite seznam in prenesite datume v koledar ICS.",
     "body": null,
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-20 14:27:16 +0200"
+    "updated_at": "2026-10-21 17:00:00 +0000"
   },
   {
     "path": "/orodja/",
@@ -1879,6 +1969,15 @@
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
     "updated_at": "2026-10-20 14:27:16 +0200"
+  },
+  {
+    "path": "/perzeidi/",
+    "body": null,
+    "created_at": "2026-10-21 17:00:00 +0000",
+    "title": "Perzeidi v Sloveniji: opazovalne noči in razmere",
+    "description": "Načrtujte opazovanje Perzeidov: noči 12. in 13. avgusta, tema, mesečina in razmere za slovenska mesta. Razlaga rojev, pregled ter prenos ICS.",
+    "status": "published",
+    "updated_at": "2026-10-21 17:00:00 +0000"
   },
   {
     "path": "/piskotki/",
@@ -1945,12 +2044,12 @@
   },
   {
     "path": "/polna-luna/",
-    "title": "Polna luna",
-    "description": null,
+    "title": "Polna luna: naslednji datum in čas v Sloveniji",
+    "description": "Kdaj je naslednja polna luna? Točen trenutek v slovenskem času, odštevanje, datumi za leta 2026–2030 in brezplačen koledar ICS.",
     "body": null,
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-20 14:27:16 +0200"
+    "updated_at": "2026-10-21 17:00:00 +0000"
   },
   {
     "path": "/pomembni-dnevi/",
@@ -2682,13 +2781,22 @@
     "updated_at": "2026-10-20 14:27:16 +0200"
   },
   {
+    "path": "/setveni-koledar/",
+    "body": null,
+    "created_at": "2026-10-21 17:00:00 +0000",
+    "title": "Setveni koledar: setev, sajenje in načrt vrta",
+    "description": "Kdaj sejati, presajati in pobirati zelenjavo? Pregled za 16 vrtnin, filtri po mesecih in opravilih ter vaš načrt vrta za tisk in koledar ICS.",
+    "status": "published",
+    "updated_at": "2026-10-21 17:00:00 +0000"
+  },
+  {
     "path": "/solske-pocitnice/",
-    "title": "Šolske počitnice",
-    "description": null,
+    "title": "Šolske počitnice 2026/2027 v Sloveniji",
+    "description": "Preverjeni datumi šolskih počitnic 2026/2027 v Sloveniji, regionalne razlike, pouk in povezave do uradnih virov. Pripravite svoj pregled počitnic.",
     "body": null,
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-20 14:27:16 +0200"
+    "updated_at": "2026-10-21 17:00:00 +0000"
   },
   {
     "path": "/solske-pocitnice/2026-2027/",
@@ -2781,13 +2889,31 @@
     "updated_at": "2026-10-20 14:27:16 +0200"
   },
   {
+    "path": "/solski-koledar/",
+    "body": null,
+    "created_at": "2026-10-21 17:00:00 +0000",
+    "title": "Šolski koledar 2026/2027: pouk, počitnice in izpiti",
+    "description": "Šolski koledar 2026/2027 za osnovne in srednje šole v Sloveniji. Pouk, počitnice, NPZ in izpitni roki z izbiro razreda, tiskom in izvozom ICS.",
+    "status": "published",
+    "updated_at": "2026-10-21 17:00:00 +0000"
+  },
+  {
     "path": "/solski-urnik/",
-    "title": "Šolski urnik",
-    "description": null,
+    "title": "Šolski urnik: ustvarite in natisnite tedenski razpored",
+    "description": "Ustvarite šolski urnik s predmeti, urami, učilnicami in učitelji. Tedensko ponavljanje, pregled prekrivanj, tisk PDF ter izvoz ICS in varnostne kopije.",
     "body": null,
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-20 14:27:16 +0200"
+    "updated_at": "2026-10-21 17:00:00 +0000"
+  },
+  {
+    "path": "/soncni-mrk/",
+    "body": null,
+    "created_at": "2026-10-21 17:00:00 +0000",
+    "title": "Sončni mrk v Sloveniji: datumi in lokalna vidnost",
+    "description": "Sončni mrki 2026–2030: izberite slovensko mesto, preverite krajevni potek in vidnost nad obzorjem. Varno opazovanje, izračuni in koledar ICS.",
+    "status": "published",
+    "updated_at": "2026-10-21 17:00:00 +0000"
   },
   {
     "path": "/soncni-vzhod-in-zahod/",
@@ -2880,13 +3006,22 @@
     "updated_at": "2026-10-20 14:27:16 +0200"
   },
   {
+    "path": "/studijski-koledar/",
+    "body": null,
+    "created_at": "2026-10-21 17:00:00 +0000",
+    "title": "Študijski koledar 2026/2027: semestri in izpitna obdobja",
+    "description": "Študijski koledar 2026/2027 za slovenske univerze in izbrane članice. Primerjajte semestre ter izpitna obdobja in prenesite svoj koledar ICS.",
+    "status": "published",
+    "updated_at": "2026-10-21 17:00:00 +0000"
+  },
+  {
     "path": "/tedenski-koledar/",
-    "title": "Tedenski koledar",
-    "description": null,
+    "title": "Tedenski koledar in planer za tiskanje",
+    "description": "Tedenski koledar z izbiro datuma ali tedna ISO, slovenskimi prazniki in zapiski za vsak dan. Pripravite tedenski planer ter ga prenesite v PDF.",
     "body": null,
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-20 14:27:16 +0200"
+    "updated_at": "2026-10-21 17:00:00 +0000"
   },
   {
     "path": "/tedenski-koledar/2026/",
@@ -2953,12 +3088,12 @@
   },
   {
     "path": "/viri-in-metodologija/",
-    "title": "Viri in metodologija",
-    "description": null,
+    "title": "Viri in metodologija: kako preverjamo koledarske podatke",
+    "description": "Kako Koledar365 izbira vire, ločuje uradne datume od izračunov ter obravnava spremembe. Časovni pas, opombe o slikah, popravki in odgovornost.",
     "body": "\n\nLuna: viri in metodologija\n\nDnevna osvetljenost je izračunana za 12.00 po času v Sloveniji (Europe/Ljubljana) z Astronomy Engine 2.1.19. Glavne mene so ločeni dogodki iz podatkov USNO z minutno ločljivostjo. Njihov čas UT je pri pretvorbi v krajevni čas obravnavan kot približek UTC. Pravila poletnega in zimskega časa temeljijo na zbirki IANA; ob spremembi pravil je treba prihodnje koledarje posodobiti.\n\nPrikazi so računalniške upodobitve, ne fotografije prihodnjih datumov. Površje: NASA's Scientific Visualization Studio, LROC in LOLA. Geocentrični pogled ima sever Lune zgoraj; libracija je izračunana z JPL DE440 in pripadajočim orientacijskim modelom. Model uporablja normale iz višinskega modela ter vzorčene sence reliefa. Fotometrični približek Lommel–Seeliger ne vključuje ozračja, Zemljinega sija ali videza mrkov. Ne prikazuje natančne lege Lune nad krajevnim obzorjem.\n\nViri: https://aa.usno.navy.mil/data/MoonPhases ; https://svs.gsfc.nasa.gov/4720/ ; https://ssd.jpl.nasa.gov/doc/de440_de441.html ; https://www.iana.org/time-zones\n\nPDF vsebuje vektorsko besedilo in barve CMYK z vključenim izhodnim profilom. WebP vsebuje isto postavitev v sRGB. Pisava za tisk je DejaVu Sans; Avenir se na spletu uporabi, kadar je nameščen na napravi.",
     "status": "published",
     "created_at": "2026-10-20 11:09:43 +0200",
-    "updated_at": "2026-10-20 19:02:57 +0200"
+    "updated_at": "2026-10-21 22:23:48 +0200"
   },
   {
     "path": "/zasebnost/",

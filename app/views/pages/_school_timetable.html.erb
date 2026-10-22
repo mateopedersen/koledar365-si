@@ -1,0 +1,15 @@
+<article class="timetable-page" data-timetable-page>
+  <%= render 'student_timetable_hero' %>
+  <div class="timetable-mode-nav" role="tablist" aria-label="Način šolskega načrtovanja">
+    <button id="timetable-weekly-tab" type="button" role="tab" aria-controls="timetable-weekly-panel" aria-selected="true" data-timetable-mode="weekly"><%= ui_icon('calendar') %><span><strong>Tedenski planer</strong><small>Predmeti, naloge in učenje</small></span></button>
+    <button id="timetable-period-tab" type="button" role="tab" aria-controls="timetable-period-panel" aria-selected="false" tabindex="-1" data-timetable-mode="period"><%= ui_icon('clock') %><span><strong>Urnik za obdobje</strong><small>Ponavljanje, počitnice in izvoz ICS</small></span></button>
+  </div>
+  <section id="timetable-weekly-panel" role="tabpanel" aria-labelledby="timetable-weekly-tab" data-timetable-panel="weekly">
+    <%= render 'planner' %>
+  </section>
+  <section id="timetable-period-panel" role="tabpanel" aria-labelledby="timetable-period-tab" data-timetable-panel="period" hidden>
+    <div class="timetable-period-intro"><div><strong>Razpored za celo šolsko obdobje</strong><p>Tedenski planer in obdobni urnik imata ločeni kopiji v tem brskalniku. Obstoječe predmete lahko dodate v obdobni urnik; naloge in izvirni vnosi ostanejo v tedenskem planerju.</p></div><button class="button" type="button" data-copy-weekly-lessons>Dodaj predmete iz tedenskega planerja</button><output data-timetable-mode-status role="status" aria-live="polite"></output></div>
+    <%= render 'school_timetable_period' %>
+  </section>
+  <noscript><p class="notice">Za urejanje osebnega urnika omogočite JavaScript. Uradni termini so na voljo v <a href="/solski-koledar/">šolskem koledarju</a>.</p></noscript>
+</article>

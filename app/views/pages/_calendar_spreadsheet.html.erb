@@ -1,0 +1,6 @@
+<section class="calendar-spreadsheet" data-calendar-spreadsheet data-year="<%= @year %>" data-month="<%= @page&.month %>" aria-labelledby="calendar-spreadsheet-title">
+  <script type="application/json" data-calendar-data><%= raw(json_escape(calendar_experience_data.to_json)) %></script>
+  <div class="calendar-spreadsheet__mark" aria-hidden="true"><span>XLSX</span><svg viewBox="0 0 48 48"><path d="M8 5h32v38H8zM8 15h32M8 25h32M8 35h32M19 15v28M30 15v28"/></svg></div>
+  <div><span class="calendar-experience__eyebrow">KOLEDAR, KI GA LAHKO UREDITE</span><h2 id="calendar-spreadsheet-title"><%= @page&.month ? "#{CalendarEngine::MONTHS[@page.month-1].capitalize} #{@year}" : "Koledar #{@year}" %> v Excelu</h2><p><%= @page&.month ? 'Izbrani mesec v urejeni mreži' : 'Vsak mesec na svojem delovnem listu' %>, označeni dela prosti dnevi in prostor za vaše zapiske. Dodan je urejevalni seznam datumov z delovnimi dnevi.</p></div>
+  <div class="calendar-spreadsheet__action"><button type="button" data-calendar-xlsx>Prenesi Excel <span>.xlsx ↓</span></button><small>Prava preglednica · brez prijave</small><output data-calendar-status role="status" aria-live="polite"></output></div>
+</section>

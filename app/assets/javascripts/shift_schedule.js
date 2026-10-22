@@ -1,6 +1,6 @@
 'use strict';
 (()=>{
- const form=document.getElementById('shift-form');
+ const form=document.querySelector('.shift-workbench #shift-form');
  if(!form)return;
  const fromInput=form.elements.from,toInput=form.elements.to,cycleInput=document.getElementById('shift-cycle');
  const calendar=document.getElementById('shift-calendar'),monthTitle=document.getElementById('shift-month-title');

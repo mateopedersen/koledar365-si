@@ -13,16 +13,25 @@ class PlannerIntegrationTest < ActionDispatch::IntegrationTest
     %w[prazen-koledar razpored-izmen solski-urnik rojstnodnevni-koledar dnevni-planer druzinski-planer].each do |slug|
       get "/#{slug}/"
       assert_response :success
-      assert_select '#planner-entry'
-      assert_select '#planner-ics'
-      assert_select '[data-personal-preview]',15
-      assert_select 'script[src*="planners"]'
+      if slug == 'solski-urnik'
+        assert_select '[data-school-timetable] [data-tt-lesson]'
+        assert_select '[data-tt-lesson] [name=subject]'
+        assert_select '[data-tt-board]'
+        %w[ics print backup import].each { |control| assert_select "[data-tt-#{control}]" }
+        assert_select 'script[type=module][src="/education/timetable-page.mjs"]'
+      else
+        assert_select '#planner-entry'
+        assert_select '#planner-ics'
+        assert_select '[data-personal-preview]',15
+        assert_select 'script[src*="planners"]'
+      end
     end
   end
   test 'student timetable renders its responsive planner beside the complete print gallery' do
     get '/solski-urnik/'
     assert_response :success
     assert_select 'body.student-timetable-page'
+    assert_select 'body.gallery-page'
     assert_select 'h1#student-page-title',text:'Šolski urnik za učence in dijake'
     assert_select '[data-student-timetable]'
     assert_select '[data-student-day]',count:5

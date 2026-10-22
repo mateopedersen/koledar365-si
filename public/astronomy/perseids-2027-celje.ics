@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Koledar365//Astronomija SL//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Koledar365 · Astronomija
+X-WR-TIMEZONE:Europe/Ljubljana
+BEGIN:VEVENT
+DTSTAMP:20261021T000000Z
+UID:perseids-2027-08-11-celje@koledar365.si
+DTSTART:20270811T201700Z
+DTEND:20270812T015200Z
+DESCRIPTION:Načrtovana noč okoli običajnega avgustovskega viška aktivno
+ sti\, ne napoved točne ure maksimuma. Čas označuje astronomsko temo (So
+ nce pod −18°). Preverite mesečino\, oblake in krajevno obzorje.
+SUMMARY:Perzeidi: opazovalna noč · Celje
+TRANSP:TRANSPARENT
+URL;VALUE=URI:https://koledar365.si/perzeidi/?year=2027&city=celje
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261021T000000Z
+UID:perseids-2027-08-12-celje@koledar365.si
+DTSTART:20270812T201400Z
+DTEND:20270813T015400Z
+DESCRIPTION:Načrtovana noč okoli običajnega avgustovskega viška aktivno
+ sti\, ne napoved točne ure maksimuma. Čas označuje astronomsko temo (So
+ nce pod −18°). Preverite mesečino\, oblake in krajevno obzorje.
+SUMMARY:Perzeidi: opazovalna noč · Celje
+TRANSP:TRANSPARENT
+URL;VALUE=URI:https://koledar365.si/perzeidi/?year=2027&city=celje
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261021T000000Z
+UID:perseids-2027-08-13-celje@koledar365.si
+DTSTART:20270813T201200Z
+DTEND:20270814T015600Z
+DESCRIPTION:Načrtovana noč okoli običajnega avgustovskega viška aktivno
+ sti\, ne napoved točne ure maksimuma. Čas označuje astronomsko temo (So
+ nce pod −18°). Preverite mesečino\, oblake in krajevno obzorje.
+SUMMARY:Perzeidi: opazovalna noč · Celje
+TRANSP:TRANSPARENT
+URL;VALUE=URI:https://koledar365.si/perzeidi/?year=2027&city=celje
+END:VEVENT
+END:VCALENDAR

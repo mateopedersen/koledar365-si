@@ -1,11 +1,11 @@
 <% if @section=='home' %>
-<div class="intro"><div><h1>Vaš dan. Vaši načrti.</h1><p>Slovenski koledar, prazniki in osebno načrtovanje.</p></div><a class="button subtle" href="/ustvari-koledar/"><%= ui_icon('settings') %> Ustvari svoj koledar</a></div>
+<div class="intro"><div><h1>Slovenski koledar za vaše načrte.</h1><p>Prazniki, osebni dogodki in orodja za vsak dan.</p></div><a class="button subtle" href="/ustvari-koledar/"><%= ui_icon('settings') %> Ustvari svoj koledar</a></div>
 <%= render 'home' %>
 <% elsif @section=='tool' && page_path=='/nacrtovalnik-dopusta/' %>
 <%= render 'vacation_planner' %>
 <% elsif @section=='tool' && page_path=='/odstevanje/' %>
 <%= render 'countdown' %>
-<% elsif %w[about terms privacy cookie_policy holidays observance school calendar_studio horoscope].include?(@section) %>
+<% elsif %w[about terms privacy cookie_policy holidays observance school calendar_studio horoscope methodology garden_calendar payment_calendar education_calendar school_timetable moon_phases astronomy_events].include?(@section) %>
 <%= render @section %>
 <% else %>
 <% if page_path=='/datumski-kalkulator/' %>
@@ -106,7 +106,7 @@
 </svg>
   </div>
 </section>
-<% elsif page_path=='/delovni-dnevi/' && (2027..2030).cover?(@year) %>
+<% elsif @section=='workdays' && !@page.month %>
 <section class="workdays-hero" aria-labelledby="workdays-title">
   <div class="workdays-hero__copy">
     <span class="workdays-kicker"><i aria-hidden="true"></i> KOLEDAR365 <span>·</span> SLOVENIJA</span>
@@ -144,21 +144,9 @@
 <% elsif page_path=='/soncni-vzhod-in-zahod/' %>
 <%# The sun experience renders its own single, illustrated main heading. %>
 <% elsif page_path=='/solski-urnik/' %>
-<section class="student-page-hero" aria-labelledby="student-page-title">
-  <div class="student-page-hero__copy">
-    <span class="student-kicker"><span aria-hidden="true">SI</span> KOLEDAR365 · ORODJE ZA UČENCE IN DIJAKE</span>
-    <h1 id="student-page-title">Šolski urnik za učence in dijake</h1>
-    <p>V enem pregledu razporedi predmete, spremljaj domače naloge in preverjanja znanja ter si vzemi čas za zbran študij. Urnik prilagodi svoji šoli; tvoji podatki ostanejo v tem brskalniku.</p>
-    <div class="student-page-hero__actions"><a class="button primary" href="#student-schedule">Uredi svoj teden <span aria-hidden="true">↓</span></a><a class="button" href="#design-gallery">Oglej si predloge za tisk <span aria-hidden="true">↗</span></a></div>
-    <div class="student-page-hero__facts"><span>Osebni urnik</span><span>PDF, WebP in ICS</span><span>Brez računa</span></div>
-  </div>
-  <div class="student-page-hero__visual" aria-hidden="true">
-    <div class="student-hero-paper"><div class="student-hero-paper__top"><span>MOJ TEDEN</span><b>01</b></div><div class="student-hero-paper__line"><i>PON</i><span>Matematika</span><b>08:00</b></div><div class="student-hero-paper__line"><i>TOR</i><span>Slovenščina</span><b>09:45</b></div><div class="student-hero-paper__line student-hero-paper__line--red"><i>SRE</i><span>Naravoslovje</span><b>11:30</b></div><div class="student-hero-paper__line"><i>ČET</i><span>Angleščina</span><b>08:50</b></div><div class="student-hero-paper__line"><i>PET</i><span>Zgodovina</span><b>10:35</b></div><div class="student-hero-paper__footer"><span></span> PREDMETI · NALOGE · ČAS ZASE</div></div>
-    <span class="student-hero-sticker student-hero-sticker--blue">Moj ritem</span><span class="student-hero-sticker student-hero-sticker--red">Tvoj načrt</span>
-  </div>
-</section>
+<%= render 'student_timetable_hero' %>
 <% else %><div class="page-heading"><span class="eyebrow">KOLEDAR365 · SLOVENIJA</span><h1><%= @title %></h1><% unless @section=='events' && TopicContent.find(page_path.split('/').last) %><p><%= gallery_page? ? gallery_description : @description %></p><% end %></div><% end %>
 <%= render @section %>
 <% end %>
 
-<% if @page&.body.present? && !%w[observance school horoscope calendar_studio].include?(@section) %><section class="panel prose"><%= simple_format(@page.body) %></section><% end %>
+<% if @page&.body.present? && !%w[observance school horoscope calendar_studio methodology garden_calendar payment_calendar education_calendar school_timetable moon_phases astronomy_events].include?(@section) %><section class="panel prose"><%= simple_format(@page.body) %></section><% end %>

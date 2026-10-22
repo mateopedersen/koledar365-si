@@ -81,7 +81,6 @@ export function parseDateQuery(value) {
   if (date.getUTCFullYear() !== year || date.getUTCMonth() !== month - 1 || date.getUTCDate() !== day) return null;
 
   const iso = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-  if (iso < '2026-10-01') return null;
   return {
     title: `${day}. ${MONTHS[month - 1]} ${year}`,
     path: `/?${new URLSearchParams({ year, month, date: iso, view: 'day' })}`,

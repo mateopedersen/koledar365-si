@@ -1,6 +1,7 @@
 class PageMetadata
   # Describe the actual tool/data on a page; do not append lists of SEO keywords.
   def self.description(page, year:)
+    return ExpansionCatalog.page(page.path).fetch(:description) if ExpansionCatalog.page(page.path)
     return ClockChangeSchedule::DESCRIPTION if page.path=='/premik-ure/'
     return 'Ustvarite svoj letni ali mesečni koledar z imenom, fotografijami, logotipom in dogodki. Prilagodite pisave, barve in začetek tedna ter prenesite PDF, PNG ali SVG.' if page.path=='/ustvari-koledar/'
     return 'Pogoji uporabe Koledar365 pojasnjujejo rabo koledarjev in orodij, navajanje virov, avtorske pravice, omejitve podatkov ter prijavo napak.' if page.path=='/pogoji-uporabe/'

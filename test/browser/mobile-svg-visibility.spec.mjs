@@ -56,11 +56,42 @@ test('branded SVG icons and real imagery stay colorful and visible in every majo
     }
 
     if (path === '/solske-pocitnice/') {
-      const seasonalArt = page.locator('.sp-holiday .sp-card-art img').first();
-      await seasonalArt.scrollIntoViewIfNeeded();
-      await expect.poll(() => seasonalArt.evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
-      await expect(seasonalArt).toHaveAttribute('src', /\/school\/photos\/.*\.jpg$/);
-      await expect(seasonalArt).not.toHaveAttribute('alt', '');
+      const schoolIcon = page.locator('.sp-filter-illustration').first();
+      await schoolIcon.scrollIntoViewIfNeeded();
+      await expect(schoolIcon).toBeVisible();
+      await expect.poll(() => schoolIcon.evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
+      await expect(schoolIcon).toHaveAttribute('src', /\/school\/.*\.[a-f0-9]{16}\.svg$/);
+
+      const seasonalCard = page.locator('.sp-holiday[data-break-id]').first();
+      const seasonalPhoto = seasonalCard.locator('.sp-card-art img');
+      const photo = await seasonalCard.evaluate(card => {
+        const data = JSON.parse(card.closest('[data-school-page]').querySelector('#sp-data').textContent);
+        const schoolBreak = data.breaks.find(row => row.id === card.dataset.breakId);
+        return data.photos[schoolBreak.photo];
+      });
+      expect(photo.path).toMatch(/^\/school\/photos\/[^/]+-[a-f0-9]{8}\.jpg$/);
+      expect(photo.alt.trim()).not.toBe('');
+      await expect(seasonalPhoto).toHaveAttribute('src', photo.path);
+      await expect(seasonalPhoto).toHaveAttribute('alt', photo.alt);
+      await seasonalPhoto.scrollIntoViewIfNeeded();
+      await expect(seasonalPhoto).toBeVisible();
+      await expect.poll(() => seasonalPhoto.evaluate(image => image.complete && image.naturalWidth > 0 && image.naturalHeight > 0)).toBe(true);
+      const photoBounds = await seasonalPhoto.boundingBox();
+      expect(photoBounds.width).toBeGreaterThan(0);
+      expect(photoBounds.height).toBeGreaterThan(0);
+
+      const credit = seasonalCard.locator('.sp-photo-credit');
+      await expect(credit).toBeVisible();
+      const source = credit.getByRole('link', {name: `Foto: ${photo.author}`, exact: true});
+      await expect(source).toBeVisible();
+      await expect(source).toHaveAttribute('href', photo.source);
+      if (photo.licenseUrl) {
+        const license = credit.getByRole('link', {name: photo.license, exact: true});
+        await expect(license).toBeVisible();
+        await expect(license).toHaveAttribute('href', photo.licenseUrl);
+      } else {
+        await expect(credit).toContainText(photo.license);
+      }
     }
   }
 });

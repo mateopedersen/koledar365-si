@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Koledar365//Astronomija SL//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Koledar365 · Astronomija
+X-WR-TIMEZONE:Europe/Ljubljana
+BEGIN:VEVENT
+DTSTAMP:20261021T000000Z
+UID:lunar-2028-01-12-kranj-0@koledar365.si
+DTSTART:20280112T020700Z
+DTEND:20280112T061900Z
+DESCRIPTION:Izračunano časovno okno\, ko je vsaj del mrka nad ravnim obzo
+ rjem. Vrsta vidnega mrka: Delni mrk. Ne vključuje vremena\, hribov ali st
+ avb. Polsenčni del je lahko slabo opazen. Izračun: Astronomy Engine\; lo
+ kalna ura Europe/Ljubljana.
+SUMMARY:Lunin mrk · Kranj
+TRANSP:TRANSPARENT
+URL;VALUE=URI:https://koledar365.si/lunin-mrk/?year=2028&city=kranj
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261021T000000Z
+UID:lunar-2028-07-06-kranj-0@koledar365.si
+DTSTART:20280706T185700Z
+DTEND:20280706T205500Z
+DESCRIPTION:Izračunano časovno okno\, ko je vsaj del mrka nad ravnim obzo
+ rjem. Vrsta vidnega mrka: Delni mrk. Ne vključuje vremena\, hribov ali st
+ avb. Polsenčni del je lahko slabo opazen. Izračun: Astronomy Engine\; lo
+ kalna ura Europe/Ljubljana.
+SUMMARY:Lunin mrk · Kranj
+TRANSP:TRANSPARENT
+URL;VALUE=URI:https://koledar365.si/lunin-mrk/?year=2028&city=kranj
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261021T000000Z
+UID:lunar-2028-12-31-kranj-0@koledar365.si
+DTSTART:20281231T151600Z
+DTEND:20281231T194000Z
+DESCRIPTION:Izračunano časovno okno\, ko je vsaj del mrka nad ravnim obzo
+ rjem. Vrsta vidnega mrka: Popolni mrk. Ne vključuje vremena\, hribov ali 
+ stavb. Polsenčni del je lahko slabo opazen. Izračun: Astronomy Engine\; 
+ lokalna ura Europe/Ljubljana.
+SUMMARY:Lunin mrk · Kranj
+TRANSP:TRANSPARENT
+URL;VALUE=URI:https://koledar365.si/lunin-mrk/?year=2028&city=kranj
+END:VEVENT
+END:VCALENDAR

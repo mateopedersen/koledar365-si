@@ -51,6 +51,11 @@ jobs:
         run: node script/lunar/audit_dates.mjs
       - name: Clock change instant boundaries
         run: node script/test_clock_change.mjs
+      - name: Expanded calendar, education, astronomy and official payment contracts
+        run: |
+          node --test test/search/calendar-experience.test.mjs test/search/site-search.test.mjs test/javascript/astronomy_test.cjs
+          node script/test_education.mjs
+          node script/test_garden_payments.mjs
       - name: Calendar Studio date, import and export contracts
         run: node script/test_calendar_studio.mjs
       - name: Ruby syntax

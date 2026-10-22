@@ -44,8 +44,11 @@ Dir[site.join('**/*.html')].sort.each do |file|
  end
  if (gallery=doc.at_css('[data-calendar-gallery],.design-section')) && !relative.start_with?('lunin-koledar/2026/')
   gallery_pages+=1;family=gallery['data-gallery-type'] || JSON.parse(gallery['data-export-options']).fetch('type');gallery_families[family]+=1
-  if relative=='delovni-dnevi/index.html'
-   dashboard=doc.at_css('body.gallery-page .workdays-dashboard[data-workdays-dashboard][data-year="2027"]')
+  if relative.match?(%r{\Adelovni-dnevi/(?:20(?:2[6-9]|30)/)?index\.html\z})
+   dashboard=doc.at_css('body.gallery-page .workdays-dashboard[data-workdays-dashboard]')
+   expected_year=relative[%r{\Adelovni-dnevi/(\d{4})/},1]
+   fail_with.call('Annual dashboard year must match its canonical URL') if expected_year && dashboard&.[]('data-year')!=expected_year
+   fail_with.call('Annual dashboard year must stay within verified coverage') unless dashboard && (2026..2030).cover?(dashboard['data-year'].to_i)
    fail_with.call('Workdays landing page must keep its interactive annual dashboard') unless dashboard && doc.css('[data-workdays-card]').size==12
    fail_with.call('Workdays dashboard must expose weekday, hours and holiday controls') unless doc.at_css('[data-workdays-controls] input[type=number][data-workdays-hours]') && doc.css('[data-workdays-controls] input[type=checkbox]').size==8
    static_scripts=JSON.parse(doc.at_css('#k365-static-config')&.text.to_s).fetch('scripts',[]) rescue []
@@ -58,6 +61,9 @@ Dir[site.join('**/*.html')].sort.each do |file|
    fail_with.call('Workdays dashboard assets must be present') unless has_workdays_styles && has_workdays_script
    fail_with.call('Workdays gallery must remain visible below the annual dashboard') unless doc.at_css('#design-gallery .gallery-format-label')&.text.to_s.include?('600 ppi') && gallery.css('.design-card').size==15
    fail_with.call('Workdays dashboard should use its full-width layout') if dashboard&.ancestors&.any? { |parent|parent['class'].to_s.split.include?('download-workspace') }
+  elsif relative.match?(%r{\Atedenski-koledar/20(?:2[6-9]|30)/index\.html\z})
+   fail_with.call('Weekly downloads require the real selectable week workspace') unless doc.at_css('[data-calendar-experience=weekly] [data-week-selection]') && doc.css('[data-day-notes]').size==7 && doc.at_css('[data-calendar-pdf]')
+   fail_with.call('Weekly workspace module must survive static export') unless doc.at_css('script[type=module][src="/calendar-tools/experience.mjs"]') && site.join('calendar-tools/experience.mjs').file?
   else
    fail_with.call('Gallery must share a workspace with its calendar or settings') unless doc.at_css('body.gallery-page .download-workspace > .gallery-context #gallery-context-content') && gallery.ancestors.any? { |parent|parent['class'].to_s.split.include?('download-workspace') }
    if relative=='solski-urnik/index.html'
@@ -79,6 +85,19 @@ Dir[site.join('**/*.html')].sort.each do |file|
    css.include?('.download-workspace') && css.include?('.calendar-gallery-grid')
   end
   fail_with.call('Gallery layout stylesheet is missing') unless has_gallery_styles
+ end
+ if relative.match?(%r{\A(?:mesecni-koledar|tedenski-koledar)/index\.html\z})
+  fail_with.call('Calendar hub needs period selection, real notes and export controls') unless doc.at_css('[data-calendar-experience] [data-period-notes]') && doc.at_css('[data-calendar-pdf]') && doc.at_css('script[type=module][src="/calendar-tools/experience.mjs"]')
+ end
+ expansion_modules={
+  'setveni-koledar/index.html'=>['[data-garden]','/garden/experience.mjs'],
+  'izplacila-pokojnin/index.html'=>['[data-payment-calendar]','/payments/experience.mjs'],
+  'izplacila-socialnih-transferjev/index.html'=>['[data-payment-calendar]','/payments/experience.mjs'],
+  'solski-urnik/index.html'=>['[data-school-timetable]','/education/timetable-page.mjs']
+ }
+ if (contract=expansion_modules[relative])
+  selector,src=contract
+  fail_with.call('Expanded tool or its browser module is missing') unless doc.at_css(selector) && doc.at_css("script[type=module][src='#{src}']") && site.join(src.delete_prefix('/')).file?
  end
  if relative=='kalkulator-delovnih-dni/index.html'
   fail_with.call('Workday calculator must retain both interactive modes') unless doc.at_css('[data-workday-calculator]') && doc.css('[data-wdc-mode]').map { |node|node['data-wdc-mode'] }.sort==%w[range shift] && doc.css('[data-wdc-form]').map { |node|node['data-wdc-form'] }.sort==%w[range shift]
