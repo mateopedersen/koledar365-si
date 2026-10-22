@@ -97,7 +97,7 @@ function initSchoolPage(root) {
       const photo = data.photos?.[row.photo];
       const image = photo ? `<img src="${escapeHTML(photo.path)}" width="640" height="420" alt="${escapeHTML(photo.alt)}" loading="lazy" decoding="async">` : '';
       const credit = photo ? `<div class="sp-photo-credit"><a href="${escapeHTML(photo.source)}" target="_blank" rel="noopener noreferrer" title="${escapeHTML(photo.title)}">Foto: ${escapeHTML(photo.author)}</a><span aria-hidden="true"> · </span>${photo.licenseUrl ? `<a href="${escapeHTML(photo.licenseUrl)}" target="_blank" rel="license noopener noreferrer">${escapeHTML(photo.license)}</a>` : `<span>${escapeHTML(photo.license)}</span>`}</div>` : '';
-      return `<article class="sp-holiday sp-${row.season}" data-break-id="${row.id}"><div class="sp-card-art">${image}<span class="sp-season-tag">${{autumn:'JESEN',festive:'PRAZNIČNI ČAS',winter:'ZIMA',spring:'POMLAD',summer:'POLETJE'}[row.season]}</span><button type="button" class="sp-favorite" data-favorite="${row.id}" aria-label="${favorites.has(row.id)?'Odstrani iz shranjenih':'Shrani'}: ${escapeHTML(row.name)}" aria-pressed="${favorites.has(row.id)}">${icon('heart')}</button>${credit}</div><div class="sp-card-content"><small>${escapeHTML(row.tag)}</small><h3>${escapeHTML(row.name)}</h3><div class="sp-card-date">${icon('calendar')}<time datetime="${row.start}">${rangeText(row)}</time></div><div class="sp-card-bottom"><span><strong>${daysInclusive(row.start,row.end)}</strong> koledarskih dni <small>uradnega obdobja</small></span><button type="button" data-export-break="${row.id}" aria-label="Izvozi: ${escapeHTML(row.name)}">${icon('download')}</button></div></div></article>`;
+      return `<article id="pocitnice-${row.id}" class="sp-holiday sp-${row.season}" data-break-id="${row.id}"><div class="sp-card-art">${image}<span class="sp-season-tag">${{autumn:'JESEN',festive:'PRAZNIČNI ČAS',winter:'ZIMA',spring:'POMLAD',summer:'POLETJE'}[row.season]}</span><button type="button" class="sp-favorite" data-favorite="${row.id}" aria-label="${favorites.has(row.id)?'Odstrani iz shranjenih':'Shrani'}: ${escapeHTML(row.name)}" aria-pressed="${favorites.has(row.id)}">${icon('heart')}</button>${credit}</div><div class="sp-card-content"><small>${escapeHTML(row.tag)}</small><h3>${escapeHTML(row.name)}</h3><div class="sp-card-date">${icon('calendar')}<time datetime="${row.start}">${rangeText(row)}</time></div><div class="sp-card-bottom"><span><strong>${daysInclusive(row.start,row.end)}</strong> koledarskih dni <small>uradnega obdobja</small></span><button type="button" data-export-break="${row.id}" aria-label="Izvozi: ${escapeHTML(row.name)}">${icon('download')}</button></div></div></article>`;
     }).join('') + (!savedOnly ? tip : '');
     $('[data-empty]').hidden = !savedOnly || cards.length > 0;
     $('[data-saved-only]').setAttribute('aria-pressed', String(savedOnly)); $('[data-saved-count]').textContent = favorites.size;
@@ -144,6 +144,9 @@ function initSchoolPage(root) {
     renderCards(); renderCalendar(); renderCountdown(); calculate();
   }
   root.addEventListener('click', event=>{
+    const shortcut=event.target.closest('.period-links a[href^="#"]');
+    if(shortcut&&root.contains(shortcut)){if(level==='university')level='primary';savedOnly=false;renderState();updateURL();}
+
     const target = event.target.closest('button'); if (!target || !root.contains(target)) return;
     if (target.hasAttribute('data-level')) {level=target.dataset.level;renderState();updateURL();}
     else if (target.hasAttribute('data-region-choice')) {region=target.dataset.regionChoice;renderState();updateURL();toast('Prikazana je ' + (region==='east'?'vzhodna':'zahodna') + ' skupina.');}

@@ -16,3 +16,17 @@ test('month links survive interactive important-day filtering and fit a narrow p
  expect(state.right).toBeLessThanOrEqual(state.viewport);
  expect(Math.min(...state.heights)).toBeGreaterThanOrEqual(44);
 });
+
+
+test('school shortcuts retain real targets after changing education level and saved filters',async({page})=>{
+ await page.goto('/solske-pocitnice/');
+ await page.locator('[data-level="university"]').click();
+ const nav=page.getByRole('navigation',{name:'Pregledi šolskih počitnic'});
+ await nav.getByRole('link',{name:'Jesenske počitnice',exact:true}).click();
+ await expect(page.locator('#pocitnice-autumn')).toBeVisible();
+ await expect(page.locator('[data-level="primary"]')).toHaveAttribute('aria-pressed','true');
+ await page.locator('[data-saved-only]').click();
+ await nav.getByRole('link',{name:'Poletne počitnice',exact:true}).click();
+ await expect(page.locator('#pocitnice-summer')).toBeVisible();
+ await expect(page.locator('[data-saved-only]')).toHaveAttribute('aria-pressed','false');
+});
