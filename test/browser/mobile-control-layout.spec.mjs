@@ -28,7 +28,7 @@ test('mobile school weekday tabs remain readable and expose full accessible name
     const tabs=await controlGeometry(page,'.student-day-filters>button');
     expect(tabs).toHaveLength(5);
     expect(tabs.every(x=>x.contentFits&&x.height>=48)).toBeTruthy();
-    for(const name of ['Ponedeljek','Torek','Sreda','Četrtek','Petek'])await expect(page.getByRole('button',{name,exact:true})).toBeVisible();
+    for(const name of ['Pon Ponedeljek','Tor Torek','Sre Sreda','Čet Četrtek','Pet Petek'])await expect(page.getByRole('button',{name,exact:true})).toBeVisible();
   }
 });
 
