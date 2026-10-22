@@ -4,6 +4,7 @@ require 'digest'
 session=ActionDispatch::Integration::Session.new(Rails.application);session.host!('localhost');session.get('/o-nas/')
 doc=Nokogiri::HTML(session.response.body)
 doc.at_css('title').content='Urejanje vsebine · Koledar365'
+doc.at_css('meta[name=description]')['content']='Uredniški dostop do javnih besedil, podatkov, zgodovine sprememb in preverjanja objav Koledar365.'
 doc.at_css('meta[name=robots]')['content']='noindex, nofollow'
 doc.css('script[src],script[type="application/ld+json"],meta[property^="og:"],meta[name^="twitter:"],link[rel=canonical],meta[name^="csrf-"],meta[name="csp-nonce"]').remove
 repo='https://github.com/mateopedersen/koledar365-si'
@@ -14,7 +15,7 @@ links={
  'Viri in podatki'=>["#{repo}/tree/main/data/source",'Preglejte vire, različice in javne agregirane podatke. Trajnih naslovov imen ne spreminjajte.'],
  'Zgodovina in obnovitev'=>["#{repo}/commits/main",'Git hrani različice javne vsebine. Prejšnjo spremembo obnovite z razveljavitvijo ustreznega commita.'],
  'Dokazila o datotekah'=>["#{repo}/tree/main/evidence",'Preverite obdobja, kontrolne vsote, 600 ppi, barve, pisave in PDF/WebP ujemanje.']}
-body='<div class="page-heading"><span class="eyebrow">UREJNIŠTVO</span><h1>Urejanje vsebine</h1><p>Prijava in dovoljenja za objavo se upravljajo v GitHubu. Javni obiskovalci nimajo pravice spreminjati vsebine.</p></div><div class="feature-grid">'
+body='<div class="page-heading"><span class="eyebrow">UREDNIŠTVO</span><h1>Urejanje vsebine</h1><p>Prijava in dovoljenja za objavo se upravljajo v GitHubu. Javni obiskovalci nimajo pravice spreminjati vsebine.</p></div><div class="feature-grid">'
 links.each { |title,(href,text)|body+=%(<a class="feature panel" href="#{href}"><h2>#{ERB::Util.html_escape(title)}</h2><p>#{ERB::Util.html_escape(text)}</p><span>Odpri v GitHubu →</span></a>) }
 body+='</div><section class="panel prose"><h2>Postopek objave</h2><ol><li>Uredite javno vsebino v GitHubu in predlagajte spremembo.</li><li>Preverite samodejne preglede ter predogled izdaje.</li><li>Združite preverjeno spremembo v glavno vejo; Cloudflare objavi pripravljeno izdajo.</li></ol><p>Osebni načrti obiskovalcev in njihove fotografije ostanejo na njihovih napravah. Uredništvo do njih nima dostopa. Kontaktna sporočila prejmete na <a href="mailto:koledar365@gmail.com">koledar365@gmail.com</a>.</p></section>'
 doc.at_css('#vsebina').inner_html=body
