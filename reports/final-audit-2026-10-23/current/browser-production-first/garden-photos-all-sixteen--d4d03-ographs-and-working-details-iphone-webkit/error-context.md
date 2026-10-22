@@ -1,0 +1,2085 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Na vsebino" [ref=e2]:
+    - /url: "#vsebina"
+  - banner [ref=e3]:
+    - link "Koledar365 – domov" [ref=e4]:
+      - /url: /
+      - img [ref=e6]
+      - generic [ref=e7]: Koledar365
+    - navigation "Glavna navigacija" [ref=e8]:
+      - link "Koledar" [ref=e9]:
+        - /url: /koledar/
+        - img [ref=e10]
+        - generic [ref=e11]: Koledar
+      - link "Prazniki" [ref=e12]:
+        - /url: /prazniki/
+        - img [ref=e13]
+        - generic [ref=e14]: Prazniki
+      - link "Šolske počitnice" [ref=e15]:
+        - /url: /solske-pocitnice/
+        - img [ref=e16]
+        - generic [ref=e17]: Šolske počitnice
+    - search [ref=e18]:
+      - generic [ref=e19]: Poišči datum, dogodek ali orodje
+      - combobox "Poišči datum, dogodek ali orodje" [ref=e20]
+      - button "Išči po spletnem mestu" [ref=e21] [cursor=pointer]:
+        - img [ref=e22]
+    - generic "Slovenija" [ref=e23]:
+      - img [ref=e24]
+      - generic [ref=e25]: Slovenija
+  - navigation "Koledarji in orodja" [ref=e26]:
+    - generic [ref=e27]:
+      - group "Letni koledarji" [ref=e28]:
+        - generic [ref=e29]:
+          - img [ref=e30]
+          - generic [ref=e31]: Koledarji
+        - link "Koledar 2027" [ref=e32]:
+          - /url: /koledar/2027/
+          - text: "2027"
+        - link "Koledar 2028" [ref=e33]:
+          - /url: /koledar/2028/
+          - text: "2028"
+        - link "Koledar 2029" [ref=e34]:
+          - /url: /koledar/2029/
+          - text: "2029"
+        - link "Koledar 2030" [ref=e35]:
+          - /url: /koledar/2030/
+          - text: "2030"
+      - link "Koledarji PDF" [ref=e36]:
+        - /url: /koledar-za-tiskanje/
+        - img [ref=e37]
+        - generic [ref=e38]: Koledarji PDF
+      - link "Delovni dnevi" [ref=e39]:
+        - /url: /delovni-dnevi/
+        - img [ref=e40]
+        - generic [ref=e41]: Delovni dnevi
+      - link "Datumski kalkulator" [ref=e42]:
+        - /url: /datumski-kalkulator/
+        - img [ref=e43]
+        - generic [ref=e44]: Datumski kalkulator
+      - group [ref=e45]:
+        - generic "Več orodij" [ref=e46] [cursor=pointer]:
+          - img [ref=e47]
+          - generic [ref=e48]: Več orodij
+          - img [ref=e49]
+  - main [ref=e51]:
+    - navigation "Drobtinice" [ref=e52]:
+      - link "Domov" [ref=e53]:
+        - /url: /
+      - generic [ref=e54]: ›
+      - generic [ref=e55]: Fotografije in licence
+    - generic [ref=e56]:
+      - text: KOLEDAR365 · AVTORSTVO
+      - heading "Fotografije in licence" [level=1] [ref=e57]
+      - paragraph [ref=e58]: Vrtnine, praznovanja, običaji in kraji. Z izvirnimi viri in navedbo avtorjev.
+      - navigation "Vrste fotografij" [ref=e59]:
+        - link "Vrtnine · 16" [ref=e60]:
+          - /url: "#fotografije-vrtnin"
+        - link "Prazniki in običaji · 58" [ref=e61]:
+          - /url: "#fotografije-praznikov"
+        - link "Slovenska mesta · 69" [ref=e62]:
+          - /url: "#fotografije-mest"
+    - heading "Fotografije vrtnin" [level=2] [ref=e63]
+    - generic [ref=e64]:
+      - heading "Prave fotografije za lažje prepoznavanje" [level=3] [ref=e65]
+      - paragraph [ref=e66]:
+        - text: V
+        - link "setvenem koledarju" [ref=e67]:
+          - /url: /setveni-koledar/#setveni-pregled
+        - text: je vsaka vrtnina opremljena s pravo fotografijo. Fotografije so pomanjšane in stisnjene v WebP ter vključene v samostojen okvir SVG; pri prikazu ni povezovanja s strežnikom izvirnika. Fotografije vrtnin niso ustvarjene z umetno inteligenco.
+      - paragraph [ref=e68]: Fotografije prikazujejo vrtnino, ne zagotavljajo določene sorte ali termina pridelave. Pri sezonskih zapisih solate je uporabljena ista fotografija. Pri čebulčku je prikazana čebula; velikost sadilnega materiala je odvisna od dobavitelja. Navedena odprta licenca velja tudi za obdelano fotografijo v datoteki SVG, vključno z deljenjem pod enakimi pogoji, kjer je to zahtevano. Povezava do izvirnika in podatki o avtorstvu so shranjeni tudi v posamezni datoteki SVG.
+      - paragraph [ref=e69]:
+        - text: "Pregled fotografij in licenc:"
+        - time [ref=e70]: 22. oktobra 2026
+        - text: . Naslovna vrtna ilustracija je ločeno označena kot ustvarjena z umetno inteligenco.
+    - generic [ref=e71]:
+      - article [ref=e72]:
+        - img "Paradižnik – prava fotografija vrtnine" [ref=e73]
+        - heading "Paradižnik" [level=3] [ref=e74]
+        - generic [ref=e75]:
+          - term [ref=e76]: Avtor / vir
+          - definition [ref=e77]: Softeis
+          - term [ref=e78]: Licenca fotografije
+          - definition [ref=e79]:
+            - link "CC BY-SA 3.0" [ref=e80]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0/
+          - term [ref=e81]: Prilagoditve
+          - definition [ref=e82]: Pomanjšanje in stiskanje v WebP; obrez praznih robov pri papriki; fotografija v vektorskem okviru SVG. Brez vsebinske generativne obdelave.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e83]:
+          - /url: https://commons.wikimedia.org/wiki/File:Tomato_je.jpg
+      - article [ref=e84]:
+        - img "Paprika – prava fotografija vrtnine" [ref=e85]
+        - heading "Paprika" [level=3] [ref=e86]
+        - generic [ref=e87]:
+          - term [ref=e88]: Avtor / vir
+          - definition [ref=e89]: AntanO
+          - term [ref=e90]: Licenca fotografije
+          - definition [ref=e91]:
+            - link "CC BY-SA 4.0" [ref=e92]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+          - term [ref=e93]: Prilagoditve
+          - definition [ref=e94]: Pomanjšanje in stiskanje v WebP; obrez praznih robov pri papriki; fotografija v vektorskem okviru SVG. Brez vsebinske generativne obdelave.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e95]:
+          - /url: https://commons.wikimedia.org/wiki/File:Red_bell_pepper.jpg
+      - article [ref=e96]:
+        - img "Jajčevec – prava fotografija vrtnine" [ref=e97]
+        - heading "Jajčevec" [level=3] [ref=e98]
+        - generic [ref=e99]:
+          - term [ref=e100]: Avtor / vir
+          - definition [ref=e101]: Horst Frank
+          - term [ref=e102]: Licenca fotografije
+          - definition [ref=e103]:
+            - link "CC BY-SA 3.0" [ref=e104]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0/
+          - term [ref=e105]: Prilagoditve
+          - definition [ref=e106]: Pomanjšanje in stiskanje v WebP; obrez praznih robov pri papriki; fotografija v vektorskem okviru SVG. Brez vsebinske generativne obdelave.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e107]:
+          - /url: https://commons.wikimedia.org/wiki/File:Aubergine.jpg
+      - article [ref=e108]:
+        - img "Sveže zelene kumare" [ref=e109]
+        - heading "Kumare" [level=3] [ref=e110]
+        - generic [ref=e111]:
+          - term [ref=e112]: Avtor / vir
+          - definition [ref=e113]: WiseMan42
+          - term [ref=e114]: Licenca fotografije
+          - definition [ref=e115]:
+            - link "CC0" [ref=e116]:
+              - /url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
+          - term [ref=e117]: Prilagoditve
+          - definition [ref=e118]: Pomanjšanje in stiskanje v WebP; obrez praznih robov pri papriki; fotografija v vektorskem okviru SVG. Brez vsebinske generativne obdelave.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e119]:
+          - /url: https://commons.wikimedia.org/wiki/File:Cucumber_from_Denmark.jpg
+      - article [ref=e120]:
+        - img "Zgodnje zelje – prava fotografija vrtnine" [ref=e121]
+        - heading "Zgodnje zelje" [level=3] [ref=e122]
+        - generic [ref=e123]:
+          - term [ref=e124]: Avtor / vir
+          - definition [ref=e125]: Coyau
+          - term [ref=e126]: Licenca fotografije
+          - definition [ref=e127]:
+            - link "CC BY-SA 3.0" [ref=e128]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+          - term [ref=e129]: Prilagoditve
+          - definition [ref=e130]: Pomanjšanje in stiskanje v WebP; obrez praznih robov pri papriki; fotografija v vektorskem okviru SVG. Brez vsebinske generativne obdelave.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e131]:
+          - /url: https://commons.wikimedia.org/wiki/File:Chou_cabus_blanc_01.jpg
+      - article [ref=e132]:
+        - img "Zgodnja cvetača – prava fotografija vrtnine" [ref=e133]
+        - heading "Zgodnja cvetača" [level=3] [ref=e134]
+        - generic [ref=e135]:
+          - term [ref=e136]: Avtor / vir
+          - definition [ref=e137]: Tiia Monto
+          - term [ref=e138]: Licenca fotografije
+          - definition [ref=e139]:
+            - link "CC BY-SA 4.0" [ref=e140]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+          - term [ref=e141]: Prilagoditve
+          - definition [ref=e142]: Pomanjšanje in stiskanje v WebP; obrez praznih robov pri papriki; fotografija v vektorskem okviru SVG. Brez vsebinske generativne obdelave.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e143]:
+          - /url: https://commons.wikimedia.org/wiki/File:Cauliflower_2.jpg
+      - article [ref=e144]:
+        - img "Zgodnji ohrovt – prava fotografija vrtnine" [ref=e145]
+        - heading "Zgodnji ohrovt" [level=3] [ref=e146]
+        - generic [ref=e147]:
+          - term [ref=e148]: Avtor / vir
+          - definition [ref=e149]: Coyau
+          - term [ref=e150]: Licenca fotografije
+          - definition [ref=e151]:
+            - link "CC BY-SA 3.0" [ref=e152]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+          - term [ref=e153]: Prilagoditve
+          - definition [ref=e154]: Pomanjšanje in stiskanje v WebP; obrez praznih robov pri papriki; fotografija v vektorskem okviru SVG. Brez vsebinske generativne obdelave.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e155]:
+          - /url: https://commons.wikimedia.org/wiki/File:Chou_de_Milan_01.jpg
+      - article [ref=e156]:
+        - img "Gomolj zelene z zelenimi listi" [ref=e157]
+        - heading "Zelena" [level=3] [ref=e158]
+        - generic [ref=e159]:
+          - term [ref=e160]: Avtor / vir
+          - definition [ref=e161]: Jamain
+          - term [ref=e162]: Licenca fotografije
+          - definition [ref=e163]:
+            - link "CC BY-SA 3.0" [ref=e164]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+          - term [ref=e165]: Prilagoditve
+          - definition [ref=e166]: Pomanjšanje in stiskanje v WebP; obrez praznih robov pri papriki; fotografija v vektorskem okviru SVG. Brez vsebinske generativne obdelave.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e167]:
+          - /url: https://commons.wikimedia.org/wiki/File:Celeriac_J1.jpg
+      - article [ref=e168]:
+        - img "Poletni por – prava fotografija vrtnine" [ref=e169]
+        - heading "Poletni por" [level=3] [ref=e170]
+        - generic [ref=e171]:
+          - term [ref=e172]: Avtor / vir
+          - definition [ref=e173]: Björn König
+          - term [ref=e174]: Licenca fotografije
+          - definition [ref=e175]:
+            - link "CC0" [ref=e176]:
+              - /url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
+          - term [ref=e177]: Prilagoditve
+          - definition [ref=e178]: Pomanjšanje in stiskanje v WebP; obrez praznih robov pri papriki; fotografija v vektorskem okviru SVG. Brez vsebinske generativne obdelave.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e179]:
+          - /url: https://commons.wikimedia.org/wiki/File:Leek.jpg
+      - article [ref=e180]:
+        - img "Zelena glavnata solata" [ref=e181]
+        - heading "Zgodnja solata" [level=3] [ref=e182]
+        - generic [ref=e183]:
+          - term [ref=e184]: Avtor / vir
+          - definition [ref=e185]: Geo Lightspeed7
+          - term [ref=e186]: Licenca fotografije
+          - definition [ref=e187]:
+            - link "CC BY-SA 4.0" [ref=e188]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+          - term [ref=e189]: Prilagoditve
+          - definition [ref=e190]: Pomanjšanje in stiskanje v WebP; obrez praznih robov pri papriki; fotografija v vektorskem okviru SVG. Brez vsebinske generativne obdelave.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e191]:
+          - /url: https://commons.wikimedia.org/wiki/File:Buttercrunch_butterhead_lettuce.jpg
+      - article [ref=e192]:
+        - img "Zelena glavnata solata" [ref=e193]
+        - heading "Zimska solata" [level=3] [ref=e194]
+        - generic [ref=e195]:
+          - term [ref=e196]: Avtor / vir
+          - definition [ref=e197]: Geo Lightspeed7
+          - term [ref=e198]: Licenca fotografije
+          - definition [ref=e199]:
+            - link "CC BY-SA 4.0" [ref=e200]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+          - term [ref=e201]: Prilagoditve
+          - definition [ref=e202]: Pomanjšanje in stiskanje v WebP; obrez praznih robov pri papriki; fotografija v vektorskem okviru SVG. Brez vsebinske generativne obdelave.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e203]:
+          - /url: https://commons.wikimedia.org/wiki/File:Buttercrunch_butterhead_lettuce.jpg
+      - article [ref=e204]:
+        - img "Sveži zeleni listi motovilca" [ref=e205]
+        - heading "Motovilec" [level=3] [ref=e206]
+        - generic [ref=e207]:
+          - term [ref=e208]: Avtor / vir
+          - definition [ref=e209]: Der X an alle Rahm
+          - term [ref=e210]: Licenca fotografije
+          - definition [ref=e211]:
+            - link "CC BY-SA 4.0" [ref=e212]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+          - term [ref=e213]: Prilagoditve
+          - definition [ref=e214]: Pomanjšanje in stiskanje v WebP; obrez praznih robov pri papriki; fotografija v vektorskem okviru SVG. Brez vsebinske generativne obdelave.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e215]:
+          - /url: https://commons.wikimedia.org/wiki/File:Feldsalat_20241130_144337.jpg
+      - article [ref=e216]:
+        - img "Špinača – prava fotografija vrtnine" [ref=e217]
+        - heading "Špinača" [level=3] [ref=e218]
+        - generic [ref=e219]:
+          - term [ref=e220]: Avtor / vir
+          - definition [ref=e221]: Nillerdk
+          - term [ref=e222]: Licenca fotografije
+          - definition [ref=e223]:
+            - link "CC BY 3.0" [ref=e224]:
+              - /url: https://creativecommons.org/licenses/by/3.0
+          - term [ref=e225]: Prilagoditve
+          - definition [ref=e226]: Pomanjšanje in stiskanje v WebP; obrez praznih robov pri papriki; fotografija v vektorskem okviru SVG. Brez vsebinske generativne obdelave.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e227]:
+          - /url: https://commons.wikimedia.org/wiki/File:Spinach_leaves.jpg
+      - article [ref=e228]:
+        - img "Blitva z velikimi zelenimi listi in rdečimi peclji" [ref=e229]
+        - heading "Blitva za prezimovanje" [level=3] [ref=e230]
+        - generic [ref=e231]:
+          - term [ref=e232]: Avtor / vir
+          - definition [ref=e233]: Joe Mabel
+          - term [ref=e234]: Licenca fotografije
+          - definition [ref=e235]:
+            - link "CC BY-SA 3.0" [ref=e236]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+          - term [ref=e237]: Prilagoditve
+          - definition [ref=e238]: Pomanjšanje in stiskanje v WebP; obrez praznih robov pri papriki; fotografija v vektorskem okviru SVG. Brez vsebinske generativne obdelave.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e239]:
+          - /url: https://commons.wikimedia.org/wiki/File:Chard_01.jpg
+      - article [ref=e240]:
+        - img "Jesenski česen – prava fotografija vrtnine" [ref=e241]
+        - heading "Jesenski česen" [level=3] [ref=e242]
+        - generic [ref=e243]:
+          - term [ref=e244]: Avtor / vir
+          - definition [ref=e245]: Ivar Leidus
+          - term [ref=e246]: Licenca fotografije
+          - definition [ref=e247]:
+            - link "CC BY-SA 4.0" [ref=e248]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+          - term [ref=e249]: Prilagoditve
+          - definition [ref=e250]: Pomanjšanje in stiskanje v WebP; obrez praznih robov pri papriki; fotografija v vektorskem okviru SVG. Brez vsebinske generativne obdelave.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e251]:
+          - /url: https://commons.wikimedia.org/wiki/File:Garlic_bulbs_and_cloves.jpg
+      - article [ref=e252]:
+        - img "Čebulice čebule z zlato rjavo lupino" [ref=e253]
+        - heading "Jesenski čebulček" [level=3] [ref=e254]
+        - generic [ref=e255]:
+          - term [ref=e256]: Avtor / vir
+          - definition [ref=e257]: Donovan Govan.
+          - term [ref=e258]: Licenca fotografije
+          - definition [ref=e259]:
+            - link "CC BY-SA 3.0" [ref=e260]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0/
+          - term [ref=e261]: Prilagoditve
+          - definition [ref=e262]: Pomanjšanje in stiskanje v WebP; obrez praznih robov pri papriki; fotografija v vektorskem okviru SVG. Brez vsebinske generativne obdelave.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e263]:
+          - /url: https://commons.wikimedia.org/wiki/File:Onion.jpg
+    - generic [ref=e264]:
+      - heading "Prazniki, običaji in pomembni dnevi" [level=2] [ref=e265]
+      - paragraph [ref=e266]: Fotografije prikazujejo resnične dogodke, običaje in predmete, povezane z vsebino posamezne strani. Pri arhivskih posnetkih je naveden čas nastanka; pri dogodkih iz tujine tudi kraj. Tematski motiv ponazarja vsebino dneva in ne napoveduje programa prihodnje prireditve. Pri Trubarju in reformaciji uporabljamo reprodukciji izvirnih zgodovinskih knjig.
+      - paragraph [ref=e267]: Vsak izvirnik ima svojo povezavo, avtorja in dovoljenje za uporabo. Fotografije smo pomanjšali in pretvorili v WebP; okvir prikaza lahko obreže robove. Vsebinskih sprememb z generativno umetno inteligenco nismo izvajali. Predelane različice ohranijo navedeno licenco, vključno z določilom deljenja pod enakimi pogoji, kjer to velja.
+    - generic [ref=e268]:
+      - article [ref=e269]:
+        - img "Novoletni ognjemet nad Bledom" [ref=e270]
+        - heading "Novoletni ognjemet nad Bledom" [level=2] [ref=e271]
+        - paragraph [ref=e272]: Novoletni ognjemet na Bledu, 2013.
+        - generic [ref=e273]:
+          - term [ref=e274]: Avtor oziroma navedba avtorstva
+          - definition [ref=e275]: Smihael
+          - term [ref=e276]: Licenca oziroma pravni status
+          - definition [ref=e277]:
+            - link "CC BY-SA 3.0" [ref=e278]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+          - term [ref=e279]: Prilagoditev za prikaz
+          - definition [ref=e280]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e281]:
+          - /url: https://commons.wikimedia.org/wiki/File:Bled_2013_fireworks.jpg
+      - article [ref=e282]:
+        - img "Podelitev priznanj na proslavi ob slovenskem kulturnem prazniku" [ref=e283]
+        - heading "Podelitev priznanj na proslavi ob slovenskem kulturnem prazniku" [level=2] [ref=e284]
+        - paragraph [ref=e285]: Podelitev priznanj na državni proslavi ob slovenskem kulturnem prazniku, 2026.
+        - generic [ref=e286]:
+          - term [ref=e287]: Avtor oziroma navedba avtorstva
+          - definition [ref=e288]: Žiga Živulovič / FotoBOBO
+          - term [ref=e289]: Licenca oziroma pravni status
+          - definition [ref=e290]:
+            - link "Public domain" [ref=e291]:
+              - /url: https://creativecommons.org/publicdomain/mark/1.0/
+          - term [ref=e292]: Prilagoditev za prikaz
+          - definition [ref=e293]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e294]:
+          - /url: https://commons.wikimedia.org/wiki/File:Dr%C5%BEavna_proslava_ob_dnevu_kulture_-_55083677694.jpg
+      - article [ref=e295]:
+        - img "Govornik na državni proslavi ob dnevu upora" [ref=e296]
+        - heading "Govornik na državni proslavi ob dnevu upora" [level=2] [ref=e297]
+        - paragraph [ref=e298]: Državna proslava ob dnevu upora proti okupatorju v Črnomlju, 26. aprila 2024.
+        - generic [ref=e299]:
+          - term [ref=e300]: Avtor oziroma navedba avtorstva
+          - definition [ref=e301]: Borut Živulovič / Foto Bobo · Vlada Republike Slovenije
+          - term [ref=e302]: Licenca oziroma pravni status
+          - definition [ref=e303]:
+            - link "Public domain" [ref=e304]:
+              - /url: https://creativecommons.org/publicdomain/mark/1.0/
+          - term [ref=e305]: Prilagoditev za prikaz
+          - definition [ref=e306]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e307]:
+          - /url: https://commons.wikimedia.org/wiki/File:Dr%C5%BEavna_proslava_ob_dnevu_upora_proti_okupatorju,_26._april_2024,_%C4%8Crnomelj_(53679843802).jpg
+      - article [ref=e308]:
+        - img "Prvomajski kres in zbrani obiskovalci v Trbovljah" [ref=e309]
+        - heading "Prvomajski kres in zbrani obiskovalci v Trbovljah" [level=2] [ref=e310]
+        - paragraph [ref=e311]: Kresovanje na predvečer praznika dela v Trbovljah, 30. aprila 2024.
+        - generic [ref=e312]:
+          - term [ref=e313]: Avtor oziroma navedba avtorstva
+          - definition [ref=e314]: Viktar Palstsiuk
+          - term [ref=e315]: Licenca oziroma pravni status
+          - definition [ref=e316]:
+            - link "CC BY-SA 4.0" [ref=e317]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+          - term [ref=e318]: Prilagoditev za prikaz
+          - definition [ref=e319]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e320]:
+          - /url: https://commons.wikimedia.org/wiki/File:Kresovanje_2024_in_Trbovlje.jpg
+      - article [ref=e321]:
+        - img "Odprta knjiga s prvo stranjo Trubarjevega Katekizma" [ref=e322]
+        - heading "Odprta knjiga s prvo stranjo Trubarjevega Katekizma" [level=2] [ref=e323]
+        - paragraph [ref=e324]: Trubarjev Katekizem iz leta 1550. Reprodukcija prve slovenske tiskane knjige.
+        - generic [ref=e325]:
+          - term [ref=e326]: Avtor oziroma navedba avtorstva
+          - definition [ref=e327]: Primož Trubar
+          - term [ref=e328]: Licenca oziroma pravni status
+          - definition [ref=e329]:
+            - link "Public domain" [ref=e330]:
+              - /url: https://creativecommons.org/publicdomain/mark/1.0/
+          - term [ref=e331]: Prilagoditev za prikaz
+          - definition [ref=e332]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e333]:
+          - /url: https://commons.wikimedia.org/wiki/File:Primo%C5%BE_Trubar_-_Catechismus_(cover).jpg
+      - article [ref=e334]:
+        - img "Slovesni prihod na državno proslavo ob dnevu državnosti" [ref=e335]
+        - heading "Slovesni prihod na državno proslavo ob dnevu državnosti" [level=2] [ref=e336]
+        - paragraph [ref=e337]: Državna proslava ob dnevu državnosti, 24. junija 2024.
+        - generic [ref=e338]:
+          - term [ref=e339]: Avtor oziroma navedba avtorstva
+          - definition [ref=e340]: Vlada Republike Slovenije from Ljubljana, Slovenia
+          - term [ref=e341]: Licenca oziroma pravni status
+          - definition [ref=e342]:
+            - link "Public domain" [ref=e343]:
+              - /url: https://creativecommons.org/publicdomain/mark/1.0/
+          - term [ref=e344]: Prilagoditev za prikaz
+          - definition [ref=e345]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e346]:
+          - /url: https://commons.wikimedia.org/wiki/File:Dr%C5%BEavna_proslava_ob_dnevu_dr%C5%BEavnosti_(24._6._2024)_(53813796124).jpg
+      - article [ref=e347]:
+        - img "Planinka ob Aljaževem stolpu na vrhu Triglava" [ref=e348]
+        - heading "Planinka ob Aljaževem stolpu na vrhu Triglava" [level=2] [ref=e349]
+        - paragraph [ref=e350]: Obisk Aljaževega stolpa na Triglavu, 2019. Planinski motiv ob dnevu Triglava.
+        - generic [ref=e351]:
+          - term [ref=e352]: Avtor oziroma navedba avtorstva
+          - definition [ref=e353]: Christian Mathea
+          - term [ref=e354]: Licenca oziroma pravni status
+          - definition [ref=e355]:
+            - link "CC BY 2.0" [ref=e356]:
+              - /url: https://creativecommons.org/licenses/by/2.0
+          - term [ref=e357]: Prilagoditev za prikaz
+          - definition [ref=e358]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e359]:
+          - /url: https://commons.wikimedia.org/wiki/File:Wanderung_auf_den_Triglav_(48962335136).jpg
+      - article [ref=e360]:
+        - img "Mladi tekači na tekaški prireditvi v Ljubljani" [ref=e361]
+        - heading "Mladi tekači na tekaški prireditvi v Ljubljani" [level=2] [ref=e362]
+        - paragraph [ref=e363]: Tekaška prireditev v okviru Ljubljanskega maratona, 2013. Motiv skupnega gibanja.
+        - generic [ref=e364]:
+          - term [ref=e365]: Avtor oziroma navedba avtorstva
+          - definition [ref=e366]: Vladimir Yaitskiy from Kyiv, Ukraine
+          - term [ref=e367]: Licenca oziroma pravni status
+          - definition [ref=e368]:
+            - link "CC BY-SA 2.0" [ref=e369]:
+              - /url: https://creativecommons.org/licenses/by-sa/2.0
+          - term [ref=e370]: Prilagoditev za prikaz
+          - definition [ref=e371]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e372]:
+          - /url: https://commons.wikimedia.org/wiki/File:18th_Ljubljanski_maraton_(11330073555).jpg
+      - article [ref=e373]:
+        - img "Cvetje in sveče ob spominskem obeležju na pokopališču" [ref=e374]
+        - heading "Cvetje in sveče ob spominskem obeležju na pokopališču" [level=2] [ref=e375]
+        - paragraph [ref=e376]: Cvetje in sveče na pobreškem pokopališču v Mariboru, 2013. Motiv spomina na umrle.
+        - generic [ref=e377]:
+          - term [ref=e378]: Avtor oziroma navedba avtorstva
+          - definition [ref=e379]: Janezdrilc
+          - term [ref=e380]: Licenca oziroma pravni status
+          - definition [ref=e381]:
+            - link "CC0" [ref=e382]:
+              - /url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+          - term [ref=e383]: Prilagoditev za prikaz
+          - definition [ref=e384]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e385]:
+          - /url: https://commons.wikimedia.org/wiki/File:Pobre%C5%BEje_cemetery_18.JPG
+      - article [ref=e386]:
+        - img "Praporščaki na državni proslavi ob dnevu Rudolfa Maistra" [ref=e387]
+        - heading "Praporščaki na državni proslavi ob dnevu Rudolfa Maistra" [level=2] [ref=e388]
+        - paragraph [ref=e389]: Državna proslava na predvečer dneva Rudolfa Maistra, 22. novembra 2023.
+        - generic [ref=e390]:
+          - term [ref=e391]: Avtor oziroma navedba avtorstva
+          - definition [ref=e392]: Vlada Republike Slovenije from Ljubljana, Slovenia
+          - term [ref=e393]: Licenca oziroma pravni status
+          - definition [ref=e394]:
+            - link "Public domain" [ref=e395]:
+              - /url: https://creativecommons.org/publicdomain/mark/1.0/
+          - term [ref=e396]: Prilagoditev za prikaz
+          - definition [ref=e397]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e398]:
+          - /url: https://commons.wikimedia.org/wiki/File:Dr%C5%BEavna_proslava_ob_dnevu_Rudolfa_Maistra_-_22._11._2023_(53349906590).jpg
+      - article [ref=e399]:
+        - img "Glasbeni nastop na proslavi ob dnevu samostojnosti in enotnosti" [ref=e400]
+        - heading "Glasbeni nastop na proslavi ob dnevu samostojnosti in enotnosti" [level=2] [ref=e401]
+        - paragraph [ref=e402]: Kulturni program državne proslave ob dnevu samostojnosti in enotnosti v Ljubljani, 2024.
+        - generic [ref=e403]:
+          - term [ref=e404]: Avtor oziroma navedba avtorstva
+          - definition [ref=e405]: Žiga Živulovič jr. / Bobo
+          - term [ref=e406]: Licenca oziroma pravni status
+          - definition [ref=e407]:
+            - link "Public domain" [ref=e408]:
+              - /url: https://creativecommons.org/publicdomain/mark/1.0/
+          - term [ref=e409]: Prilagoditev za prikaz
+          - definition [ref=e410]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e411]:
+          - /url: https://commons.wikimedia.org/wiki/File:Dr%C5%BEavna_proslava_ob_dnevu_samostojnosti_in_enotnosti_2024_(54217540475).jpg
+      - article [ref=e412]:
+        - img "Velikonočna miza s pirhi, potico, šunko in hrenom" [ref=e413]
+        - heading "Velikonočna miza s pirhi, potico, šunko in hrenom" [level=2] [ref=e414]
+        - paragraph [ref=e415]: "Slovenski velikonočni zajtrk: pirhi, potica, šunka in hren. Fotografija iz leta 2013."
+        - generic [ref=e416]:
+          - term [ref=e417]: Avtor oziroma navedba avtorstva
+          - definition [ref=e418]: Klemen Brumec
+          - term [ref=e419]: Licenca oziroma pravni status
+          - definition [ref=e420]:
+            - link "CC0" [ref=e421]:
+              - /url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+          - term [ref=e422]: Prilagoditev za prikaz
+          - definition [ref=e423]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e424]:
+          - /url: https://commons.wikimedia.org/wiki/File:Velika_no%C4%8D_-_jedila_hren_%C5%A1unka_pirhi_potica.jpg
+      - article [ref=e425]:
+        - img "Zbor in zbrani verniki pri binkoštni ekumenski službi" [ref=e426]
+        - heading "Zbor in zbrani verniki pri binkoštni ekumenski službi" [level=2] [ref=e427]
+        - paragraph [ref=e428]: Binkoštno ekumensko bogoslužje v Idsteinu v Nemčiji, 2026.
+        - generic [ref=e429]:
+          - term [ref=e430]: Avtor oziroma navedba avtorstva
+          - definition [ref=e431]: Gerda Arendt
+          - term [ref=e432]: Licenca oziroma pravni status
+          - definition [ref=e433]:
+            - link "CC0" [ref=e434]:
+              - /url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+          - term [ref=e435]: Prilagoditev za prikaz
+          - definition [ref=e436]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e437]:
+          - /url: https://commons.wikimedia.org/wiki/File:Unionskirche,_Idstein,_ecumenical_service_for_Pentecost,_Ngokujabula!.jpg
+      - article [ref=e438]:
+        - img "Jaslice s figurami svete družine na Zasavski Sveti gori" [ref=e439]
+        - heading "Jaslice s figurami svete družine na Zasavski Sveti gori" [level=2] [ref=e440]
+        - paragraph [ref=e441]: Jaslice ob kapeli Marije Kraljice miru na Zasavski Sveti gori. Motiv božičnega izročila.
+        - generic [ref=e442]:
+          - term [ref=e443]: Avtor oziroma navedba avtorstva
+          - definition [ref=e444]: Ajznponar
+          - term [ref=e445]: Licenca oziroma pravni status
+          - definition [ref=e446]:
+            - link "CC BY-SA 4.0" [ref=e447]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+          - term [ref=e448]: Prilagoditev za prikaz
+          - definition [ref=e449]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e450]:
+          - /url: https://commons.wikimedia.org/wiki/File:Zasavska_Sveta_gora,_nativity_scene.jpg
+      - article [ref=e451]:
+        - img "Sprevod s figurami svetih treh kraljev" [ref=e452]
+        - heading "Sprevod s figurami svetih treh kraljev" [level=2] [ref=e453]
+        - paragraph [ref=e454]: Sprevod svetih treh kraljev v Vilni, Litva, 6. januarja 2023.
+        - generic [ref=e455]:
+          - term [ref=e456]: Avtor oziroma navedba avtorstva
+          - definition [ref=e457]: Pofka
+          - term [ref=e458]: Licenca oziroma pravni status
+          - definition [ref=e459]:
+            - link "CC BY-SA 4.0" [ref=e460]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+          - term [ref=e461]: Prilagoditev za prikaz
+          - definition [ref=e462]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e463]:
+          - /url: https://commons.wikimedia.org/wiki/File:Three_Kings%27_Day_procession_near_the_Town_Hall_of_Vilnius_in_2023.jpg
+      - article [ref=e464]:
+        - img "Šopek rdečih vrtnic in drugega cvetja" [ref=e465]
+        - heading "Šopek rdečih vrtnic in drugega cvetja" [level=2] [ref=e466]
+        - paragraph [ref=e467]: Valentinov šopek. Tematski motiv obdarovanja s cvetjem, 2019.
+        - generic [ref=e468]:
+          - term [ref=e469]: Avtor oziroma navedba avtorstva
+          - definition [ref=e470]: Maimaid
+          - term [ref=e471]: Licenca oziroma pravni status
+          - definition [ref=e472]:
+            - link "CC BY-SA 4.0" [ref=e473]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+          - term [ref=e474]: Prilagoditev za prikaz
+          - definition [ref=e475]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e476]:
+          - /url: https://commons.wikimedia.org/wiki/File:Bouquet_of_Flowers_for_Valentine%27s_Day.jpg
+      - article [ref=e477]:
+        - img "Kurenti z zvonci in pisanimi trakovi na ptujskem pustovanju" [ref=e478]
+        - heading "Kurenti z zvonci in pisanimi trakovi na ptujskem pustovanju" [level=2] [ref=e479]
+        - paragraph [ref=e480]: Kurenti na Kurentovanju na Ptuju, 2019.
+        - generic [ref=e481]:
+          - term [ref=e482]: Avtor oziroma navedba avtorstva
+          - definition [ref=e483]: Aleš Kravos
+          - term [ref=e484]: Licenca oziroma pravni status
+          - definition [ref=e485]:
+            - link "CC BY-SA 4.0" [ref=e486]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+          - term [ref=e487]: Prilagoditev za prikaz
+          - definition [ref=e488]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e489]:
+          - /url: https://commons.wikimedia.org/wiki/File:Ale%C5%A1_Kravos_Kurentovanje_Ptuj_2019.jpg
+      - article [ref=e490]:
+        - img "Udeleženke in udeleženci dogodka ob mednarodnem dnevu žensk" [ref=e491]
+        - heading "Udeleženke in udeleženci dogodka ob mednarodnem dnevu žensk" [level=2] [ref=e492]
+        - paragraph [ref=e493]: Mednarodni dan žensk pri IAEA na Dunaju, 8. marca 2023.
+        - generic [ref=e494]:
+          - term [ref=e495]: Avtor oziroma navedba avtorstva
+          - definition [ref=e496]: Dean Calma / IAEA
+          - term [ref=e497]: Licenca oziroma pravni status
+          - definition [ref=e498]:
+            - link "CC BY 2.0" [ref=e499]:
+              - /url: https://creativecommons.org/licenses/by/2.0
+          - term [ref=e500]: Prilagoditev za prikaz
+          - definition [ref=e501]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e502]:
+          - /url: https://commons.wikimedia.org/wiki/File:IAEA_International_Women%27s_Day_2023,_Vienna,_March_2023,_64.jpg
+      - article [ref=e503]:
+        - img "Osvetljeni gregorčki plavajo po vodi ob mraku" [ref=e504]
+        - heading "Osvetljeni gregorčki plavajo po vodi ob mraku" [level=2] [ref=e505]
+        - paragraph [ref=e506]: Spuščanje gregorčkov ob gregorjevem, 2012.
+        - generic [ref=e507]:
+          - term [ref=e508]: Avtor oziroma navedba avtorstva
+          - definition [ref=e509]: Danilo Tic from Slovenska Bistrica, Slovenia
+          - term [ref=e510]: Licenca oziroma pravni status
+          - definition [ref=e511]:
+            - link "CC BY-SA 2.0" [ref=e512]:
+              - /url: https://creativecommons.org/licenses/by-sa/2.0
+          - term [ref=e513]: Prilagoditev za prikaz
+          - definition [ref=e514]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e515]:
+          - /url: https://commons.wikimedia.org/wiki/File:Gregorjevo2012004_(6831143480).jpg
+      - article [ref=e516]:
+        - img "Mati objema svojo hčer" [ref=e517]
+        - heading "Mati objema svojo hčer" [level=2] [ref=e518]
+        - paragraph [ref=e519]: Objem matere in hčere na Javi v Indoneziji, 2012. Tematski motiv materinskega dne.
+        - generic [ref=e520]:
+          - term [ref=e521]: Avtor oziroma navedba avtorstva
+          - definition [ref=e522]: Peter van der Sluijs
+          - term [ref=e523]: Licenca oziroma pravni status
+          - definition [ref=e524]:
+            - link "CC BY-SA 3.0" [ref=e525]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+          - term [ref=e526]: Prilagoditev za prikaz
+          - definition [ref=e527]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e528]:
+          - /url: https://commons.wikimedia.org/wiki/File:Mother_hugs_her_daughter_Indonesia.jpg
+      - article [ref=e529]:
+        - img "Otroci držijo okrašene cvetnonedeljske butarice" [ref=e530]
+        - heading "Otroci držijo okrašene cvetnonedeljske butarice" [level=2] [ref=e531]
+        - paragraph [ref=e532]: Cvetnonedeljske butarice, 1956. Arhivska fotografija prazničnega običaja.
+        - generic [ref=e533]:
+          - term [ref=e534]: Avtor oziroma navedba avtorstva
+          - definition [ref=e535]: Neznan avtor (navedba v izvirnem arhivu)
+          - term [ref=e536]: Licenca oziroma pravni status
+          - definition [ref=e537]:
+            - link "Public domain" [ref=e538]:
+              - /url: https://creativecommons.org/publicdomain/mark/1.0/
+          - term [ref=e539]: Prilagoditev za prikaz
+          - definition [ref=e540]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e541]:
+          - /url: https://commons.wikimedia.org/wiki/File:Cvetnonedeljske_butarice_1956.jpg
+      - article [ref=e542]:
+        - img "Igralci v prizoru Škofjeloškega pasijona" [ref=e543]
+        - heading "Igralci v prizoru Škofjeloškega pasijona" [level=2] [ref=e544]
+        - paragraph [ref=e545]: Škofjeloški pasijon, uprizoritev leta 2009. Prizor iz slovenskega pasijonskega izročila.
+        - generic [ref=e546]:
+          - term [ref=e547]: Avtor oziroma navedba avtorstva
+          - definition [ref=e548]: Sl-Ziga
+          - term [ref=e549]: Licenca oziroma pravni status
+          - definition [ref=e550]:
+            - link "Public domain" [ref=e551]:
+              - /url: https://creativecommons.org/publicdomain/mark/1.0/
+          - term [ref=e552]: Prilagoditev za prikaz
+          - definition [ref=e553]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e554]:
+          - /url: https://commons.wikimedia.org/wiki/File:SkPasijon20.JPG
+      - article [ref=e555]:
+        - img "Prostovoljci skupaj sadijo drevo" [ref=e556]
+        - heading "Prostovoljci skupaj sadijo drevo" [level=2] [ref=e557]
+        - paragraph [ref=e558]: Sajenje dreves ob dnevu Zemlje v Nairobiju v Keniji, 2010.
+        - generic [ref=e559]:
+          - term [ref=e560]: Avtor oziroma navedba avtorstva
+          - definition [ref=e561]: U.S. Embassy Nairobi
+          - term [ref=e562]: Licenca oziroma pravni status
+          - definition [ref=e563]:
+            - link "Public domain" [ref=e564]:
+              - /url: https://creativecommons.org/publicdomain/mark/1.0/
+          - term [ref=e565]: Prilagoditev za prikaz
+          - definition [ref=e566]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e567]:
+          - /url: https://commons.wikimedia.org/wiki/File:Earth_Day_Tree_Planting_in_Maringo_Estate_(4577122595).jpg
+      - article [ref=e568]:
+        - img "Velika evropska zastava med praznovanjem dneva Evrope" [ref=e569]
+        - heading "Velika evropska zastava med praznovanjem dneva Evrope" [level=2] [ref=e570]
+        - paragraph [ref=e571]: Praznovanje dneva Evrope v Strasbourgu v Franciji, 9. maja 2009.
+        - generic [ref=e572]:
+          - term [ref=e573]: Avtor oziroma navedba avtorstva
+          - definition [ref=e574]: Francois Schnell
+          - term [ref=e575]: Licenca oziroma pravni status
+          - definition [ref=e576]:
+            - link "CC BY 2.0" [ref=e577]:
+              - /url: https://creativecommons.org/licenses/by/2.0
+          - term [ref=e578]: Prilagoditev za prikaz
+          - definition [ref=e579]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e580]:
+          - /url: https://commons.wikimedia.org/wiki/File:Big_european_flag_at_Strasbourg_(France)_-_Europe_Day_2009.jpg
+      - article [ref=e581]:
+        - img "Adventni venec z vijoličnimi in rožnato svečo" [ref=e582]
+        - heading "Adventni venec z vijoličnimi in rožnato svečo" [level=2] [ref=e583]
+        - paragraph [ref=e584]: Adventni venec s svečami – tradicionalni motiv adventnega časa.
+        - generic [ref=e585]:
+          - term [ref=e586]: Avtor oziroma navedba avtorstva
+          - definition [ref=e587]: PHILIP János
+          - term [ref=e588]: Licenca oziroma pravni status
+          - definition [ref=e589]:
+            - link "CC0" [ref=e590]:
+              - /url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+          - term [ref=e591]: Prilagoditev za prikaz
+          - definition [ref=e592]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e593]:
+          - /url: https://commons.wikimedia.org/wiki/File:Advent_wreath_with_violet_and_rose_candles_2.jpg
+      - article [ref=e594]:
+        - img "Miklavž z angeli in parkeljni med obiskovanjem otrok" [ref=e595]
+        - heading "Miklavž z angeli in parkeljni med obiskovanjem otrok" [level=2] [ref=e596]
+        - paragraph [ref=e597]: Miklavžev sprevod na območju Šutne pri Kranju, 2015.
+        - generic [ref=e598]:
+          - term [ref=e599]: Avtor oziroma navedba avtorstva
+          - definition [ref=e600]: Mravlja Matjaz
+          - term [ref=e601]: Licenca oziroma pravni status
+          - definition [ref=e602]:
+            - link "CC BY-SA 4.0" [ref=e603]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+          - term [ref=e604]: Prilagoditev za prikaz
+          - definition [ref=e605]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e606]:
+          - /url: https://commons.wikimedia.org/wiki/File:Sveti_Miklav%C5%BE_in_parkelj,_vsakoletni_sprevod_po_naselju_%C5%A0utna.jpg
+      - article [ref=e607]:
+        - img "Silvestrski ognjemet nad Ljubljanskim gradom" [ref=e608]
+        - heading "Silvestrski ognjemet nad Ljubljanskim gradom" [level=2] [ref=e609]
+        - paragraph [ref=e610]: Ognjemet ob prehodu iz leta 2013 v leto 2014 v Ljubljani.
+        - generic [ref=e611]:
+          - term [ref=e612]: Avtor oziroma navedba avtorstva
+          - definition [ref=e613]: Suzi5p at Slovenian Wikipedia (Suzana Pavšič)
+          - term [ref=e614]: Licenca oziroma pravni status
+          - definition [ref=e615]:
+            - link "CC BY-SA 3.0" [ref=e616]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+          - term [ref=e617]: Prilagoditev za prikaz
+          - definition [ref=e618]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e619]:
+          - /url: https://commons.wikimedia.org/wiki/File:Ognjemet_Ljubljana_2013-2014.jpg
+      - article [ref=e620]:
+        - img "Cvetoča jablana pod modrim nebom" [ref=e621]
+        - heading "Cvetoča jablana pod modrim nebom" [level=2] [ref=e622]
+        - paragraph [ref=e623]: Spomladansko cvetenje jablane. Sezonski motiv ob začetku pomladi.
+        - generic [ref=e624]:
+          - term [ref=e625]: Avtor oziroma navedba avtorstva
+          - definition [ref=e626]: focusonmore.com
+          - term [ref=e627]: Licenca oziroma pravni status
+          - definition [ref=e628]:
+            - link "CC BY 2.0" [ref=e629]:
+              - /url: https://creativecommons.org/licenses/by/2.0
+          - term [ref=e630]: Prilagoditev za prikaz
+          - definition [ref=e631]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e632]:
+          - /url: https://commons.wikimedia.org/wiki/File:Beautiful_apple_tree_blossom_in_spring.jpg
+      - article [ref=e633]:
+        - img "Sonce vzhaja za kamni Stonehengea ob poletnem solsticiju" [ref=e634]
+        - heading "Sonce vzhaja za kamni Stonehengea ob poletnem solsticiju" [level=2] [ref=e635]
+        - paragraph [ref=e636]: Sončni vzhod ob poletnem solsticiju v Stonehengeu v Angliji, 21. junija 2005.
+        - generic [ref=e637]:
+          - term [ref=e638]: Avtor oziroma navedba avtorstva
+          - definition [ref=e639]: Andrew Dunn · andrewdunnphoto.com
+          - term [ref=e640]: Licenca oziroma pravni status
+          - definition [ref=e641]:
+            - link "CC BY-SA 2.0" [ref=e642]:
+              - /url: https://creativecommons.org/licenses/by-sa/2.0
+          - term [ref=e643]: Prilagoditev za prikaz
+          - definition [ref=e644]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e645]:
+          - /url: https://commons.wikimedia.org/wiki/File:Summer_Solstice_Sunrise_over_Stonehenge_2005.jpg
+      - article [ref=e646]:
+        - img "Jesensko obarvani listi v slovenskem parku" [ref=e647]
+        - heading "Jesensko obarvani listi v slovenskem parku" [level=2] [ref=e648]
+        - paragraph [ref=e649]: Jesenski listi v Sloveniji. Sezonski motiv ob začetku jeseni.
+        - generic [ref=e650]:
+          - term [ref=e651]: Avtor oziroma navedba avtorstva
+          - definition [ref=e652]: Dreamy Pixel
+          - term [ref=e653]: Licenca oziroma pravni status
+          - definition [ref=e654]:
+            - link "CC BY 4.0" [ref=e655]:
+              - /url: https://creativecommons.org/licenses/by/4.0
+          - term [ref=e656]: Prilagoditev za prikaz
+          - definition [ref=e657]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e658]:
+          - /url: https://commons.wikimedia.org/wiki/File:Close_up_of_the_autumn_leaves_in_the_park,_Slovenia.jpg
+      - article [ref=e659]:
+        - img "Zasnežen gozd na Pokljuki" [ref=e660]
+        - heading "Zasnežen gozd na Pokljuki" [level=2] [ref=e661]
+        - paragraph [ref=e662]: Zasnežena Pokljuka. Sezonski motiv ob začetku zime.
+        - generic [ref=e663]:
+          - term [ref=e664]: Avtor oziroma navedba avtorstva
+          - definition [ref=e665]: Dreamy Pixel
+          - term [ref=e666]: Licenca oziroma pravni status
+          - definition [ref=e667]:
+            - link "CC BY 4.0" [ref=e668]:
+              - /url: https://creativecommons.org/licenses/by/4.0
+          - term [ref=e669]: Prilagoditev za prikaz
+          - definition [ref=e670]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e671]:
+          - /url: https://commons.wikimedia.org/wiki/File:Forests_of_Pokljuka_in_snow.jpg
+      - article [ref=e672]:
+        - img "Kazalci na številčnici analogne ure" [ref=e673]
+        - heading "Kazalci na številčnici analogne ure" [level=2] [ref=e674]
+        - paragraph [ref=e675]: Analogna ura. Tematski motiv za spomladanski in jesenski premik ure.
+        - generic [ref=e676]:
+          - term [ref=e677]: Avtor oziroma navedba avtorstva
+          - definition [ref=e678]: Markus Spiske
+          - term [ref=e679]: Licenca oziroma pravni status
+          - definition [ref=e680]:
+            - link "CC BY 2.0" [ref=e681]:
+              - /url: https://creativecommons.org/licenses/by/2.0
+          - term [ref=e682]: Prilagoditev za prikaz
+          - definition [ref=e683]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e684]:
+          - /url: https://commons.wikimedia.org/wiki/File:Analog_clock_2014.jpg
+      - article [ref=e685]:
+        - img "Udeleženci spominske slovesnosti ob mednarodnem dnevu spomina na holokavst" [ref=e686]
+        - heading "Udeleženci spominske slovesnosti ob mednarodnem dnevu spomina na holokavst" [level=2] [ref=e687]
+        - paragraph [ref=e688]: Spominska slovesnost na trgu Raoula Wallenberga v Stockholmu, 27. januarja 2013.
+        - generic [ref=e689]:
+          - term [ref=e690]: Avtor oziroma navedba avtorstva
+          - definition [ref=e691]: Frankie Fouganthin
+          - term [ref=e692]: Licenca oziroma pravni status
+          - definition [ref=e693]:
+            - link "CC BY-SA 3.0" [ref=e694]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+          - term [ref=e695]: Prilagoditev za prikaz
+          - definition [ref=e696]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e697]:
+          - /url: https://commons.wikimedia.org/wiki/File:F%C3%B6rintelsens_minnesdag_p%C3%A5_Raoul_Wallenbergs_torg.jpg
+      - article [ref=e698]:
+        - img "Pisane talne poslikave ob dnevu maternega jezika" [ref=e699]
+        - heading "Pisane talne poslikave ob dnevu maternega jezika" [level=2] [ref=e700]
+        - paragraph [ref=e701]: Poslikave alpona ob mednarodnem dnevu maternega jezika v Daki v Bangladešu, 2019.
+        - generic [ref=e702]:
+          - term [ref=e703]: Avtor oziroma navedba avtorstva
+          - definition [ref=e704]: Israt Jarin
+          - term [ref=e705]: Licenca oziroma pravni status
+          - definition [ref=e706]:
+            - link "CC BY-SA 4.0" [ref=e707]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+          - term [ref=e708]: Prilagoditev za prikaz
+          - definition [ref=e709]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e710]:
+          - /url: https://commons.wikimedia.org/wiki/File:Celebration_of_international_mother_language_day_01.jpg
+      - article [ref=e711]:
+        - img "Prostovoljca odstranjujeta odpadke iz reke" [ref=e712]
+        - heading "Prostovoljca odstranjujeta odpadke iz reke" [level=2] [ref=e713]
+        - paragraph [ref=e714]: Čiščenje reke ob svetovnem dnevu voda v Južni Koreji, 2009.
+        - generic [ref=e715]:
+          - term [ref=e716]: Avtor oziroma navedba avtorstva
+          - definition [ref=e717]: Han, Bu Yong / UNC–CFC–USFK
+          - term [ref=e718]: Licenca oziroma pravni status
+          - definition [ref=e719]:
+            - link "CC BY 2.0" [ref=e720]:
+              - /url: https://creativecommons.org/licenses/by/2.0
+          - term [ref=e721]: Prilagoditev za prikaz
+          - definition [ref=e722]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e723]:
+          - /url: https://commons.wikimedia.org/wiki/File:World_Water_Day_(3384841410).jpg
+      - article [ref=e724]:
+        - img "Knjižne police in čitalnica v gimnazijski knjižnici" [ref=e725]
+        - heading "Knjižne police in čitalnica v gimnazijski knjižnici" [level=2] [ref=e726]
+        - paragraph [ref=e727]: Knjižnica Gimnazije Želimlje. Tematski motiv branja in dostopa do knjig.
+        - generic [ref=e728]:
+          - term [ref=e729]: Avtor oziroma navedba avtorstva
+          - definition [ref=e730]: Klemen Lajevec
+          - term [ref=e731]: Licenca oziroma pravni status
+          - definition [ref=e732]:
+            - link "CC BY-SA 3.0" [ref=e733]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+          - term [ref=e734]: Prilagoditev za prikaz
+          - definition [ref=e735]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e736]:
+          - /url: https://commons.wikimedia.org/wiki/File:Gimnazija_Zelimlje_-_citalnica.jpg
+      - article [ref=e737]:
+        - img "Družina na skupnem pikniku na prostem" [ref=e738]
+        - heading "Družina na skupnem pikniku na prostem" [level=2] [ref=e739]
+        - paragraph [ref=e740]: Družinski piknik v Himejiju na Japonskem, 2016. Motiv skupnega preživljanja časa.
+        - generic [ref=e741]:
+          - term [ref=e742]: Avtor oziroma navedba avtorstva
+          - definition [ref=e743]: DimiTalen
+          - term [ref=e744]: Licenca oziroma pravni status
+          - definition [ref=e745]:
+            - link "CC0" [ref=e746]:
+              - /url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+          - term [ref=e747]: Prilagoditev za prikaz
+          - definition [ref=e748]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e749]:
+          - /url: https://commons.wikimedia.org/wiki/File:Family_picnic,_Himeji_Castle_grounds,_Himeji,_2016.jpg
+      - article [ref=e750]:
+        - img "Zdravstvena delavka na transfuzijskem oddelku mariborske bolnišnice" [ref=e751]
+        - heading "Zdravstvena delavka na transfuzijskem oddelku mariborske bolnišnice" [level=2] [ref=e752]
+        - paragraph [ref=e753]: Transfuzijski oddelek mariborske bolnišnice, 1956. Arhivski motiv slovenskega krvodajalstva.
+        - generic [ref=e754]:
+          - term [ref=e755]: Avtor oziroma navedba avtorstva
+          - definition [ref=e756]: Neznan avtor (navedba v izvirnem arhivu)
+          - term [ref=e757]: Licenca oziroma pravni status
+          - definition [ref=e758]:
+            - link "Public domain" [ref=e759]:
+              - /url: https://creativecommons.org/publicdomain/mark/1.0/
+          - term [ref=e760]: Prilagoditev za prikaz
+          - definition [ref=e761]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e762]:
+          - /url: https://commons.wikimedia.org/wiki/File:Mariborska_bolni%C5%A1nica_-_transfuzijski_oddelek_1956.jpg
+      - article [ref=e763]:
+        - img "Udeleženec čistilne akcije zbira odpadke v vrečo" [ref=e764]
+        - heading "Udeleženec čistilne akcije zbira odpadke v vrečo" [level=2] [ref=e765]
+        - paragraph [ref=e766]: Čistilna akcija ob svetovnem dnevu okolja v kraju Jafrood Bala v Iranu, 2025.
+        - generic [ref=e767]:
+          - term [ref=e768]: Avtor oziroma navedba avtorstva
+          - definition [ref=e769]: M.Ghiami/khoobankhabar.ir
+          - term [ref=e770]: Licenca oziroma pravni status
+          - definition [ref=e771]:
+            - link "CC BY 4.0" [ref=e772]:
+              - /url: https://creativecommons.org/licenses/by/4.0
+          - term [ref=e773]: Prilagoditev za prikaz
+          - definition [ref=e774]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e775]:
+          - /url: https://commons.wikimedia.org/wiki/File:Jafrood_Upper_Khammam_Beach_Cleared_of_Garbage_10.jpg
+      - article [ref=e776]:
+        - img "Udeleženci konference o nacistično-sovjetskem paktu" [ref=e777]
+        - heading "Udeleženci konference o nacistično-sovjetskem paktu" [level=2] [ref=e778]
+        - paragraph [ref=e779]: Konferenca ob 80. obletnici nacistično-sovjetskega pakta v Torontu, 2019. Arhivski motiv zgodovinskega spomina.
+        - generic [ref=e780]:
+          - term [ref=e781]: Avtor oziroma navedba avtorstva
+          - definition [ref=e782]: Mykola Swarnyk
+          - term [ref=e783]: Licenca oziroma pravni status
+          - definition [ref=e784]:
+            - link "CC BY-SA 3.0" [ref=e785]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+          - term [ref=e786]: Prilagoditev za prikaz
+          - definition [ref=e787]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e788]:
+          - /url: https://commons.wikimedia.org/wiki/File:Nazi-Soviet_Pact_80_Conference_Toronto_2019.jpg
+      - article [ref=e789]:
+        - img "Stojnica z evropskimi zastavami ob dnevu jezikov" [ref=e790]
+        - heading "Stojnica z evropskimi zastavami ob dnevu jezikov" [level=2] [ref=e791]
+        - paragraph [ref=e792]: Evropski dan jezikov v Sanoku na Poljskem, 26. septembra 2012.
+        - generic [ref=e793]:
+          - term [ref=e794]: Avtor oziroma navedba avtorstva
+          - definition [ref=e795]: Silar
+          - term [ref=e796]: Licenca oziroma pravni status
+          - definition [ref=e797]:
+            - link "CC BY-SA 3.0" [ref=e798]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+          - term [ref=e799]: Prilagoditev za prikaz
+          - definition [ref=e800]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e801]:
+          - /url: https://commons.wikimedia.org/wiki/File:0019_Europ%C3%A4ische_Tag_der_Sprachen_in_Sanok.JPG
+      - article [ref=e802]:
+        - img "Prostovoljec s psom iz zavetišča med sprehodom" [ref=e803]
+        - heading "Prostovoljec s psom iz zavetišča med sprehodom" [level=2] [ref=e804]
+        - paragraph [ref=e805]: Prostovoljsko delo v zavetišču Lese v Vilni, 2026. Motiv skrbi za živali.
+        - generic [ref=e806]:
+          - term [ref=e807]: Avtor oziroma navedba avtorstva
+          - definition [ref=e808]: U.S. Army photo by Sgt. Max Elliott
+          - term [ref=e809]: Licenca oziroma pravni status
+          - definition [ref=e810]:
+            - link "Public domain" [ref=e811]:
+              - /url: https://creativecommons.org/publicdomain/mark/1.0/
+          - term [ref=e812]: Prilagoditev za prikaz
+          - definition [ref=e813]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e814]:
+          - /url: https://commons.wikimedia.org/wiki/File:Military_police_and_Civil_Affairs_Soldiers_volunteer_at_Vilnius_animal_shelter_(9876967).jpg
+      - article [ref=e815]:
+        - img "Otroka se igrata med jesenskim listjem v parku" [ref=e816]
+        - heading "Otroka se igrata med jesenskim listjem v parku" [level=2] [ref=e817]
+        - paragraph [ref=e818]: Otroška igra na Kongresnem trgu v Ljubljani, 2013. Motiv ob tednu otroka.
+        - generic [ref=e819]:
+          - term [ref=e820]: Avtor oziroma navedba avtorstva
+          - definition [ref=e821]: Vladimir Yaitskiy from Kyiv, Ukraine
+          - term [ref=e822]: Licenca oziroma pravni status
+          - definition [ref=e823]:
+            - link "CC BY-SA 2.0" [ref=e824]:
+              - /url: https://creativecommons.org/licenses/by-sa/2.0
+          - term [ref=e825]: Prilagoditev za prikaz
+          - definition [ref=e826]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e827]:
+          - /url: https://commons.wikimedia.org/wiki/File:Children_at_Kongresni_trg,_Congress_Square_(11330243433).jpg
+      - article [ref=e828]:
+        - img "Izrezljana buča z obrazom" [ref=e829]
+        - heading "Izrezljana buča z obrazom" [level=2] [ref=e830]
+        - paragraph [ref=e831]: Izrezljana buča na festivalu buč v Ludwigsburgu v Nemčiji, 2023.
+        - generic [ref=e832]:
+          - term [ref=e833]: Avtor oziroma navedba avtorstva
+          - definition [ref=e834]: Llez
+          - term [ref=e835]: Licenca oziroma pravni status
+          - definition [ref=e836]:
+            - link "CC BY-SA 3.0" [ref=e837]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+          - term [ref=e838]: Prilagoditev za prikaz
+          - definition [ref=e839]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e840]:
+          - /url: https://commons.wikimedia.org/wiki/File:Carved_pumpkin_-_Ludwigsburg_01.jpg
+      - article [ref=e841]:
+        - img "Spominske sveče ob oltarju cerkve" [ref=e842]
+        - heading "Spominske sveče ob oltarju cerkve" [level=2] [ref=e843]
+        - paragraph [ref=e844]: Sveče ob spominu vseh vernih rajnih v cerkvi sv. Antona v Casperju v ZDA, 2. novembra 2022.
+        - generic [ref=e845]:
+          - term [ref=e846]: Avtor oziroma navedba avtorstva
+          - definition [ref=e847]: Twillisjr
+          - term [ref=e848]: Licenca oziroma pravni status
+          - definition [ref=e849]:
+            - link "CC BY-SA 4.0" [ref=e850]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+          - term [ref=e851]: Prilagoditev za prikaz
+          - definition [ref=e852]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e853]:
+          - /url: https://commons.wikimedia.org/wiki/File:Saint_Anthony%E2%80%99s_Church_Casper_Wyoming_All_Souls_Day_Candles.jpg
+      - article [ref=e854]:
+        - img "Otroka se sporazumevata s kretnjami" [ref=e855]
+        - heading "Otroka se sporazumevata s kretnjami" [level=2] [ref=e856]
+        - paragraph [ref=e857]: Sporazumevanje s kretnjami. Splošni tematski motiv; fotografija ne prikazuje učnega primera slovenskega znakovnega jezika.
+        - generic [ref=e858]:
+          - term [ref=e859]: Avtor oziroma navedba avtorstva
+          - definition [ref=e860]: Alex Proimos from Sydney, Australia
+          - term [ref=e861]: Licenca oziroma pravni status
+          - definition [ref=e862]:
+            - link "CC BY 2.0" [ref=e863]:
+              - /url: https://creativecommons.org/licenses/by/2.0
+          - term [ref=e864]: Prilagoditev za prikaz
+          - definition [ref=e865]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e866]:
+          - /url: https://commons.wikimedia.org/wiki/File:Sign_Language_(4234921250).jpg
+      - article [ref=e867]:
+        - img "Otrok ob odprtju razstave ob svetovnem dnevu otrok" [ref=e868]
+        - heading "Otrok ob odprtju razstave ob svetovnem dnevu otrok" [level=2] [ref=e869]
+        - paragraph [ref=e870]: Odprtje likovne razstave ob svetovnem dnevu otrok na Maldivih, 2023.
+        - generic [ref=e871]:
+          - term [ref=e872]: Avtor oziroma navedba avtorstva
+          - definition [ref=e873]: The President's Office, Maldives
+          - term [ref=e874]: Licenca oziroma pravni status
+          - definition [ref=e875]:
+            - link "CC BY 4.0" [ref=e876]:
+              - /url: https://creativecommons.org/licenses/by/4.0
+          - term [ref=e877]: Prilagoditev za prikaz
+          - definition [ref=e878]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e879]:
+          - /url: https://commons.wikimedia.org/wiki/File:Inauguration_of_the_World_Children%27s_Day_Art_Exhibition_in_Maldives_(4).jpg
+      - article [ref=e880]:
+        - img "Starodobni avtomobil na razstavi Tehniškega muzeja Slovenije" [ref=e881]
+        - heading "Starodobni avtomobil na razstavi Tehniškega muzeja Slovenije" [level=2] [ref=e882]
+        - paragraph [ref=e883]: Razstavni predmet v Tehniškem muzeju Slovenije v Bistri, 2025. Motiv muzejskega obiska.
+        - generic [ref=e884]:
+          - term [ref=e885]: Avtor oziroma navedba avtorstva
+          - definition [ref=e886]: Szilas
+          - term [ref=e887]: Licenca oziroma pravni status
+          - definition [ref=e888]:
+            - link "CC BY 4.0" [ref=e889]:
+              - /url: https://creativecommons.org/licenses/by/4.0
+          - term [ref=e890]: Prilagoditev za prikaz
+          - definition [ref=e891]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e892]:
+          - /url: https://commons.wikimedia.org/wiki/File:Technical_Museum_of_Slovenia_-_car_exhibition_09.jpg
+      - article [ref=e893]:
+        - img "Romarji celjske škofije pri bogoslužju na Brezjah" [ref=e894]
+        - heading "Romarji celjske škofije pri bogoslužju na Brezjah" [level=2] [ref=e895]
+        - paragraph [ref=e896]: Romarji celjske škofije na Brezjah, 7. julija 2007. Arhivski motiv romanja k Mariji.
+        - generic [ref=e897]:
+          - term [ref=e898]: Avtor oziroma navedba avtorstva
+          - definition [ref=e899]: Janezdrilc
+          - term [ref=e900]: Licenca oziroma pravni status
+          - definition [ref=e901]:
+            - link "CC0" [ref=e902]:
+              - /url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+          - term [ref=e903]: Prilagoditev za prikaz
+          - definition [ref=e904]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e905]:
+          - /url: https://commons.wikimedia.org/wiki/File:Pilgrimage_of_Diocese_of_Celje_to_Brezje_05.JPG
+      - article [ref=e906]:
+        - img "Glasbeniki na odru državne proslave ob prekmurskem prazniku" [ref=e907]
+        - heading "Glasbeniki na odru državne proslave ob prekmurskem prazniku" [level=2] [ref=e908]
+        - paragraph [ref=e909]: Kulturni program državne proslave ob prazniku združitve prekmurskih Slovencev z matičnim narodom, 2024.
+        - generic [ref=e910]:
+          - term [ref=e911]: Avtor oziroma navedba avtorstva
+          - definition [ref=e912]: gov.si
+          - term [ref=e913]: Licenca oziroma pravni status
+          - definition [ref=e914]:
+            - link "Public domain" [ref=e915]:
+              - /url: https://creativecommons.org/publicdomain/mark/1.0/
+          - term [ref=e916]: Prilagoditev za prikaz
+          - definition [ref=e917]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e918]:
+          - /url: https://commons.wikimedia.org/wiki/File:Dr%C5%BEavna_proslava_ob_prazniku_zdru%C5%BEitve_prekmurskih_Slovencev_z_mati%C4%8Dnim_narodom_8.8.2024_-_12.jpg
+      - article [ref=e919]:
+        - img "Oder in občinstvo na državni slovesnosti ob vrnitvi Primorske" [ref=e920]
+        - heading "Oder in občinstvo na državni slovesnosti ob vrnitvi Primorske" [level=2] [ref=e921]
+        - paragraph [ref=e922]: Slovesnost ob 75. obletnici vrnitve Primorske k matični domovini v Portorožu, 2022.
+        - generic [ref=e923]:
+          - term [ref=e924]: Avtor oziroma navedba avtorstva
+          - definition [ref=e925]: Daniel Novakovič / STA
+          - term [ref=e926]: Licenca oziroma pravni status
+          - definition [ref=e927]:
+            - link "Public domain" [ref=e928]:
+              - /url: https://creativecommons.org/publicdomain/mark/1.0/
+          - term [ref=e929]: Prilagoditev za prikaz
+          - definition [ref=e930]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e931]:
+          - /url: https://commons.wikimedia.org/wiki/File:Osrednja_dr%C5%BEavna_slovesnost_ob_75._obletnici_vrnitve_Primorske_k_mati%C4%8Dni_domovini_(52358220669).jpg
+      - article [ref=e932]:
+        - img "Laborantka pri delu s stekleno laboratorijsko opremo" [ref=e933]
+        - heading "Laborantka pri delu s stekleno laboratorijsko opremo" [level=2] [ref=e934]
+        - paragraph [ref=e935]: Laboratorij podjetja Aero, 1962. Arhivski pogled na raziskovalno delo v Sloveniji.
+        - generic [ref=e936]:
+          - term [ref=e937]: Avtor oziroma navedba avtorstva
+          - definition [ref=e938]: Danilo Škofič
+          - term [ref=e939]: Licenca oziroma pravni status
+          - definition [ref=e940]:
+            - link "Public domain" [ref=e941]:
+              - /url: https://creativecommons.org/publicdomain/mark/1.0/
+          - term [ref=e942]: Prilagoditev za prikaz
+          - definition [ref=e943]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e944]:
+          - /url: https://commons.wikimedia.org/wiki/File:Laboratorij_podjetja_Aero_1962.jpg
+      - article [ref=e945]:
+        - img "Leseni čebelnjak Antona Janše z vrstami panjev" [ref=e946]
+        - heading "Leseni čebelnjak Antona Janše z vrstami panjev" [level=2] [ref=e947]
+        - paragraph [ref=e948]: Rekonstruirani Janšev čebelnjak na Breznici. Motiv slovenske čebelarske dediščine.
+        - generic [ref=e949]:
+          - term [ref=e950]: Avtor oziroma navedba avtorstva
+          - definition [ref=e951]: Pavle58
+          - term [ref=e952]: Licenca oziroma pravni status
+          - definition [ref=e953]:
+            - link "CC BY-SA 4.0" [ref=e954]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+          - term [ref=e955]: Prilagoditev za prikaz
+          - definition [ref=e956]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e957]:
+          - /url: https://commons.wikimedia.org/wiki/File:Jan%C5%A1ev_%C4%8Debelnjak_01.jpg
+      - article [ref=e958]:
+        - img "Pečena gos z rdečim zeljem in prilogo na krožniku" [ref=e959]
+        - heading "Pečena gos z rdečim zeljem in prilogo na krožniku" [level=2] [ref=e960]
+        - paragraph [ref=e961]: Pečena gos z rdečim zeljem. Tematski motiv martinove pojedine.
+        - generic [ref=e962]:
+          - term [ref=e963]: Avtor oziroma navedba avtorstva
+          - definition [ref=e964]: Romi
+          - term [ref=e965]: Licenca oziroma pravni status
+          - definition [ref=e966]:
+            - link "CC0" [ref=e967]:
+              - /url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+          - term [ref=e968]: Prilagoditev za prikaz
+          - definition [ref=e969]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e970]:
+          - /url: https://commons.wikimedia.org/wiki/File:Roasted_goose.jpg
+      - article [ref=e971]:
+        - img "Naslovna stran Dalmatinovega prevoda Biblije" [ref=e972]
+        - heading "Naslovna stran Dalmatinovega prevoda Biblije" [level=2] [ref=e973]
+        - paragraph [ref=e974]: Dalmatinova Biblija iz leta 1584. Reprodukcija pomembnega dela slovenske reformacije.
+        - generic [ref=e975]:
+          - term [ref=e976]: Avtor oziroma navedba avtorstva
+          - definition [ref=e977]: Jurij Dalmatin
+          - term [ref=e978]: Licenca oziroma pravni status
+          - definition [ref=e979]:
+            - link "Public domain" [ref=e980]:
+              - /url: https://creativecommons.org/publicdomain/mark/1.0/
+          - term [ref=e981]: Prilagoditev za prikaz
+          - definition [ref=e982]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e983]:
+          - /url: https://commons.wikimedia.org/wiki/File:Dalmatinova_biblija_barva.jpg
+      - article [ref=e984]:
+        - img "Kruh z maslom in medom na belem krožniku" [ref=e985]
+        - heading "Kruh z maslom in medom na belem krožniku" [level=2] [ref=e986]
+        - paragraph [ref=e987]: Kruh z maslom in medom. Tematski motiv sestavin tradicionalnega slovenskega zajtrka.
+        - generic [ref=e988]:
+          - term [ref=e989]: Avtor oziroma navedba avtorstva
+          - definition [ref=e990]: Liat Portal / Foodie Disorder (HaJunkiyada)
+          - term [ref=e991]: Licenca oziroma pravni status
+          - definition [ref=e992]:
+            - link "CC BY-SA 4.0" [ref=e993]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+          - term [ref=e994]: Prilagoditev za prikaz
+          - definition [ref=e995]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e996]:
+          - /url: https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Bread_butter_and_honey.jpg
+      - article [ref=e997]:
+        - img "Učitelj in učenci med poukom v Črnomlju" [ref=e998]
+        - heading "Učitelj in učenci med poukom v Črnomlju" [level=2] [ref=e999]
+        - paragraph [ref=e1000]: Pouk v osnovni šoli v Črnomlju, 1945. Arhivska fotografija slovenskega šolstva.
+        - generic [ref=e1001]:
+          - term [ref=e1002]: Avtor oziroma navedba avtorstva
+          - definition [ref=e1003]: Neznan avtor (navedba v izvirnem arhivu)
+          - term [ref=e1004]: Licenca oziroma pravni status
+          - definition [ref=e1005]:
+            - link "Public domain" [ref=e1006]:
+              - /url: https://creativecommons.org/publicdomain/mark/1.0/
+          - term [ref=e1007]: Prilagoditev za prikaz
+          - definition [ref=e1008]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1009]:
+          - /url: https://commons.wikimedia.org/wiki/File:Pouk_v_osnovni_%C5%A1oli_v_%C4%8Crnomlju.jpg
+      - article [ref=e1010]:
+        - img "Slovenska zastava plapola na drogu" [ref=e1011]
+        - heading "Slovenska zastava plapola na drogu" [level=2] [ref=e1012]
+        - paragraph [ref=e1013]: Slovenska zastava – simbol državne samostojnosti. Tematska fotografija iz leta 2017.
+        - generic [ref=e1014]:
+          - term [ref=e1015]: Avtor oziroma navedba avtorstva
+          - definition [ref=e1016]: Balkan's Photos
+          - term [ref=e1017]: Licenca oziroma pravni status
+          - definition [ref=e1018]:
+            - link "CC BY 2.0" [ref=e1019]:
+              - /url: https://creativecommons.org/licenses/by/2.0
+          - term [ref=e1020]: Prilagoditev za prikaz
+          - definition [ref=e1021]: Pomanjšanje in pretvorba v WebP; prikaz v okvirju je lahko obrezan. Brez generativnih sprememb vsebine.
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1022]:
+          - /url: https://commons.wikimedia.org/wiki/File:Flag_of_Slovenia_(40015536335).jpg
+    - heading "Fotografije slovenskih mest" [level=2] [ref=e1023]
+    - generic [ref=e1024]:
+      - heading "Podobe 69 slovenskih mest" [level=2] [ref=e1025]
+      - paragraph [ref=e1026]:
+        - text: Seznam zajema vseh 69 naselij s statusom mesta po
+        - link "uradnem seznamu GOV.SI" [ref=e1027]:
+          - /url: https://www.gov.si/teme/mesta-in-druga-urbana-naselja/
+        - text: . Fotografije prikazujejo mesto ali prepoznaven motiv v njem; niso posnetki v živo. Ob izbiri drugega mesta se zamenjajo fotografija, opis in vremenska napoved. Zemljepisne koordinate so povzete po Wikipediji oziroma Wikidata (CC0).
+      - paragraph [ref=e1028]: Fotografije uporabljamo po spodaj navedenih licencah. Izvirniki so povezani pri vsaki sliki. Spletne kopije so pomanjšane in stisnjene v AVIF oziroma WebP. Za kartico je prikaz prilagojen velikosti zaslona in lahko obrezan z robovi okvira; vsebina ni generirana z umetno inteligenco. Vsaka fotografija ohrani navedeno licenco, vključno z določilom deljenja pod enakimi pogoji, kjer to velja.
+      - heading "Vremenski podatki" [level=2] [ref=e1029]
+      - paragraph [ref=e1030]:
+        - text: "Vir:"
+        - link "MET Norway" [ref=e1031]:
+          - /url: https://api.met.no/weatherapi/locationforecast/2.0/
+        - text: ", licenca"
+        - link "CC BY 4.0" [ref=e1032]:
+          - /url: https://creativecommons.org/licenses/by/4.0/
+        - text: . Prikazujemo redno posodobljeno modelno napoved za izbrano mesto, ne meritev vremenske postaje. Enote in opise prilagodimo slovenščini, čase pa časovnemu pasu Europe/Ljubljana. Ura nastanka napovedi je vidna v kartici. Ob izpadu vira je prikazano opozorilo.
+      - paragraph [ref=e1033]: Izbira mesta se shrani samo v vašem brskalniku. Vremenski vir prejme zahtevo našega strežnika za javne koordinate mesta, ne vaše natančne lokacije ali vašega naslova IP.
+    - generic [ref=e1034]:
+      - article [ref=e1035]:
+        - img "Ajdovščina – fotografija mesta" [ref=e1037]
+        - heading "Ajdovščina" [level=2] [ref=e1038]
+        - generic [ref=e1039]:
+          - term [ref=e1040]: Avtor
+          - definition [ref=e1041]: Doremo
+          - term [ref=e1042]: Licenca
+          - definition [ref=e1043]:
+            - link "CC BY-SA 4.0" [ref=e1044]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1045]:
+          - /url: https://commons.wikimedia.org/wiki/File:Ajdov%C5%A1%C4%8Dina_Slovenia_2.jpg
+      - article [ref=e1046]:
+        - img "Bled – fotografija mesta" [ref=e1048]
+        - heading "Bled" [level=2] [ref=e1049]
+        - generic [ref=e1050]:
+          - term [ref=e1051]: Avtor
+          - definition [ref=e1052]: Canadianhockey91
+          - term [ref=e1053]: Licenca
+          - definition [ref=e1054]:
+            - link "CC BY-SA 3.0" [ref=e1055]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1056]:
+          - /url: https://commons.wikimedia.org/wiki/File:Lake_Bled_from_the_Mountain.jpg
+      - article [ref=e1057]:
+        - img "Bovec – fotografija mesta" [ref=e1059]
+        - heading "Bovec" [level=2] [ref=e1060]
+        - generic [ref=e1061]:
+          - term [ref=e1062]: Avtor
+          - definition [ref=e1063]: Damjanleban at Slovenian Wikipedia
+          - term [ref=e1064]: Licenca
+          - definition [ref=e1065]:
+            - link "CC BY-SA 2.5" [ref=e1066]:
+              - /url: https://creativecommons.org/licenses/by-sa/2.5
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1067]:
+          - /url: https://commons.wikimedia.org/wiki/File:Bovec_aerial_view.jpg
+      - article [ref=e1068]:
+        - img "Brežice – fotografija mesta" [ref=e1070]
+        - heading "Brežice" [level=2] [ref=e1071]
+        - generic [ref=e1072]:
+          - term [ref=e1073]: Avtor
+          - definition [ref=e1074]: Matjaž Mirt from Krško, Slovenia
+          - term [ref=e1075]: Licenca
+          - definition [ref=e1076]:
+            - link "CC BY 2.0" [ref=e1077]:
+              - /url: https://creativecommons.org/licenses/by/2.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1078]:
+          - /url: https://commons.wikimedia.org/wiki/File:Bre%C5%BEice_(51380139659).jpg
+      - article [ref=e1079]:
+        - img "Celje – fotografija mesta" [ref=e1081]
+        - heading "Celje" [level=2] [ref=e1082]
+        - generic [ref=e1083]:
+          - term [ref=e1084]: Avtor
+          - definition [ref=e1085]: Reisevogel
+          - term [ref=e1086]: Licenca
+          - definition [ref=e1087]:
+            - link "CC BY-SA 4.0" [ref=e1088]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1089]:
+          - /url: https://commons.wikimedia.org/wiki/File:Celjski_dom_in_Celje.jpg
+      - article [ref=e1090]:
+        - img "Cerknica – fotografija mesta" [ref=e1092]
+        - heading "Cerknica" [level=2] [ref=e1093]
+        - generic [ref=e1094]:
+          - term [ref=e1095]: Avtor
+          - definition [ref=e1096]: No machine-readable author provided. Žiga assumed (based on copyright claims).
+          - term [ref=e1097]: Licenca
+          - definition [ref=e1098]: Public domain
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1099]:
+          - /url: https://commons.wikimedia.org/wiki/File:Cerknica1.jpg
+      - article [ref=e1100]:
+        - img "Črnomelj – fotografija mesta" [ref=e1102]
+        - heading "Črnomelj" [level=2] [ref=e1103]
+        - generic [ref=e1104]:
+          - term [ref=e1105]: Avtor
+          - definition [ref=e1106]: Občina Črnomelj
+          - term [ref=e1107]: Licenca
+          - definition [ref=e1108]:
+            - link "CC BY-SA 4.0" [ref=e1109]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1110]:
+          - /url: https://commons.wikimedia.org/wiki/File:Ob%C4%8Dina_%C4%8Crnomelj.jpg
+      - article [ref=e1111]:
+        - img "Domžale – fotografija mesta" [ref=e1113]
+        - heading "Domžale" [level=2] [ref=e1114]
+        - generic [ref=e1115]:
+          - term [ref=e1116]: Avtor
+          - definition [ref=e1117]: Doremo
+          - term [ref=e1118]: Licenca
+          - definition [ref=e1119]:
+            - link "CC BY 4.0" [ref=e1120]:
+              - /url: https://creativecommons.org/licenses/by/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1121]:
+          - /url: https://commons.wikimedia.org/wiki/File:Spodnje_Dom%C5%BEale_Slovenia_1.jpg
+      - article [ref=e1122]:
+        - img "Dravograd – fotografija mesta" [ref=e1124]
+        - heading "Dravograd" [level=2] [ref=e1125]
+        - generic [ref=e1126]:
+          - term [ref=e1127]: Avtor
+          - definition [ref=e1128]: Besednjak at Dutch Wikipedia
+          - term [ref=e1129]: Licenca
+          - definition [ref=e1130]:
+            - link "CC BY-SA 3.0" [ref=e1131]:
+              - /url: http://creativecommons.org/licenses/by-sa/3.0/
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1132]:
+          - /url: https://commons.wikimedia.org/wiki/File:Dravograd2001c.jpg
+      - article [ref=e1133]:
+        - img "Gornja Radgona – fotografija mesta" [ref=e1135]
+        - heading "Gornja Radgona" [level=2] [ref=e1136]
+        - generic [ref=e1137]:
+          - term [ref=e1138]: Avtor
+          - definition [ref=e1139]: Karl Gruber
+          - term [ref=e1140]: Licenca
+          - definition [ref=e1141]:
+            - link "CC BY-SA 3.0 at" [ref=e1142]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0/at/deed.en
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1143]:
+          - /url: https://commons.wikimedia.org/wiki/File:Gornja_Radgona_7394.JPG
+      - article [ref=e1144]:
+        - img "Grosuplje – fotografija mesta" [ref=e1146]
+        - heading "Grosuplje" [level=2] [ref=e1147]
+        - generic [ref=e1148]:
+          - term [ref=e1149]: Avtor
+          - definition [ref=e1150]: Eleassar
+          - term [ref=e1151]: Licenca
+          - definition [ref=e1152]:
+            - link "CC BY-SA 3.0" [ref=e1153]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1154]:
+          - /url: https://commons.wikimedia.org/wiki/File:Grosuplje_-_cerkev_sv._Mihaela_(stara_cerkev).jpg
+      - article [ref=e1155]:
+        - img "Hrastnik – fotografija mesta" [ref=e1157]
+        - heading "Hrastnik" [level=2] [ref=e1158]
+        - generic [ref=e1159]:
+          - term [ref=e1160]: Avtor
+          - definition [ref=e1161]: Ajznponar
+          - term [ref=e1162]: Licenca
+          - definition [ref=e1163]:
+            - link "CC BY-SA 3.0" [ref=e1164]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1165]:
+          - /url: https://commons.wikimedia.org/wiki/File:Hrastnik-train_station-front.jpg
+      - article [ref=e1166]:
+        - img "Idrija – fotografija mesta" [ref=e1168]
+        - heading "Idrija" [level=2] [ref=e1169]
+        - generic [ref=e1170]:
+          - term [ref=e1171]: Avtor
+          - definition [ref=e1172]: Luka Peternel
+          - term [ref=e1173]: Licenca
+          - definition [ref=e1174]:
+            - link "CC BY-SA 4.0" [ref=e1175]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1176]:
+          - /url: https://commons.wikimedia.org/wiki/File:Idrija-view-2025-Luka-Peternel.jpg
+      - article [ref=e1177]:
+        - img "Ilirska Bistrica – fotografija mesta" [ref=e1179]
+        - heading "Ilirska Bistrica" [level=2] [ref=e1180]
+        - generic [ref=e1181]:
+          - term [ref=e1182]: Avtor
+          - definition [ref=e1183]: Stemby71
+          - term [ref=e1184]: Licenca
+          - definition [ref=e1185]:
+            - link "CC BY-SA 4.0" [ref=e1186]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1187]:
+          - /url: https://commons.wikimedia.org/wiki/File:Ilirska_Bistrica.jpg
+      - article [ref=e1188]:
+        - img "Izola – fotografija mesta" [ref=e1190]
+        - heading "Izola" [level=2] [ref=e1191]
+        - generic [ref=e1192]:
+          - term [ref=e1193]: Avtor
+          - definition [ref=e1194]: Petar Milošević
+          - term [ref=e1195]: Licenca
+          - definition [ref=e1196]:
+            - link "CC BY-SA 4.0" [ref=e1197]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1198]:
+          - /url: https://commons.wikimedia.org/wiki/File:Izola,_mestno_jedro_z_marino.jpg
+      - article [ref=e1199]:
+        - img "Jesenice – fotografija mesta" [ref=e1201]
+        - heading "Jesenice" [level=2] [ref=e1202]
+        - generic [ref=e1203]:
+          - term [ref=e1204]: Avtor
+          - definition [ref=e1205]: Dreamy Pixel
+          - term [ref=e1206]: Licenca
+          - definition [ref=e1207]:
+            - link "CC BY 4.0" [ref=e1208]:
+              - /url: https://creativecommons.org/licenses/by/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1209]:
+          - /url: https://commons.wikimedia.org/wiki/File:Sunset_over_my_home_town_Jesenice.jpg
+      - article [ref=e1210]:
+        - img "Kamnik – fotografija mesta" [ref=e1212]
+        - heading "Kamnik" [level=2] [ref=e1213]
+        - generic [ref=e1214]:
+          - term [ref=e1215]: Avtor
+          - definition [ref=e1216]: Ramón from Llanera, España
+          - term [ref=e1217]: Licenca
+          - definition [ref=e1218]:
+            - link "CC BY-SA 2.0" [ref=e1219]:
+              - /url: https://creativecommons.org/licenses/by-sa/2.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1220]:
+          - /url: https://commons.wikimedia.org/wiki/File:Kamnik_002_(6805804681).jpg
+      - article [ref=e1221]:
+        - img "Kočevje – fotografija mesta" [ref=e1223]
+        - heading "Kočevje" [level=2] [ref=e1224]
+        - generic [ref=e1225]:
+          - term [ref=e1226]: Avtor
+          - definition [ref=e1227]: Sl-Ziga
+          - term [ref=e1228]: Licenca
+          - definition [ref=e1229]:
+            - link "CC BY-SA 3.0" [ref=e1230]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1231]:
+          - /url: https://commons.wikimedia.org/wiki/File:Rinza1-Kocevje.JPG
+      - article [ref=e1232]:
+        - img "Koper – fotografija mesta" [ref=e1234]
+        - heading "Koper" [level=2] [ref=e1235]
+        - generic [ref=e1236]:
+          - term [ref=e1237]: Avtor
+          - definition [ref=e1238]: TICKoper
+          - term [ref=e1239]: Licenca
+          - definition [ref=e1240]:
+            - link "CC BY-SA 4.0" [ref=e1241]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1242]:
+          - /url: https://commons.wikimedia.org/wiki/File:Koper,_mesto.jpg
+      - article [ref=e1243]:
+        - img "Kostanjevica na Krki – fotografija mesta" [ref=e1245]
+        - heading "Kostanjevica na Krki" [level=2] [ref=e1246]
+        - generic [ref=e1247]:
+          - term [ref=e1248]: Avtor
+          - definition [ref=e1249]: No machine-readable author provided. Žiga assumed (based on copyright claims).
+          - term [ref=e1250]: Licenca
+          - definition [ref=e1251]: Public domain
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1252]:
+          - /url: https://commons.wikimedia.org/wiki/File:KostanjevicaNaKrki-1.JPG
+      - article [ref=e1253]:
+        - img "Kranj – fotografija mesta" [ref=e1255]
+        - heading "Kranj" [level=2] [ref=e1256]
+        - generic [ref=e1257]:
+          - term [ref=e1258]: Avtor
+          - definition [ref=e1259]: Andraž Muljavec, Fotomorgana
+          - term [ref=e1260]: Licenca
+          - definition [ref=e1261]:
+            - link "CC BY 3.0" [ref=e1262]:
+              - /url: https://creativecommons.org/licenses/by/3.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1263]:
+          - /url: https://commons.wikimedia.org/wiki/File:Kranj_veduta_Kranja_Andra%C5%BE_Muljavec_Fotomorgana.jpg
+      - article [ref=e1264]:
+        - img "Krško – fotografija mesta" [ref=e1266]
+        - heading "Krško" [level=2] [ref=e1267]
+        - generic [ref=e1268]:
+          - term [ref=e1269]: Avtor
+          - definition [ref=e1270]: Darja Gramc Kavčič
+          - term [ref=e1271]: Licenca
+          - definition [ref=e1272]:
+            - link "CC BY-SA 4.0" [ref=e1273]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1274]:
+          - /url: https://commons.wikimedia.org/wiki/File:Darja_Gramc_Kav%C4%8Di%C4%8D_-_Panorama_Videm-Kr%C5%A1ko.jpg
+      - article [ref=e1275]:
+        - img "Laško – fotografija mesta" [ref=e1277]
+        - heading "Laško" [level=2] [ref=e1278]
+        - generic [ref=e1279]:
+          - term [ref=e1280]: Avtor
+          - definition [ref=e1281]: antonio from Trieste, Italy
+          - term [ref=e1282]: Licenca
+          - definition [ref=e1283]:
+            - link "CC BY 2.0" [ref=e1284]:
+              - /url: https://creativecommons.org/licenses/by/2.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1285]:
+          - /url: https://commons.wikimedia.org/wiki/File:-5_PARCO_LASKO_10_-8-2019_(48534227941).jpg
+      - article [ref=e1286]:
+        - img "Lenart v Slovenskih goricah – fotografija mesta" [ref=e1288]
+        - heading "Lenart v Slovenskih goricah" [level=2] [ref=e1289]
+        - generic [ref=e1290]:
+          - term [ref=e1291]: Avtor
+          - definition [ref=e1292]: T@Di
+          - term [ref=e1293]: Licenca
+          - definition [ref=e1294]:
+            - link "CC BY-SA 3.0" [ref=e1295]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1296]:
+          - /url: https://commons.wikimedia.org/wiki/File:CerkevSvLenartaLenart1.jpg
+      - article [ref=e1297]:
+        - img "Lendava – fotografija mesta" [ref=e1299]
+        - heading "Lendava" [level=2] [ref=e1300]
+        - generic [ref=e1301]:
+          - term [ref=e1302]: Avtor
+          - definition [ref=e1303]: Pierre Bona
+          - term [ref=e1304]: Licenca
+          - definition [ref=e1305]:
+            - link "CC BY-SA 3.0" [ref=e1306]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1307]:
+          - /url: https://commons.wikimedia.org/wiki/File:Lendava-Le_chateau.jpg
+      - article [ref=e1308]:
+        - img "Litija – fotografija mesta" [ref=e1310]
+        - heading "Litija" [level=2] [ref=e1311]
+        - generic [ref=e1312]:
+          - term [ref=e1313]: Avtor
+          - definition [ref=e1314]: Peter Jovanovič
+          - term [ref=e1315]: Licenca
+          - definition [ref=e1316]:
+            - link "CC BY-SA 4.0" [ref=e1317]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1318]:
+          - /url: https://commons.wikimedia.org/wiki/File:Litija_iz_zraka.jpg
+      - article [ref=e1319]:
+        - img "Ljubljana – fotografija mesta" [ref=e1321]
+        - heading "Ljubljana" [level=2] [ref=e1322]
+        - generic [ref=e1323]:
+          - term [ref=e1324]: Avtor
+          - definition [ref=e1325]: Andrew Milligan Sumo
+          - term [ref=e1326]: Licenca
+          - definition [ref=e1327]:
+            - link "CC BY 2.0" [ref=e1328]:
+              - /url: https://creativecommons.org/licenses/by/2.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1329]:
+          - /url: https://commons.wikimedia.org/wiki/File:Ljubljana_Old_Town,_Slovenia_(Old_Camera)_(33286165680).jpg
+      - article [ref=e1330]:
+        - img "Ljutomer – fotografija mesta" [ref=e1332]
+        - heading "Ljutomer" [level=2] [ref=e1333]
+        - generic [ref=e1334]:
+          - term [ref=e1335]: Avtor
+          - definition [ref=e1336]: BikeMike
+          - term [ref=e1337]: Licenca
+          - definition [ref=e1338]:
+            - link "CC0" [ref=e1339]:
+              - /url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1340]:
+          - /url: https://commons.wikimedia.org/wiki/File:20100819-Ljutomer-Hauptplatz-Slovenija.jpg
+      - article [ref=e1341]:
+        - img "Logatec – fotografija mesta" [ref=e1343]
+        - heading "Logatec" [level=2] [ref=e1344]
+        - generic [ref=e1345]:
+          - term [ref=e1346]: Avtor
+          - definition [ref=e1347]: Andrejj
+          - term [ref=e1348]: Licenca
+          - definition [ref=e1349]:
+            - link "CC BY-SA 4.0" [ref=e1350]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1351]:
+          - /url: https://commons.wikimedia.org/wiki/File:Logatec_from_Sekirica.jpg
+      - article [ref=e1352]:
+        - img "Maribor – fotografija mesta" [ref=e1354]
+        - heading "Maribor" [level=2] [ref=e1355]
+        - generic [ref=e1356]:
+          - term [ref=e1357]: Avtor
+          - definition [ref=e1358]: Vlada Republike Slovenije
+          - term [ref=e1359]: Licenca
+          - definition [ref=e1360]: Public domain
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1361]:
+          - /url: https://commons.wikimedia.org/wiki/File:Mariborski_Glavni_trg.jpg
+      - article [ref=e1362]:
+        - img "Medvode – fotografija mesta" [ref=e1364]
+        - heading "Medvode" [level=2] [ref=e1365]
+        - generic [ref=e1366]:
+          - term [ref=e1367]: Avtor
+          - definition [ref=e1368]: Doremo
+          - term [ref=e1369]: Licenca
+          - definition [ref=e1370]:
+            - link "CC BY-SA 4.0" [ref=e1371]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1372]:
+          - /url: https://commons.wikimedia.org/wiki/File:Preska_Medvode_Slovenia_2.jpg
+      - article [ref=e1373]:
+        - img "Mengeš – fotografija mesta" [ref=e1375]
+        - heading "Mengeš" [level=2] [ref=e1376]
+        - generic [ref=e1377]:
+          - term [ref=e1378]: Avtor
+          - definition [ref=e1379]: Doremo
+          - term [ref=e1380]: Licenca
+          - definition [ref=e1381]:
+            - link "CC BY-SA 4.0" [ref=e1382]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1383]:
+          - /url: https://commons.wikimedia.org/wiki/File:Menges_Slovenia_-_church.jpg
+      - article [ref=e1384]:
+        - img "Metlika – fotografija mesta" [ref=e1386]
+        - heading "Metlika" [level=2] [ref=e1387]
+        - generic [ref=e1388]:
+          - term [ref=e1389]: Avtor
+          - definition [ref=e1390]: Uroš Novina from Semič, Slovenia
+          - term [ref=e1391]: Licenca
+          - definition [ref=e1392]:
+            - link "CC BY 2.0" [ref=e1393]:
+              - /url: https://creativecommons.org/licenses/by/2.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1394]:
+          - /url: https://commons.wikimedia.org/wiki/File:Metlika_in_Bela_krajina_(30395562187).jpg
+      - article [ref=e1395]:
+        - img "Mežica – fotografija mesta" [ref=e1397]
+        - heading "Mežica" [level=2] [ref=e1398]
+        - generic [ref=e1399]:
+          - term [ref=e1400]: Avtor
+          - definition [ref=e1401]: Savinjc
+          - term [ref=e1402]: Licenca
+          - definition [ref=e1403]:
+            - link "CC BY-SA 4.0" [ref=e1404]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1405]:
+          - /url: https://commons.wikimedia.org/wiki/File:Meza-mezica.JPG
+      - article [ref=e1406]:
+        - img "Murska Sobota – fotografija mesta" [ref=e1408]
+        - heading "Murska Sobota" [level=2] [ref=e1409]
+        - generic [ref=e1410]:
+          - term [ref=e1411]: Avtor
+          - definition [ref=e1412]: Sl-Ziga
+          - term [ref=e1413]: Licenca
+          - definition [ref=e1414]: Public domain
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1415]:
+          - /url: https://commons.wikimedia.org/wiki/File:MurskaSobota1.jpg
+      - article [ref=e1416]:
+        - img "Nova Gorica – fotografija mesta" [ref=e1418]
+        - heading "Nova Gorica" [level=2] [ref=e1419]
+        - generic [ref=e1420]:
+          - term [ref=e1421]: Avtor
+          - definition [ref=e1422]: Eleassar
+          - term [ref=e1423]: Licenca
+          - definition [ref=e1424]:
+            - link "CC BY-SA 4.0" [ref=e1425]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1426]:
+          - /url: https://commons.wikimedia.org/wiki/File:Nova_Gorica.jpg
+      - article [ref=e1427]:
+        - img "Novo mesto – fotografija mesta" [ref=e1429]
+        - heading "Novo mesto" [level=2] [ref=e1430]
+        - generic [ref=e1431]:
+          - term [ref=e1432]: Avtor
+          - definition [ref=e1433]: gov.si
+          - term [ref=e1434]: Licenca
+          - definition [ref=e1435]: Public domain
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1436]:
+          - /url: https://commons.wikimedia.org/wiki/File:2025_Aerial_view_of_Novo_Mesto_in_Slovenia.jpg
+      - article [ref=e1437]:
+        - img "Ormož – fotografija mesta" [ref=e1439]
+        - heading "Ormož" [level=2] [ref=e1440]
+        - generic [ref=e1441]:
+          - term [ref=e1442]: Avtor
+          - definition [ref=e1443]: Ajznponar
+          - term [ref=e1444]: Licenca
+          - definition [ref=e1445]:
+            - link "CC BY-SA 4.0" [ref=e1446]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1447]:
+          - /url: https://commons.wikimedia.org/wiki/File:Ormoz,_Kerencicev_trg_01.jpg
+      - article [ref=e1448]:
+        - img "Piran – fotografija mesta" [ref=e1450]
+        - heading "Piran" [level=2] [ref=e1451]
+        - generic [ref=e1452]:
+          - term [ref=e1453]: Avtor
+          - definition [ref=e1454]: Etienne O. Dallaire
+          - term [ref=e1455]: Licenca
+          - definition [ref=e1456]:
+            - link "CC BY 4.0" [ref=e1457]:
+              - /url: https://creativecommons.org/licenses/by/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1458]:
+          - /url: https://commons.wikimedia.org/wiki/File:Piran,_Slovenia,_Viewpoint.jpg
+      - article [ref=e1459]:
+        - img "Postojna – fotografija mesta" [ref=e1461]
+        - heading "Postojna" [level=2] [ref=e1462]
+        - generic [ref=e1463]:
+          - term [ref=e1464]: Avtor
+          - definition [ref=e1465]: Tiia Monto
+          - term [ref=e1466]: Licenca
+          - definition [ref=e1467]:
+            - link "CC BY-SA 3.0" [ref=e1468]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1469]:
+          - /url: https://commons.wikimedia.org/wiki/File:Postojna_cave_mansion.JPG
+      - article [ref=e1470]:
+        - img "Prevalje – fotografija mesta" [ref=e1472]
+        - heading "Prevalje" [level=2] [ref=e1473]
+        - generic [ref=e1474]:
+          - term [ref=e1475]: Avtor
+          - definition [ref=e1476]: Maximilian Paradiz from Amsterdam, Netherlands
+          - term [ref=e1477]: Licenca
+          - definition [ref=e1478]:
+            - link "CC BY 2.0" [ref=e1479]:
+              - /url: https://creativecommons.org/licenses/by/2.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1480]:
+          - /url: https://commons.wikimedia.org/wiki/File:Prevalje_(37450418566).jpg
+      - article [ref=e1481]:
+        - img "Ptuj – fotografija mesta" [ref=e1483]
+        - heading "Ptuj" [level=2] [ref=e1484]
+        - generic [ref=e1485]:
+          - term [ref=e1486]: Avtor
+          - definition [ref=e1487]: "Ptuj-mestnaHisa1.JPG: Sl-Ziga uploaded and derivative work: MrPanyGoff"
+          - term [ref=e1488]: Licenca
+          - definition [ref=e1489]: Public domain
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1490]:
+          - /url: https://commons.wikimedia.org/wiki/File:Ptuj_Town_Hall.jpg
+      - article [ref=e1491]:
+        - img "Radeče – fotografija mesta" [ref=e1493]
+        - heading "Radeče" [level=2] [ref=e1494]
+        - generic [ref=e1495]:
+          - term [ref=e1496]: Avtor
+          - definition [ref=e1497]: Janezdrilc
+          - term [ref=e1498]: Licenca
+          - definition [ref=e1499]:
+            - link "CC0" [ref=e1500]:
+              - /url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1501]:
+          - /url: https://commons.wikimedia.org/wiki/File:St._Peter%27s_Parish_Church_(Rade%C4%8De)_05.jpg
+      - article [ref=e1502]:
+        - img "Radovljica – fotografija mesta" [ref=e1504]
+        - heading "Radovljica" [level=2] [ref=e1505]
+        - generic [ref=e1506]:
+          - term [ref=e1507]: Avtor
+          - definition [ref=e1508]: Miran Hladnik
+          - term [ref=e1509]: Licenca
+          - definition [ref=e1510]:
+            - link "CC BY-SA 2.5 si" [ref=e1511]:
+              - /url: https://creativecommons.org/licenses/by-sa/2.5/si/deed.en
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1512]:
+          - /url: https://commons.wikimedia.org/wiki/File:Radovljica_(3).jpg
+      - article [ref=e1513]:
+        - img "Ravne na Koroškem – fotografija mesta" [ref=e1515]
+        - heading "Ravne na Koroškem" [level=2] [ref=e1516]
+        - generic [ref=e1517]:
+          - term [ref=e1518]: Avtor
+          - definition [ref=e1519]: BlueBay
+          - term [ref=e1520]: Licenca
+          - definition [ref=e1521]:
+            - link "CC BY-SA 3.0" [ref=e1522]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1523]:
+          - /url: https://commons.wikimedia.org/wiki/File:Ravne_na_Koroskem.jpg
+      - article [ref=e1524]:
+        - img "Ribnica – fotografija mesta" [ref=e1526]
+        - heading "Ribnica" [level=2] [ref=e1527]
+        - generic [ref=e1528]:
+          - term [ref=e1529]: Avtor
+          - definition [ref=e1530]: Sl-Ziga
+          - term [ref=e1531]: Licenca
+          - definition [ref=e1532]:
+            - link "CC BY-SA 3.0" [ref=e1533]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1534]:
+          - /url: https://commons.wikimedia.org/wiki/File:Ribnica1.JPG
+      - article [ref=e1535]:
+        - img "Rogaška Slatina – fotografija mesta" [ref=e1537]
+        - heading "Rogaška Slatina" [level=2] [ref=e1538]
+        - generic [ref=e1539]:
+          - term [ref=e1540]: Avtor
+          - definition [ref=e1541]: Nxr-at
+          - term [ref=e1542]: Licenca
+          - definition [ref=e1543]:
+            - link "CC BY-SA 4.0" [ref=e1544]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1545]:
+          - /url: https://commons.wikimedia.org/wiki/File:Roga%C5%A1ka_Slatina_Park.jpg
+      - article [ref=e1546]:
+        - img "Ruše – fotografija mesta" [ref=e1548]
+        - heading "Ruše" [level=2] [ref=e1549]
+        - generic [ref=e1550]:
+          - term [ref=e1551]: Avtor
+          - definition [ref=e1552]: Sl-Ziga
+          - term [ref=e1553]: Licenca
+          - definition [ref=e1554]: Public domain
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1555]:
+          - /url: https://commons.wikimedia.org/wiki/File:Ruse1.jpg
+      - article [ref=e1556]:
+        - img "Šempeter pri Gorici – fotografija mesta" [ref=e1558]
+        - heading "Šempeter pri Gorici" [level=2] [ref=e1559]
+        - generic [ref=e1560]:
+          - term [ref=e1561]: Avtor
+          - definition [ref=e1562]: Faktikus
+          - term [ref=e1563]: Licenca
+          - definition [ref=e1564]:
+            - link "CC BY-SA 4.0" [ref=e1565]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1566]:
+          - /url: https://commons.wikimedia.org/wiki/File:Dvorec_Coronini.jpg
+      - article [ref=e1567]:
+        - img "Šentjur – fotografija mesta" [ref=e1569]
+        - heading "Šentjur" [level=2] [ref=e1570]
+        - generic [ref=e1571]:
+          - term [ref=e1572]: Avtor
+          - definition [ref=e1573]: Janezdrilc
+          - term [ref=e1574]: Licenca
+          - definition [ref=e1575]:
+            - link "CC0" [ref=e1576]:
+              - /url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1577]:
+          - /url: https://commons.wikimedia.org/wiki/File:%C5%A0entjur_06.jpg
+      - article [ref=e1578]:
+        - img "Sevnica – fotografija mesta" [ref=e1580]
+        - heading "Sevnica" [level=2] [ref=e1581]
+        - generic [ref=e1582]:
+          - term [ref=e1583]: Avtor
+          - definition [ref=e1584]: Petar Milošević
+          - term [ref=e1585]: Licenca
+          - definition [ref=e1586]:
+            - link "CC BY-SA 4.0" [ref=e1587]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1588]:
+          - /url: https://commons.wikimedia.org/wiki/File:Sevnica,_Slovenija_(2026).jpg
+      - article [ref=e1589]:
+        - img "Sežana – fotografija mesta" [ref=e1591]
+        - heading "Sežana" [level=2] [ref=e1592]
+        - generic [ref=e1593]:
+          - term [ref=e1594]: Avtor
+          - definition [ref=e1595]: Samo Onič
+          - term [ref=e1596]: Licenca
+          - definition [ref=e1597]:
+            - link "CC BY-SA 4.0" [ref=e1598]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1599]:
+          - /url: https://commons.wikimedia.org/wiki/File:Se%C5%BEana_2012_Samo_Oni%C4%8D.jpg
+      - article [ref=e1600]:
+        - img "Škofja Loka – fotografija mesta" [ref=e1602]
+        - heading "Škofja Loka" [level=2] [ref=e1603]
+        - generic [ref=e1604]:
+          - term [ref=e1605]: Avtor
+          - definition [ref=e1606]: Bernd Thaller from Graz, Austria
+          - term [ref=e1607]: Licenca
+          - definition [ref=e1608]:
+            - link "CC BY 2.0" [ref=e1609]:
+              - /url: https://creativecommons.org/licenses/by/2.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1610]:
+          - /url: https://commons.wikimedia.org/wiki/File:Cappuchin_Bridge_(30706076020).jpg
+      - article [ref=e1611]:
+        - img "Slovenj Gradec – fotografija mesta" [ref=e1613]
+        - heading "Slovenj Gradec" [level=2] [ref=e1614]
+        - generic [ref=e1615]:
+          - term [ref=e1616]: Avtor
+          - definition [ref=e1617]: Janezdrilc
+          - term [ref=e1618]: Licenca
+          - definition [ref=e1619]:
+            - link "CC0" [ref=e1620]:
+              - /url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1621]:
+          - /url: https://commons.wikimedia.org/wiki/File:St._Elizabeth_of_Hungary_Parish_Church_(Slovenj_Gradec)_02.jpg
+      - article [ref=e1622]:
+        - img "Slovenska Bistrica – fotografija mesta" [ref=e1624]
+        - heading "Slovenska Bistrica" [level=2] [ref=e1625]
+        - generic [ref=e1626]:
+          - term [ref=e1627]: Avtor
+          - definition [ref=e1628]: Eleassar
+          - term [ref=e1629]: Licenca
+          - definition [ref=e1630]:
+            - link "CC BY-SA 3.0" [ref=e1631]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1632]:
+          - /url: https://commons.wikimedia.org/wiki/File:Slovenska_Bistrica_-_the_main_bridge_over_the_Bistrica.jpg
+      - article [ref=e1633]:
+        - img "Slovenske Konjice – fotografija mesta" [ref=e1635]
+        - heading "Slovenske Konjice" [level=2] [ref=e1636]
+        - generic [ref=e1637]:
+          - term [ref=e1638]: Avtor
+          - definition [ref=e1639]: Shabicht
+          - term [ref=e1640]: Licenca
+          - definition [ref=e1641]:
+            - link "CC BY-SA 4.0" [ref=e1642]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1643]:
+          - /url: https://commons.wikimedia.org/wiki/File:Gonobitz_church.jpg
+      - article [ref=e1644]:
+        - img "Šoštanj – fotografija mesta" [ref=e1646]
+        - heading "Šoštanj" [level=2] [ref=e1647]
+        - generic [ref=e1648]:
+          - term [ref=e1649]: Avtor
+          - definition [ref=e1650]: Ajznponar
+          - term [ref=e1651]: Licenca
+          - definition [ref=e1652]:
+            - link "CC BY-SA 4.0" [ref=e1653]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1654]:
+          - /url: https://commons.wikimedia.org/wiki/File:Sostanj,_Trg_bratov_Mravljakov_03.jpg
+      - article [ref=e1655]:
+        - img "Tolmin – fotografija mesta" [ref=e1657]
+        - heading "Tolmin" [level=2] [ref=e1658]
+        - generic [ref=e1659]:
+          - term [ref=e1660]: Avtor
+          - definition [ref=e1661]: Krzysztof Golik
+          - term [ref=e1662]: Licenca
+          - definition [ref=e1663]:
+            - link "CC BY-SA 4.0" [ref=e1664]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1665]:
+          - /url: https://commons.wikimedia.org/wiki/File:View_of_Tolmin_(2).jpg
+      - article [ref=e1666]:
+        - img "Trbovlje – fotografija mesta" [ref=e1668]
+        - heading "Trbovlje" [level=2] [ref=e1669]
+        - generic [ref=e1670]:
+          - term [ref=e1671]: Avtor
+          - definition [ref=e1672]: Viktar Palstsiuk
+          - term [ref=e1673]: Licenca
+          - definition [ref=e1674]:
+            - link "CC BY 4.0" [ref=e1675]:
+              - /url: https://creativecommons.org/licenses/by/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1676]:
+          - /url: https://commons.wikimedia.org/wiki/File:Aerial_view_of_Trbovlje,_Slovenia.jpg
+      - article [ref=e1677]:
+        - img "Trebnje – fotografija mesta" [ref=e1679]
+        - heading "Trebnje" [level=2] [ref=e1680]
+        - generic [ref=e1681]:
+          - term [ref=e1682]: Avtor
+          - definition [ref=e1683]: Eleassar
+          - term [ref=e1684]: Licenca
+          - definition [ref=e1685]:
+            - link "CC BY-SA 3.0" [ref=e1686]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1687]:
+          - /url: https://commons.wikimedia.org/wiki/File:Trebnje_Golia_rojstna_hi%C5%A1a_2.jpg
+      - article [ref=e1688]:
+        - img "Tržič – fotografija mesta" [ref=e1690]
+        - heading "Tržič" [level=2] [ref=e1691]
+        - generic [ref=e1692]:
+          - term [ref=e1693]: Avtor
+          - definition [ref=e1694]: Matijap
+          - term [ref=e1695]: Licenca
+          - definition [ref=e1696]:
+            - link "CC BY-SA 3.0" [ref=e1697]:
+              - /url: https://creativecommons.org/licenses/by-sa/3.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1698]:
+          - /url: https://commons.wikimedia.org/wiki/File:Trzic_09_2009.jpg
+      - article [ref=e1699]:
+        - img "Velenje – fotografija mesta" [ref=e1701]
+        - heading "Velenje" [level=2] [ref=e1702]
+        - generic [ref=e1703]:
+          - term [ref=e1704]: Avtor
+          - definition [ref=e1705]: Tilky0808
+          - term [ref=e1706]: Licenca
+          - definition [ref=e1707]:
+            - link "CC BY-SA 4.0" [ref=e1708]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1709]:
+          - /url: https://commons.wikimedia.org/wiki/File:Velenjski_grad_iz_zraka.jpg
+      - article [ref=e1710]:
+        - img "Višnja Gora – fotografija mesta" [ref=e1712]
+        - heading "Višnja Gora" [level=2] [ref=e1713]
+        - generic [ref=e1714]:
+          - term [ref=e1715]: Avtor
+          - definition [ref=e1716]: Lan G.
+          - term [ref=e1717]: Licenca
+          - definition [ref=e1718]:
+            - link "CC BY-SA 4.0" [ref=e1719]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1720]:
+          - /url: https://commons.wikimedia.org/wiki/File:Pogled_na_Vi%C5%A1njo_Goro_3.jpg
+      - article [ref=e1721]:
+        - img "Vrhnika – fotografija mesta" [ref=e1723]
+        - heading "Vrhnika" [level=2] [ref=e1724]
+        - generic [ref=e1725]:
+          - term [ref=e1726]: Avtor
+          - definition [ref=e1727]: Ajznponar
+          - term [ref=e1728]: Licenca
+          - definition [ref=e1729]:
+            - link "CC0" [ref=e1730]:
+              - /url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1731]:
+          - /url: https://commons.wikimedia.org/wiki/File:Vrhnika,_view_of_St._Paul%27s_church_from_Drca_02.jpg
+      - article [ref=e1732]:
+        - img "Zagorje ob Savi – fotografija mesta" [ref=e1734]
+        - heading "Zagorje ob Savi" [level=2] [ref=e1735]
+        - generic [ref=e1736]:
+          - term [ref=e1737]: Avtor
+          - definition [ref=e1738]: No machine-readable author provided. Romanm assumed (based on copyright claims).
+          - term [ref=e1739]: Licenca
+          - definition [ref=e1740]: Public domain
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1741]:
+          - /url: https://commons.wikimedia.org/wiki/File:Zagorje_-_cerkev_poleti.jpg
+      - article [ref=e1742]:
+        - img "Žalec – fotografija mesta" [ref=e1744]
+        - heading "Žalec" [level=2] [ref=e1745]
+        - generic [ref=e1746]:
+          - term [ref=e1747]: Avtor
+          - definition [ref=e1748]: Janezdrilc
+          - term [ref=e1749]: Licenca
+          - definition [ref=e1750]:
+            - link "CC0" [ref=e1751]:
+              - /url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1752]:
+          - /url: https://commons.wikimedia.org/wiki/File:Saint_Nicholas_Church,_%C5%BDalec_08.JPG
+      - article [ref=e1753]:
+        - img "Železniki – fotografija mesta" [ref=e1755]
+        - heading "Železniki" [level=2] [ref=e1756]
+        - generic [ref=e1757]:
+          - term [ref=e1758]: Avtor
+          - definition [ref=e1759]: Sl-Ziga
+          - term [ref=e1760]: Licenca
+          - definition [ref=e1761]: Public domain
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1762]:
+          - /url: https://commons.wikimedia.org/wiki/File:Zelezniki2.jpg
+      - article [ref=e1763]:
+        - img "Žiri – fotografija mesta" [ref=e1765]
+        - heading "Žiri" [level=2] [ref=e1766]
+        - generic [ref=e1767]:
+          - term [ref=e1768]: Avtor
+          - definition [ref=e1769]: Doremo
+          - term [ref=e1770]: Licenca
+          - definition [ref=e1771]:
+            - link "CC BY 4.0" [ref=e1772]:
+              - /url: https://creativecommons.org/licenses/by/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1773]:
+          - /url: https://commons.wikimedia.org/wiki/File:%C5%BDiri_Slovenia.jpg
+      - article [ref=e1774]:
+        - img "Zreče – fotografija mesta" [ref=e1776]
+        - heading "Zreče" [level=2] [ref=e1777]
+        - generic [ref=e1778]:
+          - term [ref=e1779]: Avtor
+          - definition [ref=e1780]: Andrej Jakobčič
+          - term [ref=e1781]: Licenca
+          - definition [ref=e1782]:
+            - link "CC BY-SA 4.0" [ref=e1783]:
+              - /url: https://creativecommons.org/licenses/by-sa/4.0
+        - link "Izvirna fotografija in podatki o avtorstvu ↗" [ref=e1784]:
+          - /url: https://commons.wikimedia.org/wiki/File:Zre%C4%8De.jpg
+  - contentinfo [ref=e1785]:
+    - generic [ref=e1786]:
+      - generic [ref=e1787]:
+        - generic [ref=e1788]:
+          - link "Koledar365 – domov" [ref=e1789]:
+            - /url: /
+            - img [ref=e1791]
+            - generic [ref=e1792]: Koledar365
+          - paragraph [ref=e1793]: Vaša prva izbira za koledarje, praznike, načrtovanje in horoskope.
+        - navigation "Povezave v nogi strani" [ref=e1794]:
+          - region "Koledarji" [ref=e1795]:
+            - heading "Koledarji" [level=2] [ref=e1796]
+            - link "Letni in mesečni koledar" [ref=e1797]:
+              - /url: /koledar/
+            - link "Prazniki v Sloveniji" [ref=e1798]:
+              - /url: /prazniki/
+            - link "Lunin koledar" [ref=e1799]:
+              - /url: /lunin-koledar/
+            - link "Pomembni dnevi" [ref=e1800]:
+              - /url: /pomembni-dnevi/
+          - region "Orodja za načrtovanje" [ref=e1801]:
+            - heading "Orodja za načrtovanje" [level=2] [ref=e1802]
+            - link "Sončni vzhod in zahod" [ref=e1803]:
+              - /url: /soncni-vzhod-in-zahod/
+            - link "Razpored izmen" [ref=e1804]:
+              - /url: /razpored-izmen/
+            - link "Datumski kalkulator" [ref=e1805]:
+              - /url: /datumski-kalkulator/
+            - link "Kalkulator delovnih dni" [ref=e1806]:
+              - /url: /kalkulator-delovnih-dni/
+            - link "Načrtovalnik dopusta" [ref=e1807]:
+              - /url: /nacrtovalnik-dopusta/
+          - region "O Koledarju365" [ref=e1808]:
+            - heading "O Koledarju365" [level=2] [ref=e1809]
+            - link "O nas" [ref=e1810]:
+              - /url: /o-nas/
+            - link "Viri in metodologija" [ref=e1811]:
+              - /url: /viri-in-metodologija/
+            - link "Fotografije in licence" [ref=e1812]:
+              - /url: /fotografije-in-licence/
+            - link "Zasebnost" [ref=e1813]:
+              - /url: /zasebnost/
+            - link "Pogoji uporabe" [ref=e1814]:
+              - /url: /pogoji-uporabe/
+            - button "Nastavitve piškotkov" [ref=e1815] [cursor=pointer]
+          - region "Kontakt" [ref=e1816]:
+            - heading "Kontakt" [level=2] [ref=e1817]
+            - paragraph [ref=e1818]: Imate predlog ali ste opazili napako? Z veseljem bomo preverili.
+            - link "Pišite nam" [ref=e1819]:
+              - /url: /kontakt/
+              - text: Pišite nam
+              - generic [ref=e1820]: →
+            - link "koledar365@gmail.com" [ref=e1821]:
+              - /url: mailto:koledar365@gmail.com
+      - generic [ref=e1822]:
+        - generic [ref=e1823]: © 2026 Koledar365 · Vse pravice pridržane.
+        - generic [ref=e1824]: Ustvarjeno v Bratislavi. 🇸🇮 ❤️
+```

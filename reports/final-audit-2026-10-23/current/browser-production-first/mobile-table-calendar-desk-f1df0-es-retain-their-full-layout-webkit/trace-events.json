@@ -1,0 +1,1198 @@
+[
+  {
+    "version": 8,
+    "type": "context-options",
+    "origin": "testRunner",
+    "browserName": "",
+    "options": {},
+    "platform": "darwin",
+    "wallTime": 1792708779752,
+    "monotonicTime": 267634.903,
+    "sdkLanguage": "javascript"
+  },
+  {
+    "type": "before",
+    "callId": "hook@1",
+    "stepId": "hook@1",
+    "startTime": 267635.071,
+    "class": "Test",
+    "method": "hook",
+    "title": "Before Hooks",
+    "params": {},
+    "stack": []
+  },
+  {
+    "type": "before",
+    "callId": "hook@2",
+    "stepId": "hook@2",
+    "parentId": "hook@1",
+    "startTime": 267635.136,
+    "class": "Test",
+    "method": "hook",
+    "title": "beforeEach hook",
+    "params": {},
+    "stack": [
+      {
+        "file": "/Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-publication/test/browser/mobile-table-calendar.spec.mjs",
+        "line": 3,
+        "column": 6
+      }
+    ]
+  },
+  {
+    "type": "before",
+    "callId": "fixture@23",
+    "stepId": "fixture@23",
+    "parentId": "hook@2",
+    "startTime": 267636.516,
+    "class": "Test",
+    "method": "fixture",
+    "title": "Fixture \"context\"",
+    "params": {},
+    "stack": []
+  },
+  {
+    "type": "before",
+    "callId": "pw:api@24",
+    "stepId": "pw:api@24",
+    "parentId": "fixture@23",
+    "startTime": 267636.688,
+    "class": "Test",
+    "method": "pw:api",
+    "title": "Create context",
+    "params": {
+      "acceptDownloads": "accept",
+      "bypassCSP": "false",
+      "colorScheme": "light",
+      "deviceScaleFactor": "2",
+      "hasTouch": "false",
+      "ignoreHTTPSErrors": "false",
+      "isMobile": "false",
+      "javaScriptEnabled": "true",
+      "locale": "en-US",
+      "offline": "false",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15",
+      "viewport": "Object",
+      "baseURL": "https://koledar365.si",
+      "serviceWorkers": "allow",
+      "selectorEngines": "[]",
+      "testIdAttributeName": "data-testid",
+      "noDefaultViewport": "false",
+      "extraHTTPHeaders": "undefined",
+      "storageState": "undefined",
+      "reducedMotion": "undefined",
+      "forcedColors": "undefined",
+      "contrast": "undefined",
+      "clientCertificates": "undefined"
+    },
+    "stack": []
+  },
+  {
+    "type": "after",
+    "callId": "pw:api@24",
+    "endTime": 267637.725,
+    "annotations": []
+  },
+  {
+    "type": "after",
+    "callId": "fixture@23",
+    "endTime": 267638.039,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "fixture@25",
+    "stepId": "fixture@25",
+    "parentId": "hook@2",
+    "startTime": 267638.123,
+    "class": "Test",
+    "method": "fixture",
+    "title": "Fixture \"page\"",
+    "params": {},
+    "stack": []
+  },
+  {
+    "type": "before",
+    "callId": "pw:api@26",
+    "stepId": "pw:api@26",
+    "parentId": "fixture@25",
+    "startTime": 267638.379,
+    "class": "Test",
+    "method": "pw:api",
+    "title": "Create page",
+    "params": {},
+    "stack": []
+  },
+  {
+    "type": "after",
+    "callId": "pw:api@26",
+    "endTime": 267726.236,
+    "annotations": []
+  },
+  {
+    "type": "after",
+    "callId": "fixture@25",
+    "endTime": 267726.262,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "pw:api@27",
+    "stepId": "pw:api@27",
+    "parentId": "hook@2",
+    "startTime": 267726.591,
+    "class": "Test",
+    "method": "pw:api",
+    "title": "Add init script",
+    "params": {
+      "source": "(() => localStorage.setItem('k365.consent', JSON.stringify({\n    version: 2,\n    expiresAt: Date.now() + 86400000,\n    preferences: false\n  })))(undefined)"
+    },
+    "stack": [
+      {
+        "file": "/Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-publication/test/browser/mobile-table-calendar.spec.mjs",
+        "line": 4,
+        "column": 3
+      }
+    ],
+    "group": "configuration"
+  },
+  {
+    "type": "after",
+    "callId": "pw:api@27",
+    "endTime": 267727.773,
+    "annotations": []
+  },
+  {
+    "type": "after",
+    "callId": "hook@2",
+    "endTime": 267727.79,
+    "annotations": []
+  },
+  {
+    "type": "after",
+    "callId": "hook@1",
+    "endTime": 267727.831,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "pw:api@28",
+    "stepId": "pw:api@28",
+    "startTime": 267728.185,
+    "class": "Test",
+    "method": "pw:api",
+    "title": "Set viewport size",
+    "params": {
+      "viewportSize": "Object"
+    },
+    "stack": [
+      {
+        "file": "/Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-publication/test/browser/mobile-table-calendar.spec.mjs",
+        "line": 80,
+        "column": 14
+      }
+    ]
+  },
+  {
+    "type": "after",
+    "callId": "pw:api@28",
+    "endTime": 267730.417,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "pw:api@29",
+    "stepId": "pw:api@29",
+    "startTime": 267730.66,
+    "class": "Test",
+    "method": "pw:api",
+    "title": "Navigate to \"/?year=2026&month=10\"",
+    "params": {
+      "url": "/?year=2026&month=10",
+      "waitUntil": "load",
+      "timeout": "0"
+    },
+    "stack": [
+      {
+        "file": "/Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-publication/test/browser/mobile-table-calendar.spec.mjs",
+        "line": 81,
+        "column": 14
+      }
+    ]
+  },
+  {
+    "type": "after",
+    "callId": "pw:api@29",
+    "endTime": 268110.283,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "expect@30",
+    "stepId": "expect@30",
+    "startTime": 268110.599,
+    "class": "Test",
+    "method": "expect",
+    "title": "Expect \"toContainText\"",
+    "params": {
+      "expected": "dan reformacije"
+    },
+    "stack": [
+      {
+        "file": "/Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-publication/test/browser/mobile-table-calendar.spec.mjs",
+        "line": 83,
+        "column": 23
+      }
+    ]
+  },
+  {
+    "type": "after",
+    "callId": "expect@30",
+    "endTime": 268125.952,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "pw:api@31",
+    "stepId": "pw:api@31",
+    "startTime": 268126.504,
+    "class": "Test",
+    "method": "pw:api",
+    "title": "Evaluate locator('td[data-date=\"2026-10-31\"] .event-label').first()",
+    "params": {
+      "selector": "td[data-date=\"2026-10-31\"] .event-label >> nth=0",
+      "strict": "true",
+      "state": "attached",
+      "timeout": "0"
+    },
+    "stack": [
+      {
+        "file": "/Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-publication/test/browser/mobile-table-calendar.spec.mjs",
+        "line": 84,
+        "column": 22
+      }
+    ]
+  },
+  {
+    "type": "after",
+    "callId": "pw:api@31",
+    "endTime": 268149.19,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "expect@32",
+    "stepId": "expect@32",
+    "startTime": 268149.438,
+    "class": "Test",
+    "method": "expect",
+    "title": "Expect \"toBeGreaterThanOrEqual\"",
+    "params": {
+      "expected": "10"
+    },
+    "stack": [
+      {
+        "file": "/Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-publication/test/browser/mobile-table-calendar.spec.mjs",
+        "line": 84,
+        "column": 80
+      }
+    ]
+  },
+  {
+    "type": "after",
+    "callId": "expect@32",
+    "endTime": 268149.466,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "expect@33",
+    "stepId": "expect@33",
+    "startTime": 268149.646,
+    "class": "Test",
+    "method": "expect",
+    "title": "Expect \"toBeHidden\"",
+    "params": {},
+    "stack": [
+      {
+        "file": "/Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-publication/test/browser/mobile-table-calendar.spec.mjs",
+        "line": 85,
+        "column": 50
+      }
+    ]
+  },
+  {
+    "type": "after",
+    "callId": "expect@33",
+    "endTime": 268157.35,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "pw:api@34",
+    "stepId": "pw:api@34",
+    "startTime": 268157.661,
+    "class": "Test",
+    "method": "pw:api",
+    "title": "Navigate to \"/pomembni-dnevi/\"",
+    "params": {
+      "url": "/pomembni-dnevi/",
+      "waitUntil": "load",
+      "timeout": "0"
+    },
+    "stack": [
+      {
+        "file": "/Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-publication/test/browser/mobile-table-calendar.spec.mjs",
+        "line": 86,
+        "column": 14
+      }
+    ]
+  },
+  {
+    "type": "after",
+    "callId": "pw:api@34",
+    "endTime": 268341.392,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "pw:api@35",
+    "stepId": "pw:api@35",
+    "startTime": 268341.695,
+    "class": "Test",
+    "method": "pw:api",
+    "title": "Set viewport size",
+    "params": {
+      "viewportSize": "Object"
+    },
+    "stack": [
+      {
+        "file": "/Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-publication/test/browser/mobile-table-calendar.spec.mjs",
+        "line": 87,
+        "column": 14
+      }
+    ]
+  },
+  {
+    "type": "after",
+    "callId": "pw:api@35",
+    "endTime": 268361.504,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "expect@36",
+    "stepId": "expect@36",
+    "startTime": 268361.807,
+    "class": "Test",
+    "method": "expect",
+    "title": "Expect \"toBeVisible\"",
+    "params": {},
+    "stack": [
+      {
+        "file": "/Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-publication/test/browser/mobile-table-calendar.spec.mjs",
+        "line": 88,
+        "column": 62
+      }
+    ]
+  },
+  {
+    "type": "after",
+    "callId": "expect@36",
+    "endTime": 268371.814,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "pw:api@37",
+    "stepId": "pw:api@37",
+    "startTime": 268372.068,
+    "class": "Test",
+    "method": "pw:api",
+    "title": "Emulate media",
+    "params": {
+      "media": "print",
+      "colorScheme": "undefined",
+      "reducedMotion": "undefined",
+      "forcedColors": "undefined",
+      "contrast": "undefined"
+    },
+    "stack": [
+      {
+        "file": "/Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-publication/test/browser/mobile-table-calendar.spec.mjs",
+        "line": 89,
+        "column": 14
+      }
+    ]
+  },
+  {
+    "type": "after",
+    "callId": "pw:api@37",
+    "endTime": 268388.174,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "pw:api@38",
+    "stepId": "pw:api@38",
+    "startTime": 268388.552,
+    "class": "Test",
+    "method": "pw:api",
+    "title": "Evaluate locator('.mobile-record-table').first()",
+    "params": {
+      "selector": ".mobile-record-table >> nth=0",
+      "strict": "true",
+      "state": "attached",
+      "timeout": "0"
+    },
+    "stack": [
+      {
+        "file": "/Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-publication/test/browser/mobile-table-calendar.spec.mjs",
+        "line": 90,
+        "column": 61
+      }
+    ]
+  },
+  {
+    "type": "after",
+    "callId": "pw:api@38",
+    "endTime": 268415.4,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "expect@39",
+    "stepId": "expect@39",
+    "startTime": 268415.646,
+    "class": "Test",
+    "method": "expect",
+    "title": "Expect \"toBe\"",
+    "params": {
+      "expected": "table"
+    },
+    "stack": [
+      {
+        "file": "/Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-publication/test/browser/mobile-table-calendar.spec.mjs",
+        "line": 90,
+        "column": 103
+      }
+    ]
+  },
+  {
+    "type": "after",
+    "callId": "expect@39",
+    "endTime": 268416.397,
+    "annotations": [],
+    "error": {
+      "name": "",
+      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"table\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m",
+      "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"table\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\n    at /Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-publication/test/browser/mobile-table-calendar.spec.mjs:90:103"
+    }
+  },
+  {
+    "type": "error",
+    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"table\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m",
+    "stack": [
+      {
+        "file": "/Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-publication/test/browser/mobile-table-calendar.spec.mjs",
+        "line": 90,
+        "column": 103
+      }
+    ]
+  },
+  {
+    "type": "before",
+    "callId": "hook@40",
+    "stepId": "hook@40",
+    "startTime": 268416.525,
+    "class": "Test",
+    "method": "hook",
+    "title": "After Hooks",
+    "params": {},
+    "stack": []
+  },
+  {
+    "type": "before",
+    "callId": "fixture@41",
+    "stepId": "fixture@41",
+    "parentId": "hook@40",
+    "startTime": 268437.987,
+    "class": "Test",
+    "method": "fixture",
+    "title": "Fixture \"page\"",
+    "params": {},
+    "stack": []
+  },
+  {
+    "type": "after",
+    "callId": "fixture@41",
+    "endTime": 268438.021,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "fixture@42",
+    "stepId": "fixture@42",
+    "parentId": "hook@40",
+    "startTime": 268438.093,
+    "class": "Test",
+    "method": "fixture",
+    "title": "Fixture \"context\"",
+    "params": {},
+    "stack": []
+  },
+  {
+    "type": "before",
+    "callId": "pw:api@43",
+    "stepId": "pw:api@43",
+    "parentId": "fixture@42",
+    "startTime": 268494.214,
+    "class": "Test",
+    "method": "pw:api",
+    "title": "Close context",
+    "params": {
+      "reason": "Test ended."
+    },
+    "stack": []
+  },
+  {
+    "type": "after",
+    "callId": "pw:api@43",
+    "endTime": 268497.625,
+    "annotations": []
+  },
+  {
+    "type": "after",
+    "callId": "fixture@42",
+    "endTime": 268497.638,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "attach@c7638f569722ef6421e0544ca4eea3ac",
+    "stepId": "attach@c7638f569722ef6421e0544ca4eea3ac",
+    "startTime": 268498.783,
+    "class": "Test",
+    "method": "test.attach",
+    "title": "Attach \"error-context\"",
+    "params": {},
+    "stack": []
+  },
+  {
+    "type": "after",
+    "callId": "attach@c7638f569722ef6421e0544ca4eea3ac",
+    "endTime": 268498.788,
+    "attachments": [
+      {
+        "name": "error-context",
+        "contentType": "text/markdown",
+        "sha1": "4d2c2ba2dfcee34f7e546e38332168024d886c63"
+      }
+    ]
+  },
+  {
+    "type": "before",
+    "callId": "fixture@52",
+    "stepId": "fixture@52",
+    "parentId": "hook@40",
+    "startTime": 268499.171,
+    "class": "Test",
+    "method": "fixture",
+    "title": "Fixture \"baseURL\"",
+    "params": {},
+    "stack": [
+      {
+        "file": "project#webkit",
+        "line": 1,
+        "column": 1
+      }
+    ],
+    "group": "configuration"
+  },
+  {
+    "type": "after",
+    "callId": "fixture@52",
+    "endTime": 268499.175,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "fixture@53",
+    "stepId": "fixture@53",
+    "parentId": "hook@40",
+    "startTime": 268499.214,
+    "class": "Test",
+    "method": "fixture",
+    "title": "Fixture \"userAgent\"",
+    "params": {},
+    "stack": [
+      {
+        "file": "project#webkit",
+        "line": 1,
+        "column": 1
+      }
+    ],
+    "group": "configuration"
+  },
+  {
+    "type": "after",
+    "callId": "fixture@53",
+    "endTime": 268499.217,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "fixture@55",
+    "stepId": "fixture@55",
+    "parentId": "hook@40",
+    "startTime": 268499.294,
+    "class": "Test",
+    "method": "fixture",
+    "title": "Fixture \"viewport\"",
+    "params": {},
+    "stack": [
+      {
+        "file": "project#webkit",
+        "line": 1,
+        "column": 1
+      }
+    ],
+    "group": "configuration"
+  },
+  {
+    "type": "after",
+    "callId": "fixture@55",
+    "endTime": 268499.296,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "fixture@62",
+    "stepId": "fixture@62",
+    "parentId": "hook@40",
+    "startTime": 268499.567,
+    "class": "Test",
+    "method": "fixture",
+    "title": "Fixture \"isMobile\"",
+    "params": {},
+    "stack": [
+      {
+        "file": "project#webkit",
+        "line": 1,
+        "column": 1
+      }
+    ],
+    "group": "configuration"
+  },
+  {
+    "type": "after",
+    "callId": "fixture@62",
+    "endTime": 268499.569,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "fixture@66",
+    "stepId": "fixture@66",
+    "parentId": "hook@40",
+    "startTime": 268499.725,
+    "class": "Test",
+    "method": "fixture",
+    "title": "Fixture \"hasTouch\"",
+    "params": {},
+    "stack": [
+      {
+        "file": "project#webkit",
+        "line": 1,
+        "column": 1
+      }
+    ],
+    "group": "configuration"
+  },
+  {
+    "type": "after",
+    "callId": "fixture@66",
+    "endTime": 268499.728,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "fixture@68",
+    "stepId": "fixture@68",
+    "parentId": "hook@40",
+    "startTime": 268499.823,
+    "class": "Test",
+    "method": "fixture",
+    "title": "Fixture \"deviceScaleFactor\"",
+    "params": {},
+    "stack": [
+      {
+        "file": "project#webkit",
+        "line": 1,
+        "column": 1
+      }
+    ],
+    "group": "configuration"
+  },
+  {
+    "type": "after",
+    "callId": "fixture@68",
+    "endTime": 268499.825,
+    "annotations": []
+  },
+  {
+    "type": "after",
+    "callId": "hook@40",
+    "endTime": 268500.048,
+    "attachments": [
+      {
+        "name": "screenshot",
+        "contentType": "image/png",
+        "sha1": "ae4da0c7a5ce7ac24ae15dec9bac1dc681845189"
+      }
+    ],
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "hook@74",
+    "stepId": "hook@74",
+    "startTime": 268500.109,
+    "class": "Test",
+    "method": "hook",
+    "title": "Worker Cleanup",
+    "params": {},
+    "stack": []
+  },
+  {
+    "type": "before",
+    "callId": "fixture@78",
+    "stepId": "fixture@78",
+    "parentId": "hook@74",
+    "startTime": 268500.327,
+    "class": "Test",
+    "method": "fixture",
+    "title": "Fixture \"browser\"",
+    "params": {},
+    "stack": []
+  },
+  {
+    "type": "after",
+    "callId": "fixture@78",
+    "endTime": 268514.743,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "fixture@82",
+    "stepId": "fixture@82",
+    "parentId": "hook@74",
+    "startTime": 268515.038,
+    "class": "Test",
+    "method": "fixture",
+    "title": "Fixture \"defaultBrowserType\"",
+    "params": {},
+    "stack": [
+      {
+        "file": "project#webkit",
+        "line": 1,
+        "column": 1
+      }
+    ],
+    "group": "configuration"
+  },
+  {
+    "type": "after",
+    "callId": "fixture@82",
+    "endTime": 268515.058,
+    "annotations": []
+  },
+  {
+    "type": "before",
+    "callId": "fixture@83",
+    "stepId": "fixture@83",
+    "parentId": "hook@74",
+    "startTime": 268515.117,
+    "class": "Test",
+    "method": "fixture",
+    "title": "Fixture \"screenshot\"",
+    "params": {},
+    "stack": [
+      {
+        "file": "project#webkit",
+        "line": 1,
+        "column": 1
+      }
+    ],
+    "group": "configuration"
+  },
+  {
+    "type": "after",
+    "callId": "fixture@83",
+    "endTime": 268515.121,
+    "annotations": []
+  },
+  {
+    "type": "after",
+    "callId": "hook@74",
+    "endTime": 268515.546,
+    "annotations": []
+  },
+  {
+    "version": 8,
+    "type": "context-options",
+    "origin": "library",
+    "browserName": "webkit",
+    "options": {
+      "noDefaultViewport": false,
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "ignoreHTTPSErrors": false,
+      "javaScriptEnabled": true,
+      "bypassCSP": false,
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15",
+      "locale": "en-US",
+      "offline": false,
+      "deviceScaleFactor": 2,
+      "isMobile": false,
+      "hasTouch": false,
+      "colorScheme": "light",
+      "acceptDownloads": "accept",
+      "baseURL": "https://koledar365.si",
+      "serviceWorkers": "allow",
+      "selectorEngines": [],
+      "testIdAttributeName": "data-testid"
+    },
+    "platform": "darwin",
+    "wallTime": 1792708779755,
+    "monotonicTime": 267637.927,
+    "sdkLanguage": "javascript",
+    "testIdAttributeName": "data-testid",
+    "contextId": "browser-context@619c1e4d37ce36c78bb5c975eefeaadc",
+    "title": "mobile-table-calendar.spec.mjs:79 › desktop event text and printed tables retain their full layout"
+  },
+  {
+    "type": "before",
+    "callId": "call@2331",
+    "startTime": 267638.415,
+    "class": "BrowserContext",
+    "method": "newPage",
+    "params": {},
+    "stepId": "pw:api@26",
+    "beforeSnapshot": "before@call@2331"
+  },
+  {
+    "type": "event",
+    "time": 267726.04,
+    "class": "BrowserContext",
+    "method": "page",
+    "params": {
+      "pageId": "page@254394ec2b047aaabb6d5cd79084d0ce"
+    }
+  },
+  {
+    "type": "after",
+    "callId": "call@2331",
+    "endTime": 267726.057,
+    "result": {
+      "page": "<Page>"
+    },
+    "afterSnapshot": "after@call@2331"
+  },
+  {
+    "type": "before",
+    "callId": "call@2333",
+    "startTime": 267726.684,
+    "class": "Page",
+    "method": "addInitScript",
+    "params": {
+      "source": "(() => localStorage.setItem('k365.consent', JSON.stringify({\n    version: 2,\n    expiresAt: Date.now() + 86400000,\n    preferences: false\n  })))(undefined)"
+    },
+    "stepId": "pw:api@27",
+    "pageId": "page@254394ec2b047aaabb6d5cd79084d0ce",
+    "beforeSnapshot": "before@call@2333"
+  },
+  {
+    "type": "after",
+    "callId": "call@2333",
+    "endTime": 267727.721,
+    "afterSnapshot": "after@call@2333"
+  },
+  {
+    "type": "before",
+    "callId": "call@2335",
+    "startTime": 267728.241,
+    "class": "Page",
+    "method": "setViewportSize",
+    "params": {
+      "viewportSize": {
+        "width": 1280,
+        "height": 900
+      }
+    },
+    "stepId": "pw:api@28",
+    "pageId": "page@254394ec2b047aaabb6d5cd79084d0ce",
+    "beforeSnapshot": "before@call@2335"
+  },
+  {
+    "type": "after",
+    "callId": "call@2335",
+    "endTime": 267730.199,
+    "afterSnapshot": "after@call@2335"
+  },
+  {
+    "type": "before",
+    "callId": "call@2337",
+    "startTime": 267730.696,
+    "class": "Frame",
+    "method": "goto",
+    "params": {
+      "url": "/?year=2026&month=10",
+      "timeout": 0,
+      "waitUntil": "load"
+    },
+    "stepId": "pw:api@29",
+    "pageId": "page@254394ec2b047aaabb6d5cd79084d0ce",
+    "beforeSnapshot": "before@call@2337"
+  },
+  {
+    "type": "after",
+    "callId": "call@2337",
+    "endTime": 268097.147,
+    "result": {
+      "response": "<Response>"
+    },
+    "afterSnapshot": "after@call@2337"
+  },
+  {
+    "type": "before",
+    "callId": "call@2339",
+    "startTime": 268110.869,
+    "title": "Expect \"toContainText\"",
+    "class": "Frame",
+    "method": "expect",
+    "params": {
+      "selector": "td[data-date=\"2026-10-31\"] .event-label >> nth=0",
+      "expression": "to.have.text",
+      "expectedText": [
+        {
+          "string": "dan reformacije",
+          "matchSubstring": true,
+          "normalizeWhiteSpace": true
+        }
+      ],
+      "expectedValue": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      },
+      "isNot": false,
+      "timeout": 10000
+    },
+    "stepId": "expect@30",
+    "pageId": "page@254394ec2b047aaabb6d5cd79084d0ce",
+    "beforeSnapshot": "before@call@2339"
+  },
+  {
+    "type": "after",
+    "callId": "call@2339",
+    "endTime": 268123.439,
+    "result": {
+      "matches": true,
+      "received": {
+        "s": "dan reformacije"
+      }
+    },
+    "afterSnapshot": "after@call@2339"
+  },
+  {
+    "type": "before",
+    "callId": "call@2341",
+    "startTime": 268126.568,
+    "title": "Evaluate",
+    "class": "Frame",
+    "method": "waitForSelector",
+    "params": {
+      "selector": "td[data-date=\"2026-10-31\"] .event-label >> nth=0",
+      "strict": true,
+      "timeout": 0,
+      "state": "attached"
+    },
+    "stepId": "pw:api@31",
+    "pageId": "page@254394ec2b047aaabb6d5cd79084d0ce",
+    "beforeSnapshot": "before@call@2341"
+  },
+  {
+    "type": "after",
+    "callId": "call@2341",
+    "endTime": 268132.556,
+    "result": {
+      "element": "<ElementHandle>"
+    },
+    "afterSnapshot": "after@call@2341"
+  },
+  {
+    "type": "before",
+    "callId": "call@2345",
+    "startTime": 268150.003,
+    "title": "Expect \"toBeHidden\"",
+    "class": "Frame",
+    "method": "expect",
+    "params": {
+      "selector": ".calendar-agenda",
+      "expression": "to.be.hidden",
+      "expectedValue": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      },
+      "isNot": false,
+      "timeout": 10000
+    },
+    "stepId": "expect@33",
+    "pageId": "page@254394ec2b047aaabb6d5cd79084d0ce",
+    "beforeSnapshot": "before@call@2345"
+  },
+  {
+    "type": "after",
+    "callId": "call@2345",
+    "endTime": 268154.398,
+    "result": {
+      "matches": true,
+      "received": {
+        "s": "hidden"
+      }
+    },
+    "afterSnapshot": "after@call@2345"
+  },
+  {
+    "type": "before",
+    "callId": "call@2347",
+    "startTime": 268157.734,
+    "class": "Frame",
+    "method": "goto",
+    "params": {
+      "url": "/pomembni-dnevi/",
+      "timeout": 0,
+      "waitUntil": "load"
+    },
+    "stepId": "pw:api@34",
+    "pageId": "page@254394ec2b047aaabb6d5cd79084d0ce",
+    "beforeSnapshot": "before@call@2347"
+  },
+  {
+    "type": "after",
+    "callId": "call@2347",
+    "endTime": 268334.825,
+    "result": {
+      "response": "<Response>"
+    },
+    "afterSnapshot": "after@call@2347"
+  },
+  {
+    "type": "before",
+    "callId": "call@2349",
+    "startTime": 268341.773,
+    "class": "Page",
+    "method": "setViewportSize",
+    "params": {
+      "viewportSize": {
+        "width": 320,
+        "height": 900
+      }
+    },
+    "stepId": "pw:api@35",
+    "pageId": "page@254394ec2b047aaabb6d5cd79084d0ce",
+    "beforeSnapshot": "before@call@2349"
+  },
+  {
+    "type": "after",
+    "callId": "call@2349",
+    "endTime": 268358.411,
+    "afterSnapshot": "after@call@2349"
+  },
+  {
+    "type": "before",
+    "callId": "call@2351",
+    "startTime": 268362.076,
+    "title": "Expect \"toBeVisible\"",
+    "class": "Frame",
+    "method": "expect",
+    "params": {
+      "selector": ".mobile-record-table >> nth=0",
+      "expression": "to.be.visible",
+      "expectedValue": {
+        "value": {
+          "v": "undefined"
+        },
+        "handles": []
+      },
+      "isNot": false,
+      "timeout": 10000
+    },
+    "stepId": "expect@36",
+    "pageId": "page@254394ec2b047aaabb6d5cd79084d0ce",
+    "beforeSnapshot": "before@call@2351"
+  },
+  {
+    "type": "after",
+    "callId": "call@2351",
+    "endTime": 268369.717,
+    "result": {
+      "matches": true,
+      "received": {
+        "s": "visible"
+      }
+    },
+    "afterSnapshot": "after@call@2351"
+  },
+  {
+    "type": "before",
+    "callId": "call@2353",
+    "startTime": 268372.123,
+    "class": "Page",
+    "method": "emulateMedia",
+    "params": {
+      "media": "print"
+    },
+    "stepId": "pw:api@37",
+    "pageId": "page@254394ec2b047aaabb6d5cd79084d0ce",
+    "beforeSnapshot": "before@call@2353"
+  },
+  {
+    "type": "after",
+    "callId": "call@2353",
+    "endTime": 268386.532,
+    "afterSnapshot": "after@call@2353"
+  },
+  {
+    "type": "before",
+    "callId": "call@2355",
+    "startTime": 268388.613,
+    "title": "Evaluate",
+    "class": "Frame",
+    "method": "waitForSelector",
+    "params": {
+      "selector": ".mobile-record-table >> nth=0",
+      "strict": true,
+      "timeout": 0,
+      "state": "attached"
+    },
+    "stepId": "pw:api@38",
+    "pageId": "page@254394ec2b047aaabb6d5cd79084d0ce",
+    "beforeSnapshot": "before@call@2355"
+  },
+  {
+    "type": "after",
+    "callId": "call@2355",
+    "endTime": 268392.039,
+    "result": {
+      "element": "<ElementHandle>"
+    },
+    "afterSnapshot": "after@call@2355"
+  }
+]

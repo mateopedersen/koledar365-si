@@ -1,20 +1,24 @@
 {
   "status": "in_progress",
-  "branch": "codex/final-audit-20261023",
+  "branch": "codex/final-audit-evidence-20261023",
   "pr": 107,
   "current_checkout": "work/koledar365-final-publication",
-  "git_head": "d3989cd5b9",
+  "git_head": "82c4db6325e343e79d5dd8e526f3ce3c66c6470d",
   "source_manifest_commit": "d3989cd5b9334f20edff2ec905a349e63e70a52e",
   "preview": "https://f0c78aee.koledar365-si.pages.dev",
   "preview_manifest_sha256": "95fb25a07d6d182688baa498f34563a332c473fe38ad87635644918f48fb573d",
-  "local_gates": "136 Rails/13873 assertions;464 browser pass/8 skip;52 final targeted;1200 layout;138 accessibility;780 raster;6556 downloads;108 exports;48 months;69 coordinates all passed;32 final solar-date tests;36 image gate controls passed",
+  "local_gates": "136 Rails/13873 assertions;468 local browser pass/8 intentional skip;1200 layout;138 accessibility;780 raster;6556 parsed downloads;108 exports;48 months;69 coordinates;32 solar-date regressions;36 image gate controls all passed",
   "pending": [
-    "preview workflow rerun with validated per-request generation timestamp",
-    "merge PR107",
-    "production deploy full site via configured existing Cloudflare project",
-    "production full parity/download/browser/SEO/performance checks",
-    "finalize 13 reports and GO only if gates pass"
+    "finish GitHub production quality run",
+    "commit and publish final evidence"
   ],
   "search_console": "excluded",
-  "active": "Final 476-case browser run session 67389; upload f0c78aee complete; push snapshot and verify new GH preview next"
+  "active": "All live gates passed including final full browser468pass8skip; main GitHub QA39865776062 finishing; evidence commit next",
+  "production_deployment": "68ab0aa9-146a-483b-acf5-26f446e6252d",
+  "production_manifest_verified": true,
+  "preview_workflow": "39864947847 success:1768 parity,552 layout,138 axe",
+  "production_workflow": "39865775941 success",
+  "production_parity": "8014 files / 2444114125 bytes / 0 failures",
+  "performance": "93\u201398 lab scores; 5/6 LCP <=2.5s; school2.66s openP2; CLS0; no fieldINP",
+  "live_browser": "Final full live suite468pass8intentionalskip0failure in8.3min"
 }

@@ -1,0 +1,793 @@
+# Page snapshot
+
+```yaml
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - text: KOLEDAR365 · SLOVENIJA
+    - heading "Pomembni dnevi in praznovanja v Sloveniji" [level=1] [ref=e4]
+    - paragraph [ref=e5]: Slovenski običaji, spominski in mednarodni dnevi za leta 2027–2030. Pregled po mesecih z viri ter jasno oznako dela prostih dni.
+  - generic [ref=e6]:
+    - paragraph [ref=e7]: "Prikazani datumi: 69. Mednarodni ali kulturni dan sam po sebi ne pomeni dela prostega dne."
+    - generic [ref=e8]:
+      - generic [ref=e9]: Naslednji v izboru
+      - link "Novo leto" [ref=e10]:
+        - /url: /prazniki/novo-leto/
+        - strong [ref=e11]: Novo leto
+      - time [ref=e12]: 01. 01. 2027
+      - generic [ref=e13]: Čez 70 dni
+  - table "Pomembni dnevi in njihov status" [ref=e16]:
+    - rowgroup [ref=e17]:
+      - row "Datum Pomembni dan Vrsta Status dneva" [ref=e18]:
+        - columnheader "Datum" [ref=e19]
+        - columnheader "Pomembni dan" [ref=e20]
+        - columnheader "Vrsta" [ref=e21]
+        - columnheader "Status dneva" [ref=e22]
+    - rowgroup [ref=e23]:
+      - row "1. januar 2027 novo leto Prazniki po zakonu Dela prost dan" [ref=e24]:
+        - cell "1. januar 2027" [ref=e25]:
+          - link "1. januar 2027" [ref=e26]:
+            - /url: /?year=2027&month=1&date=2027-01-01
+        - cell "novo leto" [ref=e27]:
+          - link "novo leto" [ref=e28]:
+            - /url: /prazniki/novo-leto/
+        - cell "Prazniki po zakonu" [ref=e29]
+        - cell "Dela prost dan" [ref=e30]
+      - row "2. januar 2027 novo leto Prazniki po zakonu Dela prost dan" [ref=e31]:
+        - cell "2. januar 2027" [ref=e32]:
+          - link "2. januar 2027" [ref=e33]:
+            - /url: /?year=2027&month=1&date=2027-01-02
+        - cell "novo leto" [ref=e34]:
+          - link "novo leto" [ref=e35]:
+            - /url: /prazniki/novo-leto/
+        - cell "Prazniki po zakonu" [ref=e36]
+        - cell "Dela prost dan" [ref=e37]
+      - row "8. februar 2027 Prešernov dan, slovenski kulturni praznik Prazniki po zakonu Dela prost dan" [ref=e38]:
+        - cell "8. februar 2027" [ref=e39]:
+          - link "8. februar 2027" [ref=e40]:
+            - /url: /?year=2027&month=2&date=2027-02-08
+        - cell "Prešernov dan, slovenski kulturni praznik" [ref=e41]:
+          - link "Prešernov dan, slovenski kulturni praznik" [ref=e42]:
+            - /url: /prazniki/presernov-dan/
+        - cell "Prazniki po zakonu" [ref=e43]
+        - cell "Dela prost dan" [ref=e44]
+      - row "28. marec 2027 velikonočna nedelja Prazniki po zakonu Dela prost dan" [ref=e45]:
+        - cell "28. marec 2027" [ref=e46]:
+          - link "28. marec 2027" [ref=e47]:
+            - /url: /?year=2027&month=3&date=2027-03-28
+        - cell "velikonočna nedelja" [ref=e48]:
+          - link "velikonočna nedelja" [ref=e49]:
+            - /url: /prazniki/velika-noc/
+        - cell "Prazniki po zakonu" [ref=e50]
+        - cell "Dela prost dan" [ref=e51]
+      - row "29. marec 2027 velikonočni ponedeljek Prazniki po zakonu Dela prost dan" [ref=e52]:
+        - cell "29. marec 2027" [ref=e53]:
+          - link "29. marec 2027" [ref=e54]:
+            - /url: /?year=2027&month=3&date=2027-03-29
+        - cell "velikonočni ponedeljek" [ref=e55]:
+          - link "velikonočni ponedeljek" [ref=e56]:
+            - /url: /prazniki/velika-noc/
+        - cell "Prazniki po zakonu" [ref=e57]
+        - cell "Dela prost dan" [ref=e58]
+      - row "27. april 2027 dan upora proti okupatorju Prazniki po zakonu Dela prost dan" [ref=e59]:
+        - cell "27. april 2027" [ref=e60]:
+          - link "27. april 2027" [ref=e61]:
+            - /url: /?year=2027&month=4&date=2027-04-27
+        - cell "dan upora proti okupatorju" [ref=e62]:
+          - link "dan upora proti okupatorju" [ref=e63]:
+            - /url: /prazniki/dan-upora-proti-okupatorju/
+        - cell "Prazniki po zakonu" [ref=e64]
+        - cell "Dela prost dan" [ref=e65]
+      - row "1. maj 2027 praznik dela Prazniki po zakonu Dela prost dan" [ref=e66]:
+        - cell "1. maj 2027" [ref=e67]:
+          - link "1. maj 2027" [ref=e68]:
+            - /url: /?year=2027&month=5&date=2027-05-01
+        - cell "praznik dela" [ref=e69]:
+          - link "praznik dela" [ref=e70]:
+            - /url: /prazniki/praznik-dela/
+        - cell "Prazniki po zakonu" [ref=e71]
+        - cell "Dela prost dan" [ref=e72]
+      - row "2. maj 2027 praznik dela Prazniki po zakonu Dela prost dan" [ref=e73]:
+        - cell "2. maj 2027" [ref=e74]:
+          - link "2. maj 2027" [ref=e75]:
+            - /url: /?year=2027&month=5&date=2027-05-02
+        - cell "praznik dela" [ref=e76]:
+          - link "praznik dela" [ref=e77]:
+            - /url: /prazniki/praznik-dela/
+        - cell "Prazniki po zakonu" [ref=e78]
+        - cell "Dela prost dan" [ref=e79]
+      - row "16. maj 2027 binkoštna nedelja, binkošti Prazniki po zakonu Dela prost dan" [ref=e80]:
+        - cell "16. maj 2027" [ref=e81]:
+          - link "16. maj 2027" [ref=e82]:
+            - /url: /?year=2027&month=5&date=2027-05-16
+        - cell "binkoštna nedelja, binkošti" [ref=e83]:
+          - link "binkoštna nedelja, binkošti" [ref=e84]:
+            - /url: /prazniki/binkosti/
+        - cell "Prazniki po zakonu" [ref=e85]
+        - cell "Dela prost dan" [ref=e86]
+      - row "8. junij 2027 dan Primoža Trubarja Prazniki po zakonu Ni dela prost dan" [ref=e87]:
+        - cell "8. junij 2027" [ref=e88]:
+          - link "8. junij 2027" [ref=e89]:
+            - /url: /?year=2027&month=6&date=2027-06-08
+        - cell "dan Primoža Trubarja" [ref=e90]:
+          - link "dan Primoža Trubarja" [ref=e91]:
+            - /url: /prazniki/dan-primoza-trubarja/
+        - cell "Prazniki po zakonu" [ref=e92]
+        - cell "Ni dela prost dan" [ref=e93]
+      - row "25. junij 2027 dan državnosti Prazniki po zakonu Dela prost dan" [ref=e94]:
+        - cell "25. junij 2027" [ref=e95]:
+          - link "25. junij 2027" [ref=e96]:
+            - /url: /?year=2027&month=6&date=2027-06-25
+        - cell "dan državnosti" [ref=e97]:
+          - link "dan državnosti" [ref=e98]:
+            - /url: /prazniki/dan-drzavnosti/
+        - cell "Prazniki po zakonu" [ref=e99]
+        - cell "Dela prost dan" [ref=e100]
+      - row "7. avgust 2027 dan Triglava Prazniki po zakonu Ni dela prost dan" [ref=e101]:
+        - cell "7. avgust 2027" [ref=e102]:
+          - link "7. avgust 2027" [ref=e103]:
+            - /url: /?year=2027&month=8&date=2027-08-07
+        - cell "dan Triglava" [ref=e104]:
+          - link "dan Triglava" [ref=e105]:
+            - /url: /prazniki/dan-triglava/
+        - cell "Prazniki po zakonu" [ref=e106]
+        - cell "Ni dela prost dan" [ref=e107]
+      - row "15. avgust 2027 Marijino vnebovzetje Prazniki po zakonu Dela prost dan" [ref=e108]:
+        - cell "15. avgust 2027" [ref=e109]:
+          - link "15. avgust 2027" [ref=e110]:
+            - /url: /?year=2027&month=8&date=2027-08-15
+        - cell "Marijino vnebovzetje" [ref=e111]:
+          - link "Marijino vnebovzetje" [ref=e112]:
+            - /url: /prazniki/marijino-vnebovzetje/
+        - cell "Prazniki po zakonu" [ref=e113]
+        - cell "Dela prost dan" [ref=e114]
+      - row "17. avgust 2027 združitev prekmurskih Slovencev z matičnim narodom Prazniki po zakonu Ni dela prost dan" [ref=e115]:
+        - cell "17. avgust 2027" [ref=e116]:
+          - link "17. avgust 2027" [ref=e117]:
+            - /url: /?year=2027&month=8&date=2027-08-17
+        - cell "združitev prekmurskih Slovencev z matičnim narodom" [ref=e118]:
+          - link "združitev prekmurskih Slovencev z matičnim narodom" [ref=e119]:
+            - /url: /prazniki/zdruzitev-prekmurskih-slovencev/
+        - cell "Prazniki po zakonu" [ref=e120]
+        - cell "Ni dela prost dan" [ref=e121]
+      - row "15. september 2027 vrnitev Primorske k matični domovini Prazniki po zakonu Ni dela prost dan" [ref=e122]:
+        - cell "15. september 2027" [ref=e123]:
+          - link "15. september 2027" [ref=e124]:
+            - /url: /?year=2027&month=9&date=2027-09-15
+        - cell "vrnitev Primorske k matični domovini" [ref=e125]:
+          - link "vrnitev Primorske k matični domovini" [ref=e126]:
+            - /url: /prazniki/vrnitev-primorske/
+        - cell "Prazniki po zakonu" [ref=e127]
+        - cell "Ni dela prost dan" [ref=e128]
+      - row "23. september 2027 dan slovenskega športa Prazniki po zakonu Ni dela prost dan" [ref=e129]:
+        - cell "23. september 2027" [ref=e130]:
+          - link "23. september 2027" [ref=e131]:
+            - /url: /?year=2027&month=9&date=2027-09-23
+        - cell "dan slovenskega športa" [ref=e132]:
+          - link "dan slovenskega športa" [ref=e133]:
+            - /url: /prazniki/dan-slovenskega-sporta/
+        - cell "Prazniki po zakonu" [ref=e134]
+        - cell "Ni dela prost dan" [ref=e135]
+      - row "25. oktober 2027 dan suverenosti Prazniki po zakonu Ni dela prost dan" [ref=e136]:
+        - cell "25. oktober 2027" [ref=e137]:
+          - link "25. oktober 2027" [ref=e138]:
+            - /url: /?year=2027&month=10&date=2027-10-25
+        - cell "dan suverenosti" [ref=e139]:
+          - link "dan suverenosti" [ref=e140]:
+            - /url: /prazniki/dan-suverenosti/
+        - cell "Prazniki po zakonu" [ref=e141]
+        - cell "Ni dela prost dan" [ref=e142]
+      - row "31. oktober 2027 dan reformacije Prazniki po zakonu Dela prost dan" [ref=e143]:
+        - cell "31. oktober 2027" [ref=e144]:
+          - link "31. oktober 2027" [ref=e145]:
+            - /url: /?year=2027&month=10&date=2027-10-31
+        - cell "dan reformacije" [ref=e146]:
+          - link "dan reformacije" [ref=e147]:
+            - /url: /prazniki/dan-reformacije/
+        - cell "Prazniki po zakonu" [ref=e148]
+        - cell "Dela prost dan" [ref=e149]
+      - row "1. november 2027 dan spomina na mrtve Prazniki po zakonu Dela prost dan" [ref=e150]:
+        - cell "1. november 2027" [ref=e151]:
+          - link "1. november 2027" [ref=e152]:
+            - /url: /?year=2027&month=11&date=2027-11-01
+        - cell "dan spomina na mrtve" [ref=e153]:
+          - link "dan spomina na mrtve" [ref=e154]:
+            - /url: /prazniki/dan-spomina-na-mrtve/
+        - cell "Prazniki po zakonu" [ref=e155]
+        - cell "Dela prost dan" [ref=e156]
+      - row "10. november 2027 dan znanosti Prazniki po zakonu Ni dela prost dan" [ref=e157]:
+        - cell "10. november 2027" [ref=e158]:
+          - link "10. november 2027" [ref=e159]:
+            - /url: /?year=2027&month=11&date=2027-11-10
+        - cell "dan znanosti" [ref=e160]:
+          - link "dan znanosti" [ref=e161]:
+            - /url: /prazniki/dan-znanosti/
+        - cell "Prazniki po zakonu" [ref=e162]
+        - cell "Ni dela prost dan" [ref=e163]
+      - row "23. november 2027 dan Rudolfa Maistra Prazniki po zakonu Ni dela prost dan" [ref=e164]:
+        - cell "23. november 2027" [ref=e165]:
+          - link "23. november 2027" [ref=e166]:
+            - /url: /?year=2027&month=11&date=2027-11-23
+        - cell "dan Rudolfa Maistra" [ref=e167]:
+          - link "dan Rudolfa Maistra" [ref=e168]:
+            - /url: /prazniki/dan-rudolfa-maistra/
+        - cell "Prazniki po zakonu" [ref=e169]
+        - cell "Ni dela prost dan" [ref=e170]
+      - row "25. december 2027 božič Prazniki po zakonu Dela prost dan" [ref=e171]:
+        - cell "25. december 2027" [ref=e172]:
+          - link "25. december 2027" [ref=e173]:
+            - /url: /?year=2027&month=12&date=2027-12-25
+        - cell "božič" [ref=e174]:
+          - link "božič" [ref=e175]:
+            - /url: /prazniki/bozic/
+        - cell "Prazniki po zakonu" [ref=e176]
+        - cell "Dela prost dan" [ref=e177]
+      - row "26. december 2027 dan samostojnosti in enotnosti Prazniki po zakonu Dela prost dan" [ref=e178]:
+        - cell "26. december 2027" [ref=e179]:
+          - link "26. december 2027" [ref=e180]:
+            - /url: /?year=2027&month=12&date=2027-12-26
+        - cell "dan samostojnosti in enotnosti" [ref=e181]:
+          - link "dan samostojnosti in enotnosti" [ref=e182]:
+            - /url: /prazniki/dan-samostojnosti-in-enotnosti/
+        - cell "Prazniki po zakonu" [ref=e183]
+        - cell "Dela prost dan" [ref=e184]
+      - row "6. januar 2027 Sveti trije kralji Izročilo in verski dnevi Ni dela prost dan" [ref=e185]:
+        - cell "6. januar 2027" [ref=e186]:
+          - link "6. januar 2027" [ref=e187]:
+            - /url: /?year=2027&month=1&date=2027-01-06
+        - cell "Sveti trije kralji" [ref=e188]:
+          - link "Sveti trije kralji" [ref=e189]:
+            - /url: /prazniki/sveti-trije-kralji/
+        - cell "Izročilo in verski dnevi" [ref=e190]
+        - cell "Ni dela prost dan" [ref=e191]
+      - row "14. februar 2027 Valentinovo Kultura in družba Ni dela prost dan" [ref=e192]:
+        - cell "14. februar 2027" [ref=e193]:
+          - link "14. februar 2027" [ref=e194]:
+            - /url: /?year=2027&month=2&date=2027-02-14
+        - cell "Valentinovo" [ref=e195]:
+          - link "Valentinovo" [ref=e196]:
+            - /url: /prazniki/valentinovo/
+        - cell "Kultura in družba" [ref=e197]
+        - cell "Ni dela prost dan" [ref=e198]
+      - row "9. februar 2027 Pust Kultura in družba Ni dela prost dan" [ref=e199]:
+        - cell "9. februar 2027" [ref=e200]:
+          - link "9. februar 2027" [ref=e201]:
+            - /url: /?year=2027&month=2&date=2027-02-09
+        - cell "Pust" [ref=e202]:
+          - link "Pust" [ref=e203]:
+            - /url: /prazniki/pust/
+        - cell "Kultura in družba" [ref=e204]
+        - cell "Ni dela prost dan" [ref=e205]
+      - row "8. marec 2027 Dan žena Mednarodni in evropski dnevi Ni dela prost dan" [ref=e206]:
+        - cell "8. marec 2027" [ref=e207]:
+          - link "8. marec 2027" [ref=e208]:
+            - /url: /?year=2027&month=3&date=2027-03-08
+        - cell "Dan žena" [ref=e209]:
+          - link "Dan žena" [ref=e210]:
+            - /url: /prazniki/dan-zena/
+        - cell "Mednarodni in evropski dnevi" [ref=e211]
+        - cell "Ni dela prost dan" [ref=e212]
+      - row "12. marec 2027 Gregorjevo Kultura in družba Ni dela prost dan" [ref=e213]:
+        - cell "12. marec 2027" [ref=e214]:
+          - link "12. marec 2027" [ref=e215]:
+            - /url: /?year=2027&month=3&date=2027-03-12
+        - cell "Gregorjevo" [ref=e216]:
+          - link "Gregorjevo" [ref=e217]:
+            - /url: /prazniki/gregorjevo/
+        - cell "Kultura in družba" [ref=e218]
+        - cell "Ni dela prost dan" [ref=e219]
+      - row "25. marec 2027 Materinski dan Kultura in družba Ni dela prost dan" [ref=e220]:
+        - cell "25. marec 2027" [ref=e221]:
+          - link "25. marec 2027" [ref=e222]:
+            - /url: /?year=2027&month=3&date=2027-03-25
+        - cell "Materinski dan" [ref=e223]:
+          - link "Materinski dan" [ref=e224]:
+            - /url: /prazniki/materinski-dan/
+        - cell "Kultura in družba" [ref=e225]
+        - cell "Ni dela prost dan" [ref=e226]
+      - row "21. marec 2027 Cvetna nedelja Izročilo in verski dnevi Ni dela prost dan" [ref=e227]:
+        - cell "21. marec 2027" [ref=e228]:
+          - link "21. marec 2027" [ref=e229]:
+            - /url: /?year=2027&month=3&date=2027-03-21
+        - cell "Cvetna nedelja" [ref=e230]:
+          - link "Cvetna nedelja" [ref=e231]:
+            - /url: /prazniki/cvetna-nedelja/
+        - cell "Izročilo in verski dnevi" [ref=e232]
+        - cell "Ni dela prost dan" [ref=e233]
+      - row "26. marec 2027 Veliki petek Izročilo in verski dnevi Ni dela prost dan" [ref=e234]:
+        - cell "26. marec 2027" [ref=e235]:
+          - link "26. marec 2027" [ref=e236]:
+            - /url: /?year=2027&month=3&date=2027-03-26
+        - cell "Veliki petek" [ref=e237]:
+          - link "Veliki petek" [ref=e238]:
+            - /url: /prazniki/veliki-petek/
+        - cell "Izročilo in verski dnevi" [ref=e239]
+        - cell "Ni dela prost dan" [ref=e240]
+      - row "22. april 2027 Svetovni dan Zemlje Mednarodni in evropski dnevi Ni dela prost dan" [ref=e241]:
+        - cell "22. april 2027" [ref=e242]:
+          - link "22. april 2027" [ref=e243]:
+            - /url: /?year=2027&month=4&date=2027-04-22
+        - cell "Svetovni dan Zemlje" [ref=e244]:
+          - link "Svetovni dan Zemlje" [ref=e245]:
+            - /url: /prazniki/svetovni-dan-zemlje/
+        - cell "Mednarodni in evropski dnevi" [ref=e246]
+        - cell "Ni dela prost dan" [ref=e247]
+      - row "9. maj 2027 Dan Evrope Mednarodni in evropski dnevi Ni dela prost dan" [ref=e248]:
+        - cell "9. maj 2027" [ref=e249]:
+          - link "9. maj 2027" [ref=e250]:
+            - /url: /?year=2027&month=5&date=2027-05-09
+        - cell "Dan Evrope" [ref=e251]:
+          - link "Dan Evrope" [ref=e252]:
+            - /url: /prazniki/dan-evrope/
+        - cell "Mednarodni in evropski dnevi" [ref=e253]
+        - cell "Ni dela prost dan" [ref=e254]
+      - row "20. maj 2027 Svetovni dan čebel Mednarodni in evropski dnevi Ni dela prost dan" [ref=e255]:
+        - cell "20. maj 2027" [ref=e256]:
+          - link "20. maj 2027" [ref=e257]:
+            - /url: /?year=2027&month=5&date=2027-05-20
+        - cell "Svetovni dan čebel" [ref=e258]:
+          - link "Svetovni dan čebel" [ref=e259]:
+            - /url: /prazniki/svetovni-dan-cebel/
+        - cell "Mednarodni in evropski dnevi" [ref=e260]
+        - cell "Ni dela prost dan" [ref=e261]
+      - row "28. november 2027 Advent Izročilo in verski dnevi Ni dela prost dan" [ref=e262]:
+        - cell "28. november 2027" [ref=e263]:
+          - link "28. november 2027" [ref=e264]:
+            - /url: /?year=2027&month=11&date=2027-11-28
+        - cell "Advent" [ref=e265]:
+          - link "Advent" [ref=e266]:
+            - /url: /prazniki/advent/
+        - cell "Izročilo in verski dnevi" [ref=e267]
+        - cell "Ni dela prost dan" [ref=e268]
+      - row "11. november 2027 Martinovo Kultura in družba Ni dela prost dan" [ref=e269]:
+        - cell "11. november 2027" [ref=e270]:
+          - link "11. november 2027" [ref=e271]:
+            - /url: /?year=2027&month=11&date=2027-11-11
+        - cell "Martinovo" [ref=e272]:
+          - link "Martinovo" [ref=e273]:
+            - /url: /prazniki/martinovo/
+        - cell "Kultura in družba" [ref=e274]
+        - cell "Ni dela prost dan" [ref=e275]
+      - row "6. december 2027 Miklavž Izročilo in verski dnevi Ni dela prost dan" [ref=e276]:
+        - cell "6. december 2027" [ref=e277]:
+          - link "6. december 2027" [ref=e278]:
+            - /url: /?year=2027&month=12&date=2027-12-06
+        - cell "Miklavž" [ref=e279]:
+          - link "Miklavž" [ref=e280]:
+            - /url: /prazniki/miklavz/
+        - cell "Izročilo in verski dnevi" [ref=e281]
+        - cell "Ni dela prost dan" [ref=e282]
+      - row "31. december 2027 Silvestrovo Kultura in družba Ni dela prost dan" [ref=e283]:
+        - cell "31. december 2027" [ref=e284]:
+          - link "31. december 2027" [ref=e285]:
+            - /url: /?year=2027&month=12&date=2027-12-31
+        - cell "Silvestrovo" [ref=e286]:
+          - link "Silvestrovo" [ref=e287]:
+            - /url: /prazniki/silvestrovo/
+        - cell "Kultura in družba" [ref=e288]
+        - cell "Ni dela prost dan" [ref=e289]
+      - row "28. marec 2027 Premik ure Narava, letni časi in ura Sovpada z dela prostim dnem" [ref=e290]:
+        - cell "28. marec 2027" [ref=e291]:
+          - link "28. marec 2027" [ref=e292]:
+            - /url: /?year=2027&month=3&date=2027-03-28
+        - cell "Premik ure" [ref=e293]:
+          - link "Premik ure" [ref=e294]:
+            - /url: /pomembni-dnevi/2027/
+        - cell "Narava, letni časi in ura" [ref=e295]
+        - cell "Sovpada z dela prostim dnem" [ref=e296]
+      - row "31. oktober 2027 Premik ure Narava, letni časi in ura Sovpada z dela prostim dnem" [ref=e297]:
+        - cell "31. oktober 2027" [ref=e298]:
+          - link "31. oktober 2027" [ref=e299]:
+            - /url: /?year=2027&month=10&date=2027-10-31
+        - cell "Premik ure" [ref=e300]:
+          - link "Premik ure" [ref=e301]:
+            - /url: /pomembni-dnevi/2027/
+        - cell "Narava, letni časi in ura" [ref=e302]
+        - cell "Sovpada z dela prostim dnem" [ref=e303]
+      - row "27. januar 2027 Mednarodni dan spomina na žrtve holokavsta Mednarodni in evropski dnevi Ni dela prost dan" [ref=e304]:
+        - cell "27. januar 2027" [ref=e305]:
+          - link "27. januar 2027" [ref=e306]:
+            - /url: /?year=2027&month=1&date=2027-01-27
+        - cell "Mednarodni dan spomina na žrtve holokavsta" [ref=e307]:
+          - link "Mednarodni dan spomina na žrtve holokavsta" [ref=e308]:
+            - /url: /pomembni-dnevi/dan-spomina-na-zrtve-holokavsta/
+        - cell "Mednarodni in evropski dnevi" [ref=e309]
+        - cell "Ni dela prost dan" [ref=e310]
+      - row "21. februar 2027 Mednarodni dan maternega jezika Mednarodni in evropski dnevi Ni dela prost dan" [ref=e311]:
+        - cell "21. februar 2027" [ref=e312]:
+          - link "21. februar 2027" [ref=e313]:
+            - /url: /?year=2027&month=2&date=2027-02-21
+        - cell "Mednarodni dan maternega jezika" [ref=e314]:
+          - link "Mednarodni dan maternega jezika" [ref=e315]:
+            - /url: /pomembni-dnevi/mednarodni-dan-maternega-jezika/
+        - cell "Mednarodni in evropski dnevi" [ref=e316]
+        - cell "Ni dela prost dan" [ref=e317]
+      - row "22. marec 2027 Svetovni dan voda Narava, letni časi in ura Ni dela prost dan" [ref=e318]:
+        - cell "22. marec 2027" [ref=e319]:
+          - link "22. marec 2027" [ref=e320]:
+            - /url: /?year=2027&month=3&date=2027-03-22
+        - cell "Svetovni dan voda" [ref=e321]:
+          - link "Svetovni dan voda" [ref=e322]:
+            - /url: /pomembni-dnevi/svetovni-dan-voda/
+        - cell "Narava, letni časi in ura" [ref=e323]
+        - cell "Ni dela prost dan" [ref=e324]
+      - row "23. april 2027 Svetovni dan knjige in avtorskih pravic Mednarodni in evropski dnevi Ni dela prost dan" [ref=e325]:
+        - cell "23. april 2027" [ref=e326]:
+          - link "23. april 2027" [ref=e327]:
+            - /url: /?year=2027&month=4&date=2027-04-23
+        - cell "Svetovni dan knjige in avtorskih pravic" [ref=e328]:
+          - link "Svetovni dan knjige in avtorskih pravic" [ref=e329]:
+            - /url: /pomembni-dnevi/svetovni-dan-knjige-in-avtorskih-pravic/
+        - cell "Mednarodni in evropski dnevi" [ref=e330]
+        - cell "Ni dela prost dan" [ref=e331]
+      - row "15. maj 2027 Mednarodni dan družin Mednarodni in evropski dnevi Ni dela prost dan" [ref=e332]:
+        - cell "15. maj 2027" [ref=e333]:
+          - link "15. maj 2027" [ref=e334]:
+            - /url: /?year=2027&month=5&date=2027-05-15
+        - cell "Mednarodni dan družin" [ref=e335]:
+          - link "Mednarodni dan družin" [ref=e336]:
+            - /url: /pomembni-dnevi/mednarodni-dan-druzin/
+        - cell "Mednarodni in evropski dnevi" [ref=e337]
+        - cell "Ni dela prost dan" [ref=e338]
+      - row "4. junij 2027 Dan slovenskega krvodajalstva Kultura in družba Ni dela prost dan" [ref=e339]:
+        - cell "4. junij 2027" [ref=e340]:
+          - link "4. junij 2027" [ref=e341]:
+            - /url: /?year=2027&month=6&date=2027-06-04
+        - cell "Dan slovenskega krvodajalstva" [ref=e342]:
+          - link "Dan slovenskega krvodajalstva" [ref=e343]:
+            - /url: /pomembni-dnevi/dan-slovenskega-krvodajalstva/
+        - cell "Kultura in družba" [ref=e344]
+        - cell "Ni dela prost dan" [ref=e345]
+      - row "5. junij 2027 Svetovni dan okolja Narava, letni časi in ura Ni dela prost dan" [ref=e346]:
+        - cell "5. junij 2027" [ref=e347]:
+          - link "5. junij 2027" [ref=e348]:
+            - /url: /?year=2027&month=6&date=2027-06-05
+        - cell "Svetovni dan okolja" [ref=e349]:
+          - link "Svetovni dan okolja" [ref=e350]:
+            - /url: /pomembni-dnevi/svetovni-dan-okolja/
+        - cell "Narava, letni časi in ura" [ref=e351]
+        - cell "Ni dela prost dan" [ref=e352]
+      - row "12. avgust 2027 Mednarodni dan mladih Mednarodni in evropski dnevi Ni dela prost dan" [ref=e353]:
+        - cell "12. avgust 2027" [ref=e354]:
+          - link "12. avgust 2027" [ref=e355]:
+            - /url: /?year=2027&month=8&date=2027-08-12
+        - cell "Mednarodni dan mladih" [ref=e356]:
+          - link "Mednarodni dan mladih" [ref=e357]:
+            - /url: /pomembni-dnevi/2027/
+        - cell "Mednarodni in evropski dnevi" [ref=e358]
+        - cell "Ni dela prost dan" [ref=e359]
+      - row "23. avgust 2027 Evropski dan spomina na žrtve totalitarnih in avtoritarnih režimov Mednarodni in evropski dnevi Ni dela prost dan" [ref=e360]:
+        - cell "23. avgust 2027" [ref=e361]:
+          - link "23. avgust 2027" [ref=e362]:
+            - /url: /?year=2027&month=8&date=2027-08-23
+        - cell "Evropski dan spomina na žrtve totalitarnih in avtoritarnih režimov" [ref=e363]:
+          - link "Evropski dan spomina na žrtve totalitarnih in avtoritarnih režimov" [ref=e364]:
+            - /url: /pomembni-dnevi/evropski-dan-spomina-na-zrtve-totalitarnih-rezimov/
+        - cell "Mednarodni in evropski dnevi" [ref=e365]
+        - cell "Ni dela prost dan" [ref=e366]
+      - row "8. september 2027 Mednarodni dan pismenosti Mednarodni in evropski dnevi Ni dela prost dan" [ref=e367]:
+        - cell "8. september 2027" [ref=e368]:
+          - link "8. september 2027" [ref=e369]:
+            - /url: /?year=2027&month=9&date=2027-09-08
+        - cell "Mednarodni dan pismenosti" [ref=e370]:
+          - link "Mednarodni dan pismenosti" [ref=e371]:
+            - /url: /pomembni-dnevi/2027/
+        - cell "Mednarodni in evropski dnevi" [ref=e372]
+        - cell "Ni dela prost dan" [ref=e373]
+      - row "21. september 2027 Mednarodni dan miru Mednarodni in evropski dnevi Ni dela prost dan" [ref=e374]:
+        - cell "21. september 2027" [ref=e375]:
+          - link "21. september 2027" [ref=e376]:
+            - /url: /?year=2027&month=9&date=2027-09-21
+        - cell "Mednarodni dan miru" [ref=e377]:
+          - link "Mednarodni dan miru" [ref=e378]:
+            - /url: /pomembni-dnevi/2027/
+        - cell "Mednarodni in evropski dnevi" [ref=e379]
+        - cell "Ni dela prost dan" [ref=e380]
+      - row "26. september 2027 Evropski dan jezikov Mednarodni in evropski dnevi Ni dela prost dan" [ref=e381]:
+        - cell "26. september 2027" [ref=e382]:
+          - link "26. september 2027" [ref=e383]:
+            - /url: /?year=2027&month=9&date=2027-09-26
+        - cell "Evropski dan jezikov" [ref=e384]:
+          - link "Evropski dan jezikov" [ref=e385]:
+            - /url: /pomembni-dnevi/evropski-dan-jezikov/
+        - cell "Mednarodni in evropski dnevi" [ref=e386]
+        - cell "Ni dela prost dan" [ref=e387]
+      - row "1. oktober 2027 Mednarodni dan starejših Mednarodni in evropski dnevi Ni dela prost dan" [ref=e388]:
+        - cell "1. oktober 2027" [ref=e389]:
+          - link "1. oktober 2027" [ref=e390]:
+            - /url: /?year=2027&month=10&date=2027-10-01
+        - cell "Mednarodni dan starejših" [ref=e391]:
+          - link "Mednarodni dan starejših" [ref=e392]:
+            - /url: /pomembni-dnevi/2027/
+        - cell "Mednarodni in evropski dnevi" [ref=e393]
+        - cell "Ni dela prost dan" [ref=e394]
+      - row "4. oktober 2027 Svetovni dan živali Mednarodni in evropski dnevi Ni dela prost dan" [ref=e395]:
+        - cell "4. oktober 2027" [ref=e396]:
+          - link "4. oktober 2027" [ref=e397]:
+            - /url: /?year=2027&month=10&date=2027-10-04
+        - cell "Svetovni dan živali" [ref=e398]:
+          - link "Svetovni dan živali" [ref=e399]:
+            - /url: /pomembni-dnevi/svetovni-dan-zivali/
+        - cell "Mednarodni in evropski dnevi" [ref=e400]
+        - cell "Ni dela prost dan" [ref=e401]
+      - row "5. oktober 2027 Svetovni dan učiteljev Mednarodni in evropski dnevi Ni dela prost dan" [ref=e402]:
+        - cell "5. oktober 2027" [ref=e403]:
+          - link "5. oktober 2027" [ref=e404]:
+            - /url: /?year=2027&month=10&date=2027-10-05
+        - cell "Svetovni dan učiteljev" [ref=e405]:
+          - link "Svetovni dan učiteljev" [ref=e406]:
+            - /url: /pomembni-dnevi/svetovni-dan-uciteljev/
+        - cell "Mednarodni in evropski dnevi" [ref=e407]
+        - cell "Ni dela prost dan" [ref=e408]
+      - row "4. oktober 2027 Teden otroka® Kultura in družba Ni dela prost dan" [ref=e409]:
+        - cell "4. oktober 2027" [ref=e410]:
+          - link "4. oktober 2027" [ref=e411]:
+            - /url: /?year=2027&month=10&date=2027-10-04
+        - cell "Teden otroka®" [ref=e412]:
+          - link "Teden otroka®" [ref=e413]:
+            - /url: /pomembni-dnevi/teden-otroka/
+        - cell "Kultura in družba" [ref=e414]
+        - cell "Ni dela prost dan" [ref=e415]
+      - row "16. oktober 2027 Svetovni dan hrane Mednarodni in evropski dnevi Ni dela prost dan" [ref=e416]:
+        - cell "16. oktober 2027" [ref=e417]:
+          - link "16. oktober 2027" [ref=e418]:
+            - /url: /?year=2027&month=10&date=2027-10-16
+        - cell "Svetovni dan hrane" [ref=e419]:
+          - link "Svetovni dan hrane" [ref=e420]:
+            - /url: /pomembni-dnevi/2027/
+        - cell "Mednarodni in evropski dnevi" [ref=e421]
+        - cell "Ni dela prost dan" [ref=e422]
+      - row "31. oktober 2027 Noč čarovnic Kultura in družba Sovpada z dela prostim dnem" [ref=e423]:
+        - cell "31. oktober 2027" [ref=e424]:
+          - link "31. oktober 2027" [ref=e425]:
+            - /url: /?year=2027&month=10&date=2027-10-31
+        - cell "Noč čarovnic" [ref=e426]:
+          - link "Noč čarovnic" [ref=e427]:
+            - /url: /pomembni-dnevi/noc-carovnic/
+        - cell "Kultura in družba" [ref=e428]
+        - cell "Sovpada z dela prostim dnem" [ref=e429]
+      - row "2. november 2027 Spomin vseh vernih rajnih Izročilo in verski dnevi Ni dela prost dan" [ref=e430]:
+        - cell "2. november 2027" [ref=e431]:
+          - link "2. november 2027" [ref=e432]:
+            - /url: /?year=2027&month=11&date=2027-11-02
+        - cell "Spomin vseh vernih rajnih" [ref=e433]:
+          - link "Spomin vseh vernih rajnih" [ref=e434]:
+            - /url: /pomembni-dnevi/spomin-vseh-vernih-rajnih/
+        - cell "Izročilo in verski dnevi" [ref=e435]
+        - cell "Ni dela prost dan" [ref=e436]
+      - row "14. november 2027 Dan slovenskega znakovnega jezika Kultura in družba Ni dela prost dan" [ref=e437]:
+        - cell "14. november 2027" [ref=e438]:
+          - link "14. november 2027" [ref=e439]:
+            - /url: /?year=2027&month=11&date=2027-11-14
+        - cell "Dan slovenskega znakovnega jezika" [ref=e440]:
+          - link "Dan slovenskega znakovnega jezika" [ref=e441]:
+            - /url: /pomembni-dnevi/dan-slovenskega-znakovnega-jezika/
+        - cell "Kultura in družba" [ref=e442]
+        - cell "Ni dela prost dan" [ref=e443]
+      - row "19. november 2027 Dan slovenske hrane Kultura in družba Ni dela prost dan" [ref=e444]:
+        - cell "19. november 2027" [ref=e445]:
+          - link "19. november 2027" [ref=e446]:
+            - /url: /?year=2027&month=11&date=2027-11-19
+        - cell "Dan slovenske hrane" [ref=e447]:
+          - link "Dan slovenske hrane" [ref=e448]:
+            - /url: /pomembni-dnevi/dan-slovenske-hrane/
+        - cell "Kultura in družba" [ref=e449]
+        - cell "Ni dela prost dan" [ref=e450]
+      - row "20. november 2027 Svetovni dan otrok Mednarodni in evropski dnevi Ni dela prost dan" [ref=e451]:
+        - cell "20. november 2027" [ref=e452]:
+          - link "20. november 2027" [ref=e453]:
+            - /url: /?year=2027&month=11&date=2027-11-20
+        - cell "Svetovni dan otrok" [ref=e454]:
+          - link "Svetovni dan otrok" [ref=e455]:
+            - /url: /pomembni-dnevi/svetovni-dan-otrok/
+        - cell "Mednarodni in evropski dnevi" [ref=e456]
+        - cell "Ni dela prost dan" [ref=e457]
+      - row "3. december 2027 Mednarodni dan invalidov Mednarodni in evropski dnevi Ni dela prost dan" [ref=e458]:
+        - cell "3. december 2027" [ref=e459]:
+          - link "3. december 2027" [ref=e460]:
+            - /url: /?year=2027&month=12&date=2027-12-03
+        - cell "Mednarodni dan invalidov" [ref=e461]:
+          - link "Mednarodni dan invalidov" [ref=e462]:
+            - /url: /pomembni-dnevi/2027/
+        - cell "Mednarodni in evropski dnevi" [ref=e463]
+        - cell "Ni dela prost dan" [ref=e464]
+      - row "3. december 2027 Ta veseli dan kulture Kultura in družba Ni dela prost dan" [ref=e465]:
+        - cell "3. december 2027" [ref=e466]:
+          - link "3. december 2027" [ref=e467]:
+            - /url: /?year=2027&month=12&date=2027-12-03
+        - cell "Ta veseli dan kulture" [ref=e468]:
+          - link "Ta veseli dan kulture" [ref=e469]:
+            - /url: /pomembni-dnevi/ta-veseli-dan-kulture/
+        - cell "Kultura in družba" [ref=e470]
+        - cell "Ni dela prost dan" [ref=e471]
+      - row "10. december 2027 Dan človekovih pravic Mednarodni in evropski dnevi Ni dela prost dan" [ref=e472]:
+        - cell "10. december 2027" [ref=e473]:
+          - link "10. december 2027" [ref=e474]:
+            - /url: /?year=2027&month=12&date=2027-12-10
+        - cell "Dan človekovih pravic" [ref=e475]:
+          - link "Dan človekovih pravic" [ref=e476]:
+            - /url: /pomembni-dnevi/2027/
+        - cell "Mednarodni in evropski dnevi" [ref=e477]
+        - cell "Ni dela prost dan" [ref=e478]
+      - row "20. marec 2027 Pomladno enakonočje Narava, letni časi in ura Ni dela prost dan" [ref=e479]:
+        - cell "20. marec 2027" [ref=e480]:
+          - link "20. marec 2027" [ref=e481]:
+            - /url: /?year=2027&month=3&date=2027-03-20
+        - cell "Pomladno enakonočje" [ref=e482]:
+          - link "Pomladno enakonočje" [ref=e483]:
+            - /url: /letni-casi/pomladno-enakonocje/
+        - cell "Narava, letni časi in ura" [ref=e484]
+        - cell "Ni dela prost dan" [ref=e485]
+      - row "21. junij 2027 Poletni solsticij Narava, letni časi in ura Ni dela prost dan" [ref=e486]:
+        - cell "21. junij 2027" [ref=e487]:
+          - link "21. junij 2027" [ref=e488]:
+            - /url: /?year=2027&month=6&date=2027-06-21
+        - cell "Poletni solsticij" [ref=e489]:
+          - link "Poletni solsticij" [ref=e490]:
+            - /url: /letni-casi/poletni-solsticij/
+        - cell "Narava, letni časi in ura" [ref=e491]
+        - cell "Ni dela prost dan" [ref=e492]
+      - row "23. september 2027 Jesensko enakonočje Narava, letni časi in ura Ni dela prost dan" [ref=e493]:
+        - cell "23. september 2027" [ref=e494]:
+          - link "23. september 2027" [ref=e495]:
+            - /url: /?year=2027&month=9&date=2027-09-23
+        - cell "Jesensko enakonočje" [ref=e496]:
+          - link "Jesensko enakonočje" [ref=e497]:
+            - /url: /letni-casi/jesensko-enakonocje/
+        - cell "Narava, letni časi in ura" [ref=e498]
+        - cell "Ni dela prost dan" [ref=e499]
+      - row "22. december 2027 Zimski solsticij Narava, letni časi in ura Ni dela prost dan" [ref=e500]:
+        - cell "22. december 2027" [ref=e501]:
+          - link "22. december 2027" [ref=e502]:
+            - /url: /?year=2027&month=12&date=2027-12-22
+        - cell "Zimski solsticij" [ref=e503]:
+          - link "Zimski solsticij" [ref=e504]:
+            - /url: /letni-casi/zimski-solsticij/
+        - cell "Narava, letni časi in ura" [ref=e505]
+        - cell "Ni dela prost dan" [ref=e506]
+  - navigation "Pomembni dnevi po mesecih" [ref=e507]:
+    - heading "Pomembni dnevi po mesecih" [level=2] [ref=e508]
+    - generic [ref=e509]:
+      - link "Januar" [ref=e510]:
+        - /url: /pomembni-dnevi/januar/
+      - link "Februar" [ref=e511]:
+        - /url: /pomembni-dnevi/februar/
+      - link "Marec" [ref=e512]:
+        - /url: /pomembni-dnevi/marec/
+      - link "April" [ref=e513]:
+        - /url: /pomembni-dnevi/april/
+      - link "Maj" [ref=e514]:
+        - /url: /pomembni-dnevi/maj/
+      - link "Junij" [ref=e515]:
+        - /url: /pomembni-dnevi/junij/
+      - link "Julij" [ref=e516]:
+        - /url: /pomembni-dnevi/julij/
+      - link "Avgust" [ref=e517]:
+        - /url: /pomembni-dnevi/avgust/
+      - link "September" [ref=e518]:
+        - /url: /pomembni-dnevi/september/
+      - link "Oktober" [ref=e519]:
+        - /url: /pomembni-dnevi/oktober/
+      - link "November" [ref=e520]:
+        - /url: /pomembni-dnevi/november/
+      - link "December" [ref=e521]:
+        - /url: /pomembni-dnevi/december/
+  - generic [ref=e522]:
+    - heading "Odkrijte zgodbe za datumi" [level=2] [ref=e523]
+    - generic [ref=e524]:
+      - link "Advent" [ref=e525]:
+        - /url: /prazniki/advent/
+      - link "Binkoštna nedelja, binkošti" [ref=e526]:
+        - /url: /prazniki/binkosti/
+      - link "Božič" [ref=e527]:
+        - /url: /prazniki/bozic/
+      - link "Cvetna nedelja" [ref=e528]:
+        - /url: /prazniki/cvetna-nedelja/
+      - link "Dan Evrope" [ref=e529]:
+        - /url: /prazniki/dan-evrope/
+      - link "Dan Primoža Trubarja" [ref=e530]:
+        - /url: /prazniki/dan-primoza-trubarja/
+      - link "Dan Rudolfa Maistra" [ref=e531]:
+        - /url: /prazniki/dan-rudolfa-maistra/
+      - link "Dan Triglava" [ref=e532]:
+        - /url: /prazniki/dan-triglava/
+      - link "Dan državnosti" [ref=e533]:
+        - /url: /prazniki/dan-drzavnosti/
+      - link "Dan reformacije" [ref=e534]:
+        - /url: /prazniki/dan-reformacije/
+      - link "Dan samostojnosti in enotnosti" [ref=e535]:
+        - /url: /prazniki/dan-samostojnosti-in-enotnosti/
+      - link "Dan slovenske hrane" [ref=e536]:
+        - /url: /pomembni-dnevi/dan-slovenske-hrane/
+      - link "Dan slovenskega krvodajalstva" [ref=e537]:
+        - /url: /pomembni-dnevi/dan-slovenskega-krvodajalstva/
+      - link "Dan slovenskega znakovnega jezika" [ref=e538]:
+        - /url: /pomembni-dnevi/dan-slovenskega-znakovnega-jezika/
+      - link "Dan slovenskega športa" [ref=e539]:
+        - /url: /prazniki/dan-slovenskega-sporta/
+      - link "Dan spomina na mrtve" [ref=e540]:
+        - /url: /prazniki/dan-spomina-na-mrtve/
+      - link "Dan suverenosti" [ref=e541]:
+        - /url: /prazniki/dan-suverenosti/
+      - link "Dan upora proti okupatorju" [ref=e542]:
+        - /url: /prazniki/dan-upora-proti-okupatorju/
+      - link "Dan znanosti" [ref=e543]:
+        - /url: /prazniki/dan-znanosti/
+      - link "Dan žena" [ref=e544]:
+        - /url: /prazniki/dan-zena/
+      - link "Evropski dan jezikov" [ref=e545]:
+        - /url: /pomembni-dnevi/evropski-dan-jezikov/
+      - link "Evropski dan spomina na žrtve totalitarnih in avtoritarnih režimov" [ref=e546]:
+        - /url: /pomembni-dnevi/evropski-dan-spomina-na-zrtve-totalitarnih-rezimov/
+      - link "Gregorjevo" [ref=e547]:
+        - /url: /prazniki/gregorjevo/
+      - link "Jesensko enakonočje" [ref=e548]:
+        - /url: /letni-casi/jesensko-enakonocje/
+      - link "Marijino vnebovzetje" [ref=e549]:
+        - /url: /prazniki/marijino-vnebovzetje/
+      - link "Martinovo" [ref=e550]:
+        - /url: /prazniki/martinovo/
+      - link "Materinski dan" [ref=e551]:
+        - /url: /prazniki/materinski-dan/
+      - link "Mednarodni dan družin" [ref=e552]:
+        - /url: /pomembni-dnevi/mednarodni-dan-druzin/
+      - link "Mednarodni dan maternega jezika" [ref=e553]:
+        - /url: /pomembni-dnevi/mednarodni-dan-maternega-jezika/
+      - link "Mednarodni dan spomina na žrtve holokavsta" [ref=e554]:
+        - /url: /pomembni-dnevi/dan-spomina-na-zrtve-holokavsta/
+      - link "Miklavž" [ref=e555]:
+        - /url: /prazniki/miklavz/
+      - link "Novo leto" [ref=e556]:
+        - /url: /prazniki/novo-leto/
+      - link "Noč čarovnic" [ref=e557]:
+        - /url: /pomembni-dnevi/noc-carovnic/
+      - link "Poletni solsticij" [ref=e558]:
+        - /url: /letni-casi/poletni-solsticij/
+      - link "Pomladno enakonočje" [ref=e559]:
+        - /url: /letni-casi/pomladno-enakonocje/
+      - link "Praznik dela" [ref=e560]:
+        - /url: /prazniki/praznik-dela/
+      - 'link "Premik ure 2026–2030: poletni in zimski čas" [ref=e561]':
+        - /url: /premik-ure/
+      - link "Prešernov dan, slovenski kulturni praznik" [ref=e562]:
+        - /url: /prazniki/presernov-dan/
+      - link "Pust" [ref=e563]:
+        - /url: /prazniki/pust/
+      - link "Silvestrovo" [ref=e564]:
+        - /url: /prazniki/silvestrovo/
+      - link "Spomin vseh vernih rajnih" [ref=e565]:
+        - /url: /pomembni-dnevi/spomin-vseh-vernih-rajnih/
+      - link "Sveti trije kralji" [ref=e566]:
+        - /url: /prazniki/sveti-trije-kralji/
+      - link "Svetovni dan Zemlje" [ref=e567]:
+        - /url: /prazniki/svetovni-dan-zemlje/
+      - link "Svetovni dan knjige in avtorskih pravic" [ref=e568]:
+        - /url: /pomembni-dnevi/svetovni-dan-knjige-in-avtorskih-pravic/
+      - link "Svetovni dan okolja" [ref=e569]:
+        - /url: /pomembni-dnevi/svetovni-dan-okolja/
+      - link "Svetovni dan otrok" [ref=e570]:
+        - /url: /pomembni-dnevi/svetovni-dan-otrok/
+      - link "Svetovni dan učiteljev" [ref=e571]:
+        - /url: /pomembni-dnevi/svetovni-dan-uciteljev/
+      - link "Svetovni dan voda" [ref=e572]:
+        - /url: /pomembni-dnevi/svetovni-dan-voda/
+      - link "Svetovni dan čebel" [ref=e573]:
+        - /url: /prazniki/svetovni-dan-cebel/
+      - link "Svetovni dan živali" [ref=e574]:
+        - /url: /pomembni-dnevi/svetovni-dan-zivali/
+      - link "Ta veseli dan kulture" [ref=e575]:
+        - /url: /pomembni-dnevi/ta-veseli-dan-kulture/
+      - link "Teden otroka®" [ref=e576]:
+        - /url: /pomembni-dnevi/teden-otroka/
+      - link "Valentinovo" [ref=e577]:
+        - /url: /prazniki/valentinovo/
+      - link "Veliki petek" [ref=e578]:
+        - /url: /prazniki/veliki-petek/
+      - link "Velikonočna nedelja in ponedeljek, velika noč" [ref=e579]:
+        - /url: /prazniki/velika-noc/
+      - link "Vrnitev Primorske k matični domovini" [ref=e580]:
+        - /url: /prazniki/vrnitev-primorske/
+      - link "Združitev prekmurskih Slovencev z matičnim narodom" [ref=e581]:
+        - /url: /prazniki/zdruzitev-prekmurskih-slovencev/
+      - link "Zimski solsticij" [ref=e582]:
+        - /url: /letni-casi/zimski-solsticij/
+```

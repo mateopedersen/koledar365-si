@@ -44,6 +44,11 @@ test('all sixteen vegetables have sharp self-contained licensed SVG photographs 
   await expect(page.locator('main a[href*="fotografije-in-licence"], main .garden-photo-credit')).toHaveCount(0);
   await expect(page.locator('main')).not.toContainText(/CC BY|CC0|Avtorji in licence fotografij/);
   await page.goto('/');
+  // Let the unrelated initial city request settle before leaving the document.
+  // WebKit reports a request cancelled by immediate navigation as a page error.
+  await expect(page.locator('#city-location-status')).not.toContainText('določamo');
+  await expect(page.locator('#city-card')).toHaveAttribute('data-weather-state',/^(ready|saved|unavailable)$/);
+  await expect(page.locator('#city-weather')).not.toHaveAttribute('aria-busy','true');
   await page.locator('footer a[href="/fotografije-in-licence/"]').click();
   await expect(page).toHaveURL(/\/fotografije-in-licence\/$/);
   await expect(page.locator('#fotografije-vrtnin')).toHaveText('Fotografije vrtnin');
