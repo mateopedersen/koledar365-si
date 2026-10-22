@@ -18,14 +18,14 @@
 <meta property="og:site_name" content="Koledar365">
 <meta property="og:locale" content="sl_SI">
 <meta property="og:url" content="https://koledar365.si/">
-<meta property="og:image" content="https://koledar365.si/druzabno/pages/1/52bbcdfef3ca0cf71a6f.png">
+<meta property="og:image" content="https://koledar365.si/druzabno/pages/1/73939479261ec75a5a27.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Slovenski koledar 2026–2030: prazniki in načrtovanje">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Slovenski koledar 2026–2030: prazniki in načrtovanje · Koledar365">
 <meta name="twitter:description" content="Slovenski koledar s prazniki, številkami tednov in osebnimi zapiski. Izberite leto med 2026 in 2030, mesec ali teden ter pripravite svoj koledar za tisk.">
-<meta name="twitter:image" content="https://koledar365.si/druzabno/pages/1/52bbcdfef3ca0cf71a6f.png">
+<meta name="twitter:image" content="https://koledar365.si/druzabno/pages/1/73939479261ec75a5a27.png">
 <meta name="twitter:image:alt" content="Slovenski koledar 2026–2030: prazniki in načrtovanje">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl-SI","publisher":{"@id":"https://koledar365.si/#organization"}},{"@type":"WebPage","@id":"https://koledar365.si/#webpage","url":"https://koledar365.si/","name":"Slovenski koledar 2026–2030: prazniki in načrtovanje","description":"Slovenski koledar s prazniki, številkami tednov in osebnimi zapiski. Izberite leto med 2026 in 2030, mesec ali teden ter pripravite svoj koledar za tisk.","inLanguage":"sl-SI","isPartOf":{"@id":"https://koledar365.si/#website"},"publisher":{"@id":"https://koledar365.si/#organization"},"author":{"@id":"https://koledar365.si/#organization"}},{"@type":"Organization","@id":"https://koledar365.si/#organization","name":"Koledar365","url":"https://koledar365.si/","email":"koledar365@gmail.com"}]}</script>
 
@@ -1361,6 +1361,24 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
   .nav-directory__footer { display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:17px;padding-top:12px;border-top:1px solid #e1e8f2;color:#697b91;font-size:12px; }
   .site-navigation .nav-directory__footer a { display:flex;align-items:center;gap:9px;min-height:38px;padding:6px 10px;border:0;background:transparent;color:#125193;font-size:13px;font-weight:750;box-shadow:none;white-space:normal; }
   .nav-directory__footer .ui-icon { width:19px;height:19px; }
+  .home-header-spotlight { display:none;min-width:0;min-height:49px;align-items:center;gap:9px;padding:6px 10px;border:1px solid #d7e2ef;border-radius:12px;background:linear-gradient(135deg,#fff 0%,#f3f7fc 100%);box-shadow:0 3px 10px #1b365608;color:#18385f;text-decoration:none;transition:border-color .16s,box-shadow .16s,transform .16s; }
+  .home-header-spotlight:hover { border-color:#a9bfdc;box-shadow:0 6px 14px #1b365610;text-decoration:none;transform:translateY(-1px); }
+  .home-header-spotlight:focus-visible { outline:3px solid #2373c6;outline-offset:3px; }
+  .home-header-spotlight__icon { display:grid;flex:none;place-items:center;width:35px;height:35px;border:1px solid #dbe6f1;border-radius:10px;background:linear-gradient(145deg,#fff2f3,#edf4fc);color:#b32642; }
+  .home-header-spotlight__icon .ui-icon { width:23px;height:23px; }
+  .home-header-spotlight__content { display:grid;min-width:0;gap:1px;line-height:1.2; }
+  .home-header-spotlight__eyebrow { overflow:hidden;color:#60738c;font-size:8px;font-weight:850;letter-spacing:.08em;text-overflow:ellipsis;white-space:nowrap; }
+  .home-header-spotlight__event { display:flex;min-width:0;align-items:center;gap:3px;overflow:hidden;font-size:11px;white-space:nowrap; }
+  .home-header-spotlight__event time { flex:none;color:#0b559d;font-weight:850; }
+  .home-header-spotlight__event strong { min-width:0;overflow:hidden;color:#173456;font-weight:750;text-overflow:ellipsis;white-space:nowrap; }
+  .home-header-spotlight__content small { overflow:hidden;color:#697b91;font-size:9px;text-overflow:ellipsis;white-space:nowrap; }
+  .home-header-spotlight__arrow { display:grid;flex:none;place-items:center;margin-left:auto;color:#0c5ba7; }
+  .home-header-spotlight__arrow .ui-icon { width:17px;height:17px; }
+  @media(min-width:1400px) {
+    .home-page .topbar { grid-template-columns:auto minmax(244px,auto) minmax(215px,280px) minmax(240px,320px) auto;justify-content:space-between;column-gap:clamp(14px,1.25vw,22px); }
+    .home-page .topbar > .home-header-spotlight { display:flex; }
+    .home-page .topbar .search { width:100%;max-width:320px;margin:0; }
+  }
   @media(max-width:1180px) {
     .topbar { grid-template-columns:auto minmax(0,1fr) auto;gap:7px 20px; }
     .topbar .search { grid-column:1/-1;grid-row:2;max-width:none; }
@@ -1563,7 +1581,15 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
       <a href="/prazniki/"><svg class="ui-icon icon-gift" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#gift" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#gift"></use></svg><span>Prazniki</span></a>
       <a href="/solske-pocitnice/"><svg class="ui-icon icon-school" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#school" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#school"></use></svg><span>Šolske počitnice</span></a>
   </nav>
-  <form action="/isci/" class="search" role="search" data-site-search>
+      <a class="home-header-spotlight" aria-label="Naslednji dela prost dan: dan reformacije, 31. 10." href="/prazniki/dan-reformacije/">
+        <span class="home-header-spotlight__icon" aria-hidden="true"><svg class="ui-icon icon-holidays" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#holidays" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#holidays"></use></svg></span>
+        <span class="home-header-spotlight__content">
+          <span class="home-header-spotlight__eyebrow">NASLEDNJI DELA PROST DAN</span>
+          <span class="home-header-spotlight__event"><time datetime="2026-10-31">31. 10.</time><span aria-hidden="true"> · </span><strong>Dan reformacije</strong></span>
+          <small>Še 9 dni</small>
+        </span>
+        <span class="home-header-spotlight__arrow" aria-hidden="true"><svg class="ui-icon icon-arrow" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#arrow" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#arrow"></use></svg></span>
+</a>  <form action="/isci/" class="search" role="search" data-site-search>
     <label class="sr-only" for="search">Poišči datum, dogodek ali orodje</label>
     <input id="search" data-search-input name="q" type="search" autocomplete="off" placeholder="Išči datum, praznik ali orodje" value="">
     <button aria-label="Išči po spletnem mestu"><svg class="ui-icon icon-search" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#search" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#search"></use></svg></button>
@@ -2143,7 +2169,7 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
         <!-- BEGIN app/views/layouts/_brand.html.erb
 --><a class="brand brand-lockup" href="/" aria-label="Koledar365 – domov"><span class="brand-symbol"><img width="52" height="52" alt="" class="brand-mark" aria-hidden="true" src="/visuals/brand-calendar-v3.20014959d7558e83.svg"></span><span class="brand-name">Koledar<span class="brand-digits">365</span></span></a>
 <!-- END app/views/layouts/_brand.html.erb -->
-        <p>Koledarji in uporabna orodja za lažje načrtovanje vsakdanjih dni.</p>
+        <p>Vaša prva izbira za koledarje, praznike, načrtovanje in horoskope.</p>
       </div>
       <nav class="site-footer__groups" aria-label="Povezave v nogi strani">
         <section class="site-footer__group" aria-labelledby="footer-calendars">
@@ -2179,7 +2205,7 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
       </nav>
     </div>
     <div class="site-footer__bottom">
-<span>© 2026 Koledar365 · Vse pravice pridržane.</span><span>Z ljubeznijo do Slovenije. <span aria-hidden="true">🇸🇮 ❤️</span></span>
+<span>© 2026 Koledar365 · Vse pravice pridržane.</span><span>Ustvarjeno v Bratislavi. <span aria-hidden="true">🇸🇮 ❤️</span></span>
 </div>
   </div>
 </footer>
