@@ -58,3 +58,58 @@ test('personal calendar action borders align and fit across home views and scree
     }
   }
 });
+
+test('backup and restore action borders align on the other planner pages', async ({ page }) => {
+  const groups = [
+    { path: '/solski-urnik/', selector: '.student-backup-actions', count: 2 },
+    { path: '/druzinski-planer/', selector: '.family-backup-actions', count: 2 },
+    { path: '/razpored-izmen/', selector: '.shift-saved__actions', count: 3 },
+  ];
+
+  for (const { path, selector, count } of groups) {
+    await page.goto(path);
+    const group = page.locator(selector);
+    await expect(group, `${path} exposes its backup actions`).toBeVisible();
+    await expect(group.locator(':scope > *')).toHaveCount(count);
+
+    for (const width of [320, 390, 768, 1280]) {
+      await page.setViewportSize({ width, height: 1000 });
+      const layout = await group.evaluate((container) => {
+        const groupRect = container.getBoundingClientRect();
+        const controls = [...container.children].map((item) => {
+          const rect = item.getBoundingClientRect();
+          return {
+            left: rect.left,
+            top: rect.top,
+            right: rect.right,
+            bottom: rect.bottom,
+            width: rect.width,
+            height: rect.height,
+            margin: getComputedStyle(item).margin,
+            clientWidth: item.clientWidth,
+            scrollWidth: item.scrollWidth,
+          };
+        });
+        const rows = [...new Set(controls.map((box) => Math.round(box.top)))].map((top) =>
+          controls.filter((box) => Math.round(box.top) === top),
+        );
+        return { controls, rows, group: { left: groupRect.left, right: groupRect.right, top: groupRect.top, bottom: groupRect.bottom } };
+      });
+
+      for (const row of layout.rows) {
+        expect(Math.max(...row.map((box) => box.height)) - Math.min(...row.map((box) => box.height)), `${path} row heights at ${width}px`).toBeLessThanOrEqual(1);
+        if (row.length > 1) {
+          expect(Math.max(...row.map((box) => box.width)) - Math.min(...row.map((box) => box.width)), `${path} column widths at ${width}px`).toBeLessThanOrEqual(1);
+        }
+      }
+      for (const control of layout.controls) {
+        expect(control.margin, `${path} control margin at ${width}px`).toBe('0px');
+        expect(control.left, `${path} left border at ${width}px`).toBeGreaterThanOrEqual(layout.group.left - 1);
+        expect(control.right, `${path} right border at ${width}px`).toBeLessThanOrEqual(layout.group.right + 1);
+        expect(control.top, `${path} top border at ${width}px`).toBeGreaterThanOrEqual(layout.group.top - 1);
+        expect(control.bottom, `${path} bottom border at ${width}px`).toBeLessThanOrEqual(layout.group.bottom + 1);
+        expect(control.scrollWidth, `${path} content at ${width}px`).toBeLessThanOrEqual(control.clientWidth + 1);
+      }
+    }
+  }
+});
