@@ -149,3 +149,34 @@ body.shift-page .shift-preview__top>div{min-width:0;max-width:100%}
 body.shift-page .shift-preview__badge{max-width:100%;white-space:normal;overflow-wrap:anywhere}
 body.shift-page .shift-stats>div>span:last-child{min-width:0;overflow-wrap:anywhere}
 @media(max-width:650px){body.shift-page .shift-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Keep the live shift preview within narrow mobile cards. */
+@media screen and (max-width: 650px) {
+  body.shift-page .shift-preview__top {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  body.shift-page .shift-preview__top > div {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  body.shift-page .shift-preview__badge {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  body.shift-page .shift-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.shift-page .shift-stats > div > span:not(.shift-stat-icon) {
+    min-width: 0;
+  }
+
+  body.shift-page .shift-stats small {
+    overflow-wrap: anywhere;
+  }
+}
