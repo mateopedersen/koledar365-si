@@ -28,6 +28,12 @@ jobs:
       PYTHON_BIN: /usr/bin/python3
     steps:
       - uses: actions/checkout@v4
+      - name: Use the official HTTPS Ubuntu archive
+        run: |
+          # Keep the normal fallback list; avoid the Azure mirror that stalled package downloads.
+          if [ -f /etc/apt/apt-mirrors.txt ]; then
+            sudo sed -i 's|http://azure.archive.ubuntu.com/ubuntu|https://archive.ubuntu.com/ubuntu|g' /etc/apt/apt-mirrors.txt
+          fi
       - name: Install image and database dependencies
         run: sudo apt-get update -qq && sudo apt-get install -y libpq-dev poppler-utils python3-pil
       - uses: ruby/setup-ruby@v1
