@@ -4,8 +4,40 @@ require 'json'
 require 'set'
 require 'digest'
 require 'uri'
+require 'zlib'
 root=File.expand_path('..',__dir__)
 site=File.join(root,'site')
+verify_png = lambda do |path|
+ data=File.binread(path)
+ signature="\\x89PNG\\r\\n\\x1a\\n".b
+ raise "#{path}: invalid PNG signature" unless data.start_with?(signature)
+ offset=8;idat=+"".b;width=height=nil;saw_ihdr=false;saw_iend=false
+ while offset < data.bytesize
+  raise "#{path}: truncated PNG chunk" if offset+12>data.bytesize
+  length=data.byteslice(offset,4).unpack1('N');type=data.byteslice(offset+4,4)
+  chunk_start=offset+8;chunk_end=chunk_start+length
+  raise "#{path}: truncated #{type} chunk" if chunk_end+4>data.bytesize
+  payload=data.byteslice(chunk_start,length);crc=data.byteslice(chunk_end,4).unpack1('N')
+  raise "#{path}: invalid #{type} checksum" unless Zlib.crc32(type+payload)==crc
+  if type=='IHDR'
+   raise "#{path}: misplaced or repeated IHDR" if saw_ihdr || length!=13 || offset!=8
+   width,height,bit_depth,color_type,compression,filter,interlace=payload.unpack('NNC5')
+   raise "#{path}: expected 512x512 RGBA PNG" unless width==512 && height==512 && bit_depth==8 && color_type==6 && compression==0 && filter==0 && interlace==0
+   saw_ihdr=true
+  elsif type=='IDAT'
+   idat << payload
+  elsif type=='IEND'
+   raise "#{path}: malformed IEND" unless length==0
+   saw_iend=true;offset=chunk_end+4;break
+  end
+  offset=chunk_end+4
+ end
+ raise "#{path}: missing PNG chunks or trailing data" unless saw_ihdr && saw_iend && offset==data.bytesize && !idat.empty?
+ decoded=Zlib::Inflate.inflate(idat)
+ raise "#{path}: incomplete PNG image data" unless decoded.bytesize==height*(width*4+1)
+end
+verify_png.call(File.join(root,'public','icon.png'))
+verify_png.call(File.join(site,'icon.png'))
 sprite='/visuals/ui-material-v3.svg'
 xml=Nokogiri::XML(File.read(File.join(site,sprite))) { |c|c.strict }
 ids=xml.xpath('//*[@id]').map { |n|n['id'] }
