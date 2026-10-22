@@ -16,16 +16,19 @@ Status: production gates pending; no final GO yet.
 | F06 | P1 | Two copied lunar PDFs had corrupt blocks | Manifest source verification and atomic destination repair; 10 assertions |
 | F07 | P1 | Production lacked existing contrast/name corrections | Preserved main fixes; 49 baseline screen contexts to zero local violations |
 | F08 | P2 | Live llms.txt returned 404 | Complete guide, 53 canonical links/10 sections, included in publication |
+| F09 | P2 | Solar default date could remain on the static build day | Ljubljana today default, valid shared date preservation, invalid-date fallback and browser-history regression |
 | Q01 | P1 (QA) | Occupied port could test another checkout | Server process and exact manifest verification required |
 | Q02 | P2 (QA) | Error asset confused with actual HTTP 404 | Verify a genuinely absent route |
 | Q03 | P2 (QA) | Valid Safari number grouping rejected | Accept both correct Slovene representations; failed evidence preserved |
 | Q04 | P2 (QA) | Raw hashes rejected daily edge content | Strict actual-edition validation plus unchanged-template comparison |
 
-Eight product/publication findings and four QA safeguards are counted separately. The 49 screen contexts are not inflated into 49 independent root causes. Production closure is still pending.
+| Q05 | P2 (CI) | Preview browser setup stalled on Azure package mirror | Same signed packages installed from official Ubuntu archives |
+
+Nine product/publication findings and five QA/infrastructure safeguards are counted separately. The 49 screen contexts are not inflated into 49 independent root causes. Production closure is still pending.
 
 ## Verified local results
 - 136 Rails tests / 13,873 assertions: zero failures.
-- Full four-project browser suite: 464 passed, 8 intentional skips. Final source/provenance changes: 52 additional sun/workday tests passed.
+- Full four-project browser suite: 464 passed, 8 intentional skips. Source/provenance changes: 52 additional sun/workday tests passed. Final midnight/leap-day/history correction: 32 sun tests passed across four projects.
 - 1,200 Chromium layouts, 138 WebKit layouts, 138 axe contexts and 138 keyboard contexts/4,900 focus stops: zero failures.
 - 48 months, 1,461 dates, 8 DST boundaries, 198 lunar events, 16 seasonal events and 69 coordinates: passed.
 - 6,556 parsed files, 780 PDF/WebP comparisons, 108 real exports and independent file parsing: passed.

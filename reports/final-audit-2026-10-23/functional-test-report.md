@@ -1,6 +1,6 @@
 # İşlevsel testler
 
-Durum: son yayın doğrulaması sürüyor. Bu dosya nihai canlı sonuçlarla güncellenecek. Son yayın paketinde tam tarayıcı tekrarına ek olarak binlerce statik dosya denetimi sürmektedir.
+Durum: yerel testler tamamlandı; önizleme ve canlı yayın kapıları sürüyor.
 
 - Rails: 136 test, 13.873 assertion, sıfır hata; `tmp/final-audit/rails-tests-final.log`.
 - İlk dört tarayıcı projesi turu: 462 geçti, 8 bilinçli kapsam tekrarı atlandı, 2 Safari test beklentisi hatası. Safari 1875, Chromium 1.875 biçimini seçer; ikisi de aynı doğru sonuçtur. Test iki geçerli biçimi kabul edecek şekilde düzeltildi; ilgili 24 test dört projede geçti. Başarısız ilk sonuçlar `current/first-browser-suite/` içinde saklandı.
@@ -16,3 +16,9 @@ Ana sayfadan yıl/aya, tasarım ve indirmeye; Ay yılı/ayı/tarih/evreye; çal�
 Gerçek eksik URL için HTTP 404 kontrolü korunur. /404.html dosyasının Cloudflare tarafından /404'e yönlendirilip 200 ile sunulması hata sayılmaz; noindex hata belgesine doğrudan erişimdir. Önceki testin bu ikisini karıştıran sekiz başarısız ekran beklentisi düzeltildi.
 
 Son tam dört proje turu: **464 geçti, 8 bilinçli skip, 0 başarısız**. Koordinat kaynak bağlantısı değişiminden sonra dört projede 28 güneş testi ayrıca geçti. Son Rails turunda ilk çağrı yanlış sistem Python sürümünü kullandığı için fotoğraf testi başarısız oldu; yayın yapılandırmasındaki Pillow içeren PYTHON_BIN ile tam tekrar 136/13.873 sıfır hata verdi. Her iki log korunur.
+
+Ana dalın eşzamanlı otomatik yayınıyla normal birleştirme ve yeniden üretimden sonra 52 güneş/çalışma günü tarayıcı testi ve 6.556 dosya hash kontrolü yeniden geçti.
+
+Gece yarısı regresyonu ilk denemede derleme gününün korunduğunu göstererek başarısız oldu. Varsayılan güneş tarihi Europe/Ljubljana bugünü kullanacak şekilde düzeltildi; açık tarih, 29 Şubat, geçersiz bağlantı ve tarayıcı geri dönüşü korunur. Son güneş turu: 32/32 geçti. Önizlemede 552 düzen bağlamından 551 geçti; Chromium çalıştırıcısında bir görüntü yükleme süresi doldu. Bu başarısızlık `current/preview-prior-layout.json` içinde saklandı. Tarayıcıların ön plandaki ziyaretçi gibi çalışması için arka plan kısıtlaması kapatıldı; görüntü çözme ve bütün doğrulamalar zorunlu kalır. Tam yeni önizleme turu bekleniyor.
+
+Son çalıştırıcı kontrolü: 36 sentetik görüntü senaryosu geçti. Bozuk görüntülü sekiz negatif kontrol beklendiği gibi reddedildi; gerçek görsel çözme kapısı gevşetilmedi.

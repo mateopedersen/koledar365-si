@@ -1,0 +1,51 @@
+
+Running 1 test using 1 worker
+
+(node:85990) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:85990) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › test/browser/sun-experience.spec.mjs:180:1 › default solar date follows Ljubljana today after a static build and history navigation (10.5s)
+
+
+  1) [chromium] › test/browser/sun-experience.spec.mjs:180:1 › default solar date follows Ljubljana today after a static build and history navigation 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveValue[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  locator('[data-sun-date]')
+    Expected: [32m"202[7m8-03-01[27m"[39m
+    Received: [31m"202[7m6-10-22[27m"[39m
+    Timeout:  10000ms
+
+    Call log:
+    [2m  - Expect "toHaveValue" with timeout 10000ms[22m
+    [2m  - waiting for locator('[data-sun-date]')[22m
+    [2m    14 × locator resolved to <input name="date" type="date" required="" id="sun-date" min="1901-01-01" max="2099-12-31" data-sun-date="" value="2026-10-22"/>[22m
+    [2m       - unexpected value "2026-10-22"[22m
+
+
+      142 |  await page.goto('/soncni-vzhod-in-zahod/koper/');
+      143 |  await chooseNecessaryCookies(page);
+    > 144 |  await expect(page.locator('[data-sun-date]')).toHaveValue('2028-03-01');
+          |                                                ^
+      145 |  await page.locator('[data-sun-date]').fill('2027-07-15');
+      146 |  await page.locator('[data-sun-date]').press('Tab');
+      147 |  await expect(page).toHaveURL(/date=2027-07-15/);
+        at /Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-publication/test/browser/sun-experience.spec.mjs:144:48
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/sun-experience-default-sol-4a7f7-uild-and-history-navigation-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/sun-experience-default-sol-4a7f7-uild-and-history-navigation-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/sun-experience-default-sol-4a7f7-uild-and-history-navigation-chromium/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/sun-experience-default-sol-4a7f7-uild-and-history-navigation-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › test/browser/sun-experience.spec.mjs:180:1 › default solar date follows Ljubljana today after a static build and history navigation 
