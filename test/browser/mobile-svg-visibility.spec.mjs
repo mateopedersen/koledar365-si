@@ -8,7 +8,7 @@ const pageFamilies = [
   '/solske-pocitnice/',
 ];
 
-test('content-addressed SVGs stay colorful and visible in every major page family', async ({page}) => {
+test('branded SVG icons and real imagery stay colorful and visible in every major page family', async ({page}) => {
   for (const path of pageFamilies) {
     await page.goto(path);
     const logo = page.locator('img.brand-mark').first();
@@ -59,7 +59,8 @@ test('content-addressed SVGs stay colorful and visible in every major page famil
       const seasonalArt = page.locator('.sp-holiday .sp-card-art img').first();
       await seasonalArt.scrollIntoViewIfNeeded();
       await expect.poll(() => seasonalArt.evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
-      await expect(seasonalArt).toHaveAttribute('src', /\/school\/.*\.[a-f0-9]{16}\.svg$/);
+      await expect(seasonalArt).toHaveAttribute('src', /\/school\/photos\/.*\.jpg$/);
+      await expect(seasonalArt).not.toHaveAttribute('alt', '');
     }
   }
 });

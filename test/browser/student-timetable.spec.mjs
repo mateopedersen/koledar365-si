@@ -1,0 +1,87 @@
+import { test, expect } from '@playwright/test';
+
+async function quietConsent(page, withLegacyEntry = false) {
+  await page.addInitScript(({ withLegacyEntry }) => {
+    localStorage.setItem('k365.consent', JSON.stringify({
+      version: 2, choice: 'essential', preferences: false, analytics: false,
+      advertising: false, at: new Date().toISOString(), expiresAt: Date.now() + 86400000,
+    }));
+    if (withLegacyEntry && !localStorage.getItem('student-timetable-test-fixture')) {
+      localStorage.setItem('k365.entries./solski-urnik/', JSON.stringify([
+        { entry_id: 'legacy-entry', title: 'Stari zapisek', date: '2027-03-29', source: 'legacy' },
+      ]));
+      localStorage.setItem('student-timetable-test-fixture', 'installed');
+    }
+  }, { withLegacyEntry });
+}
+
+test('student timetable works on mobile, persists locally, and exports a valid Ljubljana-time ICS', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await quietConsent(page, true);
+  const response = await page.goto('/solski-urnik/', { waitUntil: 'load' });
+  expect(response?.status()).toBe(200);
+  await expect(page.locator('[data-student-timetable]')).toBeVisible();
+  await expect(page.locator('.design-card')).toHaveCount(15);
+  await expect(page.locator('[data-personal-preview]')).toHaveCount(15);
+  await expect(page.locator('[data-day-panel="1"]')).toBeVisible();
+
+  await page.locator('[data-add-lesson-open]').first().click();
+  const lesson = page.locator('[data-lesson-form]');
+  await lesson.locator('[name="subject"]').fill('Matematika');
+  await lesson.locator('[name="day"]').selectOption('1');
+  await lesson.locator('[name="start"]').fill('08:00');
+  await lesson.locator('[name="end"]').fill('08:45');
+  await lesson.locator('[data-lesson-save]').click();
+  await expect(page.locator('[data-lesson-id]')).toHaveCount(1);
+  const storedPrintEntries = await page.evaluate(() => JSON.parse(localStorage.getItem('k365.entries./solski-urnik/') || '[]'));
+  expect(storedPrintEntries.map(entry => entry.title)).toContain('Stari zapisek');
+  expect(storedPrintEntries.map(entry => entry.title)).toContain('Matematika');
+
+  await page.locator('[data-add-lesson-open]').first().click();
+  await lesson.locator('[name="subject"]').fill('Naravoslovje');
+  await lesson.locator('[name="day"]').selectOption('1');
+  await lesson.locator('[name="start"]').fill('08:30');
+  await lesson.locator('[name="end"]').fill('09:00');
+  await lesson.locator('[data-lesson-save]').click();
+  await expect(page.locator('[data-lesson-status]')).toContainText('že imaš predmet');
+  await expect(page.locator('[data-lesson-id]')).toHaveCount(1);
+
+  const task = page.locator('[data-task-form]');
+  await task.locator('[name="title"]').fill('Ponovi ulomke');
+  await task.locator('[name="due"]').fill('2027-03-29');
+  await task.locator('[name="subject"]').fill('Matematika');
+  await task.locator('button[type="submit"]').click();
+  await expect(page.locator('[data-task-id]')).toHaveCount(1);
+
+  await expect.poll(async () => page.evaluate(() => JSON.parse(localStorage.getItem('k365.student.timetable.v1') || '{}').lessons?.length)).toBe(1);
+  const icsDownload = page.waitForEvent('download');
+  await page.locator('[data-ics-from]').fill('2027-03-29');
+  await page.locator('[data-ics-until]').fill('2027-04-02');
+  await page.locator('[data-export-ics]').click();
+  const ics = await icsDownload;
+  const file = await ics.createReadStream();
+  let content = '';
+  for await (const chunk of file) content += chunk.toString('utf8');
+  expect(content).toContain('DTSTART:20270329T060000Z');
+  expect(content).toContain('SUMMARY:Matematika');
+  expect(content).toContain('SUMMARY:Domača naloga: Ponovi ulomke');
+
+  await page.reload({ waitUntil: 'load' });
+  await expect(page.locator('[data-lesson-id]')).toHaveCount(1);
+  await expect(page.locator('[data-task-id]')).toHaveCount(1);
+  await page.locator('[data-student-day="2"]').click();
+  await expect(page.locator('[data-day-panel="2"]')).toBeVisible();
+  const widths = await page.evaluate(() => ({ document: document.documentElement.scrollWidth, viewport: document.documentElement.clientWidth }));
+  expect(widths.document, JSON.stringify(widths)).toBeLessThanOrEqual(widths.viewport + 1);
+});
+
+test('student print view displays all weekdays and preserves the complete gallery in screen view', async ({ page }) => {
+  await quietConsent(page);
+  const response = await page.goto('/solski-urnik/', { waitUntil: 'load' });
+  expect(response?.status()).toBe(200);
+  await expect(page.locator('#design-gallery .design-card')).toHaveCount(15);
+  await page.emulateMedia({ media: 'print' });
+  await expect(page.locator('.student-day-panel')).toHaveCount(5);
+  await expect(page.locator('.student-print-only')).toBeVisible();
+  await expect(page.locator('.design-section')).toBeHidden();
+});

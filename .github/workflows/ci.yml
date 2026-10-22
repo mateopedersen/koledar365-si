@@ -43,6 +43,8 @@ jobs:
           python-version: '3.12'
       - name: Weather and public download contracts
         run: node script/test_weather_function.mjs && node script/test_city_detection.mjs && node script/test_public_catalog.mjs && node script/test_horoscope.mjs && node script/test_vacation_planner.cjs && node script/test_family_planner.cjs && node --check app/assets/javascripts/family_planner.js && node --check app/assets/javascripts/family_planner_core.js
+      - name: Student planner and Ljubljana calendar export
+        run: node script/test_student_timetable.cjs && node --check app/assets/javascripts/student_timetable_core.js && node --check app/assets/javascripts/student_timetable.js
       - name: Cloudflare Pages Functions compiler compatibility
         run: npx --yes wrangler@3.114.17 pages functions build functions --outdir=tmp/cloudflare-functions
       - name: Astronomical lunar date and phase data
@@ -95,6 +97,7 @@ jobs:
           bundle exec ruby script/rebuild_free.rb
           ruby script/test_pages_cache_headers.rb
           node script/test_family_static.cjs
+          node script/test_student_static.cjs
       - uses: pnpm/action-setup@v4
       - name: Install and prepare static browser checks
         if: ${{ hashFiles('site/release-manifest.json') != '' }}

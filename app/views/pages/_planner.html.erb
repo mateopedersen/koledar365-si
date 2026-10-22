@@ -1,10 +1,11 @@
 <% type={'ustvari-koledar'=>'name','prazen-koledar'=>'blank','razpored-izmen'=>'shift','solski-urnik'=>'school','rojstnodnevni-koledar'=>'birthday','dnevni-planer'=>'daily','druzinski-planer'=>'family','koledar-za-tiskanje'=>'annual'}[page_path.split('/').last] || 'weekly';type=params[:type] if PrintCatalog::TYPES.key?(params[:type]) %>
+<% if type=='school' %><%= render 'student_timetable' %><% end %>
 <% if type=='shift' %>
 <%= render 'shift_schedule' %>
 <% else %>
 <% if type=='family' %><%= render 'family_planner' %><% end %>
 <div class="download-workspace" data-download-workspace>
-<section class="panel planner-workbench gallery-context">
+<section class="panel planner-workbench gallery-context<%= ' student-print-bridge' if type=='school' %>" <%= 'hidden' if type=='school' %>>
   <%= render 'context_heading', title: 'Prilagodite svoj koledar', expand: 'Razširi nastavitve' %>
   <div class="context-content" id="gallery-context-content">
   <form id="planner-options" data-planner-type="<%= type %>">
