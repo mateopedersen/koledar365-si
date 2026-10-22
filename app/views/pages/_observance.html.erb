@@ -12,7 +12,7 @@
       <p class="observance-scope">Datumi za štiri leta. Jasna razlika med obeležitvijo in prostim dnem.</p>
     </div>
     <% if (photo=@observance.photo) %>
-      <figure class="observance-photo <%= 'is-reproduction' if photo['kind']=='reproduction' %>"><%= render 'responsive_photo', path: photo['local_path'], alt: photo['alt_sl'], sizes: '(max-width:760px) 100vw, 50vw' %><figcaption><span><%= photo['caption_sl'] %></span><a href="/fotografije-in-licence/#praznik-<%= @observance.slug %>">Avtor in licenca <%= ui_icon('info') %></a></figcaption></figure>
+      <figure class="observance-photo <%= 'is-reproduction' if photo['kind']=='reproduction' %>"><%= render 'responsive_photo', path: photo['local_path'], alt: photo['alt_sl'], sizes: '(max-width:760px) 100vw, 50vw' %><figcaption><span><%= photo['caption_sl'] %></span> <a href="/fotografije-in-licence/#praznik-<%= @observance.slug %>">Avtor in licenca <%= ui_icon('info') %></a></figcaption></figure>
     <% end %>
   </header>
 
