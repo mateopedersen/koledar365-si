@@ -10,6 +10,9 @@ row thumbnails and 112 px expanded detail. No third-party image request is made.
 license link, original dimensions, downloaded-image hash, embedded-WebP hash,
 SVG hash, adaptations, and review date for each crop. The attribution is both
 inside each SVG and visible at `/fotografije-in-licence/#fotografije-vrtnin`.
+The existing footer link on the home page and shared site footer leads to this
+credits page. At the site owner's request, photograph credits and license links
+are not repeated in the garden page content or expanded crop details.
 Creative Commons ShareAlike terms continue to apply to the adapted photographs.
 
 Photographs identify the crop, not a particular cultivar, sowing date, or seed
@@ -24,6 +27,7 @@ were excluded. The collection distinguishes cabbage and Savoy cabbage, celeriac,
 corn salad, spinach, and chard.
 
 The browser regression checks all 16 SVG MIME types, image decoding, embedded
-WebP signatures and hashes, attribution links, accessible button names,
+WebP signatures and hashes, the home footer route to complete attribution,
+absence of repeated credits in the garden content, accessible button names,
 expand/collapse behavior, filters, and label layout at four viewport widths on
 all configured browser profiles. Existing garden plan and export tests remain.

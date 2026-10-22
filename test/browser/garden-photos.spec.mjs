@@ -30,7 +30,7 @@ test('all sixteen vegetables have sharp self-contained licensed SVG photographs 
     await button.click();const detail=page.locator(`[data-garden-detail="${photo.id}"]`);
     await expect(detail).toBeVisible();await expect(button).toHaveAttribute('aria-expanded','true');
     await expect(detail.locator('.garden-detail-photo')).toHaveAttribute('alt',photo.alt);
-    await expect(detail.locator('.garden-photo-credit')).toHaveAttribute('href',`/fotografije-in-licence/#vrtnina-${photo.id}`);
+    await expect(detail.locator('.garden-photo-credit, a[href*="fotografije-in-licence"]')).toHaveCount(0);
     await button.click();await expect(detail).toBeHidden();
   }
   for(const width of [320,390,780,1440]){
@@ -41,7 +41,12 @@ test('all sixteen vegetables have sharp self-contained licensed SVG photographs 
     }
   }
   await page.locator('[data-garden-search]').fill('cesen');await expect(page.locator('[data-garden-row]:visible .garden-plant-photo')).toHaveCount(1);
-  await page.goto('/fotografije-in-licence/#fotografije-vrtnin');
+  await expect(page.locator('main a[href*="fotografije-in-licence"], main .garden-photo-credit')).toHaveCount(0);
+  await expect(page.locator('main')).not.toContainText(/CC BY|CC0|Avtorji in licence fotografij/);
+  await page.goto('/');
+  await page.locator('footer a[href="/fotografije-in-licence/"]').click();
+  await expect(page).toHaveURL(/\/fotografije-in-licence\/$/);
+  await expect(page.locator('#fotografije-vrtnin')).toHaveText('Fotografije vrtnin');
   await expect(page.locator('.garden-photo-license')).toHaveCount(16);
   for(const photo of catalog.photos){
     const credit=page.locator(`#vrtnina-${photo.id}`);await expect(credit).toContainText(photo.author);
