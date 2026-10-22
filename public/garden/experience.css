@@ -52,5 +52,5 @@
 }
 
 @media screen and (max-width:780px){
-  #vsebina .garden-plan-form label>input,#vsebina .garden-plan-form label>select{margin-top:7px}
+  #vsebina .garden-plan-form label>input,#vsebina .garden-plan-form label>select{margin-top:7px!important}
 }
