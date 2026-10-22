@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="780" viewBox="0 0 640 780" role="img" aria-labelledby="title desc"><title id="title">Sončev mrk</title><desc id="desc">Luna med Soncem in Zemljo. Velikosti in razdalje niso v merilu.</desc>
+<defs><radialGradient id="sun"><stop stop-color="#fff"/><stop offset="1" stop-color="#e5f1fb"/></radialGradient><radialGradient id="earth" cx="30%" cy="30%"><stop stop-color="#2d83bd"/><stop offset="1" stop-color="#064873"/></radialGradient><radialGradient id="moon" cx="30%" cy="30%"><stop stop-color="#e5edf5"/><stop offset="1" stop-color="#a4b7c9"/></radialGradient></defs>
+<rect width="640" height="780" fill="#f2f7fc"/><rect x="0" y="0" width="640" height="8" fill="#005da4"/><rect x="0" y="0" width="96" height="8" fill="#c52d45"/><g font-family="DejaVu Sans, Liberation Sans, sans-serif">
+<text x="38" y="75" font-size="42" fill="#153650" font-weight="750" text-anchor="start">Sončev mrk</text>
+<text x="38" y="119" font-size="25" fill="#526f87" font-weight="400" text-anchor="start">Luna med Soncem in Zemljo</text>
+<path d="M 398 277 L 640 206.3489932885906 L 640 393.6510067114094 L 398 323 Z" fill="#c7d7e6" opacity=".5"/>
+<path d="M 398 277 L 565.170731707317 300 L 398 323 Z" fill="#254a68" opacity=".45"/>
+<path d="M 100 236 L 398 277 M 100 364 L 398 323" fill="none" stroke="#a5c6df" stroke-width="1.5" stroke-dasharray="6 6"/>
+<circle cx="548" cy="300" r="49" fill="url(#earth)" stroke="#005da4" stroke-width="2"/><ellipse cx="548" cy="300" rx="20.58" ry="49" fill="none" stroke="#b2d6ed" stroke-width="1.2" opacity=".55"/><ellipse cx="548" cy="300" rx="49" ry="17.64" fill="none" stroke="#b2d6ed" stroke-width="1.2" opacity=".55"/><path d="M 499 300 H 597" stroke="#b2d6ed" stroke-width="1.2" opacity=".55"/>
+<circle cx="398" cy="300" r="23" fill="url(#moon)" stroke="#6e879d" stroke-width="1.5"/>
+<text x="398" y="366" font-size="27" fill="#153650" font-weight="700" text-anchor="middle">Luna</text>
+<text x="548" y="393" font-size="27" fill="#153650" font-weight="700" text-anchor="middle">Zemlja</text>
+<circle cx="100" cy="300" r="73" fill="none" stroke="#c7deed" stroke-width="2"/><circle cx="100" cy="300" r="64" fill="url(#sun)" stroke="#81b6dc" stroke-width="2"/>
+<text x="100" y="408" font-size="27" fill="#153650" font-weight="700" text-anchor="middle">Sonce</text>
+<rect x="38" y="464" width="564" height="208" rx="12" fill="#fff" stroke="#cbdeec"/>
+<circle cx="144" cy="564" r="63" fill="#e4f1fb" stroke="#7aadd0" stroke-width="2"/><circle cx="171" cy="541" r="59" fill="#153650"/>
+<text x="242" y="529" font-size="27" fill="#153650" font-weight="700" text-anchor="start">Luna zakrije</text>
+<text x="242" y="566" font-size="27" fill="#153650" font-weight="700" text-anchor="start">del Sonca ali</text>
+<text x="242" y="603" font-size="27" fill="#153650" font-weight="700" text-anchor="start">vse Sonce.</text>
+<text x="38" y="714" font-size="24" fill="#526f87" font-weight="400" text-anchor="start">Shema · ni v merilu</text>
+<text x="602" y="753" font-size="24" fill="#536d85" font-weight="400" text-anchor="end">koledar365.si</text>
+</g></svg>
