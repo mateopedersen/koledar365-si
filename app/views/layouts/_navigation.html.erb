@@ -1,0 +1,64 @@
+<header class="topbar">
+  <a class="brand" href="/" aria-label="Koledar365 – domov"><span class="brand-symbol"><%= brand_symbol %></span> Koledar<span>365</span></a>
+  <nav aria-label="Glavna navigacija">
+    <% [['Koledar', '/koledar/', 'calendar'], ['Prazniki', '/prazniki/', 'gift'], ['Šolske počitnice', '/solske-pocitnice/', 'school']].each do |label, href, icon| %>
+      <%= link_to href, aria: { current: page_path == href ? 'page' : nil } do %><%= ui_icon(icon) %><span><%= label %></span><% end %>
+    <% end %>
+  </nav>
+  <form action="/isci/" class="search" role="search" data-site-search>
+    <label class="sr-only" for="search">Poišči datum, dogodek ali orodje</label>
+    <input id="search" data-search-input name="q" type="search" autocomplete="off" placeholder="Išči datum, praznik ali orodje" value="<%= @q %>">
+    <button aria-label="Išči po spletnem mestu"><%= ui_icon('search') %></button>
+    <div class="site-search-suggestions" data-search-suggestions hidden><p class="site-search-status" data-search-status role="status" aria-live="polite" hidden></p><div id="site-search-suggestions" data-search-options role="listbox" aria-label="Predlogi iskanja"></div></div>
+  </form>
+  <span class="country" aria-label="Slovenija"><%= slovenia_flag %><span class="country-label">Slovenija</span></span>
+</header>
+<nav class="subnav site-navigation" aria-label="Koledarji in orodja">
+  <div class="subnav-track">
+    <div class="nav-years" role="group" aria-label="Letni koledarji">
+      <span class="nav-years__label"><%= ui_icon('calendar') %><span>Koledarji</span></span>
+      <% (2027..2030).each do |year| %>
+        <%= link_to year, "/koledar/#{year}/", aria: { label: "Koledar #{year}", current: page_path == "/koledar/#{year}/" ? 'page' : nil } %>
+      <% end %>
+    </div>
+    <% [['Koledarji PDF', '/koledar-za-tiskanje/', 'print'], ['Delovni dnevi', '/delovni-dnevi/', 'briefcase'], ['Datumski kalkulator', '/datumski-kalkulator/', 'calculator']].each do |label, href, icon| %>
+      <%= link_to href, class: 'nav-shortcut', aria: { current: page_path == href ? 'page' : nil } do %><%= ui_icon(icon) %><span><%= label %></span><% end %>
+    <% end %>
+    <details class="nav-explorer" data-navigation-menu>
+      <summary aria-controls="site-tools-menu"><%= ui_icon('grid') %><span>Več orodij</span><svg class="nav-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></summary>
+      <div class="nav-directory" id="site-tools-menu">
+        <div class="nav-directory__heading"><div><span>NA ENEM MESTU</span><h2>Kaj želite načrtovati?</h2></div><button type="button" data-navigation-close aria-label="Zapri meni orodij"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button></div>
+        <div class="nav-directory__groups">
+          <% [
+            ['Osebni načrti', [
+              ['Ustvari koledar', '/ustvari-koledar/', 'plus', 'Vaše fotografije, datumi in slog.'],
+              ['Načrtovalnik dopusta', '/nacrtovalnik-dopusta/', 'vacation', 'Več oddiha z manj dnevi dopusta.'],
+              ['Družinski planer', '/druzinski-planer/', 'family', 'Dogodki, obroki in skupni opravki.'],
+              ['Razpored izmen', '/razpored-izmen/', 'clock', 'Delovni cikli in osebni urnik.']
+            ]],
+            ['Šola in čas', [
+              ['Šolski koledar', '/solski-koledar/', 'school', 'Pomembni datumi šolskega leta.'],
+              ['Šolski urnik', '/solski-urnik/', 'week', 'Pregleden urnik pouka za tisk.'],
+              ['Prazen koledar', '/prazen-koledar/', 'note', 'Prostor za vaše zapiske in načrte.'],
+              ['Odštevanje do datuma', '/odstevanje/', 'refresh', 'Koliko dni je še do vašega dogodka?']
+            ]],
+            ['Narava in navdih', [
+              ['Sonce in Luna', '/lunin-koledar/', 'moon', 'Lunine mene in pogled v nebo.'],
+              ['Sončni vzhod in zahod', '/soncni-vzhod-in-zahod/', 'sunset', 'Dolžina dneva za vaš kraj.'],
+              ['Setveni koledar', '/setveni-koledar/', 'sprout', 'Sezonska opravila za vaš vrt.'],
+              ['Dnevni horoskop', '/horoskop/', 'zodiac', 'Dnevni pogled za vaše znamenje.']
+            ]]
+          ].each do |heading, links| %>
+            <section class="nav-directory__group" aria-label="<%= heading %>">
+              <h3><%= heading %></h3>
+              <% links.each do |label, href, icon, description| %>
+                <%= link_to href, aria: { current: page_path == href ? 'page' : nil } do %><span class="nav-directory__icon"><%= ui_icon(icon) %></span><span><strong><%= label %></strong><small><%= description %></small></span><% end %>
+              <% end %>
+            </section>
+          <% end %>
+        </div>
+        <div class="nav-directory__footer"><span>Praktična orodja. Brez registracije.</span><a href="/orodja/">Vsa orodja <%= ui_icon('arrow') %></a></div>
+      </div>
+    </details>
+  </div>
+</nav>

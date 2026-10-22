@@ -12,7 +12,7 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     services:
       postgres:
         image: postgres:17
@@ -108,7 +108,13 @@ jobs:
       - uses: pnpm/action-setup@v4
       - name: Install and prepare static browser checks
         if: ${{ hashFiles('site/release-manifest.json') != '' }}
-        run: pnpm install --frozen-lockfile && pnpm exec playwright install --with-deps chromium webkit
+        run: |
+          # Use the same signed Ubuntu packages without the slow Azure archive mirror.
+          if [ -f /etc/apt/sources.list.d/ubuntu.sources ]; then
+            sudo sed -i 's|http://azure.archive.ubuntu.com/ubuntu|https://archive.ubuntu.com/ubuntu|g' /etc/apt/sources.list.d/ubuntu.sources
+          fi
+          pnpm install --frozen-lockfile
+          pnpm exec playwright install --with-deps chromium webkit
       - name: Browser checks against the freshly rebuilt publication
         if: ${{ hashFiles('site/release-manifest.json') != '' }}
         run: pnpm test:city-card

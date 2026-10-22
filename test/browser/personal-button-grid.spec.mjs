@@ -72,7 +72,9 @@ test('backup and restore action borders align on the other planner pages', async
     await page.goto(path);
     if (openDetails) {
       await page.locator('[data-context-expand]').click();
+      await expect(page.locator('[data-context-expand]')).toHaveAttribute('aria-expanded', 'true');
       await page.locator('details.planner-inputs > summary').click();
+      await expect(page.locator('details.planner-inputs')).toHaveAttribute('open', '');
     }
     const group = page.locator(selector);
     await expect(group, `${path} exposes its backup actions`).toBeVisible();

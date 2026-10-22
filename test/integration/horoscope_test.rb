@@ -37,7 +37,7 @@ class HoroscopeTest < ActionDispatch::IntegrationTest
     assert_select '[data-sign-card]',count:12
     assert_select '.z-card-date',count:12
     get '/'
-    assert_select '.subnav a[href="/horoskop/"]',text:'Dnevni horoskop'
+    assert_select '.subnav a[href="/horoskop/"] strong',text:'Dnevni horoskop'
     assert_select '.subnav a[href="/horoskop/"] img' do |icons|
       assert_match %r{\A/horoscope/art/wheel-icon-v1\.[a-f0-9]{16}\.svg\z},icons.first['src']
     end

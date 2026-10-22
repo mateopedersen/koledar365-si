@@ -40,6 +40,7 @@ files.each do |file|
  doc=Nokogiri::HTML(html)
  page_file=file
  fail_page=lambda { |reason|failures<<{path:page_file.delete_prefix(site),reason:reason} }
+ fail_page.call('Missing shared responsive navigation') unless doc.at_css('.subnav.site-navigation [data-navigation-menu]') && doc.css('#site-tools-menu').size==1 && doc.css('.nav-years a').size==4 && doc.css('.nav-shortcut').size==3
  %w[header footer].each do |tag|
   n=doc.at_css("#{tag} .brand-mark")
   fail_page.call("Missing #{tag} logo") unless n && versioned_ref.call(n['src'], '/visuals/brand-calendar-v3.svg') && n['width'] && n['height']
