@@ -51,15 +51,35 @@ test('shared controls have consistent, usable dimensions across site page famili
 
       const geometry = await page.evaluate(() => {
         const viewport = document.documentElement.clientWidth;
-        const contentOverflow = document.documentElement.scrollWidth > viewport + 1
-          ? [...document.querySelectorAll('#vsebina *')]
-            .map((element) => {
-              const rect = element.getBoundingClientRect();
-              return { tag: element.tagName, className: typeof element.className === 'string' ? element.className : '', right: Math.round(rect.right), width: Math.round(rect.width) };
-            })
-            .filter((element) => element.width > 0 && element.right > viewport + 1)
-            .slice(0, 8)
-          : [];
+        const pageOverflow = [...document.querySelectorAll('body *')]
+          .map((element) => {
+            const rect = element.getBoundingClientRect();
+            const style = getComputedStyle(element);
+            return {
+              tag: element.tagName,
+              className: typeof element.className === 'string' ? element.className : '',
+              right: Math.round(rect.right),
+              width: Math.round(rect.width),
+              position: style.position,
+              insideSubnav: Boolean(element.closest('.subnav')),
+            };
+          })
+          .filter((element) => element.width > 0 && element.right > viewport + 1 && element.position !== 'fixed' && !element.insideSubnav)
+          .slice(0, 8);
+        const contentOverflow = [...document.querySelectorAll('#vsebina *')]
+          .map((element) => {
+            const rect = element.getBoundingClientRect();
+            const style = getComputedStyle(element);
+            let ancestor = element.parentElement;
+            let insideClip = false;
+            while (ancestor && ancestor.id !== 'vsebina') {
+              if (['auto', 'scroll', 'hidden', 'clip'].includes(getComputedStyle(ancestor).overflowX)) insideClip = true;
+              ancestor = ancestor.parentElement;
+            }
+            return { tag: element.tagName, className: typeof element.className === 'string' ? element.className : '', right: Math.round(rect.right), width: Math.round(rect.width), position: style.position, visible: style.display !== 'none' && style.visibility !== 'hidden', insideClip };
+          })
+          .filter((element) => element.width > 0 && element.right > viewport + 1 && element.position !== 'fixed' && element.visible && !element.insideClip)
+          .slice(0, 8);
         const visible = (element) => {
           const rect = element.getBoundingClientRect();
           const style = getComputedStyle(element);
@@ -80,6 +100,7 @@ test('shared controls have consistent, usable dimensions across site page famili
         return {
           viewport,
           document: document.documentElement.scrollWidth,
+          pageOverflow,
           contentOverflow,
           standard,
           fields,
@@ -87,6 +108,7 @@ test('shared controls have consistent, usable dimensions across site page famili
       });
 
       expect(geometry.document, `${route} at ${width}px has horizontal overflow: ${JSON.stringify(geometry)}`).toBeLessThanOrEqual(geometry.viewport + 1);
+      expect(geometry.contentOverflow, `${route} at ${width}px clips visible content: ${JSON.stringify(geometry)}`).toEqual([]);
       expect(geometry.standard.length, `${route} should expose at least one standard control`).toBeGreaterThan(0);
       for (const control of [...geometry.standard, ...geometry.fields]) {
         expect(control.height, `${route} at ${width}px: ${JSON.stringify(control)}`).toBeGreaterThanOrEqual(47);
@@ -143,8 +165,8 @@ test('paired student, calendar and gallery controls keep matching box sizes', as
   }
 });
 
-test('every published sitemap page fits a phone and keeps standard controls usable', async ({ page, browserName }) => {
-  test.skip(browserName !== 'chromium', 'A full 382-page audit runs once; the companion test covers the other engines.');
+test('every published sitemap page fits a phone and keeps standard controls usable', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'chromium', 'A full 382-page audit runs once; the companion test covers the other engines.');
   test.setTimeout(300000);
 
   await page.addInitScript(() => localStorage.setItem('k365.consent', JSON.stringify({
@@ -170,23 +192,38 @@ test('every published sitemap page fits a phone and keeps standard controls usab
           '#vsebina button:not(.text-button):not(.square):not(.category-chip):not(.student-icon-button), #vsebina .button:not(.text-button):not(.square):not(.category-chip):not(.student-icon-button), #vsebina input[type="submit"], #vsebina input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]), #vsebina select',
         )].filter(visible);
         const viewport = document.documentElement.clientWidth;
-        const contentOverflow = document.documentElement.scrollWidth > viewport + 1
-          ? [...document.querySelectorAll('#vsebina *')]
-            .map((element) => {
-              const rect = element.getBoundingClientRect();
-              return { tag: element.tagName, className: typeof element.className === 'string' ? element.className : '', right: Math.round(rect.right), width: Math.round(rect.width) };
-            })
-            .filter((element) => element.width > 0 && element.right > viewport + 1)
-            .slice(0, 8)
-          : [];
+        const pageOverflow = [...document.querySelectorAll('body *')]
+          .map((element) => {
+            const rect = element.getBoundingClientRect();
+            const style = getComputedStyle(element);
+            return { tag: element.tagName, className: typeof element.className === 'string' ? element.className : '', right: Math.round(rect.right), width: Math.round(rect.width), position: style.position, insideSubnav: Boolean(element.closest('.subnav')) };
+          })
+          .filter((element) => element.width > 0 && element.right > viewport + 1 && element.position !== 'fixed' && !element.insideSubnav)
+          .slice(0, 8);
+        const contentOverflow = [...document.querySelectorAll('#vsebina *')]
+          .map((element) => {
+            const rect = element.getBoundingClientRect();
+            const style = getComputedStyle(element);
+            let ancestor = element.parentElement;
+            let insideClip = false;
+            while (ancestor && ancestor.id !== 'vsebina') {
+              if (['auto', 'scroll', 'hidden', 'clip'].includes(getComputedStyle(ancestor).overflowX)) insideClip = true;
+              ancestor = ancestor.parentElement;
+            }
+            return { tag: element.tagName, className: typeof element.className === 'string' ? element.className : '', right: Math.round(rect.right), width: Math.round(rect.width), position: style.position, visible: style.display !== 'none' && style.visibility !== 'hidden', insideClip };
+          })
+          .filter((element) => element.width > 0 && element.right > viewport + 1 && element.position !== 'fixed' && element.visible && !element.insideClip)
+          .slice(0, 8);
         return {
           viewport,
           document: document.documentElement.scrollWidth,
+          pageOverflow,
           contentOverflow,
           heights: controls.map((element) => element.getBoundingClientRect().height),
         };
       });
       expect(geometry.document, `${route} at ${width}px has horizontal overflow: ${JSON.stringify(geometry)}`).toBeLessThanOrEqual(geometry.viewport + 1);
+      expect(geometry.contentOverflow, `${route} at ${width}px clips visible content: ${JSON.stringify(geometry)}`).toEqual([]);
       for (const height of geometry.heights) {
         expect(height, `${route} at ${width}px exposes a control shorter than 47px`).toBeGreaterThanOrEqual(47);
       }
