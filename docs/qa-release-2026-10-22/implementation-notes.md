@@ -6,7 +6,7 @@ Rails statik yayını; 2026 arşivi ve 2027–2030 dönemleri korunur. PR #58 il
 
 ## Yapılan düzeltmeler
 
-- Sitemap gerçek indexable HTML envanterinden üretilir; silinen kaynak sayfaların önceki dışa aktarıma ait HTML çıktıları ayıklanır. Sahte lastmod yerine alan çıkarılır. 790 image sitemap kaydı korunur.
+- Sitemap gerçek indexable HTML envanterinden üretilir; silinen kaynak sayfaların önceki dışa aktarıma ait HTML çıktıları ayıklanır. Lastmod, içerikle eşleşen page-revisions.json kaydından üretilir; geçmişi bilinmeyen sayfalarda alan çıkarılır. Önceki ana daldaki gerçek içerik revizyonları korundu. 790 image sitemap kaydı korunur.
 - llms.txt: 53 doğrulanmış canonical bağlantı, 10 doğal Slovence konu bölümü; UTF-8 text/plain; build sırasında kapsam kontrolü.
 - Koyu panellerde açık yazı ve küçük metinlerde kontrast; görünür odak göstergeleri; modalda Tab/Shift+Tab sınırları ve Escape sonrası odak dönüşü.
 - Görünür metinle uyumlu erişilebilir adlar; tanım listesi ve vardiya tablosunun doğru semantiği; dekoratif işaretlerin erişilebilir addan çıkarılması.
@@ -33,3 +33,7 @@ Rails statik yayını; 2026 arşivi ve 2027–2030 dönemleri korunur. PR #58 il
 13. Cloudflare e-posta koruması HTML byte değerlerini değiştirir. Yalnızca gözlenen e-posta anchor/span ve bilinen decoder script dönüşümü geri alınır; elde edilen tüm HTML'nin SHA-256 değeri yerel dosyayla eşit olmalıdır. Beş regresyon testi yanlış e-posta ve ilgisiz HTML/script değişikliklerini reddeder. Ham ve düzeltilmiş hashler ayrı raporlanır.
 14. Ay takviminin baskısında gün ve Ay simgesi dikey yerleştirildi; dikeyde dört, yatayda altı ay sütunu kullanılır. On iki ay ilk sayfadadır; faz tablosu ve açıklamalarda tek başına boş/açıklama sayfası engellenir.
 15. Paralel tarayıcı testinde görev indeksi sayfa açma beklemesinden önce ayrılır; her test yeni sayfada çalışır. Okul günü adları görünür kısa ve tam adla uyumludur. Vardiya planlayıcısının iki sütunu yalnızca geniş ekrana uygulanır.
+
+16. Ana dalın SEO ve tablet iyileştirmeleri 35b274eade içinde birleştirildi. Semantik takvim tabloları, editoryal kaynak açıklamaları ve sl-SI dili korundu. Son uygulama testi: 130 test, 13.828 assertion, sıfır hata. Sitemap tarihleri içerik parmak iziyle doğrulanır; stale/future tarih yayını durdurur.
+
+17. Birleşmiş matrisin ilk koşusunda `/delovni-dnevi/2028/` görsel decode işlemi bir kez EncodingError verdi; sayfanın sekiz genişlikte yeniden kontrolü ve tüm görsellerin gerçek yüklenmesi geçti. Kontrol, sonraki iki çizim karesinde bir kez daha decode yapar ve ilk hatayı raporda saklar. Başarılı decode zorunlu kalır; ikinci hata kaynak URL'siyle testi durdurur. İlk başarısız koşu da kanıtta saklanır.

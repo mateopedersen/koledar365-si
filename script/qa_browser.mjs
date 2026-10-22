@@ -51,15 +51,26 @@ await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||3)},async()=
    if(item.snapshot&&mode==='layout'){
     // Exercise native lazy loading by scrolling; a full-page screenshot alone
     // does not request images below the viewport.
-    await bounded(page.evaluate(async()=>{
+    row.imageDecodeRetries=await bounded(page.evaluate(async()=>{
      for(let y=0;y<document.documentElement.scrollHeight;y+=innerHeight*.8){
       scrollTo(0,y);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
      }
      // A hidden, lazy image is never requested by WebKit. Decode the images
      // that the scrolling visitor can actually see, and fail broken images.
      const displayed=[...document.images].filter(im=>{const r=im.getBoundingClientRect();return r.width>0&&r.height>0&&getComputedStyle(im).visibility!=='hidden'});
-     await Promise.all(displayed.map(im=>im.decode()));
+     const retries=[];
+     await Promise.all(displayed.map(async im=>{
+      try{await im.decode();}
+      catch(firstError){
+       // A responsive source can change while decode is pending. Retry once
+       // after layout, retain evidence, and still require successful decode.
+       retries.push({src:im.currentSrc||im.src,error:firstError.message});
+       await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+       try{await im.decode();}catch(error){throw new Error(`Image decode failed: ${im.currentSrc||im.src}: ${error.message}`);}
+      }
+     }));
      scrollTo(0,0);await new Promise(r=>requestAnimationFrame(r));
+     return retries;
     }),'Scrolled image loading');
    }
    row.layout=await page.evaluate(()=>{
