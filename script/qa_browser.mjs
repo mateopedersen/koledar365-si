@@ -22,16 +22,22 @@ if(mode==='layout'&&!filter&&process.env.QA_SAMPLE_ONLY!=='1'&&engine==='chromiu
 for(const [,p] of samples)for(const w of mode==='a11y'||engine!=='chromium'?[390,1440]:widths)add(p,w,[390,1440].includes(w));
 fs.mkdirSync(path.join(output,'screenshots'),{recursive:true});
 const browser=await ({chromium,webkit,firefox}[engine]).launch({headless:true});
+async function bounded(promise,label){
+ let timer;
+ try{return await Promise.race([promise,new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error(label+' timed out after 30s')),30000)})]);}
+ finally{clearTimeout(timer);}
+}
 const rows=[];let cursor=0;const tasks=[...cases.values()];
 const commit=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
 await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||3)},async()=>{
  const context=await browser.newContext({viewport:{width:390,height:900},deviceScaleFactor:1,locale:'sl-SI',timezoneId:'Europe/Ljubljana'});
  await context.addInitScript(()=>localStorage.setItem('k365.consent',JSON.stringify({version:2,expiresAt:Date.now()+86400000,preferences:false})));
- const page=await context.newPage();
- if(mode==='a11y')await page.route('**/__qa/axe.js',r=>r.fulfill({status:200,contentType:'application/javascript',body:fs.readFileSync(require.resolve('axe-core/axe.min.js'),'utf8')}));
+ let page=await context.newPage();
+ if(mode==='a11y')await context.route('**/__qa/axe.js',r=>r.fulfill({status:200,contentType:'application/javascript',body:fs.readFileSync(require.resolve('axe-core/axe.min.js'),'utf8')}));
  // A local static server has no weather Function. No UI or calendar data is mocked.
- if(base.startsWith('http://127.0.0.1'))await page.route('**/vreme/**',r=>r.fulfill({status:503,contentType:'application/json',body:'{"error":"Local weather service unavailable"}'}));
+ if(base.startsWith('http://127.0.0.1'))await context.route('**/vreme/**',r=>r.fulfill({status:503,contentType:'application/json',body:'{"error":"Local weather service unavailable"}'}));
  while(cursor<tasks.length){
+  await page.close();page=await context.newPage();page.setDefaultTimeout(30000);
   const item=tasks[cursor++];const errors=[];const listener=e=>errors.push(e.message);page.on('pageerror',listener);
   const row={...item,browser:engine,issues:[],pageErrors:errors};
   try{
@@ -40,17 +46,17 @@ await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||3)},async()=
    row.status=response?.status();
    if(row.status!==(item.path==='/404.html'&&!base.includes('127.0.0.1')?404:200))row.issues.push('Unexpected HTTP status');
    await page.locator('main h1').first().waitFor({state:'visible',timeout:15000});
-   await page.evaluate(async()=>{await document.fonts.ready;await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));});
+   await bounded(page.evaluate(async()=>{await document.fonts.ready;await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));}),'Fonts and layout');
    if(item.snapshot&&mode==='layout'){
     // Exercise native lazy loading by scrolling; a full-page screenshot alone
     // does not request images below the viewport.
-    await page.evaluate(async()=>{
+    await bounded(page.evaluate(async()=>{
      for(let y=0;y<document.documentElement.scrollHeight;y+=innerHeight*.8){
       scrollTo(0,y);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
      }
      await Promise.all([...document.images].map(im=>im.decode().catch(()=>{})));
      scrollTo(0,0);await new Promise(r=>requestAnimationFrame(r));
-    });
+    }),'Scrolled image loading');
    }
    row.layout=await page.evaluate(()=>{
     const visible=e=>{const r=e.getBoundingClientRect(),s=getComputedStyle(e);return r.width>0&&r.height>0&&s.visibility!=='hidden'&&s.display!=='none'};

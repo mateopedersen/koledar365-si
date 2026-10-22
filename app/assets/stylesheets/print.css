@@ -193,7 +193,7 @@
   body.family-planner-page .family-card-heading { margin-bottom: 2mm; }
   body.school-calendar-printing .school-page .sp-calendar-layout { display: grid !important; }
   .school-page .sp-calendar-section > .sp-heading { margin-bottom: 2mm !important; }
-  .school-page .sp-calendar-section { break-inside: auto !important; }
+  .school-page .sp-calendar-section { break-inside: avoid-page !important; }
   .school-page .sp-calendar-section > .sp-heading { break-after: avoid; }
 
 
