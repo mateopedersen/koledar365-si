@@ -5,6 +5,10 @@ const path=require('node:path');
 
 const html=fs.readFileSync('site/solski-urnik/index.html','utf8');
 assert.match(html,/data-student-timetable/,'the published page should render the student planner');
+assert.match(html,/id="student-page-title"[^>]*>Šolski urnik za učence in dijake</,'the published page should use its clear student-focused heading');
+assert.equal((html.match(/class="student-gallery-copy"/g)||[]).length,1,'the print gallery should include one concise format explanation');
+assert.match(html,/class="student-gallery-copy"[^>]*>[\s\S]*?PDF[\s\S]*?WebP[\s\S]*?600 ppi/,'the gallery explanation should describe the matched printable formats and resolution');
+assert.match(html,/id="design-gallery"[^>]*aria-labelledby="design-gallery-title"/,'the student print gallery should have an accessible labelled heading');
 assert.match(html,/student-timetable-page/,'the published page should receive the dedicated theme');
 assert.match(html,/data-task-form/,'the published page should contain the assignment tracker');
 assert.equal((html.match(/data-personal-preview=/g)||[]).length,15,'all fifteen personal print previews should remain available');
