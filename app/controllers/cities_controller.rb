@@ -8,7 +8,7 @@ class CitiesController < ApplicationController
     render json:{error:'Vremenski podatki trenutno niso na voljo. Poskusite znova pozneje.',server_now:Time.current.iso8601},status: :service_unavailable
   end
   def licenses
-    @title='Fotografije in licence';@description='Avtorji, izvirniki in licence fotografij praznikov, slovenskih običajev in 69 mest ter podatkov o vremenu.';@canonical='/fotografije-in-licence/'
+    @title='Fotografije in licence';@description='Avtorji, izvirniki in licence fotografij vrtnin, praznikov, slovenskih običajev in 69 mest ter podatkov o vremenu.';@canonical='/fotografije-in-licence/'
     @cities=CityCatalog.all
     @holiday_photos=HolidayPhotoCatalog.all.select { |photo|photo['reviewed']==true }
   end
