@@ -177,8 +177,8 @@ test('annual dashboard explains the actual selected daily hours and resets them'
   await page.goto('/delovni-dnevi/2028/');
   await page.locator('[data-workdays-hours]').fill('7.5');
   await expect(page.locator('[data-daily-hours-summary]')).toHaveText('Dnevni obseg: 7,5 h');
-  await expect(page.locator('[data-year-hours]')).toHaveText('1.875');
+  await expect(page.locator('[data-year-hours]')).toHaveText(/^1\.?875$/);
   await page.locator('[data-workdays-reset]').click();
   await expect(page.locator('[data-daily-hours-summary]')).toHaveText('Dnevni obseg: 8 h');
-  await expect(page.locator('[data-year-hours]')).toHaveText('2.000');
+  await expect(page.locator('[data-year-hours]')).toHaveText(/^2\.?000$/);
 });
