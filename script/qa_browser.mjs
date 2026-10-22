@@ -47,13 +47,20 @@ await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||3)},async()=
    row.status=response?.status();
    if(row.status!==(item.path==='/404.html'&&!base.includes('127.0.0.1')?404:200))row.issues.push('Unexpected HTTP status');
    await page.locator('main h1').first().waitFor({state:'visible',timeout:15000});
-   await bounded(page.evaluate(async()=>{await document.fonts.ready;await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));}),'Fonts and layout');
+   await bounded(page.evaluate(async()=>{await document.fonts.ready;await new Promise(r=>{const timer=setTimeout(r,100);requestAnimationFrame(()=>requestAnimationFrame(()=>{clearTimeout(timer);r()}));});}),'Fonts and layout');
    if(item.snapshot&&mode==='layout'){
     // Exercise native lazy loading by scrolling; a full-page screenshot alone
     // does not request images below the viewport.
-    row.imageDecodeRetries=await bounded(page.evaluate(async()=>{
+    row.imageLoading=await bounded(page.evaluate(async()=>{
+     let paintTimerFallbacks=0;
+     // Headless background tabs may suspend animation frames. Image decoding
+     // and screenshot/layout assertions remain mandatory after this wait.
+     const settle=()=>new Promise(resolve=>{
+      const timer=setTimeout(()=>{paintTimerFallbacks++;resolve();},100);
+      requestAnimationFrame(()=>requestAnimationFrame(()=>{clearTimeout(timer);resolve();}));
+     });
      for(let y=0;y<document.documentElement.scrollHeight;y+=innerHeight*.8){
-      scrollTo(0,y);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+      scrollTo(0,y);await settle();
      }
      // A hidden, lazy image is never requested by WebKit. Decode the images
      // that the scrolling visitor can actually see, and fail broken images.
@@ -75,17 +82,17 @@ await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||3)},async()=
      // before decode; fast whole-page scrolling can otherwise skip a request.
      for(const im of displayed){
       im.scrollIntoView({block:'center',inline:'nearest'});
-      await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+      await settle();
       try{await decode(im);}
       catch(firstError){
        retries.push({src:im.currentSrc||im.src,error:firstError.message});
        im.scrollIntoView({block:'center',inline:'nearest'});
-       await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+       await settle();
        try{await decode(im);}catch(error){throw new Error(`Image decode failed: ${im.currentSrc||im.src}: ${error.message}`);}
       }
      }
-     scrollTo(0,0);await new Promise(r=>requestAnimationFrame(r));
-     return retries;
+     scrollTo(0,0);await settle();
+     return {decodedImages:displayed.length,retries,paintTimerFallbacks,visibilityState:document.visibilityState};
     }),'Scrolled image loading',90000);
    }
    row.layout=await page.evaluate(()=>{
@@ -119,7 +126,7 @@ await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||3)},async()=
     row.screenshot='screenshots/'+filename;
    }
   }catch(error){row.issues.push(error.message);}
-  row.passed=!row.issues.length;rows.push(row);page.off('pageerror',listener);
+  row.passed=!row.issues.length;if(!row.passed)console.error(JSON.stringify({path:row.path,width:row.width,issues:row.issues}));rows.push(row);page.off('pageerror',listener);
   if(rows.length%40===0){fs.writeFileSync(path.join(output,`progress-${mode}-${engine}.json`),JSON.stringify({completed:rows.length,total:tasks.length,failed:rows.filter(r=>!r.passed).length}));console.log(`${mode}/${engine}: ${rows.length}/${tasks.length}`);}
  }
  await context.close();

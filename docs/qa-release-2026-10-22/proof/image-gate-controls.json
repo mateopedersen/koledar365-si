@@ -1,5 +1,5 @@
 {
-  "tested": 18,
+  "tested": 26,
   "failed": 0,
   "cases": [
     {
@@ -12,6 +12,13 @@
     {
       "name": "lazy-webkit",
       "tested": 2,
+      "expectedFailures": 0,
+      "observedFailures": 0,
+      "passed": true
+    },
+    {
+      "name": "lazy-no-animation-frames",
+      "tested": 8,
       "expectedFailures": 0,
       "observedFailures": 0,
       "passed": true

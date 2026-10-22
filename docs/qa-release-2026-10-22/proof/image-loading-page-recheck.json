@@ -1,0 +1,212 @@
+{
+  "tested": 24,
+  "failed": 0,
+  "app_build_source": "4a887f6b371143e3387a43d15225dcef9c156739",
+  "harness_sha256": "db3b9a2bfdfafca474ab62cbb60312871204ccd02cd12c3b84c14ffe4f53fdb5",
+  "rows": [
+    {
+      "path": "/izplacila-socialnih-transferjev/",
+      "width": 320,
+      "snapshot": false,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/izplacila-socialnih-transferjev/",
+      "width": 360,
+      "snapshot": false,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/izplacila-socialnih-transferjev/",
+      "width": 390,
+      "snapshot": true,
+      "issues": [],
+      "imageLoading": {
+        "decodedImages": 5,
+        "retries": [],
+        "paintTimerFallbacks": 0,
+        "visibilityState": "visible"
+      },
+      "passed": true
+    },
+    {
+      "path": "/izplacila-socialnih-transferjev/",
+      "width": 430,
+      "snapshot": false,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/izplacila-socialnih-transferjev/",
+      "width": 768,
+      "snapshot": false,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/izplacila-socialnih-transferjev/",
+      "width": 1024,
+      "snapshot": false,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/izplacila-socialnih-transferjev/",
+      "width": 1280,
+      "snapshot": false,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/izplacila-socialnih-transferjev/",
+      "width": 1440,
+      "snapshot": true,
+      "issues": [],
+      "imageLoading": {
+        "decodedImages": 5,
+        "retries": [],
+        "paintTimerFallbacks": 0,
+        "visibilityState": "visible"
+      },
+      "passed": true
+    },
+    {
+      "path": "/setveni-koledar/",
+      "width": 320,
+      "snapshot": false,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/setveni-koledar/",
+      "width": 360,
+      "snapshot": false,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/setveni-koledar/",
+      "width": 390,
+      "snapshot": true,
+      "issues": [],
+      "imageLoading": {
+        "decodedImages": 21,
+        "retries": [],
+        "paintTimerFallbacks": 0,
+        "visibilityState": "visible"
+      },
+      "passed": true
+    },
+    {
+      "path": "/setveni-koledar/",
+      "width": 430,
+      "snapshot": false,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/setveni-koledar/",
+      "width": 768,
+      "snapshot": false,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/setveni-koledar/",
+      "width": 1024,
+      "snapshot": false,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/setveni-koledar/",
+      "width": 1280,
+      "snapshot": false,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/setveni-koledar/",
+      "width": 1440,
+      "snapshot": true,
+      "issues": [],
+      "imageLoading": {
+        "decodedImages": 21,
+        "retries": [],
+        "paintTimerFallbacks": 1,
+        "visibilityState": "visible"
+      },
+      "passed": true
+    },
+    {
+      "path": "/solski-koledar/",
+      "width": 320,
+      "snapshot": false,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/solski-koledar/",
+      "width": 360,
+      "snapshot": false,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/solski-koledar/",
+      "width": 390,
+      "snapshot": true,
+      "issues": [],
+      "imageLoading": {
+        "decodedImages": 3,
+        "retries": [],
+        "paintTimerFallbacks": 0,
+        "visibilityState": "visible"
+      },
+      "passed": true
+    },
+    {
+      "path": "/solski-koledar/",
+      "width": 430,
+      "snapshot": false,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/solski-koledar/",
+      "width": 768,
+      "snapshot": false,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/solski-koledar/",
+      "width": 1024,
+      "snapshot": false,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/solski-koledar/",
+      "width": 1280,
+      "snapshot": false,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "path": "/solski-koledar/",
+      "width": 1440,
+      "snapshot": true,
+      "issues": [],
+      "imageLoading": {
+        "decodedImages": 3,
+        "retries": [],
+        "paintTimerFallbacks": 0,
+        "visibilityState": "visible"
+      },
+      "passed": true
+    }
+  ]
+}
