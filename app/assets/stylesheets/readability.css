@@ -276,6 +276,10 @@
 /* K365-control-system-v1: shared, predictable dimensions for page controls.
    Compact chips and icon-only tools keep their own accessible tap targets. */
 @media screen {
+  @media (max-width: 640px) {
+    html { overflow-x: clip; }
+  }
+
   :root {
     --k365-control-height: 48px;
     --k365-compact-control-height: 40px;
