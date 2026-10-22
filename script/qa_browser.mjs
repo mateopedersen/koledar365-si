@@ -57,18 +57,33 @@ await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||3)},async()=
      }
      // A hidden, lazy image is never requested by WebKit. Decode the images
      // that the scrolling visitor can actually see, and fail broken images.
-     const displayed=[...document.images].filter(im=>{const r=im.getBoundingClientRect();return r.width>0&&r.height>0&&getComputedStyle(im).visibility!=='hidden'});
+     const displayed=[...document.images].filter(im=>{
+      const r=im.getBoundingClientRect();
+      if(!r.width||!r.height||getComputedStyle(im).visibility==='hidden')return false;
+      if(typeof im.checkVisibility==='function'&&!im.checkVisibility({visibilityProperty:true,opacityProperty:true}))return false;
+      const closed=im.closest('details:not([open])');
+      return !closed||closed.querySelector('summary')?.contains(im);
+     });
      const retries=[];
-     await Promise.all(displayed.map(async im=>{
-      try{await im.decode();}
+     const decode=async im=>{
+      let timer;
+      try{await Promise.race([im.decode(),new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('Image decode timed out: '+(im.currentSrc||im.src))),15000)})]);}
+      finally{clearTimeout(timer);}
+      if(!im.complete||!im.naturalWidth)throw new Error('Broken image: '+(im.currentSrc||im.src));
+     };
+     // Native lazy loading requires intersection. Visit each rendered image
+     // before decode; fast whole-page scrolling can otherwise skip a request.
+     for(const im of displayed){
+      im.scrollIntoView({block:'center',inline:'nearest'});
+      await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+      try{await decode(im);}
       catch(firstError){
-       // A responsive source can change while decode is pending. Retry once
-       // after layout, retain evidence, and still require successful decode.
        retries.push({src:im.currentSrc||im.src,error:firstError.message});
+       im.scrollIntoView({block:'center',inline:'nearest'});
        await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
-       try{await im.decode();}catch(error){throw new Error(`Image decode failed: ${im.currentSrc||im.src}: ${error.message}`);}
+       try{await decode(im);}catch(error){throw new Error(`Image decode failed: ${im.currentSrc||im.src}: ${error.message}`);}
       }
-     }));
+     }
      scrollTo(0,0);await new Promise(r=>requestAnimationFrame(r));
      return retries;
     }),'Scrolled image loading',90000);

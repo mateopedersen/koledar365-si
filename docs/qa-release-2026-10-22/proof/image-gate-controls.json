@@ -1,0 +1,27 @@
+{
+  "tested": 18,
+  "failed": 0,
+  "cases": [
+    {
+      "name": "lazy-chromium",
+      "tested": 8,
+      "expectedFailures": 0,
+      "observedFailures": 0,
+      "passed": true
+    },
+    {
+      "name": "lazy-webkit",
+      "tested": 2,
+      "expectedFailures": 0,
+      "observedFailures": 0,
+      "passed": true
+    },
+    {
+      "name": "broken-chromium",
+      "tested": 8,
+      "expectedFailures": 8,
+      "observedFailures": 8,
+      "passed": true
+    }
+  ]
+}
