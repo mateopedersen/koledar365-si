@@ -3,6 +3,7 @@ class PageMetadata
   def self.description(page, year:)
     return ClockChangeSchedule::DESCRIPTION if page.path=='/premik-ure/'
     return 'Ustvarite svoj letni ali mesečni koledar z imenom, fotografijami, logotipom in dogodki. Prilagodite pisave, barve in začetek tedna ter prenesite PDF, PNG ali SVG.' if page.path=='/ustvari-koledar/'
+    return 'Pogoji uporabe Koledar365 pojasnjujejo rabo koledarjev in orodij, navajanje virov, avtorske pravice, omejitve podatkov ter prijavo napak.' if page.path=='/pogoji-uporabe/'
     return page.description if page.description.present?
     path = page.path
     fixed = JSON.parse(Rails.root.join("data/page_descriptions_sl.json").read)
