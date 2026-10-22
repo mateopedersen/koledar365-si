@@ -57,7 +57,7 @@
   .home-header-spotlight__event { display:flex;min-width:0;align-items:center;gap:3px;overflow:hidden;font-size:11px;white-space:nowrap; }
   .home-header-spotlight__event time { flex:none;color:#0b559d;font-weight:850; }
   .home-header-spotlight__event strong { min-width:0;overflow:hidden;color:#173456;font-weight:750;text-overflow:ellipsis;white-space:nowrap; }
-  .home-header-spotlight__content small { overflow:hidden;color:#697b91;font-size:9px;text-overflow:ellipsis;white-space:nowrap; }
+  .home-header-spotlight__content small { overflow:hidden;color:#52647c;font-size:9px;text-overflow:ellipsis;white-space:nowrap; }
   .home-header-spotlight__arrow { display:grid;flex:none;place-items:center;margin-left:auto;color:#0c5ba7; }
   .home-header-spotlight__arrow .ui-icon { width:17px;height:17px; }
   @media(min-width:1400px) {
