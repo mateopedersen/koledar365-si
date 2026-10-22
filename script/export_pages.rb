@@ -95,9 +95,6 @@ elsif path=='/solski-urnik/'
    stamp=article.element_children.find { |node|node.name=='small' };current.add_child(stamp) if stamp
   end
  end
- if path=='/kontakt/'
-   panel=doc.at_css('main .prose');panel.inner_html='<h2>Pišite uredništvu</h2><p>Za vprašanje, popravek ali zahtevo glede zasebnosti pišite na <a href="mailto:koledar365@gmail.com">koledar365@gmail.com</a>. Navedite naslov strani in datum, na katerega se sporočilo nanaša.</p><a class="button primary" href="mailto:koledar365@gmail.com?subject=Koledar365%20%E2%80%93%20vpra%C5%A1anje">Odpri e-pošto</a><p>Povezava odpre vaš poštni program. Sporočilo pošljete sami; spletno mesto ga ne odda v ozadju. <a href="/zasebnost/">Obdelava podatkov in vaše pravice.</a></p>'
- end
  if path=='/piskotki/'
    doc.css('tr').find { |node|node.text.include?('_koledar365_session') }&.remove
    doc.css('p').each { |node|node.inner_html=node.inner_html.gsub('kontaktnega obrazca','e-pošte').gsub('obdelava podatkov na strežniku','tehnični podatki ob obisku') }
@@ -186,7 +183,7 @@ headers=<<~HEADERS
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(self)
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-#{cookie_script_hash}'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' blob:; connect-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-#{cookie_script_hash}'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' blob:; connect-src 'self' blob:; frame-src https://docs.google.com/forms/; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'
   Cache-Control: public, max-age=0, must-revalidate
 /visuals/*
   ! Cache-Control
