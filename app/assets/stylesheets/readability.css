@@ -430,3 +430,11 @@
   #vsebina .important-controls .filters>label:has(input[type="search"]){grid-column:1/-1}
   #vsebina .design-card .actions{grid-template-columns:minmax(0,1fr)}
 }
+@media screen and (max-width:600px){
+  #vsebina .studio-project-actions{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;width:100%;align-items:stretch}
+  #vsebina .studio-project-actions>.studio-history{align-self:center}
+  #vsebina .studio-project-actions>.studio-menu{min-width:0}
+  #vsebina #studio-download{grid-column:1/-1;width:100%;min-width:0;white-space:normal}
+  #vsebina .studio-presets{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #vsebina .studio-presets>button{min-width:0;overflow-wrap:break-word}
+}
