@@ -44,7 +44,7 @@
       <p class="student-private-note"><strong>Zasebno po zasnovi.</strong> Urnik in naloge se shranijo samo v tem brskalniku; Koledar365 jih ne pošlje na strežnik.</p>
     </section>
 
-    <aside class="student-side-column">
+    <div class="student-side-column">
       <section class="student-panel student-tasks" aria-labelledby="student-tasks-title">
         <div class="student-panel__heading"><div><span class="student-section-index">B · DOMAČE NALOGE IN PREVERJANJA</span><h3 id="student-tasks-title">Kaj je naslednje?</h3></div><span class="student-task-counter" data-task-progress>0 / 0</span></div>
         <form class="student-task-form" data-task-form>
@@ -72,7 +72,7 @@
         <div><span class="student-section-index">TVOJI PODATKI</span><h3 id="student-backup-title">Shrani kopijo</h3><p>Če zamenjaš brskalnik ali napravo, urnik in obveznosti prenesi s seboj.</p></div>
         <div class="student-backup-actions"><button class="button" type="button" data-student-backup>Prenesi kopijo</button><label class="button student-file-button">Obnovi kopijo<input type="file" data-student-restore accept="application/json,.json"></label></div><output data-backup-status role="status"></output>
       </section>
-    </aside>
+    </div>
   </div>
 
   <section class="student-print-tools" aria-labelledby="student-print-tools-title">
@@ -83,10 +83,10 @@
     </div>
   </section>
 
-  <aside class="student-source-note" aria-label="Uradni viri in pomembne informacije">
+  <section class="student-source-note" aria-label="Uradni viri in pomembne informacije">
     <div><span class="student-source-note__stamp" aria-hidden="true">45′</span><p><strong>V osnovni šoli ura pouka traja 45 minut; pouk se ne sme začeti pred 7.30, urnik predmetov pa določi šola. Tudi v srednji šoli ura pouka traja 45 minut, praktično usposabljanje pri delodajalcu pa 60 minut.</strong> Urnik prilagodi svojemu programu in obvestilom šole; ta stran je osebni pripomoček, ne uradni šolski koledar.</p></div>
     <details><summary>Uradni viri za šolsko leto 2026/27</summary><ul><li><a href="https://www.gov.si/teme/o-osnovni-soli/" target="_blank" rel="noopener noreferrer">Osnovna šola: organizacija in šolsko leto · GOV.SI</a></li><li><a href="https://www.gov.si/teme/solski-koledar-za-osnovne-sole/" target="_blank" rel="noopener noreferrer">Koledar za osnovne šole · GOV.SI</a></li><li><a href="https://www.gov.si/teme/solski-koledar-za-srednje-sole/" target="_blank" rel="noopener noreferrer">Koledar za srednje šole · GOV.SI</a></li></ul><p>Termini počitnic, preverjanj in zaključka pouka se razlikujejo glede na šolsko leto, program in v nekaterih primerih regijo. Preveri obvestila svoje šole.</p></details>
-  </aside>
+  </section>
 
   <output class="student-live-status" data-student-live-status role="status" aria-live="polite"></output>
 </section>

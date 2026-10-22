@@ -168,7 +168,7 @@
           <p class="sun-scene-note">Položaj in azimut Sonca se računata za izbrani trenutek; disk prikazuje NASA/SDO-jevo fotosfero z vidno granulacijo in sončnimi pegami, obrobljeno z atmosfersko sipano svetlobo. Alpska panorama in oblaki so ilustrativni, ne prikazujejo lokalnega reliefa ali dejanskega vremena. Površinska fotografija: NASA/SDO HMI Continuum, 21. 10. 2026.</p>
     </div>
 
-    <aside class="sun-day-card" aria-label="Sončni časi in dnevna svetloba">
+    <section class="sun-day-card" aria-label="Sončni časi in dnevna svetloba">
       <div class="sun-day-card__head"><span class="sun-step">03 <i aria-hidden="true"></i> SONČNI ČASI ZA <b data-sun-city-name><%= sun[:name] %></b></span><span class="sun-day-number" data-sun-day-number><%= sun[:minutes] / 60 %><small>h</small> <%= (sun[:minutes] % 60) %><small>min svetlobe</small></span></div>
       <div class="sun-event-list">
         <div class="sun-event sun-event--twilight"><span class="sun-event__icon" aria-hidden="true">◌</span><div><small>Jutranji civilni mrak</small><strong data-sun-value="civil-dawn"><%= sun[:civil_dawn].strftime('%H:%M') %></strong></div><small>–6°</small></div>
@@ -181,7 +181,7 @@
       </div>
       <p class="sun-date-caption" data-sun-date-caption><%= sl_date(date) %> · <%= sun[:name] %></p>
       <button class="sun-share" type="button" data-sun-share><span aria-hidden="true">↗</span> Kopiraj povezavo do izračuna</button>
-    </aside>
+    </section>
   </div>
 
   <details class="sun-method">
