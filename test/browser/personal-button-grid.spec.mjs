@@ -6,6 +6,8 @@ const widths = [320, 390, 644, 768, 1024, 1440];
 test('personal calendar action borders align and fit across home views and screen widths', async ({ page }) => {
   for (const view of views) {
     await page.goto(`/?year=2026&month=10&date=2026-10-22&view=${view}`);
+    await expect(page.locator('html')).toHaveAttribute('data-free-ready', 'true');
+    await expect(page.locator('.workspace')).toHaveAttribute('data-home-view', view);
     const grid = page.locator('.right-panel .button-grid');
     await expect(grid, `${view} view exposes the shared personal calendar actions`).toBeVisible();
     await expect(grid.locator(':scope > *')).toHaveCount(4);
