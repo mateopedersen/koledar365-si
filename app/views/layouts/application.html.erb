@@ -23,6 +23,7 @@
 <% if @section=='sun' -%><%= stylesheet_link_tag 'sun' %><%= javascript_include_tag 'sun',defer:true %><% end -%>
 <% if page_path.start_with?('/lunin-koledar/') -%><link rel="stylesheet" href="/lunar/calendar.css?v=20261021-2"><% end -%>
 <% if page_path == '/datumski-kalkulator/' %><%= stylesheet_link_tag 'date_calculator' %><% end %>
+<% if page_path == '/prestopno-leto/' %><%= stylesheet_link_tag 'leap_year' %><%= javascript_include_tag 'leap_year', defer: true %><% end %>
 <% if page_path == '/nacrtovalnik-dopusta/' %><%= stylesheet_link_tag 'vacation' %><%= javascript_include_tag 'vacation',defer:true %><% end %>
 <% if page_path == '/odstevanje/' %><%= stylesheet_link_tag 'countdown' %><%= javascript_include_tag 'countdown',defer:true %><% end %>
 <% if @section=='horoscope' %><%= stylesheet_link_tag 'horoscope' %><script type="module" src="/horoscope/experience-v1.mjs"></script><% end %>

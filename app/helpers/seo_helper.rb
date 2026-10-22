@@ -2,6 +2,7 @@ module SeoHelper
   def site_origin = ENV.fetch("SITE_URL", "https://koledar365.si").delete_suffix("/")
 
   def seo_title
+    return "Prestopno leto: kalkulator in pravilo 29. februarja · Koledar365" if page_path == "/prestopno-leto/"
     title = @title.presence || "Slovenski koledar"
     title.include?("Koledar365") ? title : "#{title} · Koledar365"
   end
@@ -42,6 +43,18 @@ module SeoHelper
       ["Kako kalkulator prišteje mesece?", "Meseci se prištevajo po koledarju. Če ciljni mesec nima izbranega dne, kalkulator uporabi zadnji dan ciljnega meseca. Tako se 31. januar pri prištevanju enega meseca premakne na zadnji dan februarja."],
       ["Kako se štejejo delovni dnevi v Sloveniji?", "V načinu »Delovni dnevi« izberete dneve tedna, dnevne ure in ali naj kalkulator izloči zakonsko dela proste praznike. Podatki za praznike so na voljo za leta 2027–2030."],
       ["Ali lahko rezultat delim?", "Da. Gumb »Kopiraj povezavo« ustvari povezavo z izbranimi datumi in nastavitvami. Za datumske izračune račun ni potreben."]
+    ]
+  end
+
+  def leap_year_faq
+    [
+      ["Kdaj je leto prestopno?", "V gregorijanskem koledarju je prestopno leto deljivo s 4, razen stoletnih let, ki niso deljiva s 400. Leto 2000 je bilo prestopno, 1900 pa ne."],
+      ["Zakaj 1900 ni prestopno, leto 2000 pa je?", "Obe leti sta deljivi s 100, zato običajno pravilo s štiri ne zadošča. Stoletno leto je prestopno samo, če je deljivo tudi s 400: 1900 ni, 2000 pa je."],
+      ["Ali bo leto 2100 prestopno?", "Ne. Leto 2100 je deljivo s 100, ni pa deljivo s 400, zato bo februar imel 28 dni."],
+      ["Kaj se zgodi 29. februarja?", "V prestopnem letu ima februar 29 namesto 28 dni. Dodatni datum je med 28. februarjem in 1. marcem; leto ima zato skupaj 366 dni."],
+      ["Zakaj prestopnih let ne določimo samo vsaka štiri leta?", "Tropsko leto traja približno 365,2422 dni, zato preprosto dodajanje dneva vsaka štiri leta sčasoma doda preveč časa. Gregorijansko pravilo izpusti večino stoletnih let in ohrani vsako štiristoletno izjemo."],
+      ["Koliko dni ima prestopno leto?", "Prestopno leto ima 366 koledarskih dni. Vsi meseci razen februarja ohranijo običajno dolžino; februar ima 29 dni."],
+      ["Ali lahko s kalkulatorjem preverim tudi zgodovinsko leto?", "Kalkulator uporabi gregorijansko pravilo za leta od 1 do 9999. Pri zgodovinskih datumih se je dejanska uporaba civilnega koledarja razlikovala po kraju in obdobju, zato preverite tudi lokalni zgodovinski vir."]
     ]
   end
 
@@ -100,6 +113,19 @@ module SeoHelper
           "Štetje delovnih dni in slovenskih praznikov", "Deljiva povezava do nastavitev"] }
       graph << { "@type" => "FAQPage", "@id" => "#{canonical_url}#faq",
         "mainEntity" => date_calculator_faq.map { |question, answer|
+          { "@type" => "Question", "name" => question,
+            "acceptedAnswer" => { "@type" => "Answer", "text" => answer } }
+        } }
+    end
+    if page_path == "/prestopno-leto/"
+      graph << { "@type" => "WebApplication", "@id" => "#{canonical_url}#application",
+        "name" => "Kalkulator prestopnega leta", "url" => canonical_url,
+        "description" => @description, "applicationCategory" => "UtilitiesApplication",
+        "operatingSystem" => "Any", "isAccessibleForFree" => true, "inLanguage" => "sl",
+        "featureList" => ["Preverjanje let od 1 do 9999", "Gregorijansko pravilo deljivosti s 4, 100 in 400",
+          "Število dni v februarju", "Primeri stoletnih let"] }
+      graph << { "@type" => "FAQPage", "@id" => "#{canonical_url}#faq",
+        "mainEntity" => leap_year_faq.map { |question, answer|
           { "@type" => "Question", "name" => question,
             "acceptedAnswer" => { "@type" => "Answer", "text" => answer } }
         } }
