@@ -11,4 +11,16 @@
 <aside aria-label="Osebni načrtovalnik" class="right-panel" id="personal-planner" data-selected-date="<%= @selected %>"><%= render 'personal' %></aside>
 </div>
 <%= render 'expansion_discovery' %>
-<section class="panel discovery"><div class="section-heading"><h2>Več možnosti. Vse na enem mestu.</h2><a href="/orodja/">Vsa orodja →</a></div><div class="feature-grid"><div><h3><%= ui_icon('calendar') %> Koledarji 2027–2030</h3><p>Letni in mesečni koledarji za vsak načrt.</p><div class="year-links"><% (2027..2030).each do |y| %><a href="/koledar/<%= y %>/"><%= y %></a><% end %></div></div><a href="/datumski-kalkulator/" class="feature"><h3><%= ui_icon('calculator') %> Datumski kalkulator</h3><p>Preštejte dneve in poiščite pravi datum.</p><span>Izračunaj →</span></a></div><div class="quick-links"><a href="/horoskop/" class="home-zodiac-link"><%= horoscope_icon %> Dnevni horoskop in znamenja</a><a href="/pomembni-dnevi/"><%= ui_icon('gift') %> Pomembni dnevi</a><a href="/lunin-koledar/"><%= ui_icon('moon') %> Lunin koledar</a><a href="/nacrtovalnik-dopusta/"><%= ui_icon('vacation') %> Načrtovalnik dopusta</a><a href="/prazen-koledar/"><%= ui_icon('note') %> Prazen koledar</a></div></section>
+<section class="panel discovery home-discovery"><div class="section-heading"><h2>Več možnosti. Vse na enem mestu.</h2><a href="/orodja/">Vsa orodja →</a></div><div class="feature-grid"><div><h3><%= ui_icon('calendar') %> Koledarji 2027–2030</h3><p>Letni in mesečni koledarji za vsak načrt.</p><div class="year-links"><% (2027..2030).each do |y| %><a href="/koledar/<%= y %>/"><%= y %></a><% end %></div></div><a href="/datumski-kalkulator/" class="feature"><h3><%= ui_icon('calculator') %> Datumski kalkulator</h3><p>Preštejte dneve in poiščite pravi datum.</p><span>Izračunaj →</span></a>
+<% next_day_off = @upcoming.find(&:work_free) %>
+<article class="feature feature--holiday">
+<h3><%= ui_icon('holidays') %> Naslednji dela prost dan</h3>
+<% if next_day_off %>
+<% days_until = (next_day_off.on - @today).to_i %>
+<p class="holiday-feature__date"><time datetime="<%= next_day_off.on.iso8601 %>"><%= next_day_off.on.strftime('%-d. %-m.') %></time><span><%= next_day_off.title.sub(/\A./, &:upcase) %></span></p>
+<div class="holiday-feature__footer"><a href="<%= event_path(next_day_off) %>">Podrobnosti praznika →</a><span><%= days_until.zero? ? 'Danes' : "Čez #{days_until} dni" %></span></div>
+<% else %>
+<p>Na enem mestu preverite slovenske praznike in dela proste dni.</p>
+<div class="holiday-feature__footer"><a href="/prazniki/">Odpri praznike →</a></div>
+<% end %>
+</article></div><div class="quick-links"><a href="/horoskop/" class="home-zodiac-link"><%= horoscope_icon %> Dnevni horoskop in znamenja</a><a href="/pomembni-dnevi/"><%= ui_icon('gift') %> Pomembni dnevi</a><a href="/lunin-koledar/"><%= ui_icon('moon') %> Lunin koledar</a><a href="/nacrtovalnik-dopusta/"><%= ui_icon('vacation') %> Načrtovalnik dopusta</a><a href="/prazen-koledar/"><%= ui_icon('note') %> Prazen koledar</a></div></section>

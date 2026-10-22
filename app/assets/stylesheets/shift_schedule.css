@@ -142,3 +142,34 @@ body.shift-page .shift-saved__actions>button,body.shift-page .shift-saved__actio
 body.shift-page .shift-download-workspace{grid-template-columns:minmax(0,1fr)}
 body.shift-page .shift-download-workspace>.shift-workbench,body.shift-page .shift-download-workspace>.shift-saved,body.shift-page .shift-download-workspace>.shift-print-settings,body.shift-page .shift-download-workspace>#design-gallery{grid-column:1/-1;min-width:0}
 @media screen and (min-width:901px){body.shift-page .shift-layout{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}}
+
+/* Keep the live shift preview within narrow mobile cards. */
+@media screen and (max-width: 650px) {
+  body.shift-page .shift-preview__top {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  body.shift-page .shift-preview__top > div {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  body.shift-page .shift-preview__badge {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  body.shift-page .shift-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.shift-page .shift-stats > div > span:not(.shift-stat-icon) {
+    min-width: 0;
+  }
+
+  body.shift-page .shift-stats small {
+    overflow-wrap: anywhere;
+  }
+}
