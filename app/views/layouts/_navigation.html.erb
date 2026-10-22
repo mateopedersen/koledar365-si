@@ -13,7 +13,7 @@
         <span class="home-header-spotlight__icon" aria-hidden="true"><%= ui_icon('holidays') %></span>
         <span class="home-header-spotlight__content">
           <span class="home-header-spotlight__eyebrow">NASLEDNJI DELA PROST DAN</span>
-          <span class="home-header-spotlight__event"><time datetime="<%= next_header_holiday.on.iso8601 %>"><%= next_header_holiday.on.strftime('%-d. %-m.') %></time><span aria-hidden="true"> · </span><strong><%= next_header_holiday.title.sub(/\\A./, &:upcase) %></strong></span>
+          <span class="home-header-spotlight__event"><time datetime="<%= next_header_holiday.on.iso8601 %>"><%= next_header_holiday.on.strftime('%-d. %-m.') %></time><span aria-hidden="true"> · </span><strong><%= next_header_holiday.title.sub(/^./, &:upcase) %></strong></span>
           <small><%= header_holiday_days.zero? ? 'Danes' : header_holiday_days == 1 ? 'Še 1 dan' : "Še #{header_holiday_days} dni" %></small>
         </span>
         <span class="home-header-spotlight__arrow" aria-hidden="true"><%= ui_icon('arrow') %></span>
