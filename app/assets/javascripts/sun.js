@@ -48,6 +48,13 @@
     const parts = partsInZone(new Date(), { year: 'numeric', month: '2-digit', day: '2-digit' });
     return asIsoDate(Number(parts.year), Number(parts.month), Number(parts.day));
   };
+  const requestedDateOrToday = (value) => {
+    if (/^\d{4}-\d{2}-\d{2}$/.test(value || '')) {
+      const { year, month, day } = dateParts(value);
+      if (year >= 1901 && year <= 2099 && new Date(Date.UTC(year, month - 1, day)).toISOString().slice(0, 10) === value) return value;
+    }
+    return localToday();
+  };
   const dateLabel = (iso) => {
     const { year, month, day } = dateParts(iso);
     return new Intl.DateTimeFormat('sl-SI', { dateStyle: 'full', timeZone: timezone })
@@ -368,8 +375,10 @@
   const queryCity = url.searchParams.get('city');
   const initialCity = queryCity || routeCity || root.dataset.selectedCity;
   if ([...citySelect.options].some((option) => option.value === initialCity)) citySelect.value = initialCity;
-  if (url.searchParams.get('date') && /^\d{4}-\d{2}-\d{2}$/.test(url.searchParams.get('date'))) dateInput.value = url.searchParams.get('date');
+  const initialDate = url.searchParams.get('date');
+  dateInput.value = requestedDateOrToday(initialDate);
   render();
+  if (initialDate && initialDate !== dateInput.value && status) status.textContent = 'Datum v povezavi ni veljaven. Prikazan je današnji datum.';
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -442,7 +451,7 @@
     const city = current.searchParams.get('city') || current.pathname.match(/^\/soncni-vzhod-in-zahod\/([a-z0-9-]+)\/$/)?.[1];
     if (city && [...citySelect.options].some((option) => option.value === city)) citySelect.value = city;
     const date = current.searchParams.get('date');
-    if (date && /^\d{4}-\d{2}-\d{2}$/.test(date)) dateInput.value = date;
+    dateInput.value = requestedDateOrToday(date);
     render();
   });
 
