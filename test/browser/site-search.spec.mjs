@@ -47,3 +47,21 @@ test('search dropdown fits a narrow phone and date suggestions open the right ca
   expect(layout.right, JSON.stringify(layout)).toBeLessThanOrEqual(320.5);
   await expect(suggestions.locator('a[role="option"]').first()).toHaveAttribute('href', '/?year=2027&month=12&date=2027-12-25&view=day');
 });
+
+
+test('Escape keeps suggestions closed when a delayed search response arrives',async({page})=>{
+ let pending;
+ await page.route('**/free/search.json',route=>{pending=route;});
+ await page.goto('/',{waitUntil:'domcontentloaded'});
+ const input=page.locator('#search'),popup=page.locator('[data-search-suggestions]').first();
+ await input.fill('prazniki');
+ await expect(popup).toContainText('Iščemo');
+ await expect.poll(()=>Boolean(pending)).toBe(true);
+ await input.press('Escape');
+ const response=page.waitForResponse('**/free/search.json');
+ await pending.fulfill({status:200,contentType:'application/json',body:'[]'});
+ await response;
+ await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+ await expect(popup).toBeHidden();
+ await expect(input).toHaveAttribute('aria-expanded','false');
+});

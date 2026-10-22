@@ -102,14 +102,14 @@ function makeSearchLink(result,index,asOption=false){const link=element('a',unde
 function attachSearchSuggestions(form){
  const input=form.querySelector('[data-search-input]'),popup=form.querySelector('[data-search-suggestions]'),list=popup?.querySelector('[data-search-options]'),status=popup?.querySelector('[data-search-status]');if(!input||!popup||!list||!status)return;
  let activeIndex=-1,timer=0,request=0;
- const close=()=>{popup.hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');activeIndex=-1};
+ const close=()=>{clearTimeout(timer);request++;popup.hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');activeIndex=-1};
  const open=()=>{popup.hidden=false;input.setAttribute('aria-expanded','true')};
  const render=(rows,message)=>{list.replaceChildren();activeIndex=-1;status.textContent=message||'';status.hidden=!message;list.hidden=!rows.length;if(!message)rows.forEach((row,index)=>list.append(makeSearchLink(row,index,true)));open()};
  const update=async()=>{
   const query=input.value.trim().slice(0,120),sequence=++request;
   if(!query){render(popularSearches);return}
   if(normalizeSearchText(query).length<2){render([],'Vnesite vsaj dve črki za iskanje.');return}
-  render([],'Iščemo po koledarjih, imenih, praznikih in orodjih …');
+  render([],'Iščemo po koledarjih, praznikih in orodjih …');
   try{const data=await loadSearchIndex();if(sequence!==request)return;const {results}=searchRecords(data,query,{limit:6});const rows=results.map(row=>({...row,detail:row.category||row.type}));
    if(rows.length){rows.push({title:`Prikaži vse rezultate za »${query}«`,detail:'Odpri seznam rezultatov',path:`/isci/?${new URLSearchParams({q:query})}`,type:'Vsi rezultati'});render(rows)}
    else render([{title:`Išči »${query}«`,detail:'Odpri iskanje po celotni vsebini',path:`/isci/?${new URLSearchParams({q:query})}`,type:'Iskanje'}]);
@@ -138,11 +138,11 @@ function initializeSearchResults(){
  const query=(params.get('q')||'').trim().slice(0,120),heading=$('[data-search-heading]',page),panel=$('[data-search-results]',page),headerInput=$('#search'),pageInput=$('[data-search-input]',page);
  if(headerInput)headerInput.value=query;
  if(pageInput)pageInput.value=query;
- if(heading)heading.textContent=query?`Rezultati za »${query}«`:'Poiščite med koledarji, prazniki, imeni in orodji.';
+ if(heading)heading.textContent=query?`Rezultati za »${query}«`:'Poiščite med koledarji, prazniki in orodji.';
  if(!panel)return;
  const renderEmpty=()=>{panel.replaceChildren(element('p','Začnite z iskanjem ali izberite eno od priljubljenih tem.','search-empty-copy'));const links=element('div',undefined,'search-shortcuts');popularSearches.forEach((item,index)=>links.append(makeSearchLink(item,`popular-${index}`)));panel.append(links)};
  if(!query){renderEmpty();return}
- panel.setAttribute('aria-busy','true');panel.replaceChildren(element('p','Iščemo po koledarjih, praznikih, imenih in orodjih …','search-loading'));
+ panel.setAttribute('aria-busy','true');panel.replaceChildren(element('p','Iščemo po koledarjih, praznikih in orodjih …','search-loading'));
  loadSearchIndex().then(data=>{
   const {results,total}=searchRecords(data,query,{limit:10000});panel.removeAttribute('aria-busy');panel.replaceChildren();
   if(!total){panel.append(element('p',`Za »${query}« nismo našli zadetkov. Poskusite krajši izraz ali preverite zapis.`,'search-empty-copy'));const links=element('div',undefined,'search-shortcuts');popularSearches.slice(0,4).forEach((item,index)=>links.append(makeSearchLink(item,`empty-${index}`)));panel.append(links);return}
