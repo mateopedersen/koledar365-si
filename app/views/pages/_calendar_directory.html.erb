@@ -12,7 +12,7 @@
       <label for="cd-month">Prikaži mesec<select id="cd-month" data-directory-month><option value="0">Vsi meseci</option><% months.each_with_index do |month,index| %><option value="<%= index+1 %>"><%= month.capitalize %></option><% end %></select></label>
       <button type="button" class="cd-reset" data-directory-reset>Ponastavi</button>
     </div>
-    <p class="cd-result" data-directory-status role="status" aria-live="polite">Prikazani so <%= years.size %> letni in <%= years.size*12 %> mesečnih koledarjev.</p>
+    <p class="cd-result" data-directory-status role="status" aria-live="polite">Prikazani so <%= years.size %> letni koledarji in <%= years.size*12 %> mesečnih koledarjev.</p>
     <p class="cd-scroll-hint">Za primerjavo vseh let pomaknite preglednico levo ali desno.</p>
     <div class="cd-table-wrap" tabindex="0" role="region" aria-label="Koledarji po letih in mesecih">
       <table class="cd-period-table">
