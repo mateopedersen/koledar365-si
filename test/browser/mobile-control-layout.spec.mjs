@@ -41,3 +41,14 @@ test('studio download and template names fit the narrowest phone',async({page})=
     expect(controls.every(x=>x.contentFits&&x.left>=0&&x.right<=320)).toBeTruthy();
   }
 });
+
+test('expanded shift entry fields keep their own rows on phones',async({page})=>{
+  await page.goto('/razpored-izmen/');
+  await page.locator('.shift-custom-entries>summary').click();
+  for(const width of [320,430,768]){
+    await page.setViewportSize({width,height:900});
+    const fields=await controlGeometry(page,'.shift-custom-entries #planner-entry .filters input');
+    expect(fields).toHaveLength(8);
+    expect(fields.every(x=>x.width>=100&&x.width<=x.parentWidth+1&&x.right<=width+1)).toBeTruthy();
+  }
+});
