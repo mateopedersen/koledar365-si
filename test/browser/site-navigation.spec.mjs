@@ -30,9 +30,17 @@ test('all shared navigation controls fit without clipped links or intersecting b
             return { label: el.getAttribute('aria-label') || el.innerText, left: r.left, right: r.right, top: r.top, bottom: r.bottom, client: el.clientWidth, scroll: el.scrollWidth };
           });
         const rail = document.querySelector('.subnav');
-        return { width: innerWidth, document: document.documentElement.scrollWidth, rail: { client: rail.clientWidth, scroll: rail.scrollWidth }, boxes };
+        const overflowing = document.documentElement.scrollWidth > innerWidth + 1 ? [...document.querySelectorAll('body *')].filter(el => {
+          const r = el.getBoundingClientRect();
+          if (!r.width || r.right <= innerWidth + 1) return false;
+          for (let parent = el.parentElement; parent && parent !== document.body; parent = parent.parentElement) {
+            if (['auto', 'scroll', 'hidden', 'clip'].includes(getComputedStyle(parent).overflowX)) return false;
+          }
+          return true;
+        }).slice(0, 20).map(el => ({ element: el.tagName + '#' + el.id + '.' + String(el.className).replaceAll(' ', '.'), right: el.getBoundingClientRect().right, text: el.innerText?.slice(0, 80) })) : [];
+        return { width: innerWidth, document: document.documentElement.scrollWidth, rail: { client: rail.clientWidth, scroll: rail.scrollWidth }, boxes, overflowing };
       });
-      expect(layout.document, `${path} at ${width}px`).toBeLessThanOrEqual(width + 1);
+      expect(layout.document, `${path} at ${width}px: ${JSON.stringify(layout.overflowing)}`).toBeLessThanOrEqual(width + 1);
       expect(layout.rail.scroll, `navigation has no sideways scroll at ${width}px`).toBeLessThanOrEqual(layout.rail.client + 1);
       for (const box of layout.boxes) {
         expect(box.left, `${box.label} at ${width}px`).toBeGreaterThanOrEqual(-1);
