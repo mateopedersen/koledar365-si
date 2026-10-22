@@ -86,8 +86,10 @@ test('desktop event text and printed tables retain their full layout',async({pag
   await page.goto('/pomembni-dnevi/');
   await page.setViewportSize({width:320,height:900});
   await expect(page.locator('.mobile-record-table').first()).toBeVisible();
+  // The exported table is replaced when the asynchronous calendar renderer boots.
+  await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
   await page.emulateMedia({media:'print'});
-  expect(await page.locator('.mobile-record-table').first().evaluate(e=>getComputedStyle(e).display)).toBe('table');
+  await expect(page.locator('.mobile-record-table').first()).toHaveCSS('display','table');
   expect(await page.locator('.mobile-record-table thead').first().evaluate(e=>e.getBoundingClientRect().height)).toBeGreaterThan(10);
 });
 

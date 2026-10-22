@@ -1,0 +1,922 @@
+{
+  "checked_at": "2026-10-22T22:24:35.640691+00:00",
+  "months": 48,
+  "days": 1461,
+  "timezone": "Europe/Ljubljana",
+  "dst_boundaries": 8,
+  "failed": 0,
+  "rows": [
+    {
+      "path": "/koledar/2027/januar/",
+      "days": 31,
+      "working_days": 20,
+      "hours": 160,
+      "weeks": 5,
+      "first_week": [
+        2026,
+        53,
+        1
+      ],
+      "last_week": [
+        2027,
+        4,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2027/februar/",
+      "days": 28,
+      "working_days": 19,
+      "hours": 152,
+      "weeks": 4,
+      "first_week": [
+        2027,
+        5,
+        1
+      ],
+      "last_week": [
+        2027,
+        8,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2027/marec/",
+      "days": 31,
+      "working_days": 22,
+      "hours": 176,
+      "weeks": 5,
+      "first_week": [
+        2027,
+        9,
+        1
+      ],
+      "last_week": [
+        2027,
+        13,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2027/april/",
+      "days": 30,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 5,
+      "first_week": [
+        2027,
+        13,
+        1
+      ],
+      "last_week": [
+        2027,
+        17,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2027/maj/",
+      "days": 31,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 6,
+      "first_week": [
+        2027,
+        17,
+        1
+      ],
+      "last_week": [
+        2027,
+        22,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2027/junij/",
+      "days": 30,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 5,
+      "first_week": [
+        2027,
+        22,
+        1
+      ],
+      "last_week": [
+        2027,
+        26,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2027/julij/",
+      "days": 31,
+      "working_days": 22,
+      "hours": 176,
+      "weeks": 5,
+      "first_week": [
+        2027,
+        26,
+        1
+      ],
+      "last_week": [
+        2027,
+        30,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2027/avgust/",
+      "days": 31,
+      "working_days": 22,
+      "hours": 176,
+      "weeks": 6,
+      "first_week": [
+        2027,
+        30,
+        1
+      ],
+      "last_week": [
+        2027,
+        35,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2027/september/",
+      "days": 30,
+      "working_days": 22,
+      "hours": 176,
+      "weeks": 5,
+      "first_week": [
+        2027,
+        35,
+        1
+      ],
+      "last_week": [
+        2027,
+        39,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2027/oktober/",
+      "days": 31,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 5,
+      "first_week": [
+        2027,
+        39,
+        1
+      ],
+      "last_week": [
+        2027,
+        43,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2027/november/",
+      "days": 30,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 5,
+      "first_week": [
+        2027,
+        44,
+        1
+      ],
+      "last_week": [
+        2027,
+        48,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2027/december/",
+      "days": 31,
+      "working_days": 23,
+      "hours": 184,
+      "weeks": 5,
+      "first_week": [
+        2027,
+        48,
+        1
+      ],
+      "last_week": [
+        2027,
+        52,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2028/januar/",
+      "days": 31,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 6,
+      "first_week": [
+        2027,
+        52,
+        1
+      ],
+      "last_week": [
+        2028,
+        5,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2028/februar/",
+      "days": 29,
+      "working_days": 20,
+      "hours": 160,
+      "weeks": 5,
+      "first_week": [
+        2028,
+        5,
+        1
+      ],
+      "last_week": [
+        2028,
+        9,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2028/marec/",
+      "days": 31,
+      "working_days": 23,
+      "hours": 184,
+      "weeks": 5,
+      "first_week": [
+        2028,
+        9,
+        1
+      ],
+      "last_week": [
+        2028,
+        13,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2028/april/",
+      "days": 30,
+      "working_days": 18,
+      "hours": 144,
+      "weeks": 5,
+      "first_week": [
+        2028,
+        13,
+        1
+      ],
+      "last_week": [
+        2028,
+        17,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2028/maj/",
+      "days": 31,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 5,
+      "first_week": [
+        2028,
+        18,
+        1
+      ],
+      "last_week": [
+        2028,
+        22,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2028/junij/",
+      "days": 30,
+      "working_days": 22,
+      "hours": 176,
+      "weeks": 5,
+      "first_week": [
+        2028,
+        22,
+        1
+      ],
+      "last_week": [
+        2028,
+        26,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2028/julij/",
+      "days": 31,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 6,
+      "first_week": [
+        2028,
+        26,
+        1
+      ],
+      "last_week": [
+        2028,
+        31,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2028/avgust/",
+      "days": 31,
+      "working_days": 22,
+      "hours": 176,
+      "weeks": 5,
+      "first_week": [
+        2028,
+        31,
+        1
+      ],
+      "last_week": [
+        2028,
+        35,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2028/september/",
+      "days": 30,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 5,
+      "first_week": [
+        2028,
+        35,
+        1
+      ],
+      "last_week": [
+        2028,
+        39,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2028/oktober/",
+      "days": 31,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 6,
+      "first_week": [
+        2028,
+        39,
+        1
+      ],
+      "last_week": [
+        2028,
+        44,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2028/november/",
+      "days": 30,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 5,
+      "first_week": [
+        2028,
+        44,
+        1
+      ],
+      "last_week": [
+        2028,
+        48,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2028/december/",
+      "days": 31,
+      "working_days": 19,
+      "hours": 152,
+      "weeks": 5,
+      "first_week": [
+        2028,
+        48,
+        1
+      ],
+      "last_week": [
+        2028,
+        52,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2029/januar/",
+      "days": 31,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 5,
+      "first_week": [
+        2029,
+        1,
+        1
+      ],
+      "last_week": [
+        2029,
+        5,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2029/februar/",
+      "days": 28,
+      "working_days": 19,
+      "hours": 152,
+      "weeks": 5,
+      "first_week": [
+        2029,
+        5,
+        1
+      ],
+      "last_week": [
+        2029,
+        9,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2029/marec/",
+      "days": 31,
+      "working_days": 22,
+      "hours": 176,
+      "weeks": 5,
+      "first_week": [
+        2029,
+        9,
+        1
+      ],
+      "last_week": [
+        2029,
+        13,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2029/april/",
+      "days": 30,
+      "working_days": 19,
+      "hours": 152,
+      "weeks": 6,
+      "first_week": [
+        2029,
+        13,
+        1
+      ],
+      "last_week": [
+        2029,
+        18,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2029/maj/",
+      "days": 31,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 5,
+      "first_week": [
+        2029,
+        18,
+        1
+      ],
+      "last_week": [
+        2029,
+        22,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2029/junij/",
+      "days": 30,
+      "working_days": 20,
+      "hours": 160,
+      "weeks": 5,
+      "first_week": [
+        2029,
+        22,
+        1
+      ],
+      "last_week": [
+        2029,
+        26,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2029/julij/",
+      "days": 31,
+      "working_days": 22,
+      "hours": 176,
+      "weeks": 6,
+      "first_week": [
+        2029,
+        26,
+        1
+      ],
+      "last_week": [
+        2029,
+        31,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2029/avgust/",
+      "days": 31,
+      "working_days": 22,
+      "hours": 176,
+      "weeks": 5,
+      "first_week": [
+        2029,
+        31,
+        1
+      ],
+      "last_week": [
+        2029,
+        35,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2029/september/",
+      "days": 30,
+      "working_days": 20,
+      "hours": 160,
+      "weeks": 5,
+      "first_week": [
+        2029,
+        35,
+        1
+      ],
+      "last_week": [
+        2029,
+        39,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2029/oktober/",
+      "days": 31,
+      "working_days": 22,
+      "hours": 176,
+      "weeks": 5,
+      "first_week": [
+        2029,
+        40,
+        1
+      ],
+      "last_week": [
+        2029,
+        44,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2029/november/",
+      "days": 30,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 5,
+      "first_week": [
+        2029,
+        44,
+        1
+      ],
+      "last_week": [
+        2029,
+        48,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2029/december/",
+      "days": 31,
+      "working_days": 19,
+      "hours": 152,
+      "weeks": 6,
+      "first_week": [
+        2029,
+        48,
+        1
+      ],
+      "last_week": [
+        2030,
+        1,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2030/januar/",
+      "days": 31,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 5,
+      "first_week": [
+        2030,
+        1,
+        1
+      ],
+      "last_week": [
+        2030,
+        5,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2030/februar/",
+      "days": 28,
+      "working_days": 19,
+      "hours": 152,
+      "weeks": 5,
+      "first_week": [
+        2030,
+        5,
+        1
+      ],
+      "last_week": [
+        2030,
+        9,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2030/marec/",
+      "days": 31,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 5,
+      "first_week": [
+        2030,
+        9,
+        1
+      ],
+      "last_week": [
+        2030,
+        13,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2030/april/",
+      "days": 30,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 5,
+      "first_week": [
+        2030,
+        14,
+        1
+      ],
+      "last_week": [
+        2030,
+        18,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2030/maj/",
+      "days": 31,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 5,
+      "first_week": [
+        2030,
+        18,
+        1
+      ],
+      "last_week": [
+        2030,
+        22,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2030/junij/",
+      "days": 30,
+      "working_days": 19,
+      "hours": 152,
+      "weeks": 5,
+      "first_week": [
+        2030,
+        22,
+        1
+      ],
+      "last_week": [
+        2030,
+        26,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2030/julij/",
+      "days": 31,
+      "working_days": 23,
+      "hours": 184,
+      "weeks": 5,
+      "first_week": [
+        2030,
+        27,
+        1
+      ],
+      "last_week": [
+        2030,
+        31,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2030/avgust/",
+      "days": 31,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 5,
+      "first_week": [
+        2030,
+        31,
+        1
+      ],
+      "last_week": [
+        2030,
+        35,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2030/september/",
+      "days": 30,
+      "working_days": 21,
+      "hours": 168,
+      "weeks": 6,
+      "first_week": [
+        2030,
+        35,
+        1
+      ],
+      "last_week": [
+        2030,
+        40,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2030/oktober/",
+      "days": 31,
+      "working_days": 22,
+      "hours": 176,
+      "weeks": 5,
+      "first_week": [
+        2030,
+        40,
+        1
+      ],
+      "last_week": [
+        2030,
+        44,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2030/november/",
+      "days": 30,
+      "working_days": 20,
+      "hours": 160,
+      "weeks": 5,
+      "first_week": [
+        2030,
+        44,
+        1
+      ],
+      "last_week": [
+        2030,
+        48,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    },
+    {
+      "path": "/koledar/2030/december/",
+      "days": 31,
+      "working_days": 20,
+      "hours": 160,
+      "weeks": 6,
+      "first_week": [
+        2030,
+        48,
+        1
+      ],
+      "last_week": [
+        2031,
+        1,
+        1
+      ],
+      "passed": true,
+      "issues": []
+    }
+  ]
+}
