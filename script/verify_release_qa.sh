@@ -3,6 +3,7 @@
 set -euo pipefail
 task_python="${PYTHON_BIN:-python3}"
 "$task_python" test/test_cdn_email_parity.py
+"$task_python" script/test_horoscope_parity.py
 "$task_python" script/qa_seo.py
 "$task_python" script/audit_calendar_independent.py
 node script/test_qa_image_loading.mjs

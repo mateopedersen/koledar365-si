@@ -22,7 +22,11 @@ def normalize(body,sign,expected=None):
   field=m[3];wanted=expected and expected['signs'][sign][field]
   return m[1]+value(m[4],wanted,field)+m[5]
  text,count=re.subn(r'(<([\w-]+)\b[^>]*data-reading-field="([^"]+)"[^>]*>)([^<]*)(</\2>)',reading,text)
- assert count==6,'Reading field count changed'
+ assert count==(6 if sign else 0),'Reading field count changed'
+ def card(m):
+  return m[1]+value(m[3],expected and expected['signs'][m[2]]['title'],'card '+m[2])+m[4]
+ text,cards=re.subn(r'(<div\b[^>]*data-sign-card="([^"]+)"[\s\S]*?<p\b[^>]*data-card-copy[^>]*>)([^<]*)(</p>)',card,text)
+ assert cards==(0 if sign else 12),'Sign card count changed'
  def schema(m):
   data=json.loads(m[2])
   for item in data.get('@graph',[]):

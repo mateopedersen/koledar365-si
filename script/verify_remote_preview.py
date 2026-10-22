@@ -34,10 +34,11 @@ def check(p):
    expected=manifest['files'][p]['sha256'];actual=hashlib.sha256(body).hexdigest()
    if actual!=expected and p.endswith('.html'):
     body,counts=restore_email_html(body);actual=hashlib.sha256(body).hexdigest();row['email_transformations']=counts
-   if actual!=expected and re.fullmatch(r'horoskop/[^/]+/index.html',p) and headers.get('X-Horoscope-Rendering')=='daily-html-v1':
+   if actual!=expected and re.fullmatch(r'horoskop/(?:[^/]+/)?index.html',p) and headers.get('X-Horoscope-Rendering')=='daily-html-v1':
     local=Path('site',p).read_bytes()
     assert hashlib.sha256(local).hexdigest()==expected,'Local fallback differs from preview manifest'
-    verify_daily(local,body,p.split('/')[1],headers.get('X-Horoscope-Date'))
+    sign=p.split('/')[1] if p.count('/')==2 and '/izracun-znamenja/' not in p else ''
+    verify_daily(local,body,sign,headers.get('X-Horoscope-Date'))
     row['match_type']='verified-daily-edge-render';actual=expected
    assert actual==expected,'Content SHA-256 mismatch'
    if p=='llms.txt':assert 'text/plain' in mime,'Wrong llms.txt MIME'

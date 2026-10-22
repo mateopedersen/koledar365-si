@@ -44,7 +44,8 @@ def check(route):
      if row['normalized_sha256']==row['expected_sha256']:
       row['match_type']='verified-cloudflare-email'
      elif route.startswith('/horoskop/') and response.headers.get('X-Horoscope-Rendering')=='daily-html-v1':
-      verify_daily(local.read_bytes(),restored,route.strip('/').split('/')[-1],response.headers.get('X-Horoscope-Date'))
+      sign=route.strip('/').split('/')[-1] if route not in ['/horoskop/','/horoskop/izracun-znamenja/'] else ''
+      verify_daily(local.read_bytes(),restored,sign,response.headers.get('X-Horoscope-Date'))
       row['match_type']='verified-daily-edge-render'
      else:raise AssertionError('Build and live HTML differ after verified email restoration')
     else:raise AssertionError('Build and live SHA-256 differ')

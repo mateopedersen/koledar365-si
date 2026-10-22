@@ -1,7 +1,10 @@
 import copy,json,re,unittest
 from pathlib import Path
-from horoscope_parity import edition,verify_daily
+from horoscope_parity import edition,verify_daily,normalize
 class DailyParityTest(unittest.TestCase):
+ def test_card_templates_are_complete(self):
+  for route in ('horoskop','horoskop/izracun-znamenja'):
+   self.assertIn(b'__VERIFIED_DAILY_VALUE__',normalize(Path('site',route,'index.html').read_bytes(),''))
  def test_known_daily_changes_pass_but_static_and_dynamic_tampering_fail(self):
   original=Path('site/horoskop/bik/index.html').read_bytes();day='2026-10-24';e=edition(day);text=original.decode()
   text=re.sub(r'data-edition-day="[^"]*"',f'data-edition-day="{day}"',text)
