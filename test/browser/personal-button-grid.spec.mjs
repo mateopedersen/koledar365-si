@@ -113,6 +113,10 @@ test('backup and restore action borders align on the other planner pages', async
         Math.max(...layout.controls.map((box) => box.width)) - Math.min(...layout.controls.map((box) => box.width)),
         `${path} consistent action widths at ${width}px`,
       ).toBeLessThanOrEqual(1);
+      expect(
+        Math.max(...layout.controls.map((box) => box.height)) - Math.min(...layout.controls.map((box) => box.height)),
+        `${path} consistent action heights at ${width}px`,
+      ).toBeLessThanOrEqual(1);
       for (const control of layout.controls) {
         expect(control.margin, `${path} control margin at ${width}px`).toBe('0px');
         expect(control.left, `${path} left border at ${width}px`).toBeGreaterThanOrEqual(layout.group.left - 1);
