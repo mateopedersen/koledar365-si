@@ -133,3 +133,12 @@ Daha ayrıntılı kurtarma komutları ve faz kayıtları: docs/status-history-20
 - Tam CI başarılı: 80 Rails testi, 5.046 doğrulama, Chromium/WebKit/Android/iPhone profillerinde 141 tarayıcı testi. PostgreSQL, Docker, 600 ppi çıktı, SEO ve temiz statik üretim kontrolleri geçti: https://github.com/mateopedersen/koledar365-si/actions/runs/39637451946 .
 - Doğrulanmış yayın üretimi başarılı: https://github.com/mateopedersen/koledar365-si/actions/runs/39639733905 . Hazır `site/` snapshot'ı `ffacae4b97960bec6315132b5743ce48960e4fab` commit'inde kaydedildi.
 - Bu kayıt, doğrulanmış statik çıktıyı içeren ana dalın mevcut Cloudflare Pages otomatik dağıtımına alınması içindir. Ücretli kaynak veya yeni yayın projesi oluşturulmadı.
+
+
+## 2026-10-22 Student planner WebP browser compatibility
+
+- PR #62 gallery layout is merged; current main publication snapshot `edec5868bb4933045e7f0be160392c178c046d7c` deployed successfully to Cloudflare Pages.
+- Live `/solski-urnik/` testing found PDF.js used `Map.prototype.getOrInsertComputed`, missing in the current browser runtime, which prevented WebP raster output.
+- Injecting the compatibility method in a live browser produced a real 600 ppi WebP download. The same end-to-end run verified PDF bytes, timetable and homework persistence, ICS dates/time zone, local JSON backup, and restore. Chromium and iPhone WebKit planner/ICS checks passed 2/2.
+- Permanent fix: `cloudflare/free/map-compat.js` supplies the missing Map method before PDF.js loads. `test/browser/student-webp-export.spec.mjs` removes the API, then verifies the generated WebP RIFF/WEBP signature.
+- Remaining: CI, verified static Pages snapshot, production deployment, and live WebP/ICS/backup-restore checks. Do not mark complete before production verification.
