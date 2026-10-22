@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<!-- BEGIN app/views/layouts/application.html.erb
+--><html lang="sl">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setveni koledar: setev, sajenje in načrt vrta · Koledar365</title>
+<meta name="description" content="Kdaj sejati, presajati in pobirati zelenjavo? Pregled za 16 vrtnin, filtri po mesecih in opravilih ter vaš načrt vrta za tisk in koledar ICS.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://koledar365.si/setveni-koledar/">
+<meta property="og:title" content="Setveni koledar: setev, sajenje in načrt vrta · Koledar365">
+<meta property="og:description" content="Kdaj sejati, presajati in pobirati zelenjavo? Pregled za 16 vrtnin, filtri po mesecih in opravilih ter vaš načrt vrta za tisk in koledar ICS.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Koledar365">
+<meta property="og:locale" content="sl_SI">
+<meta property="og:url" content="https://koledar365.si/setveni-koledar/">
+<meta property="og:image" content="https://koledar365.si/garden/setveni-koledar-sadike-1200.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Ilustrativni prikaz sadik paradižnika in solate, semen, česna ter vrtnega orodja.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Setveni koledar: setev, sajenje in načrt vrta · Koledar365">
+<meta name="twitter:description" content="Kdaj sejati, presajati in pobirati zelenjavo? Pregled za 16 vrtnin, filtri po mesecih in opravilih ter vaš načrt vrta za tisk in koledar ICS.">
+<meta name="twitter:image" content="https://koledar365.si/garden/setveni-koledar-sadike-1200.webp">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl","publisher":{"@id":"https://koledar365.si/#organization"}},{"@type":"WebPage","@id":"https://koledar365.si/setveni-koledar/#webpage","url":"https://koledar365.si/setveni-koledar/","name":"Setveni koledar: setev, sajenje in načrt vrta","description":"Kdaj sejati, presajati in pobirati zelenjavo? Pregled za 16 vrtnin, filtri po mesecih in opravilih ter vaš načrt vrta za tisk in koledar ICS.","inLanguage":"sl","isPartOf":{"@id":"https://koledar365.si/#website"},"publisher":{"@id":"https://koledar365.si/#organization"},"dateModified":"2026-10-21","author":{"@id":"https://koledar365.si/#organization"},"citation":["https://www.klubgaia.com/si/vrtnarski-nasveti/4264-Vzgojimo-si-svoje-sadike","https://www.klubgaia.com/si/vrtnarski-nasveti/887-Setve-in-sajenje-za-jesensko-zimske-dni","https://www.klubgaia.com/si/vrtnarski-nasveti/853-Jesensko-sajenje-cesna","https://vrtobilja.si/ponudba/vrtnarski-koledar","https://www.klubgaia.com/si/vrtnarski-nasveti/6138-koledar-vrtnih-opravil-za-leto-2026","https://www.kmetijskizavod-ng.si/panoge/poljedelstvo_in_zelenjadarstvo/2017060814095258/strokovni_nasveti/"],"primaryImageOfPage":{"@id":"https://koledar365.si/garden/setveni-koledar-sadike-1200.webp#image"}},{"@type":"Organization","@id":"https://koledar365.si/#organization","name":"Koledar365","url":"https://koledar365.si/","email":"koledar365@gmail.com"},{"@type":"ImageObject","@id":"https://koledar365.si/garden/setveni-koledar-sadike-1200.webp#image","contentUrl":"https://koledar365.si/garden/setveni-koledar-sadike-1200.webp","url":"https://koledar365.si/garden/setveni-koledar-sadike-1200.webp","width":1200,"height":800,"name":"Ilustrativni prikaz sadik paradižnika in solate, semen, česna ter vrtnega orodja.","caption":"Ilustrativni prikaz sadik paradižnika in solate, semen, česna ter vrtnega orodja.","inLanguage":"sl","creditText":"Koledar365; ilustracija, ustvarjena z umetno inteligenco.","creator":{"@id":"https://koledar365.si/#organization"}},{"@type":"WebApplication","@id":"https://koledar365.si/setveni-koledar/#application","name":"Setveni koledar: setev, sajenje in načrt vrta","description":"Kdaj sejati, presajati in pobirati zelenjavo? Pregled za 16 vrtnin, filtri po mesecih in opravilih ter vaš načrt vrta za tisk in koledar ICS.","url":"https://koledar365.si/setveni-koledar/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","isAccessibleForFree":true,"inLanguage":"sl","featureList":["Pregled 16 vrtnin po mesecih in opravilih","Osebni setveni načrt v brskalniku","Tisk, varnostna kopija JSON in izvoz ICS"],"publisher":{"@id":"https://koledar365.si/#organization"}},{"@type":"FAQPage","@id":"https://koledar365.si/setveni-koledar/#faq","mainEntity":[{"@type":"Question","name":"Ali je to setveni koledar po Mariji Thun?","acceptedAnswer":{"@type":"Answer","text":"Ne. Pregled prikazuje praktične sezonske okvire za vrtnine. Biodinamični koledar po Mariji Thun temelji na drugem pristopu; povezavo do izvirnega koledarja najdete med viri. Njegovih avtorskih dnevnih razporedov ne prepisujemo."}},{"@type":"Question","name":"Ali termini veljajo tudi na Primorskem?","acceptedAnswer":{"@type":"Answer","text":"Osnovna preglednica je namenjena predvsem kontinentalni Sloveniji. Na Primorskem, v višjih legah in v rastlinjaku so razmere drugačne. Izbor območja prikaže ustrezno pojasnilo, svojih datumov pa ne premakne samodejno."}},{"@type":"Question","name":"Zakaj ne priporočate enega natančnega dneva za setev?","acceptedAnswer":{"@type":"Answer","text":"Mesec je okvir. Odločitev je odvisna tudi od sorte, vremenske napovedi, ogretosti tal, svetlobe in razvoja sadik. V osebnem načrtu izberete datum, ki ustreza vašemu vrtu."}},{"@type":"Question","name":"Kako shranim svoj setveni načrt?","acceptedAnswer":{"@type":"Answer","text":"Dodajte vrtnino, opravilo, datum in po želji opombo. Načrt se shrani v tem brskalniku. Prenesete ga lahko kot datoteko JSON za ponovno odpiranje, kot ICS za koledar ali ga natisnete oziroma shranite v PDF."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://koledar365.si/"},{"@type":"ListItem","position":2,"name":"Setveni koledar: setev, sajenje in načrt vrta","item":"https://koledar365.si/setveni-koledar/"}]}]}</script>
+
+<link rel="stylesheet" href="/assets/web-6c73505d86cda9e2.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="module" src="/garden/experience.mjs"></script>
+
+
+
+
+
+
+
+<link rel="icon" href="/visuals/brand-calendar-v3.71d101697df6153f.svg" type="image/svg+xml">
+<script type="application/json" id="k365-static-config">{"scripts":["/assets/application-f427bb33.js","/assets/planners-3190708b.js"],"holidays":"/assets/holidays-0af57d2c.js","vacation":"/assets/vacation-ecc923a5.js","countdown":"/assets/countdown-164dee2d.js","shift":"/assets/shift_schedule-b8cc056a.js"}</script><link rel="preload" as="script" href="/assets/application-f427bb33.js">
+<link rel="preload" as="script" href="/assets/planners-3190708b.js">
+<link rel="modulepreload" href="/free/catalog-match.js">
+<link rel="modulepreload" href="/free/date-context.js">
+<script type="module" src="/free/client-22eb9699b8eb5642.js"></script>
+</head>
+<body class="">
+<svg xmlns="http://www.w3.org/2000/svg" data-k365-ui-paint-defs="" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden;pointer-events:none"><defs><lineargradient id="k-paper" x1="0" y1="0" x2=".85" y2="1">
+  <stop stop-color="#ffffff"></stop>
+  <stop offset="1" stop-color="#dce7f3"></stop>
+</lineargradient><lineargradient id="k-navy" x1="0" y1="0" x2=".85" y2="1">
+  <stop stop-color="#42698f"></stop>
+  <stop offset="1" stop-color="#102b4d"></stop>
+</lineargradient><lineargradient id="k-blue" x1="0" y1="0" x2=".85" y2="1">
+  <stop stop-color="#64b5ff"></stop>
+  <stop offset="1" stop-color="#1260ba"></stop>
+</lineargradient><lineargradient id="k-red" x1="0" y1="0" x2=".85" y2="1">
+  <stop stop-color="#ff6b78"></stop>
+  <stop offset="1" stop-color="#bd203b"></stop>
+</lineargradient><lineargradient id="k-silver" x1="0" y1="0" x2=".85" y2="1">
+  <stop stop-color="#f8fcff"></stop>
+  <stop offset="1" stop-color="#6c869f"></stop>
+</lineargradient><lineargradient id="k-green" x1="0" y1="0" x2=".85" y2="1">
+  <stop stop-color="#6ad8b2"></stop>
+  <stop offset="1" stop-color="#147c68"></stop>
+</lineargradient><lineargradient id="k-purple" x1="0" y1="0" x2=".85" y2="1">
+  <stop stop-color="#ccacfa"></stop>
+  <stop offset="1" stop-color="#8053bc"></stop>
+</lineargradient><lineargradient id="k-gold" x1="0" y1="0" x2=".85" y2="1">
+  <stop stop-color="#ffe6a0"></stop>
+  <stop offset="1" stop-color="#df9b25"></stop>
+</lineargradient><lineargradient id="k-skin" x1="0" y1="0" x2=".85" y2="1">
+  <stop stop-color="#ffe1c5"></stop>
+  <stop offset="1" stop-color="#d79873"></stop>
+</lineargradient><radialgradient id="k-glass" cx=".28" cy=".22" r=".85">
+  <stop stop-color="#fff" stop-opacity=".9"></stop>
+  <stop offset=".55" stop-color="#d2ecff" stop-opacity=".45"></stop>
+  <stop offset="1" stop-color="#5b9acb" stop-opacity=".65"></stop>
+</radialgradient></defs></svg>
+<a class="skip" href="#vsebina">Na vsebino</a>
+<header class="topbar"><a class="brand" href="/" aria-label="Koledar365 – domov"><span class="brand-symbol"><img width="44" height="44" alt="" class="brand-mark" aria-hidden="true" src="/visuals/brand-calendar-v3.71d101697df6153f.svg"></span> Koledar<span>365</span></a>
+<nav aria-label="Glavna navigacija"><a href="/koledar/">Koledar</a><a href="/prazniki/">Prazniki</a><a href="/solske-pocitnice/">Šolske počitnice</a></nav>
+<form action="/isci/" class="search" role="search" data-site-search>
+<label class="sr-only" for="search">Poišči datum, dogodek ali orodje</label><input id="search" data-search-input name="q" type="search" autocomplete="off" placeholder="Išči praznik, dogodek, datum ali orodje" value=""><button aria-label="Išči po spletnem mestu"><svg class="ui-icon icon-search" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#search" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#search"></use></svg></button><div class="site-search-suggestions" data-search-suggestions hidden>
+<p class="site-search-status" data-search-status role="status" aria-live="polite" hidden></p>
+<div id="site-search-suggestions" data-search-options role="listbox" aria-label="Predlogi iskanja"></div>
+</div>
+</form>
+<span class="country"><img width="36" height="22" alt="" class="country-flag" aria-hidden="true" src="/visuals/slovenia-fabric-v3.95b82b3f8fbaebac.svg"> Slovenija</span></header>
+<nav class="subnav" aria-label="Koledarji in orodja"><div class="subnav-track">
+<a href="/koledar/2027/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar"></use></svg> 2027</a><a href="/koledar/2028/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar"></use></svg> 2028</a><a href="/koledar/2029/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar"></use></svg> 2029</a><a href="/koledar/2030/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar"></use></svg> 2030</a><a href="/lunin-koledar/"><svg class="ui-icon icon-moon" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#moon" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#moon"></use></svg> Sonce in Luna</a><a href="/delovni-dnevi/"><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note"></use></svg> Delovni dnevi</a><a href="/koledar-za-tiskanje/"><svg class="ui-icon icon-print" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#print" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#print"></use></svg> Koledarji PDF</a><a href="/datumski-kalkulator/"><svg class="ui-icon icon-calculator" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calculator" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calculator"></use></svg> Datumski kalkulator</a><a href="/solski-koledar/"><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note"></use></svg> Šolski koledar</a><a href="/setveni-koledar/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar"></use></svg> Setveni koledar</a><a href="/horoskop/"><img width="24" height="24" alt="" class="ui-icon icon-zodiac" aria-hidden="true" src="/horoscope/art/wheel-icon-v1.f0a3a103957daf9e.svg"> Dnevni horoskop</a><a href="/orodja/"><svg class="ui-icon icon-grid" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#grid" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#grid"></use></svg> Vsa orodja</a>
+</div></nav>
+<main id="vsebina" tabindex="-1">
+<nav class="breadcrumb" aria-label="Drobtinice"><a href="/">Domov</a><span aria-hidden="true">›</span><span aria-current="page">Setveni koledar: setev, sajenje in načrt vrta</span></nav>
+
+<!-- BEGIN app/views/pages/show.html.erb
+--><!-- BEGIN app/views/pages/_garden_calendar.html.erb
+--><article class="garden-page" data-garden>
+  <script type="application/json" data-garden-data>{"version":1,"checked_on":"2026-10-21","coverage":"kontinentalna Slovenija","sources":{"gaia-sadike":{"title":"Klub Gaia – Vzgojimo si svoje sadike","url":"https://www.klubgaia.com/si/vrtnarski-nasveti/4264-Vzgojimo-si-svoje-sadike","scope":"Okvirni termini za vzgojo sadik in pridelavo v kontinentalni Sloveniji."},"gaia-jesen":{"title":"Klub Gaia – Setve in sajenje za jesensko-zimske dni","url":"https://www.klubgaia.com/si/vrtnarski-nasveti/887-Setve-in-sajenje-za-jesensko-zimske-dni","scope":"Jesenske setve solatnic, blitve, motovilca in špinače ter sajenje čebulnic."},"gaia-cesen":{"title":"Klub Gaia – Jesensko sajenje česna","url":"https://www.klubgaia.com/si/vrtnarski-nasveti/853-Jesensko-sajenje-cesna","scope":"Razlika med jesenskim in spomladanskim česnom ter razmere za sajenje."},"vrt-obilja":{"title":"Vrt Obilja – Vrtnarski koledar","url":"https://vrtobilja.si/ponudba/vrtnarski-koledar","scope":"Povezava na avtorski vrtnarski koledar. Njegovih dnevnih terminov ne prepisujemo."},"gaia-thun":{"title":"Klub Gaia – Koledar vrtnih opravil za leto 2026","url":"https://www.klubgaia.com/si/vrtnarski-nasveti/6138-koledar-vrtnih-opravil-za-leto-2026","scope":"Pojasnilo koledarja po Mariji Thun in povezava do izvirnega koledarja."},"kgz-primorska":{"title":"KGZS – Zavod Nova Gorica: strokovni nasveti za zelenjadarstvo","url":"https://www.kmetijskizavod-ng.si/panoge/poljedelstvo_in_zelenjadarstvo/2017060814095258/strokovni_nasveti/","scope":"Podnebje Primorske, pridelava na prostem in vzgoja sadik v ogrevanih prostorih."}},"plants":[{"id":"paradiznik","name":"Paradižnik","group":"plodovke","note":"Pred presajanjem preverite ogretost tal in nevarnost pozebe; mesec v preglednici sam po sebi še ni zagotovilo za varno sajenje.","tasks":[{"id":"setev","label":"Setev za sadike","months":[2,3],"window":"februar–marec","place":"sadike","source":"gaia-sadike"},{"id":"sajenje","label":"Presajanje na prosto","months":[5],"window":"maj","place":"prosto","source":"gaia-sadike"},{"id":"pridelek","label":"Okvir pobiranja","months":[7,8,9,10],"window":"julij–sredina oktobra","place":"prosto","source":"gaia-sadike"}]},{"id":"paprika","name":"Paprika","group":"plodovke","note":"Pred presajanjem preverite ogretost tal in nevarnost pozebe; mesec v preglednici sam po sebi še ni zagotovilo za varno sajenje.","tasks":[{"id":"setev","label":"Setev za sadike","months":[3],"window":"marec","place":"sadike","source":"gaia-sadike"},{"id":"sajenje","label":"Presajanje na prosto","months":[5],"window":"maj","place":"prosto","source":"gaia-sadike"},{"id":"pridelek","label":"Okvir pobiranja","months":[6,7,8,9,10],"window":"druga polovica junija–sredina oktobra","place":"prosto","source":"gaia-sadike"}]},{"id":"jajcevec","name":"Jajčevec","group":"plodovke","note":"Pred presajanjem preverite ogretost tal in nevarnost pozebe; mesec v preglednici sam po sebi še ni zagotovilo za varno sajenje.","tasks":[{"id":"setev","label":"Setev za sadike","months":[2],"window":"druga polovica februarja","place":"sadike","source":"gaia-sadike"},{"id":"sajenje","label":"Presajanje na prosto","months":[5],"window":"maj","place":"prosto","source":"gaia-sadike"},{"id":"pridelek","label":"Okvir pobiranja","months":[7,8,9,10],"window":"julij–sredina oktobra","place":"prosto","source":"gaia-sadike"}]},{"id":"kumare","name":"Kumare","group":"plodovke","note":"Pred presajanjem preverite ogretost tal in nevarnost pozebe; mesec v preglednici sam po sebi še ni zagotovilo za varno sajenje.","tasks":[{"id":"setev","label":"Setev za sadike","months":[4],"window":"april","place":"sadike","source":"gaia-sadike"},{"id":"sajenje","label":"Presajanje na prosto","months":[5,6],"window":"sredina maja–sredina junija","place":"prosto","source":"gaia-sadike"},{"id":"pridelek","label":"Okvir pobiranja","months":[7],"window":"druga polovica julija","place":"prosto","source":"gaia-sadike"}]},{"id":"zgodnje-zelje","name":"Zgodnje zelje","group":"kapusnice","note":"Termine prilagodite sorti, razvoju sadik in vremenu na svojem vrtu.","tasks":[{"id":"setev","label":"Setev za sadike","months":[2,3],"window":"februar–marec","place":"sadike","source":"gaia-sadike"},{"id":"sajenje","label":"Presajanje na prosto","months":[4],"window":"april","place":"prosto","source":"gaia-sadike"},{"id":"pridelek","label":"Okvir pobiranja","months":[6,7],"window":"junij–julij","place":"prosto","source":"gaia-sadike"}]},{"id":"zgodnja-cvetaca","name":"Zgodnja cvetača","group":"kapusnice","note":"Termine prilagodite sorti, razvoju sadik in vremenu na svojem vrtu.","tasks":[{"id":"setev","label":"Setev za sadike","months":[1,2,3],"window":"sredina januarja–marec","place":"sadike","source":"gaia-sadike"},{"id":"sajenje","label":"Presajanje na prosto","months":[4],"window":"april","place":"prosto","source":"gaia-sadike"},{"id":"pridelek","label":"Okvir pobiranja","months":[6,7,8],"window":"junij–avgust","place":"prosto","source":"gaia-sadike"}]},{"id":"zgodnji-ohrovt","name":"Zgodnji ohrovt","group":"kapusnice","note":"Termine prilagodite sorti, razvoju sadik in vremenu na svojem vrtu.","tasks":[{"id":"setev","label":"Setev za sadike","months":[2],"window":"februar","place":"sadike","source":"gaia-sadike"},{"id":"sajenje","label":"Presajanje na prosto","months":[4],"window":"april","place":"prosto","source":"gaia-sadike"},{"id":"pridelek","label":"Okvir pobiranja","months":[7],"window":"julij","place":"prosto","source":"gaia-sadike"}]},{"id":"zelena","name":"Zelena","group":"korenovke","note":"Termine prilagodite sorti, razvoju sadik in vremenu na svojem vrtu.","tasks":[{"id":"setev","label":"Setev za sadike","months":[2,3],"window":"februar–marec","place":"sadike","source":"gaia-sadike"},{"id":"sajenje","label":"Presajanje na prosto","months":[4,5,6],"window":"začetek aprila–sredina junija","place":"prosto","source":"gaia-sadike"},{"id":"pridelek","label":"Okvir pobiranja","months":[10],"window":"oktober","place":"prosto","source":"gaia-sadike"}]},{"id":"poletni-por","name":"Poletni por","group":"cebulnice","note":"Termine prilagodite sorti, razvoju sadik in vremenu na svojem vrtu.","tasks":[{"id":"setev","label":"Setev za sadike","months":[2,3],"window":"februar–marec","place":"sadike","source":"gaia-sadike"},{"id":"sajenje","label":"Presajanje na prosto","months":[5],"window":"maj","place":"prosto","source":"gaia-sadike"},{"id":"pridelek","label":"Okvir pobiranja","months":[8,9],"window":"avgust–september","place":"prosto","source":"gaia-sadike"}]},{"id":"zgodnja-solata","name":"Zgodnja solata","group":"solatnice","note":"Termine prilagodite sorti, razvoju sadik in vremenu na svojem vrtu.","tasks":[{"id":"setev","label":"Setev za sadike","months":[1,2,3],"window":"januar–marec","place":"sadike","source":"gaia-sadike"},{"id":"sajenje","label":"Presajanje na prosto","months":[4,5],"window":"začetek aprila–maj","place":"prosto","source":"gaia-sadike"},{"id":"pridelek","label":"Okvir pobiranja","months":[6,7],"window":"junij–julij","place":"prosto","source":"gaia-sadike"}]},{"id":"zimska-solata","name":"Zimska solata","group":"solatnice","note":"Prikazan je jesenski cikel. To ni celoten seznam vseh možnih setev te vrtnine.","tasks":[{"id":"setev","label":"Setev na prosto","months":[8,9],"window":"sredina avgusta–konec septembra","place":"prosto","source":"gaia-jesen"}]},{"id":"motovilec","name":"Motovilec","group":"solatnice","note":"Prikazan je jesenski cikel. To ni celoten seznam vseh možnih setev te vrtnine.","tasks":[{"id":"setev","label":"Setev na prosto","months":[8,9],"window":"avgust–september; druga polovica septembra za pomlad","place":"prosto","source":"gaia-jesen"}]},{"id":"spinaca","name":"Špinača","group":"solatnice","note":"Prikazan je jesenski cikel. To ni celoten seznam vseh možnih setev te vrtnine.","tasks":[{"id":"setev","label":"Jesenska setev","months":[8,9],"window":"avgust–september; poznejša setev za pomlad","place":"prosto","source":"gaia-jesen"}]},{"id":"blitva","name":"Blitva za prezimovanje","group":"solatnice","note":"Prikazan je jesenski cikel. To ni celoten seznam vseh možnih setev te vrtnine.","tasks":[{"id":"setev","label":"Setev na prosto","months":[8],"window":"avgust","place":"prosto","source":"gaia-jesen"}]},{"id":"jesenski-cesen","name":"Jesenski česen","group":"cebulnice","note":"Prikazan je jesenski cikel. To ni celoten seznam vseh možnih setev te vrtnine.","tasks":[{"id":"sajenje","label":"Sajenje strokov","months":[10,11],"window":"konec oktobra–začetek novembra","place":"prosto","source":"gaia-jesen"}]},{"id":"cebulcek","name":"Jesenski čebulček","group":"cebulnice","note":"Prikazan je jesenski cikel. To ni celoten seznam vseh možnih setev te vrtnine.","tasks":[{"id":"sajenje","label":"Sajenje čebulčka","months":[10],"window":"druga polovica oktobra","place":"prosto","source":"gaia-jesen"}]}],"image":{"path":"/garden/setveni-koledar-sadike-1200.webp","width":1200,"height":800,"alt":"Ilustrativni prikaz sadik paradižnika in solate, semen, česna ter vrtnega orodja.","credit":"Koledar365; ilustracija, ustvarjena z umetno inteligenco."}}</script>
+  <header class="garden-hero">
+    <div class="garden-hero-copy">
+      <p class="garden-kicker"><img width="36" height="22" alt="" class="country-flag" aria-hidden="true" src="/visuals/slovenia-fabric-v3.95b82b3f8fbaebac.svg"> KOLEDAR365 · VRT SKOZI LETO</p>
+      <h1>Setveni koledar.<br><span>Od semena do pridelka.</span>
+</h1>
+      <p class="garden-lead">Poiščite čas za svojo zelenjavo. Primerjajte sezonske okvire, dodajte lastne datume in sestavite načrt, ki raste skupaj z vašim vrtom.</p>
+      <div class="garden-hero-actions">
+<a class="button primary" href="#setveni-pregled">Raziščite setveni koledar <span aria-hidden="true">↓</span></a><a class="button" href="#moj-vrt">Sestavite svoj načrt</a>
+</div>
+      <dl class="garden-facts">
+<div>
+<dt>Vrtnine</dt>
+<dd>16</dd>
+</div>
+<div>
+<dt>Sezonski pregled</dt>
+<dd>12 <span>mesecev</span>
+</dd>
+</div>
+<div>
+<dt>Vaš načrt</dt>
+<dd>PDF <span>in ICS</span>
+</dd>
+</div>
+</dl>
+    </div>
+    <figure class="garden-hero-figure">
+      <picture><source type="image/webp" srcset="/garden/setveni-koledar-sadike-640.webp 640w, /garden/setveni-koledar-sadike-1200.webp 1200w, /garden/setveni-koledar-sadike-1536.webp 1536w" sizes="(max-width:780px) 100vw, 48vw"><img src="/garden/setveni-koledar-sadike-1200.webp" width="1200" height="800" alt="Ilustrativni prikaz sadik paradižnika in solate, semen, česna ter vrtnega orodja." fetchpriority="high"></source></picture>
+      <figcaption>Začnite z dobrim načrtom. Ilustrativni prizor, ustvarjen z umetno inteligenco za Koledar365.</figcaption>
+    </figure>
+  </header>
+
+  <nav class="garden-jump" aria-label="Vsebina setvenega koledarja"><a href="#setveni-pregled"><span>01</span> Sezona na pogled</a><a href="#moj-vrt"><span>02</span> Moj vrt</a><a href="#kako-nacrtovati-vrt"><span>03</span> Kako načrtovati</a><a href="#vrtni-viri"><span>04</span> Viri in pojasnila</a></nav>
+
+  <section class="garden-overview" id="setveni-pregled" aria-labelledby="garden-overview-title">
+    <div class="garden-section-heading">
+<div>
+<p class="garden-kicker">01 / SEZONA NA POGLED</p>
+<h2 id="garden-overview-title">Kaj je na vrsti v vašem vrtu?</h2>
+<p>Barve pokažejo okvir za setev, presajanje in pobiranje. Odprite vrtnino za natančnejši opis obdobja.</p>
+</div>
+<a class="garden-source-link" href="#vrtni-viri">Viri preverjeni 21. 10. 2026 <span aria-hidden="true">↗</span></a>
+</div>
+    <div class="garden-filters" role="search" aria-label="Filtriranje setvenega koledarja">
+      <label for="garden-search">Vrtnina<input id="garden-search" type="search" placeholder="Paradižnik, česen, solata …" data-garden-search></label>
+      <label for="garden-month">Mesec<select id="garden-month" data-garden-month><option value="0">Vse leto</option>
+<option value="1">Januar</option>
+<option value="2">Februar</option>
+<option value="3">Marec</option>
+<option value="4">April</option>
+<option value="5">Maj</option>
+<option value="6">Junij</option>
+<option value="7">Julij</option>
+<option value="8">Avgust</option>
+<option value="9">September</option>
+<option value="10">Oktober</option>
+<option value="11">November</option>
+<option value="12">December</option></select></label>
+      <label for="garden-task">Opravilo<select id="garden-task" data-garden-task><option value="all">Vsa opravila</option>
+<option value="setev">Setev</option>
+<option value="sajenje">Presajanje / sajenje</option>
+<option value="pridelek">Pobiranje</option></select></label>
+      <label for="garden-place">Način pridelave<select id="garden-place" data-garden-place><option value="all">Sadike in greda</option>
+<option value="sadike">Vzgoja sadik</option>
+<option value="prosto">Na prostem</option></select></label>
+    </div>
+    <div class="garden-climate">
+<label for="garden-climate">Vaše območje<select id="garden-climate" data-garden-climate><option value="continental">Notranjost Slovenije</option>
+<option value="coastal">Primorska</option>
+<option value="higher">Višje lege</option>
+<option value="greenhouse">Rastlinjak</option></select></label><p data-garden-climate-note>Osnovni okvir velja predvsem za kontinentalno Slovenijo. Pred delom preverite vremensko napoved, ogretost tal in navodila za svojo sorto.</p>
+</div>
+    <div class="garden-legend" aria-label="Legenda">
+<span><i class="garden-dot garden-dot--setev"></i> S · Setev</span><span><i class="garden-dot garden-dot--sajenje"></i> P · Presajanje / sajenje</span><span><i class="garden-dot garden-dot--pridelek"></i> B · Pobiranje</span><button type="button" class="text-button" data-garden-current>Ta mesec</button><button type="button" class="text-button" data-garden-reset>Počisti filtre</button>
+</div>
+    <p class="garden-result-count" data-garden-count role="status" aria-live="polite">16 vrtnin v pregledu</p>
+    <div class="garden-timeline-wrap" role="region" aria-label="Letni pregled setve in sajenja; vodoravno pomična preglednica" tabindex="0">
+      <table class="garden-timeline">
+<caption class="sr-only">Okvirni setveni koledar za kontinentalno Slovenijo po mesecih</caption>
+<thead><tr>
+<th scope="col">Vrtnina</th>
+<th scope="col"><abbr title="januar">Jan</abbr></th>
+<th scope="col"><abbr title="februar">Feb</abbr></th>
+<th scope="col"><abbr title="marec">Mar</abbr></th>
+<th scope="col"><abbr title="april">Apr</abbr></th>
+<th scope="col"><abbr title="maj">Maj</abbr></th>
+<th scope="col"><abbr title="junij">Jun</abbr></th>
+<th scope="col"><abbr title="julij">Jul</abbr></th>
+<th scope="col"><abbr title="avgust">Avg</abbr></th>
+<th scope="col"><abbr title="september">Sep</abbr></th>
+<th scope="col"><abbr title="oktober">Okt</abbr></th>
+<th scope="col"><abbr title="november">Nov</abbr></th>
+<th scope="col"><abbr title="december">Dec</abbr></th>
+<th scope="col">Načrt</th>
+</tr></thead>
+<tbody>
+        <tr data-garden-row="paradiznik">
+<th scope="row"><button type="button" class="garden-plant-button" data-garden-details="paradiznik" aria-expanded="false" aria-controls="garden-detail-paradiznik">Paradižnik<span aria-hidden="true">＋</span></button></th>
+<td></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev za sadike: februar–marec">S<span class="sr-only">: Setev za sadike</span></span></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev za sadike: februar–marec">S<span class="sr-only">: Setev za sadike</span></span></td>
+<td></td>
+<td><span class="garden-stage garden-stage--sajenje" title="Presajanje na prosto: maj">P<span class="sr-only">: Presajanje na prosto</span></span></td>
+<td></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: julij–sredina oktobra">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: julij–sredina oktobra">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: julij–sredina oktobra">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: julij–sredina oktobra">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td></td>
+<td></td>
+<td><button type="button" class="garden-add" data-garden-pick="paradiznik" aria-label="Dodaj Paradižnik v moj načrt">＋</button></td>
+</tr>
+        <tr class="garden-detail-row" id="garden-detail-paradiznik" data-garden-detail="paradiznik" hidden><td colspan="14"><div class="garden-plant-detail">
+<div>
+<h3>Paradižnik</h3>
+<p>Pred presajanjem preverite ogretost tal in nevarnost pozebe; mesec v preglednici sam po sebi še ni zagotovilo za varno sajenje.</p>
+</div>
+<dl>
+<div>
+<dt>Setev za sadike</dt>
+<dd>februar–marec</dd>
+</div>
+<div>
+<dt>Presajanje na prosto</dt>
+<dd>maj</dd>
+</div>
+<div>
+<dt>Okvir pobiranja</dt>
+<dd>julij–sredina oktobra</dd>
+</div>
+</dl>
+<div><a href="https://www.klubgaia.com/si/vrtnarski-nasveti/4264-Vzgojimo-si-svoje-sadike">Klub Gaia – Vzgojimo si svoje sadike ↗</a></div>
+</div></td></tr>
+<tr data-garden-row="paprika">
+<th scope="row"><button type="button" class="garden-plant-button" data-garden-details="paprika" aria-expanded="false" aria-controls="garden-detail-paprika">Paprika<span aria-hidden="true">＋</span></button></th>
+<td></td>
+<td></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev za sadike: marec">S<span class="sr-only">: Setev za sadike</span></span></td>
+<td></td>
+<td><span class="garden-stage garden-stage--sajenje" title="Presajanje na prosto: maj">P<span class="sr-only">: Presajanje na prosto</span></span></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: druga polovica junija–sredina oktobra">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: druga polovica junija–sredina oktobra">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: druga polovica junija–sredina oktobra">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: druga polovica junija–sredina oktobra">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: druga polovica junija–sredina oktobra">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td></td>
+<td></td>
+<td><button type="button" class="garden-add" data-garden-pick="paprika" aria-label="Dodaj Paprika v moj načrt">＋</button></td>
+</tr>
+        <tr class="garden-detail-row" id="garden-detail-paprika" data-garden-detail="paprika" hidden><td colspan="14"><div class="garden-plant-detail">
+<div>
+<h3>Paprika</h3>
+<p>Pred presajanjem preverite ogretost tal in nevarnost pozebe; mesec v preglednici sam po sebi še ni zagotovilo za varno sajenje.</p>
+</div>
+<dl>
+<div>
+<dt>Setev za sadike</dt>
+<dd>marec</dd>
+</div>
+<div>
+<dt>Presajanje na prosto</dt>
+<dd>maj</dd>
+</div>
+<div>
+<dt>Okvir pobiranja</dt>
+<dd>druga polovica junija–sredina oktobra</dd>
+</div>
+</dl>
+<div><a href="https://www.klubgaia.com/si/vrtnarski-nasveti/4264-Vzgojimo-si-svoje-sadike">Klub Gaia – Vzgojimo si svoje sadike ↗</a></div>
+</div></td></tr>
+<tr data-garden-row="jajcevec">
+<th scope="row"><button type="button" class="garden-plant-button" data-garden-details="jajcevec" aria-expanded="false" aria-controls="garden-detail-jajcevec">Jajčevec<span aria-hidden="true">＋</span></button></th>
+<td></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev za sadike: druga polovica februarja">S<span class="sr-only">: Setev za sadike</span></span></td>
+<td></td>
+<td></td>
+<td><span class="garden-stage garden-stage--sajenje" title="Presajanje na prosto: maj">P<span class="sr-only">: Presajanje na prosto</span></span></td>
+<td></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: julij–sredina oktobra">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: julij–sredina oktobra">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: julij–sredina oktobra">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: julij–sredina oktobra">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td></td>
+<td></td>
+<td><button type="button" class="garden-add" data-garden-pick="jajcevec" aria-label="Dodaj Jajčevec v moj načrt">＋</button></td>
+</tr>
+        <tr class="garden-detail-row" id="garden-detail-jajcevec" data-garden-detail="jajcevec" hidden><td colspan="14"><div class="garden-plant-detail">
+<div>
+<h3>Jajčevec</h3>
+<p>Pred presajanjem preverite ogretost tal in nevarnost pozebe; mesec v preglednici sam po sebi še ni zagotovilo za varno sajenje.</p>
+</div>
+<dl>
+<div>
+<dt>Setev za sadike</dt>
+<dd>druga polovica februarja</dd>
+</div>
+<div>
+<dt>Presajanje na prosto</dt>
+<dd>maj</dd>
+</div>
+<div>
+<dt>Okvir pobiranja</dt>
+<dd>julij–sredina oktobra</dd>
+</div>
+</dl>
+<div><a href="https://www.klubgaia.com/si/vrtnarski-nasveti/4264-Vzgojimo-si-svoje-sadike">Klub Gaia – Vzgojimo si svoje sadike ↗</a></div>
+</div></td></tr>
+<tr data-garden-row="kumare">
+<th scope="row"><button type="button" class="garden-plant-button" data-garden-details="kumare" aria-expanded="false" aria-controls="garden-detail-kumare">Kumare<span aria-hidden="true">＋</span></button></th>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev za sadike: april">S<span class="sr-only">: Setev za sadike</span></span></td>
+<td><span class="garden-stage garden-stage--sajenje" title="Presajanje na prosto: sredina maja–sredina junija">P<span class="sr-only">: Presajanje na prosto</span></span></td>
+<td><span class="garden-stage garden-stage--sajenje" title="Presajanje na prosto: sredina maja–sredina junija">P<span class="sr-only">: Presajanje na prosto</span></span></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: druga polovica julija">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><button type="button" class="garden-add" data-garden-pick="kumare" aria-label="Dodaj Kumare v moj načrt">＋</button></td>
+</tr>
+        <tr class="garden-detail-row" id="garden-detail-kumare" data-garden-detail="kumare" hidden><td colspan="14"><div class="garden-plant-detail">
+<div>
+<h3>Kumare</h3>
+<p>Pred presajanjem preverite ogretost tal in nevarnost pozebe; mesec v preglednici sam po sebi še ni zagotovilo za varno sajenje.</p>
+</div>
+<dl>
+<div>
+<dt>Setev za sadike</dt>
+<dd>april</dd>
+</div>
+<div>
+<dt>Presajanje na prosto</dt>
+<dd>sredina maja–sredina junija</dd>
+</div>
+<div>
+<dt>Okvir pobiranja</dt>
+<dd>druga polovica julija</dd>
+</div>
+</dl>
+<div><a href="https://www.klubgaia.com/si/vrtnarski-nasveti/4264-Vzgojimo-si-svoje-sadike">Klub Gaia – Vzgojimo si svoje sadike ↗</a></div>
+</div></td></tr>
+<tr data-garden-row="zgodnje-zelje">
+<th scope="row"><button type="button" class="garden-plant-button" data-garden-details="zgodnje-zelje" aria-expanded="false" aria-controls="garden-detail-zgodnje-zelje">Zgodnje zelje<span aria-hidden="true">＋</span></button></th>
+<td></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev za sadike: februar–marec">S<span class="sr-only">: Setev za sadike</span></span></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev za sadike: februar–marec">S<span class="sr-only">: Setev za sadike</span></span></td>
+<td><span class="garden-stage garden-stage--sajenje" title="Presajanje na prosto: april">P<span class="sr-only">: Presajanje na prosto</span></span></td>
+<td></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: junij–julij">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: junij–julij">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><button type="button" class="garden-add" data-garden-pick="zgodnje-zelje" aria-label="Dodaj Zgodnje zelje v moj načrt">＋</button></td>
+</tr>
+        <tr class="garden-detail-row" id="garden-detail-zgodnje-zelje" data-garden-detail="zgodnje-zelje" hidden><td colspan="14"><div class="garden-plant-detail">
+<div>
+<h3>Zgodnje zelje</h3>
+<p>Termine prilagodite sorti, razvoju sadik in vremenu na svojem vrtu.</p>
+</div>
+<dl>
+<div>
+<dt>Setev za sadike</dt>
+<dd>februar–marec</dd>
+</div>
+<div>
+<dt>Presajanje na prosto</dt>
+<dd>april</dd>
+</div>
+<div>
+<dt>Okvir pobiranja</dt>
+<dd>junij–julij</dd>
+</div>
+</dl>
+<div><a href="https://www.klubgaia.com/si/vrtnarski-nasveti/4264-Vzgojimo-si-svoje-sadike">Klub Gaia – Vzgojimo si svoje sadike ↗</a></div>
+</div></td></tr>
+<tr data-garden-row="zgodnja-cvetaca">
+<th scope="row"><button type="button" class="garden-plant-button" data-garden-details="zgodnja-cvetaca" aria-expanded="false" aria-controls="garden-detail-zgodnja-cvetaca">Zgodnja cvetača<span aria-hidden="true">＋</span></button></th>
+<td><span class="garden-stage garden-stage--setev" title="Setev za sadike: sredina januarja–marec">S<span class="sr-only">: Setev za sadike</span></span></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev za sadike: sredina januarja–marec">S<span class="sr-only">: Setev za sadike</span></span></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev za sadike: sredina januarja–marec">S<span class="sr-only">: Setev za sadike</span></span></td>
+<td><span class="garden-stage garden-stage--sajenje" title="Presajanje na prosto: april">P<span class="sr-only">: Presajanje na prosto</span></span></td>
+<td></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: junij–avgust">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: junij–avgust">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: junij–avgust">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><button type="button" class="garden-add" data-garden-pick="zgodnja-cvetaca" aria-label="Dodaj Zgodnja cvetača v moj načrt">＋</button></td>
+</tr>
+        <tr class="garden-detail-row" id="garden-detail-zgodnja-cvetaca" data-garden-detail="zgodnja-cvetaca" hidden><td colspan="14"><div class="garden-plant-detail">
+<div>
+<h3>Zgodnja cvetača</h3>
+<p>Termine prilagodite sorti, razvoju sadik in vremenu na svojem vrtu.</p>
+</div>
+<dl>
+<div>
+<dt>Setev za sadike</dt>
+<dd>sredina januarja–marec</dd>
+</div>
+<div>
+<dt>Presajanje na prosto</dt>
+<dd>april</dd>
+</div>
+<div>
+<dt>Okvir pobiranja</dt>
+<dd>junij–avgust</dd>
+</div>
+</dl>
+<div><a href="https://www.klubgaia.com/si/vrtnarski-nasveti/4264-Vzgojimo-si-svoje-sadike">Klub Gaia – Vzgojimo si svoje sadike ↗</a></div>
+</div></td></tr>
+<tr data-garden-row="zgodnji-ohrovt">
+<th scope="row"><button type="button" class="garden-plant-button" data-garden-details="zgodnji-ohrovt" aria-expanded="false" aria-controls="garden-detail-zgodnji-ohrovt">Zgodnji ohrovt<span aria-hidden="true">＋</span></button></th>
+<td></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev za sadike: februar">S<span class="sr-only">: Setev za sadike</span></span></td>
+<td></td>
+<td><span class="garden-stage garden-stage--sajenje" title="Presajanje na prosto: april">P<span class="sr-only">: Presajanje na prosto</span></span></td>
+<td></td>
+<td></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: julij">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><button type="button" class="garden-add" data-garden-pick="zgodnji-ohrovt" aria-label="Dodaj Zgodnji ohrovt v moj načrt">＋</button></td>
+</tr>
+        <tr class="garden-detail-row" id="garden-detail-zgodnji-ohrovt" data-garden-detail="zgodnji-ohrovt" hidden><td colspan="14"><div class="garden-plant-detail">
+<div>
+<h3>Zgodnji ohrovt</h3>
+<p>Termine prilagodite sorti, razvoju sadik in vremenu na svojem vrtu.</p>
+</div>
+<dl>
+<div>
+<dt>Setev za sadike</dt>
+<dd>februar</dd>
+</div>
+<div>
+<dt>Presajanje na prosto</dt>
+<dd>april</dd>
+</div>
+<div>
+<dt>Okvir pobiranja</dt>
+<dd>julij</dd>
+</div>
+</dl>
+<div><a href="https://www.klubgaia.com/si/vrtnarski-nasveti/4264-Vzgojimo-si-svoje-sadike">Klub Gaia – Vzgojimo si svoje sadike ↗</a></div>
+</div></td></tr>
+<tr data-garden-row="zelena">
+<th scope="row"><button type="button" class="garden-plant-button" data-garden-details="zelena" aria-expanded="false" aria-controls="garden-detail-zelena">Zelena<span aria-hidden="true">＋</span></button></th>
+<td></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev za sadike: februar–marec">S<span class="sr-only">: Setev za sadike</span></span></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev za sadike: februar–marec">S<span class="sr-only">: Setev za sadike</span></span></td>
+<td><span class="garden-stage garden-stage--sajenje" title="Presajanje na prosto: začetek aprila–sredina junija">P<span class="sr-only">: Presajanje na prosto</span></span></td>
+<td><span class="garden-stage garden-stage--sajenje" title="Presajanje na prosto: začetek aprila–sredina junija">P<span class="sr-only">: Presajanje na prosto</span></span></td>
+<td><span class="garden-stage garden-stage--sajenje" title="Presajanje na prosto: začetek aprila–sredina junija">P<span class="sr-only">: Presajanje na prosto</span></span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: oktober">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td></td>
+<td></td>
+<td><button type="button" class="garden-add" data-garden-pick="zelena" aria-label="Dodaj Zelena v moj načrt">＋</button></td>
+</tr>
+        <tr class="garden-detail-row" id="garden-detail-zelena" data-garden-detail="zelena" hidden><td colspan="14"><div class="garden-plant-detail">
+<div>
+<h3>Zelena</h3>
+<p>Termine prilagodite sorti, razvoju sadik in vremenu na svojem vrtu.</p>
+</div>
+<dl>
+<div>
+<dt>Setev za sadike</dt>
+<dd>februar–marec</dd>
+</div>
+<div>
+<dt>Presajanje na prosto</dt>
+<dd>začetek aprila–sredina junija</dd>
+</div>
+<div>
+<dt>Okvir pobiranja</dt>
+<dd>oktober</dd>
+</div>
+</dl>
+<div><a href="https://www.klubgaia.com/si/vrtnarski-nasveti/4264-Vzgojimo-si-svoje-sadike">Klub Gaia – Vzgojimo si svoje sadike ↗</a></div>
+</div></td></tr>
+<tr data-garden-row="poletni-por">
+<th scope="row"><button type="button" class="garden-plant-button" data-garden-details="poletni-por" aria-expanded="false" aria-controls="garden-detail-poletni-por">Poletni por<span aria-hidden="true">＋</span></button></th>
+<td></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev za sadike: februar–marec">S<span class="sr-only">: Setev za sadike</span></span></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev za sadike: februar–marec">S<span class="sr-only">: Setev za sadike</span></span></td>
+<td></td>
+<td><span class="garden-stage garden-stage--sajenje" title="Presajanje na prosto: maj">P<span class="sr-only">: Presajanje na prosto</span></span></td>
+<td></td>
+<td></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: avgust–september">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: avgust–september">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><button type="button" class="garden-add" data-garden-pick="poletni-por" aria-label="Dodaj Poletni por v moj načrt">＋</button></td>
+</tr>
+        <tr class="garden-detail-row" id="garden-detail-poletni-por" data-garden-detail="poletni-por" hidden><td colspan="14"><div class="garden-plant-detail">
+<div>
+<h3>Poletni por</h3>
+<p>Termine prilagodite sorti, razvoju sadik in vremenu na svojem vrtu.</p>
+</div>
+<dl>
+<div>
+<dt>Setev za sadike</dt>
+<dd>februar–marec</dd>
+</div>
+<div>
+<dt>Presajanje na prosto</dt>
+<dd>maj</dd>
+</div>
+<div>
+<dt>Okvir pobiranja</dt>
+<dd>avgust–september</dd>
+</div>
+</dl>
+<div><a href="https://www.klubgaia.com/si/vrtnarski-nasveti/4264-Vzgojimo-si-svoje-sadike">Klub Gaia – Vzgojimo si svoje sadike ↗</a></div>
+</div></td></tr>
+<tr data-garden-row="zgodnja-solata">
+<th scope="row"><button type="button" class="garden-plant-button" data-garden-details="zgodnja-solata" aria-expanded="false" aria-controls="garden-detail-zgodnja-solata">Zgodnja solata<span aria-hidden="true">＋</span></button></th>
+<td><span class="garden-stage garden-stage--setev" title="Setev za sadike: januar–marec">S<span class="sr-only">: Setev za sadike</span></span></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev za sadike: januar–marec">S<span class="sr-only">: Setev za sadike</span></span></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev za sadike: januar–marec">S<span class="sr-only">: Setev za sadike</span></span></td>
+<td><span class="garden-stage garden-stage--sajenje" title="Presajanje na prosto: začetek aprila–maj">P<span class="sr-only">: Presajanje na prosto</span></span></td>
+<td><span class="garden-stage garden-stage--sajenje" title="Presajanje na prosto: začetek aprila–maj">P<span class="sr-only">: Presajanje na prosto</span></span></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: junij–julij">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td><span class="garden-stage garden-stage--pridelek" title="Okvir pobiranja: junij–julij">B<span class="sr-only">: Okvir pobiranja</span></span></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><button type="button" class="garden-add" data-garden-pick="zgodnja-solata" aria-label="Dodaj Zgodnja solata v moj načrt">＋</button></td>
+</tr>
+        <tr class="garden-detail-row" id="garden-detail-zgodnja-solata" data-garden-detail="zgodnja-solata" hidden><td colspan="14"><div class="garden-plant-detail">
+<div>
+<h3>Zgodnja solata</h3>
+<p>Termine prilagodite sorti, razvoju sadik in vremenu na svojem vrtu.</p>
+</div>
+<dl>
+<div>
+<dt>Setev za sadike</dt>
+<dd>januar–marec</dd>
+</div>
+<div>
+<dt>Presajanje na prosto</dt>
+<dd>začetek aprila–maj</dd>
+</div>
+<div>
+<dt>Okvir pobiranja</dt>
+<dd>junij–julij</dd>
+</div>
+</dl>
+<div><a href="https://www.klubgaia.com/si/vrtnarski-nasveti/4264-Vzgojimo-si-svoje-sadike">Klub Gaia – Vzgojimo si svoje sadike ↗</a></div>
+</div></td></tr>
+<tr data-garden-row="zimska-solata">
+<th scope="row"><button type="button" class="garden-plant-button" data-garden-details="zimska-solata" aria-expanded="false" aria-controls="garden-detail-zimska-solata">Zimska solata<span aria-hidden="true">＋</span></button></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev na prosto: sredina avgusta–konec septembra">S<span class="sr-only">: Setev na prosto</span></span></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev na prosto: sredina avgusta–konec septembra">S<span class="sr-only">: Setev na prosto</span></span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><button type="button" class="garden-add" data-garden-pick="zimska-solata" aria-label="Dodaj Zimska solata v moj načrt">＋</button></td>
+</tr>
+        <tr class="garden-detail-row" id="garden-detail-zimska-solata" data-garden-detail="zimska-solata" hidden><td colspan="14"><div class="garden-plant-detail">
+<div>
+<h3>Zimska solata</h3>
+<p>Prikazan je jesenski cikel. To ni celoten seznam vseh možnih setev te vrtnine.</p>
+</div>
+<dl><div>
+<dt>Setev na prosto</dt>
+<dd>sredina avgusta–konec septembra</dd>
+</div></dl>
+<div><a href="https://www.klubgaia.com/si/vrtnarski-nasveti/887-Setve-in-sajenje-za-jesensko-zimske-dni">Klub Gaia – Setve in sajenje za jesensko-zimske dni ↗</a></div>
+</div></td></tr>
+<tr data-garden-row="motovilec">
+<th scope="row"><button type="button" class="garden-plant-button" data-garden-details="motovilec" aria-expanded="false" aria-controls="garden-detail-motovilec">Motovilec<span aria-hidden="true">＋</span></button></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev na prosto: avgust–september; druga polovica septembra za pomlad">S<span class="sr-only">: Setev na prosto</span></span></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev na prosto: avgust–september; druga polovica septembra za pomlad">S<span class="sr-only">: Setev na prosto</span></span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><button type="button" class="garden-add" data-garden-pick="motovilec" aria-label="Dodaj Motovilec v moj načrt">＋</button></td>
+</tr>
+        <tr class="garden-detail-row" id="garden-detail-motovilec" data-garden-detail="motovilec" hidden><td colspan="14"><div class="garden-plant-detail">
+<div>
+<h3>Motovilec</h3>
+<p>Prikazan je jesenski cikel. To ni celoten seznam vseh možnih setev te vrtnine.</p>
+</div>
+<dl><div>
+<dt>Setev na prosto</dt>
+<dd>avgust–september; druga polovica septembra za pomlad</dd>
+</div></dl>
+<div><a href="https://www.klubgaia.com/si/vrtnarski-nasveti/887-Setve-in-sajenje-za-jesensko-zimske-dni">Klub Gaia – Setve in sajenje za jesensko-zimske dni ↗</a></div>
+</div></td></tr>
+<tr data-garden-row="spinaca">
+<th scope="row"><button type="button" class="garden-plant-button" data-garden-details="spinaca" aria-expanded="false" aria-controls="garden-detail-spinaca">Špinača<span aria-hidden="true">＋</span></button></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="garden-stage garden-stage--setev" title="Jesenska setev: avgust–september; poznejša setev za pomlad">S<span class="sr-only">: Jesenska setev</span></span></td>
+<td><span class="garden-stage garden-stage--setev" title="Jesenska setev: avgust–september; poznejša setev za pomlad">S<span class="sr-only">: Jesenska setev</span></span></td>
+<td></td>
+<td></td>
+<td></td>
+<td><button type="button" class="garden-add" data-garden-pick="spinaca" aria-label="Dodaj Špinača v moj načrt">＋</button></td>
+</tr>
+        <tr class="garden-detail-row" id="garden-detail-spinaca" data-garden-detail="spinaca" hidden><td colspan="14"><div class="garden-plant-detail">
+<div>
+<h3>Špinača</h3>
+<p>Prikazan je jesenski cikel. To ni celoten seznam vseh možnih setev te vrtnine.</p>
+</div>
+<dl><div>
+<dt>Jesenska setev</dt>
+<dd>avgust–september; poznejša setev za pomlad</dd>
+</div></dl>
+<div><a href="https://www.klubgaia.com/si/vrtnarski-nasveti/887-Setve-in-sajenje-za-jesensko-zimske-dni">Klub Gaia – Setve in sajenje za jesensko-zimske dni ↗</a></div>
+</div></td></tr>
+<tr data-garden-row="blitva">
+<th scope="row"><button type="button" class="garden-plant-button" data-garden-details="blitva" aria-expanded="false" aria-controls="garden-detail-blitva">Blitva za prezimovanje<span aria-hidden="true">＋</span></button></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="garden-stage garden-stage--setev" title="Setev na prosto: avgust">S<span class="sr-only">: Setev na prosto</span></span></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><button type="button" class="garden-add" data-garden-pick="blitva" aria-label="Dodaj Blitva za prezimovanje v moj načrt">＋</button></td>
+</tr>
+        <tr class="garden-detail-row" id="garden-detail-blitva" data-garden-detail="blitva" hidden><td colspan="14"><div class="garden-plant-detail">
+<div>
+<h3>Blitva za prezimovanje</h3>
+<p>Prikazan je jesenski cikel. To ni celoten seznam vseh možnih setev te vrtnine.</p>
+</div>
+<dl><div>
+<dt>Setev na prosto</dt>
+<dd>avgust</dd>
+</div></dl>
+<div><a href="https://www.klubgaia.com/si/vrtnarski-nasveti/887-Setve-in-sajenje-za-jesensko-zimske-dni">Klub Gaia – Setve in sajenje za jesensko-zimske dni ↗</a></div>
+</div></td></tr>
+<tr data-garden-row="jesenski-cesen">
+<th scope="row"><button type="button" class="garden-plant-button" data-garden-details="jesenski-cesen" aria-expanded="false" aria-controls="garden-detail-jesenski-cesen">Jesenski česen<span aria-hidden="true">＋</span></button></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="garden-stage garden-stage--sajenje" title="Sajenje strokov: konec oktobra–začetek novembra">P<span class="sr-only">: Sajenje strokov</span></span></td>
+<td><span class="garden-stage garden-stage--sajenje" title="Sajenje strokov: konec oktobra–začetek novembra">P<span class="sr-only">: Sajenje strokov</span></span></td>
+<td></td>
+<td><button type="button" class="garden-add" data-garden-pick="jesenski-cesen" aria-label="Dodaj Jesenski česen v moj načrt">＋</button></td>
+</tr>
+        <tr class="garden-detail-row" id="garden-detail-jesenski-cesen" data-garden-detail="jesenski-cesen" hidden><td colspan="14"><div class="garden-plant-detail">
+<div>
+<h3>Jesenski česen</h3>
+<p>Prikazan je jesenski cikel. To ni celoten seznam vseh možnih setev te vrtnine.</p>
+</div>
+<dl><div>
+<dt>Sajenje strokov</dt>
+<dd>konec oktobra–začetek novembra</dd>
+</div></dl>
+<div><a href="https://www.klubgaia.com/si/vrtnarski-nasveti/887-Setve-in-sajenje-za-jesensko-zimske-dni">Klub Gaia – Setve in sajenje za jesensko-zimske dni ↗</a></div>
+</div></td></tr>
+<tr data-garden-row="cebulcek">
+<th scope="row"><button type="button" class="garden-plant-button" data-garden-details="cebulcek" aria-expanded="false" aria-controls="garden-detail-cebulcek">Jesenski čebulček<span aria-hidden="true">＋</span></button></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><span class="garden-stage garden-stage--sajenje" title="Sajenje čebulčka: druga polovica oktobra">P<span class="sr-only">: Sajenje čebulčka</span></span></td>
+<td></td>
+<td></td>
+<td><button type="button" class="garden-add" data-garden-pick="cebulcek" aria-label="Dodaj Jesenski čebulček v moj načrt">＋</button></td>
+</tr>
+        <tr class="garden-detail-row" id="garden-detail-cebulcek" data-garden-detail="cebulcek" hidden><td colspan="14"><div class="garden-plant-detail">
+<div>
+<h3>Jesenski čebulček</h3>
+<p>Prikazan je jesenski cikel. To ni celoten seznam vseh možnih setev te vrtnine.</p>
+</div>
+<dl><div>
+<dt>Sajenje čebulčka</dt>
+<dd>druga polovica oktobra</dd>
+</div></dl>
+<div><a href="https://www.klubgaia.com/si/vrtnarski-nasveti/887-Setve-in-sajenje-za-jesensko-zimske-dni">Klub Gaia – Setve in sajenje za jesensko-zimske dni ↗</a></div>
+</div></td></tr>
+      </tbody>
+</table>
+    </div>
+    <p class="garden-empty" data-garden-empty hidden>Za ta izbor ni vnesenega sezonskega okvira. Poskusite drug mesec ali počistite filtre.</p>
+    <noscript><p>Filtri in odpiranje podrobnosti potrebujejo JavaScript. Preglednica prikazuje vse vrtnine; opis opravila je tudi v naslovu posamezne oznake.</p></noscript>
+    <details class="garden-static-reference"><summary>Besedilni pregled vseh obdobij</summary><dl>
+<dt>Paradižnik</dt>
+<dd>Setev za sadike: februar–marec · Presajanje na prosto: maj · Okvir pobiranja: julij–sredina oktobra</dd>
+<dt>Paprika</dt>
+<dd>Setev za sadike: marec · Presajanje na prosto: maj · Okvir pobiranja: druga polovica junija–sredina oktobra</dd>
+<dt>Jajčevec</dt>
+<dd>Setev za sadike: druga polovica februarja · Presajanje na prosto: maj · Okvir pobiranja: julij–sredina oktobra</dd>
+<dt>Kumare</dt>
+<dd>Setev za sadike: april · Presajanje na prosto: sredina maja–sredina junija · Okvir pobiranja: druga polovica julija</dd>
+<dt>Zgodnje zelje</dt>
+<dd>Setev za sadike: februar–marec · Presajanje na prosto: april · Okvir pobiranja: junij–julij</dd>
+<dt>Zgodnja cvetača</dt>
+<dd>Setev za sadike: sredina januarja–marec · Presajanje na prosto: april · Okvir pobiranja: junij–avgust</dd>
+<dt>Zgodnji ohrovt</dt>
+<dd>Setev za sadike: februar · Presajanje na prosto: april · Okvir pobiranja: julij</dd>
+<dt>Zelena</dt>
+<dd>Setev za sadike: februar–marec · Presajanje na prosto: začetek aprila–sredina junija · Okvir pobiranja: oktober</dd>
+<dt>Poletni por</dt>
+<dd>Setev za sadike: februar–marec · Presajanje na prosto: maj · Okvir pobiranja: avgust–september</dd>
+<dt>Zgodnja solata</dt>
+<dd>Setev za sadike: januar–marec · Presajanje na prosto: začetek aprila–maj · Okvir pobiranja: junij–julij</dd>
+<dt>Zimska solata</dt>
+<dd>Setev na prosto: sredina avgusta–konec septembra</dd>
+<dt>Motovilec</dt>
+<dd>Setev na prosto: avgust–september; druga polovica septembra za pomlad</dd>
+<dt>Špinača</dt>
+<dd>Jesenska setev: avgust–september; poznejša setev za pomlad</dd>
+<dt>Blitva za prezimovanje</dt>
+<dd>Setev na prosto: avgust</dd>
+<dt>Jesenski česen</dt>
+<dd>Sajenje strokov: konec oktobra–začetek novembra</dd>
+<dt>Jesenski čebulček</dt>
+<dd>Sajenje čebulčka: druga polovica oktobra</dd>
+</dl></details>
+  </section>
+
+  <section class="garden-personal" id="moj-vrt" aria-labelledby="garden-plan-title">
+    <div class="garden-section-heading">
+<div>
+<p class="garden-kicker">02 / VAŠ OSEBNI NAČRT</p>
+<h2 id="garden-plan-title">Moj vrt, moji datumi.</h2>
+<p>Izberite konkretni datum za svoje razmere. Vaši vnosi ostanejo v tem brskalniku.</p>
+</div>
+<span class="garden-plan-total" data-garden-plan-total>0 opravil</span>
+</div>
+    <div class="garden-personal-workspace">
+      <form class="garden-plan-form" data-garden-plan-form>
+        <fieldset disabled data-garden-enable>
+<legend>Dodajte vrtno opravilo</legend>
+<label for="garden-plan-plant">Vrtnina<select id="garden-plan-plant" name="plant" required><option value="paradiznik">Paradižnik</option>
+<option value="paprika">Paprika</option>
+<option value="jajcevec">Jajčevec</option>
+<option value="kumare">Kumare</option>
+<option value="zgodnje-zelje">Zgodnje zelje</option>
+<option value="zgodnja-cvetaca">Zgodnja cvetača</option>
+<option value="zgodnji-ohrovt">Zgodnji ohrovt</option>
+<option value="zelena">Zelena</option>
+<option value="poletni-por">Poletni por</option>
+<option value="zgodnja-solata">Zgodnja solata</option>
+<option value="zimska-solata">Zimska solata</option>
+<option value="motovilec">Motovilec</option>
+<option value="spinaca">Špinača</option>
+<option value="blitva">Blitva za prezimovanje</option>
+<option value="jesenski-cesen">Jesenski česen</option>
+<option value="cebulcek">Jesenski čebulček</option>
+<option value="custom">Drugo opravilo</option></select></label><label for="garden-plan-task">Opravilo<select id="garden-plan-task" name="task"><option value="Setev">Setev</option>
+<option value="Presajanje / sajenje">Presajanje / sajenje</option>
+<option value="Pobiranje">Pobiranje</option>
+<option value="Drugo opravilo">Drugo opravilo</option></select></label><label for="garden-plan-date">Vaš datum<input id="garden-plan-date" name="date" type="date" min="1900-01-01" max="2100-12-31" required aria-describedby="garden-personal-help"></label><label for="garden-plan-note">Opomba <span>(neobvezno)</span><input id="garden-plan-note" name="note" maxlength="180" placeholder="Greda 2, sorta, število sadik …"></label><button class="button primary" type="submit" data-garden-save>Dodaj v moj načrt</button><button type="button" class="text-button" data-garden-cancel hidden>Prekliči urejanje</button>
+</fieldset>
+        <p id="garden-personal-help">Datum v osebnem načrtu določite sami. Shranjeni datum ni strokovno priporočilo za vašo lokacijo.</p>
+      </form>
+      <div class="garden-plan-sheet">
+<div class="garden-sheet-heading">
+<span>MOJ SETVENI NAČRT</span><button type="button" data-garden-print><svg class="ui-icon icon-print" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#print" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#print"></use></svg> Natisni / shrani PDF</button>
+</div>
+<div class="garden-plan-list" data-garden-plan-list><div class="garden-plan-empty">
+<span aria-hidden="true">＋</span><h3>Prostor za vašo novo sezono.</h3>
+<p>Dodajte prvo vrtnino in datum. Tukaj se bo sestavil vaš osebni seznam opravil.</p>
+</div></div>
+<div class="garden-plan-actions">
+<button type="button" data-garden-ics disabled>Prenesi koledar ICS</button><button type="button" data-garden-backup disabled>Shrani načrt JSON</button><label class="button garden-import">Odpri načrt JSON<input type="file" accept="application/json,.json" data-garden-import></label>
+</div>
+<p class="garden-status" data-garden-status role="status" aria-live="polite"></p>
+</div>
+    </div>
+    <noscript><p>Osebni načrt potrebuje JavaScript. Brez njega se vnosi nikamor ne pošljejo.</p></noscript>
+  </section>
+
+  <section class="garden-method" id="kako-nacrtovati-vrt"><div>
+<p class="garden-kicker">03 / NAČRT, KI UPOŠTEVA RAZMERE</p>
+<h2>Koledar je začetek.<br>Vrt ima zadnjo besedo.</h2>
+<p>Setev za vzgojo sadik v notranjem prostoru ni isto kot setev neposredno na gredo. Tudi začetek prikazanega obdobja še ne pomeni, da so tla ali nočne temperature že primerne. Zato pri vsaki vrtnini ločujemo opravila in način pridelave.</p>
+<p>Pregled je orientacija za praktično načrtovanje. Zgodnje, pozne in prezimne sorte imajo različne potrebe; seznam prikazuje navedene cikle, ne vseh mogočih kombinacij.</p>
+<a href="/lunin-koledar/">Astronomski lunin koledar <span aria-hidden="true">→</span></a>
+</div>
+<ol class="garden-method-steps">
+<li>
+<span>01</span><div>
+<h3>Izberite vrtnino in način vzgoje</h3>
+<p>V preglednici preverite, ali gre za sadike, sajenje na prosto ali okvir pobiranja.</p>
+</div>
+</li>
+<li>
+<span>02</span><div>
+<h3>Preverite svoj vrt</h3>
+<p>Upoštevajte navodila na semenu, vremensko napoved, lokacijo in razmere na gredi.</p>
+</div>
+</li>
+<li>
+<span>03</span><div>
+<h3>Zapišite dejanski datum</h3>
+<p>Načrt sproti uredite. Z opombo o sorti in gredi boste prihodnjo sezono lažje primerjali svoje rezultate.</p>
+</div>
+</li>
+</ol></section>
+
+  <section class="garden-faq" aria-labelledby="garden-faq-title"><h2 id="garden-faq-title">Vprašanja o setvenem koledarju</h2>
+<details><summary>Ali je to setveni koledar po Mariji Thun?</summary><p>Ne. Pregled prikazuje praktične sezonske okvire za vrtnine. Biodinamični koledar po Mariji Thun temelji na drugem pristopu; povezavo do izvirnega koledarja najdete med viri. Njegovih avtorskih dnevnih razporedov ne prepisujemo.</p></details><details><summary>Ali termini veljajo tudi na Primorskem?</summary><p>Osnovna preglednica je namenjena predvsem kontinentalni Sloveniji. Na Primorskem, v višjih legah in v rastlinjaku so razmere drugačne. Izbor območja prikaže ustrezno pojasnilo, svojih datumov pa ne premakne samodejno.</p></details><details><summary>Zakaj ne priporočate enega natančnega dneva za setev?</summary><p>Mesec je okvir. Odločitev je odvisna tudi od sorte, vremenske napovedi, ogretosti tal, svetlobe in razvoja sadik. V osebnem načrtu izberete datum, ki ustreza vašemu vrtu.</p></details><details><summary>Kako shranim svoj setveni načrt?</summary><p>Dodajte vrtnino, opravilo, datum in po želji opombo. Načrt se shrani v tem brskalniku. Prenesete ga lahko kot datoteko JSON za ponovno odpiranje, kot ICS za koledar ali ga natisnete oziroma shranite v PDF.</p></details></section>
+  <section class="garden-sources" id="vrtni-viri" aria-labelledby="garden-sources-title"><p class="garden-kicker">04 / VIRI IN UREDNIŠKI PREGLED</p>
+<h2 id="garden-sources-title">Od kod so podatki?</h2>
+<p>Priprava: <a href="/o-nas/">Koledar365</a>. Sezonski okviri in obseg virov preverjeni <time datetime="2026-10-21">21. oktobra 2026</time>. Datume strnemo v lastni pregled; avtorskih dnevnih koledarjev ne reproduciramo. Za popravek nam pošljite <a href="/kontakt/">naslov strani in sporni podatek</a>.</p>
+<ul>
+<li>
+<a href="https://www.klubgaia.com/si/vrtnarski-nasveti/4264-Vzgojimo-si-svoje-sadike">Klub Gaia – Vzgojimo si svoje sadike ↗</a><p>Okvirni termini za vzgojo sadik in pridelavo v kontinentalni Sloveniji.</p>
+</li>
+<li>
+<a href="https://www.klubgaia.com/si/vrtnarski-nasveti/887-Setve-in-sajenje-za-jesensko-zimske-dni">Klub Gaia – Setve in sajenje za jesensko-zimske dni ↗</a><p>Jesenske setve solatnic, blitve, motovilca in špinače ter sajenje čebulnic.</p>
+</li>
+<li>
+<a href="https://www.klubgaia.com/si/vrtnarski-nasveti/853-Jesensko-sajenje-cesna">Klub Gaia – Jesensko sajenje česna ↗</a><p>Razlika med jesenskim in spomladanskim česnom ter razmere za sajenje.</p>
+</li>
+<li>
+<a href="https://vrtobilja.si/ponudba/vrtnarski-koledar">Vrt Obilja – Vrtnarski koledar ↗</a><p>Povezava na avtorski vrtnarski koledar. Njegovih dnevnih terminov ne prepisujemo.</p>
+</li>
+<li>
+<a href="https://www.klubgaia.com/si/vrtnarski-nasveti/6138-koledar-vrtnih-opravil-za-leto-2026">Klub Gaia – Koledar vrtnih opravil za leto 2026 ↗</a><p>Pojasnilo koledarja po Mariji Thun in povezava do izvirnega koledarja.</p>
+</li>
+<li>
+<a href="https://www.kmetijskizavod-ng.si/panoge/poljedelstvo_in_zelenjadarstvo/2017060814095258/strokovni_nasveti/">KGZS – Zavod Nova Gorica: strokovni nasveti za zelenjadarstvo ↗</a><p>Podnebje Primorske, pridelava na prostem in vzgoja sadik v ogrevanih prostorih.</p>
+</li>
+</ul>
+<p>Koledar po Mariji Thun obravnavamo kot biodinamično tradicijo. Iz astronomskega položaja Lune ne izračunavamo zagotovljenega uspeha setve. <a href="/viri-in-metodologija/">Kako preverjamo in prikazujemo podatke.</a></p></section>
+</article>
+<!-- END app/views/pages/_garden_calendar.html.erb -->
+
+
+<!-- END app/views/pages/show.html.erb -->
+</main>
+<footer><a class="brand small" href="/"><span class="brand-symbol"><img width="44" height="44" alt="" class="brand-mark" aria-hidden="true" src="/visuals/brand-calendar-v3.71d101697df6153f.svg"></span> Koledar<span>365</span></a><a href="/o-nas/">O nas</a><a href="/zasebnost/">Zasebnost</a><a href="/viri-in-metodologija/">Viri in metodologija</a><a href="/kontakt/">Kontakt</a><a href="/fotografije-in-licence/">Fotografije in licence</a><a href="/pogoji-uporabe/">Pogoji uporabe</a><button class="text-button" data-cookie-open>Nastavitve piškotkov</button><span>© 2026 Koledar365</span></footer>
+<!-- BEGIN app/views/layouts/_cookies.html.erb
+--><section id="cookies" class="cookie-bar" aria-labelledby="cookie-title" aria-describedby="cookie-intro" hidden>
+  <div class="cookie-bar-main">
+    <div class="cookie-bar-icon" aria-hidden="true">
+      <svg class="ui-icon icon-cookie" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#cookie" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#cookie"></use></svg>
+      <span class="cookie-flag"><img width="36" height="22" alt="" class="country-flag" aria-hidden="true" src="/visuals/slovenia-fabric-v3.95b82b3f8fbaebac.svg"></span>
+    </div>
+    <div class="cookie-bar-copy">
+      <span class="cookie-bar-eyebrow">Vaša zasebnost</span>
+      <h2 id="cookie-title">Vi odločate, kaj si zapomnimo.</h2>
+      <p id="cookie-intro">Z vašim dovoljenjem si do 180 dni zapomnimo izbrano mesto za krajevni čas in vreme. Analitike ali oglasnih sledilnikov ne uporabljamo. <a href="/piskotki/">Podrobnosti</a></p>
+    </div>
+    <div class="cookie-actions" role="group" aria-label="Izbira nastavitev zasebnosti">
+      <button type="button" data-consent="necessary"><span class="cookie-action-icon"><svg class="ui-icon icon-shield" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#shield" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#shield"></use></svg></span><span>Ne shrani mesta</span></button>
+      <button type="button" data-consent="all"><span class="cookie-action-icon"><svg class="ui-icon icon-pin" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#pin" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#pin"></use></svg></span><span>Zapomni si mesto</span></button>
+      <button type="button" data-consent-settings aria-expanded="false" aria-controls="cookie-settings"><span class="cookie-action-icon"><svg class="ui-icon icon-settings" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#settings" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#settings"></use></svg></span><span>Nastavitve</span></button>
+    </div>
+    <button type="button" class="cookie-close" data-cookie-close aria-label="Zapri brez spremembe nastavitev">
+      <svg viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+    </button>
+  </div>
+  <details id="cookie-settings">
+    <summary>Podrobne nastavitve</summary>
+    <p class="cookie-explanation">Pomnjenje mesta je edina neobvezna možnost. Osebne načrte shranimo v tem brskalniku, ko jih ustvarite. Zavrnitev ne omeji uporabe koledarja. Izbiro hranimo 180 dni.</p>
+    <div class="cookie-category">
+<div>
+<strong>Nujna hramba</strong><p>Seja, varnost obrazcev in vaša izbira zasebnosti.</p>
+</div>
+<span class="necessary-label">Vedno dejavna</span>
+</div>
+    <label class="cookie-category"><span><strong>Zapomni si mesto</strong><small>Izbrano mesto za fotografijo in vreme ob naslednjem obisku. Hramba največ 180 dni.</small></span><input id="cookie-preferences" type="checkbox" role="switch"></label>
+    <div class="cookie-category">
+<div>
+<strong>Analitika in oglaševanje</strong><p>Teh storitev trenutno ni.</p>
+</div>
+<span class="inactive-label">Ni v uporabi</span>
+</div>
+    <button type="button" data-consent="custom" class="button">Shrani izbrane nastavitve</button>
+    <button type="button" data-consent="withdraw" class="text-button">Prekliči dovoljenje za pomnjenje mesta</button>
+    <p class="cookie-links"><a href="/piskotki/">Politika piškotkov</a><span>·</span><a href="/zasebnost/">Varstvo osebnih podatkov</a><span>·</span>Izbiro lahko kadar koli spremenite.</p>
+  </details>
+  <output id="cookie-status" role="status"></output>
+</section>
+<script>
+(()=>{
+  const bar=document.getElementById('cookies');
+  if(!bar)return;
+  let hasValidChoice=false;
+  try{
+    const choice=JSON.parse(localStorage.getItem('k365.consent')||'null');
+    hasValidChoice=choice?.version===2&&Number.isFinite(choice.expiresAt)&&choice.expiresAt>Date.now();
+  }catch{}
+  if(!hasValidChoice){
+    bar.hidden=false;
+    document.documentElement.style.setProperty('--cookie-space',`${bar.getBoundingClientRect().height}px`);
+  }
+})();
+</script>
+<!-- END app/views/layouts/_cookies.html.erb -->
+</body>
+</html><!-- END app/views/layouts/application.html.erb -->

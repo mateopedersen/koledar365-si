@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Koledar365//Astronomija SL//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Koledar365 · Astronomija
+X-WR-TIMEZONE:Europe/Ljubljana
+BEGIN:VEVENT
+DTSTAMP:20261021T000000Z
+UID:perseids-2028-08-11-nova-gorica@koledar365.si
+DTSTART:20280811T202000Z
+DTEND:20280812T020200Z
+DESCRIPTION:Načrtovana noč okoli običajnega avgustovskega viška aktivno
+ sti\, ne napoved točne ure maksimuma. Čas označuje astronomsko temo (So
+ nce pod −18°). Preverite mesečino\, oblake in krajevno obzorje.
+SUMMARY:Perzeidi: opazovalna noč · Nova Gorica
+TRANSP:TRANSPARENT
+URL;VALUE=URI:https://koledar365.si/perzeidi/?year=2028&city=nova-gorica
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261021T000000Z
+UID:perseids-2028-08-12-nova-gorica@koledar365.si
+DTSTART:20280812T201700Z
+DTEND:20280813T020400Z
+DESCRIPTION:Načrtovana noč okoli običajnega avgustovskega viška aktivno
+ sti\, ne napoved točne ure maksimuma. Čas označuje astronomsko temo (So
+ nce pod −18°). Preverite mesečino\, oblake in krajevno obzorje.
+SUMMARY:Perzeidi: opazovalna noč · Nova Gorica
+TRANSP:TRANSPARENT
+URL;VALUE=URI:https://koledar365.si/perzeidi/?year=2028&city=nova-gorica
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261021T000000Z
+UID:perseids-2028-08-13-nova-gorica@koledar365.si
+DTSTART:20280813T201500Z
+DTEND:20280814T020600Z
+DESCRIPTION:Načrtovana noč okoli običajnega avgustovskega viška aktivno
+ sti\, ne napoved točne ure maksimuma. Čas označuje astronomsko temo (So
+ nce pod −18°). Preverite mesečino\, oblake in krajevno obzorje.
+SUMMARY:Perzeidi: opazovalna noč · Nova Gorica
+TRANSP:TRANSPARENT
+URL;VALUE=URI:https://koledar365.si/perzeidi/?year=2028&city=nova-gorica
+END:VEVENT
+END:VCALENDAR
