@@ -45,7 +45,11 @@ await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||3)},async()=
   const row={...item,browser:engine,issues:[],pageErrors:errors};
   try{
    await page.setViewportSize({width:item.width,height:900});
-   const response=await page.goto(base+item.path,{waitUntil:'load',timeout:45000});
+   // Cloudflare redirects the existing /404.html asset to /404 (HTTP 200).
+   // Exercise an absent URL to verify the real error response and its template.
+   const remote404=item.path==='/404.html'&&!base.includes('127.0.0.1');
+   row.requestPath=remote404?'/__qa-missing-page-20261023/':item.path;
+   const response=await page.goto(base+row.requestPath,{waitUntil:'load',timeout:45000});
    row.status=response?.status();
    if(row.status!==(item.path==='/404.html'&&!base.includes('127.0.0.1')?404:200))row.issues.push('Unexpected HTTP status');
    await page.locator('main h1').first().waitFor({state:'visible',timeout:15000});

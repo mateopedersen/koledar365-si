@@ -1,0 +1,22 @@
+<section class="panel prose" aria-labelledby="seasons-explanation">
+  <h2 id="seasons-explanation">Kdaj se začnejo letni časi v Sloveniji?</h2>
+  <p>Astronomska pomlad in jesen se začneta ob enakonočju, poletje in zima pa ob solsticiju. Spodaj so natančni začetki za severno poloblo v letih 2027–2030. Ure so preračunane v slovenski čas (Europe/Ljubljana): CET pomeni UTC + 1, CEST pa UTC + 2.</p>
+  <p>Meteorološki letni časi se začnejo na prvi dan meseca: pomlad 1. marca, poletje 1. junija, jesen 1. septembra in zima 1. decembra. Ti datumi se razlikujejo od astronomskih začetkov v preglednici.</p>
+  <nav class="year-links" aria-label="Izberite leto začetkov letnih časov"><% (2027..2030).each do |year| %><a class="button" href="#letni-casi-<%= year %>"><%= year %></a><% end %></nav>
+</section>
+<% (2027..2030).each do |year| %>
+<section class="panel" id="letni-casi-<%= year %>" aria-labelledby="seasons-title-<%= year %>">
+  <h2 id="seasons-title-<%= year %>">Začetki letnih časov <%= year %></h2>
+  <div class="table-wrap"><table class="data-table" aria-label="Astronomski začetki letnih časov v letu <%= year %>">
+    <thead><tr><th scope="col">Dogodek</th><th scope="col">Datum v Sloveniji</th><th scope="col">Slovenski čas</th><th scope="col">UTC</th></tr></thead>
+    <tbody><% AstronomicalEvent.where(instant:Time.utc(year,1,1)...Time.utc(year+1,1,1),kind:%w[pomladno-enakonocje poletni-solsticij jesensko-enakonocje zimski-solsticij]).order(:instant).each do |event| %>
+      <tr data-season="<%= event.kind %>"><th scope="row"><a href="/letni-casi/<%= event.kind %>/"><%= event.title %></a></th><td><time datetime="<%= event.local_time.iso8601 %>"><%= I18n.l(event.local_time.to_date) %></time></td><td><%= event.local_time.strftime('%H:%M %Z') %></td><td><time datetime="<%= event.instant.utc.iso8601 %>"><%= event.instant.utc.strftime('%d. %m. %Y, %H:%M') %></time></td></tr>
+    <% end %></tbody>
+  </table></div>
+  <p>Vir: <a href="https://aa.usno.navy.mil/calculated/seasons?year=<%= year %>&amp;tz=0&amp;dst=false">U.S. Naval Observatory – enakonočja in solsticiji <%= year %></a>. Časi so navedeni na minuto natančno.</p>
+</section>
+<% end %>
+<section class="panel prose" aria-labelledby="seasons-planning">
+  <h2 id="seasons-planning">Načrtovanje skozi leto</h2>
+  <p>Začetek letnega časa sam po sebi ni dela prost dan. Preverite <a href="/prazniki/">praznike in dela proste dni</a>, <a href="/soncni-vzhod-in-zahod/">sončni vzhod in zahod za svoj kraj</a> ter <a href="/dolzina-dneva/">dolžino dneva</a>. Spremembe lokalnega časa pojasnjuje stran <a href="/premik-ure/">premik ure</a>.</p>
+</section>

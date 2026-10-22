@@ -4,6 +4,7 @@ set -euo pipefail
 task_python="${PYTHON_BIN:-python3}"
 "$task_python" test/test_cdn_email_parity.py
 "$task_python" script/qa_seo.py
+"$task_python" script/audit_calendar_independent.py
 node script/test_qa_image_loading.mjs
 export K365_BASE_URL=http://127.0.0.1:19783
 K365_STATIC_PORT=19783 "$task_python" script/serve_static.py > /tmp/k365-qa-server.log 2>&1 &

@@ -90,14 +90,14 @@ test('workday calculator handles both modes, shares settings, and fits mobile', 
 
   await page.locator('[data-wdc-form="range"] [type="submit"]').click();
   await expect(page.locator('[data-wdc-primary]')).toHaveText('3');
-  await expect(page.locator('[data-wdc-caption]')).toHaveText('delovne dni');
+  await expect(page.locator('[data-wdc-caption]')).toHaveText('delovni dnevi');
   await expect(page.locator('[data-wdc-detail]')).toContainText('27. april 2027');
   await expect(page.locator('[data-wdc-status]')).toHaveText('Izračun je pripravljen.');
 
   await page.locator('[data-wdc-mode="shift"]').click();
   await page.locator('[data-wdc-form="shift"] [type="submit"]').click();
   await expect(page.locator('[data-wdc-primary]')).toContainText('28. april 2027');
-  await expect(page.locator('[data-wdc-stat="calendar"]')).toHaveText('2 dni');
+  await expect(page.locator('[data-wdc-stat="calendar"]')).toHaveText('2 dneva');
   await page.locator('[data-wdc-share]').click();
   const shared = new URL(await page.evaluate(() => window.__copied));
   expect(shared.searchParams.get('mode')).toBe('shift');
@@ -157,4 +157,28 @@ test('exported calculator loads its script and calculates around a Slovenian hol
   await page.locator('[data-wdc-result]:not([aria-busy])').waitFor();
   await expect(page.locator('[data-wdc-primary]')).toContainText('28. april 2027');
   await expect(page.locator('[data-wdc-status]')).toHaveText('Izračun je pripravljen.');
+});
+
+
+test('Slovene result units preserve dual forms and the last two digits', async ({page}) => {
+  let count=2, hours=1;
+  await page.route('**/izracun/',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({workdays:{calendar_days:count,working_days:count,hours,excluded_holidays:[]}})}));
+  await page.setContent(calculatorMarkup());
+  for (const [n,label,h,unit] of [[1,'delovni dan',1,'1 ura'],[2,'delovna dneva',2,'2 uri'],[3,'delovni dnevi',3,'3 ure'],[4,'delovni dnevi',4,'4 ure'],[5,'delovnih dni',5,'5 ur'],[101,'delovni dan',101,'101 ura'],[102,'delovna dneva',102,'102 uri'],[103,'delovni dnevi',103,'103 ure'],[111,'delovnih dni',1.5,'1,5 ure']]) {
+    count=n;hours=h;
+    await page.locator('[data-wdc-form="range"] [type="submit"]').click();
+    await expect(page.locator('[data-wdc-primary]')).toHaveText(String(n));
+    await expect(page.locator('[data-wdc-caption]')).toHaveText(label);
+    await expect(page.locator('[data-wdc-stat="hours"]')).toHaveText(unit);
+  }
+});
+
+test('annual dashboard explains the actual selected daily hours and resets them',async({page})=>{
+  await page.goto('/delovni-dnevi/2028/');
+  await page.locator('[data-workdays-hours]').fill('7.5');
+  await expect(page.locator('[data-daily-hours-summary]')).toHaveText('Dnevni obseg: 7,5 h');
+  await expect(page.locator('[data-year-hours]')).toHaveText('1.875');
+  await page.locator('[data-workdays-reset]').click();
+  await expect(page.locator('[data-daily-hours-summary]')).toHaveText('Dnevni obseg: 8 h');
+  await expect(page.locator('[data-year-hours]')).toHaveText('2.000');
 });
