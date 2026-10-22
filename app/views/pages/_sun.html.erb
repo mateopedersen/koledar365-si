@@ -45,7 +45,7 @@
     <div class="sun-controls__heading">
       <span class="sun-step">01 <i aria-hidden="true"></i> KRAJ IN DATUM</span>
       <h2 id="sun-experience-title">Načrtujte dan po sončni svetlobi</h2>
-      <p>Ura, zora in zahod se preračunajo za izbrani kraj in datum. Vsi prikazani časi so lokalni.</p>
+      <p>Zora, sončni vzhod in zahod se izračunajo za izbrani kraj in datum. Vsi prikazani časi so krajevni.</p>
     </div>
     <form class="sun-form" action="/soncni-vzhod-in-zahod/" method="get" data-sun-form>
       <label for="sun-city">Mesto</label>
@@ -201,11 +201,11 @@
         <% photo = city_catalog.fetch(id).fetch('photo') %>
         <article class="sun-city-link" data-city-name="<%= values[0].downcase %>">
           <a class="sun-city-link__main" tabindex="0" href="/soncni-vzhod-in-zahod/<%= id %>/">
-            <%= raw(Rails.root.join('data', 'city-marks', "#{id}.svg").read) %>
+            <%= raw(Rails.root.join('data', 'city-marks', "#{id}.svg").read.gsub("Fotografija mesta #{values[0]}", "#{values[0]} – fotografija mesta")) %>
             <span class="sun-city-link__copy"><strong><%= values[0] %></strong><small><%= format('%.4f° N · %.4f° E', values[1], values[2]) %></small></span>
             <span class="sun-city-link__arrow" aria-hidden="true">↗</span>
           </a>
-          <a class="sun-city-link__credit" tabindex="0" href="/fotografije-in-licence/#<%= id %>" aria-label="Avtor fotografije: <%= photo.fetch('author') %>; licenca: <%= photo.fetch('license') %>; vir in podrobnosti za mesto <%= values[0] %>">
+          <a class="sun-city-link__credit" tabindex="0" href="/fotografije-in-licence/#<%= id %>" aria-label="Foto: <%= photo.fetch('author') %> · <%= photo.fetch('license') %>. <%= values[0] %>: vir in podrobnosti fotografije.">
             <span>Foto: <%= photo.fetch('author') %></span><b><%= photo.fetch('license') %></b>
           </a>
         </article>

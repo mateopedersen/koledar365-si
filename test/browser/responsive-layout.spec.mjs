@@ -50,3 +50,19 @@ test('shared navigation and cookie bar stay inside narrow screens across page fa
     expect(layout.cookie?.right, `${path}: ${JSON.stringify(layout)}`).toBeLessThanOrEqual(320.5);
   }
 });
+
+test('holiday directory remains readable with a wider fallback font on a small screen', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 900 });
+  await page.goto('/prazniki/', { waitUntil: 'domcontentloaded' });
+  await page.addStyleTag({ content: 'main { font-family: monospace !important; }' });
+  const heading = page.getByRole('heading', { level: 1 });
+  await expect(heading).toHaveText('Prazniki in dela prosti dnevi.');
+  const layout = await heading.evaluate(element => ({
+    right: element.getBoundingClientRect().right,
+    document: document.documentElement.scrollWidth,
+    body: document.body.scrollWidth,
+  }));
+  expect(layout.document).toBeLessThanOrEqual(321);
+  expect(layout.body).toBeLessThanOrEqual(321);
+  expect(layout.right).toBeLessThanOrEqual(320.5);
+});

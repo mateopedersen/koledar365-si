@@ -1,5 +1,18 @@
 import { expect, test } from '@playwright/test';
 
+test('Escape keeps search text and does not reopen suggestions through native search clearing', async ({ page }) => {
+  await page.goto('/');
+  const input = page.locator('#search');
+  const popup = page.locator('[data-search-suggestions]').first();
+  await input.fill('prazniki');
+  await expect(popup).toContainText('Prazniki in dela prosti dnevi');
+  await input.press('Escape');
+  await expect(input).toHaveValue('prazniki');
+  // A native search-input clear emits a delayed input event on some browsers.
+  await page.waitForTimeout(300);
+  await expect(popup).toBeHidden();
+});
+
 test('leaving search cancels delayed suggestions so they cannot cover the tools menu', async ({ page }) => {
   let releaseSearch;
   const pendingSearch = new Promise(resolve => { releaseSearch = resolve; });
@@ -70,4 +83,23 @@ test('search dropdown fits a narrow phone and date suggestions open the right ca
   await suggestions.locator('a[role="option"]').first().click();
   await expect(page).toHaveURL(/date=2027-12-25&view=day$/);
   await expect(page.locator('#personal-planner')).toHaveAttribute('data-selected-date', '2027-12-25');
+});
+
+
+test('Escape keeps suggestions closed when a delayed search response arrives',async({page})=>{
+ let pending;
+ await page.route('**/free/search.json',route=>{pending=route;});
+ await page.goto('/',{waitUntil:'domcontentloaded'});
+ const input=page.locator('#search'),popup=page.locator('[data-search-suggestions]').first();
+ await input.fill('prazniki');
+ await expect(popup).toContainText('Iščemo');
+ await expect.poll(()=>Boolean(pending)).toBe(true);
+ await input.press('Escape');
+ const response=page.waitForResponse('**/free/search.json');
+ await pending.fulfill({status:200,contentType:'application/json',body:'[]'});
+ await response;
+ await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+ await expect(popup).toBeHidden();
+ await expect(input).toHaveAttribute('aria-expanded','false');
+ await expect(input).toHaveValue('prazniki');
 });

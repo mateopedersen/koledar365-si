@@ -10,7 +10,7 @@
       <h1 id="holiday-title">Prazniki <span><%= @year %>.</span></h1>
       <p class="holiday-hero-tagline">Več prostega časa.<br>Več lepih načrtov.</p>
       <p>Vsi <strong>prazniki in dela prosti dnevi</strong> na enem mestu. Preverite datume, poiščite daljši oddih in načrtujte leto po svoje.</p>
-      <nav class="holiday-years" aria-label="Leto praznikov"><% CalendarEngine::YEARS.each do |year| %><a href="/prazniki/<%= year %>/" <%= 'aria-current=page' if year==@year %>><%= year %></a><% end %></nav>
+      <nav class="holiday-years" aria-label="Leto praznikov"><% CalendarEngine::INTERACTIVE_YEARS.each do |year| %><a href="/prazniki/<%= year %>/" <%= 'aria-current=page' if year==@year %>><%= year %></a><% end %></nav>
       <div class="holiday-hero-actions"><a class="holiday-primary" href="#prazniki-seznam"><%= ui_icon('calendar') %> Pregled praznikov <%= ui_icon('chevron-right') %></a><a href="#holiday-downloads"><%= ui_icon('download') %> PDF in WebP</a></div>
     </div>
     <div class="holiday-visual"><%= render 'holiday_illustration' %><span class="holiday-visual-caption"><%= ui_icon('pin') %> Slovenski koledar. Vaši načrti.</span></div>

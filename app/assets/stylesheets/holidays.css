@@ -11,6 +11,10 @@ body.holiday-guide .holiday-page{--holiday-ink:#20354b;--holiday-muted:#617182;-
 body.holiday-guide .holiday-print-heading h2{font-size:28px;line-height:1.25;letter-spacing:-.8px;font-weight:750;margin:9px 0 13px}body.holiday-guide .holiday-print-heading h2 strong{color:var(--holiday-red)}
 body.holiday-guide .holiday-intro>p{display:block}
 
+/* The directory heading is longer than a year label and must wrap in every font. */
+body.holiday-guide .holiday-intro{min-width:0}
+body.holiday-guide .holiday-intro h1{white-space:normal;overflow-wrap:anywhere}
+
 /* Align the long-weekend planner with the Slovenian flag and site palette. */
 body.holiday-guide .holiday-breaks{background:#f2f5f8;border-color:#d7e1e8}
 body.holiday-guide .holiday-breaks>.eyebrow{color:#b92f45}
