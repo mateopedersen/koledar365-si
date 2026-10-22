@@ -8,7 +8,7 @@ const context=await browser.newContext({viewport:{width:1440,height:1000},locale
 await context.addInitScript(()=>{localStorage.setItem('k365.consent',JSON.stringify({version:2,expiresAt:Date.now()+86400000,preferences:false}));window.__printCalls=0;window.print=()=>{window.__printCalls++;window.dispatchEvent(new Event('beforeprint'))}});
 const page=await context.newPage();page.setDefaultTimeout(60000);
 const months=['januar','februar','marec','april','maj','junij','julij','avgust','september','oktober','november','december'];
-async function run(row,fn){try{await fn(row);row.passed=true}catch(e){row.passed=false;row.error=e.message}rows.push(row);fs.writeFileSync(path.join(out,'exports.json'),JSON.stringify({base,checkedAt:new Date().toISOString(),tested:rows.length,failed:rows.filter(r=>!r.passed).length,rows},null,2));console.log(row.kind,row.path,row.paper||'',row.orientation||'',row.passed,row.error||'')}
+async function run(row,fn){try{await fn(row);row.passed=true}catch(e){row.passed=false;row.error=e.message;row.status=await page.locator('[data-calendar-status]').allTextContents();await page.screenshot({path:path.join(out,`failure-${rows.length}.png`),fullPage:true}).catch(()=>{})}rows.push(row);fs.writeFileSync(path.join(out,'exports.json'),JSON.stringify({base,checkedAt:new Date().toISOString(),tested:rows.length,failed:rows.filter(r=>!r.passed).length,rows},null,2));console.log(row.kind,row.path,row.paper||'',row.orientation||'',row.passed,row.error||'')}
 async function download(button,row,extension){
  let trigger=button;
  // Personal exports deliberately expose a second, explicit download link.
@@ -20,6 +20,7 @@ async function download(button,row,extension){
 if(process.env.QA_EXPORT_MODE!=='print'){
  for(let year=2027;year<=2030;year++)for(let month=0;month<=12;month++){
   const route=`/koledar/${year}/${month?months[month-1]+'/':''}`;
+  if(process.env.QA_EXPORT_PATHS&&!process.env.QA_EXPORT_PATHS.split(',').includes(route))continue;
   await run({kind:'xlsx',path:route,year,month},async row=>{await page.goto(base+route,{waitUntil:'load'});await page.locator('[data-calendar-spreadsheet][data-calendar-ready=true]').waitFor();await download(page.locator('[data-calendar-xlsx]'),row,'xlsx')});
  }
  const planners=['prazen-koledar','dnevni-planer','rojstnodnevni-koledar','druzinski-planer','razpored-izmen','solski-urnik','tedenski-koledar/2028'];

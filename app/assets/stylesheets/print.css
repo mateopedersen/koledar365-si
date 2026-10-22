@@ -3,7 +3,8 @@
    the printed document. */
 @media print {
   @page {
-    size: A4 portrait;
+    /* Let the browser's paper and orientation selection take effect. */
+    size: auto;
     margin: 11mm 10mm;
   }
 
@@ -146,7 +147,49 @@
 
   .year-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 4mm !important;
   }
+
+  .year-grid .mini { break-inside: avoid; page-break-inside: avoid; }
+  .year-grid .mini h3 { margin: 0 0 2mm; font-size: 10pt; }
+  .year-grid .mini .calendar td { height: 5mm !important; }
+  .year-grid .mini .date-link,
+  .year-grid .mini .outside-date { min-height: 0 !important; padding: 0 !important; font-size: 8pt !important; line-height: 1.15 !important; }
+  .year-grid .mini .date-link span { min-width: 0 !important; height: auto !important; }
+  .year-grid .mini .calendar th { padding: 1mm 0 !important; font-size: 7pt !important; }
+
+  .lunar-download-hint { display: none !important; }
+  .lunar-year-grid > article { break-inside: avoid; page-break-inside: avoid; }
+  .lunar-year-grid { gap: 4mm !important; }
+  .lunar-year-grid h2 { margin-bottom: 2mm; font-size: 11pt; }
+  .lunar-mini-grid { gap: 1px !important; }
+  .lunar-mini-grid a { padding: 1px; gap: 1px; flex-direction: row !important; justify-content: center; }
+  .lunar-mini-grid .lunar-moon { max-width: 5mm; }
+  .lunar-calendar { break-inside: avoid; }
+  .lunar-calendar .lunar-day .lunar-moon { max-width: 11mm; }
+  .lunar-calendar .lunar-day { padding: 1mm !important; gap: 1px; }
+  .lunar-main .lunar-detail { break-before: auto; break-inside: avoid; }
+  .lunar-detail .lunar-enlarge { float: right; width: 25mm; margin: 0 0 2mm 4mm; }
+  .lunar-detail .lunar-big-percent { font-size: 17pt; }
+  .lunar-detail p { margin: 1mm 0; }
+  .lunar-phases { clear: both; margin: 3mm 0; }
+  .lunar-phases h2 { break-after: avoid; }
+  .lunar-phases .data-table { margin: 2mm 0; font-size: 9pt; }
+  .lunar-phases .data-table td,
+  .lunar-phases .data-table th { padding: 1.5mm; }
+  .lunar-phases .table-wrap { overflow: visible; }
+  .lunar-note { font-size: 8pt; }
+  body.family-planner-page .family-hero,
+  body.family-planner-page .family-stats { display: none !important; }
+  body.family-planner-page .family-week-card { margin-top: 0; }
+  body.family-planner-page .family-feature-grid { gap: 3mm; }
+  body.family-planner-page .family-card { padding: 3mm; }
+  body.family-planner-page .family-card-heading { margin-bottom: 2mm; }
+  .school-page .sp-calendar-layout { display: grid !important; }
+  .school-page .sp-calendar-section > .sp-heading { margin-bottom: 2mm !important; }
+  .school-page .sp-calendar-section { break-inside: auto !important; }
+  .school-page .sp-calendar-section > .sp-heading { break-after: avoid; }
+
 
   .school-page,
   .school-page main,

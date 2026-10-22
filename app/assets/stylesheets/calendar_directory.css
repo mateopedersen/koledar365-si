@@ -67,3 +67,4 @@
 @media screen{#vsebina .calendar-directory .cd-period-table thead small{color:#e1ebf6!important;font-size:12px!important;font-weight:600}
 #vsebina .calendar-directory .cd-period-table tbody th small{color:#526783!important;font-size:12px!important}}
 @media(max-width:400px){.calendar-directory .cd-month-number{display:none}}
+.calendar-directory .cd-month-number { color: #475b72; }

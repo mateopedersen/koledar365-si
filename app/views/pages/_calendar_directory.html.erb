@@ -40,7 +40,7 @@
         ['Prazen koledar','/prazen-koledar/','note','Prostor za lastne vpise in načrte','Predloge za tisk'],
         ['Delovni dnevi','/delovni-dnevi/','briefcase','Delovni dnevi, prazniki in obveznost','Pregledi in izračuni'],
         ['Ustvari koledar','/ustvari-koledar/','plus','Lastne fotografije in pomembni datumi','Osebna postavitev']
-      ].each do |title,url,icon,purpose,features| %><tr><th scope="row"><span class="cd-tool-name"><%= ui_icon(icon) %><%= title %></span></th><td><%= purpose %></td><td><%= features %></td><td><a href="<%= url %>" aria-label="Odprite: <%= title %>">Odpri <span aria-hidden="true">↗</span></a></td></tr><% end %>
+      ].each do |title,url,icon,purpose,features| %><tr><th scope="row"><span class="cd-tool-name"><%= ui_icon(icon) %><%= title %></span></th><td><%= purpose %></td><td><%= features %></td><td><a href="<%= url %>" aria-label="Odpri: <%= title %>">Odpri <span aria-hidden="true">↗</span></a></td></tr><% end %>
     </tbody></table></div>
   </section>
 
