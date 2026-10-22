@@ -63,7 +63,7 @@ end %>
 <%= render 'designs', type: 'workdays' %>
 
 <% else %>
-<div class="download-workspace">
+<div class="download-workspace" data-download-workspace>
   <section class="panel gallery-context">
     <%= render 'context_heading', title: 'Delovni dnevi', expand: 'Razširi pregled' %>
     <div class="context-content" id="gallery-context-content"><%= render 'year_selector' %>
