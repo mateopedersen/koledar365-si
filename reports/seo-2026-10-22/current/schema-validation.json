@@ -1,0 +1,28 @@
+{
+  "validator": "https://validator.schema.org/",
+  "method": "Actual JSON-LD copied from exported public HTML into the Code Snippet test",
+  "samples": [
+    {
+      "path": "/koledar/2028/februar/",
+      "errors": 0,
+      "warnings": 0,
+      "root_items": [
+        "WebPage",
+        "BreadcrumbList",
+        "ItemList"
+      ]
+    },
+    {
+      "path": "/prestopno-leto/",
+      "errors": 0,
+      "warnings": 0,
+      "root_items": [
+        "WebPage",
+        "BreadcrumbList",
+        "WebApplication",
+        "FAQPage"
+      ]
+    }
+  ],
+  "scope": "Representative type validation plus separate all-page JSON syntax/id/visible FAQ checks; not Google rich-result eligibility certification"
+}

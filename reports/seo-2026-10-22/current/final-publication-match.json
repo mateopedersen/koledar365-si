@@ -1,0 +1,112 @@
+{
+  "checked_at": "2026-10-22T16:25:31.326139+00:00",
+  "release_commit": "a30dcd987baf951ac352b5d335784b4e901b533e",
+  "earlier_probe_notes": "Default Python urllib User-Agent received 403 in an earlier probe. Explicit public audit User-Agent succeeded. A guessed /free/page-revisions.json returned 404; the actual exported /page-revisions.json is checked. No security settings altered.",
+  "passed": true,
+  "html_checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "slovenian_region": true
+    },
+    {
+      "path": "/razpored-izmen/",
+      "status": 200,
+      "slovenian_region": true
+    },
+    {
+      "path": "/solske-pocitnice/",
+      "status": 200,
+      "slovenian_region": true,
+      "responsive_hero": true
+    },
+    {
+      "path": "/datumski-kalkulator/",
+      "status": 200,
+      "slovenian_region": true,
+      "valid_tabpanel_elements": true
+    }
+  ],
+  "file_checks": [
+    {
+      "path": "/assets/web-426938d56f60fb36.css",
+      "status": 200,
+      "content_type": "text/css; charset=utf-8",
+      "matches_verified_release": true,
+      "bytes": 152304,
+      "sha256": "426938d56f60fb36cfcaea1ca9f9fc9715af21c9b20322a732fc5409adb385b3"
+    },
+    {
+      "path": "/assets/web-43b4bc02540cb9d6.css",
+      "status": 200,
+      "content_type": "text/css; charset=utf-8",
+      "matches_verified_release": true,
+      "bytes": 189588,
+      "sha256": "43b4bc02540cb9d6aa280d567b68bf80d5db9ff6b2e1408fbb91fcfc70eb3e0c"
+    },
+    {
+      "path": "/assets/web-48fb5f9ccc3f2038.css",
+      "status": 200,
+      "content_type": "text/css; charset=utf-8",
+      "matches_verified_release": true,
+      "bytes": 199244,
+      "sha256": "48fb5f9ccc3f203850eb7fea3016e78305b40dd6a871146c5a305c8a948f7fb0"
+    },
+    {
+      "path": "/free/runtime.json",
+      "status": 200,
+      "content_type": "application/json",
+      "matches_verified_release": true,
+      "bytes": 342,
+      "sha256": "0c216d5728a586744b4e073f405e0dcc5353426ddd8789de9c10fc725d4f8838"
+    },
+    {
+      "path": "/page-revisions.json",
+      "status": 200,
+      "content_type": "application/json",
+      "matches_verified_release": true,
+      "bytes": 63376,
+      "sha256": "d16dba9238d9380c507a6a1d0f674007a9451fdbce69fbd2a8243b49e0e34655"
+    },
+    {
+      "path": "/prazniki/2027.ics",
+      "status": 200,
+      "content_type": "text/calendar; charset=utf-8",
+      "matches_verified_release": true,
+      "bytes": 7359,
+      "sha256": "2a9132ff169398becc48ff0882f55e6cfabbfb5d939fdf00c5b18e45c4cba821",
+      "events": 23,
+      "valid_envelope": true
+    },
+    {
+      "path": "/prazniki/2028.ics",
+      "status": 200,
+      "content_type": "text/calendar; charset=utf-8",
+      "matches_verified_release": true,
+      "bytes": 7359,
+      "sha256": "a8c4f5f795d0d1b087dc32d202ceaef21f012578e7b2489ef24fab2f50a47950",
+      "events": 23,
+      "valid_envelope": true
+    },
+    {
+      "path": "/prazniki/2029.ics",
+      "status": 200,
+      "content_type": "text/calendar; charset=utf-8",
+      "matches_verified_release": true,
+      "bytes": 7359,
+      "sha256": "0fd6c2a8c062d3b72e946bcc29bf9bb8e9a430fcb645d9d6df1086d390977db8",
+      "events": 23,
+      "valid_envelope": true
+    },
+    {
+      "path": "/prazniki/2030.ics",
+      "status": 200,
+      "content_type": "text/calendar; charset=utf-8",
+      "matches_verified_release": true,
+      "bytes": 7359,
+      "sha256": "bab9e92cc9bd5220f84d44b6da2cc851cec8c5131df2ac13e0c9dce15b9a9fd5",
+      "events": 23,
+      "valid_envelope": true
+    }
+  ]
+}

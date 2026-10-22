@@ -1,0 +1,37 @@
+
+Running 16 tests using 2 workers
+
+(node:11975) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:11976) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:11975) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:11976) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › test/browser/astronomy.spec.mjs:6:1 › full moon year selection changes real rows and UTC ICS without changing the next event (1.5s)
+  ✓   2 [chromium] › test/browser/calendar-experience.spec.mjs:130:1 › monthly and annual calendar controls download real editable XLSX workbooks (2.1s)
+  ✓   3 [chromium] › test/browser/calendar-experience.spec.mjs:194:1 › exported annual workday dashboards retain their year and recalculate a custom schedule (1.5s)
+  ✓   4 [chromium] › test/browser/education.spec.mjs:52:1 › school filters keep grade and region dates distinct in the annual view, ICS and print (1.5s)
+  ✓   5 [chromium] › test/browser/education.spec.mjs:88:1 › matura subjects and exam types preserve different result dates and export only selected events (1.2s)
+  ✓   6 [chromium] › test/browser/education.spec.mjs:115:1 › NPZ grade pages and university filters keep their scopes on a narrow phone (2.7s)
+  ✓   7 [chromium] › test/browser/site-search.spec.mjs:43:1 › site search suggests relevant pages, handles keyboard use, and opens full results (2.2s)
+(node:12035) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12035) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 [chromium] › test/browser/site-search.spec.mjs:78:1 › search dropdown fits a narrow phone and date suggestions open the right calendar day (1.9s)
+(node:12055) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [iphone-webkit] › test/browser/astronomy.spec.mjs:6:1 › full moon year selection changes real rows and UTC ICS without changing the next event (1.5s)
+(node:12055) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 [iphone-webkit] › test/browser/calendar-experience.spec.mjs:194:1 › exported annual workday dashboards retain their year and recalculate a custom schedule (2.4s)
+  ✓  11 [iphone-webkit] › test/browser/calendar-experience.spec.mjs:130:1 › monthly and annual calendar controls download real editable XLSX workbooks (2.2s)
+  ✓  12 [iphone-webkit] › test/browser/education.spec.mjs:52:1 › school filters keep grade and region dates distinct in the annual view, ICS and print (1.9s)
+  ✓  13 [iphone-webkit] › test/browser/education.spec.mjs:88:1 › matura subjects and exam types preserve different result dates and export only selected events (3.8s)
+  ✓  15 [iphone-webkit] › test/browser/site-search.spec.mjs:43:1 › site search suggests relevant pages, handles keyboard use, and opens full results (5.5s)
+  ✓  14 [iphone-webkit] › test/browser/education.spec.mjs:115:1 › NPZ grade pages and university filters keep their scopes on a narrow phone (10.8s)
+  ✓  16 [iphone-webkit] › test/browser/site-search.spec.mjs:78:1 › search dropdown fits a narrow phone and date suggestions open the right calendar day (6.4s)
+
+  16 passed (29.3s)

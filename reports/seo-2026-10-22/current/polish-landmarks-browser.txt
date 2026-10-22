@@ -1,0 +1,57 @@
+
+Running 20 tests using 2 workers
+
+(node:19658) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19657) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19658) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19657) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [chromium] › test/browser/seo-interactions.spec.mjs:52:1 › school hero uses responsive previews and retains original attribution (424ms)
+  ✓   3 [chromium] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on / (656ms)
+  ✓   4 [chromium] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /solske-pocitnice/ (714ms)
+  ✓   5 [chromium] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /horoskop/ (462ms)
+(node:19674) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › test/browser/seo-interactions.spec.mjs:3:1 › date calculator tabs preserve calculations and submit only active fields (2.6s)
+(node:19674) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19676) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19676) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [webkit] › test/browser/seo-interactions.spec.mjs:52:1 › school hero uses responsive previews and retains original attribution (2.2s)
+  ✓   8 [webkit] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on / (8.9s)
+  ✓   6 [webkit] › test/browser/seo-interactions.spec.mjs:3:1 › date calculator tabs preserve calculations and submit only active fields (13.2s)
+  ✓   9 [webkit] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /solske-pocitnice/ (2.4s)
+  ✓  10 [webkit] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /horoskop/ (944ms)
+(node:19716) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19717) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19716) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19717) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  12 [android-chromium] › test/browser/seo-interactions.spec.mjs:52:1 › school hero uses responsive previews and retains original attribution (514ms)
+  ✓  13 [android-chromium] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on / (635ms)
+  ✓  14 [android-chromium] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /solske-pocitnice/ (659ms)
+  ✓  15 [android-chromium] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /horoskop/ (538ms)
+(node:19739) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [android-chromium] › test/browser/seo-interactions.spec.mjs:3:1 › date calculator tabs preserve calculations and submit only active fields (2.7s)
+(node:19739) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19740) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19740) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  17 [iphone-webkit] › test/browser/seo-interactions.spec.mjs:52:1 › school hero uses responsive previews and retains original attribution (874ms)
+  ✓  18 [iphone-webkit] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on / (3.2s)
+  ✓  16 [iphone-webkit] › test/browser/seo-interactions.spec.mjs:3:1 › date calculator tabs preserve calculations and submit only active fields (11.0s)
+  ✓  19 [iphone-webkit] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /solske-pocitnice/ (6.7s)
+  ✓  20 [iphone-webkit] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /horoskop/ (825ms)
+
+  20 passed (34.5s)

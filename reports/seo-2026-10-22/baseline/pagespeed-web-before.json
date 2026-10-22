@@ -1,0 +1,22 @@
+{
+  "reportUrl": "https://pagespeed.web.dev/analysis/https-koledar365-si/2u8f68hv5g?form_factor=mobile",
+  "reportedAt": "2026-10-22T17:06:08+03:00",
+  "phase": "Before this PR was deployed",
+  "device": "Emulated Moto G Power",
+  "lighthouse": "13.5.0",
+  "network": "Slow 4G",
+  "scores": {
+    "performance": 100,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100
+  },
+  "displayedMetrics": {
+    "fcpSeconds": 1.1,
+    "lcpSeconds": 1.7,
+    "tbtMs": 10,
+    "cls": 0,
+    "speedIndexSeconds": 1.1
+  },
+  "fieldData": "No Data"
+}

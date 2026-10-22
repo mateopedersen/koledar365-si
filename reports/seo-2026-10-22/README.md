@@ -12,7 +12,7 @@ Date: 22 October 2026. This work preserves the Rails renderer, static publicatio
 | Content and search intent | `current/search-intent.csv` | `content-quality.md` |
 | External source verification | `baseline/external-http.json` | `sources-and-research.md` |
 | Technical validation | `current/rendered-dom.json`, `current/accessibility.json` and repository `evidence/` | `technical-validation.md` |
-| Performance comparison | `baseline/performance.json`, `current/performance.json` | `performance.md` |
+| Performance comparison | `baseline/performance-live-before.json`, `current/performance-comparison.json` | `performance.md` |
 | All live pages | `current/live-urls.txt` | `live-validation.md` |
 | Limitations | HTTP reports and recorded test responses | `remaining-issues.md` |
 
@@ -29,8 +29,20 @@ bundle exec ruby script/rebuild_free.rb
 SEO_STRICT=1 bundle exec ruby script/audit_full_seo.rb
 node script/audit_seo_browser.mjs
 node script/audit_seo_accessibility.mjs
+# Include axe best-practice rules as well as WCAG checks:
+node reports/seo-2026-10-22/reproduce/audit-accessibility-all-rules.mjs
 pnpm exec playwright test
 python3 script/audit_indexability.py --live --output reports/seo-2026-10-22/current/indexability-live.json
 ```
 
 Use the repository's pinned Ruby/Node toolchain, `PYTHON_BIN` with Pillow for rendering and the static preview server for browser checks. HTTP checks record rate limits and access restrictions explicitly; they do not remove valid citations merely because a remote service blocks automated requests.
+
+
+## Completed implementation scope
+
+391 public canonical pages receive shared technical/semantic/social improvements. Body content was enriched on 112 URLs: 56 annual/monthly calendars, 48 monthly workday pages, five long-weekend pages, two date-number tools and editorial policy. Fifty-two descriptions changed; existing good titles were preserved. `current/url-change-inventory.json` separates these scopes and lists the actual URLs. The graph contains 21,653 distinct per-page target edges, with no orphan public page and maximum shortest path two.
+
+The final live indexability results, real downloadable-file checks, rendered/browser evidence, Cloudflare identifiers, truthful CI history and remaining external limits are documented in `live-validation.md`, `technical-validation.md` and `remaining-issues.md`. The Turkish response to the requested 15 delivery questions is in `sonuc-raporu.md`.
+
+
+Final Linux CI [39812543509](https://github.com/mateopedersen/koledar365-si/actions/runs/39812543509) completed successfully: **436 passed, eight intentional platform skips, zero failures, zero flaky tests**. PostgreSQL, backup/restore, production Docker/600 ppi export, complete static rebuild and the full browser suite all passed. The tested source matches the merged application source. The report-only commit does not change runtime source or deployed artifacts and skips a redundant CI rerun.

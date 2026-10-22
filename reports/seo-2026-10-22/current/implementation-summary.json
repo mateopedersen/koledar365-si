@@ -1,0 +1,80 @@
+{
+  "scope": {
+    "html_documents": 702,
+    "public_canonical_pages": 391,
+    "body_enriched_pages": 112,
+    "metadata_descriptions_changed": 52,
+    "titles_changed": 0,
+    "shared_technical_markup_pages": 391
+  },
+  "baseline_structural_findings": {
+    "unnamed_tables": 129,
+    "missing_header_scope_table_cases": 75,
+    "duplicate_image_preload": 1,
+    "total": 205,
+    "regional_language_refinements_not_errors": 391
+  },
+  "latest_local_tests": {
+    "rails": 126,
+    "assertions": 13813,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "full_phone_routes": 391,
+    "fallback_fonts": [
+      "Arial",
+      "Verdana",
+      "sans-serif"
+    ]
+  },
+  "source_pr": "https://github.com/mateopedersen/koledar365-si/pull/90",
+  "candidate_commit": "0457311e511e4d0fb0229421653e4376aeb9da8c",
+  "final_ci_run": "https://github.com/mateopedersen/koledar365-si/actions/runs/39812543509",
+  "final_ci_status": "success",
+  "production_status": "deployed_and_recrawled",
+  "search_console": "explicitly_skipped_by_user",
+  "completed_ci_run": "https://github.com/mateopedersen/koledar365-si/actions/runs/39795929075",
+  "completed_ci_status": "success",
+  "completed_ci_browser": {
+    "passed": 396,
+    "skipped": 8,
+    "failed": 0,
+    "flaky": 0
+  },
+  "final_merge_ci_run": "https://github.com/mateopedersen/koledar365-si/actions/runs/39801051571",
+  "final_merge_ci_status": "superseded_by_mobile_and_accessibility_fixes",
+  "source_prs": [
+    "https://github.com/mateopedersen/koledar365-si/pull/90",
+    "https://github.com/mateopedersen/koledar365-si/pull/99",
+    "https://github.com/mateopedersen/koledar365-si/pull/101"
+  ],
+  "source_merge_commit": "b4fecfc89125422e68408b57e562391c8ee147ac",
+  "final_local_polish": {
+    "rails_tests": 126,
+    "rails_assertions": 13813,
+    "rails_failures": 0,
+    "merged_browser_passes": 28,
+    "axe_all_rules_contexts": 64,
+    "axe_all_rules_violations": 0
+  },
+  "publication_run": "https://github.com/mateopedersen/koledar365-si/actions/runs/39812782694",
+  "source_equivalence": "No differences in application, configuration, Ruby/Node dependencies, scripts, tests, workflows, Cloudflare functions or Dockerfile between tested PR head 0457311 and squash merge b4fecfc; only prior generated publication artifacts differ.",
+  "publication_commit": "a30dcd987baf951ac352b5d335784b4e901b533e",
+  "deployment": "https://c4c725ee.koledar365-si.pages.dev",
+  "final_live": {
+    "canonical_pages": 391,
+    "phone_routes": 391,
+    "rendered_contexts": 782,
+    "rendered_failures": 0,
+    "all_rule_axe_contexts": 64,
+    "axe_violations": 0,
+    "focused_browser_passed": 28
+  },
+  "final_ci_browser": {
+    "passed": 436,
+    "skipped": 8,
+    "failed": 0,
+    "flaky": 0
+  },
+  "completion": "implementation_verified_deployed_and_recrawled"
+}

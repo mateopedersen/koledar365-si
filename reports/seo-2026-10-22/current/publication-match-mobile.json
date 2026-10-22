@@ -1,0 +1,73 @@
+{
+  "checked_at": "2026-10-22T15:59:03.351995+00:00",
+  "release_commit": "36f64f2bf8f769d54c57e8643c0481086e3a7bcc",
+  "earlier_probe": "Default Python urllib User-Agent received 403; repeated with explicit public audit User-Agent. A guessed /free/page-revisions.json returned 404; actual exported /page-revisions.json is verified. No security settings altered.",
+  "passed": true,
+  "checks": [
+    {
+      "path": "/assets/web-72bca775f60c3770.css",
+      "status": 200,
+      "content_type": "text/css; charset=utf-8",
+      "matches_verified_release": true,
+      "bytes": 198544,
+      "sha256": "72bca775f60c377080c12ecafaf0a3f935f586935c98e6e0c61ce9a8a4755e71",
+      "mobile_rule_present": true
+    },
+    {
+      "path": "/free/runtime.json",
+      "status": 200,
+      "content_type": "application/json",
+      "matches_verified_release": true,
+      "bytes": 342,
+      "sha256": "0c216d5728a586744b4e073f405e0dcc5353426ddd8789de9c10fc725d4f8838"
+    },
+    {
+      "path": "/page-revisions.json",
+      "status": 200,
+      "content_type": "application/json",
+      "matches_verified_release": true,
+      "bytes": 63376,
+      "sha256": "c2ec09987fea2c4e941e379a949c4c49ceccac017c1bd350ecbc08c841b85893"
+    },
+    {
+      "path": "/prazniki/2027.ics",
+      "status": 200,
+      "content_type": "text/calendar; charset=utf-8",
+      "matches_verified_release": true,
+      "bytes": 7359,
+      "sha256": "5ea3457e9c10cddaa70fe4a340124ce3c8052cc3bd3b0b397bb30c90458a95aa",
+      "events": 23,
+      "valid_envelope": true
+    },
+    {
+      "path": "/prazniki/2028.ics",
+      "status": 200,
+      "content_type": "text/calendar; charset=utf-8",
+      "matches_verified_release": true,
+      "bytes": 7359,
+      "sha256": "ae9d1b21ee511d14961418582a91e3d20f0b92cfb840347e9b1909c8479fce74",
+      "events": 23,
+      "valid_envelope": true
+    },
+    {
+      "path": "/prazniki/2029.ics",
+      "status": 200,
+      "content_type": "text/calendar; charset=utf-8",
+      "matches_verified_release": true,
+      "bytes": 7359,
+      "sha256": "b48d569c04ba7643e69f851db380d977a0e9678a3798181d39199f58daee0c2a",
+      "events": 23,
+      "valid_envelope": true
+    },
+    {
+      "path": "/prazniki/2030.ics",
+      "status": 200,
+      "content_type": "text/calendar; charset=utf-8",
+      "matches_verified_release": true,
+      "bytes": 7359,
+      "sha256": "d355bc31b395bfe223095698e3539d7e22e7f25079d415459bb6788f77ca3080",
+      "events": 23,
+      "valid_envelope": true
+    }
+  ]
+}

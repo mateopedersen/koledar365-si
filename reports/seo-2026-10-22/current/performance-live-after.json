@@ -1,0 +1,4473 @@
+[
+  {
+    "path": "/",
+    "fetchTime": "2026-10-22T16:36:19.401Z",
+    "origin": "https://koledar365.si",
+    "finalUrl": "https://koledar365.si/",
+    "lighthouseVersion": "12.8.2",
+    "environment": {
+      "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+      "benchmarkIndex": 3780,
+      "credits": {
+        "axe-core": "4.14.0"
+      }
+    },
+    "mode": "mobile simulated lab, production HTTPS, one run",
+    "scores": {
+      "performance": 0.93,
+      "accessibility": 1,
+      "seo": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 2744.5739999999996,
+      "cumulative-layout-shift": 0.00009592273922123604,
+      "total-blocking-time": 0,
+      "first-contentful-paint": 1803.0045,
+      "speed-index": 3957.6034346138454
+    },
+    "findings": [
+      {
+        "id": "largest-contentful-paint-element",
+        "title": "Largest Contentful Paint element",
+        "score": 0,
+        "displayValue": "2,740 ms",
+        "details": {
+          "type": "list",
+          "items": [
+            {
+              "type": "table",
+              "headings": [
+                {
+                  "key": "node",
+                  "valueType": "node",
+                  "label": "Element"
+                }
+              ],
+              "items": [
+                {
+                  "node": {
+                    "type": "node",
+                    "lhId": "page-0-IMG",
+                    "path": "2,HTML,1,BODY,6,MAIN,3,DIV,0,ASIDE,1,SECTION,1,FIGURE,0,PICTURE,1,IMG",
+                    "selector": "section#city-card > figure.city-photo > picture > img#city-photo",
+                    "boundingRect": {
+                      "top": 510,
+                      "bottom": 685,
+                      "left": 10,
+                      "right": 402,
+                      "width": 392,
+                      "height": 175
+                    },
+                    "snippet": "<img id=\"city-photo\" src=\"https://koledar365.si/images/responsive/ljubljana-960-6be528deda019fe8.avif\" srcset=\"/images/cities/ljubljana.jpg 960w\" sizes=\"(max-width:650px) calc(100vw - 18px), (max-width:1000px) 40vw, 320px\" alt=\"Ljubljana – pogled na mesto\" width=\"960\" height=\"720\" fetchpriority=\"high\" decoding=\"sync\">",
+                    "nodeLabel": "Ljubljana – pogled na mesto"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "table",
+              "headings": [
+                {
+                  "key": "phase",
+                  "valueType": "text",
+                  "label": "Phase"
+                },
+                {
+                  "key": "percent",
+                  "valueType": "text",
+                  "label": "% of LCP"
+                },
+                {
+                  "key": "timing",
+                  "valueType": "ms",
+                  "label": "Timing"
+                }
+              ],
+              "items": [
+                {
+                  "phase": "TTFB",
+                  "timing": 472.287,
+                  "percent": "17%"
+                },
+                {
+                  "phase": "Load Delay",
+                  "timing": 0,
+                  "percent": "0%"
+                },
+                {
+                  "phase": "Load Time",
+                  "timing": 0,
+                  "percent": "0%"
+                },
+                {
+                  "phase": "Render Delay",
+                  "timing": 2272.287,
+                  "percent": "83%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "unminified-css",
+        "title": "Minify CSS",
+        "score": 0.5,
+        "displayValue": "Est savings of 2 KiB",
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedBytes",
+              "valueType": "bytes",
+              "label": "Est Savings"
+            }
+          ],
+          "items": [
+            {
+              "url": "@font-face{font-family:DejaVu;src:url(\"/fonts/DejaVuSans.ttf\") format('truetype');font-display:swap} …",
+              "totalBytes": 34590,
+              "wastedBytes": 2405,
+              "wastedPercent": 6.951682329484399
+            }
+          ],
+          "overallSavingsMs": 0,
+          "overallSavingsBytes": 2405,
+          "sortedBy": [
+            "wastedBytes"
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            }
+          }
+        }
+      },
+      {
+        "id": "unused-css-rules",
+        "title": "Reduce unused CSS",
+        "score": 0.5,
+        "displayValue": "Est savings of 20 KiB",
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedBytes",
+              "valueType": "bytes",
+              "label": "Est Savings"
+            }
+          ],
+          "items": [
+            {
+              "url": "@font-face{font-family:DejaVu;src:url(\"/fonts/DejaVuSans.ttf\") format('truetype');font-display:swap} …",
+              "wastedBytes": 20394,
+              "wastedPercent": 60.350813990322806,
+              "totalBytes": 33793
+            }
+          ],
+          "overallSavingsMs": 0,
+          "overallSavingsBytes": 20394,
+          "sortedBy": [
+            "wastedBytes"
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            }
+          }
+        }
+      },
+      {
+        "id": "uses-responsive-images",
+        "title": "Properly size images",
+        "score": 0,
+        "displayValue": "Est savings of 33 KiB",
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "node",
+              "valueType": "node",
+              "label": ""
+            },
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Resource Size"
+            },
+            {
+              "key": "wastedBytes",
+              "valueType": "bytes",
+              "label": "Est Savings"
+            }
+          ],
+          "items": [
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-122-IMG",
+                "path": "2,HTML,1,BODY,6,MAIN,3,DIV,0,ASIDE,1,SECTION,1,FIGURE,0,PICTURE,1,IMG",
+                "selector": "section#city-card > figure.city-photo > picture > img#city-photo",
+                "boundingRect": {
+                  "top": 510,
+                  "bottom": 685,
+                  "left": 10,
+                  "right": 402,
+                  "width": 392,
+                  "height": 175
+                },
+                "snippet": "<img id=\"city-photo\" src=\"https://koledar365.si/images/responsive/ljubljana-960-6be528deda019fe8.avif\" srcset=\"/images/cities/ljubljana.jpg 960w\" sizes=\"(max-width:650px) calc(100vw - 18px), (max-width:1000px) 40vw, 320px\" alt=\"Ljubljana – pogled na mesto\" width=\"960\" height=\"720\" fetchpriority=\"high\" decoding=\"sync\">",
+                "nodeLabel": "Ljubljana – pogled na mesto"
+              },
+              "url": "https://koledar365.si/images/responsive/ljubljana-960-6be528deda019fe8.avif",
+              "totalBytes": 61928,
+              "wastedBytes": 33694,
+              "wastedPercent": 54.40809461805556
+            }
+          ],
+          "overallSavingsMs": 280,
+          "overallSavingsBytes": 33694,
+          "sortedBy": [
+            "wastedBytes"
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 280
+            }
+          }
+        }
+      },
+      {
+        "id": "dom-size",
+        "title": "Avoid an excessive DOM size",
+        "score": 0.5,
+        "displayValue": "949 elements",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "statistic",
+              "valueType": "text",
+              "label": "Statistic"
+            },
+            {
+              "key": "node",
+              "valueType": "node",
+              "label": "Element"
+            },
+            {
+              "key": "value",
+              "valueType": "numeric",
+              "label": "Value"
+            }
+          ],
+          "items": [
+            {
+              "statistic": "Total DOM Elements",
+              "value": {
+                "type": "numeric",
+                "granularity": 1,
+                "value": 949
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-117-stop",
+                "path": "2,HTML,1,BODY,6,MAIN,3,DIV,0,ASIDE,1,SECTION,2,DIV,3,DETAILS,0,SUMMARY,0,SPAN,0,svg,0,defs,0,radialGradient,0,stop",
+                "selector": "svg.weather-scene > defs > radialgradient#wx-halo > stop",
+                "boundingRect": {
+                  "top": 0,
+                  "bottom": 0,
+                  "left": 0,
+                  "right": 0,
+                  "width": 0,
+                  "height": 0
+                },
+                "snippet": "<stop stop-color=\"#ffd674\" stop-opacity=\".6\">",
+                "nodeLabel": "svg.weather-scene > defs > radialgradient#wx-halo > stop"
+              },
+              "statistic": "Maximum DOM Depth",
+              "value": {
+                "type": "numeric",
+                "granularity": 1,
+                "value": 13
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-118-SELECT",
+                "path": "2,HTML,1,BODY,6,MAIN,3,DIV,0,ASIDE,1,SECTION,2,DIV,2,DIV,1,DIV,1,SELECT",
+                "selector": "div.today-body > div.city-picker > div.city-select-shell > select#city-select",
+                "boundingRect": {
+                  "top": 837,
+                  "bottom": 885,
+                  "left": 29,
+                  "right": 383,
+                  "width": 354,
+                  "height": 48
+                },
+                "snippet": "<select id=\"city-select\" aria-label=\"Izberite mesto v Sloveniji\">",
+                "nodeLabel": "Ajdovščina\nBled\nBovec\nBrežice\nCelje\nCerknica\nČrnomelj\nDomžale\nDravograd\nGornja …"
+              },
+              "statistic": "Maximum Child Elements",
+              "value": {
+                "type": "numeric",
+                "granularity": 1,
+                "value": 69
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "score": 0,
+        "displayValue": "Est savings of 49 KiB",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL",
+              "subItemsHeading": {
+                "key": "reason",
+                "valueType": "text"
+              }
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Resource Size"
+            },
+            {
+              "key": "wastedBytes",
+              "valueType": "bytes",
+              "label": "Est Savings",
+              "subItemsHeading": {
+                "key": "wastedBytes",
+                "valueType": "bytes"
+              }
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/images/responsive/ljubljana-960-6be528deda019fe8.avif",
+              "totalBytes": 61928,
+              "wastedBytes": 50363,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "This image file is larger than it needs to be (960x429) for its displayed dimensions (392x196). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 50363
+                  }
+                ]
+              }
+            }
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "wastedBytes": 50363
+          }
+        }
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0,
+        "details": {
+          "type": "list",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "1F0BD2C6CE7880CCA94FD21015EEDCEB": {
+                    "url": "https://koledar365.si/",
+                    "navStartToEndTime": 236,
+                    "transferSize": 51899,
+                    "isLongest": true,
+                    "children": {
+                      "25297.9": {
+                        "url": "https://koledar365.si/calendar-tools/mobile-layout.mjs?v=20261022-1",
+                        "navStartToEndTime": 300,
+                        "transferSize": 2727,
+                        "isLongest": true,
+                        "children": {
+                          "25297.42": {
+                            "url": "https://koledar365.si/vreme/ljubljana/",
+                            "navStartToEndTime": 483,
+                            "transferSize": 839,
+                            "isLongest": true,
+                            "children": {}
+                          }
+                        }
+                      },
+                      "25297.15": {
+                        "url": "https://koledar365.si/free/client-9bed23aa73c6eeb4.js",
+                        "navStartToEndTime": 300,
+                        "transferSize": 15163,
+                        "children": {
+                          "25297.40": {
+                            "url": "https://koledar365.si/free/site-search.mjs",
+                            "navStartToEndTime": 398,
+                            "transferSize": 2867,
+                            "children": {}
+                          },
+                          "25297.41": {
+                            "url": "https://koledar365.si/free/map-compat.js",
+                            "navStartToEndTime": 385,
+                            "transferSize": 1151,
+                            "children": {}
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 483
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "path": "/koledar/2028/februar/",
+    "fetchTime": "2026-10-22T16:36:28.220Z",
+    "origin": "https://koledar365.si",
+    "finalUrl": "https://koledar365.si/koledar/2028/februar/",
+    "lighthouseVersion": "12.8.2",
+    "environment": {
+      "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+      "benchmarkIndex": 3905,
+      "credits": {
+        "axe-core": "4.14.0"
+      }
+    },
+    "mode": "mobile simulated lab, production HTTPS, one run",
+    "scores": {
+      "performance": 0.98,
+      "accessibility": 1,
+      "seo": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1996.797,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0,
+      "first-contentful-paint": 1921.797,
+      "speed-index": 1921.797
+    },
+    "findings": [
+      {
+        "id": "mainthread-work-breakdown",
+        "title": "Minimize main-thread work",
+        "score": 0.5,
+        "displayValue": "4.4 s",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "groupLabel",
+              "valueType": "text",
+              "label": "Category"
+            },
+            {
+              "key": "duration",
+              "valueType": "ms",
+              "granularity": 1,
+              "label": "Time Spent"
+            }
+          ],
+          "items": [
+            {
+              "group": "scriptEvaluation",
+              "groupLabel": "Script Evaluation",
+              "duration": 3939.479999999941
+            },
+            {
+              "group": "other",
+              "groupLabel": "Other",
+              "duration": 210.05599999999993
+            },
+            {
+              "group": "garbageCollection",
+              "groupLabel": "Garbage Collection",
+              "duration": 114.45200000000202
+            },
+            {
+              "group": "styleLayout",
+              "groupLabel": "Style & Layout",
+              "duration": 101.29600000000002
+            },
+            {
+              "group": "paintCompositeRender",
+              "groupLabel": "Rendering",
+              "duration": 22.411999999999964
+            },
+            {
+              "group": "parseHTML",
+              "groupLabel": "Parse HTML & CSS",
+              "duration": 15.404
+            },
+            {
+              "group": "scriptParseCompile",
+              "groupLabel": "Script Parsing & Compilation",
+              "duration": 4.287999999999999
+            }
+          ],
+          "sortedBy": [
+            "duration"
+          ]
+        }
+      },
+      {
+        "id": "bootup-time",
+        "title": "Reduce JavaScript execution time",
+        "score": 0.5,
+        "displayValue": "3.9 s",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "total",
+              "granularity": 1,
+              "valueType": "ms",
+              "label": "Total CPU Time"
+            },
+            {
+              "key": "scripting",
+              "granularity": 1,
+              "valueType": "ms",
+              "label": "Script Evaluation"
+            },
+            {
+              "key": "scriptParseCompile",
+              "granularity": 1,
+              "valueType": "ms",
+              "label": "Script Parse"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/koledar/2028/februar/",
+              "total": 4144.043999999951,
+              "scripting": 3897.055999999949,
+              "scriptParseCompile": 0.836
+            },
+            {
+              "url": "Unattributable",
+              "total": 222.736,
+              "scripting": 20.52400000000006,
+              "scriptParseCompile": 0
+            }
+          ],
+          "summary": {
+            "wastedMs": 3918.415999999949
+          },
+          "sortedBy": [
+            "total"
+          ]
+        }
+      },
+      {
+        "id": "label-content-name-mismatch",
+        "title": "Elements with visible text labels do not have matching accessible names.",
+        "score": 0,
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "node",
+              "valueType": "node",
+              "subItemsHeading": {
+                "key": "relatedNode",
+                "valueType": "node"
+              },
+              "label": "Failing Elements"
+            }
+          ],
+          "items": [
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-0-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,0,ARTICLE,0,A",
+                "selector": "section#calendar-designs > div.calendar-gallery-grid > article#predloga-min-01 > a.calendar-design-image",
+                "boundingRect": {
+                  "top": 1196,
+                  "bottom": 1371,
+                  "left": 13,
+                  "right": 200,
+                  "width": 187,
+                  "height": 175
+                },
+                "snippet": "<a class=\"calendar-design-image\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028.pdf\" target=\"_blank\" rel=\"noopener\" aria-label=\"Odpri PDF: Slovenski ritem – koledar za februar 2028\">",
+                "nodeLabel": "1 stran",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-1-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,0,ARTICLE,1,DIV,3,DIV,0,A",
+                "selector": "article#predloga-min-01 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 1554,
+                  "bottom": 1617,
+                  "left": 22,
+                  "right": 191,
+                  "width": 169,
+                  "height": 63
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--pdf\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028.pdf\" download=\"koledar-februar-2028.pdf\" data-calendar-download=\"pdf\" aria-label=\"Prenesi PDF: Slovenski ritem – koledar za februar 2028\">",
+                "nodeLabel": "PDF\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-2-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,0,ARTICLE,1,DIV,3,DIV,1,A",
+                "selector": "article#predloga-min-01 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 1623,
+                  "bottom": 1684,
+                  "left": 22,
+                  "right": 191,
+                  "width": 169,
+                  "height": 61
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--webp\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028.we…\" download=\"koledar-februar-2028.webp\" data-calendar-download=\"webp\" aria-label=\"Prenesi WebP: Slovenski ritem – koledar za februar 2028\">",
+                "nodeLabel": "WebP\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-3-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,1,ARTICLE,0,A",
+                "selector": "section#calendar-designs > div.calendar-gallery-grid > article#predloga-min-02 > a.calendar-design-image",
+                "boundingRect": {
+                  "top": 1196,
+                  "bottom": 1371,
+                  "left": 212,
+                  "right": 399,
+                  "width": 187,
+                  "height": 175
+                },
+                "snippet": "<a class=\"calendar-design-image\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/brezplacen-koledar-febr…\" target=\"_blank\" rel=\"noopener\" aria-label=\"Odpri PDF: Rdeči trak – koledar za februar 2028\">",
+                "nodeLabel": "1 stran",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-4-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,1,ARTICLE,1,DIV,3,DIV,0,A",
+                "selector": "article#predloga-min-02 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 1554,
+                  "bottom": 1617,
+                  "left": 221,
+                  "right": 390,
+                  "width": 169,
+                  "height": 63
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--pdf\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/brezplacen-koledar-febr…\" download=\"brezplacen-koledar-februar-2028.pdf\" data-calendar-download=\"pdf\" aria-label=\"Prenesi PDF: Rdeči trak – koledar za februar 2028\">",
+                "nodeLabel": "PDF\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-5-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,1,ARTICLE,1,DIV,3,DIV,1,A",
+                "selector": "article#predloga-min-02 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 1623,
+                  "bottom": 1684,
+                  "left": 221,
+                  "right": 390,
+                  "width": 169,
+                  "height": 61
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--webp\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/brezplacen-koledar-febr…\" download=\"brezplacen-koledar-februar-2028.webp\" data-calendar-download=\"webp\" aria-label=\"Prenesi WebP: Rdeči trak – koledar za februar 2028\">",
+                "nodeLabel": "WebP\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-6-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,2,ARTICLE,0,A",
+                "selector": "section#calendar-designs > div.calendar-gallery-grid > article#predloga-min-03 > a.calendar-design-image",
+                "boundingRect": {
+                  "top": 1760,
+                  "bottom": 1935,
+                  "left": 13,
+                  "right": 200,
+                  "width": 187,
+                  "height": 175
+                },
+                "snippet": "<a class=\"calendar-design-image\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028-za…\" target=\"_blank\" rel=\"noopener\" aria-label=\"Odpri PDF: Modri koledar – koledar za februar 2028\">",
+                "nodeLabel": "1 stran",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-7-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,2,ARTICLE,1,DIV,3,DIV,0,A",
+                "selector": "article#predloga-min-03 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 2118,
+                  "bottom": 2181,
+                  "left": 22,
+                  "right": 191,
+                  "width": 169,
+                  "height": 63
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--pdf\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028-za…\" download=\"koledar-februar-2028-za-tiskanje.pdf\" data-calendar-download=\"pdf\" aria-label=\"Prenesi PDF: Modri koledar – koledar za februar 2028\">",
+                "nodeLabel": "PDF\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-8-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,2,ARTICLE,1,DIV,3,DIV,1,A",
+                "selector": "article#predloga-min-03 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 2187,
+                  "bottom": 2249,
+                  "left": 22,
+                  "right": 191,
+                  "width": 169,
+                  "height": 61
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--webp\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028-za…\" download=\"koledar-februar-2028-za-tiskanje.webp\" data-calendar-download=\"webp\" aria-label=\"Prenesi WebP: Modri koledar – koledar za februar 2028\">",
+                "nodeLabel": "WebP\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-9-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,3,ARTICLE,0,A",
+                "selector": "section#calendar-designs > div.calendar-gallery-grid > article#predloga-ele-01 > a.calendar-design-image",
+                "boundingRect": {
+                  "top": 1760,
+                  "bottom": 1935,
+                  "left": 212,
+                  "right": 399,
+                  "width": 187,
+                  "height": 175
+                },
+                "snippet": "<a class=\"calendar-design-image\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/slovenski-koledar-febru…\" target=\"_blank\" rel=\"noopener\" aria-label=\"Odpri PDF: Alpska linija – koledar za februar 2028\">",
+                "nodeLabel": "1 stran",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-10-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,3,ARTICLE,1,DIV,3,DIV,0,A",
+                "selector": "article#predloga-ele-01 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 2118,
+                  "bottom": 2181,
+                  "left": 221,
+                  "right": 390,
+                  "width": 169,
+                  "height": 63
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--pdf\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/slovenski-koledar-febru…\" download=\"slovenski-koledar-februar-2028.pdf\" data-calendar-download=\"pdf\" aria-label=\"Prenesi PDF: Alpska linija – koledar za februar 2028\">",
+                "nodeLabel": "PDF\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-11-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,3,ARTICLE,1,DIV,3,DIV,1,A",
+                "selector": "article#predloga-ele-01 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 2187,
+                  "bottom": 2249,
+                  "left": 221,
+                  "right": 390,
+                  "width": 169,
+                  "height": 61
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--webp\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/slovenski-koledar-febru…\" download=\"slovenski-koledar-februar-2028.webp\" data-calendar-download=\"webp\" aria-label=\"Prenesi WebP: Alpska linija – koledar za februar 2028\">",
+                "nodeLabel": "WebP\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-12-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,4,ARTICLE,0,A",
+                "selector": "section#calendar-designs > div.calendar-gallery-grid > article#predloga-ele-02 > a.calendar-design-image",
+                "boundingRect": {
+                  "top": 2324,
+                  "bottom": 2499,
+                  "left": 13,
+                  "right": 200,
+                  "width": 187,
+                  "height": 175
+                },
+                "snippet": "<a class=\"calendar-design-image\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/mesecni-koledar-februar…\" target=\"_blank\" rel=\"noopener\" aria-label=\"Odpri PDF: Papirnati koledar – koledar za februar 2028\">",
+                "nodeLabel": "1 stran",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-13-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,4,ARTICLE,1,DIV,3,DIV,0,A",
+                "selector": "article#predloga-ele-02 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 2683,
+                  "bottom": 2745,
+                  "left": 22,
+                  "right": 191,
+                  "width": 169,
+                  "height": 63
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--pdf\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/mesecni-koledar-februar…\" download=\"mesecni-koledar-februar-2028.pdf\" data-calendar-download=\"pdf\" aria-label=\"Prenesi PDF: Papirnati koledar – koledar za februar 2028\">",
+                "nodeLabel": "PDF\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-14-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,4,ARTICLE,1,DIV,3,DIV,1,A",
+                "selector": "article#predloga-ele-02 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 2751,
+                  "bottom": 2813,
+                  "left": 22,
+                  "right": 191,
+                  "width": 169,
+                  "height": 61
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--webp\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/mesecni-koledar-februar…\" download=\"mesecni-koledar-februar-2028.webp\" data-calendar-download=\"webp\" aria-label=\"Prenesi WebP: Papirnati koledar – koledar za februar 2028\">",
+                "nodeLabel": "WebP\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-15-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,5,ARTICLE,0,A",
+                "selector": "section#calendar-designs > div.calendar-gallery-grid > article#predloga-ele-03 > a.calendar-design-image",
+                "boundingRect": {
+                  "top": 2324,
+                  "bottom": 2499,
+                  "left": 212,
+                  "right": 399,
+                  "width": 187,
+                  "height": 175
+                },
+                "snippet": "<a class=\"calendar-design-image\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028-a3…\" target=\"_blank\" rel=\"noopener\" aria-label=\"Odpri PDF: Zvezdni ritem – koledar za februar 2028\">",
+                "nodeLabel": "1 stran",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-16-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,5,ARTICLE,1,DIV,3,DIV,0,A",
+                "selector": "article#predloga-ele-03 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 2683,
+                  "bottom": 2745,
+                  "left": 221,
+                  "right": 390,
+                  "width": 169,
+                  "height": 63
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--pdf\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028-a3…\" download=\"koledar-februar-2028-a3.pdf\" data-calendar-download=\"pdf\" aria-label=\"Prenesi PDF: Zvezdni ritem – koledar za februar 2028\">",
+                "nodeLabel": "PDF\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-17-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,5,ARTICLE,1,DIV,3,DIV,1,A",
+                "selector": "article#predloga-ele-03 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 2751,
+                  "bottom": 2813,
+                  "left": 221,
+                  "right": 390,
+                  "width": 169,
+                  "height": 61
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--webp\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028-a3…\" download=\"koledar-februar-2028-a3.webp\" data-calendar-download=\"webp\" aria-label=\"Prenesi WebP: Zvezdni ritem – koledar za februar 2028\">",
+                "nodeLabel": "WebP\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-18-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,6,ARTICLE,0,A",
+                "selector": "section#calendar-designs > div.calendar-gallery-grid > article#predloga-nat-01 > a.calendar-design-image",
+                "boundingRect": {
+                  "top": 2889,
+                  "bottom": 3064,
+                  "left": 13,
+                  "right": 200,
+                  "width": 187,
+                  "height": 175
+                },
+                "snippet": "<a class=\"calendar-design-image\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/predloga-koledarja-febr…\" target=\"_blank\" rel=\"noopener\" aria-label=\"Odpri PDF: Valovanje – koledar za februar 2028\">",
+                "nodeLabel": "1 stran",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-19-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,6,ARTICLE,1,DIV,3,DIV,0,A",
+                "selector": "article#predloga-nat-01 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 3247,
+                  "bottom": 3309,
+                  "left": 22,
+                  "right": 191,
+                  "width": 169,
+                  "height": 63
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--pdf\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/predloga-koledarja-febr…\" download=\"predloga-koledarja-februar-2028.pdf\" data-calendar-download=\"pdf\" aria-label=\"Prenesi PDF: Valovanje – koledar za februar 2028\">",
+                "nodeLabel": "PDF\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-20-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,6,ARTICLE,1,DIV,3,DIV,1,A",
+                "selector": "article#predloga-nat-01 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 3315,
+                  "bottom": 3377,
+                  "left": 22,
+                  "right": 191,
+                  "width": 169,
+                  "height": 61
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--webp\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/predloga-koledarja-febr…\" download=\"predloga-koledarja-februar-2028.webp\" data-calendar-download=\"webp\" aria-label=\"Prenesi WebP: Valovanje – koledar za februar 2028\">",
+                "nodeLabel": "WebP\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-21-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,7,ARTICLE,0,A",
+                "selector": "section#calendar-designs > div.calendar-gallery-grid > article#predloga-nat-02 > a.calendar-design-image",
+                "boundingRect": {
+                  "top": 2889,
+                  "bottom": 3064,
+                  "left": 212,
+                  "right": 399,
+                  "width": 187,
+                  "height": 175
+                },
+                "snippet": "<a class=\"calendar-design-image\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028-za…\" target=\"_blank\" rel=\"noopener\" aria-label=\"Odpri PDF: Čipkasti rob – koledar za februar 2028\">",
+                "nodeLabel": "1 stran",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-22-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,7,ARTICLE,1,DIV,3,DIV,0,A",
+                "selector": "article#predloga-nat-02 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 3247,
+                  "bottom": 3309,
+                  "left": 221,
+                  "right": 390,
+                  "width": 169,
+                  "height": 63
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--pdf\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028-za…\" download=\"koledar-februar-2028-za-prenos.pdf\" data-calendar-download=\"pdf\" aria-label=\"Prenesi PDF: Čipkasti rob – koledar za februar 2028\">",
+                "nodeLabel": "PDF\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-23-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,7,ARTICLE,1,DIV,3,DIV,1,A",
+                "selector": "article#predloga-nat-02 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 3315,
+                  "bottom": 3377,
+                  "left": 221,
+                  "right": 390,
+                  "width": 169,
+                  "height": 61
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--webp\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028-za…\" download=\"koledar-februar-2028-za-prenos.webp\" data-calendar-download=\"webp\" aria-label=\"Prenesi WebP: Čipkasti rob – koledar za februar 2028\">",
+                "nodeLabel": "WebP\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-24-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,8,ARTICLE,0,A",
+                "selector": "section#calendar-designs > div.calendar-gallery-grid > article#predloga-nat-03 > a.calendar-design-image",
+                "boundingRect": {
+                  "top": 3453,
+                  "bottom": 3628,
+                  "left": 13,
+                  "right": 200,
+                  "width": 187,
+                  "height": 175
+                },
+                "snippet": "<a class=\"calendar-design-image\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028-z-…\" target=\"_blank\" rel=\"noopener\" aria-label=\"Odpri PDF: Gozdni ritem – koledar za februar 2028\">",
+                "nodeLabel": "1 stran",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-25-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,8,ARTICLE,1,DIV,3,DIV,0,A",
+                "selector": "article#predloga-nat-03 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 3811,
+                  "bottom": 3874,
+                  "left": 22,
+                  "right": 191,
+                  "width": 169,
+                  "height": 63
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--pdf\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028-z-…\" download=\"koledar-februar-2028-z-zapiski.pdf\" data-calendar-download=\"pdf\" aria-label=\"Prenesi PDF: Gozdni ritem – koledar za februar 2028\">",
+                "nodeLabel": "PDF\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-26-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,8,ARTICLE,1,DIV,3,DIV,1,A",
+                "selector": "article#predloga-nat-03 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 3880,
+                  "bottom": 3941,
+                  "left": 22,
+                  "right": 191,
+                  "width": 169,
+                  "height": 61
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--webp\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028-z-…\" download=\"koledar-februar-2028-z-zapiski.webp\" data-calendar-download=\"webp\" aria-label=\"Prenesi WebP: Gozdni ritem – koledar za februar 2028\">",
+                "nodeLabel": "WebP\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-27-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,9,ARTICLE,0,A",
+                "selector": "section#calendar-designs > div.calendar-gallery-grid > article#predloga-pla-01 > a.calendar-design-image",
+                "boundingRect": {
+                  "top": 3453,
+                  "bottom": 3628,
+                  "left": 212,
+                  "right": 399,
+                  "width": 187,
+                  "height": 175
+                },
+                "snippet": "<a class=\"calendar-design-image\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/lezeci-koledar-februar-…\" target=\"_blank\" rel=\"noopener\" aria-label=\"Odpri PDF: Konstrukt – koledar za februar 2028\">",
+                "nodeLabel": "1 stran",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-28-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,9,ARTICLE,1,DIV,3,DIV,0,A",
+                "selector": "article#predloga-pla-01 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 3811,
+                  "bottom": 3874,
+                  "left": 221,
+                  "right": 390,
+                  "width": 169,
+                  "height": 63
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--pdf\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/lezeci-koledar-februar-…\" download=\"lezeci-koledar-februar-2028.pdf\" data-calendar-download=\"pdf\" aria-label=\"Prenesi PDF: Konstrukt – koledar za februar 2028\">",
+                "nodeLabel": "PDF\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-29-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,9,ARTICLE,1,DIV,3,DIV,1,A",
+                "selector": "article#predloga-pla-01 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 3880,
+                  "bottom": 3941,
+                  "left": 221,
+                  "right": 390,
+                  "width": 169,
+                  "height": 61
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--webp\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/lezeci-koledar-februar-…\" download=\"lezeci-koledar-februar-2028.webp\" data-calendar-download=\"webp\" aria-label=\"Prenesi WebP: Konstrukt – koledar za februar 2028\">",
+                "nodeLabel": "WebP\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-30-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,10,ARTICLE,0,A",
+                "selector": "section#calendar-designs > div.calendar-gallery-grid > article#predloga-pla-02 > a.calendar-design-image",
+                "boundingRect": {
+                  "top": 4017,
+                  "bottom": 4192,
+                  "left": 13,
+                  "right": 200,
+                  "width": 187,
+                  "height": 175
+                },
+                "snippet": "<a class=\"calendar-design-image\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/stenski-koledar-februar…\" target=\"_blank\" rel=\"noopener\" aria-label=\"Odpri PDF: Mestni ritem – koledar za februar 2028\">",
+                "nodeLabel": "1 stran",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-31-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,10,ARTICLE,1,DIV,3,DIV,0,A",
+                "selector": "article#predloga-pla-02 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 4375,
+                  "bottom": 4438,
+                  "left": 22,
+                  "right": 191,
+                  "width": 169,
+                  "height": 63
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--pdf\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/stenski-koledar-februar…\" download=\"stenski-koledar-februar-2028.pdf\" data-calendar-download=\"pdf\" aria-label=\"Prenesi PDF: Mestni ritem – koledar za februar 2028\">",
+                "nodeLabel": "PDF\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-32-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,10,ARTICLE,1,DIV,3,DIV,1,A",
+                "selector": "article#predloga-pla-02 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 4444,
+                  "bottom": 4505,
+                  "left": 22,
+                  "right": 191,
+                  "width": 169,
+                  "height": 61
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--webp\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/stenski-koledar-februar…\" download=\"stenski-koledar-februar-2028.webp\" data-calendar-download=\"webp\" aria-label=\"Prenesi WebP: Mestni ritem – koledar za februar 2028\">",
+                "nodeLabel": "WebP\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-33-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,11,ARTICLE,0,A",
+                "selector": "section#calendar-designs > div.calendar-gallery-grid > article#predloga-pla-03 > a.calendar-design-image",
+                "boundingRect": {
+                  "top": 4017,
+                  "bottom": 4192,
+                  "left": 212,
+                  "right": 399,
+                  "width": 187,
+                  "height": 175
+                },
+                "snippet": "<a class=\"calendar-design-image\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028-s-…\" target=\"_blank\" rel=\"noopener\" aria-label=\"Odpri PDF: Tiskarska izdaja – koledar za februar 2028\">",
+                "nodeLabel": "1 stran",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-34-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,11,ARTICLE,1,DIV,3,DIV,0,A",
+                "selector": "article#predloga-pla-03 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 4375,
+                  "bottom": 4438,
+                  "left": 221,
+                  "right": 390,
+                  "width": 169,
+                  "height": 63
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--pdf\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028-s-…\" download=\"koledar-februar-2028-s-prazniki.pdf\" data-calendar-download=\"pdf\" aria-label=\"Prenesi PDF: Tiskarska izdaja – koledar za februar 2028\">",
+                "nodeLabel": "PDF\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-35-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,11,ARTICLE,1,DIV,3,DIV,1,A",
+                "selector": "article#predloga-pla-03 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 4444,
+                  "bottom": 4505,
+                  "left": 221,
+                  "right": 390,
+                  "width": 169,
+                  "height": 61
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--webp\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028-s-…\" download=\"koledar-februar-2028-s-prazniki.webp\" data-calendar-download=\"webp\" aria-label=\"Prenesi WebP: Tiskarska izdaja – koledar za februar 2028\">",
+                "nodeLabel": "WebP\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-36-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,12,ARTICLE,0,A",
+                "selector": "section#calendar-designs > div.calendar-gallery-grid > article#predloga-geo-01 > a.calendar-design-image",
+                "boundingRect": {
+                  "top": 4581,
+                  "bottom": 4756,
+                  "left": 13,
+                  "right": 200,
+                  "width": 187,
+                  "height": 175
+                },
+                "snippet": "<a class=\"calendar-design-image\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/barvni-koledar-februar-…\" target=\"_blank\" rel=\"noopener\" aria-label=\"Odpri PDF: Sončni začetek – koledar za februar 2028\">",
+                "nodeLabel": "1 stran",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-37-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,12,ARTICLE,1,DIV,3,DIV,0,A",
+                "selector": "article#predloga-geo-01 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 4940,
+                  "bottom": 5002,
+                  "left": 22,
+                  "right": 191,
+                  "width": 169,
+                  "height": 63
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--pdf\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/barvni-koledar-februar-…\" download=\"barvni-koledar-februar-2028.pdf\" data-calendar-download=\"pdf\" aria-label=\"Prenesi PDF: Sončni začetek – koledar za februar 2028\">",
+                "nodeLabel": "PDF\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-38-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,12,ARTICLE,1,DIV,3,DIV,1,A",
+                "selector": "article#predloga-geo-01 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 5008,
+                  "bottom": 5070,
+                  "left": 22,
+                  "right": 191,
+                  "width": 169,
+                  "height": 61
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--webp\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/barvni-koledar-februar-…\" download=\"barvni-koledar-februar-2028.webp\" data-calendar-download=\"webp\" aria-label=\"Prenesi WebP: Sončni začetek – koledar za februar 2028\">",
+                "nodeLabel": "WebP\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-39-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,13,ARTICLE,0,A",
+                "selector": "section#calendar-designs > div.calendar-gallery-grid > article#predloga-geo-02 > a.calendar-design-image",
+                "boundingRect": {
+                  "top": 4581,
+                  "bottom": 4756,
+                  "left": 212,
+                  "right": 399,
+                  "width": 187,
+                  "height": 175
+                },
+                "snippet": "<a class=\"calendar-design-image\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/mesecni-nacrtovalnik-fe…\" target=\"_blank\" rel=\"noopener\" aria-label=\"Odpri PDF: Načrtovalnik po tednih – koledar za februar 2028\">",
+                "nodeLabel": "1 stran",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-40-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,13,ARTICLE,1,DIV,3,DIV,0,A",
+                "selector": "article#predloga-geo-02 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 4940,
+                  "bottom": 5002,
+                  "left": 221,
+                  "right": 390,
+                  "width": 169,
+                  "height": 63
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--pdf\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/mesecni-nacrtovalnik-fe…\" download=\"mesecni-nacrtovalnik-februar-2028.pdf\" data-calendar-download=\"pdf\" aria-label=\"Prenesi PDF: Načrtovalnik po tednih – koledar za februar 2028\">",
+                "nodeLabel": "PDF\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-41-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,13,ARTICLE,1,DIV,3,DIV,1,A",
+                "selector": "article#predloga-geo-02 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 5008,
+                  "bottom": 5070,
+                  "left": 221,
+                  "right": 390,
+                  "width": 169,
+                  "height": 61
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--webp\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/mesecni-nacrtovalnik-fe…\" download=\"mesecni-nacrtovalnik-februar-2028.webp\" data-calendar-download=\"webp\" aria-label=\"Prenesi WebP: Načrtovalnik po tednih – koledar za februar 2028\">",
+                "nodeLabel": "WebP\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-42-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,14,ARTICLE,0,A",
+                "selector": "section#calendar-designs > div.calendar-gallery-grid > article#predloga-geo-03 > a.calendar-design-image",
+                "boundingRect": {
+                  "top": 5146,
+                  "bottom": 5321,
+                  "left": 13,
+                  "right": 200,
+                  "width": 187,
+                  "height": 175
+                },
+                "snippet": "<a class=\"calendar-design-image\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028-de…\" target=\"_blank\" rel=\"noopener\" aria-label=\"Odpri PDF: Praznična izdaja – koledar za februar 2028\">",
+                "nodeLabel": "1 stran",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-43-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,14,ARTICLE,1,DIV,3,DIV,0,A",
+                "selector": "article#predloga-geo-03 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 5504,
+                  "bottom": 5567,
+                  "left": 22,
+                  "right": 191,
+                  "width": 169,
+                  "height": 63
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--pdf\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028-de…\" download=\"koledar-februar-2028-dela-prosti-dnevi.pdf\" data-calendar-download=\"pdf\" aria-label=\"Prenesi PDF: Praznična izdaja – koledar za februar 2028\">",
+                "nodeLabel": "PDF\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-44-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV,14,ARTICLE,1,DIV,3,DIV,1,A",
+                "selector": "article#predloga-geo-03 > div.calendar-design-info > div.calendar-design-downloads > a.button",
+                "boundingRect": {
+                  "top": 5573,
+                  "bottom": 5634,
+                  "left": 22,
+                  "right": 191,
+                  "width": 169,
+                  "height": 61
+                },
+                "snippet": "<a class=\"button calendar-download-action calendar-download-action--webp\" href=\"/koledarji/2027-2030/original/2028/02-februar-2028/koledar-februar-2028-de…\" download=\"koledar-februar-2028-dela-prosti-dnevi.webp\" data-calendar-download=\"webp\" aria-label=\"Prenesi WebP: Praznična izdaja – koledar za februar 2028\">",
+                "nodeLabel": "WebP\nPrenesi",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            }
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "impact": "serious",
+            "tags": [
+              "cat.semantics",
+              "wcag21a",
+              "wcag253",
+              "EN-301-549",
+              "EN-9.2.5.3",
+              "RGAAv4",
+              "RGAA-6.1.5"
+            ]
+          }
+        }
+      },
+      {
+        "id": "render-blocking-resources",
+        "title": "Eliminate render-blocking resources",
+        "score": 0,
+        "displayValue": "Est savings of 30 ms",
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedMs",
+              "valueType": "timespanMs",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-ba5c19f0afb70c63.css",
+              "totalBytes": 43402,
+              "wastedMs": 1111
+            }
+          ],
+          "overallSavingsMs": 28
+        }
+      },
+      {
+        "id": "unminified-css",
+        "title": "Minify CSS",
+        "score": 0.5,
+        "displayValue": "Est savings of 3 KiB",
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedBytes",
+              "valueType": "bytes",
+              "label": "Est Savings"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-ba5c19f0afb70c63.css",
+              "totalBytes": 43402,
+              "wastedBytes": 2644,
+              "wastedPercent": 6.091319869186407
+            }
+          ],
+          "overallSavingsMs": 0,
+          "overallSavingsBytes": 2644,
+          "sortedBy": [
+            "wastedBytes"
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            }
+          }
+        }
+      },
+      {
+        "id": "unused-css-rules",
+        "title": "Reduce unused CSS",
+        "score": 0,
+        "displayValue": "Est savings of 32 KiB",
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedBytes",
+              "valueType": "bytes",
+              "label": "Est Savings"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-ba5c19f0afb70c63.css",
+              "wastedBytes": 32633,
+              "wastedPercent": 76.70869011658387,
+              "totalBytes": 42541
+            }
+          ],
+          "overallSavingsMs": 90,
+          "overallSavingsBytes": 32633,
+          "sortedBy": [
+            "wastedBytes"
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "metricSavings": {
+              "FCP": 90,
+              "LCP": 90
+            }
+          }
+        }
+      },
+      {
+        "id": "dom-size",
+        "title": "Avoid an excessive DOM size",
+        "score": 0.5,
+        "displayValue": "941 elements",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "statistic",
+              "valueType": "text",
+              "label": "Statistic"
+            },
+            {
+              "key": "node",
+              "valueType": "node",
+              "label": "Element"
+            },
+            {
+              "key": "value",
+              "valueType": "numeric",
+              "label": "Value"
+            }
+          ],
+          "items": [
+            {
+              "statistic": "Total DOM Elements",
+              "value": {
+                "type": "numeric",
+                "granularity": 1,
+                "value": 941
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-158-TIME",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,0,SECTION,5,DIV,4,DIV,2,DIV,0,TABLE,1,TBODY,0,TR,2,TD,0,A,0,TIME",
+                "selector": "tr > td > a.date-link > time",
+                "boundingRect": {
+                  "top": 0,
+                  "bottom": 0,
+                  "left": 0,
+                  "right": 0,
+                  "width": 0,
+                  "height": 0
+                },
+                "snippet": "<time datetime=\"2028-02-01\">",
+                "nodeLabel": "1"
+              },
+              "statistic": "Maximum DOM Depth",
+              "value": {
+                "type": "numeric",
+                "granularity": 1,
+                "value": 13
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-159-DIV",
+                "path": "2,HTML,1,BODY,6,MAIN,4,DIV,1,DIV,4,SECTION,3,DIV",
+                "selector": "div.download-workspace > div.calendar-downloads > section#calendar-designs > div.calendar-gallery-grid",
+                "boundingRect": {
+                  "top": 1195,
+                  "bottom": 5699,
+                  "left": 12,
+                  "right": 400,
+                  "width": 388,
+                  "height": 4504
+                },
+                "snippet": "<div class=\"calendar-gallery-grid\">",
+                "nodeLabel": "1 stran\n01\nSlovenski ritem\n\nBarvno · A3 · Ležeče · 600 dpi\n\nOdpri predogled\n↗\nP…"
+              },
+              "statistic": "Maximum Child Elements",
+              "value": {
+                "type": "numeric",
+                "granularity": 1,
+                "value": 15
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "score": 0.5,
+        "displayValue": "Est savings of 40 KiB",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL",
+              "subItemsHeading": {
+                "key": "reason",
+                "valueType": "text"
+              }
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Resource Size"
+            },
+            {
+              "key": "wastedBytes",
+              "valueType": "bytes",
+              "label": "Est Savings",
+              "subItemsHeading": {
+                "key": "wastedBytes",
+                "valueType": "bytes"
+              }
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/koledarji/2027-2030/preview/2028/02-februar-2028/koledar-februar-2028-za-tiskanje.webp",
+              "totalBytes": 13554,
+              "wastedBytes": 10425,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "This image file is larger than it needs to be (300x212) for its displayed dimensions (163x115). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 9553
+                  }
+                ]
+              }
+            },
+            {
+              "url": "https://koledar365.si/koledarji/2027-2030/preview/2028/02-februar-2028/brezplacen-koledar-februar-2028.webp",
+              "totalBytes": 13002,
+              "wastedBytes": 10352,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "This image file is larger than it needs to be (212x300) for its displayed dimensions (106x150). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 9752
+                  }
+                ]
+              }
+            },
+            {
+              "url": "https://koledar365.si/koledarji/2027-2030/preview/2028/02-februar-2028/slovenski-koledar-februar-2028.webp",
+              "totalBytes": 12790,
+              "wastedBytes": 10140,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "This image file is larger than it needs to be (212x300) for its displayed dimensions (106x150). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 9593
+                  }
+                ]
+              }
+            },
+            {
+              "url": "https://koledar365.si/koledarji/2027-2030/preview/2028/02-februar-2028/koledar-februar-2028.webp",
+              "totalBytes": 13166,
+              "wastedBytes": 10037,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "This image file is larger than it needs to be (300x212) for its displayed dimensions (163x115). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 9280
+                  }
+                ]
+              }
+            }
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "wastedBytes": 40954
+          }
+        }
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0,
+        "details": {
+          "type": "list",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "4034620F268F8C542A4259BF04C2574F": {
+                    "url": "https://koledar365.si/koledar/2028/februar/",
+                    "navStartToEndTime": 102,
+                    "transferSize": 13269,
+                    "isLongest": true,
+                    "children": {
+                      "25331.8": {
+                        "url": "https://koledar365.si/calendar-tools/experience.mjs",
+                        "navStartToEndTime": 200,
+                        "transferSize": 6377,
+                        "isLongest": true,
+                        "children": {
+                          "25331.116": {
+                            "url": "https://koledar365.si/calendar-tools/xlsx.mjs",
+                            "navStartToEndTime": 284,
+                            "transferSize": 6196,
+                            "isLongest": true,
+                            "children": {}
+                          }
+                        }
+                      },
+                      "25331.15": {
+                        "url": "https://koledar365.si/free/client-9bed23aa73c6eeb4.js",
+                        "navStartToEndTime": 164,
+                        "transferSize": 15163,
+                        "children": {
+                          "25331.110": {
+                            "url": "https://koledar365.si/free/map-compat.js",
+                            "navStartToEndTime": 248,
+                            "transferSize": 1151,
+                            "children": {}
+                          },
+                          "25331.109": {
+                            "url": "https://koledar365.si/free/site-search.mjs",
+                            "navStartToEndTime": 235,
+                            "transferSize": 2866,
+                            "children": {}
+                          }
+                        }
+                      },
+                      "25331.9": {
+                        "url": "https://koledar365.si/calendar-tools/mobile-layout.mjs?v=20261022-1",
+                        "navStartToEndTime": 177,
+                        "transferSize": 2720,
+                        "children": {}
+                      },
+                      "25331.7": {
+                        "url": "https://koledar365.si/assets/web-ba5c19f0afb70c63.css",
+                        "navStartToEndTime": 176,
+                        "transferSize": 43402,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 284
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render blocking requests",
+        "score": 0,
+        "displayValue": "Est savings of 180 ms",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedMs",
+              "valueType": "timespanMs",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-ba5c19f0afb70c63.css",
+              "totalBytes": 43402,
+              "wastedMs": 1111
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "path": "/lunin-koledar/2029/avgust/",
+    "fetchTime": "2026-10-22T16:36:40.521Z",
+    "origin": "https://koledar365.si",
+    "finalUrl": "https://koledar365.si/lunin-koledar/2029/avgust/",
+    "lighthouseVersion": "12.8.2",
+    "environment": {
+      "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+      "benchmarkIndex": 3943,
+      "credits": {
+        "axe-core": "4.14.0"
+      }
+    },
+    "mode": "mobile simulated lab, production HTTPS, one run",
+    "scores": {
+      "performance": 0.96,
+      "accessibility": 1,
+      "seo": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 2349.842425,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0,
+      "first-contentful-paint": 1974.842425,
+      "speed-index": 2632.3803020003106
+    },
+    "findings": [
+      {
+        "id": "label-content-name-mismatch",
+        "title": "Elements with visible text labels do not have matching accessible names.",
+        "score": 0,
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "node",
+              "valueType": "node",
+              "subItemsHeading": {
+                "key": "relatedNode",
+                "valueType": "node"
+              },
+              "label": "Failing Elements"
+            }
+          ],
+          "items": [
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-0-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,9,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-01",
+                "boundingRect": {
+                  "top": 1399,
+                  "bottom": 1476,
+                  "left": 128,
+                  "right": 179,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-01\" class=\"lunar-day\" data-date=\"2029-08-01\" aria-label=\"1. avgusta 2029, osvetljenost 60,1&nbsp;%, Luna pojema\" aria-pressed=\"true\" tabindex=\"0\">",
+                "nodeLabel": "1\n60,1 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-1-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,10,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-02",
+                "boundingRect": {
+                  "top": 1399,
+                  "bottom": 1476,
+                  "left": 181,
+                  "right": 231,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-02\" class=\"lunar-day\" data-date=\"2029-08-02\" aria-label=\"2. avgusta 2029, osvetljenost 50,6&nbsp;%, Luna pojema\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "2\n50,6 %\n◆",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-2-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,11,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-03",
+                "boundingRect": {
+                  "top": 1399,
+                  "bottom": 1476,
+                  "left": 233,
+                  "right": 284,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-03\" class=\"lunar-day\" data-date=\"2029-08-03\" aria-label=\"3. avgusta 2029, osvetljenost 41,1&nbsp;%, Luna pojema\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "3\n41,1 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-3-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,12,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-04",
+                "boundingRect": {
+                  "top": 1399,
+                  "bottom": 1476,
+                  "left": 286,
+                  "right": 337,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-04\" class=\"lunar-day\" data-date=\"2029-08-04\" aria-label=\"4. avgusta 2029, osvetljenost 31,8&nbsp;%, Luna pojema\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "4\n31,8 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-4-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,13,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-05",
+                "boundingRect": {
+                  "top": 1399,
+                  "bottom": 1476,
+                  "left": 339,
+                  "right": 390,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-05\" class=\"lunar-day\" data-date=\"2029-08-05\" aria-label=\"5. avgusta 2029, osvetljenost 23,0&nbsp;%, Luna pojema\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "5\n23,0 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-5-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,14,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-06",
+                "boundingRect": {
+                  "top": 1478,
+                  "bottom": 1555,
+                  "left": 22,
+                  "right": 73,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-06\" class=\"lunar-day\" data-date=\"2029-08-06\" aria-label=\"6. avgusta 2029, osvetljenost 15,1&nbsp;%, Luna pojema\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "6\n15,1 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-6-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,15,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-07",
+                "boundingRect": {
+                  "top": 1478,
+                  "bottom": 1555,
+                  "left": 75,
+                  "right": 126,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-07\" class=\"lunar-day\" data-date=\"2029-08-07\" aria-label=\"7. avgusta 2029, osvetljenost 8,4&nbsp;%, Luna pojema\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "7\n8,4 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-7-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,16,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-08",
+                "boundingRect": {
+                  "top": 1478,
+                  "bottom": 1555,
+                  "left": 128,
+                  "right": 179,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-08\" class=\"lunar-day\" data-date=\"2029-08-08\" aria-label=\"8. avgusta 2029, osvetljenost 3,5&nbsp;%, Luna pojema\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "8\n3,5 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-8-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,17,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-09",
+                "boundingRect": {
+                  "top": 1478,
+                  "bottom": 1555,
+                  "left": 181,
+                  "right": 231,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-09\" class=\"lunar-day\" data-date=\"2029-08-09\" aria-label=\"9. avgusta 2029, osvetljenost 0,6&nbsp;%, Luna pojema\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "9\n0,6 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-9-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,18,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-10",
+                "boundingRect": {
+                  "top": 1478,
+                  "bottom": 1555,
+                  "left": 233,
+                  "right": 284,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-10\" class=\"lunar-day\" data-date=\"2029-08-10\" aria-label=\"10. avgusta 2029, osvetljenost 0,3&nbsp;%, Luna raste\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "10\n0,3 %\n◆",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-10-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,19,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-11",
+                "boundingRect": {
+                  "top": 1478,
+                  "bottom": 1555,
+                  "left": 286,
+                  "right": 337,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-11\" class=\"lunar-day\" data-date=\"2029-08-11\" aria-label=\"11. avgusta 2029, osvetljenost 2,5&nbsp;%, Luna raste\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "11\n2,5 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-11-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,20,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-12",
+                "boundingRect": {
+                  "top": 1478,
+                  "bottom": 1555,
+                  "left": 339,
+                  "right": 390,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-12\" class=\"lunar-day\" data-date=\"2029-08-12\" aria-label=\"12. avgusta 2029, osvetljenost 7,4&nbsp;%, Luna raste\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "12\n7,4 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-12-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,21,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-13",
+                "boundingRect": {
+                  "top": 1557,
+                  "bottom": 1634,
+                  "left": 22,
+                  "right": 73,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-13\" class=\"lunar-day\" data-date=\"2029-08-13\" aria-label=\"13. avgusta 2029, osvetljenost 14,7&nbsp;%, Luna raste\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "13\n14,7 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-13-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,22,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-14",
+                "boundingRect": {
+                  "top": 1557,
+                  "bottom": 1634,
+                  "left": 75,
+                  "right": 126,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-14\" class=\"lunar-day\" data-date=\"2029-08-14\" aria-label=\"14. avgusta 2029, osvetljenost 24,0&nbsp;%, Luna raste\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "14\n24,0 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-14-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,23,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-15",
+                "boundingRect": {
+                  "top": 1557,
+                  "bottom": 1634,
+                  "left": 128,
+                  "right": 179,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-15\" class=\"lunar-day\" data-date=\"2029-08-15\" aria-label=\"15. avgusta 2029, osvetljenost 34,6&nbsp;%, Luna raste\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "15\n34,6 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-15-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,24,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-16",
+                "boundingRect": {
+                  "top": 1557,
+                  "bottom": 1634,
+                  "left": 181,
+                  "right": 231,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-16\" class=\"lunar-day\" data-date=\"2029-08-16\" aria-label=\"16. avgusta 2029, osvetljenost 45,9&nbsp;%, Luna raste\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "16\n45,9 %\n◆",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-16-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,25,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-17",
+                "boundingRect": {
+                  "top": 1557,
+                  "bottom": 1634,
+                  "left": 233,
+                  "right": 284,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-17\" class=\"lunar-day\" data-date=\"2029-08-17\" aria-label=\"17. avgusta 2029, osvetljenost 57,2&nbsp;%, Luna raste\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "17\n57,2 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-17-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,26,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-18",
+                "boundingRect": {
+                  "top": 1557,
+                  "bottom": 1634,
+                  "left": 286,
+                  "right": 337,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-18\" class=\"lunar-day\" data-date=\"2029-08-18\" aria-label=\"18. avgusta 2029, osvetljenost 68,1&nbsp;%, Luna raste\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "18\n68,1 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-18-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,27,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-19",
+                "boundingRect": {
+                  "top": 1557,
+                  "bottom": 1634,
+                  "left": 339,
+                  "right": 390,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-19\" class=\"lunar-day\" data-date=\"2029-08-19\" aria-label=\"19. avgusta 2029, osvetljenost 77,8&nbsp;%, Luna raste\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "19\n77,8 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-19-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,28,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-20",
+                "boundingRect": {
+                  "top": 1636,
+                  "bottom": 1714,
+                  "left": 22,
+                  "right": 73,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-20\" class=\"lunar-day\" data-date=\"2029-08-20\" aria-label=\"20. avgusta 2029, osvetljenost 86,1&nbsp;%, Luna raste\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "20\n86,1 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-20-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,29,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-21",
+                "boundingRect": {
+                  "top": 1636,
+                  "bottom": 1714,
+                  "left": 75,
+                  "right": 126,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-21\" class=\"lunar-day\" data-date=\"2029-08-21\" aria-label=\"21. avgusta 2029, osvetljenost 92,6&nbsp;%, Luna raste\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "21\n92,6 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-21-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,30,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-22",
+                "boundingRect": {
+                  "top": 1636,
+                  "bottom": 1714,
+                  "left": 128,
+                  "right": 179,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-22\" class=\"lunar-day\" data-date=\"2029-08-22\" aria-label=\"22. avgusta 2029, osvetljenost 97,1&nbsp;%, Luna raste\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "22\n97,1 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-22-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,31,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-23",
+                "boundingRect": {
+                  "top": 1636,
+                  "bottom": 1714,
+                  "left": 181,
+                  "right": 231,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-23\" class=\"lunar-day\" data-date=\"2029-08-23\" aria-label=\"23. avgusta 2029, osvetljenost 99,4&nbsp;%, Luna raste\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "23\n99,4 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-23-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,32,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-24",
+                "boundingRect": {
+                  "top": 1636,
+                  "bottom": 1714,
+                  "left": 233,
+                  "right": 284,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-24\" class=\"lunar-day\" data-date=\"2029-08-24\" aria-label=\"24. avgusta 2029, osvetljenost 99,7&nbsp;%, Luna pojema\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "24\n99,7 %\n◆",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-24-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,33,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-25",
+                "boundingRect": {
+                  "top": 1636,
+                  "bottom": 1714,
+                  "left": 286,
+                  "right": 337,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-25\" class=\"lunar-day\" data-date=\"2029-08-25\" aria-label=\"25. avgusta 2029, osvetljenost 98,0&nbsp;%, Luna pojema\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "25\n98,0 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-25-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,34,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-26",
+                "boundingRect": {
+                  "top": 1636,
+                  "bottom": 1714,
+                  "left": 339,
+                  "right": 390,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-26\" class=\"lunar-day\" data-date=\"2029-08-26\" aria-label=\"26. avgusta 2029, osvetljenost 94,5&nbsp;%, Luna pojema\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "26\n94,5 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-26-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,35,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-27",
+                "boundingRect": {
+                  "top": 1716,
+                  "bottom": 1793,
+                  "left": 22,
+                  "right": 73,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-27\" class=\"lunar-day\" data-date=\"2029-08-27\" aria-label=\"27. avgusta 2029, osvetljenost 89,4&nbsp;%, Luna pojema\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "27\n89,4 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-27-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,36,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-28",
+                "boundingRect": {
+                  "top": 1716,
+                  "bottom": 1793,
+                  "left": 75,
+                  "right": 126,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-28\" class=\"lunar-day\" data-date=\"2029-08-28\" aria-label=\"28. avgusta 2029, osvetljenost 82,9&nbsp;%, Luna pojema\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "28\n82,9 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-28-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,37,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-29",
+                "boundingRect": {
+                  "top": 1716,
+                  "bottom": 1793,
+                  "left": 128,
+                  "right": 179,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-29\" class=\"lunar-day\" data-date=\"2029-08-29\" aria-label=\"29. avgusta 2029, osvetljenost 75,3&nbsp;%, Luna pojema\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "29\n75,3 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-29-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,38,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-30",
+                "boundingRect": {
+                  "top": 1716,
+                  "bottom": 1793,
+                  "left": 181,
+                  "right": 231,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-30\" class=\"lunar-day\" data-date=\"2029-08-30\" aria-label=\"30. avgusta 2029, osvetljenost 66,7&nbsp;%, Luna pojema\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "30\n66,7 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-30-BUTTON",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,ARTICLE,1,DIV,39,BUTTON",
+                "selector": "div.lunar-main > article.panel > div.lunar-grid > button#dan-2029-08-31",
+                "boundingRect": {
+                  "top": 1716,
+                  "bottom": 1793,
+                  "left": 233,
+                  "right": 284,
+                  "width": 51,
+                  "height": 77
+                },
+                "snippet": "<button type=\"button\" id=\"dan-2029-08-31\" class=\"lunar-day\" data-date=\"2029-08-31\" aria-label=\"31. avgusta 2029, osvetljenost 57,5&nbsp;%, Luna pojema\" aria-pressed=\"false\" tabindex=\"-1\">",
+                "nodeLabel": "31\n57,5 %",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            }
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "impact": "serious",
+            "tags": [
+              "cat.semantics",
+              "wcag21a",
+              "wcag253",
+              "EN-301-549",
+              "EN-9.2.5.3",
+              "RGAAv4",
+              "RGAA-6.1.5"
+            ]
+          }
+        }
+      },
+      {
+        "id": "total-byte-weight",
+        "title": "Avoid enormous network payloads",
+        "score": 0.5,
+        "displayValue": "Total size was 10,263 KiB",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/lunar/atlas/2029-08-1.webp",
+              "totalBytes": 10186459
+            },
+            {
+              "url": "https://koledar365.si/lunar/atlas/2029-08-small.webp",
+              "totalBytes": 202972
+            },
+            {
+              "url": "https://koledar365.si/assets/web-e71594e024d2f8b7.css",
+              "totalBytes": 39236
+            },
+            {
+              "url": "https://koledar365.si/icon.png",
+              "totalBytes": 30681
+            },
+            {
+              "url": "https://koledar365.si/free/client-9bed23aa73c6eeb4.js",
+              "totalBytes": 15163
+            },
+            {
+              "url": "https://koledar365.si/lunin-koledar/2029/avgust/",
+              "totalBytes": 10105
+            },
+            {
+              "url": "https://koledar365.si/visuals/ui-material-v3.834e8abb995a5f11.svg",
+              "totalBytes": 5547
+            },
+            {
+              "url": "https://koledar365.si/lunar/data/2029-08.json",
+              "totalBytes": 3249
+            },
+            {
+              "url": "https://koledar365.si/lunar/calendar.mjs",
+              "totalBytes": 2975
+            },
+            {
+              "url": "https://koledar365.si/free/site-search.mjs",
+              "totalBytes": 2873
+            }
+          ],
+          "sortedBy": [
+            "totalBytes"
+          ]
+        }
+      },
+      {
+        "id": "render-blocking-resources",
+        "title": "Eliminate render-blocking resources",
+        "score": 0.5,
+        "displayValue": "Est savings of 0 ms",
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedMs",
+              "valueType": "timespanMs",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-e71594e024d2f8b7.css",
+              "totalBytes": 39236,
+              "wastedMs": 971
+            }
+          ],
+          "overallSavingsMs": 0
+        }
+      },
+      {
+        "id": "unminified-css",
+        "title": "Minify CSS",
+        "score": 0.5,
+        "displayValue": "Est savings of 3 KiB",
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedBytes",
+              "valueType": "bytes",
+              "label": "Est Savings"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-e71594e024d2f8b7.css",
+              "totalBytes": 39236,
+              "wastedBytes": 2609,
+              "wastedPercent": 6.648335003378925
+            }
+          ],
+          "overallSavingsMs": 0,
+          "overallSavingsBytes": 2609,
+          "sortedBy": [
+            "wastedBytes"
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            }
+          }
+        }
+      },
+      {
+        "id": "unused-css-rules",
+        "title": "Reduce unused CSS",
+        "score": 0,
+        "displayValue": "Est savings of 29 KiB",
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedBytes",
+              "valueType": "bytes",
+              "label": "Est Savings"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-e71594e024d2f8b7.css",
+              "wastedBytes": 29457,
+              "wastedPercent": 76.7617039125673,
+              "totalBytes": 38374
+            }
+          ],
+          "overallSavingsMs": 150,
+          "overallSavingsBytes": 29457,
+          "sortedBy": [
+            "wastedBytes"
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 150
+            }
+          }
+        }
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0,
+        "details": {
+          "type": "list",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "3FD44B5996CB05171746F64EF38B82BB": {
+                    "url": "https://koledar365.si/lunin-koledar/2029/avgust/",
+                    "navStartToEndTime": 122,
+                    "transferSize": 10105,
+                    "isLongest": true,
+                    "children": {
+                      "25374.9": {
+                        "url": "https://koledar365.si/lunar/calendar.mjs",
+                        "navStartToEndTime": 272,
+                        "transferSize": 2975,
+                        "isLongest": true,
+                        "children": {
+                          "25374.76": {
+                            "url": "https://koledar365.si/lunar/data/2029-08.json",
+                            "navStartToEndTime": 394,
+                            "transferSize": 3249,
+                            "isLongest": true,
+                            "children": {}
+                          }
+                        }
+                      },
+                      "25374.15": {
+                        "url": "https://koledar365.si/free/client-9bed23aa73c6eeb4.js",
+                        "navStartToEndTime": 176,
+                        "transferSize": 15163,
+                        "children": {
+                          "25374.72": {
+                            "url": "https://koledar365.si/free/site-search.mjs",
+                            "navStartToEndTime": 280,
+                            "transferSize": 2873,
+                            "children": {}
+                          },
+                          "25374.73": {
+                            "url": "https://koledar365.si/free/map-compat.js",
+                            "navStartToEndTime": 273,
+                            "transferSize": 1151,
+                            "children": {}
+                          }
+                        }
+                      },
+                      "25374.8": {
+                        "url": "https://koledar365.si/calendar-tools/mobile-layout.mjs?v=20261022-1",
+                        "navStartToEndTime": 272,
+                        "transferSize": 2727,
+                        "children": {}
+                      },
+                      "25374.7": {
+                        "url": "https://koledar365.si/assets/web-e71594e024d2f8b7.css",
+                        "navStartToEndTime": 179,
+                        "transferSize": 39236,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 394
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render blocking requests",
+        "score": 0,
+        "displayValue": "Est savings of 80 ms",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedMs",
+              "valueType": "timespanMs",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-e71594e024d2f8b7.css",
+              "totalBytes": 39236,
+              "wastedMs": 971
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "path": "/delovni-dnevi/2028/",
+    "fetchTime": "2026-10-22T16:36:48.172Z",
+    "origin": "https://koledar365.si",
+    "finalUrl": "https://koledar365.si/delovni-dnevi/2028/",
+    "lighthouseVersion": "12.8.2",
+    "environment": {
+      "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+      "benchmarkIndex": 4001,
+      "credits": {
+        "axe-core": "4.14.0"
+      }
+    },
+    "mode": "mobile simulated lab, production HTTPS, one run",
+    "scores": {
+      "performance": 0.98,
+      "accessibility": 1,
+      "seo": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1991.9519,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0,
+      "first-contentful-paint": 1916.9519,
+      "speed-index": 1916.9519
+    },
+    "findings": [
+      {
+        "id": "label-content-name-mismatch",
+        "title": "Elements with visible text labels do not have matching accessible names.",
+        "score": 0,
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "node",
+              "valueType": "node",
+              "subItemsHeading": {
+                "key": "relatedNode",
+                "valueType": "node"
+              },
+              "label": "Failing Elements"
+            }
+          ],
+          "items": [
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-0-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,0,A",
+                "selector": "main#vsebina > section#workdays-overview > div.workdays-month-grid > a.workdays-month-card",
+                "boundingRect": {
+                  "top": 1627,
+                  "bottom": 1775,
+                  "left": 25,
+                  "right": 203,
+                  "width": 178,
+                  "height": 148
+                },
+                "snippet": "<a class=\"workdays-month-card\" href=\"/delovni-dnevi/2028/januar/\" data-workdays-card=\"\" data-month=\"1\" data-holidays=\"[&quot;2028-01-01&quot;,&quot;2028-01-02&quot;]\" style=\"--month-progress:91%\" aria-label=\"Januar: 21 delovnih dni, 168 ur, 0 izločenih praznikov\">",
+                "nodeLabel": "01\n↗\nJanuar\n21\ndelovnih dni\n168 ur\n0 izločenih praznikov",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-1-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,1,A",
+                "selector": "main#vsebina > section#workdays-overview > div.workdays-month-grid > a.workdays-month-card",
+                "boundingRect": {
+                  "top": 1627,
+                  "bottom": 1775,
+                  "left": 210,
+                  "right": 387,
+                  "width": 178,
+                  "height": 148
+                },
+                "snippet": "<a class=\"workdays-month-card\" href=\"/delovni-dnevi/2028/februar/\" data-workdays-card=\"\" data-month=\"2\" data-holidays=\"[&quot;2028-02-08&quot;]\" style=\"--month-progress:87%\" aria-label=\"Februar: 20 delovnih dni, 160 ur, 1 izločenih praznikov\">",
+                "nodeLabel": "02\n↗\nFebruar\n20\ndelovnih dni\n160 ur\n1 izločenih praznikov",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-2-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,2,A",
+                "selector": "main#vsebina > section#workdays-overview > div.workdays-month-grid > a.workdays-month-card",
+                "boundingRect": {
+                  "top": 1782,
+                  "bottom": 1931,
+                  "left": 25,
+                  "right": 203,
+                  "width": 178,
+                  "height": 148
+                },
+                "snippet": "<a class=\"workdays-month-card\" href=\"/delovni-dnevi/2028/marec/\" data-workdays-card=\"\" data-month=\"3\" data-holidays=\"[]\" style=\"--month-progress:100%\" aria-label=\"Marec: 23 delovnih dni, 184 ur, 0 izločenih praznikov\">",
+                "nodeLabel": "03\n↗\nMarec\n23\ndelovnih dni\n184 ur\n0 izločenih praznikov",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-3-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,3,A",
+                "selector": "main#vsebina > section#workdays-overview > div.workdays-month-grid > a.workdays-month-card",
+                "boundingRect": {
+                  "top": 1782,
+                  "bottom": 1931,
+                  "left": 210,
+                  "right": 387,
+                  "width": 178,
+                  "height": 148
+                },
+                "snippet": "<a class=\"workdays-month-card\" href=\"/delovni-dnevi/2028/april/\" data-workdays-card=\"\" data-month=\"4\" data-holidays=\"[&quot;2028-04-16&quot;,&quot;2028-04-17&quot;,&quot;2028-04-27&quot;]\" style=\"--month-progress:78%\" aria-label=\"April: 18 delovnih dni, 144 ur, 2 izločenih praznikov\">",
+                "nodeLabel": "04\n↗\nApril\n18\ndelovnih dni\n144 ur\n2 izločenih praznikov",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-4-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,4,A",
+                "selector": "main#vsebina > section#workdays-overview > div.workdays-month-grid > a.workdays-month-card",
+                "boundingRect": {
+                  "top": 1938,
+                  "bottom": 2086,
+                  "left": 25,
+                  "right": 203,
+                  "width": 178,
+                  "height": 148
+                },
+                "snippet": "<a class=\"workdays-month-card\" href=\"/delovni-dnevi/2028/maj/\" data-workdays-card=\"\" data-month=\"5\" data-holidays=\"[&quot;2028-05-01&quot;,&quot;2028-05-02&quot;]\" style=\"--month-progress:91%\" aria-label=\"Maj: 21 delovnih dni, 168 ur, 2 izločenih praznikov\">",
+                "nodeLabel": "05\n↗\nMaj\n21\ndelovnih dni\n168 ur\n2 izločenih praznikov",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-5-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,5,A",
+                "selector": "main#vsebina > section#workdays-overview > div.workdays-month-grid > a.workdays-month-card",
+                "boundingRect": {
+                  "top": 1938,
+                  "bottom": 2086,
+                  "left": 210,
+                  "right": 387,
+                  "width": 178,
+                  "height": 148
+                },
+                "snippet": "<a class=\"workdays-month-card\" href=\"/delovni-dnevi/2028/junij/\" data-workdays-card=\"\" data-month=\"6\" data-holidays=\"[&quot;2028-06-04&quot;,&quot;2028-06-25&quot;]\" style=\"--month-progress:96%\" aria-label=\"Junij: 22 delovnih dni, 176 ur, 0 izločenih praznikov\">",
+                "nodeLabel": "06\n↗\nJunij\n22\ndelovnih dni\n176 ur\n0 izločenih praznikov",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-6-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,6,A",
+                "selector": "main#vsebina > section#workdays-overview > div.workdays-month-grid > a.workdays-month-card",
+                "boundingRect": {
+                  "top": 2093,
+                  "bottom": 2241,
+                  "left": 25,
+                  "right": 203,
+                  "width": 178,
+                  "height": 148
+                },
+                "snippet": "<a class=\"workdays-month-card\" href=\"/delovni-dnevi/2028/julij/\" data-workdays-card=\"\" data-month=\"7\" data-holidays=\"[]\" style=\"--month-progress:91%\" aria-label=\"Julij: 21 delovnih dni, 168 ur, 0 izločenih praznikov\">",
+                "nodeLabel": "07\n↗\nJulij\n21\ndelovnih dni\n168 ur\n0 izločenih praznikov",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-7-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,7,A",
+                "selector": "main#vsebina > section#workdays-overview > div.workdays-month-grid > a.workdays-month-card",
+                "boundingRect": {
+                  "top": 2093,
+                  "bottom": 2241,
+                  "left": 210,
+                  "right": 387,
+                  "width": 178,
+                  "height": 148
+                },
+                "snippet": "<a class=\"workdays-month-card\" href=\"/delovni-dnevi/2028/avgust/\" data-workdays-card=\"\" data-month=\"8\" data-holidays=\"[&quot;2028-08-15&quot;]\" style=\"--month-progress:96%\" aria-label=\"Avgust: 22 delovnih dni, 176 ur, 1 izločenih praznikov\">",
+                "nodeLabel": "08\n↗\nAvgust\n22\ndelovnih dni\n176 ur\n1 izločenih praznikov",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-8-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,8,A",
+                "selector": "main#vsebina > section#workdays-overview > div.workdays-month-grid > a.workdays-month-card",
+                "boundingRect": {
+                  "top": 2248,
+                  "bottom": 2396,
+                  "left": 25,
+                  "right": 203,
+                  "width": 178,
+                  "height": 148
+                },
+                "snippet": "<a class=\"workdays-month-card\" href=\"/delovni-dnevi/2028/september/\" data-workdays-card=\"\" data-month=\"9\" data-holidays=\"[]\" style=\"--month-progress:91%\" aria-label=\"September: 21 delovnih dni, 168 ur, 0 izločenih praznikov\">",
+                "nodeLabel": "09\n↗\nSeptember\n21\ndelovnih dni\n168 ur\n0 izločenih praznikov",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-9-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,9,A",
+                "selector": "main#vsebina > section#workdays-overview > div.workdays-month-grid > a.workdays-month-card",
+                "boundingRect": {
+                  "top": 2248,
+                  "bottom": 2396,
+                  "left": 210,
+                  "right": 387,
+                  "width": 178,
+                  "height": 148
+                },
+                "snippet": "<a class=\"workdays-month-card\" href=\"/delovni-dnevi/2028/oktober/\" data-workdays-card=\"\" data-month=\"10\" data-holidays=\"[&quot;2028-10-31&quot;]\" style=\"--month-progress:91%\" aria-label=\"Oktober: 21 delovnih dni, 168 ur, 1 izločenih praznikov\">",
+                "nodeLabel": "10\n↗\nOktober\n21\ndelovnih dni\n168 ur\n1 izločenih praznikov",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-10-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,10,A",
+                "selector": "main#vsebina > section#workdays-overview > div.workdays-month-grid > a.workdays-month-card",
+                "boundingRect": {
+                  "top": 2403,
+                  "bottom": 2551,
+                  "left": 25,
+                  "right": 203,
+                  "width": 178,
+                  "height": 148
+                },
+                "snippet": "<a class=\"workdays-month-card\" href=\"/delovni-dnevi/2028/november/\" data-workdays-card=\"\" data-month=\"11\" data-holidays=\"[&quot;2028-11-01&quot;]\" style=\"--month-progress:91%\" aria-label=\"November: 21 delovnih dni, 168 ur, 1 izločenih praznikov\">",
+                "nodeLabel": "11\n↗\nNovember\n21\ndelovnih dni\n168 ur\n1 izločenih praznikov",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-11-A",
+                "path": "2,HTML,1,BODY,6,MAIN,4,SECTION,4,DIV,11,A",
+                "selector": "main#vsebina > section#workdays-overview > div.workdays-month-grid > a.workdays-month-card",
+                "boundingRect": {
+                  "top": 2403,
+                  "bottom": 2551,
+                  "left": 210,
+                  "right": 387,
+                  "width": 178,
+                  "height": 148
+                },
+                "snippet": "<a class=\"workdays-month-card\" href=\"/delovni-dnevi/2028/december/\" data-workdays-card=\"\" data-month=\"12\" data-holidays=\"[&quot;2028-12-25&quot;,&quot;2028-12-26&quot;]\" style=\"--month-progress:83%\" aria-label=\"December: 19 delovnih dni, 152 ur, 2 izločenih praznikov\">",
+                "nodeLabel": "12\n↗\nDecember\n19\ndelovnih dni\n152 ur\n2 izločenih praznikov",
+                "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            }
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "impact": "serious",
+            "tags": [
+              "cat.semantics",
+              "wcag21a",
+              "wcag253",
+              "EN-301-549",
+              "EN-9.2.5.3",
+              "RGAAv4",
+              "RGAA-6.1.5"
+            ]
+          }
+        }
+      },
+      {
+        "id": "render-blocking-resources",
+        "title": "Eliminate render-blocking resources",
+        "score": 0,
+        "displayValue": "Est savings of 30 ms",
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedMs",
+              "valueType": "timespanMs",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-4a81b3aef27b9f0c.css",
+              "totalBytes": 45719,
+              "wastedMs": 1108
+            }
+          ],
+          "overallSavingsMs": 33
+        }
+      },
+      {
+        "id": "unminified-css",
+        "title": "Minify CSS",
+        "score": 0.5,
+        "displayValue": "Est savings of 3 KiB",
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedBytes",
+              "valueType": "bytes",
+              "label": "Est Savings"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-4a81b3aef27b9f0c.css",
+              "totalBytes": 45719,
+              "wastedBytes": 2702,
+              "wastedPercent": 5.90970586287477
+            }
+          ],
+          "overallSavingsMs": 0,
+          "overallSavingsBytes": 2702,
+          "sortedBy": [
+            "wastedBytes"
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            }
+          }
+        }
+      },
+      {
+        "id": "unused-css-rules",
+        "title": "Reduce unused CSS",
+        "score": 0,
+        "displayValue": "Est savings of 33 KiB",
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedBytes",
+              "valueType": "bytes",
+              "label": "Est Savings"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-4a81b3aef27b9f0c.css",
+              "wastedBytes": 33963,
+              "wastedPercent": 75.72730110975506,
+              "totalBytes": 44849
+            }
+          ],
+          "overallSavingsMs": 90,
+          "overallSavingsBytes": 33963,
+          "sortedBy": [
+            "wastedBytes"
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "metricSavings": {
+              "FCP": 90,
+              "LCP": 90
+            }
+          }
+        }
+      },
+      {
+        "id": "dom-size",
+        "title": "Avoid an excessive DOM size",
+        "score": 0.5,
+        "displayValue": "944 elements",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "statistic",
+              "valueType": "text",
+              "label": "Statistic"
+            },
+            {
+              "key": "node",
+              "valueType": "node",
+              "label": "Element"
+            },
+            {
+              "key": "value",
+              "valueType": "numeric",
+              "label": "Value"
+            }
+          ],
+          "items": [
+            {
+              "statistic": "Total DOM Elements",
+              "value": {
+                "type": "numeric",
+                "granularity": 1,
+                "value": 944
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-63-use",
+                "path": "2,HTML,1,BODY,4,NAV,0,DIV,4,DETAILS,1,DIV,1,DIV,0,SECTION,1,A,0,SPAN,0,svg,0,use",
+                "selector": "a > span.nav-directory__icon > svg.ui-icon > use",
+                "boundingRect": {
+                  "top": 552,
+                  "bottom": 576,
+                  "left": 253,
+                  "right": 277,
+                  "width": 24,
+                  "height": 24
+                },
+                "snippet": "<use href=\"/visuals/ui-material-v3.834e8abb995a5f11.svg#plus\" xlink:href=\"/visuals/ui-material-v3.834e8abb995a5f11.svg#plus\">",
+                "nodeLabel": "a > span.nav-directory__icon > svg.ui-icon > use"
+              },
+              "statistic": "Maximum DOM Depth",
+              "value": {
+                "type": "numeric",
+                "granularity": 1,
+                "value": 11
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-64-DIV",
+                "path": "2,HTML,1,BODY,6,MAIN,7,SECTION,2,DIV",
+                "selector": "body.gallery-page > main#vsebina > section#design-gallery > div.design-grid",
+                "boundingRect": {
+                  "top": 3264,
+                  "bottom": 8399,
+                  "left": 12,
+                  "right": 400,
+                  "width": 388,
+                  "height": 5135
+                },
+                "snippet": "<div class=\"design-grid\">",
+                "nodeLabel": "01\nČista mreža\n\nBarvna predloga · podpis Koledar365\n\nMoj predogled\n↗\nPDF\nPrenes…"
+              },
+              "statistic": "Maximum Child Elements",
+              "value": {
+                "type": "numeric",
+                "granularity": 1,
+                "value": 15
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0,
+        "details": {
+          "type": "list",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "DFA6B2BC866B688F4DAA5AFC2A4A9F5B": {
+                    "url": "https://koledar365.si/delovni-dnevi/2028/",
+                    "navStartToEndTime": 111,
+                    "transferSize": 10785,
+                    "isLongest": true,
+                    "children": {
+                      "25593.16": {
+                        "url": "https://koledar365.si/free/client-9bed23aa73c6eeb4.js",
+                        "navStartToEndTime": 233,
+                        "transferSize": 15163,
+                        "isLongest": true,
+                        "children": {
+                          "25593.112": {
+                            "url": "https://koledar365.si/free/map-compat.js",
+                            "navStartToEndTime": 315,
+                            "transferSize": 1151,
+                            "isLongest": true,
+                            "children": {}
+                          },
+                          "25593.111": {
+                            "url": "https://koledar365.si/free/site-search.mjs",
+                            "navStartToEndTime": 312,
+                            "transferSize": 2867,
+                            "children": {}
+                          }
+                        }
+                      },
+                      "25593.9": {
+                        "url": "https://koledar365.si/calendar-tools/mobile-layout.mjs?v=20261022-1",
+                        "navStartToEndTime": 235,
+                        "transferSize": 2725,
+                        "children": {}
+                      },
+                      "25593.8": {
+                        "url": "https://koledar365.si/assets/web-4a81b3aef27b9f0c.css",
+                        "navStartToEndTime": 171,
+                        "transferSize": 45719,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 315
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render blocking requests",
+        "score": 0,
+        "displayValue": "Est savings of 180 ms",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedMs",
+              "valueType": "timespanMs",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-4a81b3aef27b9f0c.css",
+              "totalBytes": 45719,
+              "wastedMs": 1108
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "path": "/solske-pocitnice/",
+    "fetchTime": "2026-10-22T16:36:55.553Z",
+    "origin": "https://koledar365.si",
+    "finalUrl": "https://koledar365.si/solske-pocitnice/",
+    "lighthouseVersion": "12.8.2",
+    "environment": {
+      "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+      "benchmarkIndex": 3839.5,
+      "credits": {
+        "axe-core": "4.14.0"
+      }
+    },
+    "mode": "mobile simulated lab, production HTTPS, one run",
+    "scores": {
+      "performance": 0.93,
+      "accessibility": 1,
+      "seo": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 2698.316625,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0,
+      "first-contentful-paint": 2077.6095,
+      "speed-index": 3909.1110299995153
+    },
+    "findings": [
+      {
+        "id": "largest-contentful-paint-element",
+        "title": "Largest Contentful Paint element",
+        "score": 0,
+        "displayValue": "2,700 ms",
+        "details": {
+          "type": "list",
+          "items": [
+            {
+              "type": "table",
+              "headings": [
+                {
+                  "key": "node",
+                  "valueType": "node",
+                  "label": "Element"
+                }
+              ],
+              "items": [
+                {
+                  "node": {
+                    "type": "node",
+                    "lhId": "page-3-H1",
+                    "path": "2,HTML,1,BODY,6,MAIN,3,DIV,1,SECTION,0,DIV,1,H1",
+                    "selector": "div.school-page > section.sp-hero > div.sp-hero-copy > h1#sp-title",
+                    "boundingRect": {
+                      "top": 460,
+                      "bottom": 603,
+                      "left": 42,
+                      "right": 370,
+                      "width": 328,
+                      "height": 143
+                    },
+                    "snippet": "<h1 id=\"sp-title\">",
+                    "nodeLabel": "Šolske počitnice 2026/2027 v Sloveniji"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "table",
+              "headings": [
+                {
+                  "key": "phase",
+                  "valueType": "text",
+                  "label": "Phase"
+                },
+                {
+                  "key": "percent",
+                  "valueType": "text",
+                  "label": "% of LCP"
+                },
+                {
+                  "key": "timing",
+                  "valueType": "ms",
+                  "label": "Timing"
+                }
+              ],
+              "items": [
+                {
+                  "phase": "TTFB",
+                  "timing": 513.80475,
+                  "percent": "19%"
+                },
+                {
+                  "phase": "Load Delay",
+                  "timing": 0,
+                  "percent": "0%"
+                },
+                {
+                  "phase": "Load Time",
+                  "timing": 0,
+                  "percent": "0%"
+                },
+                {
+                  "phase": "Render Delay",
+                  "timing": 2184.511875,
+                  "percent": "81%"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "render-blocking-resources",
+        "title": "Eliminate render-blocking resources",
+        "score": 0,
+        "displayValue": "Est savings of 450 ms",
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedMs",
+              "valueType": "timespanMs",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-43b4bc02540cb9d6.css",
+              "totalBytes": 43396,
+              "wastedMs": 1114
+            }
+          ],
+          "overallSavingsMs": 450
+        }
+      },
+      {
+        "id": "unminified-css",
+        "title": "Minify CSS",
+        "score": 0,
+        "displayValue": "Est savings of 3 KiB",
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedBytes",
+              "valueType": "bytes",
+              "label": "Est Savings"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-43b4bc02540cb9d6.css",
+              "totalBytes": 43396,
+              "wastedBytes": 2931,
+              "wastedPercent": 6.754226336471769
+            }
+          ],
+          "overallSavingsMs": 0,
+          "overallSavingsBytes": 2931,
+          "sortedBy": [
+            "wastedBytes"
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "metricSavings": {
+              "FCP": 150,
+              "LCP": 0
+            }
+          }
+        }
+      },
+      {
+        "id": "unused-css-rules",
+        "title": "Reduce unused CSS",
+        "score": 0,
+        "displayValue": "Est savings of 28 KiB",
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedBytes",
+              "valueType": "bytes",
+              "label": "Est Savings"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-43b4bc02540cb9d6.css",
+              "wastedBytes": 28381,
+              "wastedPercent": 66.72310573093863,
+              "totalBytes": 42536
+            }
+          ],
+          "overallSavingsMs": 60,
+          "overallSavingsBytes": 28381,
+          "sortedBy": [
+            "wastedBytes"
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "metricSavings": {
+              "FCP": 240,
+              "LCP": 60
+            }
+          }
+        }
+      },
+      {
+        "id": "uses-responsive-images",
+        "title": "Properly size images",
+        "score": 0.5,
+        "displayValue": "Est savings of 89 KiB",
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "node",
+              "valueType": "node",
+              "label": ""
+            },
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Resource Size"
+            },
+            {
+              "key": "wastedBytes",
+              "valueType": "bytes",
+              "label": "Est Savings"
+            }
+          ],
+          "items": [
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-138-IMG",
+                "path": "2,HTML,1,BODY,6,MAIN,3,DIV,4,SECTION,3,DIV,1,DIV,0,ARTICLE,0,DIV,0,IMG",
+                "selector": "div.sp-holiday-grid > article#pocitnice-autumn > div.sp-card-art > img",
+                "boundingRect": {
+                  "top": 2008,
+                  "bottom": 2137,
+                  "left": 17,
+                  "right": 199,
+                  "width": 182,
+                  "height": 129
+                },
+                "snippet": "<img src=\"/school/photos/autumn-zavrsnica-5f1a0392-640-2d299391ccf3.webp\" srcset=\"/school/photos/autumn-zavrsnica-5f1a0392-320-fb9f68392ac8.webp 320w, /scho…\" sizes=\"(max-width:600px) 50vw, (max-width:1000px) 45vw, 320px\" width=\"640\" height=\"350\" alt=\"Jesenska pešpot med oranžnimi in rumenimi drevesi v dolini Završnice v Slo…\" loading=\"lazy\" decoding=\"async\">",
+                "nodeLabel": "Jesenska pešpot med oranžnimi in rumenimi drevesi v dolini Završnice v Slovenij…"
+              },
+              "url": "https://koledar365.si/school/photos/autumn-zavrsnica-5f1a0392-640-2d299391ccf3.webp",
+              "totalBytes": 103454,
+              "wastedBytes": 70246,
+              "wastedPercent": 67.901171875
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-139-IMG",
+                "path": "2,HTML,1,BODY,6,MAIN,3,DIV,4,SECTION,3,DIV,1,DIV,1,ARTICLE,0,DIV,0,IMG",
+                "selector": "div.sp-holiday-grid > article#pocitnice-newyear > div.sp-card-art > img",
+                "boundingRect": {
+                  "top": 2008,
+                  "bottom": 2137,
+                  "left": 213,
+                  "right": 395,
+                  "width": 182,
+                  "height": 129
+                },
+                "snippet": "<img src=\"/school/photos/ljubljana-holidays-7690f2f1-640-7b0071eac42e.webp\" srcset=\"/school/photos/ljubljana-holidays-7690f2f1-320-7176aa3d171f.webp 320w, /sc…\" sizes=\"(max-width:600px) 50vw, (max-width:1000px) 45vw, 320px\" width=\"640\" height=\"350\" alt=\"Praznično osvetljeno staro mestno jedro Ljubljane ob reki Ljubljanici.\" loading=\"lazy\" decoding=\"async\">",
+                "nodeLabel": "Praznično osvetljeno staro mestno jedro Ljubljane ob reki Ljubljanici."
+              },
+              "url": "https://koledar365.si/school/photos/ljubljana-holidays-7690f2f1-640-7b0071eac42e.webp",
+              "totalBytes": 30258,
+              "wastedBytes": 20546,
+              "wastedPercent": 67.901171875
+            }
+          ],
+          "overallSavingsMs": 0,
+          "overallSavingsBytes": 90792,
+          "sortedBy": [
+            "wastedBytes"
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 0
+            }
+          }
+        }
+      },
+      {
+        "id": "dom-size",
+        "title": "Avoid an excessive DOM size",
+        "score": 0.5,
+        "displayValue": "1,150 elements",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "statistic",
+              "valueType": "text",
+              "label": "Statistic"
+            },
+            {
+              "key": "node",
+              "valueType": "node",
+              "label": "Element"
+            },
+            {
+              "key": "value",
+              "valueType": "numeric",
+              "label": "Value"
+            }
+          ],
+          "items": [
+            {
+              "statistic": "Total DOM Elements",
+              "value": {
+                "type": "numeric",
+                "granularity": 1,
+                "value": 1150
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-129-use",
+                "path": "2,HTML,1,BODY,6,MAIN,3,DIV,4,SECTION,3,DIV,1,DIV,0,ARTICLE,1,DIV,3,DIV,1,BUTTON,0,svg,0,use",
+                "selector": "div.sp-card-bottom > button > svg.sp-icon > use",
+                "boundingRect": {
+                  "top": 2341,
+                  "bottom": 2355,
+                  "left": 161,
+                  "right": 174,
+                  "width": 13,
+                  "height": 14
+                },
+                "snippet": "<use href=\"#sp-download\">",
+                "nodeLabel": "div.sp-card-bottom > button > svg.sp-icon > use"
+              },
+              "statistic": "Maximum DOM Depth",
+              "value": {
+                "type": "numeric",
+                "granularity": 1,
+                "value": 12
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-130-DIV",
+                "path": "2,HTML,1,BODY,6,MAIN,3,DIV,5,SECTION,1,DIV,0,DIV,1,DIV",
+                "selector": "section.sp-calendar-section > div.sp-calendar-layout > div.sp-calendar-box > div.sp-calendar-days",
+                "boundingRect": {
+                  "top": 3767,
+                  "bottom": 4057,
+                  "left": 35,
+                  "right": 377,
+                  "width": 342,
+                  "height": 290
+                },
+                "snippet": "<div class=\"sp-calendar-days\" data-calendar=\"\" aria-label=\"Mesečni koledar\">",
+                "nodeLabel": "PON\nTOR\nSRE\nČET\nPET\nSOB\nNED\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n…"
+              },
+              "statistic": "Maximum Child Elements",
+              "value": {
+                "type": "numeric",
+                "granularity": 1,
+                "value": 41
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "forced-reflow-insight",
+        "title": "Forced reflow",
+        "score": 0,
+        "details": {
+          "type": "list",
+          "items": [
+            {
+              "type": "table",
+              "headings": [
+                {
+                  "key": "source",
+                  "valueType": "source-location",
+                  "label": "Source"
+                },
+                {
+                  "key": "reflowTime",
+                  "valueType": "ms",
+                  "granularity": 1,
+                  "label": "Total reflow time"
+                }
+              ],
+              "items": [
+                {
+                  "source": {
+                    "type": "source-location",
+                    "url": "https://koledar365.si/solske-pocitnice/",
+                    "urlProvider": "network",
+                    "line": 764,
+                    "column": 71
+                  },
+                  "reflowTime": 42.026
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "score": 0,
+        "displayValue": "Est savings of 143 KiB",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL",
+              "subItemsHeading": {
+                "key": "reason",
+                "valueType": "text"
+              }
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Resource Size"
+            },
+            {
+              "key": "wastedBytes",
+              "valueType": "bytes",
+              "label": "Est Savings",
+              "subItemsHeading": {
+                "key": "wastedBytes",
+                "valueType": "bytes"
+              }
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/school/photos/autumn-zavrsnica-5f1a0392-640-2d299391ccf3.webp",
+              "totalBytes": 103454,
+              "wastedBytes": 98383,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "Increasing the image compression factor could improve this image's download size.",
+                    "wastedBytes": 74663
+                  },
+                  {
+                    "reason": "This image file is larger than it needs to be (494x350) for its displayed dimensions (236x129). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 85231
+                  }
+                ]
+              }
+            },
+            {
+              "url": "https://koledar365.si/school/photos/ljubljana-holidays-7690f2f1-640-7b0071eac42e.webp",
+              "totalBytes": 30258,
+              "wastedBytes": 25187,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "This image file is larger than it needs to be (494x350) for its displayed dimensions (236x129). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 24928
+                  }
+                ]
+              }
+            },
+            {
+              "url": "https://koledar365.si/school/photos/hero-bled-c5b4afc6-640-24b49a223faf.webp",
+              "totalBytes": 40120,
+              "wastedBytes": 23290,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "Increasing the image compression factor could improve this image's download size.",
+                    "wastedBytes": 7301
+                  },
+                  {
+                    "reason": "This image file is larger than it needs to be (563x350) for its displayed dimensions (430x235). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 19546
+                  }
+                ]
+              }
+            }
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "wastedBytes": 146860
+          }
+        }
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0,
+        "details": {
+          "type": "list",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "0F89B12781241A9E669AFBA22AEBF3A7": {
+                    "url": "https://koledar365.si/solske-pocitnice/",
+                    "navStartToEndTime": 113,
+                    "transferSize": 19232,
+                    "isLongest": true,
+                    "children": {
+                      "25644.9": {
+                        "url": "https://koledar365.si/calendar-tools/mobile-layout.mjs?v=20261022-1",
+                        "navStartToEndTime": 220,
+                        "transferSize": 810,
+                        "isLongest": true,
+                        "children": {}
+                      },
+                      "25644.8": {
+                        "url": "https://koledar365.si/school/experience.mjs?v=20261022-1",
+                        "navStartToEndTime": 219,
+                        "transferSize": 8200,
+                        "children": {}
+                      },
+                      "25644.15": {
+                        "url": "https://koledar365.si/free/client-9bed23aa73c6eeb4.js",
+                        "navStartToEndTime": 113,
+                        "transferSize": 0,
+                        "children": {
+                          "25644.58": {
+                            "url": "https://koledar365.si/free/site-search.mjs",
+                            "navStartToEndTime": 219,
+                            "transferSize": 2867,
+                            "children": {}
+                          },
+                          "25644.59": {
+                            "url": "https://koledar365.si/free/map-compat.js",
+                            "navStartToEndTime": 219,
+                            "transferSize": 1151,
+                            "children": {}
+                          }
+                        }
+                      },
+                      "25644.7": {
+                        "url": "https://koledar365.si/assets/web-43b4bc02540cb9d6.css",
+                        "navStartToEndTime": 174,
+                        "transferSize": 43396,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 220
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render blocking requests",
+        "score": 0,
+        "displayValue": "Est savings of 450 ms",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedMs",
+              "valueType": "timespanMs",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-43b4bc02540cb9d6.css",
+              "totalBytes": 43396,
+              "wastedMs": 1114
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "path": "/datumski-kalkulator/",
+    "fetchTime": "2026-10-22T16:37:04.609Z",
+    "origin": "https://koledar365.si",
+    "finalUrl": "https://koledar365.si/datumski-kalkulator/",
+    "lighthouseVersion": "12.8.2",
+    "environment": {
+      "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+      "benchmarkIndex": 3977,
+      "credits": {
+        "axe-core": "4.14.0"
+      }
+    },
+    "mode": "mobile simulated lab, production HTTPS, one run",
+    "scores": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "seo": 1
+    },
+    "metrics": {
+      "largest-contentful-paint": 1925.5032,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0,
+      "first-contentful-paint": 1775.5032,
+      "speed-index": 1775.5032
+    },
+    "findings": [
+      {
+        "id": "render-blocking-resources",
+        "title": "Eliminate render-blocking resources",
+        "score": 0,
+        "displayValue": "Est savings of 300 ms",
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedMs",
+              "valueType": "timespanMs",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-426938d56f60fb36.css",
+              "totalBytes": 35444,
+              "wastedMs": 963
+            }
+          ],
+          "overallSavingsMs": 300
+        }
+      },
+      {
+        "id": "unminified-css",
+        "title": "Minify CSS",
+        "score": 0,
+        "displayValue": "Est savings of 3 KiB",
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedBytes",
+              "valueType": "bytes",
+              "label": "Est Savings"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-426938d56f60fb36.css",
+              "totalBytes": 35444,
+              "wastedBytes": 2593,
+              "wastedPercent": 7.316432590724942
+            }
+          ],
+          "overallSavingsMs": 150,
+          "overallSavingsBytes": 2593,
+          "sortedBy": [
+            "wastedBytes"
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 150
+            }
+          }
+        }
+      },
+      {
+        "id": "unused-css-rules",
+        "title": "Reduce unused CSS",
+        "score": 0,
+        "displayValue": "Est savings of 25 KiB",
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedBytes",
+              "valueType": "bytes",
+              "label": "Est Savings"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-426938d56f60fb36.css",
+              "wastedBytes": 25189,
+              "wastedPercent": 72.84456438237437,
+              "totalBytes": 34579
+            }
+          ],
+          "overallSavingsMs": 240,
+          "overallSavingsBytes": 25189,
+          "sortedBy": [
+            "wastedBytes"
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "metricSavings": {
+              "FCP": 240,
+              "LCP": 240
+            }
+          }
+        }
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0,
+        "details": {
+          "type": "list",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "C3ED8B367940DD95A48FECE7F2A19888": {
+                    "url": "https://koledar365.si/datumski-kalkulator/",
+                    "navStartToEndTime": 107,
+                    "transferSize": 9893,
+                    "isLongest": true,
+                    "children": {
+                      "25686.14": {
+                        "url": "https://koledar365.si/free/client-9bed23aa73c6eeb4.js",
+                        "navStartToEndTime": 107,
+                        "transferSize": 0,
+                        "isLongest": true,
+                        "children": {
+                          "25686.32": {
+                            "url": "https://koledar365.si/free/site-search.mjs",
+                            "navStartToEndTime": 220,
+                            "transferSize": 2872,
+                            "isLongest": true,
+                            "children": {}
+                          },
+                          "25686.33": {
+                            "url": "https://koledar365.si/free/map-compat.js",
+                            "navStartToEndTime": 220,
+                            "transferSize": 1151,
+                            "children": {}
+                          }
+                        }
+                      },
+                      "25686.8": {
+                        "url": "https://koledar365.si/calendar-tools/mobile-layout.mjs?v=20261022-1",
+                        "navStartToEndTime": 220,
+                        "transferSize": 2724,
+                        "children": {}
+                      },
+                      "25686.7": {
+                        "url": "https://koledar365.si/assets/web-426938d56f60fb36.css",
+                        "navStartToEndTime": 170,
+                        "transferSize": 35444,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 220
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render blocking requests",
+        "score": 0,
+        "displayValue": "Est savings of 450 ms",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedMs",
+              "valueType": "timespanMs",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://koledar365.si/assets/web-426938d56f60fb36.css",
+              "totalBytes": 35444,
+              "wastedMs": 963
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

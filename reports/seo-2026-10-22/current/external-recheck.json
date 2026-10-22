@@ -1,0 +1,56 @@
+{
+  "checked_at": "2026-10-22T13:51:58.629731+00:00",
+  "tested": 6,
+  "results": [
+    {
+      "url": "https://portalvvesolje.si/dogodki",
+      "status": 200,
+      "final_url": "https://portalvvesolje.si/dogodki",
+      "redirects": [],
+      "content_type": "text/html; charset=UTF-8",
+      "sample_bytes": 4096,
+      "magic": "3c21646f6374797065206874",
+      "seconds": 0.646
+    },
+    {
+      "url": "https://portalvvesolje.si/novice/2026/Zanimivosti%20no%C4%8Dnega%20neba%20avgust%202026",
+      "status": 200,
+      "final_url": "https://portalvvesolje.si/novice/2026/Zanimivosti%20no%C4%8Dnega%20neba%20avgust%202026",
+      "redirects": [],
+      "content_type": "text/html; charset=UTF-8",
+      "sample_bytes": 4096,
+      "magic": "3c21646f6374797065206874",
+      "seconds": 0.662
+    },
+    {
+      "url": "https://www.etno-muzej.si/sl/razstave/pust-mozirski",
+      "status": 200,
+      "final_url": "https://www.etno-muzej.si/sl/razstave/pust-mozirski",
+      "redirects": [],
+      "content_type": "text/html; charset=utf-8",
+      "sample_bytes": 4096,
+      "magic": "0a3c21444f43545950452068",
+      "seconds": 0.463
+    },
+    {
+      "url": "https://www.iso.org/iso-8601-date-and-time-format.html",
+      "status": 403,
+      "final_url": "https://www.iso.org/iso-8601-date-and-time-format.html",
+      "redirects": [],
+      "classification": "access_restricted"
+    },
+    {
+      "url": "https://www.gov.si/assets/ministrstva/MOP/Dokumenti/Urbani-razvoj/naselja_s_statusom_mesta.pdf",
+      "status": null,
+      "error": "The read operation timed out",
+      "classification": "unverified_network_error"
+    },
+    {
+      "url": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2006-01-0299",
+      "status": 503,
+      "final_url": "https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2006-01-0299",
+      "redirects": [],
+      "classification": "http_error"
+    }
+  ]
+}

@@ -1,0 +1,1031 @@
+{
+  "checked_at": "2026-10-22T15:42:43.738Z",
+  "engine": "axe-core WCAG A/AA automated rules; manual checks remain separate",
+  "origin": "https://koledar365.si",
+  "results": [
+    {
+      "path": "/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 4
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 29
+        }
+      ],
+      "passes": 32
+    },
+    {
+      "path": "/koledar/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/koledar/2028/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 341
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/koledar/2028/februar/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 88
+        }
+      ],
+      "passes": 33
+    },
+    {
+      "path": "/lunin-koledar/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 46
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "path": "/lunin-koledar/2029/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 570
+        }
+      ],
+      "passes": 33
+    },
+    {
+      "path": "/lunin-koledar/2029/avgust/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 145
+        }
+      ],
+      "passes": 34
+    },
+    {
+      "path": "/pomembni-dnevi/2027/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 16
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/delovni-dnevi/2028/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 98
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "path": "/delovni-dnevi/2028/februar/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 73
+        }
+      ],
+      "passes": 33
+    },
+    {
+      "path": "/prazniki/2028/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 84
+        }
+      ],
+      "passes": 36
+    },
+    {
+      "path": "/podaljsani-vikendi/2028/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/datumski-kalkulator/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 26
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/stevilka-tedna/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 27
+    },
+    {
+      "path": "/dan-v-letu/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 27
+    },
+    {
+      "path": "/druzinski-planer/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 3
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 103
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "path": "/razpored-izmen/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 4
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 112
+        }
+      ],
+      "passes": 30
+    },
+    {
+      "path": "/solski-urnik/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 135
+        }
+      ],
+      "passes": 30
+    },
+    {
+      "path": "/solske-pocitnice/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 42
+        }
+      ],
+      "passes": 29
+    },
+    {
+      "path": "/solski-koledar/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 26
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/ljubljana/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 31
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "path": "/lunine-mene/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 19
+        }
+      ],
+      "passes": 33
+    },
+    {
+      "path": "/soncni-mrk/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 26
+        }
+      ],
+      "passes": 36
+    },
+    {
+      "path": "/setveni-koledar/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 34
+        }
+      ],
+      "passes": 35
+    },
+    {
+      "path": "/izplacila-pokojnin/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 21
+        }
+      ],
+      "passes": 33
+    },
+    {
+      "path": "/horoskop/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 53
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/ustvari-koledar/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 492
+        }
+      ],
+      "passes": 33
+    },
+    {
+      "path": "/kontakt/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 36
+        }
+      ],
+      "passes": 29
+    },
+    {
+      "path": "/o-nas/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 55
+        }
+      ],
+      "passes": 32
+    },
+    {
+      "path": "/uredniska-politika/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 29
+    },
+    {
+      "path": "/viri-in-metodologija/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 17
+        }
+      ],
+      "passes": 29
+    },
+    {
+      "path": "/piskotki/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 4
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 26
+        }
+      ],
+      "passes": 34
+    },
+    {
+      "path": "/koledar/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/koledar/2028/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 72
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "path": "/koledar/2028/februar/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 76
+        }
+      ],
+      "passes": 30
+    },
+    {
+      "path": "/lunin-koledar/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 43
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "path": "/lunin-koledar/2029/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 418
+        }
+      ],
+      "passes": 33
+    },
+    {
+      "path": "/lunin-koledar/2029/avgust/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 130
+        }
+      ],
+      "passes": 34
+    },
+    {
+      "path": "/pomembni-dnevi/2027/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/delovni-dnevi/2028/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 94
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "path": "/delovni-dnevi/2028/februar/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 70
+        }
+      ],
+      "passes": 29
+    },
+    {
+      "path": "/prazniki/2028/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 86
+        }
+      ],
+      "passes": 36
+    },
+    {
+      "path": "/podaljsani-vikendi/2028/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/datumski-kalkulator/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 21
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/stevilka-tedna/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ],
+      "passes": 27
+    },
+    {
+      "path": "/dan-v-letu/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ],
+      "passes": 27
+    },
+    {
+      "path": "/druzinski-planer/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 3
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 99
+        }
+      ],
+      "passes": 29
+    },
+    {
+      "path": "/razpored-izmen/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 4
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 119
+        }
+      ],
+      "passes": 30
+    },
+    {
+      "path": "/solski-urnik/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 116
+        }
+      ],
+      "passes": 30
+    },
+    {
+      "path": "/solske-pocitnice/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 39
+        }
+      ],
+      "passes": 29
+    },
+    {
+      "path": "/solski-koledar/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 25
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/ljubljana/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 27
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "path": "/lunine-mene/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 16
+        }
+      ],
+      "passes": 33
+    },
+    {
+      "path": "/soncni-mrk/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 22
+        }
+      ],
+      "passes": 36
+    },
+    {
+      "path": "/setveni-koledar/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 47
+        }
+      ],
+      "passes": 36
+    },
+    {
+      "path": "/izplacila-pokojnin/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 18
+        }
+      ],
+      "passes": 34
+    },
+    {
+      "path": "/horoskop/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 49
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/ustvari-koledar/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 484
+        }
+      ],
+      "passes": 33
+    },
+    {
+      "path": "/kontakt/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 28
+        }
+      ],
+      "passes": 29
+    },
+    {
+      "path": "/o-nas/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 51
+        }
+      ],
+      "passes": 32
+    },
+    {
+      "path": "/uredniska-politika/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ],
+      "passes": 29
+    },
+    {
+      "path": "/viri-in-metodologija/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 14
+        }
+      ],
+      "passes": 30
+    },
+    {
+      "path": "/piskotki/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ],
+      "passes": 31
+    }
+  ]
+}

@@ -1,0 +1,1613 @@
+{
+  "checked_at": "2026-10-22T16:12:28.130Z",
+  "engine": "axe-core all enabled rules, including best practices; candidate preview; manual checks remain separate",
+  "origin": "http://127.0.0.1:3663",
+  "results": [
+    {
+      "path": "/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "landmark-unique",
+          "impact": "moderate",
+          "description": "Ensure landmarks are unique",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-unique?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".left-panel"
+              ],
+              "summary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable",
+              "html": "<aside class=\"left-panel\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 4
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 29
+        }
+      ],
+      "passes": 53
+    },
+    {
+      "path": "/koledar/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 50
+    },
+    {
+      "path": "/koledar/2028/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 341
+        }
+      ],
+      "passes": 51
+    },
+    {
+      "path": "/koledar/2028/februar/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 88
+        }
+      ],
+      "passes": 53
+    },
+    {
+      "path": "/lunin-koledar/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 46
+        }
+      ],
+      "passes": 45
+    },
+    {
+      "path": "/lunin-koledar/2029/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 570
+        }
+      ],
+      "passes": 54
+    },
+    {
+      "path": "/lunin-koledar/2029/avgust/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 145
+        }
+      ],
+      "passes": 55
+    },
+    {
+      "path": "/pomembni-dnevi/2027/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 16
+        }
+      ],
+      "passes": 50
+    },
+    {
+      "path": "/delovni-dnevi/2028/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 98
+        }
+      ],
+      "passes": 45
+    },
+    {
+      "path": "/delovni-dnevi/2028/februar/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 73
+        }
+      ],
+      "passes": 53
+    },
+    {
+      "path": "/prazniki/2028/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".panel"
+              ],
+              "summary": "Fix any of the following:\n  The complementary landmark is contained in another landmark.",
+              "html": "<aside class=\"panel gallery-context\" aria-label=\"Nastavitve tiskanega koledarja\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 84
+        }
+      ],
+      "passes": 57
+    },
+    {
+      "path": "/podaljsani-vikendi/2028/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 50
+    },
+    {
+      "path": "/datumski-kalkulator/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 26
+        }
+      ],
+      "passes": 47
+    },
+    {
+      "path": "/stevilka-tedna/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 43
+    },
+    {
+      "path": "/dan-v-letu/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 43
+    },
+    {
+      "path": "/druzinski-planer/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "#family-members"
+              ],
+              "summary": "Fix any of the following:\n  The complementary landmark is contained in another landmark.",
+              "html": "<aside class=\"family-card family-members-card\" id=\"family-members\" aria-labelledby=\"family-members-title\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 3
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 103
+        }
+      ],
+      "passes": 45
+    },
+    {
+      "path": "/razpored-izmen/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "aside"
+              ],
+              "summary": "Fix any of the following:\n  The complementary landmark is contained in another landmark.",
+              "html": "<aside class=\"shift-preview panel\" aria-labelledby=\"shift-preview-title\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 4
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 112
+        }
+      ],
+      "passes": 48
+    },
+    {
+      "path": "/solski-urnik/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".student-side-column"
+              ],
+              "summary": "Fix any of the following:\n  The null landmark is contained in another landmark.",
+              "html": "<aside class=\"student-side-column\">"
+            },
+            {
+              "target": [
+                ".student-source-note"
+              ],
+              "summary": "Fix any of the following:\n  The complementary landmark is contained in another landmark.",
+              "html": "<aside class=\"student-source-note\" aria-label=\"Uradni viri in pomembne informacije\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 135
+        }
+      ],
+      "passes": 47
+    },
+    {
+      "path": "/solske-pocitnice/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".sp-tip"
+              ],
+              "summary": "Fix any of the following:\n  The null landmark is contained in another landmark.",
+              "html": "<aside class=\"sp-holiday sp-tip\">"
+            },
+            {
+              "target": [
+                ".sp-month-aside"
+              ],
+              "summary": "Fix any of the following:\n  The null landmark is contained in another landmark.",
+              "html": "<aside class=\"sp-month-aside\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 42
+        }
+      ],
+      "passes": 47
+    },
+    {
+      "path": "/solski-koledar/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "aside"
+              ],
+              "summary": "Fix any of the following:\n  The null landmark is contained in another landmark.",
+              "html": "<aside class=\"ed-filter-panel\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 26
+        }
+      ],
+      "passes": 47
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/ljubljana/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "aside"
+              ],
+              "summary": "Fix any of the following:\n  The complementary landmark is contained in another landmark.",
+              "html": "<aside class=\"sun-day-card\" aria-label=\"Sončni časi in dnevna svetloba\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 31
+        }
+      ],
+      "passes": 44
+    },
+    {
+      "path": "/lunine-mene/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "aside"
+              ],
+              "summary": "Fix any of the following:\n  The null landmark is contained in another landmark.",
+              "html": "<aside class=\"astro-related\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 19
+        }
+      ],
+      "passes": 53
+    },
+    {
+      "path": "/soncni-mrk/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".astro-related"
+              ],
+              "summary": "Fix any of the following:\n  The null landmark is contained in another landmark.",
+              "html": "<aside class=\"astro-related\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 26
+        }
+      ],
+      "passes": 57
+    },
+    {
+      "path": "/setveni-koledar/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 34
+        }
+      ],
+      "passes": 56
+    },
+    {
+      "path": "/izplacila-pokojnin/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "#viri-izplacil > aside"
+              ],
+              "summary": "Fix any of the following:\n  The null landmark is contained in another landmark.",
+              "html": "<aside><h3>Ste opazili spremembo?</h3>\n<p>Pošljite nam povezavo do uradne objave in podatek, ki ga je treba popraviti.</p>\n<a href=\"/kontakt/\">Sporočite popravek →</a><a href=\"/viri-in-metodologija/\">Naša metodologija →</a><a href=\"/o-nas/\">O Koledar365 →</a></aside>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 21
+        }
+      ],
+      "passes": 54
+    },
+    {
+      "path": "/horoskop/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "aria-allowed-role",
+          "impact": "minor",
+          "description": "Ensure role attribute has an appropriate value for the element",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-allowed-role?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "article[data-sign-card=\"oven\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"oven\" data-element=\"Ogenj\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"bik\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"bik\" data-element=\"Zemlja\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"dvojcka\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"dvojcka\" data-element=\"Zrak\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"rak\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"rak\" data-element=\"Voda\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"lev\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"lev\" data-element=\"Ogenj\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"devica\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"devica\" data-element=\"Zemlja\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"tehtnica\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"tehtnica\" data-element=\"Zrak\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"skorpijon\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"skorpijon\" data-element=\"Voda\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"strelec\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"strelec\" data-element=\"Ogenj\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"kozorog\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"kozorog\" data-element=\"Zemlja\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"vodnar\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"vodnar\" data-element=\"Zrak\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"ribi\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"ribi\" data-element=\"Voda\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 53
+        }
+      ],
+      "passes": 48
+    },
+    {
+      "path": "/ustvari-koledar/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 492
+        }
+      ],
+      "passes": 50
+    },
+    {
+      "path": "/kontakt/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 36
+        }
+      ],
+      "passes": 46
+    },
+    {
+      "path": "/o-nas/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 55
+        }
+      ],
+      "passes": 49
+    },
+    {
+      "path": "/uredniska-politika/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 45
+    },
+    {
+      "path": "/viri-in-metodologija/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "aside"
+              ],
+              "summary": "Fix any of the following:\n  The null landmark is contained in another landmark.",
+              "html": "<aside>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 17
+        }
+      ],
+      "passes": 45
+    },
+    {
+      "path": "/piskotki/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 50
+    },
+    {
+      "path": "/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "landmark-unique",
+          "impact": "moderate",
+          "description": "Ensure landmarks are unique",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-unique?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".left-panel"
+              ],
+              "summary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable",
+              "html": "<aside class=\"left-panel\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 4
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 26
+        }
+      ],
+      "passes": 55
+    },
+    {
+      "path": "/koledar/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ],
+      "passes": 50
+    },
+    {
+      "path": "/koledar/2028/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 72
+        }
+      ],
+      "passes": 45
+    },
+    {
+      "path": "/koledar/2028/februar/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 76
+        }
+      ],
+      "passes": 47
+    },
+    {
+      "path": "/lunin-koledar/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 43
+        }
+      ],
+      "passes": 45
+    },
+    {
+      "path": "/lunin-koledar/2029/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 418
+        }
+      ],
+      "passes": 54
+    },
+    {
+      "path": "/lunin-koledar/2029/avgust/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 130
+        }
+      ],
+      "passes": 55
+    },
+    {
+      "path": "/pomembni-dnevi/2027/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 50
+    },
+    {
+      "path": "/delovni-dnevi/2028/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 94
+        }
+      ],
+      "passes": 45
+    },
+    {
+      "path": "/delovni-dnevi/2028/februar/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 70
+        }
+      ],
+      "passes": 46
+    },
+    {
+      "path": "/prazniki/2028/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".panel"
+              ],
+              "summary": "Fix any of the following:\n  The complementary landmark is contained in another landmark.",
+              "html": "<aside class=\"panel gallery-context\" aria-label=\"Nastavitve tiskanega koledarja\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 86
+        }
+      ],
+      "passes": 57
+    },
+    {
+      "path": "/podaljsani-vikendi/2028/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ],
+      "passes": 50
+    },
+    {
+      "path": "/datumski-kalkulator/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 21
+        }
+      ],
+      "passes": 47
+    },
+    {
+      "path": "/stevilka-tedna/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ],
+      "passes": 43
+    },
+    {
+      "path": "/dan-v-letu/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ],
+      "passes": 43
+    },
+    {
+      "path": "/druzinski-planer/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "#family-members"
+              ],
+              "summary": "Fix any of the following:\n  The complementary landmark is contained in another landmark.",
+              "html": "<aside class=\"family-card family-members-card\" id=\"family-members\" aria-labelledby=\"family-members-title\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 3
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 99
+        }
+      ],
+      "passes": 46
+    },
+    {
+      "path": "/razpored-izmen/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "aside"
+              ],
+              "summary": "Fix any of the following:\n  The complementary landmark is contained in another landmark.",
+              "html": "<aside class=\"shift-preview panel\" aria-labelledby=\"shift-preview-title\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 4
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 110
+        }
+      ],
+      "passes": 48
+    },
+    {
+      "path": "/solski-urnik/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".student-side-column"
+              ],
+              "summary": "Fix any of the following:\n  The null landmark is contained in another landmark.",
+              "html": "<aside class=\"student-side-column\">"
+            },
+            {
+              "target": [
+                ".student-source-note"
+              ],
+              "summary": "Fix any of the following:\n  The complementary landmark is contained in another landmark.",
+              "html": "<aside class=\"student-source-note\" aria-label=\"Uradni viri in pomembne informacije\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 116
+        }
+      ],
+      "passes": 47
+    },
+    {
+      "path": "/solske-pocitnice/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".sp-tip"
+              ],
+              "summary": "Fix any of the following:\n  The null landmark is contained in another landmark.",
+              "html": "<aside class=\"sp-holiday sp-tip\">"
+            },
+            {
+              "target": [
+                ".sp-month-aside"
+              ],
+              "summary": "Fix any of the following:\n  The null landmark is contained in another landmark.",
+              "html": "<aside class=\"sp-month-aside\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 39
+        }
+      ],
+      "passes": 47
+    },
+    {
+      "path": "/solski-koledar/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "aside"
+              ],
+              "summary": "Fix any of the following:\n  The null landmark is contained in another landmark.",
+              "html": "<aside class=\"ed-filter-panel\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 25
+        }
+      ],
+      "passes": 47
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/ljubljana/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "aside"
+              ],
+              "summary": "Fix any of the following:\n  The complementary landmark is contained in another landmark.",
+              "html": "<aside class=\"sun-day-card\" aria-label=\"Sončni časi in dnevna svetloba\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 27
+        }
+      ],
+      "passes": 44
+    },
+    {
+      "path": "/lunine-mene/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "aside"
+              ],
+              "summary": "Fix any of the following:\n  The null landmark is contained in another landmark.",
+              "html": "<aside class=\"astro-related\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 16
+        }
+      ],
+      "passes": 53
+    },
+    {
+      "path": "/soncni-mrk/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".astro-related"
+              ],
+              "summary": "Fix any of the following:\n  The null landmark is contained in another landmark.",
+              "html": "<aside class=\"astro-related\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 22
+        }
+      ],
+      "passes": 57
+    },
+    {
+      "path": "/setveni-koledar/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 47
+        }
+      ],
+      "passes": 57
+    },
+    {
+      "path": "/izplacila-pokojnin/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "description": "Ensure the complementary landmark or aside is at top level",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "#viri-izplacil > aside"
+              ],
+              "summary": "Fix any of the following:\n  The null landmark is contained in another landmark.",
+              "html": "<aside><h3>Ste opazili spremembo?</h3>\n<p>Pošljite nam povezavo do uradne objave in podatek, ki ga je treba popraviti.</p>\n<a href=\"/kontakt/\">Sporočite popravek →</a><a href=\"/viri-in-metodologija/\">Naša metodologija →</a><a href=\"/o-nas/\">O Koledar365 →</a></aside>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 18
+        }
+      ],
+      "passes": 55
+    },
+    {
+      "path": "/horoskop/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "aria-allowed-role",
+          "impact": "minor",
+          "description": "Ensure role attribute has an appropriate value for the element",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-allowed-role?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "article[data-sign-card=\"oven\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"oven\" data-element=\"Ogenj\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"bik\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"bik\" data-element=\"Zemlja\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"dvojcka\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"dvojcka\" data-element=\"Zrak\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"rak\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"rak\" data-element=\"Voda\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"lev\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"lev\" data-element=\"Ogenj\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"devica\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"devica\" data-element=\"Zemlja\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"tehtnica\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"tehtnica\" data-element=\"Zrak\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"skorpijon\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"skorpijon\" data-element=\"Voda\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"strelec\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"strelec\" data-element=\"Ogenj\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"kozorog\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"kozorog\" data-element=\"Zemlja\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"vodnar\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"vodnar\" data-element=\"Zrak\">"
+            },
+            {
+              "target": [
+                "article[data-sign-card=\"ribi\"]"
+              ],
+              "summary": "Fix any of the following:\n  ARIA role listitem is not allowed for given element",
+              "html": "<article class=\"z-card\" role=\"listitem\" data-sign-card=\"ribi\" data-element=\"Voda\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 49
+        }
+      ],
+      "passes": 48
+    },
+    {
+      "path": "/ustvari-koledar/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 484
+        }
+      ],
+      "passes": 50
+    },
+    {
+      "path": "/kontakt/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 28
+        }
+      ],
+      "passes": 46
+    },
+    {
+      "path": "/o-nas/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 51
+        }
+      ],
+      "passes": 49
+    },
+    {
+      "path": "/uredniska-politika/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ],
+      "passes": 45
+    },
+    {
+      "path": "/viri-in-metodologija/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 14
+        }
+      ],
+      "passes": 46
+    },
+    {
+      "path": "/piskotki/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ],
+      "passes": 50
+    }
+  ]
+}

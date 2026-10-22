@@ -1,0 +1,13 @@
+{
+  "project": "koledar365-si",
+  "branch": "main",
+  "environment": "Production",
+  "deployment_id": "f66c9a2e-eeee-4c4a-9207-ae4e37182375",
+  "url": "https://f66c9a2e.koledar365-si.pages.dev",
+  "source_commit": "36f64f2bf8f769d54c57e8643c0481086e3a7bcc",
+  "source_parent": "0f2c8f3657e73bbba60aa821e26b0e2bcb850f1c",
+  "cli_completed": true,
+  "files_uploaded": 337,
+  "files_already_uploaded": 11586,
+  "note": "Official authenticated Wrangler deployment; functions, headers, redirects and routes uploaded. CLI production listing confirms branch and source. Untracked local node_modules QA symlink is outside site and is not uploaded."
+}
