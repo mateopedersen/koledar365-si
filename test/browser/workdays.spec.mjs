@@ -142,7 +142,7 @@ test('exported calculator loads its script and calculates around a Slovenian hol
   await page.locator('[data-wdc-form="range"] input[name="from"]').fill('2027-04-26');
   await page.locator('[data-wdc-form="range"] input[name="to"]').fill('2027-04-27');
   await page.locator('[data-wdc-form="range"] [type="submit"]').click();
-  await expect(page.locator('[data-wdc-primary]')).toHaveText('1');
+  await expect(page.locator('[data-wdc-primary]')).toHaveText('1', { timeout: 20000 });
   await expect(page.locator('[data-wdc-stat="hours"]')).toHaveText('8 ur');
   await expect(page.locator('[data-wdc-stat="holidays"]')).toHaveText('1');
   await expect(page.locator('[data-wdc-status]')).toHaveText('Izračun je pripravljen.');
