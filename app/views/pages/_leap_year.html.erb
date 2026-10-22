@@ -1,0 +1,91 @@
+<% leap_example_year = 2028 %>
+<% leap_example = Date.gregorian_leap?(leap_example_year) %>
+<% next_leap_example = (leap_example_year + 1..9999).find { |year| Date.gregorian_leap?(year) } %>
+<div class="leap-page" data-leap-tool>
+  <section class="leap-check" aria-labelledby="leap-check-title">
+    <div class="leap-check__intro">
+      <span class="leap-section-kicker">HITRI PREVERJEVALEC</span>
+      <h2 id="leap-check-title">Ali je izbrano leto prestopno?</h2>
+      <p>Vnesite leto med 1 in 9999. Odgovor in število dni v februarju se posodobita takoj.</p>
+      <form class="leap-check__form" data-leap-form>
+        <label for="leap-year-input">Leto</label>
+        <div class="leap-check__input-row">
+          <input id="leap-year-input" name="year" type="number" inputmode="numeric" min="1" max="9999" step="1" value="<%= leap_example_year %>" required aria-describedby="leap-year-help" data-leap-input>
+          <button class="leap-check__submit" type="submit"><span aria-hidden="true">⌕</span> Preveri leto</button>
+        </div>
+        <small id="leap-year-help">Uporabljamo gregorijansko pravilo za prestopna leta.</small>
+      </form>
+      <div class="leap-presets" aria-label="Pogosti primeri">
+        <span>Preizkusite:</span>
+        <% [[2028, 'prestopno'], [1900, 'ni prestopno'], [2000, 'prestopno'], [2100, 'ni prestopno']].each do |year, label| %>
+          <button type="button" data-leap-preset="<%= year %>"><%= year %><span><%= label %></span></button>
+        <% end %>
+      </div>
+    </div>
+    <div class="leap-answer" data-leap-answer data-is-leap="<%= leap_example ? 'true' : 'false' %>" aria-live="polite" aria-atomic="true">
+      <div class="leap-answer__top"><span class="leap-answer__symbol" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M15 5v7m18-7v7M8 18h32M11 10h26a3 3 0 0 1 3 3v27H8V13a3 3 0 0 1 3-3Z"/><path d="m17 29 5 5 10-11"/></svg></span><span>REZULTAT ZA LETO <b data-leap-year><%= leap_example_year %></b></span></div>
+      <strong class="leap-answer__status" data-leap-status><%= leap_example ? 'Prestopno leto' : 'Običajno leto' %></strong>
+      <p data-leap-summary>Leto <b data-leap-summary-year><%= leap_example_year %></b> ima <b data-leap-days><%= leap_example ? 366 : 365 %></b> dni. Februar ima <b data-leap-feb><%= leap_example ? 29 : 28 %></b> dni; v prestopnih letih je dodatni dan 29. februar.</p>
+      <div class="leap-answer__meta"><span>Naslednje prestopno leto</span><strong data-leap-next><%= next_leap_example || '—' %></strong></div>
+      <a class="leap-answer__calendar" href="/koledar/2028/" data-leap-calendar-link><span data-leap-calendar-label>Odprite koledar 2028</span> <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
+  <section class="leap-rule" aria-labelledby="leap-rule-title">
+    <div class="leap-section-heading">
+      <span class="leap-section-kicker">PRAVILO V TREH KORAKIH</span>
+      <h2 id="leap-rule-title">4 · 100 · 400: preverite po vrsti</h2>
+      <p>V gregorijanskem koledarju večina let, deljivih s štiri, dobi 29. februar. Stoletna leta so izjema — razen če so deljiva tudi s 400.</p>
+    </div>
+    <div class="leap-rule__steps">
+      <article class="leap-rule-card leap-rule-card--blue"><span class="leap-rule-card__number">01</span><div class="leap-rule-card__math">÷ 4</div><h3>Deljivo s 4?</h3><p>Če ne, leto <strong>ni</strong> prestopno. Če da, nadaljujte na naslednji korak.</p><span class="leap-rule-card__example">2027 → ne</span></article>
+      <span class="leap-rule__connector" aria-hidden="true">↓</span>
+      <article class="leap-rule-card leap-rule-card--red"><span class="leap-rule-card__number">02</span><div class="leap-rule-card__math">÷ 100</div><h3>Je tudi stoletno?</h3><p>Če ni deljivo s 100, je prestopno. Če je, običajno leto preskoči 29. februar.</p><span class="leap-rule-card__example">1900 → ne</span></article>
+      <span class="leap-rule__connector" aria-hidden="true">↓</span>
+      <article class="leap-rule-card leap-rule-card--gold"><span class="leap-rule-card__number">03</span><div class="leap-rule-card__math">÷ 400</div><h3>Stoletno leto, deljivo s 400?</h3><p>Če da, je izjema: leto <strong>je prestopno</strong> in februar ima 29 dni.</p><span class="leap-rule-card__example">2000 → da</span></article>
+    </div>
+    <p class="leap-rule__summary"><span aria-hidden="true">✓</span> Na kratko: deljivo s 4, vendar ne s 100 — ali pa deljivo s 400.</p>
+  </section>
+
+  <section class="leap-examples" aria-labelledby="leap-examples-title">
+    <div class="leap-section-heading leap-section-heading--row">
+      <div><span class="leap-section-kicker">PRIMERJAVA LET</span><h2 id="leap-examples-title">Zakaj 1900 ni prestopno, 2000 pa je?</h2></div>
+      <p>Deljivost s 400 razreši izjemo pri stoletnih letih.</p>
+    </div>
+    <div class="leap-table-wrap" tabindex="0" role="region" aria-label="Primeri prestopnih in običajnih let">
+      <table class="leap-table">
+        <thead><tr><th scope="col">Leto</th><th scope="col">Preverjanje</th><th scope="col">Dni v februarju</th><th scope="col">Rezultat</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">2027</th><td>Ni deljivo s 4</td><td>28</td><td><span class="leap-pill leap-pill--plain">Običajno leto</span></td></tr>
+          <tr><th scope="row">2028</th><td>Deljivo s 4, ne s 100</td><td>29</td><td><span class="leap-pill leap-pill--leap">Prestopno leto</span></td></tr>
+          <tr><th scope="row">1900</th><td>Deljivo s 100, ne s 400</td><td>28</td><td><span class="leap-pill leap-pill--plain">Običajno leto</span></td></tr>
+          <tr><th scope="row">2000</th><td>Deljivo s 400</td><td>29</td><td><span class="leap-pill leap-pill--leap">Prestopno leto</span></td></tr>
+          <tr><th scope="row">2100</th><td>Deljivo s 100, ne s 400</td><td>28</td><td><span class="leap-pill leap-pill--plain">Običajno leto</span></td></tr>
+          <tr><th scope="row">2400</th><td>Deljivo s 400</td><td>29</td><td><span class="leap-pill leap-pill--leap">Prestopno leto</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="leap-table-note">Leto ima 366 dni samo, ko koledar vključuje 29. februar. Ostali meseci ohranijo običajno število dni.</p>
+  </section>
+
+  <section class="leap-cycle" aria-labelledby="leap-cycle-title">
+    <div class="leap-cycle__copy"><span class="leap-section-kicker">V ŠTIRILETNEM RITMU</span><h2 id="leap-cycle-title">En dodatni dan približno vsaka štiri leta</h2><p>Koledarsko leto s 365 dnevi je za približno četrt dneva krajše od ene tropske (Sončeve) letne dobe. Ustrezno prestopno pravilo pomaga, da se koledar ne oddaljuje hitro od letnih časov.</p><a href="https://aa.usno.navy.mil/faq/seasons_orbit.html" target="_blank" rel="noopener noreferrer">Kako USNO pojasnjuje tropsko leto <span aria-hidden="true">↗</span></a></div>
+    <div class="leap-cycle__visual" aria-label="Leta 2024 do 2028: dodatni 29. februar se pojavi leta 2024 in 2028">
+      <div class="leap-cycle__track" aria-hidden="true"></div>
+      <% [[2024, true], [2025, false], [2026, false], [2027, false], [2028, true]].each do |year, leap| %>
+        <div class="leap-cycle__year <%= 'is-leap' if leap %>"><span class="leap-cycle__dot"></span><strong><%= year %></strong><span><%= leap ? '366 dni' : '365 dni' %></span><small><%= leap ? 'februar · 29 dni' : 'februar · 28 dni' %></small></div>
+      <% end %>
+    </div>
+    <p class="leap-cycle__footnote">Povprečno gregorijansko leto traja 365,2425 dni. Tropsko leto je približno 365,2422 dni, zato popolna uskladitev ni matematično natančna za vedno. <a href="https://aa.usno.navy.mil/faq/leap_years" target="_blank" rel="noopener noreferrer">Vir: U.S. Naval Observatory — prestopna leta ↗</a></p>
+  </section>
+
+  <section class="leap-faq" aria-labelledby="leap-faq-title">
+    <div class="leap-section-heading"><span class="leap-section-kicker">JASNI ODGOVORI</span><h2 id="leap-faq-title">Pogosta vprašanja</h2></div>
+    <% leap_year_faq.each do |question, answer| %><details><summary><%= question %></summary><p><%= answer %></p></details><% end %>
+  </section>
+
+  <nav class="leap-related" aria-label="Povezana koledarska orodja">
+    <a href="/koledar/2028/"><span class="leap-related__icon" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M12 5v6m16-6v6M7 16h26M9 9h22a2 2 0 0 1 2 2v21H7V11a2 2 0 0 1 2-2Z"/><path d="M13 22h5v5h-5zM22 22h5v5h-5z"/></svg></span><span><strong>Koledar za leto 2028</strong><small>Oglejte si vseh 12 mesecev in 29. februar.</small></span><b aria-hidden="true">↗</b></a>
+    <a href="/datumski-kalkulator/"><span class="leap-related__icon leap-related__icon--red" aria-hidden="true"><svg viewBox="0 0 40 40"><rect x="8" y="5" width="24" height="30" rx="4"/><path d="M13 12h14M14 19h3m6 0h3m-12 6h3m6 0h3m-12 5h3m6 0h3"/></svg></span><span><strong>Datumski kalkulator</strong><small>Primerjajte datume ali preštejte dneve.</small></span><b aria-hidden="true">↗</b></a>
+  </nav>
+</div>
