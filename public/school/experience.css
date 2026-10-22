@@ -157,3 +157,6 @@
   .sp-region-options > button > div { min-width: 0; flex: 1 1 auto; }
   .sp-date-fields input { width: 100%; }
 }
+
+/* Separate photo-credit links for touch users. */
+.sp-photo-credit a{display:inline-flex;align-items:center;min-height:24px;padding:3px 2px}

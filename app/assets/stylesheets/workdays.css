@@ -34,3 +34,6 @@
   #vsebina .workdays-holidays small{font-size:12px!important;line-height:1.45!important;font-weight:400}
   .workdays-reset{grid-row:5;min-height:40px}
 }
+
+/* Keep small month labels readable on white cards. */
+.workdays-month-card__number{color:#53677f}

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="sl">
+<html lang="sl-SI">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title><%= seo_title %></title>
@@ -13,13 +13,12 @@
 <% end %>
 <% unless @not_found %><% sharing_image=seo_image %><link rel="canonical" href="<%= canonical_url %>">
 <meta property="og:title" content="<%= seo_title %>"><meta property="og:description" content="<%= @description %>"><meta property="og:type" content="website"><meta property="og:site_name" content="Koledar365"><meta property="og:locale" content="sl_SI"><meta property="og:url" content="<%= canonical_url %>"><meta property="og:image" content="<%= sharing_image[:url] %>"><meta property="og:image:width" content="<%= sharing_image[:width] %>"><meta property="og:image:height" content="<%= sharing_image[:height] %>"><meta property="og:image:alt" content="<%= sharing_image[:alt] %>">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="<%= seo_title %>"><meta name="twitter:description" content="<%= @description %>"><meta name="twitter:image" content="<%= sharing_image[:url] %>">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="<%= seo_title %>"><meta name="twitter:description" content="<%= @description %>"><meta name="twitter:image" content="<%= sharing_image[:url] %>"><meta name="twitter:image:alt" content="<%= sharing_image[:alt] %>">
 <% end %>
 <% if (schema=structured_data) %><script type="application/ld+json" nonce="<%= content_security_policy_nonce %>"><%= raw json_escape(schema.to_json) %></script><% end %>
-<%= csrf_meta_tags %><%= csp_meta_tag %><%= stylesheet_link_tag 'application', 'experience', 'slovenia', 'vector_identity', 'search' %><%= javascript_include_tag 'application','planners',defer:true %><% if @section=='home' %><% city_image=WebImageCatalog.find(CityCatalog.default.dig('photo','local_path')) %><% if city_image %><link rel="preload" as="image" type="image/avif" imagesrcset="<%= city_image['avif_srcset'] %>" imagesizes="<%= WebImageCatalog::CITY_SIZES %>" fetchpriority="high"><% end %><%= stylesheet_link_tag 'city_card' %><%= javascript_include_tag 'city_card',defer:true %><% end %>
+<%= csrf_meta_tags %><%= csp_meta_tag %><%= stylesheet_link_tag 'application', 'experience', 'slovenia', 'vector_identity', 'search' %><%= javascript_include_tag 'application','planners',defer:true %><% if @section=='home' %><%= stylesheet_link_tag 'city_card' %><%= javascript_include_tag 'city_card',defer:true %><% end %>
 <% if @section=='about' %><%= stylesheet_link_tag 'about' %><% end %>
 <% if page_path=='/kontakt/' %><link rel="stylesheet" href="/contact/contact-v1.css"><script type="module" src="/contact/contact-v1.mjs"></script><% end %>
-<% if @section=='home' -%><% home_city=CityCatalog.default; home_image=WebImageCatalog.find(home_city.dig('photo','local_path')) %><% if home_image %><link rel="preload" as="image" type="image/avif" imagesrcset="<%= home_image.fetch('avif_srcset') %>" imagesizes="<%= WebImageCatalog::CITY_SIZES %>" fetchpriority="high"><% end %><% end -%>
 <% if page_path == '/druzinski-planer/' %><%= stylesheet_link_tag 'family_planner' %><%= javascript_include_tag 'family_planner_core', 'family_planner', defer:true %><% end %>
 <% if @section=='sun' -%><%= stylesheet_link_tag 'sun' %><%= javascript_include_tag 'sun',defer:true %><% end -%>
 <% if page_path.start_with?('/lunin-koledar/') -%><link rel="stylesheet" href="/lunar/calendar.css?v=20261021-2"><% end -%>

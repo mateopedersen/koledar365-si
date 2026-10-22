@@ -1,0 +1,3270 @@
+{
+  "checked_at": "2026-10-22T13:20:49.515Z",
+  "engine": "axe-core WCAG A/AA automated rules; manual checks remain separate",
+  "origin": "http://127.0.0.1:3661",
+  "results": [
+    {
+      "path": "/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 4
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 29
+        }
+      ],
+      "passes": 32
+    },
+    {
+      "path": "/koledar/2028/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".calendar-gallery-toolbar > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #677487, background color: #f5f6f7, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span>15 barvnih oblikovanj · PDF in WebP</span>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 341
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/koledar/2028/februar/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".calendar-gallery-toolbar > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.38 (foreground color: #677487, background color: #f5f6f7, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span>15 barvnih oblikovanj · PDF in WebP</span>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 88
+        }
+      ],
+      "passes": 33
+    },
+    {
+      "path": "/lunin-koledar/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 46
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "path": "/lunin-koledar/2029/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 570
+        }
+      ],
+      "passes": 33
+    },
+    {
+      "path": "/lunin-koledar/2029/avgust/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 145
+        }
+      ],
+      "passes": 34
+    },
+    {
+      "path": "/pomembni-dnevi/2027/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 16
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/delovni-dnevi/2028/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 98
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "path": "/delovni-dnevi/2028/februar/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 73
+        }
+      ],
+      "passes": 33
+    },
+    {
+      "path": "/prazniki/2028/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".holiday-check-intro > div > p"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.37 (foreground color: #405067, background color: #243d52, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p>Hiter odgovor za izbrani datum.</p>"
+            },
+            {
+              "target": [
+                "label[for=\"holiday-check-date\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.37 (foreground color: #405067, background color: #243d52, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<label for=\"holiday-check-date\">Izberite datum v letu 2028</label>"
+            },
+            {
+              "target": [
+                "#holiday-check-schedule"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.37 (foreground color: #405067, background color: #243d52, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"holiday-check-schedule\" id=\"holiday-check-schedule\">Velja za običajni delovnik ponedeljek–petek; vaš osebni razpored se lahko razlikuje.</p>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 84
+        }
+      ],
+      "passes": 36
+    },
+    {
+      "path": "/podaljsani-vikendi/2028/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/datumski-kalkulator/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 26
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/stevilka-tedna/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 27
+    },
+    {
+      "path": "/dan-v-letu/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 27
+    },
+    {
+      "path": "/druzinski-planer/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".family-day:nth-child(1) > .family-day__heading > .family-day__name"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.37 (foreground color: #647990, background color: #fbfcfe, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"family-day__name\">Pon.</span>"
+            },
+            {
+              "target": [
+                "button[data-family-add-for=\"2026-10-19\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.88 (foreground color: #6a8299, background color: #fbfcfe, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<button class=\"family-day__add\" type=\"button\" data-family-add-for=\"2026-10-19\" aria-label=\"Dodaj načrt za 19. oktober 2026\">+ Dodaj</button>"
+            },
+            {
+              "target": [
+                ".family-day:nth-child(2) > .family-day__heading > .family-day__name"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.37 (foreground color: #647990, background color: #fbfcfe, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"family-day__name\">Tor.</span>"
+            },
+            {
+              "target": [
+                "button[data-family-add-for=\"2026-10-20\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.88 (foreground color: #6a8299, background color: #fbfcfe, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<button class=\"family-day__add\" type=\"button\" data-family-add-for=\"2026-10-20\" aria-label=\"Dodaj načrt za 20. oktober 2026\">+ Dodaj</button>"
+            },
+            {
+              "target": [
+                ".family-day:nth-child(3) > .family-day__heading > .family-day__name"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.37 (foreground color: #647990, background color: #fbfcfe, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"family-day__name\">Sre.</span>"
+            },
+            {
+              "target": [
+                "button[data-family-add-for=\"2026-10-21\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.88 (foreground color: #6a8299, background color: #fbfcfe, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<button class=\"family-day__add\" type=\"button\" data-family-add-for=\"2026-10-21\" aria-label=\"Dodaj načrt za 21. oktober 2026\">+ Dodaj</button>"
+            },
+            {
+              "target": [
+                ".is-today > .family-day__heading > .family-day__name"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.14 (foreground color: #647990, background color: #f0f7fc, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"family-day__name\">Čet.</span>"
+            },
+            {
+              "target": [
+                "button[data-family-add-for=\"2026-10-22\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.68 (foreground color: #6a8299, background color: #f0f7fc, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<button class=\"family-day__add\" type=\"button\" data-family-add-for=\"2026-10-22\" aria-label=\"Dodaj načrt za 22. oktober 2026\">+ Dodaj</button>"
+            },
+            {
+              "target": [
+                ".family-day:nth-child(5) > .family-day__heading > .family-day__name"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.37 (foreground color: #647990, background color: #fbfcfe, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"family-day__name\">Pet.</span>"
+            },
+            {
+              "target": [
+                "button[data-family-add-for=\"2026-10-23\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.88 (foreground color: #6a8299, background color: #fbfcfe, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<button class=\"family-day__add\" type=\"button\" data-family-add-for=\"2026-10-23\" aria-label=\"Dodaj načrt za 23. oktober 2026\">+ Dodaj</button>"
+            },
+            {
+              "target": [
+                ".family-day:nth-child(6) > .family-day__heading > .family-day__name"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.37 (foreground color: #647990, background color: #fbfcfe, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"family-day__name\">Sob.</span>"
+            },
+            {
+              "target": [
+                "button[data-family-add-for=\"2026-10-24\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.88 (foreground color: #6a8299, background color: #fbfcfe, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<button class=\"family-day__add\" type=\"button\" data-family-add-for=\"2026-10-24\" aria-label=\"Dodaj načrt za 24. oktober 2026\">+ Dodaj</button>"
+            },
+            {
+              "target": [
+                ".family-day:nth-child(7) > .family-day__heading > .family-day__name"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.37 (foreground color: #647990, background color: #fbfcfe, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"family-day__name\">Ned.</span>"
+            },
+            {
+              "target": [
+                "button[data-family-add-for=\"2026-10-25\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.88 (foreground color: #6a8299, background color: #fbfcfe, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<button class=\"family-day__add\" type=\"button\" data-family-add-for=\"2026-10-25\" aria-label=\"Dodaj načrt za 25. oktober 2026\">+ Dodaj</button>"
+            },
+            {
+              "target": [
+                ".family-legend > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #657991, background color: #ffffff, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span><i class=\"family-dot family-dot--blue\"></i>Dogodek</span>"
+            },
+            {
+              "target": [
+                ".family-legend > span:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #657991, background color: #ffffff, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span><i class=\"family-dot family-dot--red\"></i>Opravilo</span>"
+            },
+            {
+              "target": [
+                ".family-legend > span:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #657991, background color: #ffffff, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span><i class=\"family-dot family-dot--meal\"></i>Obrok</span>"
+            },
+            {
+              "target": [
+                ".family-agenda-list > .family-agenda-empty"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.23 (foreground color: #657991, background color: #f7f9fc, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<div class=\"family-agenda-empty\">Ta teden še nima načrtov. Dodajte dogodek, opravilo ali ponavljajočo se domačo nalogo.</div>"
+            },
+            {
+              "target": [
+                ".family-meals-list > .family-agenda-empty"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.23 (foreground color: #657991, background color: #f7f9fc, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<div class=\"family-agenda-empty\">Za ta teden še ni načrtovanih obrokov. Shranite večerjo in sestavine dodajte na nakupovalni seznam.</div>"
+            },
+            {
+              "target": [
+                "span[data-family-grocery-count=\"\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #657991, background color: #ffffff, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span data-family-grocery-count=\"\">0 izdelkov</span>"
+            },
+            {
+              "target": [
+                ".family-grocery-empty"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #657991, background color: #ffffff, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<div class=\"family-grocery-empty\">Seznam je prazen. Dodajte izdelek ali sestavine načrtovanega obroka.</div>"
+            },
+            {
+              "target": [
+                ".family-next-empty"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.23 (foreground color: #657991, background color: #f7f9fc, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<div class=\"family-next-empty\">Za ta teden ni več prihodnjih načrtov. Z naslednjim tednom se prikažejo novi.</div>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 3
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 103
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "path": "/razpored-izmen/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "aria-required-children",
+          "impact": "critical",
+          "description": "Ensure elements with an ARIA role that require child roles contain them",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-required-children?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "#shift-calendar"
+              ],
+              "summary": "Fix any of the following:\n  Element has children which are not allowed: [role=columnheader], [role=gridcell]",
+              "html": "<div class=\"shift-calendar\" id=\"shift-calendar\" role=\"grid\" aria-label=\"Mesečni predogled razporeda izmen\">"
+            }
+          ]
+        },
+        {
+          "id": "aria-required-parent",
+          "impact": "critical",
+          "description": "Ensure elements with an ARIA role that require parent roles are contained by them",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-required-parent?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "div[aria-label=\"pon\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__weekday\" role=\"columnheader\" aria-label=\"pon\">pon</div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"tor\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__weekday\" role=\"columnheader\" aria-label=\"tor\">tor</div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"sre\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__weekday\" role=\"columnheader\" aria-label=\"sre\">sre</div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"čet\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__weekday\" role=\"columnheader\" aria-label=\"čet\">čet</div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"pet\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__weekday\" role=\"columnheader\" aria-label=\"pet\">pet</div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"sob\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__weekday\" role=\"columnheader\" aria-label=\"sob\">sob</div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"ned\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__weekday\" role=\"columnheader\" aria-label=\"ned\">ned</div>"
+            },
+            {
+              "target": [
+                ".shift-calendar__day--empty.shift-calendar__day[role=\"gridcell\"]:nth-child(8)"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--empty\" role=\"gridcell\"></div>"
+            },
+            {
+              "target": [
+                ".shift-calendar__day--empty.shift-calendar__day[role=\"gridcell\"]:nth-child(9)"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--empty\" role=\"gridcell\"></div>"
+            },
+            {
+              "target": [
+                ".shift-calendar__day--empty.shift-calendar__day[role=\"gridcell\"]:nth-child(10)"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--empty\" role=\"gridcell\"></div>"
+            },
+            {
+              "target": [
+                ".shift-calendar__day--empty.shift-calendar__day[role=\"gridcell\"]:nth-child(11)"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--empty\" role=\"gridcell\"></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"1. januar 2027 · zunaj obdobja\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--outside\" role=\"gridcell\" aria-label=\"1. januar 2027 · zunaj obdobja\"><strong>1</strong></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"2. januar 2027 · zunaj obdobja\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--outside\" role=\"gridcell\" aria-label=\"2. januar 2027 · zunaj obdobja\"><strong>2</strong></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"3. januar 2027 · zunaj obdobja\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--outside\" role=\"gridcell\" aria-label=\"3. januar 2027 · zunaj obdobja\"><strong>3</strong></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"4. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"4. januar 2027\" data-date=\"2027-01-04\"><strong>4</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"5. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"5. januar 2027\" data-date=\"2027-01-05\"><strong>5</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"6. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"6. januar 2027\" data-date=\"2027-01-06\"><strong>6</strong><span title=\"N\">N</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"7. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"7. januar 2027\" data-date=\"2027-01-07\"><strong>7</strong><span title=\"N\">N</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"8. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--off\" role=\"gridcell\" aria-label=\"8. januar 2027\" data-date=\"2027-01-08\"><strong>8</strong><span title=\"Prosto\">Prosto</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"9. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--off\" role=\"gridcell\" aria-label=\"9. januar 2027\" data-date=\"2027-01-09\"><strong>9</strong><span title=\"Prosto\">Prosto</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"10. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"10. januar 2027\" data-date=\"2027-01-10\"><strong>10</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"11. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"11. januar 2027\" data-date=\"2027-01-11\"><strong>11</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"12. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"12. januar 2027\" data-date=\"2027-01-12\"><strong>12</strong><span title=\"N\">N</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"13. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"13. januar 2027\" data-date=\"2027-01-13\"><strong>13</strong><span title=\"N\">N</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"14. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--off\" role=\"gridcell\" aria-label=\"14. januar 2027\" data-date=\"2027-01-14\"><strong>14</strong><span title=\"Prosto\">Prosto</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"15. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--off\" role=\"gridcell\" aria-label=\"15. januar 2027\" data-date=\"2027-01-15\"><strong>15</strong><span title=\"Prosto\">Prosto</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"16. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"16. januar 2027\" data-date=\"2027-01-16\"><strong>16</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"17. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"17. januar 2027\" data-date=\"2027-01-17\"><strong>17</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"18. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"18. januar 2027\" data-date=\"2027-01-18\"><strong>18</strong><span title=\"N\">N</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"19. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"19. januar 2027\" data-date=\"2027-01-19\"><strong>19</strong><span title=\"N\">N</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"20. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--off\" role=\"gridcell\" aria-label=\"20. januar 2027\" data-date=\"2027-01-20\"><strong>20</strong><span title=\"Prosto\">Prosto</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"21. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--off\" role=\"gridcell\" aria-label=\"21. januar 2027\" data-date=\"2027-01-21\"><strong>21</strong><span title=\"Prosto\">Prosto</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"22. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"22. januar 2027\" data-date=\"2027-01-22\"><strong>22</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"23. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"23. januar 2027\" data-date=\"2027-01-23\"><strong>23</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"24. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"24. januar 2027\" data-date=\"2027-01-24\"><strong>24</strong><span title=\"N\">N</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"25. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"25. januar 2027\" data-date=\"2027-01-25\"><strong>25</strong><span title=\"N\">N</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"26. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--off\" role=\"gridcell\" aria-label=\"26. januar 2027\" data-date=\"2027-01-26\"><strong>26</strong><span title=\"Prosto\">Prosto</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"27. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--off\" role=\"gridcell\" aria-label=\"27. januar 2027\" data-date=\"2027-01-27\"><strong>27</strong><span title=\"Prosto\">Prosto</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"28. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"28. januar 2027\" data-date=\"2027-01-28\"><strong>28</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"29. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"29. januar 2027\" data-date=\"2027-01-29\"><strong>29</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"30. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"30. januar 2027\" data-date=\"2027-01-30\"><strong>30</strong><span title=\"N\">N</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"31. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"31. januar 2027\" data-date=\"2027-01-31\"><strong>31</strong><span title=\"N\">N</span></div>"
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".shift-person > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.32 (foreground color: #7a8ca0, background color: #f9fbfd, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span>(neobvezno)</span>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"8. januar 2027\"] > span[title=\"Prosto\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span title=\"Prosto\">Prosto</span>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"9. januar 2027\"] > span[title=\"Prosto\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span title=\"Prosto\">Prosto</span>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"14. januar 2027\"] > strong"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<strong>14</strong>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"14. januar 2027\"] > span[title=\"Prosto\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span title=\"Prosto\">Prosto</span>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"15. januar 2027\"] > strong"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<strong>15</strong>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"15. januar 2027\"] > span[title=\"Prosto\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span title=\"Prosto\">Prosto</span>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"20. januar 2027\"] > strong"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<strong>20</strong>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"20. januar 2027\"] > span[title=\"Prosto\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span title=\"Prosto\">Prosto</span>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"21. januar 2027\"] > strong"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<strong>21</strong>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"21. januar 2027\"] > span[title=\"Prosto\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span title=\"Prosto\">Prosto</span>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"26. januar 2027\"] > strong"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<strong>26</strong>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"26. januar 2027\"] > span[title=\"Prosto\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span title=\"Prosto\">Prosto</span>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"27. januar 2027\"] > strong"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<strong>27</strong>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"27. januar 2027\"] > span[title=\"Prosto\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span title=\"Prosto\">Prosto</span>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 4
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 116
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "path": "/solski-urnik/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 135
+        }
+      ],
+      "passes": 30
+    },
+    {
+      "path": "/solske-pocitnice/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 42
+        }
+      ],
+      "passes": 29
+    },
+    {
+      "path": "/solski-koledar/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 26
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/ljubljana/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "p[data-sun-position=\"\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.83 (foreground color: #405067, background color: #0c2746, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p data-sun-position=\"\" role=\"status\" aria-live=\"polite\">Sonce je 23.2° nad obzorjem, proti jugozahodu; azimut 222°.</p>"
+            },
+            {
+              "target": [
+                ".sun-scene-note"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.67 (foreground color: #405067, background color: #102e50, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"sun-scene-note\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 31
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "path": "/lunine-mene/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".is-upcoming > td[data-label=\"Ura v Sloveniji\"] > .astro-muted"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.18 (foreground color: #64768a, background color: #eaf4fc, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"astro-muted\">CET</span>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 19
+        }
+      ],
+      "passes": 33
+    },
+    {
+      "path": "/soncni-mrk/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".is-invisible"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.97 (foreground color: #66788a, background color: #edf0f4, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"astro-status is-invisible\">Ni viden</span>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 26
+        }
+      ],
+      "passes": 36
+    },
+    {
+      "path": "/setveni-koledar/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".garden-jump > a[href$=\"#setveni-pregled\"] > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.06 (foreground color: #a7b6c7, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span>01</span>"
+            },
+            {
+              "target": [
+                "a[href$=\"#moj-vrt\"] > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.06 (foreground color: #a7b6c7, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span>02</span>"
+            },
+            {
+              "target": [
+                "a[href$=\"#kako-nacrtovati-vrt\"] > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.06 (foreground color: #a7b6c7, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span>03</span>"
+            },
+            {
+              "target": [
+                ".garden-jump > a[href$=\"#vrtni-viri\"] > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.06 (foreground color: #a7b6c7, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span>04</span>"
+            },
+            {
+              "target": [
+                "th[scope=\"col\"]:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<th scope=\"col\">Vrtnina</th>"
+            },
+            {
+              "target": [
+                "abbr[title=\"januar\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"januar\">Jan</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"februar\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"februar\">Feb</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"marec\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"marec\">Mar</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"april\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"april\">Apr</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"maj\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"maj\">Maj</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"junij\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"junij\">Jun</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"julij\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"julij\">Jul</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"avgust\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"avgust\">Avg</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"september\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"september\">Sep</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"oktober\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"oktober\">Okt</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"november\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"november\">Nov</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"december\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"december\">Dec</abbr>"
+            },
+            {
+              "target": [
+                "th[scope=\"col\"]:nth-child(14)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<th scope=\"col\">Načrt</th>"
+            },
+            {
+              "target": [
+                "label[for=\"garden-plan-note\"] > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.14 (foreground color: #6e7e92, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span>(neobvezno)</span>"
+            },
+            {
+              "target": [
+                "li:nth-child(1) > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.69 (foreground color: #b0c1d5, background color: #f5f6f7, font size: 18.8pt (25px), font weight: bold). Expected contrast ratio of 3:1",
+              "html": "<span>01</span>"
+            },
+            {
+              "target": [
+                "li:nth-child(2) > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.69 (foreground color: #b0c1d5, background color: #f5f6f7, font size: 18.8pt (25px), font weight: bold). Expected contrast ratio of 3:1",
+              "html": "<span>02</span>"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.69 (foreground color: #b0c1d5, background color: #f5f6f7, font size: 18.8pt (25px), font weight: bold). Expected contrast ratio of 3:1",
+              "html": "<span>03</span>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 34
+        }
+      ],
+      "passes": 35
+    },
+    {
+      "path": "/izplacila-pokojnin/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "span:nth-child(10)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">10</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(11)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">11</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(12)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">12</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(13)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">13</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(14)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">14</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(15)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">15</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(16)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">16</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(17)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">17</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(18)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">18</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(19)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">19</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(20)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">20</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(21)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">21</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(22)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">22</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(23)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">23</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(24)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">24</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(25)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">25</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(26)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">26</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(27)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">27</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(28)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">28</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(29)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">29</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(31)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">31</span>"
+            },
+            {
+              "target": [
+                "th[scope=\"col\"][role=\"columnheader\"]:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.28 (foreground color: #60758f, background color: #f1f4f8, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<th scope=\"col\" role=\"columnheader\">Prejemek</th>"
+            },
+            {
+              "target": [
+                "th[scope=\"col\"][role=\"columnheader\"]:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.28 (foreground color: #60758f, background color: #f1f4f8, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<th scope=\"col\" role=\"columnheader\">Mesec plana</th>"
+            },
+            {
+              "target": [
+                "th[scope=\"col\"][role=\"columnheader\"]:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.28 (foreground color: #60758f, background color: #f1f4f8, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<th scope=\"col\" role=\"columnheader\">Datum izplačila</th>"
+            },
+            {
+              "target": [
+                "th[scope=\"col\"][role=\"columnheader\"]:nth-child(4)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.28 (foreground color: #60758f, background color: #f1f4f8, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<th scope=\"col\" role=\"columnheader\">Dan</th>"
+            },
+            {
+              "target": [
+                "th[scope=\"col\"][role=\"columnheader\"]:nth-child(5)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.28 (foreground color: #60758f, background color: #f1f4f8, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<th scope=\"col\" role=\"columnheader\">Koledar</th>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 30
+        }
+      ],
+      "passes": 33
+    },
+    {
+      "path": "/horoskop/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".z-art-caption"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.7 (foreground color: #66829b, background color: #f5f6f7, font size: 6.8pt (9px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"z-art-caption\">VAŠ MALI ZVEZDNI KOMPAS</span>"
+            },
+            {
+              "target": [
+                ".z-section-heading > .z-small-note"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.31 (foreground color: #64768a, background color: #f5f6f7, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"z-small-note\">Tropski zodiak · običajni datumski razponi</span>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 53
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/ustvari-koledar/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".studio-hero-note > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #6b7687, background color: #f5f6f7, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span>6 izhodišč · vaš osebni slog</span>"
+            },
+            {
+              "target": [
+                "#studio-preview-label"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.36 (foreground color: #6b7687, background color: #f7f9fc, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span id=\"studio-preview-label\">Letni koledar · 2027</span>"
+            },
+            {
+              "target": [
+                ".studio-canvas-footer > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.64 (foreground color: #778395, background color: #f7f9fc, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span><svg class=\"studio-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 2v20M2 12h20M8 6l4-4 4 4m-8 12 4 4 4-4M6 8l-4 4 4 4m12-8 4 4-4 4\"></path></svg>Vaše elemente povlecite na želeno mesto</span>"
+            },
+            {
+              "target": [
+                "#studio-paper-size"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.64 (foreground color: #778395, background color: #f7f9fc, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<strong id=\"studio-paper-size\">A4 · 297 × 210 mm</strong>"
+            },
+            {
+              "target": [
+                ".studio-statusbar > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #6b7687, background color: #f5f6f7, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span><svg class=\"studio-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 2 3 6v6c0 5 9 10 9 10s9-5 9-10V6Zm-5 10 3 3 7-7\"></path></svg> Brez prijave. Vaše fotografije ostanejo pri vas.</span>"
+            },
+            {
+              "target": [
+                "#studio-message"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #6b7687, background color: #f5f6f7, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span id=\"studio-message\" role=\"status\" aria-live=\"polite\">Vse je pripravljeno. Naj bo to vaše leto.</span>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 492
+        }
+      ],
+      "passes": 33
+    },
+    {
+      "path": "/kontakt/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 36
+        }
+      ],
+      "passes": 29
+    },
+    {
+      "path": "/o-nas/",
+      "mode": "desktop",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".about-family > div:nth-child(2) > p:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.74 (foreground color: #405067, background color: #102b4a, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p>Družinski planer združi dogodke, domača opravila in ponavljajoče se naloge z jedilnikom ter nakupovalnim seznamom. Barvne oznake pomagajo ločiti do osem članov. Teden lahko natisnete, načrte izvozite v koledar, varnostno kopijo pa shranite kot JSON in pozneje obnovite.</p>"
+            },
+            {
+              "target": [
+                "p:nth-child(4)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.74 (foreground color: #405067, background color: #102b4a, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p>Vnosi ostanejo v brskalniku in se ne sinhronizirajo med napravami. To pomeni, da jih Koledar365 ne more samodejno prenesti na vaš telefon ali drugim članom družine.</p>"
+            }
+          ]
+        },
+        {
+          "id": "definition-list",
+          "impact": "serious",
+          "description": "Ensure <dl> elements are structured correctly",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/definition-list?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "dl"
+              ],
+              "summary": "Fix all of the following:\n  dl element has direct children that are not allowed: div > small",
+              "html": "<dl class=\"about-facts\" aria-label=\"Kako je zasnovan Koledar365\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 55
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/uredniska-politika/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 29
+    },
+    {
+      "path": "/viri-in-metodologija/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 17
+        }
+      ],
+      "passes": 29
+    },
+    {
+      "path": "/piskotki/",
+      "mode": "desktop",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 4
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 26
+        }
+      ],
+      "passes": 34
+    },
+    {
+      "path": "/koledar/2028/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 72
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "path": "/koledar/2028/februar/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 76
+        }
+      ],
+      "passes": 30
+    },
+    {
+      "path": "/lunin-koledar/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 43
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "path": "/lunin-koledar/2029/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 418
+        }
+      ],
+      "passes": 33
+    },
+    {
+      "path": "/lunin-koledar/2029/avgust/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 130
+        }
+      ],
+      "passes": 34
+    },
+    {
+      "path": "/pomembni-dnevi/2027/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/delovni-dnevi/2028/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 94
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "path": "/delovni-dnevi/2028/februar/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 70
+        }
+      ],
+      "passes": 29
+    },
+    {
+      "path": "/prazniki/2028/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".holiday-check-intro > div > p"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.37 (foreground color: #405067, background color: #243d52, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p>Hiter odgovor za izbrani datum.</p>"
+            },
+            {
+              "target": [
+                "label[for=\"holiday-check-date\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.37 (foreground color: #405067, background color: #243d52, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<label for=\"holiday-check-date\">Izberite datum v letu 2028</label>"
+            },
+            {
+              "target": [
+                "#holiday-check-schedule"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.37 (foreground color: #405067, background color: #243d52, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"holiday-check-schedule\" id=\"holiday-check-schedule\">Velja za običajni delovnik ponedeljek–petek; vaš osebni razpored se lahko razlikuje.</p>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 86
+        }
+      ],
+      "passes": 36
+    },
+    {
+      "path": "/podaljsani-vikendi/2028/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/datumski-kalkulator/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 21
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/stevilka-tedna/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ],
+      "passes": 27
+    },
+    {
+      "path": "/dan-v-letu/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ],
+      "passes": 27
+    },
+    {
+      "path": "/druzinski-planer/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".family-day:nth-child(1) > .family-day__heading > .family-day__name"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.37 (foreground color: #647990, background color: #fbfcfe, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"family-day__name\">Pon.</span>"
+            },
+            {
+              "target": [
+                "button[data-family-add-for=\"2026-10-19\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.88 (foreground color: #6a8299, background color: #fbfcfe, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<button class=\"family-day__add\" type=\"button\" data-family-add-for=\"2026-10-19\" aria-label=\"Dodaj načrt za 19. oktober 2026\">+ Dodaj</button>"
+            },
+            {
+              "target": [
+                ".family-day:nth-child(2) > .family-day__heading > .family-day__name"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.37 (foreground color: #647990, background color: #fbfcfe, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"family-day__name\">Tor.</span>"
+            },
+            {
+              "target": [
+                "button[data-family-add-for=\"2026-10-20\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.88 (foreground color: #6a8299, background color: #fbfcfe, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<button class=\"family-day__add\" type=\"button\" data-family-add-for=\"2026-10-20\" aria-label=\"Dodaj načrt za 20. oktober 2026\">+ Dodaj</button>"
+            },
+            {
+              "target": [
+                ".family-day:nth-child(3) > .family-day__heading > .family-day__name"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.37 (foreground color: #647990, background color: #fbfcfe, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"family-day__name\">Sre.</span>"
+            },
+            {
+              "target": [
+                "button[data-family-add-for=\"2026-10-21\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.88 (foreground color: #6a8299, background color: #fbfcfe, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<button class=\"family-day__add\" type=\"button\" data-family-add-for=\"2026-10-21\" aria-label=\"Dodaj načrt za 21. oktober 2026\">+ Dodaj</button>"
+            },
+            {
+              "target": [
+                ".is-today > .family-day__heading > .family-day__name"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.14 (foreground color: #647990, background color: #f0f7fc, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"family-day__name\">Čet.</span>"
+            },
+            {
+              "target": [
+                "button[data-family-add-for=\"2026-10-22\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.68 (foreground color: #6a8299, background color: #f0f7fc, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<button class=\"family-day__add\" type=\"button\" data-family-add-for=\"2026-10-22\" aria-label=\"Dodaj načrt za 22. oktober 2026\">+ Dodaj</button>"
+            },
+            {
+              "target": [
+                ".family-day:nth-child(5) > .family-day__heading > .family-day__name"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.37 (foreground color: #647990, background color: #fbfcfe, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"family-day__name\">Pet.</span>"
+            },
+            {
+              "target": [
+                "button[data-family-add-for=\"2026-10-23\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.88 (foreground color: #6a8299, background color: #fbfcfe, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<button class=\"family-day__add\" type=\"button\" data-family-add-for=\"2026-10-23\" aria-label=\"Dodaj načrt za 23. oktober 2026\">+ Dodaj</button>"
+            },
+            {
+              "target": [
+                ".family-day:nth-child(6) > .family-day__heading > .family-day__name"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.37 (foreground color: #647990, background color: #fbfcfe, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"family-day__name\">Sob.</span>"
+            },
+            {
+              "target": [
+                "button[data-family-add-for=\"2026-10-24\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.88 (foreground color: #6a8299, background color: #fbfcfe, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<button class=\"family-day__add\" type=\"button\" data-family-add-for=\"2026-10-24\" aria-label=\"Dodaj načrt za 24. oktober 2026\">+ Dodaj</button>"
+            },
+            {
+              "target": [
+                ".family-day:nth-child(7) > .family-day__heading > .family-day__name"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.37 (foreground color: #647990, background color: #fbfcfe, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"family-day__name\">Ned.</span>"
+            },
+            {
+              "target": [
+                "button[data-family-add-for=\"2026-10-25\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.88 (foreground color: #6a8299, background color: #fbfcfe, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<button class=\"family-day__add\" type=\"button\" data-family-add-for=\"2026-10-25\" aria-label=\"Dodaj načrt za 25. oktober 2026\">+ Dodaj</button>"
+            },
+            {
+              "target": [
+                ".family-legend > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #657991, background color: #ffffff, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span><i class=\"family-dot family-dot--blue\"></i>Dogodek</span>"
+            },
+            {
+              "target": [
+                ".family-legend > span:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #657991, background color: #ffffff, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span><i class=\"family-dot family-dot--red\"></i>Opravilo</span>"
+            },
+            {
+              "target": [
+                ".family-legend > span:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #657991, background color: #ffffff, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span><i class=\"family-dot family-dot--meal\"></i>Obrok</span>"
+            },
+            {
+              "target": [
+                ".family-agenda-list > .family-agenda-empty"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.23 (foreground color: #657991, background color: #f7f9fc, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<div class=\"family-agenda-empty\">Ta teden še nima načrtov. Dodajte dogodek, opravilo ali ponavljajočo se domačo nalogo.</div>"
+            },
+            {
+              "target": [
+                ".family-meals-list > .family-agenda-empty"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.23 (foreground color: #657991, background color: #f7f9fc, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<div class=\"family-agenda-empty\">Za ta teden še ni načrtovanih obrokov. Shranite večerjo in sestavine dodajte na nakupovalni seznam.</div>"
+            },
+            {
+              "target": [
+                "span[data-family-grocery-count=\"\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #657991, background color: #ffffff, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span data-family-grocery-count=\"\">0 izdelkov</span>"
+            },
+            {
+              "target": [
+                ".family-grocery-empty"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #657991, background color: #ffffff, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<div class=\"family-grocery-empty\">Seznam je prazen. Dodajte izdelek ali sestavine načrtovanega obroka.</div>"
+            },
+            {
+              "target": [
+                ".family-next-empty"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.23 (foreground color: #657991, background color: #f7f9fc, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<div class=\"family-next-empty\">Za ta teden ni več prihodnjih načrtov. Z naslednjim tednom se prikažejo novi.</div>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 3
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 99
+        }
+      ],
+      "passes": 29
+    },
+    {
+      "path": "/razpored-izmen/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "aria-required-children",
+          "impact": "critical",
+          "description": "Ensure elements with an ARIA role that require child roles contain them",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-required-children?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "#shift-calendar"
+              ],
+              "summary": "Fix any of the following:\n  Element has children which are not allowed: [role=columnheader], [role=gridcell]",
+              "html": "<div class=\"shift-calendar\" id=\"shift-calendar\" role=\"grid\" aria-label=\"Mesečni predogled razporeda izmen\">"
+            }
+          ]
+        },
+        {
+          "id": "aria-required-parent",
+          "impact": "critical",
+          "description": "Ensure elements with an ARIA role that require parent roles are contained by them",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/aria-required-parent?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "div[aria-label=\"pon\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__weekday\" role=\"columnheader\" aria-label=\"pon\">pon</div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"tor\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__weekday\" role=\"columnheader\" aria-label=\"tor\">tor</div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"sre\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__weekday\" role=\"columnheader\" aria-label=\"sre\">sre</div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"čet\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__weekday\" role=\"columnheader\" aria-label=\"čet\">čet</div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"pet\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__weekday\" role=\"columnheader\" aria-label=\"pet\">pet</div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"sob\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__weekday\" role=\"columnheader\" aria-label=\"sob\">sob</div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"ned\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__weekday\" role=\"columnheader\" aria-label=\"ned\">ned</div>"
+            },
+            {
+              "target": [
+                ".shift-calendar__day--empty.shift-calendar__day[role=\"gridcell\"]:nth-child(8)"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--empty\" role=\"gridcell\"></div>"
+            },
+            {
+              "target": [
+                ".shift-calendar__day--empty.shift-calendar__day[role=\"gridcell\"]:nth-child(9)"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--empty\" role=\"gridcell\"></div>"
+            },
+            {
+              "target": [
+                ".shift-calendar__day--empty.shift-calendar__day[role=\"gridcell\"]:nth-child(10)"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--empty\" role=\"gridcell\"></div>"
+            },
+            {
+              "target": [
+                ".shift-calendar__day--empty.shift-calendar__day[role=\"gridcell\"]:nth-child(11)"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--empty\" role=\"gridcell\"></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"1. januar 2027 · zunaj obdobja\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--outside\" role=\"gridcell\" aria-label=\"1. januar 2027 · zunaj obdobja\"><strong>1</strong></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"2. januar 2027 · zunaj obdobja\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--outside\" role=\"gridcell\" aria-label=\"2. januar 2027 · zunaj obdobja\"><strong>2</strong></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"3. januar 2027 · zunaj obdobja\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--outside\" role=\"gridcell\" aria-label=\"3. januar 2027 · zunaj obdobja\"><strong>3</strong></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"4. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"4. januar 2027\" data-date=\"2027-01-04\"><strong>4</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"5. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"5. januar 2027\" data-date=\"2027-01-05\"><strong>5</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"6. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"6. januar 2027\" data-date=\"2027-01-06\"><strong>6</strong><span title=\"N\">N</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"7. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"7. januar 2027\" data-date=\"2027-01-07\"><strong>7</strong><span title=\"N\">N</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"8. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--off\" role=\"gridcell\" aria-label=\"8. januar 2027\" data-date=\"2027-01-08\"><strong>8</strong><span title=\"Prosto\">Prosto</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"9. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--off\" role=\"gridcell\" aria-label=\"9. januar 2027\" data-date=\"2027-01-09\"><strong>9</strong><span title=\"Prosto\">Prosto</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"10. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"10. januar 2027\" data-date=\"2027-01-10\"><strong>10</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"11. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"11. januar 2027\" data-date=\"2027-01-11\"><strong>11</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"12. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"12. januar 2027\" data-date=\"2027-01-12\"><strong>12</strong><span title=\"N\">N</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"13. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"13. januar 2027\" data-date=\"2027-01-13\"><strong>13</strong><span title=\"N\">N</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"14. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--off\" role=\"gridcell\" aria-label=\"14. januar 2027\" data-date=\"2027-01-14\"><strong>14</strong><span title=\"Prosto\">Prosto</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"15. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--off\" role=\"gridcell\" aria-label=\"15. januar 2027\" data-date=\"2027-01-15\"><strong>15</strong><span title=\"Prosto\">Prosto</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"16. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"16. januar 2027\" data-date=\"2027-01-16\"><strong>16</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"17. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"17. januar 2027\" data-date=\"2027-01-17\"><strong>17</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"18. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"18. januar 2027\" data-date=\"2027-01-18\"><strong>18</strong><span title=\"N\">N</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"19. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"19. januar 2027\" data-date=\"2027-01-19\"><strong>19</strong><span title=\"N\">N</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"20. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--off\" role=\"gridcell\" aria-label=\"20. januar 2027\" data-date=\"2027-01-20\"><strong>20</strong><span title=\"Prosto\">Prosto</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"21. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--off\" role=\"gridcell\" aria-label=\"21. januar 2027\" data-date=\"2027-01-21\"><strong>21</strong><span title=\"Prosto\">Prosto</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"22. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"22. januar 2027\" data-date=\"2027-01-22\"><strong>22</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"23. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"23. januar 2027\" data-date=\"2027-01-23\"><strong>23</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"24. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"24. januar 2027\" data-date=\"2027-01-24\"><strong>24</strong><span title=\"N\">N</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"25. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"25. januar 2027\" data-date=\"2027-01-25\"><strong>25</strong><span title=\"N\">N</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"26. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--off\" role=\"gridcell\" aria-label=\"26. januar 2027\" data-date=\"2027-01-26\"><strong>26</strong><span title=\"Prosto\">Prosto</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"27. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--off\" role=\"gridcell\" aria-label=\"27. januar 2027\" data-date=\"2027-01-27\"><strong>27</strong><span title=\"Prosto\">Prosto</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"28. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"28. januar 2027\" data-date=\"2027-01-28\"><strong>28</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"29. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--day\" role=\"gridcell\" aria-label=\"29. januar 2027\" data-date=\"2027-01-29\"><strong>29</strong><span title=\"D\">D</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"30. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"30. januar 2027\" data-date=\"2027-01-30\"><strong>30</strong><span title=\"N\">N</span></div>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"31. januar 2027\"]"
+              ],
+              "summary": "Fix any of the following:\n  Required ARIA parent role not present: row",
+              "html": "<div class=\"shift-calendar__day shift-calendar__day--night\" role=\"gridcell\" aria-label=\"31. januar 2027\" data-date=\"2027-01-31\"><strong>31</strong><span title=\"N\">N</span></div>"
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".shift-person > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.32 (foreground color: #7a8ca0, background color: #f9fbfd, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span>(neobvezno)</span>"
+            },
+            {
+              "target": [
+                ".shift-preview__badge"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.46 (foreground color: #647993, background color: #ffffff, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"shift-preview__badge\">BREZ SHRANJEVANJA</span>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"8. januar 2027\"] > span[title=\"Prosto\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span title=\"Prosto\">Prosto</span>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"9. januar 2027\"] > span[title=\"Prosto\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span title=\"Prosto\">Prosto</span>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"14. januar 2027\"] > strong"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<strong>14</strong>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"14. januar 2027\"] > span[title=\"Prosto\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span title=\"Prosto\">Prosto</span>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"15. januar 2027\"] > strong"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<strong>15</strong>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"15. januar 2027\"] > span[title=\"Prosto\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span title=\"Prosto\">Prosto</span>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"20. januar 2027\"] > strong"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<strong>20</strong>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"20. januar 2027\"] > span[title=\"Prosto\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span title=\"Prosto\">Prosto</span>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"21. januar 2027\"] > strong"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<strong>21</strong>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"21. januar 2027\"] > span[title=\"Prosto\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span title=\"Prosto\">Prosto</span>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"26. januar 2027\"] > strong"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<strong>26</strong>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"26. januar 2027\"] > span[title=\"Prosto\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span title=\"Prosto\">Prosto</span>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"27. januar 2027\"] > strong"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<strong>27</strong>"
+            },
+            {
+              "target": [
+                "div[aria-label=\"27. januar 2027\"] > span[title=\"Prosto\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #6c7c8e, background color: #f4f6f8, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span title=\"Prosto\">Prosto</span>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 4
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 112
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "path": "/solski-urnik/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 116
+        }
+      ],
+      "passes": 30
+    },
+    {
+      "path": "/solske-pocitnice/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 39
+        }
+      ],
+      "passes": 29
+    },
+    {
+      "path": "/solski-koledar/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 25
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/soncni-vzhod-in-zahod/ljubljana/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "p[data-sun-position=\"\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.83 (foreground color: #405067, background color: #0c2746, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p data-sun-position=\"\" role=\"status\" aria-live=\"polite\">Sonce je 23.2° nad obzorjem, proti jugozahodu; azimut 222°.</p>"
+            },
+            {
+              "target": [
+                ".sun-scene-note"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.67 (foreground color: #405067, background color: #102e50, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"sun-scene-note\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 27
+        }
+      ],
+      "passes": 28
+    },
+    {
+      "path": "/lunine-mene/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 16
+        }
+      ],
+      "passes": 33
+    },
+    {
+      "path": "/soncni-mrk/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".is-invisible"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.97 (foreground color: #66788a, background color: #edf0f4, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"astro-status is-invisible\">Ni viden</span>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 22
+        }
+      ],
+      "passes": 36
+    },
+    {
+      "path": "/setveni-koledar/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".garden-jump > a[href$=\"#setveni-pregled\"] > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.06 (foreground color: #a7b6c7, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span>01</span>"
+            },
+            {
+              "target": [
+                "a[href$=\"#moj-vrt\"] > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.06 (foreground color: #a7b6c7, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span>02</span>"
+            },
+            {
+              "target": [
+                "a[href$=\"#kako-nacrtovati-vrt\"] > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.06 (foreground color: #a7b6c7, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span>03</span>"
+            },
+            {
+              "target": [
+                ".garden-jump > a[href$=\"#vrtni-viri\"] > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.06 (foreground color: #a7b6c7, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span>04</span>"
+            },
+            {
+              "target": [
+                "th[scope=\"col\"]:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<th scope=\"col\">Vrtnina</th>"
+            },
+            {
+              "target": [
+                "abbr[title=\"januar\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"januar\">Jan</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"februar\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"februar\">Feb</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"marec\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"marec\">Mar</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"april\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"april\">Apr</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"maj\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"maj\">Maj</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"junij\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"junij\">Jun</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"julij\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"julij\">Jul</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"avgust\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"avgust\">Avg</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"september\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"september\">Sep</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"oktober\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"oktober\">Okt</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"november\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"november\">Nov</abbr>"
+            },
+            {
+              "target": [
+                "abbr[title=\"december\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<abbr title=\"december\">Dec</abbr>"
+            },
+            {
+              "target": [
+                "th[scope=\"col\"]:nth-child(14)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.45 (foreground color: #647389, background color: #f4f6f9, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<th scope=\"col\">Načrt</th>"
+            },
+            {
+              "target": [
+                "label[for=\"garden-plan-note\"] > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.14 (foreground color: #6e7e92, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span>(neobvezno)</span>"
+            },
+            {
+              "target": [
+                "li:nth-child(1) > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.69 (foreground color: #b0c1d5, background color: #f5f6f7, font size: 18.8pt (25px), font weight: bold). Expected contrast ratio of 3:1",
+              "html": "<span>01</span>"
+            },
+            {
+              "target": [
+                "li:nth-child(2) > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.69 (foreground color: #b0c1d5, background color: #f5f6f7, font size: 18.8pt (25px), font weight: bold). Expected contrast ratio of 3:1",
+              "html": "<span>02</span>"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.69 (foreground color: #b0c1d5, background color: #f5f6f7, font size: 18.8pt (25px), font weight: bold). Expected contrast ratio of 3:1",
+              "html": "<span>03</span>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 47
+        }
+      ],
+      "passes": 36
+    },
+    {
+      "path": "/izplacila-pokojnin/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "span:nth-child(10)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">10</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(11)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">11</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(12)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">12</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(13)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">13</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(14)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">14</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(15)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">15</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(16)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">16</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(17)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">17</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(18)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">18</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(19)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">19</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(20)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">20</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(21)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">21</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(22)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">22</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(23)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">23</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(24)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">24</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(25)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">25</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(26)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">26</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(27)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">27</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(28)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">28</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(29)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">29</span>"
+            },
+            {
+              "target": [
+                "span:nth-child(31)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #74869c, background color: #f3f6f9, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"\">31</span>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 27
+        }
+      ],
+      "passes": 34
+    },
+    {
+      "path": "/horoskop/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".z-art-caption"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.7 (foreground color: #66829b, background color: #f5f6f7, font size: 6.0pt (8px), font weight: bold). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"z-art-caption\">VAŠ MALI ZVEZDNI KOMPAS</span>"
+            },
+            {
+              "target": [
+                ".z-section-heading > .z-small-note"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.31 (foreground color: #64768a, background color: #f5f6f7, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"z-small-note\">Tropski zodiak · običajni datumski razponi</span>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 49
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/ustvari-koledar/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "#studio-preview-label"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.36 (foreground color: #6b7687, background color: #f7f9fc, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span id=\"studio-preview-label\">Letni koledar · 2027</span>"
+            },
+            {
+              "target": [
+                ".studio-canvas-footer > span"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.64 (foreground color: #778395, background color: #f7f9fc, font size: 6.0pt (8px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span><svg class=\"studio-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 2v20M2 12h20M8 6l4-4 4 4m-8 12 4 4 4-4M6 8l-4 4 4 4m12-8 4 4-4 4\"></path></svg>Vaše elemente povlecite na želeno mesto</span>"
+            },
+            {
+              "target": [
+                "#studio-paper-size"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.64 (foreground color: #778395, background color: #f7f9fc, font size: 6.0pt (8px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<strong id=\"studio-paper-size\">A4 · 297 × 210 mm</strong>"
+            },
+            {
+              "target": [
+                ".studio-statusbar > span:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #6b7687, background color: #f5f6f7, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span><svg class=\"studio-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 2 3 6v6c0 5 9 10 9 10s9-5 9-10V6Zm-5 10 3 3 7-7\"></path></svg> Brez prijave. Vaše fotografije ostanejo pri vas.</span>"
+            },
+            {
+              "target": [
+                "#studio-message"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #6b7687, background color: #f5f6f7, font size: 6.8pt (9px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span id=\"studio-message\" role=\"status\" aria-live=\"polite\">Vse je pripravljeno. Naj bo to vaše leto.</span>"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 485
+        }
+      ],
+      "passes": 33
+    },
+    {
+      "path": "/kontakt/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 28
+        }
+      ],
+      "passes": 29
+    },
+    {
+      "path": "/o-nas/",
+      "mode": "mobile",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                ".about-family > div:nth-child(2) > p:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.74 (foreground color: #405067, background color: #102b4a, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p>Družinski planer združi dogodke, domača opravila in ponavljajoče se naloge z jedilnikom ter nakupovalnim seznamom. Barvne oznake pomagajo ločiti do osem članov. Teden lahko natisnete, načrte izvozite v koledar, varnostno kopijo pa shranite kot JSON in pozneje obnovite.</p>"
+            },
+            {
+              "target": [
+                "p:nth-child(4)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.74 (foreground color: #405067, background color: #102b4a, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p>Vnosi ostanejo v brskalniku in se ne sinhronizirajo med napravami. To pomeni, da jih Koledar365 ne more samodejno prenesti na vaš telefon ali drugim članom družine.</p>"
+            }
+          ]
+        },
+        {
+          "id": "definition-list",
+          "impact": "serious",
+          "description": "Ensure <dl> elements are structured correctly",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/definition-list?application=playwright",
+          "nodes": [
+            {
+              "target": [
+                "dl"
+              ],
+              "summary": "Fix all of the following:\n  dl element has direct children that are not allowed: div > small",
+              "html": "<dl class=\"about-facts\" aria-label=\"Kako je zasnovan Koledar365\">"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 51
+        }
+      ],
+      "passes": 31
+    },
+    {
+      "path": "/uredniska-politika/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ],
+      "passes": 29
+    },
+    {
+      "path": "/viri-in-metodologija/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 2
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 14
+        }
+      ],
+      "passes": 30
+    },
+    {
+      "path": "/piskotki/",
+      "mode": "mobile",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ],
+      "passes": 31
+    }
+  ]
+}

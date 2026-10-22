@@ -20,7 +20,7 @@ for source in sorted((PUBLIC / "images").rglob("*")):
         image = image.convert("RGBA" if "A" in image.getbands() else "RGB")
         largest = min(image.width, 960)
         variants = []
-        for width in (largest,):
+        for width in (sorted({min(image.width, 480), largest}) if source.stem == "ljubljana" else (largest,)):
             # One high-quality AVIF per source keeps the Pages Free asset count bounded.
             # The original image remains the broadly compatible fallback.
             height = round(width / 2)
