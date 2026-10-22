@@ -7,7 +7,7 @@ import {ensureMapGetOrInsertComputed} from './map-compat.js';
 ensureMapGetOrInsertComputed();
 const nativeFetch=window.fetch.bind(window),params=new URLSearchParams(location.search);
 const $=selector=>document.querySelector(selector),$$=selector=>[...document.querySelectorAll(selector)];
-let photos=new Map(),jobs=new Map(),registryPromise;
+let sequence=0,photos=new Map(),jobs=new Map(),registryPromise;
 const renderCache=new Map();
 async function renderResult(options){if(options.photo_token&&!photos.has(options.photo_token))throw Error('Fotografijo ponovno izberite. Po zaprtju strani ni več shranjena.');const sorted=value=>Array.isArray(value)?value.map(sorted):value&&typeof value==='object'?Object.fromEntries(Object.keys(value).sort().map(key=>[key,sorted(value[key])])):value;const key=JSON.stringify(sorted(options));if(!renderCache.has(key)){if(renderCache.size>=3)renderCache.delete(renderCache.keys().next().value);const work=call('/izvozi/',{options,photo:photos.get(options.photo_token)}).catch(error=>{renderCache.delete(key);throw error});renderCache.set(key,work)}return renderCache.get(key)}
 const urls=new Set();
