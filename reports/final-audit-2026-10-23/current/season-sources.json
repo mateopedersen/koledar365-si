@@ -1,0 +1,103 @@
+{
+  "checked_at": "2026-10-22T21:42:51.763146+00:00",
+  "events": 16,
+  "passed": true,
+  "years": [
+    {
+      "year": 2027,
+      "url": "https://aa.usno.navy.mil/calculated/seasons?dst=false&submit=Get+Data&tz=0.00&tz_label=false&tz_sign=-1&year=2027",
+      "status": 200,
+      "rows": [
+        {
+          "expected": "Equinox 2027 March 20 20:25",
+          "passed": true
+        },
+        {
+          "expected": "Solstice 2027 June 21 14:11",
+          "passed": true
+        },
+        {
+          "expected": "Equinox 2027 September 23 06:02",
+          "passed": true
+        },
+        {
+          "expected": "Solstice 2027 December 22 02:42",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "year": 2028,
+      "url": "https://aa.usno.navy.mil/calculated/seasons?dst=false&submit=Get+Data&tz=0.00&tz_label=false&tz_sign=-1&year=2028",
+      "status": 200,
+      "rows": [
+        {
+          "expected": "Equinox 2028 March 20 02:17",
+          "passed": true
+        },
+        {
+          "expected": "Solstice 2028 June 20 20:02",
+          "passed": true
+        },
+        {
+          "expected": "Equinox 2028 September 22 11:45",
+          "passed": true
+        },
+        {
+          "expected": "Solstice 2028 December 21 08:19",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "year": 2029,
+      "url": "https://aa.usno.navy.mil/calculated/seasons?dst=false&submit=Get+Data&tz=0.00&tz_label=false&tz_sign=-1&year=2029",
+      "status": 200,
+      "rows": [
+        {
+          "expected": "Equinox 2029 March 20 08:02",
+          "passed": true
+        },
+        {
+          "expected": "Solstice 2029 June 21 01:48",
+          "passed": true
+        },
+        {
+          "expected": "Equinox 2029 September 22 17:38",
+          "passed": true
+        },
+        {
+          "expected": "Solstice 2029 December 21 14:14",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "year": 2030,
+      "url": "https://aa.usno.navy.mil/calculated/seasons?dst=false&submit=Get+Data&tz=0.00&tz_label=false&tz_sign=-1&year=2030",
+      "status": 200,
+      "rows": [
+        {
+          "expected": "Equinox 2030 March 20 13:52",
+          "passed": true
+        },
+        {
+          "expected": "Solstice 2030 June 21 07:31",
+          "passed": true
+        },
+        {
+          "expected": "Equinox 2030 September 22 23:27",
+          "passed": true
+        },
+        {
+          "expected": "Solstice 2030 December 21 20:09",
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ]
+}

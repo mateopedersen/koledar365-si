@@ -18,6 +18,8 @@ test('sunrise pages cover all official Slovenian cities and respond to city, dat
  await page.locator('[data-sun-city]').selectOption('koper');
  await expect(page).toHaveURL(/soncni-vzhod-in-zahod\/koper\/\?date=2027-07-15/);
  await expect(page.locator('[data-sun-heading]')).toContainText('Koper');
+ await expect(page.locator('[data-sun-coordinate-source]')).toHaveAttribute('href', 'https://en.wikipedia.org/wiki/Koper');
+ await expect(page.locator('[data-sun-coordinate-source]')).toHaveText('Koordinate: Koper');
  await page.locator('[data-sun-time]').evaluate((slider)=>{slider.value='60';slider.dispatchEvent(new Event('input',{bubbles:true}))});
  await expect(page.locator('[data-sun-position]')).toContainText('pod obzorjem');
  const before=await page.locator('[data-sun-object]').getAttribute('transform');
@@ -133,4 +135,22 @@ test('the nearest-city button uses the approved browser position locally',async(
  await page.locator('[data-sun-locate]').click();
  await expect(page.locator('[data-sun-city]')).toHaveValue('ljubljana');
  await expect(page.locator('[data-sun-status]')).toContainText('Vaših koordinat ne pošiljamo');
+});
+
+test('default solar date follows Ljubljana today after a static build and history navigation', async ({page}) => {
+ await page.clock.setFixedTime(new Date('2028-02-29T23:30:00Z'));
+ await page.goto('/soncni-vzhod-in-zahod/koper/');
+ await chooseNecessaryCookies(page);
+ await expect(page.locator('[data-sun-date]')).toHaveValue('2028-03-01');
+ await page.locator('[data-sun-date]').fill('2027-07-15');
+ await page.locator('[data-sun-date]').press('Tab');
+ await expect(page).toHaveURL(/date=2027-07-15/);
+ await page.goBack();
+ await expect(page.locator('[data-sun-date]')).toHaveValue('2028-03-01');
+ await page.goto('/soncni-vzhod-in-zahod/koper/?date=2028-02-29');
+ await expect(page.locator('[data-sun-date]')).toHaveValue('2028-02-29');
+ await page.goto('/soncni-vzhod-in-zahod/koper/?date=2027-02-30');
+ await expect(page.locator('[data-sun-date]')).toHaveValue('2028-03-01');
+ await expect(page.locator('[data-sun-value="sunrise"]')).not.toHaveText('—');
+ await expect(page.locator('[data-sun-status]')).toContainText('Datum v povezavi ni veljaven');
 });

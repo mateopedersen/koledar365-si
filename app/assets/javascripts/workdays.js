@@ -1,4 +1,9 @@
 (() => {
+  // Standalone result labels follow Slovene cardinal forms, including 101/102.
+  const cardinal = new Intl.PluralRules('sl-SI');
+  const workdayLabel = value => ({one:'delovni dan',two:'delovna dneva',few:'delovni dnevi',other:'delovnih dni'})[cardinal.select(value)];
+  const dayLabel = value => ({one:'dan',two:'dneva',few:'dnevi',other:'dni'})[cardinal.select(value)];
+  const hourText = new Intl.NumberFormat('sl-SI', {style:'unit',unit:'hour',unitDisplay:'long',maximumFractionDigits:2});
   const calculator = document.querySelector('[data-workday-calculator]');
   if (calculator) {
     const tabs = [...calculator.querySelectorAll('[data-wdc-mode]')];
@@ -24,12 +29,6 @@
       if (!date) return '';
       const weekday = weekdayFormat.format(date);
       return weekday.charAt(0).toLocaleUpperCase('sl-SI') + weekday.slice(1);
-    };
-    const workdayLabel = (value) => {
-      if (value === 1) return 'delovni dan';
-      if (value === 2) return 'delovna dneva';
-      if (value === 3 || value === 4) return 'delovne dni';
-      return 'delovnih dni';
     };
     const showStatus = (message, error = false) => {
       status.textContent = message;
@@ -60,7 +59,7 @@
       result.querySelector('[data-wdc-label="calendar"]').textContent = 'Všteti koledarski dnevi';
       result.querySelector('[data-wdc-stat="calendar"]').textContent = number.format(data.calendar_days);
       result.querySelector('[data-wdc-label="hours"]').textContent = 'Skupaj delovnih ur';
-      result.querySelector('[data-wdc-stat="hours"]').textContent = `${number.format(data.hours)} ur`;
+      result.querySelector('[data-wdc-stat="hours"]').textContent = hourText.format(data.hours);
       result.querySelector('[data-wdc-label="holidays"]').textContent = 'Izločeni prazniki';
       result.querySelector('[data-wdc-stat="holidays"]').textContent = number.format(holidays.length);
       result.querySelector('[data-wdc-detail]').textContent = holidays.length ? `Izločeni prazniki na izbrane delovne dni: ${holidays.map(dateText).join(', ')}.` : 'V izbranem obdobju ni bilo izločenih dela prostih praznikov.';
@@ -69,11 +68,11 @@
       const from = form.elements.from.value;
       const shifted = data.target_date;
       result.querySelector('[data-wdc-title]').textContent = 'Datum po delovnih dneh';
-      result.querySelector('[data-wdc-summary]').textContent = `${number.format(data.working_days)} ${workdayLabel(data.working_days)} od ${dateText(from)}`;
+      result.querySelector('[data-wdc-summary]').textContent = `Premik: ${number.format(data.working_days)} ${workdayLabel(data.working_days)} · Izhodišče: ${dateText(from)}`;
       result.querySelector('[data-wdc-primary]').textContent = dateText(shifted);
       result.querySelector('[data-wdc-caption]').textContent = `${weekdayText(shifted)} · ${shifted}`;
       result.querySelector('[data-wdc-label="calendar"]').textContent = 'Koledarski premik';
-      result.querySelector('[data-wdc-stat="calendar"]').textContent = `${number.format(data.calendar_days)} dni`;
+      result.querySelector('[data-wdc-stat="calendar"]').textContent = `${number.format(data.calendar_days)} ${dayLabel(data.calendar_days)}`;
       result.querySelector('[data-wdc-label="hours"]').textContent = 'Delovnih dni';
       result.querySelector('[data-wdc-stat="hours"]').textContent = number.format(data.working_days);
       result.querySelector('[data-wdc-label="holidays"]').textContent = 'Izločeni prazniki';
@@ -212,11 +211,6 @@
   const year = Number(dashboard.dataset.year);
   const formatter = new Intl.NumberFormat('sl-SI', { maximumFractionDigits: 2 });
 
-  const workdayLabel = (count) => {
-    if (count === 1) return 'delovni dan';
-    if (count >= 2 && count <= 4) return 'delovni dnevi';
-    return 'delovnih dni';
-  };
 
   const update = () => {
     const hours = Number(hoursInput.value);
@@ -279,6 +273,8 @@
     dashboard.querySelector('[data-year-days]').textContent = formatter.format(annualDays);
     dashboard.querySelector('[data-year-days-label]').textContent = `${workdayLabel(annualDays)} v letu`;
     dashboard.querySelector('[data-year-hours]').textContent = formatter.format(annualHours);
+    const dailyHours = dashboard.querySelector('[data-daily-hours-summary]');
+    if (dailyHours) dailyHours.textContent = `Dnevni obseg: ${formatter.format(hours)} h`;
     dashboard.querySelector('[data-year-holidays]').textContent = formatter.format(annualHolidays);
   };
 

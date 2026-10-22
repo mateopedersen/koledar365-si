@@ -27,7 +27,7 @@
 <meta name="twitter:description" content="Začetki pomladi, poletja, jeseni in zime v letih 2027–2030. Primerjajte astronomske trenutke v Sloveniji z meteorološkimi letnimi časi.">
 <meta name="twitter:image" content="https://koledar365.si/druzabno/pages/17/44417b80bca51c765680.png">
 <meta name="twitter:image:alt" content="Letni časi">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl-SI","publisher":{"@id":"https://koledar365.si/#organization"}},{"@type":"WebPage","@id":"https://koledar365.si/letni-casi/#webpage","url":"https://koledar365.si/letni-casi/","name":"Letni časi","description":"Začetki pomladi, poletja, jeseni in zime v letih 2027–2030. Primerjajte astronomske trenutke v Sloveniji z meteorološkimi letnimi časi.","inLanguage":"sl-SI","isPartOf":{"@id":"https://koledar365.si/#website"},"publisher":{"@id":"https://koledar365.si/#organization"},"dateModified":"2026-10-22T15:11:43Z"},{"@type":"Organization","@id":"https://koledar365.si/#organization","name":"Koledar365","url":"https://koledar365.si/","email":"koledar365@gmail.com"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://koledar365.si/"},{"@type":"ListItem","position":2,"name":"Letni časi","item":"https://koledar365.si/letni-casi/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl-SI","publisher":{"@id":"https://koledar365.si/#organization"}},{"@type":"WebPage","@id":"https://koledar365.si/letni-casi/#webpage","url":"https://koledar365.si/letni-casi/","name":"Letni časi","description":"Začetki pomladi, poletja, jeseni in zime v letih 2027–2030. Primerjajte astronomske trenutke v Sloveniji z meteorološkimi letnimi časi.","inLanguage":"sl-SI","isPartOf":{"@id":"https://koledar365.si/#website"},"publisher":{"@id":"https://koledar365.si/#organization"},"dateModified":"2026-10-22T21:57:05Z"},{"@type":"Organization","@id":"https://koledar365.si/#organization","name":"Koledar365","url":"https://koledar365.si/","email":"koledar365@gmail.com"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://koledar365.si/"},{"@type":"ListItem","position":2,"name":"Letni časi","item":"https://koledar365.si/letni-casi/"}]}]}</script>
 
 <link rel="stylesheet" href="/assets/web-64e45d21223d21c4.css">
 
@@ -193,463 +193,182 @@
 <span class="eyebrow">KOLEDAR365 · SLOVENIJA</span><h1>Letni časi</h1>
 <p>Začetki pomladi, poletja, jeseni in zime v letih 2027–2030. Primerjajte astronomske trenutke v Sloveniji z meteorološkimi letnimi časi.</p>
 </div>
-<!-- BEGIN app/views/pages/_events.html.erb
---><section class="panel"><!-- BEGIN app/views/pages/_year_selector.html.erb
---><nav class="year-links" aria-label="Izbira leta"><a class="active" href="?year=2027">2027</a><a class="" href="?year=2028">2028</a><a class="" href="?year=2029">2029</a><a class="" href="?year=2030">2030</a></nav>
-<!-- END app/views/pages/_year_selector.html.erb --><form method="get" class="filters">
-<input type="hidden" name="year" value="2027"><label>Mesec<select name="month"><option value="0">Vsi meseci</option>
-<option value="1">januar</option>
-<option value="2">februar</option>
-<option value="3">marec</option>
-<option value="4">april</option>
-<option value="5">maj</option>
-<option value="6">junij</option>
-<option value="7">julij</option>
-<option value="8">avgust</option>
-<option value="9">september</option>
-<option value="10">oktober</option>
-<option value="11">november</option>
-<option value="12">december</option></select></label><label>Vrsta<select name="category"><option value="">Vse vrste</option>
-<option value="legal">Prazniki po zakonu</option>
-<option value="cultural">Kulturni dnevi</option>
-<option value="religious">Verski dnevi</option>
-<option value="international">Mednarodni dnevi</option>
-<option value="astronomical">Astronomski dogodki</option></select></label><button>Filtriraj</button>
-</form>
-<!-- BEGIN app/views/pages/_event_table.html.erb
---><div class="table-wrap"><table class="data-table" aria-label="Datumi dogodkov in status dela prostega dne">
-<thead><tr>
-<th scope="col">Datum</th>
-<th scope="col">Dan</th>
+<!-- BEGIN app/views/pages/_seasons.html.erb
+--><section class="panel prose" aria-labelledby="seasons-explanation">
+  <h2 id="seasons-explanation">Kdaj se začnejo letni časi v Sloveniji?</h2>
+  <p>Astronomska pomlad in jesen se začneta ob enakonočju, poletje in zima pa ob solsticiju. Spodaj so natančni začetki za severno poloblo v letih 2027–2030. Ure so preračunane v slovenski čas (Europe/Ljubljana): CET pomeni UTC + 1, CEST pa UTC + 2.</p>
+  <p>Meteorološki letni časi se začnejo na prvi dan meseca: pomlad 1. marca, poletje 1. junija, jesen 1. septembra in zima 1. decembra. Ti datumi se razlikujejo od astronomskih začetkov v preglednici.</p>
+  <nav class="year-links" aria-label="Izberite leto začetkov letnih časov"><a class="button" href="#letni-casi-2027">2027</a><a class="button" href="#letni-casi-2028">2028</a><a class="button" href="#letni-casi-2029">2029</a><a class="button" href="#letni-casi-2030">2030</a></nav>
+</section>
+<section class="panel" id="letni-casi-2027" aria-labelledby="seasons-title-2027">
+  <h2 id="seasons-title-2027">Začetki letnih časov 2027</h2>
+  <div class="table-wrap"><table class="data-table" aria-label="Astronomski začetki letnih časov v letu 2027">
+    <thead><tr>
 <th scope="col">Dogodek</th>
-<th scope="col">Dela prost dan</th>
+<th scope="col">Datum v Sloveniji</th>
+<th scope="col">Slovenski čas</th>
+<th scope="col">UTC</th>
 </tr></thead>
-<tbody>
-<tr>
-<td><a href="/koledar/2027/januar/">01. 01. 2027</a></td>
-<td>petek</td>
-<td><a href="/prazniki/novo-leto/">novo leto</a></td>
-<td>Da</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/januar/">02. 01. 2027</a></td>
-<td>sobota</td>
-<td><a href="/prazniki/novo-leto/">novo leto</a></td>
-<td>Da</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/januar/">06. 01. 2027</a></td>
-<td>sreda</td>
-<td><a href="/prazniki/sveti-trije-kralji/">Sveti trije kralji</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/januar/">27. 01. 2027</a></td>
-<td>sreda</td>
-<td><a href="/pomembni-dnevi/dan-spomina-na-zrtve-holokavsta/">Mednarodni dan spomina na žrtve holokavsta</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/februar/">08. 02. 2027</a></td>
-<td>ponedeljek</td>
-<td><a href="/prazniki/presernov-dan/">Prešernov dan, slovenski kulturni praznik</a></td>
-<td>Da</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/februar/">09. 02. 2027</a></td>
-<td>torek</td>
-<td><a href="/prazniki/pust/">Pust</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/februar/">14. 02. 2027</a></td>
-<td>nedelja</td>
-<td><a href="/prazniki/valentinovo/">Valentinovo</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/februar/">21. 02. 2027</a></td>
-<td>nedelja</td>
-<td><a href="/pomembni-dnevi/mednarodni-dan-maternega-jezika/">Mednarodni dan maternega jezika</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/marec/">08. 03. 2027</a></td>
-<td>ponedeljek</td>
-<td><a href="/prazniki/dan-zena/">Dan žena</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/marec/">12. 03. 2027</a></td>
-<td>petek</td>
-<td><a href="/prazniki/gregorjevo/">Gregorjevo</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/marec/">20. 03. 2027</a></td>
-<td>sobota</td>
-<td><a href="/letni-casi/pomladno-enakonocje/">Pomladno enakonočje</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/marec/">21. 03. 2027</a></td>
-<td>nedelja</td>
-<td><a href="/prazniki/cvetna-nedelja/">Cvetna nedelja</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/marec/">22. 03. 2027</a></td>
-<td>ponedeljek</td>
-<td><a href="/pomembni-dnevi/svetovni-dan-voda/">Svetovni dan voda</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/marec/">25. 03. 2027</a></td>
-<td>četrtek</td>
-<td><a href="/prazniki/materinski-dan/">Materinski dan</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/marec/">26. 03. 2027</a></td>
-<td>petek</td>
-<td><a href="/prazniki/veliki-petek/">Veliki petek</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/marec/">28. 03. 2027</a></td>
-<td>nedelja</td>
-<td><a href="/pomembni-dnevi/2027/">Premik ure</a></td>
-<td>Da</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/marec/">28. 03. 2027</a></td>
-<td>nedelja</td>
-<td><a href="/prazniki/velika-noc/">velikonočna nedelja</a></td>
-<td>Da</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/marec/">29. 03. 2027</a></td>
-<td>ponedeljek</td>
-<td><a href="/prazniki/velika-noc/">velikonočni ponedeljek</a></td>
-<td>Da</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/april/">22. 04. 2027</a></td>
-<td>četrtek</td>
-<td><a href="/prazniki/svetovni-dan-zemlje/">Svetovni dan Zemlje</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/april/">23. 04. 2027</a></td>
-<td>petek</td>
-<td><a href="/pomembni-dnevi/svetovni-dan-knjige-in-avtorskih-pravic/">Svetovni dan knjige in avtorskih pravic</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/april/">27. 04. 2027</a></td>
-<td>torek</td>
-<td><a href="/prazniki/dan-upora-proti-okupatorju/">dan upora proti okupatorju</a></td>
-<td>Da</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/maj/">01. 05. 2027</a></td>
-<td>sobota</td>
-<td><a href="/prazniki/praznik-dela/">praznik dela</a></td>
-<td>Da</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/maj/">02. 05. 2027</a></td>
-<td>nedelja</td>
-<td><a href="/prazniki/praznik-dela/">praznik dela</a></td>
-<td>Da</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/maj/">09. 05. 2027</a></td>
-<td>nedelja</td>
-<td><a href="/prazniki/dan-evrope/">Dan Evrope</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/maj/">15. 05. 2027</a></td>
-<td>sobota</td>
-<td><a href="/pomembni-dnevi/mednarodni-dan-druzin/">Mednarodni dan družin</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/maj/">16. 05. 2027</a></td>
-<td>nedelja</td>
-<td><a href="/prazniki/binkosti/">binkoštna nedelja, binkošti</a></td>
-<td>Da</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/maj/">20. 05. 2027</a></td>
-<td>četrtek</td>
-<td><a href="/prazniki/svetovni-dan-cebel/">Svetovni dan čebel</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/junij/">04. 06. 2027</a></td>
-<td>petek</td>
-<td><a href="/pomembni-dnevi/dan-slovenskega-krvodajalstva/">Dan slovenskega krvodajalstva</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/junij/">05. 06. 2027</a></td>
-<td>sobota</td>
-<td><a href="/pomembni-dnevi/svetovni-dan-okolja/">Svetovni dan okolja</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/junij/">08. 06. 2027</a></td>
-<td>torek</td>
-<td><a href="/prazniki/dan-primoza-trubarja/">dan Primoža Trubarja</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/junij/">21. 06. 2027</a></td>
-<td>ponedeljek</td>
-<td><a href="/letni-casi/poletni-solsticij/">Poletni solsticij</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/junij/">25. 06. 2027</a></td>
-<td>petek</td>
-<td><a href="/prazniki/dan-drzavnosti/">dan državnosti</a></td>
-<td>Da</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/avgust/">07. 08. 2027</a></td>
-<td>sobota</td>
-<td><a href="/prazniki/dan-triglava/">dan Triglava</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/avgust/">12. 08. 2027</a></td>
-<td>četrtek</td>
-<td><a href="/pomembni-dnevi/2027/">Mednarodni dan mladih</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/avgust/">15. 08. 2027</a></td>
-<td>nedelja</td>
-<td><a href="/prazniki/marijino-vnebovzetje/">Marijino vnebovzetje</a></td>
-<td>Da</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/avgust/">17. 08. 2027</a></td>
-<td>torek</td>
-<td><a href="/prazniki/zdruzitev-prekmurskih-slovencev/">združitev prekmurskih Slovencev z matičnim narodom</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/avgust/">23. 08. 2027</a></td>
-<td>ponedeljek</td>
-<td><a href="/pomembni-dnevi/evropski-dan-spomina-na-zrtve-totalitarnih-rezimov/">Evropski dan spomina na žrtve totalitarnih in avtoritarnih režimov</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/september/">08. 09. 2027</a></td>
-<td>sreda</td>
-<td><a href="/pomembni-dnevi/2027/">Mednarodni dan pismenosti</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/september/">15. 09. 2027</a></td>
-<td>sreda</td>
-<td><a href="/prazniki/vrnitev-primorske/">vrnitev Primorske k matični domovini</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/september/">21. 09. 2027</a></td>
-<td>torek</td>
-<td><a href="/pomembni-dnevi/2027/">Mednarodni dan miru</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/september/">23. 09. 2027</a></td>
-<td>četrtek</td>
-<td><a href="/letni-casi/jesensko-enakonocje/">Jesensko enakonočje</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/september/">23. 09. 2027</a></td>
-<td>četrtek</td>
-<td><a href="/prazniki/dan-slovenskega-sporta/">dan slovenskega športa</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/september/">26. 09. 2027</a></td>
-<td>nedelja</td>
-<td><a href="/pomembni-dnevi/evropski-dan-jezikov/">Evropski dan jezikov</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/oktober/">01. 10. 2027</a></td>
-<td>petek</td>
-<td><a href="/pomembni-dnevi/2027/">Mednarodni dan starejših</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/oktober/">04. 10. 2027</a></td>
-<td>ponedeljek</td>
-<td><a href="/pomembni-dnevi/svetovni-dan-zivali/">Svetovni dan živali</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/oktober/">04. 10. 2027</a></td>
-<td>ponedeljek</td>
-<td><a href="/pomembni-dnevi/teden-otroka/">Teden otroka®</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/oktober/">05. 10. 2027</a></td>
-<td>torek</td>
-<td><a href="/pomembni-dnevi/svetovni-dan-uciteljev/">Svetovni dan učiteljev</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/oktober/">16. 10. 2027</a></td>
-<td>sobota</td>
-<td><a href="/pomembni-dnevi/2027/">Svetovni dan hrane</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/oktober/">25. 10. 2027</a></td>
-<td>ponedeljek</td>
-<td><a href="/prazniki/dan-suverenosti/">dan suverenosti</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/oktober/">31. 10. 2027</a></td>
-<td>nedelja</td>
-<td><a href="/pomembni-dnevi/noc-carovnic/">Noč čarovnic</a></td>
-<td>Da</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/oktober/">31. 10. 2027</a></td>
-<td>nedelja</td>
-<td><a href="/pomembni-dnevi/2027/">Premik ure</a></td>
-<td>Da</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/oktober/">31. 10. 2027</a></td>
-<td>nedelja</td>
-<td><a href="/prazniki/dan-reformacije/">dan reformacije</a></td>
-<td>Da</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/november/">01. 11. 2027</a></td>
-<td>ponedeljek</td>
-<td><a href="/prazniki/dan-spomina-na-mrtve/">dan spomina na mrtve</a></td>
-<td>Da</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/november/">02. 11. 2027</a></td>
-<td>torek</td>
-<td><a href="/pomembni-dnevi/spomin-vseh-vernih-rajnih/">Spomin vseh vernih rajnih</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/november/">10. 11. 2027</a></td>
-<td>sreda</td>
-<td><a href="/prazniki/dan-znanosti/">dan znanosti</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/november/">11. 11. 2027</a></td>
-<td>četrtek</td>
-<td><a href="/prazniki/martinovo/">Martinovo</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/november/">14. 11. 2027</a></td>
-<td>nedelja</td>
-<td><a href="/pomembni-dnevi/dan-slovenskega-znakovnega-jezika/">Dan slovenskega znakovnega jezika</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/november/">19. 11. 2027</a></td>
-<td>petek</td>
-<td><a href="/pomembni-dnevi/dan-slovenske-hrane/">Dan slovenske hrane</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/november/">20. 11. 2027</a></td>
-<td>sobota</td>
-<td><a href="/pomembni-dnevi/svetovni-dan-otrok/">Svetovni dan otrok</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/november/">23. 11. 2027</a></td>
-<td>torek</td>
-<td><a href="/prazniki/dan-rudolfa-maistra/">dan Rudolfa Maistra</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/november/">28. 11. 2027</a></td>
-<td>nedelja</td>
-<td><a href="/prazniki/advent/">Advent</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/december/">03. 12. 2027</a></td>
-<td>petek</td>
-<td><a href="/pomembni-dnevi/2027/">Mednarodni dan invalidov</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/december/">03. 12. 2027</a></td>
-<td>petek</td>
-<td><a href="/pomembni-dnevi/ta-veseli-dan-kulture/">Ta veseli dan kulture</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/december/">06. 12. 2027</a></td>
-<td>ponedeljek</td>
-<td><a href="/prazniki/miklavz/">Miklavž</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/december/">10. 12. 2027</a></td>
-<td>petek</td>
-<td><a href="/pomembni-dnevi/2027/">Dan človekovih pravic</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/december/">22. 12. 2027</a></td>
-<td>sreda</td>
-<td><a href="/letni-casi/zimski-solsticij/">Zimski solsticij</a></td>
-<td>Ne</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/december/">25. 12. 2027</a></td>
-<td>sobota</td>
-<td><a href="/prazniki/bozic/">božič</a></td>
-<td>Da</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/december/">26. 12. 2027</a></td>
-<td>nedelja</td>
-<td><a href="/prazniki/dan-samostojnosti-in-enotnosti/">dan samostojnosti in enotnosti</a></td>
-<td>Da</td>
-</tr>
-<tr>
-<td><a href="/koledar/2027/december/">31. 12. 2027</a></td>
-<td>petek</td>
-<td><a href="/prazniki/silvestrovo/">Silvestrovo</a></td>
-<td>Ne</td>
-</tr>
-</tbody>
-</table></div>
-<!-- END app/views/pages/_event_table.html.erb --><div class="actions">
-<a class="button" href="/prazniki/2027.ics?all=1">Prenesi dogodke ICS</a><button data-print>Natisni</button>
-</div>
-<p class="muted">Državni praznik, dela prost dan in šolske počitnice so različne kategorije. Kulturni ali mednarodni dan sam po sebi ne pomeni prostega delovnega dne. Zbirka vključuje preverjene ponavljajoče se dneve; programi lokalnih prireditev niso napovedani.</p></section>
-<section class="related-topics"><h2>Prazniki in običaji po temah</h2>
-<div class="link-grid">
-<a href="/prazniki/novo-leto/">Novo leto</a><a href="/prazniki/presernov-dan/">Prešernov dan, slovenski kulturni praznik</a><a href="/prazniki/dan-upora-proti-okupatorju/">Dan upora proti okupatorju</a><a href="/prazniki/praznik-dela/">Praznik dela</a><a href="/prazniki/dan-primoza-trubarja/">Dan Primoža Trubarja</a><a href="/prazniki/dan-drzavnosti/">Dan državnosti</a><a href="/prazniki/dan-triglava/">Dan Triglava</a><a href="/prazniki/zdruzitev-prekmurskih-slovencev/">Združitev prekmurskih Slovencev z matičnim narodom</a><a href="/prazniki/vrnitev-primorske/">Vrnitev Primorske k matični domovini</a><a href="/prazniki/dan-slovenskega-sporta/">Dan slovenskega športa</a><a href="/prazniki/dan-suverenosti/">Dan suverenosti</a><a href="/prazniki/dan-spomina-na-mrtve/">Dan spomina na mrtve</a><a href="/prazniki/dan-znanosti/">Dan znanosti</a><a href="/prazniki/dan-rudolfa-maistra/">Dan Rudolfa Maistra</a><a href="/prazniki/dan-samostojnosti-in-enotnosti/">Dan samostojnosti in enotnosti</a><a href="/prazniki/velika-noc/">Velikonočna nedelja in ponedeljek, velika noč</a><a href="/prazniki/binkosti/">Binkoštna nedelja, binkošti</a><a href="/prazniki/marijino-vnebovzetje/">Marijino vnebovzetje</a><a href="/prazniki/dan-reformacije/">Dan reformacije</a><a href="/prazniki/bozic/">Božič</a><a href="/prazniki/sveti-trije-kralji/">Sveti trije kralji</a><a href="/prazniki/valentinovo/">Valentinovo</a><a href="/prazniki/pust/">Pust</a><a href="/prazniki/dan-zena/">Dan žena</a><a href="/prazniki/gregorjevo/">Gregorjevo</a><a href="/prazniki/materinski-dan/">Materinski dan</a><a href="/prazniki/cvetna-nedelja/">Cvetna nedelja</a><a href="/prazniki/veliki-petek/">Veliki petek</a><a href="/prazniki/svetovni-dan-zemlje/">Svetovni dan Zemlje</a><a href="/prazniki/dan-evrope/">Dan Evrope</a><a href="/prazniki/svetovni-dan-cebel/">Svetovni dan čebel</a><a href="/prazniki/advent/">Advent</a><a href="/prazniki/martinovo/">Martinovo</a><a href="/prazniki/miklavz/">Miklavž</a><a href="/prazniki/silvestrovo/">Silvestrovo</a><a href="/letni-casi/pomladno-enakonocje/">Pomladno enakonočje</a><a href="/letni-casi/poletni-solsticij/">Poletni solsticij</a><a href="/letni-casi/jesensko-enakonocje/">Jesensko enakonočje</a><a href="/letni-casi/zimski-solsticij/">Zimski solsticij</a><a href="/premik-ure/">Premik ure 2026–2030: poletni in zimski čas</a><a href="/pomembni-dnevi/dan-spomina-na-zrtve-holokavsta/">Mednarodni dan spomina na žrtve holokavsta</a><a href="/pomembni-dnevi/mednarodni-dan-maternega-jezika/">Mednarodni dan maternega jezika</a><a href="/pomembni-dnevi/svetovni-dan-voda/">Svetovni dan voda</a><a href="/pomembni-dnevi/svetovni-dan-knjige-in-avtorskih-pravic/">Svetovni dan knjige in avtorskih pravic</a><a href="/pomembni-dnevi/mednarodni-dan-druzin/">Mednarodni dan družin</a><a href="/pomembni-dnevi/dan-slovenskega-krvodajalstva/">Dan slovenskega krvodajalstva</a><a href="/pomembni-dnevi/svetovni-dan-okolja/">Svetovni dan okolja</a><a href="/pomembni-dnevi/evropski-dan-spomina-na-zrtve-totalitarnih-rezimov/">Evropski dan spomina na žrtve totalitarnih in avtoritarnih režimov</a><a href="/pomembni-dnevi/evropski-dan-jezikov/">Evropski dan jezikov</a><a href="/pomembni-dnevi/svetovni-dan-zivali/">Svetovni dan živali</a><a href="/pomembni-dnevi/svetovni-dan-uciteljev/">Svetovni dan učiteljev</a><a href="/pomembni-dnevi/teden-otroka/">Teden otroka®</a><a href="/pomembni-dnevi/noc-carovnic/">Noč čarovnic</a><a href="/pomembni-dnevi/spomin-vseh-vernih-rajnih/">Spomin vseh vernih rajnih</a><a href="/pomembni-dnevi/dan-slovenskega-znakovnega-jezika/">Dan slovenskega znakovnega jezika</a><a href="/pomembni-dnevi/dan-slovenske-hrane/">Dan slovenske hrane</a><a href="/pomembni-dnevi/svetovni-dan-otrok/">Svetovni dan otrok</a><a href="/pomembni-dnevi/ta-veseli-dan-kulture/">Ta veseli dan kulture</a>
-</div></section>
-<!-- END app/views/pages/_events.html.erb -->
+    <tbody>
+      <tr data-season="pomladno-enakonocje">
+<th scope="row"><a href="/letni-casi/pomladno-enakonocje/">Pomladno enakonočje</a></th>
+<td><time datetime="2027-03-20T21:25:00+01:00">20. 03. 2027</time></td>
+<td>21:25 CET</td>
+<td><time datetime="2027-03-20T20:25:00Z">20. 03. 2027, 20:25</time></td>
+</tr>
+    
+      <tr data-season="poletni-solsticij">
+<th scope="row"><a href="/letni-casi/poletni-solsticij/">Poletni solsticij</a></th>
+<td><time datetime="2027-06-21T16:11:00+02:00">21. 06. 2027</time></td>
+<td>16:11 CEST</td>
+<td><time datetime="2027-06-21T14:11:00Z">21. 06. 2027, 14:11</time></td>
+</tr>
+    
+      <tr data-season="jesensko-enakonocje">
+<th scope="row"><a href="/letni-casi/jesensko-enakonocje/">Jesensko enakonočje</a></th>
+<td><time datetime="2027-09-23T08:02:00+02:00">23. 09. 2027</time></td>
+<td>08:02 CEST</td>
+<td><time datetime="2027-09-23T06:02:00Z">23. 09. 2027, 06:02</time></td>
+</tr>
+    
+      <tr data-season="zimski-solsticij">
+<th scope="row"><a href="/letni-casi/zimski-solsticij/">Zimski solsticij</a></th>
+<td><time datetime="2027-12-22T03:42:00+01:00">22. 12. 2027</time></td>
+<td>03:42 CET</td>
+<td><time datetime="2027-12-22T02:42:00Z">22. 12. 2027, 02:42</time></td>
+</tr>
+    </tbody>
+  </table></div>
+  <p>Vir: <a href="https://aa.usno.navy.mil/calculated/seasons?dst=false&amp;submit=Get+Data&amp;tz=0.00&amp;tz_label=false&amp;tz_sign=-1&amp;year=2027">U.S. Naval Observatory – enakonočja in solsticiji 2027</a>. Časi so navedeni na minuto natančno.</p>
+</section>
+<section class="panel" id="letni-casi-2028" aria-labelledby="seasons-title-2028">
+  <h2 id="seasons-title-2028">Začetki letnih časov 2028</h2>
+  <div class="table-wrap"><table class="data-table" aria-label="Astronomski začetki letnih časov v letu 2028">
+    <thead><tr>
+<th scope="col">Dogodek</th>
+<th scope="col">Datum v Sloveniji</th>
+<th scope="col">Slovenski čas</th>
+<th scope="col">UTC</th>
+</tr></thead>
+    <tbody>
+      <tr data-season="pomladno-enakonocje">
+<th scope="row"><a href="/letni-casi/pomladno-enakonocje/">Pomladno enakonočje</a></th>
+<td><time datetime="2028-03-20T03:17:00+01:00">20. 03. 2028</time></td>
+<td>03:17 CET</td>
+<td><time datetime="2028-03-20T02:17:00Z">20. 03. 2028, 02:17</time></td>
+</tr>
+    
+      <tr data-season="poletni-solsticij">
+<th scope="row"><a href="/letni-casi/poletni-solsticij/">Poletni solsticij</a></th>
+<td><time datetime="2028-06-20T22:02:00+02:00">20. 06. 2028</time></td>
+<td>22:02 CEST</td>
+<td><time datetime="2028-06-20T20:02:00Z">20. 06. 2028, 20:02</time></td>
+</tr>
+    
+      <tr data-season="jesensko-enakonocje">
+<th scope="row"><a href="/letni-casi/jesensko-enakonocje/">Jesensko enakonočje</a></th>
+<td><time datetime="2028-09-22T13:45:00+02:00">22. 09. 2028</time></td>
+<td>13:45 CEST</td>
+<td><time datetime="2028-09-22T11:45:00Z">22. 09. 2028, 11:45</time></td>
+</tr>
+    
+      <tr data-season="zimski-solsticij">
+<th scope="row"><a href="/letni-casi/zimski-solsticij/">Zimski solsticij</a></th>
+<td><time datetime="2028-12-21T09:19:00+01:00">21. 12. 2028</time></td>
+<td>09:19 CET</td>
+<td><time datetime="2028-12-21T08:19:00Z">21. 12. 2028, 08:19</time></td>
+</tr>
+    </tbody>
+  </table></div>
+  <p>Vir: <a href="https://aa.usno.navy.mil/calculated/seasons?dst=false&amp;submit=Get+Data&amp;tz=0.00&amp;tz_label=false&amp;tz_sign=-1&amp;year=2028">U.S. Naval Observatory – enakonočja in solsticiji 2028</a>. Časi so navedeni na minuto natančno.</p>
+</section>
+<section class="panel" id="letni-casi-2029" aria-labelledby="seasons-title-2029">
+  <h2 id="seasons-title-2029">Začetki letnih časov 2029</h2>
+  <div class="table-wrap"><table class="data-table" aria-label="Astronomski začetki letnih časov v letu 2029">
+    <thead><tr>
+<th scope="col">Dogodek</th>
+<th scope="col">Datum v Sloveniji</th>
+<th scope="col">Slovenski čas</th>
+<th scope="col">UTC</th>
+</tr></thead>
+    <tbody>
+      <tr data-season="pomladno-enakonocje">
+<th scope="row"><a href="/letni-casi/pomladno-enakonocje/">Pomladno enakonočje</a></th>
+<td><time datetime="2029-03-20T09:02:00+01:00">20. 03. 2029</time></td>
+<td>09:02 CET</td>
+<td><time datetime="2029-03-20T08:02:00Z">20. 03. 2029, 08:02</time></td>
+</tr>
+    
+      <tr data-season="poletni-solsticij">
+<th scope="row"><a href="/letni-casi/poletni-solsticij/">Poletni solsticij</a></th>
+<td><time datetime="2029-06-21T03:48:00+02:00">21. 06. 2029</time></td>
+<td>03:48 CEST</td>
+<td><time datetime="2029-06-21T01:48:00Z">21. 06. 2029, 01:48</time></td>
+</tr>
+    
+      <tr data-season="jesensko-enakonocje">
+<th scope="row"><a href="/letni-casi/jesensko-enakonocje/">Jesensko enakonočje</a></th>
+<td><time datetime="2029-09-22T19:38:00+02:00">22. 09. 2029</time></td>
+<td>19:38 CEST</td>
+<td><time datetime="2029-09-22T17:38:00Z">22. 09. 2029, 17:38</time></td>
+</tr>
+    
+      <tr data-season="zimski-solsticij">
+<th scope="row"><a href="/letni-casi/zimski-solsticij/">Zimski solsticij</a></th>
+<td><time datetime="2029-12-21T15:14:00+01:00">21. 12. 2029</time></td>
+<td>15:14 CET</td>
+<td><time datetime="2029-12-21T14:14:00Z">21. 12. 2029, 14:14</time></td>
+</tr>
+    </tbody>
+  </table></div>
+  <p>Vir: <a href="https://aa.usno.navy.mil/calculated/seasons?dst=false&amp;submit=Get+Data&amp;tz=0.00&amp;tz_label=false&amp;tz_sign=-1&amp;year=2029">U.S. Naval Observatory – enakonočja in solsticiji 2029</a>. Časi so navedeni na minuto natančno.</p>
+</section>
+<section class="panel" id="letni-casi-2030" aria-labelledby="seasons-title-2030">
+  <h2 id="seasons-title-2030">Začetki letnih časov 2030</h2>
+  <div class="table-wrap"><table class="data-table" aria-label="Astronomski začetki letnih časov v letu 2030">
+    <thead><tr>
+<th scope="col">Dogodek</th>
+<th scope="col">Datum v Sloveniji</th>
+<th scope="col">Slovenski čas</th>
+<th scope="col">UTC</th>
+</tr></thead>
+    <tbody>
+      <tr data-season="pomladno-enakonocje">
+<th scope="row"><a href="/letni-casi/pomladno-enakonocje/">Pomladno enakonočje</a></th>
+<td><time datetime="2030-03-20T14:52:00+01:00">20. 03. 2030</time></td>
+<td>14:52 CET</td>
+<td><time datetime="2030-03-20T13:52:00Z">20. 03. 2030, 13:52</time></td>
+</tr>
+    
+      <tr data-season="poletni-solsticij">
+<th scope="row"><a href="/letni-casi/poletni-solsticij/">Poletni solsticij</a></th>
+<td><time datetime="2030-06-21T09:31:00+02:00">21. 06. 2030</time></td>
+<td>09:31 CEST</td>
+<td><time datetime="2030-06-21T07:31:00Z">21. 06. 2030, 07:31</time></td>
+</tr>
+    
+      <tr data-season="jesensko-enakonocje">
+<th scope="row"><a href="/letni-casi/jesensko-enakonocje/">Jesensko enakonočje</a></th>
+<td><time datetime="2030-09-23T01:27:00+02:00">23. 09. 2030</time></td>
+<td>01:27 CEST</td>
+<td><time datetime="2030-09-22T23:27:00Z">22. 09. 2030, 23:27</time></td>
+</tr>
+    
+      <tr data-season="zimski-solsticij">
+<th scope="row"><a href="/letni-casi/zimski-solsticij/">Zimski solsticij</a></th>
+<td><time datetime="2030-12-21T21:09:00+01:00">21. 12. 2030</time></td>
+<td>21:09 CET</td>
+<td><time datetime="2030-12-21T20:09:00Z">21. 12. 2030, 20:09</time></td>
+</tr>
+    </tbody>
+  </table></div>
+  <p>Vir: <a href="https://aa.usno.navy.mil/calculated/seasons?dst=false&amp;submit=Get+Data&amp;tz=0.00&amp;tz_label=false&amp;tz_sign=-1&amp;year=2030">U.S. Naval Observatory – enakonočja in solsticiji 2030</a>. Časi so navedeni na minuto natančno.</p>
+</section>
+<section class="panel prose" aria-labelledby="seasons-planning">
+  <h2 id="seasons-planning">Načrtovanje skozi leto</h2>
+  <p>Začetek letnega časa sam po sebi ni dela prost dan. Preverite <a href="/prazniki/">praznike in dela proste dni</a>, <a href="/soncni-vzhod-in-zahod/">sončni vzhod in zahod za svoj kraj</a> ter <a href="/dolzina-dneva/">dolžino dneva</a>. Spremembe lokalnega časa pojasnjuje stran <a href="/premik-ure/">premik ure</a>.</p>
+</section>
+<!-- END app/views/pages/_seasons.html.erb -->
 
 
 <!-- END app/views/pages/show.html.erb -->

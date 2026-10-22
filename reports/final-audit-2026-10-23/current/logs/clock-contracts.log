@@ -1,0 +1,11 @@
+✔ an already open page advances exactly at the autumn transition (0.757ms)
+✔ spring skips the missing local hour and ignores the visitor timezone (0.069166ms)
+✔ exhausted and empty schedules do not present an old date as next (0.088584ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5.103167

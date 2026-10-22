@@ -11,6 +11,7 @@ from urllib.request import Request,build_opener
 from urllib.error import HTTPError
 from audit_indexability import Redirects,ORIGIN
 from cdn_email_parity import restore_email_html
+from horoscope_parity import verify_daily
 parser=argparse.ArgumentParser();parser.add_argument('--base',default=ORIGIN);parser.add_argument('--downloads',type=Path);parser.add_argument('--out',type=Path,default=Path('evidence/qa/production'));args=parser.parse_args();args.out.mkdir(parents=True,exist_ok=True)
 site=Path('site');manifest=json.loads((site/'release-manifest.json').read_text());inventory=json.loads((site/'release-urls.json').read_text())['pages'];paths={r['path'] for r in inventory}
 paths.update('/'+p for p in manifest['files'] if Path(p).suffix in ['.css','.js','.mjs'])
@@ -40,8 +41,13 @@ def check(route):
     elif suffix=='.html':
      restored,counts=restore_email_html(b''.join(html_chunks))
      row['normalized_sha256']=hashlib.sha256(restored).hexdigest();row['cdn_email_transformations']=json.dumps(counts,sort_keys=True)
-     assert counts['email_text']+counts['mailto_links']>0 and row['normalized_sha256']==row['expected_sha256'],'Build and live HTML differ after verified email restoration'
-     row['match_type']='verified-cloudflare-email'
+     if row['normalized_sha256']==row['expected_sha256']:
+      row['match_type']='verified-cloudflare-email'
+     elif route.startswith('/horoskop/') and response.headers.get('X-Horoscope-Rendering')=='daily-html-v1':
+      sign=route.strip('/').split('/')[-1] if route not in ['/horoskop/','/horoskop/izracun-znamenja/'] else ''
+      verify_daily(local.read_bytes(),restored,sign,response.headers.get('X-Horoscope-Date'))
+      row['match_type']='verified-daily-edge-render'
+     else:raise AssertionError('Build and live HTML differ after verified email restoration')
     else:raise AssertionError('Build and live SHA-256 differ')
     row['passed']=True;row['issue']='';break
   except Exception as e:

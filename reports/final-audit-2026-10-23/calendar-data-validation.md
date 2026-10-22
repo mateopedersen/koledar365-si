@@ -1,0 +1,17 @@
+# Tarih ve hesaplama doğruluğu
+
+`script/audit_calendar_independent.py` uygulamanın Ruby CalendarEngine verisini kullanmadan Python Gregorian/ISO takvimi ile 2027–2030 arası 48 ayı ve 1.461 tarihi doğrular. Ay başlangıç/bitişleri, 28/29/30/31 gün, 4/5/6 haftalık satırlar, ISO hafta numaraları, yıl sınırları, tarihlerin tekrarsızlığı, hafta sonları, resmî işten muaf günler, aylık/yıllık çalışma günü ve 8 saatlik toplamlar kontrol edilir. 2028 artık yılı ve 29 Şubat kapsamdadır. Europe/Ljubljana için sekiz DST geçişinde geçişten hemen önce/sonra UTC farkları ayrı doğrulanır. Kanıt: `baseline/calendar-data.json`, son sürümde `evidence/final-calendar-validation.json`.
+
+Sabit günler [GOV.SI](https://www.gov.si/teme/drzavni-prazniki-in-dela-prosti-dnevi/) listesinden bağımsız fikstürdür. Paskalya: 2027-03-28, 2028-04-16, 2029-04-01, 2030-04-21; Paskalya pazartesisi +1 ve Pentecost +49 gün. [USNO 2027](https://aa.usno.navy.mil/calculated/observances/christian?year=2027), [2028](https://aa.usno.navy.mil/calculated/observances/christian?year=2028), [2029](https://aa.usno.navy.mil/calculated/observances/christian?year=2029), [2030](https://aa.usno.navy.mil/calculated/observances/christian?year=2030). 2030 sayfası arama aracında alınamadı; doğrudan HTTP yanıtındaki Easter April 21 ayrıca doğrulandı. Kopyası yerel test kanıtında tutulur.
+
+Ay takvimi: `current/lunar-validation.json` 1.461 günü ve 198 ana evre olayını sıfır hatayla karşılaştırdı; kaynak USNO faz verisi, yerel saat Europe/Ljubljana. İlgili testler tarih/saat sınırlarını ve dönem bağlantılarını kapsar.
+
+Güneş: 69 resmî şehir kaydı, Slovenya koordinat sınırları, kış/yaz UTC farkları ve güneş olaylarının sıralaması Rails testlerinde denetlendi. Ljubljana için `evidence/solar/usno-2027-crosschecks.json` bağımsız USNO doğuş/batış, transit ve civil twilight değerleriyle ±1 dakika karşılaştırması vardır. Bütün şehirlerin her tarihinin dış API ile karşılaştırıldığı iddia edilmez; 69 şehir × iki mevsim iç tutarlılık testi ile ayrı referans örnekleri birlikte kullanılır. Kaynak: [NOAA yöntem açıklaması](https://gml.noaa.gov/grad/solcalc/calcdetails.html), [USNO API](https://aa.usno.navy.mil/data/api.html). Yerel dağ/ufuk ve hava koşullarının gözlem saatini değiştirebileceği görünür biçimde açıklanır.
+
+Mevsimler: yanlış genel tatil listesi kaldırılarak 2027–2030 yıllarındaki 16 enakonočje/solsticij olayı gösterilir. Yerel saat ve UTC birlikte, kaynak her yılın yanında. 2027 ilkbahar örneği: 20 Mart 20:25 UTC = 21:25 CET. Odaklı Rails testi 22 assertion ile geçti.
+
+Eğitim: [ilkokul](https://www.gov.si/teme/solski-koledar-za-osnovne-sole/), [ortaöğretim](https://www.gov.si/teme/solski-koledar-za-srednje-sole/) ve [RIC](https://www.ric.si/) kaynakları kontrol edildi. Henüz duyurulmayan dönemler kesin tarih olarak oluşturulmaz; ilgili `Uradni datumi še niso objavljeni` durumu korunur. Eğitim veri sözleşmeleri `tmp/final-audit/education-contracts.log` içinde geçti.
+
+69 şehir adı GOV.SI belgesinin tam listesiyle eşleştirildi. 67 koordinat Wikipedia coğrafi verisi, iki koordinat kayıtlı Wikidata P625 alanıyla yeniden karşılaştırıldı: 69/69 eşleşme. GOV.SI belgesinde koordinat bulunmadığından eski kaynak iddiası düzeltildi; seçili şehrin gerçek koordinat kaynağı hem HTML içinde hem şehir değiştirildiğinde doğru bağlantıyla gösterilir. Kanıt `current/city-coordinates-validation.json`.
+
+2027–2030 USNO mevsim sayfaları gerekli sorgu parametreleriyle HTTP 200; 16/16 tarih-saat karşılaştırması geçti (`current/season-sources.json`).

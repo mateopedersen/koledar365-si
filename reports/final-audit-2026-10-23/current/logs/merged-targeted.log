@@ -1,0 +1,89 @@
+
+Running 52 tests using 2 workers
+
+(node:83686) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:83685) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:83685) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:83686) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [chromium] › test/browser/sun-experience.spec.mjs:38:1 › the city list is searchable without accents and the layout fits a phone (738ms)
+  ✓   3 [chromium] › test/browser/sun-experience.spec.mjs:61:1 › all 69 city cards show their own embedded photo and linked photo credits (336ms)
+  ✓   1 [chromium] › test/browser/sun-experience.spec.mjs:6:1 › sunrise pages cover all official Slovenian cities and respond to city, date and time (1.4s)
+  ✓   4 [chromium] › test/browser/sun-experience.spec.mjs:87:1 › the mobile privacy choice stays a compact, usable bottom ribbon (353ms)
+  ✓   6 [chromium] › test/browser/sun-experience.spec.mjs:146:1 › the animated solar disc shows observed surface detail and warm horizon light (347ms)
+  ✓   7 [chromium] › test/browser/sun-experience.spec.mjs:165:1 › the nearest-city button uses the approved browser position locally (457ms)
+  ✓   8 [chromium] › test/browser/workdays.spec.mjs:24:1 › schedule controls instantly recalculate month and year totals (340ms)
+  ✓   9 [chromium] › test/browser/workdays.spec.mjs:50:1 › workdays overview fits narrow mobile and desktop viewports (167ms)
+  ✓  10 [chromium] › test/browser/workdays.spec.mjs:78:1 › workday calculator handles both modes, shares settings, and fits mobile (681ms)
+  ✓   5 [chromium] › test/browser/sun-experience.spec.mjs:117:1 › the sky, Sun visibility, and moving clouds follow the real solar altitude (2.1s)
+  ✓  12 [chromium] › test/browser/workdays.spec.mjs:214:1 › Slovene result units preserve dual forms and the last two digits (1.5s)
+  ✓  11 [chromium] › test/browser/workdays.spec.mjs:150:1 › exported calculator loads its script and calculates around a Slovenian holiday (1.7s)
+(node:83730) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  13 [chromium] › test/browser/workdays.spec.mjs:241:1 › annual dashboard explains the actual selected daily hours and resets them (378ms)
+(node:83730) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:83747) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:83747) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  15 [webkit] › test/browser/sun-experience.spec.mjs:38:1 › the city list is searchable without accents and the layout fits a phone (1.2s)
+  ✓  16 [webkit] › test/browser/sun-experience.spec.mjs:61:1 › all 69 city cards show their own embedded photo and linked photo credits (598ms)
+  ✓  14 [webkit] › test/browser/sun-experience.spec.mjs:6:1 › sunrise pages cover all official Slovenian cities and respond to city, date and time (2.1s)
+  ✓  17 [webkit] › test/browser/sun-experience.spec.mjs:87:1 › the mobile privacy choice stays a compact, usable bottom ribbon (497ms)
+  ✓  19 [webkit] › test/browser/sun-experience.spec.mjs:146:1 › the animated solar disc shows observed surface detail and warm horizon light (566ms)
+  ✓  20 [webkit] › test/browser/sun-experience.spec.mjs:165:1 › the nearest-city button uses the approved browser position locally (615ms)
+  ✓  21 [webkit] › test/browser/workdays.spec.mjs:24:1 › schedule controls instantly recalculate month and year totals (443ms)
+  ✓  22 [webkit] › test/browser/workdays.spec.mjs:50:1 › workdays overview fits narrow mobile and desktop viewports (298ms)
+  ✓  18 [webkit] › test/browser/sun-experience.spec.mjs:117:1 › the sky, Sun visibility, and moving clouds follow the real solar altitude (2.4s)
+  ✓  23 [webkit] › test/browser/workdays.spec.mjs:78:1 › workday calculator handles both modes, shares settings, and fits mobile (746ms)
+  ✓  25 [webkit] › test/browser/workdays.spec.mjs:214:1 › Slovene result units preserve dual forms and the last two digits (3.3s)
+  ✓  24 [webkit] › test/browser/workdays.spec.mjs:150:1 › exported calculator loads its script and calculates around a Slovenian holiday (4.0s)
+(node:83928) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:83928) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  26 [webkit] › test/browser/workdays.spec.mjs:241:1 › annual dashboard explains the actual selected daily hours and resets them (558ms)
+(node:83934) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:83934) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  28 [android-chromium] › test/browser/sun-experience.spec.mjs:38:1 › the city list is searchable without accents and the layout fits a phone (419ms)
+  ✓  27 [android-chromium] › test/browser/sun-experience.spec.mjs:6:1 › sunrise pages cover all official Slovenian cities and respond to city, date and time (1.1s)
+  ✓  29 [android-chromium] › test/browser/sun-experience.spec.mjs:61:1 › all 69 city cards show their own embedded photo and linked photo credits (389ms)
+  ✓  30 [android-chromium] › test/browser/sun-experience.spec.mjs:87:1 › the mobile privacy choice stays a compact, usable bottom ribbon (510ms)
+  ✓  32 [android-chromium] › test/browser/sun-experience.spec.mjs:146:1 › the animated solar disc shows observed surface detail and warm horizon light (402ms)
+  ✓  33 [android-chromium] › test/browser/sun-experience.spec.mjs:165:1 › the nearest-city button uses the approved browser position locally (450ms)
+  ✓  34 [android-chromium] › test/browser/workdays.spec.mjs:24:1 › schedule controls instantly recalculate month and year totals (342ms)
+  ✓  35 [android-chromium] › test/browser/workdays.spec.mjs:50:1 › workdays overview fits narrow mobile and desktop viewports (495ms)
+  ✓  31 [android-chromium] › test/browser/sun-experience.spec.mjs:117:1 › the sky, Sun visibility, and moving clouds follow the real solar altitude (2.2s)
+  ✓  36 [android-chromium] › test/browser/workdays.spec.mjs:78:1 › workday calculator handles both modes, shares settings, and fits mobile (1.1s)
+  ✓  37 [android-chromium] › test/browser/workdays.spec.mjs:150:1 › exported calculator loads its script and calculates around a Slovenian holiday (1.8s)
+  ✓  39 [android-chromium] › test/browser/workdays.spec.mjs:241:1 › annual dashboard explains the actual selected daily hours and resets them (323ms)
+(node:83961) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:83961) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  38 [android-chromium] › test/browser/workdays.spec.mjs:214:1 › Slovene result units preserve dual forms and the last two digits (1.7s)
+(node:83969) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:83969) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  41 [iphone-webkit] › test/browser/sun-experience.spec.mjs:38:1 › the city list is searchable without accents and the layout fits a phone (768ms)
+  ✓  40 [iphone-webkit] › test/browser/sun-experience.spec.mjs:6:1 › sunrise pages cover all official Slovenian cities and respond to city, date and time (1.5s)
+  ✓  42 [iphone-webkit] › test/browser/sun-experience.spec.mjs:61:1 › all 69 city cards show their own embedded photo and linked photo credits (515ms)
+  ✓  43 [iphone-webkit] › test/browser/sun-experience.spec.mjs:87:1 › the mobile privacy choice stays a compact, usable bottom ribbon (577ms)
+  ✓  45 [iphone-webkit] › test/browser/sun-experience.spec.mjs:146:1 › the animated solar disc shows observed surface detail and warm horizon light (477ms)
+  ✓  46 [iphone-webkit] › test/browser/sun-experience.spec.mjs:165:1 › the nearest-city button uses the approved browser position locally (547ms)
+  ✓  47 [iphone-webkit] › test/browser/workdays.spec.mjs:24:1 › schedule controls instantly recalculate month and year totals (373ms)
+  ✓  48 [iphone-webkit] › test/browser/workdays.spec.mjs:50:1 › workdays overview fits narrow mobile and desktop viewports (437ms)
+  ✓  44 [iphone-webkit] › test/browser/sun-experience.spec.mjs:117:1 › the sky, Sun visibility, and moving clouds follow the real solar altitude (2.3s)
+  ✓  49 [iphone-webkit] › test/browser/workdays.spec.mjs:78:1 › workday calculator handles both modes, shares settings, and fits mobile (1.5s)
+  ✓  50 [iphone-webkit] › test/browser/workdays.spec.mjs:150:1 › exported calculator loads its script and calculates around a Slovenian holiday (3.1s)
+  ✓  51 [iphone-webkit] › test/browser/workdays.spec.mjs:214:1 › Slovene result units preserve dual forms and the last two digits (2.1s)
+  ✓  52 [iphone-webkit] › test/browser/workdays.spec.mjs:241:1 › annual dashboard explains the actual selected daily hours and resets them (434ms)
+
+  52 passed (30.1s)

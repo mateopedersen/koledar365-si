@@ -1,0 +1,20 @@
+{
+  "status": "in_progress",
+  "branch": "codex/final-audit-20261023",
+  "pr": 107,
+  "current_checkout": "work/koledar365-final-publication",
+  "git_head": "d3989cd5b9",
+  "source_manifest_commit": "d3989cd5b9334f20edff2ec905a349e63e70a52e",
+  "preview": "https://f0c78aee.koledar365-si.pages.dev",
+  "preview_manifest_sha256": "95fb25a07d6d182688baa498f34563a332c473fe38ad87635644918f48fb573d",
+  "local_gates": "136 Rails/13873 assertions;464 browser pass/8 skip;52 final targeted;1200 layout;138 accessibility;780 raster;6556 downloads;108 exports;48 months;69 coordinates all passed;32 final solar-date tests;36 image gate controls passed",
+  "pending": [
+    "preview workflow rerun with validated per-request generation timestamp",
+    "merge PR107",
+    "production deploy full site via configured existing Cloudflare project",
+    "production full parity/download/browser/SEO/performance checks",
+    "finalize 13 reports and GO only if gates pass"
+  ],
+  "search_console": "excluded",
+  "active": "Final 476-case browser run session 67389; upload f0c78aee complete; push snapshot and verify new GH preview next"
+}
