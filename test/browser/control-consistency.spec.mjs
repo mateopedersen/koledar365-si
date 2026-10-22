@@ -23,6 +23,9 @@ const pageFamilies = [
   '/solske-pocitnice/',
 ];
 
+const publishedRoutes = [...fs.readFileSync(path.join(root, 'site/sitemap-pages.xml'), 'utf8').matchAll(/<loc>(.*?)<\/loc>/g)]
+  .map(([, location]) => new URL(location).pathname);
+
 async function applySizingRules(page) {
   await page.addStyleTag({ content: controlStyles });
 }
@@ -126,5 +129,44 @@ test('paired student, calendar and gallery controls keep matching box sizes', as
       .map((element) => element.getBoundingClientRect().height));
     expect(downloadHeights).toHaveLength(2);
     expect(Math.abs(downloadHeights[0] - downloadHeights[1]), `PDF/WebP pair at ${width}px`).toBeLessThanOrEqual(2);
+  }
+});
+
+test('every published sitemap page fits the viewport and keeps standard controls usable', async ({ page, browserName }) => {
+  test.skip(browserName !== 'chromium', 'A full 382-page audit runs once; the companion test covers the other engines.');
+  test.setTimeout(180000);
+
+  await page.addInitScript(() => localStorage.setItem('k365.consent', JSON.stringify({
+    version: 2, choice: 'essential', preferences: false, analytics: false,
+    advertising: false, at: new Date().toISOString(), expiresAt: Date.now() + 86400000,
+  })));
+
+  expect(publishedRoutes.length).toBeGreaterThan(300);
+  for (const width of [1440, 390]) {
+    await page.setViewportSize({ width, height: 960 });
+    for (const route of publishedRoutes) {
+      const response = await page.goto(route, { waitUntil: 'domcontentloaded' });
+      expect(response?.status(), `${route} at ${width}px`).toBe(200);
+      await applySizingRules(page);
+      const geometry = await page.evaluate(() => {
+        const visible = (element) => {
+          const rect = element.getBoundingClientRect();
+          const style = getComputedStyle(element);
+          return rect.width > 0 && rect.height > 0 && style.visibility !== 'hidden' && style.display !== 'none';
+        };
+        const controls = [...document.querySelectorAll(
+          '#vsebina button:not(.text-button):not(.square):not(.category-chip):not(.student-icon-button), #vsebina .button:not(.text-button):not(.square):not(.category-chip):not(.student-icon-button), #vsebina input[type="submit"], #vsebina input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]), #vsebina select',
+        )].filter(visible);
+        return {
+          viewport: document.documentElement.clientWidth,
+          document: document.documentElement.scrollWidth,
+          heights: controls.map((element) => element.getBoundingClientRect().height),
+        };
+      });
+      expect(geometry.document, `${route} at ${width}px has horizontal overflow`).toBeLessThanOrEqual(geometry.viewport + 1);
+      for (const height of geometry.heights) {
+        expect(height, `${route} at ${width}px exposes a control shorter than 47px`).toBeGreaterThanOrEqual(47);
+      }
+    }
   }
 });
