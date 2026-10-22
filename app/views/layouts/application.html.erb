@@ -50,6 +50,7 @@
 <% if @not_found %><%= stylesheet_link_tag 'not_found' %><% end %>
 <%= stylesheet_link_tag 'mobile_layout' %><script type="module" src="/calendar-tools/mobile-layout.mjs?v=20261022-1"></script>
 <% if page_path=='/koledar/' %><%= stylesheet_link_tag 'calendar_directory' %><script type="module" src="/calendar-tools/directory.mjs"></script><% end %>
+<%= stylesheet_link_tag 'brand' %>
 <link rel="icon" href="/icon.png" type="image/png" sizes="512x512">
 </head>
 <body class="<%= [gallery_page? ? 'gallery-page' : nil, @section=='holidays' ? 'holiday-guide' : nil, @section=='home' ? 'home-page' : nil, @section=='terms' ? 'terms-page' : nil, page_path=='/druzinski-planer/' ? 'family-planner-page' : nil, page_path=='/razpored-izmen/' ? 'shift-page' : nil, page_path=='/solski-urnik/' ? 'student-timetable-page' : nil].compact.join(' ') %>">
@@ -60,6 +61,6 @@
 <% if flash[:notice] %><p class="notice" role="status"><%= flash[:notice] %></p><% end %><% if flash[:alert] %><p class="error" role="alert"><%= flash[:alert] %></p><% end %>
 <%= yield %>
 </main>
-<footer><a class="brand small" href="/"><span class="brand-symbol"><%= brand_symbol %></span> Koledar<span>365</span></a><a href="/o-nas/">O nas</a><a href="/zasebnost/">Zasebnost</a><a href="/viri-in-metodologija/">Viri in metodologija</a><a href="/kontakt/">Kontakt</a><a href="/fotografije-in-licence/">Fotografije in licence</a><a href="/pogoji-uporabe/">Pogoji uporabe</a><button class="text-button" data-cookie-open>Nastavitve piškotkov</button><span>© <%= Time.zone.today.year %> Koledar365</span></footer>
+<footer><%= render 'layouts/brand' %><a href="/o-nas/">O nas</a><a href="/zasebnost/">Zasebnost</a><a href="/viri-in-metodologija/">Viri in metodologija</a><a href="/kontakt/">Kontakt</a><a href="/fotografije-in-licence/">Fotografije in licence</a><a href="/pogoji-uporabe/">Pogoji uporabe</a><button class="text-button" data-cookie-open>Nastavitve piškotkov</button><span>© <%= Time.zone.today.year %> Koledar365</span></footer>
 <%= render 'layouts/cookies' %>
 </body></html>

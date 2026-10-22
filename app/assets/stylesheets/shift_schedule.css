@@ -142,3 +142,10 @@ body.shift-page .shift-saved__actions>button,body.shift-page .shift-saved__actio
 body.shift-page .shift-download-workspace{grid-template-columns:minmax(0,1fr)}
 body.shift-page .shift-download-workspace>.shift-workbench,body.shift-page .shift-download-workspace>.shift-saved,body.shift-page .shift-download-workspace>.shift-print-settings,body.shift-page .shift-download-workspace>#design-gallery{grid-column:1/-1;min-width:0}
 body.shift-page .shift-layout{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+
+/* Keep status text and statistics readable when shared accessible type sizes apply. */
+body.shift-page .shift-preview__top{flex-wrap:wrap}
+body.shift-page .shift-preview__top>div{min-width:0;max-width:100%}
+body.shift-page .shift-preview__badge{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+body.shift-page .shift-stats>div>span:last-child{min-width:0;overflow-wrap:anywhere}
+@media(max-width:650px){body.shift-page .shift-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}

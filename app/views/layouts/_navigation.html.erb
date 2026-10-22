@@ -1,5 +1,5 @@
 <header class="topbar">
-  <a class="brand" href="/" aria-label="Koledar365 – domov"><span class="brand-symbol"><%= brand_symbol %></span> Koledar<span>365</span></a>
+  <%= render 'layouts/brand' %>
   <nav aria-label="Glavna navigacija">
     <% [['Koledar', '/koledar/', 'calendar'], ['Prazniki', '/prazniki/', 'gift'], ['Šolske počitnice', '/solske-pocitnice/', 'school']].each do |label, href, icon| %>
       <%= link_to href, aria: { current: page_path == href ? 'page' : nil } do %><%= ui_icon(icon) %><span><%= label %></span><% end %>
