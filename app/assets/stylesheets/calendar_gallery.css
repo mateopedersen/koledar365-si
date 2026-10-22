@@ -228,3 +228,5 @@
 .calendar-month-index__links a:hover{border-color:#1764ad;background:#edf5fc;text-decoration:none}
 @media(max-width:650px){.calendar-month-pager{gap:6px;margin-bottom:11px}.calendar-month-pager__link{min-height:55px;padding:8px 7px}.calendar-month-pager__link small{font-size:9px}.calendar-month-pager__link strong{font-size:11px}.calendar-month-pager__year{min-height:33px;font-size:11px}.calendar-month-index{padding:10px;margin-bottom:11px}.calendar-month-index>p strong{font-size:11px}.calendar-month-index__links{gap:5px}.calendar-month-index__links a{min-height:36px;font-size:10px}}
 @media print{.calendar-month-pager,.calendar-month-index{display:none!important}}
+/* Native controls must stay still while WebKit scrolls them into view. */
+html:has(.download-workspace){scroll-behavior:auto}
