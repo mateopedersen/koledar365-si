@@ -5,6 +5,8 @@ on:
       - 'reports/final-audit-2026-10-23/preview-target.json'
       - '.github/workflows/preview-audit.yml'
       - 'script/verify_remote_preview.py'
+      - 'script/horoscope_parity.py'
+      - 'script/test_horoscope_parity.py'
 permissions:
   contents: read
 concurrency:
@@ -23,7 +25,7 @@ jobs:
         with:
           node-version: '24'
       - name: Verify all preview HTML, CSS, JavaScript and discovery files against trusted hashes
-        run: python3 script/verify_remote_preview.py reports/final-audit-2026-10-23/preview-target.json
+        run: python3 script/test_horoscope_parity.py && python3 script/verify_remote_preview.py reports/final-audit-2026-10-23/preview-target.json
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
