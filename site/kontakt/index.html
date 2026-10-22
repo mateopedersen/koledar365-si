@@ -27,13 +27,14 @@
 <meta name="twitter:image" content="https://koledar365.si/druzabno/pages/327/62d5e34efc992cebcdfb.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl","publisher":{"@id":"https://koledar365.si/#organization"}},{"@type":"WebPage","@id":"https://koledar365.si/kontakt/#webpage","url":"https://koledar365.si/kontakt/","name":"Kontakt","description":"Sporočite napačen datum, težavo z orodjem ali vprašanje o zasebnosti. Kontaktni obrazec pošlje sporočilo v zasebni predal Koledar365.","inLanguage":"sl","isPartOf":{"@id":"https://koledar365.si/#website"},"publisher":{"@id":"https://koledar365.si/#organization"}},{"@type":"Organization","@id":"https://koledar365.si/#organization","name":"Koledar365","url":"https://koledar365.si/","email":"koledar365@gmail.com"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://koledar365.si/"},{"@type":"ListItem","position":2,"name":"Kontakt","item":"https://koledar365.si/kontakt/"}]}]}</script>
 
-<link rel="stylesheet" href="/assets/web-61fd60c2905cae55.css">
+<link rel="stylesheet" href="/assets/web-539ad1d868d9b09a.css">
 
 
 
 
 
 
+<script type="module" src="/contact/contact-v1.mjs"></script>
 
 
 
@@ -64,11 +65,11 @@
 
 
 <link rel="icon" href="/visuals/brand-calendar-v3.71d101697df6153f.svg" type="image/svg+xml">
-<script type="application/json" id="k365-static-config">{"scripts":["/assets/application-f427bb33.js","/assets/planners-3190708b.js"],"holidays":"/assets/holidays-0af57d2c.js","vacation":"/assets/vacation-ecc923a5.js","countdown":"/assets/countdown-164dee2d.js","shift":"/assets/shift_schedule-b8cc056a.js"}</script><link rel="preload" as="script" href="/assets/application-f427bb33.js">
-<link rel="preload" as="script" href="/assets/planners-3190708b.js">
+<script type="application/json" id="k365-static-config">{"scripts":["/assets/application-f427bb33.js","/assets/planners-2d7bec70.js"],"holidays":"/assets/holidays-0af57d2c.js","vacation":"/assets/vacation-ecc923a5.js","countdown":"/assets/countdown-164dee2d.js","shift":"/assets/shift_schedule-b8cc056a.js"}</script><link rel="preload" as="script" href="/assets/application-f427bb33.js">
+<link rel="preload" as="script" href="/assets/planners-2d7bec70.js">
 <link rel="modulepreload" href="/free/catalog-match.js">
 <link rel="modulepreload" href="/free/date-context.js">
-<script type="module" src="/free/client-22eb9699b8eb5642.js"></script>
+<script type="module" src="/free/client-cd680a9a438cc8c8.js"></script>
 </head>
 <body class="">
 <svg xmlns="http://www.w3.org/2000/svg" data-k365-ui-paint-defs="" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden;pointer-events:none"><defs><lineargradient id="k-paper" x1="0" y1="0" x2=".85" y2="1">
@@ -120,15 +121,127 @@
 <nav class="breadcrumb" aria-label="Drobtinice"><a href="/">Domov</a><span aria-hidden="true">›</span><span aria-current="page">Kontakt</span></nav>
 
 <!-- BEGIN app/views/pages/show.html.erb
---><div class="page-heading">
-<span class="eyebrow">KOLEDAR365 · SLOVENIJA</span><h1>Kontakt</h1>
-<p>Sporočite napačen datum, težavo z orodjem ali vprašanje o zasebnosti. Kontaktni obrazec pošlje sporočilo v zasebni predal Koledar365.</p>
+--><!-- BEGIN app/views/pages/_contact.html.erb
+--><div class="contact-page" data-contact>
+  <section class="contact-hero" aria-labelledby="contact-title">
+    <div class="contact-hero__copy">
+      <span class="contact-eyebrow"><img width="36" height="22" alt="" class="country-flag" aria-hidden="true" src="/visuals/slovenia-fabric-v3.95b82b3f8fbaebac.svg"> KOLEDAR365 · STIK Z UREDNIŠTVOM</span>
+      <h1 id="contact-title">Dober koledar nastaja<br><em>tudi z vašo pomočjo.</em>
+</h1>
+      <p>Ste opazili napačen datum, potrebujete pomoč ali imate dobro idejo? Povejte nam. Vaše sporočilo pomaga izboljšati Koledar365 za vse.</p>
+      <div class="contact-actions">
+<a class="contact-button contact-button--red" href="#sporocilo">Napišite sporočilo <span aria-hidden="true">↗</span></a><a class="contact-button contact-button--glass" href="#pogosta-vprasanja">Najprej poiščite odgovor</a>
 </div>
-<!-- BEGIN app/views/pages/_info.html.erb
---><section class="panel prose"><h2>Pišite uredništvu</h2>
-<p>Za vprašanje, popravek ali zahtevo glede zasebnosti pišite na <a href="mailto:koledar365@gmail.com">koledar365@gmail.com</a>. Navedite naslov strani in datum, na katerega se sporočilo nanaša.</p>
-<a class="button primary" href="mailto:koledar365@gmail.com?subject=Koledar365%20%E2%80%93%20vpra%C5%A1anje">Odpri e-pošto</a><p>Povezava odpre vaš poštni program. Sporočilo pošljete sami; spletno mesto ga ne odda v ozadju. <a href="/zasebnost/">Obdelava podatkov in vaše pravice.</a></p></section>
-<!-- END app/views/pages/_info.html.erb -->
+      <div class="contact-hero__facts">
+<span><svg class="ui-icon icon-person" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#person" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#person"></use></svg> Pišete neposredno ekipi</span><span><svg class="ui-icon icon-shield" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#shield" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#shield"></use></svg> Odgovori niso javni</span><span><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note"></use></svg> Obrazec ali e-pošta</span>
+</div>
+    </div>
+    <div class="contact-hero__art" aria-hidden="true">
+      <svg viewbox="0 0 480 360" focusable="false">
+        <defs><lineargradient id="contact-paper" x2="1" y2="1"><stop stop-color="#fff"></stop><stop offset="1" stop-color="#e8f0fa"></stop></lineargradient><lineargradient id="contact-envelope" x2="1" y2="1"><stop stop-color="#1779d0"></stop><stop offset="1" stop-color="#064697"></stop></lineargradient><filter id="contact-shadow" x="-.3" y="-.3" width="1.6" height="1.8"><fedropshadow dx="0" dy="12" stddeviation="10" flood-color="#061a37" flood-opacity=".28"></fedropshadow></filter></defs>
+        <circle cx="245" cy="178" r="145" fill="#fff" opacity=".035"></circle><circle cx="245" cy="178" r="119" fill="none" stroke="#fff" stroke-opacity=".12" stroke-dasharray="3 10"></circle>
+        <g transform="rotate(-7 230 175)" filter="url(#contact-shadow)"><path d="m96 178 145-113 145 113v134H96z" fill="#0953a7"></path><rect x="126" y="44" width="228" height="237" rx="15" fill="url(#contact-paper)"></rect><path d="M126 59a15 15 0 0 1 15-15h198a15 15 0 0 1 15 15v34H126z" fill="#d52c46"></path><path d="M167 32v25m145-25v25" stroke="#8da4bd" stroke-width="9" stroke-linecap="round"></path><g fill="#cbd9e8"><rect x="155" y="116" width="34" height="27" rx="5"></rect><rect x="201" y="116" width="34" height="27" rx="5"></rect><rect x="247" y="116" width="34" height="27" rx="5"></rect><rect x="293" y="116" width="34" height="27" rx="5"></rect><rect x="155" y="155" width="34" height="27" rx="5"></rect><rect x="201" y="155" width="34" height="27" rx="5"></rect><rect x="293" y="155" width="34" height="27" rx="5"></rect></g><rect x="247" y="155" width="34" height="27" rx="5" fill="#d52c46"></rect><path d="m255 168 6 5 10-11" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"></path><path d="m96 178 145 88 145-88v120a16 16 0 0 1-16 16H112a16 16 0 0 1-16-16z" fill="url(#contact-envelope)"></path><path d="m98 306 112-93m174 93-112-93" fill="none" stroke="#68a7df" stroke-opacity=".45" stroke-width="2"></path></g>
+        <g transform="translate(327 48) rotate(8)"><rect width="111" height="76" rx="17" fill="#fff"></rect><path d="m22 76-4 14 25-14" fill="#fff"></path><path d="M24 25h62M24 39h47M24 53h29" stroke="#9bb7d3" stroke-width="6" stroke-linecap="round"></path><circle cx="92" cy="8" r="16" fill="#d52c46"></circle><path d="m85 8 5 5 9-10" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"></path></g>
+        <g transform="translate(29 222)"><circle cx="34" cy="34" r="34" fill="#fff"></circle><path d="M19 23h30v23H19zM19 23l15 13 15-13" fill="none" stroke="#175a9a" stroke-width="3" stroke-linejoin="round"></path></g><path d="M61 92v15m-7-7h14M410 261v15m-7-7h14" stroke="#90b3d8" stroke-width="2" stroke-linecap="round"></path><circle cx="102" cy="53" r="4" fill="#e4576c"></circle>
+      </svg>
+      <div class="contact-art-label">
+<span></span> Vaše sporočilo. Boljši Koledar365.</div>
+    </div>
+  </section>
+
+  <section class="contact-topics" aria-labelledby="contact-topic-title">
+    <div class="contact-section-heading">
+<span class="contact-kicker">01 / IZBERITE TEMO</span><h2 id="contact-topic-title">Kako vam lahko pomagamo?</h2>
+<p>Izberite temo za nekaj koristnih napotkov pred pisanjem.</p>
+</div>
+    <div class="contact-topic-grid" role="group" aria-label="Tema vašega sporočila">
+      <button class="contact-topic" type="button" data-contact-topic="correction" aria-pressed="true"><span class="contact-topic__icon"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar"></use></svg></span><strong>Popravek podatka</strong><small>Datum, praznik ali vir</small><span class="contact-topic__check" aria-hidden="true">✓</span></button>
+      <button class="contact-topic" type="button" data-contact-topic="technical" aria-pressed="false"><span class="contact-topic__icon"><svg class="ui-icon icon-settings" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#settings" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#settings"></use></svg></span><strong>Tehnična pomoč</strong><small>Prenosi, izvoz ali prikaz</small><span class="contact-topic__check" aria-hidden="true">✓</span></button>
+      <button class="contact-topic" type="button" data-contact-topic="idea" aria-pressed="false"><span class="contact-topic__icon"><svg class="ui-icon icon-star" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#star" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#star"></use></svg></span><strong>Vaša ideja</strong><small>Nova funkcija ali izboljšava</small><span class="contact-topic__check" aria-hidden="true">✓</span></button>
+      <button class="contact-topic" type="button" data-contact-topic="other" aria-pressed="false"><span class="contact-topic__icon"><svg class="ui-icon icon-person" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#person" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#person"></use></svg></span><strong>Drugo vprašanje</strong><small>Sodelovanje ali splošen stik</small><span class="contact-topic__check" aria-hidden="true">✓</span></button>
+    </div>
+  </section>
+
+  <div class="contact-layout" id="sporocilo">
+    <section class="contact-compose" aria-labelledby="contact-form-title">
+      <div class="contact-compose__heading">
+<span class="contact-step">02</span><div>
+<span class="contact-kicker">POVEJTE NAM VEČ</span><h2 id="contact-form-title">Sporočilo za našo ekipo</h2>
+</div>
+<span class="contact-service">Google Forms</span>
+</div>
+      <div class="contact-guidance" aria-live="polite" aria-atomic="true">
+<strong data-contact-guide-title>Pomagajte nam preveriti podatek.</strong><p data-contact-guide-text>Navedite povezavo do strani, sporni datum in po možnosti uradni vir. Tako lahko preverimo tako zapis kot njegovo razlago.</p>
+<a data-contact-guide-link href="/viri-in-metodologija/">Kako preverjamo podatke <span aria-hidden="true">→</span></a>
+</div>
+      <div class="contact-form-intro" data-contact-intro>
+        <div class="contact-form-symbol">
+<svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note"></use></svg><span aria-hidden="true">↗</span>
+</div>
+        <h3>Manj ugibanja. Več uporabnih odgovorov.</h3>
+<p>V obrazcu izberite temo, vnesite svoj e-poštni naslov in opišite vprašanje. Ime in povezava do strani sta neobvezna.</p>
+        <div class="contact-field-preview" aria-label="Polja v obrazcu">
+<span><b>01</b> E-pošta za odgovor</span><span><b>02</b> Tema in povezava</span><span><b>03</b> Vaše sporočilo</span>
+</div>
+        <div class="contact-form-actions">
+<a class="contact-button contact-button--blue" href="https://docs.google.com/forms/d/e/1FAIpQLSed2Z0hsjbskNP2M8p9bQeuC9suQqlUU5WHbGBmxPdtHGodkQ/viewform?hl=sl" target="_blank" rel="noopener noreferrer" data-contact-open>Odpri obrazec <span aria-hidden="true">↗</span><span class="sr-only"> v novem zavihku</span></a><button class="contact-button contact-button--outline" type="button" data-contact-load hidden>Izpolni na tej strani</button>
+</div>
+        <p class="contact-external-note"><svg class="ui-icon icon-shield" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#shield" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#shield"></use></svg><span>Google Forms se naloži šele ob odprtju. Google nato obdela tehnične podatke in oddane odgovore skladno s svojo <a href="https://policies.google.com/privacy?hl=sl" target="_blank" rel="noopener noreferrer">politiko zasebnosti</a>. Odgovori so dostopni uredništvu in niso javno objavljeni.</span></p>
+      </div>
+      <div class="contact-embed" data-contact-embed hidden>
+<div class="contact-embed__bar">
+<p>Obrazec izpolnite spodaj in pritisnite gumb za oddajo.</p>
+<button type="button" data-contact-close>Zapri obrazec <span aria-hidden="true">×</span></button>
+</div>
+<p class="contact-embed__fallback">Če se obrazec ne prikaže, <a href="https://docs.google.com/forms/d/e/1FAIpQLSed2Z0hsjbskNP2M8p9bQeuC9suQqlUU5WHbGBmxPdtHGodkQ/viewform?hl=sl" target="_blank" rel="noopener noreferrer">ga odprite v novem zavihku ↗</a>.</p>
+<div data-contact-frame></div>
+</div>
+      <div class="contact-compose__footer">
+<svg class="ui-icon icon-info" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#info" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#info"></use></svg><p>Po oddaji počakajte na potrditveno sporočilo v obrazcu. Samo odprtje obrazca še ne pošlje sporočila. <a href="/zasebnost/">Obdelava podatkov in vaše pravice</a></p>
+</div>
+    </section>
+
+    <aside class="contact-sidebar" aria-label="Drugi načini stika in pomoč">
+      <section class="contact-email-card"><span class="contact-kicker">RAJE PO E-POŠTI?</span><h2>Pišite nam neposredno.</h2>
+<p>Za vprašanja, priloge ali zahteve glede zasebnosti.</p>
+<a class="contact-email" href="mailto:koledar365@gmail.com" data-contact-mail>koledar365@gmail.com <span aria-hidden="true">↗</span></a><button type="button" class="contact-copy" data-contact-copy hidden>Kopiraj e-poštni naslov</button><span class="contact-copy-status" data-contact-copy-status role="status"></span><small>Odpre se vaš poštni program. Sporočilo pošljete sami.</small></section>
+      <section class="contact-checklist"><h2>
+<svg class="ui-icon icon-check" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#check" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#check"></use></svg> Preden pritisnete »Pošlji«</h2>
+<ul>
+<li>Napišite, kaj želite preveriti ali doseči.</li>
+<li>Pri napaki dodajte naslov strani in korake, ki so do nje pripeljali.</li>
+<li>Preverite svoj e-poštni naslov, da vam lahko odgovorimo.</li>
+</ul>
+<p>Ne pošiljajte gesel ali osebnih dokumentov. Osebnih načrtov, shranjenih le v vašem brskalniku, ne vidimo.</p></section>
+      <section class="contact-next"><span class="contact-kicker">KAJ SLEDI?</span><h2>Preberemo. Preverimo. Odgovorimo.</h2>
+<p>Sporočilo prejme ekipa Koledar365. Pri popravkih najprej preverimo vir; če potrebujemo pojasnilo, pišemo na vaš naslov. Točen odzivni čas ni zagotovljen.</p></section>
+    </aside>
+  </div>
+
+  <section class="contact-help" aria-labelledby="contact-help-title"><div class="contact-section-heading">
+<span class="contact-kicker">MORDA JE ODGOVOR ŽE TUKAJ</span><h2 id="contact-help-title">Hitre poti do prave informacije.</h2>
+</div>
+<div class="contact-help-grid">
+<a href="/solske-pocitnice/"><svg class="ui-icon icon-school" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#school" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#school"></use></svg><span><strong>Šole in počitnice</strong><small>Termini, regije in univerze</small></span><span aria-hidden="true">→</span></a><a href="/koledar-za-tiskanje/"><svg class="ui-icon icon-print" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#print" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#print"></use></svg><span><strong>Koledarji za tisk</strong><small>Predloge in prenosi</small></span><span aria-hidden="true">→</span></a><a href="/viri-in-metodologija/"><svg class="ui-icon icon-shield" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#shield" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#shield"></use></svg><span><strong>Viri in pravila</strong><small>Od kod prihajajo datumi</small></span><span aria-hidden="true">→</span></a><a href="/druzinski-planer/"><svg class="ui-icon icon-family" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#family" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#family"></use></svg><span><strong>Družinski planer</strong><small>Dogodki in osebni načrti</small></span><span aria-hidden="true">→</span></a>
+</div></section>
+
+  <section class="contact-faq" id="pogosta-vprasanja" aria-labelledby="contact-faq-title"><div class="contact-section-heading">
+<span class="contact-kicker">PREDEN NAM PIŠETE</span><h2 id="contact-faq-title">Pogosta vprašanja</h2>
+<p>Nekaj odgovorov, ki vam lahko prihranijo čas.</p>
+</div>
+<div class="contact-faq-list">
+    <details><summary>Kako sporočim napačen datum ali praznik?</summary><p>Pošljite povezavo do strani, leto in datum ter po možnosti povezavo do uradne objave. Praznik ni vedno dela prost dan; šolske počitnice pa imajo ločena pravila. Več pojasnimo na strani <a href="/viri-in-metodologija/">Viri in metodologija</a>.</p></details>
+    <details><summary>Zakaj preneseni koledar ne sledi poznejšim spremembam?</summary><p>Uvožena datoteka ICS je posnetek ob prenosu. Poznejših popravkov ne prenese samodejno v vaš koledar. Pred ponovnim uvozom preverite, ali vaš program podvoji dogodke. Pri datotekah PDF in slikah prenesite novo izdajo.</p></details>
+    <details><summary>Kje so moji vnosi v družinskem planerju?</summary><p>Vnosi so shranjeni v brskalniku naprave, na kateri ste jih ustvarili. Med napravami se ne sinhronizirajo. Preverite isti brskalniški profil; v zasebnem načinu ali po izbrisu podatkov brskalnika vnosi morda niso več na voljo. Če imate izvoženo varnostno kopijo JSON, jo obnovite v <a href="/druzinski-planer/">planerju</a>.</p></details>
+    <details><summary>Ali za pošiljanje sporočila potrebujem Google račun?</summary><p>Za obrazec ne zahtevamo prijave v Google račun. Vnesete e-poštni naslov, na katerega vam lahko odgovorimo. Google lahko zaradi preprečevanja zlorab prikaže dodatno preverjanje. Če obrazca ne morete uporabiti, pišite na <a href="mailto:koledar365@gmail.com">koledar365@gmail.com</a>.</p></details>
+    <details><summary>Lahko dodam posnetek zaslona ali priponko?</summary><p>Ta obrazec sprejema besedilo in povezave. Za posnetek zaslona ali datoteko nam pošljite e-pošto. Pred pošiljanjem skrijte gesla, zasebne zapiske in druge podatke, ki za obravnavo niso potrebni.</p></details>
+    <details><summary>Kdo prejme sporočilo in kako zahtevam izbris podatkov?</summary><p>Sporočila obravnava uredništvo Koledar365. Obrazec gostuje pri Googlu, ekipa pa prejme obvestilo v predal koledar365@gmail.com. Odgovori niso javno objavljeni. Za zahtevo glede podatkov pišite neposredno na ta naslov; več je na strani <a href="/zasebnost/">Zasebnost</a>.</p></details>
+  </div></section>
+  <div class="contact-bottom">
+<span><svg class="ui-icon icon-heart" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#heart" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#heart"></use></svg> Hvala, ker pomagate izboljševati Koledar365.</span><a href="/o-nas/">Spoznajte projekt <span aria-hidden="true">→</span></a>
+</div>
+</div>
+<!-- END app/views/pages/_contact.html.erb -->
 
 
 <!-- END app/views/pages/show.html.erb -->
