@@ -106,14 +106,14 @@ function makeSearchLink(result,index,asOption=false){const link=element('a',unde
 function attachSearchSuggestions(form){
  const input=form.querySelector('[data-search-input]'),popup=form.querySelector('[data-search-suggestions]'),list=popup?.querySelector('[data-search-options]'),status=popup?.querySelector('[data-search-status]');if(!input||!popup||!list||!status)return;
  let activeIndex=-1,timer=0,request=0;
- const close=()=>{popup.hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');activeIndex=-1};
+ const close=()=>{clearTimeout(timer);request++;popup.hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');activeIndex=-1};
  const open=()=>{popup.hidden=false;input.setAttribute('aria-expanded','true')};
  const render=(rows,message)=>{list.replaceChildren();activeIndex=-1;status.textContent=message||'';status.hidden=!message;list.hidden=!rows.length;if(!message)rows.forEach((row,index)=>list.append(makeSearchLink(row,index,true)));open()};
  const update=async()=>{
   const query=input.value.trim().slice(0,120),sequence=++request;
   if(!query){render(popularSearches);return}
   if(normalizeSearchText(query).length<2){render([],'Vnesite vsaj dve črki za iskanje.');return}
-  render([],'Iščemo po koledarjih, imenih, praznikih in orodjih …');
+  render([],'Iščemo po koledarjih, praznikih in orodjih …');
   try{const data=await loadSearchIndex();if(sequence!==request)return;const {results}=searchRecords(data,query,{limit:6});const rows=results.map(row=>({...row,detail:row.category||row.type}));
    if(rows.length){rows.push({title:`Prikaži vse rezultate za »${query}«`,detail:'Odpri seznam rezultatov',path:`/isci/?${new URLSearchParams({q:query})}`,type:'Vsi rezultati'});render(rows)}
    else render([{title:`Išči »${query}«`,detail:'Odpri iskanje po celotni vsebini',path:`/isci/?${new URLSearchParams({q:query})}`,type:'Iskanje'}]);
@@ -126,7 +126,7 @@ function attachSearchSuggestions(form){
   const options=[...list.querySelectorAll('[role="option"]')];
   if(event.key==='ArrowDown'&&options.length){event.preventDefault();activeIndex=Math.min(activeIndex+1,options.length-1)}
   else if(event.key==='ArrowUp'&&options.length){event.preventDefault();activeIndex=Math.max(activeIndex-1,0)}
-  else if(event.key==='Escape'&&!popup.hidden){close();return}
+  else if(event.key==='Escape'){event.preventDefault();close();return}
   else if(event.key==='Enter'&&activeIndex>=0&&options[activeIndex]){event.preventDefault();location.assign(options[activeIndex].href);return}
   else return;
   options.forEach((option,index)=>option.setAttribute('aria-selected',String(index===activeIndex)));
@@ -142,11 +142,11 @@ function initializeSearchResults(){
  const query=(params.get('q')||'').trim().slice(0,120),heading=$('[data-search-heading]',page),panel=$('[data-search-results]',page),headerInput=$('#search'),pageInput=$('[data-search-input]',page);
  if(headerInput)headerInput.value=query;
  if(pageInput)pageInput.value=query;
- if(heading)heading.textContent=query?`Rezultati za »${query}«`:'Poiščite med koledarji, prazniki, imeni in orodji.';
+ if(heading)heading.textContent=query?`Rezultati za »${query}«`:'Poiščite med koledarji, prazniki in orodji.';
  if(!panel)return;
  const renderEmpty=()=>{panel.replaceChildren(element('p','Začnite z iskanjem ali izberite eno od priljubljenih tem.','search-empty-copy'));const links=element('div',undefined,'search-shortcuts');popularSearches.forEach((item,index)=>links.append(makeSearchLink(item,`popular-${index}`)));panel.append(links)};
  if(!query){renderEmpty();return}
- panel.setAttribute('aria-busy','true');panel.replaceChildren(element('p','Iščemo po koledarjih, praznikih, imenih in orodjih …','search-loading'));
+ panel.setAttribute('aria-busy','true');panel.replaceChildren(element('p','Iščemo po koledarjih, praznikih in orodjih …','search-loading'));
  loadSearchIndex().then(data=>{
   const {results,total}=searchRecords(data,query,{limit:10000});panel.removeAttribute('aria-busy');panel.replaceChildren();
   if(!total){panel.append(element('p',`Za »${query}« nismo našli zadetkov. Poskusite krajši izraz ali preverite zapis.`,'search-empty-copy'));const links=element('div',undefined,'search-shortcuts');popularSearches.slice(0,4).forEach((item,index)=>links.append(makeSearchLink(item,`empty-${index}`)));panel.append(links);return}
@@ -178,7 +178,7 @@ async function prepareViews({year,month,view,selected,today}){
  const important=$('.important-controls');if(important){
   const form=important.querySelector('form');for(const key of ['month','category','q','display'])if(params.has(key)&&form.elements[key])form.elements[key].value=params.get(key);
   const normalized=value=>value.normalize('NFD').replace(/\p{M}/gu,'').toLocaleLowerCase('sl').trim();
-  const update=async()=>{const all=(await events()).filter(row=>row.on.startsWith(year+'-'));const category=row=>row.category==='legal'?'legal':/environment|astronomical|civil_time/.test(row.category)?'nature':/international|european/.test(row.category)?'international':/religious|folk|traditional/.test(row.category)?'tradition':'culture';const data=new FormData(form),month=Number(data.get('month')),kind=data.get('category'),query=normalized(data.get('q')||''),rows=all.filter(row=>(!month||Number(row.on.slice(5,7))===month)&&(kind==='all'||category(row)===kind)&&normalized(row.title).includes(query));const output=$('#important-free-results')||element('div',undefined);output.id='important-free-results';let next=important.nextElementSibling;while(next&&!next.classList.contains('related-topics')){const following=next.nextElementSibling;next.remove();next=following}important.after(output);output.replaceChildren();
+  const update=async()=>{const all=(await events()).filter(row=>row.on.startsWith(year+'-'));const category=row=>row.category==='legal'?'legal':/environment|astronomical|civil_time/.test(row.category)?'nature':/international|european/.test(row.category)?'international':/religious|folk|traditional/.test(row.category)?'tradition':'culture';const data=new FormData(form),month=Number(data.get('month')),kind=data.get('category'),query=normalized(data.get('q')||''),rows=all.filter(row=>(!month||Number(row.on.slice(5,7))===month)&&(kind==='all'||category(row)===kind)&&normalized(row.title).includes(query));const output=$('#important-free-results')||element('div',undefined);output.id='important-free-results';let next=important.nextElementSibling;while(next&&!next.matches('.related-topics,.period-links')){const following=next.nextElementSibling;next.remove();next=following}important.after(output);output.replaceChildren();
    if(!rows.length)output.append(element('p','V izboru ni dni. Poskusite drug mesec, vrsto ali krajši iskalni izraz.','panel empty'));
    else if(data.get('display')==='calendar'){
     output.className='important-months';const months=[...new Set(rows.map(row=>Number(row.on.slice(5,7))))];for(const month of months){const section=element('section',undefined,'panel'),heading=element('h2',new Intl.DateTimeFormat('sl-SI',{month:'long',timeZone:'UTC'}).format(new Date(Date.UTC(year,month-1,1)))+' '+year),wrap=element('div',undefined,'table-wrap'),table=element('table',undefined,'important-calendar'),thead=element('thead'),head=element('tr');for(const day of ['pon','tor','sre','čet','pet','sob','ned'])head.append(element('th',day));thead.append(head);table.append(thead);const body=element('tbody'),first=new Date(Date.UTC(year,month-1,1,12)),last=new Date(Date.UTC(year,month,0,12));first.setUTCDate(1-(first.getUTCDay()||7)+1);for(let date=new Date(first);date<=last;){const tr=element('tr');for(let col=0;col<7;col++){const td=element('td'),iso=date.toISOString().slice(0,10);if(date.getUTCMonth()+1===month){const a=element('a',date.getUTCDate(),'important-date');a.href=`/?year=${year}&month=${month}&date=${iso}`;td.append(a);for(const row of rows.filter(row=>row.on===iso)){const event=element('a',row.title,'important-event');event.href=row.path;td.append(event)}}tr.append(td);date.setUTCDate(date.getUTCDate()+1)}body.append(tr)}table.append(body);wrap.append(table);section.append(heading,wrap);output.append(section)}

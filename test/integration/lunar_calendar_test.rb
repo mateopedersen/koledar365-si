@@ -16,7 +16,7 @@ class LunarCalendarTest < ActionDispatch::IntegrationTest
   get '/lunin-koledar/2028/februar/'
   assert_response :success
   assert_select '.lunar-day',count:29
-  assert_select '.lunar-day[data-date="2028-02-29"][aria-label*="29. februarja 2028"]'
+  assert_select '.lunar-day#dan-2028-02-29[data-date="2028-02-29"][aria-label*="29. februarja 2028"]'
   assert_select '[data-lunar]'
   assert_select '.lunar-enlarge[aria-label]'
   assert_select 'dialog button[data-close]'

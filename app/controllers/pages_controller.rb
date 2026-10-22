@@ -50,7 +50,7 @@ class PagesController < ApplicationController
       PageMetadata.name_description(@person)
     elsif @sun_city_id
       city_name=SunEngine::CITIES.fetch(@sun_city_id).first
-      "Preverite sončni vzhod in zahod, zlato uro ter dolžino dneva za mesto #{city_name}. Izberite datum in si oglejte izračunano pot Sonca po lokalnem času."
+      "#{city_name}: sončni vzhod in zahod, zlata ura ter dolžina dneva v slovenskem času. Izberite datum in si oglejte izračunano pot Sonca."
     else
       PageMetadata.description(@page,year:@year)
     end

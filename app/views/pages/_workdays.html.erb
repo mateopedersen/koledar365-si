@@ -34,7 +34,7 @@ end %>
       <% CalendarEngine::DAYS.each_with_index do |day, index| %><label title="<%= day.capitalize %>"><input type="checkbox" value="<%= index + 1 %>" <%= 'checked' if index < 5 %>><span><%= CalendarEngine::SHORT_DAYS[index].capitalize %></span></label><% end %>
     </fieldset>
     <label class="workdays-hours">Ure na dan<input type="number" min="0" max="24" step="0.25" value="8" inputmode="decimal" aria-describedby="workdays-hours-error" data-workdays-hours><span>ur</span><small class="workdays-control-error" id="workdays-hours-error" data-workdays-error role="alert" hidden></small></label>
-    <label class="workdays-holidays"><input type="checkbox" checked data-workdays-exclude><span><strong>Odštej praznike</strong><small>Upoštevaj zakonske dela proste dneve</small></span></label>
+    <label class="workdays-holidays"><input type="checkbox" checked data-workdays-exclude><span><strong>Odštej praznike</strong><small>Upoštevaj z zakonom določene dela proste dneve</small></span></label>
     <button class="workdays-reset" type="button" data-workdays-reset>Ponastavi</button>
   </div>
 
@@ -52,7 +52,7 @@ end %>
       </a>
     <% end %>
   </div>
-  <p class="workdays-footnote">Osnovni pregled šteje ponedeljek–petek, 8 ur na dan in zakonske dela proste praznike, ki padejo na izbrane delovne dni. Prazniki ob koncu tedna se ne odštevajo znova in se ne prenesejo samodejno. Izračun je informativen; ne določa pogodbenih pravic ali individualnega razporeda.</p>
+  <p class="workdays-footnote">Osnovni pregled upošteva delovni teden od ponedeljka do petka, 8 ur na dan in z zakonom določene dela proste dneve, ki padejo na izbrane delovne dni. Prazniki ob koncu tedna se ne odštevajo znova in se ne prenesejo samodejno. Izračun je informativen; ne določa pogodbenih pravic ali individualnega razporeda.</p>
 </section>
 
 <nav class="workdays-discovery" aria-label="Sorodna orodja">
@@ -70,7 +70,7 @@ end %>
       <div class="table-wrap"><table class="data-table"><thead><tr><th>Mesec</th><th>Koledarski dnevi</th><th>Delovni dnevi</th><th>Ure (8 ur/dan)</th></tr></thead><tbody>
         <% (@page.month ? [@page.month] : (1..12)).each do |month| %><% result = CalendarEngine.working_days(Date.new(@year, month, 1), Date.new(@year, month, -1)) %><tr><td><a href="<%= month_url(@year, month, 'delovni-dnevi') %>"><%= CalendarEngine::MONTHS[month - 1].capitalize %></a></td><td><%= result[:calendar_days] %></td><td><%= result[:working_days] %></td><td><%= result[:working_days] * 8 %></td></tr><% end %>
       </tbody></table></div>
-      <p>Privzeti delovni teden traja od ponedeljka do petka; zakonski dela prosti dnevi se izločijo samo enkrat. Izračun ne določa vaših pogodbenih pravic.</p><a class="button primary" href="/kalkulator-delovnih-dni/">Prilagodi delovni teden in ure</a> <a href="/viri-in-metodologija/">Metodologija</a>
+      <p>Privzeti delovni teden traja od ponedeljka do petka; z zakonom določeni dela prosti dnevi se izločijo samo enkrat. Izračun ne določa vaših pogodbenih pravic.</p><a class="button primary" href="/kalkulator-delovnih-dni/">Prilagodi delovni teden in ure</a> <a href="/viri-in-metodologija/">Metodologija</a>
     </div>
   </section>
   <% unless @year == 2026 %><%= render 'designs', type: 'workdays' %><% end %>

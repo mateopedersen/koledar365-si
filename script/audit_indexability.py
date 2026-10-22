@@ -91,13 +91,12 @@ def locs(xml):
 
 
 class Redirects(HTTPRedirectHandler):
-    # Older Python releases need both the 308 entry point and compatible
-    # GET/HEAD dispatch in redirect_request. Preserve all other audit checks.
-    http_error_308 = HTTPRedirectHandler.http_error_302
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        # Python 3.9 dispatches 308 here but does not recognize it in the parent method.
+        return super().redirect_request(req, fp, 307 if code == 308 else code, msg, headers, newurl)
 
-    def redirect_request(self, request, fp, code, message, headers, new_url):
-        compatible_code = 307 if code == 308 else code
-        return super().redirect_request(request, fp, compatible_code, message, headers, new_url)
+    # macOS system Python 3.9 lacks the permanent-redirect handler.
+    http_error_308 = HTTPRedirectHandler.http_error_302
 
 
 def fetch(url):
