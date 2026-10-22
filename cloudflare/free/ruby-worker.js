@@ -13,4 +13,20 @@ async function engine(){
 }
 const base64=value=>{const data=new TextEncoder().encode(value);let encoded='';for(let i=0;i<data.length;i+=32768)encoded+=String.fromCharCode(...data.subarray(i,i+32768));return btoa(encoded)};
 let queue=Promise.resolve();
-self.onmessage=event=>{const {id,path,data}=event.data;queue=queue.then(async()=>{try{const vm=await engine();const response=JSON.parse(vm.eval(`PortableApplication.json(Base64.strict_decode64("${base64(path)}"),Base64.strict_decode64("${base64(JSON.stringify(data))}"))`).toString());if(!response.ok)throw Error(response.error);vm.eval('GC.start');self.postMessage({id,result:response.result})}catch(error){self.postMessage({id,error:error.message||'Izračun ni uspel.'})}})};
+self.onmessage=event=>{
+ const {id,path,data}=event.data;
+ queue=queue.then(async()=>{
+  let vm;
+  try{vm=await engine()}
+  catch{self.postMessage({id,fatal:true});return}
+  try{
+   const response=JSON.parse(vm.eval(`PortableApplication.json(Base64.strict_decode64("${base64(path)}"),Base64.strict_decode64("${base64(JSON.stringify(data))}"))`).toString());
+   if(!response.ok){self.postMessage({id,error:response.error});return}
+   vm.eval('GC.start');
+   self.postMessage({id,result:response.result});
+  }catch(error){
+   if(error instanceof WebAssembly.RuntimeError)self.postMessage({id,fatal:true});
+   else self.postMessage({id,error:error.message||'Izračun ni uspel.'});
+  }
+ });
+};

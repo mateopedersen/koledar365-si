@@ -1,3 +1,4 @@
+import {createRubyClient} from './ruby-client.mjs';
 import {matchPublicCalendar} from './catalog-match.js';
 import {ljubljanaDate,horoscopeDisposition} from './date-context.js';
 import {normalizeSearchText,resultCategory,searchRecords} from './site-search.mjs';
@@ -6,13 +7,13 @@ import {ensureMapGetOrInsertComputed} from './map-compat.js';
 ensureMapGetOrInsertComputed();
 const nativeFetch=window.fetch.bind(window),params=new URLSearchParams(location.search);
 const $=selector=>document.querySelector(selector),$$=selector=>[...document.querySelectorAll(selector)];
-let worker,sequence=0,pending=new Map(),photos=new Map(),jobs=new Map(),registryPromise;
+let photos=new Map(),jobs=new Map(),registryPromise;
 const renderCache=new Map();
 async function renderResult(options){if(options.photo_token&&!photos.has(options.photo_token))throw Error('Fotografijo ponovno izberite. Po zaprtju strani ni več shranjena.');const sorted=value=>Array.isArray(value)?value.map(sorted):value&&typeof value==='object'?Object.fromEntries(Object.keys(value).sort().map(key=>[key,sorted(value[key])])):value;const key=JSON.stringify(sorted(options));if(!renderCache.has(key)){if(renderCache.size>=3)renderCache.delete(renderCache.keys().next().value);const work=call('/izvozi/',{options,photo:photos.get(options.photo_token)}).catch(error=>{renderCache.delete(key);throw error});renderCache.set(key,work)}return renderCache.get(key)}
 const urls=new Set();
 function objectUrl(blob){const url=URL.createObjectURL(blob);urls.add(url);return url}
 function bytes(base64){return Uint8Array.from(atob(base64),c=>c.charCodeAt(0))}
-function call(path,data){worker ||= new Worker('/free/ruby-worker.js');return new Promise((resolve,reject)=>{const id=++sequence;pending.set(id,{resolve,reject});worker.onmessage=e=>{const task=pending.get(e.data.id);if(!task)return;pending.delete(e.data.id);e.data.error?task.reject(Error(e.data.error)):task.resolve(e.data.result)};worker.onerror=()=>{for(const task of pending.values())task.reject(Error('Brskalnik ni mogel pripraviti izračuna. Osvežite stran in poskusite znova.'));pending.clear();worker.terminate();worker=null};worker.postMessage({id,path,data})})}
+const call=createRubyClient();
 const loadScript=src=>new Promise((resolve,reject)=>{const el=document.createElement('script');el.src=src;el.onload=resolve;el.onerror=()=>reject(Error('Datoteke ni mogoče naložiti.'));document.head.append(el)});
 let pdfLibrary;
 async function pdfDocument(pdf){pdfLibrary ||= await import('/free/vendor/pdf.min.mjs');pdfLibrary.GlobalWorkerOptions.workerSrc='/free/vendor/pdf.worker.min.mjs';return pdfLibrary.getDocument({data:pdf.slice(),isEvalSupported:false,wasmUrl:'/free/vendor/pdf-wasm/'}).promise}

@@ -13,3 +13,14 @@ Production release order: wait for `Prepare verified Pages publication` to finis
 `script/rebuild_free.rb` rebuilds public HTML from source and editorial JSON, preserves real name lastmod timestamps, checks cached print source versions, refreshes the browser Ruby package only when its deterministic payload changes, and refuses to finalize an incomplete/unverified catalogue. A changed holiday rule requires regeneration and both PDF/WebP checks before publication. Existing print fingerprints do not depend on daily horoscopes.
 
 Rollback uses Cloudflare Pages' previous verified deployment and the matching Git commit. Public content backups are Git history; personal users must export their own JSON/ICS before clearing browser data. No automatic cross-device synchronization is claimed.
+
+### Browser runtime recovery
+
+A WebAssembly trap or initialization failure invalidates the entire Ruby worker.
+The adapter terminates that worker and replays pending, device-local calculations
+once in a fresh worker. A second failure stops with a readable Slovenian error;
+Ruby validation errors are returned directly without retries. No alternative date
+rules or lower-quality export are substituted. `ruby_client_test.mjs` covers the
+bounded retry, concurrent requests, validation and stale-worker responses. The
+browser recovery test injects an initialization trap, then requires the fresh,
+real Ruby engine to calculate the April 2027 holiday range correctly.
