@@ -1,6 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-test('weekly and period modes preserve both saved plans and copy lessons without duplicates', async ({ page }) => {
+// Keep the complete persistence/copy/keyboard flow at each group of widths.
+// Each scenario retains the default 30 s limit on the slower iPhone runner.
+for (const [label, widths] of [['phone', [320, 360, 390]], ['tablet and desktop', [768, 1280, 1440]]]) {
+test(`weekly and period modes preserve both saved plans and copy lessons without duplicates on ${label}`, async ({ page }) => {
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
   await page.addInitScript(() => {
@@ -30,7 +33,7 @@ test('weekly and period modes preserve both saved plans and copy lessons without
   await expect(page.locator('[data-timetable-mode-status]')).toContainText('Podvojenih vnosov nismo dodali');
   expect(await page.evaluate(() => localStorage.getItem('k365.student.timetable.v1'))).toBe(original);
 
-  for (const width of [320, 360, 390, 768, 1280, 1440]) {
+  for (const width of widths) {
     await page.setViewportSize({ width, height: 900 });
     for (const name of ['Tedenski planer', 'Urnik za obdobje']) {
       await page.getByRole('tab', { name }).click();
@@ -49,3 +52,4 @@ test('weekly and period modes preserve both saved plans and copy lessons without
   await expect(page.locator('[data-lesson-count]')).toHaveText('1');
   expect(errors).toEqual([]);
 });
+}
