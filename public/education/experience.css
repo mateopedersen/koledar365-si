@@ -46,3 +46,6 @@
 .tt-form label,.tt-settings label,.tt-settings>div,.tt-fields-row{min-width:0}.tt-fields-row{grid-template-columns:repeat(2,minmax(0,1fr))}.tt-form input,.tt-settings input{min-width:0}.tt-settings .tt-fields-row{grid-template-columns:minmax(0,1fr)}.tt-view-week input{width:160px}
 @media screen{.school-timetable .tt-day>h3{font-size:14px!important;line-height:1.5!important;letter-spacing:-.2px}}
 @media(max-width:520px){.tt-settings>div{grid-template-columns:minmax(0,1fr)}.tt-day{grid-template-columns:100px minmax(0,1fr)}}
+/* Status messages must not intercept the timetable controls beneath them. */
+.ed-toast{pointer-events:none}
+.ed-toast :is(button,a){pointer-events:auto}

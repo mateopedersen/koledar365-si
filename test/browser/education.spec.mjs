@@ -156,7 +156,20 @@ test('school timetable keeps edits, conflicts, recurrence and real exports after
   expect(ics).not.toContain('DTSTART:20261026'); // Official autumn holidays are skipped.
   expect(ics.match(/BEGIN:VEVENT/g).length).toBeGreaterThan(50);
 
-  await page.locator('[data-tt-lessons] [data-tt-remove]').first().click();
+  const removeLesson = page.locator('[data-tt-lessons] [data-tt-remove]').first();
+  await removeLesson.scrollIntoViewIfNeeded();
+  const removeBounds = await removeLesson.boundingBox();
+  // A download notice can overlap a control after scrolling. Keep it there so
+  // the real click and the following Undo exercise the notification hit area.
+  await page.locator('[data-tt-toast]').evaluate((box, bounds) => {
+    clearTimeout(box.hideTimer);
+    const width = Math.min(300, innerWidth - 32);
+    const left = Math.max(16, Math.min(innerWidth - width - 16, bounds.x + bounds.width / 2 - width / 2));
+    const top = Math.max(16, Math.min(bounds.y, innerHeight - 176));
+    Object.assign(box.style, { left: `${left}px`, top: `${top}px`, right: 'auto', bottom: 'auto', width: `${width}px`, height: '160px', boxSizing: 'border-box' });
+    box.hidden = false;
+  }, removeBounds);
+  await removeLesson.click();
   await expect(page.locator('[data-tt-lesson-count]')).toHaveText('1');
   await page.locator('[data-tt-toast]').getByRole('button', { name: 'Razveljavi' }).click();
   await expect(page.locator('[data-tt-lesson-count]')).toHaveText('2');
