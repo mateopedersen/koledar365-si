@@ -18,6 +18,34 @@ class PublicationRevisionsTest < ActiveSupport::TestCase
     data=JSON.parse(Nokogiri::HTML(PublicationRevisions.apply_html(html('Novo'),changed)).at_css('script').text)
     assert_equal now.iso8601,data['@graph'][0]['dateModified']
   end
+  test 'countdown clock ticks do not create a content revision' do
+    before=html('<strong data-countdown="2027-02-20T21:11:52Z">121 dni · 3 h · 19 min</strong>')
+    after=html('<strong data-countdown="2027-02-20T21:11:52Z">121 dni · 1 h · 50 min</strong>')
+    record={'sha256'=>PublicationRevisions.fingerprint(before),'modified_at'=>'2026-10-01T12:00:00Z'}
+    assert_equal record,PublicationRevisions.revision(html:after,previous_html:before,previous_record:record,now:Time.utc(2026,10,22))
+    unknown=PublicationRevisions.revision(html:after,previous_html:before,previous_record:nil,now:Time.utc(2026,10,22))
+    assert_nil unknown['modified_at']
+  end
+  test 'changing a countdown event date remains a significant revision' do
+    before=html('<strong data-countdown="2027-02-20T21:11:52Z">Čez nekaj dni</strong>')
+    after=html('<strong data-countdown="2027-03-20T21:11:52Z">Čez nekaj dni</strong>')
+    record={'sha256'=>PublicationRevisions.fingerprint(before),'modified_at'=>'2026-10-01T12:00:00Z'}
+    changed=PublicationRevisions.revision(html:after,previous_html:before,previous_record:record,now:Time.utc(2026,10,22))
+    assert_equal '2026-10-22T00:00:00Z',changed['modified_at']
+    refute_equal record['sha256'],changed['sha256']
+  end
+  test 'legacy clock based dates are omitted until a real content change is observed' do
+    before=html('<strong data-countdown="2027-02-20T21:11:52Z">121 dni · 3 h · 19 min</strong>')
+    after=html('<strong data-countdown="2027-02-20T21:11:52Z">121 dni · 1 h · 50 min</strong>')
+    legacy={'sha256'=>PublicationRevisions.fingerprint(before,ignore_countdown_ticks:false),'modified_at'=>'2026-10-22T12:00:00Z'}
+    migrated=PublicationRevisions.revision(html:after,previous_html:before,previous_record:legacy,now:Time.utc(2026,10,23))
+    assert_equal PublicationRevisions.fingerprint(after),migrated['sha256']
+    assert_nil migrated['modified_at']
+    assert_equal migrated,PublicationRevisions.revision(html:before,previous_html:after,previous_record:migrated,now:Time.utc(2026,10,24))
+    new_event=after.sub('2027-02-20T21:11:52Z','2027-03-20T21:11:52Z')
+    changed=PublicationRevisions.revision(html:new_event,previous_html:after,previous_record:migrated,now:Time.utc(2026,10,25))
+    assert_equal '2026-10-25T00:00:00Z',changed['modified_at']
+  end
   test 'sitemap uses only observed content dates' do
     xml='<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://koledar365.si/</loc><lastmod>2000-01-01</lastmod></url><url><loc>https://koledar365.si/koledar/</loc></url></urlset>'
     doc=Nokogiri::XML(PublicationRevisions.apply_sitemap(xml,{'/koledar/'=>{'modified_at'=>'2026-10-22T13:00:00Z'}}))

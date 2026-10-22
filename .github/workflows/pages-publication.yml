@@ -10,6 +10,7 @@ on:
       - 'data/llms-guide.json'
       - 'data/qa-templates.json'
       - 'lib/seo_publication.rb'
+      - 'lib/publication_revisions.rb'
       - 'package.json'
       - 'pnpm-lock.yaml'
       - 'requirements-qa.txt'
