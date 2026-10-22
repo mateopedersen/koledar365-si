@@ -8,8 +8,8 @@ ENV['OPERATOR_CONTACT']='koledar365@gmail.com'
 out=Rails.root.join(ENV.fetch('STATIC_OUT','site'));FileUtils.mkdir_p(out)
 partial=ENV['STATIC_ONLY']&.split(',')
 unless partial
- # Retire the removed name directory and its public preview fragments.
- %w[koledar-z-imenom imena free/names sitemap-names.xml].each { |relative| FileUtils.rm_rf(out.join(relative)) }
+ # Retire removed name-day and name-calendar pages plus their public preview fragments.
+ %w[koledar-z-imenom imena free/names sitemap-names.xml godovi].each { |relative| FileUtils.rm_rf(out.join(relative)) }
  # These generated atlases and photo variants must mirror their source directories.
  # Retaining superseded variants would eventually exceed the Pages Free file limit.
  %w[lunar/atlas images/responsive].each { |relative| FileUtils.rm_rf(out.join(relative)) }
@@ -116,7 +116,7 @@ write=lambda do |path,html|
  file=out.join(path.delete_prefix('/'));file=file.join('index.html') if path.end_with?('/')
  FileUtils.mkdir_p(file.dirname);file.write(html)
 end
-removed_name_path=%r{\A/(?:koledar-z-imenom|imena)(?:/|\z)}
+removed_name_path=%r{\A/(?:koledar-z-imenom|imena|godovi)(?:/|\z)}
 paths=Page.order(:path).reject { |page|page.path.match?(removed_name_path) }.map { |page|[page.path,page.status=='published'] }+SunEngine::CITIES.keys.map { |city_id|["/soncni-vzhod-in-zahod/#{city_id}/",true] }+[['/fotografije-in-licence/',true],['/isci/',false]]
 paths=paths.map { |path,indexable|path.match?(%r{\A/soncni-vzhod-in-zahod/[a-z0-9-]+/\z}) ? [path,true] : [path,indexable] }.uniq { |path,_|path }
 paths=paths.select { |path,_|partial.include?(path) } if partial
@@ -149,7 +149,6 @@ search=Page.published.reject { |page|page.path.match?(removed_name_path) }.map d
  when %r{\A/podaljsani-vikendi/}, %r{\A/nacrtovalnik-dopusta/} then 'podaljšani vikendi dopust prosti dnevi oddih prazniki'
  when %r{\A/soncni-vzhod-in-zahod/}, %r{\A/dolzina-dneva/} then 'sončni vzhod sončni zahod zlata ura dolžina dneva mesto'
  when '/premik-ure/' then 'premik ure prestavitev ure poletni čas zimski čas naprej nazaj menjava ure'
- when %r{\A/godovi/} then 'god godovi godovni koledar'
  when %r{\A/(?:koledar|mesecni-koledar|tedenski-koledar|prazen-koledar)/} then 'koledar datum dnevi mesec leto tedenski mesečni letni koledar'
  else ''
  end

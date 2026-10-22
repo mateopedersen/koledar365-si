@@ -32,8 +32,6 @@ class PageMetadata
       "#{page.title}: izberite datum in izračunajte krajevni čas vzhoda, zahoda ter dolžino dneva."
     when %r{\A/horoskop/}
       "#{page.title}. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno."
-    when %r{\A/godovi/}
-      "#{page.title}: zbirka čaka na preverjen vir. Nepotrjenih godov ne prikazujemo kot uradne datume."
     else
       page.description.presence || "#{page.title} – podatki, navodila in povezave za načrtovanje v Sloveniji."
     end

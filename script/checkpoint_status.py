@@ -61,7 +61,7 @@ Ortak ortam: work/runtime/mise/installs/ruby/4.0.7/bin PATH başında; PDFTOPPM_
 5. Yayın otomasyonunu temiz kurulumda test et; kabul matrisi, docs ve bu dosyayı gerçek canlı kanıtlarla güncelle.
 
 ## Korunacak sınırlar
-- 13 godovi ve doğrulanmamış 4 gelecek okul yılı held/noindex. Lisans/kaynak engeli sessizce kaldırılmaz; gelecek tatil tarihleri uydurulmaz.
+- Godovi sayfaları kaldırıldı; doğrulanmamış 4 gelecek okul yılı held/noindex. Gelecek tatil tarihleri uydurulmaz.
 - Günlük burç gerçek hazırlanmış tarihli 12 özgün yorumdur. API anahtarı olmadan sahte entegrasyon veya dünkü metne bugünün tarihi yok; tarihli editoryal hazırlama ve eksik gün açıklaması korunur.
 - Avenir cihazda kuruluysa kullanılır; dağıtılabilir webfont lisansı verilmedi. PDF'lerde lisanslı DejaVu gömülür.
 - İşletmeci Mateo Pedersen, gerçek iletişim koledar365@gmail.com. Sahte adres/ekip/uzman sertifikası yazılmaz.
