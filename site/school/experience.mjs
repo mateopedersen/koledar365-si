@@ -144,6 +144,9 @@ function initSchoolPage(root) {
     renderCards(); renderCalendar(); renderCountdown(); calculate();
   }
   root.addEventListener('click', event=>{
+    const shortcut=event.target.closest('.period-links a[href^="#"]');
+    if(shortcut&&root.contains(shortcut)){if(level==='university')level='primary';savedOnly=false;renderState();updateURL();}
+
     const target = event.target.closest('button'); if (!target || !root.contains(target)) return;
     if (target.hasAttribute('data-level')) {level=target.dataset.level;renderState();updateURL();}
     else if (target.hasAttribute('data-region-choice')) {region=target.dataset.regionChoice;renderState();updateURL();toast('Prikazana je ' + (region==='east'?'vzhodna':'zahodna') + ' skupina.');}
