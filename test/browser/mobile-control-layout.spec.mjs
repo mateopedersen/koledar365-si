@@ -31,3 +31,13 @@ test('mobile school weekday tabs remain readable and expose full accessible name
     for(const name of ['Ponedeljek','Torek','Sreda','Četrtek','Petek'])await expect(page.getByRole('button',{name,exact:true})).toBeVisible();
   }
 });
+
+test('studio download and template names fit the narrowest phone',async({page})=>{
+  await page.setViewportSize({width:320,height:900});
+  await page.goto('/ustvari-koledar/');
+  await expect(page.locator('.studio-presets>button')).not.toHaveCount(0);
+  for(const selector of ['#studio-download','.studio-presets>button']){
+    const controls=await controlGeometry(page,selector);
+    expect(controls.every(x=>x.contentFits&&x.left>=0&&x.right<=320)).toBeTruthy();
+  }
+});
