@@ -61,9 +61,9 @@
   .home-header-spotlight__arrow { display:grid;flex:none;place-items:center;margin-left:auto;color:#0c5ba7; }
   .home-header-spotlight__arrow .ui-icon { width:17px;height:17px; }
   @media(min-width:1400px) {
-    .home-page .topbar { grid-template-columns:auto auto minmax(235px,360px) minmax(280px,420px) auto;justify-content:space-between;column-gap:clamp(14px,1.25vw,22px); }
+    .home-page .topbar { grid-template-columns:auto minmax(244px,auto) minmax(215px,280px) minmax(240px,320px) auto;justify-content:space-between;column-gap:clamp(14px,1.25vw,22px); }
     .home-page .topbar > .home-header-spotlight { display:flex; }
-    .home-page .topbar .search { width:100%;max-width:420px;margin:0; }
+    .home-page .topbar .search { width:100%;max-width:320px;margin:0; }
   }
   @media(max-width:1180px) {
     .topbar { grid-template-columns:auto minmax(0,1fr) auto;gap:7px 20px; }
