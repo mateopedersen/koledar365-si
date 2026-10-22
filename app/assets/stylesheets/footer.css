@@ -2,7 +2,7 @@
 .site-footer__inner{max-width:1500px;margin:0 auto;padding:38px 0 18px}
 .site-footer__main{display:grid;grid-template-columns:minmax(210px,.8fr) minmax(0,3.2fr);gap:48px;align-items:start}
 .site-footer__brand{max-width:280px}
-.site-footer__brand .brand.small{font-size:22px;line-height:1.2}
+.site-footer__brand .brand-lockup{font-size:22px;line-height:1.2}
 .site-footer__brand .brand-symbol{font-size:29px}
 .site-footer__brand p{margin:13px 0 0;color:#536981;font-size:14px;line-height:1.65}
 .site-footer__groups{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
