@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  REMOVED_NAME_PATHS = %r{\A/(?:koledar-z-imenom|imena)(?:/|\z)}
+  REMOVED_NAME_PATHS = %r{\A/(?:koledar-z-imenom|imena|godovi)(?:/|\z)}
   before_action :context
   def context
     @all_page_paths=Page.pluck(:path).to_set
@@ -110,6 +110,7 @@ class PagesController < ApplicationController
     return 'name' if @person
     return 'home' if path=='/'
     return 'about' if path=='/o-nas/'
+    return 'terms' if path=='/pogoji-uporabe/'
     return 'privacy' if path=='/zasebnost/'
     return 'cookie_policy' if path=='/piskotki/'
     return 'methodology' if path=='/viri-in-metodologija/'
@@ -122,7 +123,6 @@ class PagesController < ApplicationController
     return 'calendar' if path.start_with?('/koledar/')||path=='/mesecni-koledar/'||path.start_with?('/tedenski-koledar/')
     return 'horoscope' if path.start_with?('/horoskop/')
     return 'school' if path.start_with?('/solske-pocitnice/')
-    return 'held' if path.start_with?('/godovi/')
     return 'lunar' if path.start_with?('/lunin-koledar/')||%w[/lunine-mene/ /polna-luna/ /mlaj/].include?(path)
     return 'sun' if path.start_with?('/soncni-vzhod-in-zahod/')||path=='/dolzina-dneva/'
     return 'workdays' if path.start_with?('/delovni-dnevi/')

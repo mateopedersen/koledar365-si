@@ -4,6 +4,7 @@ class PageMetadata
     return ExpansionCatalog.page(page.path).fetch(:description) if ExpansionCatalog.page(page.path)
     return ClockChangeSchedule::DESCRIPTION if page.path=='/premik-ure/'
     return 'Ustvarite svoj letni ali mesečni koledar z imenom, fotografijami, logotipom in dogodki. Prilagodite pisave, barve in začetek tedna ter prenesite PDF, PNG ali SVG.' if page.path=='/ustvari-koledar/'
+    return 'Pogoji uporabe Koledar365 pojasnjujejo rabo koledarjev in orodij, navajanje virov, avtorske pravice, omejitve podatkov ter prijavo napak.' if page.path=='/pogoji-uporabe/'
     return page.description if page.description.present?
     path = page.path
     fixed = JSON.parse(Rails.root.join("data/page_descriptions_sl.json").read)
@@ -33,8 +34,6 @@ class PageMetadata
       "#{page.title}: izberite datum in izračunajte krajevni čas vzhoda, zahoda ter dolžino dneva."
     when %r{\A/horoskop/}
       "#{page.title}. Preberite razvedrilno besedilo z datumom objave. Če današnje besedilo še ni objavljeno, je to jasno označeno."
-    when %r{\A/godovi/}
-      "#{page.title}: zbirka čaka na preverjen vir. Nepotrjenih godov ne prikazujemo kot uradne datume."
     else
       page.description.presence || "#{page.title} – podatki, navodila in povezave za načrtovanje v Sloveniji."
     end

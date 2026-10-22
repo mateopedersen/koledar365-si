@@ -8,7 +8,7 @@ const pageFamilies = [
   '/solske-pocitnice/',
 ];
 
-test('content-addressed SVGs stay colorful and visible in every major page family', async ({page}) => {
+test('branded SVG icons and real imagery stay colorful and visible in every major page family', async ({page}) => {
   for (const path of pageFamilies) {
     await page.goto(path);
     const logo = page.locator('img.brand-mark').first();

@@ -1,7 +1,9 @@
 import {matchPublicCalendar} from './catalog-match.js';
 import {ljubljanaDate,horoscopeDisposition} from './date-context.js';
 import {normalizeSearchText,resultCategory,searchRecords} from './site-search.mjs';
+import {ensureMapGetOrInsertComputed} from './map-compat.js';
 // Cloudflare Pages host adapter. Calendar rules and PDF composition remain Ruby.
+ensureMapGetOrInsertComputed();
 const nativeFetch=window.fetch.bind(window),params=new URLSearchParams(location.search);
 const $=selector=>document.querySelector(selector),$$=selector=>[...document.querySelectorAll(selector)];
 let worker,sequence=0,pending=new Map(),photos=new Map(),jobs=new Map(),registryPromise;

@@ -120,6 +120,20 @@ test('workday calculator handles both modes, shares settings, and fits mobile', 
 });
 
 test('exported calculator loads its script and calculates around a Slovenian holiday', async ({ page }) => {
+  await page.route('**/izracun/', async (route) => {
+    const payload = route.request().postDataJSON();
+    if (payload.tool === 'workdays') {
+      expect(payload.from).toBe('2027-04-26');
+      expect(payload.to).toBe('2027-04-27');
+      expect(payload.exclude_holidays).toBe(true);
+      await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ result: 'Izračun pripravljen.', workdays: { calendar_days: 2, working_days: 1, hours: 8, excluded_holidays: ['2027-04-27'] } }) });
+    } else {
+      expect(payload.tool).toBe('workday_shift');
+      expect(payload.from).toBe('2027-04-26');
+      expect(payload.delta).toBe('1');
+      await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ result: 'Datum pripravljen.', workday_shift: { start_date: '2027-04-26', target_date: '2027-04-28', calendar_days: 2, working_days: 1, excluded_holidays: ['2027-04-27'] } }) });
+    }
+  });
   await page.goto('/kalkulator-delovnih-dni/');
   await expect(page.locator('[data-wdc-mode="range"]')).toHaveAttribute('aria-selected', 'true');
   const scripts = await page.evaluate(() => JSON.parse(document.querySelector('#k365-static-config').textContent).scripts);

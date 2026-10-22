@@ -84,3 +84,14 @@ Son kabul kapısı PR başındaki tam GitHub CI'dır: PostgreSQL testleri, SEO, 
 `node script/verify_expansion_live.mjs --origin https://koledar365.si` komutunu tam yayımlanan committe çalıştırın. Hazırlanmış envanterdeki tüm indekslenebilir sayfalar ve canlı kaynak parmak izleri doğrulanmalıdır. Kullanıcıya yeni 15 bağlantıyı ve **bütün canlı canonical sayfaların tam listesini**, başarılı sayfa sayısını, kaynak/yayın commitlerini ve Cloudflare dağıtım bağlantısını teslim edin.
 
 Mevcut kaldırılmış isim dizinleri, doğrulanmamış godovi verisi ve ertelenmiş vergi takvimiyle ilgili kararlar korunur. Ücretli servis veya yeni altyapı gerekmez.
+
+## Handoff integration review — 22 October 2026
+
+- Reused the completed PR #56 implementation; PR #58 was already merged and was not reapplied.
+- Preserved current main's leap-year page, About page, terms, retired-name-day guards, personal planner controls and original 2027–2030 PDF/WebP collection.
+- Kept both completed school timetable tools behind accessible weekly/period tabs on the existing canonical page. Each keeps its own local store. Copying weekly lessons is explicit, additive and deduplicated.
+- Fixed Safari validation of an inactive date field and the 320 px weekly ICS date control. The shift script now initializes only its own workbench.
+- Local merged-source checks: 109 Rails tests, 11,712 assertions, no failures/errors/skips; full static audit: 397 indexable canonical pages, 2,820 verified pairs.
+- Official-source availability and pension/social-transfer comparisons are recorded in `evidence/astra6-source-review.json` and `evidence/astra6-payment-source-comparison.json`. All 163 imported payment events matched the freshly retrieved authoritative sources.
+- `evidence/astra6-pdf-review.json` records original collection hash preservation and rendered February 2028 / annual 2030 PDF and WebP samples.
+- A successful build is not a production verification. Merge, exact publication snapshot, Cloudflare status and live URL/browser evidence must be recorded after deployment.

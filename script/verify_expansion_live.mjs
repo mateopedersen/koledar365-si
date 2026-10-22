@@ -22,10 +22,13 @@ const decode=value=>String(value).replace(/&amp;/g,'&').replace(/&quot;/g,'"').r
 async function worker(){while(queue.length){const row=queue.shift(),result={url:origin+row.path,status:null,checks:[]};try{
     const response=await request(row.path);result.status=response.status;const html=await response.text();
     if(response.status!==200)result.checks.push('HTTP '+response.status);
+    if(/\bnoindex\b/i.test(response.headers.get('x-robots-tag')||''))result.checks.push('Unexpected X-Robots-Tag noindex');
     const canonical=html.match(/<link\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)/i)?.[1];
     if(canonical!==row.url)result.checks.push('Canonical differs');
     const title=decode(html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]||'');
     if(title!==row.title)result.checks.push('Title differs from prepared publication');
+    const description=decode(html.match(/<meta\b[^>]*name=["']description["'][^>]*content=["']([^"']*)/i)?.[1]||'');
+    if(description!==row.description)result.checks.push('Description differs from prepared publication');
     if((html.match(/<h1(?:\s|>)/gi)||[]).length!==1)result.checks.push('Expected exactly one H1');
     if(/<meta\b[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html))result.checks.push('Unexpected noindex');
     if(expanded.has(row.url)){
@@ -44,6 +47,7 @@ for(const asset of sampleAssets){try{const response=await request(asset);if(!res
 report.results.sort((a,b)=>a.url.localeCompare(b.url));report.passed=report.issues.length===0&&report.results.length===inventory.count&&report.results.every(row=>row.passed);
 fs.mkdirSync(path.join(root,'evidence'),{recursive:true});
 fs.writeFileSync(path.join(root,'evidence/advanced-calendar-live-verification.json'),JSON.stringify(report,null,2)+'\n');
-fs.writeFileSync(path.join(root,'evidence/all-live-page-links.txt'),report.results.map(row=>`${row.passed?'OK':'FAIL'} ${row.status??'ERROR'} ${row.url}`).join('\n')+'\n');
+fs.writeFileSync(path.join(root,'evidence/all-live-page-links.txt'),report.results.map(row=>row.url).join('\n')+'\n');
+fs.writeFileSync(path.join(root,'evidence/live-url-http-status.txt'),report.results.map(row=>`${row.passed?'OK':'FAIL'} ${row.status??'ERROR'} ${row.url}`).join('\n')+'\n');
 console.log(JSON.stringify({passed:report.passed,checked:report.results.length,failed:report.results.filter(row=>!row.passed),issues:report.issues},null,2));
 if(!report.passed)process.exitCode=1;

@@ -66,8 +66,13 @@ Dir[site.join('**/*.html')].sort.each do |file|
    fail_with.call('Weekly workspace module must survive static export') unless doc.at_css('script[type=module][src="/calendar-tools/experience.mjs"]') && site.join('calendar-tools/experience.mjs').file?
   else
    fail_with.call('Gallery must share a workspace with its calendar or settings') unless doc.at_css('body.gallery-page .download-workspace > .gallery-context #gallery-context-content') && gallery.ancestors.any? { |parent|parent['class'].to_s.split.include?('download-workspace') }
-   description=doc.at_css('.page-heading > p')&.text.to_s
-   fail_with.call('Expected one practical download paragraph and an accessible context control') unless doc.css('.page-heading > p').size==1 && (description.include?('600 ppi')||description.include?('600 dpi')) && doc.at_css('[data-context-expand][aria-expanded=false][aria-controls=gallery-context-content]')
+   if relative=='solski-urnik/index.html'
+    gallery_description=doc.at_css('#design-gallery .student-gallery-copy')&.text.to_s
+    fail_with.call('Student planner must expose its labelled workspace and one practical PDF/WebP gallery paragraph') unless doc.at_css('#student-schedule[aria-labelledby="student-workspace-title"]') && doc.at_css('#design-gallery[aria-labelledby="design-gallery-title"]') && doc.css('#design-gallery .student-gallery-copy').size==1 && %w[PDF WebP 600\ ppi].all? { |term|gallery_description.include?(term) }
+   else
+    description=doc.at_css('.page-heading > p')&.text.to_s
+    fail_with.call('Expected one practical download paragraph and an accessible context control') unless doc.css('.page-heading > p').size==1 && (description.include?('600 ppi')||description.include?('600 dpi')) && doc.at_css('[data-context-expand][aria-expanded=false][aria-controls=gallery-context-content]')
+   end
    if relative.match?(%r{\Akoledar/20(?:27|28|29|30)/})
     fail_with.call('Collection gallery description must state A3, CMYK FOGRA39 and 600 dpi') unless description.include?('A3')&&description.include?('CMYK FOGRA39')&&description.include?('600 dpi')
    end
@@ -88,7 +93,7 @@ Dir[site.join('**/*.html')].sort.each do |file|
   'setveni-koledar/index.html'=>['[data-garden]','/garden/experience.mjs'],
   'izplacila-pokojnin/index.html'=>['[data-payment-calendar]','/payments/experience.mjs'],
   'izplacila-socialnih-transferjev/index.html'=>['[data-payment-calendar]','/payments/experience.mjs'],
-  'solski-urnik/index.html'=>['[data-school-timetable]','/education/timetable.mjs']
+  'solski-urnik/index.html'=>['[data-school-timetable]','/education/timetable-page.mjs']
  }
  if (contract=expansion_modules[relative])
   selector,src=contract

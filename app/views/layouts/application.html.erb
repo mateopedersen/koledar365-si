@@ -17,11 +17,13 @@
 <% end %>
 <% if (schema=structured_data) %><script type="application/ld+json" nonce="<%= content_security_policy_nonce %>"><%= raw json_escape(schema.to_json) %></script><% end %>
 <%= csrf_meta_tags %><%= csp_meta_tag %><%= stylesheet_link_tag 'application', 'experience', 'slovenia', 'vector_identity', 'search' %><%= javascript_include_tag 'application','planners',defer:true %><% if @section=='home' %><% city_image=WebImageCatalog.find(CityCatalog.default.dig('photo','local_path')) %><% if city_image %><link rel="preload" as="image" type="image/avif" imagesrcset="<%= city_image['avif_srcset'] %>" imagesizes="<%= WebImageCatalog::CITY_SIZES %>" fetchpriority="high"><% end %><%= stylesheet_link_tag 'city_card' %><%= javascript_include_tag 'city_card',defer:true %><% end %>
+<% if @section=='about' %><%= stylesheet_link_tag 'about' %><% end %>
 <% if @section=='home' -%><% home_city=CityCatalog.default; home_image=WebImageCatalog.find(home_city.dig('photo','local_path')) %><% if home_image %><link rel="preload" as="image" type="image/avif" imagesrcset="<%= home_image.fetch('avif_srcset') %>" imagesizes="<%= WebImageCatalog::CITY_SIZES %>" fetchpriority="high"><% end %><% end -%>
 <% if page_path == '/druzinski-planer/' %><%= stylesheet_link_tag 'family_planner' %><%= javascript_include_tag 'family_planner_core', 'family_planner', defer:true %><% end %>
 <% if @section=='sun' -%><%= stylesheet_link_tag 'sun' %><%= javascript_include_tag 'sun',defer:true %><% end -%>
 <% if page_path.start_with?('/lunin-koledar/') -%><link rel="stylesheet" href="/lunar/calendar.css?v=20261021-2"><% end -%>
 <% if page_path == '/datumski-kalkulator/' %><%= stylesheet_link_tag 'date_calculator' %><% end %>
+<% if page_path == '/prestopno-leto/' %><%= stylesheet_link_tag 'leap_year' %><%= javascript_include_tag 'leap_year', defer: true %><% end %>
 <% if page_path == '/nacrtovalnik-dopusta/' %><%= stylesheet_link_tag 'vacation' %><%= javascript_include_tag 'vacation',defer:true %><% end %>
 <% if page_path == '/odstevanje/' %><%= stylesheet_link_tag 'countdown' %><%= javascript_include_tag 'countdown',defer:true %><% end %>
 <% if @section=='horoscope' %><%= stylesheet_link_tag 'horoscope' %><script type="module" src="/horoscope/experience-v1.mjs"></script><% end %>
@@ -32,19 +34,22 @@
 <% if @clock_change %><%= stylesheet_link_tag 'clock_change' %><script type="module" src="/premik-ure/experience.mjs"></script><% end %>
 <% if gallery_page? %><%= stylesheet_link_tag 'calendar_gallery' %><% end %>
 <% if page_path == '/razpored-izmen/' %><%= stylesheet_link_tag 'shift_schedule' %><%= javascript_include_tag 'shift_schedule',defer:true %><% end %>
+<% if page_path == '/solski-urnik/' %><%= stylesheet_link_tag 'student_timetable' %><%= javascript_include_tag 'student_timetable_core','student_timetable',defer:true %><% end %>
 <% if @section=='school' %><link rel="stylesheet" href="/school/experience.css?v=20261022-1"><script type="module" src="/school/experience.mjs?v=20261022-1"></script><% end %>
 <% if @section=='calendar' %><%= stylesheet_link_tag 'calendar_experience' %><script type="module" src="/calendar-tools/experience.mjs"></script><% end %>
 <% if %w[moon_phases astronomy_events].include?(@section) %><%= stylesheet_link_tag 'astronomy' %><%= javascript_include_tag 'astronomy',defer:true,data:{static_keep:true} %><% end %>
-<% if %w[education_calendar school_timetable].include?(@section) %><link rel="stylesheet" href="/education/experience.css"><script type="module" src="/education/<%= @section=='school_timetable' ? 'timetable':'experience' %>.mjs"></script><% end %>
+<% if %w[education_calendar school_timetable].include?(@section) %><link rel="stylesheet" href="/education/experience.css"><script type="module" src="/education/<%= @section=='school_timetable' ? 'timetable-page':'experience' %>.mjs"></script><% end %>
 <% if @section=='garden_calendar' %><link rel="stylesheet" href="/garden/experience.css"><script type="module" src="/garden/experience.mjs"></script><% end %>
 <% if @section=='payment_calendar' %><link rel="stylesheet" href="/payments/experience.css"><script type="module" src="/payments/experience.mjs"></script><% end %>
 <% if @section=='methodology' %><link rel="stylesheet" href="/garden/experience.css"><% end %>
 <%= stylesheet_link_tag 'print' %>
 <%= stylesheet_link_tag 'readability' %>
+<% if @section=='school_timetable' %><link rel="stylesheet" href="/education/timetable-page.css"><% end %>
+<% if @section=='terms' %><%= stylesheet_link_tag 'terms' %><% end %>
 <% if @not_found %><%= stylesheet_link_tag 'not_found' %><% end %>
 <link rel="icon" href="<%= IllustrationHelper.versioned_svg_url('/visuals/brand-calendar-v3.svg') %>" type="image/svg+xml">
 </head>
-<body class="<%= [gallery_page? ? 'gallery-page' : nil, @section=='holidays' ? 'holiday-guide' : nil, @section=='home' ? 'home-page' : nil, page_path=='/druzinski-planer/' ? 'family-planner-page' : nil, page_path=='/razpored-izmen/' ? 'shift-page' : nil].compact.join(' ') %>">
+<body class="<%= [gallery_page? ? 'gallery-page' : nil, @section=='holidays' ? 'holiday-guide' : nil, @section=='home' ? 'home-page' : nil, @section=='terms' ? 'terms-page' : nil, page_path=='/druzinski-planer/' ? 'family-planner-page' : nil, page_path=='/razpored-izmen/' ? 'shift-page' : nil, page_path=='/solski-urnik/' ? 'student-timetable-page' : nil].compact.join(' ') %>">
 <a class="skip" href="#vsebina">Na vsebino</a>
 <header class="topbar"><a class="brand" href="/" aria-label="Koledar365 – domov"><span class="brand-symbol"><%= brand_symbol %></span> Koledar<span>365</span></a>
 <nav aria-label="Glavna navigacija"><a href="/koledar/">Koledar</a><a href="/prazniki/">Prazniki</a><a href="/solske-pocitnice/">Šolske počitnice</a></nav>

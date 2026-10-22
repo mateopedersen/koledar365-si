@@ -1,7 +1,7 @@
 module ApplicationHelper
   include IllustrationHelper
   def gallery_page?
-    %w[planner name holidays].include?(@section) ||
+    %w[planner school_timetable name holidays].include?(@section) ||
       (@section == 'lunar' && !page_path.start_with?('/lunin-koledar/')) ||
       (@section == 'workdays' && CalendarEngine::INTERACTIVE_YEARS.include?(@year)) ||
       (@section == 'calendar' && @page&.year && CalendarEngine::INTERACTIVE_YEARS.include?(@year))

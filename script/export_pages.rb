@@ -8,8 +8,8 @@ ENV['OPERATOR_CONTACT']='koledar365@gmail.com'
 out=Rails.root.join(ENV.fetch('STATIC_OUT','site'));FileUtils.mkdir_p(out)
 partial=ENV['STATIC_ONLY']&.split(',')
 unless partial
- # Retire the removed name directory and its public preview fragments.
- %w[koledar-z-imenom imena free/names sitemap-names.xml].each { |relative| FileUtils.rm_rf(out.join(relative)) }
+ # Retire removed name-day and name-calendar pages plus their public preview fragments.
+ %w[koledar-z-imenom imena free/names sitemap-names.xml godovi].each { |relative| FileUtils.rm_rf(out.join(relative)) }
  # These generated atlases and photo variants must mirror their source directories.
  # Retaining superseded variants would eventually exceed the Pages Free file limit.
  %w[lunar/atlas images/responsive].each { |relative| FileUtils.rm_rf(out.join(relative)) }
@@ -62,6 +62,9 @@ transform=lambda do |body,path,indexable:true|
 elsif path=='/kalkulator-delovnih-dni/' || path.match?(%r{\A/delovni-dnevi/(?:20(?:2[6-9]|30)/)?\z})
   workdays_scripts=sources.select { |src|src.match?(%r{(?:\A|/)workdays-[^/]+\.js(?:\?.*)?\z}) }
   page_assets=assets.merge(scripts:(assets[:scripts]+workdays_scripts).uniq)
+elsif path=='/solski-urnik/'
+  student_scripts=sources.select { |src|src.match?(%r{(?:\A|/)student_timetable(?:_core)?-[^/]+\.js(?:\?.*)?\z}) }
+  page_assets=assets.merge(scripts:(assets[:scripts]+student_scripts).uniq)
  end
  config=Nokogiri::XML::Node.new('script',doc);config['type']='application/json';config['id']='k365-static-config';config.content=JSON.generate(page_assets);doc.at_css('head').add_child(config)
  (page_assets[:scripts]+[assets[:holidays]]+(doc.at_css('[data-vacation-planner]') ? [assets[:vacation]] : [])+(doc.at_css('[data-countdown-root]') ? [assets[:countdown]] : [])+(doc.at_css('#shift-form') ? [assets[:shift]] : [])).each do |src|
@@ -114,7 +117,7 @@ write=lambda do |path,html|
  file=out.join(path.delete_prefix('/'));file=file.join('index.html') if path.end_with?('/')
  FileUtils.mkdir_p(file.dirname);file.write(html)
 end
-removed_name_path=%r{\A/(?:koledar-z-imenom|imena)(?:/|\z)}
+removed_name_path=%r{\A/(?:koledar-z-imenom|imena|godovi)(?:/|\z)}
 paths=Page.order(:path).reject { |page|page.path.match?(removed_name_path) }.map { |page|[page.path,page.status=='published'] }+SunEngine::CITIES.keys.map { |city_id|["/soncni-vzhod-in-zahod/#{city_id}/",true] }+[['/fotografije-in-licence/',true],['/isci/',false]]
 paths=paths.map { |path,indexable|path.match?(%r{\A/soncni-vzhod-in-zahod/[a-z0-9-]+/\z}) ? [path,true] : [path,indexable] }.uniq { |path,_|path }
 paths=paths.select { |path,_|partial.include?(path) } if partial
@@ -147,7 +150,6 @@ search=Page.published.reject { |page|page.path.match?(removed_name_path) }.map d
  when %r{\A/podaljsani-vikendi/}, %r{\A/nacrtovalnik-dopusta/} then 'podaljšani vikendi dopust prosti dnevi oddih prazniki'
  when %r{\A/soncni-vzhod-in-zahod/}, %r{\A/dolzina-dneva/} then 'sončni vzhod sončni zahod zlata ura dolžina dneva mesto'
  when '/premik-ure/' then 'premik ure prestavitev ure poletni čas zimski čas naprej nazaj menjava ure'
- when %r{\A/godovi/} then 'god godovi godovni koledar'
  when %r{\A/(?:solski-koledar|solski-urnik|studijski-koledar|matura|npz)/} then 'šolski študijski koledar urnik matura NPZ izpiti predmeti roki rezultati dosežki'
  when '/setveni-koledar/' then 'setveni koledar vrt vrtnarski setev sajenje sadike zelenjava moj vrt'
  when %r{\A/izplacila-} then 'izplačila nakazila pokojnine socialni transferji otroški dodatek CSD ZPIZ štipendije socialna pomoč'
@@ -229,7 +231,7 @@ headers=<<~HEADERS
   X-Robots-Tag: noindex
 HEADERS
 out.join('_headers').write(headers)
-out.join('_routes.json').write(JSON.generate({version:1,include:['/vreme/*','/horoskop/*','/city-detect*','/koledar-z-imenom','/koledar-z-imenom/*','/imena','/imena/*','/free/names','/free/names/*','/free/search.json','/sitemap-names.xml','/sitemap.xml','/sitemap-pages.xml','/robots.txt'],exclude:[]}))
+out.join('_routes.json').write(JSON.generate({version:1,include:['/vreme/*','/horoskop/*','/city-detect*','/koledar-z-imenom','/koledar-z-imenom/*','/imena','/imena/*','/godovi','/godovi/*','/free/names','/free/names/*','/free/search.json','/sitemap-names.xml','/sitemap.xml','/sitemap-pages.xml','/robots.txt'],exclude:[]}))
 # Re-materialize after all page and asset transforms so the final static tree
 # always contains every content-addressed SVG referenced by generated CSS/HTML.
 SvgAssetReferences.materialize_fingerprinted_assets!(Rails.root.join('public'),out)

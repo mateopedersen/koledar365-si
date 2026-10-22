@@ -14,6 +14,7 @@ async function openPage(page, path) {
   const consent = page.locator('[data-consent="necessary"]');
   if (await consent.isVisible()) await consent.click();
   await expect(page.locator('h1')).toHaveCount(1);
+  if (path === '/solski-urnik/') await page.getByRole('tab', { name: 'Urnik za obdobje' }).click();
 }
 
 async function downloadedText(page, control) {

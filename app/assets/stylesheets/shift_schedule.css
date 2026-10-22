@@ -130,3 +130,8 @@ body.shift-page #design-gallery .design-number{color:#c52d45}
 @media(max-width:370px){body.shift-page .shift-form__dates{grid-template-columns:1fr}body.shift-page .shift-preset-list{grid-template-columns:1fr}body.shift-page .shift-stats>div{flex-direction:column;align-items:flex-start}body.shift-page .shift-calendar__day{min-height:44px}}
 @media(prefers-reduced-motion:reduce){body.shift-page .shift-preset{transition:none}}
 @media print{body.shift-page .shift-hero,body.shift-page .shift-workbench,body.shift-page .shift-saved,body.shift-page .shift-print-settings{display:none!important}body.shift-page #design-gallery{border:0;padding:0}}
+
+/* Match the restore label to the adjacent shift-planner action buttons. */
+body.shift-page .shift-saved__actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:8px}
+body.shift-page .shift-saved__actions>button,body.shift-page .shift-saved__actions>.file-button{display:inline-flex;align-items:center;justify-content:center;width:100%;min-width:0;min-height:42px;margin:0;box-sizing:border-box;text-align:center;white-space:normal;overflow-wrap:anywhere}
+@media(max-width:650px){body.shift-page .shift-saved__actions{grid-template-columns:repeat(2,minmax(0,1fr))}body.shift-page .shift-saved__actions>*:last-child{grid-column:1/-1}}

@@ -47,7 +47,7 @@ export function resultCategory(result) {
   const path = result.path || '';
   if (path.startsWith('/soncni-vzhod-in-zahod/')) return 'Sončni časi';
   if (/^\/(lunin-koledar|lunine-mene|polna-luna|mlaj)\//.test(path)) return 'Luna';
-  if (/^\/(prazniki|pomembni-dnevi|letni-casi|godovi)\//.test(path)) return 'Prazniki in dnevi';
+  if (/^\/(prazniki|pomembni-dnevi|letni-casi)\//.test(path)) return 'Prazniki in dnevi';
   if (/^\/(koledar|mesecni-koledar|tedenski-koledar)\//.test(path)) return 'Koledarji';
   return 'Orodja';
 }
@@ -81,6 +81,7 @@ export function parseDateQuery(value) {
   if (date.getUTCFullYear() !== year || date.getUTCMonth() !== month - 1 || date.getUTCDate() !== day) return null;
 
   const iso = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+  if (iso < '2026-10-01') return null;
   return {
     title: `${day}. ${MONTHS[month - 1]} ${year}`,
     path: `/?${new URLSearchParams({ year, month, date: iso, view: 'day' })}`,

@@ -1,0 +1,156 @@
+{
+  "checked_at": "2026-10-22T06:42:10.298897+00:00",
+  "scope": "Primary source availability and current source bytes; education dates spot-checked against official tables, with provenance and date relationships covered by application tests.",
+  "results": [
+    {
+      "id": "gov-primary",
+      "url": "https://www.gov.si/teme/solski-koledar-za-osnovne-sole/",
+      "kind": "education",
+      "status": 200,
+      "final_url": "https://www.gov.si/teme/solski-koledar-za-osnovne-sole/",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 94125,
+      "sha256": "ab7f15e0eff3615939de75e26f4ead63bb722cc8ac472da76dc81b46bc636756"
+    },
+    {
+      "id": "gov-secondary",
+      "url": "https://www.gov.si/teme/solski-koledar-za-srednje-sole/",
+      "kind": "education",
+      "status": 200,
+      "final_url": "https://www.gov.si/teme/solski-koledar-za-srednje-sole/",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 79697,
+      "sha256": "a73e28339db5287fb51248310c9dffc4c53274116b22ab30f1f4ed9e930b92a1"
+    },
+    {
+      "id": "ric-general",
+      "url": "https://www.ric.si/splosna-matura/koledar-splosne-mature/",
+      "kind": "education",
+      "status": 200,
+      "final_url": "https://www.ric.si/splosna-matura/koledar-splosne-mature/",
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 62148,
+      "sha256": "e620d1744353e1135ffa99fe354d941304c21baab86ce5f00aeb389f7a864db1"
+    },
+    {
+      "id": "ric-vocational",
+      "url": "https://www.ric.si/poklicna-matura/koledar-poklicne-mature/",
+      "kind": "education",
+      "status": 200,
+      "final_url": "https://www.ric.si/poklicna-matura/koledar-poklicne-mature/",
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 48621,
+      "sha256": "b4fe4520819fd8ce79326ab9ca07c86a186b57075e20ed434fe2bc88a9f56332"
+    },
+    {
+      "id": "ric-npz",
+      "url": "https://www.ric.si/nacionalno-preverjanje-znanja/koledar-npz/",
+      "kind": "education",
+      "status": 200,
+      "final_url": "https://www.ric.si/nacionalno-preverjanje-znanja/koledar-npz/",
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 43045,
+      "sha256": "90182c0a682c48d3d183a2d46165cc99fa1641bc9c4d4c7340a393a50a3c8fbb"
+    },
+    {
+      "id": "university-ul",
+      "url": "https://www.uni-lj.si/assets/Sluzba-za-1-in-2-stopnjo/Studijski-koledar/2026-2027/Studijski_koledar-2026_2027-besedilo.pdf",
+      "kind": "education",
+      "status": 200,
+      "final_url": "https://www.uni-lj.si/assets/Sluzba-za-1-in-2-stopnjo/Studijski-koledar/2026-2027/Studijski_koledar-2026_2027-besedilo.pdf",
+      "content_type": "application/pdf",
+      "bytes": 117111,
+      "sha256": "fbdca66f01f040696b5489826d2b879e93d6facc42c1c540c1118a5167852676"
+    },
+    {
+      "id": "university-um",
+      "url": "https://moja.um.si/student/Strani/studijski-koledar.aspx",
+      "kind": "education",
+      "status": 200,
+      "final_url": "https://moja.um.si/student/Strani/studijski-koledar.aspx",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 47221,
+      "sha256": "5d0017a8c69125741031b76f21227ec6248817a699d5919025ae019a4ad9f678"
+    },
+    {
+      "id": "university-up",
+      "url": "https://www.upr.si/si/studij--vpis/studijski-koledar/",
+      "kind": "education",
+      "status": 200,
+      "final_url": "https://www.upr.si/si/studij--vpis/studijski-koledar/",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 78888,
+      "sha256": "d276c1d4b643c6a0c8caf7729cffd432edad9b5cbd559c521421dc6418d4463b"
+    },
+    {
+      "id": "university-ung",
+      "url": "https://ung.si/sl/studij/akademski-koledar/",
+      "kind": "education",
+      "status": 200,
+      "final_url": "https://ung.si/sl/studij/akademski-koledar/",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 71666,
+      "sha256": "1b48c1682cc403611ff33aaa63eb5e713da7a36b0887d3a01c66a9ad0f605b74"
+    },
+    {
+      "id": "university-nu",
+      "url": "https://www.nova-uni.si/studijski-koledar-nove-univerze-za-studijsko-leto-2026-2027-2/",
+      "kind": "education",
+      "status": 200,
+      "final_url": "https://www.nova-uni.si/wp-content/uploads/2026/06/Studijski-koledar-Nove-univerze-za-studijsko-leto-2026-2027-1.pdf",
+      "content_type": "application/pdf",
+      "bytes": 255142,
+      "sha256": "f6cca97463030bab6441b4f49d8be8e18479ae4e2b3697b63f1665943edc4568"
+    },
+    {
+      "id": "university-unm-fis",
+      "url": "https://www.fis.unm.si/urnik-in-studijski-koledar/",
+      "kind": "education",
+      "status": 200,
+      "final_url": "https://www.fis.unm.si/urnik-in-studijski-koledar/",
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 225281,
+      "sha256": "e1ce6f8e970a1cd9164c4a31562389e726e1f8dca0faaa37c49ff041e1b2bcc9"
+    },
+    {
+      "id": "university-unm-fei",
+      "url": "https://fei.uni-nm.si/uploads/_custom/01_unmfei/studijski_koledar/Studijski_koledar_2026-2027.pdf",
+      "kind": "education",
+      "status": 200,
+      "final_url": "https://fei.uni-nm.si/uploads/_custom/01_unmfei/studijski_koledar/Studijski_koledar_2026-2027.pdf",
+      "content_type": "application/pdf",
+      "bytes": 85426,
+      "sha256": "f92d6e1d74d1bdea57275a6da03a610d6fcb1aa92da4709d37149ca03c9b0f4f"
+    },
+    {
+      "id": "gov-holidays",
+      "url": "https://www.gov.si/teme/drzavni-prazniki-in-dela-prosti-dnevi/",
+      "kind": "education",
+      "status": 200,
+      "final_url": "https://www.gov.si/teme/drzavni-prazniki-in-dela-prosti-dnevi/",
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 32699,
+      "sha256": "64f4523cf5d32ac378fb1ab39c7d56035b01bff6142084f1d941c8b7e59c6f92"
+    },
+    {
+      "id": "zpiz",
+      "url": "https://www.zpiz.si/cms/content2019/izplailni-dnevi",
+      "kind": "payment",
+      "status": 200,
+      "final_url": "https://www.zpiz.si/cms/content2019/izplailni-dnevi",
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 37877,
+      "sha256": "1dd5c06f840e96c40798d9ee193f0b37805c919e00fc688024eccf73f224a174"
+    },
+    {
+      "id": "csd",
+      "url": "https://www.csd-slovenije.si/csd-savinjsko-saleska/obvestila/terminski-plan-izplacil-javnih-transferjev-za-leto-2026/",
+      "kind": "payment",
+      "status": 200,
+      "final_url": "https://www.csd-slovenije.si/csd-savinjsko-saleska/obvestila/terminski-plan-izplacil-javnih-transferjev-za-leto-2026/",
+      "content_type": "text/html",
+      "bytes": 86621,
+      "sha256": "1304f98431759f7ce403d43b52ffb2ee42e0fa6330d162f2fb3da6ccca8cb815"
+    }
+  ]
+}

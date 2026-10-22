@@ -18,7 +18,7 @@ class PlannerIntegrationTest < ActionDispatch::IntegrationTest
         assert_select '[data-tt-lesson] [name=subject]'
         assert_select '[data-tt-board]'
         %w[ics print backup import].each { |control| assert_select "[data-tt-#{control}]" }
-        assert_select 'script[type=module][src="/education/timetable.mjs"]'
+        assert_select 'script[type=module][src="/education/timetable-page.mjs"]'
       else
         assert_select '#planner-entry'
         assert_select '#planner-ics'
@@ -26,6 +26,27 @@ class PlannerIntegrationTest < ActionDispatch::IntegrationTest
         assert_select 'script[src*="planners"]'
       end
     end
+  end
+  test 'student timetable renders its responsive planner beside the complete print gallery' do
+    get '/solski-urnik/'
+    assert_response :success
+    assert_select 'body.student-timetable-page'
+    assert_select 'body.gallery-page'
+    assert_select 'h1#student-page-title',text:'Šolski urnik za učence in dijake'
+    assert_select '[data-student-timetable]'
+    assert_select '[data-student-day]',count:5
+    assert_select '[data-lesson-form]'
+    assert_select '[data-task-form]'
+    assert_select '[data-focus-clock]'
+    assert_select '[data-ics-from][type=date]'
+    assert_select '[data-student-backup]'
+    assert_select '.student-print-bridge[hidden]'
+    assert_select '.design-section .design-card',count:15
+    assert_select '.student-gallery-copy',text:/PDF.*WebP.*600 ppi/
+    assert_select 'a[href="https://www.gov.si/teme/solski-koledar-za-osnovne-sole/"]'
+    assert_select 'link[rel=stylesheet][href*="student_timetable"]'
+    assert_select 'script[src*="student_timetable_core"]'
+    assert_select 'script[src*="student_timetable"]'
   end
   test 'Slovenian leave planner exposes the annual optimizer and export controls' do
     get '/nacrtovalnik-dopusta/'

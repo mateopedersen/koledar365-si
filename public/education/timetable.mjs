@@ -113,8 +113,16 @@ function initTimetable(root) {
     $('[data-tt-ics]').disabled = occurrences.length === 0; $('[data-tt-print]').disabled = inWeek.length === 0;
     $('[data-tt-prev]').disabled = addDays(week, -1) < plan.from; $('[data-tt-next]').disabled = addDays(week, 7) > plan.to;
   }
-  function resetLesson() { form.reset(); form.elements.id.value = ''; form.elements.date.value = week < plan.from ? plan.from : week; $('[data-tt-once]').hidden = true; $('[data-tt-submit]').textContent = 'Dodaj učno uro'; $('[data-tt-cancel]').hidden = true; $('[data-tt-error]').textContent = ''; form.elements.day.disabled = false; }
-  form.addEventListener('change', event => { if (event.target.name === 'repeat') { const once = form.elements.repeat.value === 'once'; $('[data-tt-once]').hidden = !once; form.elements.day.disabled = once; form.elements.date.required = once; } });
+  function syncRepeatFields() {
+    const once = form.elements.repeat.value === 'once';
+    $('[data-tt-once]').hidden = !once;
+    form.elements.day.disabled = once;
+    form.elements.date.disabled = !once;
+    form.elements.date.required = once;
+    if (once && !validDate(form.elements.date.value)) form.elements.date.value = week < plan.from ? plan.from : week;
+  }
+  function resetLesson() { form.reset(); form.elements.id.value = ''; form.elements.date.value = week < plan.from ? plan.from : week; syncRepeatFields(); $('[data-tt-submit]').textContent = 'Dodaj učno uro'; $('[data-tt-cancel]').hidden = true; $('[data-tt-error]').textContent = ''; }
+  form.addEventListener('change', event => { if (event.target.name === 'repeat') syncRepeatFields(); });
   form.addEventListener('submit', event => {
     event.preventDefault(); try { const values = Object.fromEntries(new FormData(form)); const previous = plan.lessons.find(l => l.id === values.id); const lesson = validateLesson({ ...previous, ...values }); const existing = Boolean(previous); const lessons = existing ? plan.lessons.map(l => l.id === lesson.id ? lesson : l) : [...plan.lessons, lesson];
       plan = validatePlan({ ...plan, lessons }); save(); resetLesson(); if (lesson.repeat === 'once') week = mondayOf(lesson.date); render();
@@ -134,7 +142,7 @@ function initTimetable(root) {
     if (button.hasAttribute('data-tt-edit')) {
       const lesson = plan.lessons.find(l => l.id === button.dataset.ttEdit); if (!lesson) return;
       for (const [key, value] of Object.entries(lesson)) if (form.elements.namedItem(key)) form.elements.namedItem(key).value = value;
-      $('[data-tt-once]').hidden = lesson.repeat !== 'once'; form.elements.day.disabled = lesson.repeat === 'once'; form.elements.date.required = lesson.repeat === 'once'; $('[data-tt-submit]').textContent = 'Shrani spremembe'; $('[data-tt-cancel]').hidden = false; form.elements.subject.focus();
+      syncRepeatFields(); $('[data-tt-submit]').textContent = 'Shrani spremembe'; $('[data-tt-cancel]').hidden = false; form.elements.subject.focus();
     }
     if (button.hasAttribute('data-tt-remove')) { const removed = plan.lessons.find(l => l.id === button.dataset.ttRemove); if (!removed) return; plan.lessons = plan.lessons.filter(l => l.id !== removed.id); save(); render(); if (form.elements.id.value === removed.id) resetLesson(); const box = $('[data-tt-toast]'); box.replaceChildren(document.createTextNode(`Odstranjeno: ${removed.subject}. `)); const undo = document.createElement('button'); undo.type = 'button'; undo.textContent = 'Razveljavi'; undo.addEventListener('click', () => { if (!plan.lessons.some(l => l.id === removed.id)) plan.lessons.push(removed); save(); render(); box.hidden = true; }); box.append(undo); box.hidden = false; clearTimeout(box.hideTimer); }
     if (button.hasAttribute('data-tt-backup')) download(JSON.stringify(plan, null, 2), 'koledar365-solski-urnik.json', 'application/json;charset=utf-8');
@@ -154,7 +162,25 @@ function initTimetable(root) {
       dialog.querySelector('[data-cancel]').addEventListener('click', () => dialog.close()); dialog.addEventListener('close', () => dialog.remove()); dialog.showModal();
     } catch (error) { toast(error.message); } finally { event.target.value = ''; }
   });
+  root.addEventListener('k365:copy-weekly-lessons', event => {
+    try {
+      const incoming = event.detail.lessons.map(validateLesson);
+      const signature = lesson => [lesson.subject, lesson.day, lesson.startTime, lesson.endTime, lesson.room, lesson.teacher, lesson.repeat, lesson.date].join('\u0001');
+      const existing = new Set(plan.lessons.map(signature));
+      const ids = new Set(plan.lessons.map(lesson => lesson.id));
+      const additions = [];
+      for (const lesson of incoming) {
+        if (existing.has(signature(lesson))) continue;
+        existing.add(signature(lesson));
+        if (ids.has(lesson.id)) lesson.id = uid();
+        ids.add(lesson.id); additions.push(lesson);
+      }
+      const next = validatePlan({ ...plan, lessons: [...plan.lessons, ...additions] });
+      plan = next; save(); render();
+      event.detail.report(additions.length ? `Dodano učnih ur: ${additions.length}. Obstoječi vnosi in tedenski planer so ohranjeni.` : 'Vsi predmeti so že v obdobnem urniku. Podvojenih vnosov nismo dodali.');
+    } catch (error) { event.detail.report(error.message); }
+  });
   window.addEventListener('afterprint', () => document.body.classList.remove('education-printing'));
-  $('[data-tt-submit]').disabled = false; $('[data-tt-backup]').disabled = false; render();
+  syncRepeatFields(); $('[data-tt-submit]').disabled = false; $('[data-tt-backup]').disabled = false; render();
 }
 if (typeof document !== 'undefined') { const root = document.querySelector('[data-school-timetable]'); if (root) initTimetable(root); }

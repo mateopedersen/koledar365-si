@@ -28,16 +28,18 @@ class EducationTest < ActionDispatch::IntegrationTest
   test 'school timetable has only lesson-specific fields and local export controls' do
     get '/solski-urnik/'
     assert_response :success
-    assert_select 'h1', text: 'Moj šolski urnik', count: 1
+    assert_select 'h1#student-page-title', text: 'Šolski urnik za učence in dijake', count: 1
+    assert_select '[role=tab][data-timetable-mode]', count: 2
+    assert_select '[data-timetable-panel=period][hidden]', count: 1
     assert_select 'meta[name="description"][content=?]', EducationCalendar::TIMETABLE[:description]
     %w[subject day startTime endTime room teacher repeat date].each { |name| assert_select "[data-tt-lesson] [name=#{name}]", count: 1 }
     assert_select '[name=code]', count: 0
-    assert_select '#planner-options', count: 0
+    assert_select '.student-print-bridge[hidden] #planner-options', count: 1
     assert_select '[data-tt-print]', count: 1
     assert_select '[data-tt-ics]', count: 1
     assert_select '[data-tt-backup]', count: 1
     assert_select '[data-tt-import]', count: 1
-    assert_select 'script[type="module"][src="/education/timetable.mjs"]', count: 1
+    assert_select 'script[type="module"][src="/education/timetable-page.mjs"]', count: 1
     payload = JSON.parse(css_select('#timetable-data').first.text)
     assert payload['events'].all? { |e| %w[break holiday].include?(e['category']) }
   end

@@ -1,5 +1,6 @@
 require_relative '../config/environment'
 # GitHub protects writes and records their author. Only public content is restored.
+Page.where("path LIKE ?", "/godovi/%").delete_all
 Page.transaction do
   JSON.parse(Rails.root.join('data/editorial/pages.json').read).each do |row|
     page=Page.find_by!(path:row.fetch('path'))
