@@ -1,0 +1,19 @@
+{
+  "tool": "Google Rich Results Test",
+  "report_url": "https://search.google.com/test/rich-results/result?id=KTu6E8Y53YvP8IZt30Oqyw",
+  "tested_url": "https://koledar365.si/koledar/2028/februar/",
+  "reported_crawl_time": "2026-10-22T18:44:32+03:00",
+  "crawl": "Crawled successfully",
+  "valid_items": 2,
+  "detected": [
+    {
+      "type": "Breadcrumbs",
+      "valid_items": 1
+    },
+    {
+      "type": "Organization",
+      "valid_items": 1
+    }
+  ],
+  "scope": "A live smartphone URL test; eligibility does not guarantee display in search."
+}

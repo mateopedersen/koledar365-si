@@ -3,7 +3,7 @@
 <% elsif page_path=='/koledar/' %>
 <%= render 'calendar_directory' %>
 <% elsif @section=='home' %>
-<div class="intro"><div><h1>Slovenski koledar za vaše načrte.</h1><p>Prazniki, osebni dogodki in orodja za vsak dan.</p></div><a class="button subtle" href="/ustvari-koledar/"><%= ui_icon('settings') %> Ustvari svoj koledar</a></div>
+<div class="intro"><div><h1>Slovenski koledar za vaše načrte.</h1><p>Prazniki, osebni dogodki in orodja za vsak dan.</p></div><%= render 'calendar_studio_cta' %></div>
 <%= render 'home' %>
 <% elsif @section=='tool' && page_path=='/nacrtovalnik-dopusta/' %>
 <%= render 'vacation_planner' %>

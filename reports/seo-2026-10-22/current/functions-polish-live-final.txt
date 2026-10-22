@@ -1,0 +1,49 @@
+
+Running 28 tests using 1 worker
+
+(node:24252) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:24252) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › test/browser/mobile-control-layout.spec.mjs:81:1 › expanded shift entry fields keep their own rows on phones (4.3s)
+  ✓   2 [chromium] › test/browser/mobile-control-layout.spec.mjs:96:1 › shift preview remains inside the phone workspace (4.4s)
+  ✓   3 [chromium] › test/browser/seo-interactions.spec.mjs:3:1 › date calculator tabs preserve calculations and submit only active fields (14.9s)
+  ✓   4 [chromium] › test/browser/seo-interactions.spec.mjs:52:1 › school hero uses responsive previews and retains original attribution (2.9s)
+  ✓   5 [chromium] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on / (3.0s)
+  ✓   6 [chromium] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /solske-pocitnice/ (1.6s)
+  ✓   7 [chromium] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /horoskop/ (1.7s)
+(node:24404) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:24404) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 [webkit] › test/browser/mobile-control-layout.spec.mjs:81:1 › expanded shift entry fields keep their own rows on phones (3.7s)
+  ✓   9 [webkit] › test/browser/mobile-control-layout.spec.mjs:96:1 › shift preview remains inside the phone workspace (1.9s)
+  ✓  10 [webkit] › test/browser/seo-interactions.spec.mjs:3:1 › date calculator tabs preserve calculations and submit only active fields (17.3s)
+  ✓  11 [webkit] › test/browser/seo-interactions.spec.mjs:52:1 › school hero uses responsive previews and retains original attribution (1.1s)
+  ✓  12 [webkit] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on / (2.7s)
+  ✓  13 [webkit] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /solske-pocitnice/ (2.1s)
+  ✓  14 [webkit] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /horoskop/ (2.1s)
+(node:24473) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:24473) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  15 [android-chromium] › test/browser/mobile-control-layout.spec.mjs:81:1 › expanded shift entry fields keep their own rows on phones (1.9s)
+  ✓  16 [android-chromium] › test/browser/mobile-control-layout.spec.mjs:96:1 › shift preview remains inside the phone workspace (1.4s)
+  ✓  17 [android-chromium] › test/browser/seo-interactions.spec.mjs:3:1 › date calculator tabs preserve calculations and submit only active fields (5.9s)
+  ✓  18 [android-chromium] › test/browser/seo-interactions.spec.mjs:52:1 › school hero uses responsive previews and retains original attribution (1.2s)
+  ✓  19 [android-chromium] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on / (1.5s)
+  ✓  20 [android-chromium] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /solske-pocitnice/ (1.3s)
+  ✓  21 [android-chromium] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /horoskop/ (1.5s)
+(node:24504) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:24504) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  22 [iphone-webkit] › test/browser/mobile-control-layout.spec.mjs:81:1 › expanded shift entry fields keep their own rows on phones (2.5s)
+  ✓  23 [iphone-webkit] › test/browser/mobile-control-layout.spec.mjs:96:1 › shift preview remains inside the phone workspace (1.4s)
+  ✓  24 [iphone-webkit] › test/browser/seo-interactions.spec.mjs:3:1 › date calculator tabs preserve calculations and submit only active fields (13.1s)
+  ✓  25 [iphone-webkit] › test/browser/seo-interactions.spec.mjs:52:1 › school hero uses responsive previews and retains original attribution (907ms)
+  ✓  26 [iphone-webkit] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on / (1.1s)
+  ✓  27 [iphone-webkit] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /solske-pocitnice/ (1.1s)
+  ✓  28 [iphone-webkit] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /horoskop/ (1.0s)
+
+  28 passed (2.0m)

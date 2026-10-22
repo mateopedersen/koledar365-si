@@ -15,3 +15,5 @@
 - Added repeatable structural, browser, external-link, revision-history and full-range calendar regressions.
 
 Source files and tests are the evidence for each implementation. Final build, browser and production results are documented separately and must be checked before completion.
+
+- The final combined-source phone crawl caught a later desktop-grid override on the shift planner. Limited that override to screens at least 901px wide; the existing mobile single-column layout now applies. Confirmed on all 391 live routes with unchanged assertions after deployment (PR #99).

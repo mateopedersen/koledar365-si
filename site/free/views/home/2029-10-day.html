@@ -18,14 +18,14 @@
 <meta property="og:site_name" content="Koledar365">
 <meta property="og:locale" content="sl_SI">
 <meta property="og:url" content="https://koledar365.si/">
-<meta property="og:image" content="https://koledar365.si/druzabno/pages/1/e0ae63e646f058684fdd.png">
+<meta property="og:image" content="https://koledar365.si/druzabno/pages/1/52bbcdfef3ca0cf71a6f.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Slovenski koledar 2026–2030: prazniki in načrtovanje">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Slovenski koledar 2026–2030: prazniki in načrtovanje · Koledar365">
 <meta name="twitter:description" content="Slovenski koledar s prazniki, številkami tednov in osebnimi zapiski. Izberite leto med 2026 in 2030, mesec ali teden ter pripravite svoj koledar za tisk.">
-<meta name="twitter:image" content="https://koledar365.si/druzabno/pages/1/e0ae63e646f058684fdd.png">
+<meta name="twitter:image" content="https://koledar365.si/druzabno/pages/1/52bbcdfef3ca0cf71a6f.png">
 <meta name="twitter:image:alt" content="Slovenski koledar 2026–2030: prazniki in načrtovanje">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl-SI","publisher":{"@id":"https://koledar365.si/#organization"}},{"@type":"WebPage","@id":"https://koledar365.si/#webpage","url":"https://koledar365.si/","name":"Slovenski koledar 2026–2030: prazniki in načrtovanje","description":"Slovenski koledar s prazniki, številkami tednov in osebnimi zapiski. Izberite leto med 2026 in 2030, mesec ali teden ter pripravite svoj koledar za tisk.","inLanguage":"sl-SI","isPartOf":{"@id":"https://koledar365.si/#website"},"publisher":{"@id":"https://koledar365.si/#organization"},"author":{"@id":"https://koledar365.si/#organization"}},{"@type":"Organization","@id":"https://koledar365.si/#organization","name":"Koledar365","url":"https://koledar365.si/","email":"koledar365@gmail.com"}]}</script>
 
@@ -76,6 +76,22 @@ button:hover,.button:hover{box-shadow:0 3px 9px #1165c31a;transform:translateY(-
 .period-links a[aria-current=page]{background:#0b4b9b;border-color:#0b4b9b;color:#fff}
 .period-links a:focus-visible{outline:3px solid var(--red);outline-offset:3px}
 @media(max-width:600px){.period-links{padding:16px}.period-links h2{font-size:19px}.period-links>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.period-links a{font-size:14px;padding:10px}.filters input,.filters select,.filters textarea,.calendar-experience__selection input,.calendar-experience__selection select{font-size:16px}}
+
+/* Home discovery: fill the third feature column and keep every card on one surface. */
+.home-discovery .feature-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.home-discovery .feature-grid>div,.home-discovery .feature-grid>.feature{display:flex;flex-direction:column;align-items:flex-start;min-width:0;min-height:176px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow)}
+.home-discovery .feature-grid>div .year-links{margin-top:auto;padding-top:10px;margin-bottom:0}
+.home-discovery .feature-grid>.feature>span{margin-top:auto;padding-top:12px;font-weight:750}
+.home-discovery .feature-grid>.feature:hover{background:var(--surface);border-color:#b9cde8;box-shadow:0 10px 26px #183d7210;text-decoration:none}
+.home-discovery .feature-grid>.feature:focus-visible,.home-discovery .feature-grid .holiday-feature__footer a:focus-visible{outline:3px solid #0868fb;outline-offset:3px}
+.home-discovery .holiday-feature__date{display:flex;flex-wrap:wrap;gap:6px 10px;margin:4px 0 0;color:var(--muted)}
+.home-discovery .holiday-feature__date time{color:var(--ink);font-size:21px;font-weight:850;font-variant-numeric:tabular-nums}
+.home-discovery .holiday-feature__date span{align-self:center;font-weight:700}
+.home-discovery .holiday-feature__footer{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;margin-top:auto;padding-top:12px}
+.home-discovery .holiday-feature__footer a{font-weight:750}
+.home-discovery .holiday-feature__footer>span{color:var(--muted);font-size:13px;font-weight:700;white-space:nowrap}
+.home-discovery .feature-grid>.feature--holiday h3 .ui-icon{color:var(--red)}
+@media(max-width:850px){.home-discovery .feature-grid{grid-template-columns:minmax(0,1fr)}}
 
 /* Light-only visual system: original vector illustrations and editorial pages. */
 html{color-scheme:only light}
@@ -360,6 +376,20 @@ main :where(p,li,dd,figcaption) a:not(.button):not(.card-credit){text-decoration
 .right-panel .button-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(64px,1fr);align-items:stretch}
 .right-panel .button-grid>button,.right-panel .button-grid>.button{align-self:stretch;justify-self:stretch;width:100%;min-width:0;min-height:64px;margin:0;box-sizing:border-box;text-align:center;white-space:normal;overflow-wrap:anywhere;line-height:1.3}
 
+/* A prominent, keyboard-accessible entrance to the calendar editor. */
+#vsebina .intro>a.calendar-studio-cta{position:relative;display:grid;grid-template-columns:80px minmax(0,1fr) 24px;gap:16px;flex:0 0 auto;--k365-control-height:116px;min-height:116px;max-width:100%;padding:16px 22px 16px 14px;border:1px solid #b8cce2;border-radius:18px;background:linear-gradient(120deg,#fff 25%,#f0f6fd);color:#153b66;box-shadow:0 7px 22px #173f6a0e,inset 0 1px 0 #fff;text-align:left;text-decoration:none;white-space:normal;transition:border-color .18s,box-shadow .18s,transform .18s}
+.calendar-studio-cta__art{display:block;width:80px;height:80px;flex:none;overflow:visible}
+.calendar-studio-cta__copy{display:flex;min-width:0;flex-direction:column;gap:7px}
+.calendar-studio-cta__copy strong{font-size:22px;font-weight:850;line-height:1.2;letter-spacing:-.4px}
+.calendar-studio-cta__copy small{color:#526782;font-size:13px;font-weight:600;line-height:1.4}
+.calendar-studio-cta__arrow{color:#c72b43;transition:transform .18s}
+#vsebina .intro>a.calendar-studio-cta:hover{border-color:#2b6bab;background:linear-gradient(120deg,#fff,#e7f1fc);box-shadow:0 10px 26px #174b7b18;text-decoration:none;transform:translateY(-2px)}
+.calendar-studio-cta:hover .calendar-studio-cta__arrow{transform:translateX(3px)}
+#vsebina .intro>a.calendar-studio-cta:focus-visible{outline:3px solid #c72b43;outline-offset:4px}
+@media screen and (max-width:1100px){.intro:has(>.calendar-studio-cta){flex-direction:column;align-items:stretch;gap:18px}#vsebina .intro>a.calendar-studio-cta{align-self:flex-start;width:min(100%,460px)}}
+@media screen and (max-width:480px){#vsebina .intro>a.calendar-studio-cta{width:100%;--k365-control-height:102px;min-height:102px;grid-template-columns:64px minmax(0,1fr) 20px;gap:10px;padding:14px 12px;border-radius:15px}.calendar-studio-cta__art{width:64px;height:64px}.calendar-studio-cta__copy strong{font-size:20px}.calendar-studio-cta__copy small{font-size:12px;line-height:1.45}.calendar-studio-cta__arrow{width:20px;height:20px}}
+@media(prefers-reduced-motion:reduce){#vsebina .intro>a.calendar-studio-cta,.calendar-studio-cta__arrow{transition:none}#vsebina .intro>a.calendar-studio-cta:hover{transform:none}}
+
 /* Koledar365 material vector identity, optical sizes for navigation and cards. */
 .ui-icon{display:inline-block;flex:0 0 auto;width:26px;height:26px;vertical-align:middle;overflow:visible;filter:none;stroke:none}
 .ui-icon use{pointer-events:none}
@@ -450,6 +480,30 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
  .search-results .site-search-option{min-height:60px;padding:10px}
 }
 @media(prefers-reduced-motion:reduce){.site-search-option{scroll-behavior:auto}}
+
+.site-footer{display:block;margin:0;padding:0 28px;border:0;border-top:1px solid #dce5ef;background:radial-gradient(ellipse at 92% 0,#fff2f3 0,transparent 32%),linear-gradient(135deg,#fff 0%,#f9fbfe 62%,#fff 100%);color:#304864;font-size:14px;font-weight:500}
+.site-footer__inner{max-width:1500px;margin:0 auto;padding:38px 0 18px}
+.site-footer__main{display:grid;grid-template-columns:minmax(210px,.8fr) minmax(0,3.2fr);gap:48px;align-items:start}
+.site-footer__brand{max-width:280px}
+.site-footer__brand .brand-lockup{font-size:22px;line-height:1.2}
+.site-footer__brand .brand-symbol{font-size:29px}
+.site-footer__brand p{margin:13px 0 0;color:#536981;font-size:14px;line-height:1.65}
+.site-footer__groups{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.site-footer__group{display:flex;min-width:0;flex-direction:column;align-items:flex-start;gap:9px}
+.site-footer__group h2,.site-footer__group>a,.site-footer__cookie-link{max-width:100%;min-width:0;overflow-wrap:anywhere}
+.site-footer__group h2{margin:2px 0 4px;color:#18395f;font-size:14px;font-weight:800;letter-spacing:.01em}
+.site-footer__group>a,.site-footer__cookie-link{min-height:28px;padding:0;color:#405873;font-size:13px;font-weight:600;line-height:1.45;text-align:left;text-decoration:none}
+.site-footer__group>a:hover,.site-footer__cookie-link:hover{color:#0054b8;text-decoration:underline;text-underline-offset:3px}
+.site-footer .site-footer__cookie-link{display:inline-flex;justify-content:flex-start;border:0;background:transparent}
+.site-footer__group--contact{padding-left:20px;border-left:1px solid #dbe4ee}
+.site-footer__group--contact p{margin:0;color:#536981;font-size:13px;line-height:1.55}
+.site-footer .site-footer__group--contact .site-footer__contact-link{display:inline-flex;align-items:center;gap:8px;min-height:38px;margin-top:1px;padding:8px 12px;border:1px solid #c8d9eb;border-radius:9px;background:#fff;color:#0754a6;font-weight:750}
+.site-footer .site-footer__group--contact .site-footer__contact-link:hover{border-color:#0754a6;background:#eef5fc;text-decoration:none}
+.site-footer__contact-link span{color:#c52d45;font-size:17px}
+.site-footer__bottom{display:flex;justify-content:space-between;gap:16px;margin-top:32px;padding-top:14px;border-top:1px solid #e1e8f0;color:#63758a;font-size:12px;font-weight:600}
+@media(max-width:1120px){.site-footer__main{grid-template-columns:1fr;gap:27px}.site-footer__brand{max-width:480px}.site-footer__groups{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}}
+@media(max-width:900px){.site-footer{padding-right:20px;padding-left:20px}.site-footer__groups{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 20px}.site-footer__group--contact{padding-left:0;border-left:0}.site-footer__bottom{margin-top:26px}}
+@media(max-width:480px){.site-footer{padding-right:16px;padding-left:16px}.site-footer__inner{padding-top:28px}.site-footer__groups{grid-template-columns:1fr;gap:22px}.site-footer__group{gap:7px}.site-footer__group h2{font-size:15px}.site-footer__group>a,.site-footer__cookie-link{font-size:14px}.site-footer__bottom{flex-direction:column;gap:5px;margin-top:22px}}
 
 /* The live city card is isolated from the dense calendar's spacing rules. */
 #city-card{display:block;padding:0;overflow:hidden;border:1px solid #e1e7ef;border-radius:18px;background:#fff;box-shadow:0 8px 25px #1c365e0a}
@@ -1403,7 +1457,21 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
   .calendar-footer .calendar-legend{font-size:14px;line-height:1.5}
 }
 @media print{.calendar-agenda,.table-scroll-hint{display:none!important}}
+
+/* One shared lockup and optical scale in the header and footer, on every route. */
+.topbar > .brand.brand-lockup,footer .brand.brand-lockup{display:inline-flex;align-items:center;gap:9px;flex:0 0 auto;width:max-content;max-width:100%;min-height:52px;color:#102b4a;font-family:Avenir,'Avenir Next',system-ui,-apple-system,sans-serif;font-size:28px;font-weight:800;line-height:1;letter-spacing:-1.1px;text-decoration:none;white-space:nowrap}
+.brand.brand-lockup .brand-symbol,.brand.brand-lockup .brand-mark{display:block;width:52px;height:52px;flex:0 0 52px;margin:0;max-width:none;filter:none;opacity:1}
+.brand.brand-lockup .brand-name{display:block;color:#102b4a;line-height:1.15}
+.brand.brand-lockup .brand-digits{color:#ce1936;letter-spacing:-1.5px;margin-left:1px}
+.brand.brand-lockup:hover .brand-name{color:#004b91}
+.brand.brand-lockup:focus-visible{outline:3px solid #005da8;outline-offset:5px;border-radius:6px}
+@media(max-width:700px){
+ .topbar > .brand.brand-lockup,footer .brand.brand-lockup{font-size:25px;min-height:46px;gap:7px;letter-spacing:-1px}
+ .brand.brand-lockup .brand-symbol,.brand.brand-lockup .brand-mark{width:46px;height:46px;flex-basis:46px}
+}
+@media print{.brand.brand-lockup{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
+
 
 
 
@@ -1441,6 +1509,7 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
 
 
 <script type="module" src="/calendar-tools/mobile-layout.mjs?v=20261022-1"></script>
+
 
 <link rel="icon" href="/icon.png" type="image/png" sizes="512x512">
 <script type="application/json" id="k365-static-config">{"scripts":["/assets/application-f427bb33.js","/assets/planners-2d7bec70.js","/assets/navigation-3b014eab.js"],"holidays":"/assets/holidays-0af57d2c.js","vacation":"/assets/vacation-ecc923a5.js","countdown":"/assets/countdown-164dee2d.js","shift":"/assets/shift_schedule-3b97ecc2.js"}</script><link rel="preload" as="script" href="/assets/application-f427bb33.js">
@@ -1486,7 +1555,9 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
 <a class="skip" href="#vsebina">Na vsebino</a>
 <!-- BEGIN app/views/layouts/_navigation.html.erb
 --><header class="topbar">
-  <a class="brand" href="/" aria-label="Koledar365 – domov"><span class="brand-symbol"><img width="44" height="44" alt="" class="brand-mark" aria-hidden="true" src="/visuals/brand-calendar-v3.71d101697df6153f.svg"></span> Koledar<span>365</span></a>
+  <!-- BEGIN app/views/layouts/_brand.html.erb
+--><a class="brand brand-lockup" href="/" aria-label="Koledar365 – domov"><span class="brand-symbol"><img width="52" height="52" alt="" class="brand-mark" aria-hidden="true" src="/visuals/brand-calendar-v3.20014959d7558e83.svg"></span><span class="brand-name">Koledar<span class="brand-digits">365</span></span></a>
+<!-- END app/views/layouts/_brand.html.erb -->
   <nav aria-label="Glavna navigacija">
       <a href="/koledar/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calendar" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calendar"></use></svg><span>Koledar</span></a>
       <a href="/prazniki/"><svg class="ui-icon icon-gift" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#gift" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#gift"></use></svg><span>Prazniki</span></a>
@@ -1564,11 +1635,43 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
 <h1>Slovenski koledar za vaše načrte.</h1>
 <p>Prazniki, osebni dogodki in orodja za vsak dan.</p>
 </div>
-<a class="button subtle" href="/ustvari-koledar/"><svg class="ui-icon icon-settings" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#settings" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#settings"></use></svg> Ustvari svoj koledar</a>
+<!-- BEGIN app/views/pages/_calendar_studio_cta.html.erb
+--><a class="button calendar-studio-cta" href="/ustvari-koledar/">
+  <svg class="calendar-studio-cta__art" viewbox="0 0 96 96" width="80" height="80" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <lineargradient id="studio-cta-paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"></stop><stop offset="1" stop-color="#e7edf5"></stop></lineargradient>
+      <lineargradient id="studio-cta-cover" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#2375bc"></stop><stop offset="1" stop-color="#10447b"></stop></lineargradient>
+      <lineargradient id="studio-cta-metal" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#60768a"></stop><stop offset=".45" stop-color="#f6fbff"></stop><stop offset="1" stop-color="#526a80"></stop></lineargradient>
+      <filter id="studio-cta-shadow" x="-.3" y="-.3" width="1.6" height="1.7"><fedropshadow dx="0" dy="3" stddeviation="3" flood-color="#153c61" flood-opacity=".2"></fedropshadow></filter>
+    </defs>
+    <ellipse cx="46" cy="85" rx="33" ry="5" fill="#173d65" opacity=".1"></ellipse>
+    <g transform="rotate(-6 43 48)" filter="url(#studio-cta-shadow)">
+      <rect x="13" y="19" width="62" height="64" rx="7" fill="#ccd6e2" stroke="#9cabbc"></rect>
+      <rect x="12" y="15" width="62" height="65" rx="7" fill="url(#studio-cta-paper)" stroke="#b4c6d9"></rect>
+      <path d="M19 15h48a7 7 0 0 1 7 7v13H12V22a7 7 0 0 1 7-7Z" fill="url(#studio-cta-cover)"></path>
+      <path d="M16 35h54" stroke="#fff" opacity=".3"></path>
+      <g fill="#0b3157"><circle cx="27" cy="22" r="3.3"></circle><circle cx="59" cy="22" r="3.3"></circle></g>
+      <g fill="url(#studio-cta-metal)" stroke="#536c83" stroke-width=".8"><rect x="24.8" y="8" width="4.4" height="17" rx="2.2"></rect><rect x="56.8" y="8" width="4.4" height="17" rx="2.2"></rect></g>
+      <path d="M17 40h52M17 75h52" stroke="#d4e0ec"></path>
+      <g fill="#c5d5e4"><rect x="20" y="44" width="7" height="6" rx="1.4"></rect><rect x="32" y="44" width="7" height="6" rx="1.4"></rect><rect x="44" y="44" width="7" height="6" rx="1.4"></rect><rect x="56" y="44" width="7" height="6" rx="1.4"></rect><rect x="20" y="55" width="7" height="6" rx="1.4"></rect><rect x="44" y="55" width="7" height="6" rx="1.4"></rect><rect x="56" y="55" width="7" height="6" rx="1.4"></rect><rect x="20" y="66" width="7" height="6" rx="1.4"></rect><rect x="32" y="66" width="7" height="6" rx="1.4"></rect><rect x="44" y="66" width="7" height="6" rx="1.4"></rect><rect x="56" y="66" width="7" height="6" rx="1.4"></rect></g>
+      <rect x="30" y="53" width="11" height="10" rx="3" fill="#cf2842"></rect><path d="m32.5 58 2 2 3.5-4" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M17 78h50" stroke="#fff" stroke-width="1.5"></path>
+    </g>
+    <g transform="rotate(34 73 57)" filter="url(#studio-cta-shadow)">
+      <path d="M69 32h9v40l-4.5 12L69 72Z" fill="#e9bd80" stroke="#b1834e" stroke-width=".7"></path>
+      <path d="M69 32h9v39h-9Z" fill="#075cb1"></path><path d="M70.5 33h2v37h-2Z" fill="#71b4ee"></path>
+      <path d="m71.8 79 1.7 5 1.8-5Z" fill="#26394e"></path>
+      <path d="M69 31v-4a4.5 4.5 0 0 1 9 0v4Z" fill="#d6314d"></path><path d="M69 31h9v5h-9Z" fill="url(#studio-cta-metal)"></path>
+    </g>
+  </svg>
+  <span class="calendar-studio-cta__copy"><strong>Ustvari svoj koledar</strong><small>Vaše barve. Vaši dogodki. Vaš slog.</small></span>
+  <svg class="calendar-studio-cta__arrow" viewbox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</a>
+<!-- END app/views/pages/_calendar_studio_cta.html.erb -->
 </div>
 <!-- BEGIN app/views/pages/_home.html.erb
 --><div class="workspace" data-home-year="2029" data-home-month="10" data-home-view="day">
-<aside class="left-panel"><!-- BEGIN app/views/pages/_city_card.html.erb
+<aside class="left-panel" aria-label="Krajevni podatki in koledarji"><!-- BEGIN app/views/pages/_city_card.html.erb
 --><section class="panel today-panel" id="city-card" data-cities-url="/cities.json" data-weather-state="loading">
   <header class="today-heading">
     <span class="today-location" aria-hidden="true"><svg viewbox="0 0 48 56" fill="none"><defs><lineargradient id="today-pin-red" x1="9" y1="4" x2="37" y2="43" gradientunits="userSpaceOnUse"><stop stop-color="#ff6673"></stop><stop offset="1" stop-color="#c9203b"></stop></lineargradient></defs><ellipse cx="24" cy="51" rx="10" ry="3" fill="#c9203b" opacity=".13"></ellipse><path d="M24 3C13.5 3 6 10.4 6 20.2c0 12 18 27.3 18 27.3s18-15.3 18-27.3C42 10.4 34.5 3 24 3Z" fill="url(#today-pin-red)"></path><circle cx="24" cy="20" r="7.5" fill="white"></circle><path d="M12 18a12.5 12.5 0 0 1 10-9" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity=".5"></path></svg></span>
@@ -1734,7 +1837,7 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
 <button data-print><svg class="ui-icon icon-print" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#print" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#print"></use></svg> Natisni</button><a class="button" href="/koledar-za-tiskanje/?date=2029-10-01&amp;month=10&amp;type=daily&amp;year=2029" data-selected-calendar-editor>Uredi</a><a class="button" href="/koledar-za-tiskanje/?date=2029-10-01&amp;month=10&amp;type=daily&amp;year=2029" data-selected-calendar-download><svg class="ui-icon icon-download" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#download" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#download"></use></svg> Prenesi</a>
 </div>
 </div></section></section>
-<aside class="right-panel" id="personal-planner" data-selected-date="2029-10-01"><!-- BEGIN app/views/pages/_personal.html.erb
+<aside aria-label="Osebni načrtovalnik" class="right-panel" id="personal-planner" data-selected-date="2029-10-01"><!-- BEGIN app/views/pages/_personal.html.erb
 --><section class="panel"><h2 id="personal-title">
 <svg class="ui-icon icon-check" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#check" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#check"></use></svg> Moj dan</h2>
 <p><strong>1. oktober 2029</strong></p>
@@ -1796,7 +1899,7 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
 </div>
 </section>
 <!-- END app/views/pages/_expansion_discovery.html.erb -->
-<section class="panel discovery"><div class="section-heading">
+<section class="panel discovery home-discovery"><div class="section-heading">
 <h2>Več možnosti. Vse na enem mestu.</h2>
 <a href="/orodja/">Vsa orodja →</a>
 </div>
@@ -1813,6 +1916,14 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
 <svg class="ui-icon icon-calculator" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calculator" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calculator"></use></svg> Datumski kalkulator</h3>
 <p>Preštejte dneve in poiščite pravi datum.</p>
 <span>Izračunaj →</span></a>
+<article class="feature feature--holiday">
+<h3>
+<svg class="ui-icon icon-holidays" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#holidays" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#holidays"></use></svg> Naslednji dela prost dan</h3>
+<p class="holiday-feature__date"><time datetime="2026-10-31">31. 10.</time><span>Dan reformacije</span></p>
+<div class="holiday-feature__footer">
+<a href="/prazniki/dan-reformacije/">Podrobnosti praznika →</a><span>Čez 9 dni</span>
+</div>
+</article>
 </div>
 <div class="quick-links">
 <a href="/horoskop/" class="home-zodiac-link"><img width="24" height="24" alt="" class="ui-icon icon-zodiac" aria-hidden="true" src="/horoscope/art/wheel-icon-v1.f0a3a103957daf9e.svg"> Dnevni horoskop in znamenja</a><a href="/pomembni-dnevi/"><svg class="ui-icon icon-gift" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#gift" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#gift"></use></svg> Pomembni dnevi</a><a href="/lunin-koledar/"><svg class="ui-icon icon-moon" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#moon" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#moon"></use></svg> Lunin koledar</a><a href="/nacrtovalnik-dopusta/"><svg class="ui-icon icon-vacation" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#vacation" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#vacation"></use></svg> Načrtovalnik dopusta</a><a href="/prazen-koledar/"><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#note" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#note"></use></svg> Prazen koledar</a>
@@ -1822,7 +1933,53 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
 
 <!-- END app/views/pages/show.html.erb -->
 </main>
-<footer><a class="brand small" href="/"><span class="brand-symbol"><img width="44" height="44" alt="" class="brand-mark" aria-hidden="true" src="/visuals/brand-calendar-v3.71d101697df6153f.svg"></span> Koledar<span>365</span></a><a href="/o-nas/">O nas</a><a href="/zasebnost/">Zasebnost</a><a href="/viri-in-metodologija/">Viri in metodologija</a><a href="/kontakt/">Kontakt</a><a href="/fotografije-in-licence/">Fotografije in licence</a><a href="/pogoji-uporabe/">Pogoji uporabe</a><button class="text-button" data-cookie-open>Nastavitve piškotkov</button><span>© 2026 Koledar365</span></footer>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__main">
+      <div class="site-footer__brand">
+        <!-- BEGIN app/views/layouts/_brand.html.erb
+--><a class="brand brand-lockup" href="/" aria-label="Koledar365 – domov"><span class="brand-symbol"><img width="52" height="52" alt="" class="brand-mark" aria-hidden="true" src="/visuals/brand-calendar-v3.20014959d7558e83.svg"></span><span class="brand-name">Koledar<span class="brand-digits">365</span></span></a>
+<!-- END app/views/layouts/_brand.html.erb -->
+        <p>Koledarji in uporabna orodja za lažje načrtovanje vsakdanjih dni.</p>
+      </div>
+      <nav class="site-footer__groups" aria-label="Povezave v nogi strani">
+        <section class="site-footer__group" aria-labelledby="footer-calendars">
+          <h2 id="footer-calendars">Koledarji</h2>
+          <a href="/koledar/">Letni in mesečni koledar</a>
+          <a href="/prazniki/">Prazniki v Sloveniji</a>
+          <a href="/lunin-koledar/">Lunin koledar</a>
+          <a href="/pomembni-dnevi/">Pomembni dnevi</a>
+        </section>
+        <section class="site-footer__group" aria-labelledby="footer-tools">
+          <h2 id="footer-tools">Orodja za načrtovanje</h2>
+          <a href="/soncni-vzhod-in-zahod/">Sončni vzhod in zahod</a>
+          <a href="/razpored-izmen/">Razpored izmen</a>
+          <a href="/datumski-kalkulator/">Datumski kalkulator</a>
+          <a href="/kalkulator-delovnih-dni/">Kalkulator delovnih dni</a>
+          <a href="/nacrtovalnik-dopusta/">Načrtovalnik dopusta</a>
+        </section>
+        <section class="site-footer__group" aria-labelledby="footer-about">
+          <h2 id="footer-about">O Koledarju365</h2>
+          <a href="/o-nas/">O nas</a>
+          <a href="/viri-in-metodologija/">Viri in metodologija</a>
+          <a href="/fotografije-in-licence/">Fotografije in licence</a>
+          <a href="/zasebnost/">Zasebnost</a>
+          <a href="/pogoji-uporabe/">Pogoji uporabe</a>
+          <button class="site-footer__cookie-link" type="button" data-cookie-open>Nastavitve piškotkov</button>
+        </section>
+        <section class="site-footer__group site-footer__group--contact" aria-labelledby="footer-contact">
+          <h2 id="footer-contact">Kontakt</h2>
+          <p>Imate predlog ali ste opazili napako? Z veseljem bomo preverili.</p>
+          <a class="site-footer__contact-link" href="/kontakt/">Pišite nam <span aria-hidden="true">→</span></a>
+          <a href="mailto:koledar365@gmail.com">koledar365@gmail.com</a>
+        </section>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+<span>© 2026 Koledar365 · Vse pravice pridržane.</span><span>Z ljubeznijo do Slovenije. <span aria-hidden="true">🇸🇮 ❤️</span></span>
+</div>
+  </div>
+</footer>
 <!-- BEGIN app/views/layouts/_cookies.html.erb
 --><section id="cookies" class="cookie-bar" aria-labelledby="cookie-title" aria-describedby="cookie-intro" hidden>
   <div class="cookie-bar-main">

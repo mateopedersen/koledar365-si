@@ -1,0 +1,49 @@
+
+Running 12 tests using 2 workers
+
+(node:72289) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72288) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72289) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72288) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths (557ms)
+  ✓   2 [chromium] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /solske-pocitnice/ contains complete native selectors at phone, tablet and desktop widths (658ms)
+(node:72307) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72307) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 [chromium] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records (918ms)
+(node:72322) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72322) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   4 [webkit] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /solske-pocitnice/ contains complete native selectors at phone, tablet and desktop widths (992ms)
+  ✓   5 [webkit] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths (1.0s)
+(node:72340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [webkit] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records (1.5s)
+(node:72348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [android-chromium] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /solske-pocitnice/ contains complete native selectors at phone, tablet and desktop widths (1.1s)
+  ✓   8 [android-chromium] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths (899ms)
+(node:72354) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72354) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [android-chromium] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records (1.2s)
+(node:72366) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72366) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 [iphone-webkit] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /solske-pocitnice/ contains complete native selectors at phone, tablet and desktop widths (1.2s)
+  ✓  11 [iphone-webkit] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths (1.2s)
+  ✓  12 [iphone-webkit] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records (1.5s)
+
+  12 passed (9.4s)

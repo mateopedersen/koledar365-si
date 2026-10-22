@@ -1,0 +1,18 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mWarning: Your working directory is a git repo and has uncommitted changes[0m
+
+  To silence this warning, pass in --commit-dirty=true
+
+
+✨ Compiled Worker successfully
+Uploading... (11535/11956)
+Uploading... (11675/11956)
+Uploading... (11815/11956)
+Uploading... (11956/11956)
+✨ Success! Uploaded 421 files (11535 already uploaded) (33.47 sec)
+
+✨ Uploading _headers
+✨ Uploading _redirects
+✨ Uploading Functions bundle
+✨ Uploading _routes.json
+🌎 Deploying...
+✨ Deployment complete! Take a peek over at https://c4c725ee.koledar365-si.pages.dev

@@ -1,0 +1,18 @@
+{
+  "run": "https://github.com/mateopedersen/koledar365-si/actions/runs/39812543509",
+  "status": "success",
+  "head": "0457311e511e4d0fb0229421653e4376aeb9da8c",
+  "tested_merge": "8072636f2f686fcd58071af6b9d65549508976cc",
+  "production_source": "b4fecfc89125422e68408b57e562391c8ee147ac",
+  "publication": "a30dcd987baf951ac352b5d335784b4e901b533e",
+  "stats": {
+    "startTime": "2026-10-22T16:27:16.058Z",
+    "duration": 1185361.601,
+    "expected": 436,
+    "skipped": 8,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "errors": [],
+  "artifact_id": 12441748804
+}

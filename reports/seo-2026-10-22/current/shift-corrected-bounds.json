@@ -1,0 +1,125 @@
+{
+  "method": "Actual live HTML with candidate source stylesheet; same content clipping criteria, three fallback fonts",
+  "rows": [
+    {
+      "font": "Arial",
+      "width": 320,
+      "viewport": 320,
+      "document": 320,
+      "columns": "268px",
+      "overflow": []
+    },
+    {
+      "font": "Arial",
+      "width": 390,
+      "viewport": 390,
+      "document": 390,
+      "columns": "338px",
+      "overflow": []
+    },
+    {
+      "font": "Arial",
+      "width": 768,
+      "viewport": 768,
+      "document": 768,
+      "columns": "658.5px",
+      "overflow": []
+    },
+    {
+      "font": "Arial",
+      "width": 1024,
+      "viewport": 1024,
+      "document": 1024,
+      "columns": "384.594px 470.062px",
+      "overflow": []
+    },
+    {
+      "font": "Arial",
+      "width": 1440,
+      "viewport": 1440,
+      "document": 1440,
+      "columns": "548.094px 669.906px",
+      "overflow": []
+    },
+    {
+      "font": "Verdana",
+      "width": 320,
+      "viewport": 320,
+      "document": 320,
+      "columns": "268px",
+      "overflow": []
+    },
+    {
+      "font": "Verdana",
+      "width": 390,
+      "viewport": 390,
+      "document": 390,
+      "columns": "338px",
+      "overflow": []
+    },
+    {
+      "font": "Verdana",
+      "width": 768,
+      "viewport": 768,
+      "document": 768,
+      "columns": "658.5px",
+      "overflow": []
+    },
+    {
+      "font": "Verdana",
+      "width": 1024,
+      "viewport": 1024,
+      "document": 1024,
+      "columns": "384.594px 470.062px",
+      "overflow": []
+    },
+    {
+      "font": "Verdana",
+      "width": 1440,
+      "viewport": 1440,
+      "document": 1440,
+      "columns": "548.094px 669.906px",
+      "overflow": []
+    },
+    {
+      "font": "sans-serif",
+      "width": 320,
+      "viewport": 320,
+      "document": 320,
+      "columns": "268px",
+      "overflow": []
+    },
+    {
+      "font": "sans-serif",
+      "width": 390,
+      "viewport": 390,
+      "document": 390,
+      "columns": "338px",
+      "overflow": []
+    },
+    {
+      "font": "sans-serif",
+      "width": 768,
+      "viewport": 768,
+      "document": 768,
+      "columns": "658.5px",
+      "overflow": []
+    },
+    {
+      "font": "sans-serif",
+      "width": 1024,
+      "viewport": 1024,
+      "document": 1024,
+      "columns": "384.594px 470.062px",
+      "overflow": []
+    },
+    {
+      "font": "sans-serif",
+      "width": 1440,
+      "viewport": 1440,
+      "document": 1440,
+      "columns": "548.094px 669.906px",
+      "overflow": []
+    }
+  ]
+}

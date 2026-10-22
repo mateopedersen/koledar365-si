@@ -1,0 +1,66 @@
+{
+  "protocol": "Lighthouse12.8.2 production HTTPS mobile simulation; single samples; combined main release; not field metrics",
+  "release": "a30dcd987baf951ac352b5d335784b4e901b533e",
+  "rows": [
+    {
+      "path": "/",
+      "performance_before": 96,
+      "performance_after": 93,
+      "lcp_before_ms": 2476,
+      "lcp_after_ms": 2745,
+      "tbt_after_ms": 0,
+      "accessibility_after": 100,
+      "seo_after": 100
+    },
+    {
+      "path": "/koledar/2028/februar/",
+      "performance_before": 95,
+      "performance_after": 98,
+      "lcp_before_ms": 2432,
+      "lcp_after_ms": 1997,
+      "tbt_after_ms": 0,
+      "accessibility_after": 100,
+      "seo_after": 100
+    },
+    {
+      "path": "/lunin-koledar/2029/avgust/",
+      "performance_before": 94,
+      "performance_after": 96,
+      "lcp_before_ms": 2623,
+      "lcp_after_ms": 2350,
+      "tbt_after_ms": 0,
+      "accessibility_after": 100,
+      "seo_after": 100
+    },
+    {
+      "path": "/delovni-dnevi/2028/",
+      "performance_before": 93,
+      "performance_after": 98,
+      "lcp_before_ms": 2621,
+      "lcp_after_ms": 1992,
+      "tbt_after_ms": 0,
+      "accessibility_after": 100,
+      "seo_after": 100
+    },
+    {
+      "path": "/solske-pocitnice/",
+      "performance_before": 86,
+      "performance_after": 93,
+      "lcp_before_ms": 3756,
+      "lcp_after_ms": 2698,
+      "tbt_after_ms": 0,
+      "accessibility_after": 100,
+      "seo_after": 100
+    },
+    {
+      "path": "/datumski-kalkulator/",
+      "performance_before": 97,
+      "performance_after": 99,
+      "lcp_before_ms": 2180,
+      "lcp_after_ms": 1926,
+      "tbt_after_ms": 0,
+      "accessibility_after": 100,
+      "seo_after": 100
+    }
+  ]
+}

@@ -1,0 +1,391 @@
+
+Running 32 tests using 2 workers
+
+(node:72133) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72134) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72133) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72134) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › test/browser/mobile-control-layout.spec.mjs:49:1 › mobile school weekday tabs remain readable and expose full accessible names (3.4s)
+  ✓   2 [chromium] › test/browser/mobile-control-layout.spec.mjs:18:1 › mobile garden actions and native date fields fit their rows before and after entry (3.5s)
+  ✓   3 [chromium] › test/browser/mobile-control-layout.spec.mjs:67:1 › studio download and template names fit the narrowest phone (203ms)
+  ✓   4 [chromium] › test/browser/shift-planner.spec.mjs:24:1 › fixed shift type initializes its preview and backup without a selector (327ms)
+  ✓   6 [chromium] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /solske-pocitnice/ contains complete native selectors at phone, tablet and desktop widths (647ms)
+  ✓   5 [chromium] › test/browser/shift-planner.spec.mjs:34:1 › shift period query preserves the fixed type and generated shifts export to JSON and ICS (1.4s)
+  ✘   7 [chromium] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths (10.2s)
+(node:72154) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72154) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   8 [chromium] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records (10.1s)
+(node:72162) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72162) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [webkit] › test/browser/mobile-control-layout.spec.mjs:18:1 › mobile garden actions and native date fields fit their rows before and after entry (1.1s)
+  ✓  11 [webkit] › test/browser/mobile-control-layout.spec.mjs:67:1 › studio download and template names fit the narrowest phone (351ms)
+  ✓  10 [webkit] › test/browser/mobile-control-layout.spec.mjs:49:1 › mobile school weekday tabs remain readable and expose full accessible names (806ms)
+  ✓  12 [webkit] › test/browser/shift-planner.spec.mjs:24:1 › fixed shift type initializes its preview and backup without a selector (463ms)
+  ✓  14 [webkit] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /solske-pocitnice/ contains complete native selectors at phone, tablet and desktop widths (2.5s)
+  ✓  13 [webkit] › test/browser/shift-planner.spec.mjs:34:1 › shift period query preserves the fixed type and generated shifts export to JSON and ICS (5.5s)
+  ✘  15 [webkit] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths (11.5s)
+(node:72192) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72192) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  17 [android-chromium] › test/browser/mobile-control-layout.spec.mjs:18:1 › mobile garden actions and native date fields fit their rows before and after entry (717ms)
+  ✘  16 [webkit] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records (10.3s)
+(node:72199) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  18 [android-chromium] › test/browser/mobile-control-layout.spec.mjs:49:1 › mobile school weekday tabs remain readable and expose full accessible names (461ms)
+(node:72199) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  19 [android-chromium] › test/browser/shift-planner.spec.mjs:24:1 › fixed shift type initializes its preview and backup without a selector (301ms)
+  ✓  20 [android-chromium] › test/browser/mobile-control-layout.spec.mjs:67:1 › studio download and template names fit the narrowest phone (312ms)
+  ✓  21 [android-chromium] › test/browser/shift-planner.spec.mjs:34:1 › shift period query preserves the fixed type and generated shifts export to JSON and ICS (1.4s)
+  ✓  22 [android-chromium] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /solske-pocitnice/ contains complete native selectors at phone, tablet and desktop widths (1.2s)
+  ✘  23 [android-chromium] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths (10.3s)
+  ✘  24 [android-chromium] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records (10.3s)
+(node:72223) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72223) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:72224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  26 [iphone-webkit] › test/browser/mobile-control-layout.spec.mjs:49:1 › mobile school weekday tabs remain readable and expose full accessible names (1.2s)
+  ✓  25 [iphone-webkit] › test/browser/mobile-control-layout.spec.mjs:18:1 › mobile garden actions and native date fields fit their rows before and after entry (1.5s)
+  ✓  27 [iphone-webkit] › test/browser/mobile-control-layout.spec.mjs:67:1 › studio download and template names fit the narrowest phone (378ms)
+  ✓  28 [iphone-webkit] › test/browser/shift-planner.spec.mjs:24:1 › fixed shift type initializes its preview and backup without a selector (434ms)
+  ✓  30 [iphone-webkit] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /solske-pocitnice/ contains complete native selectors at phone, tablet and desktop widths (2.7s)
+  ✓  29 [iphone-webkit] › test/browser/shift-planner.spec.mjs:34:1 › shift period query preserves the fixed type and generated shifts export to JSON and ICS (3.7s)
+  ✘  31 [iphone-webkit] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths (10.8s)
+  ✘  32 [iphone-webkit] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records (10.3s)
+
+
+  1) [chromium] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveAttribute[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  locator('html')
+    Expected: [32m"true"[39m
+    Received: [31m""[39m
+    Timeout:  10000ms
+
+    Call log:
+    [2m  - Expect "toHaveAttribute" with timeout 10000ms[22m
+    [2m  - waiting for locator('html')[22m
+    [2m    14 × locator resolved to <html lang="sl">…</html>[22m
+    [2m       - unexpected value "null"[22m
+
+
+       5 |   const errors=[];page.on('pageerror',error=>errors.push(error.message));
+       6 |   await page.goto(route,{waitUntil:'load'});
+    >  7 |   await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
+         |                                      ^
+       8 |   await page.evaluate(()=>document.fonts.ready);
+       9 |   const university=page.locator('[data-university-select]');
+      10 |   if(route==='/solske-pocitnice/'){
+        at /private/tmp/k365-seo-final-merge/test/browser/tablet-controls-layout.spec.mjs:7:38
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/tablet-controls-layout--od-1e8b5-e-tablet-and-desktop-widths-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/tablet-controls-layout--od-1e8b5-e-tablet-and-desktop-widths-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/tablet-controls-layout--od-1e8b5-e-tablet-and-desktop-widths-chromium/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/tablet-controls-layout--od-1e8b5-e-tablet-and-desktop-widths-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveAttribute[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  locator('html')
+    Expected: [32m"true"[39m
+    Received: [31m""[39m
+    Timeout:  10000ms
+
+    Call log:
+    [2m  - Expect "toHaveAttribute" with timeout 10000ms[22m
+    [2m  - waiting for locator('html')[22m
+    [2m    14 × locator resolved to <html lang="sl">…</html>[22m
+    [2m       - unexpected value "null"[22m
+
+
+      34 |   for(const route of ['/lunin-mrk/','/solske-pocitnice/','/odstevanje/']){
+      35 |    await page.goto(route,{waitUntil:'load'});
+    > 36 |    await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
+         |                                       ^
+      37 |    await page.addStyleTag({content:'main,main *{font-family:monospace!important}.mobile-record-table .astro-status{font-size:18px!important}'});
+      38 |    if(route==='/solske-pocitnice/'){
+      39 |     const select=page.locator('[data-university-select]');
+        at /private/tmp/k365-seo-final-merge/test/browser/tablet-controls-layout.spec.mjs:36:39
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/tablet-controls-layout-wid-02236-ilters-inside-their-records-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/tablet-controls-layout-wid-02236-ilters-inside-their-records-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/tablet-controls-layout-wid-02236-ilters-inside-their-records-chromium/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/tablet-controls-layout-wid-02236-ilters-inside-their-records-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [webkit] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveAttribute[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  locator('html')
+    Expected: [32m"true"[39m
+    Received: [31m""[39m
+    Timeout:  10000ms
+
+    Call log:
+    [2m  - Expect "toHaveAttribute" with timeout 10000ms[22m
+    [2m  - waiting for locator('html')[22m
+    [2m    14 × locator resolved to <html lang="sl">…</html>[22m
+    [2m       - unexpected value "null"[22m
+
+
+       5 |   const errors=[];page.on('pageerror',error=>errors.push(error.message));
+       6 |   await page.goto(route,{waitUntil:'load'});
+    >  7 |   await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
+         |                                      ^
+       8 |   await page.evaluate(()=>document.fonts.ready);
+       9 |   const university=page.locator('[data-university-select]');
+      10 |   if(route==='/solske-pocitnice/'){
+        at /private/tmp/k365-seo-final-merge/test/browser/tablet-controls-layout.spec.mjs:7:38
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/tablet-controls-layout--od-1e8b5-e-tablet-and-desktop-widths-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/tablet-controls-layout--od-1e8b5-e-tablet-and-desktop-widths-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/tablet-controls-layout--od-1e8b5-e-tablet-and-desktop-widths-webkit/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/tablet-controls-layout--od-1e8b5-e-tablet-and-desktop-widths-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [webkit] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveAttribute[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  locator('html')
+    Expected: [32m"true"[39m
+    Received: [31m""[39m
+    Timeout:  10000ms
+
+    Call log:
+    [2m  - Expect "toHaveAttribute" with timeout 10000ms[22m
+    [2m  - waiting for locator('html')[22m
+    [2m    14 × locator resolved to <html lang="sl">…</html>[22m
+    [2m       - unexpected value "null"[22m
+
+
+      34 |   for(const route of ['/lunin-mrk/','/solske-pocitnice/','/odstevanje/']){
+      35 |    await page.goto(route,{waitUntil:'load'});
+    > 36 |    await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
+         |                                       ^
+      37 |    await page.addStyleTag({content:'main,main *{font-family:monospace!important}.mobile-record-table .astro-status{font-size:18px!important}'});
+      38 |    if(route==='/solske-pocitnice/'){
+      39 |     const select=page.locator('[data-university-select]');
+        at /private/tmp/k365-seo-final-merge/test/browser/tablet-controls-layout.spec.mjs:36:39
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/tablet-controls-layout-wid-02236-ilters-inside-their-records-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/tablet-controls-layout-wid-02236-ilters-inside-their-records-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/tablet-controls-layout-wid-02236-ilters-inside-their-records-webkit/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/tablet-controls-layout-wid-02236-ilters-inside-their-records-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [android-chromium] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveAttribute[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  locator('html')
+    Expected: [32m"true"[39m
+    Received: [31m""[39m
+    Timeout:  10000ms
+
+    Call log:
+    [2m  - Expect "toHaveAttribute" with timeout 10000ms[22m
+    [2m  - waiting for locator('html')[22m
+    [2m    14 × locator resolved to <html lang="sl">…</html>[22m
+    [2m       - unexpected value "null"[22m
+
+
+       5 |   const errors=[];page.on('pageerror',error=>errors.push(error.message));
+       6 |   await page.goto(route,{waitUntil:'load'});
+    >  7 |   await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
+         |                                      ^
+       8 |   await page.evaluate(()=>document.fonts.ready);
+       9 |   const university=page.locator('[data-university-select]');
+      10 |   if(route==='/solske-pocitnice/'){
+        at /private/tmp/k365-seo-final-merge/test/browser/tablet-controls-layout.spec.mjs:7:38
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/tablet-controls-layout--od-1e8b5-e-tablet-and-desktop-widths-android-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/tablet-controls-layout--od-1e8b5-e-tablet-and-desktop-widths-android-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/tablet-controls-layout--od-1e8b5-e-tablet-and-desktop-widths-android-chromium/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/tablet-controls-layout--od-1e8b5-e-tablet-and-desktop-widths-android-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [android-chromium] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveAttribute[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  locator('html')
+    Expected: [32m"true"[39m
+    Received: [31m""[39m
+    Timeout:  10000ms
+
+    Call log:
+    [2m  - Expect "toHaveAttribute" with timeout 10000ms[22m
+    [2m  - waiting for locator('html')[22m
+    [2m    14 × locator resolved to <html lang="sl">…</html>[22m
+    [2m       - unexpected value "null"[22m
+
+
+      34 |   for(const route of ['/lunin-mrk/','/solske-pocitnice/','/odstevanje/']){
+      35 |    await page.goto(route,{waitUntil:'load'});
+    > 36 |    await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
+         |                                       ^
+      37 |    await page.addStyleTag({content:'main,main *{font-family:monospace!important}.mobile-record-table .astro-status{font-size:18px!important}'});
+      38 |    if(route==='/solske-pocitnice/'){
+      39 |     const select=page.locator('[data-university-select]');
+        at /private/tmp/k365-seo-final-merge/test/browser/tablet-controls-layout.spec.mjs:36:39
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/tablet-controls-layout-wid-02236-ilters-inside-their-records-android-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/tablet-controls-layout-wid-02236-ilters-inside-their-records-android-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/tablet-controls-layout-wid-02236-ilters-inside-their-records-android-chromium/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/tablet-controls-layout-wid-02236-ilters-inside-their-records-android-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [iphone-webkit] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveAttribute[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  locator('html')
+    Expected: [32m"true"[39m
+    Received: [31m""[39m
+    Timeout:  10000ms
+
+    Call log:
+    [2m  - Expect "toHaveAttribute" with timeout 10000ms[22m
+    [2m  - waiting for locator('html')[22m
+    [2m    14 × locator resolved to <html lang="sl">…</html>[22m
+    [2m       - unexpected value "null"[22m
+
+
+       5 |   const errors=[];page.on('pageerror',error=>errors.push(error.message));
+       6 |   await page.goto(route,{waitUntil:'load'});
+    >  7 |   await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
+         |                                      ^
+       8 |   await page.evaluate(()=>document.fonts.ready);
+       9 |   const university=page.locator('[data-university-select]');
+      10 |   if(route==='/solske-pocitnice/'){
+        at /private/tmp/k365-seo-final-merge/test/browser/tablet-controls-layout.spec.mjs:7:38
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/tablet-controls-layout--od-1e8b5-e-tablet-and-desktop-widths-iphone-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/tablet-controls-layout--od-1e8b5-e-tablet-and-desktop-widths-iphone-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/tablet-controls-layout--od-1e8b5-e-tablet-and-desktop-widths-iphone-webkit/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/tablet-controls-layout--od-1e8b5-e-tablet-and-desktop-widths-iphone-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [iphone-webkit] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveAttribute[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  locator('html')
+    Expected: [32m"true"[39m
+    Received: [31m""[39m
+    Timeout:  10000ms
+
+    Call log:
+    [2m  - Expect "toHaveAttribute" with timeout 10000ms[22m
+    [2m  - waiting for locator('html')[22m
+    [2m    14 × locator resolved to <html lang="sl">…</html>[22m
+    [2m       - unexpected value "null"[22m
+
+
+      34 |   for(const route of ['/lunin-mrk/','/solske-pocitnice/','/odstevanje/']){
+      35 |    await page.goto(route,{waitUntil:'load'});
+    > 36 |    await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
+         |                                       ^
+      37 |    await page.addStyleTag({content:'main,main *{font-family:monospace!important}.mobile-record-table .astro-status{font-size:18px!important}'});
+      38 |    if(route==='/solske-pocitnice/'){
+      39 |     const select=page.locator('[data-university-select]');
+        at /private/tmp/k365-seo-final-merge/test/browser/tablet-controls-layout.spec.mjs:36:39
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/tablet-controls-layout-wid-02236-ilters-inside-their-records-iphone-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/tablet-controls-layout-wid-02236-ilters-inside-their-records-iphone-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/tablet-controls-layout-wid-02236-ilters-inside-their-records-iphone-webkit/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/tablet-controls-layout-wid-02236-ilters-inside-their-records-iphone-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8 failed
+    [chromium] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths 
+    [chromium] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records 
+    [webkit] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths 
+    [webkit] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records 
+    [android-chromium] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths 
+    [android-chromium] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records 
+    [iphone-webkit] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths 
+    [iphone-webkit] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records 
+  24 passed (1.1m)

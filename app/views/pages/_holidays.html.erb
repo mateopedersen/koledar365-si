@@ -81,7 +81,7 @@
   <section class="holiday-downloads" id="holiday-downloads" aria-labelledby="holiday-print-title">
     <div class="page-heading holiday-print-heading"><span class="eyebrow">VAŠI PRAZNIKI. TUDI NA PAPIRJU.</span><h2 id="holiday-print-title">Izberite svojo <strong>najljubšo predlogo.</strong></h2><p><%= gallery_description %></p></div>
     <div class="download-workspace" data-download-workspace>
-      <aside class="panel gallery-context" aria-label="Nastavitve tiskanega koledarja">
+      <section class="panel gallery-context" aria-label="Nastavitve tiskanega koledarja">
         <%= render 'context_heading', title: "Prazniki #{@year} za tiskanje", expand: 'Razširi nastavitve' %>
         <div class="context-content" id="gallery-context-content">
           <nav class="year-links" aria-label="Leto tiskanega koledarja"><% CalendarEngine::YEARS.each do |year| %><a href="/prazniki/<%= year %>/#holiday-downloads" <%= 'aria-current=page' if year==@year %>><%= year %></a><% end %></nav>
@@ -89,7 +89,7 @@
           <p><strong>Namig za tisk:</strong> v tiskalniku izberite merilo 100 %. Datumi in število prostih dni veljajo za izbrano leto.</p>
           <a href="#prazniki-seznam">Nazaj na seznam praznikov ↑</a>
         </div>
-      </aside>
+      </section>
       <%= render 'designs',type:'holidays' %>
     </div>
   </section>
