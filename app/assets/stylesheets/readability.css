@@ -486,3 +486,19 @@
   #vsebina .studio-presets{grid-template-columns:repeat(2,minmax(0,1fr))}
   #vsebina .studio-presets>button{min-width:0;overflow-wrap:break-word}
 }
+
+@media screen and (max-width:900px){
+  #vsebina .shift-custom-entries #planner-entry .filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}
+  #vsebina .shift-custom-entries #planner-entry .filters>label{min-width:0}
+}
+@media screen and (max-width:600px){
+  #vsebina .shift-custom-entries #planner-entry .filters{grid-template-columns:minmax(0,1fr)}
+}
+
+@media screen and (max-width:900px){
+  body.shift-page #vsebina .shift-layout{grid-template-columns:minmax(0,1fr)}
+}
+@media screen and (max-width:650px){
+  body.shift-page #vsebina .shift-preview__top{flex-wrap:wrap}
+  body.shift-page #vsebina .shift-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
