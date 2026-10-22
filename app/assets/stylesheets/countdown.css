@@ -160,6 +160,8 @@
 /* Native Safari selects need a complete row at tablet widths with larger type. */
 @media screen and (max-width:900px){
   .countdown-filterbar{align-items:flex-start;flex-direction:column}
+  .countdown-filters{width:100%;min-width:0;max-width:100%;flex-wrap:wrap}
+  .countdown-filters button{flex:0 1 auto;white-space:normal}
   .countdown-school-controls{width:100%;min-width:0;flex-wrap:wrap}
   .countdown-region{max-width:100%;min-width:0}
 }

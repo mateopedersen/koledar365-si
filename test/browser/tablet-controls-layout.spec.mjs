@@ -26,3 +26,27 @@ for(const route of ['/solske-pocitnice/','/odstevanje/']){
   expect(errors).toEqual([]);
  });
 }
+
+test('wide fallback type keeps astronomy badges and native school filters inside their records',async({page})=>{
+ test.setTimeout(90000);
+ for(const width of [320,768]){
+  await page.setViewportSize({width,height:1000});
+  for(const route of ['/lunin-mrk/','/solske-pocitnice/','/odstevanje/']){
+   await page.goto(route,{waitUntil:'load'});
+   await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
+   await page.addStyleTag({content:'main,main *{font-family:monospace!important}.mobile-record-table .astro-status{font-size:18px!important}'});
+   if(route==='/solske-pocitnice/'){
+    const select=page.locator('[data-university-select]');
+    await select.selectOption('eu');await select.focus();
+    const focus=await select.evaluate(el=>({style:getComputedStyle(el.parentElement).outlineStyle,width:parseFloat(getComputedStyle(el.parentElement).outlineWidth)}));
+    expect(focus.style).toBe('solid');expect(focus.width).toBeGreaterThanOrEqual(3);
+   }
+   await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+   expect(await page.evaluate(()=>document.documentElement.scrollWidth),`${route} with wide type at ${width}px`).toBeLessThanOrEqual(width);
+   if(route==='/lunin-mrk/'&&width===320){
+    const cells=await page.locator('.mobile-record-table tbody tr').first().evaluate(row=>[...row.cells].map(cell=>({client:cell.clientWidth,scroll:cell.scrollWidth})));
+    for(const cell of cells)expect(cell.scroll).toBeLessThanOrEqual(cell.client+1);
+   }
+  }
+ }
+});

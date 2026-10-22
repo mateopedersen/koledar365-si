@@ -165,6 +165,15 @@
     min-width: 0;
     max-width: 100%;
     flex-shrink: 1;
+    /* WebKit can paint a long native selection outside the select itself. */
+    overflow: clip;
+    overflow-clip-margin: 8px;
+  }
+  /* Safari lacks overflow-clip-margin; this wrapper keeps focus visible there. */
+  .school-page .sp-uni-select-label:focus-within {
+    outline: 3px solid #0054b8;
+    outline-offset: 4px;
+    border-radius: 8px;
   }
   .school-page .sp-uni-select-label select,
   .school-page .sp-faculty-select select {
