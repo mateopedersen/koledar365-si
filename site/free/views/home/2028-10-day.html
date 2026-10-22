@@ -18,14 +18,14 @@
 <meta property="og:site_name" content="Koledar365">
 <meta property="og:locale" content="sl_SI">
 <meta property="og:url" content="https://koledar365.si/">
-<meta property="og:image" content="https://koledar365.si/druzabno/pages/1/1107374333d4f98a7e6c.png">
+<meta property="og:image" content="https://koledar365.si/druzabno/pages/1/5b5b2b44eea914d2026e.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Slovenski koledar 2026–2030: prazniki in načrtovanje">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Slovenski koledar 2026–2030: prazniki in načrtovanje · Koledar365">
 <meta name="twitter:description" content="Slovenski koledar s prazniki, številkami tednov in osebnimi zapiski. Izberite leto med 2026 in 2030, mesec ali teden ter pripravite svoj koledar za tisk.">
-<meta name="twitter:image" content="https://koledar365.si/druzabno/pages/1/1107374333d4f98a7e6c.png">
+<meta name="twitter:image" content="https://koledar365.si/druzabno/pages/1/5b5b2b44eea914d2026e.png">
 <meta name="twitter:image:alt" content="Slovenski koledar 2026–2030: prazniki in načrtovanje">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl-SI","publisher":{"@id":"https://koledar365.si/#organization"}},{"@type":"WebPage","@id":"https://koledar365.si/#webpage","url":"https://koledar365.si/","name":"Slovenski koledar 2026–2030: prazniki in načrtovanje","description":"Slovenski koledar s prazniki, številkami tednov in osebnimi zapiski. Izberite leto med 2026 in 2030, mesec ali teden ter pripravite svoj koledar za tisk.","inLanguage":"sl-SI","isPartOf":{"@id":"https://koledar365.si/#website"},"publisher":{"@id":"https://koledar365.si/#organization"},"author":{"@id":"https://koledar365.si/#organization"}},{"@type":"Organization","@id":"https://koledar365.si/#organization","name":"Koledar365","url":"https://koledar365.si/","email":"koledar365@gmail.com"}]}</script>
 
@@ -1403,6 +1403,19 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
   .calendar-footer .calendar-legend{font-size:14px;line-height:1.5}
 }
 @media print{.calendar-agenda,.table-scroll-hint{display:none!important}}
+
+/* One shared lockup and optical scale in the header and footer, on every route. */
+.topbar > .brand.brand-lockup,footer .brand.brand-lockup{display:inline-flex;align-items:center;gap:9px;flex:0 0 auto;width:max-content;max-width:100%;min-height:52px;color:#102b4a;font-family:Avenir,'Avenir Next',system-ui,-apple-system,sans-serif;font-size:28px;font-weight:800;line-height:1;letter-spacing:-1.1px;text-decoration:none;white-space:nowrap}
+.brand.brand-lockup .brand-symbol,.brand.brand-lockup .brand-mark{display:block;width:52px;height:52px;flex:0 0 52px;margin:0;max-width:none;filter:none;opacity:1}
+.brand.brand-lockup .brand-name{display:block;color:#102b4a;line-height:1.15}
+.brand.brand-lockup .brand-digits{color:#ce1936;letter-spacing:-1.5px;margin-left:1px}
+.brand.brand-lockup:hover .brand-name{color:#004b91}
+.brand.brand-lockup:focus-visible{outline:3px solid #005da8;outline-offset:5px;border-radius:6px}
+@media(max-width:700px){
+ .topbar > .brand.brand-lockup,footer .brand.brand-lockup{font-size:25px;min-height:46px;gap:7px;letter-spacing:-1px}
+ .brand.brand-lockup .brand-symbol,.brand.brand-lockup .brand-mark{width:46px;height:46px;flex-basis:46px}
+}
+@media print{.brand.brand-lockup{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 
 
@@ -1441,6 +1454,7 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
 
 
 <script type="module" src="/calendar-tools/mobile-layout.mjs?v=20261022-1"></script>
+
 
 <link rel="icon" href="/icon.png" type="image/png" sizes="512x512">
 <script type="application/json" id="k365-static-config">{"scripts":["/assets/application-f427bb33.js","/assets/planners-2d7bec70.js","/assets/navigation-3b014eab.js"],"holidays":"/assets/holidays-0af57d2c.js","vacation":"/assets/vacation-ecc923a5.js","countdown":"/assets/countdown-164dee2d.js","shift":"/assets/shift_schedule-3b97ecc2.js"}</script><link rel="preload" as="script" href="/assets/application-f427bb33.js">
@@ -1486,7 +1500,9 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
 <a class="skip" href="#vsebina">Na vsebino</a>
 <!-- BEGIN app/views/layouts/_navigation.html.erb
 --><header class="topbar">
-  <a class="brand" href="/" aria-label="Koledar365 – domov"><span class="brand-symbol"><img width="44" height="44" alt="" class="brand-mark" aria-hidden="true" src="/visuals/brand-calendar-v3.71d101697df6153f.svg"></span> Koledar<span>365</span></a>
+  <!-- BEGIN app/views/layouts/_brand.html.erb
+--><a class="brand brand-lockup" href="/" aria-label="Koledar365 – domov"><span class="brand-symbol"><img width="52" height="52" alt="" class="brand-mark" aria-hidden="true" src="/visuals/brand-calendar-v3.20014959d7558e83.svg"></span><span class="brand-name">Koledar<span class="brand-digits">365</span></span></a>
+<!-- END app/views/layouts/_brand.html.erb -->
   <nav aria-label="Glavna navigacija">
       <a href="/koledar/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calendar" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calendar"></use></svg><span>Koledar</span></a>
       <a href="/prazniki/"><svg class="ui-icon icon-gift" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#gift" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#gift"></use></svg><span>Prazniki</span></a>
@@ -1822,7 +1838,9 @@ button.primary .ui-icon,.button.primary .ui-icon{background:#ffffffed;border-rad
 
 <!-- END app/views/pages/show.html.erb -->
 </main>
-<footer><a class="brand small" href="/"><span class="brand-symbol"><img width="44" height="44" alt="" class="brand-mark" aria-hidden="true" src="/visuals/brand-calendar-v3.71d101697df6153f.svg"></span> Koledar<span>365</span></a><a href="/o-nas/">O nas</a><a href="/zasebnost/">Zasebnost</a><a href="/viri-in-metodologija/">Viri in metodologija</a><a href="/kontakt/">Kontakt</a><a href="/fotografije-in-licence/">Fotografije in licence</a><a href="/pogoji-uporabe/">Pogoji uporabe</a><button class="text-button" data-cookie-open>Nastavitve piškotkov</button><span>© 2026 Koledar365</span></footer>
+<footer><!-- BEGIN app/views/layouts/_brand.html.erb
+--><a class="brand brand-lockup" href="/" aria-label="Koledar365 – domov"><span class="brand-symbol"><img width="52" height="52" alt="" class="brand-mark" aria-hidden="true" src="/visuals/brand-calendar-v3.20014959d7558e83.svg"></span><span class="brand-name">Koledar<span class="brand-digits">365</span></span></a>
+<!-- END app/views/layouts/_brand.html.erb --><a href="/o-nas/">O nas</a><a href="/zasebnost/">Zasebnost</a><a href="/viri-in-metodologija/">Viri in metodologija</a><a href="/kontakt/">Kontakt</a><a href="/fotografije-in-licence/">Fotografije in licence</a><a href="/pogoji-uporabe/">Pogoji uporabe</a><button class="text-button" data-cookie-open>Nastavitve piškotkov</button><span>© 2026 Koledar365</span></footer>
 <!-- BEGIN app/views/layouts/_cookies.html.erb
 --><section id="cookies" class="cookie-bar" aria-labelledby="cookie-title" aria-describedby="cookie-intro" hidden>
   <div class="cookie-bar-main">

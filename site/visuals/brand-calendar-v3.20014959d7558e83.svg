@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <title>Koledar365 – slovenski koledar</title>
+  <defs>
+    <linearGradient id="cover" x1="12" y1="13" x2="69" y2="74" gradientUnits="userSpaceOnUse"><stop stop-color="#164E91"/><stop offset="1" stop-color="#062D61"/></linearGradient>
+    <linearGradient id="paper" x1="21" y1="25" x2="62" y2="69" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF"/><stop offset=".72" stop-color="#FAFBFD"/><stop offset="1" stop-color="#E5EBF3"/></linearGradient>
+    <linearGradient id="ribbon" x1="15" y1="15" x2="67" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#0757AA"/><stop offset="1" stop-color="#003B80"/></linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#40546A"/><stop offset=".42" stop-color="#E3EAF2"/><stop offset=".7" stop-color="#869BAF"/><stop offset="1" stop-color="#30475F"/></linearGradient>
+    <linearGradient id="fold" x1="55" y1="54" x2="66" y2="66" gradientUnits="userSpaceOnUse"><stop stop-color="#F16A75"/><stop offset="1" stop-color="#BD1232"/></linearGradient>
+  </defs>
+  <!-- The offset cover, cut paper edges and rolled corner remain distinct at small sizes. -->
+  <ellipse cx="42" cy="73" rx="29" ry="3.5" fill="#102B4A" opacity=".12"/>
+  <path d="M15 16h49a7 7 0 0 1 7 7v43a7 7 0 0 1-7 7H15a5 5 0 0 1-5-5V21a5 5 0 0 1 5-5Z" fill="url(#cover)"/>
+  <rect x="12" y="16" width="56" height="54" rx="5" fill="#CDD7E3" stroke="#A6B5C7"/>
+  <path d="M15 65h49M15 67h49" stroke="#F6F8FC"/>
+  <path d="M13 17a5 5 0 0 1 5-5h44a5 5 0 0 1 5 5v39L55 68H18a5 5 0 0 1-5-5Z" fill="url(#paper)" stroke="#CAD6E3"/>
+  <path d="M18 12h44a5 5 0 0 1 5 5v13H13V17a5 5 0 0 1 5-5Z" fill="url(#ribbon)"/>
+  <path d="M14 27h52v3H14Z" fill="#E5223D"/>
+  <path d="M18 14h44" stroke="#FFF" stroke-opacity=".23" stroke-linecap="round"/>
+  <g fill="#052B5C"><ellipse cx="25" cy="18" rx="4" ry="2.5"/><ellipse cx="55" cy="18" rx="4" ry="2.5"/></g>
+  <g stroke="#30475F" stroke-width=".7"><rect x="22.5" y="5" width="5" height="15" rx="2.5" fill="url(#steel)"/><rect x="52.5" y="5" width="5" height="15" rx="2.5" fill="url(#steel)"/></g>
+  <path d="M24 7v10M54 7v10" stroke="#FFF" stroke-opacity=".8" stroke-linecap="round"/>
+  <!-- A restrained printed calendar grid, with one unmistakable red selected day. -->
+  <g stroke="#DFE5ED" stroke-width=".7"><path d="M20 40h40M20 49h40M20 58h31M29 35v26M40 35v26M51 35v15"/></g>
+  <g fill="#214D7B"><rect x="22" y="35" width="4" height="3" rx=".7"/><rect x="33" y="35" width="4" height="3" rx=".7"/><rect x="44" y="35" width="4" height="3" rx=".7"/><rect x="55" y="35" width="4" height="3" rx=".7"/><rect x="22" y="44" width="4" height="3" rx=".7"/><rect x="33" y="44" width="4" height="3" rx=".7"/><rect x="22" y="53" width="4" height="3" rx=".7"/><rect x="33" y="53" width="4" height="3" rx=".7"/></g>
+  <rect x="42" y="41" width="9" height="9" rx="2" fill="#D81937"/>
+  <path d="m44 45 1.7 1.7 3-3.2" stroke="#FFF" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m55 68 12-12H59a4 4 0 0 0-4 4Z" fill="#092E60" opacity=".13" transform="translate(-1 -1)"/>
+  <path d="m55 68 12-12H59a4 4 0 0 0-4 4Z" fill="url(#fold)"/>
+  <path d="M59 57h6l-9 9v-6a3 3 0 0 1 3-3Z" stroke="#FFF" stroke-opacity=".35" stroke-width=".6"/>
+</svg>
