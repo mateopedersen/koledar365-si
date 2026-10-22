@@ -54,7 +54,7 @@ if(searchIndex.some(row=>retiredNamePath.test(row.path||'')||retiredGodoviPath.t
 for(const file of files.filter(file=>file.endsWith('.html'))){if(/href=["']\/(?:koledar-z-imenom|imena|godovi)(?:\/|["'])/.test(fs.readFileSync(file,'utf8')))issues.push(path.relative(site,file)+': link to a retired name page')}
 if(files.some(file=>/\/free\/client-[a-f0-9]+\.js$/.test(file)&&path.basename(file)!==clientName))issues.push('Obsolete browser adapters are still published');
 const invocationRoutes=JSON.parse(fs.readFileSync(path.join(site,'_routes.json'),'utf8')).include;
-for(const route of ['/koledar-z-imenom','/koledar-z-imenom/*','/imena','/imena/*','/free/names','/free/names/*','/free/search.json','/sitemap-names.xml','/sitemap.xml','/sitemap-pages.xml','/robots.txt'])if(!invocationRoutes.includes(route))issues.push(route+': missing edge retirement or sitemap route');
+for(const route of ['/koledar-z-imenom','/koledar-z-imenom/*','/imena','/imena/*','/godovi','/godovi/*','/free/names','/free/names/*','/free/search.json','/sitemap-names.xml','/sitemap.xml','/sitemap-pages.xml','/robots.txt'])if(!invocationRoutes.includes(route))issues.push(route+': missing edge retirement or sitemap route');
 const countdownPagePath=path.join(site,'odstevanje/index.html');
 if(!fs.existsSync(countdownPagePath))issues.push('Countdown page is missing');
 else{

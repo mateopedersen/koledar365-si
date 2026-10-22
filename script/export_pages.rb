@@ -223,7 +223,7 @@ headers=<<~HEADERS
   X-Robots-Tag: noindex
 HEADERS
 out.join('_headers').write(headers)
-out.join('_routes.json').write(JSON.generate({version:1,include:['/vreme/*','/horoskop/*','/city-detect*','/koledar-z-imenom','/koledar-z-imenom/*','/imena','/imena/*','/free/names','/free/names/*','/free/search.json','/sitemap-names.xml','/sitemap.xml','/sitemap-pages.xml','/robots.txt'],exclude:[]}))
+out.join('_routes.json').write(JSON.generate({version:1,include:['/vreme/*','/horoskop/*','/city-detect*','/koledar-z-imenom','/koledar-z-imenom/*','/imena','/imena/*','/godovi','/godovi/*','/free/names','/free/names/*','/free/search.json','/sitemap-names.xml','/sitemap.xml','/sitemap-pages.xml','/robots.txt'],exclude:[]}))
 # Re-materialize after all page and asset transforms so the final static tree
 # always contains every content-addressed SVG referenced by generated CSS/HTML.
 SvgAssetReferences.materialize_fingerprinted_assets!(Rails.root.join('public'),out)
