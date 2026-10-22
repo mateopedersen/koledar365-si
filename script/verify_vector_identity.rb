@@ -77,6 +77,10 @@ files.each do |file|
   n=doc.at_css("#{tag} .brand-mark")
   fail_page.call("Missing #{tag} logo") unless n && versioned_ref.call(n['src'], '/visuals/brand-calendar-v3.svg') && n['width'] && n['height']
  end
+ header_brand=doc.at_css('header .brand-lockup')
+ footer_brand=doc.at_css('footer .brand-lockup')
+ fail_page.call('Header/footer brand lockups differ') unless header_brand && footer_brand && header_brand.inner_html==footer_brand.inner_html
+ fail_page.call('Missing accessible shared home link') unless [header_brand,footer_brand].all? { |brand| brand && brand['href']=='/' && brand['aria-label']=='Koledar365 – domov' }
  flag=doc.at_css('.country img.country-flag')
  fail_page.call('Missing or stale fabric flag') unless flag && versioned_ref.call(flag['src'], '/visuals/slovenia-fabric-v3.svg')
  favicon_link=doc.at_css('link[rel="icon"][type="image/png"]')

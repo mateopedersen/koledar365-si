@@ -31,7 +31,7 @@ module IllustrationHelper
   end
 
   def brand_symbol
-    image_tag(IllustrationHelper.versioned_svg_url('/visuals/brand-calendar-v3.svg'), width: 44, height: 44,
+    image_tag(IllustrationHelper.versioned_svg_url('/visuals/brand-calendar-v3.svg'), width: 52, height: 52,
       alt: '', class: 'brand-mark', 'aria-hidden': 'true')
   end
 
