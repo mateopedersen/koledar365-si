@@ -19,7 +19,7 @@ for(const route of ['/solske-pocitnice/','/odstevanje/']){
     document:document.documentElement.scrollWidth,
     controls:[...document.querySelectorAll('.sp-uni-select-label select,.sp-faculty-select select,.countdown-school-controls select')].filter(el=>el.getClientRects().length).map(el=>{const r=el.getBoundingClientRect();return{left:r.left,right:r.right,width:r.width}})
    }));
-   expect(bounds.document,`${route} at ${width}px`).toBeLessThanOrEqual(bounds.viewport);
+   expect(bounds.document,`${route} at ${width}px: ${JSON.stringify(bounds)}`).toBeLessThanOrEqual(bounds.viewport);
    expect(bounds.controls.length).toBeGreaterThan(0);
    for(const control of bounds.controls){expect(control.left).toBeGreaterThanOrEqual(0);expect(control.right).toBeLessThanOrEqual(bounds.viewport);expect(control.width).toBeGreaterThan(40);}
   }

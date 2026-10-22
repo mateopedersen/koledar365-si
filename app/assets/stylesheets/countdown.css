@@ -165,3 +165,18 @@
   .countdown-school-controls{width:100%;min-width:0;flex-wrap:wrap}
   .countdown-region{max-width:100%;min-width:0}
 }
+
+/* Date/time widgets have platform-specific intrinsic widths. Keep both fields
+   in their own grid tracks instead of letting native Android content widen them. */
+.countdown-custom-form,.countdown-custom-form label{min-width:0;max-width:100%}
+.countdown-custom-form input,.countdown-custom-form select{box-sizing:border-box;min-width:0;max-width:100%}
+.countdown-custom-form__row{grid-template-columns:minmax(0,1fr) minmax(0,.68fr)}
+@media screen and (max-width:900px){
+  .countdown-custom{grid-template-columns:minmax(0,1fr);gap:20px}
+  .countdown-custom-form{width:100%;max-width:520px;justify-self:center}
+  .countdown-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .countdown-shortcuts strong,.countdown-shortcuts small{white-space:normal;overflow-wrap:anywhere}
+}
+@media screen and (max-width:520px){
+  .countdown-custom-form__row{grid-template-columns:minmax(0,1fr) minmax(0,.76fr)}
+}
