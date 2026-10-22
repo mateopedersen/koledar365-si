@@ -136,6 +136,7 @@ body.shift-page .shift-saved__actions{display:grid;grid-template-columns:repeat(
 body.shift-page .shift-saved__actions>button,body.shift-page .shift-saved__actions>.file-button{display:inline-flex;align-items:center;justify-content:center;width:100%;min-width:0;min-height:42px;margin:0;box-sizing:border-box;text-align:center;white-space:normal;overflow-wrap:anywhere}
 @media(max-width:650px){body.shift-page .shift-saved__actions{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
+.shift-calendar__row{display:contents}
 
 /* Keep the shift planner's cards in a single, ordered page flow. */
 body.shift-page .shift-download-workspace{grid-template-columns:minmax(0,1fr)}

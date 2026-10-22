@@ -2,6 +2,11 @@
   "name": "koledar365-browser-checks",
   "private": true,
   "packageManager": "pnpm@11.25.0",
-  "scripts": {"test:city-card": "playwright test"},
-  "devDependencies": {"@playwright/test": "1.56.1"}
+  "scripts": {
+    "test:city-card": "playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "@playwright/test": "1.56.1"
+  }
 }

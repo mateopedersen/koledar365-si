@@ -35,7 +35,11 @@ module SeoHelper
     parent = "/#{page_path.split("/").reject(&:blank?).first}/"
     record = Page.find_by(path: parent) if parent != page_path
     rows << [record.title, record.path] if record
-    rows << ["Lunin koledar #{@page.year}", LunarCalendar.path(@page.year)] if @section=='lunar' && @page&.month && page_path.start_with?('/lunin-koledar/')
+    if @page&.month && @page.year
+      year_path="/#{page_path.split('/').reject(&:blank?).first}/#{@page.year}/"
+      year_page=Page.published.find_by(path:year_path)
+      rows << [year_page.title,year_path] if year_page && rows.none? { |_,path| path==year_path }
+    end
     rows << [@title, page_path]
     rows
   end
@@ -65,17 +69,16 @@ module SeoHelper
     return nil if @not_found || controller_name.in?(%w[admin exports]) || action_name == "search"
     graph = [
       { "@type" => "WebSite", "@id" => "#{site_origin}/#website", "url" => "#{site_origin}/",
-        "name" => "Koledar365", "inLanguage" => "sl" },
+        "name" => "Koledar365", "inLanguage" => "sl-SI" },
       { "@type" => "WebPage", "@id" => "#{canonical_url}#webpage", "url" => canonical_url,
         "name" => @title, "description" => @description,
-        "inLanguage" => "sl", "isPartOf" => { "@id" => "#{site_origin}/#website" } }
+        "inLanguage" => "sl-SI", "isPartOf" => { "@id" => "#{site_origin}/#website" } }
     ]
     organization={"@type"=>"Organization","@id"=>"#{site_origin}/#organization","name"=>"Koledar365","url"=>"#{site_origin}/","email"=>"koledar365@gmail.com"}
     graph << organization
     graph[0]['publisher']={"@id"=>organization.fetch('@id')}
     graph[1]['publisher']={"@id"=>organization.fetch('@id')}
     if ExpansionCatalog.page(page_path)
-      graph[1]['dateModified']=ExpansionCatalog::REVIEWED_ON
       graph[1]['author']={"@id"=>organization.fetch('@id')}
       citations=expansion_citations
       graph[1]['citation']=citations unless citations.empty?
@@ -84,14 +87,14 @@ module SeoHelper
       image_url=site_origin+illustration.fetch('path')
       graph << {"@type"=>"ImageObject","@id"=>"#{image_url}#image","contentUrl"=>image_url,"url"=>image_url,
         "width"=>illustration.fetch('width'),"height"=>illustration.fetch('height'),"name"=>illustration.fetch('alt'),
-        "caption"=>illustration['caption']||illustration.fetch('alt'),"inLanguage"=>'sl',
-        "creditText"=>illustration['credit']||illustration['creator']||'Koledar365',"creator"=>{"@id"=>organization.fetch('@id')}}
+        "caption"=>illustration['caption']||illustration.fetch('alt'),"inLanguage"=>'sl-SI',
+        "creditText"=>illustration['credit']||illustration['creator']||'Koledar365'}
       graph[1]['primaryImageOfPage']={"@id"=>"#{image_url}#image"}
     end
     if (features=expansion_tool_features)
       graph << {"@type"=>'WebApplication',"@id"=>"#{canonical_url}#application","name"=>@title,"description"=>@description,
         "url"=>canonical_url,"applicationCategory"=>'UtilitiesApplication',"operatingSystem"=>'Any',
-        "isAccessibleForFree"=>true,"inLanguage"=>'sl',"featureList"=>features,"publisher"=>{"@id"=>organization.fetch('@id')}}
+        "isAccessibleForFree"=>true,"inLanguage"=>'sl-SI',"featureList"=>features,"publisher"=>{"@id"=>organization.fetch('@id')}}
     end
     questions=expansion_questions
     if questions.any?
@@ -118,7 +121,7 @@ module SeoHelper
               "description" => image.fetch('alt'), "contentUrl" => site_origin + row.dig('files', 'webp'),
               "url" => site_origin + row.dig('files', 'preview'),
               "width" => row.dig('manifest', 'width_px'), "height" => row.dig('manifest', 'height_px'),
-              "inLanguage" => "sl" } }
+              "inLanguage" => "sl-SI" } }
         } }
     end
     graph[1]['primaryImageOfPage']={"@id"=>"#{site_origin}#{seo_photo['local_path']}#image"} if seo_photo
@@ -127,7 +130,7 @@ module SeoHelper
       graph << {"@type"=>"ImageObject","@id"=>"#{image_url}#image",
         "contentUrl"=>image_url,"url"=>image_url,"width"=>1200,"height"=>720,
         "name"=>'Premik ure v Sloveniji – poletni in zimski čas',
-        "caption"=>ClockChangeSchedule::IMAGE_ALT,"inLanguage"=>'sl',
+        "caption"=>ClockChangeSchedule::IMAGE_ALT,"inLanguage"=>'sl-SI',
         "creditText"=>'Koledar365',"creator"=>{"@type"=>'Organization',"name"=>'Koledar365'}}
       graph[1]['primaryImageOfPage']={"@id"=>"#{image_url}#image"}
     end
@@ -140,7 +143,7 @@ module SeoHelper
       graph << { "@type" => "WebApplication", "@id" => "#{canonical_url}#application",
         "name" => @title, "url" => canonical_url, "description" => @description,
         "applicationCategory" => "UtilitiesApplication", "operatingSystem" => "Any",
-        "isAccessibleForFree" => true, "inLanguage" => "sl",
+        "isAccessibleForFree" => true, "inLanguage" => "sl-SI",
         "featureList" => ["Razlika med datumoma", "Prištevanje in odštevanje dni, tednov in mesecev",
           "Štetje delovnih dni in slovenskih praznikov", "Deljiva povezava do nastavitev"] }
       graph << { "@type" => "FAQPage", "@id" => "#{canonical_url}#faq",
@@ -153,7 +156,7 @@ module SeoHelper
       graph << { "@type" => "WebApplication", "@id" => "#{canonical_url}#application",
         "name" => "Kalkulator prestopnega leta", "url" => canonical_url,
         "description" => @description, "applicationCategory" => "UtilitiesApplication",
-        "operatingSystem" => "Any", "isAccessibleForFree" => true, "inLanguage" => "sl",
+        "operatingSystem" => "Any", "isAccessibleForFree" => true, "inLanguage" => "sl-SI",
         "featureList" => ["Preverjanje let od 1 do 9999", "Gregorijansko pravilo deljivosti s 4, 100 in 400",
           "Število dni v februarju", "Primeri stoletnih let"] }
       graph << { "@type" => "FAQPage", "@id" => "#{canonical_url}#faq",
@@ -166,11 +169,11 @@ module SeoHelper
       graph << { "@type" => "WebApplication", "@id" => "#{canonical_url}#ascendent",
         "name" => "Izračun vzhajajočega znamenja (ascendenta) in sončnega znamenja", "url" => "#{canonical_url}#ascendent",
         "applicationCategory" => "LifestyleApplication", "operatingSystem" => "Any",
-        "isAccessibleForFree" => true, "inLanguage" => "sl",
+        "isAccessibleForFree" => true, "inLanguage" => "sl-SI",
         "featureList" => ["Izračun po datumu, uri in kraju rojstva", "Časovni pasovi in premiki ure", "Obdelava rojstnih podatkov samo na napravi"] }
       if @horoscope_guide.profile && @horoscope_guide.edition_date
         graph << { "@type" => "Article", "@id" => "#{canonical_url}#dnevni-zapis",
-          "headline" => @horoscope_guide.reading['title'], "inLanguage" => "sl",
+          "headline" => @horoscope_guide.reading['title'], "inLanguage" => "sl-SI",
           "datePublished" => @horoscope_guide.edition['generated_at'],
           "dateModified" => @horoscope_guide.edition['generated_at'],
           "author" => { "@type" => "Organization", "name" => "Koledar365", "url" => site_origin+'/' },
@@ -187,7 +190,7 @@ module SeoHelper
       graph << { "@type" => "WebApplication", "@id" => "#{canonical_url}#application",
         "name" => "Koledar365 Ustvarjalni studio", "url" => canonical_url, "description" => @description,
         "applicationCategory" => "DesignApplication", "operatingSystem" => "Any",
-        "isAccessibleForFree" => true, "inLanguage" => "sl",
+        "isAccessibleForFree" => true, "inLanguage" => "sl-SI",
         "featureList" => ["Letni in mesečni koledar", "Imena, fotografije, logotipi in besedilni elementi",
           "Pisave, barve in postavitev", "Začetek tedna v ponedeljek ali nedeljo",
           "Dogodki in uvoz ICS ali CSV", "Prenos PDF, PNG in SVG", "Shranjevanje in odpiranje projektov"] }
