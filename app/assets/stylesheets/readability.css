@@ -430,3 +430,8 @@
   #vsebina .sun-scene-note,
   #vsebina .about-family p { color:#e6f0fc; }
 }
+
+@media screen {
+  /* The explanatory line is part of its definition and must wrap independently. */
+  #vsebina .about-facts dd small{white-space:normal;overflow-wrap:anywhere;max-width:100%}
+}
