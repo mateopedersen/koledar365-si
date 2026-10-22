@@ -95,3 +95,10 @@ Mevcut kaldırılmış isim dizinleri, doğrulanmamış godovi verisi ve ertelen
 - Official-source availability and pension/social-transfer comparisons are recorded in `evidence/astra6-source-review.json` and `evidence/astra6-payment-source-comparison.json`. All 163 imported payment events matched the freshly retrieved authoritative sources.
 - `evidence/astra6-pdf-review.json` records original collection hash preservation and rendered February 2028 / annual 2030 PDF and WebP samples.
 - A successful build is not a production verification. Merge, exact publication snapshot, Cloudflare status and live URL/browser evidence must be recorded after deployment.
+
+### Final responsive review
+
+- Fixed narrow-width calendar header wrapping, Studio project action wrapping and Safari's percentage-width garden form legend without clipping page content.
+- City and photo-credit links now explicitly participate in sequential keyboard navigation in Safari.
+- Added six-width regression coverage (320, 360, 390, 768, 1280 and 1440 px) for monthly, weekly, garden and Studio tools in all four browser profiles.
+- All 44 focused responsive/Sun tests passed after these fixes. The regenerated publication passed the 397 canonical-page and 2,820 PDF/WebP-pair audits. Full latest-head CI and production verification remain release gates.
