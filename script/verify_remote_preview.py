@@ -8,6 +8,7 @@ import concurrent.futures,hashlib,json,re,sys,time
 from pathlib import Path
 from urllib.request import urlopen,Request
 from cdn_email_parity import restore_email_html
+from horoscope_parity import verify_daily
 
 target=json.loads(Path(sys.argv[1]).read_text())
 base=target['url'].rstrip('/')
@@ -16,8 +17,8 @@ assert re.fullmatch('[a-f0-9]{64}',target['manifest_sha256'])
 out=Path('evidence/qa/preview');out.mkdir(parents=True,exist_ok=True)
 def fetch(path):
  with urlopen(Request(base+path,headers={'User-Agent':'Koledar365-Preview-Verification/1.0'}),timeout=40) as r:
-  return r.status,r.headers.get('Content-Type',''),r.read()
-status,mime,raw=fetch('/release-manifest.json')
+  return r.status,r.headers,r.read()
+status,headers,raw=fetch('/release-manifest.json')
 assert status==200 and hashlib.sha256(raw).hexdigest()==target['manifest_sha256'],'Preview manifest differs from the tested local publication'
 manifest=json.loads(raw)
 assert manifest['source_commit']==target['source_commit']
@@ -27,11 +28,17 @@ def check(p):
  row={'path':p,'url':base+route,'passed':False}
  for attempt in range(3):
   try:
-   status,mime,body=fetch(route)
+   status,headers,body=fetch(route)
+   mime=headers.get('Content-Type','')
    assert status==200,'HTTP '+str(status)
    expected=manifest['files'][p]['sha256'];actual=hashlib.sha256(body).hexdigest()
    if actual!=expected and p.endswith('.html'):
     body,counts=restore_email_html(body);actual=hashlib.sha256(body).hexdigest();row['email_transformations']=counts
+   if actual!=expected and re.fullmatch(r'horoskop/[^/]+/index.html',p) and headers.get('X-Horoscope-Rendering')=='daily-html-v1':
+    local=Path('site',p).read_bytes()
+    assert hashlib.sha256(local).hexdigest()==expected,'Local fallback differs from preview manifest'
+    verify_daily(local,body,p.split('/')[1],headers.get('X-Horoscope-Date'))
+    row['match_type']='verified-daily-edge-render';actual=expected
    assert actual==expected,'Content SHA-256 mismatch'
    if p=='llms.txt':assert 'text/plain' in mime,'Wrong llms.txt MIME'
    row.update(passed=True,status=status,mime=mime,sha256=actual);row.pop('error',None);break

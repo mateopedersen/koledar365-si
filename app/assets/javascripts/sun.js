@@ -308,6 +308,11 @@
     }
     activeModel = compute(dateIso, option);
     const city = option.textContent.trim();
+    const coordinateSource = root.querySelector('[data-sun-coordinate-source]');
+    if (coordinateSource) {
+      coordinateSource.href = option.dataset.coordinateSource;
+      coordinateSource.textContent = `Koordinate: ${city}`;
+    }
     const label = dateLabel(dateIso);
     if (heading) heading.textContent = `${city} · ${label}`;
     if (dateCaption) dateCaption.textContent = `${label} · ${city}`;

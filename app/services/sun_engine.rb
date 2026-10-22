@@ -5,7 +5,7 @@ class SunEngine
   GOLDEN_HOUR_HIGH_ALTITUDE = 6.0
   GOLDEN_HOUR_LOW_ALTITUDE = -4.0
 
-  # GOV.SI's official register of Slovenian settlements with city status.
+  # City membership: GOV.SI register; reference coordinates: linked Wikipedia articles in CityCatalog.
   CITIES = CityCatalog.all.each_with_object({}) do |city, index|
     coordinates = city.fetch('coordinates').first
     index[city.fetch('id')] = [city.fetch('name'), coordinates.fetch('lat'), coordinates.fetch('lon')].freeze

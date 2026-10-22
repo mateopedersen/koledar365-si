@@ -18,6 +18,8 @@ test('sunrise pages cover all official Slovenian cities and respond to city, dat
  await page.locator('[data-sun-city]').selectOption('koper');
  await expect(page).toHaveURL(/soncni-vzhod-in-zahod\/koper\/\?date=2027-07-15/);
  await expect(page.locator('[data-sun-heading]')).toContainText('Koper');
+ await expect(page.locator('[data-sun-coordinate-source]')).toHaveAttribute('href', 'https://en.wikipedia.org/wiki/Koper');
+ await expect(page.locator('[data-sun-coordinate-source]')).toHaveText('Koordinate: Koper');
  await page.locator('[data-sun-time]').evaluate((slider)=>{slider.value='60';slider.dispatchEvent(new Event('input',{bubbles:true}))});
  await expect(page.locator('[data-sun-position]')).toContainText('pod obzorjem');
  const before=await page.locator('[data-sun-object]').getAttribute('transform');
