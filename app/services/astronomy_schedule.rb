@@ -14,7 +14,7 @@ class AstronomySchedule
     'lunar_explainer' => ['Cosmolab: kako nastane Lunin mrk', 'https://cosmolab.si/projekti/Lunin%20mrk%202025/Lunini%20mrki%20splo%C5%A1no'],
     'solar_safety' => ['Dr. Primož Kajdič, Sončni blog: varno opazovanje Sončevega mrka', 'https://soncniblog.com/bliza-se-soncev-mrk/'],
     'solar_dates' => ['Spika: prihajajoči Sončevi mrki in solarni filtri', 'https://astronomska-revija-spika.si/filtri-za-varno-opazovanje-sonca/'],
-    'perseids' => ['Dunja Fabjan, Portal v vesolje: Perzeidi, mesečina in opazovalne razmere', 'https://arhiv.portalvvesolje.si/novice/1670-perzeidi-so-e-tu'],
+    'perseids' => ['Portal v vesolje: avgustovsko nebo in Perzeidi 2026', 'https://portalvvesolje.si/novice/2026/Zanimivosti%20no%C4%8Dnega%20neba%20avgust%202026'],
     'perseids_observing' => ['Spika: kako opazovati meteorski roj Perzeidov', 'https://astronomska-revija-spika.si/kako-opazovati-meteorski-roj-perzeidov/'],
     'local_events' => ['Portal v vesolje: javna opazovanja v Sloveniji leta 2026', 'https://portalvvesolje.si/dogodki/2026/Opazovanja%20Son%C4%8Devega%20mrka%20in%20ostalih%20pojavov%20v%20Sloveniji']
   }.freeze

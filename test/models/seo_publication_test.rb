@@ -49,4 +49,16 @@ class SeoPublicationTest < ActiveSupport::TestCase
     assert_equal 1, report[:llms_links]
     assert_includes text, '- [Koledar & datumi](https://koledar365.si/): Domača stran.'
   end
+
+  test 'lastmod requires matching content revision evidence and survives unchanged rebuilds' do
+    record = {'sha256' => PublicationRevisions.fingerprint(@site.join('index.html').read), 'modified_at' => '2026-01-02T12:00:00Z'}
+    @site.join('page-revisions.json').write(JSON.generate('/' => record))
+    2.times do
+      SeoPublication.write!(site: @site, guide: @guide)
+      assert_equal ['2026-01-02T12:00:00Z'], Nokogiri::XML(@site.join('sitemap-pages.xml').read).xpath('//*[local-name()="lastmod"]').map(&:text)
+    end
+    record['sha256'] = 'invalid'
+    @site.join('page-revisions.json').write(JSON.generate('/' => record))
+    assert_raises(RuntimeError) { SeoPublication.write!(site: @site, guide: @guide) }
+  end
 end

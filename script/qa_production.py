@@ -15,6 +15,7 @@ parser=argparse.ArgumentParser();parser.add_argument('--base',default=ORIGIN);pa
 site=Path('site');manifest=json.loads((site/'release-manifest.json').read_text());inventory=json.loads((site/'release-urls.json').read_text())['pages'];paths={r['path'] for r in inventory}
 paths.update('/'+p for p in manifest['files'] if Path(p).suffix in ['.css','.js','.mjs'])
 paths.update(['/sitemap.xml','/sitemap-pages.xml','/robots.txt','/llms.txt','/release-manifest.json'])
+if (site/'page-revisions.json').exists():paths.add('/page-revisions.json')
 if args.downloads:
  with args.downloads.open() as f:paths.update(r['url'] for r in csv.DictReader(f))
 def check(route):

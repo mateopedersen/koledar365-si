@@ -450,6 +450,54 @@
   }
 }
 
+/* Result panels use a dark blue background; retain readable foregrounds. */
+#vsebina .date-result__top p{color:#fff}
+
+/* Audited contrast on light surfaces, including small secondary labels. */
+@media screen {
+  #vsebina .calendar-gallery-toolbar > span,
+  #vsebina .cd-month-number,
+  #vsebina .family-day__name,
+  #vsebina .family-day__add,
+  #vsebina [data-family-add-for],
+  #vsebina .family-legend,
+  #vsebina .family-agenda-empty,
+  #vsebina .family-grocery-empty,
+  #vsebina .family-next-empty,
+  #vsebina [data-family-grocery-count],
+  #vsebina .shift-person > span,
+  #vsebina .shift-preview__badge,
+  #vsebina .shift-calendar__day--off,
+  #vsebina .astro-muted,
+  #vsebina .astro-status.is-invisible,
+  #vsebina .garden-jump a > span,
+  #vsebina .garden-page th,
+  #vsebina .garden-page th abbr,
+  #vsebina .garden-page label > span,
+  #vsebina .garden-page li > span,
+  #vsebina .payment-page th,
+  #vsebina .payment-next-month > span:not(.is-payment-day),
+  #vsebina .z-art-caption,
+  #vsebina .z-small-note,
+  #vsebina .studio-hero-note > span,
+  #vsebina #studio-preview-label,
+  #vsebina .studio-canvas-footer,
+  #vsebina .studio-statusbar { color:#40536b; }
+
+  /* Dark result/illustration panels need their own foreground, including labels. */
+  #vsebina .holiday-check-intro p,
+  #vsebina .holiday-date-tool label,
+  #vsebina #holiday-check-schedule,
+  #vsebina [data-sun-position],
+  #vsebina .sun-scene-note,
+  #vsebina .about-family p { color:#e6f0fc; }
+}
+
+@media screen {
+  /* The explanatory line is part of its definition and must wrap independently. */
+  #vsebina .about-facts dd small{white-space:normal;overflow-wrap:anywhere;max-width:100%}
+}
+
 /* Native mobile date widgets must not impose an intrinsic minimum column width. */
 @media screen and (max-width:900px){
   #vsebina input:is([type="date"],[type="time"],[type="datetime-local"],[type="month"],[type="week"]){

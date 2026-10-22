@@ -44,4 +44,7 @@
     <% end %>
   </div></div>
   <% end %>
+<%= render 'calendar_facts' %>
 <% else %><%= render 'year_cards' %><div class="link-grid"><% @children.limit(65).each do |p| %><a href="<%= p.path %>"><%= p.title %></a><% end %></div><% end %>
+
+<% if page_path=='/koledar/' %><section class="panel prose"><h2>Izberite leto in odprite svoj koledar</h2><p>Letni pregled povezuje vseh dvanajst mesecev, številke tednov ISO in slovenske praznike. Posamezni mesečni koledarji vsebujejo datume, povezave do sosednjih mesecev ter predloge PDF in WebP. Za vnašanje opravil odprite <a href="/mesecni-koledar/">mesečni planer</a>, za sedemdnevni razpored pa <a href="/tedenski-koledar/">tedenski koledar</a>.</p><p>Rdeče označen praznik ne pomeni samodejno prostega delovnega dne. Pravni status preverite v <a href="/prazniki/">pregledu praznikov</a>; osebni delovnik lahko prilagodite v <a href="/kalkulator-delovnih-dni/">kalkulatorju delovnih dni</a>.</p></section><% end %>

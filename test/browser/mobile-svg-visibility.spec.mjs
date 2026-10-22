@@ -71,7 +71,8 @@ test('branded SVG icons and real imagery stay colorful and visible in every majo
       });
       expect(photo.path).toMatch(/^\/school\/photos\/[^/]+-[a-f0-9]{8}\.jpg$/);
       expect(photo.alt.trim()).not.toBe('');
-      await expect(seasonalPhoto).toHaveAttribute('src', photo.path);
+      await expect(seasonalPhoto).toHaveAttribute('src', photo.display_path || photo.path);
+      if(photo.srcset) await expect(seasonalPhoto).toHaveAttribute('srcset',photo.srcset);
       await expect(seasonalPhoto).toHaveAttribute('alt', photo.alt);
       await seasonalPhoto.scrollIntoViewIfNeeded();
       await expect(seasonalPhoto).toBeVisible();

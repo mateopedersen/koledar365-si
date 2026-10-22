@@ -9,6 +9,7 @@ import xml.etree.ElementTree as ET
 from audit_indexability import Document,fetch,ORIGIN,NS
 parser=argparse.ArgumentParser();parser.add_argument('--live',action='store_true');parser.add_argument('--out',type=Path,default=Path('evidence/qa/seo'));args=parser.parse_args();args.out.mkdir(parents=True,exist_ok=True)
 site=Path('site');issues=[]
+revisions=json.loads((site/'page-revisions.json').read_text()) if (site/'page-revisions.json').exists() else {}
 def get(name):
  if not args.live:return (site/name).read_text()
  result=fetch(ORIGIN+'/'+name)
@@ -43,7 +44,8 @@ for url in urls:
   if not condition:errors.append(error)
  if args.live and (d.title!=local[url].title or d.headings!=local[url].headings):errors.append('source/build/live title or H1 mismatch')
  if headers.get('link') and 'canonical' in headers['link'] and url not in headers['link']:errors.append('HTTP canonical disagrees')
- if lastmods[url]:errors.append('unverifiable lastmod returned')
+ expected_lastmod=revisions.get(urlsplit(url).path,{}).get('modified_at','')
+ if lastmods[url]!=expected_lastmod:errors.append('lastmod differs from verified page revision history')
  row={'url':url,'page_type':urlsplit(url).path.split('/')[1] or 'home','status':status,'redirect':final!=url,'indexable':not d.noindex,'robots_allowed':robots.can_fetch('Googlebot',url),'canonical':'|'.join(d.canonicals),'canonical_target_status':status if d.canonicals==[url] else 'unverified','lastmod':lastmods[url] or 'omitted: no significant-change history','passed':not errors,'issues':'; '.join(errors)}
  rows.append(row);canonical_rows.append({k:row[k] for k in ['url','status','canonical','canonical_target_status','passed','issues']})
  issues.extend(url+': '+e for e in errors)

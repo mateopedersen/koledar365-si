@@ -3,7 +3,7 @@ class SiteTest < ActionDispatch::IntegrationTest
   test 'home server renders accessible calendar and no fake personal events' do
     get '/'
     assert_response :success
-    assert_select 'html[lang=sl]'
+    assert_select 'html[lang="sl-SI"]'
     assert_select 'h1',count:1
     assert_select 'table.calendar'
     assert_select 'a[href="/koledar/2030/"]'
@@ -43,7 +43,7 @@ class SiteTest < ActionDispatch::IntegrationTest
   test 'terms page presents personal operator, practical rules and current legal references' do
     get '/pogoji-uporabe/'
     assert_response :success
-    assert_select 'html[lang=sl]'
+    assert_select 'html[lang="sl-SI"]'
     assert_select 'body.terms-page'
     assert_select 'h1#terms-title',count:1,text:/Pravila naj bodo jasna/
     assert_select 'nav[aria-label="Vsebina pogojev uporabe"] a[href="#ponudnik"]'
@@ -90,7 +90,7 @@ class SiteTest < ActionDispatch::IntegrationTest
     Page.find_by!(path:'/delovni-dnevi/').update_column(:year,2026)
     travel_to(Time.zone.local(2026,10,21,12)) { get '/delovni-dnevi/' }
     assert_response :success
-    assert_select 'html[lang=sl]'
+    assert_select 'html[lang="sl-SI"]'
     assert_select 'h1#workdays-title', text: 'Delovni dnevi in ure 2026–2030 v Sloveniji'
     assert_select '[data-workdays-dashboard][data-year="2026"]'
     assert_select '[data-workdays-dashboard] [data-year-days]', text: '254'
@@ -143,7 +143,7 @@ class CityPageTest < ActionDispatch::IntegrationTest
     get '/'
     assert_select '#city-select option',count:69
     assert_select '#city-photo[src="/images/cities/ljubljana.jpg"][srcset][width][height]'
-    assert_select '#city-photo-avif[type="image/avif"][srcset^="/images/responsive/ljubljana-960-"]'
+    assert_select '#city-photo-avif[type="image/avif"][srcset^="/images/responsive/ljubljana-480-"]'
     get '/fotografije-in-licence/'
     assert_response :success
     assert_select 'h1',text:'Fotografije in licence'

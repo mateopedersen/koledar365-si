@@ -8,7 +8,7 @@ Dir[site.join('**/*.html')].sort.each do |file|
  relative=Pathname.new(file).relative_path_from(site).to_s;next if relative.start_with?('free/')
  doc=Nokogiri::HTML(File.read(file));html_count+=1
  fail_with=->(message){issues << {path:relative,issue:message}}
- fail_with.call('Missing Slovene language') unless doc.at_css('html')['lang']=='sl'
+ fail_with.call('Missing Slovene language') unless doc.at_css('html')['lang']=='sl-SI'
  fail_with.call('Expected one main heading') unless doc.css('main h1').size==1
  fail_with.call('Missing title or description') unless doc.at_css('title')&.text.to_s.length>0 && doc.at_css('meta[name=description]')&.[]('content').to_s.length>0
  preview_images=doc.css('img[src^="/prenosi/"][src*="/predogled.webp"],img[src^="/predogled/"],img[data-static-preview^="/free/samples/"],img[data-preview-design]')

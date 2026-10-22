@@ -44,7 +44,7 @@ Dir[site.join('**/*.html')].sort.each do |filename|
   end
   pages[path] = row
   flag = ->(kind, detail = nil) { issues << {path: path, kind: kind, detail: detail} }
-  flag.call('language', row[:language]) unless row[:language] == 'sl'
+  flag.call('language', row[:language]) unless row[:language] == 'sl-SI'
   flag.call('heading_count', row[:h1]) unless row[:h1].size == 1
   flag.call('missing_metadata') if row[:title].empty? || row[:description].empty?
   flag.call('canonical', row[:canonical]) if row[:indexable] && row[:canonical] != [origin + path]

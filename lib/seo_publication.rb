@@ -2,6 +2,7 @@ require 'json'
 require 'nokogiri'
 require 'pathname'
 require 'uri'
+require_relative 'publication_revisions'
 
 # Build the discovery files from the actual rendered, canonical HTML. Editorial
 # database timestamps alone do not date changes to shared templates or datasets.
@@ -26,6 +27,15 @@ module SeoPublication
     site = Pathname(site)
     rows = pages(site)
     raise 'Empty public inventory' if rows.empty?
+    revisions_file = site.join('page-revisions.json')
+    revisions = revisions_file.file? ? JSON.parse(revisions_file.read) : {}
+    rows.each do |row|
+      record = revisions[row[:path]]
+      next unless record && record['modified_at']
+      raise "Stale revision evidence: #{row[:path]}" unless record['sha256'] == PublicationRevisions.fingerprint(row[:document].to_html)
+      raise "Future revision date: #{row[:path]}" if Time.iso8601(record['modified_at']) > Time.now.utc
+      row[:lastmod] = record['modified_at']
+    end
     source = Nokogiri::XML(site.join('sitemap-pages.xml').read) { |config| config.strict.nonet }
     images = source.xpath('//*[local-name()="url"]').to_h do |node|
       [node.at_xpath('./*[local-name()="loc"]').text, node.xpath('./*[local-name()="image"]').map(&:dup)]
@@ -35,6 +45,7 @@ module SeoPublication
         rows.each do |row|
           x.url do
             x.loc(row[:url])
+            x.lastmod(row[:lastmod]) if row[:lastmod]
             (images[row[:url]] || []).each { |image| x.parent.add_child(image) }
           end
         end
@@ -62,6 +73,6 @@ module SeoPublication
       end
     end
     site.join('llms.txt').write(lines.join("\n") + "\n")
-    {sitemap_urls: rows.size, llms_links: seen.size, llms_sections: data['sections'].size, lastmod: 'omitted: no page-level significant-change history'}
+    {sitemap_urls: rows.size, llms_links: seen.size, llms_sections: data['sections'].size, lastmod: 'verified page revision history; omitted when unknown', dated_urls: rows.count { |row| row[:lastmod] }}
   end
 end

@@ -4,9 +4,14 @@ require 'fileutils'
 require 'digest'
 require 'base64'
 require_relative '../lib/svg_asset_references'
+require_relative '../lib/publication_revisions'
 ENV['OPERATOR_CONTACT']='koledar365@gmail.com'
 out=Rails.root.join(ENV.fetch('STATIC_OUT','site'));FileUtils.mkdir_p(out)
 partial=ENV['STATIC_ONLY']&.split(',')
+revision_path=out.join('page-revisions.json')
+previous_revisions=revision_path.file? ? JSON.parse(revision_path.read) : {}
+revisions={}
+revision_time=Time.now.utc
 unless partial
  # Retire removed name-day and name-calendar pages plus their public preview fragments.
  %w[koledar-z-imenom imena free/names sitemap-names.xml godovi].each { |relative| FileUtils.rm_rf(out.join(relative)) }
@@ -85,7 +90,8 @@ elsif path=='/solski-urnik/'
  # Public previews are a clearly marked sample; the private preview uses the same Ruby renderer locally.
  doc.css('[data-preview-design]').each do |node|
    design=node['data-preview-design'];node['src']="/free/samples/#{design}.png";node['data-static-preview']=node['src']
-   node['alt']='Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled.'
+   design_name=PrintCatalog.designs.find { |row| row['id']==design }&.fetch('name_sl',design) || design
+   node['alt']="Vzorec postavitve »#{design_name}«. Za svoje obdobje in vnose odprite Moj predogled."
  end
  doc.css('.design-section > p.muted').each { |node|node.content='Sličica prikazuje vzorec postavitve. »Moj predogled« pripravi izbrano obdobje in vaše vnose na tej napravi. PDF vsebuje vektorsko besedilo, WebP pa celotno ločljivost 600 ppi. Večstranski prenos WebP je ZIP z vsemi stranmi in podatki za tisk.' }
  doc.css('p').each do |node|
@@ -146,7 +152,13 @@ paths=paths.select { |path,_|partial.include?(path) } if partial
 limit=ENV['STATIC_LIMIT']&.to_i;paths=paths.first(limit) if limit
 paths.each_with_index do |(path,indexable),index|
  session.get(path);raise "#{path}: #{session.response.status}" unless session.response.status==200
- html=transform.call(session.response.body,path,indexable:indexable);write.call(path,html);processed<<path
+ html=transform.call(session.response.body,path,indexable:indexable)
+ if indexable && !partial && !limit
+   old_file=out.join(path.delete_prefix('/'),'index.html')
+   revisions[path]=PublicationRevisions.revision(html:html,previous_html:(old_file.read if old_file.file?),previous_record:previous_revisions[path],now:revision_time)
+   html=PublicationRevisions.apply_html(html,revisions[path])
+ end
+ write.call(path,html);processed<<path
  puts "HTML #{index+1}/#{paths.size}" if index%200==0;STDOUT.flush
 end
 unless limit||partial
@@ -195,7 +207,13 @@ end
 out.join('free/search.json').write(JSON.generate(search))
 events=CalendarEvent.all.map { |event|event.attributes.merge('path'=>['/prazniki/','/pomembni-dnevi/','/letni-casi/'].map { |prefix|prefix+event.slug+'/' }.find { |path|Page.exists?(path:path) }||"/pomembni-dnevi/#{event.on.year}/") }
 out.join('free/events.json').write(events.to_json)
-%w[sitemap.xml sitemap-pages.xml robots.txt].each { |path|session.get('/'+path);write.call('/'+path,session.response.body) }
+%w[sitemap.xml sitemap-pages.xml robots.txt].each do |path|
+ session.get('/'+path)
+ body=session.response.body
+ body=PublicationRevisions.apply_sitemap(body,revisions) if path=='sitemap-pages.xml' && !partial && !limit
+ write.call('/'+path,body)
+end
+revision_path.write(JSON.pretty_generate(revisions)+"\n") unless partial || limit
 (2027..2030).each { |year|session.get("/prazniki/#{year}.ics");write.call("/prazniki/#{year}.ics",session.response.body) }
 css=Dir[out.join('assets/holidays-*.css')].first;FileUtils.cp(css,out.join('free/holidays.css')) if css
 cities=CityCatalog.all.map { |city|city.slice('id','name','coordinates') }
