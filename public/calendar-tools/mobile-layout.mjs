@@ -89,6 +89,10 @@ function start(){
   document.querySelectorAll(selector).forEach(queue);
   new MutationObserver(changes=>{
     for(const change of changes){
+      if(change.type==='attributes'&&change.attributeName==='class'){
+        if(change.target===document.body)document.querySelectorAll(calendars).forEach(queue);
+        continue;
+      }
       if(change.target.nodeType===1)queue(change.target.closest(selector));
       for(const node of change.addedNodes){
         if(node.nodeType!==1)continue;
@@ -96,6 +100,6 @@ function start(){
         node.querySelectorAll(selector).forEach(queue);
       }
     }
-  }).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['hidden']});
+  }).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['hidden','class']});
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();

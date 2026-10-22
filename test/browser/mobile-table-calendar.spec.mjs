@@ -52,6 +52,12 @@ test('calendar markers stay inside their days and full event names follow filter
     return {inside:markers.every(b=>b.left>=r.left&&b.right<=r.right+1),overlap:markers.some((a,i)=>markers.slice(i+1).some(b=>Math.min(a.right,b.right)>Math.max(a.left,b.left)&&Math.min(a.bottom,b.bottom)>Math.max(a.top,b.top)))};
   });
   expect(layout).toEqual({inside:true,overlap:false});
+  await page.setViewportSize({width:1280,height:900});
+  await page.locator('#show-holidays').uncheck();
+  await expect(page.locator('.calendar-agenda a')).toHaveCount(1);
+  await page.locator('#show-holidays').check();
+  await expect(page.locator('.calendar-agenda a').filter({hasText:'dan reformacije'})).toHaveCount(1);
+  await page.setViewportSize({width:320,height:900});
   await page.locator('#event-search').fill('reformacije');
   await expect(agenda.getByRole('link')).toHaveCount(1);
   await expect(agenda.getByRole('link')).toContainText('dan reformacije');
