@@ -85,3 +85,26 @@ test('student print view displays all weekdays and preserves the complete galler
   await expect(page.locator('.student-print-only')).toBeVisible();
   await expect(page.locator('.design-section')).toBeHidden();
 });
+
+test('student print gallery stays full width and the WebP action remains reachable on desktop and mobile', async ({ page }) => {
+  await quietConsent(page);
+  const response = await page.goto('/solski-urnik/', { waitUntil: 'load' });
+  expect(response?.status()).toBe(200);
+
+  for (const width of [1280, 390]) {
+    await page.setViewportSize({ width, height: 844 });
+    const webpButton = page.locator('#design-gallery .design-card').first().locator('[data-export][data-format="webp"]');
+    await webpButton.scrollIntoViewIfNeeded();
+    const geometry = await page.evaluate(() => {
+      const workspace = document.querySelector('.download-workspace').getBoundingClientRect();
+      const gallery = document.querySelector('#design-gallery').getBoundingClientRect();
+      const button = document.querySelector('#design-gallery [data-export][data-format="webp"]');
+      const rect = button.getBoundingClientRect();
+      const hit = document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2);
+      return { workspaceWidth: workspace.width, galleryWidth: gallery.width, webpButtonHit: !!hit && button.contains(hit) };
+    });
+    expect(geometry.galleryWidth, JSON.stringify(geometry)).toBeGreaterThan(geometry.workspaceWidth * 0.9);
+    expect(geometry.webpButtonHit, JSON.stringify(geometry)).toBe(true);
+  }
+});
+
