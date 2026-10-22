@@ -101,3 +101,14 @@ test('without JavaScript the full table remains horizontally readable',async({br
   expect(layout.document).toBeLessThanOrEqual(321);
   await context.close();
 });
+
+test('eclipse status labels stay inside their cells with enlarged text',async({page})=>{
+  await page.setViewportSize({width:320,height:900});
+  await page.goto('/lunin-mrk/');
+  await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
+  await expect(page.locator('.mobile-record-table').first()).toBeVisible();
+  await page.addStyleTag({content:'.astro-status{font-family:DejaVu,sans-serif!important;font-size:20px!important}'});
+  await page.evaluate(()=>document.fonts.load('20px DejaVu'));
+  const cells=await page.locator('.mobile-record-table tbody tr').first().evaluate(row=>[...row.cells].map(cell=>({text:cell.textContent.trim(),width:cell.clientWidth,scroll:cell.scrollWidth})));
+  expect(cells.filter(cell=>cell.scroll>cell.width+1)).toEqual([]);
+});
