@@ -19,7 +19,7 @@
     <section class="student-panel student-schedule" aria-labelledby="student-schedule-title">
       <div class="student-panel__heading"><div><span class="student-section-index">A · TEDENSKI RAZPORED</span><h3 id="student-schedule-title">Predmeti in učilnice</h3></div><button class="student-text-button" type="button" data-add-lesson-open>＋ Dodaj uro</button></div>
       <div class="student-day-filters" role="group" aria-label="Izberi dan za prikaz na manjšem zaslonu">
-        <% [['1','Ponedeljek','Pon'],['2','Torek','Tor'],['3','Sreda','Sre'],['4','Četrtek','Čet'],['5','Petek','Pet']].each_with_index do |(value,full,short),index| %><button type="button" data-student-day="<%= value %>" aria-pressed="<%= index.zero? %>"><span><%= short %></span><small><%= full %></small></button><% end %>
+        <% [['1','Ponedeljek','Pon'],['2','Torek','Tor'],['3','Sreda','Sre'],['4','Četrtek','Čet'],['5','Petek','Pet']].each_with_index do |(value,full,short),index| %><button type="button" data-student-day="<%= value %>" aria-label="<%= full %>" aria-pressed="<%= index.zero? %>"><span><%= short %></span><small><%= full %></small></button><% end %>
       </div>
       <p class="student-demo-note" data-sample-note hidden><strong>Označen primer urnika.</strong> Uredi ga z dejanskimi dnevi in urami svoje šole ali odstrani vzorčne vnose.</p>
       <form class="student-entry-form" data-lesson-form hidden>
