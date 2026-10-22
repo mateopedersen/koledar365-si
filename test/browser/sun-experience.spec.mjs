@@ -59,7 +59,7 @@ test('all 69 city cards show their own embedded photo and linked photo credits',
  });
  expect(result).toHaveLength(69);
  expect(new Set(result.map((city)=>city.image)).size).toBe(69);
- expect(result.every((city)=>city.image?.startsWith('data:image/jpeg;base64,')&&city.title===`Fotografija mesta ${city.name}`&&city.svgLabel?.split(' ').length===2&&city.credit===`/fotografije-in-licence/#${city.id}`&&city.text.length>8)).toBe(true);
+ expect(result.every((city)=>city.image?.startsWith('data:image/jpeg;base64,')&&city.title===`${city.name} – fotografija mesta`&&city.svgLabel?.split(' ').length===2&&city.credit===`/fotografije-in-licence/#${city.id}`&&city.text.length>8)).toBe(true);
  const firstMain=page.locator('.sun-city-link__main').first();
  await firstMain.focus();
  await expect(firstMain).toBeFocused();

@@ -90,7 +90,7 @@ class SeoTest < ActionDispatch::IntegrationTest
         mark=card.at_css('.sun-city-link__mark')
         assert_equal 'svg',mark.name
         title_id=mark['aria-labelledby'].split.first
-        assert_equal "Fotografija mesta #{city.fetch('name')}",mark.at_css("title##{title_id}").text
+        assert_equal "#{city.fetch('name')} – fotografija mesta",mark.at_css("title##{title_id}").text
         assert_includes mark.to_html,'href="data:image/jpeg;base64,'
         assert Rails.root.join('data','city-marks',"#{id}.svg").file?
         refute Rails.root.join('public','images','city-marks',"#{id}.svg").exist?
