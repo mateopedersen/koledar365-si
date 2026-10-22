@@ -43,8 +43,8 @@ test('all sixteen vegetables have sharp self-contained licensed SVG photographs 
   await page.locator('[data-garden-search]').fill('cesen');await expect(page.locator('[data-garden-row]:visible .garden-plant-photo')).toHaveCount(1);
   await expect(page.locator('main a[href*="fotografije-in-licence"], main .garden-photo-credit')).toHaveCount(0);
   await expect(page.locator('main')).not.toContainText(/CC BY|CC0|Avtorji in licence fotografij/);
-  await page.goto('/');
-  await page.locator('footer a[href="/fotografije-in-licence/"]').click();
+  await page.goto('/viri-in-metodologija/');
+  await page.locator('main a[href="/fotografije-in-licence/"]').click();
   await expect(page).toHaveURL(/\/fotografije-in-licence\/$/);
   await expect(page.locator('#fotografije-vrtnin')).toHaveText('Fotografije vrtnin');
   await expect(page.locator('.garden-photo-license')).toHaveCount(16);

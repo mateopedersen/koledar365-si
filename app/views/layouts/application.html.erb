@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="<%= seo_title %>"><meta name="twitter:description" content="<%= @description %>"><meta name="twitter:image" content="<%= sharing_image[:url] %>"><meta name="twitter:image:alt" content="<%= sharing_image[:alt] %>">
 <% end %>
 <% if (schema=structured_data) %><script type="application/ld+json" nonce="<%= content_security_policy_nonce %>"><%= raw json_escape(schema.to_json) %></script><% end %>
-<%= csrf_meta_tags %><%= csp_meta_tag %><%= stylesheet_link_tag 'application', 'experience', 'slovenia', 'vector_identity', 'search' %><%= javascript_include_tag 'application','planners',defer:true %><% if @section=='home' %><%= stylesheet_link_tag 'city_card' %><%= javascript_include_tag 'city_card',defer:true %><% end %>
+<%= csrf_meta_tags %><%= csp_meta_tag %><%= stylesheet_link_tag 'application', 'experience', 'slovenia', 'vector_identity', 'search', 'footer' %><%= javascript_include_tag 'application','planners',defer:true %><% if @section=='home' %><%= stylesheet_link_tag 'city_card' %><%= javascript_include_tag 'city_card',defer:true %><% end %>
 <% if @section=='about' %><%= stylesheet_link_tag 'about' %><% end %>
 <% if page_path=='/kontakt/' %><link rel="stylesheet" href="/contact/contact-v1.css"><script type="module" src="/contact/contact-v1.mjs"></script><% end %>
 <% if page_path == '/druzinski-planer/' %><%= stylesheet_link_tag 'family_planner' %><%= javascript_include_tag 'family_planner_core', 'family_planner', defer:true %><% end %>
@@ -61,6 +61,47 @@
 <% if flash[:notice] %><p class="notice" role="status"><%= flash[:notice] %></p><% end %><% if flash[:alert] %><p class="error" role="alert"><%= flash[:alert] %></p><% end %>
 <%= yield %>
 </main>
-<footer><%= render 'layouts/brand' %><a href="/o-nas/">O nas</a><a href="/zasebnost/">Zasebnost</a><a href="/viri-in-metodologija/">Viri in metodologija</a><a href="/kontakt/">Kontakt</a><a href="/fotografije-in-licence/">Fotografije in licence</a><a href="/pogoji-uporabe/">Pogoji uporabe</a><button class="text-button" data-cookie-open>Nastavitve piškotkov</button><span>© <%= Time.zone.today.year %> Koledar365</span></footer>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__main">
+      <div class="site-footer__brand">
+        <%= render 'layouts/brand' %>
+        <p>Koledarji in uporabna orodja za lažje načrtovanje vsakdanjih dni.</p>
+      </div>
+      <nav class="site-footer__groups" aria-label="Povezave v nogi strani">
+        <section class="site-footer__group" aria-labelledby="footer-calendars">
+          <h2 id="footer-calendars">Koledarji</h2>
+          <a href="/koledar/">Letni in mesečni koledar</a>
+          <a href="/prazniki/">Prazniki v Sloveniji</a>
+          <a href="/lunin-koledar/">Lunin koledar</a>
+          <a href="/pomembni-dnevi/">Pomembni dnevi</a>
+        </section>
+        <section class="site-footer__group" aria-labelledby="footer-tools">
+          <h2 id="footer-tools">Orodja za načrtovanje</h2>
+          <a href="/soncni-vzhod-in-zahod/">Sončni vzhod in zahod</a>
+          <a href="/razpored-izmen/">Razpored izmen</a>
+          <a href="/datumski-kalkulator/">Datumski kalkulator</a>
+          <a href="/kalkulator-delovnih-dni/">Kalkulator delovnih dni</a>
+          <a href="/nacrtovalnik-dopusta/">Načrtovalnik dopusta</a>
+        </section>
+        <section class="site-footer__group" aria-labelledby="footer-about">
+          <h2 id="footer-about">O Koledarju365</h2>
+          <a href="/o-nas/">O nas</a>
+          <a href="/viri-in-metodologija/">Viri in metodologija</a>
+          <a href="/zasebnost/">Zasebnost</a>
+          <a href="/pogoji-uporabe/">Pogoji uporabe</a>
+          <button class="site-footer__cookie-link" type="button" data-cookie-open>Nastavitve piškotkov</button>
+        </section>
+        <section class="site-footer__group site-footer__group--contact" aria-labelledby="footer-contact">
+          <h2 id="footer-contact">Kontakt</h2>
+          <p>Imate predlog ali ste opazili napako? Z veseljem bomo preverili.</p>
+          <a class="site-footer__contact-link" href="/kontakt/">Pišite nam <span aria-hidden="true">→</span></a>
+          <a href="mailto:koledar365@gmail.com">koledar365@gmail.com</a>
+        </section>
+      </nav>
+    </div>
+    <div class="site-footer__bottom"><span>© <%= Time.zone.today.year %> Koledar365</span><span>Praktični koledarji za Slovenijo</span></div>
+  </div>
+</footer>
 <%= render 'layouts/cookies' %>
 </body></html>
