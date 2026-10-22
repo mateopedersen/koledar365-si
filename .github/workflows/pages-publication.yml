@@ -112,3 +112,17 @@ jobs:
       - name: Save complete verified publication
         run: |
           bash script/save_pages_publication.sh
+      # GITHUB_TOKEN pushes do not trigger another push workflow. Keep the
+      # live gate in this job so a bot publication cannot miss verification.
+      - name: Wait for the exact Cloudflare publication
+        run: /usr/bin/python3 script/wait_production.py
+      - name: Verify live canonical pages and published assets
+        run: /usr/bin/python3 script/qa_seo.py --live && /usr/bin/python3 script/qa_production.py
+      - name: Keep production parity evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: publication-production-parity-${{ github.sha }}
+          path: evidence/qa/
+          if-no-files-found: ignore
+          retention-days: 14
