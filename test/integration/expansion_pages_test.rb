@@ -45,14 +45,14 @@ class ExpansionPagesTest < ActionDispatch::IntegrationTest
     assert_select 'img[width="1200"][height="800"][alt]'
   end
 
-  test 'garden photo credits remain available from methodology without a footer link' do
+  test 'garden photo credits remain in the license page linked from the footer and methodology' do
     get GardenCalendar::PATH
     assert_response :success
     assert_select '.garden-plant-photo',count:16
     assert_select '.garden-detail-photo',count:16
     assert_select 'main a[href*="fotografije-in-licence"], main .garden-photo-credit',count:0
     get '/'
-    assert_select 'footer a[href="/fotografije-in-licence/"]',count:0
+    assert_select 'footer a[href="/fotografije-in-licence/"]',count:1
     get '/viri-in-metodologija/'
     assert_response :success
     assert_select 'main a[href="/fotografije-in-licence/"]',count:1
