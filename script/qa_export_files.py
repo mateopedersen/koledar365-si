@@ -43,6 +43,9 @@ for source in report['rows']:
     got=(float(page.mediabox.width)*25.4/72,float(page.mediabox.height)*25.4/72)
     assert all(abs(a-b)<1.2 for a,b in zip(got,expected)),f'Expected {expected}, got {got}'
    content=' '.join(page.extract_text() for page in pdf.pages)
+   if source['kind']=='print' and source.get('name')=='student':
+    assert '7. 2. 2028' in content and '11. 2. 2028' in content,'Selected school week missing'
+    assert 'Matematika' in content,'Saved sample lesson missing'
    if source['kind']=='personal-pdf':
     if source['path']=='/dnevni-planer/':
      assert all(f'{hour:02}:00' in content for hour in range(7,22)),'Missing daily hour after pagination'

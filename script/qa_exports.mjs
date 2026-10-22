@@ -31,10 +31,15 @@ if(process.env.QA_EXPORT_MODE!=='print'){
  }
 }
 if(process.env.QA_EXPORT_MODE!=='downloads'){
- const routes=[['annual','/koledar/2028/','[data-print]'],['monthly','/koledar/2028/februar/','[data-print]'],['lunar-year','/lunin-koledar/2028/','.lunar-print'],['lunar-month','/lunin-koledar/2028/februar/','.lunar-print'],['family','/druzinski-planer/','[data-family-print]'],['school','/solske-pocitnice/','[data-school-calendar-print]'],['payments','/izplacila-pokojnin/','[data-payment-print]']];
+ const routes=[['annual','/koledar/2028/','[data-print]'],['monthly','/koledar/2028/februar/','[data-print]'],['lunar-year','/lunin-koledar/2028/','.lunar-print'],['lunar-month','/lunin-koledar/2028/februar/','.lunar-print'],['family','/druzinski-planer/','[data-family-print]'],['school','/solske-pocitnice/','[data-school-calendar-print]'],['student','/solski-urnik/','[data-print-schedule]'],['payments','/izplacila-pokojnin/','[data-payment-print]']];
  for(const [name,route,selector] of routes)for(const [paper,orientation,width] of [['A4','portrait',1440],['A4','landscape',1440],['A3','portrait',1440],['A4','portrait',390]]){
   await run({kind:'print',name,path:route,paper,orientation,width},async row=>{
    await page.emulateMedia({media:'screen'});await page.setViewportSize({width,height:1000});await page.goto(base+route,{waitUntil:'load'});
+   if(name==='student'){
+    await page.locator('[data-student-timetable][data-hydrated=true]').waitFor();
+    if(await page.locator('[data-load-sample]').isVisible())await page.locator('[data-load-sample]').click();
+    await page.locator('[data-print-week]').fill('2028-02-09');
+   }
    if(!await page.locator(selector).first().isVisible()&&await page.locator('[data-context-expand]').count())await page.locator('[data-context-expand]').first().click();
    await page.locator(selector).first().click();assert(await page.evaluate(()=>window.__printCalls>0),'Button did not invoke print');await page.emulateMedia({media:'print'});
    row.file=`print-${name}-${paper}-${orientation}-${width}.pdf`;await page.pdf({path:path.join(out,row.file),format:paper,landscape:orientation==='landscape',printBackground:true,preferCSSPageSize:false});
