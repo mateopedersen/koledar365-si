@@ -29,6 +29,10 @@ for source in report['rows']:
   else:
    assert file.read_bytes().startswith(b'%PDF-')
    pdf=PdfReader(file,strict=True);assert len(pdf.pages)>0
+   if source['kind']=='print' and source.get('name') in ['annual','monthly','school']:
+    assert len(pdf.pages)==1,'Calendar should fit one sheet without a detached heading/footer'
+   for page in pdf.pages:
+    assert len(page.extract_text().strip())>30,'Blank or footer-only print page'
    expected=(297,420) if source['paper']=='A3' else (210,297)
    if source['orientation']=='landscape':expected=expected[::-1]
    for page in pdf.pages:

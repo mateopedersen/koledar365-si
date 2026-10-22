@@ -29,6 +29,17 @@
     transition: none !important;
   }
 
+  body::after {
+    position: fixed;
+    bottom: -8mm;
+    left: 0;
+    right: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    font-size: 8pt !important;
+  }
+
   .skip,
   .topbar,
   .subnav,
@@ -166,8 +177,12 @@
   .lunar-mini-grid a { padding: 1px; gap: 1px; flex-direction: row !important; justify-content: center; }
   .lunar-mini-grid .lunar-moon { max-width: 5mm; }
   .lunar-calendar { break-inside: avoid; }
-  .lunar-calendar .lunar-day .lunar-moon { max-width: 11mm; }
-  .lunar-calendar .lunar-day { padding: 1mm !important; gap: 1px; min-height: 0 !important; }
+  .lunar-calendar .lunar-day .lunar-moon { max-width: 9mm !important; }
+  .lunar-calendar .lunar-day { display: flex !important; padding: 1mm !important; gap: 1px; min-height: 0 !important; }
+  .lunar-calendar .lunar-number { font-size: 8pt !important; line-height: 1.1; }
+  .lunar-calendar .lunar-percent { font-size: 7pt !important; line-height: 1.1; }
+  .lunar-calendar .lunar-calendar-heading { padding-bottom: 2mm !important; }
+  .lunar-calendar .lunar-calendar-heading h2 { margin-bottom: 2mm !important; }
   .lunar-main .lunar-detail { break-before: auto; break-inside: avoid; }
   .lunar-detail .lunar-enlarge { float: right; width: 25mm; margin: 0 0 2mm 4mm; }
   .lunar-detail .lunar-big-percent { font-size: 17pt; }
@@ -249,4 +264,8 @@
   body.home-page .workspace > .center-panel > .stats {
     display: none !important;
   }
+}
+
+@media print and (orientation: landscape) {
+  #vsebina .year-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
 }
