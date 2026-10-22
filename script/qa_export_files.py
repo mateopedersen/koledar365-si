@@ -38,6 +38,14 @@ for source in report['rows']:
    for page in pdf.pages:
     got=(float(page.mediabox.width)*25.4/72,float(page.mediabox.height)*25.4/72)
     assert all(abs(a-b)<1.2 for a,b in zip(got,expected)),f'Expected {expected}, got {got}'
+   content=' '.join(page.extract_text() for page in pdf.pages)
+   if source['kind']=='personal-pdf':
+    if source['path']=='/dnevni-planer/':
+     assert all(f'{hour:02}:00' in content for hour in range(7,22)),'Missing daily hour after pagination'
+    if source['path']=='/solski-urnik/':
+     assert all(f'{hour}. ura' in content for hour in range(1,10)),'Missing lesson after pagination'
+    if source['path']=='/rojstnodnevni-koledar/':
+     assert all(month in content for month in ['Januar','Februar','Marec','April','Maj','Junij','Julij','Avgust','September','Oktober','November','December']),'Missing birthday month after pagination'
    row['pages']=len(pdf.pages);row['file_checks']=['PDF parsed','non-empty pages','selected paper size','selected orientation']
   row['file_passed']=True
  except Exception as e:row['file_passed']=False;row['file_error']=str(e)
