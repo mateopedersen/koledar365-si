@@ -17,6 +17,7 @@ test('mobile records keep full-width dates and names across table families and f
         if(await page.locator('[data-context-expand]').isVisible())await page.locator('[data-context-expand]').click();
       }
       await expect(table).toBeVisible();
+      expect(await table.getByRole('columnheader').count(),path).toBeGreaterThan(0);
       const row=table.locator('tbody tr').filter({visible:true}).first();
       const layout=await row.evaluate(row=>({
         viewport:document.documentElement.clientWidth,document:document.documentElement.scrollWidth,
