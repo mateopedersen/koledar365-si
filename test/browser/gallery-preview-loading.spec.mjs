@@ -23,7 +23,7 @@ test('opening a gallery keeps honest layout samples and renders a personal previ
   }
   expect(engines,'resizing a gallery must not start PDF rendering').toEqual([]);
   await card.locator('[data-personal-preview]').click();
-  await expect(card.locator('.export-status')).toContainText('Vaš osebni predogled',{timeout:90000});
+  await expect(card.locator('.export-status')).toHaveText('Vaš predogled · stran 1 od 1. Celotno datoteko prenesite s spodnjim gumbom.',{timeout:90000});
   await expect(image).toHaveAttribute('src',/^blob:/);
   await expect.poll(()=>image.evaluate(node=>node.complete&&node.naturalWidth>=600&&node.naturalHeight>=600)).toBe(true);
   expect(engines.some(url=>url.includes('/free/engine/'))).toBe(true);
