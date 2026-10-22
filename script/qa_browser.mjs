@@ -55,7 +55,10 @@ await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||3)},async()=
      for(let y=0;y<document.documentElement.scrollHeight;y+=innerHeight*.8){
       scrollTo(0,y);await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
      }
-     await Promise.all([...document.images].map(im=>im.decode().catch(()=>{})));
+     // A hidden, lazy image is never requested by WebKit. Decode the images
+     // that the scrolling visitor can actually see, and fail broken images.
+     const displayed=[...document.images].filter(im=>{const r=im.getBoundingClientRect();return r.width>0&&r.height>0&&getComputedStyle(im).visibility!=='hidden'});
+     await Promise.all(displayed.map(im=>im.decode()));
      scrollTo(0,0);await new Promise(r=>requestAnimationFrame(r));
     }),'Scrolled image loading');
    }

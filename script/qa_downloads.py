@@ -66,8 +66,11 @@ def check(item):
             if meta.get('pdf_sha256'): assert row['sha256']==meta['pdf_sha256'], 'PDF hash'
             if entry and entry.get('collection'):
                 text=' '.join(texts).casefold(); year=entry['options']['year']; month=entry['options']['month']
-                # One existing design prints the year as two stacked lines.
-                assert re.search(r'(?<!\d)' + r'\s*'.join(str(year)) + r'(?!\d)', text), 'Wrong or absent year in PDF text'
+                # Stacked numerals and the original design's three overprinted
+                # year layers are both real PDF text. Require whole year units;
+                # a different year or a year embedded in other digits fails.
+                year_pattern=r'\s*'.join(str(year))
+                assert re.search(r'(?<!\d)(?:'+year_pattern+r'){1,3}(?!\d)', text), 'Wrong or absent year in PDF text'
                 months=[month] if entry['options']['type']=='monthly' else list(range(1,13))
                 for m in months: assert MONTHS[m-1] in text, 'Month absent in PDF text'
                 expected=[datetime.date(year,m,d).isoformat() for m in months for d in range(1,calendar.monthrange(year,m)[1]+1)]
@@ -116,4 +119,5 @@ with (OUT/'download-test-report.csv').open('w') as f:
 summary={'checked_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'files':len(rows),'passed':sum(x['passed'] for x in rows),'failed':sum(not x['passed'] for x in rows),'catalog_pairs':len(CATALOG),'collection_pairs':sum(bool(x.get('collection')) for x in CATALOG),'failed_rows':[x for x in rows if not x['passed']]}
 (OUT/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
 print(json.dumps({k:v for k,v in summary.items() if k!='failed_rows'}),flush=True)
+for row in summary['failed_rows']: print(json.dumps(row,ensure_ascii=False),flush=True)
 raise SystemExit(bool(summary['failed']))

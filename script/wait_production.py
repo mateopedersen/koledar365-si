@@ -6,7 +6,7 @@ from urllib.request import Request,urlopen
 expected=hashlib.sha256(Path('site/release-manifest.json').read_bytes()).hexdigest()
 for attempt in range(40):
  try:
-  with urlopen(Request('https://koledar365.si/release-manifest.json',headers={'Accept-Encoding':'identity'}),timeout=30) as response:
+  with urlopen(Request('https://koledar365.si/release-manifest.json',headers={'Accept-Encoding':'identity','User-Agent':'Koledar365-Release-Parity/1.0'}),timeout=30) as response:
    if hashlib.sha256(response.read()).hexdigest()==expected:
     print('Cloudflare is serving the exact publication manifest.');break
  except Exception as error:

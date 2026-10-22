@@ -2,6 +2,7 @@
 # Run after rebuild_free.rb. Every command is a release gate, not a score.
 set -euo pipefail
 task_python="${PYTHON_BIN:-python3}"
+"$task_python" test/test_cdn_email_parity.py
 "$task_python" script/qa_seo.py
 "$task_python" script/qa_downloads.py
 "$task_python" script/qa_collection_raster.py
