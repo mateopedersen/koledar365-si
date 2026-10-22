@@ -27,7 +27,8 @@
 <meta name="twitter:image" content="https://koledar365.si/druzabno/pages/330/67c4e8a957c0579bc103.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl","publisher":{"@id":"https://koledar365.si/#organization"}},{"@type":"WebPage","@id":"https://koledar365.si/zasebnost/#webpage","url":"https://koledar365.si/zasebnost/","name":"Zasebnost","description":"Preberite, kako Koledar365 varuje zasebnost: lokalni koledarji, podatki ob obisku, piškotki, ponudniki, roki hrambe in vaše pravice po GDPR.","inLanguage":"sl","isPartOf":{"@id":"https://koledar365.si/#website"},"publisher":{"@id":"https://koledar365.si/#organization"}},{"@type":"Organization","@id":"https://koledar365.si/#organization","name":"Koledar365","url":"https://koledar365.si/","email":"koledar365@gmail.com"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://koledar365.si/"},{"@type":"ListItem","position":2,"name":"Zasebnost","item":"https://koledar365.si/zasebnost/"}]}]}</script>
 
-<link rel="stylesheet" href="/assets/web-742405a2f8f67a94.css">
+<link rel="stylesheet" href="/assets/web-b80f41a6308b9ca7.css">
+
 
 
 
@@ -65,11 +66,12 @@
 
 
 <link rel="icon" href="/visuals/brand-calendar-v3.71d101697df6153f.svg" type="image/svg+xml">
-<script type="application/json" id="k365-static-config">{"scripts":["/assets/application-f427bb33.js","/assets/planners-2d7bec70.js"],"holidays":"/assets/holidays-0af57d2c.js","vacation":"/assets/vacation-ecc923a5.js","countdown":"/assets/countdown-164dee2d.js","shift":"/assets/shift_schedule-b8cc056a.js"}</script><link rel="preload" as="script" href="/assets/application-f427bb33.js">
+<script type="application/json" id="k365-static-config">{"scripts":["/assets/application-f427bb33.js","/assets/planners-2d7bec70.js","/assets/navigation-3b014eab.js"],"holidays":"/assets/holidays-0af57d2c.js","vacation":"/assets/vacation-ecc923a5.js","countdown":"/assets/countdown-164dee2d.js","shift":"/assets/shift_schedule-b8cc056a.js"}</script><link rel="preload" as="script" href="/assets/application-f427bb33.js">
 <link rel="preload" as="script" href="/assets/planners-2d7bec70.js">
+<link rel="preload" as="script" href="/assets/navigation-3b014eab.js">
 <link rel="modulepreload" href="/free/catalog-match.js">
 <link rel="modulepreload" href="/free/date-context.js">
-<script type="module" src="/free/client-cd680a9a438cc8c8.js"></script>
+<script type="module" src="/free/client-533a75d9de18ac48.js"></script>
 </head>
 <body class="">
 <svg xmlns="http://www.w3.org/2000/svg" data-k365-ui-paint-defs="" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden;pointer-events:none"><defs><lineargradient id="k-paper" x1="0" y1="0" x2=".85" y2="1">
@@ -105,18 +107,77 @@
   <stop offset="1" stop-color="#5b9acb" stop-opacity=".65"></stop>
 </radialgradient></defs></svg>
 <a class="skip" href="#vsebina">Na vsebino</a>
-<header class="topbar"><a class="brand" href="/" aria-label="Koledar365 – domov"><span class="brand-symbol"><img width="44" height="44" alt="" class="brand-mark" aria-hidden="true" src="/visuals/brand-calendar-v3.71d101697df6153f.svg"></span> Koledar<span>365</span></a>
-<nav aria-label="Glavna navigacija"><a href="/koledar/">Koledar</a><a href="/prazniki/">Prazniki</a><a href="/solske-pocitnice/">Šolske počitnice</a></nav>
-<form action="/isci/" class="search" role="search" data-site-search>
-<label class="sr-only" for="search">Poišči datum, dogodek ali orodje</label><input id="search" data-search-input name="q" type="search" autocomplete="off" placeholder="Išči praznik, dogodek, datum ali orodje" value=""><button aria-label="Išči po spletnem mestu"><svg class="ui-icon icon-search" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#search" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#search"></use></svg></button><div class="site-search-suggestions" data-search-suggestions hidden>
+<!-- BEGIN app/views/layouts/_navigation.html.erb
+--><header class="topbar">
+  <a class="brand" href="/" aria-label="Koledar365 – domov"><span class="brand-symbol"><img width="44" height="44" alt="" class="brand-mark" aria-hidden="true" src="/visuals/brand-calendar-v3.71d101697df6153f.svg"></span> Koledar<span>365</span></a>
+  <nav aria-label="Glavna navigacija">
+      <a href="/koledar/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calendar" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calendar"></use></svg><span>Koledar</span></a>
+      <a href="/prazniki/"><svg class="ui-icon icon-gift" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#gift" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#gift"></use></svg><span>Prazniki</span></a>
+      <a href="/solske-pocitnice/"><svg class="ui-icon icon-school" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#school" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#school"></use></svg><span>Šolske počitnice</span></a>
+  </nav>
+  <form action="/isci/" class="search" role="search" data-site-search>
+    <label class="sr-only" for="search">Poišči datum, dogodek ali orodje</label>
+    <input id="search" data-search-input name="q" type="search" autocomplete="off" placeholder="Išči datum, praznik ali orodje" value="">
+    <button aria-label="Išči po spletnem mestu"><svg class="ui-icon icon-search" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#search" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#search"></use></svg></button>
+    <div class="site-search-suggestions" data-search-suggestions hidden>
 <p class="site-search-status" data-search-status role="status" aria-live="polite" hidden></p>
 <div id="site-search-suggestions" data-search-options role="listbox" aria-label="Predlogi iskanja"></div>
 </div>
-</form>
-<span class="country"><img width="36" height="22" alt="" class="country-flag" aria-hidden="true" src="/visuals/slovenia-fabric-v3.95b82b3f8fbaebac.svg"> Slovenija</span></header>
-<nav class="subnav" aria-label="Koledarji in orodja"><div class="subnav-track">
-<a href="/koledar/2027/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar"></use></svg> 2027</a><a href="/koledar/2028/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar"></use></svg> 2028</a><a href="/koledar/2029/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar"></use></svg> 2029</a><a href="/koledar/2030/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar"></use></svg> 2030</a><a href="/lunin-koledar/"><svg class="ui-icon icon-moon" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#moon" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#moon"></use></svg> Sonce in Luna</a><a href="/delovni-dnevi/"><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note"></use></svg> Delovni dnevi</a><a href="/koledar-za-tiskanje/"><svg class="ui-icon icon-print" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#print" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#print"></use></svg> Koledarji PDF</a><a href="/datumski-kalkulator/"><svg class="ui-icon icon-calculator" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calculator" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calculator"></use></svg> Datumski kalkulator</a><a href="/solski-koledar/"><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note"></use></svg> Šolski koledar</a><a href="/setveni-koledar/"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar"></use></svg> Setveni koledar</a><a href="/horoskop/"><img width="24" height="24" alt="" class="ui-icon icon-zodiac" aria-hidden="true" src="/horoscope/art/wheel-icon-v1.f0a3a103957daf9e.svg"> Dnevni horoskop</a><a href="/orodja/"><svg class="ui-icon icon-grid" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#grid" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#grid"></use></svg> Vsa orodja</a>
-</div></nav>
+  </form>
+  <span class="country" aria-label="Slovenija"><img width="36" height="22" alt="" class="country-flag" aria-hidden="true" src="/visuals/slovenia-fabric-v3.95b82b3f8fbaebac.svg"><span class="country-label">Slovenija</span></span>
+</header>
+<nav class="subnav site-navigation" aria-label="Koledarji in orodja">
+  <div class="subnav-track">
+    <div class="nav-years" role="group" aria-label="Letni koledarji">
+      <span class="nav-years__label"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calendar" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calendar"></use></svg><span>Koledarji</span></span>
+        <a aria-label="Koledar 2027" href="/koledar/2027/">2027</a>
+        <a aria-label="Koledar 2028" href="/koledar/2028/">2028</a>
+        <a aria-label="Koledar 2029" href="/koledar/2029/">2029</a>
+        <a aria-label="Koledar 2030" href="/koledar/2030/">2030</a>
+    </div>
+      <a class="nav-shortcut" href="/koledar-za-tiskanje/"><svg class="ui-icon icon-print" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#print" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#print"></use></svg><span>Koledarji PDF</span></a>
+      <a class="nav-shortcut" href="/delovni-dnevi/"><svg class="ui-icon icon-briefcase" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#briefcase" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#briefcase"></use></svg><span>Delovni dnevi</span></a>
+      <a class="nav-shortcut" href="/datumski-kalkulator/"><svg class="ui-icon icon-calculator" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calculator" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calculator"></use></svg><span>Datumski kalkulator</span></a>
+    <details class="nav-explorer" data-navigation-menu>
+      <summary aria-controls="site-tools-menu"><svg class="ui-icon icon-grid" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#grid" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#grid"></use></svg><span>Več orodij</span><svg class="nav-chevron" viewbox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"></path></svg></summary>
+      <div class="nav-directory" id="site-tools-menu">
+        <div class="nav-directory__heading">
+<div>
+<span>NA ENEM MESTU</span><h2>Kaj želite načrtovati?</h2>
+</div>
+<button type="button" data-navigation-close aria-label="Zapri meni orodij"><svg viewbox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"></path></svg></button>
+</div>
+        <div class="nav-directory__groups">
+            <section class="nav-directory__group" aria-label="Osebni načrti">
+              <h3>Osebni načrti</h3>
+                <a href="/ustvari-koledar/"><span class="nav-directory__icon"><svg class="ui-icon icon-plus" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#plus" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#plus"></use></svg></span><span><strong>Ustvari koledar</strong><small>Vaše fotografije, datumi in slog.</small></span></a>
+                <a href="/nacrtovalnik-dopusta/"><span class="nav-directory__icon"><svg class="ui-icon icon-vacation" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#vacation" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#vacation"></use></svg></span><span><strong>Načrtovalnik dopusta</strong><small>Več oddiha z manj dnevi dopusta.</small></span></a>
+                <a href="/druzinski-planer/"><span class="nav-directory__icon"><svg class="ui-icon icon-family" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#family" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#family"></use></svg></span><span><strong>Družinski planer</strong><small>Dogodki, obroki in skupni opravki.</small></span></a>
+                <a href="/razpored-izmen/"><span class="nav-directory__icon"><svg class="ui-icon icon-clock" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#clock" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#clock"></use></svg></span><span><strong>Razpored izmen</strong><small>Delovni cikli in osebni urnik.</small></span></a>
+            </section>
+            <section class="nav-directory__group" aria-label="Šola in čas">
+              <h3>Šola in čas</h3>
+                <a href="/solski-koledar/"><span class="nav-directory__icon"><svg class="ui-icon icon-school" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#school" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#school"></use></svg></span><span><strong>Šolski koledar</strong><small>Pomembni datumi šolskega leta.</small></span></a>
+                <a href="/solski-urnik/"><span class="nav-directory__icon"><svg class="ui-icon icon-week" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#week" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#week"></use></svg></span><span><strong>Šolski urnik</strong><small>Pregleden urnik pouka za tisk.</small></span></a>
+                <a href="/prazen-koledar/"><span class="nav-directory__icon"><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#note" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#note"></use></svg></span><span><strong>Prazen koledar</strong><small>Prostor za vaše zapiske in načrte.</small></span></a>
+                <a href="/odstevanje/"><span class="nav-directory__icon"><svg class="ui-icon icon-refresh" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#refresh" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#refresh"></use></svg></span><span><strong>Odštevanje do datuma</strong><small>Koliko dni je še do vašega dogodka?</small></span></a>
+            </section>
+            <section class="nav-directory__group" aria-label="Narava in navdih">
+              <h3>Narava in navdih</h3>
+                <a href="/lunin-koledar/"><span class="nav-directory__icon"><svg class="ui-icon icon-moon" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#moon" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#moon"></use></svg></span><span><strong>Sonce in Luna</strong><small>Lunine mene in pogled v nebo.</small></span></a>
+                <a href="/soncni-vzhod-in-zahod/"><span class="nav-directory__icon"><svg class="ui-icon icon-sunset" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#sunset" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#sunset"></use></svg></span><span><strong>Sončni vzhod in zahod</strong><small>Dolžina dneva za vaš kraj.</small></span></a>
+                <a href="/setveni-koledar/"><span class="nav-directory__icon"><svg class="ui-icon icon-sprout" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#sprout" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#sprout"></use></svg></span><span><strong>Setveni koledar</strong><small>Sezonska opravila za vaš vrt.</small></span></a>
+                <a href="/horoskop/"><span class="nav-directory__icon"><img width="24" height="24" alt="" class="ui-icon icon-zodiac" aria-hidden="true" src="/horoscope/art/wheel-icon-v1.f0a3a103957daf9e.svg"></span><span><strong>Dnevni horoskop</strong><small>Dnevni pogled za vaše znamenje.</small></span></a>
+            </section>
+        </div>
+        <div class="nav-directory__footer">
+<span>Praktična orodja. Brez registracije.</span><a href="/orodja/">Vsa orodja <svg class="ui-icon icon-arrow" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#arrow" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#arrow"></use></svg></a>
+</div>
+      </div>
+    </details>
+  </div>
+</nav>
+<!-- END app/views/layouts/_navigation.html.erb -->
 <main id="vsebina" tabindex="-1"><!-- BEGIN app/views/pages/_privacy_free.html.erb
 --><section class="privacy-hero" aria-labelledby="privacy-title">
   <div class="privacy-hero__copy">
@@ -125,8 +186,8 @@
 </h1>
     <p class="privacy-hero__lead">Preprosto in pregledno: kaj ostane v vašem brskalniku, katere zahteve prejme ponudnik gostovanja, kako dolgo se podatki hranijo in kako uveljavite svoje pravice.</p>
     <div class="privacy-hero__actions">
-      <a class="privacy-action privacy-action--primary" href="mailto:koledar365@gmail.com?subject=Koledar365%20%E2%80%93%20zasebnost"><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note"></use></svg> Pišite o zasebnosti</a>
-      <button class="privacy-action privacy-action--quiet" type="button" data-cookie-open><svg class="ui-icon icon-settings" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#settings" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#settings"></use></svg> Nastavitve shranjevanja</button>
+      <a class="privacy-action privacy-action--primary" href="mailto:koledar365@gmail.com?subject=Koledar365%20%E2%80%93%20zasebnost"><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#note" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#note"></use></svg> Pišite o zasebnosti</a>
+      <button class="privacy-action privacy-action--quiet" type="button" data-cookie-open><svg class="ui-icon icon-settings" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#settings" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#settings"></use></svg> Nastavitve shranjevanja</button>
     </div>
     <div class="privacy-proof" aria-label="Glavne značilnosti zasebnosti">
       <div>
@@ -153,21 +214,21 @@
 <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
 </div>
         <div class="privacy-art-paper__note">
-<span><svg class="ui-icon icon-check" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#check" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#check"></use></svg></span><div>
+<span><svg class="ui-icon icon-check" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#check" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#check"></use></svg></span><div>
 <b>Vaši zapiski v tem brskalniku</b><small>Shranjeni na vaši napravi</small>
 </div>
 </div>
       </div>
     </div>
     <div class="privacy-art-seal">
-<svg class="ui-icon icon-shield" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#shield" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#shield"></use></svg><span>VI<br>ODLOČATE</span>
+<svg class="ui-icon icon-shield" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#shield" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#shield"></use></svg><span>VI<br>ODLOČATE</span>
 </div>
     <span class="privacy-art-orbit privacy-art-orbit--one"></span><span class="privacy-art-orbit privacy-art-orbit--two"></span>
   </div>
 </section>
 
 <section class="privacy-summary" aria-label="Povzetek varstva zasebnosti">
-  <div class="privacy-summary__icon"><svg class="ui-icon icon-shield" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#shield" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#shield"></use></svg></div>
+  <div class="privacy-summary__icon"><svg class="ui-icon icon-shield" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#shield" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#shield"></use></svg></div>
   <div>
 <span class="privacy-kicker">NA KRATKO</span><h2>Vaši osebni načrti se obdelajo v brskalniku.</h2>
 <p>Koledar365 ne zahteva računa. Koledarski zapiski, šolski urnik, vrtni načrt in fotografije v urejevalniku se obdelajo na vaši napravi. Ponudnik gostovanja prejme običajne zahteve za javne strani in datoteke. Če sami delite povezavo z nastavitvami, so njeni parametri del deljene povezave.</p>
@@ -184,7 +245,7 @@
     <a href="#hramba">Roki hrambe</a>
     <a href="#pravice">Vaše pravice</a>
     <a href="#pravni-okvir">Pravni okvir</a>
-    <button type="button" data-cookie-open><svg class="ui-icon icon-settings" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#settings" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#settings"></use></svg> Nastavitve piškotkov</button>
+    <button type="button" data-cookie-open><svg class="ui-icon icon-settings" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#settings" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#settings"></use></svg> Nastavitve piškotkov</button>
     <div class="privacy-toc__contact">
 <span>VPRAŠANJE O PODATKIH?</span><a href="mailto:koledar365@gmail.com">koledar365@gmail.com</a>
 </div>
@@ -198,7 +259,7 @@
 </div>
 </div>
       <div class="privacy-controller__card">
-<div class="privacy-controller__mark"><svg class="ui-icon icon-person" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#person" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#person"></use></svg></div>
+<div class="privacy-controller__mark"><svg class="ui-icon icon-person" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#person" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#person"></use></svg></div>
 <div>
 <strong>Mateo Pedersen · Koledar365</strong><p>Za vprašanja o zasebnosti, zahteve glede podatkov ali predlog popravka pišite na <a href="mailto:koledar365@gmail.com">koledar365@gmail.com</a>.</p>
 </div>
@@ -213,43 +274,43 @@
 </div>
       <p class="privacy-section__intro">Koledar365 ne zahteva uporabniškega računa. Osebne dogodke, opravila, zapiske in nastavitve shranimo v brskalnik te naprave; ne sinhroniziramo jih med napravami. Javne podatke in datoteke prenesemo s spletnega mesta. Osebni izračuni in podprti izvozi v tej statični izdaji potekajo lokalno v brskalniku; ne ustvarjajo osebnega strežniškega računa.</p>
       <div class="privacy-data-list">
-        <article class="privacy-data-card"><div class="privacy-data-card__icon privacy-tone--blue"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar"></use></svg></div>
+        <article class="privacy-data-card"><div class="privacy-data-card__icon privacy-tone--blue"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calendar" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calendar"></use></svg></div>
 <div>
 <h3>Osebni načrti, zapiski in nastavitve</h3>
 <p>Dogodke, opravila in zapiske, ki jih dodate v koledar ali planer, hrani lokalna shramba brskalnika. Shranjevanje se sproži, ko uporabite ustrezno funkcijo. Vnosi ostanejo na tej napravi, dokler jih ne izbrišete; na napravi v skupni rabi jih lahko vidi tudi drug uporabnik istega brskalniškega profila.</p>
 <span class="privacy-data-card__basis">Lokalna hramba v vašem brskalniku</span>
 </div></article>
-        <article class="privacy-data-card"><div class="privacy-data-card__icon privacy-tone--red"><svg class="ui-icon icon-image" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#image" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#image"></use></svg></div>
+        <article class="privacy-data-card"><div class="privacy-data-card__icon privacy-tone--red"><svg class="ui-icon icon-image" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#image" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#image"></use></svg></div>
 <div>
 <h3>Prilagojeni izvozi, fotografije in ICS</h3>
 <p>Javne predloge PDF, WebP in objavljene koledarje ICS prenesete kot običajne datoteke. Osebne izvoze, uvoz ICS in izbrane fotografije podprta orodja obdelajo v brskalniku. Ustvarjalni studio fotografije in projekt hrani lokalno v zbirki IndexedDB; preneseno kopijo shranite sami. Tudi šolski urnik, setveni načrt in urejevalna preglednica Excel nastanejo lokalno. Ti vnosi se ob uporabi izvoznega gumba ne pošiljajo v repozitorij ali na strežnik.</p>
 <span class="privacy-data-card__basis">Lokalna obdelava; prenosi javnih datotek so običajne omrežne zahteve</span>
 </div></article>
-        <article class="privacy-data-card"><div class="privacy-data-card__icon privacy-tone--gold"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar"></use></svg></div>
+        <article class="privacy-data-card"><div class="privacy-data-card__icon privacy-tone--gold"><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calendar" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calendar"></use></svg></div>
 <div>
 <h3>Datumski in delovni izračuni</h3>
 <p>Razlike med datumi, delovne dneve in osebne nastavitve izračunamo v brskalniku. Nekatera orodja omogočajo deljivo povezavo z datumi ali nastavitvami v naslovu. Če tako povezavo odprete ali pošljete drugemu, lahko njene parametre prejme ponudnik gostovanja in jih vidi prejemnik. V deljivo povezavo ne vključujte zasebnih opomb.</p>
 <span class="privacy-data-card__basis">Izračun v napravi; deljiva povezava vsebuje izbrane parametre</span>
 </div></article>
-        <article class="privacy-data-card"><div class="privacy-data-card__icon privacy-tone--blue"><svg class="ui-icon icon-pin" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#pin" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#pin"></use></svg></div>
+        <article class="privacy-data-card"><div class="privacy-data-card__icon privacy-tone--blue"><svg class="ui-icon icon-pin" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#pin" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#pin"></use></svg></div>
 <div>
 <h3>Izbrano mesto in vremenska napoved</h3>
 <p>Za predlog mesta lahko Cloudflare iz IP-naslova oceni državo in približno območje; naš robni program v Sloveniji uporabi to oceno za predlog bližnjega mesta. Ne uporabljamo GPS-a ali natančne lokacije naprave, ocene ne shranjujemo in mesto lahko vedno izberete sami. Vremenski posrednik MET Norway prejme javne koordinate izbranega mesta, ne vašega IP-naslova, načrtov ali fotografij.</p>
 <span class="privacy-data-card__basis">Pravna podlaga za približen predlog: zakoniti interes za prikaz krajevno ustreznega vremena (člen 6(1)(f) GDPR)</span>
 </div></article>
-        <article class="privacy-data-card"><div class="privacy-data-card__icon privacy-tone--gold"><svg class="ui-icon icon-settings" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#settings" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#settings"></use></svg></div>
+        <article class="privacy-data-card"><div class="privacy-data-card__icon privacy-tone--gold"><svg class="ui-icon icon-settings" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#settings" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#settings"></use></svg></div>
 <div>
 <h3>Izbire zasebnosti in shranjevanje v brskalniku</h3>
 <p>Vrednost <code>k365.consent</code> si 180 dni zapomni vašo izbiro. Samo če dovoljenje vključuje pomnjenje mesta, shranimo še <code>k365.city</code>. Vremenska napoved se do 30 minut predpomni v <code>sessionStorage</code> trenutnega zavihka. Podatkovni nizi <code>k365.personal.v1</code>, <code>k365.entries.*</code> in <code>k365.options.*</code> hranijo načrte, vnose ali nastavitve, ki jih sami shranite. Šolski urnik uporablja <code>k365.school-timetable.v1</code>, vrtni načrt <code>k365.garden.plan.v1</code>, ustvarjalni studio pa lokalno zbirko <code>koledar365-studio</code>. Tudi mesečni in tedenski zapiski se shranijo v tem brskalniku. V zasebnem načinu ali ob onemogočeni shrambi trajna kopija morda ni na voljo; uporabljajte ponujene varnostne kopije. Izbira mesta se izbriše ob preklicu dovoljenja; lokalne zapiske lahko izbrišete v orodju ali nastavitvah brskalnika.</p>
 <span class="privacy-data-card__basis">Pomnjenje mesta temelji na vaši predhodni privolitvi; prekličete jo lahko kadar koli</span>
 </div></article>
-        <article class="privacy-data-card"><div class="privacy-data-card__icon privacy-tone--slate"><svg class="ui-icon icon-info" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#info" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#info"></use></svg></div>
+        <article class="privacy-data-card"><div class="privacy-data-card__icon privacy-tone--slate"><svg class="ui-icon icon-info" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#info" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#info"></use></svg></div>
 <div>
 <h3>Tehnični podatki ob obisku</h3>
 <p>Cloudflare, ki dostavlja in varuje spletno mesto, pri zahtevah obdela IP-naslov, čas, zahtevani naslov, podatke brskalnika, vrsto zahteve in odziv. Parametri v naslovu strani so del zahteve; lokalno shranjeni osebni načrti in fotografije podprtih orodij se pri običajnem obisku ne priložijo. Pravna podlaga za varnost in zanesljivo delovanje je zakoniti interes upravljavca (člen 6(1)(f) GDPR). Ob napaki lahko brskalnik Cloudflareju pošlje poročilo o napaki omrežne povezave; Cloudflare navaja, da IP obdela v pomnilniku med obravnavo poročila in ga v tej poti ne beleži.</p>
 <span class="privacy-data-card__basis">Ne uporabljamo lastne analitike, oglasnih profilov ali prstnega odtisa naprave</span>
 </div></article>
-        <article class="privacy-data-card"><div class="privacy-data-card__icon privacy-tone--ink"><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note"></use></svg></div>
+        <article class="privacy-data-card"><div class="privacy-data-card__icon privacy-tone--ink"><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#note" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#note"></use></svg></div>
 <div>
 <h3>Kontaktni obrazec in e-pošta</h3>
 <p>Na strani za stik lahko odprete Google Forms v novem zavihku ali ga na svojo zahtevo naložite znotraj strani. Pred tem se obrazec in Googlovi viri ne naložijo. Ob odprtju Google prejme tehnične podatke zahteve. Ob oddaji prejme e-poštni naslov, temo, sporočilo ter neobvezno ime in povezavo, če ju navedete. Odgovori so shranjeni v Google Forms v računu uredništva; za vsak nov odgovor prejme uredništvo obvestilo na koledar365@gmail.com. Povzetek odgovorov ni javen in za obrazec ne zahtevamo prijave v Google račun. Druga možnost je povezava za e-pošto: ta odpre vaš poštni program, sporočilo s prilogami pa odpošljete sami. Na vprašanja in predloge odgovorimo na podlagi zakonitega interesa (člen 6(1)(f) GDPR); zahteve za uveljavljanje zakonskih pravic obravnavamo zaradi pravne obveznosti (člen 6(1)(c)).</p>
@@ -266,28 +327,28 @@
 </div>
       <div class="privacy-provider-list">
         <div>
-<span class="privacy-provider-list__symbol"><svg class="ui-icon icon-cloud" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#cloud" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#cloud"></use></svg></span><div>
+<span class="privacy-provider-list__symbol"><svg class="ui-icon icon-cloud" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#cloud" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#cloud"></use></svg></span><div>
 <h3>Cloudflare</h3>
 <p>Omrežje dostavlja strani, izvaja približno zaznavo mesta in posreduje vremenske zahteve. Prejme zahteve za javne strani, slike, programske datoteke in objavljene prenose ter parametre v naslovu zahteve. Osebna vsebina lokalnih izvozov ostane v brskalniku. Cloudflare deluje globalno; tehnični podatki se zato lahko obdelujejo zunaj Evropskega gospodarskega prostora. Uporabijo se pogodbena varovala, vključno s standardnimi pogodbenimi klavzulami, kadar so potrebne. Koledar365 ne določa roka hrambe ponudnikovih dnevnikov; preverite Cloudflareova pravila. Ne trdimo, da je obdelava omejena na Evropo.</p>
 <a href="https://www.cloudflare.com/privacypolicy/">Zasebnost pri Cloudflare</a><span> · </span><a href="https://www.cloudflare.com/cloudflare-customer-dpa/">Pogoji obdelave in prenosi</a><span> · </span><a href="https://developers.cloudflare.com/network-error-logging/">Poročila o napakah omrežja</a>
 </div>
 </div>
         <div>
-<span class="privacy-provider-list__symbol privacy-tone--red"><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note"></use></svg></span><div>
+<span class="privacy-provider-list__symbol privacy-tone--red"><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#note" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#note"></use></svg></span><div>
 <h3>Google Forms in Gmail</h3>
 <p>Google gosti kontaktni obrazec in hrani oddane odgovore v računu uredništva. Naslov <a href="mailto:koledar365@gmail.com">koledar365@gmail.com</a> prejema obvestila o novih odgovorih in neposredno e-pošto. Do odgovorov dostopa uredništvo; ne objavljamo jih kot javne rezultate. Google lahko pri odprtju obrazca obdela IP-naslov in podatke brskalnika ter uporabi svoje varnostne mehanizme. Njegove storitve so globalne; veljajo njegova pravila obdelave in prenosov. Če ne želite uporabiti Google Forms, lahko sporočilo pošljete s svojim poštnim programom.</p>
 <a href="https://policies.google.com/privacy?hl=sl">Googlova politika zasebnosti</a>
 </div>
 </div>
         <div>
-<span class="privacy-provider-list__symbol privacy-tone--blue"><svg class="ui-icon icon-sun" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#sun" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#sun"></use></svg></span><div>
+<span class="privacy-provider-list__symbol privacy-tone--blue"><svg class="ui-icon icon-sun" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#sun" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#sun"></use></svg></span><div>
 <h3>MET Norway</h3>
 <p>Vir vremenskih podatkov prejme samo koordinate javno izbranega kraja prek strežniškega posrednika. Napoved se vrne brez podatkov o vaših osebnih načrtih ali fotografijah.</p>
 <a href="https://api.met.no/doc/TermsOfService">Pogoji za vremenski API</a>
 </div>
 </div>
       </div>
-      <p class="privacy-note"><svg class="ui-icon icon-info" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#info" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#info"></use></svg> Izvorna koda in javne vsebine so v GitHubu. Osebnih načrtov in fotografij ne pošiljamo v repozitorij. Zunanje povezave odprete sami; po kliku veljajo pravila ponudnika ciljne strani.</p>
+      <p class="privacy-note"><svg class="ui-icon icon-info" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#info" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#info"></use></svg> Izvorna koda in javne vsebine so v GitHubu. Osebnih načrtov in fotografij ne pošiljamo v repozitorij. Zunanje povezave odprete sami; po kliku veljajo pravila ponudnika ciljne strani.</p>
     </section>
 
     <section class="privacy-section" id="hramba">
@@ -298,19 +359,19 @@
 </div>
       <div class="privacy-retention-list">
         <div>
-<span><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#calendar"></use></svg></span><strong>Osebni načrti v brskalniku</strong><p>Do izbrisa v nastavitvah brskalnika ali znotraj orodja.</p>
+<span><svg class="ui-icon icon-calendar" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calendar" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#calendar"></use></svg></span><strong>Osebni načrti v brskalniku</strong><p>Do izbrisa v nastavitvah brskalnika ali znotraj orodja.</p>
 </div>
         <div>
-<span><svg class="ui-icon icon-pin" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#pin" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#pin"></use></svg></span><strong>Izbira mesta</strong><p>Največ 180 dni; ob preklicu privolitve jo odstranimo.</p>
+<span><svg class="ui-icon icon-pin" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#pin" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#pin"></use></svg></span><strong>Izbira mesta</strong><p>Največ 180 dni; ob preklicu privolitve jo odstranimo.</p>
 </div>
         <div>
-<span><svg class="ui-icon icon-clock" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#clock" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#clock"></use></svg></span><strong>Začasna vremenska napoved</strong><p>Največ 30 minut v trenutnem zavihku, nato se znova preveri.</p>
+<span><svg class="ui-icon icon-clock" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#clock" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#clock"></use></svg></span><strong>Začasna vremenska napoved</strong><p>Največ 30 minut v trenutnem zavihku, nato se znova preveri.</p>
 </div>
         <div>
-<span><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#note"></use></svg></span><strong>Kontaktni odgovori in e-pošta</strong><p>Dokler je potrebna za obravnavo, nato le še toliko časa, kolikor je razumno potrebno za povezane pravne zahtevke ali obveznosti.</p>
+<span><svg class="ui-icon icon-note" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#note" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#note"></use></svg></span><strong>Kontaktni odgovori in e-pošta</strong><p>Dokler je potrebna za obravnavo, nato le še toliko časa, kolikor je razumno potrebno za povezane pravne zahtevke ali obveznosti.</p>
 </div>
         <div>
-<span><svg class="ui-icon icon-cloud" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#cloud" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#cloud"></use></svg></span><strong>Tehnični podatki Cloudflare</strong><p>Koledar365 ne določa skupnega roka za dnevnike ponudnika. Podrobnosti in morebitne roke hrambe preverite v pravilih Cloudflare.</p>
+<span><svg class="ui-icon icon-cloud" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#cloud" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#cloud"></use></svg></span><strong>Tehnični podatki Cloudflare</strong><p>Koledar365 ne določa skupnega roka za dnevnike ponudnika. Podrobnosti in morebitne roke hrambe preverite v pravilih Cloudflare.</p>
 </div>
       </div>
     </section>
@@ -350,7 +411,7 @@
 --><section id="cookies" class="cookie-bar" aria-labelledby="cookie-title" aria-describedby="cookie-intro" hidden>
   <div class="cookie-bar-main">
     <div class="cookie-bar-icon" aria-hidden="true">
-      <svg class="ui-icon icon-cookie" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#cookie" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#cookie"></use></svg>
+      <svg class="ui-icon icon-cookie" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#cookie" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#cookie"></use></svg>
       <span class="cookie-flag"><img width="36" height="22" alt="" class="country-flag" aria-hidden="true" src="/visuals/slovenia-fabric-v3.95b82b3f8fbaebac.svg"></span>
     </div>
     <div class="cookie-bar-copy">
@@ -359,9 +420,9 @@
       <p id="cookie-intro">Z vašim dovoljenjem si do 180 dni zapomnimo izbrano mesto za krajevni čas in vreme. Analitike ali oglasnih sledilnikov ne uporabljamo. <a href="/piskotki/">Podrobnosti</a></p>
     </div>
     <div class="cookie-actions" role="group" aria-label="Izbira nastavitev zasebnosti">
-      <button type="button" data-consent="necessary"><span class="cookie-action-icon"><svg class="ui-icon icon-shield" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#shield" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#shield"></use></svg></span><span>Ne shrani mesta</span></button>
-      <button type="button" data-consent="all"><span class="cookie-action-icon"><svg class="ui-icon icon-pin" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#pin" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#pin"></use></svg></span><span>Zapomni si mesto</span></button>
-      <button type="button" data-consent-settings aria-expanded="false" aria-controls="cookie-settings"><span class="cookie-action-icon"><svg class="ui-icon icon-settings" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#settings" xlink:href="/visuals/ui-material-v3.a6bd8ea18ae2c0bc.svg#settings"></use></svg></span><span>Nastavitve</span></button>
+      <button type="button" data-consent="necessary"><span class="cookie-action-icon"><svg class="ui-icon icon-shield" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#shield" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#shield"></use></svg></span><span>Ne shrani mesta</span></button>
+      <button type="button" data-consent="all"><span class="cookie-action-icon"><svg class="ui-icon icon-pin" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#pin" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#pin"></use></svg></span><span>Zapomni si mesto</span></button>
+      <button type="button" data-consent-settings aria-expanded="false" aria-controls="cookie-settings"><span class="cookie-action-icon"><svg class="ui-icon icon-settings" viewbox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="/visuals/ui-material-v3.834e8abb995a5f11.svg#settings" xlink:href="/visuals/ui-material-v3.834e8abb995a5f11.svg#settings"></use></svg></span><span>Nastavitve</span></button>
     </div>
     <button type="button" class="cookie-close" data-cookie-close aria-label="Zapri brez spremembe nastavitev">
       <svg viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>

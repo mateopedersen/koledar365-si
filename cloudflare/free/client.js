@@ -134,6 +134,7 @@ function attachSearchSuggestions(form){
  });
  popup.addEventListener('click',event=>{if(event.target.closest('a[role="option"]'))close()});
  document.addEventListener('pointerdown',event=>{if(!form.contains(event.target))close()});
+ form.addEventListener('focusout',event=>{if(event.relatedTarget&&!form.contains(event.relatedTarget))close()});
  form.addEventListener('submit',close);
 }
 function initializeSearchSuggestions(){ $$('[data-site-search]').forEach(attachSearchSuggestions); }

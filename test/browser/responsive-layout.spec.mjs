@@ -1,5 +1,14 @@
 import { test, expect } from '@playwright/test';
 
+test('holiday heading fits while its web font is unavailable', async ({ page }) => {
+  await page.route('**/fonts/**', route => route.abort());
+  await page.setViewportSize({ width: 320, height: 900 });
+  await page.goto('/prazniki/');
+  await expect(page.locator('#holiday-directory-title')).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(321);
+  expect(await page.locator('#holiday-directory-title').evaluate(el => getComputedStyle(el).whiteSpace)).toBe('normal');
+});
+
 const pagePaths = [
   '/',
   '/koledar/2027/februar/',
