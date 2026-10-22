@@ -13,6 +13,7 @@
   const addDays=(value,daysToAdd)=>{const d=new Date(value+'T12:00:00Z');d.setUTCDate(d.getUTCDate()+daysToAdd);return d.toISOString().slice(0,10)};
   const mondayOf=value=>{const date=new Date(value+'T12:00:00Z');const day=date.getUTCDay()||7;date.setUTCDate(date.getUTCDate()-day+1);return date.toISOString().slice(0,10)};
   const formatDate=value=>new Intl.DateTimeFormat('sl-SI',{day:'numeric',month:'long'}).format(new Date(value+'T12:00:00'));
+  const formatPrintDate=value=>new Intl.DateTimeFormat('sl-SI',{day:'numeric',month:'numeric',year:'numeric'}).format(new Date(value+'T12:00:00'));
   const formatDue=task=>{const due=new Date(task.due+'T00:00:00');return new Intl.DateTimeFormat('sl-SI',{weekday:'short',day:'numeric',month:'short'}).format(due)};
   const make=(tag,className,text)=>{const node=document.createElement(tag);if(className)node.className=className;if(text!==undefined)node.textContent=text;return node};
   function syncPrintableEntries(){
@@ -88,7 +89,7 @@
     const demo=[{day:1,subject:'Matematika',start:'08:00',end:'08:45',room:'12',color:'blue'},{day:2,subject:'Slovenščina',start:'09:00',end:'09:45',room:'7',color:'red'},{day:3,subject:'Naravoslovje',start:'10:00',end:'10:45',room:'Laboratorij',color:'navy'},{day:4,subject:'Angleščina',start:'08:00',end:'08:45',room:'18',color:'blue'},{day:5,subject:'Zgodovina',start:'11:00',end:'11:45',room:'5',color:'red'}].map(item=>core.validateLesson(item));
     state.lessons.push(...demo);state.sample=true;saveAndRender('Prikazan je samo primer. Uredi ga z dejanskimi podatki svoje šole.');
   });
-  $('[data-print-schedule]').addEventListener('click',()=>{const range=$('[data-student-print-range]');range.textContent=`Tedenski pregled · teden od ${formatDate(mondayOf($('[data-print-week]').value||todayIso()))}`;window.print()});
+  $('[data-print-schedule]').addEventListener('click',()=>{const start=mondayOf($('[data-print-week]').value||todayIso()),end=addDays(start,4);$('[data-student-print-range]').textContent=`Teden: ${formatPrintDate(start)}–${formatPrintDate(end)}`;window.print()});
   $('[data-print-week]').addEventListener('change',event=>{const date=event.currentTarget.value;if(!core.validDate(date)||Number(date.slice(0,4))<2027||Number(date.slice(0,4))>2030){announce('[data-student-live-status]','Za predlogo izberi datum med letoma 2027 in 2030.',true);event.currentTarget.value='2027-01-04';return}syncPrintableEntries()});
   $('[data-export-ics]').addEventListener('click',()=>{
     try{const text=core.buildIcs(state,$('[data-ics-from]').value,$('[data-ics-until]').value);const blob=new Blob([text],{type:'text/calendar;charset=utf-8'}),url=URL.createObjectURL(blob),link=make('a');link.href=url;link.download='koledar365-moj-solski-urnik.ics';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);announce('[data-student-live-status]','ICS koledar je prenesen. Predmeti in odprti roki so v datoteki.')}catch(error){announce('[data-student-live-status]',error.message,true)}
