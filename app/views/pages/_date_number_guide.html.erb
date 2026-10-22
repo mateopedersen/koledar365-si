@@ -1,0 +1,17 @@
+<section class="panel prose" aria-labelledby="date-number-guide">
+<% if page_path=='/stevilka-tedna/' %>
+  <h2 id="date-number-guide">Kako določimo številko tedna?</h2>
+  <p>Izberite datum in pritisnite »Izračunaj«. Rezultat sledi pravilom ISO: teden traja od ponedeljka do nedelje, prvi teden leta pa vsebuje 4. januar oziroma prvi četrtek v letu.</p>
+  <h3>Zakaj datum v januarju včasih spada v prejšnje leto?</h3>
+  <p>Koledarsko leto in leto ISO se ob novem letu lahko razlikujeta. <time datetime="2027-01-01">1. januar 2027</time> je petek v <strong>53. tednu leta ISO 2026</strong>. Prvi teden leta ISO 2027 se začne v ponedeljek, <time datetime="2027-01-04">4. januarja 2027</time>. Leto ISO ima 52 ali 53 tednov.</p>
+  <p>Številka tedna ni število dopolnjenih sedemdnevnih obdobij od 1. januarja. Za razporejanje opravil odprite <a href="/tedenski-koledar/">tedenski koledar</a>; za štetje dni uporabite <a href="/datumski-kalkulator/">datumski kalkulator</a>.</p>
+<% else %>
+  <h2 id="date-number-guide">Kateri zaporedni dan v letu je izbrani datum?</h2>
+  <p>Vnesite datum in pritisnite »Izračunaj«. Štetje se začne z 1. januarjem kot prvim dnem. Upošteva vse koledarske dni, vključno s sobotami, nedeljami in prazniki.</p>
+  <h3>Kako na rezultat vpliva prestopno leto?</h3>
+  <p>V letu 2028 je <time datetime="2028-02-29">29. februar</time> <strong>60. dan leta</strong>, <time datetime="2028-03-01">1. marec</time> pa 61. dan. V navadnem letu 2027 je 1. marec 60. dan. Zadnji dan leta ima zaporedno številko 365 ali 366.</p>
+  <p>Štetje dni do konca leta izključi izbrani dan: od skupnega števila dni v letu odštejemo njegovo zaporedno številko. Pravilo lahko preverite s <a href="/prestopno-leto/">kalkulatorjem prestopnega leta</a> ali <a href="/datumski-kalkulator/">izračunom razlike med datumoma</a>.</p>
+<% end %>
+  <h3>Datum in časovni pas</h3><p>Orodje računa koledarski datum, ne pretečenih ur. Privzeti današnji datum določimo po času v Sloveniji (Europe/Ljubljana); prehod med poletnim in zimskim časom ne spremeni zaporedja dni. Za osebni rok vedno preverite tudi pravila, ki veljajo zanj.</p>
+  <p><a href="/koledar/">Letni koledarji</a> · <a href="/viri-in-metodologija/">Viri in metodologija</a> · <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO: zapis datumov in časa</a></p>
+</section>

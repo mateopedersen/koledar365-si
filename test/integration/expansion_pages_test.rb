@@ -14,7 +14,7 @@ class ExpansionPagesTest < ActionDispatch::IntegrationTest
         titles<<css_select('title').first.text;descriptions<<css_select('meta[name=description]').first['content']
         graph=JSON.parse(css_select('script[type="application/ld+json"]').first.text).fetch('@graph')
         page=graph.find{|node|node['@type']=='WebPage'}
-        assert_equal '2026-10-21',page['dateModified']
+        assert_nil page['dateModified'], 'Content modification is tracked during publication, not copied from the source-review date'
         assert_equal 'https://koledar365.si/#organization',page.dig('publisher','@id')
         if path!='/viri-in-metodologija/'
           assert graph.any?{|node|node['@type']=='ImageObject' && node['width']>=1200}

@@ -52,3 +52,12 @@ test('expanded shift entry fields keep their own rows on phones',async({page})=>
     expect(fields.every(x=>x.width>=100&&x.width<=x.parentWidth+1&&x.right<=width+1)).toBeTruthy();
   }
 });
+
+test('shift preview remains inside the phone workspace',async({page})=>{
+  await page.goto('/razpored-izmen/');
+  for(const width of [320,390,430,768]){
+    await page.setViewportSize({width,height:900});
+    const pieces=await controlGeometry(page,'.shift-preview__top,.shift-preview__badge,.shift-stats>div');
+    expect(pieces.every(x=>x.left>=0&&x.right<=width+1&&x.contentFits)).toBeTruthy();
+  }
+});

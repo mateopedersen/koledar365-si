@@ -43,6 +43,9 @@
   }
   const trailing=(7-(calendar.children.length%7))%7;
   for(let i=0;i<trailing;i++)calendar.append(makeCell('shift-calendar__day shift-calendar__day--empty','gridcell','',''));
+  // A calendar grid needs explicit rows for the header and each seven-day week.
+  const cells=Array.from(calendar.children);calendar.replaceChildren();
+  for(let i=0;i<cells.length;i+=7){const row=document.createElement('div');row.className='shift-calendar__row';row.setAttribute('role','row');row.append(...cells.slice(i,i+7));calendar.append(row)}
   status.textContent=`${span} dni · ${counts.work} izmen · ${counts.night} nočnih · ${counts.off} prostih dni. Predogled zajema izbrani mesec.`;
   updatePresetState();
  }

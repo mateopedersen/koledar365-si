@@ -49,4 +49,7 @@ run!('bundle','exec','ruby','script/audit_static.rb')
 run!(ENV.fetch('PYTHON_BIN','python3'),'script/audit_indexability.py')
 run!('ruby','script/finalize_static.rb')
 run!('bundle','exec','ruby','script/audit_site_content.rb')
+# Structural SEO checks stay reusable as new pages enter the publication.
+ENV['SEO_STRICT']='1'
+run!('bundle','exec','ruby','script/audit_full_seo.rb')
 run!(ENV.fetch('NODE_BIN','node'),'script/verify_static.mjs')

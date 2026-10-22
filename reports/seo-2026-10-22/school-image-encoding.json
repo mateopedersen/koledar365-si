@@ -1,0 +1,142 @@
+[
+  {
+    "key": "hero",
+    "source": "/school/photos/hero-bled-c5b4afc6.jpg",
+    "source_sha256": "c5b4afc6e1278cf9f18985cf2829e066b6e41e5fc9912dd72ec30eba9adfa53b",
+    "source_bytes": 233259,
+    "variants": [
+      {
+        "path": "/school/photos/hero-bled-c5b4afc6-320-f4b57d2f2be7.webp",
+        "width": 320,
+        "height": 175,
+        "bytes": 10410
+      },
+      {
+        "path": "/school/photos/hero-bled-c5b4afc6-640-24b49a223faf.webp",
+        "width": 640,
+        "height": 350,
+        "bytes": 40120
+      }
+    ]
+  },
+  {
+    "key": "autumn",
+    "source": "/school/photos/autumn-zavrsnica-5f1a0392.jpg",
+    "source_sha256": "5f1a039253578e438dfe08b09f5dfea72024d94868da50d08965ed799f13451a",
+    "source_bytes": 498542,
+    "variants": [
+      {
+        "path": "/school/photos/autumn-zavrsnica-5f1a0392-320-fb9f68392ac8.webp",
+        "width": 320,
+        "height": 175,
+        "bytes": 25032
+      },
+      {
+        "path": "/school/photos/autumn-zavrsnica-5f1a0392-640-2d299391ccf3.webp",
+        "width": 640,
+        "height": 350,
+        "bytes": 103454
+      }
+    ]
+  },
+  {
+    "key": "newyear",
+    "source": "/school/photos/ljubljana-holidays-7690f2f1.jpg",
+    "source_sha256": "7690f2f10dfc8783697c780811d83590980fda3722a6d8746fcf030eace0c50d",
+    "source_bytes": 172415,
+    "variants": [
+      {
+        "path": "/school/photos/ljubljana-holidays-7690f2f1-320-7176aa3d171f.webp",
+        "width": 320,
+        "height": 175,
+        "bytes": 8928
+      },
+      {
+        "path": "/school/photos/ljubljana-holidays-7690f2f1-640-7b0071eac42e.webp",
+        "width": 640,
+        "height": 350,
+        "bytes": 30258
+      }
+    ]
+  },
+  {
+    "key": "winterEast",
+    "source": "/school/photos/winter-pohorje-0f6b02e3.jpg",
+    "source_sha256": "0f6b02e368aff1f2cf38e3a4d6a4d6666d24cb6c123135433004ded14742c062",
+    "source_bytes": 309630,
+    "variants": [
+      {
+        "path": "/school/photos/winter-pohorje-0f6b02e3-320-433b284bee13.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 15290
+      },
+      {
+        "path": "/school/photos/winter-pohorje-0f6b02e3-640-2aad469c00ed.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 58458
+      }
+    ]
+  },
+  {
+    "key": "winterWest",
+    "source": "/school/photos/winter-kranjska-gora-924bb2aa.jpg",
+    "source_sha256": "924bb2aab62d80492b5a4794552aadca9d5264aa60937a7cfd5f4a012ed766cb",
+    "source_bytes": 143083,
+    "variants": [
+      {
+        "path": "/school/photos/winter-kranjska-gora-924bb2aa-320-2770afaac31c.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 22280
+      },
+      {
+        "path": "/school/photos/winter-kranjska-gora-924bb2aa-640-65510f819d41.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 90840
+      }
+    ]
+  },
+  {
+    "key": "spring",
+    "source": "/school/photos/spring-golica-311a2679.jpg",
+    "source_sha256": "311a267962d746b16ef53f0a0639494e1b8c5e0042ba7c748cc18d792fbdaff0",
+    "source_bytes": 652643,
+    "variants": [
+      {
+        "path": "/school/photos/spring-golica-311a2679-320-706bc0dd9ebc.webp",
+        "width": 320,
+        "height": 286,
+        "bytes": 31100
+      },
+      {
+        "path": "/school/photos/spring-golica-311a2679-640-0a748dab23d8.webp",
+        "width": 640,
+        "height": 572,
+        "bytes": 125166
+      }
+    ]
+  },
+  {
+    "key": "summer",
+    "source": "/school/photos/summer-piran-6cdae1cb.jpg",
+    "source_sha256": "6cdae1cb5088d6a655851f616d364d163d5f7047c870da88c55b9606209dfd3d",
+    "source_bytes": 346133,
+    "variants": [
+      {
+        "path": "/school/photos/summer-piran-6cdae1cb-320-0ce816d7da0b.webp",
+        "width": 320,
+        "height": 213,
+        "bytes": 12370
+      },
+      {
+        "path": "/school/photos/summer-piran-6cdae1cb-640-01fea49d4d7f.webp",
+        "width": 640,
+        "height": 426,
+        "bytes": 58800
+      }
+    ]
+  }
+]

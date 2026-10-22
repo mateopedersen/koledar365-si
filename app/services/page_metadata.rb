@@ -1,6 +1,13 @@
 class PageMetadata
   # Describe the actual tool/data on a page; do not append lists of SEO keywords.
   def self.description(page, year:)
+    return 'Izračunajte številko tedna ISO za izbrani datum. Preverite začetek tedna v ponedeljek, razliko med letom ISO in koledarskim letom ter primere ob novem letu.' if page.path=='/stevilka-tedna/'
+    return 'Kateri dan v letu je izbrani datum? Izračunajte zaporedno številko dneva, preverite vpliv 29. februarja in število dni do konca navadnega ali prestopnega leta.' if page.path=='/dan-v-letu/'
+    return 'Kako Koledar365 preverja vire, ločuje izračune od uradnih datumov in obravnava popravke. Pravila za avtomatizacijo, umetno inteligenco in jezikovni pregled.' if page.path=='/uredniska-politika/'
+    return 'Družinski planer za dogodke, opravila, člane družine in nakupovalni seznam. Načrte shranite v tem brskalniku, natisnite ali izvozite v koledar ICS.' if page.path=='/druzinski-planer/'
+    if page.path.start_with?('/delovni-dnevi/') && page.month
+      return "Delovni dnevi in ure za #{CalendarEngine::MONTHS[page.month-1]} #{year} v Sloveniji. Mesečni fond pri osemurnem delovniku, izločeni prazniki in prilagodljiv kalkulator."
+    end
     return ExpansionCatalog.page(page.path).fetch(:description) if ExpansionCatalog.page(page.path)
     return ClockChangeSchedule::DESCRIPTION if page.path=='/premik-ure/'
     return 'Ustvarite svoj letni ali mesečni koledar z imenom, fotografijami, logotipom in dogodki. Prilagodite pisave, barve in začetek tedna ter prenesite PDF, PNG ali SVG.' if page.path=='/ustvari-koledar/'
