@@ -32,6 +32,12 @@ class IndexabilityTest(unittest.TestCase):
     def issues(self):
         return module.audit(self.site)['issues']
 
+    def test_permanent_308_redirects_work_on_older_python(self):
+        request = module.Request(module.ORIGIN + '/kontakt')
+        redirected = module.Redirects().redirect_request(request, None, 308, 'Permanent Redirect', {}, module.ORIGIN + '/kontakt/')
+        self.assertEqual(module.ORIGIN + '/kontakt/', redirected.full_url)
+        self.assertEqual('GET', redirected.get_method())
+
     def test_healthy_publication_passes(self):
         self.assertEqual([], self.issues())
 
