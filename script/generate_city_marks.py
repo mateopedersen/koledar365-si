@@ -38,11 +38,11 @@ for city in cities:
         thumbnail = io.BytesIO()
         image.save(thumbnail, "JPEG", quality=68, optimize=True, progressive=True)
     encoded = base64.b64encode(thumbnail.getvalue()).decode("ascii")
-    title = escape(f"Fotografija mesta {city['name']}")
+    title = escape(f"{city['name']} – fotografija mesta")
     title_id = f"city-mark-title-{city['id']}"
     description_id = f"city-mark-desc-{city['id']}"
     photo_id = f"city-mark-photo-{city['id']}"
-    description = escape(f"Fotografija mesta {city['name']}.")
+    description = escape(f"{city['name']} – fotografija mesta.")
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" class="sun-city-link__mark" width="58" height="46" viewBox="0 0 {SIZE[0]} {SIZE[1]}" role="img" aria-labelledby="{title_id} {description_id}">
   <title id="{title_id}">{title}</title>
   <desc id="{description_id}">{description}</desc>

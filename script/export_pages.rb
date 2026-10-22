@@ -170,7 +170,7 @@ search+=SunEngine::CITIES.map { |id,values|{title:"Sončni vzhod in zahod – #{
 search+=CalendarEvent.ordered.map do |event|
  path=["/prazniki/#{event.slug}/","/pomembni-dnevi/#{event.slug}/","/letni-casi/#{event.slug}/"].find { |candidate|Page.exists?(path:candidate) }||"/pomembni-dnevi/#{event.on.year}/"
  tags=[event.title,event.on.iso8601,"#{event.on.day}. #{CalendarEngine::MONTHS.fetch(event.on.month-1)} #{event.on.year}",CalendarEngine::DAYS.fetch(event.on.cwday-1),event.category,'praznik']
- tags<<'dela prost dan dela prosti dan' if event.work_free
+ tags<<'dela prost dan dela prost dan' if event.work_free
  tags<<'državni praznik' if event.state_holiday
  {title:event.title.sub(/\A./) { |letter|letter.upcase },path:path,type:'Prazniki in dnevi',folded:PersonName.fold(tags.compact.join(' ')),priority:event.work_free ? -2 : 2}
 end

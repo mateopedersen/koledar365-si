@@ -6,7 +6,7 @@
     <div class="calendar-experience__index" aria-hidden="true"><span><%= weekly ? '07' : '12' %></span><small><%= weekly ? 'DNI / EN PREGLED' : 'MESECEV / VAŠ RITEM' %></small></div>
   </header>
   <div class="calendar-experience__period">
-    <nav class="calendar-experience__years" aria-label="<%= weekly ? 'Izberite leto ISO' : 'Izberite leto' %>"><% selection_years.each do |y| %><a href="<%= weekly && CalendarEngine::YEARS.include?(y) ? "/tedenski-koledar/#{y}/" : "#{weekly ? '/tedenski-koledar/' : '/mesecni-koledar/'}?year=#{y}#{weekly ? '&week=1' : "&month=#{month}"}" %>" data-calendar-year="<%= y %>" <%= 'aria-current=true' if y==year %>><%= y %></a><% end %></nav>
+    <nav class="calendar-experience__years" aria-label="<%= weekly ? 'Izberite leto ISO' : 'Izberite leto' %>"><% selection_years.each do |y| %><a href="<%= weekly && CalendarEngine::INTERACTIVE_YEARS.include?(y) ? "/tedenski-koledar/#{y}/" : "#{weekly ? '/tedenski-koledar/' : '/mesecni-koledar/'}?year=#{y}#{weekly ? '&week=1' : "&month=#{month}"}" %>" data-calendar-year="<%= y %>" <%= 'aria-current=true' if y==year %>><%= y %></a><% end %></nav>
     <button type="button" class="calendar-experience__today" data-calendar-today><span aria-hidden="true">↗</span> <%= weekly ? 'Ta teden' : 'Ta mesec' %></button>
   </div>
   <div class="calendar-experience__workspace">
