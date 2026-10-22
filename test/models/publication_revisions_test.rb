@@ -46,6 +46,15 @@ class PublicationRevisionsTest < ActiveSupport::TestCase
     changed=PublicationRevisions.revision(html:new_event,previous_html:after,previous_record:migrated,now:Time.utc(2026,10,25))
     assert_equal '2026-10-25T00:00:00Z',changed['modified_at']
   end
+  test 'countdown component labels and nested content remain significant' do
+    [
+      '<span data-countdown><strong>Prvi termin</strong></span>',
+      '<strong data-countdown="">Prvi termin</strong>',
+      '<strong data-countdown="2027-02-20T21:11:52Z"><em>Prvi termin</em></strong>'
+    ].each do |content|
+      refute_equal PublicationRevisions.fingerprint(html(content)),PublicationRevisions.fingerprint(html(content.sub('Prvi termin','Drugi termin')))
+    end
+  end
   test 'sitemap uses only observed content dates' do
     xml='<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://koledar365.si/</loc><lastmod>2000-01-01</lastmod></url><url><loc>https://koledar365.si/koledar/</loc></url></urlset>'
     doc=Nokogiri::XML(PublicationRevisions.apply_sitemap(xml,{'/koledar/'=>{'modified_at'=>'2026-10-22T13:00:00Z'}}))

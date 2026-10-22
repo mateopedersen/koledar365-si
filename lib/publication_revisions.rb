@@ -13,7 +13,18 @@ module PublicationRevisions
     content&.css('script,style')&.remove
     # The absolute event date remains in data-countdown. Only its clock-driven
     # display changes on routine builds; it is not a significant content edit.
-    content&.css('[data-countdown]')&.each { |node| node.content='' } if ignore_countdown_ticks
+    if ignore_countdown_ticks
+      content&.css('strong[data-countdown]')&.each do |node|
+        target=node['data-countdown'].to_s
+        next unless node.element_children.empty? && target.match?(/\A\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z\z/)
+        begin
+          Time.iso8601(target)
+          node.content=''
+        rescue ArgumentError
+          # Other countdown components and invalid targets remain content.
+        end
+      end
+    end
     Digest::SHA256.hexdigest(JSON.generate([
       doc.at_css('html')&.[]('lang'),doc.at_css('title')&.text,
       doc.at_css('meta[name=description]')&.[]('content'),content&.to_html
