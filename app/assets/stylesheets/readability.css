@@ -387,3 +387,46 @@
     overflow-x: clip;
   }
 }
+
+/* Native mobile date widgets must not impose an intrinsic minimum column width. */
+@media screen and (max-width:900px){
+  #vsebina input:is([type="date"],[type="time"],[type="datetime-local"],[type="month"],[type="week"]){
+    display:block;inline-size:100%;min-inline-size:0;max-inline-size:100%;
+    block-size:var(--k365-control-height,48px);box-sizing:border-box;
+    appearance:none;-webkit-appearance:none;padding-inline:12px;
+  }
+  #vsebina input::-webkit-date-and-time-value{min-height:1.25em;text-align:left}
+  #vsebina input::-webkit-datetime-edit{min-width:0;padding:0}
+  #vsebina .student-day-filters>button{display:flex;align-items:center;justify-content:center;min-width:0;min-height:48px;padding:8px 3px}
+  #vsebina .student-day-filters>button small{display:none}
+  #vsebina .student-day-filters>button>span{font-size:15px;font-weight:750;line-height:1.3}
+}
+
+/* Compact tools need wrapping content rather than compressed labels. */
+@media screen and (max-width:900px){
+  #vsebina .sun-play-row{flex-wrap:wrap;align-items:stretch}
+  #vsebina .sun-play-row>p{flex:1 1 170px}
+  #vsebina .sun-play-row>button{flex:1 1 210px;white-space:normal;height:auto;min-height:48px}
+  #vsebina .studio-rail{max-width:100%;min-width:0;overflow-x:auto;justify-content:flex-start}
+  #vsebina .studio-rail>button{flex:0 0 auto;min-width:100px;max-width:none;padding:10px 12px;white-space:normal}
+  #vsebina .filters>label{min-width:0}
+  #vsebina .filters>label :is(input,select){width:100%;min-width:0;max-width:100%}
+  #vsebina #payment-next-title{overflow-wrap:break-word}
+  #vsebina .design-card .calendar-download-action__icon{display:block;width:26px!important;height:26px!important;max-width:none;flex:0 0 26px;padding:0!important;object-fit:contain;background:transparent}
+  #vsebina .design-card .calendar-download-action{height:auto;min-height:56px;white-space:normal}
+}
+@media screen and (max-width:600px){
+  #vsebina .countdown-shortcuts{grid-template-columns:minmax(0,1fr)}
+  #vsebina .countdown-shortcuts button{grid-template-columns:38px minmax(0,1fr) 20px;min-height:76px}
+  #vsebina .countdown-shortcuts :is(strong,small){white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:break-word}
+  #vsebina .countdown-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}
+  #vsebina .countdown-filters>button{width:100%;white-space:normal;min-height:48px;height:auto}
+  #vsebina .design-card .actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  #vsebina .design-card .actions>button:not([data-format]){grid-column:1/-1}
+  #vsebina .design-card .calendar-download-action{min-width:0;padding-inline:7px}
+}
+@media screen and (max-width:600px){
+  #vsebina .important-controls .filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:end}
+  #vsebina .important-controls .filters>label:has(input[type="search"]){grid-column:1/-1}
+  #vsebina .design-card .actions{grid-template-columns:minmax(0,1fr)}
+}
