@@ -31,6 +31,8 @@ const rows=[];let cursor=0;const tasks=[...cases.values()];
 const commit=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
 await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||3)},async()=>{
  const context=await browser.newContext({viewport:{width:390,height:900},deviceScaleFactor:1,locale:'sl-SI',timezoneId:'Europe/Ljubljana'});
+ // Keep deadlines on the host clock: inactive browser tabs can throttle timers.
+ await context.exposeFunction('__k365QaDelay',ms=>new Promise(resolve=>{setTimeout(resolve,ms).unref();}));
  await context.addInitScript(()=>localStorage.setItem('k365.consent',JSON.stringify({version:2,expiresAt:Date.now()+86400000,preferences:false})));
  let page=await context.newPage();
  if(mode==='a11y')await context.route('**/__qa/axe.js',r=>r.fulfill({status:200,contentType:'application/javascript',body:fs.readFileSync(require.resolve('axe-core/axe.min.js'),'utf8')}));
@@ -47,7 +49,7 @@ await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||3)},async()=
    row.status=response?.status();
    if(row.status!==(item.path==='/404.html'&&!base.includes('127.0.0.1')?404:200))row.issues.push('Unexpected HTTP status');
    await page.locator('main h1').first().waitFor({state:'visible',timeout:15000});
-   await bounded(page.evaluate(async()=>{await document.fonts.ready;await new Promise(r=>{const timer=setTimeout(r,100);requestAnimationFrame(()=>requestAnimationFrame(()=>{clearTimeout(timer);r()}));});}),'Fonts and layout');
+   await bounded(page.evaluate(async()=>{await document.fonts.ready;await new Promise(r=>{window.__k365QaDelay(100).then(r);requestAnimationFrame(()=>requestAnimationFrame(r));});}),'Fonts and layout');
    if(item.snapshot&&mode==='layout'){
     // Exercise native lazy loading by scrolling; a full-page screenshot alone
     // does not request images below the viewport.
@@ -56,8 +58,10 @@ await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||3)},async()=
      // Headless background tabs may suspend animation frames. Image decoding
      // and screenshot/layout assertions remain mandatory after this wait.
      const settle=()=>new Promise(resolve=>{
-      const timer=setTimeout(()=>{paintTimerFallbacks++;resolve();},100);
-      requestAnimationFrame(()=>requestAnimationFrame(()=>{clearTimeout(timer);resolve();}));
+      let done=false;
+      const finish=()=>{if(!done){done=true;resolve();}};
+      window.__k365QaDelay(100).then(()=>{if(!done)paintTimerFallbacks++;finish();});
+      requestAnimationFrame(()=>requestAnimationFrame(finish));
      });
      for(let y=0;y<document.documentElement.scrollHeight;y+=innerHeight*.8){
       scrollTo(0,y);await settle();
@@ -73,9 +77,7 @@ await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||3)},async()=
      });
      const retries=[];
      const decode=async im=>{
-      let timer;
-      try{await Promise.race([im.decode(),new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('Image decode timed out: '+(im.currentSrc||im.src))),15000)})]);}
-      finally{clearTimeout(timer);}
+      await Promise.race([im.decode(),window.__k365QaDelay(15000).then(()=>{throw new Error('Image decode timed out: '+(im.currentSrc||im.src));})]);
       if(!im.complete||!im.naturalWidth)throw new Error('Broken image: '+(im.currentSrc||im.src));
      };
      // Native lazy loading requires intersection. Visit each rendered image
