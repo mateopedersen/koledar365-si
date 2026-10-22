@@ -91,6 +91,10 @@ def locs(xml):
 
 
 class Redirects(HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        # Python 3.9 dispatches 308 here but does not recognize it in the parent method.
+        return super().redirect_request(req, fp, 307 if code == 308 else code, msg, headers, newurl)
+
     # macOS system Python 3.9 lacks the permanent-redirect handler.
     http_error_308 = HTTPRedirectHandler.http_error_302
 
