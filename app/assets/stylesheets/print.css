@@ -207,3 +207,5 @@
     display: none !important;
   }
 }
+
+@media print{.calendar-facts{display:none!important}}
