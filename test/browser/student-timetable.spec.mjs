@@ -21,9 +21,9 @@ test('student timetable works on mobile, persists locally, and exports a valid L
   const response = await page.goto('/solski-urnik/', { waitUntil: 'load' });
   expect(response?.status()).toBe(200);
   await expect(page.locator('[data-student-timetable]')).toBeVisible();
+  await expect(page.locator('[data-student-timetable]')).toHaveAttribute('data-hydrated', 'true');
   await expect(page.locator('.design-card')).toHaveCount(15);
   await expect(page.locator('[data-personal-preview]')).toHaveCount(15);
-  await expect(page.locator('[data-day-panel="1"]')).toBeVisible();
 
   await page.locator('[data-add-lesson-open]').first().click();
   const lesson = page.locator('[data-lesson-form]');
@@ -81,10 +81,9 @@ test('student print view includes the saved weekly schedule and all obligations,
   const response = await page.goto('/solski-urnik/', { waitUntil: 'load' });
   expect(response?.status()).toBe(200);
   await expect(page.locator('#design-gallery .design-card')).toHaveCount(15);
-  // The publication bootstraps its student bundle after the static page loads.
-  // Wait for its first rendered panel before interacting so WebKit cannot race
-  // the hydration script on the print button.
-  await expect(page.locator('[data-day-panel="1"]')).toBeVisible();
+  // Static HTML is visible before the deferred student bundle attaches its
+  // handlers; wait for the real interactive state before exercising controls.
+  await expect(page.locator('[data-student-timetable]')).toHaveAttribute('data-hydrated', 'true');
 
   await page.locator('[data-add-lesson-open]').first().click();
   const lesson = page.locator('[data-lesson-form]');
@@ -131,6 +130,7 @@ test('week date field and template button align on desktop and fit on mobile', a
   await quietConsent(page);
   const response = await page.goto('/solski-urnik/', { waitUntil: 'load' });
   expect(response?.status()).toBe(200);
+  await expect(page.locator('[data-student-timetable]')).toHaveAttribute('data-hydrated', 'true');
 
   await page.setViewportSize({ width: 1440, height: 900 });
   const desktop = await page.evaluate(() => {
@@ -157,6 +157,7 @@ test('student print gallery stays full width and the WebP action remains reachab
   await quietConsent(page);
   const response = await page.goto('/solski-urnik/', { waitUntil: 'load' });
   expect(response?.status()).toBe(200);
+  await expect(page.locator('[data-student-timetable]')).toHaveAttribute('data-hydrated', 'true');
 
   for (const width of [1280, 390]) {
     await page.setViewportSize({ width, height: 844 });

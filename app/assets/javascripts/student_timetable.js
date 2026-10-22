@@ -105,4 +105,5 @@
   $('[data-focus-reset]').addEventListener('click',()=>{clearInterval(focusTimer);focusTimer=null;focusPaused=null;root.classList.remove('student-focus-complete');showClock(Number(lengthInput.value)*60);startButton.textContent='Začni';announce('[data-focus-status]','Po intervalu si vzemi kratek odmor.')});
   lengthInput.addEventListener('change',()=>{if(!focusTimer&&focusPaused===null){showClock(Number(lengthInput.value)*60);announce('[data-focus-status]','Po intervalu si vzemi kratek odmor.')}});
   renderLessons();renderTasks();showClock(Number(lengthInput.value)*60);
+  root.dataset.hydrated='true';
 })();
