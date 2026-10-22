@@ -18,6 +18,7 @@ test('navigation vector assets and every referenced symbol resolve in the public
 });
 
 test('all shared navigation controls fit without clipped links or intersecting borders', async ({ page }) => {
+  test.setTimeout(60_000); // Seven complete page families and 56 viewport layouts per browser.
   for (const path of paths) {
     expect((await page.goto(path))?.status(), path).toBe(200);
     for (const width of widths) {
