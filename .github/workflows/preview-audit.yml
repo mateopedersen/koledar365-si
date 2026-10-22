@@ -1,0 +1,40 @@
+name: Verify final audit Cloudflare preview
+on:
+  pull_request:
+    paths:
+      - 'reports/final-audit-2026-10-23/preview-target.json'
+      - '.github/workflows/preview-audit.yml'
+      - 'script/verify_remote_preview.py'
+permissions:
+  contents: read
+concurrency:
+  group: preview-audit-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify all preview HTML, CSS, JavaScript and discovery files against trusted hashes
+        run: python3 script/verify_remote_preview.py reports/final-audit-2026-10-23/preview-target.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: pnpm/action-setup@v4
+      - name: Prepare real browser checks
+        run: pnpm install --frozen-lockfile && pnpm exec playwright install --with-deps chromium
+      - name: Render every representative template in the preview
+        run: |
+          export K365_BASE_URL="$(python3 -c "import json; print(json.load(open('reports/final-audit-2026-10-23/preview-target.json'))['url'])")"
+          QA_SAMPLE_ONLY=1 QA_OUT=evidence/qa/preview/browser node script/qa_browser.mjs
+          QA_MODE=a11y QA_OUT=evidence/qa/preview/accessibility node script/qa_browser.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cloudflare-preview-${{ github.sha }}
+          path: evidence/qa/preview/
+          retention-days: 14

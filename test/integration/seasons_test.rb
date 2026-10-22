@@ -16,5 +16,6 @@ class SeasonsTest < ActionDispatch::IntegrationTest
     assert_select '.data-table a[href="/letni-casi/poletni-solsticij/"]',count:4
     assert_includes response.body,'Meteorološki letni časi'
     assert_includes response.body,'Europe/Ljubljana'
+    assert_select 'a[href*=?]', 'tz_label=false', count:4
   end
 end

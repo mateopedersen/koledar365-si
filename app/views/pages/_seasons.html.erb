@@ -13,7 +13,7 @@
       <tr data-season="<%= event.kind %>"><th scope="row"><a href="/letni-casi/<%= event.kind %>/"><%= event.title %></a></th><td><time datetime="<%= event.local_time.iso8601 %>"><%= I18n.l(event.local_time.to_date) %></time></td><td><%= event.local_time.strftime('%H:%M %Z') %></td><td><time datetime="<%= event.instant.utc.iso8601 %>"><%= event.instant.utc.strftime('%d. %m. %Y, %H:%M') %></time></td></tr>
     <% end %></tbody>
   </table></div>
-  <p>Vir: <a href="https://aa.usno.navy.mil/calculated/seasons?year=<%= year %>&amp;tz=0&amp;dst=false">U.S. Naval Observatory – enakonočja in solsticiji <%= year %></a>. Časi so navedeni na minuto natančno.</p>
+  <p>Vir: <a href="https://aa.usno.navy.mil/calculated/seasons?dst=false&amp;submit=Get+Data&amp;tz=0.00&amp;tz_label=false&amp;tz_sign=-1&amp;year=<%= year %>">U.S. Naval Observatory – enakonočja in solsticiji <%= year %></a>. Časi so navedeni na minuto natančno.</p>
 </section>
 <% end %>
 <section class="panel prose" aria-labelledby="seasons-planning">
