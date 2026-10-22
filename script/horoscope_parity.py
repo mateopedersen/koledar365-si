@@ -1,5 +1,7 @@
 """Verify only the documented daily edge transformation; preserve all static bytes."""
 import functools,html,json,re,subprocess
+from datetime import datetime,timezone,timedelta
+from zoneinfo import ZoneInfo
 @functools.lru_cache(maxsize=3)
 def edition(day):
  code="import {currentEdition} from './lib/horoscope/current.mjs'; const d=process.argv[1];console.log(JSON.stringify({...currentEdition(d),display_date:new Intl.DateTimeFormat('sl-SI',{day:'numeric',month:'long',year:'numeric',timeZone:'Europe/Ljubljana'}).format(new Date(d+'T12:00:00Z'))}));"
@@ -31,7 +33,13 @@ def normalize(body,sign,expected=None):
   data=json.loads(m[2])
   for item in data.get('@graph',[]):
    if item.get('@type')=='Article' and item.get('@id','').endswith('#dnevni-zapis'):
-    for k,v in {'headline':expected and expected['signs'][sign]['title'],'datePublished':expected and expected['generated_at'],'dateModified':expected and expected['generated_at'],'description':expected and 'Razvedrilna slovenska izdaja za '+expected['local_date']+'.'}.items():item[k]=value(item.get(k),v,k)
+    if expected is not None:
+     published=item.get('datePublished');modified=item.get('dateModified')
+     assert published==modified,'Daily publication and modification times differ'
+     timestamp=datetime.fromisoformat(published.replace('Z','+00:00'))
+     assert timestamp.astimezone(ZoneInfo('Europe/Ljubljana')).date().isoformat()==expected['local_date'],'Daily generation time belongs to another date'
+     assert timestamp<=datetime.now(timezone.utc)+timedelta(minutes=5),'Daily generation time is in the future'
+    for k,v in {'headline':expected and expected['signs'][sign]['title'],'datePublished':item.get('datePublished'),'dateModified':item.get('dateModified'),'description':expected and 'Razvedrilna slovenska izdaja za '+expected['local_date']+'.'}.items():item[k]=value(item.get(k),v,k)
   return m[1]+json.dumps(data,ensure_ascii=False,sort_keys=True,separators=(',',':'))+m[3]
  text=re.sub(r'(<script\b[^>]*type="application/ld\+json"[^>]*>)([\s\S]*?)(</script>)',schema,text)
  return text.encode()

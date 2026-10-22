@@ -6,7 +6,7 @@ class DailyParityTest(unittest.TestCase):
   for route in ('horoskop','horoskop/izracun-znamenja'):
    self.assertIn(b'__VERIFIED_DAILY_VALUE__',normalize(Path('site',route,'index.html').read_bytes(),''))
  def test_known_daily_changes_pass_but_static_and_dynamic_tampering_fail(self):
-  original=Path('site/horoskop/bik/index.html').read_bytes();day='2026-10-24';e=edition(day);text=original.decode()
+  original=Path('site/horoskop/bik/index.html').read_bytes();day='2026-10-20';e=copy.deepcopy(edition(day));e['generated_at']='2026-10-20T12:00:00.000Z';text=original.decode()
   text=re.sub(r'data-edition-day="[^"]*"',f'data-edition-day="{day}"',text)
   fields={'data-edition-status':'Današnja izdaja','data-edition-date':e['display_date'],'data-moon-sign':'Luna v '+e['sky']['moon']['locative'],'data-moon-phase':e['sky']['moon']['phase']+' · '+str(e['sky']['moon']['illumination'])+' % osvetljenosti'}
   for attr,value in fields.items():
