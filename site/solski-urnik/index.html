@@ -27,7 +27,8 @@
 <meta name="twitter:image" content="https://koledar365.si/druzabno/pages/304/7c0d8f92c377f229e6f2.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://koledar365.si/#website","url":"https://koledar365.si/","name":"Koledar365","inLanguage":"sl"},{"@type":"WebPage","@id":"https://koledar365.si/solski-urnik/#webpage","url":"https://koledar365.si/solski-urnik/","name":"Šolski urnik","description":"Sestavite osebni šolski urnik, spremljajte domače naloge in preverjanja ter načrtujte zbrane učne intervale. Urnik shranite v brskalnik, izvozite v ICS ali izberite predlogo PDF in WebP za tisk.","inLanguage":"sl","isPartOf":{"@id":"https://koledar365.si/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://koledar365.si/"},{"@type":"ListItem","position":2,"name":"Šolski urnik","item":"https://koledar365.si/solski-urnik/"}]}]}</script>
 
-<link rel="stylesheet" href="/assets/web-294d881c1b224fc4.css">
+<link rel="stylesheet" href="/assets/web-e73beb78747720fd.css">
+
 
 
 
@@ -55,10 +56,10 @@
 
 
 <link rel="icon" href="/visuals/brand-calendar-v3.71d101697df6153f.svg" type="image/svg+xml">
-<script type="application/json" id="k365-static-config">{"scripts":["/assets/application-f427bb33.js","/assets/planners-f99af087.js","/assets/student_timetable_core-9a6a0211.js","/assets/student_timetable-411243a9.js"],"holidays":"/assets/holidays-0af57d2c.js","vacation":"/assets/vacation-ecc923a5.js","countdown":"/assets/countdown-164dee2d.js","shift":"/assets/shift_schedule-f9b9ee17.js"}</script><link rel="preload" as="script" href="/assets/application-f427bb33.js">
+<script type="application/json" id="k365-static-config">{"scripts":["/assets/application-f427bb33.js","/assets/planners-f99af087.js","/assets/student_timetable_core-9a6a0211.js","/assets/student_timetable-6192201f.js"],"holidays":"/assets/holidays-0af57d2c.js","vacation":"/assets/vacation-ecc923a5.js","countdown":"/assets/countdown-164dee2d.js","shift":"/assets/shift_schedule-f9b9ee17.js"}</script><link rel="preload" as="script" href="/assets/application-f427bb33.js">
 <link rel="preload" as="script" href="/assets/planners-f99af087.js">
 <link rel="preload" as="script" href="/assets/student_timetable_core-9a6a0211.js">
-<link rel="preload" as="script" href="/assets/student_timetable-411243a9.js">
+<link rel="preload" as="script" href="/assets/student_timetable-6192201f.js">
 <link rel="preload" as="script" href="/assets/shift_schedule-f9b9ee17.js">
 <link rel="modulepreload" href="/free/catalog-match.js">
 <link rel="modulepreload" href="/free/date-context.js">
@@ -164,6 +165,10 @@
     <button class="button primary" type="button" data-add-lesson-open>＋ Dodaj predmet</button>
   </header>
 
+  <div class="student-print-only" data-student-print-header>
+<strong>Koledar365 · Moj šolski načrt</strong><span data-student-print-range></span>
+</div>
+
   <div class="student-summary" aria-label="Povzetek tvojega načrta">
     <article class="student-summary__card"><span class="student-summary__mark student-summary__mark--blue" aria-hidden="true">◷</span><div>
 <strong data-lesson-count>0</strong><span>predmetov v tednu</span>
@@ -226,8 +231,9 @@
 <label>Koledar izvozi od<input type="date" data-ics-from value="2026-10-22"></label><label>do<input type="date" data-ics-until value="2027-06-24"></label><p>Ure se ponovijo ob delavnikih z upoštevanjem poletnega časa. Šolskih počitnic ne izločimo samodejno, ker se termini razlikujejo.</p>
 </div>
       <div class="student-schedule-actions">
-<button class="button" type="button" data-print-schedule>Natisni moj teden</button><button class="button primary" type="button" data-export-ics>Izvozi urnik in roke v ICS</button>
+<button class="button" type="button" data-print-schedule>Natisni moj načrt</button><button class="button primary" type="button" data-export-ics>Izvozi urnik in roke v ICS</button>
 </div>
+      <p class="student-print-note">Izpis vključuje vseh pet šolskih dni ter domače naloge, preverjanja in projekte.</p>
       <p class="student-private-note"><strong>Zasebno po zasnovi.</strong> Urnik in naloge se shranijo samo v tem brskalniku; Koledar365 jih ne pošlje na strežnik.</p>
     </section>
 
@@ -285,12 +291,14 @@
   </div>
 
   <section class="student-print-tools" aria-labelledby="student-print-tools-title">
-    <div>
-<span class="student-section-index">TISKANJE IN PRENOS</span><h3 id="student-print-tools-title">Natisni svoj urnik ali izberi obliko</h3>
-<p>Izberi teden med letoma 2027 in 2030, da se predogled in prenesena predloga ujemata z dejanskimi datumi.</p>
+    <div class="student-print-tools__copy">
+<span class="student-section-index">TISKANJE IN PRENOS</span><h3 id="student-print-tools-title">Natisni svoj načrt ali izberi predlogo</h3>
+<p>Izberi teden med letoma 2027 in 2030. Izpis vključuje urnik in obveznosti; 15 predlog PDF in WebP je na voljo spodaj.</p>
 </div>
-    <label>Teden za predlogo<input type="date" data-print-week min="2027-01-01" max="2030-12-31" value="2027-01-04"></label>
-    <a class="button primary" href="#design-gallery">15 predlog PDF + WebP <span aria-hidden="true">↓</span></a>
+    <div class="student-print-tools__actions">
+      <label><span>Teden za predlogo</span><input type="date" data-print-week min="2027-01-01" max="2030-12-31" value="2027-01-04"></label>
+      <a class="button primary" href="#design-gallery">15 predlog PDF + WebP <span aria-hidden="true">↓</span></a>
+    </div>
   </section>
 
   <aside class="student-source-note" aria-label="Uradni viri in pomembne informacije">
@@ -305,9 +313,6 @@
 <p>Termini počitnic, preverjanj in zaključka pouka se razlikujejo glede na šolsko leto, program in v nekaterih primerih regijo. Preveri obvestila svoje šole.</p></details>
   </aside>
 
-  <div class="student-print-only" data-student-print-header>
-<strong>Koledar365 · Moj šolski teden</strong><span data-student-print-range></span>
-</div>
   <output class="student-live-status" data-student-live-status role="status" aria-live="polite"></output>
 </section>
 <!-- END app/views/pages/_student_timetable.html.erb -->
