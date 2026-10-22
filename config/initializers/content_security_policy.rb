@@ -6,6 +6,7 @@ Rails.application.config.content_security_policy do |p|
   p.script_src :self
   p.style_src :self, :unsafe_inline
   p.connect_src :self
+  p.frame_src 'https://docs.google.com/forms/'
   p.base_uri :self
   p.form_action :self
   p.frame_ancestors :none

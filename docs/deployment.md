@@ -35,3 +35,15 @@ Bir önceki doğrulanmış imaj etiketi ve Git SHA saklanır. Deploy öncesi yed
 ## Editoryal bakım
 
 Yönetim sekiz günlük burç hazırlık tablosu, düzenleme, JSON toplu ithal ve planlama sağlar. Worker her beş dakikada Ljubljana tarihine göre hazır metni yayımlar. İçerik yoksa eski metne yeni gün yazmaz. Gelecek içerik üretim API anahtarı bulunmadığından editör özgün metni hazırlamalıdır. Kaynak değişiklikleri, hukuk ve okul takvimi düzenli yeniden incelenmelidir; otomatik doğrulanmış hukuk güncellemesi vaadi yoktur.
+
+## Contact page and Google Forms
+
+The `/kontakt/` page uses the form owned by `koledar365@gmail.com`:
+
+- Public form: https://docs.google.com/forms/d/e/1FAIpQLSed2Z0hsjbskNP2M8p9bQeuC9suQqlUU5WHbGBmxPdtHGodkQ/viewform
+- Owner editor: https://docs.google.com/forms/d/1r7yBO56mJAoHNPWbEFn_FEEWK_6Kmgu3P6Mr8kPRQho/edit
+- Email collection is **Responder input**, not **Verified**; **Limit to 1 response** is off so visitors do not need an account. Email, topic and message are required. Name and page/source URL are optional. Response summaries are not shared with respondents.
+- In the owner's **Responses → More options** menu, **Get email notifications for new responses** is enabled. This sends a notification with a private response link to the owner, rather than the full message text. No forwarding rules or additional Google account permissions are needed.
+- One clearly labeled technical test was submitted on 2026-10-22, and its notification was verified in the owner's Gmail inbox. Google Forms retains the test as a response.
+- The site loads the iframe only after an explicit click. The direct form and `mailto:` links remain usable without site JavaScript. CSP permits frames only from `https://docs.google.com/forms/`. Never expose the responses or editor as a public contact link.
+- If the form is replaced, update both public links in `_contact.html.erb` and the integration test. Keep `_privacy_free.html.erb` and `_privacy.html.erb` aligned with the actual processing and retention policy.
