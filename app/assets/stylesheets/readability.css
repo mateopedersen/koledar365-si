@@ -284,6 +284,8 @@
 
   #vsebina :is(button, .button, input[type="submit"]):not(.text-button):not(.square):not(.category-chip):not(.student-icon-button) {
     box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
     min-height: var(--k365-control-height) !important;
     padding: 10px 14px;
     border-radius: var(--k365-control-radius);
@@ -292,6 +294,8 @@
 
   #vsebina :is(input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]), select) {
     box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
     height: var(--k365-control-height) !important;
     min-height: var(--k365-control-height) !important;
     margin-block: 0;
