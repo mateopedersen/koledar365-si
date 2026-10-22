@@ -12,6 +12,7 @@ unless partial
  %w[koledar-z-imenom imena free/names sitemap-names.xml godovi].each { |relative| FileUtils.rm_rf(out.join(relative)) }
  # These generated atlases and photo variants must mirror their source directories.
  # Retaining superseded variants would eventually exceed the Pages Free file limit.
+ PublicPagePolicy::REDIRECTS.each_key { |path| FileUtils.rm_rf(out.join(path.delete_prefix('/'))) }
  %w[lunar/atlas images/responsive].each { |relative| FileUtils.rm_rf(out.join(relative)) }
  FileUtils.cp_r(Rails.root.join('public/.'),out)
 end
@@ -71,6 +72,12 @@ elsif path=='/solski-urnik/'
   next if src==assets[:holidays]&&!doc.at_css('#holiday-filters')
   preload=Nokogiri::XML::Node.new('link',doc);preload['rel']='preload';preload['as']='script';preload['href']=src;doc.at_css('head').add_child(preload)
  end
+ # Internal navigation goes directly to the consolidated destination.
+ doc.css('a[href]').each do |node|
+  href=node['href']; clean=href.split(/[?#]/,2).first
+  destination=clean.start_with?('/') ? PublicPagePolicy.redirect(clean) : nil
+  node['href']=destination if destination
+ end
  %w[catalog-match.js date-context.js].each do |src|
   preload=Nokogiri::XML::Node.new('link',doc);preload['rel']='modulepreload';preload['href']="/free/#{src}";doc.at_css('head').add_child(preload)
  end
@@ -115,7 +122,7 @@ write=lambda do |path,html|
  FileUtils.mkdir_p(file.dirname);file.write(html)
 end
 removed_name_path=%r{\A/(?:koledar-z-imenom|imena|godovi)(?:/|\z)}
-paths=Page.order(:path).reject { |page|page.path.match?(removed_name_path) }.map { |page|[page.path,page.status=='published'] }+SunEngine::CITIES.keys.map { |city_id|["/soncni-vzhod-in-zahod/#{city_id}/",true] }+[['/fotografije-in-licence/',true],['/isci/',false]]
+paths=Page.order(:path).reject { |page|page.path.match?(removed_name_path) || PublicPagePolicy.redirect(page.path) }.map { |page|[page.path,page.status=='published'] }+SunEngine::CITIES.keys.map { |city_id|["/soncni-vzhod-in-zahod/#{city_id}/",true] }+[['/fotografije-in-licence/',true],['/isci/',false]]
 paths=paths.map { |path,indexable|path.match?(%r{\A/soncni-vzhod-in-zahod/[a-z0-9-]+/\z}) ? [path,true] : [path,indexable] }.uniq { |path,_|path }
 paths=paths.select { |path,_|partial.include?(path) } if partial
 limit=ENV['STATIC_LIMIT']&.to_i;paths=paths.first(limit) if limit
@@ -138,7 +145,7 @@ unless limit
  session.get('/te-strani-ni/');write.call('/404.html',transform.call(session.response.body,'/404.html',indexable:false))
 end
 out.join('free/assets.json').write(JSON.generate(assets))
-search=Page.published.reject { |page|page.path.match?(removed_name_path) }.map do |page|
+search=Page.published.reject { |page|page.path.match?(removed_name_path) || PublicPagePolicy.redirect(page.path) }.map do |page|
  keywords=case page.path
  when %r{\A/prazniki/} then 'prazniki državni praznik dela prost dan dela prosti dnevi javni praznik'
  when %r{\A/solske-pocitnice/} then 'šolske počitnice šolski koledar zimske jesenske zimske prvomajske poletne počitnice osnovna šola srednja šola'
@@ -228,6 +235,15 @@ headers=<<~HEADERS
   X-Robots-Tag: noindex
 HEADERS
 out.join('_headers').write(headers)
+# Cloudflare redirects run before assets, including stale bookmarks to aliases.
+redirect_file=out.join('_redirects')
+redirect_lines=redirect_file.exist? ? redirect_file.readlines.map(&:strip) : []
+redirect_sources=PublicPagePolicy::REDIRECTS.keys.flat_map { |path| [path,path.delete_suffix('/')] }
+redirect_lines.reject! { |line| redirect_sources.include?(line.split.first) }
+PublicPagePolicy::REDIRECTS.each do |source,destination|
+ [source,source.delete_suffix('/')].each { |path| redirect_lines << "#{path} #{destination} 301" }
+end
+redirect_file.write(redirect_lines.join("\n")+"\n")
 out.join('_routes.json').write(JSON.generate({version:1,include:['/vreme/*','/horoskop/*','/city-detect*','/koledar-z-imenom','/koledar-z-imenom/*','/imena','/imena/*','/godovi','/godovi/*','/free/names','/free/names/*','/free/search.json','/sitemap-names.xml','/sitemap.xml','/sitemap-pages.xml','/robots.txt'],exclude:[]}))
 # Re-materialize after all page and asset transforms so the final static tree
 # always contains every content-addressed SVG referenced by generated CSS/HTML.

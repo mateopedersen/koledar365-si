@@ -12,6 +12,7 @@ class PagesController < ApplicationController
   def show
     path=request.original_fullpath.split('?').first;path='/' if path.blank?
     raise ActiveRecord::RecordNotFound if path.match?(REMOVED_NAME_PATHS)
+    return redirect_to(PublicPagePolicy.redirect(path),status: :moved_permanently) if PublicPagePolicy.redirect(path)
     return redirect_to("#{path}/",status: :moved_permanently) unless path.end_with?('/')
     @canonical=path
     @person=PersonName.find_by!(slug:path.split('/')[2]) if path.start_with?('/koledar-z-imenom/')&&path.split('/').length==3
@@ -148,7 +149,7 @@ class PagesController < ApplicationController
   def sitemap_part
     raise ActiveRecord::RecordNotFound unless params[:kind]=='pages'
     base=ENV.fetch('SITE_URL','https://koledar365.si')
-    page_rows=Page.published.reject { |p| p.path.match?(REMOVED_NAME_PATHS) }
+    page_rows=Page.published.reject { |p| p.path.match?(REMOVED_NAME_PATHS) || PublicPagePolicy.redirect(p.path) }
     rows=page_rows.map { |p| [p.path,p.updated_at] }
     if params[:kind]=='pages'
       rows.concat(SunEngine::CITIES.keys.map { |city_id| ["/soncni-vzhod-in-zahod/#{city_id}/",Date.new(2026,10,21)] })

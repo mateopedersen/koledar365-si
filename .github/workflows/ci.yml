@@ -62,6 +62,8 @@ jobs:
         run: find app config lib db script test -name '*.rb' -print0 | xargs -0 -n1 ruby -c
       - name: PostgreSQL schema and functional tests
         run: bundle exec rails db:prepare && bundle exec rails test
+      - name: Indexability audit regression cases
+        run: python3 -m unittest test/test_indexability.py
       - name: SEO and observance contracts
         run: bundle exec ruby -r ./config/environment script/audit_seo.rb && bundle exec ruby -r ./config/environment script/audit_observances.rb
       - name: PostgreSQL backup and isolated restore

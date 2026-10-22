@@ -30,3 +30,16 @@
   '/soncni-vzhod-in-zahod/'=>['sun','Izračunajte vzhod, zahod, zlato uro in dolžino dneva za 69 slovenskih mest.'],
   '/horoskop/izracun-znamenja/'=>['zodiac','Izračunajte sončno in vzhajajoče znamenje (ascendent) po točnem času in kraju rojstva.']
 } %><% descriptions.each do |path,(icon,description)|;page=Page.find_by(path:path);next unless page %><a class="panel tool-card" href="<%= path %>"><span class="tool-icon"><%= ui_icon(icon) %></span><h2><%= page.title %></h2><p><%= description %></p><span class="tool-open">Odpri orodje <%= ui_icon('chevron-right') %></span></a><% end %></div>
+
+<section class="panel prose" aria-labelledby="site-directory-title">
+  <h2 id="site-directory-title">Vse vsebine na enem mestu</h2>
+  <p>Iščete določen mesec, leto ali temo? Odprite skupino in izberite neposredno povezavo. Osebni predogledi in še nepotrjeni šolski termini niso del tega kazala.</p>
+  <% directory_pages=Page.published.order(:path).reject { |page| page.path.match?(PagesController::REMOVED_NAME_PATHS) || PublicPagePolicy.redirect(page.path) } %>
+  <% directory_pages.group_by { |page| page.path.split('/')[1].to_s }.each do |group,pages| %>
+    <% heading=directory_pages.find { |page| page.path=="/#{group}/" }&.title || pages.first.title %>
+    <details class="site-directory-group">
+      <summary><strong><%= heading %></strong> <span class="muted">· <%= pages.size %></span></summary>
+      <nav class="link-grid compact" aria-label="<%= heading %>"><% pages.each do |page| %><a href="<%= page.path %>"><%= page.title %></a><% end %></nav>
+    </details>
+  <% end %>
+</section>

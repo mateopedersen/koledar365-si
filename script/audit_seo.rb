@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'json'
 sun_city_paths=SunEngine::CITIES.keys.map { |city_id| "/soncni-vzhod-in-zahod/#{city_id}/" }
 removed_name_path=PagesController::REMOVED_NAME_PATHS
-active_page_paths=Page.order(:path).pluck(:path).reject { |path| path.match?(removed_name_path) }
+active_page_paths=Page.order(:path).pluck(:path).reject { |path| path.match?(removed_name_path) || PublicPagePolicy.redirect(path) }
 paths=(active_page_paths+sun_city_paths+['/fotografije-in-licence/']).uniq
 known=Set.new(active_page_paths+sun_city_paths+['/','/isci/','/fotografije-in-licence/'])
 session=ActionDispatch::Integration::Session.new(Rails.application)
