@@ -158,6 +158,8 @@
   .sp-date-fields input { width: 100%; }
 }
 
+/* Separate photo-credit links for touch users. */
+.sp-photo-credit a{display:inline-flex;align-items:center;min-height:24px;padding:3px 2px}
 /* Long official university names must not define a flex item's minimum width. */
 @media screen {
   .school-page .sp-uni-select-label {
