@@ -11,6 +11,7 @@ test('mobile records keep full-width dates and names across table families and f
     await page.setViewportSize({width,height:900});
     for(const path of routes){
       await page.goto(path,{waitUntil:'domcontentloaded'});
+      await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
       const table=page.locator('.mobile-record-table').first();await expect(table).toBeAttached();
       if(!await table.isVisible()){
         await page.waitForLoadState('networkidle');
