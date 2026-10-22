@@ -47,7 +47,8 @@ files.each do |file|
  end
  flag=doc.at_css('.country img.country-flag')
  fail_page.call('Missing or stale fabric flag') unless flag && versioned_ref.call(flag['src'], '/visuals/slovenia-fabric-v3.svg')
- fail_page.call('Missing or stale SVG favicon') unless doc.at_css('link[rel="icon"][type="image/svg+xml"]')&.then { |node|versioned_ref.call(node['href'], '/visuals/brand-calendar-v3.svg') }
+ favicon_link=doc.at_css('link[rel="icon"][type="image/png"]')
+ fail_page.call('Missing stable square Google-compatible PNG favicon') unless favicon_link && favicon_link['href']=='/icon.png' && favicon_link['sizes']=='512x512'
  fail_page.call('Legacy emoji flag') if doc.at_css('.country')&.text.to_s.include?('🇸🇮')
  styles=doc.css('style').map(&:text)+doc.css('link[rel=stylesheet]').filter_map do |node|
   href=node['href'].split('?',2).first;stylesheet_file=File.join(site,href)

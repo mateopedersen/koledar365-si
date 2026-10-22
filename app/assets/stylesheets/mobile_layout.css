@@ -23,6 +23,7 @@
   #vsebina .mobile-record-table :is(td,th)>a{white-space:normal;overflow-wrap:anywhere}
   #vsebina .mobile-record-table .astro-status{max-width:100%;white-space:normal;overflow-wrap:anywhere;font-size:inherit}
   #vsebina .mobile-record-table small{font-size:13px;line-height:1.5;color:#52657d}
+  #vsebina .mobile-record-table .astro-status{max-width:100%;white-space:normal;overflow-wrap:anywhere}
   #vsebina .mobile-record-table [hidden]{display:none!important}
   #vsebina .important-calendar{min-width:700px}
   .table-scroll-hint{display:block;margin:8px 0;color:#52657d;font-size:14px;line-height:1.5}
