@@ -15,14 +15,15 @@
   #vsebina .mobile-record-table tbody{display:grid;width:100%;gap:12px}
   #vsebina .mobile-record-table tbody>tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 18px;min-width:0;margin:0;padding:17px 16px;border:1px solid #d4deea;border-radius:12px;background:var(--surface,#fff);color:#18324e;text-align:left}
   #vsebina .mobile-record-table tbody>tr[hidden]{display:none!important}
-  #vsebina .mobile-record-table tbody>tr>:is(td,th){display:block;width:auto;min-width:0;max-width:100%;padding:0;border:0;background:transparent;color:#18324e;font-size:15px!important;font-weight:600;line-height:1.55;text-align:left;white-space:normal;word-break:normal;overflow-wrap:anywhere;vertical-align:top}
+  #vsebina .mobile-record-table tbody>tr>:is(td,th){display:block;width:auto;min-width:0;max-width:100%;padding:0!important;border:0!important;background:transparent;color:#18324e;font-size:15px!important;font-weight:600;line-height:1.55;text-align:left;white-space:normal;word-break:normal;overflow-wrap:anywhere;vertical-align:top}
   #vsebina .mobile-record-table tbody>tr>:is(td,th):nth-child(-n+2){grid-column:1/-1}
   #vsebina .mobile-record-table tbody>tr>:is(td,th)::before{content:attr(data-label);content:attr(data-label) / "";display:block;margin:0 0 4px;color:#52657d;font-size:12px;font-weight:750;line-height:1.4;letter-spacing:.1px}
   #vsebina .mobile-record-table tbody>tr>[data-mobile-span]{grid-column:1/-1}
   #vsebina .mobile-record-table tbody>tr>[data-mobile-span]::before{display:none}
   #vsebina .mobile-record-table :is(td,th)>a{white-space:normal;overflow-wrap:anywhere}
+  #vsebina .mobile-record-table .astro-status{box-sizing:border-box;max-width:100%;white-space:normal;overflow-wrap:anywhere;font-size:inherit}
   #vsebina .mobile-record-table small{font-size:13px;line-height:1.5;color:#52657d}
-  #vsebina .mobile-record-table .astro-status{box-sizing:border-box;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+
   #vsebina .mobile-record-table [hidden]{display:none!important}
   #vsebina .important-calendar{min-width:700px}
   .table-scroll-hint{display:block;margin:8px 0;color:#52657d;font-size:14px;line-height:1.5}
