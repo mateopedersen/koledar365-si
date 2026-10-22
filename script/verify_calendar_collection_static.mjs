@@ -19,7 +19,9 @@ const hashFile = file => crypto.createHash('sha256').update(fs.readFileSync(file
 if (rows.length !== 780 || records.length !== 780) issues.push(`Expected 780 collection rows and reports, got ${rows.length}/${records.length}`);
 if (!sourceValidation.passed || sourceValidation.collection_records !== 780 || sourceValidation.failed_records !== 0 || sourceValidation.pixel_identity_records !== 780) issues.push('Source PDF/WebP validation must pass for all 780 pairs before publication');
 if (new Set(rows.map(row => row.fingerprint)).size !== 780) issues.push('Collection fingerprints are not unique');
-if (redirects.length !== 1560) issues.push(`Expected 1,560 redirects for replaced PDFs/WebPs, got ${redirects.length}`);
+const collectionRedirects = redirects.filter(([source]) => records.some(record => record.old_pdf_url === source || record.old_webp_url === source));
+if (collectionRedirects.length !== 1560) issues.push(`Expected 1,560 redirects for replaced PDFs/WebPs, got ${collectionRedirects.length}`);
+if (redirectMap.size !== redirects.length) issues.push('Duplicate redirect source rules');
 
 const rowByKey = new Map(rows.map(row => {
   const o = row.options;

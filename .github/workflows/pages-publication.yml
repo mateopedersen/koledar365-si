@@ -35,6 +35,8 @@ on:
       - 'cloudflare/free/**'
       - 'script/**'
       - 'config/initializers/**'
+      - 'config/public_page_redirects.json'
+      - 'public/robots.txt'
       - '.github/workflows/pages-publication.yml'
       - 'script/save_pages_publication.sh'
 permissions:

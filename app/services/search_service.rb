@@ -2,7 +2,7 @@ class SearchService
   def self.call(query)
     return [] if query.blank?
     f=PersonName.fold(query);tokens=f.split
-    pages=Page.where.not(status:'held').reject { |p| p.path.match?(PagesController::REMOVED_NAME_PATHS) }.filter_map do |p|
+    pages=Page.published.reject { |p| p.path.match?(PagesController::REMOVED_NAME_PATHS) || PublicPagePolicy.redirect(p.path) }.filter_map do |p|
       hay=PersonName.fold(p.title+' '+p.path)
       score=tokens.count { |w| hay.include?(w) }
       next if score==0

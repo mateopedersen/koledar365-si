@@ -41,6 +41,36 @@ class SeoTest < ActionDispatch::IntegrationTest
     get '/sitemap-random.xml'
     assert_response :not_found
   end
+  test 'duplicate school landing pages consolidate with permanent redirects' do
+    PublicPagePolicy::REDIRECTS.each do |source,destination|
+      [source,source.delete_suffix('/')].each do |path|
+        get path
+        assert_response :moved_permanently
+        assert_redirected_to destination
+      end
+    end
+    get '/sitemap-pages.xml'
+    PublicPagePolicy::REDIRECTS.each_key { |path| refute_includes response.body,"<loc>https://koledar365.si#{path}</loc>" }
+    get '/solske-pocitnice/'
+    %w[autumn newyear may summer].each { |id| assert_select "#pocitnice-#{id}",count:1 }
+  end
+
+  test 'robots advertises the sitemap and the directory links to public archives' do
+    get '/robots.txt'
+    assert_response :success
+    assert_includes response.body,'Sitemap: https://koledar365.si/sitemap.xml'
+    assert_includes response.body,'Disallow: /upravljanje/'
+    assert_equal Rails.root.join('public/robots.txt').read,response.body
+    %w[/lunin-koledar/2026/oktober/ /pomembni-dnevi/januar/ /tedenski-koledar/2026/].each { |path| Page.find_by!(path:path).update!(status:'published') }
+    Page.find_by!(path:'/solske-pocitnice/2028-2029/').update!(status:'held')
+    get '/orodja/'
+    assert_select 'a[href="/lunin-koledar/2026/oktober/"]'
+    assert_select 'a[href="/pomembni-dnevi/januar/"]'
+    assert_select 'a[href="/tedenski-koledar/2026/"]'
+    PublicPagePolicy::REDIRECTS.each_key { |path| assert_select 'a[href="'+path+'"]',count:0 }
+    assert_select 'a[href="/solske-pocitnice/2028-2029/"]',count:0
+  end
+
   test 'empty personal calendar is a valid ICS download' do
     post '/ics/izvoz/',params:{events:[]},as: :json
     assert_response :success
