@@ -394,6 +394,7 @@
 /* Audited contrast on light surfaces, including small secondary labels. */
 @media screen {
   #vsebina .calendar-gallery-toolbar > span,
+  #vsebina .cd-month-number,
   #vsebina .family-day__name,
   #vsebina .family-day__add,
   #vsebina [data-family-add-for],
