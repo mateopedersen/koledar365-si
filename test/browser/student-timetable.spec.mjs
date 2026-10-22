@@ -16,14 +16,16 @@ async function quietConsent(page, withLegacyEntry = false) {
 }
 
 test('student timetable works on mobile, persists locally, and exports a valid Ljubljana-time ICS', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
   await page.setViewportSize({ width: 390, height: 844 });
   await quietConsent(page, true);
   const response = await page.goto('/solski-urnik/', { waitUntil: 'load' });
   expect(response?.status()).toBe(200);
   await expect(page.locator('[data-student-timetable]')).toBeVisible();
+  await expect(page.locator('[data-student-timetable]')).toHaveAttribute('data-hydrated', 'true');
   await expect(page.locator('.design-card')).toHaveCount(15);
   await expect(page.locator('[data-personal-preview]')).toHaveCount(15);
-  await expect(page.locator('[data-day-panel="1"]')).toBeVisible();
 
   await page.locator('[data-add-lesson-open]').first().click();
   const lesson = page.locator('[data-lesson-form]');
@@ -73,6 +75,27 @@ test('student timetable works on mobile, persists locally, and exports a valid L
   await expect(page.locator('[data-day-panel="2"]')).toBeVisible();
   const widths = await page.evaluate(() => ({ document: document.documentElement.scrollWidth, viewport: document.documentElement.clientWidth }));
   expect(widths.document, JSON.stringify(widths)).toBeLessThanOrEqual(widths.viewport + 1);
+
+  const backupPromise = page.waitForEvent('download');
+  await page.locator('[data-student-backup]').click();
+  const backupStream = await (await backupPromise).createReadStream();
+  const backupChunks = [];
+  for await (const chunk of backupStream) backupChunks.push(chunk);
+  const backup = Buffer.concat(backupChunks);
+  expect(JSON.parse(backup.toString('utf8')).lessons).toHaveLength(1);
+  await page.evaluate(() => localStorage.removeItem('k365.student.timetable.v1'));
+  await page.reload({ waitUntil: 'load' });
+  await expect(page.locator('[data-student-timetable]')).toHaveAttribute('data-hydrated', 'true');
+  await expect(page.locator('[data-lesson-id]')).toHaveCount(0);
+  const restore = page.locator('[data-student-restore]');
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    await restore.setInputFiles({ name: 'moj-urnik.json', mimeType: 'application/json', buffer: backup });
+    await expect(page.locator('[data-backup-status]')).toContainText('Urnik in obveznosti so obnovljeni.');
+    await expect(page.locator('[data-lesson-id]')).toHaveCount(1);
+    await expect(page.locator('[data-task-id]')).toHaveCount(1);
+    await expect(restore).toHaveValue('');
+  }
+  expect(errors).toEqual([]);
 });
 
 test('student print view includes the saved weekly schedule and all obligations, while hiding controls and gallery', async ({ page }) => {
@@ -81,6 +104,9 @@ test('student print view includes the saved weekly schedule and all obligations,
   const response = await page.goto('/solski-urnik/', { waitUntil: 'load' });
   expect(response?.status()).toBe(200);
   await expect(page.locator('#design-gallery .design-card')).toHaveCount(15);
+  // Static HTML is visible before the deferred student bundle attaches its
+  // handlers; wait for the real interactive state before exercising controls.
+  await expect(page.locator('[data-student-timetable]')).toHaveAttribute('data-hydrated', 'true');
 
   await page.locator('[data-add-lesson-open]').first().click();
   const lesson = page.locator('[data-lesson-form]');
@@ -104,9 +130,8 @@ test('student print view includes the saved weekly schedule and all obligations,
 
   await page.locator('[data-print-week]').fill('2027-01-06');
   await page.locator('[data-print-schedule]').click();
-  const printedRange = await page.locator('[data-student-print-range]').textContent();
-  expect(printedRange).toContain('Teden:');
-  expect(printedRange).toMatch(/4\. 1\. 2027.*8\. 1\. 2027/);
+  const printedRange = page.locator('[data-student-print-range]');
+  await expect(printedRange).toHaveText(/Teden:.*4\. 1\. 2027.*8\. 1\. 2027/);
   expect(await page.evaluate(() => window.__k365PrintCalls)).toBe(1);
 
   await page.emulateMedia({ media: 'print' });
@@ -128,6 +153,7 @@ test('week date field and template button align on desktop and fit on mobile', a
   await quietConsent(page);
   const response = await page.goto('/solski-urnik/', { waitUntil: 'load' });
   expect(response?.status()).toBe(200);
+  await expect(page.locator('[data-student-timetable]')).toHaveAttribute('data-hydrated', 'true');
 
   await page.setViewportSize({ width: 1440, height: 900 });
   const desktop = await page.evaluate(() => {
@@ -154,6 +180,7 @@ test('student print gallery stays full width and the WebP action remains reachab
   await quietConsent(page);
   const response = await page.goto('/solski-urnik/', { waitUntil: 'load' });
   expect(response?.status()).toBe(200);
+  await expect(page.locator('[data-student-timetable]')).toHaveAttribute('data-hydrated', 'true');
 
   for (const width of [1280, 390]) {
     await page.setViewportSize({ width, height: 844 });

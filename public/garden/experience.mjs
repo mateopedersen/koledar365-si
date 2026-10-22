@@ -1,5 +1,6 @@
 import {sloveniaToday,isDate,dateLabel,calendarICS,download} from './calendar-tools.mjs';
 export const PLAN_KEY='k365.garden.plan.v1';
+const newPlanId=()=>globalThis.crypto?.randomUUID?.()||`${Date.now().toString(36)}-${Math.random().toString(36).slice(2,12)}`;
 export function normalizePlan(input,plants) {
   if(!input||input.version!==1||!Array.isArray(input.tasks)||input.tasks.length>200)throw new Error('Datoteka ni veljaven načrt Koledar365 (največ 200 opravil).');
   const allowed=new Set(plants.map(plant=>plant.id).concat('custom')),seen=new Set();
@@ -55,7 +56,7 @@ function init(root) {
     select('[data-garden-ics]').disabled=!tasks.length;select('[data-garden-backup]').disabled=!tasks.length;
   }
   form.addEventListener('submit',event=>{event.preventDefault();if(!form.reportValidity())return;if(!editing&&tasks.length>=200)return say('Načrt lahko vsebuje največ 200 opravil.');
-    const entry={id:editing||('vrt-'+crypto.randomUUID()),plant:form.elements.plant.value,task:form.elements.task.value,date:form.elements.date.value,note:form.elements.note.value.trim(),done:editing?tasks.find(task=>task.id===editing)?.done===true:false};
+    const entry={id:editing||('vrt-'+newPlanId()),plant:form.elements.plant.value,task:form.elements.task.value,date:form.elements.date.value,note:form.elements.note.value.trim(),done:editing?tasks.find(task=>task.id===editing)?.done===true:false};
     try{normalizePlan({version:1,tasks:[entry]},data.plants);}catch(error){return say(error.message);}
     if(editing)tasks=tasks.map(task=>task.id===editing?entry:task);else tasks.push(entry);save();renderPlan();cancelEdit();say(storageAvailable?'Načrt je shranjen v tem brskalniku.':'Prenesite JSON, da načrt ohranite.');
   });

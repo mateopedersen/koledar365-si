@@ -60,6 +60,7 @@ test('all shared navigation controls fit without clipped links or intersecting b
 });
 
 test('tools disclosure supports keyboard, close button, outside clicks, scrolling and real destinations', async ({ page }) => {
+  test.setTimeout(60_000); // Four viewport changes and full keyboard/pointer flows on mobile Safari.
   await page.goto('/');
   const menu = page.locator('[data-navigation-menu]');
   const trigger = menu.locator('summary');

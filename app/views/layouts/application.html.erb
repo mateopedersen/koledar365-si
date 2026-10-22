@@ -36,7 +36,7 @@
 <% if gallery_page? %><%= stylesheet_link_tag 'calendar_gallery' %><% end %>
 <% if page_path == '/razpored-izmen/' %><%= stylesheet_link_tag 'shift_schedule' %><%= javascript_include_tag 'shift_schedule',defer:true %><% end %>
 <% if page_path == '/solski-urnik/' %><%= stylesheet_link_tag 'student_timetable' %><%= javascript_include_tag 'student_timetable_core','student_timetable',defer:true %><% end %>
-<% if @section=='school' %><link rel="stylesheet" href="/school/experience.css?v=20261022-1"><script type="module" src="/school/experience.mjs?v=20261022-1"></script><% end %>
+<% if @section=='school' %><link rel="stylesheet" href="/school/experience.css?v=20261022-2"><script type="module" src="/school/experience.mjs?v=20261022-1"></script><% end %>
 <% if @section=='calendar' %><%= stylesheet_link_tag 'calendar_experience' %><script type="module" src="/calendar-tools/experience.mjs"></script><% end %>
 <% if %w[moon_phases astronomy_events].include?(@section) %><%= stylesheet_link_tag 'astronomy' %><%= javascript_include_tag 'astronomy',defer:true,data:{static_keep:true} %><% end %>
 <% if %w[education_calendar school_timetable].include?(@section) %><link rel="stylesheet" href="/education/experience.css"><script type="module" src="/education/<%= @section=='school_timetable' ? 'timetable-page':'experience' %>.mjs"></script><% end %>

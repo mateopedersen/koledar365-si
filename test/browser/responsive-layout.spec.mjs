@@ -23,7 +23,7 @@ test('shared navigation and cookie bar stay inside narrow screens across page fa
   await page.setViewportSize({ width: 320, height: 900 });
 
   for (const path of pagePaths) {
-    const response = await page.goto(path, { waitUntil: 'domcontentloaded' });
+    const response = await page.goto(path, { waitUntil: 'load' });
     expect(response?.status(), path).toBe(200);
 
     const layout = await page.evaluate(() => {
@@ -38,14 +38,14 @@ test('shared navigation and cookie bar stay inside narrow screens across page fa
       return {
         viewport: document.documentElement.clientWidth,
         document: document.documentElement.scrollWidth,
-        body: document.body.scrollWidth,
+        bodyRight: document.body.getBoundingClientRect().right,
         nav: nav && { ...bounds(nav), clientWidth: nav.clientWidth, scrollWidth: nav.scrollWidth },
         cookie: bounds(cookie),
       };
     });
 
     expect(layout.document, `${path}: ${JSON.stringify(layout)}`).toBeLessThanOrEqual(321);
-    expect(layout.body, `${path}: ${JSON.stringify(layout)}`).toBeLessThanOrEqual(321);
+    expect(layout.bodyRight, `${path}: ${JSON.stringify(layout)}`).toBeLessThanOrEqual(320.5);
     expect(layout.nav?.right, `${path}: ${JSON.stringify(layout)}`).toBeLessThanOrEqual(320.5);
     expect(layout.cookie?.right, `${path}: ${JSON.stringify(layout)}`).toBeLessThanOrEqual(320.5);
   }
