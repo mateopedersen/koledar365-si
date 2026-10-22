@@ -31,6 +31,10 @@ for source in report['rows']:
    pdf=PdfReader(file,strict=True);assert len(pdf.pages)>0
    if source['kind']=='print' and source.get('name') in ['annual','monthly','school']:
     assert len(pdf.pages)==1,'Calendar should fit one sheet without a detached heading/footer'
+   if source['kind']=='print' and source.get('name')=='lunar-year':
+    first=pdf.pages[0].extract_text()
+    assert all(month in first for month in ['Januar','Februar','Marec','April','Maj','Junij','Julij','Avgust','September','Oktober','November','December']),'All twelve lunar months must fit the first print sheet'
+    assert all('2028' in page.extract_text() for page in pdf.pages),'A lunar print page contains only source notes'
    for page in pdf.pages:
     assert len(page.extract_text().strip())>30,'Blank or footer-only print page'
    expected=(297,420) if source['paper']=='A3' else (210,297)

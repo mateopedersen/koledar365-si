@@ -37,8 +37,9 @@ await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||3)},async()=
  // A local static server has no weather Function. No UI or calendar data is mocked.
  if(base.startsWith('http://127.0.0.1'))await context.route('**/vreme/**',r=>r.fulfill({status:503,contentType:'application/json',body:'{"error":"Local weather service unavailable"}'}));
  while(cursor<tasks.length){
+  const item=tasks[cursor++];
   await page.close();page=await context.newPage();page.setDefaultTimeout(30000);
-  const item=tasks[cursor++];const errors=[];const listener=e=>errors.push(e.message);page.on('pageerror',listener);
+  const errors=[];const listener=e=>errors.push(e.message);page.on('pageerror',listener);
   const row={...item,browser:engine,issues:[],pageErrors:errors};
   try{
    await page.setViewportSize({width:item.width,height:900});

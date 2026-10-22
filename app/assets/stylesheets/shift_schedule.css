@@ -142,4 +142,4 @@ body.shift-page .shift-saved__actions>button,body.shift-page .shift-saved__actio
 /* Keep the shift planner's cards in a single, ordered page flow. */
 body.shift-page .shift-download-workspace{grid-template-columns:minmax(0,1fr)}
 body.shift-page .shift-download-workspace>.shift-workbench,body.shift-page .shift-download-workspace>.shift-saved,body.shift-page .shift-download-workspace>.shift-print-settings,body.shift-page .shift-download-workspace>#design-gallery{grid-column:1/-1;min-width:0}
-body.shift-page .shift-layout{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+@media(min-width:901px){body.shift-page .shift-layout{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}}

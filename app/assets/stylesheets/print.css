@@ -162,11 +162,11 @@
 
   .lunar-download-hint { display: none !important; }
   .lunar-year-grid > article { break-inside: avoid; page-break-inside: avoid; }
-  .lunar-year-grid { gap: 4mm !important; }
-  .lunar-year-grid h2 { margin-bottom: 2mm; font-size: 11pt; }
+  #vsebina .lunar-year-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 3mm !important; }
+  #vsebina .lunar-year-grid h2 { margin: 0 0 1mm !important; font-size: 9pt !important; }
   .lunar-mini-grid { gap: 1px !important; }
-  .lunar-mini-grid a { padding: 1px; gap: 1px; flex-direction: row !important; justify-content: center; }
-  .lunar-mini-grid .lunar-moon { max-width: 5mm; }
+  #vsebina .lunar-mini-grid a { padding: 0 !important; gap: 0; flex-direction: column !important; justify-content: center; font-size: 6.5pt !important; line-height: 1.1 !important; }
+  #vsebina .lunar-mini-grid .lunar-moon { width: 3.5mm !important; max-width: 3.5mm !important; height: 3.5mm !important; }
   .lunar-calendar { break-inside: avoid; }
   .lunar-calendar .lunar-day .lunar-moon { max-width: 9mm !important; }
   .lunar-calendar .lunar-day { display: flex !important; padding: 1mm !important; gap: 1px; min-height: 0 !important; }
@@ -183,8 +183,10 @@
   .lunar-phases .data-table { margin: 2mm 0; font-size: 9pt; }
   .lunar-phases .data-table td,
   .lunar-phases .data-table th { padding: 1.5mm; }
+  #vsebina .lunar-phases .data-table :is(td,th) { padding: .5mm 1mm !important; font-size: 8pt !important; line-height: 1.1 !important; }
+  .lunar-year-grid + .lunar-phases { break-before: page; }
   .lunar-phases .table-wrap { overflow: visible; }
-  .lunar-note { font-size: 8pt; }
+  #vsebina .lunar-note { font-size: 8pt !important; line-height: 1.25 !important; }
   body.family-planner-page .family-hero,
   body.family-planner-page .family-stats { display: none !important; }
   body.family-planner-page .family-week-card { margin-top: 0; }
@@ -259,4 +261,5 @@
 
 @media print and (orientation: landscape) {
   #vsebina .year-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+  #vsebina .lunar-year-grid { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
 }
