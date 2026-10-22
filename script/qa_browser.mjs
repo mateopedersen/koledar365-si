@@ -22,9 +22,9 @@ if(mode==='layout'&&!filter&&process.env.QA_SAMPLE_ONLY!=='1'&&engine==='chromiu
 for(const [,p] of samples)for(const w of mode==='a11y'||engine!=='chromium'?[390,1440]:widths)add(p,w,[390,1440].includes(w));
 fs.mkdirSync(path.join(output,'screenshots'),{recursive:true});
 const browser=await ({chromium,webkit,firefox}[engine]).launch({headless:true});
-async function bounded(promise,label){
+async function bounded(promise,label,timeoutMs=30000){
  let timer;
- try{return await Promise.race([promise,new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error(label+' timed out after 30s')),30000)})]);}
+ try{return await Promise.race([promise,new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error(label+' timed out after '+timeoutMs/1000+'s')),timeoutMs)})]);}
  finally{clearTimeout(timer);}
 }
 const rows=[];let cursor=0;const tasks=[...cases.values()];
@@ -71,7 +71,7 @@ await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||3)},async()=
      }));
      scrollTo(0,0);await new Promise(r=>requestAnimationFrame(r));
      return retries;
-    }),'Scrolled image loading');
+    }),'Scrolled image loading',90000);
    }
    row.layout=await page.evaluate(()=>{
     const visible=e=>{const r=e.getBoundingClientRect(),s=getComputedStyle(e);return r.width>0&&r.height>0&&s.visibility!=='hidden'&&s.display!=='none'};

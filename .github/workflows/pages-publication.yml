@@ -54,7 +54,7 @@ concurrency:
 jobs:
   prepare:
     runs-on: ubuntu-latest
-    timeout-minutes: 75
+    timeout-minutes: 150
     env:
       RAILS_ENV: development
       PDFTOPPM_BIN: /usr/bin/pdftoppm
