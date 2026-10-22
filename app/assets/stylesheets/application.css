@@ -45,3 +45,19 @@ button:hover,.button:hover{box-shadow:0 3px 9px #1165c31a;transform:translateY(-
 .period-links a[aria-current=page]{background:#0b4b9b;border-color:#0b4b9b;color:#fff}
 .period-links a:focus-visible{outline:3px solid var(--red);outline-offset:3px}
 @media(max-width:600px){.period-links{padding:16px}.period-links h2{font-size:19px}.period-links>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.period-links a{font-size:14px;padding:10px}.filters input,.filters select,.filters textarea,.calendar-experience__selection input,.calendar-experience__selection select{font-size:16px}}
+
+/* Home discovery: fill the third feature column and keep every card on one surface. */
+.discovery .feature-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.discovery .feature-grid>div,.discovery .feature-grid>.feature{display:flex;flex-direction:column;align-items:flex-start;min-width:0;min-height:176px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow)}
+.discovery .feature-grid>div .year-links{margin-top:auto;padding-top:10px;margin-bottom:0}
+.discovery .feature-grid>.feature>span{margin-top:auto;padding-top:12px;font-weight:750}
+.discovery .feature-grid>.feature:hover{background:var(--surface);border-color:#b9cde8;box-shadow:0 10px 26px #183d7210;text-decoration:none}
+.discovery .feature-grid>.feature:focus-visible,.discovery .feature-grid .holiday-feature__footer a:focus-visible{outline:3px solid #0868fb;outline-offset:3px}
+.discovery .holiday-feature__date{display:flex;flex-wrap:wrap;gap:6px 10px;margin:4px 0 0;color:var(--muted)}
+.discovery .holiday-feature__date time{color:var(--ink);font-size:21px;font-weight:850;font-variant-numeric:tabular-nums}
+.discovery .holiday-feature__date span{align-self:center;font-weight:700}
+.discovery .holiday-feature__footer{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;margin-top:auto;padding-top:12px}
+.discovery .holiday-feature__footer a{font-weight:750}
+.discovery .holiday-feature__footer>span{color:var(--muted);font-size:13px;font-weight:700;white-space:nowrap}
+.discovery .feature-grid>.feature--holiday h3 .ui-icon{color:var(--red)}
+@media(max-width:850px){.discovery .feature-grid{grid-template-columns:minmax(0,1fr)}}
