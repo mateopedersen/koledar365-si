@@ -44,4 +44,24 @@ class ExpansionPagesTest < ActionDispatch::IntegrationTest
     assert_select '.garden-static-reference dd',count:16
     assert_select 'img[width="1200"][height="800"][alt]'
   end
+
+  test 'garden photograph credits are on the existing license page reached from the home footer' do
+    get GardenCalendar::PATH
+    assert_response :success
+    assert_select '.garden-plant-photo',count:16
+    assert_select '.garden-detail-photo',count:16
+    assert_select 'main a[href*="fotografije-in-licence"], main .garden-photo-credit',count:0
+    get '/'
+    assert_select 'footer a[href="/fotografije-in-licence/"]',count:1
+    get '/fotografije-in-licence/'
+    assert_response :success
+    assert_select '#fotografije-vrtnin',text:'Fotografije vrtnin'
+    assert_select '.garden-photo-license',count:16
+    GardenCalendar.photos.each do |photo|
+      assert_select "#vrtnina-#{photo.fetch('id')}" do
+        assert_select 'a[href=?]',photo.fetch('source'),count:1
+        assert_select 'a[href=?]',photo.fetch('license_url'),count:1
+      end
+    end
+  end
 end
