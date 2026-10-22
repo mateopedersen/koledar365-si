@@ -64,4 +64,5 @@ test('Escape keeps suggestions closed when a delayed search response arrives',as
  await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
  await expect(popup).toBeHidden();
  await expect(input).toHaveAttribute('aria-expanded','false');
+ await expect(input).toHaveValue('prazniki');
 });

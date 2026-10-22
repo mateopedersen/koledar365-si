@@ -122,7 +122,7 @@ function attachSearchSuggestions(form){
   const options=[...list.querySelectorAll('[role="option"]')];
   if(event.key==='ArrowDown'&&options.length){event.preventDefault();activeIndex=Math.min(activeIndex+1,options.length-1)}
   else if(event.key==='ArrowUp'&&options.length){event.preventDefault();activeIndex=Math.max(activeIndex-1,0)}
-  else if(event.key==='Escape'&&!popup.hidden){close();return}
+  else if(event.key==='Escape'){event.preventDefault();close();return}
   else if(event.key==='Enter'&&activeIndex>=0&&options[activeIndex]){event.preventDefault();location.assign(options[activeIndex].href);return}
   else return;
   options.forEach((option,index)=>option.setAttribute('aria-selected',String(index===activeIndex)));
