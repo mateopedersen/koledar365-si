@@ -282,7 +282,7 @@
     --k365-control-radius: 9px;
   }
 
-  #vsebina :is(button, .button, input[type="submit"]):not(.text-button):not(.square):not(.category-chip):not(.student-icon-button) {
+  #vsebina :is(button, .button, .holiday-primary, input[type="submit"]):not(.text-button):not(.square):not(.category-chip):not(.student-icon-button) {
     box-sizing: border-box;
     min-width: 0;
     max-width: 100%;

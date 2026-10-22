@@ -86,7 +86,7 @@ test('shared controls have consistent, usable dimensions across site page famili
           return rect.width > 0 && rect.height > 0 && style.visibility !== 'hidden' && style.display !== 'none';
         };
         const standard = [...document.querySelectorAll(
-          '#vsebina button:not(.text-button):not(.square):not(.category-chip):not(.student-icon-button), #vsebina .button:not(.text-button):not(.square):not(.category-chip):not(.student-icon-button), #vsebina input[type="submit"]',
+          '#vsebina button:not(.text-button):not(.square):not(.category-chip):not(.student-icon-button), #vsebina .button:not(.text-button):not(.square):not(.category-chip):not(.student-icon-button), #vsebina .holiday-primary, #vsebina input[type="submit"]',
         )].filter(visible).map((element) => ({
           label: (element.innerText || element.getAttribute('aria-label') || element.value || '').trim().slice(0, 30),
           height: element.getBoundingClientRect().height,
@@ -189,7 +189,7 @@ test('every published sitemap page fits a phone and keeps standard controls usab
           return rect.width > 0 && rect.height > 0 && style.visibility !== 'hidden' && style.display !== 'none';
         };
         const controls = [...document.querySelectorAll(
-          '#vsebina button:not(.text-button):not(.square):not(.category-chip):not(.student-icon-button), #vsebina .button:not(.text-button):not(.square):not(.category-chip):not(.student-icon-button), #vsebina input[type="submit"], #vsebina input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]), #vsebina select',
+          '#vsebina button:not(.text-button):not(.square):not(.category-chip):not(.student-icon-button), #vsebina .button:not(.text-button):not(.square):not(.category-chip):not(.student-icon-button), #vsebina .holiday-primary, #vsebina input[type="submit"], #vsebina input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]), #vsebina select',
         )].filter(visible);
         const viewport = document.documentElement.clientWidth;
         const pageOverflow = [...document.querySelectorAll('body *')]
