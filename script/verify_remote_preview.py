@@ -32,6 +32,9 @@ def check(p):
    mime=headers.get('Content-Type','')
    assert status==200,'HTTP '+str(status)
    expected=manifest['files'][p]['sha256'];actual=hashlib.sha256(body).hexdigest()
+   row['raw_sha256']=actual
+   row['x_robots_tag']=headers.get('X-Robots-Tag','')
+   if p.endswith('.html'):assert 'noindex' in row['x_robots_tag'].lower(),'Preview HTML lacks noindex header'
    if actual!=expected and p.endswith('.html'):
     body,counts=restore_email_html(body);actual=hashlib.sha256(body).hexdigest();row['email_transformations']=counts
    if actual!=expected and re.fullmatch(r'horoskop/(?:[^/]+/)?index.html',p) and headers.get('X-Horoscope-Rendering')=='daily-html-v1':
@@ -42,7 +45,7 @@ def check(p):
     row['match_type']='verified-daily-edge-render';actual=expected
    assert actual==expected,'Content SHA-256 mismatch'
    if p=='llms.txt':assert 'text/plain' in mime,'Wrong llms.txt MIME'
-   row.update(passed=True,status=status,mime=mime,sha256=actual);row.pop('error',None);break
+   row.update(passed=True,status=status,mime=mime,verified_expected_sha256=actual);row.pop('error',None);break
   except Exception as e:
    row['error']=str(e)
    if attempt<2:time.sleep(attempt+1)
