@@ -1,5 +1,5 @@
 {
-  "tested": 26,
+  "tested": 28,
   "failed": 0,
   "cases": [
     {
@@ -11,6 +11,13 @@
     },
     {
       "name": "lazy-webkit",
+      "tested": 2,
+      "expectedFailures": 0,
+      "observedFailures": 0,
+      "passed": true
+    },
+    {
+      "name": "lazy-webkit-tiles",
       "tested": 2,
       "expectedFailures": 0,
       "observedFailures": 0,
