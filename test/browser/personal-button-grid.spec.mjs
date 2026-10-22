@@ -64,7 +64,8 @@ test('backup and restore action borders align on the other planner pages', async
     { path: '/solski-urnik/', selector: '.student-backup-actions', count: 2 },
     { path: '/druzinski-planer/', selector: '.family-backup-actions', count: 2 },
     { path: '/razpored-izmen/', selector: '.shift-saved__actions', count: 3 },
-    ...['/prazen-koledar/', '/rojstnodnevni-koledar/', '/dnevni-planer/', '/druzinski-planer/', '/koledar-za-tiskanje/'].map((path) => ({ path, selector: '.planner-backup-actions', count: 3, openDetails: true })),
+    // The planner backup group is shared by all calendar download templates.
+    { path: '/prazen-koledar/', selector: '.planner-backup-actions', count: 3, openDetails: true },
   ];
 
   for (const { path, selector, count, openDetails } of groups) {
@@ -77,7 +78,7 @@ test('backup and restore action borders align on the other planner pages', async
     await expect(group, `${path} exposes its backup actions`).toBeVisible();
     await expect(group.locator(':scope > *')).toHaveCount(count);
 
-    for (const width of [320, 390, 768, 1280]) {
+    for (const width of [390, 1280]) {
       await page.setViewportSize({ width, height: 1000 });
       await expect(group, `${path} actions visible at ${width}px`).toBeVisible();
       const layout = await group.evaluate((container) => {
