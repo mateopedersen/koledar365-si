@@ -9,7 +9,7 @@ root=File.expand_path('..',__dir__)
 site=File.join(root,'site')
 verify_png = lambda do |path|
  data=File.binread(path)
- signature="\\x89PNG\\r\\n\\x1a\\n".b
+ signature="\x89PNG\r\n\x1a\n".b
  raise "#{path}: invalid PNG signature" unless data.start_with?(signature)
  offset=8;idat=+"".b;width=height=nil;saw_ihdr=false;saw_iend=false
  while offset < data.bytesize
