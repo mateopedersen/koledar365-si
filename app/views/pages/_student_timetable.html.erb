@@ -7,6 +7,8 @@
     <button class="button primary" type="button" data-add-lesson-open>＋ Dodaj predmet</button>
   </header>
 
+  <div class="student-print-only" data-student-print-header><strong>Koledar365 · Moj šolski načrt</strong><span data-student-print-range></span></div>
+
   <div class="student-summary" aria-label="Povzetek tvojega načrta">
     <article class="student-summary__card"><span class="student-summary__mark student-summary__mark--blue" aria-hidden="true">◷</span><div><strong data-lesson-count>0</strong><span>predmetov v tednu</span></div></article>
     <article class="student-summary__card"><span class="student-summary__mark student-summary__mark--red" aria-hidden="true">✓</span><div><strong data-task-count>0</strong><span>odprtih obveznosti</span></div></article>
@@ -37,7 +39,8 @@
       <div class="student-schedule-grid" data-schedule-grid aria-live="polite"></div>
       <div class="student-empty" data-schedule-empty><span aria-hidden="true">＋</span><div><strong>Začni s prvim predmetom</strong><p>Vsaka šola določa svoj razpored. Dodaj dejanske ure, dneve in učilnice iz svojega urnika.</p><button class="button" type="button" data-add-lesson-open>Dodaj prvi predmet</button><button class="student-text-button" type="button" data-load-sample>Prikaži označen primer</button></div></div>
       <div class="student-ics-period"><label>Koledar izvozi od<input type="date" data-ics-from value="<%= Date.current.iso8601 %>"></label><label>do<input type="date" data-ics-until value="<%= school_year_end.iso8601 %>"></label><p>Ure se ponovijo ob delavnikih z upoštevanjem poletnega časa. Šolskih počitnic ne izločimo samodejno, ker se termini razlikujejo.</p></div>
-      <div class="student-schedule-actions"><button class="button" type="button" data-print-schedule>Natisni moj teden</button><button class="button primary" type="button" data-export-ics>Izvozi urnik in roke v ICS</button></div>
+      <div class="student-schedule-actions"><button class="button" type="button" data-print-schedule>Natisni moj načrt</button><button class="button primary" type="button" data-export-ics>Izvozi urnik in roke v ICS</button></div>
+      <p class="student-print-note">Izpis vključuje vseh pet šolskih dni ter domače naloge, preverjanja in projekte.</p>
       <p class="student-private-note"><strong>Zasebno po zasnovi.</strong> Urnik in naloge se shranijo samo v tem brskalniku; Koledar365 jih ne pošlje na strežnik.</p>
     </section>
 
@@ -73,9 +76,11 @@
   </div>
 
   <section class="student-print-tools" aria-labelledby="student-print-tools-title">
-    <div><span class="student-section-index">TISKANJE IN PRENOS</span><h3 id="student-print-tools-title">Natisni svoj urnik ali izberi obliko</h3><p>Izberi teden med letoma 2027 in 2030, da se predogled in prenesena predloga ujemata z dejanskimi datumi.</p></div>
-    <label>Teden za predlogo<input type="date" data-print-week min="2027-01-01" max="2030-12-31" value="2027-01-04"></label>
-    <a class="button primary" href="#design-gallery">15 predlog PDF + WebP <span aria-hidden="true">↓</span></a>
+    <div class="student-print-tools__copy"><span class="student-section-index">TISKANJE IN PRENOS</span><h3 id="student-print-tools-title">Natisni svoj načrt ali izberi predlogo</h3><p>Izberi teden med letoma 2027 in 2030. Izpis vključuje urnik in obveznosti; 15 predlog PDF in WebP je na voljo spodaj.</p></div>
+    <div class="student-print-tools__actions">
+      <label><span>Teden za predlogo</span><input type="date" data-print-week min="2027-01-01" max="2030-12-31" value="2027-01-04"></label>
+      <a class="button primary" href="#design-gallery">15 predlog PDF + WebP <span aria-hidden="true">↓</span></a>
+    </div>
   </section>
 
   <aside class="student-source-note" aria-label="Uradni viri in pomembne informacije">
@@ -83,6 +88,5 @@
     <details><summary>Uradni viri za šolsko leto 2026/27</summary><ul><li><a href="https://www.gov.si/teme/o-osnovni-soli/" target="_blank" rel="noopener noreferrer">Osnovna šola: organizacija in šolsko leto · GOV.SI</a></li><li><a href="https://www.gov.si/teme/solski-koledar-za-osnovne-sole/" target="_blank" rel="noopener noreferrer">Koledar za osnovne šole · GOV.SI</a></li><li><a href="https://www.gov.si/teme/solski-koledar-za-srednje-sole/" target="_blank" rel="noopener noreferrer">Koledar za srednje šole · GOV.SI</a></li></ul><p>Termini počitnic, preverjanj in zaključka pouka se razlikujejo glede na šolsko leto, program in v nekaterih primerih regijo. Preveri obvestila svoje šole.</p></details>
   </aside>
 
-  <div class="student-print-only" data-student-print-header><strong>Koledar365 · Moj šolski teden</strong><span data-student-print-range></span></div>
   <output class="student-live-status" data-student-live-status role="status" aria-live="polite"></output>
 </section>
