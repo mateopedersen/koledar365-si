@@ -3,11 +3,12 @@ const dismiss=async page=>{const button=page.locator('[data-consent="necessary"]
 const downloadedText=async download=>{const stream=await download.createReadStream();let value='';for await(const chunk of stream)value+=chunk.toString('utf8');return value;};
 
 test('garden filter and private plan support real edit, persistence, backup and ICS',async({page})=>{
+  await page.addInitScript(()=>{if(crypto.randomUUID)Object.defineProperty(crypto,'randomUUID',{value:undefined,configurable:true});});
   await page.goto('/setveni-koledar/');await dismiss(page);await expect(page.locator('[data-garden]')).toHaveAttribute('data-ready','true');
   await page.locator('[data-garden-search]').fill('cesen');await expect(page.locator('[data-garden-row]:visible')).toHaveCount(1);
   await page.locator('[data-garden-reset]').click();await expect(page.locator('[data-garden-row]:visible')).toHaveCount(16);
   await page.locator('#garden-plan-date').fill('2027-03-10');await page.locator('#garden-plan-note').fill('Greda 2; česen, solata');await page.locator('[data-garden-save]').click();
-  await expect(page.locator('.garden-plan-item')).toHaveCount(1);await page.reload();await expect(page.locator('.garden-plan-item')).toHaveCount(1);
+  await expect(page.locator('.garden-plan-item')).toHaveCount(1);await expect(page.locator('[data-garden-status]')).toContainText('Načrt je shranjen');await page.reload();await expect(page.locator('.garden-plan-item')).toHaveCount(1);
   await page.locator('.garden-plan-item').getByRole('button',{name:'Uredi',exact:true}).click();await page.locator('#garden-plan-date').fill('2027-03-11');await page.locator('[data-garden-save]').click();
   await expect(page.locator('.garden-plan-item time')).toHaveAttribute('datetime','2027-03-11');
   const [ics]=await Promise.all([page.waitForEvent('download'),page.locator('[data-garden-ics]').click()]);const calendar=await downloadedText(ics);

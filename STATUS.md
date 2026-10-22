@@ -1,5 +1,13 @@
 # Koledar365 — devam ve canlı yayın durumu
 
+## 2026-10-22 — kontrol boyutları ve öğrenci planı: yayın bekliyor
+
+- Güncel çalışma PR #72 (`codex/sitewide-control-consistency`) üzerinde. Ana dal temeli `3365191f7b794e8342edb8e24913dea72401fcf1`; mevcut canlı sürüm bu PR'nin kontrol boyutu değişikliklerini henüz içermiyor.
+- Ortak düğme/alan yüksekliği 48 px; öğrenci odak süresi, başlat/sıfırla ve yedek/geri yükle kontrolleri hizalanıyor. Dar ekran taşmaları ve okul tatili kartlarının genişlikleri için ortak kurallar hazırlanmış durumda.
+- Öğrenci planı yazdırma ve ICS testleri, statik sayfanın olay dinleyicileri bağlanana kadar `data-hydrated` durumunu bekler. Son CI çalışması `39748742310` üretim imajı, PostgreSQL/yedek geri yükleme, gerçek 600 ppi çıktı ve temiz statik üretimi geçti; tarayıcı aşamasında 267 kontrol geçti, WebKit bahçe planına kayıt ekleme kontrolü başarısız oldu. Bu nedenle birleştirme/yayın yapılmadı.
+- Bahçe planı kimlik üretimi, `crypto.randomUUID` bulunmayan tarayıcılarda da çalışacak yedek yöntemle güçlendirildi. İlgili test bu API'yi devre dışı bırakarak gerçek kayıt/düzenleme/yeniden yükleme/JSON/ICS akışını doğruluyor. Yerel Chromium, WebKit, Android Chromium ve iPhone WebKit profillerinde ilgili 16 tarayıcı kontrolü ve 8 veri/ICS kontrat testi geçti.
+- Sıradaki: bu son kaynakları PR'ye kaydet; temiz tam CI'ı yeşil doğrula; güncel ana dala güvenli biçimde birleştir; Pages üretim yayını tamamlandıktan sonra canlı öğrenci planı, yazdırılacak alan, kontrol hizalamaları ve galeri indirmelerini masaüstü/mobilde doğrula. Çalışma tamamlandıktan sonra tek seferlik `koledar365-yay-n-n-tamamla` planlayıcısını kapat.
+
 ## Güncel yayın doğrulaması — 20.10.2026
 
 - Ana dalın güncel temel sürümü `1197d74df2`. Kaynak ve statik çıktı için son PageSpeed düzeltmesi hazırlanıyor; henüz Cloudflare production’a gönderilmedi.
