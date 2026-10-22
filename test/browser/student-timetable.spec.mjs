@@ -16,6 +16,8 @@ async function quietConsent(page, withLegacyEntry = false) {
 }
 
 test('student timetable works on mobile, persists locally, and exports a valid Ljubljana-time ICS', async ({ page }) => {
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
   await page.setViewportSize({ width: 390, height: 844 });
   await quietConsent(page, true);
   const response = await page.goto('/solski-urnik/', { waitUntil: 'load' });
@@ -73,6 +75,27 @@ test('student timetable works on mobile, persists locally, and exports a valid L
   await expect(page.locator('[data-day-panel="2"]')).toBeVisible();
   const widths = await page.evaluate(() => ({ document: document.documentElement.scrollWidth, viewport: document.documentElement.clientWidth }));
   expect(widths.document, JSON.stringify(widths)).toBeLessThanOrEqual(widths.viewport + 1);
+
+  const backupPromise = page.waitForEvent('download');
+  await page.locator('[data-student-backup]').click();
+  const backupStream = await (await backupPromise).createReadStream();
+  const backupChunks = [];
+  for await (const chunk of backupStream) backupChunks.push(chunk);
+  const backup = Buffer.concat(backupChunks);
+  expect(JSON.parse(backup.toString('utf8')).lessons).toHaveLength(1);
+  await page.evaluate(() => localStorage.removeItem('k365.student.timetable.v1'));
+  await page.reload({ waitUntil: 'load' });
+  await expect(page.locator('[data-student-timetable]')).toHaveAttribute('data-hydrated', 'true');
+  await expect(page.locator('[data-lesson-id]')).toHaveCount(0);
+  const restore = page.locator('[data-student-restore]');
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    await restore.setInputFiles({ name: 'moj-urnik.json', mimeType: 'application/json', buffer: backup });
+    await expect(page.locator('[data-backup-status]')).toContainText('Urnik in obveznosti so obnovljeni.');
+    await expect(page.locator('[data-lesson-id]')).toHaveCount(1);
+    await expect(page.locator('[data-task-id]')).toHaveCount(1);
+    await expect(restore).toHaveValue('');
+  }
+  expect(errors).toEqual([]);
 });
 
 test('student print view includes the saved weekly schedule and all obligations, while hiding controls and gallery', async ({ page }) => {

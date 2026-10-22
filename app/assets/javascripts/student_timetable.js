@@ -96,7 +96,8 @@
   });
   $('[data-student-backup]').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({...state,version:1},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=make('a');link.href=url;link.download='koledar365-moj-solski-urnik.json';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);announce('[data-backup-status]','Varnostna kopija je prenesena.')});
   $('[data-student-restore]').addEventListener('change',async event=>{
-    try{const file=event.currentTarget.files[0];if(!file)return;if(file.size>1000000)throw Error('Izberi varnostno kopijo, manjšo od 1 MB.');state=core.cleanState(JSON.parse(await file.text()));if(!save())throw Error('Kopije ni mogoče shraniti. V brskalniku ni dovolj prostora.');state.sample=false;renderLessons();renderTasks();announce('[data-backup-status]','Urnik in obveznosti so obnovljeni.')}catch(error){announce('[data-backup-status]',error.message,true)}finally{event.currentTarget.value=''}
+    const input=event.currentTarget;
+    try{const file=input.files[0];if(!file)return;if(file.size>1000000)throw Error('Izberi varnostno kopijo, manjšo od 1 MB.');state=core.cleanState(JSON.parse(await file.text()));if(!save())throw Error('Kopije ni mogoče shraniti. V brskalniku ni dovolj prostora.');state.sample=false;renderLessons();renderTasks();announce('[data-backup-status]','Urnik in obveznosti so obnovljeni.')}catch(error){announce('[data-backup-status]',error.message,true)}finally{input.value=''}
   });
   const clock=$('[data-focus-clock]'),startButton=$('[data-focus-start]'),lengthInput=$('[data-focus-length]');let focusDeadline=0,focusTimer=null,focusPaused=null,focusMode='study';
   const showClock=seconds=>{clock.textContent=`${String(Math.floor(Math.max(0,seconds)/60)).padStart(2,'0')}:${String(Math.max(0,seconds)%60).padStart(2,'0')}`};

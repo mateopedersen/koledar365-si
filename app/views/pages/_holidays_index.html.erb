@@ -1,0 +1,27 @@
+<div class="holiday-page" data-holiday-directory>
+  <section class="holiday-hero" aria-labelledby="holiday-directory-title">
+    <div class="holiday-intro">
+      <span class="eyebrow"><span class="holiday-slovenia-mark" aria-hidden="true"></span> PRAZNIKI V SLOVENIJI</span>
+      <h1 id="holiday-directory-title">Prazniki in<br><span>dela prosti dnevi.</span></h1>
+      <p class="holiday-hero-tagline">Pravo leto.<br>Jasni odgovori.</p>
+      <p>Izberite leto za celoten seznam datumov, število prostih dni, podaljšane vikende in koledarje za tisk. Tu najdete tudi razliko med državnim praznikom in dela prostim dnevom.</p>
+      <nav class="holiday-years" aria-label="Izberite leto praznikov"><% CalendarEngine::YEARS.each do |year| %><a href="/prazniki/<%= year %>/"><%= year %></a><% end %></nav>
+      <div class="holiday-hero-actions"><a class="holiday-primary" href="#holiday-directory-years"><%= ui_icon('calendar') %> Primerjajte leta <%= ui_icon('chevron-right') %></a><a href="/prazniki/2026/">Arhiv 2026</a></div>
+    </div>
+    <div class="holiday-visual"><%= render 'holiday_illustration' %><span class="holiday-visual-caption"><%= ui_icon('pin') %> Slovenski prazniki, razloženi.</span></div>
+  </section>
+  <section class="holiday-comparison" id="holiday-directory-years" aria-labelledby="holiday-directory-years-title">
+    <div class="holiday-section-heading"><div><h2 id="holiday-directory-years-title">Kdaj boste imeli <strong>več prostih dni?</strong></h2><p>Primerjava velja za delovni teden od ponedeljka do petka.</p></div></div>
+    <div class="holiday-comparison-grid"><% @holiday_comparison.each do |period| %>
+      <a href="/prazniki/<%= period.year %>/"><h3><%= period.year %><span aria-hidden="true">↗</span></h3><div class="holiday-comparison-highlight"><strong><%= period.weekday_free_dates.size %></strong><span>prostih praznikov<br>med tednom</span></div><dl><div><dt>Vsi dela prosti datumi</dt><dd><%= period.free_dates.size %></dd></div><div><dt>Delovni dnevi</dt><dd><%= period.working_days %></dd></div></dl><span>Odprite datume, izvoz in koledarje →</span></a>
+    <% end %></div>
+  </section>
+  <section class="panel prose" aria-labelledby="holiday-differences-title">
+    <h2 id="holiday-differences-title">Vsak praznik ni dela prost dan</h2>
+    <p><strong>Državni praznik</strong> obeležuje pomemben datum za Slovenijo. Nekateri državni prazniki so delovni dnevi. <strong>Dela prost dan</strong> je datum, ki ga zakon določa kot prostega; mednje sodijo tudi nekateri verski prazniki.</p>
+    <p>Praznik na soboto ali nedeljo se pri običajnem delovniku ne odšteje še enkrat od delovnih dni. Samodejnega nadomestnega ponedeljka ne predpostavljamo. Vaš osebni razpored dela je lahko drugačen.</p>
+    <p><strong>Šolske počitnice</strong> imajo ločen koledar. Šolski prost dan ne pomeni nujno dela prostega dne za starše. Za dopust upoštevajte tudi svoje delovne obveznosti.</p>
+    <div class="link-grid compact"><a href="/solske-pocitnice/">Šolske počitnice</a><a href="/nacrtovalnik-dopusta/">Načrtovalnik dopusta</a><a href="/kalkulator-delovnih-dni/">Kalkulator delovnih dni</a><a href="/pomembni-dnevi/">Pomembni dnevi in običaji</a></div>
+  </section>
+  <section class="holiday-sources"><%= ui_icon('shield') %><div><h2>Pravna podlaga in preverjanje</h2><p>Izračuni temeljijo na <%= source_link(HolidayYear::LAW_URL,'Zakonu o praznikih in dela prostih dnevih v Republiki Sloveniji') %> ter <%= source_link(HolidayYear::AMENDMENT_URL,'noveli ZPDPD-I') %>. Veljajo po trenutno veljavnem zakonu; prihodnje spremembe lahko vplivajo na datume.</p><p>Preverjeno <time datetime="<%= HolidayYear::CHECKED_ON %>"><%= I18n.l(HolidayYear::CHECKED_ON) %></time> · <a href="/viri-in-metodologija/">Viri in metodologija</a> · <a href="/kontakt/">Sporočite popravek</a></p></div></section>
+</div>

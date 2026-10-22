@@ -58,7 +58,9 @@ class HolidaysTest < ActionDispatch::IntegrationTest
     assert_response :not_found
     get '/prazniki/',params:{year:2026}
     assert_response :success
-    assert_select '[data-holiday-year="2027"]'
+    assert_select '[data-holiday-directory]'
+    assert_select '[data-holiday-row]',count:0
+    (2027..2030).each { |year| assert_select "a[href='/prazniki/#{year}/']" }
   end
 
   test 'break suggestions never overlap and show every charged leave date' do

@@ -1,3 +1,6 @@
+<% if page_path=='/prazniki/' %>
+<%= render 'holidays_index' %>
+<% else %>
 <% check_date=@today.year==@year ? @today : Date.new(@year,1,1) %>
 <% check_event=@holidays.events.find { |event| event.on==check_date } %>
 <div class="holiday-page" data-holiday-year="<%= @year %>">
@@ -95,3 +98,5 @@
 
   <section class="holiday-sources" id="holiday-sources"><%= ui_icon('shield') %><div><h2>Preverjeni datumi. Razložena pravila.</h2><p>Pravna podlaga: <%= source_link(HolidayYear::LAW_URL,'Zakon o praznikih in dela prostih dnevih v Republiki Sloveniji (ZPDPD)') %>, vključno z <%= source_link(HolidayYear::AMENDMENT_URL,'novelo ZPDPD-I, veljavno od 17. oktobra 2026') %>. Upoštevani so dan Triglava ter veljavna poimenovanja praznikov.</p><p>Datumi za prihodnja leta so izračunani po trenutno veljavnem zakonu. Morebitne poznejše zakonske spremembe lahko vplivajo nanje. Velika noč se računa po gregorijanskem koledarju; binkošti so 49 dni pozneje.</p><p>Preverjeno: <time datetime="<%= HolidayYear::CHECKED_ON %>"><%= I18n.l(HolidayYear::CHECKED_ON) %></time> · <a href="/viri-in-metodologija/">Metodologija</a> · <a href="/kontakt/">Sporočite popravek</a> · <a href="/solske-pocitnice/">Šolske počitnice so ločen koledar</a></p></div></section>
 </div>
+
+<% end %>

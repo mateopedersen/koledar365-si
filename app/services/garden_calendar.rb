@@ -7,6 +7,9 @@ class GardenCalendar
   def self.plants = data.fetch('plants')
   def self.sources = data.fetch('sources')
   def self.image = data.fetch('image')
+  def self.photo_catalog = @photo_catalog ||= JSON.parse(Rails.root.join('public/garden/photos.json').read)
+  def self.photos = photo_catalog.fetch('photos')
+  def self.photo(id) = photos.find { |photo|photo.fetch('id')==id }
   def self.faq
     [
       ['Ali je to setveni koledar po Mariji Thun?', 'Ne. Pregled prikazuje praktične sezonske okvire za vrtnine. Biodinamični koledar po Mariji Thun temelji na drugem pristopu; povezavo do izvirnega koledarja najdete med viri. Njegovih avtorskih dnevnih razporedov ne prepisujemo.'],

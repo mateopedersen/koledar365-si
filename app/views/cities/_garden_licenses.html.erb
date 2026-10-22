@@ -1,0 +1,17 @@
+<h2 class="photo-license-section" id="fotografije-vrtnin">Fotografije vrtnin</h2>
+<section class="panel prose">
+  <h3>Prave fotografije za lažje prepoznavanje</h3>
+  <p>V <a href="/setveni-koledar/#setveni-pregled">setvenem koledarju</a> je vsaka vrtnina opremljena s pravo fotografijo. Fotografije so pomanjšane in stisnjene v WebP ter vključene v samostojen okvir SVG; pri prikazu ni povezovanja s strežnikom izvirnika. Fotografije vrtnin niso ustvarjene z umetno inteligenco.</p>
+  <p><%= GardenCalendar.photo_catalog.fetch('note') %> Navedena odprta licenca velja tudi za obdelano fotografijo v datoteki SVG, vključno z deljenjem pod enakimi pogoji, kjer je to zahtevano. Povezava do izvirnika in podatki o avtorstvu so shranjeni tudi v posamezni datoteki SVG.</p>
+  <p>Pregled fotografij in licenc: <time datetime="2026-10-22">22. oktobra 2026</time>. Naslovna vrtna ilustracija je ločeno označena kot ustvarjena z umetno inteligenco.</p>
+</section>
+<div class="photo-license-grid garden-license-grid">
+  <% GardenCalendar.photos.each do |photo| %>
+    <article class="panel photo-license garden-photo-license" id="vrtnina-<%= photo.fetch('id') %>">
+      <img src="<%= photo.fetch('path') %>" alt="<%= photo.fetch('alt') %>" width="160" height="160" loading="lazy" decoding="async" style="width:160px;height:160px;max-width:100%;object-fit:contain">
+      <h3><%= photo.fetch('name') %></h3>
+      <dl><dt>Avtor / vir</dt><dd><%= photo.fetch('author') %></dd><dt>Licenca fotografije</dt><dd><a href="<%= photo.fetch('license_url') %>"><%= photo.fetch('license') %></a></dd><dt>Prilagoditve</dt><dd><%= photo.fetch('changes') %></dd></dl>
+      <a href="<%= photo.fetch('source') %>">Izvirna fotografija in podatki o avtorstvu ↗</a>
+    </article>
+  <% end %>
+</div>
