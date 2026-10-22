@@ -1,22 +1,83 @@
-<section class="story-hero">
-  <div class="story-copy">
-    <span class="eyebrow">O NAS · KOLEDAR365</span>
-    <h1>Slovenski koledar.<br>Prostor za <em>vaše načrte.</em></h1>
-    <p>Za vsakdan, velike načrte in vse vmes. Slovenski koledar, ki poveže pregledne datume, uporabna orodja in prostor za vaše ideje.</p>
-    <div class="actions"><a class="button primary" href="/"><%= ui_icon('calendar') %> Odprite svoj dan</a><a class="button" href="/orodja/">Raziščite orodja <%= ui_icon('chevron-right') %></a></div>
-  </div>
-  <div class="story-visual">
-    <figure><%= render 'responsive_photo', path: '/images/cities/ljubljana.jpg', alt: 'Ljubljana – pogled na slovensko prestolnico', sizes: '(max-width:760px) 100vw, 50vw' %><figcaption>Ljubljana, Slovenija <a href="/fotografije-in-licence/#ljubljana">Fotografija in avtor</a></figcaption></figure>
+<div class="about-page">
+  <section class="about-hero" aria-labelledby="about-title">
+    <div class="about-hero__copy">
+      <span class="about-kicker"><%= slovenia_flag %> NEODVISEN SLOVENSKI PROJEKT</span>
+      <h1 id="about-title">Koledarji, ki<br><em>razumejo Slovenijo.</em></h1>
+      <p class="about-hero__lead">Koledar365 na enem mestu povezuje slovenske praznike, šolske počitnice in uporabna orodja za načrtovanje vsakdana.</p>
+      <div class="about-hero__actions">
+        <a class="button primary" href="/prazniki/"><%= ui_icon('calendar') %> Raziščite koledar</a>
+        <a class="button about-button-light" href="/orodja/">Oglejte si orodja <%= ui_icon('chevron-right') %></a>
+      </div>
+      <ul class="about-trust" aria-label="O projektu">
+        <li><%= ui_icon('check') %> Neodvisen projekt</li>
+        <li><%= ui_icon('pin') %> Za Slovenijo</li>
+        <li><%= ui_icon('shield') %> Brez računa</li>
+      </ul>
+    </div>
+    <div class="about-hero__visual">
+      <figure class="about-photo">
+        <%= render 'responsive_photo', path: '/images/cities/ljubljana.jpg', alt: 'Pogled na Ljubljano, glavno mesto Slovenije', sizes: '(max-width:760px) 100vw, 52vw' %>
+        <figcaption>Ljubljana <span>Slovenija</span><a href="/fotografije-in-licence/#ljubljana">Avtor fotografije</a></figcaption>
+      </figure>
+      <div class="about-calendar-note" aria-label="Koledar365 pomaga načrtovati skozi vse leto">
+        <span class="about-calendar-note__icon"><%= ui_icon('calendar') %></span>
+        <span><strong>Vaše leto, bolj pregledno</strong><small>Prazniki · načrti · pomembni datumi</small></span>
+        <span class="about-calendar-note__flag" aria-hidden="true"><%= slovenia_flag %></span>
+      </div>
+      <span class="about-hero__accent" aria-hidden="true"></span>
+    </div>
+  </section>
 
-  </div>
-</section>
-<div class="story-values">
-  <article><%= ui_icon('compass') %><h2>Slovenija v središču</h2><p>Prazniki, lokalni čas in slovenska imena. S podatki, ki imajo naveden vir, in fotografijami resničnih mest.</p></article>
-  <article><%= ui_icon('print') %><h2>Od zaslona do papirja</h2><p>Pet oblikovnih družin, petnajst predlog. Koledarji PDF in ujemajoče se datoteke WebP za tiskanje.</p></article>
-  <article><%= ui_icon('shield') %><h2>Načrti ostanejo vaši</h2><p>Dogodke, opravila in zapiske hranite v svojem brskalniku. Brez oglaševalskih sledilnikov in samodejne sinhronizacije.</p></article>
+  <section class="about-offer" aria-labelledby="about-offer-title">
+    <div class="about-section-heading">
+      <span class="about-eyebrow">VSE ZA DOBRO NAČRTOVANJE</span>
+      <h2 id="about-offer-title">Manj iskanja. Več jasnega pregleda.</h2>
+      <p>Od hitrega preverjanja prostega dne do načrtovanja družinskega tedna – izberite, kar potrebujete.</p>
+    </div>
+    <div class="about-offer-grid">
+      <a class="about-offer-card" href="/prazniki/"><span class="about-offer-card__icon about-tone-blue"><%= ui_icon('calendar') %></span><span class="about-offer-card__body"><strong>Prazniki in koledarji</strong><small>Preglejte leto po dnevih in hitro poiščite naslednji praznik.</small></span><%= ui_icon('chevron-right') %></a>
+      <a class="about-offer-card" href="/solske-pocitnice/"><span class="about-offer-card__icon about-tone-red"><%= ui_icon('school') %></span><span class="about-offer-card__body"><strong>Šolske počitnice</strong><small>Načrtujte družinske obveznosti po objavljenih šolskih terminih.</small></span><%= ui_icon('chevron-right') %></a>
+      <a class="about-offer-card" href="/druzinski-planer/"><span class="about-offer-card__icon about-tone-blue"><%= ui_icon('family') %></span><span class="about-offer-card__body"><strong>Družinski planer</strong><small>Uskladite opravila in dogodke v skupnem tedenskem pregledu.</small></span><%= ui_icon('chevron-right') %></a>
+      <a class="about-offer-card" href="/lunin-koledar/"><span class="about-offer-card__icon about-tone-red"><%= ui_icon('moon') %></span><span class="about-offer-card__body"><strong>Sonce, Luna in datumi</strong><small>Oglejte si lunine mene in druge koledarske informacije.</small></span><%= ui_icon('chevron-right') %></a>
+      <a class="about-offer-card" href="/delovni-dnevi/"><span class="about-offer-card__icon about-tone-blue"><%= ui_icon('briefcase') %></span><span class="about-offer-card__body"><strong>Delovni dnevi</strong><small>Preverite delovne dneve in praznike v izbranem obdobju.</small></span><%= ui_icon('chevron-right') %></a>
+      <a class="about-offer-card" href="/koledar-za-tiskanje/"><span class="about-offer-card__icon about-tone-red"><%= ui_icon('print') %></span><span class="about-offer-card__body"><strong>Koledar za tisk</strong><small>Izberite predlogo za domačo uporabo ali delovno mizo.</small></span><%= ui_icon('chevron-right') %></a>
+    </div>
+  </section>
+
+  <section class="about-method" aria-labelledby="about-method-title">
+    <div class="about-method__intro">
+      <span class="about-eyebrow">DATUMI Z JASNIM OZADJEM</span>
+      <h2 id="about-method-title">Uporabnost se začne pri zaupanja vrednih virih.</h2>
+      <p>Koledar je uporaben le, če veste, od kod prihajajo podatki. Zato ločujemo vrste informacij, označujemo uporabljene vire in jasno povemo, kadar določen datum še ni potrjen.</p>
+      <a class="about-text-link" href="/viri-in-metodologija/">Preberite, kako preverjamo podatke <%= ui_icon('chevron-right') %></a>
+    </div>
+    <ol class="about-method-steps">
+      <li><span class="about-step-number">01</span><div><h3>Preverimo izvor</h3><p>Uradne praznike, šolske počitnice in astronomske dogodke obravnavamo ločeno ter jih povezujemo z ustreznimi viri.</p></div><%= ui_icon('note') %></li>
+      <li><span class="about-step-number">02</span><div><h3>Ne ugibamo</h3><p>Če datum še ni potrjen, ga ne predstavljamo kot dejstvo. Pri načrtovanju preverite tudi obvestila pristojne ustanove.</p></div><%= ui_icon('search') %></li>
+      <li><span class="about-step-number">03</span><div><h3>Popravke jemljemo resno</h3><p>Opazili ste napačen podatek? Pošljite nam povezavo do strani in opombo, da lahko preverimo ter popravimo zapis.</p></div><%= ui_icon('check') %></li>
+    </ol>
+  </section>
+
+  <section class="about-principles" aria-label="Odgovornost in zasebnost">
+    <article class="about-principle">
+      <span class="about-principle__icon"><%= ui_icon('person') %></span>
+      <div><span class="about-eyebrow">KDO STOJI ZA PROJEKTOM</span><h2>Neodvisen koledar za vsakdanjo rabo.</h2><p>Koledar365 je neodvisen projekt. Za spletno mesto je odgovoren <strong>Mateo Pedersen</strong>. Z javnimi ustanovami, na katere se sklicujemo, nismo partnersko povezani.</p><a href="/uredniska-politika/">Uredniška politika <%= ui_icon('chevron-right') %></a></div>
+    </article>
+    <article class="about-principle about-principle--privacy">
+      <span class="about-principle__icon"><%= ui_icon('shield') %></span>
+      <div><span class="about-eyebrow">VAŠI OSEBNI NAČRTI</span><h2>Vaši vnosi ostanejo v vašem brskalniku.</h2><p>Za uporabo koledarja ne potrebujete računa. Osebne dogodke in zapiske shranjujemo v brskalniku te naprave; med napravami se ne sinhronizirajo samodejno.</p><a href="/zasebnost/">Preberite o zasebnosti <%= ui_icon('chevron-right') %></a></div>
+    </article>
+  </section>
+
+  <section class="about-contact" aria-labelledby="about-contact-title">
+    <div class="about-contact__mark"><%= ui_icon('note') %></div>
+    <div><span class="about-eyebrow">POMAGAJTE NAM IZBOLJŠATI KOLEDAR</span><h2 id="about-contact-title">Vprašanje, predlog ali popravek?</h2><p>Sporočite, kaj ste opazili, in priložite povezavo do strani. Tako bomo lažje preverili pravi podatek.</p></div>
+    <a class="button primary" href="/kontakt/">Pišite nam <%= ui_icon('chevron-right') %></a>
+  </section>
+
+  <nav class="about-footer-links" aria-label="Več o Koledar365">
+    <a href="/viri-in-metodologija/"><%= ui_icon('note') %><span><strong>Viri in metodologija</strong><small>Kako izbiramo in preverjamo podatke</small></span><%= ui_icon('chevron-right') %></a>
+    <a href="/uredniska-politika/"><%= ui_icon('check') %><span><strong>Uredniška politika</strong><small>Objave, popravki in odgovornost</small></span><%= ui_icon('chevron-right') %></a>
+    <a href="/fotografije-in-licence/"><%= ui_icon('image') %><span><strong>Fotografije in licence</strong><small>Avtorji in dovoljene uporabe</small></span><%= ui_icon('chevron-right') %></a>
+  </nav>
 </div>
-<section class="story-detail">
-  <div><span class="eyebrow">ZA DATUMI STOJI PREVERJANJE</span><h2>Lep koledar je uporaben,<br>ko se lahko znajdete v njem.</h2><p>Koledar365 je neodvisen projekt. Za spletno mesto je odgovoren <strong>Mateo Pedersen</strong>. Z javnimi ustanovami, na katere se sklicujemo, nismo partnersko povezani.</p><a href="/kontakt/" class="button">Pišite uredništvu <%= ui_icon('chevron-right') %></a></div>
-  <ol class="story-steps"><li><span>01</span><div><h3>Najprej vir</h3><p>Pravne praznike, šolske datume in astronomske dogodke obravnavamo ločeno. Statistika imen temelji na javnih podatkih SURS.</p></div></li><li><span>02</span><div><h3>Jasno o mejah podatkov</h3><p>Nepotrjenih datumov ne ugibamo. Dnevni horoskop je razvedrilna vsebina z dejanskim datumom objave.</p></div></li><li><span>03</span><div><h3>Prostor za popravek</h3><p>Opazili ste napačen datum ali neroden izraz? Sporočite nam stran in podatek. Sporočilo se shrani v uredniški predal.</p></div></li></ol>
-</section>
-<nav class="story-links" aria-label="Več o projektu"><a href="/viri-in-metodologija/"><%= ui_icon('note') %><span>Viri in metodologija<small>Kako računamo in preverjamo</small></span><%= ui_icon('chevron-right') %></a><a href="/uredniska-politika/"><%= ui_icon('check') %><span>Uredniška politika<small>Objave, popravki in odgovornost</small></span><%= ui_icon('chevron-right') %></a><a href="/fotografije-in-licence/"><%= ui_icon('image') %><span>Fotografije in licence<small>Avtorji naših pogledov na Slovenijo</small></span><%= ui_icon('chevron-right') %></a></nav>
