@@ -63,6 +63,10 @@ window.K365Free={preview(image,options){
  previewTasks.set(image,async()=>{
   const eligible=!options.name&&!options.photo_token&&!options.notes&&options.paper==='A4'&&options.orientation==='portrait'&&!['blank','daily','weekly','shift','school','family','name'].includes(options.type);const rows=eligible?await registry():[],match=eligible&&rows.find(row=>matchPublicCalendar(row,options));
   if(match){image.src=match.files.preview;image.alt=options.year+' – '+options.design+' – predogled izbranega koledarja';return}
+  // The exported gallery labels these as layout samples. Keep that honest,
+  // lightweight fallback; the explicit personal-preview button renders the
+  // selected period and entries. Opening a gallery must not render many PDFs.
+  if(image.dataset.staticPreview){image.src=image.dataset.staticPreview;image.alt='Vzorec postavitve. Za izbrano ime, obdobje in vnose odprite Moj predogled.';return}
   const result=await renderResult({...options,entries:[]}),pdf=await pdfDocument(bytes(result.pdf)),page=await pdf.getPage(1),{canvas}=await renderPage(pdf,1,600/Math.max(...page.view.slice(2))),blob=await canvasBlob(canvas);canvas.width=canvas.height=1;await pdf.destroy();
   if(image.dataset.freePreviewKey===key&&!image.dataset.objectUrl){image.src=objectUrl(blob);image.alt=(options.name?'Ime: '+options.name+'. ':'')+options.year+' – '+options.design+' – stran 1 od '+result.proof.pages}
  });previewObserver.observe(image);
