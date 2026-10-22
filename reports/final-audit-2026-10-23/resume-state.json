@@ -1,24 +1,28 @@
 {
-  "status": "in_progress",
+  "status": "complete",
   "branch": "codex/final-audit-evidence-20261023",
   "pr": 107,
   "current_checkout": "work/koledar365-final-publication",
   "git_head": "82c4db6325e343e79d5dd8e526f3ce3c66c6470d",
   "source_manifest_commit": "d3989cd5b9334f20edff2ec905a349e63e70a52e",
   "preview": "https://f0c78aee.koledar365-si.pages.dev",
-  "preview_manifest_sha256": "95fb25a07d6d182688baa498f34563a332c473fe38ad87635644918f48fb573d",
+  "preview_manifest_sha256": "8cdd8cd9607761f298b896362e8db11315b14d8be8972b665eb28ef6a2748a97",
   "local_gates": "136 Rails/13873 assertions;468 local browser pass/8 intentional skip;1200 layout;138 accessibility;780 raster;6556 parsed downloads;108 exports;48 months;69 coordinates;32 solar-date regressions;36 image gate controls all passed",
-  "pending": [
-    "finish GitHub production quality run",
-    "commit and publish final evidence"
-  ],
+  "pending": [],
   "search_console": "excluded",
-  "active": "All live gates passed including final full browser468pass8skip; main GitHub QA39865776062 finishing; evidence commit next",
+  "active": "Production accepted; all required reports finalized in PR108. Use GitHub PR state for its merge record.",
   "production_deployment": "68ab0aa9-146a-483b-acf5-26f446e6252d",
   "production_manifest_verified": true,
   "preview_workflow": "39864947847 success:1768 parity,552 layout,138 axe",
   "production_workflow": "39865775941 success",
   "production_parity": "8014 files / 2444114125 bytes / 0 failures",
   "performance": "93\u201398 lab scores; 5/6 LCP <=2.5s; school2.66s openP2; CLS0; no fieldINP",
-  "live_browser": "Final full live suite468pass8intentionalskip0failure in8.3min"
+  "live_browser": "Final full live suite468pass8intentionalskip0failure in8.3min",
+  "evidence_pr": 108,
+  "evidence_head": "8ab981583fda2b366dbdf88470a1c87783f7b67c",
+  "source_quality_workflow": "39864947827 success",
+  "production_quality_workflow": "39865776062 success",
+  "open_p0_p1": 0,
+  "open_nonblocking": "P2 school mobile lab LCP2.66s vs2.5s target; no fieldINP available",
+  "final_status": "GO \u2014 READY FOR GOOGLE SUBMISSION"
 }

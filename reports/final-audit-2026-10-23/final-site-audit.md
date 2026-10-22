@@ -43,7 +43,7 @@ No Search Console access/submission. Public contact form and required-field vali
 
 - PR #107 merged; deployed commit `82c4db6325e343e79d5dd8e526f3ce3c66c6470d`.
 - Cloudflare deployment `68ab0aa9-146a-483b-acf5-26f446e6252d`; exact normal public release-manifest SHA verified.
-- Preview workflow 39864947847 and production verification workflow 39865775941 succeeded.
+- Preview workflow 39864947847, production verification workflow 39865775941, source quality workflow 39864947827 and the complete production-commit quality workflow 39865776062 succeeded.
 - 391 public canonical URLs, 418 indexability HTTP responses, 1,572 redirects: passed.
 - 8,014 live file comparisons including 6,556 downloads / 2,444,114,125 bytes: zero failures.
 - 1,200 live layouts and 138 live axe contexts: passed.
@@ -68,3 +68,5 @@ The detailed release identity, parity methodology, integration decisions, initia
 | F09 | `app/assets/javascripts/sun.js` | `current/logs/sun-midnight-before.log`, 32 fixed-date/invalid-date/history cases | https://koledar365.si/soncni-vzhod-in-zahod/ljubljana/ |
 
 Before/after mobile screenshots, raster contact sheets and all machine-readable evidence are retained under `baseline/` and `current/`. Shared design was preserved; source code fixes were applied only where a verified defect existed.
+
+All 13 deliverables and closing evidence are recorded in [PR #108](https://github.com/mateopedersen/koledar365-si/pull/108), following the deployed application/publication [PR #107](https://github.com/mateopedersen/koledar365-si/pull/107). The report follow-up does not change the published application bytes.
