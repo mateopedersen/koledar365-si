@@ -50,3 +50,7 @@
   .garden-sheet-heading{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
   .garden-sheet-heading>button{width:100%;min-height:48px}
 }
+
+@media screen and (max-width:780px){
+  #vsebina .garden-plan-form label>input,#vsebina .garden-plan-form label>select{margin-top:7px!important}
+}
