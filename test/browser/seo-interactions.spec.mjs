@@ -38,3 +38,11 @@ test('school hero uses responsive previews and retains original attribution',asy
   await expect(page.locator('.sp-photo-credit-hero a').first()).toHaveAttribute('href',photo.source);
   await expect(page.locator('.sp-photo-credit-hero a').last()).toHaveAttribute('href',photo.licenseUrl);
 });
+
+for(const path of ['/','/solske-pocitnice/','/horoskop/']){
+  test(`public landmarks and content roles support navigation on ${path}`,async({page})=>{
+    await page.goto(path);
+    const result=await new AxeBuilder({page}).withRules(['landmark-unique','landmark-complementary-is-top-level','aria-allowed-role']).analyze();
+    expect(result.violations).toEqual([]);
+  });
+}
