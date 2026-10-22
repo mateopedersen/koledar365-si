@@ -47,7 +47,7 @@ export function resultCategory(result) {
   const path = result.path || '';
   if (path.startsWith('/soncni-vzhod-in-zahod/')) return 'Sončni časi';
   if (/^\/(lunin-koledar|lunine-mene|polna-luna|mlaj)\//.test(path)) return 'Luna';
-  if (/^\/(prazniki|pomembni-dnevi|letni-casi|godovi)\//.test(path)) return 'Prazniki in dnevi';
+  if (/^\/(prazniki|pomembni-dnevi|letni-casi)\//.test(path)) return 'Prazniki in dnevi';
   if (/^\/(koledar|mesecni-koledar|tedenski-koledar)\//.test(path)) return 'Koledarji';
   return 'Orodja';
 }
