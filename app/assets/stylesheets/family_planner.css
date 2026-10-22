@@ -162,3 +162,7 @@ body.family-planner-page .download-workspace{margin-top:32px}
   body.family-planner-page .family-feature-grid{grid-template-columns:1fr 1fr}
   body.family-planner-page .family-planner{max-width:none}
 }
+
+/* Keep the paired backup controls level despite the global label spacing. */
+.family-backup-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
+.family-backup-actions>.family-button,.family-backup-actions>.family-import-button{width:100%;min-width:0;min-height:44px;margin:0;box-sizing:border-box;text-align:center;white-space:normal;overflow-wrap:anywhere}
