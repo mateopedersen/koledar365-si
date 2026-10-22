@@ -102,7 +102,7 @@ function makeSearchLink(result,index,asOption=false){const link=element('a',unde
 function attachSearchSuggestions(form){
  const input=form.querySelector('[data-search-input]'),popup=form.querySelector('[data-search-suggestions]'),list=popup?.querySelector('[data-search-options]'),status=popup?.querySelector('[data-search-status]');if(!input||!popup||!list||!status)return;
  let activeIndex=-1,timer=0,request=0;
- const close=()=>{popup.hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');activeIndex=-1};
+ const close=()=>{clearTimeout(timer);request++;popup.hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');activeIndex=-1};
  const open=()=>{popup.hidden=false;input.setAttribute('aria-expanded','true')};
  const render=(rows,message)=>{list.replaceChildren();activeIndex=-1;status.textContent=message||'';status.hidden=!message;list.hidden=!rows.length;if(!message)rows.forEach((row,index)=>list.append(makeSearchLink(row,index,true)));open()};
  const update=async()=>{
@@ -122,7 +122,7 @@ function attachSearchSuggestions(form){
   const options=[...list.querySelectorAll('[role="option"]')];
   if(event.key==='ArrowDown'&&options.length){event.preventDefault();activeIndex=Math.min(activeIndex+1,options.length-1)}
   else if(event.key==='ArrowUp'&&options.length){event.preventDefault();activeIndex=Math.max(activeIndex-1,0)}
-  else if(event.key==='Escape'&&!popup.hidden){close();return}
+  else if(event.key==='Escape'){close();return}
   else if(event.key==='Enter'&&activeIndex>=0&&options[activeIndex]){event.preventDefault();location.assign(options[activeIndex].href);return}
   else return;
   options.forEach((option,index)=>option.setAttribute('aria-selected',String(index===activeIndex)));
@@ -130,6 +130,7 @@ function attachSearchSuggestions(form){
  });
  popup.addEventListener('click',event=>{if(event.target.closest('a[role="option"]'))close()});
  document.addEventListener('pointerdown',event=>{if(!form.contains(event.target))close()});
+ form.addEventListener('focusout',event=>{if(event.relatedTarget&&!form.contains(event.relatedTarget))close()});
  form.addEventListener('submit',close);
 }
 function initializeSearchSuggestions(){ $$('[data-site-search]').forEach(attachSearchSuggestions); }

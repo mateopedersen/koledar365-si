@@ -2,7 +2,7 @@ require 'digest'
 require_relative '../../lib/svg_asset_references'
 
 module IllustrationHelper
-  UI_ICON_NAMES = %w[calendar week clock pin sun moon person search settings plus check note download upload print info chevron-right gift image grid star briefcase calculator cloud shield cookie compass family school holidays personal work vacation birthday sunset heart arrow refresh].freeze
+  UI_ICON_NAMES = %w[calendar week clock pin sun moon person search settings plus check note download upload print info chevron-right gift image grid star briefcase calculator cloud shield cookie compass family school holidays personal work vacation birthday sunset heart arrow refresh sprout].freeze
   UI_ICON_SPRITE = '/visuals/ui-material-v3.svg'.freeze
   CALENDAR_FILE_ICONS = {
     'pdf' => '/visuals/download-pdf-v1.svg',
