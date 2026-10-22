@@ -1,0 +1,389 @@
+/* K365-site-readability-v1: shared screen typography and contrast for every route. */
+@media screen {
+  :root {
+    --ink: #10274b;
+    --muted: #40536b;
+    --blue: #084f95;
+    --line: #d4deea;
+  }
+
+  body {
+    color: #10274b;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  #vsebina p,
+  #vsebina li,
+  #vsebina dd,
+  #vsebina dt,
+  #vsebina label,
+  #vsebina legend,
+  #vsebina figcaption,
+  #vsebina summary,
+  #vsebina blockquote,
+  #vsebina .result {
+    color: #405067;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.7;
+  }
+
+  #vsebina h2 { font-size: 23px; line-height: 1.3; }
+  #vsebina h3 { font-size: 19px; line-height: 1.35; }
+
+  a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  #vsebina small,
+  #vsebina .muted,
+  #vsebina .empty,
+  #vsebina .eyebrow,
+  #vsebina .weather-source,
+  #vsebina .source-note,
+  #vsebina .tool-open,
+  #vsebina .data-table th {
+    color: #40536b !important;
+    font-size: 14px !important;
+    font-weight: 550;
+    line-height: 1.6;
+  }
+
+  #vsebina .eyebrow,
+  .cookie-bar-eyebrow { font-size: 12px !important; }
+
+  .topbar nav a,
+  .subnav a,
+  footer a { font-size: 15px; font-weight: 650; }
+  .country { color: #40536b; font-size: 14px; font-weight: 650; }
+
+  #vsebina button,
+  #vsebina .button,
+  #vsebina input,
+  #vsebina select,
+  #vsebina textarea {
+    font-size: 15px !important;
+    font-weight: 600;
+  }
+
+  input::placeholder,
+  textarea::placeholder { color: #53647a; opacity: 1; }
+
+  #vsebina .data-table { font-size: 15px; }
+  #vsebina .data-table th { font-size: 14px !important; font-weight: 700; }
+
+  #vsebina .calendar th { color: #40536b; font-size: 14px; font-weight: 700; }
+  #vsebina .calendar .date-link { font-size: 16px; font-weight: 750; }
+  #vsebina .calendar .event-label { color: #33465e; font-size: 12px; font-weight: 550; line-height: 1.4; }
+  #vsebina .category-chip,
+  #vsebina .tabs a,
+  #vsebina .calendar-footer { font-size: 14px; }
+  #vsebina .calendar-footer button,
+  #vsebina .calendar-footer .button { font-size: 14px !important; }
+
+  /* Annual mini-months are dense by design; keep their labels legible without
+     allowing the compact 12-month grid to grow beyond its column. */
+  #vsebina .mini .calendar th { font-size: 11px; font-weight: 700; }
+  #vsebina .mini .date-link,
+  #vsebina .mini .outside-date { font-size: 13px; font-weight: 650; }
+  #vsebina .mini .calendar .event-label { font-size: 11px; }
+
+  #vsebina .stats dt,
+  #vsebina .stats small { color: #40536b; font-size: 14px !important; font-weight: 600; }
+  #vsebina .stats dd,
+  #vsebina .stats strong { font-weight: 800; }
+
+  /* Keep light copy on the dark solar hero legible against its blue gradient. */
+  #vsebina .sun-masthead p { color: #e0ecf8 !important; }
+
+  #vsebina .page-heading p,
+  #vsebina .intro p,
+  #vsebina .story-copy > p,
+  #vsebina .story-values p,
+  #vsebina .story-detail p,
+  #vsebina .legal-hero p { color: #405067; font-size: 17px; font-weight: 500; }
+
+  #vsebina .mini small { font-size: 11px !important; }
+  #vsebina .tool-card p,
+  #vsebina .design-card p,
+  #vsebina .search-results small,
+  #vsebina .weather-source { font-size: 15px !important; }
+
+  /* Preserve white-on-image credits over the dark photo gradient. */
+  #vsebina .observance-photo figcaption,
+  #vsebina .observance-photo figcaption > span,
+  #vsebina .observance-photo figcaption > a {
+    color: #fff !important;
+    font-size: 14px !important;
+    font-weight: 600;
+  }
+  #vsebina .observance-photo figcaption > a { font-size: 13px !important; }
+
+  #vsebina .holiday-calendar-month th { color: #40536b; font-size: 12px; font-weight: 700; }
+  #vsebina .holiday-calendar-month td { color: #263b54; font-size: 13px; font-weight: 600; }
+  #vsebina .holiday-legend,
+  #vsebina .holiday-comparison-grid dl > div { color: #40536b; font-size: 14px; line-height: 1.6; }
+  #vsebina .holiday-photo-credit { color: #314b66; font-size: 13px; font-weight: 600; }
+
+  footer { color: #40536b; font-size: 14px; font-weight: 550; }
+
+  .cookie-bar-copy h2 { font-size: 21px; }
+  .cookie-bar-copy p { font-size: 15px !important; }
+  .cookie-bar .cookie-actions button { font-size: 15px; }
+  .cookie-bar #cookie-settings .cookie-explanation,
+  .cookie-bar #cookie-settings .cookie-category p,
+  .cookie-bar #cookie-status { color: #40536b; font-size: 14px !important; }
+  .cookie-bar #cookie-settings .cookie-category small,
+  .cookie-bar .cookie-links { color: #40536b; font-size: 13px !important; }
+
+  @media (max-width: 850px) {
+    body { font-size: 16px; }
+    #vsebina p,
+    #vsebina li,
+    #vsebina dd,
+    #vsebina dt,
+    #vsebina label,
+    #vsebina legend,
+    #vsebina figcaption,
+    #vsebina summary,
+    #vsebina blockquote,
+    #vsebina .result { font-size: 16px; }
+    #vsebina .page-heading p,
+    #vsebina .intro p,
+    #vsebina .story-copy > p,
+    #vsebina .story-values p,
+    #vsebina .story-detail p,
+    #vsebina .legal-hero p { font-size: 16px; }
+    #vsebina .calendar .event-label { font-size: 11px; }
+  }
+
+  @media (max-width: 480px) {
+    /* Keep the two horizontally scrollable navigation rows compact on narrow
+       phones; the larger type belongs to the reading content and controls. */
+    .topbar nav a,
+    .subnav a { font-size: 12px; }
+    .topbar nav a { font-weight: 650; }
+    #vsebina .calendar th { font-size: 12px; }
+    #vsebina .calendar .date-link { font-size: 14px; }
+    #vsebina .calendar .event-label { font-size: 10px; }
+    #vsebina .mini .calendar th { font-size: 10px; }
+    #vsebina .mini .date-link,
+    #vsebina .mini .outside-date { font-size: 12px; }
+    #vsebina .tabs a { font-size: 13px; }
+    .cookie-bar-copy p { font-size: 14px !important; }
+  }
+
+  /* Keep the consent controls available without turning the mobile ribbon
+     into a sheet that hides the page's primary controls. */
+  @media (max-width: 700px) {
+    #cookies {
+      max-height: min(36dvh, 190px);
+      overflow-y: auto;
+      padding: 0 12px max(6px, env(safe-area-inset-bottom));
+    }
+    #cookies .cookie-bar-main {
+      grid-template-columns: minmax(0, 1fr) 32px;
+      gap: 6px 8px;
+      padding: 10px 0 8px;
+    }
+    #cookies .cookie-bar-icon { display: none; }
+    #cookies .cookie-actions,
+    #cookies .cookie-actions button,
+    #cookies .cookie-actions button *,
+    #cookies .cookie-close,
+    #cookies .cookie-close *,
+    #cookies #cookie-settings,
+    #cookies #cookie-settings * {
+      pointer-events: auto !important;
+    }
+    #cookies .cookie-actions button,
+    #cookies .cookie-close {
+      position: relative;
+      z-index: 1001;
+    }
+    #cookies .cookie-bar-copy {
+      grid-column: 1;
+      grid-row: 1;
+      position: relative;
+      z-index: 1;
+      pointer-events: none;
+    }
+    #cookies .cookie-bar-copy a {
+      position: relative;
+      z-index: 3;
+      pointer-events: auto;
+    }
+    #cookies .cookie-bar-copy h2 {
+      margin: 0 0 2px;
+      color: #172941;
+      font-size: 16px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+    #cookies .cookie-bar-copy p {
+      max-width: none;
+      color: #40536b;
+      font-size: 13px !important;
+      line-height: 1.4;
+    }
+    #cookies .cookie-bar-copy a { white-space: nowrap; }
+    #cookies .cookie-close {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: start;
+      width: 32px;
+      min-height: 32px;
+      height: 32px;
+    }
+    #cookies .cookie-actions {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 6px;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+    }
+    #cookies .cookie-actions button,
+    #cookies .cookie-actions [data-consent-settings] {
+      min-height: 44px;
+      padding: 6px;
+      border-radius: 9px;
+      font-size: 12px;
+      line-height: 1.2;
+      white-space: normal;
+      text-align: center;
+    }
+    #cookies .cookie-actions [data-consent-settings] { grid-column: auto; }
+    #cookies .cookie-actions .cookie-action-icon { display: none; }
+    #cookies #cookie-settings { padding: 10px; }
+  }
+
+  @media (max-width: 360px) {
+    #cookies .cookie-bar-main { grid-template-columns: minmax(0, 1fr) 30px; }
+    #cookies .cookie-bar-copy h2 { font-size: 15px; }
+    #cookies .cookie-bar-copy p { font-size: 12px !important; }
+    #cookies .cookie-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    #cookies .cookie-actions [data-consent-settings] { grid-column: 1 / -1; }
+  }
+}
+
+/* K365-control-system-v1: shared, predictable dimensions for page controls.
+   Compact chips and icon-only tools keep their own accessible tap targets. */
+@media screen {
+  :root {
+    --k365-control-height: 48px;
+    --k365-compact-control-height: 40px;
+    --k365-control-radius: 9px;
+  }
+
+  #vsebina :is(button, .button, .holiday-primary, input[type="submit"]):not(.text-button):not(.square):not(.category-chip):not(.student-icon-button):not(.garden-plant-button) {
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+    min-height: var(--k365-control-height) !important;
+    padding: 10px 14px;
+    border-radius: var(--k365-control-radius);
+    line-height: 1.25;
+  }
+
+  #vsebina :is(input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]), select) {
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+    height: var(--k365-control-height) !important;
+    min-height: var(--k365-control-height) !important;
+    margin-block: 0;
+    padding-block: 9px;
+    border-radius: var(--k365-control-radius);
+    line-height: 1.25;
+  }
+
+  #vsebina textarea {
+    box-sizing: border-box;
+    min-height: 112px;
+    margin-block: 0;
+    border-radius: var(--k365-control-radius);
+  }
+
+  #vsebina .category-chip {
+    box-sizing: border-box;
+    min-height: var(--k365-compact-control-height) !important;
+    padding: 7px 12px;
+    line-height: 1.2;
+  }
+
+  #vsebina .calendar-title .square {
+    box-sizing: border-box;
+    width: var(--k365-control-height);
+    min-width: var(--k365-control-height);
+    height: var(--k365-control-height);
+    min-height: var(--k365-control-height) !important;
+    padding: 7px;
+  }
+
+  #vsebina .student-text-button {
+    min-height: 40px !important;
+  }
+
+  #vsebina .student-icon-button {
+    box-sizing: border-box;
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    min-height: 40px !important;
+  }
+
+  #vsebina :is(.student-focus-controls, .student-backup-actions, .calendar-title .actions, .calendar-footer > div) {
+    align-items: stretch;
+  }
+
+  #vsebina .student-focus-controls {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #vsebina .student-focus-controls > :is(select, .button) {
+    min-height: var(--k365-control-height) !important;
+    align-self: stretch;
+  }
+
+  #vsebina .student-backup-actions > .button {
+    min-width: 0;
+    min-height: var(--k365-control-height) !important;
+    flex: 1 1 12rem;
+    align-self: stretch;
+  }
+
+  #vsebina .student-backup-actions > .student-file-button {
+    margin: 0;
+  }
+
+  #vsebina .actions {
+    align-items: stretch;
+  }
+
+  .subnav a {
+    min-height: 44px;
+  }
+
+  @media (max-width: 760px) {
+    #vsebina .student-focus-controls {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+/* Keep intentional horizontal navigation scroll from widening the page. */
+@media screen and (max-width: 640px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+}

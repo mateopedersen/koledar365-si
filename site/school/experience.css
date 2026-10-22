@@ -122,3 +122,38 @@
     margin-top: 4mm !important;
   }
 }
+
+/* Keep the regional planner cards and date fields inside the phone column. */
+@media (max-width: 700px) {
+  .school-page,
+  .sp-tools-grid,
+  .sp-region-card,
+  .sp-planner,
+  .sp-date-fields {
+    min-width: 0;
+  }
+
+  .sp-tools-grid {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sp-region-card,
+  .sp-planner {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .sp-region-options > button,
+  .sp-date-fields label,
+  .sp-date-fields input {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sp-region-options > button { width: 100%; }
+  .sp-region-options > button > div { min-width: 0; flex: 1 1 auto; }
+  .sp-date-fields input { width: 100%; }
+}
