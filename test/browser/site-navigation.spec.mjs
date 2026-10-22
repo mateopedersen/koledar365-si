@@ -69,6 +69,8 @@ test('homepage header uses the open desktop space for the live next-day-off shor
       continue;
     }
     await expect(spotlight).toBeVisible();
+    const visibleNameParts = await spotlight.locator('.home-header-spotlight__eyebrow, time, strong, small').allTextContents();
+    await expect(spotlight).toHaveAccessibleName(visibleNameParts.join(' ').replace(/\s+/g, ' ').trim());
     expect((await spotlight.getAttribute('href')).startsWith('/prazniki/')).toBe(true);
     const holidayDate = await spotlight.locator('time').getAttribute('datetime');
     expect(new Date(holidayDate).toISOString().slice(0, 10)).toBe(holidayDate);

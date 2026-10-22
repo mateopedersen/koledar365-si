@@ -1,0 +1,43 @@
+{
+  "workflow_run": "https://github.com/mateopedersen/koledar365-si/actions/runs/39835293577",
+  "head_commit": "8a4fc13455a3b11795264bc346c00211e29cfb90",
+  "tested_merge_commit": "1af3708ddb8bcfd51ac80fc334cb88a0c6108580",
+  "overall_conclusion": "failure",
+  "chromium_layout": {
+    "tested": 1200,
+    "failed": 0
+  },
+  "axe": {
+    "tested": 138,
+    "failed": 1,
+    "failures": [
+      {
+        "path": "/",
+        "width": 1440,
+        "violations": [
+          {
+            "id": "label-content-name-mismatch",
+            "impact": "serious",
+            "help": "Elements must have their visible text as part of their accessible name",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".home-header-spotlight"
+                ],
+                "html": "<a class=\"home-header-spotlight\" aria-label=\"Naslednji dela prost dan: dan reformacije, 31. 10.\" href=\"/prazniki/dan-reformacije/\">",
+                "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            ]
+          }
+        ],
+        "issues": [
+          "WCAG automatic violations"
+        ]
+      }
+    ]
+  },
+  "artifact_id": 12451243385,
+  "artifact_zip_sha256": "1ad6c99a4acbe34ca4fbdb310d53d83ef7543446710c49be39c68f0d80d7d965",
+  "fix": "Preserve the new main-branch holiday shortcut and use its natural visible text as the accessible name; assert the complete name in four browser projects. Fresh source CI is required after this fix."
+}

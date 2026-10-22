@@ -9,7 +9,7 @@
     <% next_header_holiday = @upcoming&.find(&:work_free) %>
     <% if next_header_holiday %>
       <% header_holiday_days = (next_header_holiday.on - @today).to_i %>
-      <%= link_to event_path(next_header_holiday), class: 'home-header-spotlight', aria: { label: "Naslednji dela prost dan: #{next_header_holiday.title}, #{next_header_holiday.on.strftime('%-d. %-m.')}" } do %>
+      <%= link_to event_path(next_header_holiday), class: 'home-header-spotlight' do %>
         <span class="home-header-spotlight__icon" aria-hidden="true"><%= ui_icon('holidays') %></span>
         <span class="home-header-spotlight__content">
           <span class="home-header-spotlight__eyebrow">NASLEDNJI DELA PROST DAN</span>
