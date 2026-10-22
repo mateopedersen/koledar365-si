@@ -7,7 +7,7 @@
         <h3><a href="/prazniki/<%= @year %>/?month=<%= index+1 %>#prazniki-seznam" data-select-holiday-month="<%= index+1 %>"><%= month.sub(/\A./,&:upcase) %><%= ui_icon('chevron-right') %></a></h3>
         <table aria-label="<%= month %> <%= @year %>"><thead><tr><% %w[P T S Č P S N].each_with_index do |day,weekday| %><th scope="col" aria-label="<%= CalendarEngine::DAYS[weekday] %>"><%= day %></th><% end %></tr></thead><tbody>
 <% CalendarEngine.weeks(@year,index+1).each do |week| %><tr><% week.each do |date| %><td class="<%= 'is-weekend' if date.cwday>=6 %>">
-<% if date.month==index+1 %><% event=year_events[date]&.first %><% if event %><a class="<%= event.work_free ? 'is-free' : 'is-observance' %>" href="<%= event_path(event) %>" aria-label="<%= I18n.l(date) %>: <%= holiday_title(event) %> — <%= holiday_status(event) %>"><%= date.day %></a><% else %><span><%= date.day %></span><% end %><% end %>
+<% if date.month==index+1 %><% event=year_events[date]&.first %><% if event %><a class="<%= event.work_free ? 'is-free' : 'is-observance' %>" href="<%= event_path(event) %>" aria-label="<%= date.day %> – <%= I18n.l(date) %>: <%= holiday_title(event) %> — <%= holiday_status(event) %>"><%= date.day %></a><% else %><span><%= date.day %></span><% end %><% end %>
           </td><% end %></tr><% end %>
         </tbody></table>
       </article>

@@ -387,3 +387,65 @@
     overflow-x: clip;
   }
 }
+
+/* WCAG review, October 2026: preserve light text on deliberately dark panels.
+   The generic reading-copy rule above must not override these surfaces. */
+@media screen {
+  #vsebina :is(.sun-play-row,.sun-scene-card) p,
+  #vsebina .sun-scene-note,
+  #vsebina [data-result-summary],
+  #vsebina .about-family p,
+  #vsebina #lost-art-caption,
+  #vsebina .holiday-date-tool label,
+  #vsebina .holiday-date-tool .holiday-check-schedule { color: #edf5ff; }
+
+  #vsebina :is(.workdays-month-card__number,.family-day__name,.family-day__add,
+    .family-legend,.family-agenda-empty,.family-grocery-empty,.family-next-empty,
+    [data-family-grocery-count],.z-art-caption,.z-small-note,.z-sign-overline>b,
+    [data-reading-day]:not(.is-active),.z-reading-section>span[aria-hidden],
+    .astro-muted,.astro-status.is-invisible,.vacation-section-kicker,
+    [data-feature-kicker],.countdown-kicker,.countdown-saved__count,
+    .countdown-event-card__distance,.leap-table-note,.leap-cycle__year small,
+    .shift-preview__badge,.shift-calendar__day--off,
+    #studio-preview-label,.studio-canvas-footer,.studio-statusbar,
+    .studio-hero-note>span,.privacy-art-window__bar>span) { color: #475b72; }
+  #vsebina .family-legend { font-size: 12px; }
+  #vsebina .family-day__name { font-size: 12px; }
+  #vsebina .studio-canvas-footer { font-size: 12px; }
+  #vsebina .calendar-year-pills a:not([aria-current]),
+  #vsebina [data-calendar-year]:not(.is-active):not([aria-current="page"]),
+  #vsebina .calendar-sheet__month th[scope="row"] { color: #475b72; }
+  #vsebina .payment-table th,
+  #vsebina .garden-table th { color: #475b72; }
+
+  /* Keep focus clear of the consent ribbon and give small photo credits room. */
+  :focus-visible { scroll-margin-block: 100px calc(var(--cookie-space, 0px) + 24px); }
+  .sp-photo-credit a { display: inline-flex; align-items: center; min-height: 24px; }
+
+  #vsebina .holiday-check-intro p { color: #edf5ff !important; }
+  #vsebina .wdc-result :is(h2,p) { color: #edf5ff !important; }
+  #vsebina .lunar-hub-masthead p { color: #edf5ff !important; }
+  #vsebina :is(.z-sign-overline>span,.z-season>div>span,.z-next-sign span,
+    .payment-next-month span:not(.is-payment-day),.garden-timeline thead th,
+    .calendar-gallery-toolbar>span,[data-calendar-month]:not([aria-current])>span,
+    .calendar-experience__preview-bar>span,.calendar-sheet__month .is-outside>span,
+    .vacation-range-labels>span,.vacation-plan-item__details>span,
+    .vacation-suggestion-card__stats>div>span,.countdown-clock>div>span,
+    [data-leap-preset]>span,.leap-cycle__year small,.leap-page a small,
+    .shift-person>span,.garden-jump a>span,.garden-plan-form label>span,
+    .garden-method-steps li>span) { color: #475b72 !important; }
+}
+
+/* Narrow studio tabs keep each name in its own touch target. */
+@media screen and (max-width: 600px) {
+  #vsebina .studio-rail button { flex: 0 0 76px; min-width: 76px; white-space: normal; overflow-wrap: anywhere; }
+}
+
+@media screen {
+  #vsebina :is(a,button,input,select,textarea,summary,[tabindex]):focus-visible,
+  #vsebina input:is([type=date],[type=time],[type=datetime-local]):focus-within {
+    outline: 3px solid #0054b8 !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 2px #fff !important;
+  }
+}

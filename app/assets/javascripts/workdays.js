@@ -272,7 +272,8 @@
       card.querySelector('[data-month-hours]').textContent = formatter.format(monthHours);
       card.querySelector('[data-month-holidays]').textContent = formatter.format(monthHolidays);
       card.style.setProperty('--month-progress', `${Math.round((monthDays / peakDays) * 100)}%`);
-      card.setAttribute('aria-label', `${card.querySelector('h3').textContent}: ${formatter.format(monthDays)} ${workdayLabel(monthDays)}, ${formatter.format(monthHours)} ur, ${formatter.format(monthHolidays)} izločenih praznikov`);
+      // Visible totals already form the link name and update with the controls.
+      card.removeAttribute('aria-label');
     });
 
     dashboard.querySelector('[data-year-days]').textContent = formatter.format(annualDays);

@@ -1,0 +1,80 @@
+{
+  "name": "Koledar365.si",
+  "summary": "Slovenski koledarji, prazniki, lunine mene in orodja za načrtovanje. Letni in mesečni koledarji zajemajo leta 2027–2030; ohranjeni so tudi arhivski podatki za leto 2026.",
+  "introduction": "Datumi in astronomski časi so pojasnjeni na strani Viri in metodologija. Pri šolskih rokih in izplačilih upoštevajte objavljeno obdobje ter navedene uradne vire. Osebni vnosi in fotografije v urejevalnikih ostanejo v uporabnikovem brskalniku. Ta vodnik predstavlja izbrane vstopne strani; povezave do posameznih mesecev in krajev so na teh straneh.",
+  "sections": [
+    {"title": "Letni in mesečni koledarji", "links": [
+      ["/koledar/", "Pregled let in povezave do posameznih mesecev."],
+      ["/koledar/2027/", "Koledar leta 2027 z mesečnimi pregledi in prenosi."],
+      ["/koledar/2028/", "Prestopno leto 2028 z 29. februarjem."],
+      ["/koledar/2029/", "Letni pregled in mesečni koledarji za leto 2029."],
+      ["/koledar/2030/", "Letni pregled in mesečni koledarji za leto 2030."],
+      ["/mesecni-koledar/", "Izbira meseca, osebni zapiski ter izvoz PDF in XLSX."]
+    ]},
+    {"title": "Tedenski in tiskani koledarji", "links": [
+      ["/tedenski-koledar/", "Tedenski planer z izbiro datuma ali tedna ISO."],
+      ["/koledar-za-tiskanje/", "Predloge in možnosti priprave koledarja za tisk."],
+      ["/prazen-koledar/", "Prazne predloge za ročno izpolnjevanje."]
+    ]},
+    {"title": "Prazniki in dela prosti dnevi", "links": [
+      ["/prazniki/", "Slovenski prazniki, njihove vrste in pregledi po letih."],
+      ["/delovni-dnevi/", "Delovni dnevi in ure po letih in mesecih."],
+      ["/podaljsani-vikendi/", "Možnosti povezovanja praznikov in prostih dni."],
+      ["/nacrtovalnik-dopusta/", "Načrtovanje dopusta ob slovenskih praznikih."]
+    ]},
+    {"title": "Lunin koledar in lunine mene", "links": [
+      ["/lunin-koledar/", "Letni in mesečni pregledi Lune ter predloge za tisk."],
+      ["/lunine-mene/", "Datumi in ure glavnih luninih men v Sloveniji."],
+      ["/polna-luna/", "Naslednja polna luna in pregled terminov."],
+      ["/mlaj/", "Naslednji mlaj in pregled terminov."]
+    ]},
+    {"title": "Sončni vzhod, zahod in astronomija", "links": [
+      ["/soncni-vzhod-in-zahod/", "Izbira slovenskega kraja, sončni časi in zlata ura."],
+      ["/dolzina-dneva/", "Trajanje dnevne svetlobe in primerjava datumov."],
+      ["/soncni-mrk/", "Sončni mrki, krajevna vidnost in varno opazovanje."],
+      ["/lunin-mrk/", "Lunini mrki in razmere za opazovanje v Sloveniji."],
+      ["/perzeidi/", "Opazovalne noči in krajevne razmere za Perzeide."],
+      ["/letni-casi/", "Začetki letnih časov in povezani datumi."]
+    ]},
+    {"title": "Šolski koledar in izpiti", "links": [
+      ["/solske-pocitnice/", "Objavljene šolske počitnice in regionalne razlike."],
+      ["/solski-koledar/", "Pouk, počitnice in pomembni šolski roki."],
+      ["/studijski-koledar/", "Semestri in objavljena izpitna obdobja."],
+      ["/npz/", "Roki nacionalnega preverjanja znanja po razredih."],
+      ["/solski-urnik/", "Osebni tedenski urnik predmetov, učilnic in učiteljev."]
+    ]},
+    {"title": "Načrtovalniki in koledarska orodja", "links": [
+      ["/ustvari-koledar/", "Urejevalnik koledarja z lastnim besedilom, fotografijami in izvozom."],
+      ["/druzinski-planer/", "Skupni pregled družinskih obveznosti na tej napravi."],
+      ["/dnevni-planer/", "Predloga za dnevne naloge in zapiske."],
+      ["/razpored-izmen/", "Načrtovanje delovnih izmen."],
+      ["/rojstnodnevni-koledar/", "Pregled rojstnih dni in osebnih opomnikov."],
+      ["/setveni-koledar/", "Sezonska vrtna opravila in osebni setveni načrt."],
+      ["/orodja/", "Celoten vsebinski imenik koledarjev in orodij."]
+    ]},
+    {"title": "Pomembni datumi in izračuni", "links": [
+      ["/pomembni-dnevi/", "Pomembni dnevi, praznovanja in letni pregledi."],
+      ["/datumski-kalkulator/", "Razlike med datumi in prištevanje dni ali mesecev."],
+      ["/kalkulator-delovnih-dni/", "Izračun delovnih dni z izbranimi prazniki."],
+      ["/prestopno-leto/", "Pravilo prestopnih let in preverjanje izbranega leta."],
+      ["/stevilka-tedna/", "Številka tedna po standardu ISO."],
+      ["/dan-v-letu/", "Zaporedna številka dneva v letu."],
+      ["/odstevanje/", "Odštevanje do praznika ali osebnega datuma."],
+      ["/premik-ure/", "Prehod med poletnim in zimskim časom."],
+      ["/izplacila-pokojnin/", "Uradno objavljeni datumi izplačil pokojnin."],
+      ["/izplacila-socialnih-transferjev/", "Uradno objavljeni datumi socialnih transferjev."]
+    ]},
+    {"title": "Razvedrilo", "links": [
+      ["/horoskop/", "Dnevni horoskop kot razvedrilna vsebina; ni znanstvena napoved."]
+    ]},
+    {"title": "Viri, metodologija in uredništvo", "links": [
+      ["/viri-in-metodologija/", "Podatkovni viri, način izračunov in omejitve."],
+      ["/uredniska-politika/", "Uredniška načela in preverjanje podatkov."],
+      ["/o-nas/", "Predstavitev spletnega mesta in njegovega upravljavca."],
+      ["/kontakt/", "Kontakt in sporočanje napak."],
+      ["/fotografije-in-licence/", "Avtorji fotografij in pogoji uporabe."],
+      ["/zasebnost/", "Obdelava podatkov in hramba v brskalniku."],
+      ["/pogoji-uporabe/", "Pogoji uporabe koledarjev in orodij."]
+    ]}
+  ]
+}

@@ -14,5 +14,8 @@ end
  source_patterns=%w[public/visuals/*.svg public/icon.svg app/**/* config/**/* lib/**/* data/calendar-collection/**/* data/editorial/*.json data/web_image_variants.json data/lunar/**/* data/astronomy/**/* data/garden/**/* data/payments/**/* data/source/usno-moon-*.json public/images/**/* public/garden/**/* public/payments/**/* public/education/**/* public/astronomy/**/* public/calendar-tools/**/* public/premik-ure/**/* public/school/**/* public/studio/**/* public/horoscope/**/* data/horoscope/**/* public/lunar/**/* public/prenosi/lunin-koledar/**/* public/slike/lunin-koledar/**/* functions/**/* Gemfile Gemfile.lock .node-version script/**/* test/**/* .github/workflows/**/* cloudflare/free/**/* package.json pnpm-lock.yaml playwright.config.mjs]
 tracked=IO.popen(['git','-C',root.to_s,'ls-files','-z'],&:read).split("\0").to_set
 sources=source_patterns.flat_map { |pattern|Dir[root.join(pattern)] }.select { |file|File.file?(file)&&tracked.include?(Pathname.new(file).relative_path_from(root).to_s)&&!file.match?(%r{/(?:master\.key|credentials/.*\.key)\z}) }.sort.to_h { |file|[Pathname.new(file).relative_path_from(root).to_s,Digest::SHA256.file(file).hexdigest] }
-record={built_at:Time.now.utc.iso8601,pairs:expected.size,verified_pairs:verified.size,files:files,sources:sources}
+%w[lib/seo_publication.rb data/llms-guide.json data/qa-templates.json requirements-qa.txt].each do |relative|
+ sources[relative]=Digest::SHA256.file(root.join(relative)).hexdigest
+end
+record={built_at:Time.now.utc.iso8601,source_commit:ENV['GITHUB_SHA']||IO.popen(['git','-C',root.to_s,'rev-parse','HEAD'],&:read).strip,pairs:expected.size,verified_pairs:verified.size,files:files,sources:sources}
 site.join('release-manifest.json').write(JSON.generate(record));puts({files:files.size+1,pairs:expected.size,verified:verified.size}.to_json)

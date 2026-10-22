@@ -205,7 +205,7 @@
             <span class="sun-city-link__copy"><strong><%= values[0] %></strong><small><%= format('%.4f° N · %.4f° E', values[1], values[2]) %></small></span>
             <span class="sun-city-link__arrow" aria-hidden="true">↗</span>
           </a>
-          <a class="sun-city-link__credit" tabindex="0" href="/fotografije-in-licence/#<%= id %>" aria-label="Foto: <%= photo.fetch('author') %> · <%= photo.fetch('license') %>. <%= values[0] %>: vir in podrobnosti fotografije.">
+          <a class="sun-city-link__credit" tabindex="0" href="/fotografije-in-licence/#<%= id %>">
             <span>Foto: <%= photo.fetch('author') %></span><b><%= photo.fetch('license') %></b>
           </a>
         </article>

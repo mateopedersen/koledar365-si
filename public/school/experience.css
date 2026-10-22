@@ -26,6 +26,14 @@
 /* Keep expandable reference links above the small-text contrast threshold. */
 .school-page .sp-sources > details > summary { color: #00438f; }
 
+/* A long university name must wrap the heading at tablet widths too. */
+@media screen {
+  .sp-universities > .sp-heading { flex-wrap: wrap; }
+  .sp-universities > .sp-heading > div { flex: 1 1 24rem; min-width: 0; }
+  .sp-uni-select-label { flex: 0 1 20rem; min-width: 0; max-width: 100%; }
+  .sp-uni-select-label select { width: 100%; min-width: 0; }
+}
+
 /* Real Slovenian holiday photography with legible, linked attribution. */
 .sp-photo-credit{position:absolute;z-index:2;right:0;bottom:0;left:0;display:flex;flex-wrap:wrap;align-items:center;gap:4px;padding:24px 10px 8px;background:linear-gradient(180deg,#0b254e00 0%,#0b254e14 24%,#0b254ee8 100%);color:#fff;font-size:10px;font-weight:700;line-height:1.35}
 .sp-photo-credit a,.sp-photo-credit a:visited{color:#fff!important;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}

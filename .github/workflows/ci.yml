@@ -12,7 +12,7 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 75
     services:
       postgres:
         image: postgres:17
@@ -125,9 +125,10 @@ jobs:
           fi
           pnpm install --frozen-lockfile
           pnpm exec playwright install --with-deps chromium webkit
+          /usr/bin/python3 -m pip install --break-system-packages -r requirements-qa.txt
       - name: Browser checks against the freshly rebuilt publication
         if: ${{ hashFiles('site/release-manifest.json') != '' }}
-        run: pnpm test:city-card
+        run: bash script/verify_release_qa.sh
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -136,4 +137,5 @@ jobs:
             evidence/*.json
             evidence/*.txt
             test-results/
+            evidence/qa/
           retention-days: 7

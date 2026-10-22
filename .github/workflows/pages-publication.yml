@@ -7,6 +7,12 @@ on:
     branches: [main]
     paths:
       - 'data/editorial/**'
+      - 'data/llms-guide.json'
+      - 'data/qa-templates.json'
+      - 'lib/seo_publication.rb'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'requirements-qa.txt'
       - 'data/lunar/**'
       - 'data/astronomy/**'
       - 'data/garden/**'
@@ -48,7 +54,7 @@ concurrency:
 jobs:
   prepare:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 75
     env:
       RAILS_ENV: development
       PDFTOPPM_BIN: /usr/bin/pdftoppm
@@ -66,6 +72,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - name: Install PDF tools
         run: |
           if [ -f /etc/apt/apt-mirrors.txt ]; then
@@ -74,6 +84,23 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y poppler-utils python3-pil
       - name: Rebuild public HTML with Ruby
         run: node script/generate_daily_horoscope.mjs && bundle exec ruby script/rebuild_free.rb && bundle exec ruby script/verify_vector_identity.rb && bundle exec ruby script/verify_mobile_svg_compatibility.rb
+      - name: Install release QA dependencies
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm exec playwright install --with-deps chromium webkit
+          /usr/bin/python3 -m pip install --break-system-packages -r requirements-qa.txt
+      - name: Gate publication on SEO, browser, keyboard, print and download checks
+        run: bash script/verify_release_qa.sh
+      - name: Keep release QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-qa-${{ github.sha }}
+          path: |
+            evidence/qa/
+            test-results/
+          if-no-files-found: ignore
+          retention-days: 7
       - name: Keep vector identity audit details
         if: always()
         uses: actions/upload-artifact@v4

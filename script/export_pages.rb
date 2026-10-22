@@ -124,6 +124,24 @@ end
 removed_name_path=%r{\A/(?:koledar-z-imenom|imena|godovi)(?:/|\z)}
 paths=Page.order(:path).reject { |page|page.path.match?(removed_name_path) || PublicPagePolicy.redirect(page.path) }.map { |page|[page.path,page.status=='published'] }+SunEngine::CITIES.keys.map { |city_id|["/soncni-vzhod-in-zahod/#{city_id}/",true] }+[['/fotografije-in-licence/',true],['/isci/',false]]
 paths=paths.map { |path,indexable|path.match?(%r{\A/soncni-vzhod-in-zahod/[a-z0-9-]+/\z}) ? [path,true] : [path,indexable] }.uniq { |path,_|path }
+unless partial || ENV['STATIC_LIMIT']
+ # Remove only pages owned by the previous export. A deleted source must not
+ # survive as indexable HTML in the next publication or its generated sitemap.
+ previous=out.join('source-page-manifest.json')
+ fallback=Rails.root.join('evidence/static-export.json')
+ previous_paths=if previous.file?
+   JSON.parse(previous.read).fetch('paths')
+ elsif fallback.file?
+   JSON.parse(fallback.read).fetch('paths',[])
+ else
+   []
+ end
+ (previous_paths-paths.map(&:first)).each do |old_path|
+   next unless old_path.start_with?('/') && old_path.end_with?('/') && !old_path.include?('..') && !old_path.start_with?('/free/')
+   FileUtils.rm_f(out.join(old_path.delete_prefix('/'),'index.html'))
+ end
+ out.join('source-page-manifest.json').write(JSON.pretty_generate({paths:paths.map(&:first).sort})+"\n")
+end
 paths=paths.select { |path,_|partial.include?(path) } if partial
 limit=ENV['STATIC_LIMIT']&.to_i;paths=paths.first(limit) if limit
 paths.each_with_index do |(path,indexable),index|
@@ -231,6 +249,9 @@ headers=<<~HEADERS
   X-Robots-Tag: noindex
 /404.html
   X-Robots-Tag: noindex
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=0, must-revalidate
 /upravljanje/*
   X-Robots-Tag: noindex
 HEADERS
