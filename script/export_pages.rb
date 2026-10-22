@@ -250,6 +250,7 @@ headers=<<~HEADERS
 /404.html
   X-Robots-Tag: noindex
 /llms.txt
+  ! Cache-Control
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=0, must-revalidate
 /upravljanje/*
