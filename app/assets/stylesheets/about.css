@@ -28,3 +28,5 @@
 
 /* Preserve comfortable reading sizes on phones, where the explanatory copy matters most. */
 @media(max-width:700px){.about-facts dt{font-size:10px}.about-facts small{font-size:11px}.about-offer-card__body strong{font-size:14px}.about-offer-card__body small{font-size:12px;line-height:1.6}.about-guide-grid h3{font-size:14px}.about-guide-grid p{font-size:12px;line-height:1.65}.about-method-steps h3{font-size:15px}.about-method-steps p,.about-principle p{font-size:12px;line-height:1.7}.about-source-panel>div:first-child p,.about-source-note{font-size:12px}.about-source-panel li a{font-size:12px}.about-rules-grid h3{font-size:13px}.about-rules-grid p{font-size:12px;line-height:1.65}.about-family p{font-size:12px}.about-corrections p{font-size:12px}}
+
+.about-facts dd small{display:block}

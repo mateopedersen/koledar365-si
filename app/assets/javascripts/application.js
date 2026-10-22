@@ -7,6 +7,17 @@ async function api(url,data){const response=await fetch(url,{method:'POST',heade
 function downloadBlob(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
 function formObject(form){const out={};for(const [key,value] of new FormData(form)){if(key.endsWith('[]'))(out[key.slice(0,-2)]??=[]).push(value);else out[key]=value}return out}
 $$('[data-print]').forEach(b=>b.addEventListener('click',()=>window.print()));
+// Keep Tab at the ends of an open native dialog within its controls. Native
+// Escape and close() still restore focus to the element that opened it.
+document.addEventListener('keydown',event=>{
+ if(event.key!=='Tab')return;
+ const dialog=event.target.closest('dialog[open]');if(!dialog)return;
+ const controls=[...dialog.querySelectorAll('a[href],button,input,select,textarea,[tabindex]')].filter(el=>!el.disabled&&el.tabIndex>=0&&el.getClientRects().length);
+ if(!controls.length){event.preventDefault();return}
+ const first=controls[0],last=controls.at(-1);
+ if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}
+ else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}
+});
 // Only remembered city selection is optional; personal plans remain user-requested storage.
 const consentVersion=2,consentTTL=180*24*60*60*1000;
 function currentConsent(){const value=store.get('k365.consent',null);return value?.version===consentVersion&&Number.isFinite(value.expiresAt)&&value.expiresAt>Date.now()?value:null}

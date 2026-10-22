@@ -32,20 +32,19 @@
   calendar.replaceChildren();
   for(const day of dayNames)calendar.append(makeCell('shift-calendar__weekday','columnheader',day,day));
   const year=visibleMonth.getUTCFullYear(),month=visibleMonth.getUTCMonth(),first=new Date(Date.UTC(year,month,1)),daysInMonth=new Date(Date.UTC(year,month+1,0)).getUTCDate(),leading=(first.getUTCDay()+6)%7;
-  for(let i=0;i<leading;i++)calendar.append(makeCell('shift-calendar__day shift-calendar__day--empty','gridcell','',''));
+  for(let i=0;i<leading;i++)calendar.append(makeCell('shift-calendar__day shift-calendar__day--empty','cell','',''));
   for(let day=1;day<=daysInMonth;day++){
    const date=new Date(Date.UTC(year,month,day)),dateIso=iso(date),within=date>=start&&date<=end;
-   const cell=makeCell('shift-calendar__day','gridcell',`${day}. ${monthNames.format(date)}${within?'':' · zunaj obdobja'}`,'');
+   const cell=makeCell('shift-calendar__day','cell',`${day}. ${monthNames.format(date)}${within?'':' · zunaj obdobja'}`,'');
    const number=document.createElement('strong');number.textContent=String(day);cell.append(number);
-   if(within){const code=codes[offset(start,date)%codes.length],kind=classify(code);cell.classList.add(`shift-calendar__day--${kind}`);const label=document.createElement('span');label.textContent=code;label.title=code;cell.append(label);cell.dataset.date=dateIso}
+   if(within){const code=codes[offset(start,date)%codes.length],kind=classify(code);cell.classList.add(`shift-calendar__day--${kind}`);const label=document.createElement('span');label.textContent=code;label.title=code;cell.append(label);cell.dataset.date=dateIso;cell.setAttribute('aria-label',`${day} ${code} – ${monthNames.format(date)}`)}
    else cell.classList.add('shift-calendar__day--outside');
    calendar.append(cell);
   }
   const trailing=(7-(calendar.children.length%7))%7;
-  for(let i=0;i<trailing;i++)calendar.append(makeCell('shift-calendar__day shift-calendar__day--empty','gridcell','',''));
-  // A calendar grid needs explicit rows for the header and each seven-day week.
-  const cells=Array.from(calendar.children);calendar.replaceChildren();
-  for(let i=0;i<cells.length;i+=7){const row=document.createElement('div');row.className='shift-calendar__row';row.setAttribute('role','row');row.append(...cells.slice(i,i+7));calendar.append(row)}
+  for(let i=0;i<trailing;i++)calendar.append(makeCell('shift-calendar__day shift-calendar__day--empty','cell','',''));
+  const cells=[...calendar.children];
+  for(let index=0;index<cells.length;index+=7){const row=document.createElement('div');row.className='shift-calendar__row';row.setAttribute('role','row');cells.slice(index,index+7).forEach(cell=>row.append(cell));calendar.append(row)}
   status.textContent=`${span} dni · ${counts.work} izmen · ${counts.night} nočnih · ${counts.off} prostih dni. Predogled zajema izbrani mesec.`;
   updatePresetState();
  }

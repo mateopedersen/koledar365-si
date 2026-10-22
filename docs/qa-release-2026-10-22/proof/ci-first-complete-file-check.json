@@ -1,0 +1,58 @@
+{
+  "run": "https://github.com/mateopedersen/koledar365-si/actions/runs/39812704347",
+  "head": "e654d03328eb910616ad908fe8ef7c2b670c5c2a",
+  "result": "failed: one social-payments 390px scrolling check exceeded 30 seconds",
+  "checks": {
+    "downloads/summary.json": {
+      "checked_at": "2026-10-22T17:08:55.456853+00:00",
+      "files": 6556,
+      "passed": 6556,
+      "failed": 0,
+      "catalog_pairs": 2820,
+      "collection_pairs": 780
+    },
+    "raster/raster-comparison.json": {
+      "tested": 780,
+      "failed": 0,
+      "independent_render_size": 1024,
+      "identity_gate": "both file SHA-256s plus decoded RGB pixel SHA-256 from original 600-ppi proof",
+      "negative_control_shift_pixels": 10,
+      "failures": []
+    },
+    "browser/layout-chromium.json": {
+      "checkedAt": "2026-10-22T17:30:52.584Z",
+      "sourceCommit": "214629c80abd8f0a6c7d19fdd2c89a575bcbd788",
+      "base": "http://127.0.0.1:19783",
+      "browser": "chromium",
+      "mode": "layout",
+      "tested": 1200,
+      "templateSamples": 69,
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        768,
+        1024,
+        1280,
+        1440
+      ],
+      "failed": 1,
+      "failures": [
+        {
+          "path": "/izplacila-socialnih-transferjev/",
+          "width": 390,
+          "template": "social-payments",
+          "snapshot": true,
+          "browser": "chromium",
+          "issues": [
+            "Scrolled image loading timed out after 30s"
+          ],
+          "pageErrors": [],
+          "status": 200,
+          "passed": false
+        }
+      ]
+    }
+  }
+}

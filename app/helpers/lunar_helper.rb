@@ -8,9 +8,9 @@ module LunarHelper
     end
   end
   def lunar_day(day,small:false)
-    label="#{LunarCalendar.date_label(day['date'])}, osvetljenost #{LunarCalendar.percent(day)}, #{day['phaseNameSl']}"
+    label="#{day['date'][-2..].to_i} #{LunarCalendar.percent(day)} – #{LunarCalendar.date_label(day['date'])}, #{day['phaseNameSl']}"
     content_tag(:button,type:'button',id:"dan-#{day['date']}",class:'lunar-day',data:{date:day['date']},'aria-label':label,'aria-pressed':'false') do
-      safe_join([content_tag(:span,day['date'][-2..].to_i,class:'lunar-number'),lunar_moon(day['date'],small:true),content_tag(:span,LunarCalendar.percent(day),class:'lunar-percent'),(day['eventIds'].any? ? content_tag(:span,'◆',class:'lunar-event-dot','aria-label':'Glavna lunina mena') : nil)].compact)
+      safe_join([content_tag(:span,day['date'][-2..].to_i,class:'lunar-number'),lunar_moon(day['date'],small:true),content_tag(:span,LunarCalendar.percent(day),class:'lunar-percent'),(day['eventIds'].any? ? content_tag(:span,'◆',class:'lunar-event-dot','aria-hidden':'true') : nil)].compact, ' ')
     end
   end
 end

@@ -69,6 +69,25 @@ test('homepage header uses the open desktop space for the live next-day-off shor
       continue;
     }
     await expect(spotlight).toBeVisible();
+    const visibleNameParts = await spotlight.locator('.home-header-spotlight__eyebrow, time, strong, small').allTextContents();
+    await expect(spotlight).toHaveAccessibleName(visibleNameParts.join(' ').replace(/\s+/g, ' ').trim());
+    // Axe marks text on gradients for manual review. Check its darkest stop.
+    const smallTextContrast = await spotlight.locator('.home-header-spotlight__content small').evaluate(node => {
+      const luminance = rgb => {
+        const channels = rgb.match(/[\d.]+/g).map(Number);
+        if (channels.length !== 3) throw new Error('An opaque RGB color is required for this contrast check.');
+        return channels.map(v => v / 255).map(v => v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4)
+          .reduce((sum, v, i) => sum + v * [.2126, .7152, .0722][i], 0);
+      };
+      const foreground = luminance(getComputedStyle(node).color);
+      const stops = getComputedStyle(node.closest('.home-header-spotlight')).backgroundImage.match(/rgb\([^)]+\)/g);
+      if (!stops?.length) throw new Error('Expected the actual header gradient colors.');
+      return Math.min(...stops.map(stop => {
+        const background = luminance(stop);
+        return (Math.max(foreground, background) + .05) / (Math.min(foreground, background) + .05);
+      }));
+    });
+    expect(smallTextContrast, 'Small header text must meet AA against every gradient stop').toBeGreaterThanOrEqual(4.5);
     expect((await spotlight.getAttribute('href')).startsWith('/prazniki/')).toBe(true);
     const holidayDate = await spotlight.locator('time').getAttribute('datetime');
     expect(new Date(holidayDate).toISOString().slice(0, 10)).toBe(holidayDate);

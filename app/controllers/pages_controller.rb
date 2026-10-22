@@ -161,7 +161,10 @@ class PagesController < ApplicationController
           collection_pages=page_rows.select { |p| p.path.start_with?('/koledar/') && (2027..2030).cover?(p.year.to_i) }.index_by(&:path)
           rows.each do |path,time|
           x.url do
-            x.loc(base+path);x.lastmod(time.iso8601)
+            # DB restoration and shared template changes do not reliably date a
+            # significant change to this page. Omit optional lastmod until a
+            # reviewed page-level content history is available.
+            x.loc(base+path)
             x['image'].image { x['image'].loc(base+ClockChangeSchedule::IMAGE_PATH) } if path=='/premik-ure/'
             image=ExpansionCatalog.image(path)
             x['image'].image { x['image'].loc(base+image.fetch('path')) } if image

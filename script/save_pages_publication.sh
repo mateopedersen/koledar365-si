@@ -15,4 +15,5 @@ for attempt in 1 2 3; do
   node script/generate_daily_horoscope.mjs
   bundle exec ruby script/rebuild_free.rb
   bundle exec ruby script/verify_vector_identity.rb
+  bash script/verify_release_qa.sh
 done

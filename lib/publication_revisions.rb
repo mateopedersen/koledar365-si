@@ -7,10 +7,24 @@ require 'time'
 # Unknown historical modification dates are omitted instead of invented.
 module PublicationRevisions
   module_function
-  def fingerprint(html)
+  def fingerprint(html, ignore_countdown_ticks: true)
     doc=Nokogiri::HTML(html)
     content=doc.at_css('main')&.dup
     content&.css('script,style')&.remove
+    # The absolute event date remains in data-countdown. Only its clock-driven
+    # display changes on routine builds; it is not a significant content edit.
+    if ignore_countdown_ticks
+      content&.css('strong[data-countdown]')&.each do |node|
+        target=node['data-countdown'].to_s
+        next unless node.element_children.empty? && target.match?(/\A\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z\z/)
+        begin
+          Time.iso8601(target)
+          node.content=''
+        rescue ArgumentError
+          # Other countdown components and invalid targets remain content.
+        end
+      end
+    end
     Digest::SHA256.hexdigest(JSON.generate([
       doc.at_css('html')&.[]('lang'),doc.at_css('title')&.text,
       doc.at_css('meta[name=description]')&.[]('content'),content&.to_html
@@ -21,6 +35,12 @@ module PublicationRevisions
     digest=fingerprint(html)
     if previous_record && previous_record['sha256']==digest
       previous_record
+    elsif previous_html && previous_record &&
+        previous_record['sha256']==fingerprint(previous_html,ignore_countdown_ticks:false) &&
+        fingerprint(previous_html)==digest
+      # A legacy date may have been caused by the ticking clock. Its provenance
+      # is unknown, so omit it rather than invent or preserve an unsupported date.
+      {'sha256'=>digest}
     else
       previous_digest=previous_record&.fetch('sha256',nil) || (fingerprint(previous_html) if previous_html)
       {'sha256'=>digest,'modified_at'=>(now.utc.iso8601 if previous_digest && previous_digest!=digest)}.compact

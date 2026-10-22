@@ -39,6 +39,7 @@ end
 # renderer before it generates the 52 public gallery pages and image sitemap.
 run!(ENV.fetch('PYTHON_BIN','python3'),'script/prepare_calendar_collection.py')
 run!('bundle','exec','ruby','script/export_pages.rb')
+run!('bundle','exec','ruby','script/build_seo_publication.rb')
 run!('bundle','exec','ruby','script/build_admin_page.rb')
 run!('bundle','exec','ruby','script/package_social.rb')
 run!('bundle','exec','ruby','script/build_release_inventory.rb')
