@@ -75,15 +75,79 @@ test('student timetable works on mobile, persists locally, and exports a valid L
   expect(widths.document, JSON.stringify(widths)).toBeLessThanOrEqual(widths.viewport + 1);
 });
 
-test('student print view displays all weekdays and preserves the complete gallery in screen view', async ({ page }) => {
+test('student print view includes the saved weekly schedule and all obligations, while hiding controls and gallery', async ({ page }) => {
   await quietConsent(page);
+  await page.addInitScript(() => { window.__k365PrintCalls = 0; window.print = () => { window.__k365PrintCalls += 1; }; });
   const response = await page.goto('/solski-urnik/', { waitUntil: 'load' });
   expect(response?.status()).toBe(200);
   await expect(page.locator('#design-gallery .design-card')).toHaveCount(15);
+
+  await page.locator('[data-add-lesson-open]').first().click();
+  const lesson = page.locator('[data-lesson-form]');
+  await lesson.locator('[name="subject"]').fill('Matematika');
+  await lesson.locator('[name="day"]').selectOption('1');
+  await lesson.locator('[name="start"]').fill('08:00');
+  await lesson.locator('[name="end"]').fill('08:45');
+  await lesson.locator('[data-lesson-save]').click();
+
+  const task = page.locator('[data-task-form]');
+  await task.locator('[name="title"]').fill('Ponovi ulomke');
+  await task.locator('[name="due"]').fill('2027-01-08');
+  await task.locator('[name="subject"]').fill('Matematika');
+  await task.locator('button[type="submit"]').click();
+  await task.locator('[name="title"]').fill('Preverjanje ulomkov');
+  await task.locator('[name="kind"]').selectOption('test');
+  await task.locator('[name="due"]').fill('2027-01-11');
+  await task.locator('[name="subject"]').fill('Matematika');
+  await task.locator('button[type="submit"]').click();
+  await expect(page.locator('.student-task')).toHaveCount(2);
+
+  await page.locator('[data-print-week]').fill('2027-01-06');
+  await page.locator('[data-print-schedule]').click();
+  const printedRange = await page.locator('[data-student-print-range]').textContent();
+  expect(printedRange).toContain('Teden:');
+  expect(printedRange).toMatch(/4\. 1\. 2027.*8\. 1\. 2027/);
+  expect(await page.evaluate(() => window.__k365PrintCalls)).toBe(1);
+
   await page.emulateMedia({ media: 'print' });
   await expect(page.locator('.student-day-panel')).toHaveCount(5);
   await expect(page.locator('.student-print-only')).toBeVisible();
+  await expect(page.locator('[data-day-panel="1"] .student-lesson')).toContainText('Matematika');
+  await expect(page.locator('.student-tasks')).toBeVisible();
+  await expect(page.locator('.student-task')).toHaveCount(2);
+  await expect(page.locator('.student-task-list')).toContainText('Ponovi ulomke');
+  await expect(page.locator('.student-task-list')).toContainText('Preverjanje ulomkov');
+  await expect(page.locator('.student-task-form')).toBeHidden();
+  await expect(page.locator('.student-focus')).toBeHidden();
+  await expect(page.locator('.student-backup')).toBeHidden();
   await expect(page.locator('.design-section')).toBeHidden();
+  await expect(page.locator('.student-print-tools')).toBeHidden();
+});
+
+test('week date field and template button align on desktop and fit on mobile', async ({ page }) => {
+  await quietConsent(page);
+  const response = await page.goto('/solski-urnik/', { waitUntil: 'load' });
+  expect(response?.status()).toBe(200);
+
+  await page.setViewportSize({ width: 1440, height: 900 });
+  const desktop = await page.evaluate(() => {
+    const date = document.querySelector('[data-print-week]').getBoundingClientRect();
+    const button = document.querySelector('.student-print-tools__actions .button').getBoundingClientRect();
+    const label = document.querySelector('.student-print-tools__actions label').getBoundingClientRect();
+    const actions = document.querySelector('.student-print-tools__actions').getBoundingClientRect();
+    return { dateTop: date.top, buttonTop: button.top, dateHeight: date.height, buttonHeight: button.height, dateBottom: date.bottom, buttonBottom: button.bottom, labelTop: label.top, labelBottom: label.bottom, actionsTop: actions.top, actionsBottom: actions.bottom, grid: getComputedStyle(document.querySelector('.student-print-tools__actions')).gridTemplateRows };
+  });
+  expect(Math.abs(desktop.dateTop - desktop.buttonTop), JSON.stringify(desktop)).toBeLessThanOrEqual(1);
+  expect(Math.abs(desktop.dateHeight - desktop.buttonHeight), JSON.stringify(desktop)).toBeLessThanOrEqual(1);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  const mobile = await page.evaluate(() => {
+    const date = document.querySelector('[data-print-week]').getBoundingClientRect();
+    const button = document.querySelector('.student-print-tools__actions .button').getBoundingClientRect();
+    return { document: document.documentElement.scrollWidth, viewport: document.documentElement.clientWidth, date, button };
+  });
+  expect(mobile.document, JSON.stringify(mobile)).toBeLessThanOrEqual(mobile.viewport + 1);
+  expect(mobile.button.top, JSON.stringify(mobile)).toBeGreaterThan(mobile.date.bottom);
 });
 
 test('student print gallery stays full width and the WebP action remains reachable on desktop and mobile', async ({ page }) => {
