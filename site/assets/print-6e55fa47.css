@@ -1,0 +1,266 @@
+/* Shared print rules for the calendar and content templates. Keep this file
+   last in the stylesheet order so page-specific screen rules cannot leak into
+   the printed document. */
+@media print {
+  @page {
+    /* Let the browser's paper and orientation selection take effect. */
+    size: auto;
+    margin: 11mm 10mm;
+  }
+
+  html,
+  body {
+    width: auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: #fff !important;
+    color: #111 !important;
+    font-size: 10pt !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  body::after { display: none !important; }
+
+  .skip,
+  .topbar,
+  .subnav,
+  .breadcrumb,
+  footer,
+  .left-panel,
+  .right-panel,
+  .intro > .button,
+  .search,
+  button,
+  .button,
+  .period-form,
+  .tabs,
+  .design-section,
+  .discovery,
+  dialog,
+  .category-bar,
+  .filters,
+  .year-links,
+  .calendar-toolbar,
+  .calendar-title > .button,
+  .calendar-footer > div,
+  .holiday-list-actions,
+  .observance-story-actions,
+  .actions,
+  .sp-hero,
+  .sp-quick-bar,
+  .sp-heading > button,
+  .sp-month-heading > div,
+  .sp-small,
+  .sp-selected-date,
+  .sp-save-filter,
+  .sp-favorite,
+  .sp-uni-bottom button,
+  .sp-tip > a,
+  .sp-hero-actions,
+  .sp-levels,
+  .sp-filterbar,
+  .sp-region-note a {
+    display: none !important;
+  }
+
+  .calendar-title .actions {
+    display: flex !important;
+  }
+
+  .download-workspace .context-content,
+  .download-workspace .calendar-context-view,
+  .download-workspace .context-content[hidden],
+  .download-workspace:not(.context-expanded) .context-content,
+  .download-workspace:not(.context-expanded) .calendar-context-view {
+    display: block !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    visibility: visible !important;
+  }
+
+  main {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .workspace {
+    display: block !important;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .panel {
+    max-width: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 5px !important;
+  }
+
+  .calendar-panel {
+    margin: 0 !important;
+    padding: 5px !important;
+  }
+
+  .calendar {
+    width: 100% !important;
+    table-layout: fixed !important;
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .calendar thead,
+  .calendar tbody tr,
+  .calendar td,
+  .calendar th,
+  .sp-holiday,
+  .sp-uni-card,
+  .data-table tr {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .calendar td {
+    height: 75px !important;
+  }
+
+  .calendar td,
+  .calendar th,
+  .event-label,
+  .sp-month-event,
+  .data-table td,
+  .data-table th {
+    overflow-wrap: anywhere;
+  }
+
+  .year-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 4mm !important;
+  }
+
+  #vsebina .year-grid .mini { break-inside: avoid; page-break-inside: avoid; }
+  #vsebina .year-grid .mini h3 { margin: 0 0 2mm; font-size: 10pt; }
+  #vsebina .year-grid .mini .calendar td { height: 5mm !important; }
+  #vsebina .year-grid .mini .date-link,
+  #vsebina .year-grid .mini .outside-date { min-height: 0 !important; padding: 0 !important; font-size: 8pt !important; line-height: 1.15 !important; }
+  #vsebina .year-grid .mini .date-link span { min-width: 0 !important; height: auto !important; }
+  #vsebina .year-grid .mini .calendar th { padding: 1mm 0 !important; font-size: 7pt !important; }
+
+  .lunar-download-hint { display: none !important; }
+  .lunar-year-grid > article { break-inside: avoid; page-break-inside: avoid; }
+  #vsebina .lunar-year-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 3mm !important; }
+  #vsebina .lunar-year-grid h2 { margin: 0 0 1mm !important; font-size: 9pt !important; }
+  .lunar-mini-grid { gap: 1px !important; }
+  #vsebina .lunar-mini-grid a { padding: 0 !important; gap: 0; flex-direction: column !important; justify-content: center; font-size: 6.5pt !important; line-height: 1.1 !important; }
+  #vsebina .lunar-mini-grid .lunar-moon { width: 3.5mm !important; max-width: 3.5mm !important; height: 3.5mm !important; }
+  .lunar-calendar { break-inside: avoid; }
+  .lunar-calendar .lunar-day .lunar-moon { max-width: 9mm !important; }
+  .lunar-calendar .lunar-day { display: flex !important; padding: 1mm !important; gap: 1px; min-height: 0 !important; }
+  .lunar-calendar .lunar-number { font-size: 8pt !important; line-height: 1.1; }
+  .lunar-calendar .lunar-percent { font-size: 7pt !important; line-height: 1.1; }
+  .lunar-calendar .lunar-calendar-heading { padding-bottom: 2mm !important; }
+  .lunar-calendar .lunar-calendar-heading h2 { margin-bottom: 2mm !important; }
+  .lunar-main .lunar-detail { break-before: auto; break-inside: avoid; }
+  .lunar-detail .lunar-enlarge { float: right; width: 25mm; margin: 0 0 2mm 4mm; }
+  .lunar-detail .lunar-big-percent { font-size: 17pt; }
+  .lunar-detail p { margin: 1mm 0; }
+  .lunar-phases { clear: both; margin: 3mm 0; }
+  .lunar-phases h2 { break-after: avoid; }
+  .lunar-phases .data-table { margin: 2mm 0; font-size: 9pt; }
+  .lunar-phases .data-table td,
+  .lunar-phases .data-table th { padding: 1.5mm; }
+  #vsebina .lunar-phases .data-table :is(td,th) { padding: .5mm 1mm !important; font-size: 8pt !important; line-height: 1.1 !important; }
+  .lunar-year-grid + .lunar-phases { break-before: page; }
+  .lunar-phases .table-wrap { overflow: visible; }
+  #vsebina .lunar-note { font-size: 8pt !important; line-height: 1.25 !important; }
+  body.family-planner-page .family-hero,
+  body.family-planner-page .family-stats { display: none !important; }
+  body.family-planner-page .family-week-card { margin-top: 0; }
+  body.family-planner-page .family-feature-grid { gap: 3mm; }
+  body.family-planner-page .family-card { padding: 3mm; }
+  body.family-planner-page .family-card-heading { margin-bottom: 2mm; }
+  body.school-calendar-printing .school-page .sp-calendar-layout { display: grid !important; }
+  .school-page .sp-calendar-section > .sp-heading { margin-bottom: 2mm !important; }
+  .school-page .sp-calendar-section { break-inside: avoid-page !important; }
+  .school-page .sp-calendar-section > .sp-heading { break-after: avoid; }
+
+
+  .school-page,
+  .school-page main,
+  .school-page section,
+  .school-page article,
+  .school-page .sp-calendar-layout,
+  .school-page .sp-calendar-box,
+  .school-page .sp-month-aside {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  .school-page .sp-calendar-section {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .school-page button.sp-day {
+    display: block !important;
+    min-height: 38px;
+    cursor: default;
+  }
+
+  .school-page .sp-universities {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  .school-page .sp-calendar-layout {
+    overflow: visible !important;
+    grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr) !important;
+  }
+
+  .school-page .sp-calendar-box,
+  .school-page .sp-month-aside {
+    padding: 14px !important;
+  }
+
+  a {
+    color: #111 !important;
+    text-decoration: none !important;
+  }
+
+  .panel,
+  .prose {
+    max-width: none !important;
+  }
+
+  .data-table tr {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  /* The homepage print action is for the month grid only. Keep its month
+     heading and calendar legend, but omit the site intro and date statistics. */
+  body.home-page .intro,
+  body.home-page .workspace > .center-panel > .stats {
+    display: none !important;
+  }
+}
+
+@media print and (orientation: landscape) {
+  #vsebina .year-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+  #vsebina .lunar-year-grid { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+}
+@media print{.calendar-facts{display:none!important}}

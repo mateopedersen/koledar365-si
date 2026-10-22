@@ -1,0 +1,54 @@
+{
+  "url": "https://docs.google.com/forms/d/e/1FAIpQLSed2Z0hsjbskNP2M8p9bQeuC9suQqlUU5WHbGBmxPdtHGodkQ/viewform?hl=sl",
+  "checkedAt": "2026-10-22T21:32:19.215Z",
+  "scope": "Anonymous public form only; no response submitted and no inbox accessed",
+  "status": 200,
+  "heading": [
+    "Pišite ekipi Koledar365",
+    "E-poštni naslov *",
+    "Tema sporočila *",
+    "Ime (neobvezno)",
+    "Povezava do strani ali uradnega vira (neobvezno)",
+    "Vaše sporočilo *"
+  ],
+  "inputs": [
+    {
+      "type": "email",
+      "label": "Vaš e-poštni naslov",
+      "required": null
+    },
+    {
+      "type": "text",
+      "label": null,
+      "required": null
+    },
+    {
+      "type": "text",
+      "label": null,
+      "required": null
+    },
+    {
+      "type": "textarea",
+      "label": "Vaš odgovor",
+      "required": null
+    }
+  ],
+  "buttons": [
+    "Več o tem",
+    "Pošlji",
+    "Počisti obrazec",
+    "   "
+  ],
+  "visibleTextAfterEmptySubmit": "Pišite ekipi Koledar365\nVprašanje, popravek datuma ali predlog? Izpolnite obrazec in uredništvo Koledar365 bo prejelo vaše sporočilo. Za odgovor potrebujemo vaš e-poštni naslov. Ne pošiljajte gesel, osebnih dokumentov ali občutljivih podatkov. Več o zasebnosti: https://koledar365.si/zasebnost/\nPrijava v Google, če želite shraniti napredek. Več o tem\n* Nakazuje obvezno vprašanje\nE-poštni naslov\n*\nVaš e-poštni naslov\n \nTo je obvezno vprašanje\nTema sporočila\n*\nPopravek datuma ali podatka\nTežava pri uporabi spletnega mesta\nPredlog nove funkcije\nSodelovanje ali drugo vprašanje\nIme (neobvezno)\nVaš odgovor\nPovezava do strani ali uradnega vira (neobvezno)\nVaš odgovor\nVaše sporočilo\n*\nVaš odgovor\nPošlji mi kopijo mojih odgovorov.\nPošlji\nPočisti obrazec\nNikoli ne pošiljajte gesel prek Google Obrazcev.\nreCAPTCHA\nZasebnost\nPogoji\nGoogle ni niti ustvaril niti odobril te vsebine. - Pogoji storitve - Pravilnik o zasebnosti\n\nAli je ta obrazec videti sumljiv? Poročilo\n\n Obrazci\n \nPomoč in povratne informacije",
+  "validationMessages": [
+    "   To je obvezno vprašanje",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "visibleRequiredErrors": 0,
+  "hasPublicForm": true,
+  "requiresLogin": false,
+  "required_validation_passed": true
+}

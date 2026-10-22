@@ -1,0 +1,16 @@
+HTTP/2 404 
+date: Thu, 22 Oct 2026 21:04:16 GMT
+content-type: text/html; charset=utf-8
+x-content-type-options: nosniff
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Tw9bEVn5ljwHO%2BAYqVfF1qKIJ5C0KhNFsETeZ37ZZEexsy%2B9skZa6b6x8sV56Hpki1r2TDOXMEjAa0HcAvK0YGyaOfL588eyDakdXFNFQaESaVKG%2BcK%2BwjlTNHtbUuHc"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+access-control-allow-origin: *
+cache-control: no-store
+content-security-policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-DgO67maeoxqREFpPBdZf4QwirLQRYZFnQYEqql9EoEo='; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' blob:; connect-src 'self' blob:; frame-src https://docs.google.com/forms/; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'
+permissions-policy: camera=(), microphone=(), geolocation=(self)
+referrer-policy: strict-origin-when-cross-origin
+server: cloudflare
+cf-cache-status: DYNAMIC
+cf-ray: a4eb74186e9fb913-FRA
+alt-svc: h3=":443"; ma=86400
+

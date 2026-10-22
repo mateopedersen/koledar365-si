@@ -1,0 +1,115 @@
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:21] "GET / HTTP/1.1" 200 -
+
+Running 6 tests using 2 workers
+
+(node:63340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:63341) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:63340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:63341) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › test/browser/workdays.spec.mjs:50:1 › workdays overview fits narrow mobile and desktop viewports (281ms)
+  ✓  2 [chromium] › test/browser/workdays.spec.mjs:24:1 › schedule controls instantly recalculate month and year totals (408ms)
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /kalkulator-delovnih-dni/ HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /assets/web-a68ddef6fa44dbf3.css HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /calendar-tools/mobile-layout.mjs?v=20261022-1 HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /assets/navigation-3b014eab.js HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /assets/planners-2d7bec70.js HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /assets/application-f3b8588a.js HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /assets/workdays-03637574.js HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /free/catalog-match.js HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /free/date-context.js HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /visuals/slovenia-fabric-v3.95b82b3f8fbaebac.svg HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /horoscope/art/wheel-icon-v1.f0a3a103957daf9e.svg HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /visuals/brand-calendar-v3.20014959d7558e83.svg HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /visuals/ui-material-v3.834e8abb995a5f11.svg HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /free/client-d953750dc5713536.js HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /free/site-search.mjs HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /free/map-compat.js HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /free/ruby-client.mjs HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /free/ruby-worker.js HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /free/vendor/ruby.umd.js HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /free/runtime.json HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:22] "GET /free/engine/9c31b2ce2eaff04024b7/engine-0.gz HTTP/1.1" 200 -
+  ✓  3 [chromium] › test/browser/workdays.spec.mjs:78:1 › workday calculator handles both modes, shares settings, and fits mobile (755ms)
+  ✓  4 [chromium] › test/browser/workdays.spec.mjs:150:1 › exported calculator loads its script and calculates around a Slovenian holiday (1.7s)
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /delovni-dnevi/2028/ HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /assets/application-f3b8588a.js HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /calendar-tools/mobile-layout.mjs?v=20261022-1 HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /assets/web-032697f1657341f6.css HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /assets/planners-2d7bec70.js HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /assets/navigation-3b014eab.js HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /assets/workdays-03637574.js HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/catalog-match.js HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/date-context.js HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/client-d953750dc5713536.js HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /visuals/brand-calendar-v3.20014959d7558e83.svg HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /visuals/slovenia-fabric-v3.95b82b3f8fbaebac.svg HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /horoscope/art/wheel-icon-v1.f0a3a103957daf9e.svg HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /visuals/download-pdf-v1.5107a18b1d05d37b.svg HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /visuals/ui-material-v3.834e8abb995a5f11.svg HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /visuals/download-webp-v1.3b162881caf6fab3.svg HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/samples/min-01.png?k365-preview=212x300-v1 HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/samples/min-03.png?k365-preview=212x300-v1 HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/samples/ele-02.png?k365-preview=212x300-v1 HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/samples/ele-03.png?k365-preview=212x300-v1 HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/ruby-client.mjs HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/samples/ele-01.png?k365-preview=212x300-v1 HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/samples/min-02.png?k365-preview=212x300-v1 HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/site-search.mjs HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/samples/nat-01.png?k365-preview=212x300-v1 HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/map-compat.js HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/samples/nat-02.png?k365-preview=212x300-v1 HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/samples/nat-03.png?k365-preview=212x300-v1 HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/samples/pla-01.png?k365-preview=212x300-v1 HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/samples/pla-02.png?k365-preview=212x300-v1 HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/samples/pla-03.png?k365-preview=212x300-v1 HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/samples/geo-01.png?k365-preview=212x300-v1 HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/samples/geo-02.png?k365-preview=212x300-v1 HTTP/1.1" 200 -
+[2m[WebServer] [22m127.0.0.1 - - [23/Oct/2026 00:09:24] "GET /free/samples/geo-03.png?k365-preview=212x300-v1 HTTP/1.1" 200 -
+  ✓  5 [chromium] › test/browser/workdays.spec.mjs:214:1 › Slovene result units preserve dual forms and the last two digits (1.5s)
+  ✘  6 [chromium] › test/browser/workdays.spec.mjs:241:1 › annual dashboard explains the actual selected daily hours and resets them (10.3s)
+
+
+  1) [chromium] › test/browser/workdays.spec.mjs:241:1 › annual dashboard explains the actual selected daily hours and resets them 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('[data-daily-hours-summary]')
+    Expected: [32m"Dnevni obseg: 7,5 h"[39m
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toHaveText" with timeout 10000ms[22m
+    [2m  - waiting for locator('[data-daily-hours-summary]')[22m
+
+
+      177 |   await page.goto('/delovni-dnevi/2028/');
+      178 |   await page.locator('[data-workdays-hours]').fill('7.5');
+    > 179 |   await expect(page.locator('[data-daily-hours-summary]')).toHaveText('Dnevni obseg: 7,5 h');
+          |                                                            ^
+      180 |   await expect(page.locator('[data-year-hours]')).toHaveText('1.875');
+      181 |   await page.locator('[data-workdays-reset]').click();
+      182 |   await expect(page.locator('[data-daily-hours-summary]')).toHaveText('Dnevni obseg: 8 h');
+        at /Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-audit/test/browser/workdays.spec.mjs:179:60
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/workdays-annual-dashboard--d3bcf-daily-hours-and-resets-them-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/workdays-annual-dashboard--d3bcf-daily-hours-and-resets-them-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/workdays-annual-dashboard--d3bcf-daily-hours-and-resets-them-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/workdays-annual-dashboard--d3bcf-daily-hours-and-resets-them-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › test/browser/workdays.spec.mjs:241:1 › annual dashboard explains the actual selected daily hours and resets them 
+  5 passed (13.1s)

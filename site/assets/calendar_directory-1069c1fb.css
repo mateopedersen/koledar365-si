@@ -1,0 +1,70 @@
+/* Calendar directory: one chronological matrix, with an explicit year view on phones. */
+#vsebina .calendar-directory{max-width:1360px;margin:0 auto 40px;color:#18324e}
+.calendar-directory [hidden]{display:none!important}
+.calendar-directory .cd-heading{display:flex;justify-content:space-between;align-items:center;gap:35px;margin:15px 0 32px;padding:10px 0 28px;border-bottom:1px solid #d4deea}
+#vsebina .calendar-directory .cd-kicker{display:block;color:#a52b40;font-size:11px;font-weight:800;letter-spacing:1.3px;line-height:1.6}
+#vsebina .calendar-directory h1{font-size:clamp(32px,4vw,46px);line-height:1.15;letter-spacing:-1.4px;margin:10px 0 15px;color:#142f52}
+#vsebina .calendar-directory .cd-heading p{max-width:680px;margin:0;color:#40536b}
+.calendar-directory .cd-summary{display:flex;gap:30px;padding-left:30px;border-left:1px solid #d4deea;flex-shrink:0;color:#526783;font-size:13px;font-weight:650}
+.calendar-directory .cd-summary span{display:flex;flex-direction:column;gap:3px}
+.calendar-directory .cd-summary strong{font-size:42px;line-height:1.15;color:#084f95;font-weight:800}
+.calendar-directory .cd-section-heading{display:flex;align-items:center;justify-content:space-between;gap:22px;margin:0 0 19px}
+#vsebina .calendar-directory h2{font-size:24px;line-height:1.3;margin:5px 0;color:#18324e;letter-spacing:-.45px}
+.calendar-directory .cd-section-heading>a{color:#084f95;font-size:14px;font-weight:750;text-decoration:none;white-space:nowrap;padding:10px 0}
+.calendar-directory .cd-filters{display:flex;align-items:flex-end;gap:20px;padding:18px 22px;background:#edf3fb;border:1px solid #d6e1ee;border-radius:12px;margin:0 0 16px}
+.calendar-directory .cd-filters fieldset{margin:0;padding:0;border:0;min-width:0;flex:1}
+.calendar-directory .cd-filters legend{padding:0;margin:0 0 7px;font-size:13px;font-weight:750;color:#40536b}
+.calendar-directory .cd-year-buttons{display:flex;gap:6px}
+.calendar-directory .cd-year-buttons button{min-height:44px;min-width:60px;padding:9px 14px;border:1px solid #c2d3e7;border-radius:7px;background:#fff;color:#084f95;box-shadow:none;font-weight:750}
+.calendar-directory .cd-year-buttons button[aria-pressed=true]{background:#084f95;border-color:#084f95;color:#fff}
+.calendar-directory .cd-filters label{margin:0;min-width:200px;font-weight:750;font-size:13px;color:#40536b}
+.calendar-directory .cd-filters select{margin:7px 0 0;min-height:44px;border-color:#c2d3e7;background:#fff}
+.calendar-directory .cd-reset{min-height:44px;box-shadow:none;background:transparent;color:#084f95;border-color:#c2d3e7}
+.calendar-directory .cd-reset:disabled{opacity:.55;cursor:default}
+#vsebina .calendar-directory .cd-result{font-size:14px;line-height:1.5;color:#40536b;margin:13px 0}
+.calendar-directory .cd-table-wrap{max-width:100%;overflow:auto;border:1px solid #cddbea;border-radius:12px;background:#fff;scrollbar-color:#9bb2cb #edf3fa}
+.calendar-directory .cd-period-table{width:100%;min-width:780px;table-layout:fixed;border-collapse:separate;border-spacing:0;margin:0}
+.calendar-directory .cd-period-table th,.calendar-directory .cd-period-table td{border:0;border-bottom:1px solid #dfe6ef;text-align:left}
+.calendar-directory .cd-period-table thead th{padding:19px 16px;background:#17395f;color:#fff;font-size:14px}
+.calendar-directory .cd-period-table thead strong{display:block;font-size:23px;line-height:1.2}
+.calendar-directory .cd-period-table thead small{display:block;margin-top:6px;font-size:11px;font-weight:550;color:#e1ebf6;line-height:1.5}
+.calendar-directory .cd-period-table tbody th{padding:15px 16px;font-size:15px;font-weight:750;background:#f6f8fb;position:sticky;left:0;z-index:1}
+.calendar-directory .cd-period-table tbody th>span{vertical-align:middle}
+.calendar-directory .cd-period-table tbody th small{display:block;margin-top:4px;font-size:11px;color:#526783;font-weight:550}
+.calendar-directory .cd-month-number{display:inline-block;width:25px;margin-right:8px;color:#72839a;font-size:11px;font-weight:650}
+.calendar-directory .cd-period-table td{padding:6px;border-left:1px solid #e8edf4;background:#fff}
+.calendar-directory .cd-period-table td a{display:flex;align-items:center;justify-content:space-between;gap:7px;padding:12px 10px;min-height:46px;color:#084f95;text-decoration:none;border-radius:6px;font-size:15px;line-height:1.4;white-space:normal}
+.calendar-directory .cd-period-table td a>span:last-child{font-size:17px;color:#9c3144}
+.calendar-directory .cd-period-table td a:hover{background:#eaf2fe;box-shadow:inset 0 0 0 1px #b5cce5}
+.calendar-directory .cd-period-table tr:last-child>:is(th,td){border-bottom:0}
+.calendar-directory .cd-period-table .cd-annual-row>:is(th,td){background:#eaf1fa;border-bottom:2px solid #c6d7eb}
+.calendar-directory .cd-annual-row th .ui-icon{width:23px;height:23px;margin-right:8px}
+.calendar-directory .cd-annual-row th>span{display:inline-block}
+.calendar-directory .cd-scroll-hint{display:none}
+#vsebina .calendar-directory .cd-download-note{display:flex;align-items:flex-start;gap:12px;margin:16px 0 0;padding:15px 18px;border-left:3px solid #bd2a40;background:#fff;font-size:14px;line-height:1.6;color:#40536b}
+.calendar-directory .cd-download-note .ui-icon{width:23px;height:23px;color:#084f95}
+.calendar-directory .cd-tools{margin-top:42px}
+.calendar-directory .cd-tool-table{margin:0;background:#fff}
+.calendar-directory .cd-tool-table th,.calendar-directory .cd-tool-table td{padding:17px 18px}
+.calendar-directory .cd-tool-table th[scope=row]{font-size:15px;background:#fff;color:#18324e}
+.calendar-directory .cd-tool-name{display:flex;align-items:center;gap:10px}
+.calendar-directory .cd-tool-name .ui-icon{width:25px;height:25px}
+.calendar-directory .cd-tool-table td:last-child a{display:inline-flex;align-items:center;gap:12px;min-height:44px;font-weight:750;color:#084f95;white-space:nowrap}
+.calendar-directory .cd-archive{margin-top:30px;padding:0 20px;border:1px solid #d4deea;background:#fff;border-radius:10px}
+.calendar-directory .cd-archive summary{display:flex;justify-content:space-between;align-items:center;gap:15px;min-height:65px;padding:14px 0;color:#18324e;font-size:16px;font-weight:750;list-style:none}
+.calendar-directory .cd-archive summary::-webkit-details-marker{display:none}
+.calendar-directory .cd-archive summary>span:first-child{display:flex;align-items:center;gap:10px}
+.calendar-directory .cd-archive[open] summary>span:last-child{transform:rotate(45deg)}
+.calendar-directory .cd-archive nav{display:flex;flex-wrap:wrap;gap:8px;padding:0 0 20px}
+.calendar-directory .cd-archive nav a{padding:10px 12px;min-height:44px;border:1px solid #d4deea;border-radius:7px;color:#084f95;font-size:14px;font-weight:650}
+.calendar-directory :is(a,button,select):focus-visible,.calendar-directory .cd-table-wrap:focus-visible{outline:3px solid #2373c6;outline-offset:3px}
+.calendar-directory[data-single-year=true] .cd-period-table{min-width:0}
+.calendar-directory[data-single-year=true] .cd-period-table th:first-child{width:40%}
+@media(max-width:900px){.calendar-directory .cd-filters{flex-wrap:wrap;gap:14px}.calendar-directory .cd-filters fieldset{flex-basis:100%}.calendar-directory .cd-filters label{flex:1}.calendar-directory .cd-summary{gap:18px;padding-left:20px}.calendar-directory .cd-summary strong{font-size:32px}}
+@media(max-width:700px){.calendar-directory .cd-heading{display:block;margin-top:0;padding-bottom:22px}.calendar-directory .cd-summary{margin-top:20px;padding:0;border:0;gap:28px}.calendar-directory .cd-summary span{flex-direction:row;align-items:baseline;gap:7px}.calendar-directory .cd-summary strong{font-size:26px}.calendar-directory .cd-section-heading{display:block}.calendar-directory .cd-section-heading>a{display:inline-block;white-space:normal}.calendar-directory .cd-filters{padding:14px 12px}.calendar-directory .cd-year-buttons button{flex:1;min-width:0;padding:8px 7px;font-size:13px!important}.calendar-directory .cd-filters label{min-width:130px}.calendar-directory .cd-scroll-hint{display:block;font-size:13px;color:#526783}.calendar-directory[data-single-year=true] .cd-scroll-hint{display:none}.calendar-directory .cd-period-table thead th{padding:16px 12px}.calendar-directory .cd-period-table tbody th{padding:13px 10px}.calendar-directory .cd-month-number{width:19px;margin-right:4px}.calendar-directory .cd-tool-table{background:transparent}.calendar-directory .cd-tool-table th[scope=row]{background:transparent}.calendar-directory .cd-tools{margin-top:32px}}
+@media print{.calendar-directory .cd-filters,.calendar-directory .cd-reset,.calendar-directory .cd-summary,.calendar-directory .cd-scroll-hint{display:none!important}.calendar-directory .cd-table-wrap{overflow:visible;border:0}.calendar-directory .cd-period-table{min-width:0;font-size:9pt}.calendar-directory .cd-period-table thead th{background:#fff;color:#000;padding:8px}.calendar-directory .cd-period-table thead small{color:#333}.calendar-directory .cd-period-table td a{font-size:9pt;padding:4px;min-height:0}.calendar-directory .cd-period-table tbody th{position:static;padding:8px;font-size:9pt}.calendar-directory .cd-period-table tr{break-inside:avoid}.calendar-directory .cd-heading{margin:0;padding:0;border:0}.calendar-directory .cd-tool-table{font-size:9pt}}
+
+@media screen{#vsebina .calendar-directory .cd-period-table thead small{color:#e1ebf6!important;font-size:12px!important;font-weight:600}
+#vsebina .calendar-directory .cd-period-table tbody th small{color:#526783!important;font-size:12px!important}}
+@media(max-width:400px){.calendar-directory .cd-month-number{display:none}}
+.calendar-directory .cd-month-number { color: #475b72; }

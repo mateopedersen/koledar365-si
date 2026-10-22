@@ -1,0 +1,17 @@
+Run options: --seed 42541
+
+# Running:
+
+................................................................................................F
+
+Failure:
+PlannerIntegrationTest#test_personal_photo_preview_and_exports_are_session_bound [test/integration/planner_test.rb:78]:
+Expected response to be a <201: created>, but was a <422: Unprocessable Content>
+Response body: {"error":"Fotografije ni mogoče uporabiti. Izberite JPEG, PNG ali WebP z najmanj 900 × 600 in največ 40 milijoni slikovnih pik."}
+
+bin/rails test test/integration/planner_test.rb:75
+
+.......................................
+
+Finished in 8.015357s, 16.9674 runs/s, 1729.8044 assertions/s.
+136 runs, 13865 assertions, 1 failures, 0 errors, 0 skips

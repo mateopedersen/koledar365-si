@@ -1,0 +1,20 @@
+✔ every education event has real ordered dates and an identified Slovene primary source (2.299459ms)
+✔ school level, grade, stage and location change actual events instead of only labels (0.827167ms)
+✔ general and vocational matura retain distinct results and registration deadlines (0.293708ms)
+✔ subject selections preserve common deadlines but exclude unrelated subject exams (0.432042ms)
+✔ NPZ grade differences and faculty-specific university calendars cannot collapse (0.325916ms)
+✔ upcoming date follows Ljubljana and expired dates never become next (0.626042ms)
+✔ ICS keeps inclusive multi-day windows, stable identities and safe UTF-8 folding (13.262375ms)
+✔ annual school view is exactly September–August and correct leap-date math (13.85175ms)
+✔ weekly lessons skip the correct regional school break and keep one-off dates exact (1.651ms)
+✔ timed ICS keeps 08:00 local across both DST boundaries and rejects ambiguous times (1.843333ms)
+✔ overlap checking preserves adjacent classes and catches actual overlapping times (0.134125ms)
+✔ backup validation prevents silent invented times, duplicate ids and unverified future holiday use (1.631042ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 40.795583

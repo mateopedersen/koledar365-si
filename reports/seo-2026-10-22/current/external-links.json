@@ -202,6 +202,14 @@
     ]
   },
   {
+    "url": "https://en.wikipedia.org/wiki/Ljubljana",
+    "pages": [
+      "/dolzina-dneva/",
+      "/soncni-vzhod-in-zahod/",
+      "/soncni-vzhod-in-zahod/ljubljana/"
+    ]
+  },
+  {
     "url": "https://sdo.gsfc.nasa.gov/data/channels.php",
     "pages": [
       "/dolzina-dneva/",
@@ -1433,6 +1441,30 @@
     ]
   },
   {
+    "url": "https://aa.usno.navy.mil/calculated/seasons?dst=false&submit=Get+Data&tz=0.00&tz_label=false&tz_sign=-1&year=2027",
+    "pages": [
+      "/letni-casi/"
+    ]
+  },
+  {
+    "url": "https://aa.usno.navy.mil/calculated/seasons?dst=false&submit=Get+Data&tz=0.00&tz_label=false&tz_sign=-1&year=2028",
+    "pages": [
+      "/letni-casi/"
+    ]
+  },
+  {
+    "url": "https://aa.usno.navy.mil/calculated/seasons?dst=false&submit=Get+Data&tz=0.00&tz_label=false&tz_sign=-1&year=2029",
+    "pages": [
+      "/letni-casi/"
+    ]
+  },
+  {
+    "url": "https://aa.usno.navy.mil/calculated/seasons?dst=false&submit=Get+Data&tz=0.00&tz_label=false&tz_sign=-1&year=2030",
+    "pages": [
+      "/letni-casi/"
+    ]
+  },
+  {
     "url": "https://aa.usno.navy.mil/api/seasons?year=2027",
     "pages": [
       "/letni-casi/jesensko-enakonocje/",
@@ -2503,6 +2535,414 @@
     "url": "https://astronomska-revija-spika.si/filtri-za-varno-opazovanje-sonca/",
     "pages": [
       "/soncni-mrk/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Ajdov%C5%A1%C4%8Dina",
+    "pages": [
+      "/soncni-vzhod-in-zahod/ajdovscina/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Bled",
+    "pages": [
+      "/soncni-vzhod-in-zahod/bled/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Bovec",
+    "pages": [
+      "/soncni-vzhod-in-zahod/bovec/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Bre%C5%BEice",
+    "pages": [
+      "/soncni-vzhod-in-zahod/brezice/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Celje",
+    "pages": [
+      "/soncni-vzhod-in-zahod/celje/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Cerknica",
+    "pages": [
+      "/soncni-vzhod-in-zahod/cerknica/"
+    ]
+  },
+  {
+    "url": "https://www.wikidata.org/wiki/Special:EntityData/Q15861.json",
+    "pages": [
+      "/soncni-vzhod-in-zahod/crnomelj/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Dom%C5%BEale",
+    "pages": [
+      "/soncni-vzhod-in-zahod/domzale/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Dravograd",
+    "pages": [
+      "/soncni-vzhod-in-zahod/dravograd/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Gornja_Radgona",
+    "pages": [
+      "/soncni-vzhod-in-zahod/gornja-radgona/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Grosuplje",
+    "pages": [
+      "/soncni-vzhod-in-zahod/grosuplje/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Hrastnik",
+    "pages": [
+      "/soncni-vzhod-in-zahod/hrastnik/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Idrija",
+    "pages": [
+      "/soncni-vzhod-in-zahod/idrija/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Ilirska_Bistrica",
+    "pages": [
+      "/soncni-vzhod-in-zahod/ilirska-bistrica/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Izola",
+    "pages": [
+      "/soncni-vzhod-in-zahod/izola/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Jesenice",
+    "pages": [
+      "/soncni-vzhod-in-zahod/jesenice/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Kamnik",
+    "pages": [
+      "/soncni-vzhod-in-zahod/kamnik/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Ko%C4%8Devje",
+    "pages": [
+      "/soncni-vzhod-in-zahod/kocevje/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Koper",
+    "pages": [
+      "/soncni-vzhod-in-zahod/koper/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Kostanjevica_na_Krki",
+    "pages": [
+      "/soncni-vzhod-in-zahod/kostanjevica-na-krki/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Kranj",
+    "pages": [
+      "/soncni-vzhod-in-zahod/kranj/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Kr%C5%A1ko",
+    "pages": [
+      "/soncni-vzhod-in-zahod/krsko/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/La%C5%A1ko",
+    "pages": [
+      "/soncni-vzhod-in-zahod/lasko/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Lenart_v_Slovenskih_Goricah",
+    "pages": [
+      "/soncni-vzhod-in-zahod/lenart-v-slovenskih-goricah/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Lendava",
+    "pages": [
+      "/soncni-vzhod-in-zahod/lendava/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Litija",
+    "pages": [
+      "/soncni-vzhod-in-zahod/litija/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Ljutomer",
+    "pages": [
+      "/soncni-vzhod-in-zahod/ljutomer/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Logatec",
+    "pages": [
+      "/soncni-vzhod-in-zahod/logatec/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Maribor",
+    "pages": [
+      "/soncni-vzhod-in-zahod/maribor/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Medvode",
+    "pages": [
+      "/soncni-vzhod-in-zahod/medvode/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Menge%C5%A1",
+    "pages": [
+      "/soncni-vzhod-in-zahod/menges/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Metlika",
+    "pages": [
+      "/soncni-vzhod-in-zahod/metlika/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Me%C5%BEica",
+    "pages": [
+      "/soncni-vzhod-in-zahod/mezica/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Murska_Sobota",
+    "pages": [
+      "/soncni-vzhod-in-zahod/murska-sobota/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Nova_Gorica",
+    "pages": [
+      "/soncni-vzhod-in-zahod/nova-gorica/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Novo_Mesto",
+    "pages": [
+      "/soncni-vzhod-in-zahod/novo-mesto/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Ormo%C5%BE",
+    "pages": [
+      "/soncni-vzhod-in-zahod/ormoz/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Piran",
+    "pages": [
+      "/soncni-vzhod-in-zahod/piran/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Postojna",
+    "pages": [
+      "/soncni-vzhod-in-zahod/postojna/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Prevalje",
+    "pages": [
+      "/soncni-vzhod-in-zahod/prevalje/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Ptuj",
+    "pages": [
+      "/soncni-vzhod-in-zahod/ptuj/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Rade%C4%8De",
+    "pages": [
+      "/soncni-vzhod-in-zahod/radece/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Radovljica",
+    "pages": [
+      "/soncni-vzhod-in-zahod/radovljica/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Ravne_na_Koro%C5%A1kem",
+    "pages": [
+      "/soncni-vzhod-in-zahod/ravne-na-koroskem/"
+    ]
+  },
+  {
+    "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2596325.json",
+    "pages": [
+      "/soncni-vzhod-in-zahod/ribnica/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Roga%C5%A1ka_Slatina",
+    "pages": [
+      "/soncni-vzhod-in-zahod/rogaska-slatina/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Ru%C5%A1e",
+    "pages": [
+      "/soncni-vzhod-in-zahod/ruse/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/%C5%A0empeter_pri_Gorici",
+    "pages": [
+      "/soncni-vzhod-in-zahod/sempeter-pri-gorici/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/%C5%A0entjur",
+    "pages": [
+      "/soncni-vzhod-in-zahod/sentjur/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Sevnica",
+    "pages": [
+      "/soncni-vzhod-in-zahod/sevnica/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Se%C5%BEana",
+    "pages": [
+      "/soncni-vzhod-in-zahod/sezana/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/%C5%A0kofja_Loka",
+    "pages": [
+      "/soncni-vzhod-in-zahod/skofja-loka/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Slovenj_Gradec",
+    "pages": [
+      "/soncni-vzhod-in-zahod/slovenj-gradec/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Slovenska_Bistrica",
+    "pages": [
+      "/soncni-vzhod-in-zahod/slovenska-bistrica/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Slovenske_Konjice",
+    "pages": [
+      "/soncni-vzhod-in-zahod/slovenske-konjice/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/%C5%A0o%C5%A1tanj",
+    "pages": [
+      "/soncni-vzhod-in-zahod/sostanj/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Tolmin",
+    "pages": [
+      "/soncni-vzhod-in-zahod/tolmin/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Trbovlje",
+    "pages": [
+      "/soncni-vzhod-in-zahod/trbovlje/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Trebnje",
+    "pages": [
+      "/soncni-vzhod-in-zahod/trebnje/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Tr%C5%BEi%C4%8D",
+    "pages": [
+      "/soncni-vzhod-in-zahod/trzic/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Velenje",
+    "pages": [
+      "/soncni-vzhod-in-zahod/velenje/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Vi%C5%A1nja_Gora",
+    "pages": [
+      "/soncni-vzhod-in-zahod/visnja-gora/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Vrhnika",
+    "pages": [
+      "/soncni-vzhod-in-zahod/vrhnika/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Zagorje_ob_Savi",
+    "pages": [
+      "/soncni-vzhod-in-zahod/zagorje-ob-savi/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/%C5%BDalec",
+    "pages": [
+      "/soncni-vzhod-in-zahod/zalec/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/%C5%BDelezniki",
+    "pages": [
+      "/soncni-vzhod-in-zahod/zelezniki/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/%C5%BDiri",
+    "pages": [
+      "/soncni-vzhod-in-zahod/ziri/"
+    ]
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Zre%C4%8De",
+    "pages": [
+      "/soncni-vzhod-in-zahod/zrece/"
     ]
   },
   {

@@ -1,0 +1,65 @@
+
+Running 28 tests using 2 workers
+
+(node:81758) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:81757) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:81757) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:81758) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [chromium] › test/browser/sun-experience.spec.mjs:38:1 › the city list is searchable without accents and the layout fits a phone (592ms)
+  ✓   3 [chromium] › test/browser/sun-experience.spec.mjs:61:1 › all 69 city cards show their own embedded photo and linked photo credits (303ms)
+  ✓   4 [chromium] › test/browser/sun-experience.spec.mjs:87:1 › the mobile privacy choice stays a compact, usable bottom ribbon (317ms)
+  ✓   1 [chromium] › test/browser/sun-experience.spec.mjs:6:1 › sunrise pages cover all official Slovenian cities and respond to city, date and time (1.2s)
+  ✓   6 [chromium] › test/browser/sun-experience.spec.mjs:146:1 › the animated solar disc shows observed surface detail and warm horizon light (328ms)
+  ✓   7 [chromium] › test/browser/sun-experience.spec.mjs:165:1 › the nearest-city button uses the approved browser position locally (349ms)
+(node:81778) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:81778) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   5 [chromium] › test/browser/sun-experience.spec.mjs:117:1 › the sky, Sun visibility, and moving clouds follow the real solar altitude (2.1s)
+(node:81790) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:81790) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [webkit] › test/browser/sun-experience.spec.mjs:38:1 › the city list is searchable without accents and the layout fits a phone (684ms)
+  ✓   8 [webkit] › test/browser/sun-experience.spec.mjs:6:1 › sunrise pages cover all official Slovenian cities and respond to city, date and time (1.9s)
+  ✓  10 [webkit] › test/browser/sun-experience.spec.mjs:61:1 › all 69 city cards show their own embedded photo and linked photo credits (534ms)
+  ✓  11 [webkit] › test/browser/sun-experience.spec.mjs:87:1 › the mobile privacy choice stays a compact, usable bottom ribbon (492ms)
+  ✓  13 [webkit] › test/browser/sun-experience.spec.mjs:146:1 › the animated solar disc shows observed surface detail and warm horizon light (558ms)
+  ✓  14 [webkit] › test/browser/sun-experience.spec.mjs:165:1 › the nearest-city button uses the approved browser position locally (644ms)
+(node:81809) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:81809) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  12 [webkit] › test/browser/sun-experience.spec.mjs:117:1 › the sky, Sun visibility, and moving clouds follow the real solar altitude (2.7s)
+(node:81814) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  15 [android-chromium] › test/browser/sun-experience.spec.mjs:6:1 › sunrise pages cover all official Slovenian cities and respond to city, date and time (1.0s)
+(node:81814) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  16 [android-chromium] › test/browser/sun-experience.spec.mjs:61:1 › all 69 city cards show their own embedded photo and linked photo credits (346ms)
+  ✓  17 [android-chromium] › test/browser/sun-experience.spec.mjs:38:1 › the city list is searchable without accents and the layout fits a phone (447ms)
+  ✓  18 [android-chromium] › test/browser/sun-experience.spec.mjs:87:1 › the mobile privacy choice stays a compact, usable bottom ribbon (511ms)
+  ✓  20 [android-chromium] › test/browser/sun-experience.spec.mjs:146:1 › the animated solar disc shows observed surface detail and warm horizon light (387ms)
+  ✓  21 [android-chromium] › test/browser/sun-experience.spec.mjs:165:1 › the nearest-city button uses the approved browser position locally (462ms)
+(node:81824) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:81824) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  19 [android-chromium] › test/browser/sun-experience.spec.mjs:117:1 › the sky, Sun visibility, and moving clouds follow the real solar altitude (2.2s)
+(node:81836) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:81836) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  22 [iphone-webkit] › test/browser/sun-experience.spec.mjs:6:1 › sunrise pages cover all official Slovenian cities and respond to city, date and time (1.4s)
+  ✓  24 [iphone-webkit] › test/browser/sun-experience.spec.mjs:61:1 › all 69 city cards show their own embedded photo and linked photo credits (489ms)
+  ✓  23 [iphone-webkit] › test/browser/sun-experience.spec.mjs:38:1 › the city list is searchable without accents and the layout fits a phone (744ms)
+  ✓  25 [iphone-webkit] › test/browser/sun-experience.spec.mjs:87:1 › the mobile privacy choice stays a compact, usable bottom ribbon (537ms)
+  ✓  27 [iphone-webkit] › test/browser/sun-experience.spec.mjs:146:1 › the animated solar disc shows observed surface detail and warm horizon light (453ms)
+  ✓  28 [iphone-webkit] › test/browser/sun-experience.spec.mjs:165:1 › the nearest-city button uses the approved browser position locally (539ms)
+  ✓  26 [iphone-webkit] › test/browser/sun-experience.spec.mjs:117:1 › the sky, Sun visibility, and moving clouds follow the real solar altitude (2.3s)
+
+  28 passed (15.1s)

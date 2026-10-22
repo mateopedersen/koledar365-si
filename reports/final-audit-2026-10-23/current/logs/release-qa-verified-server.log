@@ -1,0 +1,750 @@
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK
+{"mode": "build", "sitemap_urls": 391, "indexable_html": 391, "llms_links": 53, "llms_sections": 10, "failed": 0, "issues": []}
+{'checked_at': '2026-10-22T21:24:30.266110+00:00', 'months': 48, 'days': 1461, 'timezone': 'Europe/Ljubljana', 'dst_boundaries': 8, 'failed': 0}
+{"imageGateControls":36,"failed":0,"cases":[{"name":"lazy-chromium","tested":8,"expectedFailures":0,"observedFailures":0,"passed":true},{"name":"lazy-webkit","tested":2,"expectedFailures":0,"observedFailures":0,"passed":true},{"name":"lazy-webkit-tiles","tested":2,"expectedFailures":0,"observedFailures":0,"passed":true},{"name":"lazy-no-animation-frames","tested":8,"expectedFailures":0,"observedFailures":0,"passed":true},{"name":"frozen-browser-clocks","tested":8,"expectedFailures":0,"observedFailures":0,"passed":true},{"name":"broken-chromium","tested":8,"expectedFailures":8,"observedFailures":8,"passed":true}]}
+layout/chromium: 40/1200
+layout/chromium: 80/1200
+layout/chromium: 120/1200
+layout/chromium: 160/1200
+layout/chromium: 200/1200
+layout/chromium: 240/1200
+layout/chromium: 280/1200
+layout/chromium: 320/1200
+layout/chromium: 360/1200
+layout/chromium: 400/1200
+layout/chromium: 440/1200
+layout/chromium: 480/1200
+layout/chromium: 520/1200
+layout/chromium: 560/1200
+layout/chromium: 600/1200
+layout/chromium: 640/1200
+layout/chromium: 680/1200
+layout/chromium: 720/1200
+layout/chromium: 760/1200
+layout/chromium: 800/1200
+layout/chromium: 840/1200
+layout/chromium: 880/1200
+layout/chromium: 920/1200
+layout/chromium: 960/1200
+layout/chromium: 1000/1200
+layout/chromium: 1040/1200
+layout/chromium: 1080/1200
+layout/chromium: 1120/1200
+layout/chromium: 1160/1200
+layout/chromium: 1200/1200
+{"tested":1200,"failed":0,"output":"/Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-audit/evidence/qa/browser"}
+a11y/chromium: 40/138
+a11y/chromium: 80/138
+a11y/chromium: 120/138
+{"tested":138,"failed":0,"output":"/Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-audit/evidence/qa/browser"}
+layout/webkit: 40/138
+layout/webkit: 80/138
+layout/webkit: 120/138
+{"tested":138,"failed":0,"output":"/Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-audit/evidence/qa/browser"}
+{"tested":138,"failed":0,"tabStops":4900,"functional":[{"name":"Menu Enter, Escape and focus return","passed":true},{"name":"Lunar arrow keys, Home, End and Space","passed":true},{"name":"Studio arrows, modal Tab containment, Escape and focus return","passed":true},{"name":"Real PDF download with Enter","passed":true}]}
+xlsx /koledar/2027/   true 
+xlsx /koledar/2027/januar/   true 
+xlsx /koledar/2027/februar/   true 
+xlsx /koledar/2027/marec/   true 
+xlsx /koledar/2027/april/   true 
+xlsx /koledar/2027/maj/   true 
+xlsx /koledar/2027/junij/   true 
+xlsx /koledar/2027/julij/   true 
+xlsx /koledar/2027/avgust/   true 
+xlsx /koledar/2027/september/   true 
+xlsx /koledar/2027/oktober/   true 
+xlsx /koledar/2027/november/   true 
+xlsx /koledar/2027/december/   true 
+xlsx /koledar/2028/   true 
+xlsx /koledar/2028/januar/   true 
+xlsx /koledar/2028/februar/   true 
+xlsx /koledar/2028/marec/   true 
+xlsx /koledar/2028/april/   true 
+xlsx /koledar/2028/maj/   true 
+xlsx /koledar/2028/junij/   true 
+xlsx /koledar/2028/julij/   true 
+xlsx /koledar/2028/avgust/   true 
+xlsx /koledar/2028/september/   true 
+xlsx /koledar/2028/oktober/   true 
+xlsx /koledar/2028/november/   true 
+xlsx /koledar/2028/december/   true 
+xlsx /koledar/2029/   true 
+xlsx /koledar/2029/januar/   true 
+xlsx /koledar/2029/februar/   true 
+xlsx /koledar/2029/marec/   true 
+xlsx /koledar/2029/april/   true 
+xlsx /koledar/2029/maj/   true 
+xlsx /koledar/2029/junij/   true 
+xlsx /koledar/2029/julij/   true 
+xlsx /koledar/2029/avgust/   true 
+xlsx /koledar/2029/september/   true 
+xlsx /koledar/2029/oktober/   true 
+xlsx /koledar/2029/november/   true 
+xlsx /koledar/2029/december/   true 
+xlsx /koledar/2030/   true 
+xlsx /koledar/2030/januar/   true 
+xlsx /koledar/2030/februar/   true 
+xlsx /koledar/2030/marec/   true 
+xlsx /koledar/2030/april/   true 
+xlsx /koledar/2030/maj/   true 
+xlsx /koledar/2030/junij/   true 
+xlsx /koledar/2030/julij/   true 
+xlsx /koledar/2030/avgust/   true 
+xlsx /koledar/2030/september/   true 
+xlsx /koledar/2030/oktober/   true 
+xlsx /koledar/2030/november/   true 
+xlsx /koledar/2030/december/   true 
+personal-pdf /prazen-koledar/ A4 portrait true 
+personal-pdf /prazen-koledar/ A4 landscape true 
+personal-pdf /prazen-koledar/ A3 portrait true 
+personal-pdf /dnevni-planer/ A4 portrait true 
+personal-pdf /dnevni-planer/ A4 landscape true 
+personal-pdf /dnevni-planer/ A3 portrait true 
+personal-pdf /rojstnodnevni-koledar/ A4 portrait true 
+personal-pdf /rojstnodnevni-koledar/ A4 landscape true 
+personal-pdf /rojstnodnevni-koledar/ A3 portrait true 
+personal-pdf /druzinski-planer/ A4 portrait true 
+personal-pdf /druzinski-planer/ A4 landscape true 
+personal-pdf /druzinski-planer/ A3 portrait true 
+personal-pdf /razpored-izmen/ A4 portrait true 
+personal-pdf /razpored-izmen/ A4 landscape true 
+personal-pdf /razpored-izmen/ A3 portrait true 
+personal-pdf /solski-urnik/ A4 portrait true 
+personal-pdf /solski-urnik/ A4 landscape true 
+personal-pdf /solski-urnik/ A3 portrait true 
+personal-pdf /tedenski-koledar/2028/ A4 portrait true 
+personal-pdf /tedenski-koledar/2028/ A4 landscape true 
+personal-pdf /tedenski-koledar/2028/ A3 portrait true 
+print /koledar/2028/ A4 portrait true 
+print /koledar/2028/ A4 landscape true 
+print /koledar/2028/ A3 portrait true 
+print /koledar/2028/ A4 portrait true 
+print /koledar/2028/februar/ A4 portrait true 
+print /koledar/2028/februar/ A4 landscape true 
+print /koledar/2028/februar/ A3 portrait true 
+print /koledar/2028/februar/ A4 portrait true 
+print /lunin-koledar/2028/ A4 portrait true 
+print /lunin-koledar/2028/ A4 landscape true 
+print /lunin-koledar/2028/ A3 portrait true 
+print /lunin-koledar/2028/ A4 portrait true 
+print /lunin-koledar/2028/februar/ A4 portrait true 
+print /lunin-koledar/2028/februar/ A4 landscape true 
+print /lunin-koledar/2028/februar/ A3 portrait true 
+print /lunin-koledar/2028/februar/ A4 portrait true 
+print /druzinski-planer/ A4 portrait true 
+print /druzinski-planer/ A4 landscape true 
+print /druzinski-planer/ A3 portrait true 
+print /druzinski-planer/ A4 portrait true 
+print /solske-pocitnice/ A4 portrait true 
+print /solske-pocitnice/ A4 landscape true 
+print /solske-pocitnice/ A3 portrait true 
+print /solske-pocitnice/ A4 portrait true 
+print /solski-urnik/ A4 portrait true 
+print /solski-urnik/ A4 landscape true 
+print /solski-urnik/ A3 portrait true 
+print /solski-urnik/ A4 portrait true 
+print /izplacila-pokojnin/ A4 portrait true 
+print /izplacila-pokojnin/ A4 landscape true 
+print /izplacila-pokojnin/ A3 portrait true 
+print /izplacila-pokojnin/ A4 portrait true 
+studio-print /ustvari-koledar/ A4 portrait true 
+studio-print /ustvari-koledar/ A4 landscape true 
+studio-print /ustvari-koledar/ A3 portrait true 
+{"tested":108,"failed":0}
+{"tested": 108, "failed": 0, "failures": []}
+
+Running 472 tests using 2 workers
+
+(node:69631) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:69630) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:69630) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:69631) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    1 [chromium] › test/browser/astronomy.spec.mjs:6:1 › full moon year selection changes real rows and UTC ICS without changing the next event (389ms)
+  ✓    2 [chromium] › test/browser/astronomy.spec.mjs:26:1 › eclipse controls distinguish a visible interval from a maximum below the horizon (389ms)
+  ✓    3 [chromium] › test/browser/astronomy.spec.mjs:42:1 › Perseids compare night and moon conditions with a calendar export and no invented exact peak (262ms)
+  ✓    4 [chromium] › test/browser/astronomy.spec.mjs:54:1 › astronomy pages fit a narrow phone and use the legible mobile illustration (553ms)
+  ✓    6 [chromium] › test/browser/calendar-directory.spec.mjs:11:1 › year and month selection keeps correct destinations and survives reload (447ms)
+  ✓    7 [chromium] › test/browser/calendar-directory.spec.mjs:53:1 › phone view opens one readable year and allows an accessible comparison of all years (551ms)
+  ✓    8 [chromium] › test/browser/calendar-directory.spec.mjs:95:1 › archive and purpose directory remain reachable with keyboard controls (445ms)
+  ✓    9 [chromium] › test/browser/calendar-directory.spec.mjs:110:1 › without JavaScript every year and month is available without page overflow (204ms)
+  ✓   10 [chromium] › test/browser/calendar-experience.spec.mjs:60:1 › the selected 2026 home period survives the static print flow and an older saved draft (435ms)
+  ✓    5 [chromium] › test/browser/brand-lockup.spec.mjs:2:1 › one complete, crisp brand appears identically in the header and footer across page families (2.4s)
+  ✓   12 [chromium] › test/browser/calendar-experience.spec.mjs:130:1 › monthly and annual calendar controls download real editable XLSX workbooks (528ms)
+  ✓   13 [chromium] › test/browser/calendar-experience.spec.mjs:161:1 › the static weekly hub uses the current Ljubljana date and preserves ISO year boundaries (358ms)
+  ✓   11 [chromium] › test/browser/calendar-experience.spec.mjs:112:1 › an explicit studio period overrides a saved project while retaining its personal content (1.2s)
+  ✓   14 [chromium] › test/browser/calendar-experience.spec.mjs:194:1 › exported annual workday dashboards retain their year and recalculate a custom schedule (538ms)
+  ✓   15 [chromium] › test/browser/calendar-gallery.spec.mjs:14:3 › /koledar-za-tiskanje/ has distinct, readable download controls at mobile and desktop sizes (562ms)
+  ✓   16 [chromium] › test/browser/calendar-gallery.spec.mjs:14:3 › /koledar/2027/januar/ has distinct, readable download controls at mobile and desktop sizes (541ms)
+  ✓   17 [chromium] › test/browser/city-card.spec.mjs:55:1 › clock and weather start without calendar boot and ignore forecast server time (250ms)
+  ✓   18 [chromium] › test/browser/city-card.spec.mjs:71:1 › saved forecast remains visible offline and personal records are preserved (301ms)
+  ✓   19 [chromium] › test/browser/city-card.spec.mjs:87:1 › late response for the old city cannot replace the selected city (996ms)
+  ✓   21 [chromium] › test/browser/city-card.spec.mjs:188:1 › clock catches up after a suspended page and follows Slovenian daylight saving (248ms)
+  ✓   22 [chromium] › test/browser/city-card.spec.mjs:202:1 › obsolete saved forecast is rejected and reduced motion disables scene animation (324ms)
+  ✓   23 [chromium] › test/browser/city-card.spec.mjs:224:1 › home hydration preserves the live card and selected city (1.1s)
+  ✓   20 [chromium] › test/browser/city-card.spec.mjs:106:1 › all weather scenes fit narrow mobile, tablet and desktop and the arrow targets the select (2.4s)
+  ✓   24 [chromium] › test/browser/city-card.spec.mjs:241:1 › city changes preserve the complete previous card until the new city can replace it atomically (312ms)
+  ✓   25 [chromium] › test/browser/city-card.spec.mjs:270:1 › returning to a visited city uses its fresh forecast without a network wait or an empty card (285ms)
+  ✓   26 [chromium] › test/browser/city-card.spec.mjs:291:1 › a failed city request retains the correctly labelled weather and restores the selector (262ms)
+  ✓   27 [chromium] › test/browser/city-card.spec.mjs:305:1 › night symbols follow the provider and cached forecasts advance to the current hourly interval (261ms)
+  ✓   29 [chromium] › test/browser/city-card.spec.mjs:348:1 › an explicitly saved city takes priority over the detected network location (217ms)
+  ✓   28 [chromium] › test/browser/city-card.spec.mjs:332:1 › first visit automatically selects the IP-detected Slovenian city without persisting it (233ms)
+  ✓   30 [chromium] › test/browser/city-card.spec.mjs:374:1 › a manual city choice made during IP detection cannot be overwritten by the late response (260ms)
+  ✓   31 [chromium] › test/browser/city-card.spec.mjs:404:1 › unavailable IP location keeps the safe default and lets the visitor choose (261ms)
+  ✓   32 [chromium] › test/browser/content-navigation.spec.mjs:2:1 › month links survive interactive important-day filtering and fit a narrow phone (309ms)
+  ✓   33 [chromium] › test/browser/consent-bar.spec.mjs:2:1 › cookie consent appears before the main script and stays within a usable mobile bottom panel (383ms)
+  ✓   35 [chromium] › test/browser/content-navigation.spec.mjs:59:1 › legacy school URLs preserve their selected level and open the consolidated section (280ms)
+  ✓   34 [chromium] › test/browser/content-navigation.spec.mjs:37:1 › school shortcuts retain real targets after changing education level and saved filters (460ms)
+  ✓   37 [chromium] › test/browser/control-consistency.spec.mjs:104:1 › paired student, calendar and gallery controls keep matching box sizes (615ms)
+  ✓   36 [chromium] › test/browser/control-consistency.spec.mjs:17:1 › shared controls have consistent, usable dimensions across site page families (2.0s)
+  ✓   39 [chromium] › test/browser/education.spec.mjs:52:1 › school filters keep grade and region dates distinct in the annual view, ICS and print (542ms)
+  ✓   40 [chromium] › test/browser/education.spec.mjs:88:1 › matura subjects and exam types preserve different result dates and export only selected events (482ms)
+  ✓   41 [chromium] › test/browser/education.spec.mjs:115:1 › NPZ grade pages and university filters keep their scopes on a narrow phone (452ms)
+  ✓   42 [chromium] › test/browser/education.spec.mjs:148:1 › school timetable keeps edits, conflicts, recurrence and real exports after a reload (1.1s)
+  ✓   43 [chromium] › test/browser/education.spec.mjs:231:1 › timetable JSON restore requires a choice and rejects invalid backups without losing the plan (670ms)
+  ✓   44 [chromium] › test/browser/form-scroll-stability.spec.mjs:32:1 › weekly lesson save stays under the pointer after focusing a time field (612ms)
+  ✓   45 [chromium] › test/browser/form-scroll-stability.spec.mjs:48:1 › workday calculation stays under the pointer after focusing a date field (1.8s)
+  ✓   46 [chromium] › test/browser/gallery-preview-loading.spec.mjs:2:1 › opening a gallery keeps honest layout samples and renders a personal preview only on request (2.8s)
+  ✓   47 [chromium] › test/browser/garden-payments.spec.mjs:12:1 › garden filter and private plan support real edit, persistence, backup and ICS (758ms)
+  ✓   48 [chromium] › test/browser/garden-payments.spec.mjs:62:1 › pensions use the December 29 official exception and export the filtered date (294ms)
+  ✓   49 [chromium] › test/browser/garden-payments.spec.mjs:79:1 › payment coverage ends honestly and preserves the single January carry-over (317ms)
+  ✓   50 [chromium] › test/browser/garden-payments.spec.mjs:92:1 › new source-led tools and methodology fit a 320px phone with one main heading (464ms)
+  ✓   51 [chromium] › test/browser/garden-photos.spec.mjs:7:1 › all sixteen vegetables have sharp self-contained licensed SVG photographs and working details (4.0s)
+  ✓   52 [chromium] › test/browser/holiday-directory-layout.spec.mjs:2:1 › the holiday directory keeps its complete heading and year choices inside narrow screens (439ms)
+  ✓   53 [chromium] › test/browser/mobile-control-layout.spec.mjs:18:1 › mobile garden actions and native date fields fit their rows before and after entry (518ms)
+  ✓   54 [chromium] › test/browser/mobile-control-layout.spec.mjs:49:1 › mobile school weekday tabs remain readable and expose full accessible names (366ms)
+  ✓   55 [chromium] › test/browser/mobile-control-layout.spec.mjs:67:1 › studio download and template names fit the narrowest phone (194ms)
+  ✓   56 [chromium] › test/browser/mobile-control-layout.spec.mjs:81:1 › expanded shift entry fields keep their own rows on phones (326ms)
+  ✓   57 [chromium] › test/browser/mobile-control-layout.spec.mjs:96:1 › shift preview remains inside the phone workspace (283ms)
+  ✓   58 [chromium] › test/browser/mobile-svg-visibility.spec.mjs:3:1 › branded SVG icons and real imagery stay colorful and visible in every major page family (848ms)
+  ✓   59 [chromium] › test/browser/mobile-table-calendar.spec.mjs:11:1 › mobile records keep full-width dates and names across table families and filtered results (2.5s)
+  ✓   60 [chromium] › test/browser/mobile-table-calendar.spec.mjs:62:1 › calendar markers stay inside their days and full event names follow filters (464ms)
+  ✓   61 [chromium] › test/browser/mobile-table-calendar.spec.mjs:136:1 › desktop event text and printed tables retain their full layout (275ms)
+  ✓   62 [chromium] › test/browser/mobile-table-calendar.spec.mjs:160:1 › without JavaScript the full table remains horizontally readable (214ms)
+  ✓   63 [chromium] › test/browser/mobile-table-calendar.spec.mjs:185:1 › eclipse status labels stay inside their cells with enlarged text (166ms)
+  ✓   64 [chromium] › test/browser/personal-button-grid.spec.mjs:4:1 › personal calendar action borders align and fit across home views and screen widths (1.8s)
+  ✓   65 [chromium] › test/browser/personal-button-grid.spec.mjs:67:1 › backup and restore action borders align on the other planner pages (947ms)
+  ✓   38 [chromium] › test/browser/control-consistency.spec.mjs:160:1 › every published sitemap page fits a phone and keeps standard controls usable (39.6s)
+  ✓   66 [chromium] › test/browser/print-layout.spec.mjs:38:1 › all printable routes load the shared print stylesheet and omit interactive chrome (14.7s)
+  ✓   68 [chromium] › test/browser/print-layout.spec.mjs:124:1 › school print keeps its calendar section together and removes its interactive month picker (416ms)
+  ✓   69 [chromium] › test/browser/responsive-layout.spec.mjs:2:1 › holiday heading fits while its web font is unavailable (152ms)
+  ✓   70 [chromium] › test/browser/responsive-layout.spec.mjs:16:1 › shared navigation and cookie bar stay inside narrow screens across page families (506ms)
+  ✓   71 [chromium] › test/browser/responsive-layout.spec.mjs:58:1 › holiday directory remains readable with a wider fallback font on a small screen (179ms)
+  ✓   67 [chromium] › test/browser/print-layout.spec.mjs:89:1 › each published monthly calendar prints on one A4 page (3.0s)
+  ✓   72 [chromium] › test/browser/ruby-runtime-recovery.spec.mjs:2:1 › workday calculation survives a trapped Ruby VM and uses a fresh real engine (2.6s)
+  ✓   74 [chromium] › test/browser/seo-interactions.spec.mjs:52:1 › school hero uses responsive previews and retains original attribution (241ms)
+  ✓   75 [chromium] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on / (352ms)
+  ✓   76 [chromium] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /solske-pocitnice/ (392ms)
+  ✓   73 [chromium] › test/browser/seo-interactions.spec.mjs:3:1 › date calculator tabs preserve calculations and submit only active fields (2.1s)
+  ✓   77 [chromium] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /horoskop/ (351ms)
+  ✓   78 [chromium] › test/browser/shift-planner.spec.mjs:24:1 › fixed shift type initializes its preview and backup without a selector (300ms)
+  ✓   80 [chromium] › test/browser/shift-preview-mobile.spec.mjs:2:1 › shift status and four statistics fit without clipping at accessible phone text sizes (481ms)
+  ✓   81 [chromium] › test/browser/shift-schedule.spec.mjs:2:1 › shift entries can be saved, edited and restored after reload (505ms)
+  ✓   79 [chromium] › test/browser/shift-planner.spec.mjs:34:1 › shift period query preserves the fixed type and generated shifts export to JSON and ICS (1.3s)
+  ✓   82 [chromium] › test/browser/site-navigation.spec.mjs:4:1 › navigation vector assets and every referenced symbol resolve in the publication (296ms)
+  ✓   84 [chromium] › test/browser/site-navigation.spec.mjs:85:1 › homepage header uses the open desktop space for the live next-day-off shortcut (350ms)
+  ✓   85 [chromium] › test/browser/site-navigation.spec.mjs:143:1 › tools disclosure supports keyboard, close button, outside clicks, scrolling and real destinations (1.3s)
+  ✓   86 [chromium] › test/browser/site-navigation.spec.mjs:186:1 › the native tools disclosure remains usable when JavaScript is unavailable (368ms)
+  ✓   83 [chromium] › test/browser/site-navigation.spec.mjs:19:1 › all shared navigation controls fit without clipped links or intersecting borders (2.7s)
+  ✓   87 [chromium] › test/browser/site-search.spec.mjs:2:1 › Escape keeps search text and does not reopen suggestions through native search clearing (663ms)
+  ✓   88 [chromium] › test/browser/site-search.spec.mjs:16:1 › leaving search cancels delayed suggestions so they cannot cover the tools menu (488ms)
+  ✓   89 [chromium] › test/browser/site-search.spec.mjs:43:1 › site search suggests relevant pages, handles keyboard use, and opens full results (624ms)
+  ✓   90 [chromium] › test/browser/site-search.spec.mjs:78:1 › search dropdown fits a narrow phone and date suggestions open the right calendar day (428ms)
+  ✓   91 [chromium] › test/browser/site-search.spec.mjs:108:1 › Escape keeps suggestions closed when a delayed search response arrives (376ms)
+  ✓   93 [chromium] › test/browser/student-timetable.spec.mjs:122:1 › student print view includes the saved weekly schedule and all obligations, while hiding controls and gallery (573ms)
+  ✓   94 [chromium] › test/browser/student-timetable.spec.mjs:179:1 › week date field and template button align on desktop and fit on mobile (207ms)
+  ✓   92 [chromium] › test/browser/student-timetable.spec.mjs:28:1 › student timetable works on mobile, persists locally, and exports a valid Ljubljana-time ICS (992ms)
+  ✓   95 [chromium] › test/browser/student-timetable.spec.mjs:230:1 › student print gallery stays full width and the WebP action remains reachable on desktop and mobile (279ms)
+  ✓   97 [chromium] › test/browser/sun-experience.spec.mjs:6:1 › sunrise pages cover all official Slovenian cities and respond to city, date and time (1.0s)
+  ✓   98 [chromium] › test/browser/sun-experience.spec.mjs:36:1 › the city list is searchable without accents and the layout fits a phone (330ms)
+  ✓   99 [chromium] › test/browser/sun-experience.spec.mjs:59:1 › all 69 city cards show their own embedded photo and linked photo credits (307ms)
+  ✓  100 [chromium] › test/browser/sun-experience.spec.mjs:85:1 › the mobile privacy choice stays a compact, usable bottom ribbon (323ms)
+  ✓   96 [chromium] › test/browser/student-webp-export.spec.mjs:2:1 › student planner WebP export produces an image in browsers without native Map.getOrInsertComputed (3.2s)
+  ✓  102 [chromium] › test/browser/sun-experience.spec.mjs:144:1 › the animated solar disc shows observed surface detail and warm horizon light (352ms)
+  ✓  103 [chromium] › test/browser/sun-experience.spec.mjs:163:1 › the nearest-city button uses the approved browser position locally (372ms)
+  ✓  101 [chromium] › test/browser/sun-experience.spec.mjs:115:1 › the sky, Sun visibility, and moving clouds follow the real solar altitude (2.1s)
+  ✓  104 [chromium] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /solske-pocitnice/ contains complete native selectors at phone, tablet and desktop widths (675ms)
+  ✓  105 [chromium] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths (660ms)
+  ✓  106 [chromium] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records (1.0s)
+  ✓  107 [chromium] › test/browser/timetable-integration.spec.mjs:6:3 › weekly and period modes preserve both saved plans and copy lessons without duplicates on phone (955ms)
+  ✓  109 [chromium] › test/browser/tool-widths.spec.mjs:3:3 › /mesecni-koledar/ keeps all tool controls within six phone, tablet and desktop widths (254ms)
+  ✓  110 [chromium] › test/browser/tool-widths.spec.mjs:3:3 › /tedenski-koledar/ keeps all tool controls within six phone, tablet and desktop widths (275ms)
+  ✓  108 [chromium] › test/browser/timetable-integration.spec.mjs:6:3 › weekly and period modes preserve both saved plans and copy lessons without duplicates on tablet and desktop (953ms)
+  ✓  111 [chromium] › test/browser/tool-widths.spec.mjs:3:3 › /setveni-koledar/ keeps all tool controls within six phone, tablet and desktop widths (412ms)
+  ✓  112 [chromium] › test/browser/tool-widths.spec.mjs:3:3 › /ustvari-koledar/ keeps all tool controls within six phone, tablet and desktop widths (383ms)
+  ✓  114 [chromium] › test/browser/workdays.spec.mjs:50:1 › workdays overview fits narrow mobile and desktop viewports (165ms)
+  ✓  113 [chromium] › test/browser/workdays.spec.mjs:24:1 › schedule controls instantly recalculate month and year totals (305ms)
+  ✓  115 [chromium] › test/browser/workdays.spec.mjs:78:1 › workday calculator handles both modes, shares settings, and fits mobile (752ms)
+  ✓  116 [chromium] › test/browser/workdays.spec.mjs:150:1 › exported calculator loads its script and calculates around a Slovenian holiday (1.7s)
+  ✓  117 [chromium] › test/browser/workdays.spec.mjs:214:1 › Slovene result units preserve dual forms and the last two digits (1.4s)
+  ✓  118 [chromium] › test/browser/workdays.spec.mjs:241:1 › annual dashboard explains the actual selected daily hours and resets them (378ms)
+(node:69842) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:69843) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:69843) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:69842) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  119 [webkit] › test/browser/astronomy.spec.mjs:6:1 › full moon year selection changes real rows and UTC ICS without changing the next event (893ms)
+  ✓  120 [webkit] › test/browser/astronomy.spec.mjs:26:1 › eclipse controls distinguish a visible interval from a maximum below the horizon (905ms)
+  ✓  121 [webkit] › test/browser/astronomy.spec.mjs:42:1 › Perseids compare night and moon conditions with a calendar export and no invented exact peak (402ms)
+  ✓  122 [webkit] › test/browser/astronomy.spec.mjs:54:1 › astronomy pages fit a narrow phone and use the legible mobile illustration (809ms)
+  ✓  124 [webkit] › test/browser/calendar-directory.spec.mjs:11:1 › year and month selection keeps correct destinations and survives reload (622ms)
+  ✓  125 [webkit] › test/browser/calendar-directory.spec.mjs:53:1 › phone view opens one readable year and allows an accessible comparison of all years (773ms)
+  ✓  126 [webkit] › test/browser/calendar-directory.spec.mjs:95:1 › archive and purpose directory remain reachable with keyboard controls (887ms)
+  ✓  127 [webkit] › test/browser/calendar-directory.spec.mjs:110:1 › without JavaScript every year and month is available without page overflow (427ms)
+  ✓  123 [webkit] › test/browser/brand-lockup.spec.mjs:2:1 › one complete, crisp brand appears identically in the header and footer across page families (3.5s)
+  ✓  128 [webkit] › test/browser/calendar-experience.spec.mjs:60:1 › the selected 2026 home period survives the static print flow and an older saved draft (782ms)
+  ✓  130 [webkit] › test/browser/calendar-experience.spec.mjs:130:1 › monthly and annual calendar controls download real editable XLSX workbooks (934ms)
+  ✓  129 [webkit] › test/browser/calendar-experience.spec.mjs:112:1 › an explicit studio period overrides a saved project while retaining its personal content (1.5s)
+  ✓  131 [webkit] › test/browser/calendar-experience.spec.mjs:161:1 › the static weekly hub uses the current Ljubljana date and preserves ISO year boundaries (647ms)
+  ✓  132 [webkit] › test/browser/calendar-experience.spec.mjs:194:1 › exported annual workday dashboards retain their year and recalculate a custom schedule (900ms)
+  ✓  133 [webkit] › test/browser/calendar-gallery.spec.mjs:14:3 › /koledar-za-tiskanje/ has distinct, readable download controls at mobile and desktop sizes (1.0s)
+  ✓  134 [webkit] › test/browser/calendar-gallery.spec.mjs:14:3 › /koledar/2027/januar/ has distinct, readable download controls at mobile and desktop sizes (846ms)
+  ✓  135 [webkit] › test/browser/city-card.spec.mjs:55:1 › clock and weather start without calendar boot and ignore forecast server time (452ms)
+  ✓  136 [webkit] › test/browser/city-card.spec.mjs:71:1 › saved forecast remains visible offline and personal records are preserved (570ms)
+  ✓  137 [webkit] › test/browser/city-card.spec.mjs:87:1 › late response for the old city cannot replace the selected city (1.3s)
+  ✓  138 [webkit] › test/browser/city-card.spec.mjs:106:1 › all weather scenes fit narrow mobile, tablet and desktop and the arrow targets the select (1.1s)
+  ✓  139 [webkit] › test/browser/city-card.spec.mjs:188:1 › clock catches up after a suspended page and follows Slovenian daylight saving (476ms)
+  ✓  140 [webkit] › test/browser/city-card.spec.mjs:202:1 › obsolete saved forecast is rejected and reduced motion disables scene animation (567ms)
+  ✓  142 [webkit] › test/browser/city-card.spec.mjs:241:1 › city changes preserve the complete previous card until the new city can replace it atomically (514ms)
+  ✓  143 [webkit] › test/browser/city-card.spec.mjs:270:1 › returning to a visited city uses its fresh forecast without a network wait or an empty card (458ms)
+  ✓  141 [webkit] › test/browser/city-card.spec.mjs:224:1 › home hydration preserves the live card and selected city (1.3s)
+  ✓  144 [webkit] › test/browser/city-card.spec.mjs:291:1 › a failed city request retains the correctly labelled weather and restores the selector (474ms)
+  ✓  145 [webkit] › test/browser/city-card.spec.mjs:305:1 › night symbols follow the provider and cached forecasts advance to the current hourly interval (484ms)
+  ✓  146 [webkit] › test/browser/city-card.spec.mjs:332:1 › first visit automatically selects the IP-detected Slovenian city without persisting it (439ms)
+  ✓  147 [webkit] › test/browser/city-card.spec.mjs:348:1 › an explicitly saved city takes priority over the detected network location (420ms)
+  ✓  148 [webkit] › test/browser/city-card.spec.mjs:374:1 › a manual city choice made during IP detection cannot be overwritten by the late response (470ms)
+  ✓  149 [webkit] › test/browser/city-card.spec.mjs:404:1 › unavailable IP location keeps the safe default and lets the visitor choose (448ms)
+  ✓  150 [webkit] › test/browser/consent-bar.spec.mjs:2:1 › cookie consent appears before the main script and stays within a usable mobile bottom panel (586ms)
+  ✓  151 [webkit] › test/browser/content-navigation.spec.mjs:2:1 › month links survive interactive important-day filtering and fit a narrow phone (493ms)
+  ✓  153 [webkit] › test/browser/content-navigation.spec.mjs:59:1 › legacy school URLs preserve their selected level and open the consolidated section (495ms)
+  ✓  152 [webkit] › test/browser/content-navigation.spec.mjs:37:1 › school shortcuts retain real targets after changing education level and saved filters (724ms)
+  ✓  155 [webkit] › test/browser/control-consistency.spec.mjs:104:1 › paired student, calendar and gallery controls keep matching box sizes (830ms)
+  -  156 [webkit] › test/browser/control-consistency.spec.mjs:160:1 › every published sitemap page fits a phone and keeps standard controls usable
+  ✓  157 [webkit] › test/browser/education.spec.mjs:52:1 › school filters keep grade and region dates distinct in the annual view, ICS and print (947ms)
+  ✓  158 [webkit] › test/browser/education.spec.mjs:88:1 › matura subjects and exam types preserve different result dates and export only selected events (743ms)
+  ✓  154 [webkit] › test/browser/control-consistency.spec.mjs:17:1 › shared controls have consistent, usable dimensions across site page families (3.2s)
+  ✓  159 [webkit] › test/browser/education.spec.mjs:115:1 › NPZ grade pages and university filters keep their scopes on a narrow phone (702ms)
+  ✓  161 [webkit] › test/browser/education.spec.mjs:231:1 › timetable JSON restore requires a choice and rejects invalid backups without losing the plan (942ms)
+  ✓  160 [webkit] › test/browser/education.spec.mjs:148:1 › school timetable keeps edits, conflicts, recurrence and real exports after a reload (1.4s)
+  ✓  162 [webkit] › test/browser/form-scroll-stability.spec.mjs:32:1 › weekly lesson save stays under the pointer after focusing a time field (733ms)
+  ✓  163 [webkit] › test/browser/form-scroll-stability.spec.mjs:48:1 › workday calculation stays under the pointer after focusing a date field (3.0s)
+  ✓  165 [webkit] › test/browser/garden-payments.spec.mjs:12:1 › garden filter and private plan support real edit, persistence, backup and ICS (6.5s)
+  ✓  164 [webkit] › test/browser/gallery-preview-loading.spec.mjs:2:1 › opening a gallery keeps honest layout samples and renders a personal preview only on request (9.1s)
+  ✓  166 [webkit] › test/browser/garden-payments.spec.mjs:62:1 › pensions use the December 29 official exception and export the filtered date (670ms)
+  ✓  167 [webkit] › test/browser/garden-payments.spec.mjs:79:1 › payment coverage ends honestly and preserves the single January carry-over (447ms)
+  ✓  168 [webkit] › test/browser/garden-payments.spec.mjs:92:1 › new source-led tools and methodology fit a 320px phone with one main heading (655ms)
+  ✓  170 [webkit] › test/browser/holiday-directory-layout.spec.mjs:2:1 › the holiday directory keeps its complete heading and year choices inside narrow screens (870ms)
+  ✓  171 [webkit] › test/browser/mobile-control-layout.spec.mjs:18:1 › mobile garden actions and native date fields fit their rows before and after entry (815ms)
+  ✓  172 [webkit] › test/browser/mobile-control-layout.spec.mjs:49:1 › mobile school weekday tabs remain readable and expose full accessible names (600ms)
+  ✓  173 [webkit] › test/browser/mobile-control-layout.spec.mjs:67:1 › studio download and template names fit the narrowest phone (332ms)
+  ✓  174 [webkit] › test/browser/mobile-control-layout.spec.mjs:81:1 › expanded shift entry fields keep their own rows on phones (465ms)
+  ✓  175 [webkit] › test/browser/mobile-control-layout.spec.mjs:96:1 › shift preview remains inside the phone workspace (524ms)
+  ✓  176 [webkit] › test/browser/mobile-svg-visibility.spec.mjs:3:1 › branded SVG icons and real imagery stay colorful and visible in every major page family (1.5s)
+  ✓  169 [webkit] › test/browser/garden-photos.spec.mjs:7:1 › all sixteen vegetables have sharp self-contained licensed SVG photographs and working details (6.0s)
+  ✓  178 [webkit] › test/browser/mobile-table-calendar.spec.mjs:62:1 › calendar markers stay inside their days and full event names follow filters (608ms)
+  ✓  179 [webkit] › test/browser/mobile-table-calendar.spec.mjs:136:1 › desktop event text and printed tables retain their full layout (428ms)
+  ✓  180 [webkit] › test/browser/mobile-table-calendar.spec.mjs:160:1 › without JavaScript the full table remains horizontally readable (411ms)
+  ✓  181 [webkit] › test/browser/mobile-table-calendar.spec.mjs:185:1 › eclipse status labels stay inside their cells with enlarged text (336ms)
+  ✓  177 [webkit] › test/browser/mobile-table-calendar.spec.mjs:11:1 › mobile records keep full-width dates and names across table families and filtered results (3.7s)
+  ✓  182 [webkit] › test/browser/personal-button-grid.spec.mjs:4:1 › personal calendar action borders align and fit across home views and screen widths (2.4s)
+  ✓  183 [webkit] › test/browser/personal-button-grid.spec.mjs:67:1 › backup and restore action borders align on the other planner pages (1.4s)
+  -  185 [webkit] › test/browser/print-layout.spec.mjs:89:1 › each published monthly calendar prints on one A4 page
+  ✓  186 [webkit] › test/browser/print-layout.spec.mjs:124:1 › school print keeps its calendar section together and removes its interactive month picker (514ms)
+  ✓  187 [webkit] › test/browser/responsive-layout.spec.mjs:2:1 › holiday heading fits while its web font is unavailable (309ms)
+  ✓  188 [webkit] › test/browser/responsive-layout.spec.mjs:16:1 › shared navigation and cookie bar stay inside narrow screens across page families (811ms)
+  ✓  189 [webkit] › test/browser/responsive-layout.spec.mjs:58:1 › holiday directory remains readable with a wider fallback font on a small screen (301ms)
+  ✓  190 [webkit] › test/browser/ruby-runtime-recovery.spec.mjs:2:1 › workday calculation survives a trapped Ruby VM and uses a fresh real engine (4.1s)
+  ✓  191 [webkit] › test/browser/seo-interactions.spec.mjs:3:1 › date calculator tabs preserve calculations and submit only active fields (3.9s)
+  ✓  192 [webkit] › test/browser/seo-interactions.spec.mjs:52:1 › school hero uses responsive previews and retains original attribution (533ms)
+  ✓  193 [webkit] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on / (695ms)
+  ✓  194 [webkit] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /solske-pocitnice/ (754ms)
+  ✓  195 [webkit] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /horoskop/ (597ms)
+  ✓  196 [webkit] › test/browser/shift-planner.spec.mjs:24:1 › fixed shift type initializes its preview and backup without a selector (457ms)
+  ✓  197 [webkit] › test/browser/shift-planner.spec.mjs:34:1 › shift period query preserves the fixed type and generated shifts export to JSON and ICS (3.1s)
+  ✓  198 [webkit] › test/browser/shift-preview-mobile.spec.mjs:2:1 › shift status and four statistics fit without clipping at accessible phone text sizes (773ms)
+  ✓  199 [webkit] › test/browser/shift-schedule.spec.mjs:2:1 › shift entries can be saved, edited and restored after reload (826ms)
+  ✓  200 [webkit] › test/browser/site-navigation.spec.mjs:4:1 › navigation vector assets and every referenced symbol resolve in the publication (513ms)
+  ✓  201 [webkit] › test/browser/site-navigation.spec.mjs:19:1 › all shared navigation controls fit without clipped links or intersecting borders (3.7s)
+  ✓  202 [webkit] › test/browser/site-navigation.spec.mjs:85:1 › homepage header uses the open desktop space for the live next-day-off shortcut (696ms)
+  ✓  203 [webkit] › test/browser/site-navigation.spec.mjs:143:1 › tools disclosure supports keyboard, close button, outside clicks, scrolling and real destinations (2.1s)
+  ✓  204 [webkit] › test/browser/site-navigation.spec.mjs:186:1 › the native tools disclosure remains usable when JavaScript is unavailable (578ms)
+  ✓  184 [webkit] › test/browser/print-layout.spec.mjs:38:1 › all printable routes load the shared print stylesheet and omit interactive chrome (26.5s)
+  ✓  205 [webkit] › test/browser/site-search.spec.mjs:2:1 › Escape keeps search text and does not reopen suggestions through native search clearing (858ms)
+  ✓  206 [webkit] › test/browser/site-search.spec.mjs:16:1 › leaving search cancels delayed suggestions so they cannot cover the tools menu (733ms)
+  ✓  208 [webkit] › test/browser/site-search.spec.mjs:78:1 › search dropdown fits a narrow phone and date suggestions open the right calendar day (584ms)
+  ✓  207 [webkit] › test/browser/site-search.spec.mjs:43:1 › site search suggests relevant pages, handles keyboard use, and opens full results (831ms)
+  ✓  209 [webkit] › test/browser/site-search.spec.mjs:108:1 › Escape keeps suggestions closed when a delayed search response arrives (615ms)
+  ✓  210 [webkit] › test/browser/student-timetable.spec.mjs:28:1 › student timetable works on mobile, persists locally, and exports a valid Ljubljana-time ICS (1.3s)
+  ✓  211 [webkit] › test/browser/student-timetable.spec.mjs:122:1 › student print view includes the saved weekly schedule and all obligations, while hiding controls and gallery (863ms)
+  ✓  212 [webkit] › test/browser/student-timetable.spec.mjs:179:1 › week date field and template button align on desktop and fit on mobile (355ms)
+  ✓  213 [webkit] › test/browser/student-timetable.spec.mjs:230:1 › student print gallery stays full width and the WebP action remains reachable on desktop and mobile (425ms)
+  -  214 [webkit] › test/browser/student-webp-export.spec.mjs:2:1 › student planner WebP export produces an image in browsers without native Map.getOrInsertComputed
+  ✓  216 [webkit] › test/browser/sun-experience.spec.mjs:36:1 › the city list is searchable without accents and the layout fits a phone (519ms)
+  ✓  217 [webkit] › test/browser/sun-experience.spec.mjs:59:1 › all 69 city cards show their own embedded photo and linked photo credits (537ms)
+  ✓  215 [webkit] › test/browser/sun-experience.spec.mjs:6:1 › sunrise pages cover all official Slovenian cities and respond to city, date and time (1.3s)
+  ✓  218 [webkit] › test/browser/sun-experience.spec.mjs:85:1 › the mobile privacy choice stays a compact, usable bottom ribbon (456ms)
+  ✓  220 [webkit] › test/browser/sun-experience.spec.mjs:144:1 › the animated solar disc shows observed surface detail and warm horizon light (542ms)
+  ✓  221 [webkit] › test/browser/sun-experience.spec.mjs:163:1 › the nearest-city button uses the approved browser position locally (589ms)
+  ✓  222 [webkit] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /solske-pocitnice/ contains complete native selectors at phone, tablet and desktop widths (910ms)
+  ✓  219 [webkit] › test/browser/sun-experience.spec.mjs:115:1 › the sky, Sun visibility, and moving clouds follow the real solar altitude (2.4s)
+  ✓  223 [webkit] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths (858ms)
+  ✓  224 [webkit] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records (1.5s)
+  ✓  225 [webkit] › test/browser/timetable-integration.spec.mjs:6:3 › weekly and period modes preserve both saved plans and copy lessons without duplicates on phone (1.3s)
+  ✓  227 [webkit] › test/browser/tool-widths.spec.mjs:3:3 › /mesecni-koledar/ keeps all tool controls within six phone, tablet and desktop widths (446ms)
+  ✓  226 [webkit] › test/browser/timetable-integration.spec.mjs:6:3 › weekly and period modes preserve both saved plans and copy lessons without duplicates on tablet and desktop (1.3s)
+  ✓  228 [webkit] › test/browser/tool-widths.spec.mjs:3:3 › /tedenski-koledar/ keeps all tool controls within six phone, tablet and desktop widths (429ms)
+  ✓  229 [webkit] › test/browser/tool-widths.spec.mjs:3:3 › /setveni-koledar/ keeps all tool controls within six phone, tablet and desktop widths (592ms)
+  ✓  230 [webkit] › test/browser/tool-widths.spec.mjs:3:3 › /ustvari-koledar/ keeps all tool controls within six phone, tablet and desktop widths (564ms)
+  ✓  231 [webkit] › test/browser/workdays.spec.mjs:24:1 › schedule controls instantly recalculate month and year totals (434ms)
+  ✓  232 [webkit] › test/browser/workdays.spec.mjs:50:1 › workdays overview fits narrow mobile and desktop viewports (286ms)
+  ✓  233 [webkit] › test/browser/workdays.spec.mjs:78:1 › workday calculator handles both modes, shares settings, and fits mobile (853ms)
+  ✓  234 [webkit] › test/browser/workdays.spec.mjs:150:1 › exported calculator loads its script and calculates around a Slovenian holiday (3.2s)
+  ✓  235 [webkit] › test/browser/workdays.spec.mjs:214:1 › Slovene result units preserve dual forms and the last two digits (2.2s)
+(node:70148) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:70148) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  237 [android-chromium] › test/browser/astronomy.spec.mjs:6:1 › full moon year selection changes real rows and UTC ICS without changing the next event (421ms)
+  ✓  238 [android-chromium] › test/browser/astronomy.spec.mjs:26:1 › eclipse controls distinguish a visible interval from a maximum below the horizon (272ms)
+  ✓  239 [android-chromium] › test/browser/astronomy.spec.mjs:42:1 › Perseids compare night and moon conditions with a calendar export and no invented exact peak (227ms)
+  ✓  240 [android-chromium] › test/browser/astronomy.spec.mjs:54:1 › astronomy pages fit a narrow phone and use the legible mobile illustration (532ms)
+  ✓  241 [android-chromium] › test/browser/brand-lockup.spec.mjs:2:1 › one complete, crisp brand appears identically in the header and footer across page families (2.3s)
+  ✓  242 [android-chromium] › test/browser/calendar-directory.spec.mjs:11:1 › year and month selection keeps correct destinations and survives reload (508ms)
+  ✓  243 [android-chromium] › test/browser/calendar-directory.spec.mjs:53:1 › phone view opens one readable year and allows an accessible comparison of all years (505ms)
+  ✓  244 [android-chromium] › test/browser/calendar-directory.spec.mjs:95:1 › archive and purpose directory remain reachable with keyboard controls (365ms)
+  ✓  245 [android-chromium] › test/browser/calendar-directory.spec.mjs:110:1 › without JavaScript every year and month is available without page overflow (247ms)
+  ✓  246 [android-chromium] › test/browser/calendar-experience.spec.mjs:60:1 › the selected 2026 home period survives the static print flow and an older saved draft (477ms)
+  ✓  247 [android-chromium] › test/browser/calendar-experience.spec.mjs:112:1 › an explicit studio period overrides a saved project while retaining its personal content (1.3s)
+  ✓  248 [android-chromium] › test/browser/calendar-experience.spec.mjs:130:1 › monthly and annual calendar controls download real editable XLSX workbooks (475ms)
+  ✓  249 [android-chromium] › test/browser/calendar-experience.spec.mjs:161:1 › the static weekly hub uses the current Ljubljana date and preserves ISO year boundaries (375ms)
+  ✓  250 [android-chromium] › test/browser/calendar-experience.spec.mjs:194:1 › exported annual workday dashboards retain their year and recalculate a custom schedule (557ms)
+  ✓  251 [android-chromium] › test/browser/calendar-gallery.spec.mjs:14:3 › /koledar-za-tiskanje/ has distinct, readable download controls at mobile and desktop sizes (764ms)
+  ✘  236 [webkit] › test/browser/workdays.spec.mjs:241:1 › annual dashboard explains the actual selected daily hours and resets them (10.5s)
+(node:70169) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:70169) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  252 [android-chromium] › test/browser/calendar-gallery.spec.mjs:14:3 › /koledar/2027/januar/ has distinct, readable download controls at mobile and desktop sizes (794ms)
+  ✓  253 [android-chromium] › test/browser/city-card.spec.mjs:71:1 › saved forecast remains visible offline and personal records are preserved (358ms)
+  ✓  254 [android-chromium] › test/browser/city-card.spec.mjs:55:1 › clock and weather start without calendar boot and ignore forecast server time (341ms)
+  ✓  255 [android-chromium] › test/browser/city-card.spec.mjs:87:1 › late response for the old city cannot replace the selected city (1.1s)
+  ✓  257 [android-chromium] › test/browser/city-card.spec.mjs:188:1 › clock catches up after a suspended page and follows Slovenian daylight saving (329ms)
+  ✓  256 [android-chromium] › test/browser/city-card.spec.mjs:106:1 › all weather scenes fit narrow mobile, tablet and desktop and the arrow targets the select (1.6s)
+  ✓  258 [android-chromium] › test/browser/city-card.spec.mjs:202:1 › obsolete saved forecast is rejected and reduced motion disables scene animation (391ms)
+  ✓  260 [android-chromium] › test/browser/city-card.spec.mjs:241:1 › city changes preserve the complete previous card until the new city can replace it atomically (341ms)
+  ✓  261 [android-chromium] › test/browser/city-card.spec.mjs:270:1 › returning to a visited city uses its fresh forecast without a network wait or an empty card (398ms)
+  ✓  259 [android-chromium] › test/browser/city-card.spec.mjs:224:1 › home hydration preserves the live card and selected city (1.2s)
+  ✓  262 [android-chromium] › test/browser/city-card.spec.mjs:291:1 › a failed city request retains the correctly labelled weather and restores the selector (315ms)
+  ✓  263 [android-chromium] › test/browser/city-card.spec.mjs:305:1 › night symbols follow the provider and cached forecasts advance to the current hourly interval (312ms)
+  ✓  264 [android-chromium] › test/browser/city-card.spec.mjs:332:1 › first visit automatically selects the IP-detected Slovenian city without persisting it (340ms)
+  ✓  265 [android-chromium] › test/browser/city-card.spec.mjs:348:1 › an explicitly saved city takes priority over the detected network location (291ms)
+  ✓  266 [android-chromium] › test/browser/city-card.spec.mjs:374:1 › a manual city choice made during IP detection cannot be overwritten by the late response (329ms)
+  ✓  267 [android-chromium] › test/browser/city-card.spec.mjs:404:1 › unavailable IP location keeps the safe default and lets the visitor choose (331ms)
+  ✓  268 [android-chromium] › test/browser/consent-bar.spec.mjs:2:1 › cookie consent appears before the main script and stays within a usable mobile bottom panel (407ms)
+  ✓  269 [android-chromium] › test/browser/content-navigation.spec.mjs:2:1 › month links survive interactive important-day filtering and fit a narrow phone (429ms)
+  ✓  270 [android-chromium] › test/browser/content-navigation.spec.mjs:37:1 › school shortcuts retain real targets after changing education level and saved filters (515ms)
+  ✓  271 [android-chromium] › test/browser/content-navigation.spec.mjs:59:1 › legacy school URLs preserve their selected level and open the consolidated section (365ms)
+  ✓  273 [android-chromium] › test/browser/control-consistency.spec.mjs:104:1 › paired student, calendar and gallery controls keep matching box sizes (757ms)
+  -  274 [android-chromium] › test/browser/control-consistency.spec.mjs:160:1 › every published sitemap page fits a phone and keeps standard controls usable
+  ✓  275 [android-chromium] › test/browser/education.spec.mjs:52:1 › school filters keep grade and region dates distinct in the annual view, ICS and print (627ms)
+  ✓  272 [android-chromium] › test/browser/control-consistency.spec.mjs:17:1 › shared controls have consistent, usable dimensions across site page families (2.1s)
+  ✓  276 [android-chromium] › test/browser/education.spec.mjs:88:1 › matura subjects and exam types preserve different result dates and export only selected events (511ms)
+  ✓  278 [android-chromium] › test/browser/education.spec.mjs:115:1 › NPZ grade pages and university filters keep their scopes on a narrow phone (481ms)
+  ✓  277 [android-chromium] › test/browser/education.spec.mjs:148:1 › school timetable keeps edits, conflicts, recurrence and real exports after a reload (1.0s)
+  ✓  279 [android-chromium] › test/browser/education.spec.mjs:231:1 › timetable JSON restore requires a choice and rejects invalid backups without losing the plan (603ms)
+  ✓  280 [android-chromium] › test/browser/form-scroll-stability.spec.mjs:32:1 › weekly lesson save stays under the pointer after focusing a time field (599ms)
+  ✓  281 [android-chromium] › test/browser/form-scroll-stability.spec.mjs:48:1 › workday calculation stays under the pointer after focusing a date field (1.4s)
+  ✓  283 [android-chromium] › test/browser/garden-payments.spec.mjs:12:1 › garden filter and private plan support real edit, persistence, backup and ICS (827ms)
+  ✓  284 [android-chromium] › test/browser/garden-payments.spec.mjs:62:1 › pensions use the December 29 official exception and export the filtered date (293ms)
+  ✓  285 [android-chromium] › test/browser/garden-payments.spec.mjs:79:1 › payment coverage ends honestly and preserves the single January carry-over (332ms)
+  ✓  286 [android-chromium] › test/browser/garden-payments.spec.mjs:92:1 › new source-led tools and methodology fit a 320px phone with one main heading (431ms)
+  ✓  282 [android-chromium] › test/browser/gallery-preview-loading.spec.mjs:2:1 › opening a gallery keeps honest layout samples and renders a personal preview only on request (3.1s)
+  ✓  288 [android-chromium] › test/browser/holiday-directory-layout.spec.mjs:2:1 › the holiday directory keeps its complete heading and year choices inside narrow screens (739ms)
+  ✓  289 [android-chromium] › test/browser/mobile-control-layout.spec.mjs:18:1 › mobile garden actions and native date fields fit their rows before and after entry (669ms)
+  ✓  290 [android-chromium] › test/browser/mobile-control-layout.spec.mjs:49:1 › mobile school weekday tabs remain readable and expose full accessible names (455ms)
+  ✓  291 [android-chromium] › test/browser/mobile-control-layout.spec.mjs:67:1 › studio download and template names fit the narrowest phone (250ms)
+  ✓  292 [android-chromium] › test/browser/mobile-control-layout.spec.mjs:81:1 › expanded shift entry fields keep their own rows on phones (474ms)
+  ✓  293 [android-chromium] › test/browser/mobile-control-layout.spec.mjs:96:1 › shift preview remains inside the phone workspace (593ms)
+  ✓  287 [android-chromium] › test/browser/garden-photos.spec.mjs:7:1 › all sixteen vegetables have sharp self-contained licensed SVG photographs and working details (3.9s)
+  ✓  294 [android-chromium] › test/browser/mobile-svg-visibility.spec.mjs:3:1 › branded SVG icons and real imagery stay colorful and visible in every major page family (847ms)
+  ✓  296 [android-chromium] › test/browser/mobile-table-calendar.spec.mjs:62:1 › calendar markers stay inside their days and full event names follow filters (425ms)
+  ✓  297 [android-chromium] › test/browser/mobile-table-calendar.spec.mjs:136:1 › desktop event text and printed tables retain their full layout (359ms)
+  ✓  298 [android-chromium] › test/browser/mobile-table-calendar.spec.mjs:160:1 › without JavaScript the full table remains horizontally readable (303ms)
+  ✓  299 [android-chromium] › test/browser/mobile-table-calendar.spec.mjs:185:1 › eclipse status labels stay inside their cells with enlarged text (190ms)
+  ✓  295 [android-chromium] › test/browser/mobile-table-calendar.spec.mjs:11:1 › mobile records keep full-width dates and names across table families and filtered results (2.5s)
+  ✓  301 [android-chromium] › test/browser/personal-button-grid.spec.mjs:67:1 › backup and restore action borders align on the other planner pages (1.3s)
+  ✓  300 [android-chromium] › test/browser/personal-button-grid.spec.mjs:4:1 › personal calendar action borders align and fit across home views and screen widths (2.1s)
+  -  303 [android-chromium] › test/browser/print-layout.spec.mjs:89:1 › each published monthly calendar prints on one A4 page
+  ✓  304 [android-chromium] › test/browser/print-layout.spec.mjs:124:1 › school print keeps its calendar section together and removes its interactive month picker (323ms)
+  ✓  305 [android-chromium] › test/browser/responsive-layout.spec.mjs:2:1 › holiday heading fits while its web font is unavailable (222ms)
+  ✓  306 [android-chromium] › test/browser/responsive-layout.spec.mjs:16:1 › shared navigation and cookie bar stay inside narrow screens across page families (591ms)
+  ✓  307 [android-chromium] › test/browser/responsive-layout.spec.mjs:58:1 › holiday directory remains readable with a wider fallback font on a small screen (261ms)
+  ✓  308 [android-chromium] › test/browser/ruby-runtime-recovery.spec.mjs:2:1 › workday calculation survives a trapped Ruby VM and uses a fresh real engine (2.8s)
+  ✓  309 [android-chromium] › test/browser/seo-interactions.spec.mjs:3:1 › date calculator tabs preserve calculations and submit only active fields (2.4s)
+  ✓  310 [android-chromium] › test/browser/seo-interactions.spec.mjs:52:1 › school hero uses responsive previews and retains original attribution (322ms)
+  ✓  311 [android-chromium] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on / (468ms)
+  ✓  312 [android-chromium] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /solske-pocitnice/ (472ms)
+  ✓  313 [android-chromium] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /horoskop/ (445ms)
+  ✓  314 [android-chromium] › test/browser/shift-planner.spec.mjs:24:1 › fixed shift type initializes its preview and backup without a selector (330ms)
+  ✓  315 [android-chromium] › test/browser/shift-planner.spec.mjs:34:1 › shift period query preserves the fixed type and generated shifts export to JSON and ICS (1.4s)
+  ✓  316 [android-chromium] › test/browser/shift-preview-mobile.spec.mjs:2:1 › shift status and four statistics fit without clipping at accessible phone text sizes (766ms)
+  ✓  317 [android-chromium] › test/browser/shift-schedule.spec.mjs:2:1 › shift entries can be saved, edited and restored after reload (556ms)
+  ✓  318 [android-chromium] › test/browser/site-navigation.spec.mjs:4:1 › navigation vector assets and every referenced symbol resolve in the publication (355ms)
+  ✓  302 [android-chromium] › test/browser/print-layout.spec.mjs:38:1 › all printable routes load the shared print stylesheet and omit interactive chrome (14.0s)
+  ✓  320 [android-chromium] › test/browser/site-navigation.spec.mjs:85:1 › homepage header uses the open desktop space for the live next-day-off shortcut (898ms)
+  ✓  319 [android-chromium] › test/browser/site-navigation.spec.mjs:19:1 › all shared navigation controls fit without clipped links or intersecting borders (3.3s)
+  ✓  322 [android-chromium] › test/browser/site-navigation.spec.mjs:186:1 › the native tools disclosure remains usable when JavaScript is unavailable (471ms)
+  ✓  321 [android-chromium] › test/browser/site-navigation.spec.mjs:143:1 › tools disclosure supports keyboard, close button, outside clicks, scrolling and real destinations (1.5s)
+  ✓  323 [android-chromium] › test/browser/site-search.spec.mjs:2:1 › Escape keeps search text and does not reopen suggestions through native search clearing (696ms)
+  ✓  324 [android-chromium] › test/browser/site-search.spec.mjs:16:1 › leaving search cancels delayed suggestions so they cannot cover the tools menu (574ms)
+  ✓  325 [android-chromium] › test/browser/site-search.spec.mjs:43:1 › site search suggests relevant pages, handles keyboard use, and opens full results (880ms)
+  ✓  326 [android-chromium] › test/browser/site-search.spec.mjs:78:1 › search dropdown fits a narrow phone and date suggestions open the right calendar day (493ms)
+  ✓  327 [android-chromium] › test/browser/site-search.spec.mjs:108:1 › Escape keeps suggestions closed when a delayed search response arrives (425ms)
+  ✓  329 [android-chromium] › test/browser/student-timetable.spec.mjs:122:1 › student print view includes the saved weekly schedule and all obligations, while hiding controls and gallery (638ms)
+  ✓  328 [android-chromium] › test/browser/student-timetable.spec.mjs:28:1 › student timetable works on mobile, persists locally, and exports a valid Ljubljana-time ICS (989ms)
+  ✓  330 [android-chromium] › test/browser/student-timetable.spec.mjs:179:1 › week date field and template button align on desktop and fit on mobile (277ms)
+  ✓  331 [android-chromium] › test/browser/student-timetable.spec.mjs:230:1 › student print gallery stays full width and the WebP action remains reachable on desktop and mobile (349ms)
+  ✓  333 [android-chromium] › test/browser/sun-experience.spec.mjs:6:1 › sunrise pages cover all official Slovenian cities and respond to city, date and time (988ms)
+  ✓  334 [android-chromium] › test/browser/sun-experience.spec.mjs:36:1 › the city list is searchable without accents and the layout fits a phone (374ms)
+  ✓  335 [android-chromium] › test/browser/sun-experience.spec.mjs:59:1 › all 69 city cards show their own embedded photo and linked photo credits (336ms)
+  ✓  336 [android-chromium] › test/browser/sun-experience.spec.mjs:85:1 › the mobile privacy choice stays a compact, usable bottom ribbon (496ms)
+  ✓  332 [android-chromium] › test/browser/student-webp-export.spec.mjs:2:1 › student planner WebP export produces an image in browsers without native Map.getOrInsertComputed (3.6s)
+  ✓  338 [android-chromium] › test/browser/sun-experience.spec.mjs:144:1 › the animated solar disc shows observed surface detail and warm horizon light (429ms)
+  ✓  337 [android-chromium] › test/browser/sun-experience.spec.mjs:115:1 › the sky, Sun visibility, and moving clouds follow the real solar altitude (2.2s)
+  ✓  339 [android-chromium] › test/browser/sun-experience.spec.mjs:163:1 › the nearest-city button uses the approved browser position locally (449ms)
+  ✓  340 [android-chromium] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths (792ms)
+  ✓  341 [android-chromium] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /solske-pocitnice/ contains complete native selectors at phone, tablet and desktop widths (1.0s)
+  ✓  342 [android-chromium] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records (1.1s)
+  ✓  343 [android-chromium] › test/browser/timetable-integration.spec.mjs:6:3 › weekly and period modes preserve both saved plans and copy lessons without duplicates on phone (957ms)
+  ✓  345 [android-chromium] › test/browser/tool-widths.spec.mjs:3:3 › /mesecni-koledar/ keeps all tool controls within six phone, tablet and desktop widths (400ms)
+  ✓  346 [android-chromium] › test/browser/tool-widths.spec.mjs:3:3 › /tedenski-koledar/ keeps all tool controls within six phone, tablet and desktop widths (386ms)
+  ✓  344 [android-chromium] › test/browser/timetable-integration.spec.mjs:6:3 › weekly and period modes preserve both saved plans and copy lessons without duplicates on tablet and desktop (1.1s)
+  ✓  347 [android-chromium] › test/browser/tool-widths.spec.mjs:3:3 › /setveni-koledar/ keeps all tool controls within six phone, tablet and desktop widths (753ms)
+  ✓  348 [android-chromium] › test/browser/tool-widths.spec.mjs:3:3 › /ustvari-koledar/ keeps all tool controls within six phone, tablet and desktop widths (548ms)
+  ✓  349 [android-chromium] › test/browser/workdays.spec.mjs:24:1 › schedule controls instantly recalculate month and year totals (315ms)
+  ✓  350 [android-chromium] › test/browser/workdays.spec.mjs:50:1 › workdays overview fits narrow mobile and desktop viewports (475ms)
+  ✓  351 [android-chromium] › test/browser/workdays.spec.mjs:78:1 › workday calculator handles both modes, shares settings, and fits mobile (1.0s)
+  ✓  352 [android-chromium] › test/browser/workdays.spec.mjs:150:1 › exported calculator loads its script and calculates around a Slovenian holiday (1.3s)
+  ✓  354 [android-chromium] › test/browser/workdays.spec.mjs:241:1 › annual dashboard explains the actual selected daily hours and resets them (320ms)
+(node:70304) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:70304) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  353 [android-chromium] › test/browser/workdays.spec.mjs:214:1 › Slovene result units preserve dual forms and the last two digits (1.5s)
+(node:70316) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:70316) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  355 [iphone-webkit] › test/browser/astronomy.spec.mjs:6:1 › full moon year selection changes real rows and UTC ICS without changing the next event (814ms)
+  ✓  357 [iphone-webkit] › test/browser/astronomy.spec.mjs:42:1 › Perseids compare night and moon conditions with a calendar export and no invented exact peak (407ms)
+  ✓  356 [iphone-webkit] › test/browser/astronomy.spec.mjs:26:1 › eclipse controls distinguish a visible interval from a maximum below the horizon (602ms)
+  ✓  358 [iphone-webkit] › test/browser/astronomy.spec.mjs:54:1 › astronomy pages fit a narrow phone and use the legible mobile illustration (835ms)
+  ✓  360 [iphone-webkit] › test/browser/calendar-directory.spec.mjs:11:1 › year and month selection keeps correct destinations and survives reload (726ms)
+  ✓  361 [iphone-webkit] › test/browser/calendar-directory.spec.mjs:53:1 › phone view opens one readable year and allows an accessible comparison of all years (800ms)
+  ✓  362 [iphone-webkit] › test/browser/calendar-directory.spec.mjs:95:1 › archive and purpose directory remain reachable with keyboard controls (836ms)
+  ✓  363 [iphone-webkit] › test/browser/calendar-directory.spec.mjs:110:1 › without JavaScript every year and month is available without page overflow (443ms)
+  ✓  359 [iphone-webkit] › test/browser/brand-lockup.spec.mjs:2:1 › one complete, crisp brand appears identically in the header and footer across page families (3.7s)
+  ✓  364 [iphone-webkit] › test/browser/calendar-experience.spec.mjs:60:1 › the selected 2026 home period survives the static print flow and an older saved draft (585ms)
+  ✓  366 [iphone-webkit] › test/browser/calendar-experience.spec.mjs:130:1 › monthly and annual calendar controls download real editable XLSX workbooks (806ms)
+  ✓  365 [iphone-webkit] › test/browser/calendar-experience.spec.mjs:112:1 › an explicit studio period overrides a saved project while retaining its personal content (1.5s)
+  ✓  367 [iphone-webkit] › test/browser/calendar-experience.spec.mjs:161:1 › the static weekly hub uses the current Ljubljana date and preserves ISO year boundaries (623ms)
+  ✓  368 [iphone-webkit] › test/browser/calendar-experience.spec.mjs:194:1 › exported annual workday dashboards retain their year and recalculate a custom schedule (892ms)
+  ✓  369 [iphone-webkit] › test/browser/calendar-gallery.spec.mjs:14:3 › /koledar-za-tiskanje/ has distinct, readable download controls at mobile and desktop sizes (1.2s)
+  ✓  370 [iphone-webkit] › test/browser/calendar-gallery.spec.mjs:14:3 › /koledar/2027/januar/ has distinct, readable download controls at mobile and desktop sizes (995ms)
+  ✓  371 [iphone-webkit] › test/browser/city-card.spec.mjs:55:1 › clock and weather start without calendar boot and ignore forecast server time (405ms)
+  ✓  372 [iphone-webkit] › test/browser/city-card.spec.mjs:71:1 › saved forecast remains visible offline and personal records are preserved (490ms)
+  ✓  373 [iphone-webkit] › test/browser/city-card.spec.mjs:87:1 › late response for the old city cannot replace the selected city (1.2s)
+  ✓  375 [iphone-webkit] › test/browser/city-card.spec.mjs:188:1 › clock catches up after a suspended page and follows Slovenian daylight saving (400ms)
+  ✓  374 [iphone-webkit] › test/browser/city-card.spec.mjs:106:1 › all weather scenes fit narrow mobile, tablet and desktop and the arrow targets the select (1.3s)
+  ✓  376 [iphone-webkit] › test/browser/city-card.spec.mjs:202:1 › obsolete saved forecast is rejected and reduced motion disables scene animation (518ms)
+  ✓  378 [iphone-webkit] › test/browser/city-card.spec.mjs:241:1 › city changes preserve the complete previous card until the new city can replace it atomically (463ms)
+  ✓  377 [iphone-webkit] › test/browser/city-card.spec.mjs:224:1 › home hydration preserves the live card and selected city (1.3s)
+  ✓  379 [iphone-webkit] › test/browser/city-card.spec.mjs:270:1 › returning to a visited city uses its fresh forecast without a network wait or an empty card (527ms)
+  ✓  380 [iphone-webkit] › test/browser/city-card.spec.mjs:291:1 › a failed city request retains the correctly labelled weather and restores the selector (421ms)
+  ✓  381 [iphone-webkit] › test/browser/city-card.spec.mjs:305:1 › night symbols follow the provider and cached forecasts advance to the current hourly interval (436ms)
+  ✓  382 [iphone-webkit] › test/browser/city-card.spec.mjs:332:1 › first visit automatically selects the IP-detected Slovenian city without persisting it (377ms)
+  ✓  383 [iphone-webkit] › test/browser/city-card.spec.mjs:348:1 › an explicitly saved city takes priority over the detected network location (368ms)
+  ✓  384 [iphone-webkit] › test/browser/city-card.spec.mjs:374:1 › a manual city choice made during IP detection cannot be overwritten by the late response (406ms)
+  ✓  385 [iphone-webkit] › test/browser/city-card.spec.mjs:404:1 › unavailable IP location keeps the safe default and lets the visitor choose (389ms)
+  ✓  386 [iphone-webkit] › test/browser/consent-bar.spec.mjs:2:1 › cookie consent appears before the main script and stays within a usable mobile bottom panel (668ms)
+  ✓  387 [iphone-webkit] › test/browser/content-navigation.spec.mjs:2:1 › month links survive interactive important-day filtering and fit a narrow phone (542ms)
+  ✓  389 [iphone-webkit] › test/browser/content-navigation.spec.mjs:59:1 › legacy school URLs preserve their selected level and open the consolidated section (448ms)
+  ✓  388 [iphone-webkit] › test/browser/content-navigation.spec.mjs:37:1 › school shortcuts retain real targets after changing education level and saved filters (669ms)
+  ✓  391 [iphone-webkit] › test/browser/control-consistency.spec.mjs:104:1 › paired student, calendar and gallery controls keep matching box sizes (922ms)
+  -  392 [iphone-webkit] › test/browser/control-consistency.spec.mjs:160:1 › every published sitemap page fits a phone and keeps standard controls usable
+  ✓  393 [iphone-webkit] › test/browser/education.spec.mjs:52:1 › school filters keep grade and region dates distinct in the annual view, ICS and print (884ms)
+  ✓  394 [iphone-webkit] › test/browser/education.spec.mjs:88:1 › matura subjects and exam types preserve different result dates and export only selected events (697ms)
+  ✓  390 [iphone-webkit] › test/browser/control-consistency.spec.mjs:17:1 › shared controls have consistent, usable dimensions across site page families (3.3s)
+  ✓  395 [iphone-webkit] › test/browser/education.spec.mjs:115:1 › NPZ grade pages and university filters keep their scopes on a narrow phone (737ms)
+  ✓  397 [iphone-webkit] › test/browser/education.spec.mjs:231:1 › timetable JSON restore requires a choice and rejects invalid backups without losing the plan (902ms)
+  ✓  396 [iphone-webkit] › test/browser/education.spec.mjs:148:1 › school timetable keeps edits, conflicts, recurrence and real exports after a reload (1.3s)
+  ✓  398 [iphone-webkit] › test/browser/form-scroll-stability.spec.mjs:32:1 › weekly lesson save stays under the pointer after focusing a time field (766ms)
+  ✓  399 [iphone-webkit] › test/browser/form-scroll-stability.spec.mjs:48:1 › workday calculation stays under the pointer after focusing a date field (3.4s)
+  ✓  400 [iphone-webkit] › test/browser/gallery-preview-loading.spec.mjs:2:1 › opening a gallery keeps honest layout samples and renders a personal preview only on request (9.7s)
+  ✓  401 [iphone-webkit] › test/browser/garden-payments.spec.mjs:12:1 › garden filter and private plan support real edit, persistence, backup and ICS (6.9s)
+  ✓  402 [iphone-webkit] › test/browser/garden-payments.spec.mjs:62:1 › pensions use the December 29 official exception and export the filtered date (545ms)
+  ✓  403 [iphone-webkit] › test/browser/garden-payments.spec.mjs:79:1 › payment coverage ends honestly and preserves the single January carry-over (493ms)
+  ✓  404 [iphone-webkit] › test/browser/garden-payments.spec.mjs:92:1 › new source-led tools and methodology fit a 320px phone with one main heading (666ms)
+  ✓  406 [iphone-webkit] › test/browser/holiday-directory-layout.spec.mjs:2:1 › the holiday directory keeps its complete heading and year choices inside narrow screens (950ms)
+  ✓  407 [iphone-webkit] › test/browser/mobile-control-layout.spec.mjs:18:1 › mobile garden actions and native date fields fit their rows before and after entry (871ms)
+  ✓  408 [iphone-webkit] › test/browser/mobile-control-layout.spec.mjs:49:1 › mobile school weekday tabs remain readable and expose full accessible names (631ms)
+  ✓  409 [iphone-webkit] › test/browser/mobile-control-layout.spec.mjs:67:1 › studio download and template names fit the narrowest phone (370ms)
+  ✓  410 [iphone-webkit] › test/browser/mobile-control-layout.spec.mjs:81:1 › expanded shift entry fields keep their own rows on phones (574ms)
+  ✓  411 [iphone-webkit] › test/browser/mobile-control-layout.spec.mjs:96:1 › shift preview remains inside the phone workspace (622ms)
+  ✓  405 [iphone-webkit] › test/browser/garden-photos.spec.mjs:7:1 › all sixteen vegetables have sharp self-contained licensed SVG photographs and working details (5.9s)
+  ✓  412 [iphone-webkit] › test/browser/mobile-svg-visibility.spec.mjs:3:1 › branded SVG icons and real imagery stay colorful and visible in every major page family (1.4s)
+  ✓  414 [iphone-webkit] › test/browser/mobile-table-calendar.spec.mjs:62:1 › calendar markers stay inside their days and full event names follow filters (661ms)
+  ✓  415 [iphone-webkit] › test/browser/mobile-table-calendar.spec.mjs:136:1 › desktop event text and printed tables retain their full layout (443ms)
+  ✓  416 [iphone-webkit] › test/browser/mobile-table-calendar.spec.mjs:160:1 › without JavaScript the full table remains horizontally readable (408ms)
+  ✓  417 [iphone-webkit] › test/browser/mobile-table-calendar.spec.mjs:185:1 › eclipse status labels stay inside their cells with enlarged text (350ms)
+  ✓  413 [iphone-webkit] › test/browser/mobile-table-calendar.spec.mjs:11:1 › mobile records keep full-width dates and names across table families and filtered results (3.7s)
+  ✓  418 [iphone-webkit] › test/browser/personal-button-grid.spec.mjs:4:1 › personal calendar action borders align and fit across home views and screen widths (2.7s)
+  ✓  419 [iphone-webkit] › test/browser/personal-button-grid.spec.mjs:67:1 › backup and restore action borders align on the other planner pages (1.5s)
+  -  421 [iphone-webkit] › test/browser/print-layout.spec.mjs:89:1 › each published monthly calendar prints on one A4 page
+  ✓  422 [iphone-webkit] › test/browser/print-layout.spec.mjs:124:1 › school print keeps its calendar section together and removes its interactive month picker (468ms)
+  ✓  423 [iphone-webkit] › test/browser/responsive-layout.spec.mjs:2:1 › holiday heading fits while its web font is unavailable (328ms)
+  ✓  424 [iphone-webkit] › test/browser/responsive-layout.spec.mjs:16:1 › shared navigation and cookie bar stay inside narrow screens across page families (849ms)
+  ✓  425 [iphone-webkit] › test/browser/responsive-layout.spec.mjs:58:1 › holiday directory remains readable with a wider fallback font on a small screen (319ms)
+  ✓  426 [iphone-webkit] › test/browser/ruby-runtime-recovery.spec.mjs:2:1 › workday calculation survives a trapped Ruby VM and uses a fresh real engine (4.7s)
+  ✓  427 [iphone-webkit] › test/browser/seo-interactions.spec.mjs:3:1 › date calculator tabs preserve calculations and submit only active fields (3.6s)
+  ✓  428 [iphone-webkit] › test/browser/seo-interactions.spec.mjs:52:1 › school hero uses responsive previews and retains original attribution (433ms)
+  ✓  429 [iphone-webkit] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on / (595ms)
+  ✓  430 [iphone-webkit] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /solske-pocitnice/ (614ms)
+  ✓  431 [iphone-webkit] › test/browser/seo-interactions.spec.mjs:66:3 › public landmarks and content roles support navigation on /horoskop/ (555ms)
+  ✓  432 [iphone-webkit] › test/browser/shift-planner.spec.mjs:24:1 › fixed shift type initializes its preview and backup without a selector (425ms)
+  ✓  433 [iphone-webkit] › test/browser/shift-planner.spec.mjs:34:1 › shift period query preserves the fixed type and generated shifts export to JSON and ICS (3.2s)
+  ✓  434 [iphone-webkit] › test/browser/shift-preview-mobile.spec.mjs:2:1 › shift status and four statistics fit without clipping at accessible phone text sizes (904ms)
+  ✓  435 [iphone-webkit] › test/browser/shift-schedule.spec.mjs:2:1 › shift entries can be saved, edited and restored after reload (786ms)
+  ✓  436 [iphone-webkit] › test/browser/site-navigation.spec.mjs:4:1 › navigation vector assets and every referenced symbol resolve in the publication (450ms)
+  ✓  437 [iphone-webkit] › test/browser/site-navigation.spec.mjs:19:1 › all shared navigation controls fit without clipped links or intersecting borders (3.8s)
+  ✓  438 [iphone-webkit] › test/browser/site-navigation.spec.mjs:85:1 › homepage header uses the open desktop space for the live next-day-off shortcut (915ms)
+  ✓  420 [iphone-webkit] › test/browser/print-layout.spec.mjs:38:1 › all printable routes load the shared print stylesheet and omit interactive chrome (24.9s)
+  ✓  440 [iphone-webkit] › test/browser/site-navigation.spec.mjs:186:1 › the native tools disclosure remains usable when JavaScript is unavailable (573ms)
+  ✓  439 [iphone-webkit] › test/browser/site-navigation.spec.mjs:143:1 › tools disclosure supports keyboard, close button, outside clicks, scrolling and real destinations (2.1s)
+  ✓  441 [iphone-webkit] › test/browser/site-search.spec.mjs:2:1 › Escape keeps search text and does not reopen suggestions through native search clearing (802ms)
+  ✓  442 [iphone-webkit] › test/browser/site-search.spec.mjs:16:1 › leaving search cancels delayed suggestions so they cannot cover the tools menu (679ms)
+  ✓  444 [iphone-webkit] › test/browser/site-search.spec.mjs:78:1 › search dropdown fits a narrow phone and date suggestions open the right calendar day (683ms)
+  ✓  443 [iphone-webkit] › test/browser/site-search.spec.mjs:43:1 › site search suggests relevant pages, handles keyboard use, and opens full results (983ms)
+  ✓  445 [iphone-webkit] › test/browser/site-search.spec.mjs:108:1 › Escape keeps suggestions closed when a delayed search response arrives (542ms)
+  ✓  446 [iphone-webkit] › test/browser/student-timetable.spec.mjs:28:1 › student timetable works on mobile, persists locally, and exports a valid Ljubljana-time ICS (1.3s)
+  ✓  447 [iphone-webkit] › test/browser/student-timetable.spec.mjs:122:1 › student print view includes the saved weekly schedule and all obligations, while hiding controls and gallery (866ms)
+  ✓  448 [iphone-webkit] › test/browser/student-timetable.spec.mjs:179:1 › week date field and template button align on desktop and fit on mobile (380ms)
+  ✓  449 [iphone-webkit] › test/browser/student-timetable.spec.mjs:230:1 › student print gallery stays full width and the WebP action remains reachable on desktop and mobile (451ms)
+  -  450 [iphone-webkit] › test/browser/student-webp-export.spec.mjs:2:1 › student planner WebP export produces an image in browsers without native Map.getOrInsertComputed
+  ✓  452 [iphone-webkit] › test/browser/sun-experience.spec.mjs:36:1 › the city list is searchable without accents and the layout fits a phone (544ms)
+  ✓  453 [iphone-webkit] › test/browser/sun-experience.spec.mjs:59:1 › all 69 city cards show their own embedded photo and linked photo credits (442ms)
+  ✓  451 [iphone-webkit] › test/browser/sun-experience.spec.mjs:6:1 › sunrise pages cover all official Slovenian cities and respond to city, date and time (1.2s)
+  ✓  454 [iphone-webkit] › test/browser/sun-experience.spec.mjs:85:1 › the mobile privacy choice stays a compact, usable bottom ribbon (499ms)
+  ✓  456 [iphone-webkit] › test/browser/sun-experience.spec.mjs:144:1 › the animated solar disc shows observed surface detail and warm horizon light (450ms)
+  ✓  457 [iphone-webkit] › test/browser/sun-experience.spec.mjs:163:1 › the nearest-city button uses the approved browser position locally (532ms)
+  ✓  458 [iphone-webkit] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /solske-pocitnice/ contains complete native selectors at phone, tablet and desktop widths (954ms)
+  ✓  455 [iphone-webkit] › test/browser/sun-experience.spec.mjs:115:1 › the sky, Sun visibility, and moving clouds follow the real solar altitude (2.3s)
+  ✓  459 [iphone-webkit] › test/browser/tablet-controls-layout.spec.mjs:3:3 › /odstevanje/ contains complete native selectors at phone, tablet and desktop widths (974ms)
+  ✓  460 [iphone-webkit] › test/browser/tablet-controls-layout.spec.mjs:47:1 › wide fallback type keeps astronomy badges and native school filters inside their records (1.5s)
+  ✓  461 [iphone-webkit] › test/browser/timetable-integration.spec.mjs:6:3 › weekly and period modes preserve both saved plans and copy lessons without duplicates on phone (1.3s)
+  ✓  463 [iphone-webkit] › test/browser/tool-widths.spec.mjs:3:3 › /mesecni-koledar/ keeps all tool controls within six phone, tablet and desktop widths (511ms)
+  ✓  462 [iphone-webkit] › test/browser/timetable-integration.spec.mjs:6:3 › weekly and period modes preserve both saved plans and copy lessons without duplicates on tablet and desktop (1.4s)
+  ✓  464 [iphone-webkit] › test/browser/tool-widths.spec.mjs:3:3 › /tedenski-koledar/ keeps all tool controls within six phone, tablet and desktop widths (453ms)
+  ✓  465 [iphone-webkit] › test/browser/tool-widths.spec.mjs:3:3 › /setveni-koledar/ keeps all tool controls within six phone, tablet and desktop widths (674ms)
+  ✓  466 [iphone-webkit] › test/browser/tool-widths.spec.mjs:3:3 › /ustvari-koledar/ keeps all tool controls within six phone, tablet and desktop widths (576ms)
+  ✓  467 [iphone-webkit] › test/browser/workdays.spec.mjs:24:1 › schedule controls instantly recalculate month and year totals (374ms)
+  ✓  468 [iphone-webkit] › test/browser/workdays.spec.mjs:50:1 › workdays overview fits narrow mobile and desktop viewports (426ms)
+  ✓  469 [iphone-webkit] › test/browser/workdays.spec.mjs:78:1 › workday calculator handles both modes, shares settings, and fits mobile (798ms)
+  ✓  471 [iphone-webkit] › test/browser/workdays.spec.mjs:214:1 › Slovene result units preserve dual forms and the last two digits (2.1s)
+  ✓  470 [iphone-webkit] › test/browser/workdays.spec.mjs:150:1 › exported calculator loads its script and calculates around a Slovenian holiday (2.9s)
+  ✘  472 [iphone-webkit] › test/browser/workdays.spec.mjs:241:1 › annual dashboard explains the actual selected daily hours and resets them (10.5s)
+
+
+  1) [webkit] › test/browser/workdays.spec.mjs:241:1 › annual dashboard explains the actual selected daily hours and resets them 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  locator('[data-year-hours]')
+    Expected: [32m"1[7m.[27m875"[39m
+    Received: [31m"1875"[39m
+    Timeout:  10000ms
+
+    Call log:
+    [2m  - Expect "toHaveText" with timeout 10000ms[22m
+    [2m  - waiting for locator('[data-year-hours]')[22m
+    [2m    14 × locator resolved to <span data-year-hours="">1875</span>[22m
+    [2m       - unexpected value "1875"[22m
+
+
+      178 |   await page.locator('[data-workdays-hours]').fill('7.5');
+      179 |   await expect(page.locator('[data-daily-hours-summary]')).toHaveText('Dnevni obseg: 7,5 h');
+    > 180 |   await expect(page.locator('[data-year-hours]')).toHaveText('1.875');
+          |                                                   ^
+      181 |   await page.locator('[data-workdays-reset]').click();
+      182 |   await expect(page.locator('[data-daily-hours-summary]')).toHaveText('Dnevni obseg: 8 h');
+      183 |   await expect(page.locator('[data-year-hours]')).toHaveText('2.000');
+        at /Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-audit/test/browser/workdays.spec.mjs:180:51
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/workdays-annual-dashboard--d3bcf-daily-hours-and-resets-them-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/workdays-annual-dashboard--d3bcf-daily-hours-and-resets-them-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/workdays-annual-dashboard--d3bcf-daily-hours-and-resets-them-webkit/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/workdays-annual-dashboard--d3bcf-daily-hours-and-resets-them-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [iphone-webkit] › test/browser/workdays.spec.mjs:241:1 › annual dashboard explains the actual selected daily hours and resets them 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  locator('[data-year-hours]')
+    Expected: [32m"1[7m.[27m875"[39m
+    Received: [31m"1875"[39m
+    Timeout:  10000ms
+
+    Call log:
+    [2m  - Expect "toHaveText" with timeout 10000ms[22m
+    [2m  - waiting for locator('[data-year-hours]')[22m
+    [2m    14 × locator resolved to <span data-year-hours="">1875</span>[22m
+    [2m       - unexpected value "1875"[22m
+
+
+      178 |   await page.locator('[data-workdays-hours]').fill('7.5');
+      179 |   await expect(page.locator('[data-daily-hours-summary]')).toHaveText('Dnevni obseg: 7,5 h');
+    > 180 |   await expect(page.locator('[data-year-hours]')).toHaveText('1.875');
+          |                                                   ^
+      181 |   await page.locator('[data-workdays-reset]').click();
+      182 |   await expect(page.locator('[data-daily-hours-summary]')).toHaveText('Dnevni obseg: 8 h');
+      183 |   await expect(page.locator('[data-year-hours]')).toHaveText('2.000');
+        at /Users/melihozcan/Documents/Codex/2026-10-20/https-koledar365-si-solske-pocitnice-https-2/work/koledar365-final-audit/test/browser/workdays.spec.mjs:180:51
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/workdays-annual-dashboard--d3bcf-daily-hours-and-resets-them-iphone-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/workdays-annual-dashboard--d3bcf-daily-hours-and-resets-them-iphone-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/workdays-annual-dashboard--d3bcf-daily-hours-and-resets-them-iphone-webkit/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/workdays-annual-dashboard--d3bcf-daily-hours-and-resets-them-iphone-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [webkit] › test/browser/workdays.spec.mjs:241:1 › annual dashboard explains the actual selected daily hours and resets them 
+    [iphone-webkit] › test/browser/workdays.spec.mjs:241:1 › annual dashboard explains the actual selected daily hours and resets them 
+  8 skipped
+  462 passed (5.0m)

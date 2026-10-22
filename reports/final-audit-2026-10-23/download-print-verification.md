@@ -1,0 +1,13 @@
+# İndirme ve baskı doğrulaması
+
+6556 benzersiz gerçek PDF/WebP/ZIP/ICS/XLSX bağlantı hedefi yerel yayın dosyası olarak tam okundu; sıfır hata. 2820 katalog çifti ve 780 yeni dönem/tasarım çifti kapsamdadır. Dosya başlığına bakmakla yetinilmedi: PDF pypdf ile açıldı, WebP Pillow ile tam çözüldü, ZIP içerikleri ve ICS tarihleri denetlendi. Kanıt: `current/download-test-report.csv`, `current/download-summary.json`.
+
+Gerçek tarayıcı düğmelerinden 52 XLSX, 21 kişisel PDF ve 35 baskı/stüdyo PDF örneği üretildi: 108/108 indirme/etkileşim başarılı, 108/108 dosya ayrıştırma başarılı. XLSX sayfa adları, tarih hücreleri, formüller ve önbellekteki sonuçları, çalışma günü toplamları, A4 landscape ayarları openpyxl ile açılarak kontrol edildi. PDF'lerde A4/A3, portrait/landscape, seçili okul haftası, 12 Ay ayı, günlük saatlerin tamamı, gerçek sayfa boyutu ve boş sayfa yokluğu kontrol edildi.
+
+Tarayıcı baskı testi gerçek düğme işleyicisini çağırıp Chromium PDF motoruyla print media çıktısını yakalar. İşletim sistemi yazıcı iletişim kutusu veya fiziksel yazıcı kullanılmadı. Görsel incelemede yıllık, aylık, Ay yılı/ayı, okul, stüdyo, günlük ve aile örnekleri açıldı; kesilen hücre veya bağımsız boş başlık sayfası görülmedi. Örnek görsel kanıt: `tmp/final-audit/print-review/sheet.jpg`. Baskı kataloğunun yüksek çözünürlüklü asılları yeniden üretilmedi.
+
+780 PDF/WebP çiftinin bağımsız Poppler önizleme render'ı ve orijinal 600 ppi doğrulama kaydıyla dosya/piksel hash karşılaştırması 780/780 sıfır hatayla tamamlandı. CMYK dönüşümü yüzünden iki farklı renderer'ın RGB piksellerinin birebir aynı olduğu iddia edilmez; gerçek eşlik kapısı doğrulanmış PDF/WebP hashleri ve çözülen orijinal raster hashidir. 1024 px bağımsız render yapısal/görsel tanı kanıtıdır.
+
+Temiz ikinci checkout derlemesinde iki 2027 yıllık Ay PDF kopyasında aynı uzunlukta sıfır blokları görüldü; kaynak PDF hashleri doğruydu. Yayın kapısı bunu reddetti. `VerifiedAssetCopy` kaynağı onaylı manifestle doğrular, yalnızca bozuk/eksik hedefi geçici dosyaya açık byte yazımı ve atomik rename ile onarır; doğrulanmamış kaynağı reddeder. Bu yeni güvence eksik, kısalmış, aynı boyda bozulmuş ve değişmemesi gereken sağlam dosya senaryolarında 10 assertion ile geçti. Hata kaynak PDF'yi yeniden üretmeyi gerektirmedi. İşletim sistemi düzeyindeki kök neden kesinleşmiş sayılmıyor.
+
+Dosya MIME ve canlı indirme eşleşmesi üretim yayını sonrası raporunda ayrıca kaydedilecek. Çalışan eski katalog adları/bağlantıları sırf yeniden adlandırmak için kırılmadı; yeni koleksiyon dosyaları açıklayıcı Slovence dönem adlarını kullanır, bazı kişisel çıktı adlarında kararlı teknik tasarım/tip kimlikleri kalır.

@@ -1,0 +1,351 @@
+{
+  "tested": 69,
+  "failed": 0,
+  "rows": [
+    {
+      "city": "Ajdovščina",
+      "source": "https://en.wikipedia.org/wiki/Ajdov%C5%A1%C4%8Dina",
+      "matches": true
+    },
+    {
+      "city": "Bled",
+      "source": "https://en.wikipedia.org/wiki/Bled",
+      "matches": true
+    },
+    {
+      "city": "Bovec",
+      "source": "https://en.wikipedia.org/wiki/Bovec",
+      "matches": true
+    },
+    {
+      "city": "Brežice",
+      "source": "https://en.wikipedia.org/wiki/Bre%C5%BEice",
+      "matches": true
+    },
+    {
+      "city": "Celje",
+      "source": "https://en.wikipedia.org/wiki/Celje",
+      "matches": true
+    },
+    {
+      "city": "Črnomelj",
+      "source": "https://www.wikidata.org/wiki/Special:EntityData/Q15861.json",
+      "matches": true
+    },
+    {
+      "city": "Domžale",
+      "source": "https://en.wikipedia.org/wiki/Dom%C5%BEale",
+      "matches": true
+    },
+    {
+      "city": "Gornja Radgona",
+      "source": "https://en.wikipedia.org/wiki/Gornja_Radgona",
+      "matches": true
+    },
+    {
+      "city": "Hrastnik",
+      "source": "https://en.wikipedia.org/wiki/Hrastnik",
+      "matches": true
+    },
+    {
+      "city": "Idrija",
+      "source": "https://en.wikipedia.org/wiki/Idrija",
+      "matches": true
+    },
+    {
+      "city": "Ilirska Bistrica",
+      "source": "https://en.wikipedia.org/wiki/Ilirska_Bistrica",
+      "matches": true
+    },
+    {
+      "city": "Izola",
+      "source": "https://en.wikipedia.org/wiki/Izola",
+      "matches": true
+    },
+    {
+      "city": "Jesenice",
+      "source": "https://en.wikipedia.org/wiki/Jesenice",
+      "matches": true
+    },
+    {
+      "city": "Kamnik",
+      "source": "https://en.wikipedia.org/wiki/Kamnik",
+      "matches": true
+    },
+    {
+      "city": "Kočevje",
+      "source": "https://en.wikipedia.org/wiki/Ko%C4%8Devje",
+      "matches": true
+    },
+    {
+      "city": "Koper",
+      "source": "https://en.wikipedia.org/wiki/Koper",
+      "matches": true
+    },
+    {
+      "city": "Kostanjevica na Krki",
+      "source": "https://en.wikipedia.org/wiki/Kostanjevica_na_Krki",
+      "matches": true
+    },
+    {
+      "city": "Kranj",
+      "source": "https://en.wikipedia.org/wiki/Kranj",
+      "matches": true
+    },
+    {
+      "city": "Krško",
+      "source": "https://en.wikipedia.org/wiki/Kr%C5%A1ko",
+      "matches": true
+    },
+    {
+      "city": "Laško",
+      "source": "https://en.wikipedia.org/wiki/La%C5%A1ko",
+      "matches": true
+    },
+    {
+      "city": "Lendava",
+      "source": "https://en.wikipedia.org/wiki/Lendava",
+      "matches": true
+    },
+    {
+      "city": "Litija",
+      "source": "https://en.wikipedia.org/wiki/Litija",
+      "matches": true
+    },
+    {
+      "city": "Ljubljana",
+      "source": "https://en.wikipedia.org/wiki/Ljubljana",
+      "matches": true
+    },
+    {
+      "city": "Ljutomer",
+      "source": "https://en.wikipedia.org/wiki/Ljutomer",
+      "matches": true
+    },
+    {
+      "city": "Maribor",
+      "source": "https://en.wikipedia.org/wiki/Maribor",
+      "matches": true
+    },
+    {
+      "city": "Metlika",
+      "source": "https://en.wikipedia.org/wiki/Metlika",
+      "matches": true
+    },
+    {
+      "city": "Murska Sobota",
+      "source": "https://en.wikipedia.org/wiki/Murska_Sobota",
+      "matches": true
+    },
+    {
+      "city": "Nova Gorica",
+      "source": "https://en.wikipedia.org/wiki/Nova_Gorica",
+      "matches": true
+    },
+    {
+      "city": "Novo mesto",
+      "source": "https://en.wikipedia.org/wiki/Novo_Mesto",
+      "matches": true
+    },
+    {
+      "city": "Ormož",
+      "source": "https://en.wikipedia.org/wiki/Ormo%C5%BE",
+      "matches": true
+    },
+    {
+      "city": "Piran",
+      "source": "https://en.wikipedia.org/wiki/Piran",
+      "matches": true
+    },
+    {
+      "city": "Postojna",
+      "source": "https://en.wikipedia.org/wiki/Postojna",
+      "matches": true
+    },
+    {
+      "city": "Ptuj",
+      "source": "https://en.wikipedia.org/wiki/Ptuj",
+      "matches": true
+    },
+    {
+      "city": "Radeče",
+      "source": "https://en.wikipedia.org/wiki/Rade%C4%8De",
+      "matches": true
+    },
+    {
+      "city": "Radovljica",
+      "source": "https://en.wikipedia.org/wiki/Radovljica",
+      "matches": true
+    },
+    {
+      "city": "Ravne na Koroškem",
+      "source": "https://en.wikipedia.org/wiki/Ravne_na_Koro%C5%A1kem",
+      "matches": true
+    },
+    {
+      "city": "Sevnica",
+      "source": "https://en.wikipedia.org/wiki/Sevnica",
+      "matches": true
+    },
+    {
+      "city": "Sežana",
+      "source": "https://en.wikipedia.org/wiki/Se%C5%BEana",
+      "matches": true
+    },
+    {
+      "city": "Slovenska Bistrica",
+      "source": "https://en.wikipedia.org/wiki/Slovenska_Bistrica",
+      "matches": true
+    },
+    {
+      "city": "Slovenj Gradec",
+      "source": "https://en.wikipedia.org/wiki/Slovenj_Gradec",
+      "matches": true
+    },
+    {
+      "city": "Slovenske Konjice",
+      "source": "https://en.wikipedia.org/wiki/Slovenske_Konjice",
+      "matches": true
+    },
+    {
+      "city": "Škofja Loka",
+      "source": "https://en.wikipedia.org/wiki/%C5%A0kofja_Loka",
+      "matches": true
+    },
+    {
+      "city": "Šoštanj",
+      "source": "https://en.wikipedia.org/wiki/%C5%A0o%C5%A1tanj",
+      "matches": true
+    },
+    {
+      "city": "Tolmin",
+      "source": "https://en.wikipedia.org/wiki/Tolmin",
+      "matches": true
+    },
+    {
+      "city": "Trbovlje",
+      "source": "https://en.wikipedia.org/wiki/Trbovlje",
+      "matches": true
+    },
+    {
+      "city": "Tržič",
+      "source": "https://en.wikipedia.org/wiki/Tr%C5%BEi%C4%8D",
+      "matches": true
+    },
+    {
+      "city": "Velenje",
+      "source": "https://en.wikipedia.org/wiki/Velenje",
+      "matches": true
+    },
+    {
+      "city": "Višnja Gora",
+      "source": "https://en.wikipedia.org/wiki/Vi%C5%A1nja_Gora",
+      "matches": true
+    },
+    {
+      "city": "Vrhnika",
+      "source": "https://en.wikipedia.org/wiki/Vrhnika",
+      "matches": true
+    },
+    {
+      "city": "Zagorje ob Savi",
+      "source": "https://en.wikipedia.org/wiki/Zagorje_ob_Savi",
+      "matches": true
+    },
+    {
+      "city": "Žalec",
+      "source": "https://en.wikipedia.org/wiki/%C5%BDalec",
+      "matches": true
+    },
+    {
+      "city": "Cerknica",
+      "source": "https://en.wikipedia.org/wiki/Cerknica",
+      "matches": true
+    },
+    {
+      "city": "Dravograd",
+      "source": "https://en.wikipedia.org/wiki/Dravograd",
+      "matches": true
+    },
+    {
+      "city": "Grosuplje",
+      "source": "https://en.wikipedia.org/wiki/Grosuplje",
+      "matches": true
+    },
+    {
+      "city": "Logatec",
+      "source": "https://en.wikipedia.org/wiki/Logatec",
+      "matches": true
+    },
+    {
+      "city": "Medvode",
+      "source": "https://en.wikipedia.org/wiki/Medvode",
+      "matches": true
+    },
+    {
+      "city": "Mengeš",
+      "source": "https://en.wikipedia.org/wiki/Menge%C5%A1",
+      "matches": true
+    },
+    {
+      "city": "Mežica",
+      "source": "https://en.wikipedia.org/wiki/Me%C5%BEica",
+      "matches": true
+    },
+    {
+      "city": "Prevalje",
+      "source": "https://en.wikipedia.org/wiki/Prevalje",
+      "matches": true
+    },
+    {
+      "city": "Ribnica",
+      "source": "https://www.wikidata.org/wiki/Special:EntityData/Q2596325.json",
+      "matches": true
+    },
+    {
+      "city": "Rogaška Slatina",
+      "source": "https://en.wikipedia.org/wiki/Roga%C5%A1ka_Slatina",
+      "matches": true
+    },
+    {
+      "city": "Ruše",
+      "source": "https://en.wikipedia.org/wiki/Ru%C5%A1e",
+      "matches": true
+    },
+    {
+      "city": "Šempeter pri Gorici",
+      "source": "https://en.wikipedia.org/wiki/%C5%A0empeter_pri_Gorici",
+      "matches": true
+    },
+    {
+      "city": "Šentjur",
+      "source": "https://en.wikipedia.org/wiki/%C5%A0entjur",
+      "matches": true
+    },
+    {
+      "city": "Trebnje",
+      "source": "https://en.wikipedia.org/wiki/Trebnje",
+      "matches": true
+    },
+    {
+      "city": "Železniki",
+      "source": "https://en.wikipedia.org/wiki/%C5%BDelezniki",
+      "matches": true
+    },
+    {
+      "city": "Žiri",
+      "source": "https://en.wikipedia.org/wiki/%C5%BDiri",
+      "matches": true
+    },
+    {
+      "city": "Lenart v Slovenskih goricah",
+      "source": "https://en.wikipedia.org/wiki/Lenart_v_Slovenskih_Goricah",
+      "matches": true
+    },
+    {
+      "city": "Zreče",
+      "source": "https://en.wikipedia.org/wiki/Zre%C4%8De",
+      "matches": true
+    }
+  ]
+}
