@@ -64,16 +64,22 @@ test('backup and restore action borders align on the other planner pages', async
     { path: '/solski-urnik/', selector: '.student-backup-actions', count: 2 },
     { path: '/druzinski-planer/', selector: '.family-backup-actions', count: 2 },
     { path: '/razpored-izmen/', selector: '.shift-saved__actions', count: 3 },
+    ...['/prazen-koledar/', '/rojstnodnevni-koledar/', '/dnevni-planer/', '/druzinski-planer/', '/koledar-za-tiskanje/'].map((path) => ({ path, selector: '.planner-backup-actions', count: 3, openDetails: true })),
   ];
 
-  for (const { path, selector, count } of groups) {
+  for (const { path, selector, count, openDetails } of groups) {
     await page.goto(path);
+    if (openDetails) {
+      await page.locator('[data-context-expand]').click();
+      await page.locator('details.planner-inputs > summary').click();
+    }
     const group = page.locator(selector);
     await expect(group, `${path} exposes its backup actions`).toBeVisible();
     await expect(group.locator(':scope > *')).toHaveCount(count);
 
     for (const width of [320, 390, 768, 1280]) {
       await page.setViewportSize({ width, height: 1000 });
+      await expect(group, `${path} actions visible at ${width}px`).toBeVisible();
       const layout = await group.evaluate((container) => {
         const groupRect = container.getBoundingClientRect();
         const controls = [...container.children].map((item) => {
