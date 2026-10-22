@@ -18,7 +18,7 @@ if(root){
     root.dataset.singleYear=String(Boolean(year));
     root.querySelector('[data-directory-status]').textContent=selected
       ?`${month.selectedOptions[0].textContent}${year?' '+year:''}: ${count} ${count===1?'mesečni koledar':'mesečni koledarji'}.`
-      :year?`Prikazani so letni koledar in vseh 12 mesecev leta ${year}.`:`Prikazani so ${years.length} letni in ${years.length*12} mesečnih koledarjev.`;
+      :year?`Leto ${year}: letni koledar in 12 mesečnih koledarjev.`:`Prikazani so ${years.length} letni koledarji in ${years.length*12} mesečnih koledarjev.`;
     root.querySelector('[data-directory-reset]').disabled=year===fallbackYear&&!selected;
     if(updateUrl){const url=new URL(location.href);url.searchParams.set('leto',year||'vsa');if(selected)url.searchParams.set('mesec',selected);else url.searchParams.delete('mesec');history.replaceState(null,'',url);}
   }
