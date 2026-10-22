@@ -13,9 +13,9 @@
   .subnav.site-navigation { position:relative;z-index:15;overflow:visible;max-width:100%;padding:10px clamp(12px,3vw,48px);background:#f6f8fc;border-bottom:1px solid #dce4ef; }
   .site-navigation .subnav-track { display:grid;grid-template-columns:auto repeat(3,minmax(0,1fr)) auto;align-items:stretch;gap:10px;width:100%;min-width:0;max-width:1800px;margin-inline:auto; }
   .nav-years { display:flex;align-items:center;gap:6px;min-width:0;padding-right:12px;border-right:1px solid #d9e2ee; }
-  .nav-years__label { display:flex;align-items:center;gap:6px;margin-right:4px;font-size:12px;font-weight:750;color:#526783; }
+  .nav-years__label { display:flex;align-items:center;gap:6px;margin-right:4px;font-size:14px;font-weight:750;color:#526783; }
   .site-navigation .nav-years__label .ui-icon { width:25px;height:25px; }
-  .site-navigation .nav-years a { display:flex;justify-content:center;align-items:center;min-width:49px;min-height:44px;padding:7px 9px;background:#fff;border:1px solid #d2deed;border-radius:9px;font-size:14px;line-height:1.2;font-weight:800;box-shadow:0 2px 3px #1b365608; }
+  .site-navigation .nav-years a { color:#084f95;display:flex;justify-content:center;align-items:center;min-width:49px;min-height:44px;padding:7px 9px;background:#fff;border:1px solid #d2deed;border-radius:9px;font-size:14px;line-height:1.2;font-weight:800;box-shadow:0 2px 3px #1b365608; }
   .site-navigation a.nav-shortcut,.nav-explorer > summary { display:flex;align-items:center;justify-content:center;gap:8px;min-width:0;min-height:44px;padding:8px 12px;border:1px solid #d6e0ed;border-radius:9px;background:#fff;color:#253f63;font-size:14px;font-weight:700;line-height:1.35;white-space:normal;box-shadow:0 2px 3px #1b365608;text-align:left; }
   .site-navigation .ui-icon { width:25px;height:25px; }
   .nav-explorer { margin:0;min-width:0; }
