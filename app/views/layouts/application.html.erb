@@ -23,20 +23,28 @@
 <% if @section=='sun' -%><%= stylesheet_link_tag 'sun' %><%= javascript_include_tag 'sun',defer:true %><% end -%>
 <% if page_path.start_with?('/lunin-koledar/') -%><link rel="stylesheet" href="/lunar/calendar.css?v=20261021-2"><% end -%>
 <% if page_path == '/datumski-kalkulator/' %><%= stylesheet_link_tag 'date_calculator' %><% end %>
+<% if page_path == '/prestopno-leto/' %><%= stylesheet_link_tag 'leap_year' %><%= javascript_include_tag 'leap_year', defer: true %><% end %>
 <% if page_path == '/nacrtovalnik-dopusta/' %><%= stylesheet_link_tag 'vacation' %><%= javascript_include_tag 'vacation',defer:true %><% end %>
 <% if page_path == '/odstevanje/' %><%= stylesheet_link_tag 'countdown' %><%= javascript_include_tag 'countdown',defer:true %><% end %>
 <% if @section=='horoscope' %><%= stylesheet_link_tag 'horoscope' %><script type="module" src="/horoscope/experience-v1.mjs"></script><% end %>
 <% if page_path == '/ustvari-koledar/' %><link rel="stylesheet" href="/studio/studio.css?v=20261020-1"><script type="module" src="/studio/studio.mjs?v=20261020-1"></script><% end %>
 <% if @section=='holidays' %><%= stylesheet_link_tag 'holidays' %><%= javascript_include_tag 'holidays',defer:true %><% end %>
-<% if page_path == '/kalkulator-delovnih-dni/' || (page_path == '/delovni-dnevi/' && (2027..2030).cover?(@year)) %><%= stylesheet_link_tag 'workdays' %><%= javascript_include_tag 'workdays',defer:true %><% end %>
+<% if page_path == '/kalkulator-delovnih-dni/' || (@section=='workdays' && !@page.month) %><%= stylesheet_link_tag 'workdays' %><%= javascript_include_tag 'workdays',defer:true %><% end %>
 <% if @section=='observance' %><%= stylesheet_link_tag 'observances' %><% end %>
 <% if @clock_change %><%= stylesheet_link_tag 'clock_change' %><script type="module" src="/premik-ure/experience.mjs"></script><% end %>
 <% if gallery_page? %><%= stylesheet_link_tag 'calendar_gallery' %><% end %>
 <% if page_path == '/razpored-izmen/' %><%= stylesheet_link_tag 'shift_schedule' %><%= javascript_include_tag 'shift_schedule',defer:true %><% end %>
 <% if page_path == '/solski-urnik/' %><%= stylesheet_link_tag 'student_timetable' %><%= javascript_include_tag 'student_timetable_core','student_timetable',defer:true %><% end %>
 <% if @section=='school' %><link rel="stylesheet" href="/school/experience.css?v=20261022-2"><script type="module" src="/school/experience.mjs?v=20261022-1"></script><% end %>
+<% if @section=='calendar' %><%= stylesheet_link_tag 'calendar_experience' %><script type="module" src="/calendar-tools/experience.mjs"></script><% end %>
+<% if %w[moon_phases astronomy_events].include?(@section) %><%= stylesheet_link_tag 'astronomy' %><%= javascript_include_tag 'astronomy',defer:true,data:{static_keep:true} %><% end %>
+<% if %w[education_calendar school_timetable].include?(@section) %><link rel="stylesheet" href="/education/experience.css"><script type="module" src="/education/<%= @section=='school_timetable' ? 'timetable-page':'experience' %>.mjs"></script><% end %>
+<% if @section=='garden_calendar' %><link rel="stylesheet" href="/garden/experience.css"><script type="module" src="/garden/experience.mjs"></script><% end %>
+<% if @section=='payment_calendar' %><link rel="stylesheet" href="/payments/experience.css"><script type="module" src="/payments/experience.mjs"></script><% end %>
+<% if @section=='methodology' %><link rel="stylesheet" href="/garden/experience.css"><% end %>
 <%= stylesheet_link_tag 'print' %>
 <%= stylesheet_link_tag 'readability' %>
+<% if @section=='school_timetable' %><link rel="stylesheet" href="/education/timetable-page.css"><% end %>
 <% if @section=='terms' %><%= stylesheet_link_tag 'terms' %><% end %>
 <% if @not_found %><%= stylesheet_link_tag 'not_found' %><% end %>
 <link rel="icon" href="<%= IllustrationHelper.versioned_svg_url('/visuals/brand-calendar-v3.svg') %>" type="image/svg+xml">
@@ -47,7 +55,7 @@
 <nav aria-label="Glavna navigacija"><a href="/koledar/">Koledar</a><a href="/prazniki/">Prazniki</a><a href="/solske-pocitnice/">Šolske počitnice</a></nav>
 <form action="/isci/" class="search" role="search" data-site-search><label class="sr-only" for="search">Poišči datum, dogodek ali orodje</label><input id="search" data-search-input name="q" type="search" autocomplete="off" placeholder="Išči praznik, dogodek, datum ali orodje" value="<%= @q %>"><button aria-label="Išči po spletnem mestu"><%= ui_icon('search') %></button><div class="site-search-suggestions" data-search-suggestions hidden><p class="site-search-status" data-search-status role="status" aria-live="polite" hidden></p><div id="site-search-suggestions" data-search-options role="listbox" aria-label="Predlogi iskanja"></div></div></form>
 <span class="country"><%= slovenia_flag %> Slovenija</span></header>
-<nav class="subnav" aria-label="Koledarji in orodja"><div class="subnav-track"><% (2027..2030).each do |year| %><a href="/koledar/<%= year %>/"><%= ui_icon('calendar') %> <%= year %></a><% end %><a href="/lunin-koledar/"><%= ui_icon('moon') %> Sonce in Luna</a><a href="/delovni-dnevi/"><%= ui_icon('note') %> Delovni dnevi</a><a href="/koledar-za-tiskanje/"><%= ui_icon('print') %> Koledarji PDF</a><a href="/datumski-kalkulator/"><%= ui_icon('calculator') %> Datumski kalkulator</a><a href="/horoskop/"><%= horoscope_icon %> Dnevni horoskop</a><a href="/orodja/"><%= ui_icon('grid') %> Vsa orodja</a></div></nav>
+<nav class="subnav" aria-label="Koledarji in orodja"><div class="subnav-track"><% (2027..2030).each do |year| %><a href="/koledar/<%= year %>/"><%= ui_icon('calendar') %> <%= year %></a><% end %><a href="/lunin-koledar/"><%= ui_icon('moon') %> Sonce in Luna</a><a href="/delovni-dnevi/"><%= ui_icon('note') %> Delovni dnevi</a><a href="/koledar-za-tiskanje/"><%= ui_icon('print') %> Koledarji PDF</a><a href="/datumski-kalkulator/"><%= ui_icon('calculator') %> Datumski kalkulator</a><a href="/solski-koledar/"><%= ui_icon('note') %> Šolski koledar</a><a href="/setveni-koledar/"><%= ui_icon('calendar') %> Setveni koledar</a><a href="/horoskop/"><%= horoscope_icon %> Dnevni horoskop</a><a href="/orodja/"><%= ui_icon('grid') %> Vsa orodja</a></div></nav>
 <main id="vsebina" tabindex="-1">
 <% unless breadcrumbs.empty? %><nav class="breadcrumb" aria-label="Drobtinice"><% breadcrumbs.each_with_index do |(label,path),i| %><% if i>0 %><span aria-hidden="true">›</span><% end %><% if i==breadcrumbs.size-1 %><span aria-current="page"><%= label %></span><% else %><a href="<%= path %>"><%= label %></a><% end %><% end %></nav><% end %>
 <% if flash[:notice] %><p class="notice" role="status"><%= flash[:notice] %></p><% end %><% if flash[:alert] %><p class="error" role="alert"><%= flash[:alert] %></p><% end %>

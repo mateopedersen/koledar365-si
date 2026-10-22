@@ -1,0 +1,95 @@
+{
+  "source": "Actual partial static export, not mocked",
+  "base_url": "http://127.0.0.1:3671",
+  "fixed_time": "2026-10-21T12:00:00Z",
+  "errors": [],
+  "images": [
+    {
+      "name": "setveni-koledar-desktop",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "name": "setveni-koledar-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "name": "setveni-koledar-editor",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "name": "izplacila-pokojnin-desktop",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "name": "izplacila-pokojnin-mobile",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "name": "izplacila-socialnih-transferjev-desktop",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "name": "solski-koledar-desktop",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "name": "solski-koledar-letni-pregled",
+      "width": 1440,
+      "height": 1250,
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "name": "soncni-mrk-desktop",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "name": "soncni-mrk-visibility",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "name": "mesecni-koledar-editor",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false,
+      "broken": []
+    },
+    {
+      "name": "viri-in-metodologija-desktop",
+      "width": 1440,
+      "height": 1000,
+      "overflow": false,
+      "broken": []
+    }
+  ],
+  "source_note": "Actual partial static export recovered from the verified local build. Astronomy JavaScript updated from final source to show the corrected axis labels; the same ERB change was independently rendered and checked.",
+  "locale": "sl-SI",
+  "timezone": "Europe/Ljubljana"
+}

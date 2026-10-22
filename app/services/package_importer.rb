@@ -24,6 +24,10 @@ class PackageImporter
         items['events'].each { |e| store_event(e.merge('key'=>"legal:#{e['id']}:#{e['date']}",'category'=>'legal','source_url'=>data['sources']['law']['url'])) }
       end
       data['bridge_2026']['legal_events'].each { |e| store_event(e.merge('key'=>"legal:#{e['id']}:#{e['date']}",'category'=>'legal','source_url'=>data['sources']['law']['url'])) }
+      CalendarEngine.statutory_work_free_events(2026).each do |attributes|
+        event=CalendarEvent.find_or_initialize_by(key:attributes.fetch(:key))
+        event.assign_attributes(attributes);event.save! if event.changed?
+      end
       data['editorial']['pages'].reject { |r| r['tier']=='core' }.each do |topic|
         CalendarEngine::YEARS.each do |y|
           CalendarEngine.rule_dates(topic['rule'],y).each do |d|
@@ -55,6 +59,7 @@ class PackageImporter
         end
       end
     end
+    ExpansionCatalog.apply!
     {pages:Page.count,names:PersonName.count,events:CalendarEvent.count,astronomy:AstronomicalEvent.count}
   end
   def self.store_event(v)

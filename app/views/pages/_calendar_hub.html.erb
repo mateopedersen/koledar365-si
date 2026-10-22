@@ -1,0 +1,45 @@
+<% weekly=local_assigns.fetch(:weekly,false);period=calendar_hub_period(weekly:weekly);selected=period.fetch(:date);year=period.fetch(:year);month=period.fetch(:month);monday=selected-selected.cwday+1;selection_years=weekly ? (2026..Date.new(2030,12,31).cwyear).to_a : CalendarEngine::INTERACTIVE_YEARS %>
+<section class="calendar-experience" data-calendar-experience="<%= weekly ? 'weekly' : 'monthly' %>" data-initial-year="<%= year %>" data-initial-month="<%= month %>" data-initial-date="<%= selected %>" aria-labelledby="calendar-workbench-title">
+  <script type="application/json" data-calendar-data><%= raw(json_escape(calendar_experience_data.to_json)) %></script>
+  <header class="calendar-experience__intro">
+    <div><p class="calendar-experience__eyebrow">KOLEDAR365 / <%= weekly ? 'VAŠ TEDEN' : 'MESEC PO VAŠE' %></p><h2 id="calendar-workbench-title"><%= weekly ? 'Sedem dni. Prostor za vaše načrte.' : 'Izberite mesec. Uredite svoje načrte.' %></h2><p><%= weekly ? 'Odprite tekoči teden ali izberite datum. Dodajte opravila po dnevih in prenesite tedenski planer za tisk.' : 'Dvanajst mesecev na dosegu roke. Preverite datume in praznike, izberite postavitev ter shranite koledar za tisk ali urejanje.' %></p></div>
+    <div class="calendar-experience__index" aria-hidden="true"><span><%= weekly ? '07' : '12' %></span><small><%= weekly ? 'DNI / EN PREGLED' : 'MESECEV / VAŠ RITEM' %></small></div>
+  </header>
+  <div class="calendar-experience__period">
+    <nav class="calendar-experience__years" aria-label="<%= weekly ? 'Izberite leto ISO' : 'Izberite leto' %>"><% selection_years.each do |y| %><a href="<%= weekly && CalendarEngine::YEARS.include?(y) ? "/tedenski-koledar/#{y}/" : "#{weekly ? '/tedenski-koledar/' : '/mesecni-koledar/'}?year=#{y}#{weekly ? '&week=1' : "&month=#{month}"}" %>" data-calendar-year="<%= y %>" <%= 'aria-current=true' if y==year %>><%= y %></a><% end %></nav>
+    <button type="button" class="calendar-experience__today" data-calendar-today><span aria-hidden="true">↗</span> <%= weekly ? 'Ta teden' : 'Ta mesec' %></button>
+  </div>
+  <div class="calendar-experience__workspace">
+    <aside class="calendar-experience__sidebar">
+      <% if weekly %>
+        <form class="calendar-experience__selection" action="<%= @page&.year ? '/tedenski-koledar/' : page_path %>" data-week-selection>
+          <span class="calendar-experience__step">01 / IZBERITE TEDEN</span>
+          <label>Datum v tednu<input type="date" name="date" min="2026-01-01" max="2030-12-31" value="<%= selected %>" data-week-date required></label>
+          <div class="calendar-experience__week-inputs"><label>Leto ISO<select name="year" data-week-year><% selection_years.each do |y| %><option <%= 'selected' if y==year %>><%= y %></option><% end %></select></label><label>Teden<input type="number" name="week" min="1" max="<%= year==2031 ? 1 : Date.new(year,12,28).cweek %>" value="<%= selected.cweek %>" data-week-number required></label></div>
+          <button type="submit">Pokaži teden <span aria-hidden="true">→</span></button>
+          <p>Teden se začne v ponedeljek. Leto ISO se lahko ob novem letu razlikuje od koledarskega leta. V letu ISO 2031 je prikazan prvi teden, ki se začne decembra 2030.</p>
+        </form>
+      <% else %>
+        <div class="calendar-experience__month-selector"><span class="calendar-experience__step">01 / IZBERITE MESEC</span><nav class="calendar-experience__months" aria-label="Meseci izbranega leta"><% CalendarEngine::MONTHS.each_with_index do |name,index|;d=Date.new(year,index+1,1) %><a href="<%= calendar_path(d) %>" data-calendar-month="<%= index+1 %>" <%= 'aria-current=true' if index+1==month %>><span><%= '%02d' % (index+1) %></span><strong><%= name.capitalize %></strong><small data-month-days="<%= index+1 %>"><%= Date.new(year,index+1,-1).day %> dni</small><b aria-hidden="true">↗</b></a><% end %></nav></div>
+      <% end %>
+      <div class="calendar-experience__paper-options"><span class="calendar-experience__step">02 / PRIPRAVITE ZA TISK</span><div><label>Papir<select data-calendar-paper><option>A4</option><option>A3</option><option>A5</option></select></label><label>Usmerjenost<select data-calendar-orientation><option value="landscape">Ležeče</option><option value="portrait">Pokončno</option></select></label></div><p>Predogled spodaj je koledarski pregled. PDF uporabi izbrano postavitev, papir in usmerjenost.</p></div>
+    </aside>
+    <div class="calendar-experience__main">
+      <div class="calendar-experience__preview-bar"><span><i aria-hidden="true"></i> VAŠ KOLEDAR</span><div><button type="button" data-calendar-back aria-label="<%= weekly ? 'Prejšnji teden' : 'Prejšnji mesec' %>">‹</button><button type="button" data-calendar-next aria-label="<%= weekly ? 'Naslednji teden' : 'Naslednji mesec' %>">›</button></div></div>
+      <section class="calendar-sheet <%= 'calendar-sheet--week' if weekly %>" data-calendar-sheet aria-label="Predogled izbranega koledarja">
+        <header><div><span class="calendar-sheet__kicker" data-calendar-kicker><%= weekly ? "TEDEN #{selected.cweek} / #{selected.cwyear}" : 'MESEČNI KOLEDAR' %></span><h3 data-calendar-heading><%= weekly ? "#{I18n.l(monday)}–#{I18n.l(monday+6)}" : "#{CalendarEngine::MONTHS[month-1].capitalize} #{year}" %></h3></div><span class="calendar-sheet__brand">Koledar<span>365</span></span></header>
+        <div data-calendar-grid>
+          <% if weekly %><div class="calendar-sheet__week"><% 7.times do |i|;date=monday+i %><section class="calendar-sheet__day"><h4><%= CalendarEngine::DAYS[i].capitalize %> <time datetime="<%= date %>"><%= date.strftime('%-d. %-m.') %></time></h4><label><span class="sr-only">Načrti za <%= sl_date(date) %></span><textarea maxlength="200" data-day-notes="<%= date %>" placeholder="Vaši načrti …"></textarea></label></section><% end %></div>
+          <% else %><%= calendar_month(year,month,mini:true) %><% end %>
+        </div>
+        <div class="calendar-sheet__notes"><label for="calendar-period-notes"><%= weekly ? 'Prednostne naloge in zapiski' : 'Mesečni cilji in zapiski' %></label><textarea id="calendar-period-notes" maxlength="2000" rows="2" placeholder="Kaj želite v tem <%= weekly ? 'tednu' : 'mesecu' %> narediti?" data-period-notes></textarea></div>
+        <footer><span><i></i> Dela prost dan</span><span>Ponedeljek–nedelja · Slovenija</span></footer>
+      </section>
+      <fieldset class="calendar-layouts"><legend>Izberite postavitev PDF</legend><% [['grid','min-01',weekly ? 'Skupni tedenski pregled' : 'Mesečna mreža'],['notes','min-03','Več prostora za zapiske'],['list','min-02',weekly ? 'Dan za dnem' : 'Dnevni seznam']].each_with_index do |(layout,design,label),index| %><label><input type="radio" name="calendar-layout" value="<%= design %>" data-calendar-layout <%= 'checked' if index==(weekly ? 2 : 0) %>><%= calendar_layout_preview(layout) %><span><%= label %></span></label><% end %></fieldset>
+      <div class="calendar-experience__downloads"><div><span class="calendar-experience__step">03 / SHRANITE SVOJ KOLEDAR</span><p data-calendar-save-copy>Vaši zapiski ostanejo v tem brskalniku in se vključijo v izvoz.</p></div><div class="calendar-experience__download-actions"><button type="button" class="primary" data-calendar-pdf>↓ Prenesi PDF</button><% unless weekly %><button type="button" data-calendar-xlsx>Excel .xlsx</button><% end %><a href="<%= calendar_print_path(year:selected.year,month:month,date:selected,type:weekly ? 'weekly' : 'monthly') %>" data-calendar-all-designs>Vseh 15 predlog ↗</a></div><output data-calendar-status role="status" aria-live="polite"></output></div>
+      <div class="calendar-experience__related"><a href="<%= weekly ? '/stevilka-tedna/' : calendar_path(Date.new(year,month,1)) %>" data-calendar-detail><%= weekly ? 'Kako določimo številko tedna?' : 'Odpri podroben mesečni koledar' %> <span aria-hidden="true">→</span></a><a href="<%= weekly ? '/mesecni-koledar/' : '/tedenski-koledar/' %>"><%= weekly ? 'Mesečni koledar' : 'Tedenski planer' %> <span aria-hidden="true">→</span></a></div>
+    </div>
+  </div>
+  <p class="calendar-experience__source">Dela prosti dnevi sledijo <a href="https://pisrs.si/pregledPredpisa?id=ZAKO865" rel="noopener" target="_blank">veljavnemu zakonu ZPDPD</a>. Preverjeno 21. 10. 2026. Prihodnja leta se lahko spremenijo ob spremembi predpisa. <a href="/viri-in-metodologija/">Viri in metodologija</a></p>
+  <noscript><p class="panel">Izberite mesec s povezavo ali odprite <a href="<%= calendar_print_path(year:selected.year,month:month,date:selected,type:weekly ? 'weekly' : 'monthly') %>">koledar za tiskanje</a>. Za sprotni predogled, shranjevanje zapiskov in izvoz Excel omogočite JavaScript.</p></noscript>
+</section>

@@ -142,7 +142,10 @@ test('exported calculator loads its script and calculates around a Slovenian hol
   await page.locator('[data-wdc-form="range"] input[name="from"]').fill('2027-04-26');
   await page.locator('[data-wdc-form="range"] input[name="to"]').fill('2027-04-27');
   await page.locator('[data-wdc-form="range"] [type="submit"]').click();
-  await expect(page.locator('[data-wdc-primary]')).toHaveText('1', { timeout: 20000 });
+  // The first static calculation also initializes Ruby-WASM. Wait for that
+  // operation to finish within the existing test budget before checking values.
+  await page.locator('[data-wdc-result]:not([aria-busy])').waitFor();
+  await expect(page.locator('[data-wdc-primary]')).toHaveText('1');
   await expect(page.locator('[data-wdc-stat="hours"]')).toHaveText('8 ur');
   await expect(page.locator('[data-wdc-stat="holidays"]')).toHaveText('1');
   await expect(page.locator('[data-wdc-status]')).toHaveText('Izračun je pripravljen.');
@@ -151,6 +154,7 @@ test('exported calculator loads its script and calculates around a Slovenian hol
   await page.locator('[data-wdc-form="shift"] input[name="from"]').fill('2027-04-26');
   await page.locator('[data-wdc-form="shift"] input[name="delta"]').fill('1');
   await page.locator('[data-wdc-form="shift"] [type="submit"]').click();
+  await page.locator('[data-wdc-result]:not([aria-busy])').waitFor();
   await expect(page.locator('[data-wdc-primary]')).toContainText('28. april 2027');
   await expect(page.locator('[data-wdc-status]')).toHaveText('Izračun je pripravljen.');
 });

@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Koledar365//Astronomija SL//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Koledar365 · Astronomija
+X-WR-TIMEZONE:Europe/Ljubljana
+BEGIN:VEVENT
+DTSTAMP:20261021T000000Z
+UID:solar-2028-01-26-novo-mesto-0@koledar365.si
+DTSTART:20280126T154400Z
+DTEND:20280126T155600Z
+DESCRIPTION:Izračunano časovno okno\, ko je vsaj del mrka nad ravnim obzo
+ rjem. Vrsta vidnega mrka: Delni mrk. Ne vključuje vremena\, hribov ali st
+ avb. Sonce opazujte samo z ustreznim solarnim filtrom. Izračun: Astronomy
+  Engine\; lokalna ura Europe/Ljubljana.
+SUMMARY:Sončni mrk · Novo mesto
+TRANSP:TRANSPARENT
+URL;VALUE=URI:https://koledar365.si/soncni-mrk/?year=2028&city=novo-mesto
+END:VEVENT
+END:VCALENDAR

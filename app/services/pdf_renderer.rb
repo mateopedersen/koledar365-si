@@ -21,7 +21,7 @@ class PdfRenderer
     margin={'A3'=>15,'A4'=>12,'A5'=>10}.fetch(options['paper'])*MM
     @left=margin; @bottom=(options['paper']=='A5' ? 18 : 20)*MM
     @w=pdf.bounds.width-2*margin; @h=pdf.bounds.height-margin-@bottom
-    @holidays=CalendarEvent.where(work_free:true,on:Date.new(options['year'],1,1)..Date.new(options['year'],12,31)).pluck(:on).to_set
+    @holidays=CalendarEngine.work_free_dates(Date.new(options['year'],1,1),Date.new(options['year'],12,31)).to_set
   end
 
   def ink(hex)

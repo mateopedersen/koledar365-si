@@ -8,7 +8,9 @@ class PrintCatalog
     design=p.fetch('design','min-01');type=p.fetch('type','annual')
     raise ArgumentError,'Neznana predloga.' unless designs.any? { |d| d['id']==design } && TYPES.key?(type)
     year=Integer(p.fetch('year',2027));month=Integer(p.fetch('month',1))
-    raise ArgumentError,'Izberite leto med 2027 in 2030 ter veljaven mesec.' unless CalendarEngine::YEARS.include?(year)&&(1..12).cover?(month)
+    raise ArgumentError,'Izberite leto med 2026 in 2030 ter veljaven mesec.' unless CalendarEngine::INTERACTIVE_YEARS.include?(year)&&(1..12).cover?(month)
+    raise ArgumentError,'Lunine predloge za tisk so na voljo za leta 2027–2030. Za leto 2026 odprite pregled luninih men.' if type=='lunar' && !CalendarEngine::YEARS.include?(year)
+    raise ArgumentError,'Predloge s celotnim seznamom praznikov so na voljo za leta 2027–2030. Za leto 2026 izberite letni ali mesečni koledar.' if type=='holidays' && !CalendarEngine::YEARS.include?(year)
     name=p.fetch('name','').to_s.unicode_normalize(:nfc).strip
     raise ArgumentError,'Ime lahko vsebuje največ 100 znakov.' if name.length>100 || name.match?(/[\x00-\x1f]/)
     paper=p.fetch('paper','A4');orientation=p.fetch('orientation','portrait')

@@ -1,5 +1,11 @@
-<% if @page.year %>
-  <% with_gallery = @year.between?(2027,2030); weekly = page_path.start_with?('/tedenski-koledar/') %>
+<% if page_path.start_with?('/tedenski-koledar/') %>
+  <% selected_week=calendar_hub_period(weekly:true);@selected=selected_week.fetch(:date);@year=@selected.year;@month=@selected.month %>
+  <%= render 'calendar_hub',weekly:true %>
+  <% if @page.year %><div id="calendar-designs"><%= render 'designs',type:'weekly' %></div><% end %>
+<% elsif page_path=='/mesecni-koledar/' %>
+  <%= render 'calendar_hub',weekly:false %>
+<% elsif @page.year %>
+  <% with_gallery = CalendarEngine::INTERACTIVE_YEARS.include?(@year); weekly = false %>
   <% @view = 'week' if weekly %>
   <% download_type = weekly ? 'weekly' : (@page.month ? 'monthly' : 'annual') %>
 <% if with_gallery %><div class="download-workspace" data-download-workspace><% end %>
@@ -8,14 +14,14 @@
 <% if with_gallery && @page.month %>
     <% period=Date.new(@year,@month,1); previous_month=period.prev_month; next_month=period.next_month %>
     <nav class="calendar-month-pager" aria-label="Mesečna navigacija">
-      <% if CalendarEngine::YEARS.include?(previous_month.year) %><a class="calendar-month-pager__link" href="<%= month_url(previous_month.year,previous_month.month) %>" aria-label="Prejšnji mesec: <%= CalendarEngine::MONTHS[previous_month.month-1].capitalize %> <%= previous_month.year %>"><span class="calendar-month-pager__arrow" aria-hidden="true">←</span><span><small>Prejšnji mesec</small><strong><%= CalendarEngine::MONTHS[previous_month.month-1].capitalize %> <%= previous_month.year %></strong></span></a><% else %><span class="calendar-month-pager__link is-disabled" aria-disabled="true"><span class="calendar-month-pager__arrow" aria-hidden="true">←</span><span><small>Začetek obdobja</small><strong>Januar 2027</strong></span></span><% end %>
-      <% if CalendarEngine::YEARS.include?(next_month.year) %><a class="calendar-month-pager__link calendar-month-pager__link--next" href="<%= month_url(next_month.year,next_month.month) %>" aria-label="Naslednji mesec: <%= CalendarEngine::MONTHS[next_month.month-1].capitalize %> <%= next_month.year %>"><span><small>Naslednji mesec</small><strong><%= CalendarEngine::MONTHS[next_month.month-1].capitalize %> <%= next_month.year %></strong></span><span class="calendar-month-pager__arrow" aria-hidden="true">→</span></a><% else %><span class="calendar-month-pager__link calendar-month-pager__link--next is-disabled" aria-disabled="true"><span><small>Konec obdobja</small><strong>December 2030</strong></span><span class="calendar-month-pager__arrow" aria-hidden="true">→</span></span><% end %>
+      <% if CalendarEngine::INTERACTIVE_YEARS.include?(previous_month.year) %><a class="calendar-month-pager__link" href="<%= calendar_path(previous_month) %>" aria-label="Prejšnji mesec: <%= CalendarEngine::MONTHS[previous_month.month-1].capitalize %> <%= previous_month.year %>"><span class="calendar-month-pager__arrow" aria-hidden="true">←</span><span><small>Prejšnji mesec</small><strong><%= CalendarEngine::MONTHS[previous_month.month-1].capitalize %> <%= previous_month.year %></strong></span></a><% else %><span class="calendar-month-pager__link is-disabled" aria-disabled="true"><span class="calendar-month-pager__arrow" aria-hidden="true">←</span><span><small>Začetek obdobja</small><strong>Januar <%= CalendarEngine::INTERACTIVE_YEARS.first %></strong></span></span><% end %>
+      <% if CalendarEngine::INTERACTIVE_YEARS.include?(next_month.year) %><a class="calendar-month-pager__link calendar-month-pager__link--next" href="<%= calendar_path(next_month) %>" aria-label="Naslednji mesec: <%= CalendarEngine::MONTHS[next_month.month-1].capitalize %> <%= next_month.year %>"><span><small>Naslednji mesec</small><strong><%= CalendarEngine::MONTHS[next_month.month-1].capitalize %> <%= next_month.year %></strong></span><span class="calendar-month-pager__arrow" aria-hidden="true">→</span></a><% else %><span class="calendar-month-pager__link calendar-month-pager__link--next is-disabled" aria-disabled="true"><span><small>Konec obdobja</small><strong>December <%= CalendarEngine::INTERACTIVE_YEARS.last %></strong></span><span class="calendar-month-pager__arrow" aria-hidden="true">→</span></span><% end %>
       <a class="calendar-month-pager__year" href="/koledar/<%= @year %>/">Letni pregled · <%= @year %></a>
     </nav>
 <% elsif with_gallery %>
     <nav class="calendar-month-index" aria-label="Vsi meseci leta <%= @year %>">
       <p><strong>Odprite mesec</strong><span>Vseh 12 mesecev · <%= @year %></span></p>
-      <div class="calendar-month-index__links"><% CalendarEngine::MONTHS.each_with_index do |month_name,index| %><a href="<%= month_url(@year,index+1) %>"><%= month_name.capitalize %></a><% end %></div>
+      <div class="calendar-month-index__links"><% CalendarEngine::MONTHS.each_with_index do |month_name,index| %><a href="<%= calendar_path(Date.new(@year,index+1,1)) %>"><%= month_name.capitalize %></a><% end %></div>
     </nav>
 <% end %>
     <div class="context-content" id="gallery-context-content">
@@ -28,12 +34,14 @@
       </div>
     </div>
   </section>
+  <% if with_gallery %><div class="calendar-downloads"><% end %>
+  <%= render 'calendar_spreadsheet' %>
   <% if with_gallery %>
-    <% if !weekly && PublicCalendarGallery.available? %>
+    <% if CalendarEngine::YEARS.include?(@year) && PublicCalendarGallery.available? %>
       <%= render 'calendar_gallery', year: @year, month: @page.month, rows: PublicCalendarGallery.rows_for(year: @year, month: @page.month) %>
     <% else %>
       <div id="calendar-designs"><%= render 'designs', type: download_type %></div>
     <% end %>
-  </div>
+  </div></div>
   <% end %>
 <% else %><%= render 'year_cards' %><div class="link-grid"><% @children.limit(65).each do |p| %><a href="<%= p.path %>"><%= p.title %></a><% end %></div><% end %>

@@ -29,19 +29,19 @@ class ToolsController < ApplicationController
     when 'workday_shift'
       from=Date.iso8601(params[:from]);delta=Integer(params[:delta])
       raise ArgumentError,'Izberite največ 1.000 delovnih dni naprej ali nazaj.' unless (-1000..1000).cover?(delta)
-      raise ArgumentError,'Izberite izhodiščni datum med letoma 2027 in 2030.' unless CalendarEngine::YEARS.include?(from.year)
+      raise ArgumentError,'Izberite izhodiščni datum med letoma 2026 in 2030.' unless CalendarEngine::INTERACTIVE_YEARS.include?(from.year)
       week=Array(params[:weekdays]).map(&:to_i)
       raise ArgumentError,'Izberite vsaj en delovni dan.' if week.empty?||(week-[1,2,3,4,5,6,7]).any?
       exclude_holidays=params[:exclude_holidays]=='1'
       holidays=if exclude_holidays
-        CalendarEvent.where(on:Date.new(2027,1,1)..Date.new(2030,12,31),work_free:true).pluck(:on)
+        CalendarEngine.work_free_dates(Date.new(2026,1,1),Date.new(2030,12,31))
       else
         []
       end
       target=from;counted=0;skipped=[];direction=delta.negative? ? -1 : 1
       while counted<delta.abs
         target+=direction
-        raise ArgumentError,'Izračun bi presegel podprta leta 2027–2030.' unless CalendarEngine::YEARS.include?(target.year)
+        raise ArgumentError,'Izračun bi presegel podprta leta 2026–2030.' unless CalendarEngine::INTERACTIVE_YEARS.include?(target.year)
         next unless week.include?(target.cwday)
         if holidays.include?(target)
           skipped << target
@@ -89,7 +89,7 @@ class ToolsController < ApplicationController
   end
   def planner_ics
     options=PrintCatalog.normalize(params.require(:options).permit(:type,:year,:month,:date,:leap_policy,entries:[:title,:date,:time,:person,:code,:end_time,:break,:notes,:room,:done]).to_h)
-    send_data PlannerCalendar.export(options),type:'text/calendar; charset=utf-8',filename:'koledar365-planer-2027-2030.ics'
+    send_data PlannerCalendar.export(options),type:'text/calendar; charset=utf-8',filename:"koledar365-planer-#{options['type']=='birthday' ? '2027-2030' : options['year']}.ics"
   end
   def import_ics
     render json:{events:IcsService.import(params.require(:ics).to_s)}

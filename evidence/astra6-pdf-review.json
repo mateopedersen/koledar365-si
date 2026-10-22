@@ -1,0 +1,46 @@
+{
+  "original_pairs_unchanged": 780,
+  "compared_to_main": "0fab11a374708b3155eeefd24b25c01a6ba5a731",
+  "samples": [
+    {
+      "year": 2028,
+      "month": 2,
+      "pdf": "/koledarji/2027-2030/original/2028/02-februar-2028/slovenski-koledar-februar-2028.pdf",
+      "webp": "/koledarji/2027-2030/original/2028/02-februar-2028/slovenski-koledar-februar-2028.webp",
+      "pdf_pages": 1,
+      "pdf_points": [
+        0,
+        0,
+        841.8898,
+        1190.551
+      ],
+      "webp_type": "WEBP",
+      "webp_dimensions": [
+        7016,
+        9921
+      ],
+      "hashes_match": true,
+      "text_checked": true
+    },
+    {
+      "year": 2030,
+      "month": null,
+      "pdf": "/koledarji/2027-2030/original/2030/letni-koledar-2030/koledar-2030-za-tiskanje.pdf",
+      "webp": "/koledarji/2027-2030/original/2030/letni-koledar-2030/koledar-2030-za-tiskanje.webp",
+      "pdf_pages": 1,
+      "pdf_points": [
+        0,
+        0,
+        1190.551,
+        841.8898
+      ],
+      "webp_type": "WEBP",
+      "webp_dimensions": [
+        9921,
+        7016
+      ],
+      "hashes_match": true,
+      "text_checked": true
+    }
+  ]
+}

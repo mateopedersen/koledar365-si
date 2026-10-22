@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc"><title id="title">Sončev mrk</title><desc id="desc">Luna med Soncem in Zemljo. Velikosti in razdalje niso v merilu.</desc>
+<defs><radialGradient id="sun"><stop stop-color="#fff"/><stop offset="1" stop-color="#e5f1fb"/></radialGradient><radialGradient id="earth" cx="30%" cy="30%"><stop stop-color="#2d83bd"/><stop offset="1" stop-color="#064873"/></radialGradient><radialGradient id="moon" cx="30%" cy="30%"><stop stop-color="#e5edf5"/><stop offset="1" stop-color="#a4b7c9"/></radialGradient></defs>
+<rect width="1200" height="630" fill="#f2f7fc"/><rect x="0" y="0" width="1200" height="8" fill="#005da4"/><rect x="0" y="0" width="180" height="8" fill="#c52d45"/><g font-family="DejaVu Sans, Liberation Sans, sans-serif">
+<text x="54" y="75" font-size="46" fill="#153650" font-weight="750" text-anchor="start">Sončev mrk</text>
+<text x="54" y="119" font-size="24" fill="#526f87" font-weight="400" text-anchor="start">Luna med Soncem in Zemljo</text>
+<path d="M 760 281 L 1200 182.73333333333335 L 1200 447.26666666666665 L 760 349 Z" fill="#c7d7e6" opacity=".5"/>
+<path d="M 760 281 L 1069.090909090909 315 L 760 349 Z" fill="#254a68" opacity=".45"/>
+<path d="M 160 215 L 760 281 M 160 415 L 760 349" fill="none" stroke="#a5c6df" stroke-width="1.5" stroke-dasharray="6 6"/>
+<circle cx="1030" cy="315" r="72" fill="url(#earth)" stroke="#005da4" stroke-width="2"/><ellipse cx="1030" cy="315" rx="30.24" ry="72" fill="none" stroke="#b2d6ed" stroke-width="1.2" opacity=".55"/><ellipse cx="1030" cy="315" rx="72" ry="25.919999999999998" fill="none" stroke="#b2d6ed" stroke-width="1.2" opacity=".55"/><path d="M 958 315 H 1102" stroke="#b2d6ed" stroke-width="1.2" opacity=".55"/>
+<circle cx="760" cy="315" r="34" fill="url(#moon)" stroke="#6e879d" stroke-width="1.5"/>
+<text x="760" y="392" font-size="28" fill="#153650" font-weight="700" text-anchor="middle">Luna</text>
+<text x="1030" y="431" font-size="28" fill="#153650" font-weight="700" text-anchor="middle">Zemlja</text>
+<circle cx="160" cy="315" r="109" fill="none" stroke="#c7deed" stroke-width="2"/><circle cx="160" cy="315" r="100" fill="url(#sun)" stroke="#81b6dc" stroke-width="2"/>
+<text x="160" y="459" font-size="28" fill="#153650" font-weight="700" text-anchor="middle">Sonce</text>
+<text x="54" y="545" font-size="23" fill="#3e617e" font-weight="400" text-anchor="start">Vidnost je odvisna od poravnave in položaja opazovalca.</text>
+<text x="54" y="590" font-size="18" fill="#647d94" font-weight="400" text-anchor="start">Velikosti in razdalje niso v merilu.</text>
+<text x="1162" y="603" font-size="18" fill="#536d85" font-weight="400" text-anchor="end">koledar365.si</text>
+</g></svg>

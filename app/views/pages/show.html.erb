@@ -1,11 +1,11 @@
 <% if @section=='home' %>
-<div class="intro"><div><h1>Vaš dan. Vaši načrti.</h1><p>Slovenski koledar, prazniki in osebno načrtovanje.</p></div><a class="button subtle" href="/ustvari-koledar/"><%= ui_icon('settings') %> Ustvari svoj koledar</a></div>
+<div class="intro"><div><h1>Slovenski koledar za vaše načrte.</h1><p>Prazniki, osebni dogodki in orodja za vsak dan.</p></div><a class="button subtle" href="/ustvari-koledar/"><%= ui_icon('settings') %> Ustvari svoj koledar</a></div>
 <%= render 'home' %>
 <% elsif @section=='tool' && page_path=='/nacrtovalnik-dopusta/' %>
 <%= render 'vacation_planner' %>
 <% elsif @section=='tool' && page_path=='/odstevanje/' %>
 <%= render 'countdown' %>
-<% elsif %w[about terms privacy cookie_policy holidays observance school calendar_studio horoscope].include?(@section) %>
+<% elsif %w[about terms privacy cookie_policy holidays observance school calendar_studio horoscope methodology garden_calendar payment_calendar education_calendar school_timetable moon_phases astronomy_events].include?(@section) %>
 <%= render @section %>
 <% else %>
 <% if page_path=='/datumski-kalkulator/' %>
@@ -22,6 +22,56 @@
 </svg>
   </div>
 </div>
+<% elsif page_path=='/prestopno-leto/' %>
+<section class="leap-hero" aria-labelledby="leap-title">
+  <div class="leap-hero__copy">
+    <span class="leap-kicker"><i aria-hidden="true"></i> KOLEDAR365 · GREGORIJANSKI KOLEDAR</span>
+    <h1 id="leap-title">Prestopno leto: preverite leto in 29. februar</h1>
+    <p>Prestopno leto ima 366 dni. Izračunajte izbrano leto in v jasnem pregledu preverite, zakaj nekatera stoletna leta preskočijo dodatni dan.</p>
+    <div class="leap-hero__facts" aria-label="Ključna dejstva">
+      <span><strong>365</strong><small>običajno leto</small></span><span class="leap-hero__plus" aria-hidden="true">+</span><span><strong>1</strong><small>dodatni dan</small></span><span class="leap-hero__date"><strong>29. 2.</strong><small>v februarju</small></span>
+    </div>
+  </div>
+  <div class="leap-hero__art">
+    <svg viewBox="0 0 520 360" role="img" aria-labelledby="leap-art-title leap-art-desc" focusable="false">
+      <title id="leap-art-title">Zemljina pot okoli Sonca in koledar za februar 2028</title>
+      <desc id="leap-art-desc">Ilustracija Sonca in Zemlje ob koledarju za februar 2028. Mreža se začne v torek in pravilno označuje 29. februar v torek.</desc>
+      <defs>
+        <linearGradient id="leap-sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fbff"/><stop offset="1" stop-color="#e5eff9"/></linearGradient>
+        <linearGradient id="leap-paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#f3f7fc"/></linearGradient>
+        <linearGradient id="leap-earth" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#55a6dc"/><stop offset="1" stop-color="#0b4f88"/></linearGradient>
+        <radialGradient id="leap-sun"><stop stop-color="#fff3c8"/><stop offset=".64" stop-color="#ffd36e"/><stop offset="1" stop-color="#f3a933"/></radialGradient>
+        <filter id="leap-shadow" x="-.3" y="-.3" width="1.7" height="1.8"><feDropShadow dx="0" dy="13" stdDeviation="12" flood-color="#12345a" flood-opacity=".14"/></filter>
+      </defs>
+      <circle cx="265" cy="181" r="150" fill="url(#leap-sky)"/>
+      <ellipse cx="253" cy="184" rx="135" ry="78" transform="rotate(-22 253 184)" fill="none" stroke="#9eb9d2" stroke-width="2" stroke-dasharray="3 9"/>
+      <path d="M355 95a135 78-22 0 1 22 28" fill="none" stroke="#145b97" stroke-width="3" stroke-linecap="round"/>
+      <path d="m372 116 7 9 3-11" fill="none" stroke="#145b97" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <g transform="translate(151 225)">
+        <circle r="39" fill="#f2aa37" opacity=".16"/><circle r="28" fill="url(#leap-sun)"/>
+        <g stroke="#dfa044" stroke-width="3" stroke-linecap="round"><path d="M0-43v-9M0 43v9M-43 0h-9M43 0h9M-30-30l-7-7M30 30l7 7M30-30l7-7M-30 30l-7 7"/></g><circle r="7" fill="#fff6d7" opacity=".8"/>
+      </g>
+      <g transform="translate(378 134) rotate(-18)"><circle r="24" fill="#0b4779" opacity=".13"/><circle r="20" fill="url(#leap-earth)"/><path d="M-12-8c6-7 9-4 12-8l8 4-3 5 6 5-5 7-7-1-3 7-6-5 1-7-5-2z" fill="#83c99e"/><path d="M-17-11c8-9 22-12 32-4M-18 8c5 9 17 14 28 10" fill="none" stroke="#d7efff" stroke-opacity=".65" stroke-width="2"/></g>
+      <g filter="url(#leap-shadow)" transform="rotate(5 372 262)">
+        <rect x="275" y="174" width="194" height="176" rx="18" fill="url(#leap-paper)" stroke="#cbd9e8" stroke-width="2"/><path d="M275 192a18 18 0 0 1 18-18h158a18 18 0 0 1 18 18v20H275z" fill="#104d82"/><path d="M309 166v18m126-18v18" stroke="#163b61" stroke-width="7" stroke-linecap="round"/><text x="372" y="199" fill="#fff" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="800" letter-spacing="1.5">FEBRUAR 2028</text>
+        <g fill="#536a80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="7.5" font-weight="800"><text x="294" y="229">PO</text><text x="319" y="229">TO</text><text x="344" y="229">SR</text><text x="369" y="229">ČE</text><text x="394" y="229">PE</text><text x="419" y="229">SO</text><text x="444" y="229">NE</text></g>
+        <g fill="#e5ebf2"><rect x="284" y="235" width="20" height="17" rx="4"/><rect x="309" y="235" width="20" height="17" rx="4"/><rect x="334" y="235" width="20" height="17" rx="4"/><rect x="359" y="235" width="20" height="17" rx="4"/><rect x="384" y="235" width="20" height="17" rx="4"/><rect x="409" y="235" width="20" height="17" rx="4" fill="#edf0f4"/><rect x="434" y="235" width="20" height="17" rx="4" fill="#edf0f4"/>
+          <rect x="284" y="255" width="20" height="17" rx="4"/><rect x="309" y="255" width="20" height="17" rx="4"/><rect x="334" y="255" width="20" height="17" rx="4"/><rect x="359" y="255" width="20" height="17" rx="4"/><rect x="384" y="255" width="20" height="17" rx="4"/><rect x="409" y="255" width="20" height="17" rx="4" fill="#edf0f4"/><rect x="434" y="255" width="20" height="17" rx="4" fill="#edf0f4"/>
+          <rect x="284" y="275" width="20" height="17" rx="4"/><rect x="309" y="275" width="20" height="17" rx="4"/><rect x="334" y="275" width="20" height="17" rx="4"/><rect x="359" y="275" width="20" height="17" rx="4"/><rect x="384" y="275" width="20" height="17" rx="4"/><rect x="409" y="275" width="20" height="17" rx="4" fill="#edf0f4"/><rect x="434" y="275" width="20" height="17" rx="4" fill="#edf0f4"/>
+          <rect x="284" y="295" width="20" height="17" rx="4"/><rect x="309" y="295" width="20" height="17" rx="4"/><rect x="334" y="295" width="20" height="17" rx="4"/><rect x="359" y="295" width="20" height="17" rx="4"/><rect x="384" y="295" width="20" height="17" rx="4"/><rect x="409" y="295" width="20" height="17" rx="4" fill="#edf0f4"/><rect x="434" y="295" width="20" height="17" rx="4" fill="#edf0f4"/>
+          <rect x="284" y="315" width="20" height="17" rx="4"/><rect x="309" y="315" width="20" height="17" rx="4" fill="#c9233f"/></g>
+        <g fill="#536a80" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700"><text x="319" y="247">1</text><text x="344" y="247">2</text><text x="369" y="247">3</text><text x="394" y="247">4</text><text x="419" y="247">5</text><text x="444" y="247">6</text>
+          <text x="294" y="267">7</text><text x="319" y="267">8</text><text x="344" y="267">9</text><text x="369" y="267">10</text><text x="394" y="267">11</text><text x="419" y="267">12</text><text x="444" y="267">13</text>
+          <text x="294" y="287">14</text><text x="319" y="287">15</text><text x="344" y="287">16</text><text x="369" y="287">17</text><text x="394" y="287">18</text><text x="419" y="287">19</text><text x="444" y="287">20</text>
+          <text x="294" y="307">21</text><text x="319" y="307">22</text><text x="344" y="307">23</text><text x="369" y="307">24</text><text x="394" y="307">25</text><text x="419" y="307">26</text><text x="444" y="307">27</text>
+          <text x="294" y="327">28</text></g><text x="319" y="327" fill="#fff" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="850">29</text>
+      </g>
+      <g fill="#145b97"><circle cx="130" cy="95" r="3"/><circle cx="450" cy="118" r="4"/><circle cx="111" cy="242" r="3"/></g>
+      <path d="M86 275h98M101 287h63" stroke="#b9cbdd" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <span class="leap-hero__caption"><span aria-hidden="true"></span> Dodaten dan, da koledar ostane usklajen z letnimi časi</span>
+  </div>
+</section>
 <% elsif page_path=='/razpored-izmen/' %>
 <section class="shift-hero" aria-labelledby="shift-hero-title">
   <div class="shift-hero__copy page-heading">
@@ -56,7 +106,7 @@
 </svg>
   </div>
 </section>
-<% elsif page_path=='/delovni-dnevi/' && (2027..2030).cover?(@year) %>
+<% elsif @section=='workdays' && !@page.month %>
 <section class="workdays-hero" aria-labelledby="workdays-title">
   <div class="workdays-hero__copy">
     <span class="workdays-kicker"><i aria-hidden="true"></i> KOLEDAR365 <span>·</span> SLOVENIJA</span>
@@ -94,21 +144,9 @@
 <% elsif page_path=='/soncni-vzhod-in-zahod/' %>
 <%# The sun experience renders its own single, illustrated main heading. %>
 <% elsif page_path=='/solski-urnik/' %>
-<section class="student-page-hero" aria-labelledby="student-page-title">
-  <div class="student-page-hero__copy">
-    <span class="student-kicker"><span aria-hidden="true">SI</span> KOLEDAR365 · ORODJE ZA UČENCE IN DIJAKE</span>
-    <h1 id="student-page-title">Šolski urnik za učence in dijake</h1>
-    <p>V enem pregledu razporedi predmete, spremljaj domače naloge in preverjanja znanja ter si vzemi čas za zbran študij. Urnik prilagodi svoji šoli; tvoji podatki ostanejo v tem brskalniku.</p>
-    <div class="student-page-hero__actions"><a class="button primary" href="#student-schedule">Uredi svoj teden <span aria-hidden="true">↓</span></a><a class="button" href="#design-gallery">Oglej si predloge za tisk <span aria-hidden="true">↗</span></a></div>
-    <div class="student-page-hero__facts"><span>Osebni urnik</span><span>PDF, WebP in ICS</span><span>Brez računa</span></div>
-  </div>
-  <div class="student-page-hero__visual" aria-hidden="true">
-    <div class="student-hero-paper"><div class="student-hero-paper__top"><span>MOJ TEDEN</span><b>01</b></div><div class="student-hero-paper__line"><i>PON</i><span>Matematika</span><b>08:00</b></div><div class="student-hero-paper__line"><i>TOR</i><span>Slovenščina</span><b>09:45</b></div><div class="student-hero-paper__line student-hero-paper__line--red"><i>SRE</i><span>Naravoslovje</span><b>11:30</b></div><div class="student-hero-paper__line"><i>ČET</i><span>Angleščina</span><b>08:50</b></div><div class="student-hero-paper__line"><i>PET</i><span>Zgodovina</span><b>10:35</b></div><div class="student-hero-paper__footer"><span></span> PREDMETI · NALOGE · ČAS ZASE</div></div>
-    <span class="student-hero-sticker student-hero-sticker--blue">Moj ritem</span><span class="student-hero-sticker student-hero-sticker--red">Tvoj načrt</span>
-  </div>
-</section>
+<%= render 'student_timetable_hero' %>
 <% else %><div class="page-heading"><span class="eyebrow">KOLEDAR365 · SLOVENIJA</span><h1><%= @title %></h1><% unless @section=='events' && TopicContent.find(page_path.split('/').last) %><p><%= gallery_page? ? gallery_description : @description %></p><% end %></div><% end %>
 <%= render @section %>
 <% end %>
 
-<% if @page&.body.present? && !%w[observance school horoscope calendar_studio].include?(@section) %><section class="panel prose"><%= simple_format(@page.body) %></section><% end %>
+<% if @page&.body.present? && !%w[observance school horoscope calendar_studio methodology garden_calendar payment_calendar education_calendar school_timetable moon_phases astronomy_events].include?(@section) %><section class="panel prose"><%= simple_format(@page.body) %></section><% end %>

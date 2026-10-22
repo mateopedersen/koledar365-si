@@ -32,7 +32,7 @@ end
 end
 unknown=links.reject do |path|
  known.include?(path) || path.match?(%r{\A/prazniki/20(?:27|28|29|30)\.ics\z}) ||
-  (path=='/premik-ure/premik-ure-2026.ics' && Rails.root.join('public',path.delete_prefix('/')).file?) ||
+  (path.match?(%r{\A/(?:premik-ure|astronomy|payments|garden|education)/[^.].*\.(?:ics|webp|svg|json)\z}) && Rails.root.join('public',path.delete_prefix('/')).file?) ||
   (path.start_with?('/prenosi/') && PublicCalendarGallery.public_file(path)) ||
   (path.start_with?('/koledarji/2027-2030/') && PublicCalendarGallery.public_file(path)) ||
   (path.match?(%r{\A/(?:prenosi|slike)/lunin-koledar/}) && Rails.root.join('public',path.delete_prefix('/')).file?)

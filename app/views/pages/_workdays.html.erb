@@ -1,6 +1,6 @@
-<% if page_path == '/delovni-dnevi/' && (2027..2030).cover?(@year) %>
+<% if !@page.month && CalendarEngine::INTERACTIVE_YEARS.include?(@year) %>
 <% year_start = Date.new(@year, 1, 1); year_end = Date.new(@year, 12, 31) %>
-<% legal_dates = CalendarEvent.where(category: 'legal', work_free: true, on: year_start..year_end).pluck(:on).uniq.sort %>
+<% legal_dates = CalendarEngine.work_free_dates(year_start,year_end) %>
 <% months = (1..12).map do |month|
   first = Date.new(@year, month, 1)
   last = Date.new(@year, month, -1)
@@ -18,8 +18,7 @@ end %>
 
   <nav class="workdays-year-picker" aria-label="Izbira leta">
     <span>Leto</span>
-    <% (2027..2030).each do |year| %><a class="<%= 'active' if year == @year %>" href="<%= year == 2027 ? '/delovni-dnevi/' : "/delovni-dnevi/#{year}/" %>" <% if year == @year %>aria-current="page"<% end %>><%= year %></a><% end %>
-    <a class="workdays-year-picker__partial <%= 'active' if @year == 2026 %>" href="/delovni-dnevi/2026/">2026 · od oktobra</a>
+    <% CalendarEngine::INTERACTIVE_YEARS.each do |year| %><a class="<%= 'active' if year == @year %>" href="<%= "/delovni-dnevi/#{year}/" %>" <% if year == @year %>aria-current="page"<% end %>><%= year %></a><% end %>
   </nav>
 
   <div class="workdays-summary" aria-live="polite" aria-atomic="true">
@@ -44,7 +43,7 @@ end %>
       <% percent = (entry[:days].to_f / peak_days * 100).round %>
       <% holiday_count = entry[:holidays].count { |date| date.cwday <= 5 } %>
       <% day_label = entry[:days] == 1 ? 'delovni dan' : (entry[:days].between?(2, 4) ? 'delovni dnevi' : 'delovnih dni') %>
-      <a class="workdays-month-card" href="<%= month_url(@year, entry[:month], 'delovni-dnevi') %>" data-workdays-card data-month="<%= entry[:month] %>" data-holidays="<%= entry[:holidays].map(&:iso8601).to_json %>" style="--month-progress:<%= percent %>%">
+      <a class="workdays-month-card" href="<%= @year==2026 ? '/kalkulator-delovnih-dni/?'+{from:entry[:from].iso8601,to:entry[:to].iso8601,holidays:1,hours:8}.to_query : month_url(@year, entry[:month], 'delovni-dnevi') %>" data-workdays-card data-month="<%= entry[:month] %>" data-holidays="<%= entry[:holidays].map(&:iso8601).to_json %>" style="--month-progress:<%= percent %>%">
         <span class="workdays-month-card__top"><span class="workdays-month-card__number"><%= '%02d' % entry[:month] %></span><span class="workdays-month-card__arrow" aria-hidden="true">↗</span></span>
         <h3><%= CalendarEngine::MONTHS[entry[:month] - 1].capitalize %></h3>
         <div class="workdays-month-card__count"><strong data-month-days><%= entry[:days] %></strong><span data-month-day-label><%= day_label %></span></div>
@@ -58,13 +57,10 @@ end %>
 
 <nav class="workdays-discovery" aria-label="Sorodna orodja">
   <a href="/kalkulator-delovnih-dni/"><span class="workdays-discovery__icon" aria-hidden="true">↔</span><span><strong>Kalkulator obdobja</strong><small>Izberite datuma, delovne dneve in dnevne ure.</small></span><b aria-hidden="true">↗</b></a>
-  <a href="/prazniki/<%= @year %>/"><span class="workdays-discovery__icon workdays-discovery__icon--red" aria-hidden="true">✦</span><span><strong>Prazniki v <%= @year %></strong><small>Preverite vse praznike in njihov status.</small></span><b aria-hidden="true">↗</b></a>
+  <a href="<%= @year==2026 ? '/?year=2026&view=year' : "/prazniki/#{@year}/" %>"><span class="workdays-discovery__icon workdays-discovery__icon--red" aria-hidden="true">✦</span><span><strong>Prazniki v <%= @year %></strong><small><%= @year==2026 ? 'Odprite koledar z dela prostimi dnevi.' : 'Preverite vse praznike in njihov status.' %></small></span><b aria-hidden="true">↗</b></a>
   <a href="/podaljsani-vikendi/"><span class="workdays-discovery__icon workdays-discovery__icon--blue" aria-hidden="true">⌑</span><span><strong>Načrtuj oddih</strong><small>Odkrijte, kako praznike povezati z dopustom.</small></span><b aria-hidden="true">↗</b></a>
 </nav>
 <%= render 'designs', type: 'workdays' %>
-
-<% elsif @year == 2026 %>
-<div class="download-workspace"><section class="panel gallery-context"><%= render 'context_heading', title: 'Delovni dnevi', expand: 'Razširi pregled' %><div class="context-content" id="gallery-context-content"><%= render 'year_selector' %><p>Podatki za leto 2026 pokrivajo le prehodno obdobje od 20. oktobra. Celoviti izračuni so na voljo za leta 2027–2030.</p><a href="/viri-in-metodologija/">Metodologija</a></div></section></div>
 
 <% else %>
 <div class="download-workspace">

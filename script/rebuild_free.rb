@@ -41,6 +41,7 @@ run!(ENV.fetch('PYTHON_BIN','python3'),'script/prepare_calendar_collection.py')
 run!('bundle','exec','ruby','script/export_pages.rb')
 run!('bundle','exec','ruby','script/build_admin_page.rb')
 run!('bundle','exec','ruby','script/package_social.rb')
+run!('bundle','exec','ruby','script/build_release_inventory.rb')
 # Reuse the verified public catalogue on CI; original rendering folders are private build caches.
 run!('bundle','exec','ruby','script/validate_catalog_sources.rb')
 run!(ENV.fetch('PYTHON_BIN','python3'),'script/optimize_gallery_previews.py')

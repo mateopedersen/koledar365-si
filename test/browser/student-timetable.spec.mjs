@@ -174,4 +174,3 @@ test('student print gallery stays full width and the WebP action remains reachab
     expect(geometry.webpButtonHit, JSON.stringify(geometry)).toBe(true);
   }
 });
-
