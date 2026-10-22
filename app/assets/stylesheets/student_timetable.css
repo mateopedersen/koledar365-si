@@ -54,3 +54,7 @@
 /* Equalize backup buttons and upload labels inside the two-column action grid. */
 .student-backup-actions{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(52px,1fr);align-items:stretch}
 .student-backup-actions>.button{display:inline-flex;align-items:center;justify-content:center;width:100%;min-width:0;min-height:52px;margin:0;box-sizing:border-box;text-align:center;white-space:normal;overflow-wrap:anywhere}
+
+/* Keep the pupil plan landscape even when shared education print styles load later. */
+@page student-plan{size:A4 landscape;margin:12mm}
+@media print{body.student-timetable-page{page:student-plan}.student-timetable-page .student-lesson{grid-template-columns:minmax(0,1fr)!important}.student-timetable-page .student-lesson__time{white-space:nowrap}.student-timetable-page .student-day-heading{overflow-wrap:normal}}
