@@ -5,6 +5,31 @@
       <%= link_to href, aria: { current: page_path == href ? 'page' : nil } do %><%= ui_icon(icon) %><span><%= label %></span><% end %>
     <% end %>
   </nav>
+  <% if @section == 'home' %>
+    <% next_header_holiday = @upcoming&.find(&:work_free) %>
+    <% if next_header_holiday %>
+      <% header_holiday_days = (next_header_holiday.on - @today).to_i %>
+      <%= link_to event_path(next_header_holiday), class: 'home-header-spotlight', aria: { label: "Naslednji dela prost dan: #{next_header_holiday.title}, #{next_header_holiday.on.strftime('%-d. %-m.')}" } do %>
+        <span class="home-header-spotlight__icon" aria-hidden="true"><%= ui_icon('holidays') %></span>
+        <span class="home-header-spotlight__content">
+          <span class="home-header-spotlight__eyebrow">NASLEDNJI DELA PROST DAN</span>
+          <span class="home-header-spotlight__event"><time datetime="<%= next_header_holiday.on.iso8601 %>"><%= next_header_holiday.on.strftime('%-d. %-m.') %></time><span aria-hidden="true"> · </span><strong><%= next_header_holiday.title.sub(/^./, &:upcase) %></strong></span>
+          <small><%= header_holiday_days.zero? ? 'Danes' : header_holiday_days == 1 ? 'Še 1 dan' : "Še #{header_holiday_days} dni" %></small>
+        </span>
+        <span class="home-header-spotlight__arrow" aria-hidden="true"><%= ui_icon('arrow') %></span>
+      <% end %>
+    <% else %>
+      <a class="home-header-spotlight home-header-spotlight--empty" href="/prazniki/">
+        <span class="home-header-spotlight__icon" aria-hidden="true"><%= ui_icon('holidays') %></span>
+        <span class="home-header-spotlight__content">
+          <span class="home-header-spotlight__eyebrow">SLOVENSKI PRAZNIKI</span>
+          <span class="home-header-spotlight__event"><strong>Koledar dela prostih dni</strong></span>
+          <small>Pregled praznikov skozi leto</small>
+        </span>
+        <span class="home-header-spotlight__arrow" aria-hidden="true"><%= ui_icon('arrow') %></span>
+      </a>
+    <% end %>
+  <% end %>
   <form action="/isci/" class="search" role="search" data-site-search>
     <label class="sr-only" for="search">Poišči datum, dogodek ali orodje</label>
     <input id="search" data-search-input name="q" type="search" autocomplete="off" placeholder="Išči datum, praznik ali orodje" value="<%= @q %>">

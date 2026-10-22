@@ -59,6 +59,35 @@ test('all shared navigation controls fit without clipped links or intersecting b
   }
 });
 
+test('homepage header uses the open desktop space for the live next-day-off shortcut', async ({ page }) => {
+  await page.goto('/');
+  const spotlight = page.locator('.home-header-spotlight');
+  for (const width of [1280, 1440, 1920]) {
+    await page.setViewportSize({ width, height: 900 });
+    if (width < 1400) {
+      await expect(spotlight).toBeHidden();
+      continue;
+    }
+    await expect(spotlight).toBeVisible();
+    expect((await spotlight.getAttribute('href')).startsWith('/prazniki/')).toBe(true);
+    const holidayDate = await spotlight.locator('time').getAttribute('datetime');
+    expect(new Date(holidayDate).toISOString().slice(0, 10)).toBe(holidayDate);
+    const boxes = await page.evaluate(() => ['.topbar > .brand', '.topbar > nav', '.topbar > .home-header-spotlight', '.topbar > .search', '.topbar > .country'].map(selector => {
+      const rect = document.querySelector(selector).getBoundingClientRect();
+      return { selector, left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom };
+    }));
+    for (let i = 0; i < boxes.length; i++) {
+      expect(boxes[i].left, boxes[i].selector).toBeGreaterThanOrEqual(-1);
+      expect(boxes[i].right, boxes[i].selector).toBeLessThanOrEqual(width + 1);
+      for (let j = i + 1; j < boxes.length; j++) {
+        const a = boxes[i], b = boxes[j];
+        const intersects = Math.min(a.right, b.right) - Math.max(a.left, b.left) > 1 && Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top) > 1;
+        expect(intersects, `${a.selector} overlaps ${b.selector} at ${width}px`).toBe(false);
+      }
+    }
+  }
+});
+
 test('tools disclosure supports keyboard, close button, outside clicks, scrolling and real destinations', async ({ page }) => {
   test.setTimeout(60_000); // Four viewport changes and full keyboard/pointer flows on mobile Safari.
   await page.goto('/');
