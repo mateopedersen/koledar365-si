@@ -38,8 +38,20 @@ def check(p):
    if actual!=expected and p.endswith('.html'):
     body,counts=restore_email_html(body);actual=hashlib.sha256(body).hexdigest();row['email_transformations']=counts
    if actual!=expected and re.fullmatch(r'horoskop/(?:[^/]+/)?index.html',p) and headers.get('X-Horoscope-Rendering')=='daily-html-v1':
-    local=Path('site',p).read_bytes()
-    assert hashlib.sha256(local).hexdigest()==expected,'Local fallback differs from preview manifest'
+    local_path=Path('site',p)
+    local=local_path.read_bytes() if local_path.is_file() else b''
+    if hashlib.sha256(local).hexdigest()!=expected:
+     # This preview belongs to an earlier verified publication. A later main
+     # rebuild changes the local static template without changing the preview.
+     # Fetch the template from that exact publication and still require the
+     # preview manifest's SHA-256 before checking the daily edge transform.
+     snapshot=target.get('publication_commit','')
+     assert re.fullmatch(r'[a-f0-9]{40}',snapshot),'Missing trusted publication commit'
+     source='https://raw.githubusercontent.com/mateopedersen/koledar365-si/'+snapshot+'/site/'+p
+     with urlopen(Request(source,headers={'User-Agent':'Koledar365-Preview-Verification/1.0'}),timeout=40) as original:
+      assert original.status==200,'Snapshot template unavailable'
+      local=original.read()
+    assert hashlib.sha256(local).hexdigest()==expected,'Publication fallback differs from preview manifest'
     sign=p.split('/')[1] if p.count('/')==2 and '/izracun-znamenja/' not in p else ''
     verify_daily(local,body,sign,headers.get('X-Horoscope-Date'))
     row['match_type']='verified-daily-edge-render';actual=expected
