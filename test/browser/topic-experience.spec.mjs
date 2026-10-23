@@ -85,6 +85,8 @@ test('large vegetable names and garden controls fit with loaded fonts',async({pa
   expect(names).toHaveLength(16);
   for(const name of names){expect(name.scrollWidth,`${width}px: ${name.text}`).toBeLessThanOrEqual(name.width);expect(name.scrollHeight,`${width}px: ${name.text}`).toBeLessThanOrEqual(name.height);expect(name.font).toBeGreaterThanOrEqual(18);}
   if(width<=780){
+   const timeline=await page.evaluate(()=>({visible:document.querySelector('.garden-timeline-wrap').clientWidth,sticky:document.querySelector('.garden-timeline thead th').getBoundingClientRect().width}));
+   expect(timeline.visible-timeline.sticky,`${width}px: at least one month remains visible beside the plant name`).toBeGreaterThanOrEqual(60);
    const actions=await page.locator('.garden-hero-actions>.button').evaluateAll(nodes=>nodes.map(e=>({height:e.getBoundingClientRect().height,client:e.clientWidth,scroll:e.scrollWidth})));
    expect(Math.abs(actions[0].height-actions[1].height)).toBeLessThanOrEqual(1);expect(actions.every(e=>e.scroll<=e.client)).toBe(true);
    for(const value of ['', '2027-03-12']){
