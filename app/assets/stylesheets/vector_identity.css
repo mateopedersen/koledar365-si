@@ -1,5 +1,6 @@
 /* Koledar365 material vector identity, optical sizes for navigation and cards. */
-.ui-icon{display:inline-block;flex:0 0 auto;width:26px;height:26px;vertical-align:middle;overflow:visible;filter:none;stroke:none}
+.ui-icon{display:inline-block;flex:0 0 auto;width:26px;height:26px;vertical-align:middle;filter:none;stroke:none}
+svg.ui-icon{overflow:visible}
 .ui-icon use{pointer-events:none}
 .subnav a{display:inline-flex;align-items:center;gap:8px}
 .subnav .ui-icon{width:25px;height:25px}

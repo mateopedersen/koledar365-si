@@ -42,7 +42,16 @@ class ExpansionPagesTest < ActionDispatch::IntegrationTest
     assert_select '[data-garden-plan-form] fieldset[disabled]'
     assert_select '[data-garden-row]',count:16
     assert_select '.garden-static-reference dd',count:16
-    assert_select 'img[width="1200"][height="800"][alt]'
+    assert_select '.garden-hero-figure picture' do
+      assert_select 'source[type="image/avif"][srcset][sizes]', count: 1
+      assert_select 'img[width][height][alt][srcset][sizes]', count: 1 do |images|
+        image = images.first
+        assert_operator image['width'].to_i, :>=, 1200
+        assert_equal image['width'].to_i * 2, image['height'].to_i * 3,
+          'The garden hero reserves its original 3:2 aspect ratio before loading'
+        assert image['alt'].present?
+      end
+    end
   end
 
   test 'garden photo credits remain in the license page linked from the footer and methodology' do

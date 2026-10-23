@@ -46,22 +46,22 @@ test('the city list is searchable without accents and the layout fits a phone',a
  expect(await page.locator('.sun-city-grid').evaluate((grid)=>getComputedStyle(grid).gridTemplateColumns.split(' ').length)).toBe(1);
 });
 
-test('all 69 city cards show their own embedded photo and linked photo credits',async({page})=>{
+test('all 69 city cards show their own lazy photo and linked photo credits',async({page})=>{
  await page.goto('/soncni-vzhod-in-zahod/');
  const result=await page.locator('.sun-city-link').evaluateAll(async(cards)=>{
   return cards.map((card)=>({
    id:card.querySelector('.sun-city-link__main')?.getAttribute('href').split('/').filter(Boolean).at(-1),
    name:card.querySelector('.sun-city-link__copy strong')?.textContent.trim(),
-   title:card.querySelector('.sun-city-link__mark title')?.textContent.trim(),
-   image:card.querySelector('.sun-city-link__mark image')?.getAttribute('href'),
-   svgLabel:card.querySelector('.sun-city-link__mark')?.getAttribute('aria-labelledby'),
+   title:card.querySelector('.sun-city-link__mark')?.getAttribute('alt'),
+   image:card.querySelector('.sun-city-link__mark')?.getAttribute('src'),
+   loading:card.querySelector('.sun-city-link__mark')?.getAttribute('loading'),
    credit:card.querySelector('.sun-city-link__credit')?.getAttribute('href'),
    text:card.querySelector('.sun-city-link__credit')?.textContent.trim()
   }));
  });
  expect(result).toHaveLength(69);
  expect(new Set(result.map((city)=>city.image)).size).toBe(69);
- expect(result.every((city)=>city.image?.startsWith('data:image/jpeg;base64,')&&city.title===`${city.name} – fotografija mesta`&&city.svgLabel?.split(' ').length===2&&city.credit===`/fotografije-in-licence/#${city.id}`&&city.text.length>8)).toBe(true);
+ expect(result.every((city)=>city.image?.startsWith(`/city-marks/${city.id}.`)&&city.title===`${city.name} – fotografija mesta`&&city.loading==='lazy'&&city.credit===`/fotografije-in-licence/#${city.id}`&&city.text.length>8)).toBe(true);
  const firstMain=page.locator('.sun-city-link__main').first();
  await firstMain.focus();
  await expect(firstMain).toBeFocused();

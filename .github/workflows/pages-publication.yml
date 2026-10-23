@@ -83,12 +83,14 @@ jobs:
             sudo sed -i 's|http://azure.archive.ubuntu.com/ubuntu|https://archive.ubuntu.com/ubuntu|g' /etc/apt/apt-mirrors.txt
           fi
           sudo apt-get update -qq && sudo apt-get install -y poppler-utils python3-pil
+      - name: Install pinned CSS compiler and browser tools
+        run: npx --yes pnpm@11.25.0 install --frozen-lockfile
       - name: Rebuild public HTML with Ruby
         run: node script/generate_daily_horoscope.mjs && bundle exec ruby script/rebuild_free.rb && bundle exec ruby script/verify_vector_identity.rb && bundle exec ruby script/verify_mobile_svg_compatibility.rb
       - name: Install release QA dependencies
         run: |
           pnpm install --frozen-lockfile
-          pnpm exec playwright install --with-deps chromium webkit
+          pnpm exec playwright install --with-deps chromium webkit firefox
           /usr/bin/python3 -m pip install --break-system-packages -r requirements-qa.txt
       - name: Gate publication on SEO, browser, keyboard, print and download checks
         run: bash script/verify_release_qa.sh

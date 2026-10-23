@@ -63,13 +63,13 @@
   .country { color: #40536b; font-size: 14px; font-weight: 650; }
 
   #vsebina button,
-  #vsebina .button,
-  #vsebina input,
-  #vsebina select,
-  #vsebina textarea {
+  #vsebina .button {
     font-size: 15px !important;
     font-weight: 600;
   }
+
+  /* Native iOS controls retain the page zoom when focused. */
+  #vsebina input, #vsebina select, #vsebina textarea { font-size: 16px; font-weight: 600; }
 
   input::placeholder,
   textarea::placeholder { color: #53647a; opacity: 1; }

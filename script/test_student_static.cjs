@@ -30,5 +30,5 @@ for(const source of [scripts[core],scripts[app]]){
 const styleLinks=[...html.matchAll(/<link[^>]+href="(\/assets\/web-[^"]+\.css)"/g)].map(match=>match[1]);
 const studentStyles=styleLinks.map(source=>fs.readFileSync(path.join('site',source.slice(1)),'utf8')).find(style=>style.includes('.student-workspace'));
 assert.ok(studentStyles,'the published page should include its complete student planner theme');
-assert.match(studentStyles,/@media\s*\(max-width:\s*760px\)/,'the published student planner should include narrow-screen layout rules');
+assert.match(studentStyles,/@media\s*\((?:max-width:\s*760px|width\s*<=\s*760px)\)/,'the published student planner should include narrow-screen layout rules');
 console.log('Published student planner markup, all 15 print pairs, scripts and responsive theme passed.');

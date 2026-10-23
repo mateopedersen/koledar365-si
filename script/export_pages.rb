@@ -3,6 +3,7 @@ require 'nokogiri'
 require 'fileutils'
 require 'digest'
 require 'base64'
+require 'open3'
 require_relative '../lib/svg_asset_references'
 require_relative '../lib/publication_revisions'
 ENV['OPERATOR_CONTACT']='koledar365@gmail.com'
@@ -39,7 +40,7 @@ transform=lambda do |body,path,indexable:true|
  doc.css('script[src]').each { |script|src=script['src'];script.remove unless kept_scripts.include?(src)||src.include?('city_card-')||src.include?('sun-')||src.start_with?('/studio/','/horoscope/','/premik-ure/')||src.split('?',2).first=='/school/experience.mjs' }
  doc.css('meta[name="csrf-token"],meta[name="csrf-param"],meta[name="csp-nonce"],meta[http-equiv="Content-Security-Policy"],input[name="authenticity_token"]').remove
  if doc.at_css('[data-lunar]')
-   lunar_script=Nokogiri::XML::Node.new('script',doc);lunar_script['type']='module';lunar_script['src']='/lunar/calendar.mjs';doc.at_css('head').add_child(lunar_script)
+   lunar_script=Nokogiri::XML::Node.new('script',doc);lunar_script['type']='module';lunar_script['src']='/lunar/calendar.mjs?v=20261023-screen1';doc.at_css('head').add_child(lunar_script)
  end
 
  doc.css('[nonce]').each { |node|node.remove_attribute('nonce') }
@@ -48,7 +49,12 @@ transform=lambda do |body,path,indexable:true|
  links=doc.css('link[rel="stylesheet"][href^="/"]')
  unless links.empty?
   key=links.map { |node|node['href'] }.join('|')
-  styles=style_sets[key] ||= links.map { |node|out.join(node['href'].split('?',2).first.delete_prefix('/')).read }.join("\n")
+  styles=style_sets[key] ||= begin
+   source=links.map { |node|out.join(node['href'].split('?',2).first.delete_prefix('/')).read }.join("\n")
+   compact,error,status=Open3.capture3(ENV.fetch('NODE_BIN','node'),Rails.root.join('script/minify_css.mjs').to_s,stdin_data:source)
+   raise "CSS compilation failed: #{error}" unless status.success?
+   compact
+  end
   if path=='/'
    style=Nokogiri::XML::Node.new('style',doc);style['data-page-styles']='home';style.content=styles;links.first.add_previous_sibling(style)
   else

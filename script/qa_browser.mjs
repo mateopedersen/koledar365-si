@@ -85,11 +85,11 @@ await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||3)},async()=
    if(errors.length)row.issues.push('Uncaught JavaScript error');
    if((item.snapshot||row.issues.length)&&mode==='layout'){
     const filename=`${item.template}-${engine}-${item.width}.png`;
-    // Linux WebKit caps a screenshot dimension at 32767 px. Preserve every
+    // Firefox and WebKit cap screenshot dimensions at 32767 px. Preserve every
     // viewport tile of longer pages instead of clipping their evidence.
     const screenshotHeight=await page.evaluate(()=>Math.max(document.documentElement.scrollHeight,document.body.scrollHeight));
     row.screenshotHeight=screenshotHeight;
-    if(engine==='webkit'&&screenshotHeight>30000){
+    if(screenshotHeight>30000){
      const viewport=page.viewportSize();row.screenshotTiles=[];
      for(let y=0;y<screenshotHeight;y+=viewport.height){
       const top=await page.evaluate(value=>{scrollTo(0,value);return scrollY;},y);

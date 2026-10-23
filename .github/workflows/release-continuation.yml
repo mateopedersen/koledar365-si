@@ -1,0 +1,71 @@
+name: Complete remaining release checks
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/release-continuation.yml'
+      - 'script/verify_release_tail.sh'
+permissions:
+  contents: read
+concurrency:
+  group: release-continuation-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  complete:
+    # One-time continuation; ordinary future releases keep the full QA gate.
+    if: github.event.pull_request.number == 111
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 3
+      - name: Require identical runtime to the already checked candidate
+        run: |
+          git fetch --no-tags --depth=1 origin af8197e874dea01609c0481f5b7fac051ebcce1a
+          git diff --exit-code af8197e874dea01609c0481f5b7fac051ebcce1a HEAD -- app public functions config lib data site package.json pnpm-lock.yaml script/export_pages.rb script/rebuild_free.rb script/minify_css.mjs
+          git diff --name-only af8197e874dea01609c0481f5b7fac051ebcce1a HEAD | while IFS= read -r task_changed_file; do
+            case "$task_changed_file" in
+              .github/workflows/release-continuation.yml|script/qa_browser.mjs|script/verify_release_qa.sh|script/verify_release_tail.sh|test/browser/sun-experience.spec.mjs) ;;
+              *) echo "Unexpected source change: $task_changed_file"; exit 1 ;;
+            esac
+          done
+          # The preceding run passed PostgreSQL, production boot, calendar data,
+          # all 1,224 Chromium renders, 782 geometry, 144 axe and 144 WebKit checks.
+          # It stopped only at Firefox's screenshot dimension limit.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned browser and export QA dependencies
+        run: |
+          if [ -f /etc/apt/apt-mirrors.txt ]; then
+            sudo sed -i 's|http://azure.archive.ubuntu.com/ubuntu|https://archive.ubuntu.com/ubuntu|g' /etc/apt/apt-mirrors.txt
+          fi
+          sudo apt-get update -qq && sudo apt-get install -y poppler-utils
+          pnpm install --frozen-lockfile
+          pnpm exec playwright install --with-deps chromium webkit firefox
+          python3 -m pip install -r requirements-qa.txt
+      - name: Repeat Firefox and complete every remaining gate
+        env:
+          K365_BASE_URL: http://127.0.0.1:19783
+        run: |
+          K365_STATIC_PORT=19783 python3 script/serve_static.py > /tmp/release-tail-server.log 2>&1 &
+          task_server_pid=$!
+          trap 'kill "$task_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --silent --fail "$K365_BASE_URL/robots.txt" >/dev/null; then break; fi
+            sleep 1
+          done
+          curl --fail "$K365_BASE_URL/robots.txt"
+          bash script/verify_release_tail.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: remaining-release-evidence
+          path: |
+            evidence/qa/
+            test-results/
+          retention-days: 14

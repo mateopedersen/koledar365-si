@@ -27,3 +27,8 @@
 /node_modules/
 /test-results/
 /playwright-report/
+
+# Full visual and Lighthouse evidence is retained locally / in CI artifacts.
+/reports/css-performance-*/**/screenshots/
+/reports/css-performance-*/**/*.json.gz
+/reports/css-performance-*/**/*.css.gz

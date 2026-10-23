@@ -1,0 +1,56 @@
+name: Repeated CSS performance comparison
+on:
+  workflow_dispatch:
+    inputs:
+      templates:
+        description: 'Optional comma-separated affected template IDs'
+        required: false
+        default: ''
+      repetitions:
+        description: 'Cold runs per device'
+        required: false
+        default: '3'
+  pull_request:
+    paths:
+      - 'reports/css-performance-2026-10-23/preview-target.json'
+      - '.github/workflows/css-performance.yml'
+permissions:
+  contents: read
+concurrency:
+  group: css-performance-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: ${{ fromJSON(github.event.inputs.templates != '' && '[0]' || '[0,1,2,3,4,5]') }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: pnpm/action-setup@v4
+      - name: Install pinned browser and Lighthouse
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm exec playwright install --with-deps chromium
+      - name: Measure production and immutable preview on the same runner
+        env:
+          SHARD: ${{ matrix.shard }}
+          TEMPLATE_FILTER: ${{ github.event.inputs.templates }}
+          REPETITIONS: ${{ github.event.inputs.repetitions || '3' }}
+        run: |
+          export QA_TEMPLATES="$(node -e 'const a=require("./data/qa-templates.json"); console.log(a.filter((r,i)=>process.env.TEMPLATE_FILTER?process.env.TEMPLATE_FILTER.split(",").includes(r[0]):i%6===Number(process.env.SHARD)).map(x=>x[0]).join(","))')"
+          export LH_RUNS="$REPETITIONS"
+          K365_BASE_URL=https://koledar365.si LH_OUT=evidence/lighthouse/before node script/qa_lighthouse.mjs
+          export K365_BASE_URL="$(node -e 'console.log(require("./reports/css-performance-2026-10-23/preview-target.json").url)')"
+          LH_OUT=evidence/lighthouse/after node script/qa_lighthouse.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-comparison-${{ matrix.shard }}-${{ github.sha }}
+          path: evidence/lighthouse/
+          retention-days: 14
