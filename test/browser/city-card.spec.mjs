@@ -9,6 +9,15 @@ test('clock and weather start without calendar boot and ignore forecast server t
  await expect(page.locator('#ljubljana-clock')).toHaveText('14:34');await expect(page.locator('#city-clock-seconds')).toHaveText('56');await expect(page.locator('#weather-temperature')).toHaveText('14°');await expect(page.locator('#city-zone')).toHaveText('CEST');
  await expect(page.locator('#city-card')).toHaveAttribute('data-live-initialized','true');await expect(page.locator('#weather-updated')).toContainText('Napoved za');await expect(page.locator('#weather-published')).toContainText('MET Norway');
 });
+test('forecast refresh has a clear touch target and announces its progress',async({page})=>{
+ let requests=0,signalRefresh,finishRefresh;
+ const refreshStarted=new Promise(resolve=>{signalRefresh=resolve}),refreshPending=new Promise(resolve=>{finishRefresh=resolve});
+ await mock(page,async id=>{if(++requests>1){signalRefresh();await refreshPending}return forecast(id)});
+ await page.goto('/');const button=page.locator('#weather-refresh');await expect(button).toBeEnabled();await expect(button).toHaveAccessibleName('Osveži vremensko napoved');await expect(button.locator('#weather-refresh-label')).toHaveText('Osveži');
+ for(const width of [320,390,1440]){await page.setViewportSize({width,height:820});const box=await button.boundingBox();expect(box.height).toBeGreaterThanOrEqual(44);expect(box.width).toBeGreaterThanOrEqual(130);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)).toBe(true)}
+ await page.setViewportSize({width:390,height:820});await button.click();await refreshStarted;await expect(button).toBeDisabled();await expect(button).toHaveAccessibleName('Osveževanje vremenske napovedi');await expect(button.locator('#weather-refresh-label')).toHaveText('Osvežujem');
+ finishRefresh();await expect(button).toBeEnabled();await expect(button).toHaveAccessibleName('Osveži vremensko napoved');await expect(button.locator('#weather-refresh-label')).toHaveText('Osveži');
+});
 test('saved forecast remains visible offline and personal records are preserved',async({page})=>{
  await mock(page);await page.addInitScript(()=>localStorage.setItem('k365.personal',JSON.stringify({note:'Private regression record'})));await page.goto('/');await expect(page.locator('#city-card')).toHaveAttribute('data-weather-state','ready');
  await page.unroute('**/vreme/*/');await page.route('**/vreme/*/',route=>route.abort());await page.reload();await expect(page.locator('#weather-temperature')).toHaveText('14°');await expect(page.locator('#city-card')).toHaveAttribute('data-weather-state','saved');expect(await page.evaluate(()=>localStorage.getItem('k365.personal'))).toContain('Private regression record');
