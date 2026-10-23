@@ -1,0 +1,63 @@
+name: Notify IndexNow of published page changes
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/page-revisions.json'
+      - 'site/sitemap-pages.xml'
+      - 'site/*.txt'
+      - 'config/indexnow.json'
+      - 'integrations/indexnow/**'
+      - '.github/workflows/indexnow.yml'
+  workflow_run:
+    workflows: ['Prepare verified Pages publication']
+    types: [completed]
+  workflow_dispatch:
+  schedule:
+    - cron: '35 4 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: indexnow-production
+  cancel-in-progress: false
+jobs:
+  notify:
+    if: github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          sparse-checkout: |
+            integrations/indexnow
+            config/indexnow.json
+            site/page-revisions.json
+            site/sitemap-pages.xml
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Restore last accepted page revisions
+        uses: actions/cache/restore@v4
+        with:
+          path: .indexnow/state.json
+          key: indexnow-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: indexnow-v1-
+      - name: Test notification selection and retry handling
+        run: python3 -m unittest discover -s integrations/indexnow -p 'test_*.py'
+      - name: Wait for publication and submit added, changed and removed URLs
+        run: python3 integrations/indexnow/notify.py --wait
+      - name: Save only accepted revisions
+        uses: actions/cache/save@v4
+        with:
+          path: .indexnow/state.json
+          key: indexnow-v1-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Keep submission receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: indexnow-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .indexnow/report.json
+          if-no-files-found: ignore
+          retention-days: 30
