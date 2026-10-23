@@ -76,3 +76,23 @@ test('large specialist record cards fit full dates and names at 320 and 390 pixe
   }
  }
 });
+
+test('large vegetable names and garden controls fit with loaded fonts',async({page})=>{
+ await page.goto('/setveni-koledar/');await expect(page.locator('[data-garden]')).toHaveAttribute('data-ready','true');
+ for(const width of [320,390,480,600,768,780,1440]){
+  await page.setViewportSize({width,height:900});await page.evaluate(()=>document.fonts.ready);
+  const names=await page.locator('.garden-plant-name').evaluateAll(nodes=>nodes.map(e=>({text:e.textContent,width:e.clientWidth,height:e.clientHeight,scrollWidth:e.scrollWidth,scrollHeight:e.scrollHeight,font:parseFloat(getComputedStyle(e).fontSize)})));
+  expect(names).toHaveLength(16);
+  for(const name of names){expect(name.scrollWidth,`${width}px: ${name.text}`).toBeLessThanOrEqual(name.width);expect(name.scrollHeight,`${width}px: ${name.text}`).toBeLessThanOrEqual(name.height);expect(name.font).toBeGreaterThanOrEqual(18);}
+  if(width<=780){
+   const actions=await page.locator('.garden-hero-actions>.button').evaluateAll(nodes=>nodes.map(e=>({height:e.getBoundingClientRect().height,client:e.clientWidth,scroll:e.scrollWidth})));
+   expect(Math.abs(actions[0].height-actions[1].height)).toBeLessThanOrEqual(1);expect(actions.every(e=>e.scroll<=e.client)).toBe(true);
+   for(const value of ['', '2027-03-12']){
+    await page.locator('#garden-plan-date').fill(value);
+    const fields=await page.locator('.garden-plan-form input,.garden-plan-form select').evaluateAll(nodes=>nodes.map(e=>({height:e.getBoundingClientRect().height,width:e.getBoundingClientRect().width,parent:e.parentElement.getBoundingClientRect().width})));
+    expect(fields.every(e=>Math.abs(e.height-48)<1&&e.width<=e.parent+1)).toBe(true);
+   }
+  }
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ }
+});
