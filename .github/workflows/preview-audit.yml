@@ -50,8 +50,8 @@ jobs:
           export K365_BASE_URL="$(python3 -c "import json; print(json.load(open('reports/css-performance-2026-10-23/preview-target.json'))['url'])")"
           QA_OUT=evidence/qa/preview/css-layout node script/qa_css_layout.mjs
           QA_INTERNAL=1 QA_OUT=evidence/qa/preview/internal-layout node script/qa_css_layout.mjs
-          QA_SAMPLE_ONLY=1 QA_OUT=evidence/qa/preview/browser node script/qa_browser.mjs
-          QA_MODE=a11y QA_OUT=evidence/qa/preview/accessibility node script/qa_browser.mjs
+          QA_WORKERS=1 QA_SAMPLE_ONLY=1 QA_OUT=evidence/qa/preview/browser node script/qa_browser.mjs
+          QA_WORKERS=1 QA_MODE=a11y QA_OUT=evidence/qa/preview/accessibility node script/qa_browser.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:

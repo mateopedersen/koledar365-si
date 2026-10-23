@@ -9,7 +9,7 @@ permissions:
   contents: read
 concurrency:
   group: css-performance-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 jobs:
   compare:
     runs-on: ubuntu-latest
