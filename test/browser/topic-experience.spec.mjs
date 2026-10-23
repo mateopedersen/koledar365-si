@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import crypto from 'node:crypto';
 import {test,expect} from '@playwright/test';
 const topics=JSON.parse(fs.readFileSync(new URL('../../data/topic_experiences_sl.json',import.meta.url),'utf8')).pages;
 
@@ -10,9 +11,9 @@ for(const [path,topic] of Object.entries(topics)) {
     await expect(page.locator('h1')).toHaveCount(1);
     const root=page.locator('.topic-experience');await expect(root).toHaveCount(1);
     await expect(root.locator('.topic-fact')).toHaveCount(3);
-    const art=root.locator('.topic-art img');await expect(art).toHaveAttribute('src',`/topics/${topic.art}.svg`);
+    const art=root.locator('.topic-art img');const hash=crypto.createHash('sha256').update(fs.readFileSync(new URL(`../../public/topics/${topic.art}.svg`,import.meta.url))).digest('hex').slice(0,16);await expect(art).toHaveAttribute('src',new RegExp(`^/topics/${topic.art}(?:\\.${hash})?\\.svg$`));
     await art.scrollIntoViewIfNeeded();await expect(art).toBeVisible();
-    const svgResponse=await page.request.get(`/topics/${topic.art}.svg`);expect(svgResponse.status()).toBe(200);expect(svgResponse.headers()['content-type']).toContain('image/svg+xml');const svg=await svgResponse.text();expect(svg).toContain('width="520" height="360" viewBox="0 0 520 360"');
+    const svgResponse=await page.request.get(await art.getAttribute('src'));expect(svgResponse.status()).toBe(200);expect(svgResponse.headers()['content-type']).toContain('image/svg+xml');const svg=await svgResponse.text();expect(svg).toContain('width="520" height="360" viewBox="0 0 520 360"');
     const decoded=await art.evaluate(async img=>{await img.decode();return {width:img.naturalWidth,ratio:img.getBoundingClientRect().width/img.getBoundingClientRect().height};});expect(decoded.width).toBeGreaterThan(0);expect(decoded.ratio).toBeCloseTo(520/360,1);
     const guide=root.locator('.topic-guide');await guide.scrollIntoViewIfNeeded();
     await expect(guide.locator('tbody tr')).toHaveCount(3);

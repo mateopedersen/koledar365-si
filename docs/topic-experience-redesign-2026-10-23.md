@@ -44,3 +44,5 @@ Additional checks:
 ## Verification
 
 `test/integration/topic_experience_test.rb` covers registry, HTML, metadata, scope and new editorial sections. `test/browser/topic-experience.spec.mjs` checks every route on all four supported browser profiles, readable type, SVG MIME/geometry/decode, no horizontal overflow, preparation persistence and blocked storage, quick filtering and real ICS download. Existing education, payment, garden, astronomy and publication gates also run.
+
+Publication integrity: `data/topic_experiences_sl.json` and every `public/topics/` asset enter the verified source manifest and automatic publication path triggers. Static verification requires every specialist HTML page to reference the exact content-hashed SVG and checklist module. Browser tests accept the exact source or exact hash-addressed SVG as appropriate to Rails versus the static publication.
