@@ -4,5 +4,5 @@ class WebImageCatalog
     @images[path]
   end
 
-  CITY_SIZES = '(max-width:650px) calc(100vw - 18px), (max-width:1000px) 40vw, 320px'.freeze
+  CITY_SIZES = '(max-width:650px) calc(100vw - 26px), (max-width:850px) 40vw, (max-width:1250px) 240px, 320px'.freeze
 end

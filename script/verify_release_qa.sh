@@ -28,9 +28,11 @@ with urlopen(os.environ["K365_BASE_URL"]+"/release-manifest.json",timeout=10) as
     assert response.read()==Path("site/release-manifest.json").read_bytes(), "QA server is serving a different publication"
 PY
 kill -0 "$task_server_pid" 2>/dev/null || { cat "$task_log" >&2; exit 1; }
-node script/qa_browser.mjs
-QA_MODE=a11y node script/qa_browser.mjs
-QA_BROWSER=webkit QA_SAMPLE_ONLY=1 node script/qa_browser.mjs
+QA_WORKERS=1 node script/qa_browser.mjs
+QA_OUT=evidence/qa/css-layout node script/qa_css_layout.mjs
+QA_WORKERS=1 QA_MODE=a11y node script/qa_browser.mjs
+QA_WORKERS=1 QA_BROWSER=webkit QA_SAMPLE_ONLY=1 node script/qa_browser.mjs
+QA_WORKERS=1 QA_BROWSER=firefox QA_SAMPLE_ONLY=1 node script/qa_browser.mjs
 node script/qa_keyboard.mjs
 node script/qa_exports.mjs
 "$task_python" script/qa_export_files.py

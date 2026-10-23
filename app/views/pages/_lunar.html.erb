@@ -9,7 +9,7 @@
   <div class="lunar-year-links"><% (2027..2030).each do |y| %><% days=LunarCalendar.period(y).size; year_events=LunarCalendar.phases(y); photo=photos_by_year.fetch(y) %>
     <article class="lunar-year-card lunar-year-card--<%= y %>">
       <div class="lunar-year-art lunar-year-art--<%= y %>">
-        <img class="lunar-year-art__photo" src="/lunar/photos/<%= photo[0] %>" alt="<%= photo[2] %>" width="1920" height="<%= y==2027 || y==2028 ? 1280 : (y==2029 ? 1909 : 1816) %>" loading="lazy" decoding="async">
+        <%= render 'responsive_photo', path: "/lunar/photos/#{photo[0]}", alt: photo[2], image_class: 'lunar-year-art__photo', sizes: '(max-width:650px) calc(100vw - 26px), (max-width:1800px) 50vw, 875px', loading: 'lazy' %>
         <span class="lunar-year-art__label">Letni Lunin Pregled</span><span class="lunar-year-art__number"><%= y %></span><span class="lunar-year-art__credit">NASA · <%= photo[1] %></span>
       </div>
       <div class="lunar-year-card__body">

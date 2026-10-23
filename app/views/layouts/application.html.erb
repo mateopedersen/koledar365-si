@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="<%= seo_title %>"><meta name="twitter:description" content="<%= @description %>"><meta name="twitter:image" content="<%= sharing_image[:url] %>"><meta name="twitter:image:alt" content="<%= sharing_image[:alt] %>">
 <% end %>
 <% if (schema=structured_data) %><script type="application/ld+json" nonce="<%= content_security_policy_nonce %>"><%= raw json_escape(schema.to_json) %></script><% end %>
-<%= csrf_meta_tags %><%= csp_meta_tag %><%= stylesheet_link_tag 'application', 'experience', 'slovenia', 'vector_identity', 'search', 'footer' %><%= javascript_include_tag 'application','planners',defer:true %><% if @section=='home' %><%= stylesheet_link_tag 'city_card' %><%= javascript_include_tag 'city_card',defer:true %><% end %>
+<%= csrf_meta_tags %><%= csp_meta_tag %><%= stylesheet_link_tag(*(['application', (page_path == '/datumski-kalkulator/' ? 'date_calculator_base' : nil), 'experience', (page_path == '/zasebnost/' ? 'privacy' : nil), 'slovenia', 'vector_identity', 'search', 'footer'].compact)) %><%= javascript_include_tag 'application','planners',defer:true %><% if @section=='home' %><%= stylesheet_link_tag 'city_card' %><%= javascript_include_tag 'city_card',defer:true %><% end %>
 <% if @section=='about' %><%= stylesheet_link_tag 'about' %><% end %>
 <% if page_path=='/kontakt/' %><link rel="stylesheet" href="/contact/contact-v1.css"><script type="module" src="/contact/contact-v1.mjs"></script><% end %>
 <% if page_path == '/druzinski-planer/' %><%= stylesheet_link_tag 'family_planner' %><%= javascript_include_tag 'family_planner_core', 'family_planner', defer:true %><% end %>
