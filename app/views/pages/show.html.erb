@@ -141,7 +141,7 @@
     </div>
   </div>
   <div class="lunar-hub-masthead__art" aria-hidden="true">
-    <img src="/lunar/photos/artemis-earthset.jpg" alt="" width="1920" height="1280" fetchpriority="high" decoding="async">
+    <%= render 'responsive_photo', path: '/lunar/photos/artemis-earthset.jpg', alt: '', sizes: '(max-width:650px) min(330px, calc(100vw - 70px)), (max-width:900px) 28vw, 440px' %>
     <span>Fotografija NASA · Artemis II</span>
   </div>
 </section>

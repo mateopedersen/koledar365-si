@@ -17,11 +17,16 @@ const results=[];let cursor=0;
 const jobs=routes.flatMap(route=>widths.map(width=>({route,width})));
 await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||2)},async()=>{
  while(cursor<jobs.length){
-  const job=jobs[cursor++],row={...job,browser:engine,errors:[],failedRequests:[],assets:[],issues:[]};
+  const job=jobs[cursor++],row={...job,browser:engine,errors:[],consoleErrors:[],failedRequests:[],assets:[],issues:[]};
   const ctx=await browser.newContext({viewport:{width:job.width,height:900},locale:'sl-SI',timezoneId:'Europe/Ljubljana',deviceScaleFactor:Number(process.env.QA_DPR||1)});
   await ctx.addInitScript(()=>localStorage.setItem('k365.consent',JSON.stringify({version:2,expiresAt:Date.now()+86400000,preferences:false})));
+  await ctx.addInitScript(()=>{
+   window.__cssVitals={cls:0,lcp:0,longTasks:[]};
+   for(const type of ['layout-shift','largest-contentful-paint','longtask'])try{new PerformanceObserver(list=>{for(const e of list.getEntries()){if(type==='layout-shift'&&!e.hadRecentInput)window.__cssVitals.cls+=e.value;if(type==='largest-contentful-paint')window.__cssVitals.lcp=e.startTime;if(type==='longtask')window.__cssVitals.longTasks.push(e.duration);}}).observe({type,buffered:true});}catch{}
+  });
   const page=await ctx.newPage();
   page.on('pageerror',e=>row.errors.push(e.message));
+  page.on('console',m=>{if(m.type()==='error')row.consoleErrors.push(m.text());});
   page.on('requestfailed',r=>row.failedRequests.push({url:r.url(),type:r.resourceType(),error:r.failure()?.errorText}));
   page.on('response',r=>{if(['stylesheet','script','font','image'].includes(r.request().resourceType()))row.assets.push({url:r.url(),status:r.status(),type:r.request().resourceType()});});
   try{
@@ -40,7 +45,7 @@ await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||2)},async()=
     });
     const anchors=['.topbar','.topbar>.brand','.subnav-track','main','.intro','.workspace','.calendar-panel','.site-footer__inner'].flatMap(s=>[...document.querySelectorAll(s)].map(e=>({selector:s,...box(e),paddingLeft:getComputedStyle(e).paddingLeft,paddingRight:getComputedStyle(e).paddingRight})));
     const outside=[...document.querySelectorAll('body *')].filter(visible).filter(e=>{const r=box(e);if(r.left>=-2&&r.right<=innerWidth+2)return false;if(e.closest('svg,.skip,.sr-only,.visually-hidden,[role=tooltip]'))return false;for(let p=e.parentElement;p;p=p.parentElement)if(/auto|scroll/.test(getComputedStyle(p).overflowX))return false;return true;}).slice(0,40).map(e=>({selector:selector(e),...box(e),overflow:getComputedStyle(e).overflowX}));
-    return {width:innerWidth,scrollWidth:document.documentElement.scrollWidth,htmlOverflow:getComputedStyle(document.documentElement).overflowX,anchors,controls,outside,canonical:document.querySelector('[rel=canonical]')?.href,robots:document.querySelector('meta[name=robots]')?.content,h1:document.querySelector('main h1')?.textContent,resourceBytes:performance.getEntriesByType('resource').reduce((s,r)=>s+r.transferSize,0),resources:performance.getEntriesByType('resource').length};
+    return {width:innerWidth,scrollWidth:document.documentElement.scrollWidth,htmlOverflow:getComputedStyle(document.documentElement).overflowX,anchors,controls,outside,canonical:document.querySelector('[rel=canonical]')?.href,robots:document.querySelector('meta[name=robots]')?.content,h1:document.querySelector('main h1')?.textContent,labVitals:window.__cssVitals,navigation:performance.getEntriesByType('navigation').map(e=>({ttfb:e.responseStart,domContentLoaded:e.domContentLoadedEventEnd,load:e.loadEventEnd,transferSize:e.transferSize})),resourceBytes:[...performance.getEntriesByType('resource'),...performance.getEntriesByType('navigation')].reduce((s,r)=>s+r.transferSize,0),resources:performance.getEntriesByType('resource').length};
    });
    if(row.geometry.scrollWidth>job.width+2)row.issues.push('page-overflow');
    const clipped=row.geometry.controls.filter(x=>x.clips.length||(!x.scrollRegion&&(x.left< -2||x.right>job.width+2)));if(clipped.length)row.issues.push('control-clipping');

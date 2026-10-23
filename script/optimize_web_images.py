@@ -49,6 +49,29 @@ for source in sorted((PUBLIC / "images").rglob("*")):
             "width": image.width, "height": image.height,
             "variants": variants,
         }
+# NASA photographs retain their full composition; only browser delivery copies change.
+for source in sorted((PUBLIC / "lunar/photos").glob("*.jpg")):
+    with Image.open(source) as original:
+        image = ImageOps.exif_transpose(original).convert("RGB")
+        variants = []
+        for width in sorted({min(image.width, 480), min(image.width, 720), min(image.width, 1280)}):
+            height = round(width * image.height / image.width)
+            resized = image.resize((width, height), Image.Resampling.LANCZOS)
+            temporary = OUT / ".lunar.avif"
+            resized.save(temporary, "AVIF", quality=48, speed=6)
+            digest = hashlib.sha256(temporary.read_bytes()).hexdigest()[:16]
+            destination = OUT / f"lunar-{source.stem}-{width}-{digest}.avif"
+            temporary.replace(destination)
+            used.add(destination)
+            variants.append({"avif": "/" + str(destination.relative_to(PUBLIC)), "width": width, "height": height, "avif_bytes": destination.stat().st_size})
+        images["/" + str(source.relative_to(PUBLIC))] = {
+            "source_sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
+            "src": "/" + str(source.relative_to(PUBLIC)),
+            "srcset": "/" + str(source.relative_to(PUBLIC)) + f" {image.width}w",
+            "avif_srcset": ", ".join(f"{v['avif']} {v['width']}w" for v in variants),
+            "width": image.width, "height": image.height, "variants": variants,
+        }
+
 # Holiday photographs keep their complete composition and existing WebP fallback.
 for photo in json.loads((ROOT / "data/holiday_photos_sl.json").read_text())["photos"]:
     source = PUBLIC / photo["local_path"].lstrip("/")
