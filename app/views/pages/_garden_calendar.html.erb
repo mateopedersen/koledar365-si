@@ -1,5 +1,5 @@
 <% garden=GardenCalendar; months=GardenCalendar::MONTHS %>
-<article class="garden-page" data-garden>
+<article class="garden-page topic-experience" data-garden>
   <script type="application/json" data-garden-data><%= raw json_escape(garden.data.to_json) %></script>
   <header class="garden-hero">
     <div class="garden-hero-copy">
@@ -14,6 +14,7 @@
       <figcaption>Začnite z dobrim načrtom. Ilustrativni prizor, ustvarjen z umetno inteligenco za Koledar365.</figcaption>
     </figure>
   </header>
+  <%= render 'pages/topic_snapshot' %>
 
   <nav class="garden-jump" aria-label="Vsebina setvenega koledarja"><a href="#setveni-pregled"><span>01</span> Sezona na pogled</a><a href="#moj-vrt"><span>02</span> Moj vrt</a><a href="#kako-nacrtovati-vrt"><span>03</span> Kako načrtovati</a><a href="#vrtni-viri"><span>04</span> Viri in pojasnila</a></nav>
 
@@ -41,6 +42,7 @@
     <details class="garden-static-reference"><summary>Besedilni pregled vseh obdobij</summary><dl><% garden.plants.each do |plant| %><dt><%= plant['name'] %></dt><dd><%= plant['tasks'].map{|task|"#{task['label']}: #{task['window']}"}.join(' · ') %></dd><% end %></dl></details>
   </section>
 
+  <%= render 'pages/topic_guide' %>
   <section class="garden-personal" id="moj-vrt" aria-labelledby="garden-plan-title">
     <div class="garden-section-heading"><div><p class="garden-kicker">02 / VAŠ OSEBNI NAČRT</p><h2 id="garden-plan-title">Moj vrt, moji datumi.</h2><p>Izberite konkretni datum za svoje razmere. Vaši vnosi ostanejo v tem brskalniku.</p></div><span class="garden-plan-total" data-garden-plan-total>0 opravil</span></div>
     <div class="garden-personal-workspace">

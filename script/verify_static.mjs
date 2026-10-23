@@ -69,6 +69,19 @@ else{
  const cssHref=html.match(/<link rel="stylesheet" href="([^"]+)"/),cssFile=cssHref&&path.join(site,new URL(cssHref[1],'https://koledar365.si').pathname.slice(1));
  if(!cssFile||!fs.existsSync(cssFile)||!fs.readFileSync(cssFile,'utf8').includes('.countdown-hero'))issues.push('Countdown styles are missing from the static publication');
 }
+// The specialist source data, vector artwork and experience code must belong
+// to the exact verified snapshot. A source-only push cannot publish old HTML.
+const topics=JSON.parse(fs.readFileSync(path.join(root,'data/topic_experiences_sl.json'),'utf8')).pages;
+for(const file of ['data/topic_experiences_sl.json',...fs.readdirSync(path.join(root,'public/topics')).map(name=>'public/topics/'+name)]){
+ if(!manifest.sources[file])issues.push(file+': specialist source missing from verified fingerprint');
+}
+for(const [route,topic] of Object.entries(topics)){
+ const htmlFile=path.join(site,route.slice(1),'index.html');
+ if(!fs.existsSync(htmlFile)){issues.push(route+': specialist page missing');continue;}
+ const html=fs.readFileSync(htmlFile,'utf8');
+ const hash=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'public/topics',topic.art+'.svg'))).digest('hex').slice(0,16);
+ for(const marker of ['topic-experience','data-topic-checklist','topic-guide',`/topics/${topic.art}.${hash}.svg`,'/topics/experience.mjs'])if(!html.includes(marker))issues.push(route+': specialist snapshot missing '+marker);
+}
 console.log(JSON.stringify({passed:!issues.length,files:files.length,pairs:catalog.length,issues},null,2));if(issues.length)process.exit(1);
 await import('./lunar/verify_static.mjs');
 await import('./verify_calendar_collection_static.mjs');

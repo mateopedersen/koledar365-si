@@ -44,7 +44,7 @@ for source in report['rows']:
     assert all(abs(a-b)<1.2 for a,b in zip(got,expected)),f'Expected {expected}, got {got}'
    content=' '.join(page.extract_text() for page in pdf.pages)
    if source['kind']=='print' and source.get('name')=='student':
-    assert '7. 2. 2028' in content and '11. 2. 2028' in content,'Selected school week missing'
+    assert '7.2.2028' in content and '11.2.2028' in content,'Selected school week missing'
     assert 'Matematika' in content,'Saved sample lesson missing'
    if source['kind']=='personal-pdf':
     if source['path']=='/dnevni-planer/':

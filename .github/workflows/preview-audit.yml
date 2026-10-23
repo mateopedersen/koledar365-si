@@ -52,6 +52,18 @@ jobs:
           QA_INTERNAL=1 QA_OUT=evidence/qa/preview/internal-layout node script/qa_css_layout.mjs
           QA_WORKERS=1 QA_SAMPLE_ONLY=1 QA_OUT=evidence/qa/preview/browser node script/qa_browser.mjs
           QA_WORKERS=1 QA_MODE=a11y QA_OUT=evidence/qa/preview/accessibility node script/qa_browser.mjs
+      - name: Show failed preview page details
+        if: failure()
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          for file in Path('evidence/qa/preview').glob('*/rows.ndjson'):
+              for line in file.read_text().splitlines():
+                  row = json.loads(line)
+                  if row.get('issues'):
+                      print(json.dumps({'file':str(file),'route':row.get('route'),'width':row.get('width'),'issues':row['issues'],'errors':row.get('errors'),'failedRequests':row.get('failedRequests')},ensure_ascii=False))
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:

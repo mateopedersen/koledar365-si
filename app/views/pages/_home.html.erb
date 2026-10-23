@@ -1,6 +1,6 @@
 <div class="workspace" data-home-year="<%= @year %>" data-home-month="<%= @month %>" data-home-view="<%= @view %>">
 <aside class="left-panel" aria-label="Krajevni podatki in koledarji"><%= render 'city_card' %>
-<section class="panel"><h2><%= ui_icon('calendar') %> Prihajajoči prazniki</h2><% @upcoming.each do |e| %><a class="upcoming" href="<%= event_path(e) %>"><time><%= e.on.strftime('%-d. %-m.') %></time><span><b><%= e.title.sub(/\A./, &:upcase) %></b><small><%= e.work_free ? 'Dela prost dan':'Ni dela prost dan' %></small></span></a><% end %><a class="more" href="/prazniki/">Vsi prazniki →</a></section>
+<section class="panel"><h2><%= ui_icon('calendar') %> Prihajajoči prazniki</h2><% @upcoming.each do |e| %><a class="upcoming" href="<%= event_path(e) %>"><time datetime="<%= e.on.iso8601 %>"><%= compact_day_month(e.on) %></time><span><b><%= e.title.sub(/\A./, &:upcase) %></b><small><%= e.work_free ? 'Dela prost dan':'Ni dela prost dan' %></small></span></a><% end %><a class="more" href="/prazniki/">Vsi prazniki →</a></section>
 <section class="panel"><h2><%= ui_icon('check') %> Moji koledarji</h2><label class="check"><input type="checkbox" checked id="show-holidays"> <%= ui_icon('holidays') %> Slovenski prazniki</label><label class="check"><input type="checkbox" checked id="show-personal"> <%= ui_icon('personal') %> Osebni dogodki</label><% {'work'=>'Delo','family'=>'Družina','school'=>'Šola'}.each do |key,label| %><label class="check"><input type="checkbox" checked data-category-toggle="<%= key %>"><%= ui_icon(key) %><%= label %></label><% end %><p class="muted">Osebni zapisi ostanejo samo na tej napravi.</p></section></aside>
 <section class="center-panel"><dl class="stats" aria-label="Podatki o izbranem dnevu">
   <div><span aria-hidden="true"><%= ui_icon('week') %></span><dt>Teden ISO</dt><dd><%= @selected.cweek %></dd></div>
@@ -16,7 +16,7 @@
 <h3><%= ui_icon('holidays') %> Naslednji dela prost dan</h3>
 <% if next_day_off %>
 <% days_until = (next_day_off.on - @today).to_i %>
-<p class="holiday-feature__date"><time datetime="<%= next_day_off.on.iso8601 %>"><%= next_day_off.on.strftime('%-d. %-m.') %></time><span><%= next_day_off.title.sub(/\A./, &:upcase) %></span></p>
+<p class="holiday-feature__date"><time datetime="<%= next_day_off.on.iso8601 %>"><%= compact_day_month(next_day_off.on) %></time><span><%= next_day_off.title.sub(/\A./, &:upcase) %></span></p>
 <div class="holiday-feature__footer"><a href="<%= event_path(next_day_off) %>">Podrobnosti praznika →</a><span><%= days_until.zero? ? 'Danes' : "Čez #{days_until} dni" %></span></div>
 <% else %>
 <p>Na enem mestu preverite slovenske praznike in dela proste dni.</p>

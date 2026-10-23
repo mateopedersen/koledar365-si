@@ -9,6 +9,8 @@ on:
       - 'data/editorial/**'
       - 'data/llms-guide.json'
       - 'data/qa-templates.json'
+      - 'data/topic_experiences_sl.json'
+      - 'public/topics/**'
       - 'lib/seo_publication.rb'
       - 'lib/publication_revisions.rb'
       - 'package.json'

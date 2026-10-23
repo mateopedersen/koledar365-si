@@ -1,0 +1,6 @@
+<% topic = TopicExperience.page(page_path) %>
+<section class="topic-snapshot" aria-label="Ključne informacije">
+  <% topic.fetch('snapshot').each_with_index do |fact,index| %>
+    <div class="topic-fact"><span class="topic-fact-index" aria-hidden="true">0<%= index+1 %></span><strong><%= fact.fetch('value') %></strong><h2><%= fact.fetch('label') %></h2><p><%= fact.fetch('note') %></p></div>
+  <% end %>
+</section>

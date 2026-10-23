@@ -74,6 +74,8 @@ for source in sorted((PUBLIC / "lunar/photos").glob("*.jpg")):
 
 # Garden hero: avoid selecting a 1200px WebP for a phone-sized illustration.
 source = PUBLIC / "garden/setveni-koledar-sadike-1536.webp"
+with Image.open(PUBLIC / "garden/setveni-koledar-sadike-1200.webp") as fallback:
+    garden_fallback_width, garden_fallback_height = fallback.size
 with Image.open(source) as original:
     image = ImageOps.exif_transpose(original).convert("RGB")
     variants = []
@@ -91,7 +93,7 @@ with Image.open(source) as original:
         "src": "/garden/setveni-koledar-sadike-1200.webp",
         "srcset": "/garden/setveni-koledar-sadike-640.webp 640w, /garden/setveni-koledar-sadike-1200.webp 1200w, /garden/setveni-koledar-sadike-1536.webp 1536w",
         "avif_srcset": ", ".join(f"{v['avif']} {v['width']}w" for v in variants),
-        "width": image.width, "height": image.height, "variants": variants,
+        "width": garden_fallback_width, "height": garden_fallback_height, "variants": variants,
     }
 
 # Holiday photographs keep their complete composition and existing WebP fallback.

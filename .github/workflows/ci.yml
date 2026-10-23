@@ -59,7 +59,7 @@ jobs:
         run: node script/test_clock_change.mjs
       - name: Expanded calendar, education, astronomy and official payment contracts
         run: |
-          node --test test/search/calendar-experience.test.mjs test/search/site-search.test.mjs test/javascript/astronomy_test.cjs
+          node --test test/search/calendar-experience.test.mjs test/search/site-search.test.mjs test/javascript/astronomy_test.cjs test/javascript/topic_experience_test.mjs test/javascript/numeric_date_presentation_test.mjs
           node script/test_education.mjs
           node script/test_garden_payments.mjs
       - name: Calendar Studio date, import and export contracts

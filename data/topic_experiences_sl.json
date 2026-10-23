@@ -1,0 +1,800 @@
+{
+  "reviewedAt": "2026-10-23",
+  "pages": {
+    "/setveni-koledar/": {
+      "art": "garden",
+      "artAlt": "Sadika z razvitimi koreninami, semena in vrtna greda.",
+      "artCaption": "Od semena in korenin do presajanja na gredo. Shematski prikaz razvoja rastline.",
+      "snapshot": [
+        {
+          "value": "16",
+          "label": "vrtnin",
+          "note": "Fotografije, opisi in sezonska opravila."
+        },
+        {
+          "value": "12",
+          "label": "mesecev",
+          "note": "Setev, presajanje in pobiranje po mesecih."
+        },
+        {
+          "value": "Vaš vrt",
+          "label": "vaši datumi",
+          "note": "Osebni načrt s tiskom, ICS in varnostno kopijo."
+        }
+      ],
+      "guideTitle": "Tri odločitve pred prvo setvijo",
+      "guideIntro": "Mesec je izhodišče. Izvedbo prilagodite sorti, zemlji in dejanskim razmeram na svojem vrtu.",
+      "columns": [
+        "Preverite",
+        "Zakaj je pomembno",
+        "Kaj naredite"
+      ],
+      "rows": [
+        [
+          "Seme in sorta",
+          "Različne sorte nimajo enake dolge rastne dobe.",
+          "Preberite navodila na semenski vrečki."
+        ],
+        [
+          "Prostor za sadike",
+          "Svetloba in temperatura vplivata na razvoj sadik.",
+          "Izberite primerno mesto in čiste posode."
+        ],
+        [
+          "Greda in vreme",
+          "Primorska, notranjost in višje lege se razlikujejo.",
+          "Pred presajanjem preverite lokalne razmere."
+        ]
+      ],
+      "checklist": [
+        "Izbral sem vrtnino in sorto.",
+        "Preveril sem razmere na svojem vrtu.",
+        "Svoj datum sem dodal v osebni načrt."
+      ],
+      "sourceTitle": "Klub Gaia · vzgoja sadik",
+      "sourceUrl": "https://www.klubgaia.com/si/vrtnarski-nasveti/4264-Vzgojimo-si-svoje-sadike"
+    },
+    "/izplacila-pokojnin/": {
+      "art": "pension",
+      "artAlt": "Bančno nakazilo, pregledni koledar in dokument ZPIZ.",
+      "artCaption": "Koledar rednih nakazil. Ilustracija ne predstavlja bančnega potrdila.",
+      "snapshot": [
+        {
+          "value": "12",
+          "label": "rednih datumov",
+          "note": "Objavljeni koledar ZPIZ za leto 2026."
+        },
+        {
+          "value": "29. 12.",
+          "label": "decembrsko izplačilo",
+          "note": "Objavljeni datum se razlikuje od konca meseca."
+        },
+        {
+          "value": "ICS",
+          "label": "datumi v koledarju",
+          "note": "Prenos izbranega ali celotnega pregleda."
+        }
+      ],
+      "guideTitle": "Kaj vam pove datum pokojnine?",
+      "guideIntro": "Pregled olajša načrtovanje meseca. Za znesek in osebno pravico je pristojen ZPIZ.",
+      "columns": [
+        "Podatek",
+        "Kaj zajema",
+        "Kje preverite"
+      ],
+      "rows": [
+        [
+          "Redna pokojnina",
+          "Objavljeni mesečni datum nakazila.",
+          "Koledar izplačil na tej strani in ZPIZ."
+        ],
+        [
+          "Letni ali zimski dodatek",
+          "Ločena pravica; ni del tega seznama rednih izplačil.",
+          "Aktualna pojasnila ZPIZ."
+        ],
+        [
+          "Ura priliva",
+          "Točne ure na osebnem računu ne napovedujemo.",
+          "Svoja banka in osebni izpisek."
+        ]
+      ],
+      "checklist": [
+        "Preveril sem mesec in datum izplačila.",
+        "Pomembne termine sem dodal v koledar.",
+        "Pri osebnem vprašanju bom preveril podatke pri ZPIZ."
+      ],
+      "sourceTitle": "ZPIZ · izplačilni dnevi",
+      "sourceUrl": "https://www.zpiz.si/cms/content2019/izplailni-dnevi"
+    },
+    "/izplacila-socialnih-transferjev/": {
+      "art": "social",
+      "artAlt": "Družina, zaščiten dokument in pregled različnih nakazil.",
+      "artCaption": "Različne vrste prejemkov imajo svoj razpored. Ilustracija ni odločba.",
+      "snapshot": [
+        {
+          "value": "Po prejemku",
+          "label": "ločeni termini",
+          "note": "Izberite dodatek, pomoč, štipendijo ali drug prejemek."
+        },
+        {
+          "value": "I. / II.",
+          "label": "ločeni obdelavi",
+          "note": "Prikaz obeh ne pomeni dveh nakazil za vsakega."
+        },
+        {
+          "value": "5. 1. 2027",
+          "label": "prenos iz plana 2026",
+          "note": "Druga decembrska obdelava denarne socialne pomoči."
+        }
+      ],
+      "guideTitle": "Prejemek, obdelava in datum",
+      "guideIntro": "Izberite postavko, ki ustreza vašemu primeru. Mesec plana in dejanski datum nakazila sta prikazana ločeno.",
+      "columns": [
+        "V preglednici",
+        "Pomen",
+        "Vaš naslednji korak"
+      ],
+      "rows": [
+        [
+          "Prejemek",
+          "Vrsta transferja iz uradnega plana.",
+          "Izberite ustrezno vrsto v filtru."
+        ],
+        [
+          "Mesec plana",
+          "Mesec izvornega terminskega načrta.",
+          "Primerjajte ga s stolpcem izplačila."
+        ],
+        [
+          "Datum izplačila",
+          "Datum nakazila; ni rok za oddajo vloge.",
+          "O upravičenosti vprašajte pristojni CSD."
+        ]
+      ],
+      "checklist": [
+        "Izbral sem pravo vrsto prejemka.",
+        "Preveril sem obdelavo in datum nakazila.",
+        "Prenesel sem termine svojega izbora."
+      ],
+      "sourceTitle": "CSD · terminski plan 2026",
+      "sourceUrl": "https://www.csd-slovenije.si/csd-savinjsko-saleska/obvestila/terminski-plan-izplacil-javnih-transferjev-za-leto-2026/"
+    },
+    "/solski-koledar/": {
+      "art": "school",
+      "artAlt": "Šolska torba, knjige in koledar šolskega leta.",
+      "artCaption": "Pouk, počitnice in izpiti v povezanem šolskem letu.",
+      "snapshot": [
+        {
+          "value": "2026/27",
+          "label": "šolsko leto",
+          "note": "Od septembrskega začetka do poletnih počitnic."
+        },
+        {
+          "value": "2 skupini",
+          "label": "zimske počitnice",
+          "note": "Izbira je odvisna od lokacije šole."
+        },
+        {
+          "value": "Po razredu",
+          "label": "osebni pregled",
+          "note": "Zaključek pouka in izpitni roki se razlikujejo."
+        }
+      ],
+      "guideTitle": "Pravi koledar za pravo šolo",
+      "guideIntro": "Najprej izberite raven šole, nato razred ali letnik in lokacijo.",
+      "columns": [
+        "Izbira",
+        "Kaj se razlikuje",
+        "Na kaj bodite pozorni"
+      ],
+      "rows": [
+        [
+          "Osnovna šola",
+          "9. razred zaključi pouk 15. 6., drugi 24. 6. 2027.",
+          "Izberite razred pred prenosom."
+        ],
+        [
+          "Zimske počitnice",
+          "Vzhodna skupina: 15.–19. 2.; zahodna: 22.–26. 2. 2027.",
+          "Upoštevajte lokacijo šole in občinske izjeme."
+        ],
+        [
+          "Srednja šola",
+          "Zaključni letniki imajo drugačen konec pouka.",
+          "Izberite letnik in preverite šolski razpored."
+        ]
+      ],
+      "checklist": [
+        "Izbral sem raven šole in razred ali letnik.",
+        "Preveril sem skupino zimskih počitnic.",
+        "Datume sem primerjal z obvestili svoje šole."
+      ],
+      "sourceTitle": "Ministrstvo · šolski koledar",
+      "sourceUrl": "https://www.gov.si/teme/solski-koledar-za-osnovne-sole/"
+    },
+    "/matura/2027/": {
+      "art": "matura",
+      "artAlt": "Maturitetna kapa, spričevalo in dve poti do izpitnega koledarja.",
+      "artCaption": "Splošna in poklicna matura imata ločena koledarja.",
+      "snapshot": [
+        {
+          "value": "2",
+          "label": "vrsti mature",
+          "note": "Splošna in poklicna, vsaka s svojim razporedom."
+        },
+        {
+          "value": "2",
+          "label": "izpitna roka",
+          "note": "Spomladanski in jesenski pregled."
+        },
+        {
+          "value": "Vaši predmeti",
+          "label": "vaš izbor",
+          "note": "Skupni roki ostanejo vključeni."
+        }
+      ],
+      "guideTitle": "Izberite svojo pot do mature",
+      "guideIntro": "Začnite z vrsto mature. Osebni dan in uro ustnih izpitov določi šola.",
+      "columns": [
+        "Pregled",
+        "Kaj vključuje",
+        "Kam naprej"
+      ],
+      "rows": [
+        [
+          "Splošna matura",
+          "Esej, pisni predmeti, ustna obdobja in rezultati.",
+          "Odprite splošno maturo in izberite predmete."
+        ],
+        [
+          "Poklicna matura",
+          "Programski drugi in četrti predmet ter skupni roki.",
+          "Odprite poklicno maturo in preverite program."
+        ],
+        [
+          "Posamezni izpit splošne mature",
+          "Dodaten predmet se preverja po koledarju splošne mature.",
+          "Ustrezni predmet shranite posebej."
+        ]
+      ],
+      "checklist": [
+        "Izbral sem vrsto mature in izpitni rok.",
+        "Označil sem svoje predmete.",
+        "Osebne termine bom preveril na šoli."
+      ],
+      "sourceTitle": "RIC · koledarja mature",
+      "sourceUrl": "https://www.ric.si/splosna-matura/koledar-splosne-mature/"
+    },
+    "/matura/2027/splosna/": {
+      "art": "general",
+      "artAlt": "Maturitetni esej, nalivno pero in spričevalo.",
+      "artCaption": "Od eseja do pisnih in ustnih izpitov ter rezultatov.",
+      "snapshot": [
+        {
+          "value": "4. 5.",
+          "label": "esej 2027",
+          "note": "Prvi del izpita iz učnega jezika."
+        },
+        {
+          "value": "9.–23. 6.",
+          "label": "redno ustno obdobje",
+          "note": "Osebni termin objavi šola; možni sta izjemi."
+        },
+        {
+          "value": "13. 7.",
+          "label": "spomladanski rezultati",
+          "note": "Objava uspeha pri splošni maturi."
+        }
+      ],
+      "guideTitle": "Splošna matura v treh korakih",
+      "guideIntro": "Spodnji poudarki veljajo za spomladanski rok 2027. Jesenski razpored izberete v orodju.",
+      "columns": [
+        "Korak",
+        "Uradni okvir",
+        "Kako ga uporabite"
+      ],
+      "rows": [
+        [
+          "Esej in pisni izpiti",
+          "Esej 4. maja; drugi pisni izpiti imajo predmetne datume.",
+          "Izberite vsak svoj predmet."
+        ],
+        [
+          "Ustni izpiti",
+          "Redno 9.–23. junija; izjemoma tudi 29. maja ali 5. junija.",
+          "Na šoli preverite osebni dan in uro."
+        ],
+        [
+          "Rezultati in vpogled",
+          "Uspeh 13. julija; e-vpogledi 13.–15. julija 2027.",
+          "Shranite tudi datum vpogleda."
+        ]
+      ],
+      "checklist": [
+        "Preveril sem esej in vse pisne predmete.",
+        "Na šoli bom preveril osebne ustne termine.",
+        "V koledar sem vključil rezultate in vpogled."
+      ],
+      "sourceTitle": "RIC · splošna matura 2027",
+      "sourceUrl": "https://www.ric.si/splosna-matura/koledar-splosne-mature/"
+    },
+    "/matura/2027/poklicna/": {
+      "art": "vocational",
+      "artAlt": "Tehniško risalo, zobnik in dokument poklicne mature.",
+      "artCaption": "Predmetni roki in praktični del programa ostanejo jasno ločeni.",
+      "snapshot": [
+        {
+          "value": "7. 6.",
+          "label": "drugi predmet",
+          "note": "Spomladanski pisni izpit 2027."
+        },
+        {
+          "value": "9.–23. 6.",
+          "label": "ustni in četrti predmet",
+          "note": "Osebni razpored določi šola."
+        },
+        {
+          "value": "8. 7.",
+          "label": "spomladanski rezultati",
+          "note": "Uspeh pri poklicni maturi 2027."
+        }
+      ],
+      "guideTitle": "Predmeti vašega programa",
+      "guideIntro": "Drugi in četrti predmet sta vezana na izobraževalni program.",
+      "columns": [
+        "Del mature",
+        "Kaj preverite",
+        "Kje najdete osebni podatek"
+      ],
+      "rows": [
+        [
+          "Pisni izpiti",
+          "Predmetne datume v izbranem roku.",
+          "Izbor predmetov v koledarju."
+        ],
+        [
+          "Drugi in četrti predmet",
+          "Program ter šolski razpored izvedbe.",
+          "Obvestila in maturitetna komisija vaše šole."
+        ],
+        [
+          "Dodatni predmet splošne mature",
+          "Posebno prijavo in datum splošne mature.",
+          "Ločen koledar splošne mature."
+        ]
+      ],
+      "checklist": [
+        "Preveril sem predmete svojega programa.",
+        "Dogovoril se bom za podrobnosti četrtega predmeta.",
+        "Morebitni dodatni predmet sem preveril ločeno."
+      ],
+      "sourceTitle": "RIC · poklicna matura 2027",
+      "sourceUrl": "https://www.ric.si/poklicna-matura/koledar-poklicne-mature/"
+    },
+    "/npz/": {
+      "art": "npz",
+      "artAlt": "Trije označeni šolski zvezki za 3., 6. in 9. razred.",
+      "artCaption": "Vsak razred ima svoje predmete in roke objave dosežkov.",
+      "snapshot": [
+        {
+          "value": "3 · 6 · 9",
+          "label": "razredi NPZ",
+          "note": "Odprite namenski koledar za svoj razred."
+        },
+        {
+          "value": "Marec–april",
+          "label": "preizkusi 2027",
+          "note": "Jezik, matematika in dodatni predmet po razredu."
+        },
+        {
+          "value": "Ločeni roki",
+          "label": "dosežki in vpogledi",
+          "note": "Datumi objave se med razredi razlikujejo."
+        }
+      ],
+      "guideTitle": "Primerjajte razrede na enem mestu",
+      "guideIntro": "Jezikovni preizkus in matematika sta skupna. Dodatni predmet in objava dosežkov sta odvisna od razreda.",
+      "columns": [
+        "Razred",
+        "Preizkusi",
+        "Prva seznanitev z dosežki"
+      ],
+      "rows": [
+        [
+          "3. razred",
+          "Jezik in matematika.",
+          "6. maj 2027"
+        ],
+        [
+          "6. razred",
+          "Jezik, tuji jezik in matematika.",
+          "3. maj 2027"
+        ],
+        [
+          "9. razred",
+          "Jezik, tretji predmet in matematika.",
+          "20. april 2027"
+        ]
+      ],
+      "checklist": [
+        "Izbral sem pravi razred.",
+        "Preveril sem predmete in dneve preizkusov.",
+        "Shranil sem tudi datum dosežkov in vpogleda."
+      ],
+      "sourceTitle": "RIC · koledar NPZ",
+      "sourceUrl": "https://www.ric.si/nacionalno-preverjanje-znanja/koledar-npz/"
+    },
+    "/npz/3-razred/": {
+      "art": "npz3",
+      "artAlt": "Zvezek, pisalo in učni pripomočki za NPZ v 3. razredu.",
+      "artCaption": "Dva preizkusa: jezik in matematika.",
+      "snapshot": [
+        {
+          "value": "3.",
+          "label": "razred",
+          "note": "Namenski pregled samo za ta razred."
+        },
+        {
+          "value": "22. 3.",
+          "label": "pomemben preizkus",
+          "note": "2027 · Jezik"
+        },
+        {
+          "value": "6. 5.",
+          "label": "objava dosežkov",
+          "note": "2027 · prva seznanitev učencev."
+        }
+      ],
+      "guideTitle": "NPZ za 3. razred, jasno po korakih",
+      "guideIntro": "Dva preizkusa: jezik in matematika.",
+      "columns": [
+        "Datum 2027",
+        "Kaj je na vrsti",
+        "Kaj si zapomnite"
+      ],
+      "rows": [
+        [
+          "22. marec",
+          "Slovenščina, italijanščina ali madžarščina.",
+          "Preizkus iz učnega jezika."
+        ],
+        [
+          "1. april",
+          "Matematika.",
+          "Drugi preizkus v 3. razredu."
+        ],
+        [
+          "6. maj",
+          "Prva seznanitev z dosežki.",
+          "Sledi obdobje vpogledov."
+        ]
+      ],
+      "checklist": [
+        "Preveril sem vse preizkuse za 3. razred.",
+        "Šolo bom vprašal o potrebnih pripomočkih.",
+        "V koledar sem dodal še dosežke in vpogled."
+      ],
+      "sourceTitle": "RIC · NPZ po razredih",
+      "sourceUrl": "https://www.ric.si/nacionalno-preverjanje-znanja/koledar-npz/"
+    },
+    "/npz/6-razred/": {
+      "art": "npz6",
+      "artAlt": "Zvezek, pisalo in učni pripomočki za NPZ v 6. razredu.",
+      "artCaption": "Trije preizkusi, vključno s tujim jezikom.",
+      "snapshot": [
+        {
+          "value": "6.",
+          "label": "razred",
+          "note": "Namenski pregled samo za ta razred."
+        },
+        {
+          "value": "24. 3.",
+          "label": "pomemben preizkus",
+          "note": "2027 · Tuji jezik"
+        },
+        {
+          "value": "3. 5.",
+          "label": "objava dosežkov",
+          "note": "2027 · prva seznanitev učencev."
+        }
+      ],
+      "guideTitle": "NPZ za 6. razred, jasno po korakih",
+      "guideIntro": "Trije preizkusi, vključno s tujim jezikom.",
+      "columns": [
+        "Datum 2027",
+        "Kaj je na vrsti",
+        "Kaj si zapomnite"
+      ],
+      "rows": [
+        [
+          "22. marec",
+          "Preizkus iz učnega jezika.",
+          "Skupni datum vseh treh razredov."
+        ],
+        [
+          "24. marec",
+          "Tuji jezik.",
+          "Predmet preverite pri šoli."
+        ],
+        [
+          "1. april",
+          "Matematika.",
+          "Za dosežke spremljajte svoj razred."
+        ]
+      ],
+      "checklist": [
+        "Preveril sem vse preizkuse za 6. razred.",
+        "Šolo bom vprašal o potrebnih pripomočkih.",
+        "V koledar sem dodal še dosežke in vpogled."
+      ],
+      "sourceTitle": "RIC · NPZ po razredih",
+      "sourceUrl": "https://www.ric.si/nacionalno-preverjanje-znanja/koledar-npz/"
+    },
+    "/npz/9-razred/": {
+      "art": "npz9",
+      "artAlt": "Zvezek, pisalo in učni pripomočki za NPZ v 9. razredu.",
+      "artCaption": "Ime tretjega predmeta preverite pri svoji šoli.",
+      "snapshot": [
+        {
+          "value": "9.",
+          "label": "razred",
+          "note": "Namenski pregled samo za ta razred."
+        },
+        {
+          "value": "24. 3.",
+          "label": "pomemben preizkus",
+          "note": "2027 · Tretji predmet"
+        },
+        {
+          "value": "20. 4.",
+          "label": "objava dosežkov",
+          "note": "2027 · prva seznanitev učencev."
+        }
+      ],
+      "guideTitle": "NPZ za 9. razred, jasno po korakih",
+      "guideIntro": "Ime tretjega predmeta preverite pri svoji šoli.",
+      "columns": [
+        "Datum 2027",
+        "Kaj je na vrsti",
+        "Kaj si zapomnite"
+      ],
+      "rows": [
+        [
+          "22. marec",
+          "Preizkus iz učnega jezika.",
+          "Skupni datum vseh treh razredov."
+        ],
+        [
+          "24. marec",
+          "Tretji predmet vaše šole.",
+          "Predmet preverite pri šoli."
+        ],
+        [
+          "1. april",
+          "Matematika.",
+          "Za dosežke spremljajte svoj razred."
+        ]
+      ],
+      "checklist": [
+        "Preveril sem vse preizkuse za 9. razred.",
+        "Šolo bom vprašal o potrebnih pripomočkih.",
+        "V koledar sem dodal še dosežke in vpogled."
+      ],
+      "sourceTitle": "RIC · NPZ po razredih",
+      "sourceUrl": "https://www.ric.si/nacionalno-preverjanje-znanja/koledar-npz/"
+    },
+    "/studijski-koledar/": {
+      "art": "study",
+      "artAlt": "Univerzitetna stavba, odprta knjiga in semestrski koledar.",
+      "artCaption": "Semestri in izpitna obdobja: okvir ustanove, osebni termini pri članici.",
+      "snapshot": [
+        {
+          "value": "2026/27",
+          "label": "študijsko leto",
+          "note": "Semestri, izpiti in objavljeni prosti dnevi."
+        },
+        {
+          "value": "Po ustanovi",
+          "label": "ločeni koledarji",
+          "note": "Univerzitetnih okvirov ne združujemo v enega."
+        },
+        {
+          "value": "Vaši izpiti",
+          "label": "pri članici",
+          "note": "Izpitno obdobje še ni osebni termin izpita."
+        }
+      ],
+      "guideTitle": "Semestri in izpiti niso isto",
+      "guideIntro": "Izberite svojo ustanovo. Razpored članice in prijavne roke preverite v njenem informacijskem sistemu.",
+      "columns": [
+        "Obdobje",
+        "Kaj pomeni",
+        "Kaj dodate osebno"
+      ],
+      "rows": [
+        [
+          "Semester",
+          "Obdobje organiziranega pedagoškega dela.",
+          "Svoj urnik predavanj in vaj."
+        ],
+        [
+          "Izpitno obdobje",
+          "Okvir, v katerem ustanova razporeja izpite.",
+          "Posamezen datum izpita in prijavni rok."
+        ],
+        [
+          "Objavljeni prosti dnevi",
+          "Izrecno navedeni dnevi brez pedagoškega dela.",
+          "Posebnosti svojega programa ali članice."
+        ]
+      ],
+      "checklist": [
+        "Izbral sem univerzo ali članico.",
+        "Preveril sem osebne izpitne in prijavne roke.",
+        "Izbrane dogodke sem izvozil v svoj koledar."
+      ],
+      "sourceTitle": "Univerza v Ljubljani · študijski koledar",
+      "sourceUrl": "https://www.uni-lj.si/assets/Sluzba-za-1-in-2-stopnjo/Studijski-koledar/2026-2027/Studijski_koledar-2026_2027-besedilo.pdf"
+    },
+    "/soncni-mrk/": {
+      "art": "solar",
+      "artAlt": "Sonce, Luna in Zemlja s prikazom Lunine sence.",
+      "artCaption": "Sončev mrk: Luna med Soncem in Zemljo. Velikosti in razdalje niso v merilu.",
+      "snapshot": [
+        {
+          "value": "Vaš kraj",
+          "label": "lokalni potek",
+          "note": "Globalni maksimum ni vedno čas opazovanja pri vas."
+        },
+        {
+          "value": "Nad obzorjem",
+          "label": "opazovalno okno",
+          "note": "Upošteva lego Sonca; ne vključuje vremena in hribov."
+        },
+        {
+          "value": "Zaščita oči",
+          "label": "pri vsakem delnem mrku",
+          "note": "Navadna sončna očala niso primerna."
+        }
+      ],
+      "guideTitle": "Prepoznajte vrsto Sončevega mrka",
+      "guideIntro": "Prikaz lokalne vidnosti v koledarju je ločen od globalne vrste pojava.",
+      "columns": [
+        "Vrsta",
+        "Kaj se zgodi",
+        "Kaj preverite v svojem kraju"
+      ],
+      "rows": [
+        [
+          "Delni",
+          "Luna prekrije le del Sončeve ploskve.",
+          "Višino Sonca in varen način opazovanja."
+        ],
+        [
+          "Popolni",
+          "Luna z ustreznega območja prekrije vso Sončevo ploskev.",
+          "Ali vaš kraj sploh leži na območju popolne faze."
+        ],
+        [
+          "Kolobarjasti",
+          "Okoli Lune ostane viden svetel Sončev obroč.",
+          "Zaščita je potrebna ves čas neposrednega opazovanja."
+        ]
+      ],
+      "checklist": [
+        "Izbral sem kraj in leto opazovanja.",
+        "Preveril sem lokalno okno in odprto obzorje.",
+        "Pripravil sem ustrezno zaščito za Sonce."
+      ],
+      "sourceTitle": "NASA · mrki in varno opazovanje",
+      "sourceUrl": "https://science.nasa.gov/eclipses/"
+    },
+    "/lunin-mrk/": {
+      "art": "lunar",
+      "artAlt": "Zemlja med Soncem in Luno; Luna v Zemljini senci.",
+      "artCaption": "Lunin mrk: Luna prečka Zemljino senco. Velikosti in razdalje niso v merilu.",
+      "snapshot": [
+        {
+          "value": "Polna luna",
+          "label": "možnost Luninega mrka",
+          "note": "Vsaka polna luna še ne pomeni mrka."
+        },
+        {
+          "value": "3 vrste",
+          "label": "polsenčni, delni, popolni",
+          "note": "Razlikujejo se po prehodu skozi senco."
+        },
+        {
+          "value": "Brez filtra",
+          "label": "opazovanje s prostim očesom",
+          "note": "Za Lunin mrk posebna očala niso potrebna."
+        }
+      ],
+      "guideTitle": "Od polsence do popolne faze",
+      "guideIntro": "Spremljajte faze mrka in obenem preverite, ali je Luna nad vašim obzorjem.",
+      "columns": [
+        "Faza",
+        "Kaj opazujete",
+        "Kaj vpliva na vidnost"
+      ],
+      "rows": [
+        [
+          "Polsenčna",
+          "Nežno potemnitev Lunine ploskve.",
+          "Sprememba je lahko komaj zaznavna."
+        ],
+        [
+          "Delna",
+          "Del Lune vstopi v glavno Zemljino senco.",
+          "Lunin vzhod, zahod in krajevno obzorje."
+        ],
+        [
+          "Popolna",
+          "Celotna Luna je v glavni senci.",
+          "Barva in svetlost se med mrki razlikujeta."
+        ]
+      ],
+      "checklist": [
+        "Izbral sem kraj in preveril Lunin vzhod.",
+        "Preveril sem začetek in konec vidnih faz.",
+        "Pripravil sem daljnogled ali prost pogled na nebo."
+      ],
+      "sourceTitle": "NASA · Sončevi in Lunini mrki",
+      "sourceUrl": "https://science.nasa.gov/eclipses/"
+    },
+    "/perzeidi/": {
+      "art": "perseids",
+      "artAlt": "Meteorske sledi nad silhueto slovenskih gora in temnim nebom.",
+      "artCaption": "Ilustrativno avgustovsko nebo; smeri sledi niso krajevna zvezdna karta.",
+      "snapshot": [
+        {
+          "value": "12./13. 8.",
+          "label": "običajno obdobje viška",
+          "note": "Primerjava treh sosednjih avgustovskih noči."
+        },
+        {
+          "value": "109P",
+          "label": "komet Swift–Tuttle",
+          "note": "Zemlja prečka tok njegovih delcev."
+        },
+        {
+          "value": "Širok pogled",
+          "label": "brez teleskopa",
+          "note": "Tema in malo mesečine pomagata pri opazovanju."
+        }
+      ],
+      "guideTitle": "Pripravite si dobro opazovalno noč",
+      "guideIntro": "Koledar primerja temo in Luno. To ni napoved števila utrinkov ali jamstvo jasnega vremena.",
+      "columns": [
+        "Razmera",
+        "Zakaj šteje",
+        "Kaj naredite"
+      ],
+      "rows": [
+        [
+          "Temno nebo",
+          "Mestne luči in mesečina zakrijejo šibkejše sledi.",
+          "Primerjajte modre intervale brez Lune."
+        ],
+        [
+          "Široko vidno polje",
+          "Utrinki se pojavljajo na širšem delu neba.",
+          "Udobno se namestite; teleskop ni potreben."
+        ],
+        [
+          "Priprava na noč",
+          "Poleti je lahko zunaj hladno in vlažno.",
+          "Vzemite topel sloj in preverite vreme ter varno pot."
+        ]
+      ],
+      "checklist": [
+        "Izbral sem kraj in primerjal tri noči.",
+        "Preveril sem mesečino, vreme in dostop.",
+        "Pripravil sem topla oblačila in udoben sedež."
+      ],
+      "sourceTitle": "NASA · Perzeidi",
+      "sourceUrl": "https://science.nasa.gov/solar-system/meteors-meteorites/perseids/"
+    }
+  }
+}
