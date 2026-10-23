@@ -6,14 +6,14 @@ import path from 'node:path';
 import {spawn} from 'node:child_process';
 const root=path.resolve(import.meta.dirname,'..');
 const out=path.join(root,'evidence/qa/image-gate-controls');
-let freezeFrames=false;let freezeTimers=false;let pageHeight=9000;
+let freezeFrames=false;let freezeTimers=false;let stallDecode=false;let pageHeight=9000;
 const svg='<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="blue"/></svg>';
 const server=http.createServer((req,res)=>{
  if(req.url==='/ok.svg'){res.writeHead(200,{'Content-Type':'image/svg+xml'});res.end(svg);return;}
  if(req.url==='/missing.webp'){res.writeHead(404);res.end('missing');return;}
  const broken=req.url.includes('socialnih');
  res.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});
- res.end(`<!doctype html><html lang="sl"><meta name="viewport" content="width=device-width"><title>Image gate control</title>${freezeFrames?'<script>window.requestAnimationFrame=()=>0</script>':''}${freezeTimers?'<script>window.setTimeout=()=>0</script>':''}<style>body{margin:0}h1{font-size:24px}</style><main><h1>Koledar</h1><details><summary>Closed image</summary><img loading="lazy" src="/missing.webp" width="100" height="100" alt="Hidden image"></details>${broken?'':'<div style="height:'+pageHeight+'px"></div>'}<img loading="${broken?'eager':'lazy'}" src="${broken?'/missing.webp':'/ok.svg'}" width="100" height="100" alt="Visible image"></main></html>`);
+ res.end(`<!doctype html><html lang="sl"><meta name="viewport" content="width=device-width"><title>Image gate control</title>${freezeFrames?'<script>window.requestAnimationFrame=()=>0</script>':''}${stallDecode?'<script>HTMLImageElement.prototype.decode=()=>new Promise(()=>{})</script>':''}${freezeTimers?'<script>window.setTimeout=()=>0</script>':''}<style>body{margin:0}h1{font-size:24px}</style><main><h1>Koledar</h1><details><summary>Closed image</summary><img loading="lazy" src="/missing.webp" width="100" height="100" alt="Hidden image"></details>${broken?'':'<div style="height:'+pageHeight+'px"></div>'}<img loading="${broken?'eager':'lazy'}" src="${broken?'/missing.webp':'/ok.svg'}" width="100" height="100" alt="Visible image"></main></html>`);
 });
 await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
 const base='http://127.0.0.1:'+server.address().port;
@@ -25,9 +25,10 @@ try{
   ['lazy-webkit-tiles','webkit','/solski-koledar/',2,0],
   ['lazy-no-animation-frames','chromium','/solski-koledar/',8,0],
   ['frozen-browser-clocks','chromium','/solski-koledar/',8,0],
+  ['stalled-decode','chromium','/solski-koledar/',8,2],
   ['broken-chromium','chromium','/izplacila-socialnih-transferjev/',8,8]
  ]){
-  freezeTimers=name==='frozen-browser-clocks';freezeFrames=name==='lazy-no-animation-frames'||freezeTimers;pageHeight=name==='lazy-webkit-tiles'?40000:9000;
+  stallDecode=name==='stalled-decode';freezeTimers=name==='frozen-browser-clocks';freezeFrames=name==='lazy-no-animation-frames'||freezeTimers;pageHeight=name==='lazy-webkit-tiles'?40000:9000;
   const folder=path.join(out,name);let log='';
   const code=await new Promise((resolve,reject)=>{
    const child=spawn(process.execPath,['script/qa_browser.mjs'],{cwd:root,env:{...process.env,K365_BASE_URL:base,QA_MODE:'layout',QA_BROWSER:engine,QA_PATHS:route,QA_OUT:folder}});
@@ -46,10 +47,14 @@ try{
    }
   }
   if(freezeFrames)assert(report.rows.filter(row=>row.snapshot).every(row=>row.imageLoading?.paintTimerFallbacks>0&&row.imageLoading.decodedImages>0),'Animation-frame fallback must still decode visible images');
-  if(failed)assert(report.rows.every(row=>!row.passed&&JSON.stringify(row).includes('/missing.webp')),name+': missing broken-image evidence');
+  if(name==='broken-chromium')assert(report.rows.every(row=>!row.passed&&JSON.stringify(row).includes('/missing.webp')),name+': missing broken-image evidence');
+  if(stallDecode){
+   const failures=report.rows.filter(row=>!row.passed);
+   assert(failures.every(row=>row.snapshot&&row.imageLoadingProgress?.stage==='decode'&&JSON.stringify(row.issues).includes('/ok.svg')&&!JSON.stringify(row.issues).includes('Scrolled image loading timed out')),'A stalled decoder must fail at its own deadline with the image URL');
+  }
   cases.push({name,tested,expectedFailures:failed,observedFailures:report.failed,passed:true});
  }
  fs.mkdirSync(out,{recursive:true});
- fs.writeFileSync(path.join(out,'summary.json'),JSON.stringify({tested:36,failed:0,cases},null,2)+'\n');
- console.log(JSON.stringify({imageGateControls:36,failed:0,cases}));
+ fs.writeFileSync(path.join(out,'summary.json'),JSON.stringify({tested:44,failed:0,cases},null,2)+'\n');
+ console.log(JSON.stringify({imageGateControls:44,failed:0,cases}));
 }finally{await new Promise(resolve=>server.close(resolve));}
