@@ -52,14 +52,19 @@
 #city-card .weather-hours>div{min-width:43px;padding:8px 5px;background:#f6f9fc;border:1px solid #ebf0f6;border-radius:8px;font-size:10px;color:#7b8fa7}
 #city-card .weather-hours strong{font-size:15px;margin-top:4px;color:#2e5377}
 #city-card #weather-more>.muted{font-size:10px;color:#7d8c9f;line-height:1.55;margin:3px 0 12px}
-#city-card .weather-source{display:flex;align-items:center;gap:7px;margin:0 0 12px;padding:0 0 0 4px;min-height:35px;color:#7a8da3}
-#city-card .weather-source .status-dot{width:5px;height:5px;flex:none;background:#a9bacd;border-radius:50%}
+#city-card .weather-source{display:flex;align-items:center;gap:8px;margin:3px 0 12px;padding:8px;border:1px solid #dce7f2;border-radius:14px;background:linear-gradient(120deg,#f4f8fd,#fff);min-height:60px;color:#526174}
+#city-card .weather-source .status-dot{width:7px;height:7px;flex:none;background:#a9bacd;border-radius:50%}
 #city-card .weather-source>div{min-width:0;flex:1}
-#city-card .weather-source small{display:block;font-size:9px;line-height:1.65}
-#city-card #weather-published{font-size:8px;color:#91a0b2}
-#city-card #weather-refresh{display:grid;place-items:center;flex:none;width:28px;height:28px;min-height:28px;padding:6px;border:1px solid #e5ecf4;border-radius:50%;background:#f8fafd;color:#7f95ae;box-shadow:none;cursor:pointer}
-#city-card #weather-refresh:hover{background:#e9f0f8;color:#244d76}
-#city-card #weather-refresh svg{width:14px;height:14px}
+#city-card .weather-source small{display:block;font-size:10px;line-height:1.45}
+#city-card #weather-updated{font-size:11px;font-weight:700;color:#294861}
+#city-card #weather-published{font-size:10px;color:#5b7188}
+#city-card #weather-refresh{display:inline-flex;align-items:center;justify-content:center;gap:7px;flex:none;min-width:136px;min-height:44px;padding:5px 11px 5px 5px;border:1px solid #004b91;border-radius:12px;background:linear-gradient(135deg,#096fc2,#004f9d);color:#fff;box-shadow:0 3px 9px #0054a522;font:750 13px/1.1 Avenir,system-ui,sans-serif;letter-spacing:.01em;white-space:nowrap;cursor:pointer;transition:background .2s,box-shadow .2s,transform .2s}
+#city-card #weather-refresh:hover:not(:disabled){background:linear-gradient(135deg,#087bcf,#005da9);box-shadow:0 5px 13px #0054a533;transform:translateY(-1px)}
+#city-card #weather-refresh:active:not(:disabled){transform:translateY(0);box-shadow:0 2px 5px #0054a522}
+#city-card #weather-refresh:focus-visible{outline:3px solid #e02c45;outline-offset:3px}
+#city-card #weather-refresh:disabled{opacity:1;cursor:wait;background:linear-gradient(135deg,#387da9,#316794);box-shadow:none}
+#city-card .weather-refresh__icon{display:grid;place-items:center;flex:none;width:31px;height:31px;border:1px solid #ffffff42;border-radius:8px;background:#ffffff1f}
+#city-card #weather-refresh svg{width:20px;height:20px;color:#fff}
 #city-card[data-weather-state=ready] .status-dot{background:#0054b8;box-shadow:0 0 0 3px #0054b810}
 #city-card[data-weather-state=saved] .status-dot,#city-card[data-weather-state=unavailable] .status-dot{background:#d69b4c}
 #city-card.is-refreshing #weather-refresh svg{animation:wx-spin 1.5s linear infinite}
@@ -88,3 +93,5 @@
 #city-card .weather-facts span,#city-card .weather-hours>div,#city-card #weather-more>.muted,#city-card .today-live{color:#526174}
 /* Keep the first paint steady; motion responds to deliberate interaction. */
 #city-card:not(:hover):not(:focus-within) [class^="wx-"],#city-card:not(:hover):not(:focus-within) [class^="wx-"] *{animation-play-state:paused}
+#city-card #weather-published{font-size:10px}
+@media(max-width:359px){#city-card .weather-source{flex-wrap:wrap}#city-card .weather-source>div{flex:1}#city-card #weather-refresh{width:100%;min-width:0}}

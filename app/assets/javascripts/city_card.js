@@ -63,7 +63,7 @@ function render(body,saved=false){
 function schedule(body){const now=Date.now(),remaining=Date.parse(body.expires_at)-now,delay=body.stale?15000:Math.max(60000,Math.min(300000,remaining||60000));weatherTimer=setTimeout(()=>{if(!document.hidden)refresh()},Math.min(delay,3600000-now%3600000+20))}
 async function refresh(force=false){
  clearTimeout(weatherTimer);request?.abort();const controller=new AbortController();request=controller;const id=select.value,token=++revision,city=chosen(id),photoReady=preparePhoto(city),previous=displayed?.city===id&&usable(displayed,id)?displayed:cached(id);
- card.dataset.pendingCity=id;$('city-weather').setAttribute('aria-busy','true');card.classList.add('is-refreshing');$('weather-refresh').disabled=true;const timeout=setTimeout(()=>controller.abort(),8000);
+ card.dataset.pendingCity=id;$('city-weather').setAttribute('aria-busy','true');card.classList.add('is-refreshing');$('weather-refresh').disabled=true;$('weather-refresh').setAttribute('aria-label','Osveževanje vremenske napovedi');text('weather-refresh-label','Osvežujem');const timeout=setTimeout(()=>controller.abort(),8000);
  try{
   if(previous){await photoReady;if(token!==revision||select.value!==id)return;render(previous,!memory.has(id)||Date.parse(previous.expires_at)<=Date.now());if(!force&&!previous.stale&&Date.parse(previous.expires_at)>Date.now()){schedule(previous);return}}
   // Keep the last complete, correctly labelled card until the new city is ready.
@@ -78,7 +78,7 @@ async function refresh(force=false){
   else if(displayed&&usable(displayed,displayed.city)){select.value=displayed.city;text('weather-updated','Napoved za '+city.name+' ni dosegljiva. Poskusite znova.')}
   else{card.dataset.weatherState='unavailable';text('weather-label','Vreme · '+city.name);text('weather-description','Napoved ni dosegljiva');text('weather-temperature','—');$('weather-icon').innerHTML='<svg class="weather-unavailable" viewBox="0 0 100 100"><circle cx="50" cy="50" r="25" fill="#f1f5fa" stroke="#b7c9dc" stroke-width="2"/><path d="M50 33v19m0 10v2" stroke="#7895b3" stroke-width="3" stroke-linecap="round"/></svg>';text('weather-updated','Vir se ne odziva · poskusite znova')}
   weatherTimer=setTimeout(()=>{if(!document.hidden)refresh()},60000);
- }finally{clearTimeout(timeout);if(token===revision){delete card.dataset.pendingCity;$('city-weather').removeAttribute('aria-busy');card.classList.remove('is-refreshing');$('weather-refresh').disabled=false;request=null}}
+ }finally{clearTimeout(timeout);if(token===revision){delete card.dataset.pendingCity;$('city-weather').removeAttribute('aria-busy');card.classList.remove('is-refreshing');$('weather-refresh').disabled=false;$('weather-refresh').setAttribute('aria-label','Osveži vremensko napoved');text('weather-refresh-label','Osveži');request=null}}
 }
 function changeCity(){refresh()}
 function locationStatus(message){const status=$('city-location-status');if(status)status.textContent=message}
