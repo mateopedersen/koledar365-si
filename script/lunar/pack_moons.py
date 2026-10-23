@@ -22,3 +22,7 @@ for y in range(2027,2031):
 for old in OUT.glob('*.webp'):
  if old.name not in keep:old.unlink()
 (ROOT/'evidence/lunar/atlas-audit.json').write_text(json.dumps({'status':'passed','days':len(mapping),'losslessPixelEquality':True,'files':len(list(OUT.glob('*.webp'))),'largestBytes':max(p.stat().st_size for p in OUT.glob('*.webp'))},indent=2))
+
+# Screen previews are derived separately; lossless source atlases stay untouched.
+import subprocess,sys
+subprocess.run([sys.executable,str(ROOT/"script/lunar/screen_atlases.py")],check=True)

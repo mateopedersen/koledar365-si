@@ -88,12 +88,14 @@ class SeoTest < ActionDispatch::IntegrationTest
         id=link['href'].match(%r{/soncni-vzhod-in-zahod/([a-z0-9-]+)/})[1]
         city=city_index.fetch(id)
         mark=card.at_css('.sun-city-link__mark')
-        assert_equal 'svg',mark.name
-        title_id=mark['aria-labelledby'].split.first
-        assert_equal "#{city.fetch('name')} – fotografija mesta",mark.at_css("title##{title_id}").text
-        assert_includes mark.to_html,'href="data:image/jpeg;base64,'
-        assert Rails.root.join('data','city-marks',"#{id}.svg").file?
-        refute Rails.root.join('public','images','city-marks',"#{id}.svg").exist?
+        assert_equal 'img',mark.name
+        assert_equal "#{city.fetch('name')} – fotografija mesta",mark['alt']
+        assert_equal "/city-marks/#{id}.svg",mark['src']
+        assert_equal 'lazy',mark['loading']
+        assert_equal '58',mark['width']
+        assert_equal '46',mark['height']
+        original=Rails.root.join('data','city-marks',"#{id}.svg").read
+        assert_equal original,Rails.root.join('public','city-marks',"#{id}.svg").read
         credit=card.at_css('.sun-city-link__credit')
         assert_equal "/fotografije-in-licence/##{id}",credit['href']
         assert_includes credit.text,city.dig('photo','author')

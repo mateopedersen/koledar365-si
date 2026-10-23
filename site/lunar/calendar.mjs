@@ -4,7 +4,7 @@ if(root){
  const gen=['januarja','februarja','marca','aprila','maja','junija','julija','avgusta','septembra','oktobra','novembra','decembra'];
  const label=d=>{const [y,m,day]=d.split('-').map(Number);return `${day}. ${gen[m-1]} ${y}`};
  const percent=d=>new Intl.NumberFormat('sl-SI',{minimumFractionDigits:1,maximumFractionDigits:1}).format(d.illuminationFraction*100)+'\u00a0%';
- const moon=(svg,date,alt)=>{const i=Number(date.slice(-2))-1;svg.setAttribute('viewBox',`${i%6*768} ${Math.floor(i/6)*768} 768 768`);svg.querySelector('image').setAttribute('href',`/lunar/atlas/${date.slice(0,7)}-1.webp`);svg.setAttribute('aria-label',alt)};
+ const moon=(svg,date,alt,full=false)=>{const i=Number(date.slice(-2))-1,size=full?768:384;svg.setAttribute('viewBox',`${i%6*size} ${Math.floor(i/6)*size} ${size} ${size}`);const image=svg.querySelector('image');image.setAttribute('width',6*size);image.setAttribute('height',6*size);image.setAttribute('href',`/lunar/atlas/${date.slice(0,7)}-${full?'1':'screen'}.webp`);svg.setAttribute('aria-label',alt)};
  const event=e=>`${e.phaseNameSl} · ${label(e.localDate)} ob ${e.localTime.replace(':','.')} (UTC${e.localDateTime.slice(-6)})`;
  root.querySelector('.lunar-print')?.addEventListener('click',()=>window.print());
  root.querySelector('#lunar-phase-filter')?.addEventListener('change',e=>root.querySelectorAll('[data-phase]').forEach(r=>{r.hidden=e.target.value!=='all'&&r.dataset.phase!==e.target.value}));
@@ -37,7 +37,7 @@ if(root){
    })});
    input.addEventListener('change',()=>{const v=input.value;if(!/^20(?:27|28|29|30)-\d{2}-\d{2}$/.test(v)||!input.checkValidity()){error.textContent='Izberite veljaven datum med 1. januarjem 2027 in 31. decembrom 2030.';return}const [y,m]=v.split('-').map(Number);if(y!==year||m!==month)location.href=`/lunin-koledar/${y}/${months[m-1]}/#dan-${v}`;else select(v,{push:true})});
    addEventListener('popstate',fromUrl);addEventListener('hashchange',fromUrl);
-   const dialog=root.querySelector('dialog'),enlarge=root.querySelector('.lunar-enlarge');enlarge.addEventListener('click',()=>{moon(dialog.querySelector('svg'),current.date,`Luna ${label(current.date)}, ${percent(current)}.`);dialog.querySelector('[data-dialog-caption]').textContent=`${label(current.date)} · ${percent(current)} · ob 12.00 v Sloveniji`;dialog.showModal()});dialog.querySelector('[data-close]').addEventListener('click',()=>dialog.close());
+   const dialog=root.querySelector('dialog'),enlarge=root.querySelector('.lunar-enlarge');enlarge.addEventListener('click',()=>{moon(dialog.querySelector('svg'),current.date,`Luna ${label(current.date)}, ${percent(current)}.`,true);dialog.querySelector('[data-dialog-caption]').textContent=`${label(current.date)} · ${percent(current)} · ob 12.00 v Sloveniji`;dialog.showModal()});dialog.querySelector('[data-close]').addEventListener('click',()=>dialog.close());
    dialog.addEventListener('close',()=>enlarge.focus({preventScroll:true}));
   }).catch(()=>{error.textContent='Dnevnih podrobnosti ni bilo mogoče naložiti. Koledar in preglednica men ostajata na voljo.'});
  }
