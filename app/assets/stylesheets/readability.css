@@ -564,3 +564,32 @@
   body.shift-page #vsebina .shift-preview__top{flex-wrap:wrap}
   body.shift-page #vsebina .shift-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+/* One dropdown indicator across Chromium, Safari and Firefox. Keep native
+   select interaction; listboxes and the city picker retain their own UI. */
+@media screen {
+  #vsebina select:not([multiple]):not([size]):not(:where(.city-select-shell select)),
+  #vsebina select:not([multiple])[size="0"]:not(:where(.city-select-shell select)),
+  #vsebina select:not([multiple])[size="1"]:not(:where(.city-select-shell select)) {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='m1 1 5 5 5-5' fill='none' stroke='%23163b58' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px 8px;
+    padding-inline: 10px 30px;
+    cursor: pointer;
+  }
+}
+
+/* Let the OS draw its high-contrast indicator when image colors are forced. */
+@media screen and (forced-colors: active) {
+  #vsebina select:not([multiple]):not([size]):not(:where(.city-select-shell select)),
+  #vsebina select:not([multiple])[size="0"]:not(:where(.city-select-shell select)),
+  #vsebina select:not([multiple])[size="1"]:not(:where(.city-select-shell select)) {
+    appearance: auto;
+    -webkit-appearance: auto;
+    background-image: none;
+    padding-inline-end: 10px;
+  }
+}
