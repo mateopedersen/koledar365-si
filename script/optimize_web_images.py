@@ -8,10 +8,18 @@ ROOT = Path(__file__).resolve().parent.parent
 PUBLIC = ROOT / "public"
 OUT = PUBLIC / "images/responsive"
 OUT.mkdir(parents=True, exist_ok=True)
+previous = json.loads((ROOT / "data/web_image_variants.json").read_text())
 images = {}
 used = set()
 for source in sorted((PUBLIC / "images").rglob("*")):
     if source.suffix.lower() not in (".jpg", ".jpeg", ".png") or OUT in source.parents or source.parent.name == "solar":
+        continue
+    source_key = "/" + str(source.relative_to(PUBLIC))
+    cached = previous.get(source_key)
+    # Preserve an existing editorial crop when its licensed source has not changed.
+    if source.parent.name != "cities" and cached and cached["source_sha256"] == hashlib.sha256(source.read_bytes()).hexdigest() and all((PUBLIC / v["avif"].lstrip("/")).is_file() for v in cached["variants"]):
+        images[source_key] = cached
+        used.update(PUBLIC / v["avif"].lstrip("/") for v in cached["variants"])
         continue
     with Image.open(source) as original:
         image = ImageOps.exif_transpose(original)
