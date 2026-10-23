@@ -1,8 +1,9 @@
-name: Verify final audit Cloudflare preview
+name: Verify Cloudflare preview
 on:
   pull_request:
     paths:
       - 'reports/final-audit-2026-10-23/preview-target.json'
+      - 'reports/css-performance-2026-10-23/preview-target.json'
       - '.github/workflows/preview-audit.yml'
       - 'script/verify_remote_preview.py'
       - 'script/horoscope_parity.py'
@@ -15,7 +16,9 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 50
+    env:
+      PREVIEW_TARGET: reports/css-performance-2026-10-23/preview-target.json
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -25,7 +28,7 @@ jobs:
         with:
           node-version: '24'
       - name: Verify all preview HTML, CSS, JavaScript and discovery files against trusted hashes
-        run: python3 script/test_horoscope_parity.py && python3 script/verify_remote_preview.py reports/final-audit-2026-10-23/preview-target.json
+        run: python3 script/test_horoscope_parity.py && python3 script/verify_remote_preview.py "$PREVIEW_TARGET"
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
@@ -44,7 +47,8 @@ jobs:
           pnpm exec playwright install --with-deps chromium
       - name: Render every representative template in the preview
         run: |
-          export K365_BASE_URL="$(python3 -c "import json; print(json.load(open('reports/final-audit-2026-10-23/preview-target.json'))['url'])")"
+          export K365_BASE_URL="$(python3 -c "import json; print(json.load(open('reports/css-performance-2026-10-23/preview-target.json'))['url'])")"
+          QA_OUT=evidence/qa/preview/css-layout node script/qa_css_layout.mjs
           QA_SAMPLE_ONLY=1 QA_OUT=evidence/qa/preview/browser node script/qa_browser.mjs
           QA_MODE=a11y QA_OUT=evidence/qa/preview/accessibility node script/qa_browser.mjs
       - uses: actions/upload-artifact@v4
