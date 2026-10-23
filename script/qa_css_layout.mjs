@@ -14,11 +14,12 @@ if(process.env.QA_PATHS)routes=process.env.QA_PATHS.split(',');
 fs.mkdirSync(out+'/screenshots',{recursive:true});
 const browser=await({chromium,webkit,firefox}[engine]).launch({headless:true});
 const results=[];let cursor=0;
-const jobs=routes.flatMap(route=>widths.map(width=>({route,width})));
+const heights={320:568,360:800,375:812,390:844,414:896,430:932,768:1024,820:1180,1024:768,1280:800,1366:768,1440:900,1920:1080,2560:1440};
+const jobs=routes.flatMap(route=>widths.map(width=>({route,width,height:heights[width]||900}))); 
 await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||2)},async()=>{
  while(cursor<jobs.length){
   const job=jobs[cursor++],row={...job,browser:engine,errors:[],consoleErrors:[],failedRequests:[],assets:[],issues:[]};
-  const ctx=await browser.newContext({viewport:{width:job.width,height:900},locale:'sl-SI',timezoneId:'Europe/Ljubljana',deviceScaleFactor:Number(process.env.QA_DPR||1)});
+  const ctx=await browser.newContext({viewport:{width:job.width,height:job.height},locale:'sl-SI',timezoneId:'Europe/Ljubljana',deviceScaleFactor:Number(process.env.QA_DPR||1)});
   await ctx.addInitScript(()=>localStorage.setItem('k365.consent',JSON.stringify({version:2,expiresAt:Date.now()+86400000,preferences:false})));
   await ctx.addInitScript(()=>{
    window.__cssVitals={cls:0,lcp:0,longTasks:[]};
