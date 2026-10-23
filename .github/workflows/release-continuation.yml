@@ -6,8 +6,13 @@ on:
       - 'script/verify_release_tail.sh'
 permissions:
   contents: read
+concurrency:
+  group: release-continuation-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   complete:
+    # One-time continuation; ordinary future releases keep the full QA gate.
+    if: github.event.pull_request.number == 111
     runs-on: ubuntu-latest
     timeout-minutes: 75
     steps:
@@ -16,7 +21,14 @@ jobs:
           fetch-depth: 3
       - name: Require identical runtime to the already checked candidate
         run: |
+          git fetch --no-tags --depth=1 origin af8197e874dea01609c0481f5b7fac051ebcce1a
           git diff --exit-code af8197e874dea01609c0481f5b7fac051ebcce1a HEAD -- app public functions config lib data site package.json pnpm-lock.yaml script/export_pages.rb script/rebuild_free.rb script/minify_css.mjs
+          git diff --name-only af8197e874dea01609c0481f5b7fac051ebcce1a HEAD | while IFS= read -r task_changed_file; do
+            case "$task_changed_file" in
+              .github/workflows/release-continuation.yml|script/qa_browser.mjs|script/verify_release_qa.sh|script/verify_release_tail.sh|test/browser/sun-experience.spec.mjs) ;;
+              *) echo "Unexpected source change: $task_changed_file"; exit 1 ;;
+            esac
+          done
           # The preceding run passed PostgreSQL, production boot, calendar data,
           # all 1,224 Chromium renders, 782 geometry, 144 axe and 144 WebKit checks.
           # It stopped only at Firefox's screenshot dimension limit.
