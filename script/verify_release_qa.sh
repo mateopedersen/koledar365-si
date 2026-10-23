@@ -32,10 +32,4 @@ QA_WORKERS=1 node script/qa_browser.mjs
 QA_OUT=evidence/qa/css-layout node script/qa_css_layout.mjs
 QA_WORKERS=1 QA_MODE=a11y node script/qa_browser.mjs
 QA_WORKERS=1 QA_BROWSER=webkit QA_SAMPLE_ONLY=1 node script/qa_browser.mjs
-QA_WORKERS=1 QA_BROWSER=firefox QA_SAMPLE_ONLY=1 node script/qa_browser.mjs
-node script/qa_keyboard.mjs
-node script/qa_exports.mjs
-"$task_python" script/qa_export_files.py
-pnpm exec playwright test
-"$task_python" script/qa_downloads.py
-"$task_python" script/qa_collection_raster.py
+bash script/verify_release_tail.sh
