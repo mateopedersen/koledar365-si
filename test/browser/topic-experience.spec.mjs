@@ -63,3 +63,16 @@ test('larger screen type preserves the dedicated education and payment print vie
   else {await expect(page.locator('.payment-table')).toBeVisible();expect(await page.locator('.payment-table td').first().evaluate(e=>parseFloat(getComputedStyle(e).fontSize))).toBeLessThan(17);}
  }
 });
+
+test('large specialist record cards fit full dates and names at 320 and 390 pixels',async({page})=>{
+ for(const width of [320,390]){
+  await page.setViewportSize({width,height:900});
+  for(const path of ['/soncni-mrk/','/lunin-mrk/','/izplacila-pokojnin/','/izplacila-socialnih-transferjev/']){
+   await page.goto(path);const table=page.locator('.topic-experience .mobile-record-table').first();await expect(table).toBeVisible();
+   const rows=await table.locator('tbody tr:visible').evaluateAll(rows=>rows.slice(0,4).map(row=>[...row.cells].map(cell=>({width:cell.getBoundingClientRect().width,client:cell.clientWidth,scroll:cell.scrollWidth,font:parseFloat(getComputedStyle(cell).fontSize)}))));
+   expect(rows.length).toBeGreaterThan(0);
+   for(const row of rows)for(const cell of row){expect(cell.width,`${path} ${width}px`).toBeGreaterThan(180);expect(cell.scroll,`${path} ${width}px`).toBeLessThanOrEqual(cell.client+1);expect(cell.font).toBeGreaterThanOrEqual(18);}
+   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+  }
+ }
+});
