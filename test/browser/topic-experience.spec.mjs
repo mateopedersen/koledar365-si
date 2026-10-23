@@ -83,6 +83,8 @@ test('large vegetable names and garden controls fit with loaded fonts',async({pa
   await page.setViewportSize({width,height:900});await page.evaluate(()=>document.fonts.ready);
   const names=await page.locator('.garden-plant-name').evaluateAll(nodes=>nodes.map(e=>({text:e.textContent,width:e.clientWidth,height:e.clientHeight,scrollWidth:e.scrollWidth,scrollHeight:e.scrollHeight,font:parseFloat(getComputedStyle(e).fontSize)})));
   expect(names).toHaveLength(16);
+  expect(await page.locator('.garden-timeline thead th').last().evaluate(e=>getComputedStyle(e).whiteSpace)).toBe('nowrap');
+  if(width===1440)expect(await page.locator('.garden-climate select').evaluate(e=>e.getBoundingClientRect().width)).toBeGreaterThanOrEqual(200);
   for(const name of names){expect(name.scrollWidth,`${width}px: ${name.text}`).toBeLessThanOrEqual(name.width);expect(name.scrollHeight,`${width}px: ${name.text}`).toBeLessThanOrEqual(name.height);expect(name.font).toBeGreaterThanOrEqual(18);}
   if(width<=780){
    const timeline=await page.evaluate(()=>({visible:document.querySelector('.garden-timeline-wrap').clientWidth,sticky:document.querySelector('.garden-timeline thead th').getBoundingClientRect().width}));

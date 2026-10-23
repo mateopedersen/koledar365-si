@@ -144,11 +144,13 @@
 #vsebina .topic-experience .garden-source-link{font-size:16px;white-space:normal}
 #vsebina .topic-experience :is(.garden-page label,.garden-filters label,.garden-climate label,.payment-filters label:not(.payment-upcoming-toggle),.payment-filters .payment-upcoming-toggle){font-size:17px;font-weight:800;line-height:1.5}
 #vsebina .topic-experience :is(.garden-filters input,.garden-filters select,.garden-climate select,.garden-plan-form input,.garden-plan-form select,.payment-filters select){font-size:17px;min-height:50px;padding:12px}
-#vsebina .topic-experience .garden-climate{padding:22px;border-radius:13px;gap:24px}
+#vsebina .topic-experience .garden-climate{padding:22px;border-radius:13px;gap:24px;grid-template-columns:minmax(310px,.7fr) minmax(0,1.7fr)}
+#vsebina .topic-experience .garden-climate select{width:auto;min-width:0;max-width:100%;flex:1}
 #vsebina .topic-experience .garden-climate p{font-size:17px;line-height:1.75}
 #vsebina .topic-experience :is(.garden-legend>span,.garden-legend>.text-button,.garden-result-count,.garden-photo-note,.garden-static-reference,.garden-plan-total,.garden-plan-form>p,.garden-sheet-heading>span,.garden-status){font-size:17px;line-height:1.65}
 #vsebina .topic-experience .garden-timeline thead th{font-size:17px;line-height:1.5;padding:14px 10px}
 #vsebina .topic-experience .garden-timeline thead th:first-child{width:320px}
+#vsebina .topic-experience .garden-timeline thead th:last-child{width:84px;white-space:nowrap}
 #vsebina .topic-experience .garden-plant-button{grid-template-columns:72px minmax(0,1fr) 24px;gap:12px;min-height:96px;padding:12px;width:100%}
 #vsebina .topic-experience .garden-plant-button>.garden-plant-name{display:block;min-width:0;font-size:19px;line-height:28px;font-weight:850;white-space:normal;overflow-wrap:anywhere;word-break:normal;max-height:none}
 #vsebina .topic-experience .garden-plant-photo{width:72px;height:72px;flex-shrink:0}
