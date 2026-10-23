@@ -437,3 +437,12 @@
 #vsebina .topic-experience .ed-print-sheet .ed-mini-days>span{min-height:15px;height:15px;font-size:8pt}
 #vsebina .topic-experience .ed-print-sheet .ed-mini-month h3{font-size:11pt}
 #vsebina .topic-experience .payment-next .topic-art,#vsebina .topic-experience .astro-next .topic-art{display:none!important}}
+/* Source notes and helper paragraphs are essential content, too. Legacy
+   garden/payment rules used !important, so keep this final scoped floor. */
+@media screen{
+#vsebina .topic-experience :is(p,li){font-size:18px!important;line-height:1.8!important}
+#vsebina .topic-experience :is(.garden-kicker,.payment-kicker){font-size:17px!important;line-height:1.55!important}
+#vsebina .topic-experience :is(.ed-hero-copy>p,.garden-lead,.payment-lead,.astro-intro>p){font-size:21px!important;line-height:1.75!important}
+#vsebina .topic-experience :is(.garden-method a,.garden-sources a,.payment-source a,.topic-reference a){font-size:17px!important;line-height:1.7!important}
+#vsebina .topic-experience :is(.garden-sources time,.payment-verification time,.payment-source time){font-size:17px!important}
+}

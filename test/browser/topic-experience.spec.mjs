@@ -23,7 +23,7 @@ for(const [path,topic] of Object.entries(topics)) {
     await page.reload();await expect(checklist.locator('[data-topic-check="0"]')).toBeChecked();
     await checklist.locator('[data-topic-reset]').click();await expect(checklist.locator('output')).toHaveText('Opravljeno: 0 od 3');
     const sizes=await page.evaluate(()=>{
-      const selectors=['.topic-fact p','.topic-guide td','.topic-checklist label','.ed-event-copy h4','.ed-filters select','.ed-event-copy p','.garden-plant-name','.payment-table tbody td','.astro-reading p','.astro-safety p','.astro-method li'];
+      const selectors=['.topic-fact p','.topic-guide td','.topic-checklist label','.ed-event-copy h4','.ed-filters select','.ed-event-copy p','.garden-plant-name','.payment-table tbody td','.astro-reading p','.astro-safety p','.astro-method li','.garden-climate p','.garden-plan-form>p','.garden-sources p','.payment-faq p','.payment-source p'];
       return selectors.flatMap(s=>[...document.querySelectorAll(s)].filter(e=>e.getClientRects().length).map(e=>({selector:s,size:parseFloat(getComputedStyle(e).fontSize)})));
     });
     for(const item of sizes)expect(item.size,`${path}: ${item.selector}`).toBeGreaterThanOrEqual(17);
