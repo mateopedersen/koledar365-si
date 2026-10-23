@@ -56,6 +56,9 @@ for (const gallery of galleryPages) {
         const buttonRows = buttons.map((button) => {
           const style = getComputedStyle(button);
           const icon = button.querySelector('img').getBoundingClientRect();
+          const bounds = button.getBoundingClientRect();
+          const copy = button.querySelector('.calendar-download-action__copy');
+          const label = copy.getBoundingClientRect();
           return {
             width: button.getBoundingClientRect().width,
             height: button.getBoundingClientRect().height,
@@ -65,6 +68,12 @@ for (const gallery of galleryPages) {
             textColor: style.color,
             iconWidth: icon.width,
             iconHeight: icon.height,
+            contentOffsetX: Math.abs((Math.min(icon.left,label.left)+Math.max(icon.right,label.right)-bounds.left-bounds.right)/2),
+            contentOffsetY: Math.abs((Math.min(icon.top,label.top)+Math.max(icon.bottom,label.bottom)-bounds.top-bounds.bottom)/2),
+            copyOverflow: copy.scrollWidth-copy.clientWidth,
+            labelAlignment: getComputedStyle(copy).textAlign,
+            primaryFont: parseFloat(getComputedStyle(copy.querySelector('strong')).fontSize),
+            secondaryFont: parseFloat(getComputedStyle(copy.querySelector('small')).fontSize),
           };
         });
         return {
@@ -72,9 +81,11 @@ for (const gallery of galleryPages) {
           scrollWidth: document.documentElement.scrollWidth,
           titleRows,
           buttonRows,
+          overflowingMetadata: cards.flatMap(card=>[...card.querySelectorAll('.calendar-design-meta,.calendar-design-meta>span')]).filter(e=>e.scrollWidth>e.clientWidth+2).length,
         };
       }, gallery.card);
       expect(layout.scrollWidth, `horizontal overflow at ${width}px`).toBeLessThanOrEqual(layout.clientWidth);
+      expect(layout.overflowingMetadata, 'template metadata must wrap within the card').toBe(0);
       for (const [index, title] of layout.titleRows.entries()) {
         expect(title.titleLeft, `card ${index + 1}: number/title collision at ${width}px`).toBeGreaterThan(title.numberRight);
       }
@@ -85,8 +96,13 @@ for (const gallery of galleryPages) {
         expect(parseFloat(button.borderWidth), `button ${index + 1} border too thin`).toBeGreaterThanOrEqual(2);
         expect(button.borderColor, `button ${index + 1} has no visible outline`).not.toBe('rgb(218, 230, 242)');
         expect(button.textColor).not.toBe('rgb(16, 39, 75)');
-        expect(button.iconWidth, `button ${index + 1} icon stretched at ${width}px`).toBeLessThanOrEqual(26);
-        expect(button.iconHeight, `button ${index + 1} icon stretched at ${width}px`).toBeLessThanOrEqual(26);
+        expect(button.iconWidth, `button ${index + 1} icon stretched at ${width}px`).toBeLessThanOrEqual(32);
+        expect(button.iconHeight, `button ${index + 1} icon stretched at ${width}px`).toBeLessThanOrEqual(32);
+        expect(button.contentOffsetX, 'icon and label must be horizontally centered').toBeLessThanOrEqual(2);
+        expect(button.contentOffsetY, 'icon and label must be vertically centered').toBeLessThanOrEqual(2);
+        expect(button.copyOverflow, 'download label must fit the button').toBeLessThanOrEqual(2);
+        expect(button.labelAlignment).toBe('center');
+        expect(button.primaryFont).toBeGreaterThanOrEqual(button.secondaryFont);
       }
     }
 

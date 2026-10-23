@@ -27,7 +27,7 @@
         </a>
         <div class="calendar-design-info">
           <h3><span class="design-number" aria-hidden="true"><%= '%02d' % (index + 1) %></span><span class="design-title"><%= design['name_sl'] %></span></h3>
-          <p class="calendar-design-meta"><i class="<%= design['color_mode'] == 'monochrome_bw' ? 'mono' : 'color' %>" aria-hidden="true"></i><%= design['color_mode'] == 'monochrome_bw' ? 'Črno-belo' : 'Barvno' %> · <%= row.dig('options', 'paper') || 'A4' %> · <%= row.dig('options', 'orientation') == 'landscape' ? 'Ležeče' : 'Pokončno' %><% if row['collection'] == 'calendar-2027-2030' %> · 600 dpi<% end %></p>
+          <p class="calendar-design-meta"><span class="calendar-design-meta__mode"><i class="<%= design['color_mode'] == 'monochrome_bw' ? 'mono' : 'color' %>" aria-hidden="true"></i><%= design['color_mode'] == 'monochrome_bw' ? 'Črno-belo' : 'Barvno' %></span><span><%= row.dig('options', 'paper') || 'A4' %></span><span><%= row.dig('options', 'orientation') == 'landscape' ? 'Ležeče' : 'Pokončno' %></span><% if row['collection'] == 'calendar-2027-2030' %><span>600 dpi</span><% end %></p>
           <a class="button calendar-design-preview" href="<%= files.fetch('pdf') %>" target="_blank" rel="noopener">Odpri predogled <span aria-hidden="true">↗</span></a>
           <div class="calendar-design-downloads">
             <a class="button calendar-download-action calendar-download-action--pdf" href="<%= files.fetch('pdf') %>" download="<%= File.basename(files.fetch('pdf')) %>" data-calendar-download="pdf" aria-label="PDF Prenesi – <%= design['name_sl'] %> – <%= period %>"><%= calendar_file_icon('pdf') %><span class="calendar-download-action__copy"><strong>PDF</strong> <small>Prenesi</small></span></a>
