@@ -52,6 +52,8 @@
 <%= stylesheet_link_tag 'mobile_layout' %><script type="module" src="/calendar-tools/mobile-layout.mjs?v=20261022-1"></script>
 <% if page_path=='/koledar/' %><%= stylesheet_link_tag 'calendar_directory' %><script type="module" src="/calendar-tools/directory.mjs"></script><% end %>
 <%= stylesheet_link_tag 'brand' %>
+<% if TopicExperience.page(page_path) %><link rel="stylesheet" href="/topics/experience.css"><script type="module" src="/topics/experience.mjs"></script><% end %>
+
 <link rel="icon" href="/icon.png" type="image/png" sizes="512x512">
 </head>
 <body class="<%= [gallery_page? ? 'gallery-page' : nil, @section=='holidays' ? 'holiday-guide' : nil, @section=='home' ? 'home-page' : nil, @section=='terms' ? 'terms-page' : nil, page_path=='/druzinski-planer/' ? 'family-planner-page' : nil, page_path=='/razpored-izmen/' ? 'shift-page' : nil, page_path=='/solski-urnik/' ? 'student-timetable-page' : nil].compact.join(' ') %>">

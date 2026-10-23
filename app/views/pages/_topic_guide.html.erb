@@ -1,0 +1,17 @@
+<% topic = TopicExperience.page(page_path) %>
+<section class="topic-guide" aria-labelledby="topic-guide-title">
+  <header class="topic-section-heading"><span class="topic-kicker">RAZUMITE SVOJ KOLEDAR</span><h2 id="topic-guide-title"><%= topic.fetch('guideTitle') %></h2><p><%= topic.fetch('guideIntro') %></p></header>
+  <div class="topic-guide-grid">
+    <div class="topic-comparison" tabindex="0" role="region" aria-label="<%= topic.fetch('guideTitle') %>"><table><caption class="sr-only"><%= topic.fetch('guideTitle') %></caption><thead><tr><% topic.fetch('columns').each do |column| %><th scope="col"><%= column %></th><% end %></tr></thead><tbody><% topic.fetch('rows').each do |row| %><tr><th scope="row"><%= row[0] %></th><td data-label="<%= topic.fetch('columns')[1] %>"><%= row[1] %></td><td data-label="<%= topic.fetch('columns')[2] %>"><%= row[2] %></td></tr><% end %></tbody></table><p class="topic-reference">Dodatna razlaga: <a href="<%= topic.fetch('sourceUrl') %>" target="_blank" rel="noopener"><%= topic.fetch('sourceTitle') %> ↗</a></p></div>
+    <aside class="topic-checklist" data-topic-checklist aria-labelledby="topic-checklist-title">
+      <% if page_path=='/setveni-koledar/' %><%= render 'pages/topic_art' %><% end %>
+      <span class="topic-kicker">MOJA PRIPRAVA</span><h3 id="topic-checklist-title">Pripravljeno, korak za korakom.</h3>
+      <p>Označite opravljeno. Izbor se shrani samo v tem brskalniku.</p>
+      <div class="topic-progress-track" aria-hidden="true"><span data-topic-progress-bar></span></div>
+      <output data-topic-progress aria-live="polite">Opravljeno: 0 od 3</output>
+      <% topic.fetch('checklist').each_with_index do |item,index| %><label><input type="checkbox" data-topic-check="<%= index %>"><span><%= item %></span></label><% end %>
+      <button type="button" data-topic-reset>Počisti pripravo</button><p class="topic-check-status" data-topic-check-status role="status"></p>
+      <noscript><p>Za shranjevanje izbora vključite JavaScript. Seznam lahko tudi natisnete.</p></noscript>
+    </aside>
+  </div>
+</section>

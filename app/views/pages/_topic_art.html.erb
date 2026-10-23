@@ -1,0 +1,5 @@
+<% topic = TopicExperience.page(page_path) %>
+<figure class="topic-art">
+  <img src="/topics/<%= topic.fetch('art') %>.svg" width="520" height="360" alt="<%= topic.fetch('artAlt') %>" decoding="async" <%= local_assigns[:eager] ? 'fetchpriority=high' : 'loading=lazy' %>>
+  <figcaption><%= topic.fetch('artCaption') %></figcaption>
+</figure>
