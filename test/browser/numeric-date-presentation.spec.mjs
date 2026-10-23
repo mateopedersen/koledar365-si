@@ -6,6 +6,10 @@ test('numeric dates stay compact in server HTML and dynamic content without chan
  if(await page.locator('[data-consent=necessary]').isVisible())await page.locator('[data-consent=necessary]').click();
  const date=page.locator('.holiday-feature__date time');await expect(date).toHaveCount(1);
  await expect(date).toHaveText(/^\d{1,2}\.\d{1,2}\.$/);
+ for(const item of await page.locator('.upcoming time').all()){
+  await expect(item).toHaveText(/^\d{1,2}\.\d{1,2}\.$/);
+  expect(await item.getAttribute('datetime')).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+ }
  expect(await date.evaluate(e=>getComputedStyle(e).whiteSpace)).toBe('nowrap');
  await page.evaluate(()=>{
   const fixture=document.createElement('section');fixture.id='numeric-date-fixture';

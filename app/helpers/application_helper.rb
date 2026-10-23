@@ -17,6 +17,7 @@ module ApplicationHelper
     path.nil? || path=="/" ? "/" : path.delete_suffix("/")+"/"
   end
   def sl_date(d) = I18n.l(d.to_date,format: :long)
+  def compact_day_month(date) = "#{date.day}.#{date.month}."
   def month_url(year,month,family='koledar') = "/#{family}/#{year}/#{CalendarEngine::MONTHS[month-1]}/"
   def calendar_path(date) = date.year==2026 ? "/?year=2026&month=#{date.month}&date=#{date.iso8601}" : month_url(date.year,date.month)
   def canonical_url
