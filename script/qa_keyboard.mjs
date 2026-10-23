@@ -17,9 +17,20 @@ for(const width of [390,1440]){
   try{
    await page.goto(base+route,{waitUntil:'load'});
    await page.keyboard.press('Tab');
-   assert(await page.locator('.skip').evaluate(el=>el===document.activeElement),'First Tab must reach skip link');
-   await page.keyboard.press('Enter');
-   assert(await page.locator('main').evaluate(el=>el===document.activeElement),'Skip link must focus main');
+   if(await page.locator('.skip').count()){
+    assert(await page.locator('.skip').evaluate(el=>el===document.activeElement),'First Tab must reach skip link');
+    await page.keyboard.press('Enter');
+    assert(await page.locator('main').evaluate(el=>el===document.activeElement),'Skip link must focus main');
+    row.skipNavigation='passed';
+   }else{
+    // Standalone server-error documents have no repeated header to skip.
+    assert(template==='support-error','Shared site pages require a skip link');
+    assert.equal(await page.locator('body > header, .topbar, .subnav').count(),0);
+    assert(await page.evaluate(()=>document.activeElement.closest('main')!==null),'First Tab must enter the standalone error content');
+    const focus=await page.evaluate(()=>{const s=getComputedStyle(document.activeElement);return s.outlineStyle!=='none'&&parseFloat(s.outlineWidth)>0;});
+    assert(focus,'Standalone error link must have visible focus');
+    row.skipNavigation='not-needed: standalone main without repeated navigation';
+   }
    for(let i=0;i<45;i++){
     await page.keyboard.press('Tab');
     const state=await page.evaluate(()=>{
