@@ -1,0 +1,29 @@
+name: Focused screen image performance
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: pnpm/action-setup@v4
+      - run: pnpm install --frozen-lockfile && pnpm exec playwright install --with-deps chromium
+      - name: Repeat affected templates five times per device
+        run: |
+          export QA_TEMPLATES=lunar-month,sun-index
+          export LH_RUNS=5
+          K365_BASE_URL=https://koledar365.si LH_OUT=evidence/lighthouse/before node script/qa_lighthouse.mjs
+          export K365_BASE_URL="$(node -e 'console.log(require("./reports/css-performance-2026-10-23/preview-target.json").url)')"
+          LH_OUT=evidence/lighthouse/after node script/qa_lighthouse.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: focused-image-performance
+          path: evidence/lighthouse/
+          retention-days: 14

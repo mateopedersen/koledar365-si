@@ -1,8 +1,8 @@
 module LunarHelper
   def lunar_moon(date,small:false,detail:false)
     index=date[-2..].to_i-1
-    size=small ? 96 : 768; columns=small ? 7 : 6; local=index
-    file="/lunar/atlas/#{date[0,7]}-#{small ? 'small' : 1}.webp"
+    size=small ? 96 : 384; columns=small ? 7 : 6; local=index
+    file="/lunar/atlas/#{date[0,7]}-#{small ? 'small' : 'screen'}.webp"
     content_tag(:svg,viewBox:"#{local%columns*size} #{local/columns*size} #{size} #{size}",class:'lunar-moon',role:small ? nil : 'img','aria-hidden':small ? 'true' : nil,'aria-label':small ? nil : "Luna #{LunarCalendar.date_label(date)} ob 12.00",data:detail ? {detail_image:true} : {}) do
       tag(:image,href:file,width:columns*size,height:(small ? 5 : 6)*size)
     end

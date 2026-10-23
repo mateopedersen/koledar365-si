@@ -55,6 +55,9 @@ for city in cities:
 '''
     destination = OUTPUT / f"{city['id']}.svg"
     destination.write_text(svg, encoding="utf-8")
+    web_directory = ROOT / "public/city-marks"
+    web_directory.mkdir(parents=True, exist_ok=True)
+    (web_directory / destination.name).write_text(svg, encoding="utf-8")
     rows.append({
         "id": city["id"], "name": city["name"], "path": "data/city-marks/" + destination.name,
         "source": photo["source"], "author": photo["author"], "license": photo["license"],

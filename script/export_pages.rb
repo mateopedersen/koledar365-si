@@ -40,7 +40,7 @@ transform=lambda do |body,path,indexable:true|
  doc.css('script[src]').each { |script|src=script['src'];script.remove unless kept_scripts.include?(src)||src.include?('city_card-')||src.include?('sun-')||src.start_with?('/studio/','/horoscope/','/premik-ure/')||src.split('?',2).first=='/school/experience.mjs' }
  doc.css('meta[name="csrf-token"],meta[name="csrf-param"],meta[name="csp-nonce"],meta[http-equiv="Content-Security-Policy"],input[name="authenticity_token"]').remove
  if doc.at_css('[data-lunar]')
-   lunar_script=Nokogiri::XML::Node.new('script',doc);lunar_script['type']='module';lunar_script['src']='/lunar/calendar.mjs';doc.at_css('head').add_child(lunar_script)
+   lunar_script=Nokogiri::XML::Node.new('script',doc);lunar_script['type']='module';lunar_script['src']='/lunar/calendar.mjs?v=20261023-screen1';doc.at_css('head').add_child(lunar_script)
  end
 
  doc.css('[nonce]').each { |node|node.remove_attribute('nonce') }
