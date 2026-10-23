@@ -11,7 +11,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 images = {}
 used = set()
 for source in sorted((PUBLIC / "images").rglob("*")):
-    if source.suffix.lower() not in (".jpg", ".jpeg", ".png") or OUT in source.parents:
+    if source.suffix.lower() not in (".jpg", ".jpeg", ".png") or OUT in source.parents or source.parent.name == "solar":
         continue
     with Image.open(source) as original:
         image = ImageOps.exif_transpose(original)
@@ -20,10 +20,11 @@ for source in sorted((PUBLIC / "images").rglob("*")):
         image = image.convert("RGBA" if "A" in image.getbands() else "RGB")
         largest = min(image.width, 960)
         variants = []
-        for width in (sorted({min(image.width, 480), largest}) if source.stem == "ljubljana" else (largest,)):
-            # One high-quality AVIF per source keeps the Pages Free asset count bounded.
+        widths = sorted({min(image.width, 480), min(image.width, 720), largest}) if source.parent.name == "cities" else [largest]
+        for width in widths:
+            # Small city cards select a matching DPR variant without fetching the full-size photo.
             # The original image remains the broadly compatible fallback.
-            height = round(width / 2)
+            height = round(width / 2) if source.parent.name == "cities" else round(width * image.height / image.width)
             resized = ImageOps.fit(image, (width, height), Image.Resampling.LANCZOS)
             avif_temporary = OUT / ".image.avif"
             resized.save(avif_temporary, "AVIF", quality=45, speed=6)
@@ -46,7 +47,7 @@ for photo in json.loads((ROOT / "data/holiday_photos_sl.json").read_text())["pho
     with Image.open(source) as original:
         image = ImageOps.exif_transpose(original).convert("RGB")
         variants = []
-        for width in (min(image.width, 1280),):
+        for width in sorted({min(image.width, 640), min(image.width, 960), min(image.width, 1280)}):
             height = round(width * image.height / image.width)
             resized = image.resize((width, height), Image.Resampling.LANCZOS)
             temporary = OUT / ".holiday.avif"

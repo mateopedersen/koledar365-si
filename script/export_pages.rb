@@ -3,6 +3,7 @@ require 'nokogiri'
 require 'fileutils'
 require 'digest'
 require 'base64'
+require 'open3'
 require_relative '../lib/svg_asset_references'
 require_relative '../lib/publication_revisions'
 ENV['OPERATOR_CONTACT']='koledar365@gmail.com'
@@ -48,7 +49,12 @@ transform=lambda do |body,path,indexable:true|
  links=doc.css('link[rel="stylesheet"][href^="/"]')
  unless links.empty?
   key=links.map { |node|node['href'] }.join('|')
-  styles=style_sets[key] ||= links.map { |node|out.join(node['href'].split('?',2).first.delete_prefix('/')).read }.join("\n")
+  styles=style_sets[key] ||= begin
+   source=links.map { |node|out.join(node['href'].split('?',2).first.delete_prefix('/')).read }.join("\n")
+   compact,error,status=Open3.capture3(ENV.fetch('NODE_BIN','node'),Rails.root.join('script/minify_css.mjs').to_s,stdin_data:source)
+   raise "CSS compilation failed: #{error}" unless status.success?
+   compact
+  end
   if path=='/'
    style=Nokogiri::XML::Node.new('style',doc);style['data-page-styles']='home';style.content=styles;links.first.add_previous_sibling(style)
   else

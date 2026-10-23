@@ -100,6 +100,8 @@ jobs:
           curl -fsS http://127.0.0.1:3000/up
           docker exec koledar-ci bundle exec rails runner script/production_smoke.rb
           docker logs koledar-ci
+      - name: Install pinned CSS compiler and browser tools
+        run: npx --yes pnpm@11.25.0 install --frozen-lockfile
       - name: Rebuild free publication from a fresh SQLite database
         if: ${{ hashFiles('site/release-manifest.json') != '' }}
         env:
@@ -124,7 +126,7 @@ jobs:
               /etc/apt/sources.list.d/ubuntu.sources
           fi
           pnpm install --frozen-lockfile
-          pnpm exec playwright install --with-deps chromium webkit
+          pnpm exec playwright install --with-deps chromium webkit firefox
           /usr/bin/python3 -m pip install --break-system-packages -r requirements-qa.txt
       - name: Browser checks against the freshly rebuilt publication
         if: ${{ hashFiles('site/release-manifest.json') != '' }}
