@@ -52,3 +52,12 @@ A direct-text audit also checks legacy helper paragraphs, FAQ answers and source
 Full CI caught an existing mobile-record contract regression: the enlarged payment date exceeded its legacy half-width third cell. Specialist mobile record tables now use one full-width field per row at <=700px, preserving existing semantic column headers and desktop/print layout. The original test is unchanged. A new four-route320/390px cell-level regression requires every field to exceed180px width, use at least18px text and have zero internal horizontal overflow across all four browser profiles.
 
 The complete browser gate also exposed garden name clipping and unequal hero actions after the type enlargement. On phones the photograph and expand control now precede a full-width plant name; the desktop name column is wider. Equal grid rows preserve complete button labels, and native plan fields stay 48 px high. Existing garden-photo and mobile-control contracts remain unchanged. Additional regression coverage checks all sixteen names and the controls with loaded fonts at seven widths across the four browser profiles.
+
+
+## Numeric date presentation follow-up
+
+The requested compact interface style (`31.10.`, `31.10.2026`) is applied to rendered HTML and dynamically inserted visible text, with calendar-validity checks. Written month names, ISO values, structured scripts, editable notes, downloadable calendar source data and the existing PDF/WebP collection are preserved. This is an interface choice; it does not change Slovenian date rules or the underlying dates. The short home holiday date cannot wrap internally.
+
+A shared 20-case fixture checks Ruby/JavaScript parity, leap dates, invalid dates, punctuation, Unicode spacing, ISO and version strings. A final static formatting pass covers content added by SEO builders; a mandatory audit checks every canonical sitemap page for remaining valid spaced numeric dates. The existing student print assertions now require the same compact dates (unchanged selected week, lesson checks and page constraints).
+
+Local combined-source verification: 140 Rails tests / 14,167 assertions, 104 Chromium/WebKit/Android/iPhone browser cases, 60 responsive layouts, 15 Axe checks. The local application sitemap audit scanned 391 canonical pages and 338,290 text/attribute nodes with zero remaining spaced numeric dates. Final CI, static publication and production evidence must be checked separately before declaring the release live.

@@ -45,7 +45,7 @@ button:hover,.button:hover{box-shadow:0 3px 9px #1165c31a;transform:translateY(-
 .home-discovery .feature-grid>.feature:hover{background:var(--surface);border-color:#b9cde8;box-shadow:0 10px 26px #183d7210;text-decoration:none}
 .home-discovery .feature-grid>.feature:focus-visible,.home-discovery .feature-grid .holiday-feature__footer a:focus-visible{outline:3px solid #0868fb;outline-offset:3px}
 .home-discovery .holiday-feature__date{display:flex;flex-wrap:wrap;gap:6px 10px;margin:4px 0 0;color:var(--muted)}
-.home-discovery .holiday-feature__date time{color:var(--ink);font-size:21px;font-weight:850;font-variant-numeric:tabular-nums}
+.home-discovery .holiday-feature__date time{white-space:nowrap;word-spacing:normal;letter-spacing:normal;color:var(--ink);font-size:21px;font-weight:850;font-variant-numeric:tabular-nums}
 .home-discovery .holiday-feature__date span{align-self:center;font-weight:700}
 .home-discovery .holiday-feature__footer{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;margin-top:auto;padding-top:12px}
 .home-discovery .holiday-feature__footer a{font-weight:750}

@@ -131,7 +131,7 @@ test('student print view includes the saved weekly schedule and all obligations,
   await page.locator('[data-print-week]').fill('2027-01-06');
   await page.locator('[data-print-schedule]').click();
   const printedRange = page.locator('[data-student-print-range]');
-  await expect(printedRange).toHaveText(/Teden:.*4\. 1\. 2027.*8\. 1\. 2027/);
+  await expect(printedRange).toHaveText(/Teden:.*4\.1\.2027.*8\.1\.2027/);
   expect(await page.evaluate(() => window.__k365PrintCalls)).toBe(1);
 
   await page.emulateMedia({ media: 'print' });

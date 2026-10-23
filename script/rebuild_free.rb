@@ -43,6 +43,7 @@ run!('bundle','exec','ruby','script/lunar/sync_verified_assets.rb')
 run!('bundle','exec','ruby','script/build_seo_publication.rb')
 run!('bundle','exec','ruby','script/build_admin_page.rb')
 run!('bundle','exec','ruby','script/package_social.rb')
+run!('bundle','exec','ruby','script/format_numeric_dates.rb')
 run!('bundle','exec','ruby','script/build_release_inventory.rb')
 # Reuse the verified public catalogue on CI; original rendering folders are private build caches.
 run!('bundle','exec','ruby','script/validate_catalog_sources.rb')
