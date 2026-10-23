@@ -1,3 +1,5 @@
+/* Specialist redesign is screen-only; existing compact print layouts stay active. */
+@media screen{
 /* Large, readable specialist pages. These rules only apply to the fifteen
    editorial experiences; shared navigation, calendars and other tools keep
    their own styles. Avenir inherits the licensed local site font. */
@@ -404,6 +406,22 @@
 #vsebina .topic-experience .astro-chart-key span{flex-shrink:0}}
 @media(prefers-reduced-motion:reduce){
 #vsebina .topic-experience *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+#vsebina .topic-experience .button.primary,#vsebina .topic-experience .button.primary:hover{color:#fff;background:#005da4;border-color:#005da4}
+#vsebina .topic-experience :is(.ed-hero-copy>p,.garden-lead,.payment-lead,.astro-intro>p){font-weight:600}
+/* Override shared site controls and mobile table typography only in this scope. */
+@media screen{
+#vsebina .topic-experience :is(button,.button,input,select,textarea){font-size:18px!important;font-weight:750}
+#vsebina .topic-experience small{font-size:17px!important;line-height:1.65;color:#425e75!important}
+#vsebina .topic-experience .eyebrow{font-size:15px!important;color:#005da4!important}
+#vsebina .topic-experience .payment-table tbody>tr>:is(td,th){font-size:18px!important;line-height:1.75;padding:16px 14px!important}
+#vsebina .topic-experience .payment-table tbody>tr>th{font-size:21px!important;font-weight:850}
+#vsebina .topic-experience .ed-mini-days>button{font-size:18px!important}
+#vsebina .topic-experience :is(.payment-next,.astro-next) .topic-art{max-width:305px}
+#vsebina .topic-experience :is(.payment-next,.astro-next) .topic-art img{max-height:none}
+}
+
+}
 @media print{
 #vsebina .topic-experience{font-size:11pt;color:#111}
 #vsebina .topic-experience :is(.topic-snapshot,.topic-guide,.topic-art,.topic-quick-filters){display:none!important}
@@ -419,16 +437,3 @@
 #vsebina .topic-experience .ed-print-sheet .ed-mini-days>span{min-height:15px;height:15px;font-size:8pt}
 #vsebina .topic-experience .ed-print-sheet .ed-mini-month h3{font-size:11pt}
 #vsebina .topic-experience .payment-next .topic-art,#vsebina .topic-experience .astro-next .topic-art{display:none!important}}
-#vsebina .topic-experience .button.primary,#vsebina .topic-experience .button.primary:hover{color:#fff;background:#005da4;border-color:#005da4}
-#vsebina .topic-experience :is(.ed-hero-copy>p,.garden-lead,.payment-lead,.astro-intro>p){font-weight:600}
-/* Override shared site controls and mobile table typography only in this scope. */
-@media screen{
-#vsebina .topic-experience :is(button,.button,input,select,textarea){font-size:18px!important;font-weight:750}
-#vsebina .topic-experience small{font-size:17px!important;line-height:1.65;color:#425e75!important}
-#vsebina .topic-experience .eyebrow{font-size:15px!important;color:#005da4!important}
-#vsebina .topic-experience .payment-table tbody>tr>:is(td,th){font-size:18px!important;line-height:1.75;padding:16px 14px!important}
-#vsebina .topic-experience .payment-table tbody>tr>th{font-size:21px!important;font-weight:850}
-#vsebina .topic-experience .ed-mini-days>button{font-size:18px!important}
-#vsebina .topic-experience :is(.payment-next,.astro-next) .topic-art{max-width:305px}
-#vsebina .topic-experience :is(.payment-next,.astro-next) .topic-art img{max-height:none}
-}

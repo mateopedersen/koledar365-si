@@ -49,3 +49,16 @@ test('preparation stays separate by page and works when local storage is unavail
  await page.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw new DOMException('Blocked','SecurityError');}});});
  await page.reload();await page.locator('[data-topic-check="2"]').check();await expect(page.locator('[data-topic-progress]')).toHaveText('Opravljeno: 1 od 3');await expect(page.locator('[data-topic-check-status]')).toContainText('ni mogoče shraniti');
 });
+
+test('larger screen type preserves the dedicated education and payment print views',async({page})=>{
+ for(const path of ['/npz/6-razred/','/izplacila-pokojnin/']){
+  await page.emulateMedia({media:'screen'});await page.goto(path);
+  if(await page.locator('[data-consent=necessary]').isVisible())await page.locator('[data-consent=necessary]').click();
+  await page.evaluate(()=>{window.print=()=>{window.__topicPrinted=true;};});
+  const education=path.startsWith('/npz/');await page.locator(education?'[data-ed-print]':'[data-payment-print]').click();
+  expect(await page.evaluate(()=>window.__topicPrinted)).toBe(true);await page.emulateMedia({media:'print'});
+  await expect(page.locator('.topic-guide')).toBeHidden();await expect(page.locator('.topic-snapshot')).toBeHidden();await expect(page.locator('.topic-art')).toBeHidden();
+  if(education){await expect(page.locator('[data-ed-print-sheet]')).toBeVisible();await expect(page.locator('[data-ed-print-sheet]')).toContainText('Matematika');}
+  else {await expect(page.locator('.payment-table')).toBeVisible();expect(await page.locator('.payment-table td').first().evaluate(e=>parseFloat(getComputedStyle(e).fontSize))).toBeLessThan(17);}
+ }
+});
