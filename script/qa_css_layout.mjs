@@ -9,6 +9,7 @@ const samples=JSON.parse(fs.readFileSync('data/qa-templates.json'));
 const widths=(process.env.QA_WIDTHS||'360,1440').split(',').map(Number);
 let routes=JSON.parse(fs.readFileSync('site/release-urls.json')).pages.map(x=>x.path);
 if(process.env.QA_SAMPLE_ONLY==='1')routes=samples.map(x=>x[1]);
+if(process.env.QA_INTERNAL==='1')routes=JSON.parse(fs.readFileSync('evidence/indexability-audit.json')).pages.filter(x=>!x.indexable).map(x=>x.path);
 if(process.env.QA_EXPANDED==='1')routes=JSON.parse(fs.readFileSync('site/release-urls.json')).expanded_urls.map(x=>typeof x==='string'?new URL(x,base).pathname+new URL(x,base).search:x.path);
 if(process.env.QA_PATHS)routes=process.env.QA_PATHS.split(',');
 fs.mkdirSync(out+'/screenshots',{recursive:true});

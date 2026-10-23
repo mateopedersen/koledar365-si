@@ -15,6 +15,7 @@ for(const width of [320,360,768,1024,1440,1920,2560])test(`shared content axis a
  for(const edge of [geometry.nav.right,geometry.footer.right])expect(Math.abs(edge-geometry.right)).toBeLessThanOrEqual(1.1);
  expect(Math.abs(geometry.left-(width-geometry.right))).toBeLessThanOrEqual(1.1);
  expect(geometry.scroll).toBeLessThanOrEqual(width+1);
+ if(width<=1100){const cta=await page.locator('.calendar-studio-cta').boundingBox();expect(Math.abs(cta.x+cta.width/2-width/2)).toBeLessThanOrEqual(1.1);}
  for(const control of geometry.controls){expect(control.left).toBeGreaterThanOrEqual(geometry.left);expect(control.right).toBeLessThanOrEqual(geometry.right);expect(control.width).toBeGreaterThan(40);}
  await page.locator('.period-form select[name=year]').selectOption('2030');
  await page.locator('.period-form select[name=month]').selectOption('11');
@@ -42,4 +43,18 @@ for(const width of [850,851,900,1024,1100,1101])test(`city controls stay inside 
   expect(control.x).toBeGreaterThanOrEqual(card.x);
   expect(control.x+control.width).toBeLessThanOrEqual(card.x+card.width);
  }
+});
+
+for(const width of [360,760,768,820,1024])test(`horoscope birth fields fit their card at ${width}px`,async({page})=>{
+ await page.setViewportSize({width,height:900});
+ await page.goto('/horoskop/oven/');
+ await page.evaluate(()=>document.fonts.ready);
+ const card=await page.locator('.z-calculator-aside .z-calculator').boundingBox();
+ for(const selector of ['#z-birth-date','#z-birth-time']){
+  const input=page.locator(selector);await input.scrollIntoViewIfNeeded();
+  const control=await input.boundingBox();
+  expect(control.x).toBeGreaterThanOrEqual(card.x);
+  expect(control.x+control.width).toBeLessThanOrEqual(card.x+card.width);
+ }
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(width+1);
 });

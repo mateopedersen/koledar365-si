@@ -5,7 +5,7 @@ import {launch} from 'chrome-launcher';
 import {chromium} from '@playwright/test';
 const out=process.env.LH_OUT||'evidence/qa/lighthouse';fs.mkdirSync(out,{recursive:true});
 const base=process.env.K365_BASE_URL||'https://koledar365.si';
-const samples=JSON.parse(fs.readFileSync('data/qa-templates.json')).filter(([id])=>id!=='404'&&(!process.env.QA_TEMPLATES||process.env.QA_TEMPLATES.split(',').includes(id)));
+const samples=JSON.parse(fs.readFileSync('data/qa-templates.json')).filter(([id])=>!process.env.QA_TEMPLATES||process.env.QA_TEMPLATES.split(',').includes(id));
 const rows=fs.existsSync(out+'/results.json')?JSON.parse(fs.readFileSync(out+'/results.json')):[];
 for(const [template,path] of samples)for(const device of ['mobile','desktop'])for(let run=1;run<=Number(process.env.LH_RUNS||3);run++){
  const id=`${template}-${device}-${run}`;if(rows.some(r=>r.id===id&&!r.error))continue;
@@ -18,3 +18,6 @@ for(const [template,path] of samples)for(const device of ['mobile','desktop'])fo
  }catch(e){rows.push({id,path,template,device,run,error:e.message});console.log(id,e.message);}finally{await chrome.kill();}
  fs.writeFileSync(out+'/results.json',JSON.stringify(rows,null,2));
 }
+
+const latest=new Map(rows.map(row=>[row.id,row]));
+if([...latest.values()].some(row=>row.error))process.exitCode=1;
