@@ -7,9 +7,10 @@ for(const width of [820,1440])test(`studio paper keeps its dimensions while the 
  await page.route('**/studio/studio.mjs*',async route=>{await gate;await route.continue();});
  await page.goto('/ustvari-koledar/',{waitUntil:'commit'});
  const paper=page.locator('#studio-paper');await expect(paper).toBeVisible();
- await page.evaluate(()=>document.fonts.ready);
+ // WebKit resolves fonts.ready after load; the deliberately paused module blocks load.
  const before=await paper.boundingBox();
  release();await expect(page.locator('#studio-paper svg')).toBeVisible();
+ await page.evaluate(()=>document.fonts.ready);
  await expect(page.locator('#studio-presets button').first()).toBeVisible();
  const after=await paper.boundingBox();
  expect(Math.abs(before.width-after.width)).toBeLessThanOrEqual(1.1);
