@@ -1,0 +1,469 @@
+/* Specialist redesign is screen-only; existing compact print layouts stay active. */
+@media screen{
+/* Large, readable specialist pages. These rules only apply to the fifteen
+   editorial experiences; shared navigation, calendars and other tools keep
+   their own styles. Avenir inherits the licensed local site font. */
+#vsebina .topic-experience{--topic-blue:#005da4;--topic-red:#c52d45;--topic-ink:#123653;--topic-muted:#425e75;--topic-line:#cddde9;--topic-soft:#edf5fb;font-family:'Avenir Local',Avenir,'Avenir Next',system-ui,sans-serif;font-size:18px;line-height:1.65;color:var(--topic-ink);max-width:1440px;margin-inline:auto;overflow-wrap:anywhere}
+#vsebina .topic-experience *{box-sizing:border-box}
+#vsebina .topic-experience [hidden]{display:none!important}
+#vsebina .topic-experience :is(p,li,dt,dd,label,summary,small,button,input,select,textarea){font-size:17px;line-height:1.65}
+#vsebina .topic-experience :is(h1,h2,h3,h4){font-weight:800;text-wrap:balance;color:var(--topic-ink)}
+#vsebina .topic-experience h1{font-size:clamp(38px,4.5vw,66px);line-height:1.08;letter-spacing:-1.8px}
+#vsebina .topic-experience :is(h2,.astro-section-heading h2){font-size:32px!important;line-height:1.25;letter-spacing:-.6px}
+#vsebina .topic-experience h3{font-size:24px;line-height:1.35}
+#vsebina .topic-experience a{color:#005da4;text-underline-offset:4px}
+#vsebina .topic-experience a:hover{text-decoration:underline}
+#vsebina .topic-experience :focus-visible{outline:3px solid #c52d45;outline-offset:4px}
+#vsebina .topic-experience :is(button,.button){font-size:17px;font-weight:800;min-height:48px;border-radius:10px;white-space:normal;padding:11px 17px;line-height:1.4}
+#vsebina .topic-experience :is(input,select,textarea){font:inherit;min-height:48px;max-width:100%;border-radius:9px;border-color:#a4bfd3;color:#123653;background:#fff}
+#vsebina .topic-experience input[type=checkbox]{width:22px;height:22px;min-height:22px;flex-shrink:0;accent-color:#005da4}
+#vsebina .topic-experience :is(.ed-eyebrow,.eyebrow,.garden-kicker,.payment-kicker,.topic-kicker){font-size:15px!important;line-height:1.5;font-weight:850;letter-spacing:.09em;color:#005da4}
+#vsebina .topic-experience :is(.ed-hero,.garden-hero,.payment-hero,.astro-hero){gap:40px;padding:36px;background:linear-gradient(125deg,#fff 45%,#edf5fb);border:1px solid var(--topic-line);border-radius:24px;box-shadow:0 12px 40px #13365308;position:relative;overflow:hidden;margin:20px 0 24px;align-items:center}
+#vsebina .topic-experience :is(.ed-hero,.garden-hero,.payment-hero,.astro-hero):before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#fff 0 33.33%,#005da4 33.33% 66.66%,#c52d45 66.66%)}
+#vsebina .topic-experience :is(.ed-hero-copy>p,.garden-lead,.payment-lead,.astro-intro>p){font-size:21px;line-height:1.75;font-weight:550;color:#425e75;max-width:65ch}
+#vsebina .topic-experience :is(.ed-hero h1,.garden-hero h1,.payment-hero h1,.astro-intro h1){font-size:clamp(38px,4.5vw,64px);line-height:1.1;letter-spacing:-1.8px;margin:15px 0 22px}
+#vsebina .topic-experience :is(.ed-verification,.payment-verification){font-size:16px!important;font-weight:600;line-height:1.6;margin-top:22px}
+#vsebina .topic-experience .ed-jump{font-size:18px;font-weight:850;border:1px solid #005da4;border-radius:10px;background:#005da4;color:#fff;padding:13px 20px;min-height:50px;gap:22px}
+#vsebina .topic-art{margin:0;min-width:0}
+#vsebina .topic-art img{display:block;width:100%;height:auto;filter:none;opacity:1;max-height:380px;object-fit:contain}
+#vsebina .topic-art figcaption{font-size:16px;font-weight:550;line-height:1.55;color:#425e75;margin-top:12px}
+#vsebina .topic-experience :is(.payment-next,.astro-next) .topic-art{max-width:360px;margin:0 auto 22px}
+#vsebina .topic-experience :is(.payment-next,.astro-next) .topic-art img{max-height:210px}
+#vsebina .topic-experience :is(.payment-next,.astro-next) .topic-art figcaption{display:none}
+#vsebina .topic-snapshot{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:24px 0 32px}
+#vsebina .topic-fact{position:relative;padding:25px 25px 22px;border:1px solid #ccdeeb;border-radius:16px;background:#fff;box-shadow:0 5px 16px #12365304;min-width:0}
+#vsebina .topic-fact-index{position:absolute;right:19px;top:16px;color:#476b86;font-size:16px;font-weight:800}
+#vsebina .topic-fact>strong{display:block;font-size:clamp(27px,2.5vw,36px);font-weight:850;color:#005da4;line-height:1.2;padding-right:30px;letter-spacing:-.6px}
+#vsebina .topic-fact:nth-child(2)>strong{color:#b52842}
+#vsebina .topic-experience .topic-fact h2{font-size:20px!important;line-height:1.35;margin:10px 0 8px;letter-spacing:0}
+#vsebina .topic-fact p{font-size:17px;color:#425e75;margin:0;line-height:1.6}
+#vsebina .topic-guide{margin:44px 0;padding:32px;border:1px solid #cddde9;background:#fff;border-radius:22px}
+#vsebina .topic-section-heading{max-width:900px;margin-bottom:25px}
+#vsebina .topic-section-heading h2{margin:10px 0 12px}
+#vsebina .topic-section-heading p{font-size:19px;margin:0;color:#425e75}
+#vsebina .topic-guide-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(280px,1fr);gap:28px;align-items:start}
+#vsebina .topic-comparison{min-width:0;overflow:auto;border:1px solid #cddde9;border-radius:14px}
+#vsebina .topic-comparison table{width:100%;margin:0;border-collapse:collapse;table-layout:fixed;font-size:17px;line-height:1.7}
+#vsebina .topic-comparison th,#vsebina .topic-comparison td{padding:19px 17px;text-align:left;vertical-align:top;border:0;border-bottom:1px solid #dce7ef;overflow-wrap:anywhere}
+#vsebina .topic-comparison thead th{background:#005da4;color:#fff;font-size:17px;font-weight:800;line-height:1.4}
+#vsebina .topic-comparison tbody th{font-weight:850;color:#123653;background:#f3f8fc}
+#vsebina .topic-comparison tr:last-child>*{border-bottom:0}
+#vsebina .topic-comparison th:first-child{width:26%}
+#vsebina .topic-reference{padding:16px;margin:0;border-top:1px solid #cddde9;background:#f5f9fc;font-size:16px!important;line-height:1.65!important}
+#vsebina .topic-checklist{padding:26px;background:#f0f6fb;border:1px solid #c4d9e9;border-top:4px solid #c52d45;border-radius:14px;min-width:0}
+#vsebina .topic-checklist h3{font-size:25px;line-height:1.25;margin:10px 0 12px}
+#vsebina .topic-checklist>p{font-size:17px;color:#425e75;margin:0 0 17px}
+#vsebina .topic-checklist label{display:flex;align-items:flex-start;gap:12px;margin:0;padding:14px 0;border-bottom:1px solid #cddde9;cursor:pointer;font-size:17px;font-weight:650}
+#vsebina .topic-checklist input{margin-top:3px}
+#vsebina .topic-checklist label:has(input:checked) span{color:#244f6e;text-decoration:line-through;text-decoration-color:#6d9eba}
+#vsebina .topic-checklist output{display:block;font-size:17px;font-weight:800;color:#005da4;margin:10px 0}
+#vsebina .topic-checklist button{margin-top:20px;background:#fff;border:1px solid #9ab7cd;color:#123653;width:100%}
+#vsebina .topic-progress-track{height:8px;overflow:hidden;border-radius:8px;background:#d6e4ef}
+#vsebina .topic-progress-track span{display:block;width:0;height:100%;background:#005da4}
+#vsebina .topic-check-status:empty{display:none}
+#vsebina .topic-checklist>.topic-art{margin:-10px -10px 25px}
+#vsebina .topic-quick-filters{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:16px 0}
+#vsebina .topic-quick-filters>span{font-size:17px;font-weight:800;margin-right:5px}
+#vsebina .topic-quick-filters button{font-size:16px;background:#fff;color:#005da4;border:1px solid #aac5d9;padding:10px 14px}
+/* Education: separate filter card, full-width event cards, comfortable calendar cells. */
+#vsebina .topic-experience .ed-navigation{gap:12px;flex-wrap:wrap;overflow:visible;border:0;margin:0 0 20px;padding:0}
+#vsebina .topic-experience .ed-navigation a{font-size:17px;min-height:48px;border:1px solid #cddde9;border-radius:10px;padding:10px 15px;background:#fff;font-weight:750;color:#244c6b;white-space:normal}
+#vsebina .topic-experience .ed-navigation a[aria-current=page]{background:#005da4;color:#fff}
+#vsebina .topic-experience .ed-navigation a:after{display:none}
+#vsebina .topic-experience :is(.ed-type-links,.ed-grade-links){gap:14px;border:0;margin:24px 0}
+#vsebina .topic-experience .ed-type-links>a,#vsebina .topic-experience .ed-grade-links>a{border:1px solid #bfd4e4;border-radius:13px;background:#fff;padding:22px;min-height:100px}
+#vsebina .topic-experience .ed-type-links strong{font-size:23px}
+#vsebina .topic-experience .ed-type-links small{font-size:17px;line-height:1.5}
+#vsebina .topic-experience .ed-type-links>a>span{font-size:17px}
+#vsebina .topic-experience .ed-grade-links a{font-size:19px}
+#vsebina .topic-experience :is(.ed-type-links,.ed-grade-links) a[aria-current=page]{background:#e9f3fb;box-shadow:inset 0 -4px #005da4}
+#vsebina .topic-experience .ed-workspace{grid-template-columns:310px minmax(0,1fr);gap:28px;padding:20px 0 35px}
+#vsebina .topic-experience .ed-filter-panel{position:static;max-height:none;overflow:visible;padding:26px;border:1px solid #c4d8e7;border-radius:16px;background:#fff}
+#vsebina .topic-experience .ed-step{font-size:16px}
+#vsebina .topic-experience .ed-panel-heading h2{font-size:27px!important}
+#vsebina .topic-experience .ed-panel-heading p{font-size:17px}
+#vsebina .topic-experience :is(.ed-filters>label,.ed-filters .ed-check,.ed-subjects legend,.ed-subjects label){font-size:17px;line-height:1.6}
+#vsebina .topic-experience .ed-filters select{font-size:17px;padding:12px 28px 12px 12px;min-height:50px}
+#vsebina .topic-experience :is(.ed-region-help,.ed-region-help summary,.ed-subjects>p,.ed-scope,.ed-personal-help p,.ed-personal-help a){font-size:16px;line-height:1.7}
+#vsebina .topic-experience .ed-subjects input[type=search]{font-size:17px;min-height:48px}
+#vsebina .topic-experience .ed-subjects>div{max-height:320px}
+#vsebina .topic-experience .ed-subjects label{padding:9px 0;min-height:44px}
+#vsebina .topic-experience .ed-fixed-choice{font-size:20px}
+#vsebina .topic-experience .ed-reset{font-size:17px}
+#vsebina .topic-experience .ed-personal-help h3{font-size:23px}
+#vsebina .topic-experience .ed-next{padding:26px;border-radius:16px;margin-bottom:24px}
+#vsebina .topic-experience .ed-next .ed-eyebrow{font-size:15px}
+#vsebina .topic-experience .ed-next strong{font-size:25px;line-height:1.4;letter-spacing:-.4px}
+#vsebina .topic-experience .ed-next p{font-size:17px}
+#vsebina .topic-experience .ed-next>time{font-size:29px;line-height:1.3;white-space:normal;flex-shrink:0;max-width:40%}
+#vsebina .topic-experience .ed-results-top{align-items:start}
+#vsebina .topic-experience .ed-results-top p{font-size:17px}
+#vsebina .topic-experience .ed-view-switch{max-width:100%;flex-wrap:wrap}
+#vsebina .topic-experience .ed-view-switch button{font-size:17px;min-height:48px;padding:10px 14px}
+#vsebina .topic-experience .ed-context-note{font-size:17px;line-height:1.75;padding:18px;border-left-width:4px;background:#fff4f6;border-radius:0 10px 10px 0}
+#vsebina .topic-experience .ed-export-bar{padding:18px 0;gap:15px}
+#vsebina .topic-experience .ed-export-bar button{font-size:17px;min-height:48px;padding:11px 14px;border:1px solid #bfd3e2;background:#fff}
+#vsebina .topic-experience .ed-export-bar button.ed-primary{background:#005da4;color:#fff;border-color:#005da4}
+#vsebina .topic-experience .ed-export-bar>div:first-child span{font-size:17px;padding:10px 0}
+#vsebina .topic-experience .ed-export-note{font-size:16px;line-height:1.7;margin:15px 0 28px}
+#vsebina .topic-experience .ed-month-group{grid-template-columns:1fr;gap:12px;margin-bottom:30px}
+#vsebina .topic-experience .ed-month-group>h3{font-size:23px;padding:13px 0 0}
+#vsebina .topic-experience .ed-month-group>div{border:0;display:grid;gap:12px}
+#vsebina .topic-experience .ed-event{grid-template-columns:26px minmax(140px,.55fr) minmax(0,1fr);gap:17px;padding:24px;background:#fff;border:1px solid #cbdde9;border-left:4px solid #005da4;border-radius:13px;align-items:start}
+#vsebina .topic-experience .ed-event[data-category=results],#vsebina .topic-experience .ed-event[data-category=written]{border-left-color:#c52d45}
+#vsebina .topic-experience .ed-event-date{font-size:18px;font-weight:850;line-height:1.5}
+#vsebina .topic-experience .ed-event-date>span{font-size:16px;line-height:1.5;margin-top:12px}
+#vsebina .topic-experience .ed-event-copy h4{font-size:22px;line-height:1.45}
+#vsebina .topic-experience .ed-event-copy small{font-size:16px;line-height:1.6;margin-top:8px}
+#vsebina .topic-experience .ed-event-copy p{font-size:17px;line-height:1.75}
+#vsebina .topic-experience .ed-event-copy>a{font-size:16px;line-height:1.6;min-height:44px;display:inline-flex;align-items:center;font-weight:750}
+#vsebina .topic-experience .ed-event-select{min-height:44px;padding-top:4px}
+#vsebina .topic-experience .ed-year-view{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+#vsebina .topic-experience .ed-mini-month{padding:20px;border-radius:13px}
+#vsebina .topic-experience .ed-mini-month h3{font-size:21px}
+#vsebina .topic-experience .ed-mini-weekdays{font-size:16px;font-weight:800}
+#vsebina .topic-experience .ed-mini-days{gap:3px}
+#vsebina .topic-experience .ed-mini-days>button,#vsebina .topic-experience .ed-mini-days>span{font-size:17px;min-height:40px;height:40px;padding:0;border-radius:6px}
+#vsebina .topic-experience .ed-mini-days>button{font-weight:800}
+#vsebina .topic-experience .ed-day-detail{font-size:17px;padding:22px}
+#vsebina .topic-experience :is(.ed-reading,.ed-sources){padding:30px;border:1px solid #cddde9;border-radius:18px;background:#fff;gap:35px;margin-bottom:30px}
+#vsebina .topic-experience .ed-reading summary{font-size:20px;font-weight:800;line-height:1.5;min-height:52px}
+#vsebina .topic-experience .ed-reading details p,#vsebina .topic-experience .ed-sources p,#vsebina .topic-experience .ed-sources li{font-size:17px;line-height:1.85}
+#vsebina .topic-experience .ed-source-links{font-size:17px}
+#vsebina .topic-experience .ed-toast{font-size:17px;max-width:min(600px,calc(100vw - 32px));padding:18px}
+/* Gardening and payments: retain genuine vegetable photographs and data. */
+#vsebina .topic-experience .garden-facts{display:none}
+#vsebina .topic-experience .garden-hero-figure{border-radius:17px;overflow:hidden}
+#vsebina .topic-experience .garden-hero-figure figcaption{font-size:16px;line-height:1.6;padding:13px;background:#fff}
+#vsebina .topic-experience :is(.garden-jump,.payment-nav){gap:10px;flex-wrap:wrap;border:0;padding:10px 0;margin-bottom:30px}
+#vsebina .topic-experience :is(.garden-jump a,.payment-nav a){font-size:17px;font-weight:800;padding:13px 17px;border:1px solid #c2d6e5;border-radius:10px;background:#fff;min-height:48px}
+#vsebina .topic-experience .garden-jump a span{font-size:17px}
+#vsebina .topic-experience :is(.garden-overview,.garden-personal,.payment-schedule,.payment-visual){padding:30px;background:#fff;border:1px solid #cddde9;border-radius:20px;margin:30px 0}
+#vsebina .topic-experience :is(.garden-section-heading,.payment-section-heading){gap:22px;margin-bottom:26px}
+#vsebina .topic-experience .garden-section-heading p:not(.garden-kicker),#vsebina .topic-experience .payment-section-heading p:not(.payment-kicker){font-size:19px;line-height:1.7}
+#vsebina .topic-experience .garden-source-link{font-size:16px;white-space:normal}
+#vsebina .topic-experience :is(.garden-page label,.garden-filters label,.garden-climate label,.payment-filters label:not(.payment-upcoming-toggle),.payment-filters .payment-upcoming-toggle){font-size:17px;font-weight:800;line-height:1.5}
+#vsebina .topic-experience :is(.garden-filters input,.garden-filters select,.garden-climate select,.garden-plan-form input,.garden-plan-form select,.payment-filters select){font-size:17px;min-height:50px;padding:12px}
+#vsebina .topic-experience .garden-climate{padding:22px;border-radius:13px;gap:24px;grid-template-columns:minmax(310px,.7fr) minmax(0,1.7fr)}
+#vsebina .topic-experience .garden-climate select{width:auto;min-width:0;max-width:100%;flex:1}
+#vsebina .topic-experience .garden-climate p{font-size:17px;line-height:1.75}
+#vsebina .topic-experience :is(.garden-legend>span,.garden-legend>.text-button,.garden-result-count,.garden-photo-note,.garden-static-reference,.garden-plan-total,.garden-plan-form>p,.garden-sheet-heading>span,.garden-status){font-size:17px;line-height:1.65}
+#vsebina .topic-experience .garden-timeline thead th{font-size:17px;line-height:1.5;padding:14px 10px}
+#vsebina .topic-experience .garden-timeline thead th:first-child{width:320px}
+#vsebina .topic-experience .garden-timeline thead th:last-child{width:84px;white-space:nowrap}
+#vsebina .topic-experience .garden-plant-button{grid-template-columns:72px minmax(0,1fr) 24px;gap:12px;min-height:96px;padding:12px;width:100%}
+#vsebina .topic-experience .garden-plant-button>.garden-plant-name{display:block;min-width:0;font-size:19px;line-height:28px;font-weight:850;white-space:normal;overflow-wrap:anywhere;word-break:normal;max-height:none}
+#vsebina .topic-experience .garden-plant-photo{width:72px;height:72px;flex-shrink:0}
+#vsebina .topic-experience .garden-plant-button>.garden-plant-toggle{font-size:22px}
+#vsebina .topic-experience .garden-stage{font-size:16px;min-width:27px;min-height:27px;line-height:27px}
+#vsebina .topic-experience .garden-add{min-width:48px;min-height:48px;font-size:25px}
+#vsebina .topic-experience .garden-plant-detail h3{font-size:25px}
+#vsebina .topic-experience .garden-plant-detail p,#vsebina .topic-experience .garden-plant-detail a,#vsebina .topic-experience .garden-plant-detail dt,#vsebina .topic-experience .garden-plant-detail dd{font-size:17px;line-height:1.7}
+#vsebina .topic-experience .garden-detail-photo{width:144px;height:144px}
+#vsebina .topic-experience .garden-plan-form legend{font-size:26px}
+#vsebina .topic-experience .garden-plan-item h3{font-size:22px}
+#vsebina .topic-experience :is(.garden-plan-item p,.garden-plan-item time,.garden-plan-item-actions button,.garden-plan-actions button,.garden-plan-actions .button,.garden-sheet-heading button,.garden-plan-empty p){font-size:17px}
+#vsebina .topic-experience :is(.garden-method,.garden-faq,.garden-sources){padding:30px;border:1px solid #cddde9;border-radius:18px;background:#fff;margin:30px 0}
+#vsebina .topic-experience .garden-method-steps h3{font-size:24px}
+#vsebina .topic-experience :is(.garden-method p,.garden-method a,.garden-method-steps p,.garden-faq details p,.garden-sources>p:not(.garden-kicker),.garden-sources li>a,.garden-sources li>p){font-size:17px;line-height:1.8}
+#vsebina .topic-experience .garden-faq summary{font-size:20px;font-weight:800;line-height:1.5;min-height:52px}
+#vsebina .topic-experience .payment-next{border-radius:18px;padding:25px;box-shadow:0 8px 26px #1236530a}
+#vsebina .topic-experience .payment-next-top{font-size:16px;line-height:1.5;flex-wrap:wrap;gap:12px}
+#vsebina .topic-experience .payment-year{font-size:17px}
+#vsebina .topic-experience .payment-next h2{font-size:24px!important;line-height:1.4}
+#vsebina .topic-experience .payment-next-date{font-size:clamp(27px,2.7vw,38px);line-height:1.3}
+#vsebina .topic-experience .payment-next-month span{font-size:17px;min-height:31px;height:31px}
+#vsebina .topic-experience :is(.payment-next-weekday,.payment-next-countdown,.payment-next-caption,.payment-column-note,.payment-result-count,.payment-table-footer p,.payment-status,.payment-empty){font-size:17px!important;line-height:1.75!important}
+#vsebina .topic-experience .payment-table thead th{font-size:17px;padding:18px 14px}
+#vsebina .topic-experience .payment-table tbody th,#vsebina .topic-experience .payment-table tbody td{font-size:18px;line-height:1.65;padding:20px 14px}
+#vsebina .topic-experience .payment-table time{font-size:22px;font-weight:850}
+#vsebina .topic-experience .payment-table button{font-size:17px;min-height:48px}
+#vsebina .topic-experience .payment-table td:before{font-size:16px;font-weight:800}
+#vsebina .topic-experience .payment-table-footer button{font-size:17px}
+#vsebina .topic-experience .payment-visual figcaption{font-size:16px;line-height:1.7}
+#vsebina .topic-experience :is(.payment-faq,.payment-source){padding:30px;border:1px solid #cddde9;border-radius:18px;background:#fff;margin:30px 0}
+#vsebina .topic-experience .payment-faq summary{font-size:20px;font-weight:800;line-height:1.5;min-height:52px}
+#vsebina .topic-experience .payment-faq details p,#vsebina .topic-experience .payment-source p:not(.payment-kicker){font-size:18px;line-height:1.85}
+#vsebina .topic-experience .payment-source .payment-source-note h3{font-size:25px}
+#vsebina .topic-experience .payment-source .payment-source-note a{font-size:17px;min-height:44px}
+/* Astronomy: readable contact times, captions, safety text and sky conditions. */
+#vsebina .topic-experience .astro-next{padding:25px;border-radius:17px}
+#vsebina .topic-experience .astro-next-date{font-size:36px;line-height:1.3}
+#vsebina .topic-experience .astro-next-time{font-size:26px}
+#vsebina .topic-experience .astro-next-context{font-size:18px!important;line-height:1.7!important}
+#vsebina .topic-experience .astro-countdown>span{font-size:17px}
+#vsebina .topic-experience .astro-countdown strong{font-size:24px}
+#vsebina .topic-experience .astro-sibling-nav{gap:12px}
+#vsebina .topic-experience .astro-sibling-nav a{font-size:18px;border:1px solid #b6cfe2;padding:10px 14px;border-radius:9px;background:#fff}
+#vsebina .topic-experience .astro-sibling-nav a[aria-current=page]{background:#005da4;color:#fff;border-color:#005da4}
+#vsebina .topic-experience .astro-safety{padding:26px;border-radius:15px;gap:18px}
+#vsebina .topic-experience .astro-safety h2{font-size:26px!important}
+#vsebina .topic-experience .astro-safety p{font-size:18px!important;line-height:1.85!important}
+#vsebina .topic-experience .astro-purpose-note{font-size:18px!important;line-height:1.85!important;padding:23px;border-radius:0 14px 14px 0}
+#vsebina .topic-experience .astro-calendar{padding:30px;background:#fff;border:1px solid #cddde9;border-radius:20px;margin:30px 0}
+#vsebina .topic-experience .astro-zone-note{font-size:17px;white-space:normal}
+#vsebina .topic-experience .astro-toolbar{padding:22px;gap:20px;border-radius:13px}
+#vsebina .topic-experience .astro-toolbar label{font-size:17px;line-height:1.5}
+#vsebina .topic-experience .astro-toolbar select,#vsebina .topic-experience .astro-event-selection select{font-size:18px;min-height:52px}
+#vsebina .topic-experience .astro-toolbar button,#vsebina .topic-experience .astro-button{font-size:17px;min-height:50px;border-radius:10px;white-space:normal}
+#vsebina .topic-experience :is(.astro-tool-note,.astro-note,.astro-chart-key,.astro-global-maximum){font-size:17px!important;line-height:1.8!important}
+#vsebina .topic-experience .astro-table{font-size:18px;line-height:1.7}
+#vsebina .topic-experience .astro-table thead th{font-size:17px}
+#vsebina .topic-experience .astro-table th,#vsebina .topic-experience .astro-table td{padding:20px 17px!important;white-space:normal}
+#vsebina .topic-experience .astro-status{font-size:17px;white-space:normal;padding:8px 12px;border-radius:7px}
+#vsebina .topic-experience .astro-event-selection{font-size:18px;line-height:1.6}
+#vsebina .topic-experience .astro-event-detail{padding:28px;border-radius:15px}
+#vsebina .topic-experience .astro-detail-top h3{font-size:30px!important}
+#vsebina .topic-experience .astro-detail-summary{font-size:18px!important;line-height:1.8!important}
+#vsebina .topic-experience .astro-contact{font-size:18px;padding:17px 0 17px 20px;grid-template-columns:minmax(0,1fr) 85px 190px;gap:20px}
+#vsebina .topic-experience .astro-contact time{font-size:23px}
+#vsebina .topic-experience .astro-contact small{font-size:17px;line-height:1.6}
+#vsebina .topic-experience .astro-contact-date{font-size:16px!important}
+#vsebina .topic-experience .astro-night{grid-template-columns:150px minmax(0,1fr)}
+#vsebina .topic-experience .astro-night-date{padding:27px 20px}
+#vsebina .topic-experience .astro-night-date>span{font-size:16px}
+#vsebina .topic-experience .astro-night-date h3{font-size:32px!important}
+#vsebina .topic-experience .astro-night-date p{font-size:17px!important;line-height:1.5!important}
+#vsebina .topic-experience .astro-night-main{padding:28px}
+#vsebina .topic-experience .astro-night-heading{font-size:19px;line-height:1.5;flex-wrap:wrap}
+#vsebina .topic-experience .astro-night-heading>span{font-size:23px}
+#vsebina .topic-experience .astro-night-bar{height:22px;border-radius:6px}
+#vsebina .topic-experience .astro-night-facts{font-size:18px;line-height:1.8;gap:12px 24px}
+#vsebina .topic-experience .astro-explainer-figure{max-width:none}
+#vsebina .topic-experience .astro-explainer-figure figcaption{font-size:17px;line-height:1.8}
+#vsebina .topic-experience .astro-reading-layout{gap:30px}
+#vsebina .topic-experience .astro-reading,#vsebina .topic-experience .astro-related{padding:30px;background:#fff;border:1px solid #cddde9;border-radius:18px}
+#vsebina .topic-experience .astro-reading h3{font-size:25px!important;line-height:1.4}
+#vsebina .topic-experience .astro-reading p{font-size:19px!important;line-height:1.9!important}
+#vsebina .topic-experience .astro-related h2{font-size:29px!important}
+#vsebina .topic-experience .astro-related>a strong{font-size:21px}
+#vsebina .topic-experience .astro-related>a span{font-size:17px;line-height:1.7}
+#vsebina .topic-experience .astro-related>p{font-size:18px!important;line-height:1.8!important}
+#vsebina .topic-experience .astro-method{padding:30px;border-radius:18px;border:1px solid #cddde9}
+#vsebina .topic-experience .astro-method h2{font-size:29px!important}
+#vsebina .topic-experience .astro-method p,#vsebina .topic-experience .astro-method li{font-size:17px!important;line-height:1.85!important}
+@media(max-width:1150px){
+#vsebina .topic-experience .ed-workspace{grid-template-columns:280px minmax(0,1fr);gap:22px}
+#vsebina .topic-experience .ed-event{grid-template-columns:26px minmax(0,1fr)}
+#vsebina .topic-experience .ed-event-copy{grid-column:2}
+#vsebina .topic-experience .ed-event-date{display:flex;gap:10px;flex-wrap:wrap}
+#vsebina .topic-experience .ed-event-date>span{margin-top:0}
+#vsebina .topic-experience .ed-results-top{flex-wrap:wrap}
+#vsebina .topic-experience .ed-next{flex-direction:column;align-items:flex-start;gap:12px}
+#vsebina .topic-experience .ed-next>time{max-width:none}
+#vsebina .topic-guide-grid{grid-template-columns:1fr}
+#vsebina .topic-checklist{display:block}
+#vsebina .topic-experience .astro-contact{grid-template-columns:minmax(0,1fr) 85px}
+#vsebina .topic-experience .astro-contact small{grid-column:1/-1}
+#vsebina .topic-experience .garden-filters{grid-template-columns:repeat(2,minmax(0,1fr))}
+#vsebina .topic-experience .garden-climate{grid-template-columns:1fr}}
+@media(max-width:800px){
+#vsebina .topic-experience .garden-hero-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr;align-items:stretch}
+#vsebina .topic-experience .garden-hero-actions>.button{display:flex;align-items:center;justify-content:center;height:100%!important;min-height:52px;margin:0;width:100%;text-align:center}
+#vsebina .topic-experience .garden-plan-form :is(input,select){height:48px!important;min-height:48px!important;min-width:0;width:100%;padding:9px 12px;line-height:1.4}
+#vsebina .topic-experience .garden-timeline thead th:first-child{width:192px;min-width:192px}
+#vsebina .topic-experience .garden-plant-button{grid-template-columns:60px minmax(0,1fr) 24px;gap:8px 10px}
+#vsebina .topic-experience .garden-plant-photo{grid-column:1;grid-row:1;width:60px;height:60px}
+#vsebina .topic-experience .garden-plant-button>.garden-plant-name{grid-column:1/-1;grid-row:2}
+#vsebina .topic-experience .garden-plant-button>.garden-plant-toggle{grid-column:3;grid-row:1}
+#vsebina .topic-experience{font-size:18px}
+#vsebina .topic-experience :is(.ed-hero,.garden-hero,.payment-hero,.astro-hero){grid-template-columns:1fr;gap:26px;padding:26px;margin:16px 0 22px;border-radius:18px}
+#vsebina .topic-experience :is(.ed-hero h1,.garden-hero h1,.payment-hero h1,.astro-intro h1){font-size:40px;letter-spacing:-1px;line-height:1.12}
+#vsebina .topic-experience :is(.ed-hero-copy>p,.garden-lead,.payment-lead,.astro-intro>p){font-size:19px;line-height:1.8}
+#vsebina .topic-experience .topic-art{max-width:520px;margin-inline:auto}
+#vsebina .topic-snapshot{gap:12px}
+#vsebina .topic-fact{padding:23px 18px}
+#vsebina .topic-fact>strong{font-size:27px;padding-right:0}
+#vsebina .topic-fact-index{position:static;display:block;margin-bottom:8px}
+#vsebina .topic-experience .topic-fact h2{font-size:19px!important}
+#vsebina .topic-fact p{font-size:17px}
+#vsebina .topic-experience .ed-workspace{grid-template-columns:1fr}
+#vsebina .topic-experience .ed-filter-panel{padding:25px}
+#vsebina .topic-experience .ed-filter-panel .ed-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 22px}
+#vsebina .topic-experience .ed-filters>*{margin:0;min-width:0}
+#vsebina .topic-experience .ed-subjects,#vsebina .topic-experience .ed-region-help{grid-column:1/-1}
+#vsebina .topic-experience .ed-personal-help{display:none}
+#vsebina .topic-experience .ed-next{flex-direction:row;align-items:center}
+#vsebina .topic-experience .ed-next>time{max-width:38%;font-size:27px}
+#vsebina .topic-experience .ed-event{grid-template-columns:26px minmax(140px,.55fr) minmax(0,1fr)}
+#vsebina .topic-experience .ed-event-copy{grid-column:auto}
+#vsebina .topic-experience .ed-event-date{display:block}
+#vsebina .topic-experience .ed-year-view{grid-template-columns:repeat(2,minmax(0,1fr))}
+#vsebina .topic-experience .ed-mini-days>button{min-height:40px}
+#vsebina .topic-experience .ed-reading,#vsebina .topic-experience .ed-sources{grid-template-columns:1fr;padding:25px;gap:20px}
+#vsebina .topic-experience .astro-reading-layout{grid-template-columns:1fr}
+#vsebina .topic-experience :is(.garden-section-heading,.payment-section-heading){align-items:flex-start;flex-direction:column}
+#vsebina .topic-experience .payment-next{max-width:none;width:100%}
+#vsebina .topic-experience .astro-hero .astro-next{width:100%}
+#vsebina .topic-experience .astro-reading,#vsebina .topic-experience .astro-related{padding:25px}
+#vsebina .topic-experience .astro-contact{grid-template-columns:minmax(0,1fr) 80px}
+#vsebina .topic-experience .garden-hero-figure img{width:100%;height:auto}
+#vsebina .topic-guide{padding:25px}}
+@media(max-width:560px){
+#vsebina .topic-experience :is(.ed-hero,.garden-hero,.payment-hero,.astro-hero){padding:24px 20px;gap:24px}
+#vsebina .topic-experience :is(h2,.astro-section-heading h2){font-size:29px!important}
+#vsebina .topic-experience :is(.ed-hero h1,.garden-hero h1,.payment-hero h1,.astro-intro h1){font-size:37px;overflow-wrap:anywhere}
+#vsebina .topic-experience :is(.ed-navigation,.garden-jump,.payment-nav){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#vsebina .topic-experience :is(.ed-navigation a,.garden-jump a,.payment-nav a){padding:12px;font-size:17px;display:flex;align-items:center;line-height:1.4;min-width:0}
+#vsebina .topic-experience .ed-navigation a{white-space:normal}
+#vsebina .topic-snapshot{grid-template-columns:1fr;gap:12px}
+#vsebina .topic-fact{padding:21px 22px 21px 30px;border-left:4px solid #005da4}
+#vsebina .topic-fact:nth-child(2){border-left-color:#c52d45}
+#vsebina .topic-fact-index{position:absolute;right:18px;top:16px}
+#vsebina .topic-fact>strong{font-size:31px;padding-right:30px}
+#vsebina .topic-experience .topic-fact h2{font-size:21px!important;margin:7px 0}
+#vsebina .topic-fact p{font-size:18px;line-height:1.65}
+#vsebina .topic-experience .ed-type-links{grid-template-columns:1fr}
+#vsebina .topic-experience .ed-type-links>a{padding:23px;grid-template-columns:26px minmax(0,1fr) 20px}
+#vsebina .topic-experience .ed-type-links strong{font-size:23px}
+#vsebina .topic-experience .ed-grade-links{display:grid;grid-template-columns:1fr;gap:10px}
+#vsebina .topic-experience .ed-grade-links>a{padding:16px 22px;min-height:66px;font-size:21px}
+#vsebina .topic-experience .ed-grade-links strong{font-size:33px}
+#vsebina .topic-experience .ed-filter-panel .ed-filters{grid-template-columns:1fr;gap:18px}
+#vsebina .topic-experience .ed-filter-panel{padding:23px 20px}
+#vsebina .topic-experience .ed-filters select{font-size:18px}
+#vsebina .topic-experience .ed-next{padding:23px 20px;flex-direction:column;align-items:start}
+#vsebina .topic-experience .ed-next>time{max-width:none;font-size:31px}
+#vsebina .topic-experience .ed-next strong{font-size:25px}
+#vsebina .topic-experience .ed-results-top{flex-direction:column;gap:16px}
+#vsebina .topic-experience .ed-view-switch{width:100%}
+#vsebina .topic-experience .ed-view-switch button{flex:1}
+#vsebina .topic-experience .ed-export-bar>div{width:100%}
+#vsebina .topic-experience .ed-export-bar>div:last-child{display:grid;grid-template-columns:1fr}
+#vsebina .topic-experience .ed-export-bar>div:first-child button{flex:1}
+#vsebina .topic-experience .ed-export-bar button{font-size:17px;padding:13px 12px;line-height:1.5;min-width:0}
+#vsebina .topic-experience .ed-export-bar>div:first-child span{display:block;width:100%;font-size:18px}
+#vsebina .topic-experience .ed-event{padding:23px 18px;grid-template-columns:24px minmax(0,1fr);gap:12px}
+#vsebina .topic-experience .ed-event-copy{grid-column:2}
+#vsebina .topic-experience .ed-event-date{display:block;font-size:20px}
+#vsebina .topic-experience .ed-event-date>span{font-size:17px;margin-top:8px}
+#vsebina .topic-experience .ed-event-copy h4{font-size:23px}
+#vsebina .topic-experience .ed-event-copy small,#vsebina .topic-experience .ed-event-copy p,#vsebina .topic-experience .ed-event-copy>a{font-size:17px}
+#vsebina .topic-experience .ed-year-view{grid-template-columns:1fr}
+#vsebina .topic-experience .ed-mini-month h3{font-size:24px}
+#vsebina .topic-experience .ed-mini-days>button,#vsebina .topic-experience .ed-mini-days>span{font-size:19px;min-height:42px;height:42px}
+#vsebina .topic-experience .ed-mini-weekdays{font-size:17px}
+#vsebina .topic-experience .ed-mini-month{padding:19px 12px}
+#vsebina .topic-experience .ed-reading,#vsebina .topic-experience .ed-sources{padding:24px 20px}
+#vsebina .topic-experience .ed-sources p,#vsebina .topic-experience .ed-sources li{font-size:18px}
+#vsebina .topic-experience .ed-sources ol{padding-left:25px}
+#vsebina .topic-experience .topic-quick-filters{gap:8px}
+#vsebina .topic-experience .topic-quick-filters button{font-size:17px}
+#vsebina .topic-guide{padding:24px 19px;margin:30px 0}
+#vsebina .topic-guide-grid{gap:24px}
+#vsebina .topic-section-heading p{font-size:18px}
+#vsebina .topic-comparison{border:0;border-radius:0;overflow:visible}
+#vsebina .topic-comparison table{display:block;font-size:18px}
+#vsebina .topic-comparison thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+#vsebina .topic-comparison tbody{display:grid;gap:14px}
+#vsebina .topic-comparison tr{display:grid;border:1px solid #bfd5e5;border-radius:13px;overflow:hidden}
+#vsebina .topic-comparison th:first-child{width:auto;font-size:21px;padding:17px 19px}
+#vsebina .topic-comparison td{display:block;padding:15px 19px;font-size:18px;line-height:1.8}
+#vsebina .topic-comparison td:nth-child(2):before,#vsebina .topic-comparison td:nth-child(3):before{display:block;content:attr(data-label);font-size:16px;font-weight:850;color:#005da4;margin-bottom:4px}
+#vsebina .topic-reference{margin-top:20px;border:1px solid #cddde9;border-radius:10px}
+#vsebina .topic-checklist{padding:24px 20px}
+#vsebina .topic-checklist h3{font-size:27px}
+#vsebina .topic-checklist label{font-size:18px;line-height:1.65}
+#vsebina .topic-experience :is(.garden-overview,.garden-personal,.payment-schedule,.payment-visual,.garden-method,.garden-faq,.garden-sources,.payment-faq,.payment-source,.astro-calendar,.astro-reading,.astro-related,.astro-method){padding:24px 19px;border-radius:16px;margin:25px 0}
+#vsebina .topic-experience .garden-filters{grid-template-columns:1fr}
+#vsebina .topic-experience .garden-climate{display:block;padding:20px}
+#vsebina .topic-experience .garden-climate select{width:100%;margin:8px 0 16px}
+#vsebina .topic-experience .garden-hero-actions{grid-template-columns:minmax(0,1fr)}
+#vsebina .topic-experience .garden-timeline th:first-child{min-width:192px}
+#vsebina .topic-experience .garden-plant-button{padding:13px 12px;gap:10px}
+#vsebina .topic-experience .garden-plant-photo{width:60px;height:60px}
+#vsebina .topic-experience .garden-plant-button>.garden-plant-name{font-size:18px}
+#vsebina .topic-experience .garden-timeline thead th:first-child{min-width:192px}
+#vsebina .topic-experience .garden-plant-detail{grid-template-columns:1fr}
+#vsebina .topic-experience .garden-plan-layout{grid-template-columns:1fr}
+#vsebina .topic-experience .garden-plan-item h3{font-size:23px}
+#vsebina .topic-experience .garden-plan-item-actions{flex-wrap:wrap}
+#vsebina .topic-experience .payment-next{padding:22px 18px}
+#vsebina .topic-experience .payment-next-month span{font-size:17px}
+#vsebina .topic-experience .payment-table tbody th,#vsebina .topic-experience .payment-table tbody td{font-size:18px;padding:16px 13px;line-height:1.7}
+#vsebina .topic-experience .payment-table time{font-size:24px}
+#vsebina .topic-experience .payment-filters{display:grid;grid-template-columns:1fr}
+#vsebina .topic-experience .payment-filters select{font-size:18px;width:100%}
+#vsebina .topic-experience .payment-filters label{min-width:0!important}
+#vsebina .topic-experience .payment-source{grid-template-columns:1fr}
+#vsebina .topic-experience .payment-next-date{font-size:31px}
+#vsebina .topic-experience .astro-next{padding:22px 20px}
+#vsebina .topic-experience .astro-next-date{font-size:32px}
+#vsebina .topic-experience .astro-safety{padding:22px 18px;gap:12px}
+#vsebina .topic-experience .astro-safety h2{font-size:24px!important}
+#vsebina .topic-experience .astro-safety p{font-size:18px!important}
+#vsebina .topic-experience .astro-toolbar{padding:18px;gap:18px}
+#vsebina .topic-experience .astro-toolbar label{flex-basis:100%;width:100%}
+#vsebina .topic-experience .astro-toolbar select{width:100%;font-size:18px}
+#vsebina .topic-experience .astro-toolbar-actions{width:100%;display:grid;grid-template-columns:1fr}
+#vsebina .topic-experience .astro-event-selection select{min-width:0;width:100%;font-size:18px}
+#vsebina .topic-experience .astro-event-detail{padding:23px 17px}
+#vsebina .topic-experience .astro-detail-top h3{font-size:27px!important}
+#vsebina .topic-experience .astro-contact{padding-left:15px;gap:8px 10px;font-size:18px;grid-template-columns:minmax(0,1fr) 75px}
+#vsebina .topic-experience .astro-contact time{font-size:22px}
+#vsebina .topic-experience .astro-contact small{font-size:17px;grid-column:1/-1}
+#vsebina .topic-experience .astro-night{grid-template-columns:1fr}
+#vsebina .topic-experience .astro-night-date{padding:19px 22px;border-right:0;border-bottom:1px solid #cddde9;display:flex;gap:15px;align-items:center;flex-wrap:wrap}
+#vsebina .topic-experience .astro-night-date h3{font-size:29px!important;margin:0!important}
+#vsebina .topic-experience .astro-night-main{padding:24px 22px}
+#vsebina .topic-experience .astro-night-heading{gap:12px;font-size:19px}
+#vsebina .topic-experience .astro-night-heading>span{font-size:25px}
+#vsebina .topic-experience .astro-night-facts{font-size:18px;gap:13px}
+#vsebina .topic-experience .astro-night-bar{height:23px}
+#vsebina .topic-experience .astro-reading p{font-size:19px!important}
+#vsebina .topic-experience .astro-method p,#vsebina .topic-experience .astro-method li{font-size:18px!important}
+#vsebina .topic-experience .astro-related{margin-bottom:0}
+#vsebina .topic-experience .astro-explainer-figure{margin-top:28px!important}
+#vsebina .topic-experience .astro-chart-key{gap:8px}
+#vsebina .topic-experience .astro-chart-key span{flex-shrink:0}}
+@media(prefers-reduced-motion:reduce){
+#vsebina .topic-experience *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+#vsebina .topic-experience .button.primary,#vsebina .topic-experience .button.primary:hover{color:#fff;background:#005da4;border-color:#005da4}
+#vsebina .topic-experience :is(.ed-hero-copy>p,.garden-lead,.payment-lead,.astro-intro>p){font-weight:600}
+/* Override shared site controls and mobile table typography only in this scope. */
+@media screen{
+#vsebina .topic-experience :is(button,.button,input,select,textarea){font-size:18px!important;font-weight:750}
+#vsebina .topic-experience small{font-size:17px!important;line-height:1.65;color:#425e75!important}
+#vsebina .topic-experience .eyebrow{font-size:15px!important;color:#005da4!important}
+#vsebina .topic-experience .payment-table tbody>tr>:is(td,th){font-size:18px!important;line-height:1.75;padding:16px 14px!important}
+#vsebina .topic-experience .payment-table tbody>tr>th{font-size:21px!important;font-weight:850}
+#vsebina .topic-experience .ed-mini-days>button{font-size:18px!important}
+#vsebina .topic-experience :is(.payment-next,.astro-next) .topic-art{max-width:305px}
+#vsebina .topic-experience :is(.payment-next,.astro-next) .topic-art img{max-height:none}
+}
+
+}
+@media print{
+#vsebina .topic-experience{font-size:11pt;color:#111}
+#vsebina .topic-experience :is(.topic-snapshot,.topic-guide,.topic-art,.topic-quick-filters){display:none!important}
+#vsebina .topic-experience :is(.ed-hero,.garden-hero,.payment-hero,.astro-hero){display:block;padding:0;border:0;box-shadow:none;background:#fff}
+#vsebina .topic-experience :is(.ed-hero,.garden-hero,.payment-hero,.astro-hero):before{display:none}
+#vsebina .topic-experience :is(.garden-overview,.garden-personal,.payment-schedule,.astro-calendar){padding:0;border:0;background:none}
+#vsebina .topic-experience .ed-print-sheet :is(h1,h2,h3,h4,p,span,small,th,td){font-size:inherit}
+#vsebina .topic-experience .ed-print-sheet .ed-event{padding:8px;border-radius:0;grid-template-columns:100px 1fr;gap:12px}
+#vsebina .topic-experience .ed-print-sheet .ed-event-copy{grid-column:auto}
+#vsebina .topic-experience .ed-print-sheet .ed-event-copy h4{font-size:11pt}
+#vsebina .topic-experience .ed-print-sheet .ed-event-date,#vsebina .topic-experience .ed-print-sheet .ed-event-copy small,#vsebina .topic-experience .ed-print-sheet .ed-event-copy p{font-size:9pt}
+#vsebina .topic-experience .ed-print-sheet .ed-month-group h3{font-size:12pt}
+#vsebina .topic-experience .ed-print-sheet .ed-mini-days>span{min-height:15px;height:15px;font-size:8pt}
+#vsebina .topic-experience .ed-print-sheet .ed-mini-month h3{font-size:11pt}
+#vsebina .topic-experience .payment-next .topic-art,#vsebina .topic-experience .astro-next .topic-art{display:none!important}}
+/* Source notes and helper paragraphs are essential content, too. Legacy
+   garden/payment rules used !important, so keep this final scoped floor. */
+@media screen{
+#vsebina .topic-experience :is(p,li){font-size:18px!important;line-height:1.8!important}
+#vsebina .topic-experience :is(.garden-kicker,.payment-kicker){font-size:17px!important;line-height:1.55!important}
+#vsebina .topic-experience :is(.ed-hero-copy>p,.garden-lead,.payment-lead,.astro-intro>p){font-size:21px!important;line-height:1.75!important}
+#vsebina .topic-experience :is(.garden-method a,.garden-sources a,.payment-source a,.topic-reference a){font-size:17px!important;line-height:1.7!important}
+#vsebina .topic-experience :is(.garden-sources time,.payment-verification time,.payment-source time){font-size:17px!important}
+}
+/* Enlarged dates need a full row on phones. Keep the shared record-table
+   semantics and desktop/print layout, with no nested horizontal overflow. */
+@media screen and (max-width:700px){
+#vsebina .topic-experience .mobile-record-table tbody>tr{grid-template-columns:minmax(0,1fr);gap:17px;padding:21px 18px}
+#vsebina .topic-experience .mobile-record-table tbody>tr>:is(td,th){grid-column:1/-1;width:100%;min-width:0;max-width:100%;padding:0!important;font-size:18px!important;line-height:1.75!important;white-space:normal;overflow-wrap:anywhere}
+#vsebina .topic-experience .mobile-record-table tbody>tr>th{font-size:21px!important;font-weight:850}
+#vsebina .topic-experience .mobile-record-table tbody>tr>:is(td,th)::before{font-size:16px;font-weight:800;line-height:1.5;margin-bottom:7px}
+#vsebina .topic-experience .mobile-record-table time{white-space:normal;overflow-wrap:anywhere}
+}

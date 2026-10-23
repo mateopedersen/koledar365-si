@@ -1,4 +1,26 @@
 // Shared enhancement also covers tables and calendars replaced by the static-site adapter.
+export function compactNumericDates(value){
+  return value.replace(/(?<![\d.])(\d{1,2})\.[\t \u00a0\u202f]*(\d{1,2})\.(?:[\t \u00a0\u202f]*(\d{4})(?!\d))?(?!\d|\.\d|[\t \u00a0\u202f]*\d)/g,(original,day,month,year)=>{
+    const date=new Date(0);date.setUTCFullYear(Number(year||2000),Number(month)-1,Number(day));
+    return date.getUTCFullYear()===Number(year||2000)&&date.getUTCMonth()===Number(month)-1&&date.getUTCDate()===Number(day)?`${day}.${month}.${year||''}`:original;
+  });
+}
+const dateExcluded='script,style,pre,code,textarea,input,noscript,[contenteditable]';
+function compactDateText(node){
+  if(node.parentElement?.closest(dateExcluded))return;
+  const replacement=compactNumericDates(node.data);if(replacement!==node.data)node.data=replacement;
+}
+function compactDateDOM(root){
+  if(root.nodeType===3){compactDateText(root);return;}
+  if(root.nodeType!==1||root.closest(dateExcluded))return;
+  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let node;
+  while((node=walker.nextNode()))compactDateText(node);
+  for(const element of [root,...root.querySelectorAll('[aria-label],[title],img[alt]')]){
+    for(const attribute of ['aria-label','title','alt'])if(element.hasAttribute(attribute)){
+      const value=element.getAttribute(attribute),replacement=compactNumericDates(value);if(replacement!==value)element.setAttribute(attribute,replacement);
+    }
+  }
+}
 const records='table.data-table,table.astro-table,table.payment-table,table.leap-table';
 const calendars='table.calendar';
 const calendarState=new WeakMap();
@@ -71,6 +93,7 @@ function prepareScrollTable(table){
 }
 
 function start(){
+  compactDateDOM(document.body);
   const pending=new Set();let scheduled=false;
   const queue=table=>{
     if(!table)return;pending.add(table);if(scheduled)return;scheduled=true;
@@ -89,17 +112,21 @@ function start(){
   document.querySelectorAll(selector).forEach(queue);
   new MutationObserver(changes=>{
     for(const change of changes){
+      if(change.type==='characterData'){compactDateText(change.target);continue;}
       if(change.type==='attributes'&&change.attributeName==='class'){
         if(change.target===document.body)document.querySelectorAll(calendars).forEach(queue);
         continue;
       }
       if(change.target.nodeType===1)queue(change.target.closest(selector));
       for(const node of change.addedNodes){
+        compactDateDOM(node);
         if(node.nodeType!==1)continue;
         if(node.matches(selector))queue(node);
         node.querySelectorAll(selector).forEach(queue);
       }
     }
-  }).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['hidden','class']});
+  }).observe(document.body,{childList:true,characterData:true,subtree:true,attributes:true,attributeFilter:['hidden','class']});
 }
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
+if(typeof document!=='undefined'){
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
+}
