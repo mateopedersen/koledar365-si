@@ -1,4 +1,5 @@
 import {test,expect} from '@playwright/test';
+test.beforeEach(async({page})=>{await page.addInitScript(()=>localStorage.setItem('k365.consent',JSON.stringify({version:2,expiresAt:Date.now()+86400000,preferences:false})));});
 test('lunar overview uses screen atlas and full quality is requested on enlargement',async({page})=>{
  const requested=[];page.on('request',r=>{if(r.url().includes('/lunar/atlas/'))requested.push(r.url());});
  await page.goto('/lunin-koledar/2029/avgust/');
