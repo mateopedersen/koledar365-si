@@ -113,7 +113,8 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
         expect(label.compactRight, `${route} event ${index + 1} compact title is clipped`).toBeLessThanOrEqual(label.labelRight + 0.5);
         expect(label.textRight, `${route} event ${index + 1} compact text is visually clipped`).toBeLessThanOrEqual(label.labelRight + 0.5);
         expect(label.compactScrollWidth, `${route} event ${index + 1} compact text overflows its box`).toBeLessThanOrEqual(label.compactClientWidth + 1);
-        expect(label.height, `${route} event ${index + 1} grows into a tall paragraph`).toBeLessThanOrEqual(20);
+        expect(label.height, `${route} event ${index + 1} should retain a comfortable tap target`).toBeGreaterThanOrEqual(24);
+        expect(label.height, `${route} event ${index + 1} grows beyond its compact tap target`).toBeLessThanOrEqual(24.5);
       }
     }
   }
