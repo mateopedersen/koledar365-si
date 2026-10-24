@@ -10,6 +10,10 @@
   const url = root.dataset.shareUrl;
   const title = root.dataset.shareTitle;
 
+  details.addEventListener('toggle', () => {
+    if (details.open) root.querySelectorAll('.site-share__mark img').forEach(icon => { icon.loading = 'eager'; });
+  });
+
   if (typeof navigator.share === 'function') {
     native.hidden = false;
     native.addEventListener('click', async () => {

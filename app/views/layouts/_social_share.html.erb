@@ -8,9 +8,9 @@
       <div class="site-share__heading"><span class="site-share__eyebrow">KOLEDAR365</span><strong>Deli to stran</strong><p>Pošljite povezavo do koledarja, horoskopa ali članka. Na telefonu lahko izberete tudi svoje aplikacije.</p></div>
       <div class="site-share__grid">
         <% social_share_links(url: canonical_url, title: @title.presence || 'Slovenski koledar', image: sharing_image[:url]).each do |target| %>
-          <a class="site-share__target site-share__target--<%= target[:key] %>" href="<%= target[:href] %>" target="_blank" rel="noopener noreferrer nofollow" referrerpolicy="no-referrer" aria-label="Deli na <%= target[:label] %>"><span class="site-share__mark" aria-hidden="true"><%= target[:mark] %></span><span><%= target[:label] %></span></a>
+          <a class="site-share__target site-share__target--<%= target[:key] %>" href="<%= target[:href] %>" target="_blank" rel="noopener noreferrer nofollow" referrerpolicy="no-referrer" aria-label="Deli na <%= target[:label] %>"><span class="site-share__mark" aria-hidden="true"><img src="<%= target[:icon] %>" alt="" width="30" height="30" loading="lazy" decoding="async"></span><span><%= target[:label] %></span></a>
         <% end %>
-        <a class="site-share__target site-share__target--mail" href="mailto:?subject=<%= ERB::Util.url_encode(@title.presence || 'Slovenski koledar') %>&body=<%= ERB::Util.url_encode(canonical_url) %>" aria-label="Pošlji povezavo po e-pošti"><span class="site-share__mark" aria-hidden="true">@</span><span>E-pošta</span></a>
+        <a class="site-share__target site-share__target--mail" href="mailto:?subject=<%= ERB::Util.url_encode(@title.presence || 'Slovenski koledar') %>&body=<%= ERB::Util.url_encode(canonical_url) %>" aria-label="Pošlji povezavo po e-pošti"><span class="site-share__mark" aria-hidden="true"><img src="/social/mail.svg" alt="" width="30" height="30" loading="lazy" decoding="async"></span><span>E-pošta</span></a>
       </div>
       <div class="site-share__actions">
         <button type="button" class="site-share__native" data-share-native hidden>Odpri meni za deljenje</button>
