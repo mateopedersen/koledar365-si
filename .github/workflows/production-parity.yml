@@ -12,7 +12,7 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -20,6 +20,8 @@ jobs:
           python-version: '3.12'
       - name: Wait for the exact Cloudflare publication
         run: python3 script/wait_production.py
+      - name: Audit every published image for live indexing eligibility
+        run: python3 script/audit_public_images.py --out evidence/qa/live-image-indexability
       - name: Verify all canonical pages and published CSS and JavaScript
         run: python3 script/qa_seo.py --live && python3 script/qa_production.py
       - uses: actions/upload-artifact@v4
