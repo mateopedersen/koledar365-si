@@ -90,7 +90,8 @@ $$('[data-calendar-gallery]').forEach(gallery=>{
 $$('[data-download-workspace]').forEach(workspace=>{
  const button=workspace.querySelector('[data-context-expand]');if(!button)return;
  const content=workspace.querySelector('#gallery-context-content'),mobile=window.matchMedia('(max-width:650px)');
- const syncContext=()=>{content.hidden=mobile.matches&&!workspace.classList.contains('context-expanded')};
+ const alwaysShowCalendar=workspace.querySelector('.calendar-context');
+ const syncContext=()=>{content.hidden=mobile.matches&&!workspace.classList.contains('context-expanded')&&!alwaysShowCalendar};
  syncContext();mobile.addEventListener('change',syncContext);
  button.hidden=false;
  button.addEventListener('click',()=>{
