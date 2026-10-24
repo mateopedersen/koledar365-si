@@ -9,6 +9,7 @@ from collections import defaultdict, deque
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 import hashlib
+from fnmatch import fnmatchcase
 from html.parser import HTMLParser
 import json
 from pathlib import Path
@@ -23,6 +24,24 @@ import xml.etree.ElementTree as ET
 ORIGIN = 'https://koledar365.si'
 ROOT = Path(__file__).resolve().parent.parent
 NS = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9', 'image': 'http://www.google.com/schemas/sitemap-image/1.1'}
+
+
+def image_header(site, path):
+    """Pages matches all applicable patterns; splats also match nested paths."""
+    header_file = site / '_headers'
+    values, matching = [], False
+    if not header_file.exists():
+        return ''
+    for line in header_file.read_text().splitlines():
+        if line.startswith('/'):
+            matching = fnmatchcase(path, line.strip())
+        elif matching:
+            text = line.strip()
+            if text.lower() == '! x-robots-tag':
+                values = []
+            elif text.lower().startswith('x-robots-tag:'):
+                values.append(text.split(':', 1)[1].strip())
+    return ', '.join(values)
 
 
 def image_sitemap_issues(xml, sitemap, site, robots):
@@ -51,6 +70,8 @@ def image_sitemap_issues(xml, sitemap, site, robots):
                 issues.append(image + ': missing sitemap image')
             elif not all(robots.can_fetch(agent, image) for agent in ('Googlebot-Image', 'bingbot')):
                 issues.append(image + ': robots blocks image')
+            elif re.search(r'\b(noindex|none)\b', image_header(site, parsed.path), re.I):
+                issues.append(image + ': image response header blocks indexing')
     return issues
 
 

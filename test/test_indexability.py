@@ -93,6 +93,10 @@ class IndexabilityTest(unittest.TestCase):
         file = self.site / 'sitemap-images.xml'
         file.write_text(xml)
         self.assertEqual([], self.issues())
+        (self.site / '_headers').write_text('/*\n  X-Robots-Tag: noindex\n')
+        self.assertTrue(any('header blocks indexing' in issue for issue in self.issues()))
+        (self.site / '_headers').write_text('/*.pdf\n  X-Robots-Tag: noindex\n')
+        self.assertEqual([], self.issues())
         file.write_text(xml.replace('/tema/', '/private/'))
         self.assertTrue(any('not canonical/indexable' in issue for issue in self.issues()))
         file.write_text(xml.replace('</urlset>', xml[xml.index('<url>'):xml.index('</urlset>')] + '</urlset>'))
