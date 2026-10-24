@@ -606,10 +606,10 @@
 #vsebina .calendar a.event-label .event-label__compact { display: none; }
 #vsebina .download-workspace:not(.context-expanded) .calendar-context .calendar a.event-label {
   display: block;
-  min-height: 0;
-  max-height: 18px;
+  min-height: 24px;
+  max-height: 24px;
   overflow: hidden;
-  padding: 1px 2px 1px 8px;
+  padding: 4px 2px 4px 8px;
   font-size: 9px;
   line-height: 1.25;
   white-space: nowrap;
@@ -622,10 +622,10 @@
 @media screen and (max-width: 650px) {
   #vsebina .calendar a.event-label {
     display: block;
-    min-height: 0;
-    max-height: 18px;
+    min-height: 24px;
+    max-height: 24px;
     overflow: hidden;
-    padding: 1px 1px 1px 6px;
+    padding: 4px 1px 4px 6px;
     font-size: 8.5px;
     line-height: 1.25;
     white-space: nowrap;
