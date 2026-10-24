@@ -22,4 +22,10 @@ class SocialShareTest < ActionDispatch::IntegrationTest
     assert_response :not_found
     assert_select '.site-share', count: 0
   end
+
+  test 'editor pages do not show a sharing control' do
+    get '/upravljanje/prijava/'
+    assert_response :success
+    assert_select '.site-share', count: 0
+  end
 end
