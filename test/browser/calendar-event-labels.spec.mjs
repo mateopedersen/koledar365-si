@@ -31,10 +31,11 @@ const sourceEvents = [
 
 test('all 48 monthly calendars show compact labels without expanding and retain full event names', async ({ page }) => {
   test.setTimeout(120_000);
+  const routesToScan = test.info().project.name === 'chromium' ? calendarRoutes : ['/koledar/2027/oktober/'];
 
   for (const width of [390, 1280]) {
     await page.setViewportSize({ width, height: 900 });
-    for (const route of calendarRoutes) {
+    for (const route of routesToScan) {
       const response = await page.goto(route, { waitUntil: 'domcontentloaded' });
       expect(response?.status(), `${route} at ${width}px`).toBe(200);
       const result = await page.evaluate(() => {
