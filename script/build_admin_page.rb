@@ -7,6 +7,10 @@ doc.at_css('title').content='Urejanje vsebine · Koledar365'
 doc.at_css('meta[name=description]')['content']='Uredniški dostop do javnih besedil, podatkov, zgodovine sprememb in preverjanja objav Koledar365.'
 doc.at_css('meta[name=robots]')['content']='noindex, nofollow'
 doc.css('script[src],script[type="application/ld+json"],meta[property^="og:"],meta[name^="twitter:"],link[rel=canonical],meta[name^="csrf-"],meta[name="csp-nonce"]').remove
+# This export reuses the public /o-nas/ layout, so remove its share UI and assets
+# explicitly; the rendered layout cannot infer the eventual /upravljanje/ path.
+doc.css('.site-share,link[href*="social_share"],script[src*="social_share"]').remove
+raise 'Admin editor export must not include social sharing controls or assets' if doc.at_css('.site-share,link[href*="social_share"],script[src*="social_share"]')
 repo='https://github.com/mateopedersen/koledar365-si'
 links={
  'Besedila strani'=>["#{repo}/edit/main/data/editorial/pages.json",'Uredite naslov, opis in besedilo obstoječe strani. Izvorno preverjanje zadrži strani, ki čakajo na vir.'],
