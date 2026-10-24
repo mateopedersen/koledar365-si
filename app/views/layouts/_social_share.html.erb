@@ -1,0 +1,24 @@
+<aside class="site-share" data-site-share data-share-title="<%= @title.presence || 'Slovenski koledar' %>" data-share-url="<%= canonical_url %>" aria-label="Deljenje strani">
+  <details class="site-share__details">
+    <summary class="site-share__trigger">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 12.5 16.2 7.8M8 11.5l8.2 4.7"/><circle cx="5.5" cy="12" r="2.5"/><circle cx="18.5" cy="6.5" r="2.5"/><circle cx="18.5" cy="17.5" r="2.5"/></svg>
+      <span>Deli stran</span>
+    </summary>
+    <div class="site-share__panel">
+      <div class="site-share__heading"><span class="site-share__eyebrow">KOLEDAR365</span><strong>Deli to stran</strong><p>Pošljite povezavo do koledarja, horoskopa ali članka. Na telefonu lahko izberete tudi svoje aplikacije.</p></div>
+      <div class="site-share__grid">
+        <% social_share_links(url: canonical_url, title: @title.presence || 'Slovenski koledar', image: sharing_image[:url]).each do |target| %>
+          <a class="site-share__target site-share__target--<%= target[:key] %>" href="<%= target[:href] %>" target="_blank" rel="noopener noreferrer nofollow" referrerpolicy="no-referrer" aria-label="Deli na <%= target[:label] %>"><span class="site-share__mark" aria-hidden="true"><img src="<%= target[:icon] %>" alt="" width="30" height="30" loading="lazy" decoding="async"></span><span><%= target[:label] %></span></a>
+        <% end %>
+        <a class="site-share__target site-share__target--mail" href="mailto:?subject=<%= ERB::Util.url_encode(@title.presence || 'Slovenski koledar') %>&body=<%= ERB::Util.url_encode(canonical_url) %>" aria-label="Pošlji povezavo po e-pošti"><span class="site-share__mark" aria-hidden="true"><img src="/social/mail.svg" alt="" width="30" height="30" loading="lazy" decoding="async"></span><span>E-pošta</span></a>
+      </div>
+      <div class="site-share__actions">
+        <button type="button" class="site-share__native" data-share-native hidden>Odpri meni za deljenje</button>
+        <button type="button" class="site-share__copy" data-share-copy hidden>Kopiraj povezavo</button>
+      </div>
+      <label class="site-share__url-label" for="site-share-url">Povezava do strani</label>
+      <input id="site-share-url" class="site-share__url" type="text" readonly value="<%= canonical_url %>" data-share-input>
+      <p class="site-share__status" data-share-status role="status" aria-live="polite"></p>
+    </div>
+  </details>
+</aside>
