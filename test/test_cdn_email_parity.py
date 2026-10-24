@@ -4,8 +4,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'script'))
 from cdn_email_parity import restore_email_html
 
-def encoded(email):
-    return '37' + bytes(c ^ 0x37 for c in email.encode()).hex()
+def encoded(value):
+    return '37' + bytes(c ^ 0x37 for c in value.encode()).hex()
 
 class EmailParityTest(unittest.TestCase):
     def setUp(self):
@@ -19,6 +19,14 @@ class EmailParityTest(unittest.TestCase):
         restored, counts = restore_email_html(self.live)
         self.assertEqual(restored, self.source)
         self.assertEqual(counts, dict(email_text=2, mailto_links=1, decoder_scripts=1))
+
+    def test_generic_mailto_query_restoration(self):
+        query = '?subject=%C5%A0olske%20po%C4%8Ditnice&amp;body=https%3A%2F%2Fkoledar365.si%2F'
+        source = f'<a href="mailto:{query}">Share</a>'.encode()
+        live = (f'<a href="/cdn-cgi/l/email-protection#{encoded(query)}">Share</a>'+self.script).encode()
+        restored, counts = restore_email_html(live)
+        self.assertEqual(restored, source)
+        self.assertEqual(counts, dict(email_text=0, mailto_links=1, decoder_scripts=1))
 
     def test_tampered_email_fails_comparison(self):
         self.assertNotEqual(restore_email_html(self.live.replace(self.hex.encode(), encoded('wrong@example.com').encode()))[0], self.source)
