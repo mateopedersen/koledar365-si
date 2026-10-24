@@ -593,3 +593,59 @@
     padding-inline-end: 10px;
   }
 }
+
+/* Calendar labels stay compact in narrow grids; full names remain available to
+   screen readers, on focus/hover, and in the expanded desktop calendar. */
+#vsebina .calendar a.event-label {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: auto;
+  text-overflow: clip;
+}
+#vsebina .calendar a.event-label .event-label__full { display: inline; }
+#vsebina .calendar a.event-label .event-label__compact { display: none; }
+#vsebina .download-workspace:not(.context-expanded) .calendar-context .calendar a.event-label {
+  display: block;
+  min-height: 0;
+  max-height: 18px;
+  overflow: hidden;
+  padding: 1px 2px 1px 8px;
+  font-size: 9px;
+  line-height: 1.25;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#vsebina .download-workspace:not(.context-expanded) .calendar-context .calendar a.event-label .event-label__full { display: none; }
+#vsebina .download-workspace:not(.context-expanded) .calendar-context .calendar a.event-label .event-label__compact { display: inline; }
+#vsebina .context-expanded .calendar-context .calendar a.event-label .event-label__full { display: inline; }
+#vsebina .context-expanded .calendar-context .calendar a.event-label .event-label__compact { display: none; }
+@media screen and (max-width: 650px) {
+  #vsebina .calendar a.event-label {
+    display: block;
+    min-height: 0;
+    max-height: 18px;
+    overflow: hidden;
+    padding: 1px 1px 1px 6px;
+    font-size: 8.5px;
+    line-height: 1.25;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  #vsebina .calendar a.event-label .event-label__full { display: none !important; }
+  #vsebina .calendar a.event-label .event-label__compact { display: inline !important; }
+  #vsebina .calendar .date-events { gap: 1px; padding: 1px 2px 2px; }
+  #vsebina .download-workspace:not(.context-expanded) .calendar-context .context-content {
+    display: block !important;
+    max-height: none;
+    min-height: 0;
+    overflow: visible;
+    padding: 0;
+  }
+  #vsebina .download-workspace:not(.context-expanded) .calendar-context .calendar a.event-label { font-size: 8.5px; }
+  #vsebina .download-workspace:not(.context-expanded) .calendar-context-view {
+    grid-column: auto;
+    grid-row: auto;
+    max-height: none;
+    overflow: visible;
+  }
+}

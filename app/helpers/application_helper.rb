@@ -20,6 +20,59 @@ module ApplicationHelper
   def compact_day_month(date) = "#{date.day}.#{date.month}."
   def month_url(year,month,family='koledar') = "/#{family}/#{year}/#{CalendarEngine::MONTHS[month-1]}/"
   def calendar_path(date) = date.year==2026 ? "/?year=2026&month=#{date.month}&date=#{date.iso8601}" : month_url(date.year,date.month)
+  CALENDAR_EVENT_COMPACT_TITLES = {
+    'Dan slovenske hrane' => 'Hrana',
+    'Dan slovenskega krvodajalstva' => 'Kri',
+    'Dan slovenskega znakovnega jezika' => 'Znaki',
+    'Dan človekovih pravic' => 'Pravice',
+    'Evropski dan jezikov' => 'Jeziki',
+    'Evropski dan spomina na žrtve totalitarnih in avtoritarnih režimov' => 'Spomin',
+    'Mednarodni dan družin' => 'Družine',
+    'Mednarodni dan invalidov' => 'Invalidi',
+    'Mednarodni dan maternega jezika' => 'Materni',
+    'Mednarodni dan miru' => 'Mir',
+    'Mednarodni dan mladih' => 'Mladi',
+    'Mednarodni dan pismenosti' => 'Branje',
+    'Mednarodni dan spomina na žrtve holokavsta' => 'Spomin',
+    'Mednarodni dan starejših' => 'Starejši',
+    'Marijino vnebovzetje' => 'Marija',
+    'Noč čarovnic' => 'Čarov.',
+    'Prešernov dan, slovenski kulturni praznik' => 'Prešern.',
+    'Spomin vseh vernih rajnih' => 'Rajni',
+    'Svetovni dan hrane' => 'Hrana',
+    'Svetovni dan knjige in avtorskih pravic' => 'Knjiga',
+    'Svetovni dan okolja' => 'Okolje',
+    'Svetovni dan otrok' => 'Otroci',
+    'Svetovni dan učiteljev' => 'Učitelji',
+    'Svetovni dan voda' => 'Voda',
+    'Svetovni dan živali' => 'Živali',
+    'Ta veseli dan kulture' => 'Kultura',
+    'Teden otroka®' => 'Teden',
+    'Dan slovenskega športa' => 'Šport',
+    'dan Primoža Trubarja' => 'Trubar',
+    'dan Rudolfa Maistra' => 'Maister',
+    'dan Triglava' => 'Triglav',
+    'dan državnosti' => 'Država',
+    'dan reformacije' => 'Reform.',
+    'dan samostojnosti in enotnosti' => 'Enotn.',
+    'dan spomina na mrtve' => 'Spomin',
+    'dan suverenosti' => 'Suver.',
+    'dan upora proti okupatorju' => 'Upor',
+    'dan znanosti' => 'Znanost',
+    'novo leto' => 'Novo',
+    'praznik dela' => 'Delo',
+    'binkoštna nedelja, binkošti' => 'Binkošti',
+    'velikonočna nedelja' => 'Vel. noč',
+    'velikonočni ponedeljek' => 'Vel. noč',
+    'vrnitev Primorske k matični domovini' => 'Primor.',
+    'združitev prekmurskih Slovencev z matičnim narodom' => 'Prekm.'
+  }.transform_keys { |title| title.sub(/\A./, &:upcase) }.freeze
+
+  def calendar_event_compact_title(event)
+    title = event.title.sub(/\A./, &:upcase)
+    CALENDAR_EVENT_COMPACT_TITLES.fetch(title, title)
+  end
+
   def canonical_url
     site_origin+page_path
   end
