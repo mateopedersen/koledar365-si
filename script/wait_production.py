@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
-"""Wait until Cloudflare serves a manifest built from this GitHub commit."""
+"""Wait until Cloudflare serves the expected generated publication."""
 import json
 import os
 import time
+from pathlib import Path
 from urllib.request import Request, urlopen
 
+checked_in_manifest = json.loads(Path("site/release-manifest.json").read_text())
 expected = os.environ.get("GITHUB_SHA")
+if os.environ.get("GITHUB_EVENT_NAME") != "push":
+    # On manual runs, verify the latest publication described by the checked-in
+    # build manifest. Push runs use the commit that triggered the deployment.
+    expected = checked_in_manifest.get("source_commit") or expected
 if not expected:
-    raise SystemExit("GITHUB_SHA is required to verify the publication.")
+    raise SystemExit("No expected publication source commit is available.")
 
 for attempt in range(40):
     url = f"https://koledar365.si/release-manifest.json?publication-check={expected}-{attempt}"
