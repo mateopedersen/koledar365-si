@@ -22,16 +22,8 @@ export async function auditImageLoading(page, progress=()=>{}) {
  let paintTimerFallbacks=0;
  const settle=async()=>{if(await settlePaint(page))paintTimerFallbacks++;};
  const retries=[];
- // Visit the complete page before collecting its rendered images.
- for(let y=0;;) {
-  const dimensions=await page.evaluate(()=>({height:document.documentElement.scrollHeight,step:innerHeight*.8}));
-  if(y>=dimensions.height)break;
-  if(!(dimensions.step>0))throw new Error('Image audit viewport has no height');
-  progress({stage:'scroll',y,height:dimensions.height});
-  await page.evaluate(value=>scrollTo(0,value),y);
-  await settle();
-  y+=dimensions.step;
- }
+ // Scroll directly to each rendered image below. This triggers native lazy
+ // loading without spending time sweeping long text-only sections first.
  const all=await page.locator('img').elementHandles();
  const displayed=[];
  for(const image of all) {

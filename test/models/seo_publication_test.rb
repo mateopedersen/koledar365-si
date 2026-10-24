@@ -42,6 +42,22 @@ class SeoPublicationTest < ActiveSupport::TestCase
     assert_raises(RuntimeError) { SeoPublication.write!(site: @site, guide: @guide) }
   end
 
+  test 'image discovery uses originals, meaningful downloads and only indexable landing pages' do
+    @site.join('images').mkpath
+    %w[original.webp small.avif moon.webp hidden.webp icon.svg].each { |file| @site.join('images',file).write('fixture') }
+    @site.parent.join('data').mkpath
+    @site.parent.join('data/web_image_variants.json').write(JSON.generate('/images/original.webp' => {'variants' => [{'avif' => '/images/small.avif'}]}))
+    @site.join('index.html').write(@site.join('index.html').read.sub('</body>', '<img src="/images/small.avif" alt="Luna"><img src="/images/icon.svg" alt=""><a href="/images/moon.webp">Prenesi sliko</a></body>'))
+    page('/private/', robots: 'noindex')
+    @site.join('private/index.html').write(@site.join('private/index.html').read.sub('</body>', '<img src="/images/hidden.webp" alt="Zasebno"></body>'))
+    report = SeoPublication.write!(site: @site, guide: @guide)
+    assert_equal 2, report[:additional_images]
+    xml = Nokogiri::XML(@site.join('sitemap-images.xml').read) { |c| c.strict }
+    assert_equal ['https://koledar365.si/images/original.webp', 'https://koledar365.si/images/moon.webp'], xml.xpath('//*[local-name()="image"]/*[local-name()="loc"]').map(&:text)
+    assert_equal ['https://koledar365.si/'], xml.xpath('//*[local-name()="url"]/*[local-name()="loc"]').map(&:text)
+    assert_includes @site.join('sitemap.xml').read, 'sitemap-images.xml'
+  end
+
   test 'guide is concise Slovenian Markdown using rendered titles and canonical links' do
     report = SeoPublication.write!(site: @site, guide: @guide)
     text = @site.join('llms.txt').read

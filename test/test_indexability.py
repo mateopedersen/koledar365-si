@@ -85,6 +85,26 @@ class IndexabilityTest(unittest.TestCase):
         self.assertTrue(report['passed'])
         self.assertEqual(2, report['indexable_pages'])
 
+    def test_image_sitemap_allows_same_canonical_but_rejects_invalid_targets(self):
+        image = self.site / 'moon.webp'
+        image.write_bytes(b'fixture')
+        (self.site / 'sitemap.xml').write_text('<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>https://koledar365.si/sitemap-pages.xml</loc></sitemap><sitemap><loc>https://koledar365.si/sitemap-images.xml</loc></sitemap></sitemapindex>')
+        xml = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"><url><loc>https://koledar365.si/tema/</loc><image:image><image:loc>https://koledar365.si/moon.webp</image:loc></image:image></url></urlset>'
+        file = self.site / 'sitemap-images.xml'
+        file.write_text(xml)
+        self.assertEqual([], self.issues())
+        (self.site / '_headers').write_text('/*\n  X-Robots-Tag: noindex\n')
+        self.assertTrue(any('header blocks indexing' in issue for issue in self.issues()))
+        (self.site / '_headers').write_text('/*.pdf\n  X-Robots-Tag: noindex\n')
+        self.assertEqual([], self.issues())
+        file.write_text(xml.replace('/tema/', '/private/'))
+        self.assertTrue(any('not canonical/indexable' in issue for issue in self.issues()))
+        file.write_text(xml.replace('</urlset>', xml[xml.index('<url>'):xml.index('</urlset>')] + '</urlset>'))
+        self.assertTrue(any('Duplicate landing' in issue for issue in self.issues()))
+        file.write_text(xml)
+        image.unlink()
+        self.assertTrue(any('missing sitemap image' in issue for issue in self.issues()))
+
 
 if __name__ == '__main__':
     unittest.main()

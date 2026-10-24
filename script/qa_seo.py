@@ -6,7 +6,7 @@ from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlsplit,urljoin
 from urllib.robotparser import RobotFileParser
 import xml.etree.ElementTree as ET
-from audit_indexability import Document,fetch,ORIGIN,NS
+from audit_indexability import Document,fetch,ORIGIN,NS,image_sitemap_issues
 parser=argparse.ArgumentParser();parser.add_argument('--live',action='store_true');parser.add_argument('--out',type=Path,default=Path('evidence/qa/seo'));args=parser.parse_args();args.out.mkdir(parents=True,exist_ok=True)
 site=Path('site');issues=[]
 revisions=json.loads((site/'page-revisions.json').read_text()) if (site/'page-revisions.json').exists() else {}
@@ -17,15 +17,27 @@ def get(name):
  if name=='llms.txt':assert 'text/plain' in {k.lower():v for k,v in result['headers'].items()}.get('content-type',''),'llms MIME must be text/plain'
  return result['body']
 index=ET.fromstring(get('sitemap.xml'));assert index.tag=='{'+NS['s']+'}sitemapindex'
-urls=[];lastmods={}
+urls=[];lastmods={};image_xml=None;image_lastmods={}
+children=[loc.text for loc in index.findall('s:sitemap/s:loc',NS)]
+expected=[ORIGIN+'/sitemap-pages.xml']+([ORIGIN+'/sitemap-images.xml'] if (site/'sitemap-images.xml').exists() else [])
+assert children==expected,'Unexpected or repeated sitemap child'
 for loc in index.findall('s:sitemap/s:loc',NS):
  assert loc.text.startswith(ORIGIN+'/')
  text=get(urlsplit(loc.text).path.lstrip('/'));tree=ET.fromstring(text);assert tree.tag=='{'+NS['s']+'}urlset'
  nodes=tree.findall('s:url',NS);assert len(nodes)<=50000 and len(text.encode())<=50*1024*1024
+ child_urls=[node.findtext('s:loc',namespaces=NS) for node in nodes]
+ assert len(child_urls)==len(set(child_urls)),'Repeated URL within sitemap'
+ if loc.text.endswith('/sitemap-images.xml'):
+  image_xml=text
+  image_lastmods={node.findtext('s:loc',namespaces=NS):node.findtext('s:lastmod',default='',namespaces=NS) for node in nodes}
+  continue
  for node in nodes:
   url=node.findtext('s:loc',namespaces=NS);urls.append(url);lastmods[url]=node.findtext('s:lastmod',default='',namespaces=NS)
 assert len(urls)==len(set(urls)),'Repeated sitemap URL'
 robots=RobotFileParser();robots.parse(get('robots.txt').splitlines());assert ORIGIN+'/sitemap.xml' in robots.site_maps()
+if image_xml is not None:
+ assert not image_sitemap_issues(image_xml,urls,site,robots),'Invalid image discovery sitemap'
+ assert all(lastmods[url]==value for url,value in image_lastmods.items()),'Conflicting page revision dates in image sitemap'
 local={}
 for f in site.rglob('*.html'):
  d=Document(f.read_text());route='/'+str(f.relative_to(site)).removesuffix('index.html')
