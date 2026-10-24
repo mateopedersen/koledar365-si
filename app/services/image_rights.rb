@@ -21,24 +21,44 @@ class ImageRights
           value['creator'] ||= {'@type' => kind, 'name' => author}
           value['creditText'] ||= author
         end
-        value['license'] ||= photo['license_url'] if photo['license_url'].present?
+        license_url = photo['license_url'].presence
+        license_url ||= 'https://creativecommons.org/publicdomain/mark/1.0/' if photo['license'] == 'Public domain'
+        value['license'] ||= license_url if license_url
         value['acquireLicensePage'] ||= photo['source'] if photo['source'].present?
-        value['copyrightNotice'] ||= photo['copyright_notice'] if photo['copyright_notice'].present?
+        value['copyrightNotice'] ||= rights_notice(photo)
       elsif OWNED_PREFIXES.any? { |prefix| path.start_with?(prefix) } || value['creditText'].to_s.start_with?('Koledar365')
         value['creator'] ||= {'@type' => 'Organization', 'name' => 'Koledar365'}
         value['creditText'] ||= 'Koledar365'
         value['license'] ||= origin + '/pogoji-uporabe/#gradiva'
         value['acquireLicensePage'] ||= origin + '/kontakt/'
-        # AI illustration credit is preserved without inventing exclusive rights.
-        value['copyrightNotice'] ||= 'Koledar365' unless value['creditText'].match?(/umetn|\bAI\b/i)
+        value['copyrightNotice'] ||= if value['creditText'].match?(/umetn|\bAI\b/i)
+          'Ilustracija, ustvarjena z umetno inteligenco. Uporaba po pogojih Koledar365.'
+        else
+          'Koledar365'
+        end
       end
     end
     value
   end
 
+  # A rights notice describes the reviewed license, without claiming that the
+  # photographer is necessarily the current copyright owner.
+  def self.rights_notice(photo)
+    return photo['copyright_notice'] if photo['copyright_notice'].present?
+    license = photo['license'].to_s.strip
+    return if license.empty?
+    rights = case license
+    when 'Public domain' then 'Javna domena (Public Domain Mark 1.0).'
+    when 'CC0' then 'CC0 1.0 — brez pridržanih avtorskih pravic.'
+    else "Uporaba po licenci #{license}."
+    end
+    author = photo['author'].to_s.strip
+    author.empty? ? rights : "#{rights} Navedba vira: #{author}."
+  end
+
   def self.photos
-    @photos ||= (HolidayPhotoCatalog.all + CityCatalog.all.map { |city| city['photo'] } + GardenCalendar.photos).compact.to_h do |photo|
-      [photo['local_path'] || photo['path'], photo]
+    @photos ||= (HolidayPhotoCatalog.all + CityCatalog.all.map { |city| city['photo'] } + GardenCalendar.photos).compact.each_with_object({}) do |photo, index|
+      [photo['local_path'], photo['path'], photo['small_path']].compact.each { |path| index[path] = photo }
     end
   end
 end
