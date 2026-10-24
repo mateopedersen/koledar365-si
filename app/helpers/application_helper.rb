@@ -69,17 +69,17 @@ module ApplicationHelper
   }.transform_keys { |title| title.sub(/\A./, &:upcase) }.freeze
 
   def calendar_event_compact_title(event)
-    title = event.title.sub(/\A./, &:upcase)
-    CALENDAR_EVENT_COMPACT_TITLES.fetch(title, title)
+    title = event.title
+    normalized_title = title.sub(/\A./, &:upcase)
+    CALENDAR_EVENT_COMPACT_TITLES.fetch(normalized_title, title)
   end
 
-  # Keep the visible compact label in the accessible name so WCAG label-in-name
-  # checks pass, while preserving the full event title for screen readers.
+  # Keep the visible compact label in the accessible name while preserving
+  # every event's exact full title for screen readers.
   def calendar_event_accessible_title(event)
     title = event.title
     compact_title = calendar_event_compact_title(event)
-    normalized_title = title.sub(/\A./, &:upcase)
-    compact_title == normalized_title ? title : "#{compact_title} – #{title}"
+    compact_title == title ? title : "#{compact_title} – #{title}"
   end
 
   def canonical_url
