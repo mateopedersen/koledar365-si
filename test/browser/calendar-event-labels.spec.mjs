@@ -85,13 +85,17 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
       expect(result.expanded, `${route} unexpectedly requires or enables expansion`).toBe(false);
       expect(result.pageWidth, `${route} page viewport`).toBe(width);
       expect(result.scrollWidth, `${route} horizontal overflow at ${width}px`).toBeLessThanOrEqual(width + 1);
-      expect(result.labels.length, `${route} has no calendar event links`).toBeGreaterThan(0);
       if (width <= 650) expect(result.hidden, `${route} mobile preview was hidden`).toBe(false);
 
       const monthMatch = route.match(/\/(\d{4})\/([^/]+)\/$/);
       const year = monthMatch[1];
       const monthNumber = String(months.indexOf(monthMatch[2]) + 1).padStart(2, '0');
       const sourceMonthEvents = sourceEvents.filter((event) => event.date.startsWith(`${year}-${monthNumber}-`));
+      if (sourceMonthEvents.length) {
+        expect(result.labels.length, `${route} has no calendar event links`).toBeGreaterThan(0);
+      } else {
+        expect(result.labels.length, `${route} should have no invented event links`).toBe(0);
+      }
       for (const event of sourceMonthEvents) {
         expect(result.dayEvents[event.date], `${route} lost ${event.title} on ${event.date}`).toContain(event.title);
       }
