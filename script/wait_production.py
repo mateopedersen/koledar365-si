@@ -7,11 +7,10 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 
 checked_in_manifest = json.loads(Path("site/release-manifest.json").read_text())
-expected = os.environ.get("GITHUB_SHA")
-if os.environ.get("GITHUB_EVENT_NAME") != "push":
-    # On manual runs, verify the latest publication described by the checked-in
-    # build manifest. Push runs use the commit that triggered the deployment.
-    expected = checked_in_manifest.get("source_commit") or expected
+# The generated artifact records its source revision. A merge or publication
+# commit may legitimately differ from that revision, including on push events.
+# Fresh CI rebuilds also write their expected revision into this same manifest.
+expected = checked_in_manifest.get("source_commit") or os.environ.get("GITHUB_SHA")
 if not expected:
     raise SystemExit("No expected publication source commit is available.")
 
