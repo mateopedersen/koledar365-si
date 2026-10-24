@@ -103,7 +103,8 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
 
       for (const [index, label] of result.labels.entries()) {
         expect(label.title, `${route} event ${index + 1} lost its full title`).toBeTruthy();
-        expect(label.accessibleName, `${route} event ${index + 1} is not accessible`).toBe(label.title);
+        expect(label.accessibleName, `${route} event ${index + 1} accessible name omits its visible label`).toContain(label.compactText);
+        expect(label.accessibleName, `${route} event ${index + 1} accessible name omits the full title`).toContain(label.title);
         expect(label.fullText, `${route} event ${index + 1} full text changed`).toBe(label.title);
         expect(label.compactText, `${route} event ${index + 1} has no compact label`).toBeTruthy();
         expect(label.compactVisible, `${route} event ${index + 1} requires expanding`).toBe(true);
