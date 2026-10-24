@@ -22,7 +22,7 @@ status,headers,raw=fetch('/release-manifest.json')
 assert status==200 and hashlib.sha256(raw).hexdigest()==target['manifest_sha256'],'Preview manifest differs from the tested local publication'
 manifest=json.loads(raw)
 assert manifest['source_commit']==target['source_commit']
-paths={p for p in manifest['files'] if p.endswith(('.html','.css','.js','.mjs')) or p in ['robots.txt','sitemap.xml','sitemap-pages.xml','llms.txt','release-urls.json']}
+paths={p for p in manifest['files'] if p.endswith(('.html','.css','.js','.mjs')) or p in ['robots.txt','sitemap.xml','sitemap-pages.xml','sitemap-images.xml','llms.txt','release-urls.json']}
 def check(p):
  route='/'+p.removesuffix('index.html') if p.endswith('index.html') else '/'+p
  row={'path':p,'url':base+route,'passed':False}

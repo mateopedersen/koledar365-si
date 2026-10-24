@@ -22,7 +22,36 @@ import xml.etree.ElementTree as ET
 
 ORIGIN = 'https://koledar365.si'
 ROOT = Path(__file__).resolve().parent.parent
-NS = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+NS = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9', 'image': 'http://www.google.com/schemas/sitemap-image/1.1'}
+
+
+def image_sitemap_issues(xml, sitemap, site, robots):
+    tree = ET.fromstring(xml)
+    issues = []
+    if tree.tag != '{' + NS['s'] + '}urlset':
+        issues.append('Invalid image sitemap root')
+    nodes = tree.findall('s:url', NS)
+    urls = [node.findtext('s:loc', namespaces=NS) for node in nodes]
+    if len(urls) != len(set(urls)):
+        issues.append('Duplicate landing URL within image sitemap')
+    if len(nodes) > 50000 or len(xml.encode()) > 50 * 1024 * 1024:
+        issues.append('Image sitemap exceeds protocol limits')
+    for node in nodes:
+        url = node.findtext('s:loc', namespaces=NS)
+        if url not in sitemap:
+            issues.append(str(url) + ': image landing page is not canonical/indexable')
+        images = [n.text for n in node.findall('image:image/image:loc', NS)]
+        if not images or len(images) > 1000 or len(images) != len(set(images)):
+            issues.append(str(url) + ': invalid image list')
+        for image in images:
+            parsed = urlsplit(image or '')
+            if parsed.scheme != 'https' or parsed.netloc != 'koledar365.si' or parsed.query or parsed.fragment or '..' in parsed.path.split('/'):
+                issues.append(str(image) + ': invalid image URL')
+            elif not (site / parsed.path.lstrip('/')).is_file():
+                issues.append(image + ': missing sitemap image')
+            elif not all(robots.can_fetch(agent, image) for agent in ('Googlebot-Image', 'bingbot')):
+                issues.append(image + ': robots blocks image')
+    return issues
 
 
 class Document(HTMLParser):
@@ -121,13 +150,19 @@ def audit(site, live=False):
         issues.append('Duplicate URLs in sitemap')
     index = ET.fromstring((site / 'sitemap.xml').read_text())
     children = [node.text for node in index.findall('s:sitemap/s:loc', NS)]
-    if children != [ORIGIN + '/sitemap-pages.xml']:
+    expected_children = [ORIGIN + '/sitemap-pages.xml']
+    image_file = site / 'sitemap-images.xml'
+    if image_file.exists():
+        expected_children.append(ORIGIN + '/sitemap-images.xml')
+    if children != expected_children:
         issues.append('Unexpected sitemap index')
     robots_text = (site / 'robots.txt').read_text()
     robots = RobotFileParser()
     robots.parse(robots_text.splitlines())
     if ORIGIN + '/sitemap.xml' not in (robots.site_maps() or []):
         issues.append('robots.txt does not advertise the sitemap')
+    if image_file.exists():
+        issues.extend(image_sitemap_issues(image_file.read_text(), sitemap, site, robots))
     documents, title_groups, content_groups = {}, defaultdict(list), defaultdict(list)
     for file in sorted(site.rglob('*.html')):
         relative = file.relative_to(site).as_posix()
@@ -221,6 +256,14 @@ def audit(site, live=False):
         live_robots = fetch(ORIGIN + '/robots.txt')
         live_index = fetch(ORIGIN + '/sitemap.xml')
         live_sitemap = fetch(ORIGIN + '/sitemap-pages.xml')
+        if image_file.exists():
+            live_images = fetch(ORIGIN + '/sitemap-images.xml')
+            if live_images.get('status') != 200:
+                issues.append('Live image sitemap failed')
+            elif live_images['body'] != image_file.read_text():
+                issues.append('Live and exported image sitemaps differ')
+            else:
+                issues.extend(image_sitemap_issues(live_images['body'], sitemap, site, robots))
         for result in (live_robots, live_index, live_sitemap):
             if result.get('status') != 200:
                 issues.append(result['url'] + ': live file failed ' + str(result.get('error', result.get('status'))))
@@ -232,6 +275,10 @@ def audit(site, live=False):
             live_urls = locs(live_sitemap['body'])
             if set(live_urls) != set(sitemap):
                 issues.append('Live and exported sitemap URL sets differ')
+        if live_index.get('status') == 200:
+            live_children = [node.text for node in ET.fromstring(live_index['body']).findall('s:sitemap/s:loc', NS)]
+            if live_children != expected_children:
+                issues.append('Live sitemap index differs')
         with ThreadPoolExecutor(max_workers=5) as pool:
             for result in pool.map(fetch, sitemap):
                 url = result['url']

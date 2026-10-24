@@ -205,6 +205,7 @@ module SeoHelper
         { "@type" => "Question", "name" => question, "acceptedAnswer" => { "@type" => "Answer", "text" => answer } }
       } }
     end
+    ImageRights.apply!(graph, origin: site_origin)
     { "@context" => "https://schema.org", "@graph" => graph }
   end
 
