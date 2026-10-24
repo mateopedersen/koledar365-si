@@ -60,7 +60,7 @@
 <body class="<%= [gallery_page? ? 'gallery-page' : nil, @section=='holidays' ? 'holiday-guide' : nil, @section=='home' ? 'home-page' : nil, @section=='terms' ? 'terms-page' : nil, page_path=='/druzinski-planer/' ? 'family-planner-page' : nil, page_path=='/razpored-izmen/' ? 'shift-page' : nil, page_path=='/solski-urnik/' ? 'student-timetable-page' : nil].compact.join(' ') %>">
 <a class="skip" href="#vsebina">Na vsebino</a>
 <%= render 'layouts/navigation' %>
-<%= render 'layouts/social_share', sharing_image: sharing_image unless @not_found || @noindex %>
+<%= render 'layouts/social_share', sharing_image: sharing_image unless @not_found || (@noindex && Rails.env.production?) %>
 <main id="vsebina" tabindex="-1">
 <% unless breadcrumbs.empty? %><nav class="breadcrumb" aria-label="Drobtinice"><% breadcrumbs.each_with_index do |(label,path),i| %><% if i>0 %><span aria-hidden="true">›</span><% end %><% if i==breadcrumbs.size-1 %><span aria-current="page"><%= label %></span><% else %><a href="<%= path %>"><%= label %></a><% end %><% end %></nav><% end %>
 <% if flash[:notice] %><p class="notice" role="status"><%= flash[:notice] %></p><% end %><% if flash[:alert] %><p class="error" role="alert"><%= flash[:alert] %></p><% end %>
