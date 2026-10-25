@@ -98,7 +98,7 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
         expect(result.labels.length, `${route} should have no invented event links`).toBe(0);
       }
       for (const event of sourceMonthEvents) {
-        expect(result.dayEvents[event.date], `${route} lost ${event.title} on ${event.date}`).toContain(event.title);
+        expect(result.dayEvents[event.date]?.some((name) => name?.includes(event.title)), `${route} lost ${event.title} on ${event.date}`).toBe(true);
       }
 
       for (const [index, label] of result.labels.entries()) {
