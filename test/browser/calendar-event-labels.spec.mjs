@@ -109,12 +109,14 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
         expect(label.accessibleName, `${route} event ${index + 1} accessible name omits the full title`).toContain(label.title);
         expect(label.fullText, `${route} event ${index + 1} full text changed`).toBe(label.title);
         expect(label.compactText, `${route} event ${index + 1} has no compact label`).toBeTruthy();
+        expect(Array.from(label.compactText).length, `${route} event ${index + 1} compact label exceeds five characters`).toBeLessThanOrEqual(5);
+        expect(Array.from(label.compactText).length, `${route} event ${index + 1} compact label exceeds five characters`).toBeLessThanOrEqual(5);
         expect(label.compactVisible, `${route} event ${index + 1} requires expanding`).toBe(true);
         expect(label.whiteSpace, `${route} event ${index + 1} wraps into narrow columns`).toBe('nowrap');
         expect(label.labelLeft, `${route} event ${index + 1} starts outside its day`).toBeGreaterThanOrEqual(label.cellLeft);
         expect(label.labelRight, `${route} event ${index + 1} overflows its day`).toBeLessThanOrEqual(label.cellRight + 1);
-        expect(label.compactRight, `${route} event ${index + 1} compact title is clipped`).toBeLessThanOrEqual(label.labelRight + 0.5);
-        expect(label.textRight, `${route} event ${index + 1} compact text is visually clipped`).toBeLessThanOrEqual(label.labelRight + 0.5);
+        expect(label.compactRight, `${route} event ${index + 1} compact title ${JSON.stringify(label.compactText)} is clipped`).toBeLessThanOrEqual(label.labelRight + 0.5);
+        expect(label.textRight, `${route} event ${index + 1} compact text ${JSON.stringify(label.compactText)} is visually clipped`).toBeLessThanOrEqual(label.labelRight + 0.5);
         expect(label.compactScrollWidth, `${route} event ${index + 1} compact text overflows its box`).toBeLessThanOrEqual(label.compactClientWidth + 1);
         expect(label.height, `${route} event ${index + 1} should retain a comfortable tap target`).toBeGreaterThanOrEqual(24);
         expect(label.height, `${route} event ${index + 1} grows beyond its compact tap target`).toBeLessThanOrEqual(24.5);
@@ -124,23 +126,23 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
 
   if (test.info().project.name === 'chromium') {
     const editorialLabels = new Map([
-      ['Advent', 'Advent'],
-      ['Cvetna nedelja', 'Cvetna'],
-      ['Dan Evrope', 'Evropa'],
+      ['Advent', 'Adv.'],
+      ['Cvetna nedelja', 'Cvet.'],
+      ['Dan Evrope', 'Evrop'],
       ['Dan žena', 'Žena'],
       ['Gregorjevo', 'Greg.'],
       ['Jesensko enakonočje', 'Jesen'],
-      ['Martinovo', 'Martin'],
+      ['Martinovo', 'Mart.'],
       ['Materinski dan', 'Mati.'],
-      ['Miklavž', 'Miklavž'],
-      ['Poletni solsticij', 'Poletje'],
-      ['Pomladno enakonočje', 'Pomlad'],
+      ['Miklavž', 'Mik.'],
+      ['Poletni solsticij', 'Polet'],
+      ['Pomladno enakonočje', 'Poml.'],
       ['Premik ure', 'Ura'],
       ['Pust', 'Pust'],
       ['Silvestrovo', 'Silv.'],
-      ['Sveti trije kralji', 'Kralji'],
-      ['Svetovni dan Zemlje', 'Zemlja'],
-      ['Svetovni dan čebel', 'Čebele'],
+      ['Sveti trije kralji', 'Kralj'],
+      ['Svetovni dan Zemlje', 'Zem.'],
+      ['Svetovni dan čebel', 'Čeb.'],
       ['Valentinovo', 'Val.'],
       ['Veliki petek', 'Petek'],
       ['Zimski solsticij', 'Zima'],
@@ -157,8 +159,8 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
   await expect(october.filter({ hasText: 'Živali' })).toHaveCount(1);
   await expect(october.filter({ hasText: 'Učitelji' })).toHaveCount(1);
   const octoberCompactTitles = await page.locator('.calendar-context .calendar .event-label__compact').allTextContents();
-  expect(octoberCompactTitles).toContain('Čarov.');
-  expect(octoberCompactTitles).toContain('Reform.');
+  expect(octoberCompactTitles).toContain('Čar.');
+  expect(octoberCompactTitles).toContain('Ref.');
 
   await page.getByRole('button', { name: /Razširi koledar/ }).click();
   await expect(page.getByRole('button', { name: /Nazaj k galeriji/ })).toHaveAttribute('aria-expanded', 'true');
