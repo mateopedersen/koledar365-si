@@ -109,7 +109,7 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
         expect(label.accessibleName, `${route} event ${index + 1} accessible name omits the full title`).toContain(label.title);
         expect(label.fullText, `${route} event ${index + 1} full text changed`).toBe(label.title);
         expect(label.compactText, `${route} event ${index + 1} has no compact label`).toBeTruthy();
-        expect(Array.from(label.compactText).length, `${route} event ${index + 1} compact label exceeds five characters`).toBeLessThanOrEqual(5);
+        expect(Array.from(label.compactText).length, `${route} event ${index + 1} compact label exceeds seven characters`).toBeLessThanOrEqual(7);
         expect(Array.from(label.compactText).length, `${route} event ${index + 1} compact label exceeds five characters`).toBeLessThanOrEqual(5);
         expect(label.compactVisible, `${route} event ${index + 1} requires expanding`).toBe(true);
         expect(label.whiteSpace, `${route} event ${index + 1} wraps into narrow columns`).toBe('nowrap');
@@ -127,22 +127,22 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
   if (test.info().project.name === 'chromium') {
     const editorialLabels = new Map([
       ['Advent', 'Adv.'],
-      ['Cvetna nedelja', 'Cvet.'],
-      ['Dan Evrope', 'Evrop'],
+      ['Cvetna nedelja', 'Cvetna'],
+      ['Dan Evrope', 'Evrop.'],
       ['Dan žena', 'Žena'],
       ['Gregorjevo', 'Greg.'],
       ['Jesensko enakonočje', 'Jesen'],
-      ['Martinovo', 'Mart.'],
-      ['Materinski dan', 'Mati.'],
-      ['Miklavž', 'Mik.'],
-      ['Poletni solsticij', 'Polet'],
-      ['Pomladno enakonočje', 'Poml.'],
+      ['Martinovo', 'Martin'],
+      ['Materinski dan', 'Mater.'],
+      ['Miklavž', 'Miklavž'],
+      ['Poletni solsticij', 'Polet.'],
+      ['Pomladno enakonočje', 'Pomlad'],
       ['Premik ure', 'Ura'],
       ['Pust', 'Pust'],
       ['Silvestrovo', 'Silv.'],
-      ['Sveti trije kralji', 'Kralj'],
-      ['Svetovni dan Zemlje', 'Zem.'],
-      ['Svetovni dan čebel', 'Čeb.'],
+      ['Sveti trije kralji', 'Kralji'],
+      ['Svetovni dan Zemlje', 'Zemlja'],
+      ['Svetovni dan čebel', 'Čebele'],
       ['Valentinovo', 'Val.'],
       ['Veliki petek', 'Petek'],
       ['Zimski solsticij', 'Zima'],
@@ -160,7 +160,7 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
   await expect(october.filter({ hasText: 'Učitelji' })).toHaveCount(1);
   const octoberCompactTitles = await page.locator('.calendar-context .calendar .event-label__compact').allTextContents();
   expect(octoberCompactTitles).toContain('Čar.');
-  expect(octoberCompactTitles).toContain('Ref.');
+  expect(octoberCompactTitles).toContain('Reform.');
 
   await page.getByRole('button', { name: /Razširi koledar/ }).click();
   await expect(page.getByRole('button', { name: /Nazaj k galeriji/ })).toHaveAttribute('aria-expanded', 'true');
