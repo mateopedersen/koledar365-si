@@ -26,7 +26,7 @@ function parseCsv(source) {
 
 const sourceEvents = [
   ...parseCsv(readFileSync(new URL('../../data/source/yasal-tatil-tarihleri-2027-2030.csv', import.meta.url), 'utf8')).map((row) => ({ date: row.date, title: row.name_sl })),
-  ...parseCsv(readFileSync(new URL('../../data/source/ek-onemli-gun-tarihleri-2027-2030.csv', import.meta.url), 'utf8')).map((row) => ({ date: row.date, title: row.title_sl })),
+  ...parseCsv(readFileSync(new URL('../../data/source/ek-onemli-gun-tarihleri-2027-2030.csv', import.meta.url), 'utf8')).map((row) => ({ date: row.date || row.start_date, title: row.title_sl })),
 ];
 
 test('all 48 monthly calendars show compact labels without expanding and retain full event names', async ({ page }) => {
@@ -89,16 +89,15 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
       expect(result.scrollWidth, `${route} horizontal overflow at ${width}px`).toBeLessThanOrEqual(width + 1);
       if (width <= 650) expect(result.hidden, `${route} mobile preview was hidden`).toBe(false);
 
-      const monthMatch = route.match(/\/(\d{4})\/([^/]+)\/$/);
-      const year = monthMatch[1];
-      const monthNumber = String(months.indexOf(monthMatch[2]) + 1).padStart(2, '0');
-      const sourceMonthEvents = sourceEvents.filter((event) => event.date.startsWith(`${year}-${monthNumber}-`));
-      if (sourceMonthEvents.length) {
+      // The visible grid can include holidays from the neighbouring month.
+      const gridDates = new Set(Object.keys(result.dayEvents));
+      const sourceGridEvents = sourceEvents.filter((event) => gridDates.has(event.date));
+      if (sourceGridEvents.length) {
         expect(result.labels.length, `${route} has no calendar event links`).toBeGreaterThan(0);
       } else {
         expect(result.labels.length, `${route} should have no invented event links`).toBe(0);
       }
-      for (const event of sourceMonthEvents) {
+      for (const event of sourceGridEvents) {
         expect(result.dayEvents[event.date]?.some((name) => name?.includes(event.title)), `${route} lost ${event.title} on ${event.date}`).toBe(true);
       }
 
@@ -154,9 +153,10 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
   await page.setViewportSize({ width: 1280, height: 900 });
   await page.goto('/koledar/2027/oktober/', { waitUntil: 'domcontentloaded' });
   const october = page.locator('.calendar-context .calendar a.event-label');
-  await expect(october.filter({ hasText: 'Starejši' })).toHaveCount(1);
-  await expect(october.filter({ hasText: 'Živali' })).toHaveCount(1);
-  await expect(october.filter({ hasText: 'Učitelji' })).toHaveCount(1);
+  const octoberCalendar = page.locator('.calendar-context .calendar');
+  await expect(octoberCalendar.getByTitle('Mednarodni dan starejših', { exact: true }).locator('.event-label__compact')).toHaveText('Star.');
+  await expect(octoberCalendar.getByTitle('Svetovni dan živali', { exact: true }).locator('.event-label__compact')).toHaveText('Živali');
+  await expect(octoberCalendar.getByTitle('Svetovni dan učiteljev', { exact: true }).locator('.event-label__compact')).toHaveText('Učit.');
   const octoberCompactTitles = await page.locator('.calendar-context .calendar .event-label__compact').allTextContents();
   expect(octoberCompactTitles).toContain('Čar.');
   expect(octoberCompactTitles).toContain('Reform.');
