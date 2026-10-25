@@ -32,6 +32,7 @@ const sourceEvents = [
 test('all 48 monthly calendars show compact labels without expanding and retain full event names', async ({ page }) => {
   test.setTimeout(120_000);
   const routesToScan = test.info().project.name === 'chromium' ? calendarRoutes : ['/koledar/2027/oktober/'];
+  const compactLabelsByTitle = new Map();
 
   for (const width of [390, 1280]) {
     await page.setViewportSize({ width, height: 900 });
@@ -102,6 +103,7 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
       }
 
       for (const [index, label] of result.labels.entries()) {
+        compactLabelsByTitle.set(label.title, label.compactText);
         expect(label.title, `${route} event ${index + 1} lost its full title`).toBeTruthy();
         expect(label.accessibleName, `${route} event ${index + 1} accessible name omits its visible label`).toContain(label.compactText);
         expect(label.accessibleName, `${route} event ${index + 1} accessible name omits the full title`).toContain(label.title);
@@ -120,6 +122,34 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
     }
   }
 
+  if (test.info().project.name === 'chromium') {
+    const editorialLabels = new Map([
+      ['Advent', 'Advent'],
+      ['Cvetna nedelja', 'Cvetna'],
+      ['Dan Evrope', 'Evropa'],
+      ['Dan žena', 'Žena'],
+      ['Gregorjevo', 'Greg.'],
+      ['Jesensko enakonočje', 'Jesen'],
+      ['Martinovo', 'Martin'],
+      ['Materinski dan', 'Mati.'],
+      ['Miklavž', 'Miklavž'],
+      ['Poletni solsticij', 'Poletje'],
+      ['Pomladno enakonočje', 'Pomlad'],
+      ['Premik ure', 'Ura'],
+      ['Pust', 'Pust'],
+      ['Silvestrovo', 'Silv.'],
+      ['Sveti trije kralji', 'Kralji'],
+      ['Svetovni dan Zemlje', 'Zemlja'],
+      ['Svetovni dan čebel', 'Čebele'],
+      ['Valentinovo', 'Val.'],
+      ['Veliki petek', 'Petek'],
+      ['Zimski solsticij', 'Zima'],
+      ['božič', 'Božič'],
+    ]);
+    for (const [title, compact] of editorialLabels) {
+      expect(compactLabelsByTitle.get(title), `editorial event ${title} needs a meaningful compact label`).toBe(compact);
+    }
+  }
   await page.setViewportSize({ width: 1280, height: 900 });
   await page.goto('/koledar/2027/oktober/', { waitUntil: 'domcontentloaded' });
   const october = page.locator('.calendar-context .calendar a.event-label');
