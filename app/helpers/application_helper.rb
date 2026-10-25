@@ -26,51 +26,89 @@ module ApplicationHelper
     'Dan slovenskega znakovnega jezika' => 'Znaki',
     'Dan človekovih pravic' => 'Pravice',
     'Evropski dan jezikov' => 'Jeziki',
-    'Evropski dan spomina na žrtve totalitarnih in avtoritarnih režimov' => 'Spomin',
+    'Evropski dan spomina na žrtve totalitarnih in avtoritarnih režimov' => 'Spom.',
     'Mednarodni dan družin' => 'Družine',
-    'Mednarodni dan invalidov' => 'Invalidi',
-    'Mednarodni dan maternega jezika' => 'Materni',
+    'Mednarodni dan invalidov' => 'Inv.',
+    'Mednarodni dan maternega jezika' => 'Mater.',
     'Mednarodni dan miru' => 'Mir',
     'Mednarodni dan mladih' => 'Mladi',
     'Mednarodni dan pismenosti' => 'Branje',
-    'Mednarodni dan spomina na žrtve holokavsta' => 'Spomin',
-    'Mednarodni dan starejših' => 'Starejši',
+    'Mednarodni dan spomina na žrtve holokavsta' => 'Spom.',
+    'Mednarodni dan starejših' => 'Star.',
     'Marijino vnebovzetje' => 'Marija',
-    'Noč čarovnic' => 'Čarov.',
-    'Prešernov dan, slovenski kulturni praznik' => 'Prešern.',
+    'Noč čarovnic' => 'Čar.',
+    'Prešernov dan, slovenski kulturni praznik' => 'Preš.',
     'Spomin vseh vernih rajnih' => 'Rajni',
     'Svetovni dan hrane' => 'Hrana',
     'Svetovni dan knjige in avtorskih pravic' => 'Knjiga',
     'Svetovni dan okolja' => 'Okolje',
     'Svetovni dan otrok' => 'Otroci',
-    'Svetovni dan učiteljev' => 'Učitelji',
+    'Svetovni dan učiteljev' => 'Učit.',
     'Svetovni dan voda' => 'Voda',
     'Svetovni dan živali' => 'Živali',
-    'Ta veseli dan kulture' => 'Kultura',
+    'Ta veseli dan kulture' => 'Kult.',
     'Teden otroka®' => 'Teden',
     'Dan slovenskega športa' => 'Šport',
     'dan Primoža Trubarja' => 'Trubar',
-    'dan Rudolfa Maistra' => 'Maister',
-    'dan Triglava' => 'Triglav',
+    'dan Rudolfa Maistra' => 'Mais.',
+    'dan Triglava' => 'Trig.',
     'dan državnosti' => 'Država',
     'dan reformacije' => 'Reform.',
-    'dan samostojnosti in enotnosti' => 'Enotn.',
-    'dan spomina na mrtve' => 'Spomin',
+    'dan samostojnosti in enotnosti' => 'Enot.',
+    'dan spomina na mrtve' => 'Spom.',
     'dan suverenosti' => 'Suver.',
     'dan upora proti okupatorju' => 'Upor',
     'dan znanosti' => 'Znanost',
     'novo leto' => 'Novo',
     'praznik dela' => 'Delo',
-    'binkoštna nedelja, binkošti' => 'Binkošti',
-    'velikonočna nedelja' => 'Vel. noč',
-    'velikonočni ponedeljek' => 'Vel. noč',
-    'vrnitev Primorske k matični domovini' => 'Primor.',
-    'združitev prekmurskih Slovencev z matičnim narodom' => 'Prekm.'
+    'binkoštna nedelja, binkošti' => 'Binkoš.',
+    'velikonočna nedelja' => 'V. noč',
+    'velikonočni ponedeljek' => 'V. noč',
+    'vrnitev Primorske k matični domovini' => 'Prim.',
+    'združitev prekmurskih Slovencev z matičnim narodom' => 'Prekm.',
+    'Velikonočna nedelja in ponedeljek, velika noč' => 'V. noč',
+    'Božič' => 'Božič',
+    'Sveti trije kralji' => 'Kralji',
+    'Valentinovo' => 'Val.',
+    'Pust' => 'Pust',
+    'Dan žena' => 'Žena',
+    'Gregorjevo' => 'Greg.',
+    'Materinski dan' => 'Mater.',
+    'Cvetna nedelja' => 'Cvetna',
+    'Veliki petek' => 'Petek',
+    'Svetovni dan Zemlje' => 'Zemlja',
+    'Dan Evrope' => 'Evrop.',
+    'Svetovni dan čebel' => 'Čebele',
+    'Advent' => 'Adv.',
+    'Martinovo' => 'Martin',
+    'Miklavž' => 'Miklavž',
+    'Silvestrovo' => 'Silv.',
+    'Pomladno enakonočje' => 'Pomlad',
+    'Poletni solsticij' => 'Polet.',
+    'Jesensko enakonočje' => 'Jesen',
+    'Zimski solsticij' => 'Zima',
+    'Premik ure' => 'Ura',
   }.transform_keys { |title| title.sub(/\A./, &:upcase) }.freeze
 
   def calendar_event_compact_title(event)
-    title = event.title.sub(/\A./, &:upcase)
-    CALENDAR_EVENT_COMPACT_TITLES.fetch(title, title)
+    title = event.title
+    normalized_title = title.sub(/\A./, &:upcase)
+    compact_title = CALENDAR_EVENT_COMPACT_TITLES[normalized_title]
+    return compact_title if compact_title
+
+    # Calendar sources include editorial observances as well as legal holidays.
+    # Bound any future unmapped title so a narrow day cell can never become a paragraph.
+    graphemes = normalized_title.scan(/\X/)
+    return title if graphemes.length <= 6
+    "#{graphemes.first(6).join}…"
+  end
+
+  # Keep the visible compact label in the accessible name while preserving
+  # every event's exact full title for screen readers.
+  def calendar_event_accessible_title(event)
+    title = event.title
+    compact_title = calendar_event_compact_title(event)
+    compact_title == title ? title : "#{compact_title} – #{title}"
   end
 
   def canonical_url

@@ -70,14 +70,19 @@ class PagesController < ApplicationController
     @view=%w[month week day list year].include?(params[:view]) ? params[:view] : (path.match?(%r{^/koledar/\d{4}/$}) ? 'year':'month')
     range_start=[Date.new(@year,1,1),@selected-(@selected.cwday-1)].min
     range_end=[Date.new(@year,12,31),@selected+(7-@selected.cwday)].max
-    @events=CalendarEvent.where(on:range_start..range_end).ordered.to_a
-    (range_start.year..range_end.year).each do |year|
+    # Month grids include complete weeks, including the neighbouring year.
+    # Keep that extra context in the grid map without widening annual lists.
+    grid_start=[range_start,CalendarEngine.weeks(@year,1).first.first].min
+    grid_end=[range_end,CalendarEngine.weeks(@year,12).last.last].max
+    calendar_events=CalendarEvent.where(on:grid_start..grid_end).ordered.to_a
+    (grid_start.year..grid_end.year).each do |year|
       CalendarEngine.statutory_work_free_events(year).each do |attributes|
-        next unless attributes[:on].between?(range_start,range_end)
-        @events<<CalendarEvent.new(attributes) unless @events.any?{|event|event.key==attributes[:key]}
+        next unless attributes[:on].between?(grid_start,grid_end)
+        calendar_events<<CalendarEvent.new(attributes) unless calendar_events.any?{|event|event.key==attributes[:key]}
       end
     end
-    @event_map=@events.group_by(&:on)
+    @events=calendar_events.select { |event| event.on.between?(range_start,range_end) }
+    @event_map=calendar_events.group_by(&:on)
     @upcoming=CalendarEvent.where(on:@today..).where(category:'legal').ordered.limit(3)
     @section=section_for(path)
     @education_calendar=EducationCalendar.new(path:path) if @section=='education_calendar'

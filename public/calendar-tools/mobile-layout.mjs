@@ -62,7 +62,9 @@ function prepareCalendar(table){
     for(const event of cell.querySelectorAll('.date-events .event-label')){
       const personal=event.classList.contains('personal-dot');
       if(event.hidden||(!personal&&document.body.classList.contains('hide-holidays')))continue;
-      const label=event.textContent.trim();if(!label)continue;
+      // Grid labels contain both a full title and a compact visual variant.
+      // The agenda must show the full title exactly once, including for personal events.
+      const label=(event.querySelector('.event-label__full')?.textContent||event.getAttribute('title')||event.textContent).trim();if(!label)continue;
       rows.push({date:cell.dataset.date,label,category:event.dataset.category||(personal?'personal':'holidays'),free:event.classList.contains('free'),href:event.getAttribute('href')||cell.querySelector('.date-link')?.getAttribute('href')||'#personal-planner'});
     }
   }

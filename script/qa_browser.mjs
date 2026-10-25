@@ -105,7 +105,7 @@ await Promise.all(Array.from({length:Number(process.env.QA_WORKERS||3)},async()=
     }
    }
   }catch(error){row.issues.push(error.message);if(row.imageLoadingProgress)row.imageLoadingFailure=row.imageLoadingProgress;}
-  row.passed=!row.issues.length;if(!row.passed)console.error(JSON.stringify({path:row.path,width:row.width,issues:row.issues,imageLoadingFailure:row.imageLoadingFailure}));rows.push(row);page.off('pageerror',listener);
+  row.passed=!row.issues.length;if(!row.passed)console.error(JSON.stringify({path:row.path,width:row.width,issues:row.issues,imageLoadingFailure:row.imageLoadingFailure,a11y:row.violations?.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.slice(0,5).map(n=>({target:n.target,summary:n.summary?.slice(0,420)}))}))}));rows.push(row);page.off('pageerror',listener);
   if(rows.length%40===0){fs.writeFileSync(path.join(output,`progress-${mode}-${engine}.json`),JSON.stringify({completed:rows.length,total:tasks.length,failed:rows.filter(r=>!r.passed).length}));console.log(`${mode}/${engine}: ${rows.length}/${tasks.length}`);}
  }
  await context.close();

@@ -26,14 +26,15 @@ function parseCsv(source) {
 
 const sourceEvents = [
   ...parseCsv(readFileSync(new URL('../../data/source/yasal-tatil-tarihleri-2027-2030.csv', import.meta.url), 'utf8')).map((row) => ({ date: row.date, title: row.name_sl })),
-  ...parseCsv(readFileSync(new URL('../../data/source/ek-onemli-gun-tarihleri-2027-2030.csv', import.meta.url), 'utf8')).map((row) => ({ date: row.date, title: row.title_sl })),
+  ...parseCsv(readFileSync(new URL('../../data/source/ek-onemli-gun-tarihleri-2027-2030.csv', import.meta.url), 'utf8')).map((row) => ({ date: row.date || row.start_date, title: row.title_sl })),
 ];
 
 test('all 48 monthly calendars show compact labels without expanding and retain full event names', async ({ page }) => {
-  test.setTimeout(120_000);
+  test.setTimeout(180_000);
   const routesToScan = test.info().project.name === 'chromium' ? calendarRoutes : ['/koledar/2027/oktober/'];
+  const compactLabelsByTitle = new Map();
 
-  for (const width of [390, 1280]) {
+  for (const width of [320, 390, 700, 1280]) {
     await page.setViewportSize({ width, height: 900 });
     for (const route of routesToScan) {
       const response = await page.goto(route, { waitUntil: 'domcontentloaded' });
@@ -59,6 +60,7 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
             const textRange = document.createRange();
             if (compact) textRange.selectNodeContents(compact);
             const textRect = compact ? textRange.getBoundingClientRect() : null;
+            const marker = getComputedStyle(label, '::before');
             const cellRect = cell.getBoundingClientRect();
             return {
               title: label.getAttribute('title'),
@@ -74,6 +76,9 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
               labelRight: rect.right,
               compactRight: compactRect?.right,
               textRight: textRect?.right,
+              textLeft: textRect?.left,
+              markerVisible: marker.display !== 'none' && marker.content !== 'none',
+              markerRight: rect.left + parseFloat(marker.left) + parseFloat(marker.width),
               compactClientWidth: compact?.clientWidth,
               compactScrollWidth: compact?.scrollWidth,
               whiteSpace: getComputedStyle(label).whiteSpace,
@@ -87,45 +92,79 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
       expect(result.pageWidth, `${route} page viewport`).toBe(width);
       expect(result.scrollWidth, `${route} horizontal overflow at ${width}px`).toBeLessThanOrEqual(width + 1);
       if (width <= 650) expect(result.hidden, `${route} mobile preview was hidden`).toBe(false);
+      await expect(page.locator('.calendar-context .calendar-agenda strong'), `${route} agenda should show each complete title once`).toHaveText(result.labels.map((label) => label.title));
 
-      const monthMatch = route.match(/\/(\d{4})\/([^/]+)\/$/);
-      const year = monthMatch[1];
-      const monthNumber = String(months.indexOf(monthMatch[2]) + 1).padStart(2, '0');
-      const sourceMonthEvents = sourceEvents.filter((event) => event.date.startsWith(`${year}-${monthNumber}-`));
-      if (sourceMonthEvents.length) {
+      // The visible grid can include holidays from the neighbouring month.
+      const gridDates = new Set(Object.keys(result.dayEvents));
+      const sourceGridEvents = sourceEvents.filter((event) => gridDates.has(event.date));
+      if (sourceGridEvents.length) {
         expect(result.labels.length, `${route} has no calendar event links`).toBeGreaterThan(0);
       } else {
         expect(result.labels.length, `${route} should have no invented event links`).toBe(0);
       }
-      for (const event of sourceMonthEvents) {
-        expect(result.dayEvents[event.date], `${route} lost ${event.title} on ${event.date}`).toContain(event.title);
+      for (const event of sourceGridEvents) {
+        expect(result.dayEvents[event.date]?.some((name) => name?.includes(event.title)), `${route} lost ${event.title} on ${event.date}`).toBe(true);
       }
 
       for (const [index, label] of result.labels.entries()) {
+        compactLabelsByTitle.set(label.title, label.compactText);
         expect(label.title, `${route} event ${index + 1} lost its full title`).toBeTruthy();
-        expect(label.accessibleName, `${route} event ${index + 1} is not accessible`).toBe(label.title);
+        expect(label.accessibleName, `${route} event ${index + 1} accessible name omits its visible label`).toContain(label.compactText);
+        expect(label.accessibleName, `${route} event ${index + 1} accessible name omits the full title`).toContain(label.title);
         expect(label.fullText, `${route} event ${index + 1} full text changed`).toBe(label.title);
         expect(label.compactText, `${route} event ${index + 1} has no compact label`).toBeTruthy();
+        expect(Array.from(label.compactText).length, `${route} event ${index + 1} compact label exceeds seven characters`).toBeLessThanOrEqual(7);
         expect(label.compactVisible, `${route} event ${index + 1} requires expanding`).toBe(true);
         expect(label.whiteSpace, `${route} event ${index + 1} wraps into narrow columns`).toBe('nowrap');
         expect(label.labelLeft, `${route} event ${index + 1} starts outside its day`).toBeGreaterThanOrEqual(label.cellLeft);
         expect(label.labelRight, `${route} event ${index + 1} overflows its day`).toBeLessThanOrEqual(label.cellRight + 1);
-        expect(label.compactRight, `${route} event ${index + 1} compact title is clipped`).toBeLessThanOrEqual(label.labelRight + 0.5);
-        expect(label.textRight, `${route} event ${index + 1} compact text is visually clipped`).toBeLessThanOrEqual(label.labelRight + 0.5);
+        expect(label.compactRight, `${route} event ${index + 1} compact title ${JSON.stringify(label.compactText)} is clipped`).toBeLessThanOrEqual(label.labelRight + 0.5);
+        expect(label.textRight, `${route} event ${index + 1} compact text ${JSON.stringify(label.compactText)} is visually clipped`).toBeLessThanOrEqual(label.labelRight + 0.5);
+        if (label.markerVisible) expect(label.textLeft, `${route} event ${index + 1} marker overlaps its text`).toBeGreaterThanOrEqual(label.markerRight + 1);
         expect(label.compactScrollWidth, `${route} event ${index + 1} compact text overflows its box`).toBeLessThanOrEqual(label.compactClientWidth + 1);
-        expect(label.height, `${route} event ${index + 1} grows into a tall paragraph`).toBeLessThanOrEqual(20);
+        expect(label.height, `${route} event ${index + 1} should retain a comfortable tap target`).toBeGreaterThanOrEqual(24);
+        expect(label.height, `${route} event ${index + 1} grows beyond its compact tap target`).toBeLessThanOrEqual(24.5);
       }
     }
   }
 
+  if (test.info().project.name === 'chromium') {
+    const editorialLabels = new Map([
+      ['Advent', 'Adv.'],
+      ['Cvetna nedelja', 'Cvetna'],
+      ['Dan Evrope', 'Evrop.'],
+      ['Dan žena', 'Žena'],
+      ['Gregorjevo', 'Greg.'],
+      ['Jesensko enakonočje', 'Jesen'],
+      ['Martinovo', 'Martin'],
+      ['Materinski dan', 'Mater.'],
+      ['Miklavž', 'Miklavž'],
+      ['Poletni solsticij', 'Polet.'],
+      ['Pomladno enakonočje', 'Pomlad'],
+      ['Premik ure', 'Ura'],
+      ['Pust', 'Pust'],
+      ['Silvestrovo', 'Silv.'],
+      ['Sveti trije kralji', 'Kralji'],
+      ['Svetovni dan Zemlje', 'Zemlja'],
+      ['Svetovni dan čebel', 'Čebele'],
+      ['Valentinovo', 'Val.'],
+      ['Veliki petek', 'Petek'],
+      ['Zimski solsticij', 'Zima'],
+      ['božič', 'Božič'],
+    ]);
+    for (const [title, compact] of editorialLabels) {
+      expect(compactLabelsByTitle.get(title), `editorial event ${title} needs a meaningful compact label`).toBe(compact);
+    }
+  }
   await page.setViewportSize({ width: 1280, height: 900 });
   await page.goto('/koledar/2027/oktober/', { waitUntil: 'domcontentloaded' });
   const october = page.locator('.calendar-context .calendar a.event-label');
-  await expect(october.filter({ hasText: 'Starejši' })).toHaveCount(1);
-  await expect(october.filter({ hasText: 'Živali' })).toHaveCount(1);
-  await expect(october.filter({ hasText: 'Učitelji' })).toHaveCount(1);
+  const octoberCalendar = page.locator('.calendar-context .calendar');
+  await expect(octoberCalendar.getByTitle('Mednarodni dan starejših', { exact: true }).locator('.event-label__compact')).toHaveText('Star.');
+  await expect(octoberCalendar.getByTitle('Svetovni dan živali', { exact: true }).locator('.event-label__compact')).toHaveText('Živali');
+  await expect(octoberCalendar.getByTitle('Svetovni dan učiteljev', { exact: true }).locator('.event-label__compact')).toHaveText('Učit.');
   const octoberCompactTitles = await page.locator('.calendar-context .calendar .event-label__compact').allTextContents();
-  expect(octoberCompactTitles).toContain('Čarov.');
+  expect(octoberCompactTitles).toContain('Čar.');
   expect(octoberCompactTitles).toContain('Reform.');
 
   await page.getByRole('button', { name: /Razširi koledar/ }).click();
