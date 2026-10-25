@@ -132,6 +132,7 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
     const editorialLabels = new Map([
       ['Advent', 'Adv.'],
       ['Cvetna nedelja', 'Cvetna'],
+      ['dan znanosti', 'Znan.'],
       ['Dan Evrope', 'Evrop.'],
       ['Dan žena', 'Žena'],
       ['Gregorjevo', 'Greg.'],
