@@ -5,6 +5,8 @@
 .calendar-legend-item .dot{flex:0 0 9px;width:9px;height:9px;margin:0}
 @media screen{
   #vsebina .calendar .date-events .event-label{position:relative;padding:4px 3px 4px 12px;white-space:normal;word-break:normal;overflow-wrap:anywhere}
+  /* Keep gallery preview labels compact before expansion; the full names remain in the DOM and accessible name. */
+  #vsebina .download-workspace:not(.context-expanded) .calendar-context .calendar .date-events .event-label{padding:4px 1px 4px 6px;white-space:nowrap;word-break:normal;overflow-wrap:normal;overflow:hidden;text-overflow:ellipsis}
   #vsebina .calendar .date-events .event-label::before{content:"";position:absolute;left:3px;top:calc(.7em + 4px);transform:translateY(-50%);width:5px;height:5px;border-radius:50%;margin:0;background:currentColor;line-height:1}
 }
 @media screen and (max-width:700px){
