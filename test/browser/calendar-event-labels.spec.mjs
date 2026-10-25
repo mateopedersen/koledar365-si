@@ -30,11 +30,11 @@ const sourceEvents = [
 ];
 
 test('all 48 monthly calendars show compact labels without expanding and retain full event names', async ({ page }) => {
-  test.setTimeout(120_000);
+  test.setTimeout(180_000);
   const routesToScan = test.info().project.name === 'chromium' ? calendarRoutes : ['/koledar/2027/oktober/'];
   const compactLabelsByTitle = new Map();
 
-  for (const width of [390, 1280]) {
+  for (const width of [320, 390, 700, 1280]) {
     await page.setViewportSize({ width, height: 900 });
     for (const route of routesToScan) {
       const response = await page.goto(route, { waitUntil: 'domcontentloaded' });
@@ -60,6 +60,7 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
             const textRange = document.createRange();
             if (compact) textRange.selectNodeContents(compact);
             const textRect = compact ? textRange.getBoundingClientRect() : null;
+            const marker = getComputedStyle(label, '::before');
             const cellRect = cell.getBoundingClientRect();
             return {
               title: label.getAttribute('title'),
@@ -75,6 +76,9 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
               labelRight: rect.right,
               compactRight: compactRect?.right,
               textRight: textRect?.right,
+              textLeft: textRect?.left,
+              markerVisible: marker.display !== 'none' && marker.content !== 'none',
+              markerRight: rect.left + parseFloat(marker.left) + parseFloat(marker.width),
               compactClientWidth: compact?.clientWidth,
               compactScrollWidth: compact?.scrollWidth,
               whiteSpace: getComputedStyle(label).whiteSpace,
@@ -88,6 +92,7 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
       expect(result.pageWidth, `${route} page viewport`).toBe(width);
       expect(result.scrollWidth, `${route} horizontal overflow at ${width}px`).toBeLessThanOrEqual(width + 1);
       if (width <= 650) expect(result.hidden, `${route} mobile preview was hidden`).toBe(false);
+      await expect(page.locator('.calendar-context .calendar-agenda strong'), `${route} agenda should show each complete title once`).toHaveText(result.labels.map((label) => label.title));
 
       // The visible grid can include holidays from the neighbouring month.
       const gridDates = new Set(Object.keys(result.dayEvents));
@@ -115,6 +120,7 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
         expect(label.labelRight, `${route} event ${index + 1} overflows its day`).toBeLessThanOrEqual(label.cellRight + 1);
         expect(label.compactRight, `${route} event ${index + 1} compact title ${JSON.stringify(label.compactText)} is clipped`).toBeLessThanOrEqual(label.labelRight + 0.5);
         expect(label.textRight, `${route} event ${index + 1} compact text ${JSON.stringify(label.compactText)} is visually clipped`).toBeLessThanOrEqual(label.labelRight + 0.5);
+        if (label.markerVisible) expect(label.textLeft, `${route} event ${index + 1} marker overlaps its text`).toBeGreaterThanOrEqual(label.markerRight + 1);
         expect(label.compactScrollWidth, `${route} event ${index + 1} compact text overflows its box`).toBeLessThanOrEqual(label.compactClientWidth + 1);
         expect(label.height, `${route} event ${index + 1} should retain a comfortable tap target`).toBeGreaterThanOrEqual(24);
         expect(label.height, `${route} event ${index + 1} grows beyond its compact tap target`).toBeLessThanOrEqual(24.5);
