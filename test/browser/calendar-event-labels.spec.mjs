@@ -166,7 +166,7 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
   await expect(octoberCalendar.getByTitle('Svetovni dan učiteljev', { exact: true }).locator('.event-label__compact')).toHaveText('Učit.');
   const octoberCompactTitles = await page.locator('.calendar-context .calendar .event-label__compact').allTextContents();
   expect(octoberCompactTitles).toContain('Čar.');
-  expect(octoberCompactTitles).toContain('Reform.');
+  expect(octoberCompactTitles).toContain('Reform');
 
   await page.getByRole('button', { name: /Razširi koledar/ }).click();
   await expect(page.getByRole('button', { name: /Nazaj k galeriji/ })).toHaveAttribute('aria-expanded', 'true');

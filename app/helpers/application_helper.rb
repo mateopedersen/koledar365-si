@@ -53,7 +53,7 @@ module ApplicationHelper
     'dan Rudolfa Maistra' => 'Mais.',
     'dan Triglava' => 'Trig.',
     'dan državnosti' => 'Država',
-    'dan reformacije' => 'Reform.',
+    'dan reformacije' => 'Reform',
     'dan samostojnosti in enotnosti' => 'Enot.',
     'dan spomina na mrtve' => 'Spom.',
     'dan suverenosti' => 'Suver.',
