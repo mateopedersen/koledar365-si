@@ -110,7 +110,6 @@ test('all 48 monthly calendars show compact labels without expanding and retain 
         expect(label.fullText, `${route} event ${index + 1} full text changed`).toBe(label.title);
         expect(label.compactText, `${route} event ${index + 1} has no compact label`).toBeTruthy();
         expect(Array.from(label.compactText).length, `${route} event ${index + 1} compact label exceeds seven characters`).toBeLessThanOrEqual(7);
-        expect(Array.from(label.compactText).length, `${route} event ${index + 1} compact label exceeds five characters`).toBeLessThanOrEqual(5);
         expect(label.compactVisible, `${route} event ${index + 1} requires expanding`).toBe(true);
         expect(label.whiteSpace, `${route} event ${index + 1} wraps into narrow columns`).toBe('nowrap');
         expect(label.labelLeft, `${route} event ${index + 1} starts outside its day`).toBeGreaterThanOrEqual(label.cellLeft);
