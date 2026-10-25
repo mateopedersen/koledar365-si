@@ -58,7 +58,7 @@ module ApplicationHelper
     'dan spomina na mrtve' => 'Spom.',
     'dan suverenosti' => 'Suver.',
     'dan upora proti okupatorju' => 'Upor',
-    'dan znanosti' => 'Znanost',
+    'dan znanosti' => 'Znan.',
     'novo leto' => 'Novo',
     'praznik dela' => 'Delo',
     'binkoštna nedelja, binkošti' => 'Binkoš.',
