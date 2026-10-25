@@ -65,13 +65,42 @@ module ApplicationHelper
     'velikonočna nedelja' => 'V. noč',
     'velikonočni ponedeljek' => 'V. noč',
     'vrnitev Primorske k matični domovini' => 'Prim.',
-    'združitev prekmurskih Slovencev z matičnim narodom' => 'Prekm.'
+    'združitev prekmurskih Slovencev z matičnim narodom' => 'Prekm.',
+    'Velikonočna nedelja in ponedeljek, velika noč' => 'V. noč',
+    'Božič' => 'Božič',
+    'Sveti trije kralji' => 'Kralji',
+    'Valentinovo' => 'Val.',
+    'Pust' => 'Pust',
+    'Dan žena' => 'Žena',
+    'Gregorjevo' => 'Greg.',
+    'Materinski dan' => 'Mati.',
+    'Cvetna nedelja' => 'Cvetna',
+    'Veliki petek' => 'Petek',
+    'Svetovni dan Zemlje' => 'Zemlja',
+    'Dan Evrope' => 'Evropa',
+    'Svetovni dan čebel' => 'Čebele',
+    'Advent' => 'Advent',
+    'Martinovo' => 'Martin',
+    'Miklavž' => 'Miklavž',
+    'Silvestrovo' => 'Silv.',
+    'Pomladno enakonočje' => 'Pomlad',
+    'Poletni solsticij' => 'Poletje',
+    'Jesensko enakonočje' => 'Jesen',
+    'Zimski solsticij' => 'Zima',
+    'Premik ure' => 'Ura',
   }.transform_keys { |title| title.sub(/\A./, &:upcase) }.freeze
 
   def calendar_event_compact_title(event)
     title = event.title
     normalized_title = title.sub(/\A./, &:upcase)
-    CALENDAR_EVENT_COMPACT_TITLES.fetch(normalized_title, title)
+    compact_title = CALENDAR_EVENT_COMPACT_TITLES[normalized_title]
+    return compact_title if compact_title
+
+    # Calendar sources include editorial observances as well as legal holidays.
+    # Bound any future unmapped title so a narrow day cell can never become a paragraph.
+    graphemes = normalized_title.scan(/\X/)
+    return title if graphemes.length <= 7
+    "#{graphemes.first(6).join}…"
   end
 
   # Keep the visible compact label in the accessible name while preserving
