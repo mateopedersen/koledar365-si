@@ -1,5 +1,16 @@
 require 'test_helper'
 class CalendarNavigationTest < ActionDispatch::IntegrationTest
+ test 'December previews retain statutory holidays in their next-year spillover cells' do
+  [2027,2028,2029,2030].each do |year|
+   get "/koledar/#{year}/december/"
+   assert_response :success
+   grid=CalendarEngine.weeks(year,12).flatten
+   expected=CalendarEngine.statutory_work_free_events(year+1).select { |event|grid.include?(event[:on]) }
+   expected.each do |event|
+    assert_select '.calendar-context td[data-date="'+event[:on].iso8601+'"].holiday a.event-label.free[title="'+event[:title]+'"]',count:1
+   end
+  end
+ end
  test 'home calendar keeps date and period consistent and bounds the supported years' do
   get '/',params:{year:2027,month:1,date:'2028-02-29',view:'day'}
   assert_select '#personal-planner[data-selected-date="2028-02-29"]'
