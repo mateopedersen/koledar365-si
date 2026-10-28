@@ -1,24 +1,24 @@
 {
   "schema_version": 1,
   "edition_version": "sl-original-v2",
-  "local_date": "2026-10-26",
+  "local_date": "2026-10-28",
   "time_zone": "Europe/Ljubljana",
-  "generated_at": "2026-10-26T00:30:11.431Z",
-  "reference_utc": "2026-10-26T11:00:00.000Z",
+  "generated_at": "2026-10-28T19:11:10.318Z",
+  "reference_utc": "2026-10-28T11:00:00.000Z",
   "sky": {
     "sun": {
       "slug": "skorpijon",
       "name": "Škorpijon",
-      "longitude": 213.044134707559
+      "longitude": 215.03875109814487
     },
     "moon": {
-      "slug": "bik",
-      "name": "Bik",
-      "locative": "Biku",
-      "longitude": 36.85059612057728,
-      "illumination": 100,
-      "phase": "Polna luna",
-      "phase_angle": 183.80070473883447
+      "slug": "dvojcka",
+      "name": "Dvojčka",
+      "locative": "Dvojčkih",
+      "longitude": 66.11300614917667,
+      "illumination": 93,
+      "phase": "Pojemajoča Luna",
+      "phase_angle": 211.0684917180276
     }
   },
   "method": "Izvirna slovenska razvedrilna interpretacija, samodejno sestavljena iz uredniških besedil glede na datum in izračunani položaj Lune v tropskem zodiaku. Astronomski izračun ni dokaz napovedne veljavnosti astrologije.",
@@ -30,112 +30,112 @@
   ],
   "signs": {
     "oven": {
+      "title": "En dober pogovor",
+      "overview": "Poudarek dneva je na besedah, vprašanjih in kratkih poteh. Preden sklepate, preverite, kaj je bilo res mišljeno. Zapisana misel ali pravočasno sporočilo lahko poenostavi dogovor, ki se je zdel zapleten. Med prvim odzivom in odločitvijo si privoščite trenutek premora. Pustite si možnost, da načrt prilagodite. Sprememba vrstnega reda je lahko čisto praktična rešitev.",
+      "love": "Zanimanje pokažite s poslušanjem. Namesto hitrega odgovora zastavite vprašanje, ki pušča prostor za drugačen pogled. Tudi lahek pogovor o vsakdanjih stvareh lahko ustvari občutek bližine.",
+      "work": "Združite podobna opravila in si določite čas za sporočila. Če navodilo ni jasno, prosite za konkreten primer. Manj ugibanja pomeni več pozornosti za delo, ki je dejansko pred vami.",
+      "wellbeing": "Privoščite si znan, preprost obred: miren čaj, urejen prostor ali nekaj časa ob najljubši glasbi. Namen ni popolna rutina, temveč občutek, da v dnevu obstaja tudi prostor za vas.",
+      "thought": "Zaključite eno odprto malenkost, preden odprete novo nalogo.",
+      "symbolic_house": 3
+    },
+    "bik": {
       "title": "Vrednost je tudi v preprostosti",
-      "overview": "Današnji simbolni poudarek so stvari, na katere se lahko oprete. Poglejte, kaj vam že dobro služi, preden začnete iskati novo rešitev. Včasih največ prostora ustvari odločitev, česa ne potrebujete. Med prvim odzivom in odločitvijo si privoščite trenutek premora. Za danes izberite eno dejanje, za katero boste ob večeru vedeli, zakaj je bilo vredno vašega časa.",
+      "overview": "Današnji simbolni poudarek so stvari, na katere se lahko oprete. Poglejte, kaj vam že dobro služi, preden začnete iskati novo rešitev. Včasih največ prostora ustvari odločitev, česa ne potrebujete. Varen ritem naj pušča prostor tudi za novo možnost. Najprej naredite majhen poskus. Šele nato presodite, ali želite zamisel razvijati naprej.",
       "love": "Naklonjenost pokažite z nečim konkretnim: s časom, pozornim vprašanjem ali držanjem dogovora. Prijeten skupen trenutek ne potrebuje posebne priložnosti ali velikega načrta.",
       "work": "Najprej pripravite pogoje za zbrano delo. Pospravite površino, preverite gradivo in se dogovorite o mirnem času. Če delate od doma, jasno označite tudi trenutek, ko boste z delom končali.",
       "wellbeing": "Po obilici informacij si privoščite nekaj tišine. Zamisel, ki se vrača, zapišite na papir; ni je treba ves dan nositi v mislih. Nato svojo pozornost usmerite v eno stvar naenkrat.",
-      "thought": "Zapišite tri pomembne stvari in začnite s tisto, ki jo lahko danes res premaknete.",
+      "thought": "Preverite eno domnevo z jasnim vprašanjem.",
       "symbolic_house": 2
     },
-    "bik": {
+    "dvojcka": {
       "title": "Prostor za vaš prvi korak",
-      "overview": "Pozornost namenite temu, kako želite začeti. Izberite eno stvar, pri kateri boste danes ravnali bolj po svoje, in si zanjo pustite dovolj časa. Majhna, jasna odločitev je lahko uporabnejša od velike obljube. Varen ritem naj pušča prostor tudi za novo možnost. Prednost dajte dogovoru, ki ga lahko uresničite; ostalo lahko ostane odprto do jasnejšega trenutka.",
+      "overview": "Pozornost namenite temu, kako želite začeti. Izberite eno stvar, pri kateri boste danes ravnali bolj po svoje, in si zanjo pustite dovolj časa. Majhna, jasna odločitev je lahko uporabnejša od velike obljube. Izberite eno nit pogovora in ji namenite vso pozornost. Vprašajte se, kaj bi današnji dan naredilo malo bolj preprost. Odgovor naj bo konkreten in dosegljiv.",
       "love": "Povejte, kaj si želite, ne da bi pričakovali, da bo druga oseba to uganila. Če ste sami, si dovolite prvi prijazen stik brez obveznosti, da mora iz njega takoj nastati nekaj več.",
       "work": "Združite podobna opravila in si določite čas za sporočila. Če navodilo ni jasno, prosite za konkreten primer. Manj ugibanja pomeni več pozornosti za delo, ki je dejansko pred vami.",
       "wellbeing": "Drobno udobje lahko postane prijeten del dneva. Uredite kotiček, v katerem pogosto sedite, pripravite nekaj po svojem okusu ali si namenite odmor, ki ga ne boste zapolnili z novo nalogo.",
-      "thought": "Namenite nekaj nemotenih minut pogovoru, ki vam veliko pomeni.",
+      "thought": "Zapišite tri pomembne stvari in začnite s tisto, ki jo lahko danes res premaknete.",
       "symbolic_house": 1
     },
-    "dvojcka": {
+    "rak": {
       "title": "Mir med dvema korakoma",
-      "overview": "Danes si lahko več dovolite zaključiti kot začeti. Uredite misel, pospravite drobno nedokončano opravilo ali si preprosto pustite nekaj praznega prostora. Tišina je lahko premor, ne naloga, ki jo morate uspešno opraviti. Izberite eno nit pogovora in ji namenite vso pozornost. Pustite si možnost, da načrt prilagodite. Sprememba vrstnega reda je lahko čisto praktična rešitev.",
+      "overview": "Danes si lahko več dovolite zaključiti kot začeti. Uredite misel, pospravite drobno nedokončano opravilo ali si preprosto pustite nekaj praznega prostora. Tišina je lahko premor, ne naloga, ki jo morate uspešno opraviti. Skrb za druge začnite z jasnim občutkom za svoje meje. Za pomembnejši odgovor si vzemite čas. Miren premislek lahko skrajša poznejše popravljanje.",
+      "love": "Svoje potrebe izrazite nežno in jasno. Če želite nekaj časa zase, to povejte, namesto da bi se brez pojasnila umaknili. Majhna, iskrena pozornost lahko ohrani bližino tudi v bolj mirnem dnevu.",
+      "work": "Začnite z nalogo, pri kateri je naslednji korak najbolj jasen. Preden prevzamete novo obveznost, preverite, ali zanjo res ostaja prostor. Vaš odgovor je lahko premišljen, tudi kadar je kratek.",
+      "wellbeing": "Opazite svoj ritem in si privoščite prehod med obveznostmi. Kratek sprehod ali nekaj mirnih minut brez zaslona je preprost način, da se spet posvetite temu, kar počnete.",
+      "thought": "Namenite nekaj nemotenih minut pogovoru, ki vam veliko pomeni.",
+      "symbolic_house": 12
+    },
+    "lev": {
+      "title": "Vaše mesto v skupni zgodbi",
+      "overview": "Današnja simbolna tema so skupnost, prijateljstvo in zamisli za prihodnost. Poglejte, kje lahko prispevate nekaj konkretnega in od koga lahko kaj pridobite. Skupen cilj je lažji, če je dovolj jasno opisan. Poleg lastnega glasu pustite prostor še komu drugemu. Ne preskočite drobnega napredka. Tudi opravljena malenkost je lahko dober temelj za nadaljevanje.",
       "love": "Svoje potrebe izrazite nežno in jasno. Če želite nekaj časa zase, to povejte, namesto da bi se brez pojasnila umaknili. Majhna, iskrena pozornost lahko ohrani bližino tudi v bolj mirnem dnevu.",
       "work": "Prednost dajte zbranemu zaključevanju in pripravi na naslednji korak. Obvestila preverjajte ob izbranem času. Kar še ni dovolj jasno, zapišite kot vprašanje in se k temu vrnite s svežim pogledom.",
       "wellbeing": "Privoščite si dejavnost brez pričakovanj glede rezultata. Umirjena glasba, branje ali nekaj minut v tišini lahko označijo konec delovnega dela dneva. Počitek ne potrebuje posebnega opravičila.",
       "thought": "Izberite majhen, izvedljiv način, da podprete svojo zamisel.",
-      "symbolic_house": 12
-    },
-    "rak": {
-      "title": "Vaše mesto v skupni zgodbi",
-      "overview": "Današnja simbolna tema so skupnost, prijateljstvo in zamisli za prihodnost. Poglejte, kje lahko prispevate nekaj konkretnega in od koga lahko kaj pridobite. Skupen cilj je lažji, če je dovolj jasno opisan. Skrb za druge začnite z jasnim občutkom za svoje meje. Najprej naredite majhen poskus. Šele nato presodite, ali želite zamisel razvijati naprej.",
-      "love": "Oglasite se prijatelju ali predlagajte preprost skupen načrt. V odnosu pustite prostor tudi samostojnim zanimanjem. Različnost ni ovira, če ostaneta zanimanje in spoštovanje obojestranska.",
-      "work": "Začnite z nalogo, pri kateri je naslednji korak najbolj jasen. Preden prevzamete novo obveznost, preverite, ali zanjo res ostaja prostor. Vaš odgovor je lahko premišljen, tudi kadar je kratek.",
-      "wellbeing": "Privoščite si dejavnost brez pričakovanj glede rezultata. Umirjena glasba, branje ali nekaj minut v tišini lahko označijo konec delovnega dela dneva. Počitek ne potrebuje posebnega opravičila.",
-      "thought": "Pred dogovorom preverite, kaj potrebujete vi in kaj potrebuje druga oseba.",
       "symbolic_house": 11
     },
-    "lev": {
+    "devica": {
       "title": "Korak, ki nekaj gradi",
-      "overview": "Pozornost namenite smeri, v katero vlagate svoj čas. Preverite, ali je cilj še vedno vaš in ali je načrt izvedljiv. Doslednost je lahko mirna; ni se vam treba primerjati s tujim tempom. Poleg lastnega glasu pustite prostor še komu drugemu. Vprašajte se, kaj bi današnji dan naredilo malo bolj preprost. Odgovor naj bo konkreten in dosegljiv.",
-      "love": "Oglasite se prijatelju ali predlagajte preprost skupen načrt. V odnosu pustite prostor tudi samostojnim zanimanjem. Različnost ni ovira, če ostaneta zanimanje in spoštovanje obojestranska.",
-      "work": "Določite en smiseln rezultat za današnji dan. Večjo nalogo razdelite in si zapišite, kaj bo pomenilo, da je prvi del končan. Napredek ocenjujte glede na dejanske okoliščine, ne glede na idealen načrt.",
-      "wellbeing": "Ob koncu dneva opazite tudi opravljeno, ne le preostalega. Čas za počitek si lahko vnaprej označite v koledarju. Odgovoren odnos do ciljev vključuje tudi razumen obseg obveznosti.",
-      "thought": "V načrtu pustite prostor za odmor, ne le za obveznosti.",
+      "overview": "Pozornost namenite smeri, v katero vlagate svoj čas. Preverite, ali je cilj še vedno vaš in ali je načrt izvedljiv. Doslednost je lahko mirna; ni se vam treba primerjati s tujim tempom. Dovolj dobro je včasih prav tisto, kar današnji dan potrebuje. Ob koncu dneva si zapomnite en prijeten trenutek, ki ga niste načrtovali.",
+      "love": "Tudi poln urnik naj vsebuje jasen dogovor o času za odnos. Povejte, kdaj boste zares navzoči, in ta čas spoštujte. Iskrena pozornost je dragocenejša od obljube, ki je ne morete izpolniti.",
+      "work": "Prednost dajte zbranemu zaključevanju in pripravi na naslednji korak. Obvestila preverjajte ob izbranem času. Kar še ni dovolj jasno, zapišite kot vprašanje in se k temu vrnite s svežim pogledom.",
+      "wellbeing": "Izberite družbo, ob kateri vam ni treba igrati vloge. Če je informacij preveč, zmanjšajte število obvestil. Povezanost je lahko tudi en dober pogovor, ne neprekinjena dosegljivost.",
+      "thought": "Pred dogovorom preverite, kaj potrebujete vi in kaj potrebuje druga oseba.",
       "symbolic_house": 10
     },
-    "devica": {
+    "tehtnica": {
       "title": "Pogled onkraj znanega",
-      "overview": "Radovednost je današnja simbolna iztočnica. Preberite nekaj novega, preverite drug pogled ali poiščite pot, po kateri še niste šli. Širša slika je lahko uporabna, ko jo povežete z enim konkretnim korakom. Dovolj dobro je včasih prav tisto, kar današnji dan potrebuje. Za pomembnejši odgovor si vzemite čas. Miren premislek lahko skrajša poznejše popravljanje.",
+      "overview": "Radovednost je današnja simbolna iztočnica. Preberite nekaj novega, preverite drug pogled ali poiščite pot, po kateri še niste šli. Širša slika je lahko uporabna, ko jo povežete z enim konkretnim korakom. Odločitev ne potrebuje popolnega soglasja, potrebuje jasno merilo. Za danes izberite eno dejanje, za katero boste ob večeru vedeli, zakaj je bilo vredno vašega časa.",
       "love": "Podelite zamisel, izkušnjo ali vprašanje, ki vas navdušuje. Različni okusi lahko postanejo dobra tema pogovora. Pri skupnih načrtih preverite tudi praktične možnosti in želje druge osebe.",
-      "work": "Zamisel predstavite s kratkim primerom in jasnim vprašanjem. Odziv skupine lahko pokaže podrobnost, ki ste jo spregledali. Pri delitvi nalog se dogovorite, kdo bo poskrbel za naslednji korak.",
-      "wellbeing": "Ob koncu dneva opazite tudi opravljeno, ne le preostalega. Čas za počitek si lahko vnaprej označite v koledarju. Odgovoren odnos do ciljev vključuje tudi razumen obseg obveznosti.",
-      "thought": "Opazite, kaj vam že dobro služi, in temu namenite nekaj pozornosti.",
+      "work": "Določite en smiseln rezultat za današnji dan. Večjo nalogo razdelite in si zapišite, kaj bo pomenilo, da je prvi del končan. Napredek ocenjujte glede na dejanske okoliščine, ne glede na idealen načrt.",
+      "wellbeing": "Kratek odmik od običajne poti lahko osveži dan. Obseg naj bo izvedljiv: drugačen sprehod, nekaj strani knjige ali pogovor z nekom, ki ima drugačne izkušnje. Ni treba daleč, da pogled postane širši.",
+      "thought": "V načrtu pustite prostor za odmor, ne le za obveznosti.",
       "symbolic_house": 9
     },
-    "tehtnica": {
+    "skorpijon": {
       "title": "Iskreno pod površje",
-      "overview": "Poudarek dneva je na zaupanju in stvareh, ki jih delite z drugimi. Ločite podatek od domneve in si vzemite čas za občutljivo vprašanje. Ni treba vsega povedati naenkrat, pomembno je, da je povedano jasno. Odločitev ne potrebuje popolnega soglasja, potrebuje jasno merilo. Ne preskočite drobnega napredka. Tudi opravljena malenkost je lahko dober temelj za nadaljevanje.",
-      "love": "Bližino gradite z iskrenostjo, ne s preizkušanjem sogovornika. Če vas nekaj skrbi, to poimenujte brez ugibanja o tujih namenih. Tudi mirno poslušanje je lahko pomemben del zahtevnejšega pogovora.",
-      "work": "Pred novo nalogo si razjasnite, kaj se morate še naučiti. Poiščite zanesljiv vir in preverite, ali je nasvet primeren za vaš primer. Navdih najbolje zaživi, ko ima jasno nadaljevanje.",
+      "overview": "Poudarek dneva je na zaupanju in stvareh, ki jih delite z drugimi. Ločite podatek od domneve in si vzemite čas za občutljivo vprašanje. Ni treba vsega povedati naenkrat, pomembno je, da je povedano jasno. Ločite tisto, kar veste, od tistega, kar šele domnevate. Prednost dajte dogovoru, ki ga lahko uresničite; ostalo lahko ostane odprto do jasnejšega trenutka.",
+      "love": "Podelite zamisel, izkušnjo ali vprašanje, ki vas navdušuje. Različni okusi lahko postanejo dobra tema pogovora. Pri skupnih načrtih preverite tudi praktične možnosti in želje druge osebe.",
+      "work": "Določite en smiseln rezultat za današnji dan. Večjo nalogo razdelite in si zapišite, kaj bo pomenilo, da je prvi del končan. Napredek ocenjujte glede na dejanske okoliščine, ne glede na idealen načrt.",
       "wellbeing": "Izberite eno misel, ki jo želite razjasniti, in ji namenite omejen, miren čas. Potem pozornost preusmerite v nekaj oprijemljivega. Premislek ne zahteva, da ves dan ostanete pri istem vprašanju.",
-      "thought": "Zaključite eno odprto malenkost, preden odprete novo nalogo.",
+      "thought": "Opazite, kaj vam že dobro služi, in temu namenite nekaj pozornosti.",
       "symbolic_house": 8
     },
-    "skorpijon": {
+    "strelec": {
       "title": "Srečanje dveh pogledov",
-      "overview": "Današnja simbolna tema so sodelovanje, dogovori in drugačen pogled na isto stvar. Soglasje se lažje oblikuje, ko je jasno, kaj je za vsako stran pomembno. Poslušanje ne pomeni, da se morate v vsem strinjati. Ločite tisto, kar veste, od tistega, kar šele domnevate. Ob koncu dneva si zapomnite en prijeten trenutek, ki ga niste načrtovali.",
-      "love": "Bližino gradite z iskrenostjo, ne s preizkušanjem sogovornika. Če vas nekaj skrbi, to poimenujte brez ugibanja o tujih namenih. Tudi mirno poslušanje je lahko pomemben del zahtevnejšega pogovora.",
-      "work": "Pri skupnih virih ali obveznostih preverite podrobnosti in jih zapišite. Z zaupnimi podatki ravnajte skrbno. Če odločitev presega vaše znanje, si pridobite pojasnilo, preden se zavežete.",
+      "overview": "Današnja simbolna tema so sodelovanje, dogovori in drugačen pogled na isto stvar. Soglasje se lažje oblikuje, ko je jasno, kaj je za vsako stran pomembno. Poslušanje ne pomeni, da se morate v vsem strinjati. Navdih dobi največjo moč, ko mu dodate izvedljiv naslednji korak. Pustite si možnost, da načrt prilagodite. Sprememba vrstnega reda je lahko čisto praktična rešitev.",
+      "love": "Za pogovor izberite miren trenutek in eno konkretno temo. Povejte, kaj opažate in kaj si želite. Če se z nekom šele spoznavate, si pustite dovolj časa, da se vtis razvije skozi dejanja.",
+      "work": "Pred skupnim začetkom preverite odgovornosti in roke. Dober dogovor naj bo razumljiv vsem udeleženim. Če potrebujete pomoč, povejte, katero opravilo je odprto in kakšen prispevek bi vam koristil.",
       "wellbeing": "Izberite eno misel, ki jo želite razjasniti, in ji namenite omejen, miren čas. Potem pozornost preusmerite v nekaj oprijemljivega. Premislek ne zahteva, da ves dan ostanete pri istem vprašanju.",
-      "thought": "Preverite eno domnevo z jasnim vprašanjem.",
+      "thought": "Zaključite eno odprto malenkost, preden odprete novo nalogo.",
       "symbolic_house": 7
     },
-    "strelec": {
+    "kozorog": {
       "title": "Manj zapletov, več dobrega ritma",
-      "overview": "Pozornost usmerite v drobne navade in odprta opravila. Izberite eno spremembo, ki bi vam res olajšala vsakdan. Seznam naj bo dovolj kratek, da ob njem ostane prostor za nepredvideno in za odmor. Navdih dobi največjo moč, ko mu dodate izvedljiv naslednji korak. Za danes izberite eno dejanje, za katero boste ob večeru vedeli, zakaj je bilo vredno vašega časa.",
-      "love": "Skrb se lahko pokaže v praktični pomoči, vendar je najprej dobro vprašati, kaj druga oseba potrebuje. Ni treba prevzeti vsega. Jasen dogovor o drobnih opravilih je lahko tudi izraz spoštovanja.",
-      "work": "Pred skupnim začetkom preverite odgovornosti in roke. Dober dogovor naj bo razumljiv vsem udeleženim. Če potrebujete pomoč, povejte, katero opravilo je odprto in kakšen prispevek bi vam koristil.",
+      "overview": "Pozornost usmerite v drobne navade in odprta opravila. Izberite eno spremembo, ki bi vam res olajšala vsakdan. Seznam naj bo dovolj kratek, da ob njem ostane prostor za nepredvideno in za odmor. Napredek vključuje tudi počitek in priznanje že opravljenega. Najprej naredite majhen poskus. Šele nato presodite, ali želite zamisel razvijati naprej.",
+      "love": "Za pogovor izberite miren trenutek in eno konkretno temo. Povejte, kaj opažate in kaj si želite. Če se z nekom šele spoznavate, si pustite dovolj časa, da se vtis razvije skozi dejanja.",
+      "work": "Obveznosti razvrstite po pomembnosti in zaključite en oprijemljiv del. Podrobnostim namenite toliko časa, kolikor ga naloga zahteva. Ko izdelek izpolnjuje namen, si dovolite narediti piko.",
       "wellbeing": "Uravnotežite druženje in čas zase. Po zahtevnem pogovoru si vzemite nekaj minut, da uredite svoje misli. Vaše meje so lahko prijazne in hkrati dovolj jasne, da jih drugi razumejo.",
-      "thought": "Zapišite tri pomembne stvari in začnite s tisto, ki jo lahko danes res premaknete.",
+      "thought": "Preverite eno domnevo z jasnim vprašanjem.",
       "symbolic_house": 6
     },
-    "kozorog": {
+    "vodnar": {
       "title": "Nekaj zgolj iz veselja",
-      "overview": "Današnja simbolna tema je ustvarjalnost brez nuje po popolnem rezultatu. Vrnite se k zamisli, ki vas iskreno zanima. Tudi majhen poskus šteje, kadar nastane iz veselja in ne le zaradi pričakovanj okolice. Napredek vključuje tudi počitek in priznanje že opravljenega. Prednost dajte dogovoru, ki ga lahko uresničite; ostalo lahko ostane odprto do jasnejšega trenutka.",
-      "love": "Skrb se lahko pokaže v praktični pomoči, vendar je najprej dobro vprašati, kaj druga oseba potrebuje. Ni treba prevzeti vsega. Jasen dogovor o drobnih opravilih je lahko tudi izraz spoštovanja.",
+      "overview": "Današnja simbolna tema je ustvarjalnost brez nuje po popolnem rezultatu. Vrnite se k zamisli, ki vas iskreno zanima. Tudi majhen poskus šteje, kadar nastane iz veselja in ne le zaradi pričakovanj okolice. Predlog razložite s konkretnim primerom in prisluhnite odzivu. Vprašajte se, kaj bi današnji dan naredilo malo bolj preprost. Odgovor naj bo konkreten in dosegljiv.",
+      "love": "Toplino izrazite na svoj način, z domiselno pozornostjo ali skupno dejavnostjo. V pogovoru pustite prostor tudi igrivosti. Prijetnega trenutka ni treba takoj spreminjati v velik preizkus odnosa.",
+      "work": "Pred skupnim začetkom preverite odgovornosti in roke. Dober dogovor naj bo razumljiv vsem udeleženim. Če potrebujete pomoč, povejte, katero opravilo je odprto in kakšen prispevek bi vam koristil.",
+      "wellbeing": "Med daljšim sedenjem si namenite kratke prekinitve in prilagodite dnevni načrt svojim dejanskim zmožnostim. Če kaj ne gre po načrtu, je sprememba ritma lahko povsem smiseln odgovor.",
+      "thought": "Zapišite tri pomembne stvari in začnite s tisto, ki jo lahko danes res premaknete.",
+      "symbolic_house": 5
+    },
+    "ribi": {
+      "title": "Vaša mirna osnova",
+      "overview": "Danes naj bo v ospredju tisto, kar vam daje občutek domačnosti. Opazite navado, prostor ali odnos, ob katerem lažje zadihate. Majhna ureditev vsakdana je lahko dovolj; vsega ni treba spreminjati hkrati. Občutku dodajte konkreten podatek in en majhen izvedljiv korak. Za pomembnejši odgovor si vzemite čas. Miren premislek lahko skrajša poznejše popravljanje.",
+      "love": "Povejte, kdaj potrebujete družbo in kdaj mir. Bližina je lažja, kadar so potrebe izrečene. Prijazen stik z nekom, ki ga že dolgo niste slišali, je lahko prijeten začetek pogovora.",
       "work": "Nalogi dodajte svoj pristop, vendar naj cilj ostane jasen. Osnutek pokažite dovolj zgodaj, da lahko dobite uporaben odziv. Pohvalite konkreten prispevek drugih, če pri projektu sodelujete.",
       "wellbeing": "Poiščite dejavnost, pri kateri ne merite vsake minute. Risanje, glasba, kuhanje ali kratek izlet v bližino lahko postanejo čas zase, tudi če zanje nimate celega prostega popoldneva.",
       "thought": "Namenite nekaj nemotenih minut pogovoru, ki vam veliko pomeni.",
-      "symbolic_house": 5
-    },
-    "vodnar": {
-      "title": "Vaša mirna osnova",
-      "overview": "Danes naj bo v ospredju tisto, kar vam daje občutek domačnosti. Opazite navado, prostor ali odnos, ob katerem lažje zadihate. Majhna ureditev vsakdana je lahko dovolj; vsega ni treba spreminjati hkrati. Predlog razložite s konkretnim primerom in prisluhnite odzivu. Pustite si možnost, da načrt prilagodite. Sprememba vrstnega reda je lahko čisto praktična rešitev.",
-      "love": "Povejte, kdaj potrebujete družbo in kdaj mir. Bližina je lažja, kadar so potrebe izrečene. Prijazen stik z nekom, ki ga že dolgo niste slišali, je lahko prijeten začetek pogovora.",
-      "work": "Obveznosti razvrstite po pomembnosti in zaključite en oprijemljiv del. Podrobnostim namenite toliko časa, kolikor ga naloga zahteva. Ko izdelek izpolnjuje namen, si dovolite narediti piko.",
-      "wellbeing": "Privoščite si znan, preprost obred: miren čaj, urejen prostor ali nekaj časa ob najljubši glasbi. Namen ni popolna rutina, temveč občutek, da v dnevu obstaja tudi prostor za vas.",
-      "thought": "Izberite majhen, izvedljiv način, da podprete svojo zamisel.",
       "symbolic_house": 4
-    },
-    "ribi": {
-      "title": "En dober pogovor",
-      "overview": "Poudarek dneva je na besedah, vprašanjih in kratkih poteh. Preden sklepate, preverite, kaj je bilo res mišljeno. Zapisana misel ali pravočasno sporočilo lahko poenostavi dogovor, ki se je zdel zapleten. Občutku dodajte konkreten podatek in en majhen izvedljiv korak. Najprej naredite majhen poskus. Šele nato presodite, ali želite zamisel razvijati naprej.",
-      "love": "Zanimanje pokažite s poslušanjem. Namesto hitrega odgovora zastavite vprašanje, ki pušča prostor za drugačen pogled. Tudi lahek pogovor o vsakdanjih stvareh lahko ustvari občutek bližine.",
-      "work": "Združite podobna opravila in si določite čas za sporočila. Če navodilo ni jasno, prosite za konkreten primer. Manj ugibanja pomeni več pozornosti za delo, ki je dejansko pred vami.",
-      "wellbeing": "Privoščite si znan, preprost obred: miren čaj, urejen prostor ali nekaj časa ob najljubši glasbi. Namen ni popolna rutina, temveč občutek, da v dnevu obstaja tudi prostor za vas.",
-      "thought": "Pred dogovorom preverite, kaj potrebujete vi in kaj potrebuje druga oseba.",
-      "symbolic_house": 3
     }
   }
 }
