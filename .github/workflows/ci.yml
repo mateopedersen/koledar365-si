@@ -138,6 +138,12 @@ jobs:
           path: |
             evidence/*.json
             evidence/*.txt
-            test-results/
-            evidence/qa/
+            evidence/qa/**/*.json
+            evidence/qa/**/*.ndjson
+            evidence/qa/**/*.csv
+            evidence/qa/**/*.txt
+            evidence/qa/**/*.md
+            test-results/**/*.json
+            test-results/**/error-context.md
+            test-results/**/test-failed-*.png
           retention-days: 7
