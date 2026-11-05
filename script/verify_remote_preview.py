@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 """Verify a Cloudflare preview against a trusted, locally recorded manifest hash.
 
-Runs on GitHub when the operator's network cannot reach pages.dev. No credentials
-are read. The preview host, TLS certificate and content hashes remain verified.
+Runs on GitHub when the operator's network cannot reach pages.dev. A read-only
+job token can retrieve a historical private-repository template. It is never
+sent to the preview host. TLS, exact commit and content hashes remain verified.
 """
-import concurrent.futures,hashlib,json,re,sys,time
+import concurrent.futures,hashlib,json,os,re,sys,time
 from pathlib import Path
 from urllib.request import urlopen,Request
 from cdn_email_parity import restore_email_html
 from horoscope_parity import verify_daily
+from preview_source import publication_template
 
 target=json.loads(Path(sys.argv[1]).read_text())
 base=target['url'].rstrip('/')
@@ -46,11 +48,7 @@ def check(p):
      # Fetch the template from that exact publication and still require the
      # preview manifest's SHA-256 before checking the daily edge transform.
      snapshot=target.get('publication_commit','')
-     assert re.fullmatch(r'[a-f0-9]{40}',snapshot),'Missing trusted publication commit'
-     source='https://raw.githubusercontent.com/mateopedersen/koledar365-si/'+snapshot+'/site/'+p
-     with urlopen(Request(source,headers={'User-Agent':'Koledar365-Preview-Verification/1.0'}),timeout=40) as original:
-      assert original.status==200,'Snapshot template unavailable'
-      local=original.read()
+     local=publication_template(snapshot,p,expected,os.environ.get('K365_PREVIEW_GITHUB_TOKEN',''))
     assert hashlib.sha256(local).hexdigest()==expected,'Publication fallback differs from preview manifest'
     sign=p.split('/')[1] if p.count('/')==2 and '/izracun-znamenja/' not in p else ''
     verify_daily(local,body,sign,headers.get('X-Horoscope-Date'))
