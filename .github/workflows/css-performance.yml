@@ -21,7 +21,8 @@ concurrency:
   cancel-in-progress: false
 jobs:
   compare:
-    runs-on: ubuntu-latest
+    # Keep the pinned browser version on its supported distribution.
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     strategy:
       fail-fast: false
