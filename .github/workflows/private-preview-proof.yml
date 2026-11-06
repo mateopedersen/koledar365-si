@@ -52,7 +52,7 @@ jobs:
           test "$(git ls-remote origin refs/heads/$GITHUB_REF_NAME | cut -f1)" = "$GITHUB_SHA"
           git config user.name 'Koledar365 preview verification'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add site functions/cities.js
+          git add site functions/cities.js public/horoscope/daily.json data/editorial/horoscopes.json data/editorial/pages.json
           git diff --cached --quiet && { echo 'No preview output changed.'; exit 1; }
           git commit -m 'Build reviewed source for isolated preview verification'
           git push origin HEAD:refs/heads/codex/private-preview-proof-20261106
