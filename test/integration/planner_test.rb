@@ -72,6 +72,27 @@ class PlannerIntegrationTest < ActionDispatch::IntegrationTest
     post "/upravljanje/stran/#{page.id}/",params:{page:{title:page.title,description:'Opis',status:'published'}}
     assert_equal 'held',page.reload.status
   end
+  test 'changing an admin password revokes other sessions for that admin' do
+    old_password = 'old-test-password-123'
+    new_password = 'new-test-password-456'
+    admin = Admin.create!(email: 'session-test-editor', password: old_password)
+    other = open_session
+    other.post '/upravljanje/prijava/', params: { email: admin.email, password: old_password }
+    other.get '/upravljanje/'
+    assert_equal 200, other.response.status
+    post '/upravljanje/prijava/', params: { email: admin.email, password: old_password }
+    post '/upravljanje/geslo/', params: {
+      current_password: old_password, password: new_password, password_confirmation: new_password
+    }
+    assert_redirected_to '/upravljanje/prijava/'
+    assert admin.reload.authenticate(new_password)
+    other.get '/upravljanje/'
+    assert_equal 302, other.response.status
+    assert_equal '/upravljanje/prijava/', URI.parse(other.response.location).path
+    other.post '/upravljanje/prijava/', params: { email: admin.email, password: new_password }
+    other.get '/upravljanje/'
+    assert_equal 200, other.response.status
+  end
   test 'personal photo preview and exports are session bound' do
     file=Rack::Test::UploadedFile.new(Rails.root.join('public/images/observances/bozic.webp'),'image/webp')
     post '/fotografija/',params:{photo:file}

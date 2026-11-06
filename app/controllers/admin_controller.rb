@@ -1,3 +1,5 @@
+require 'digest'
+
 class AdminController < ApplicationController
   before_action :require_admin,except:[:login,:authenticate]
   rate_limit to:5,within:5.minutes,only: :authenticate
@@ -7,7 +9,11 @@ class AdminController < ApplicationController
   def authenticate
     admin=Admin.find_by(email:params[:email].to_s.downcase)
     if admin&.authenticate(params[:password])
-      reset_session;session[:admin_id]=admin.id;session[:admin_at]=Time.current.to_i;redirect_to '/upravljanje/'
+      reset_session
+      session[:admin_id]=admin.id
+      session[:admin_at]=Time.current.to_i
+      session[:admin_credential]=credential_version(admin)
+      redirect_to '/upravljanje/'
     else
       @title='Prijava v uredništvo';@error='Prijava ni uspela. Preverite podatke.';render :login,status: :unprocessable_entity
     end
@@ -71,8 +77,21 @@ class AdminController < ApplicationController
   rescue ArgumentError,ActiveRecord::RecordInvalid
     redirect_to '/upravljanje/',alert:'Preverite trenutno geslo. Novo geslo mora imeti najmanj 14 znakov; potrditvi se morata ujemati.'
   end
+  private
+
   def require_admin
     @admin=Admin.find_by(id:session[:admin_id])
-    redirect_to '/upravljanje/prijava/' unless @admin&&session[:admin_at].to_i>8.hours.ago.to_i
+    return if @admin &&
+      session[:admin_at].to_i > 8.hours.ago.to_i &&
+      ActiveSupport::SecurityUtils.secure_compare(session[:admin_credential].to_s, credential_version(@admin))
+
+    session.delete(:admin_id)
+    session.delete(:admin_at)
+    session.delete(:admin_credential)
+    redirect_to '/upravljanje/prijava/'
+  end
+
+  def credential_version(admin)
+    Digest::SHA256.hexdigest(admin.password_digest)
   end
 end
