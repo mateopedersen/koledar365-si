@@ -5,3 +5,7 @@
 @media print{.payment-nav,.payment-filters,.payment-next,.payment-actions,.payment-table button,.payment-section-heading>button,.payment-table-footer,.payment-status,.payment-visual,.payment-faq,.payment-source,.topbar,.subnav,footer,.breadcrumb{display:none!important}.payment-page{max-width:none;padding:0}.payment-hero{display:block;margin:0 0 20px}.payment-hero h1{font-size:27px;margin-bottom:10px}.payment-hero-copy .payment-lead{font-size:12px}.payment-verification{font-size:10px!important}.payment-table,.payment-table thead,.payment-table tbody{display:table;min-width:0;width:100%}.payment-table thead{display:table-header-group}.payment-table tbody{display:table-row-group}.payment-table tr{display:table-row;break-inside:avoid}.payment-table th,.payment-table td{display:table-cell;padding:9px!important;font-size:10px!important;border-bottom:1px solid #ccc!important}.payment-table td:before{display:none}.payment-table time{font-size:11px}.payment-table th:last-child,.payment-table td:last-child{display:none}.payment-table-wrap{border:0;overflow:visible}.payment-section-heading h2{font-size:20px}.payment-page .payment-kicker{font-size:9px}}
 
 .payment-hero>*{min-width:0}.payment-next-top>span:first-child{min-width:0}.payment-next-month span{min-width:0}.payment-source a{overflow-wrap:anywhere}
+
+.payment-table tr.is-today > td {
+  color: #475b72;
+}
