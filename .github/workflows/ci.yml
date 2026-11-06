@@ -69,7 +69,7 @@ jobs:
       - name: PostgreSQL schema and functional tests
         run: bundle exec rails db:prepare && bundle exec rails test
       - name: Indexability audit regression cases
-        run: python3 test/test_indexability.py
+        run: python3 test/test_indexability.py && python3 script/test_preview_source.py
       - name: SEO and observance contracts
         run: bundle exec ruby -r ./config/environment script/audit_seo.rb && bundle exec ruby -r ./config/environment script/audit_observances.rb
       - name: PostgreSQL backup and isolated restore
@@ -130,7 +130,7 @@ jobs:
           /usr/bin/python3 -m pip install --break-system-packages -r requirements-qa.txt
       - name: Browser checks against the freshly rebuilt publication
         if: ${{ hashFiles('site/release-manifest.json') != '' }}
-        run: bash script/verify_release_qa.sh
+        run: bash script/verify_horoscope_edge.sh && bash script/verify_release_qa.sh
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -138,6 +138,12 @@ jobs:
           path: |
             evidence/*.json
             evidence/*.txt
-            test-results/
-            evidence/qa/
+            evidence/qa/**/*.json
+            evidence/qa/**/*.ndjson
+            evidence/qa/**/*.csv
+            evidence/qa/**/*.txt
+            evidence/qa/**/*.md
+            test-results/**/*.json
+            test-results/**/error-context.md
+            test-results/**/test-failed-*.png
           retention-days: 7

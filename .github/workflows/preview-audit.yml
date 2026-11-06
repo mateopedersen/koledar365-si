@@ -6,6 +6,8 @@ on:
       - 'reports/css-performance-2026-10-23/preview-target.json'
       - '.github/workflows/preview-audit.yml'
       - 'script/verify_remote_preview.py'
+      - 'script/preview_source.py'
+      - 'script/test_preview_source.py'
       - 'script/horoscope_parity.py'
       - 'script/test_horoscope_parity.py'
 permissions:
@@ -15,7 +17,8 @@ concurrency:
   cancel-in-progress: true
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    # Playwright 1.56.1 supports Ubuntu 24.04, not the rolling latest image.
+    runs-on: ubuntu-24.04
     timeout-minutes: 50
     env:
       PREVIEW_TARGET: reports/css-performance-2026-10-23/preview-target.json
@@ -28,7 +31,9 @@ jobs:
         with:
           node-version: '24'
       - name: Verify all preview HTML, CSS, JavaScript and discovery files against trusted hashes
-        run: python3 script/test_horoscope_parity.py && python3 script/verify_remote_preview.py "$PREVIEW_TARGET"
+        env:
+          K365_PREVIEW_GITHUB_TOKEN: ${{ github.token }}
+        run: python3 script/test_preview_source.py && python3 script/test_horoscope_parity.py && python3 script/verify_remote_preview.py "$PREVIEW_TARGET"
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
@@ -68,5 +73,12 @@ jobs:
         if: always()
         with:
           name: cloudflare-preview-${{ github.sha }}
-          path: evidence/qa/preview/
-          retention-days: 14
+          path: |
+            evidence/qa/preview/**/*.json
+            evidence/qa/preview/**/*.ndjson
+            evidence/qa/preview/**/*.csv
+            evidence/qa/preview/**/*.txt
+            evidence/qa/preview/**/*.md
+            test-results/**/error-context.md
+            test-results/**/test-failed-*.png
+          retention-days: 7
