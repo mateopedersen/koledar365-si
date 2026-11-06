@@ -1,0 +1,58 @@
+name: Build isolated private migration preview
+on:
+  push:
+    branches: [codex/private-preview-proof-20261106]
+permissions:
+  contents: write
+concurrency:
+  group: private-migration-preview
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.repository == 'mateopedersen/koledar365-si'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 80
+    env:
+      RAILS_ENV: development
+      PDFTOPPM_BIN: /usr/bin/pdftoppm
+      PYTHON_BIN: /usr/bin/python3
+      OPERATOR_CONTACT: koledar365@gmail.com
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '4.0.7'
+          bundler-cache: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install required build tools
+        run: |
+          if [ -f /etc/apt/apt-mirrors.txt ]; then
+            sudo sed -i 's|http://azure.archive.ubuntu.com/ubuntu|https://archive.ubuntu.com/ubuntu|g' /etc/apt/apt-mirrors.txt
+          fi
+          sudo apt-get update -qq && sudo apt-get install -y poppler-utils python3-pil
+          npx --yes pnpm@11.25.0 install --frozen-lockfile
+      - name: Build the exact reviewed source and verify the generated publication
+        run: |
+          node script/generate_daily_horoscope.mjs
+          bundle exec ruby script/rebuild_free.rb
+          bundle exec ruby script/verify_vector_identity.rb
+          bundle exec ruby script/verify_mobile_svg_compatibility.rb
+      - name: Save preview output only to this isolated branch
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF_NAME" = 'codex/private-preview-proof-20261106'
+          test "$(git ls-remote origin refs/heads/$GITHUB_REF_NAME | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'Koledar365 preview verification'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add site functions/cities.js
+          git diff --cached --quiet && { echo 'No preview output changed.'; exit 1; }
+          git commit -m 'Build reviewed source for isolated preview verification'
+          git push origin HEAD:refs/heads/codex/private-preview-proof-20261106
