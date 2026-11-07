@@ -38,11 +38,11 @@ jobs:
           fetch-depth: 1
       - uses: ruby/setup-ruby@de492cf36cbab201753d720ce4f4e336cd688c94 # v1
         with:
-          ruby-version: '4.0.7'
+          ruby-version: '4.0.9'
           bundler-cache: true
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: '24'
+          node-version: '24.22.1'
       - name: Install PDF tools
         run: sudo apt-get update -qq && sudo apt-get install -y poppler-utils python3-pil
       - name: Install pinned CSS compiler and browser tools

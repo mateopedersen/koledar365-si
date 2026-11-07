@@ -29,14 +29,14 @@ jobs:
           python-version: '3.12'
       - uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '24.22.1'
       - name: Verify all preview HTML, CSS, JavaScript and discovery files against trusted hashes
         env:
           K365_PREVIEW_GITHUB_TOKEN: ${{ github.token }}
         run: python3 script/test_preview_source.py && python3 script/test_horoscope_parity.py && python3 script/verify_remote_preview.py "$PREVIEW_TARGET"
       - uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '24.22.1'
       - uses: pnpm/action-setup@v4
       - name: Prepare real browser checks
         run: |

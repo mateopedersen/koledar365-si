@@ -1,5 +1,5 @@
 require 'json'
-raise 'Unexpected Ruby' unless RUBY_VERSION=='4.0.7'
+raise 'Unexpected Ruby' unless RUBY_VERSION=='4.0.9'
 raise 'Unexpected Rails' unless Rails.version=='8.1.4.1'
 raise 'Production must use PostgreSQL' unless ActiveRecord::Base.connection.adapter_name=='PostgreSQL'
 PackageImporter.run!

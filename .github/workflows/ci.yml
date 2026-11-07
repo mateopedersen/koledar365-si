@@ -38,11 +38,11 @@ jobs:
         run: sudo apt-get update -qq && sudo apt-get install -y libpq-dev poppler-utils python3-pil
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '4.0.7'
+          ruby-version: '4.0.9'
           bundler-cache: true
       - uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '24.22.1'
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-python@v5
         with:
