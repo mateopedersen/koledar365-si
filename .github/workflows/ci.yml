@@ -36,23 +36,25 @@ jobs:
           fi
       - name: Install image and database dependencies
         run: sudo apt-get update -qq && sudo apt-get install -y libpq-dev poppler-utils python3-pil
-      - uses: ruby/setup-ruby@v1
+      - uses: ruby/setup-ruby@b3aaceaef7e0ee231b499e7b5f49c03fc1d32199 # v1
         with:
-          ruby-version: '4.0.7'
+          ruby-version: '4.0.9'
           bundler-cache: true
       - uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '24.22.1'
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Install pinned CSS compiler and browser tools
+        run: npx --yes pnpm@11.25.0 install --frozen-lockfile
       - name: Weather and public download contracts
-        run: node --test test/javascript/ruby_client_test.mjs && node script/test_weather_function.mjs && node script/test_city_detection.mjs && node script/test_public_catalog.mjs && node script/test_horoscope.mjs && node script/test_vacation_planner.cjs && node script/test_family_planner.cjs && node --check app/assets/javascripts/family_planner.js && node --check app/assets/javascripts/family_planner_core.js
+        run: node --test test/javascript/ruby_client_test.mjs test/javascript/pdf_lifecycle_test.mjs && node script/test_weather_function.mjs && node script/test_city_detection.mjs && node script/test_public_catalog.mjs && node script/test_horoscope.mjs && node script/test_vacation_planner.cjs && node script/test_family_planner.cjs && node --check app/assets/javascripts/family_planner.js && node --check app/assets/javascripts/family_planner_core.js
       - name: Student planner and Ljubljana calendar export
         run: node script/test_student_timetable.cjs && node --check app/assets/javascripts/student_timetable_core.js && node --check app/assets/javascripts/student_timetable.js
       - name: Cloudflare Pages Functions compiler compatibility
-        run: npx --yes wrangler@3.114.17 pages functions build functions --outdir=tmp/cloudflare-functions
+        run: pnpm exec wrangler pages functions build functions --outdir=tmp/cloudflare-functions
       - name: Astronomical lunar date and phase data
         run: node script/lunar/audit_dates.mjs
       - name: Clock change instant boundaries
@@ -100,8 +102,6 @@ jobs:
           curl -fsS http://127.0.0.1:3000/up
           docker exec koledar-ci bundle exec rails runner script/production_smoke.rb
           docker logs koledar-ci
-      - name: Install pinned CSS compiler and browser tools
-        run: npx --yes pnpm@11.25.0 install --frozen-lockfile
       - name: Rebuild free publication from a fresh SQLite database
         if: ${{ hashFiles('site/release-manifest.json') != '' }}
         env:

@@ -1,4 +1,7 @@
 {$DOMAIN:koledar365.si} {
   encode zstd gzip
-  reverse_proxy web:3000
+  reverse_proxy web:3000 {
+    # Only proxy-generated forwarding metadata may reach Rack/Rails.
+    header_up -Forwarded
+  }
 }

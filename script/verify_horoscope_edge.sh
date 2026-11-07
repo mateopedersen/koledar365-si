@@ -24,7 +24,7 @@ assert 'STARI ZAPIS' in (target / 'dvojcka/index.html').read_text()
 print('Prepared 14-route real HTML fixtures with deliberately stale readings')
 PY
 # Run the repository's actual Pages Functions in workerd against stale assets.
-npx --yes wrangler@3.114.17 pages dev "$fixture_dir" --ip 127.0.0.1 --port 8799 >"$fixture_dir/worker.log" 2>&1 &
+pnpm exec wrangler pages dev "$fixture_dir" --ip 127.0.0.1 --port 8799 >"$fixture_dir/worker.log" 2>&1 &
 edge_pid=$!
 for attempt in $(seq 1 45); do
   if curl --silent --fail http://127.0.0.1:8799/horoskop/dnevno.json >/dev/null; then break; fi

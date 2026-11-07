@@ -34,7 +34,7 @@ jobs:
           # It stopped only at Firefox's screenshot dimension limit.
       - uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '24.22.1'
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-python@v5
         with:
