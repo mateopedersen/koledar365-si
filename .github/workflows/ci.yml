@@ -36,7 +36,7 @@ jobs:
           fi
       - name: Install image and database dependencies
         run: sudo apt-get update -qq && sudo apt-get install -y libpq-dev poppler-utils python3-pil
-      - uses: ruby/setup-ruby@v1
+      - uses: ruby/setup-ruby@b3aaceaef7e0ee231b499e7b5f49c03fc1d32199 # v1
         with:
           ruby-version: '4.0.9'
           bundler-cache: true
