@@ -437,6 +437,37 @@
 }
 
 /* Narrow studio tabs keep each name in its own touch target. */
+@media screen {
+  #vsebina .studio-rail > button > span:last-child {
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.35;
+  }
+}
+
+/* Match the Studio's vertical-rail breakpoint and its readable 15px labels.
+   The general button padding and 900px mobile rule must not widen these tabs. */
+@media screen and (min-width: 851px) {
+  #vsebina .studio-workspace { grid-template-columns: 112px 300px minmax(0, 1fr); }
+  #vsebina .studio-rail > button {
+    flex: 0 0 auto;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 72px;
+    padding: 10px 4px !important;
+    font-weight: 650;
+  }
+}
+@media screen and (min-width: 851px) and (max-width: 1150px) {
+  #vsebina .studio-workspace { grid-template-columns: 112px 270px minmax(0, 1fr); }
+}
+@media screen and (min-width: 1700px) {
+  #vsebina .studio-workspace { grid-template-columns: 112px 325px minmax(0, 1fr); }
+}
 @media screen and (max-width: 600px) {
   #vsebina .studio-rail button { flex: 0 0 76px; min-width: 76px; white-space: normal; overflow-wrap: anywhere; }
 }
@@ -517,13 +548,15 @@
   #vsebina .sun-play-row{flex-wrap:wrap;align-items:stretch}
   #vsebina .sun-play-row>p{flex:1 1 170px}
   #vsebina .sun-play-row>button{flex:1 1 210px;white-space:normal;height:auto;min-height:48px}
-  #vsebina .studio-rail{max-width:100%;min-width:0;overflow-x:auto;justify-content:flex-start}
-  #vsebina .studio-rail>button{flex:0 0 auto;min-width:100px;max-width:none;padding:10px 12px;white-space:normal}
   #vsebina .filters>label{min-width:0}
   #vsebina .filters>label :is(input,select){width:100%;min-width:0;max-width:100%}
   #vsebina #payment-next-title{overflow-wrap:break-word}
   #vsebina .design-card .calendar-download-action__icon{display:block;width:26px!important;height:26px!important;max-width:none;flex:0 0 26px;padding:0!important;object-fit:contain;background:transparent}
   #vsebina .design-card .calendar-download-action{height:auto;min-height:56px;white-space:normal}
+}
+@media screen and (max-width:850px){
+  #vsebina .studio-rail{max-width:100%;min-width:0;overflow-x:auto;justify-content:flex-start}
+  #vsebina .studio-rail>button{flex:0 0 auto;min-width:100px;max-width:none;padding:10px 12px;white-space:normal}
 }
 @media screen and (max-width:600px){
   #vsebina .countdown-shortcuts{grid-template-columns:minmax(0,1fr)}
