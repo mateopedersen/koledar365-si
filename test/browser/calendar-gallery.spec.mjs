@@ -36,7 +36,7 @@ for (const gallery of galleryPages) {
     await expect(actions).toHaveCount(2);
     await expect(actions.nth(0).locator('strong')).toHaveText('PDF');
     await expect(actions.nth(0).locator('small')).toHaveText('Prenesi');
-    await expect(actions.nth(1).locator('strong')).toHaveText(/WebP/);
+    await expect(actions.nth(1).locator('strong')).toHaveText(/Slika/);
     await expect(actions.nth(1).locator('small')).toHaveText('Prenesi');
     await expect(actions.nth(0).locator('img')).toHaveAttribute('src', /\/visuals\/download-pdf-v1\.[a-f0-9]{16}\.svg$/);
     await expect(actions.nth(1).locator('img')).toHaveAttribute('src', /\/visuals\/download-webp-v1\.[a-f0-9]{16}\.svg$/);

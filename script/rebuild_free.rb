@@ -52,6 +52,8 @@ run!('bundle','exec','ruby','script/validate_catalog_sources.rb')
 run!(ENV.fetch('PYTHON_BIN','python3'),'script/optimize_gallery_previews.py')
 run!('bundle','exec','ruby','script/audit_static.rb')
 run!(ENV.fetch('PYTHON_BIN','python3'),'script/audit_indexability.py')
+require_relative '../lib/image_format_labels'
+ImageFormatLabels.rewrite!('site')
 run!('ruby','script/finalize_static.rb')
 run!('bundle','exec','ruby','script/audit_site_content.rb')
 # Structural SEO checks stay reusable as new pages enter the publication.

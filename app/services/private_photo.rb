@@ -2,7 +2,7 @@ class PrivatePhoto
   MAX_BYTES=20.megabytes
   ROOT=Rails.root.join('storage/private_photos')
   def self.save!(upload,owner)
-    raise ArgumentError,'Izberite fotografijo JPEG, PNG ali WebP do 20 MB.' unless upload.respond_to?(:tempfile) && upload.size.between?(1,MAX_BYTES)
+    raise ArgumentError,'Izberite slikovno datoteko do 20 MB.' unless upload.respond_to?(:tempfile) && upload.size.between?(1,MAX_BYTES)
     id=SecureRandom.hex(24);dir=ROOT.join(id);FileUtils.mkdir_p(dir)
     RenderCommand.run!(ENV.fetch('PYTHON_BIN','python3'),Rails.root.join('bin/prepare-photo').to_s,upload.tempfile.path,dir.to_s,timeout:30)
     metadata=JSON.parse(dir.join('image.json').read).merge('owner'=>Digest::SHA256.hexdigest(owner),'expires_at'=>7.days.from_now.iso8601)
@@ -10,7 +10,7 @@ class PrivatePhoto
     {token:Rails.application.message_verifier('photo').generate(id,expires_in:7.days,purpose:'calendar-photo'),width:metadata['width'],height:metadata['height']}
   rescue StandardError
     FileUtils.rm_rf(dir) if dir
-    raise ArgumentError,'Fotografije ni mogoče uporabiti. Izberite JPEG, PNG ali WebP z najmanj 900 × 600 in največ 40 milijoni slikovnih pik.'
+    raise ArgumentError,'Fotografije ni mogoče uporabiti. Izberite slikovno datoteko z najmanj 900 × 600 in največ 40 milijoni slikovnih pik.'
   end
   def self.resolve!(token,owner)
     id=Rails.application.message_verifier('photo').verified(token,purpose:'calendar-photo')

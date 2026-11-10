@@ -24,7 +24,7 @@
         </tbody>
       </table>
     </div>
-    <p class="cd-download-note"><%= ui_icon('download') %><span><strong>Iščete PDF ali WebP?</strong> Datoteke za prenos so na strani izbranega leta ali meseca, pod koledarskim pregledom.</span></p>
+    <p class="cd-download-note"><%= ui_icon('download') %><span><strong>Iščete PDF ali sliko?</strong> Datoteke za prenos so na strani izbranega leta ali meseca, pod koledarskim pregledom.</span></p>
   </section>
 
   <% if archives.any? %><details class="cd-archive"><summary><span><%= ui_icon('calendar') %> Koledarji za leto 2026</span><span aria-hidden="true">+</span></summary><p>Potrebujete pregled za leto 2026? Odprite leto ali enega od razpoložljivih mesecev.</p><nav aria-label="Koledarji za leto 2026"><% archives.each do |page| %><a href="<%= page.path %>"><%= page.month ? "#{months[page.month-1].capitalize} 2026" : 'Letni koledar 2026' %> <span aria-hidden="true">↗</span></a><% end %></nav></details><% end %>
@@ -35,7 +35,7 @@
       <% [
         ['Mesečni koledar','/mesecni-koledar/','calendar','Načrtovanje izbranega meseca','Zapiski · PDF · Excel'],
         ['Tedenski koledar','/tedenski-koledar/','week','Tedenski pregled obveznosti','Tedni ISO · zapiski'],
-        ['Lunin koledar','/lunin-koledar/','moon','Lunine mene in osvetljenost Lune','2027–2030 · PDF · WebP'],
+        ['Lunin koledar','/lunin-koledar/','moon','Lunine mene in osvetljenost Lune','2027–2030 · PDF · Slika'],
         ['Šolski koledar','/solski-koledar/','school','Pouk, počitnice in šolski datumi','Počitnice · pouk · izpiti'],
         ['Prazen koledar','/prazen-koledar/','note','Prostor za lastne vpise in načrte','Predloge za tisk'],
         ['Delovni dnevi','/delovni-dnevi/','briefcase','Delovni dnevi, prazniki in obveznost','Pregledi in izračuni'],

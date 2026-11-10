@@ -99,10 +99,10 @@ elsif path=='/solski-urnik/'
    design_name=PrintCatalog.designs.find { |row| row['id']==design }&.fetch('name_sl',design) || design
    node['alt']="Vzorec postavitve »#{design_name}«. Za svoje obdobje in vnose odprite Moj predogled."
  end
- doc.css('.design-section > p.muted').each { |node|node.content='Sličica prikazuje vzorec postavitve. »Moj predogled« pripravi izbrano obdobje in vaše vnose na tej napravi. PDF vsebuje vektorsko besedilo, WebP pa celotno ločljivost 600 ppi. Večstranski prenos WebP je ZIP z vsemi stranmi in podatki za tisk.' }
+ doc.css('.design-section > p.muted').each { |node|node.content='Sličica prikazuje vzorec postavitve. »Moj predogled« pripravi izbrano obdobje in vaše vnose na tej napravi. PDF vsebuje vektorsko besedilo, slika pa celotno ločljivost 600 ppi. Večstranski prenos Slika je ZIP z vsemi stranmi in podatki za tisk.' }
  doc.css('p').each do |node|
   if node.text.include?('Za osebni predogled in prenos jih pošljemo strežniku')
-   node.content='Vnosi se shranijo na tej napravi. Osebni predogled, PDF in WebP pripravimo v brskalniku. Fotografija ostane le do zaprtja strani; strežniku je ne pošljemo.'
+   node.content='Vnosi se shranijo na tej napravi. Osebni predogled, PDF in slike pripravimo v brskalniku. Fotografija ostane le do zaprtja strani; strežniku je ne pošljemo.'
   end
  end
  if (grid=doc.at_css('.horoscope-grid'))

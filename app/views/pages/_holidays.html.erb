@@ -11,7 +11,7 @@
       <p class="holiday-hero-tagline">Več prostega časa.<br>Več lepih načrtov.</p>
       <p>Vsi <strong>prazniki in dela prosti dnevi</strong> na enem mestu. Preverite datume, poiščite daljši oddih in načrtujte leto po svoje.</p>
       <nav class="holiday-years" aria-label="Leto praznikov"><% CalendarEngine::INTERACTIVE_YEARS.each do |year| %><a href="/prazniki/<%= year %>/" <%= 'aria-current=page' if year==@year %>><%= year %></a><% end %></nav>
-      <div class="holiday-hero-actions"><a class="holiday-primary" href="#prazniki-seznam"><%= ui_icon('calendar') %> Pregled praznikov <%= ui_icon('chevron-right') %></a><a href="#holiday-downloads"><%= ui_icon('download') %> PDF in WebP</a></div>
+      <div class="holiday-hero-actions"><a class="holiday-primary" href="#prazniki-seznam"><%= ui_icon('calendar') %> Pregled praznikov <%= ui_icon('chevron-right') %></a><a href="#holiday-downloads"><%= ui_icon('download') %> PDF in slike</a></div>
     </div>
     <div class="holiday-visual"><%= render 'holiday_illustration' %><span class="holiday-visual-caption"><%= ui_icon('pin') %> Slovenski koledar. Vaši načrti.</span></div>
   </section>
@@ -85,7 +85,7 @@
         <%= render 'context_heading', title: "Prazniki #{@year} za tiskanje", expand: 'Razširi nastavitve' %>
         <div class="context-content" id="gallery-context-content">
           <nav class="year-links" aria-label="Leto tiskanega koledarja"><% CalendarEngine::YEARS.each do |year| %><a href="/prazniki/<%= year %>/#holiday-downloads" <%= 'aria-current=page' if year==@year %>><%= year %></a><% end %></nav>
-          <p><strong>15 različnih postavitev.</strong> Izberite papir in usmerjenost ter si oglejte predogled. PDF je pripravljen za tisk, WebP pa za shranjevanje v polni ločljivosti.</p>
+          <p><strong>15 različnih postavitev.</strong> Izberite papir in usmerjenost ter si oglejte predogled. PDF je pripravljen za tisk, slika pa za shranjevanje v polni ločljivosti.</p>
           <p><strong>Namig za tisk:</strong> v tiskalniku izberite merilo 100 %. Datumi in število prostih dni veljajo za izbrano leto.</p>
           <a href="#prazniki-seznam">Nazaj na seznam praznikov ↑</a>
         </div>

@@ -2,11 +2,11 @@
 <section class="calendar-gallery" id="calendar-designs" aria-labelledby="calendar-gallery-title" data-calendar-gallery data-gallery-type="<%= month ? 'monthly' : 'annual' %>" data-gallery-year="<%= year %>" data-gallery-month="<%= month %>">
   <header class="calendar-gallery-heading">
     <div><span class="eyebrow">ZBIRKA ZA TISKANJE</span><h2 id="calendar-gallery-title"><%= period.capitalize %>: 15 predlog</h2></div>
-    <span class="calendar-gallery-quality"><%= ui_icon('print') %><span><%= rows.first['collection'] == 'calendar-2027-2030' ? 'A3 · 600 dpi' : 'A4 · Pokončno' %><small><%= rows.first['collection'] == 'calendar-2027-2030' ? 'PDF CMYK · WebP sRGB' : 'Podpis Koledar365 na vsaki strani' %></small></span></span>
+    <span class="calendar-gallery-quality"><%= ui_icon('print') %><span><%= rows.first['collection'] == 'calendar-2027-2030' ? 'A3 · 600 dpi' : 'A4 · Pokončno' %><small><%= rows.first['collection'] == 'calendar-2027-2030' ? 'PDF CMYK · Slika sRGB' : 'Podpis Koledar365 na vsaki strani' %></small></span></span>
   </header>
   <div class="calendar-gallery-toolbar" data-gallery-filters>
     <% if rows.first['collection'] == 'calendar-2027-2030' %>
-      <span>15 barvnih oblikovanj · PDF in WebP</span>
+      <span>15 barvnih oblikovanj · PDF in slike</span>
     <% else %>
       <div class="calendar-gallery-filters" role="group" aria-label="Barve predlog">
         <button type="button" data-gallery-filter="all" aria-pressed="true">Vse predloge</button>
@@ -31,9 +31,9 @@
           <a class="button calendar-design-preview" href="<%= files.fetch('pdf') %>" target="_blank" rel="noopener">Odpri predogled <span aria-hidden="true">↗</span></a>
           <div class="calendar-design-downloads">
             <a class="button calendar-download-action calendar-download-action--pdf" href="<%= files.fetch('pdf') %>" download="<%= File.basename(files.fetch('pdf')) %>" data-calendar-download="pdf" aria-label="PDF Prenesi – <%= design['name_sl'] %> – <%= period %>"><%= calendar_file_icon('pdf') %><span class="calendar-download-action__copy"><strong>PDF</strong> <small>Prenesi</small></span></a>
-            <a class="button calendar-download-action calendar-download-action--webp" href="<%= files.fetch('webp') %>" download="<%= File.basename(files.fetch('webp')) %>" data-calendar-download="webp" aria-label="<%= zipped ? 'WebP ZIP' : 'WebP' %> Prenesi – <%= design['name_sl'] %> – <%= period %>"><%= calendar_file_icon('webp') %><span class="calendar-download-action__copy"><strong><%= zipped ? 'WebP ZIP' : 'WebP' %></strong> <small>Prenesi</small></span></a>
+            <a class="button calendar-download-action calendar-download-action--webp" href="<%= files.fetch('webp') %>" download="<%= File.basename(files.fetch('webp')) %>" data-calendar-download="webp" aria-label="<%= zipped ? 'Slika ZIP' : 'Slika' %> Prenesi – <%= design['name_sl'] %> – <%= period %>"><%= calendar_file_icon('webp') %><span class="calendar-download-action__copy"><strong><%= zipped ? 'Slika ZIP' : 'Slika' %></strong> <small>Prenesi</small></span></a>
           </div>
-          <small class="calendar-design-note"><%= zipped ? "Vseh #{pages} strani WebP v eni datoteki ZIP." : row['collection'] == 'calendar-2027-2030' ? 'PDF za tisk in WebP celotne strani.' : 'PDF in WebP z enako postavitvijo.' %></small>
+          <small class="calendar-design-note"><%= zipped ? "Vseh #{pages} slikovnih strani v eni datoteki ZIP." : row['collection'] == 'calendar-2027-2030' ? 'PDF za tisk in Slika celotne strani.' : 'PDF in slike z enako postavitvijo.' %></small>
         </div>
       </article>
     <% end %>
