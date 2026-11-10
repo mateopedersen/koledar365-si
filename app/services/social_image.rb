@@ -7,7 +7,7 @@ class SocialImage
     person=record.is_a?(PersonName);title=person ? "Koledar z imenom\n#{record.exact}" : record.title
     year=person ? nil : record.year;month=person ? nil : record.month
     label=year ? year.to_s : '2027–2030'
-    subtitle=person ? '15 predlog PDF in WebP · 4 leta' : 'Slovenski koledar in osebno načrtovanje'
+    subtitle=person ? '15 predlog PDF in slike · 4 leta' : 'Slovenski koledar in osebno načrtovanje'
     pdf=Prawn::Document.new(page_size:[1200,630],margin:0)
     pdf.font_families.update('Sans'=>{normal:Rails.root.join('app/assets/fonts/DejaVuSans.ttf').to_s,bold:Rails.root.join('app/assets/fonts/DejaVuSans-Bold.ttf').to_s});pdf.font('Sans')
     pdf.fill_color('F5F5F2');pdf.fill_rectangle([0,630],1200,630)

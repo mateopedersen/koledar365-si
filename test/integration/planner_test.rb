@@ -42,7 +42,7 @@ class PlannerIntegrationTest < ActionDispatch::IntegrationTest
     assert_select '[data-student-backup]'
     assert_select '.student-print-bridge[hidden]'
     assert_select '.design-section .design-card',count:15
-    assert_select '.student-gallery-copy',text:/PDF.*WebP.*600 ppi/
+    assert_select '.student-gallery-copy',text:/PDF.*slik.*600 ppi/
     assert_select 'a[href="https://www.gov.si/teme/solski-koledar-za-osnovne-sole/"]'
     assert_select 'link[rel=stylesheet][href*="student_timetable"]'
     assert_select 'script[src*="student_timetable_core"]'

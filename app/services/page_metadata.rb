@@ -47,6 +47,6 @@ class PageMetadata
   end
 
   def self.name_description(person)
-    "Koledar z imenom #{person.exact} za leta 2027–2030: 15 predlog PDF in WebP, izbira barv in podatki o pogostosti imena iz zbirke SURS."
+    "Koledar z imenom #{person.exact} za leta 2027–2030: 15 predlog PDF in slike, izbira barv in podatki o pogostosti imena iz zbirke SURS."
   end
 end
