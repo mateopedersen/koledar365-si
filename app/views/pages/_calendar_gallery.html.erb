@@ -33,7 +33,7 @@
             <a class="button calendar-download-action calendar-download-action--pdf" href="<%= files.fetch('pdf') %>" download="<%= File.basename(files.fetch('pdf')) %>" data-calendar-download="pdf" aria-label="PDF Prenesi – <%= design['name_sl'] %> – <%= period %>"><%= calendar_file_icon('pdf') %><span class="calendar-download-action__copy"><strong>PDF</strong> <small>Prenesi</small></span></a>
             <a class="button calendar-download-action calendar-download-action--webp" href="<%= files.fetch('webp') %>" download="<%= File.basename(files.fetch('webp')) %>" data-calendar-download="webp" aria-label="<%= zipped ? 'Slika ZIP' : 'Slika' %> Prenesi – <%= design['name_sl'] %> – <%= period %>"><%= calendar_file_icon('webp') %><span class="calendar-download-action__copy"><strong><%= zipped ? 'Slika ZIP' : 'Slika' %></strong> <small>Prenesi</small></span></a>
           </div>
-          <small class="calendar-design-note"><%= zipped ? "Vseh #{pages} slikovnih strani v eni datoteki ZIP." : row['collection'] == 'calendar-2027-2030' ? 'PDF za tisk in Slika celotne strani.' : 'PDF in slike z enako postavitvijo.' %></small>
+          <small class="calendar-design-note"><%= zipped ? "Vseh #{pages} slikovnih strani v eni datoteki ZIP." : row['collection'] == 'calendar-2027-2030' ? 'PDF za tisk in slika celotne strani.' : 'PDF in slike z enako postavitvijo.' %></small>
         </div>
       </article>
     <% end %>
