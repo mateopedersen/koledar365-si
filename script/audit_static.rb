@@ -68,7 +68,7 @@ Dir[site.join('**/*.html')].sort.each do |file|
    fail_with.call('Gallery must share a workspace with its calendar or settings') unless doc.at_css('body.gallery-page .download-workspace > .gallery-context #gallery-context-content') && gallery.ancestors.any? { |parent|parent['class'].to_s.split.include?('download-workspace') }
    if relative=='solski-urnik/index.html'
     gallery_description=doc.at_css('#design-gallery .student-gallery-copy')&.text.to_s
-    fail_with.call('Student planner must expose its labelled workspace and one practical PDF/WebP gallery paragraph') unless doc.at_css('#student-schedule[aria-labelledby="student-workspace-title"]') && doc.at_css('#design-gallery[aria-labelledby="design-gallery-title"]') && doc.css('#design-gallery .student-gallery-copy').size==1 && %w[PDF WebP 600\ ppi].all? { |term|gallery_description.include?(term) }
+    fail_with.call('Student planner must expose its labelled workspace and one practical PDF/WebP gallery paragraph') unless doc.at_css('#student-schedule[aria-labelledby="student-workspace-title"]') && doc.at_css('#design-gallery[aria-labelledby="design-gallery-title"]') && doc.css('#design-gallery .student-gallery-copy').size==1 && %w[PDF 600\ ppi].all? { |term|gallery_description.include?(term) } && gallery_description.match?(/slik/i)
    else
     description=doc.at_css('.page-heading > p')&.text.to_s
     fail_with.call('Expected one practical download paragraph and an accessible context control') unless doc.css('.page-heading > p').size==1 && (description.include?('600 ppi')||description.include?('600 dpi')) && doc.at_css('[data-context-expand][aria-expanded=false][aria-controls=gallery-context-content]')
