@@ -12,7 +12,8 @@ if(root){
  if(month){
   const error=root.querySelector('[data-lunar-error]'),input=root.querySelector('#lunar-date'),buttons=[...root.querySelectorAll('.lunar-day')];
   const text=(name,value)=>{root.querySelector(`[data-detail-${name}]`).textContent=value};
-  let data,current;
+  let data,current,loading;
+  let requestId=0;
   function select(date,{push=false,focus=false}={}){
    const d=data.days.find(d=>d.date===date);
    if(!d){error.textContent='Izberite veljaven datum prikazanega meseca.';return false}
@@ -30,15 +31,68 @@ if(root){
    if(location.hash){const m=/^#dan-(\d{4}-\d{2}-\d{2})$/.exec(location.hash);if(m){select(m[1]);return}if(location.hash.startsWith('#dan-'))error.textContent='Povezava vsebuje neveljaven datum. Izberite datum v koledarju.';return}
    const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Ljubljana',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());select(data.days.some(d=>d.date===today)?today:data.days[0].date);
   }
-  fetch(`/lunar/data/${year}-${String(month).padStart(2,'0')}.json`).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{
-   data=d;select(d.days[0].date);fromUrl();
-   buttons.forEach((b,i)=>{b.addEventListener('click',()=>select(b.dataset.date,{push:true}));b.addEventListener('keydown',e=>{
-    const target={ArrowLeft:i-1,ArrowRight:i+1,ArrowUp:i-7,ArrowDown:i+7,Home:0,End:buttons.length-1}[e.key];if(target===undefined)return;e.preventDefault();const n=Math.max(0,Math.min(buttons.length-1,target));select(buttons[n].dataset.date,{push:true,focus:true});
-   })});
-   input.addEventListener('change',()=>{const v=input.value;if(!/^20(?:27|28|29|30)-\d{2}-\d{2}$/.test(v)||!input.checkValidity()){error.textContent='Izberite veljaven datum med 1. januarjem 2027 in 31. decembrom 2030.';return}const [y,m]=v.split('-').map(Number);if(y!==year||m!==month)location.href=`/lunin-koledar/${y}/${months[m-1]}/#dan-${v}`;else select(v,{push:true})});
-   addEventListener('popstate',fromUrl);addEventListener('hashchange',fromUrl);
-   const dialog=root.querySelector('dialog'),enlarge=root.querySelector('.lunar-enlarge');enlarge.addEventListener('click',()=>{moon(dialog.querySelector('svg'),current.date,`Luna ${label(current.date)}, ${percent(current)}.`,true);dialog.querySelector('[data-dialog-caption]').textContent=`${label(current.date)} · ${percent(current)} · ob 12.00 v Sloveniji`;dialog.showModal()});dialog.querySelector('[data-close]').addEventListener('click',()=>dialog.close());
-   dialog.addEventListener('close',()=>enlarge.focus({preventScroll:true}));
-  }).catch(()=>{error.textContent='Dnevnih podrobnosti ni bilo mogoče naložiti. Koledar in preglednica men ostajata na voljo.'});
+  function loadMonth() {
+   if (!loading) {
+    loading = fetch(`/lunar/data/${year}-${String(month).padStart(2, '0')}.json`)
+     .then(response => {
+      if (!response.ok) throw Error(response.status);
+      return response.json();
+     })
+     .then(payload => { data = payload; return true; })
+     .catch(() => {
+      loading = null;
+      error.textContent = 'Dnevnih podrobnosti ni bilo mogoče naložiti. Poskusite znova z izbiro datuma.';
+      return false;
+     });
+   }
+   return loading;
+  }
+  async function applyLatest(update) {
+   const id = ++requestId;
+   if ((data || await loadMonth()) && id === requestId) update();
+  }
+  const selectDay = (date, options) => applyLatest(() => select(date, options));
+  const selectFromUrl = () => applyLatest(() => {
+   if (!current) select(data.days[0].date);
+   fromUrl();
+  });
+  buttons.forEach((button, index) => {
+   button.addEventListener('click', () => selectDay(button.dataset.date, {push:true}));
+   button.addEventListener('keydown', event => {
+    const target = {ArrowLeft:index-1, ArrowRight:index+1, ArrowUp:index-7, ArrowDown:index+7, Home:0, End:buttons.length-1}[event.key];
+    if (target === undefined) return;
+    event.preventDefault();
+    const next = buttons[Math.max(0, Math.min(buttons.length - 1, target))];
+    selectDay(next.dataset.date, {push:true, focus:true});
+   });
+  });
+  input.addEventListener('change', () => {
+   const date = input.value;
+   if (!/^20(?:27|28|29|30)-\d{2}-\d{2}$/.test(date) || !input.checkValidity()) {
+    error.textContent = 'Izberite veljaven datum med 1. januarjem 2027 in 31. decembrom 2030.';
+    return;
+   }
+   const [selectedYear, selectedMonth] = date.split('-').map(Number);
+   if (selectedYear !== year || selectedMonth !== month) {
+    location.href = `/lunin-koledar/${selectedYear}/${months[selectedMonth-1]}/#dan-${date}`;
+   } else {
+    selectDay(date, {push:true});
+   }
+  });
+  addEventListener('popstate', selectFromUrl);
+  addEventListener('hashchange', selectFromUrl);
+  const dialog = root.querySelector('dialog');
+  const enlarge = root.querySelector('.lunar-enlarge');
+  enlarge.addEventListener('click', async () => {
+   if (!data && !await loadMonth()) return;
+   if (!current) select(data.days[0].date);
+   if (!current || dialog.open) return;
+   moon(dialog.querySelector('svg'), current.date, `Luna ${label(current.date)}, ${percent(current)}.`, true);
+   dialog.querySelector('[data-dialog-caption]').textContent = `${label(current.date)} · ${percent(current)} · ob 12.00 v Sloveniji`;
+   dialog.showModal();
+  });
+  dialog.querySelector('[data-close]').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('close', () => enlarge.focus({preventScroll:true}));
+  selectFromUrl();
  }
 }
