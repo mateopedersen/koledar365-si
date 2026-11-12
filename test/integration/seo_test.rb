@@ -108,7 +108,9 @@ class SeoTest < ActionDispatch::IntegrationTest
 
     get '/soncni-vzhod-in-zahod/ajdovscina/',params:{date:'2027-07-15'}
     assert_response :success
-    assert_select 'title',/Sončni vzhod in zahod – Ajdovščina/
+    assert_select 'title',text:'Ajdovščina: sončni vzhod in zahod | Koledar365'
+    assert_select 'meta[property="og:title"][content="Ajdovščina: sončni vzhod in zahod | Koledar365"]'
+    assert_select 'meta[name="twitter:title"][content="Ajdovščina: sončni vzhod in zahod | Koledar365"]'
     assert_select 'link[rel=canonical][href="https://koledar365.si/soncni-vzhod-in-zahod/ajdovscina/"]'
     assert_select '[data-sun-city] option[selected][value="ajdovscina"]'
     assert_select '[data-sun-value="sunrise"]'
