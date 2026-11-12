@@ -1,10 +1,25 @@
 module SeoHelper
   def site_origin = ENV.fetch("SITE_URL", "https://koledar365.si").delete_suffix("/")
 
-  def seo_title
-    return "Prestopno leto: kalkulator in pravilo 29. februarja · Koledar365" if page_path == "/prestopno-leto/"
-    title = @title.presence || "Slovenski koledar"
-    title.include?("Koledar365") ? title : "#{title} · Koledar365"
+  def seo_title = "#{seo_page_title} | Koledar365"
+
+  def seo_page_title
+    return "Prestopno leto: kalkulator in pravilo 29. februarja" if page_path == "/prestopno-leto/"
+
+    title = (@title.presence || "Slovenski koledar").sub(/ +[·|] +Koledar365\z/, "")
+    subject, detail = title.split(" – ", 2)
+    return title unless detail
+
+    case subject
+    when "Koledar", "Lunin koledar", "Delovni dnevi in ure", "Pomembni dnevi"
+      "#{subject} za #{detail}"
+    when "Sončni vzhod in zahod"
+      "#{detail}: sončni vzhod in zahod"
+    when "Ustvari svoj koledar"
+      "Spletni urejevalnik za izdelavo koledarja"
+    else
+      detail == "dnevni horoskop" ? "#{subject}: dnevni horoskop" : title
+    end
   end
 
   def seo_photo
@@ -69,9 +84,9 @@ module SeoHelper
     return nil if @not_found || controller_name.in?(%w[admin exports]) || action_name == "search"
     graph = [
       { "@type" => "WebSite", "@id" => "#{site_origin}/#website", "url" => "#{site_origin}/",
-        "name" => "Koledar365", "inLanguage" => "sl-SI" },
+        "name" => "Koledar365", "alternateName" => "koledar365.si", "inLanguage" => "sl-SI" },
       { "@type" => "WebPage", "@id" => "#{canonical_url}#webpage", "url" => canonical_url,
-        "name" => @title, "description" => @description,
+        "name" => seo_page_title, "description" => @description,
         "inLanguage" => "sl-SI", "isPartOf" => { "@id" => "#{site_origin}/#website" } }
     ]
     organization={"@type"=>"Organization","@id"=>"#{site_origin}/#organization","name"=>"Koledar365","url"=>"#{site_origin}/","email"=>"koledar365@gmail.com"}

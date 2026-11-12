@@ -29,7 +29,7 @@ class ClockChangeTest < ActionDispatch::IntegrationTest
       get '/premik-ure/'
       assert_response :success
       assert_select 'h1',text:'Premik ure v Sloveniji',count:1
-      assert_select 'title',text:"#{ClockChangeSchedule::TITLE} · Koledar365"
+      assert_select 'title',text:"#{ClockChangeSchedule::TITLE} | Koledar365"
       assert_select 'meta[name="description"][content=?]',ClockChangeSchedule::DESCRIPTION
       assert_select 'meta[property="og:description"][content=?]',ClockChangeSchedule::DESCRIPTION
       assert_select '[data-next-date][datetime="2026-10-25"]'

@@ -35,6 +35,11 @@ for loc in index.findall('s:sitemap/s:loc',NS):
   url=node.findtext('s:loc',namespaces=NS);urls.append(url);lastmods[url]=node.findtext('s:lastmod',default='',namespaces=NS)
 assert len(urls)==len(set(urls)),'Repeated sitemap URL'
 robots=RobotFileParser();robots.parse(get('robots.txt').splitlines());assert ORIGIN+'/sitemap.xml' in robots.site_maps()
+favicon_url=ORIGIN+'/icon.png'
+assert all(robots.can_fetch(agent, favicon_url) for agent in ('Googlebot','Googlebot-Image','bingbot')), 'Favicon blocked by robots.txt'
+favicon=(site/'icon.png').read_bytes()
+assert favicon[:8]==bytes.fromhex('89504e470d0a1a0a') and favicon[12:16]==b'IHDR', 'Favicon is not a PNG'
+assert int.from_bytes(favicon[16:20],'big')==int.from_bytes(favicon[20:24],'big')==512, 'Favicon is not square 512px'
 if image_xml is not None:
  assert not image_sitemap_issues(image_xml,urls,site,robots),'Invalid image discovery sitemap'
  assert all(lastmods[url]==value for url,value in image_lastmods.items()),'Conflicting page revision dates in image sitemap'

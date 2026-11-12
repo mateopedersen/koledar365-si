@@ -26,6 +26,6 @@ with (folder/'search-intent.csv').open('w',newline='') as f:
  w=csv.writer(f);w.writerow(['url','primary_user_intent','primary_sl_topic','supporting_terms_from_visible_headings','distinct_period_or_subject','title','description','h1','heading_outline','related_canonical_destinations','schema_types','review_limit'])
  for p in r['pages']:
   if not p['indexable']:continue
-  title=p['title'].removesuffix(' · Koledar365')
+  title=p['title'].removesuffix(' | Koledar365').removesuffix(' · Koledar365')
   w.writerow([p['url'],intents.get(p['family'],'Uporaba prikazanega orodja ali razumevanje navedene vsebine'),title,' | '.join(h['text'] for h in p['headings'] if h['level'] in [2,3])[:2000],p['path'],p['title'],p['description'],' | '.join(p['h1']),' | '.join(f"H{h['level']}: {h['text']}" for h in p['headings'])[:4000],' | '.join(graph.get(p['path'],[])),' | '.join(str(n['type']) for n in p['schemas']),'Actual inventory mapping; no measured search volume or native-speaker certification'])
 print('Wrote public URL intent inventory')

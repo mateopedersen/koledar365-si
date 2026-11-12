@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'digest'
 session=ActionDispatch::Integration::Session.new(Rails.application);session.host!('localhost');session.get('/o-nas/')
 doc=Nokogiri::HTML(session.response.body)
-doc.at_css('title').content='Urejanje vsebine · Koledar365'
+doc.at_css('title').content='Urejanje vsebine | Koledar365'
 doc.at_css('meta[name=description]')['content']='Uredniški dostop do javnih besedil, podatkov, zgodovine sprememb in preverjanja objav Koledar365.'
 doc.at_css('meta[name=robots]')['content']='noindex, nofollow'
 doc.css('script[src],script[type="application/ld+json"],meta[property^="og:"],meta[name^="twitter:"],link[rel=canonical],meta[name^="csrf-"],meta[name="csp-nonce"]').remove

@@ -52,12 +52,19 @@ Dir[site.join('**/*.html')].sort.each do |filename|
   flag.call('duplicate_ids', duplicate_ids) unless duplicate_ids.empty?
   doc.css('script[type="application/ld+json"]').each do |node|
     begin
-      JSON.parse(node.text)
+      data = JSON.parse(node.text)
+      if path == '/'
+        website = Array(data['@graph']).find { |entry| entry['@type'] == 'WebSite' }
+        flag.call('website_identity') unless website && website.values_at('name', 'alternateName', 'url') == ['Koledar365', 'koledar365.si', origin + '/']
+      end
     rescue JSON::ParserError => error
       flag.call('invalid_structured_data', error.message)
     end
   end
   if row[:indexable]
+    flag.call('unbranded_or_repeated_title', row[:title]) unless row[:title].match?(/\A[^|]+ \| Koledar365\z/)
+    twitter_title = doc.at_css('meta[name="twitter:title"]')&.[]('content')
+    flag.call('social_metadata_mismatch', 'twitter:title') unless clean.call(twitter_title) == row[:title]
     { 'og:title' => row[:title], 'og:description' => row[:description], 'og:url' => origin + path }.each do |property, expected|
       actual = doc.at_css("meta[property='#{property}']")&.[]('content')
       flag.call('social_metadata_mismatch', property) unless clean.call(actual) == expected

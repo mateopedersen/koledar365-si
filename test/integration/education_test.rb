@@ -8,7 +8,7 @@ class EducationTest < ActionDispatch::IntegrationTest
         get path
         assert_response :success
         assert_select 'h1', text: config[:heading], count: 1
-        assert_select 'title', text: "#{config[:title]} · Koledar365"
+        assert_select 'title', text: "#{config[:title]} | Koledar365"
         assert_select 'meta[name="description"][content=?]', config[:description]
         assert_select 'link[rel="canonical"][href=?]', "https://koledar365.si#{path}"
         assert_select 'link[rel="stylesheet"][href="/education/experience.css"]', count: 1
