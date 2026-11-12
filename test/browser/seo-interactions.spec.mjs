@@ -77,3 +77,29 @@ test('copying a calculation or its link preserves the result even when clipboard
   await expect(resultButton).toHaveText('Kopiranje ni uspelo');
   await expect(primary).toHaveText('2 dneva');
 });
+
+test('the lunar calendar remembers a selection made while the month is loading', async ({page}) => {
+  let releaseMonth;
+  const waiting = new Promise(resolve => { releaseMonth = resolve; });
+  await page.route('**/lunar/data/2028-01.json', async route => {
+    await waiting;
+    await route.continue();
+  });
+  await page.goto('/lunin-koledar/2028/januar/');
+  const consent = page.locator('[data-consent=necessary]');
+  if (await consent.isVisible()) await consent.click();
+  const day = date => page.locator('.lunar-day[data-date="' + date + '"]');
+  try {
+    await day('2028-01-02').click();
+    await day('2028-01-24').click();
+  } finally {
+    releaseMonth();
+  }
+  await expect(page.locator('[data-detail-date]')).toHaveText('24. januarja 2028');
+  await expect(day('2028-01-24')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page).toHaveURL(/#dan-2028-01-24$/);
+  await day('2028-01-24').press('ArrowRight');
+  await expect(page.locator('#lunar-date')).toHaveValue('2028-01-25');
+  await page.goBack();
+  await expect(page.locator('#lunar-date')).toHaveValue('2028-01-24');
+});
