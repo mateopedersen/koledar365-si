@@ -46,3 +46,34 @@ for(const path of ['/','/solske-pocitnice/','/horoskop/']){
     expect(result.violations).toEqual([]);
   });
 }
+
+test('copying a calculation or its link preserves the result even when clipboard access is denied', async ({page}) => {
+  await page.addInitScript(() => {
+    window.writtenValues = [];
+    Object.defineProperty(navigator, 'clipboard', { configurable: true, value: {
+      async writeText(text) {
+        await new Promise(resolve => setTimeout(resolve, 20));
+        if (window.denyClipboard) throw new Error('Clipboard access denied');
+        window.writtenValues.push(text);
+      }
+    } });
+  });
+  await page.goto('/datumski-kalkulator/?calc=difference&from=2028-02-28&to=2028-03-01');
+  const consent = page.locator('[data-consent=necessary]');
+  if (await consent.isVisible()) await consent.click();
+  const primary = page.locator('[data-result-primary]');
+  await expect(primary).toHaveText('2 dneva');
+  const resultButton = page.locator('[data-copy-result]');
+  await resultButton.click();
+  await expect(resultButton).toHaveText('Kopirano ✓');
+  const linkButton = page.locator('[data-copy-link]');
+  await linkButton.click();
+  await expect(linkButton).toHaveText('Povezava kopirana ✓');
+  const [text, link] = await page.evaluate(() => window.writtenValues);
+  expect(text).toContain('2 dneva');
+  expect(new URL(link).searchParams.get('to')).toBe('2028-03-01');
+  await page.evaluate(() => { window.denyClipboard = true; });
+  await resultButton.click();
+  await expect(resultButton).toHaveText('Kopiranje ni uspelo');
+  await expect(primary).toHaveText('2 dneva');
+});

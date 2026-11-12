@@ -135,8 +135,54 @@ function initDateCalculator(root){
  root.querySelector('[data-work-swap]').addEventListener('click',()=>{const a=form.querySelector('[data-work-from]'),b=form.querySelector('[data-work-to]'),value=a.value;a.value=b.value;b.value=value;run()});
  root.querySelectorAll('[data-date-preset]').forEach(button=>button.addEventListener('click',()=>{const from=dateInput(form.querySelector('[data-date-from]').value);if(!from)return;form.querySelector('[data-date-to]').value=dateISO(new Date(from.getTime()+Number(button.dataset.datePreset)*86400000));run()}));
  form.addEventListener('submit',event=>{event.preventDefault();run()});
- root.querySelector('[data-copy-result]').addEventListener('click',async event=>{const textToCopy=[summary.textContent,primary.textContent,caption.textContent,...Object.keys(stats).map(key=>labels[key].textContent+': '+stats[key].textContent),note.hidden?'':note.textContent].filter(Boolean).join('\n');try{await navigator.clipboard.writeText(textToCopy);event.currentTarget.textContent='Kopirano ✓';setTimeout(()=>event.currentTarget.textContent='Kopiraj rezultat',1800)}catch{showError('Kopiranje ni bilo mogoče. Označite rezultat in ga kopirajte ročno.')}});
- root.querySelector('[data-copy-link]').addEventListener('click',async event=>{const url=new URL(location.href);url.search='';url.searchParams.set('calc',form.dataset.mode);const mode=form.dataset.mode;if(mode==='difference'){url.searchParams.set('from',form.querySelector('[data-date-from]').value);url.searchParams.set('to',form.querySelector('[data-date-to]').value);if(form.querySelector('[data-date-inclusive]').checked)url.searchParams.set('inclusive','1')}else if(mode==='add'){url.searchParams.set('from',form.querySelector('[data-shift-from]').value);url.searchParams.set('delta',form.querySelector('[data-date-delta]').value);url.searchParams.set('unit',form.querySelector('[data-date-unit]').value)}else{url.searchParams.set('from',form.querySelector('[data-work-from]').value);url.searchParams.set('to',form.querySelector('[data-work-to]').value);url.searchParams.set('weekdays',[...form.querySelectorAll('[data-date-pane="workdays"] input[name="weekdays[]"]:checked')].map(input=>input.value).join(','));url.searchParams.set('hours',form.querySelector('[data-work-hours]').value);if(form.querySelector('[data-date-pane="workdays"] input[name="exclude_holidays"]').checked)url.searchParams.set('holidays','1');if(!form.querySelector('[data-date-pane="workdays"] input[name="include_start"]').checked)url.searchParams.set('start','0');if(!form.querySelector('[data-date-pane="workdays"] input[name="include_end"]').checked)url.searchParams.set('end','0')}try{await navigator.clipboard.writeText(url.toString());event.currentTarget.textContent='Povezava kopirana ✓';setTimeout(()=>event.currentTarget.textContent='Kopiraj povezavo',1800)}catch{showError('Povezave ni bilo mogoče kopirati. Poskusite znova.')}});
+ function addCopyAction(selector, getText, confirmation) {
+   const button = root.querySelector(selector);
+   const initialText = button.textContent;
+   let resetTimer;
+   button.addEventListener('click', async () => {
+     clearTimeout(resetTimer);
+     try {
+       await navigator.clipboard.writeText(getText());
+       button.textContent = confirmation;
+     } catch {
+       button.textContent = 'Kopiranje ni uspelo';
+     }
+     resetTimer = setTimeout(() => { button.textContent = initialText; }, 2400);
+   });
+ }
+ addCopyAction('[data-copy-result]', () => [
+   summary.textContent, primary.textContent, caption.textContent,
+   ...Object.keys(stats).map(key => labels[key].textContent + ': ' + stats[key].textContent),
+   note.hidden ? '' : note.textContent
+ ].filter(Boolean).join('\n'), 'Kopirano ✓');
+ addCopyAction('[data-copy-link]', () => {
+   const url = new URL(location.href);
+   const mode = form.dataset.mode;
+   const read = selector => form.querySelector(selector);
+   url.search = '';
+   const params = url.searchParams;
+   params.set('calc', mode);
+   if (mode === 'difference') {
+     params.set('from', read('[data-date-from]').value);
+     params.set('to', read('[data-date-to]').value);
+     if (read('[data-date-inclusive]').checked) params.set('inclusive', '1');
+   } else if (mode === 'add') {
+     params.set('from', read('[data-shift-from]').value);
+     params.set('delta', read('[data-date-delta]').value);
+     params.set('unit', read('[data-date-unit]').value);
+   } else {
+     const pane = read('[data-date-pane="workdays"]');
+     const weekdays = Array.from(pane.querySelectorAll('input[name="weekdays[]"]:checked'), input => input.value);
+     params.set('from', read('[data-work-from]').value);
+     params.set('to', read('[data-work-to]').value);
+     params.set('weekdays', weekdays.join(','));
+     params.set('hours', read('[data-work-hours]').value);
+     if (pane.querySelector('[name="exclude_holidays"]').checked) params.set('holidays', '1');
+     if (!pane.querySelector('[name="include_start"]').checked) params.set('start', '0');
+     if (!pane.querySelector('[name="include_end"]').checked) params.set('end', '0');
+   }
+   return url.toString();
+ }, 'Povezava kopirana ✓');
  const params=new URLSearchParams(location.search),mode=params.get('calc');if(mode){setMode(mode);const from=params.get('from'),to=params.get('to');if(mode==='difference'){if(from)form.querySelector('[data-date-from]').value=from;if(to)form.querySelector('[data-date-to]').value=to;form.querySelector('[data-date-inclusive]').checked=params.get('inclusive')==='1'}else if(mode==='add'){if(from)form.querySelector('[data-shift-from]').value=from;if(params.has('delta'))form.querySelector('[data-date-delta]').value=params.get('delta');if(['days','weeks','months'].includes(params.get('unit')))form.querySelector('[data-date-unit]').value=params.get('unit')}else if(mode==='workdays'){if(from)form.querySelector('[data-work-from]').value=from;if(to)form.querySelector('[data-work-to]').value=to;if(params.has('weekdays')){const chosen=params.get('weekdays').split(',');form.querySelectorAll('[data-date-pane="workdays"] input[name="weekdays[]"]').forEach(input=>input.checked=chosen.includes(input.value))}if(params.has('hours'))form.querySelector('[data-work-hours]').value=params.get('hours');form.querySelector('[data-date-pane="workdays"] input[name="exclude_holidays"]').checked=params.get('holidays')==='1';form.querySelector('[data-date-pane="workdays"] input[name="include_start"]').checked=params.get('start')!=='0';form.querySelector('[data-date-pane="workdays"] input[name="include_end"]').checked=params.get('end')!=='0'}}
  setMode(mode||'difference');run();
 }
