@@ -22,7 +22,7 @@
 <% if page_path=='/kontakt/' %><link rel="stylesheet" href="/contact/contact-v1.css"><script type="module" src="/contact/contact-v1.mjs"></script><% end %>
 <% if page_path == '/druzinski-planer/' %><%= stylesheet_link_tag 'family_planner' %><%= javascript_include_tag 'family_planner_core', 'family_planner', defer:true %><% end %>
 <% if @section=='sun' -%><%= stylesheet_link_tag 'sun' %><%= javascript_include_tag 'sun',defer:true %><% end -%>
-<% if page_path.start_with?('/lunin-koledar/') -%><link rel="stylesheet" href="/lunar/calendar.css?v=20261021-2"><% end -%>
+<% if page_path.start_with?('/lunin-koledar/') -%><link rel="stylesheet" href="/lunar/calendar.css?v=20261112"><% end -%>
 <% if page_path == '/datumski-kalkulator/' %><%= stylesheet_link_tag 'date_calculator' %><% end %>
 <% if page_path == '/prestopno-leto/' %><%= stylesheet_link_tag 'leap_year' %><%= javascript_include_tag 'leap_year', defer: true %><% end %>
 <% if page_path == '/nacrtovalnik-dopusta/' %><%= stylesheet_link_tag 'vacation' %><%= javascript_include_tag 'vacation',defer:true %><% end %>
@@ -40,9 +40,9 @@
 <% if @section=='calendar' %><%= stylesheet_link_tag 'calendar_experience' %><script type="module" src="/calendar-tools/experience.mjs"></script><% end %>
 <% if %w[moon_phases astronomy_events].include?(@section) %><%= stylesheet_link_tag 'astronomy' %><%= javascript_include_tag 'astronomy',defer:true,data:{static_keep:true} %><% end %>
 <% if %w[education_calendar school_timetable].include?(@section) %><link rel="stylesheet" href="/education/experience.css"><script type="module" src="/education/<%= @section=='school_timetable' ? 'timetable-page':'experience' %>.mjs"></script><% end %>
-<% if @section=='garden_calendar' %><link rel="stylesheet" href="/garden/experience.css"><script type="module" src="/garden/experience.mjs"></script><% end %>
+<% if @section=='garden_calendar' %><link rel="stylesheet" href="/garden/experience.css?v=20261112"><script type="module" src="/garden/experience.mjs"></script><% end %>
 <% if @section=='payment_calendar' %><link rel="stylesheet" href="/payments/experience.css"><script type="module" src="/payments/experience.mjs"></script><% end %>
-<% if @section=='methodology' %><link rel="stylesheet" href="/garden/experience.css"><% end %>
+<% if @section=='methodology' %><link rel="stylesheet" href="/garden/experience.css?v=20261112"><% end %>
 <%= stylesheet_link_tag 'print' %>
 <%= stylesheet_link_tag 'readability' %>
 <%= stylesheet_link_tag 'navigation' %><%= javascript_include_tag 'navigation', defer: true %>

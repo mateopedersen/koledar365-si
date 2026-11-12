@@ -1,12 +1,19 @@
 module ApplicationHelper
   include IllustrationHelper
+
+  def legacy_lunar_gallery?
+    @section == 'lunar' && (!page_path.start_with?(LunarCalendar.path) ||
+      (page_path != LunarCalendar.path && !LunarCalendar::YEARS.cover?(@year.to_i)))
+  end
+
   def gallery_page?
     %w[planner school_timetable name holidays].include?(@section) ||
-      (@section == 'lunar' && !page_path.start_with?('/lunin-koledar/')) ||
+      legacy_lunar_gallery? ||
       (@section == 'workdays' && CalendarEngine::INTERACTIVE_YEARS.include?(@year)) ||
       (@section == 'calendar' && @page&.year && CalendarEngine::INTERACTIVE_YEARS.include?(@year))
   end
   def gallery_description
+    return 'Preverite datume luninih men in čas v Sloveniji. Med predlogami izberite koledar za tisk v obliki PDF ali sliko pri 600 ppi.' if legacy_lunar_gallery?
     return 'Načrtujte družinski teden, delite pregled z domačimi v tem brskalniku in prenesite koledar PDF ali sliko, pripravljen pri 600 ppi.' if page_path == '/druzinski-planer/'
     return 'Izberite med 15 izvirnimi slovenskimi oblikovanji za tisk. Vsak koledar je na voljo kot vektorski PDF A3 CMYK FOGRA39 in slika celotne strani v sRGB pri 600 dpi.' if @section == 'calendar' && @page&.path&.start_with?('/koledar/') && @year.to_i.between?(2027, 2030)
     'V galeriji izberite eno od 15 predlog: PDF za tisk in ujemajočo se sliko pri 600 ppi, s podpisom Koledar365 na vsaki strani. Večstranski slikovni izvoz je v datoteki ZIP; PDF tiskajte v merilu 100 %.'

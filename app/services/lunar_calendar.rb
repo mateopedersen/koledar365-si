@@ -3,6 +3,7 @@ require 'date'
 require 'digest'
 class LunarCalendar
   ROOT = File.expand_path('../..', __dir__)
+  YEARS = (2027..2030).freeze
   MONTHS = %w[januar februar marec april maj junij julij avgust september oktober november december].freeze
   GENITIVE = %w[januarja februarja marca aprila maja junija julija avgusta septembra oktobra novembra decembra].freeze
   WEEKDAYS = %w[ponedeljek torek sreda četrtek petek sobota nedelja].freeze

@@ -1,16 +1,16 @@
-<% if !page_path.start_with?('/lunin-koledar/') || (page_path!=LunarCalendar.path && ![2027,2028,2029,2030].include?(@year)) %><%= render 'lunar_legacy' %><% else %>
+<% if legacy_lunar_gallery? %><%= render 'lunar_legacy' %><% else %>
 <% hub=page_path==LunarCalendar.path; month=@page.month; year=@year; rows=LunarCalendar.period(year,month); events=LunarCalendar.phases(year,month) %>
 <section class="lunar-experience <%= 'lunar-hub' if hub %>" data-lunar data-year="<%= year %>" data-month="<%= month %>">
-<% unless hub %><nav class="lunar-years" aria-label="Leta"><% (2027..2030).each do |y| %><a href="<%= LunarCalendar.path(y) %>" <%= 'aria-current=page' if year==y&&!month %>><%= y %></a><% end %><a href="/viri-in-metodologija/">Viri in metodologija</a></nav><% end %>
+<% unless hub %><nav class="lunar-years" aria-label="Leta"><% LunarCalendar::YEARS.each do |y| %><a href="<%= LunarCalendar.path(y) %>" <%= 'aria-current=page' if year==y&&!month %>><%= y %></a><% end %><a href="/viri-in-metodologija/">Viri in metodologija</a></nav><% end %>
 <% if hub %>
 <section class="lunar-hub-years" aria-labelledby="lunar-hub-years-title">
   <div class="lunar-hub-section-head"><div><span class="lunar-hub-overline">PREGLED PO LETIH</span><h2 id="lunar-hub-years-title">Izberite svoje leto</h2></div><p>Odprite letni pregled ali skočite naravnost na izbrani mesec.</p></div>
   <% photos_by_year={2027=>['artemis-curve.jpg','Artemis II','Prava fotografija Lune med preletom Artemis II'],2028=>['artemis-earthset.jpg','Artemis II','Zemlja zahaja za fotografiranim luninim površjem med preletom Artemis II'],2029=>['apollo-17-moon.jpg','Apollo 17','Fotografirani celotni Lunin disk med misijo Apollo 17'],2030=>['apollo-8-lunar-surface.jpg','Apollo 8','Fotografirano lunino površje med misijo Apollo 8']} %>
-  <div class="lunar-year-links"><% (2027..2030).each do |y| %><% days=LunarCalendar.period(y).size; year_events=LunarCalendar.phases(y); photo=photos_by_year.fetch(y) %>
+  <div class="lunar-year-links"><% LunarCalendar::YEARS.each do |y| %><% days=LunarCalendar.period(y).size; year_events=LunarCalendar.phases(y); photo=photos_by_year.fetch(y) %>
     <article class="lunar-year-card lunar-year-card--<%= y %>">
       <div class="lunar-year-art lunar-year-art--<%= y %>">
         <%= render 'responsive_photo', path: "/lunar/photos/#{photo[0]}", alt: photo[2], image_class: 'lunar-year-art__photo', sizes: '(max-width:650px) calc(100vw - 26px), (max-width:1800px) 50vw, 875px', loading: 'lazy' %>
-        <span class="lunar-year-art__label">Letni Lunin Pregled</span><span class="lunar-year-art__number"><%= y %></span><span class="lunar-year-art__credit">NASA · <%= photo[1] %></span>
+        <span class="lunar-year-art__label">Letni pregled luninih men</span><span class="lunar-year-art__number"><%= y %></span><span class="lunar-year-art__credit">NASA · <%= photo[1] %></span>
       </div>
       <div class="lunar-year-card__body">
         <div class="lunar-year-summary"><span><%= days %> dni</span><span><%= year_events.size %> glavnih luninih men</span></div>

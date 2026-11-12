@@ -34,13 +34,15 @@
 .lunar-year-art:after{position:absolute;inset:auto 0 0;height:3px;background:linear-gradient(90deg,#fff 0 33.333%,#005da4 33.333% 66.666%,#ed1c24 66.666%);content:""}
 .lunar-year-art__label{position:absolute;top:21px;left:24px;color:#d9e7f4;font-size:10px;font-weight:700;letter-spacing:.13em}
 .lunar-year-art__number{position:relative;z-index:1;color:#fff;font-size:clamp(40px,5vw,58px);font-weight:740;letter-spacing:-.065em;line-height:.95;text-shadow:0 4px 18px #09192a4d}
-.lunar-year-card__body{padding:19px 23px 22px}
+.lunar-year-card__body{container:lunar-year / inline-size;padding:19px 23px 22px}
 .lunar-year-summary{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 13px;color:#526176;font-size:12px}
 .lunar-year-summary span{display:flex;align-items:center;gap:7px}.lunar-year-summary span:before{width:6px;height:6px;border-radius:50%;background:#005da4;content:""}.lunar-year-summary span+span:before{background:#ed1c24}
 .lunar-year-open{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 17px;padding:12px 15px;border:1px solid #d4e1ef;border-radius:12px;background:#f4f8fc;color:#084f89!important;font-size:14px;font-weight:700;text-decoration:none;transition:background .16s ease,border-color .16s ease}
 .lunar-year-open:hover{border-color:#a8c4df;background:#e9f2fa}.lunar-year-open span{color:#ed1c24;font-size:18px}
 .lunar-year-card__body h3{margin:0 0 9px;color:#263750;font-size:12px;font-weight:750;letter-spacing:.07em;text-transform:uppercase}
 .lunar-hub .lunar-month-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:0}
+@container lunar-year (max-width:23rem){.lunar-hub .lunar-month-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@container lunar-year (max-width:15rem){.lunar-hub .lunar-month-links{grid-template-columns:1fr}}
 .lunar-hub .lunar-month-links a{display:flex;align-items:center;gap:7px;min-width:0;min-height:40px;padding:7px 8px;border:1px solid #e3eaf2;border-radius:10px;background:#fff;color:#30445e;font-size:12px;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .15s ease,border-color .15s ease,color .15s ease}
 .lunar-hub .lunar-month-links a span{color:#98a8ba;font-size:9px;font-variant-numeric:tabular-nums}
 .lunar-hub .lunar-month-links a:hover{border-color:#9ab9d6;background:#f1f7fc;color:#005da4}
