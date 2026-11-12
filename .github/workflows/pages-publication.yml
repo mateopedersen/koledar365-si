@@ -45,6 +45,7 @@ on:
       - 'functions/horoskop/**'
       - 'cloudflare/free/**'
       - 'script/**'
+      - 'test/test_publication_race.py'
       - 'config/initializers/**'
       - 'config/public_page_redirects.json'
       - 'public/robots.txt'
@@ -123,6 +124,7 @@ jobs:
           retention-days: 7
       - name: Save complete verified publication
         run: |
+          python3 test/test_publication_race.py
           bash script/save_pages_publication.sh
       # GITHUB_TOKEN pushes do not trigger another push workflow. Keep the
       # live gate in this job so a bot publication cannot miss verification.
