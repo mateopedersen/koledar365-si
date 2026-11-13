@@ -5,7 +5,7 @@ const $=id=>card.querySelector('#'+id),select=$('city-select'),fetchWeather=wind
 const zone='Europe/Ljubljana',timeFormat=new Intl.DateTimeFormat('sl-SI',{timeZone:zone,hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}),dayFormat=new Intl.DateTimeFormat('sl-SI',{timeZone:zone,weekday:'long',day:'numeric',month:'long',year:'numeric'}),zoneFormat=new Intl.DateTimeFormat('en-GB',{timeZone:zone,timeZoneName:'short'}),shortTime=new Intl.DateTimeFormat('sl-SI',{timeZone:zone,hour:'2-digit',minute:'2-digit'}),number=new Intl.NumberFormat('sl-SI',{maximumFractionDigits:0});
 let clockTimer,weatherTimer,request,revision=0,lastFetch=0,displayed=null,manualCityPreference=false,manualCityChange=false,cityInitializationComplete=false;const memory=new Map();
 let cityPhotos;
-function updateCityPhoto(id=select.value){cityPhotos??=import('/photo-time/slovenia-d9841a0168798bc9.mjs').then(module=>module.createSiteCityPhotos(card,select));return cityPhotos.then(controller=>controller.select(id));}
+function updateCityPhoto(id=select.value){cityPhotos??=import('/photo-time/slovenia-de0a39ad2beabc2c.mjs').then(module=>module.createSiteCityPhotos(card,select));return cityPhotos.then(controller=>controller.select(id));}
 
 function clock(){
  clearTimeout(clockTimer);const now=new Date(),parts=timeFormat.formatToParts(now),part=name=>parts.find(p=>p.type===name).value,hour=part('hour'),minute=part('minute'),second=part('second');

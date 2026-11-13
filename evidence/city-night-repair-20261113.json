@@ -5,7 +5,7 @@
   "nightMissing": 47,
   "solarCases": 345,
   "boundaryAssertions": 2070,
-  "controllerAssertions": 5,
+  "controllerAssertions": 8,
   "coverage": [
     {
       "id": "ajdovscina",
@@ -464,8 +464,8 @@
     }
   ],
   "browser": {
-    "passed": 12,
-    "total": 12,
+    "passed": 16,
+    "total": 16,
     "projects": [
       "chromium",
       "webkit",
@@ -478,7 +478,8 @@
       "matching credit anchor",
       "pageshow transition to day",
       "missing asset explicitly archive",
-      "direct saved calendar view matches fresh catalogue"
+      "direct saved calendar view matches fresh catalogue",
+      "previous decoded photograph remains visible during final-DOM decode"
     ],
     "unexpected404s": 0
   },
@@ -683,7 +684,7 @@
     "sparseCheckoutRecovered": true,
     "missingPreviousManifestFiles": 0,
     "fullVerifyPassed": true,
-    "verifiedOutputFiles": 13001,
+    "verifiedOutputFiles": 13004,
     "verifiedCalendarPairs": 2820,
     "verifiedLunarPairs": 208,
     "verifiedCollectionRecords": 780
@@ -699,5 +700,15 @@
     "outsideCityCatalogueAndAdapterIdentical": true,
     "licensePageOnlySevenCardsAdded": true,
     "remoteEditorialSourcesUnchanged": true
+  },
+  "chromiumFinalFrameFix": {
+    "cause": "Moving a detached responsive picture into the visible DOM could briefly restart source selection in Chromium.",
+    "behavior": "Decode an invisible clone in its final DOM position while retaining the existing photo; commit only the current selection after decode.",
+    "controller": "controller-d64a383276d8d3d3.mjs",
+    "adapter": "slovenia-de0a39ad2beabc2c.mjs",
+    "compiledCard": "city_card-a47911f8.js",
+    "htmlReferencesUpdated": 301,
+    "browserProfilesPassed": 4,
+    "testsPassed": 16
   }
 }

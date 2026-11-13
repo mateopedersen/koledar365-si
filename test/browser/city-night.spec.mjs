@@ -46,3 +46,16 @@ test('returning to the tab changes back to day while an unmapped night is explic
  await expect(page.locator('#city-card figure')).toHaveAttribute('data-photo-period','archive');
  await expect(page.locator('#city-photo')).toHaveAttribute('alt',/arhivska fotografija/);
 });
+test('the previous decoded photo stays visible until the incoming final frame is decoded',async({page})=>{
+ await prepare(page);
+ await expect(page.locator('#city-card figure')).toHaveAttribute('data-photo-city','ljubljana');
+ let requested,release;
+ const started=new Promise(resolve=>{requested=resolve}),pending=new Promise(resolve=>{release=resolve});
+ await page.route('**/images/city-night/kamnik-*',async route=>{requested();await pending;await route.continue();});
+ await page.locator('#city-select').selectOption('kamnik');await started;
+ await expect(page.locator('#city-card figure')).toHaveAttribute('data-photo-city','ljubljana');
+ expect(await page.locator('#city-photo').evaluate(img=>img.complete&&img.naturalWidth>0)).toBe(true);
+ release();
+ await expect(page.locator('#city-card figure')).toHaveAttribute('data-photo-city','kamnik');
+ expect(await page.locator('#city-photo').evaluate(img=>img.complete&&img.naturalWidth>0)).toBe(true);
+});
