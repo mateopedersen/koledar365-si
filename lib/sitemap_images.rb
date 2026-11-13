@@ -51,6 +51,14 @@ module SitemapImages
         next if image['class'].to_s.split.any? { |name| %w[ui-icon brand-mark country-flag].include?(name) }
         normalize.call(image['src'])
       end
+      if row[:path]=='/' && root.join('data/cities_sl.json').file?
+        # City-picker photographs are meaningful homepage content even when
+        # they are selected after the initial HTML has been rendered.
+        JSON.parse(root.join('data/cities_sl.json').read).fetch('cities').each do |city|
+          candidates << normalize.call(city.dig('photo','local_path'))
+          candidates << normalize.call(city.dig('night_photo','local_path'))
+        end
+      end
       # Printable originals are linked downloads, often larger than the preview.
       row[:document].css('a[href]').each do |link|
         candidates << normalize.call(link['href']) unless link.text.strip.empty? && link['aria-label'].to_s.strip.empty?
