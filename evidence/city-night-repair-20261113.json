@@ -1,0 +1,703 @@
+{
+  "date": "2026-11-13",
+  "total": 69,
+  "nightAvailable": 22,
+  "nightMissing": 47,
+  "solarCases": 345,
+  "boundaryAssertions": 2070,
+  "controllerAssertions": 5,
+  "coverage": [
+    {
+      "id": "ajdovscina",
+      "name": "Ajdovščina",
+      "night": false
+    },
+    {
+      "id": "bled",
+      "name": "Bled",
+      "night": true,
+      "asset": "/images/city-night/bled-night-cf1e2b9e98dd.webp",
+      "sha256": "cf1e2b9e98dd69d0899ef764bbf1b7e5665377788ae6db2c36e9f29af83e409d",
+      "bytes": 113964,
+      "license": "CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Church_Night_(33069521894).jpg"
+    },
+    {
+      "id": "bovec",
+      "name": "Bovec",
+      "night": false
+    },
+    {
+      "id": "brezice",
+      "name": "Brežice",
+      "night": false
+    },
+    {
+      "id": "celje",
+      "name": "Celje",
+      "night": false
+    },
+    {
+      "id": "crnomelj",
+      "name": "Črnomelj",
+      "night": true,
+      "asset": "/images/city-night/crnomelj-night-c433e7a610e5.webp",
+      "sha256": "c433e7a610e5227d1fb785bf021a537e9aa51ea9e802b49b3bfea186d221962d",
+      "bytes": 34204,
+      "license": "CC BY 2.0",
+      "source": "https://www.flickr.com/photos/kharak/49341244552/"
+    },
+    {
+      "id": "domzale",
+      "name": "Domžale",
+      "night": false
+    },
+    {
+      "id": "gornja-radgona",
+      "name": "Gornja Radgona",
+      "night": false
+    },
+    {
+      "id": "hrastnik",
+      "name": "Hrastnik",
+      "night": false
+    },
+    {
+      "id": "idrija",
+      "name": "Idrija",
+      "night": true,
+      "asset": "/images/city-night/idrija-night-0873c24b8959.webp",
+      "sha256": "0873c24b89597d649d5d6ab0dce6f6aee87c35e23261bc3a887d57db6ba611f2",
+      "bytes": 148382,
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Idrija-festival_idrijske_%C4%8Dipke.jpg"
+    },
+    {
+      "id": "ilirska-bistrica",
+      "name": "Ilirska Bistrica",
+      "night": false
+    },
+    {
+      "id": "izola",
+      "name": "Izola",
+      "night": true,
+      "asset": "/images/city-night/izola-night-3684a6f4db1e.webp",
+      "sha256": "3684a6f4db1ea5964c6ad4643afe0f81a72a7ce71e62a1b8bd3ad1e077e72189",
+      "bytes": 49604,
+      "license": "CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Izola_(31022047750).jpg"
+    },
+    {
+      "id": "jesenice",
+      "name": "Jesenice",
+      "night": false
+    },
+    {
+      "id": "kamnik",
+      "name": "Kamnik",
+      "night": true,
+      "asset": "/images/city-night/kamnik-night-03fff8d92204.webp",
+      "sha256": "03fff8d922045904094f96d50a40caf6c2d82a0d12e228ad406b02ab42d9a0c6",
+      "bytes": 160822,
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Sutna_in_Kamnik_(5).jpg"
+    },
+    {
+      "id": "kocevje",
+      "name": "Kočevje",
+      "night": false
+    },
+    {
+      "id": "koper",
+      "name": "Koper",
+      "night": true,
+      "asset": "/images/city-night/koper-night-9cecdb491e7b.webp",
+      "sha256": "9cecdb491e7ba8be1dc6bb589d56d4b251b61e7a6c38b8f7c3898b045aa885ef",
+      "bytes": 103370,
+      "license": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Koper_panorama_night.jpg"
+    },
+    {
+      "id": "kostanjevica-na-krki",
+      "name": "Kostanjevica na Krki",
+      "night": false
+    },
+    {
+      "id": "kranj",
+      "name": "Kranj",
+      "night": true,
+      "asset": "/images/city-night/kranj-night-a03cfd096e68.webp",
+      "sha256": "a03cfd096e68e99ace00d45d6edfa3a11751fc79de7ec660d3acf48c49a72849",
+      "bytes": 151404,
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Kranj_glavni_trg_fotomorgana.jpg"
+    },
+    {
+      "id": "krsko",
+      "name": "Krško",
+      "night": true,
+      "asset": "/images/city-night/krsko-night-7693868c0f95.webp",
+      "sha256": "7693868c0f9547de59e04d6ca7f31718267645ed5b618814af208e92d1829e8e",
+      "bytes": 91750,
+      "license": "CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Kr%C5%A1ko_streets_at_night_(45496594875).jpg"
+    },
+    {
+      "id": "lasko",
+      "name": "Laško",
+      "night": true,
+      "asset": "/images/city-night/lasko-night-f24891e1ca0d.webp",
+      "sha256": "f24891e1ca0dbcaffc3103ebca9681dcb8e69daaf5e2d273518c31fb9c49f23d",
+      "bytes": 71210,
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:%D0%92_%D1%81%D1%83%D0%BC%D0%B5%D1%80%D0%BA%D0%B0%D1%85_-_panoramio_(1).jpg"
+    },
+    {
+      "id": "lendava",
+      "name": "Lendava",
+      "night": false
+    },
+    {
+      "id": "litija",
+      "name": "Litija",
+      "night": false
+    },
+    {
+      "id": "ljubljana",
+      "name": "Ljubljana",
+      "night": true,
+      "asset": "/images/city-night/ljubljana-night-739fb3e76ccf.webp",
+      "sha256": "739fb3e76ccf55f6e1b03b7e3cc76ce74f6f1197135b4660fe45a1805721f32d",
+      "bytes": 163624,
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Fuente_de_la_Plaza_Nueva,_Liubliana,_Eslovenia,_2017-04-14,_DD_50-52_HDR.jpg"
+    },
+    {
+      "id": "ljutomer",
+      "name": "Ljutomer",
+      "night": false
+    },
+    {
+      "id": "maribor",
+      "name": "Maribor",
+      "night": true,
+      "asset": "/images/city-night/maribor-night-5b0238de0f63.webp",
+      "sha256": "5b0238de0f6301336ef8735e0f5d5fda5234ead893c9fa62d3e27fa2dd45ec62",
+      "bytes": 134948,
+      "license": "CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Night_right_in_Maribor.jpg"
+    },
+    {
+      "id": "metlika",
+      "name": "Metlika",
+      "night": false
+    },
+    {
+      "id": "murska-sobota",
+      "name": "Murska Sobota",
+      "night": false
+    },
+    {
+      "id": "nova-gorica",
+      "name": "Nova Gorica",
+      "night": false
+    },
+    {
+      "id": "novo-mesto",
+      "name": "Novo mesto",
+      "night": true,
+      "asset": "/images/city-night/novo-mesto-night-de57c5e5199e.webp",
+      "sha256": "de57c5e5199e24d5dcc20ce424f24f70c41fe13426371db708caa8722661682f",
+      "bytes": 104142,
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Vodnjak_Novo_mesto,_pono%C4%8Di.jpg"
+    },
+    {
+      "id": "ormoz",
+      "name": "Ormož",
+      "night": false
+    },
+    {
+      "id": "piran",
+      "name": "Piran",
+      "night": true,
+      "asset": "/images/city-night/piran-night-64eec53f34bd.webp",
+      "sha256": "64eec53f34bdd99123a598c85fdc4046d5d562d7241d287d0490d0f4876020ac",
+      "bytes": 110648,
+      "license": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Piran%27s_Harbour_at_Night.jpg"
+    },
+    {
+      "id": "postojna",
+      "name": "Postojna",
+      "night": false
+    },
+    {
+      "id": "ptuj",
+      "name": "Ptuj",
+      "night": true,
+      "asset": "/images/city-night/ptuj-night-1bb3c04f32c8.webp",
+      "sha256": "1bb3c04f32c8efb117acde052f183e1318e1ab98c5fcaf1fac243742c7b3dc0d",
+      "bytes": 58710,
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Lightning_strike_in_the_oldest_Slovenian_city.jpg"
+    },
+    {
+      "id": "radece",
+      "name": "Radeče",
+      "night": false
+    },
+    {
+      "id": "radovljica",
+      "name": "Radovljica",
+      "night": false
+    },
+    {
+      "id": "ravne-na-koroskem",
+      "name": "Ravne na Koroškem",
+      "night": false
+    },
+    {
+      "id": "sevnica",
+      "name": "Sevnica",
+      "night": true,
+      "asset": "/images/city-night/sevnica-night-592041e42450.webp",
+      "sha256": "592041e4245042416e24e5b186f909bf496ffb9a8a7bab01f3b91b2a13576eaf",
+      "bytes": 36962,
+      "license": "CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Sevnica_(1137334970).jpg"
+    },
+    {
+      "id": "sezana",
+      "name": "Sežana",
+      "night": false
+    },
+    {
+      "id": "slovenska-bistrica",
+      "name": "Slovenska Bistrica",
+      "night": true,
+      "asset": "/images/city-night/slovenska-bistrica-night-785b1fa63687.webp",
+      "sha256": "785b1fa6368797aa36da6d5854c8301914da15d3945a0950d718cd8af3efe889",
+      "bytes": 248384,
+      "license": "CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Winter_night_in_the_park_(51784462616).jpg"
+    },
+    {
+      "id": "slovenj-gradec",
+      "name": "Slovenj Gradec",
+      "night": false
+    },
+    {
+      "id": "slovenske-konjice",
+      "name": "Slovenske Konjice",
+      "night": true,
+      "asset": "/images/city-night/slovenske-konjice-night-c2f98516ea28.webp",
+      "sha256": "c2f98516ea2811569b3a5ec2f29ddc91d8fa6dc281e89f98518ee3996357cb74",
+      "bytes": 89152,
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Slovenske_Konjice_by_night.jpg"
+    },
+    {
+      "id": "skofja-loka",
+      "name": "Škofja Loka",
+      "night": true,
+      "asset": "/images/city-night/skofja-loka-night-23c4fb3c14c0.webp",
+      "sha256": "23c4fb3c14c02a7957e35778a18d08d6d49f0ec101bdf76a465dde5ee18b751b",
+      "bytes": 136984,
+      "license": "CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Loka_Castle_by_night_(22783232240).jpg"
+    },
+    {
+      "id": "sostanj",
+      "name": "Šoštanj",
+      "night": false
+    },
+    {
+      "id": "tolmin",
+      "name": "Tolmin",
+      "night": false
+    },
+    {
+      "id": "trbovlje",
+      "name": "Trbovlje",
+      "night": true,
+      "asset": "/images/city-night/trbovlje-night-dcb3976927b0.webp",
+      "sha256": "dcb3976927b018ef20901001f2db7139616d12cb0d559c73fb2a456f09cedbbe",
+      "bytes": 75630,
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Hi%C5%A1a_Obrtni%C5%A1ka_cesta_1.jpg"
+    },
+    {
+      "id": "trzic",
+      "name": "Tržič",
+      "night": false
+    },
+    {
+      "id": "velenje",
+      "name": "Velenje",
+      "night": true,
+      "asset": "/images/city-night/velenje-night-55078d3b3dd6.webp",
+      "sha256": "55078d3b3dd69a20b34c2907a95febffdc5b2a2cc8bb84ca1a3b46a9d252dba8",
+      "bytes": 79220,
+      "license": "CC0 1.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Velenje-54880.jpg"
+    },
+    {
+      "id": "visnja-gora",
+      "name": "Višnja Gora",
+      "night": true,
+      "asset": "/images/city-night/visnja-gora-night-2db1a0c37618.webp",
+      "sha256": "2db1a0c3761865131402a2dd9484a562188ef05490529cce1d7cbcf3e6fe24e7",
+      "bytes": 19102,
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:VisnjaGora_-_night_view.jpg"
+    },
+    {
+      "id": "vrhnika",
+      "name": "Vrhnika",
+      "night": false
+    },
+    {
+      "id": "zagorje-ob-savi",
+      "name": "Zagorje ob Savi",
+      "night": false
+    },
+    {
+      "id": "zalec",
+      "name": "Žalec",
+      "night": false
+    },
+    {
+      "id": "cerknica",
+      "name": "Cerknica",
+      "night": false
+    },
+    {
+      "id": "dravograd",
+      "name": "Dravograd",
+      "night": false
+    },
+    {
+      "id": "grosuplje",
+      "name": "Grosuplje",
+      "night": true,
+      "asset": "/images/city-night/grosuplje-night-936fbc187119.webp",
+      "sha256": "936fbc187119decaa09b43b892dc7ae58100c7d63af0b3643f0fac2b508ce769",
+      "bytes": 126886,
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Stavba_knji%C5%BEnice_Grosuplje.jpg"
+    },
+    {
+      "id": "logatec",
+      "name": "Logatec",
+      "night": false
+    },
+    {
+      "id": "medvode",
+      "name": "Medvode",
+      "night": false
+    },
+    {
+      "id": "menges",
+      "name": "Mengeš",
+      "night": false
+    },
+    {
+      "id": "mezica",
+      "name": "Mežica",
+      "night": false
+    },
+    {
+      "id": "prevalje",
+      "name": "Prevalje",
+      "night": false
+    },
+    {
+      "id": "ribnica",
+      "name": "Ribnica",
+      "night": false
+    },
+    {
+      "id": "rogaska-slatina",
+      "name": "Rogaška Slatina",
+      "night": false
+    },
+    {
+      "id": "ruse",
+      "name": "Ruše",
+      "night": false
+    },
+    {
+      "id": "sempeter-pri-gorici",
+      "name": "Šempeter pri Gorici",
+      "night": false
+    },
+    {
+      "id": "sentjur",
+      "name": "Šentjur",
+      "night": false
+    },
+    {
+      "id": "trebnje",
+      "name": "Trebnje",
+      "night": false
+    },
+    {
+      "id": "zelezniki",
+      "name": "Železniki",
+      "night": false
+    },
+    {
+      "id": "ziri",
+      "name": "Žiri",
+      "night": false
+    },
+    {
+      "id": "lenart-v-slovenskih-goricah",
+      "name": "Lenart v Slovenskih goricah",
+      "night": false
+    },
+    {
+      "id": "zrece",
+      "name": "Zreče",
+      "night": false
+    }
+  ],
+  "browser": {
+    "passed": 12,
+    "total": 12,
+    "projects": [
+      "chromium",
+      "webkit",
+      "android-chromium",
+      "iphone-webkit"
+    ],
+    "nightAssetSelections": 88,
+    "checks": [
+      "fully decoded city-specific image",
+      "matching credit anchor",
+      "pageshow transition to day",
+      "missing asset explicitly archive",
+      "direct saved calendar view matches fresh catalogue"
+    ],
+    "unexpected404s": 0
+  },
+  "missingCities": [
+    {
+      "id": "ajdovscina",
+      "name": "Ajdovščina"
+    },
+    {
+      "id": "bovec",
+      "name": "Bovec"
+    },
+    {
+      "id": "brezice",
+      "name": "Brežice"
+    },
+    {
+      "id": "celje",
+      "name": "Celje"
+    },
+    {
+      "id": "domzale",
+      "name": "Domžale"
+    },
+    {
+      "id": "gornja-radgona",
+      "name": "Gornja Radgona"
+    },
+    {
+      "id": "hrastnik",
+      "name": "Hrastnik"
+    },
+    {
+      "id": "ilirska-bistrica",
+      "name": "Ilirska Bistrica"
+    },
+    {
+      "id": "jesenice",
+      "name": "Jesenice"
+    },
+    {
+      "id": "kocevje",
+      "name": "Kočevje"
+    },
+    {
+      "id": "kostanjevica-na-krki",
+      "name": "Kostanjevica na Krki"
+    },
+    {
+      "id": "lendava",
+      "name": "Lendava"
+    },
+    {
+      "id": "litija",
+      "name": "Litija"
+    },
+    {
+      "id": "ljutomer",
+      "name": "Ljutomer"
+    },
+    {
+      "id": "metlika",
+      "name": "Metlika"
+    },
+    {
+      "id": "murska-sobota",
+      "name": "Murska Sobota"
+    },
+    {
+      "id": "nova-gorica",
+      "name": "Nova Gorica"
+    },
+    {
+      "id": "ormoz",
+      "name": "Ormož"
+    },
+    {
+      "id": "postojna",
+      "name": "Postojna"
+    },
+    {
+      "id": "radece",
+      "name": "Radeče"
+    },
+    {
+      "id": "radovljica",
+      "name": "Radovljica"
+    },
+    {
+      "id": "ravne-na-koroskem",
+      "name": "Ravne na Koroškem"
+    },
+    {
+      "id": "sezana",
+      "name": "Sežana"
+    },
+    {
+      "id": "slovenj-gradec",
+      "name": "Slovenj Gradec"
+    },
+    {
+      "id": "sostanj",
+      "name": "Šoštanj"
+    },
+    {
+      "id": "tolmin",
+      "name": "Tolmin"
+    },
+    {
+      "id": "trzic",
+      "name": "Tržič"
+    },
+    {
+      "id": "vrhnika",
+      "name": "Vrhnika"
+    },
+    {
+      "id": "zagorje-ob-savi",
+      "name": "Zagorje ob Savi"
+    },
+    {
+      "id": "zalec",
+      "name": "Žalec"
+    },
+    {
+      "id": "cerknica",
+      "name": "Cerknica"
+    },
+    {
+      "id": "dravograd",
+      "name": "Dravograd"
+    },
+    {
+      "id": "logatec",
+      "name": "Logatec"
+    },
+    {
+      "id": "medvode",
+      "name": "Medvode"
+    },
+    {
+      "id": "menges",
+      "name": "Mengeš"
+    },
+    {
+      "id": "mezica",
+      "name": "Mežica"
+    },
+    {
+      "id": "prevalje",
+      "name": "Prevalje"
+    },
+    {
+      "id": "ribnica",
+      "name": "Ribnica"
+    },
+    {
+      "id": "rogaska-slatina",
+      "name": "Rogaška Slatina"
+    },
+    {
+      "id": "ruse",
+      "name": "Ruše"
+    },
+    {
+      "id": "sempeter-pri-gorici",
+      "name": "Šempeter pri Gorici"
+    },
+    {
+      "id": "sentjur",
+      "name": "Šentjur"
+    },
+    {
+      "id": "trebnje",
+      "name": "Trebnje"
+    },
+    {
+      "id": "zelezniki",
+      "name": "Železniki"
+    },
+    {
+      "id": "ziri",
+      "name": "Žiri"
+    },
+    {
+      "id": "lenart-v-slovenskih-goricah",
+      "name": "Lenart v Slovenskih goricah"
+    },
+    {
+      "id": "zrece",
+      "name": "Zreče"
+    }
+  ],
+  "build": {
+    "mode": "Targeted home and licensing export, with city catalogues and adapter references synchronized in all 300 saved home views. Other published pages retained from the verified snapshot.",
+    "targetPages": [
+      "/",
+      "/fotografije-in-licence/"
+    ],
+    "targetExportPassed": true,
+    "savedHomeViewsSynchronized": 300,
+    "sparseCheckoutRecovered": true,
+    "missingPreviousManifestFiles": 0,
+    "fullVerifyPassed": true,
+    "verifiedOutputFiles": 13001,
+    "verifiedCalendarPairs": 2820,
+    "verifiedLunarPairs": 208,
+    "verifiedCollectionRecords": 780
+  },
+  "embeddedCityCatalogues": {
+    "pages": 301,
+    "nightOptionsPerPage": 22,
+    "passed": true
+  },
+  "rebasePreservation": {
+    "base": "2979671e",
+    "homePagesCompared": 301,
+    "outsideCityCatalogueAndAdapterIdentical": true,
+    "licensePageOnlySevenCardsAdded": true,
+    "remoteEditorialSourcesUnchanged": true
+  }
+}

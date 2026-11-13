@@ -177,6 +177,21 @@ unless limit||partial
   end
  end
 end
+# A partial home publication must refresh the source-bound city catalogue in
+# every saved calendar view too. Keep each view's calendar and personal layout.
+if partial&.include?('/')
+ home=out.join('index.html').read
+ city_select=home[/<select\b[^>]*\bid="city-select"[^>]*>.*?<\/select>/m]
+ city_script=home[/<script\b[^>]*\bsrc="\/assets\/city_card-[^"]+\.js"[^>]*><\/script>/m]
+ raise 'Home city catalogue is missing' unless city_select&&city_script
+ Dir[out.join('free/views/home/*.html')].each do |file|
+  source=File.read(file)
+  next unless source.include?('id="city-select"')
+  source=source.sub(/<select\b[^>]*\bid="city-select"[^>]*>.*?<\/select>/m){city_select}
+  source=source.sub(/<script\b[^>]*\bsrc="\/assets\/city_card-[^"]+\.js"[^>]*><\/script>/m){city_script}
+  File.write(file,source)
+ end
+end
 unless limit
  session.get('/te-strani-ni/');write.call('/404.html',transform.call(session.response.body,'/404.html',indexable:false))
 end

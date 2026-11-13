@@ -223,5 +223,230 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "pixelReview": "Actual candidate contact sheet inspected; city identity checked against description, categories or GPS on 2026-11-13.",
     "changes": "Resized, cropped to 1200 × 675 and compressed as WebP. No day-to-night alteration."
+  },
+  {
+    "cityId": "izola",
+    "sourceTitle": "File:Izola (31022047750).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Izola_(31022047750).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/Izola_%2831022047750%29.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/Izola_%2831022047750%29.jpg",
+    "downloadSha256": "5854c4f30d1394c050a1e9f514282f7ef848ada8a2a6e84f99920d4f848ae02b",
+    "asset": "/images/city-night/izola-night-3684a6f4db1e.webp",
+    "assetSha256": "3684a6f4db1ea5964c6ad4643afe0f81a72a7ce71e62a1b8bd3ad1e077e72189",
+    "author": "G0DeX",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "identityEvidence": {
+      "coordinates": [
+        45.534055,
+        13.648345
+      ],
+      "categories": "Flickr images reviewed by FlickreviewR|Files with coordinates missing SDC location of creation|Boats in Izola|Night in Izola",
+      "source": "https://www.flickr.com/photos/132655238@N06/31022047750/"
+    },
+    "pixelReview": "2026-11-13 source original and cached contact sheet inspected: deep navy sky with distinct stars, white fishing boat raised above a lit stone harbour wall, warm artificial lights reflected in calm water; genuine night. Komunala Izola mark visible on boat, and source GPS 45.534055,13.648345 locates Izola seafront.",
+    "changes": "Resized, cropped to 1200 × 675 and compressed as WebP. No day-to-night alteration."
+  },
+  {
+    "cityId": "crnomelj",
+    "sourceTitle": "Constellation Orion behind a WW2 monument",
+    "sourceUrl": "https://www.flickr.com/photos/kharak/49341244552/",
+    "originalUrl": "https://live.staticflickr.com/65535/49341244552_14d4d72627_o.jpg",
+    "downloadUrl": "https://live.staticflickr.com/65535/49341244552_14d4d72627_o.jpg",
+    "downloadSha256": "f0d5e0cc773b47df4cc448577e932429149fa898ef33a10e6f59d97bbfef9569",
+    "asset": "/images/city-night/crnomelj-night-c433e7a610e5.webp",
+    "assetSha256": "c433e7a610e5227d1fb785bf021a537e9aa51ea9e802b49b3bfea186d221962d",
+    "author": "Uroš Novina",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "identityEvidence": {
+      "_flickrModelRegistry": "photo-geo-models",
+      "hasGeo": true,
+      "latitude": 45.574736,
+      "longitude": 15.195819,
+      "accuracy": 16,
+      "isPublic": true,
+      "id": "49341244552"
+    },
+    "pixelReview": "On 2026-11-13, actual original6000×4000 photograph and1024preview were inspected. Dark blue-black sky filled with stars and Orion above a rectangular stone memorial column. Bare trees stand in the foreground; orange street lights and lit houses appear below. Genuine night; no solar disc or daytime shadows. SourceGPS45.574736,15.195819 and the photographer description match Griček memorial inČrnomelj. The visible stone obelisk matches the location.",
+    "changes": "Resized, cropped to 1200 × 675 and compressed as WebP. No day-to-night alteration."
+  },
+  {
+    "cityId": "ptuj",
+    "sourceTitle": "File:Lightning strike in the oldest Slovenian city.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lightning_strike_in_the_oldest_Slovenian_city.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Lightning_strike_in_the_oldest_Slovenian_city.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Lightning_strike_in_the_oldest_Slovenian_city.jpg",
+    "downloadSha256": "c2714766f2ea71c58c8ce2186e28a567c0d647a1e6a87a48f32ea36be778c492",
+    "asset": "/images/city-night/ptuj-night-1bb3c04f32c8.webp",
+    "assetSha256": "1bb3c04f32c8efb117acde052f183e1318e1ab98c5fcaf1fac243742c7b3dc0d",
+    "author": "Mstegar",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "identityEvidence": {
+      "description": "View of Ptuj Castle by storm.",
+      "categories": "Images from Wiki Loves Monuments 2019|Self-published work|Lightning in Slovenia|Images from Wiki Loves Monuments 2019 in Slovenia|Cultural monuments of Slovenia with known IDs|Uploaded via Campaign:wlm-si|Night in Ptuj|2017 in Ptuj|Views of Ptuj Castle from the banks of the Drava|Bridges in Ptuj|Eligible images from Wiki Loves Monuments 2019 in Slovenia",
+      "landmark": "Ptuj Castle, illuminated footbridge overDrava and town church skyline"
+    },
+    "pixelReview": "On 2026-11-13, actual1200×800 original was inspected. Bright lightning crosses a purple-dark sky above PtujCastle. Castle andbridge lights reflect orange andwhite in the Drava; houses andvegetation remain dark away fromartificiallights. Genuine nightstorm photograph. Source timestamp21:06,10-second exposure andNightinPtuj category support the pixels. The hilltopcastle andDrava bridge match Ptuj.",
+    "changes": "Resized, cropped to 1200 × 675 and compressed as WebP. No day-to-night alteration."
+  },
+  {
+    "cityId": "trbovlje",
+    "sourceTitle": "File:Hiša Obrtniška cesta 1.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hi%C5%A1a_Obrtni%C5%A1ka_cesta_1.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/29/Hi%C5%A1a_Obrtni%C5%A1ka_cesta_1.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/2/29/Hi%C5%A1a_Obrtni%C5%A1ka_cesta_1.jpg",
+    "downloadSha256": "b8e272dc475a90ef1cbf9f13bb4add1d810a77077b8930a23ffcba1f17f50a73",
+    "asset": "/images/city-night/trbovlje-night-dcb3976927b0.webp",
+    "assetSha256": "dcb3976927b018ef20901001f2db7139616d12cb0d559c73fb2a456f09cedbbe",
+    "author": "Viktar Palstsiuk",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "identityEvidence": {
+      "coordinates": [
+        46.154887,
+        15.051118
+      ],
+      "landmark": "Dimnikova hiša / Gostilna Dimnik, Obrtniška cesta 1, Trbovlje",
+      "primaryReferences": [
+        "https://pizzerija-dimnik.si/ana-dimnik/",
+        "https://www.trbovlje.si/post/262895"
+      ],
+      "registryReference": "https://javnipodatki.si/kulturna-dediscina/enota/trbovlje-hisa-obrtniska-cesta-1",
+      "registryCoordinates": [
+        46.1549,
+        15.05085
+      ],
+      "pixelMatch": "Two-storey yellow historic facade, Ana Dimnik relief/plaque, Pizzerija Dimnik sign and the building form match the named address and heritage description."
+    },
+    "pixelReview": "2026-11-13 original 4000x3000 pixels inspected. Genuine night photograph of the illuminated yellow Dimnik House with dark navy sky, icicle-style festive lights along the eaves, legible Dimnik signs and clear windows/doorways. Fixed exterior composition without windshield or moving-car obstruction. Some low-light sensor noise is visible in the dark sky, but the identified building remains clear. No artificial darkening or generated content used.",
+    "changes": "Resized without upscaling, cropped to 1200 × 675 and compressed as WebP. No day-to-night alteration."
+  },
+  {
+    "cityId": "lasko",
+    "sourceTitle": "File:В сумерках - panoramio (1).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92_%D1%81%D1%83%D0%BC%D0%B5%D1%80%D0%BA%D0%B0%D1%85_-_panoramio_(1).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/50/%D0%92_%D1%81%D1%83%D0%BC%D0%B5%D1%80%D0%BA%D0%B0%D1%85_-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/5/50/%D0%92_%D1%81%D1%83%D0%BC%D0%B5%D1%80%D0%BA%D0%B0%D1%85_-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "downloadSha256": "acbd475d0b06feb7d144d5356532f9b2a428970a5fb2330ceea4e4a5baa1fec3",
+    "asset": "/images/city-night/lasko-night-f24891e1ca0d.webp",
+    "assetSha256": "f24891e1ca0dbcaffc3103ebca9681dcb8e69daaf5e2d273518c31fb9c49f23d",
+    "author": "Рустам Абдрахимов",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "identityEvidence": {
+      "sourceCoordinates": [
+        46.16668,
+        15.234003
+      ],
+      "landmark": "Savinja valley, the red-roofed bridge over Savinja in Laško, and part of Thermana Park Laško in the foreground",
+      "primaryReferences": [
+        "https://www.ponting.si/en/projects/bridge-over-savinja-in-lasko-14.html",
+        "https://www.thermana.si/hr/mjesto",
+        "https://www.thermana.si/en/accommodation/hotel-thermana-park-lasko"
+      ],
+      "referenceImagePaths": [
+        "/Users/melihozcan/Documents/Codex/2026-11-09/kalendars365-i-yapacagiz-github-dan-bakarsin/work/reports/night-completion-20261113/si/lasko-ponting-bridge-reference.jpg",
+        "/Users/melihozcan/Documents/Codex/2026-11-09/kalendars365-i-yapacagiz-github-dan-bakarsin/work/reports/night-completion-20261113/si/lasko-thermana-reference.jpg"
+      ],
+      "pixelMatch": "Distinctive continuous red pitched roof with raised gable sections, timber side posts and concrete river piers matches the bridge designer’s own photograph. The orange-and-glass riverside hotel form agrees with Thermana’s official image and address."
+    },
+    "pixelReview": "Original 2384x1588 pixels inspected. Clean blue-hour/evening view over the Savinja with an identifiable covered bridge, lit buildings and light trails. Fixed elevated composition, no windshield or dominant vehicle. Natural dim blue ambience; do not label as full-dark night. Parent explicitly reviewed the same original and accepted quality as an evening image once identity was confirmed.",
+    "changes": "Resized without upscaling, cropped to 1200 × 675 and compressed as WebP. No day-to-night alteration."
+  },
+  {
+    "cityId": "velenje",
+    "sourceTitle": "File:Velenje-54880.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Velenje-54880.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Velenje-54880.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Velenje-54880.jpg",
+    "downloadPath": "/Users/melihozcan/Documents/Codex/2026-11-09/kalendars365-i-yapacagiz-github-dan-bakarsin/work/reports/night-completion-20261113/si/commons-candidate-images/59552923.jpg",
+    "downloadSha256": "afba403e6d27d14293ddb65151e39c4b5da7661bc2e81b0e2b69edf158772848",
+    "sourceWidth": 5472,
+    "sourceHeight": 3648,
+    "author": "Mitja MIKLAV",
+    "authorUrl": "https://unsplash.com/@mitja_miklav",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "originalSourceUrl": "https://unsplash.com/photos/lncFsBaNlq4",
+    "attribution": "Mitja MIKLAV / Unsplash via Wikimedia Commons / CC0 1.0",
+    "sourceDate": "Unknown (Commons upload 2017-06-03; do not invent capture date)",
+    "lightClassification": "night",
+    "pixelReview": "Original 5472x3648 viewed. Elevated genuine night city panorama, illuminated white round castle tower on the left, dense apartment/office blocks, curved junction and multicolour fireworks. Slight mist/halation and bright clipped lamps; city architecture remains recognizable. No windshield or vehicle foreground. Actual original reopened in publication review on 2026-11-13.",
+    "identityEvidence": {
+      "landmark": "Velenje Castle and city viewed from the castle hillside",
+      "primaryReferences": [
+        "https://muzej-velenje.si/en/velenje-castle/",
+        "https://www.visitsaleska.si/sl/velenje-mesto-ki-je-cez-noc-zraslo-v-zgodbo-ki-jo-morate-slisati/"
+      ],
+      "referenceImagePaths": [
+        "/Users/melihozcan/Documents/Codex/2026-11-09/kalendars365-i-yapacagiz-github-dan-bakarsin/work/reports/night-completion-20261113/si/velenje-panorama-reference.jpg",
+        "/Users/melihozcan/Documents/Codex/2026-11-09/kalendars365-i-yapacagiz-github-dan-bakarsin/work/reports/night-completion-20261113/si/velenje-castle-official-reference.jpg"
+      ],
+      "pixelMatch": "Municipal destination panorama reproduces the same castle-over-city orientation, circular road junction and tall paired tan apartment blocks. The illuminated white turret, square wall and corner stonework agree with Velenje Castle. Museum address Ljubljanska cesta 54, Velenje."
+    },
+    "sourceMetadataPath": "/Users/melihozcan/Documents/Codex/2026-11-09/kalendars365-i-yapacagiz-github-dan-bakarsin/work/reports/night-completion-20261113/si/velenje-unsplash-source.json",
+    "reviewStatus": "accepted",
+    "sourceVerificationNote": "Individual Commons file page archived after shared cooldown, HTTP200 at2026-11-13T12:01:09Z. Explicit CC0 1.0; third-party licence review by Daphne Lantier on3June2017 confirms original Unsplash URL under stated licence before5June2017. Original Unsplash page currently returns401; no bypass attempted. Capture date remains unknown.",
+    "reviewedAt": "2026-11-13T12:01:28.615546+00:00",
+    "sourcePageEvidencePath": "/Users/melihozcan/Documents/Codex/2026-11-09/kalendars365-i-yapacagiz-github-dan-bakarsin/work/reports/night-completion-20261113/si/velenje-night-source.html",
+    "sourcePageSha256": "2458018a6bce9edee00f3f185c12d9827f33ae47a4c135ba6632882f197fb8cf",
+    "licenseReview": {
+      "reviewer": "Daphne Lantier",
+      "date": "2017-06-03",
+      "statement": "Commons individual file page confirms source licence review of https://unsplash.com/photos/lncFsBaNlq4 on3June2017."
+    },
+    "sceneNote": "Real night panorama with fireworks over Velenje; illuminated medieval castle tower and city buildings visible.",
+    "parentQualityReview": "Parent opened original and approved recognizable city panorama and castle; 2026-11-13.",
+    "asset": "/images/city-night/velenje-night-55078d3b3dd6.webp",
+    "assetSha256": "55078d3b3dd69a20b34c2907a95febffdc5b2a2cc8bb84ca1a3b46a9d252dba8",
+    "changes": "Resized, cropped to 1200 × 675 and compressed as WebP. No day-to-night alteration."
+  },
+  {
+    "cityId": "kamnik",
+    "sourceTitle": "File:Sutna in Kamnik (5).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sutna_in_Kamnik_(5).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Sutna_in_Kamnik_%285%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Sutna_in_Kamnik_%285%29.jpg",
+    "downloadPath": "/Users/melihozcan/Documents/Codex/2026-11-09/kalendars365-i-yapacagiz-github-dan-bakarsin/work/reports/night-completion-20261113/si/commons-candidate-images/114991756.jpg",
+    "downloadSha256": "7a12587249304aea505aac13e960698ff62df06bf577126c31a382e70fa4a1f0",
+    "sourceWidth": 3495,
+    "sourceHeight": 2699,
+    "author": "Krzysztof Golik",
+    "authorUrl": "https://www.wikidata.org/wiki/Q51955005",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": "Krzysztof Golik / Wikimedia Commons / CC BY-SA 4.0",
+    "sourceDate": "2021-10-13 18:50:28 (source camera timestamp; local timezone assumed only for solar estimate)",
+    "lightClassification": "evening-blue-hour",
+    "pixelReview": "Original3495x2699 actual pixels viewed. Sharp lit historic Šutna streetscape, warm illuminated façades and wrought-iron street lanterns, cobbled curved street and pale yellow-edged separate church tower at right. Deep blue sky with a few star-like points. No Sun disc, no windshield or vehicle foreground; a couple of distant long-exposure pedestrians are blurred. Lamps partly clipped but do not obscure city façades. Clean identifiable evening scene, not claimed fully dark night. Actual original reopened in publication review on 2026-11-13.",
+    "identityEvidence": {
+      "latitude": 46.223516,
+      "longitude": 14.608645,
+      "landmark": "Šutna old-town street beside the separate Gothic tower of Mary Immaculate parish church in Kamnik",
+      "primaryReferences": [
+        "https://www.kamnik.si/objava/602159",
+        "https://visitkamnik.com/en/top-attractions/kamnik"
+      ],
+      "referenceImagePath": "/Users/melihozcan/Documents/Codex/2026-11-09/kalendars365-i-yapacagiz-github-dan-bakarsin/work/reports/night-completion-20261113/si/kamnik-sutna-municipal-reference.jpg",
+      "referenceImageUrl": "https://www.kamnik.si/Files/Gallery/61/299149/l_357766%C5%A0utna.jpg",
+      "pixelMatch": "Municipal Šutna reference matches pale yellow-edged freestanding tower, curved central cobbled strip, narrow pavements and the row of cream/red tiled dormer façades; opposite direction along the same section of street. Official municipal and tourism text identifies Šutna and its separate Gothic church spire. Source GPS lies directly on that street."
+    },
+    "sourceMetadataPath": "/Users/melihozcan/Documents/Codex/2026-11-09/kalendars365-i-yapacagiz-github-dan-bakarsin/work/reports/night-completion-20261113/si/kamnik-evening-source.json",
+    "sourcePageEvidencePath": "/Users/melihozcan/Documents/Codex/2026-11-09/kalendars365-i-yapacagiz-github-dan-bakarsin/work/reports/night-completion-20261113/si/kamnik-sutna-source.html",
+    "sourcePageSha256": "f239749d8f912dae5e04dd90717bfcd440205f8a09b26ceb14da86a9d13be2db",
+    "sourceVerificationNote": "Individual Commons file page archived HTTP200 and explicitly names Krzysztof Golik, own work,13October2021 andCCBY-SA4.0. Cropping/resizing permitted if changes indicated and adapted image remains same licence.",
+    "reviewStatus": "accepted",
+    "reviewedAt": "2026-11-13T12:09:29.485349+00:00",
+    "otherOriginalsInspected": [
+      "114991757.jpg",
+      "114991763.jpg",
+      "138947033.jpg"
+    ],
+    "selectionNote": "Chosen over earlierbrighter panorama and vertical tower closeup because later deeperblue street view shows clear recognizable historic city architecture.",
+    "asset": "/images/city-night/kamnik-night-03fff8d92204.webp",
+    "assetSha256": "03fff8d922045904094f96d50a40caf6c2d82a0d12e228ad406b02ab42d9a0c6",
+    "changes": "Resized, cropped to 1200 × 675 and compressed as WebP. No day-to-night alteration."
   }
 ]
