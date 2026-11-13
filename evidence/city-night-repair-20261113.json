@@ -702,13 +702,15 @@
     "remoteEditorialSourcesUnchanged": true
   },
   "chromiumFinalFrameFix": {
-    "cause": "Moving a detached responsive picture into the visible DOM could briefly restart source selection in Chromium.",
-    "behavior": "Decode an invisible clone in its final DOM position while retaining the existing photo; commit only the current selection after decode.",
+    "cause": "Copying responsive attributes after decode, even an identical sizes value, restarts source selection in Chromium and clears the ready bitmap.",
+    "behavior": "Apply all responsive attributes before inserting and decoding an invisible final-DOM frame. Keep the previous photo until that frame is decoded, then swap without changing responsive attributes.",
     "controller": "controller-d64a383276d8d3d3.mjs",
-    "adapter": "slovenia-de0a39ad2beabc2c.mjs",
-    "compiledCard": "city_card-a47911f8.js",
+    "adapter": "slovenia-9ae27fc9896105e3.mjs",
+    "compiledCard": "city_card-dfbe0d99.js",
     "htmlReferencesUpdated": 301,
     "browserProfilesPassed": 4,
-    "testsPassed": 16
+    "testsPassed": 16,
+    "stableAfterMicrotaskAndAnimationFrame": true,
+    "liveNetworkOverrideTestsPassed": 16
   }
 }

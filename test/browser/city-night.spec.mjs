@@ -2,6 +2,16 @@ import {test,expect} from '@playwright/test';
 import fs from 'node:fs';
 const cities=JSON.parse(fs.readFileSync(new URL('../../data/cities_sl.json',import.meta.url))).cities;
 const NIGHT='2026-11-13T21:00:00Z';
+async function decodedAcrossFrames(image){
+ return image.evaluate(async img=>{
+  const ready=()=>img.isConnected&&img.complete&&img.naturalWidth>0;
+  if(!ready())return false;
+  await Promise.resolve();if(!ready())return false;
+  await new Promise(resolve=>requestAnimationFrame(resolve));
+  return ready();
+ });
+}
+
 async function prepare(page,url='/'){
  await page.clock.setFixedTime(new Date(NIGHT));
  await page.route('**/city-detect/',route=>route.fulfill({json:{city:'ljubljana',match:'city',approximate:true}}));
@@ -20,7 +30,7 @@ test('every mapped city displays its decoded genuine night asset and linked attr
   await expect(page.locator('#city-card figure')).toHaveAttribute('data-photo-city',city.id);
   await expect(page.locator('#city-card figure')).toHaveAttribute('data-photo-period','night');
   await expect(page.locator('#city-photo')).toHaveAttribute('src',city.night_photo.local_path);
-  expect(await page.locator('#city-photo').evaluate(img=>img.complete&&img.naturalWidth>0),city.id+' decoded image').toBe(true);
+  expect(await decodedAcrossFrames(page.locator('#city-photo')),city.id+' decoded image').toBe(true);
   await expect(page.locator('#city-credit')).toHaveAttribute('href','/fotografije-in-licence/#'+city.id+'-noc');
  }
 });
@@ -30,7 +40,7 @@ test('a saved calendar view receives the same night catalogue and current photo 
   await page.locator('#city-select').selectOption(city);
   await expect(page.locator('#city-card figure')).toHaveAttribute('data-photo-city',city);
   await expect(page.locator('#city-card figure')).toHaveAttribute('data-photo-period','night');
-  expect(await page.locator('#city-photo').evaluate(img=>img.complete&&img.naturalWidth>0)).toBe(true);
+  expect(await decodedAcrossFrames(page.locator('#city-photo'))).toBe(true);
  }
 });
 test('returning to the tab changes back to day while an unmapped night is explicitly an archive',async({page})=>{
@@ -54,8 +64,8 @@ test('the previous decoded photo stays visible until the incoming final frame is
  await page.route('**/images/city-night/kamnik-*',async route=>{requested();await pending;await route.continue();});
  await page.locator('#city-select').selectOption('kamnik');await started;
  await expect(page.locator('#city-card figure')).toHaveAttribute('data-photo-city','ljubljana');
- expect(await page.locator('#city-photo').evaluate(img=>img.complete&&img.naturalWidth>0)).toBe(true);
+ expect(await decodedAcrossFrames(page.locator('#city-photo'))).toBe(true);
  release();
  await expect(page.locator('#city-card figure')).toHaveAttribute('data-photo-city','kamnik');
- expect(await page.locator('#city-photo').evaluate(img=>img.complete&&img.naturalWidth>0)).toBe(true);
+ expect(await decodedAcrossFrames(page.locator('#city-photo'))).toBe(true);
 });
