@@ -139,18 +139,41 @@ class SiteTest < ActionDispatch::IntegrationTest
   end
 end
 class CityPageTest < ActionDispatch::IntegrationTest
-  test 'city selector exposes every city and the complete attribution page' do
+  test 'city selector exposes every city' do
     get '/'
-    assert_select '#city-select option',count:69
+    assert_response :success
+    assert_select '#city-select option',count:CityCatalog.all.size
+    CityCatalog.all.each do |city|
+      assert_select '#city-select option[value=?]',city.fetch('id'),count:1,text:city.fetch('name')
+    end
     assert_select '#city-photo[src="/images/cities/ljubljana.jpg"][srcset][width][height]'
     assert_select '#city-photo-avif[type="image/avif"][srcset^="/images/responsive/ljubljana-480-"]'
+    get '/vreme/not-a-city/'
+    assert_response :not_found
+  end
+
+  test 'attribution page credits every daytime and night city photograph exactly once' do
+    photos=CityCatalog.all.each_with_object({}) do |city,expected|
+      expected[city.fetch('id')]=city.fetch('photo')
+      expected["#{city.fetch('id')}-noc"]=city.fetch('night_photo') if city['night_photo']
+    end
     get '/fotografije-in-licence/'
     assert_response :success
     assert_select 'h1',text:'Fotografije in licence'
-    assert_select '.city-photo-license',count:69
+    assert_select '.city-photo-license',count:photos.size
+    assert_select '.city-photo-license[data-night-photo]',count:CityCatalog.all.count { |city|city['night_photo'] }
+    photos.each do |id,photo|
+      assert_select '.city-photo-license[id=?]',id,count:1 do
+        assert_select 'img',count:1
+        assert_select 'a[href=?]',photo.fetch('source'),count:1
+        assert_select 'dd',text:photo.fetch('author').squish,count:1
+        if photo['license_url'].present?
+          assert_select 'a[href=?]',photo.fetch('license_url'),text:photo.fetch('license').squish,count:1
+        else
+          assert_select 'dd',text:photo.fetch('license').squish,count:1
+        end
+      end
+    end
     assert_select '.holiday-photo-licenses .photo-license',count:58
-    assert_select '.city-photo-license a[href^="https://commons.wikimedia.org/"]',count:69
-    get '/vreme/not-a-city/'
-    assert_response :not_found
   end
 end
