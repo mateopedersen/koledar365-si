@@ -448,5 +448,33 @@
     "asset": "/images/city-night/kamnik-night-03fff8d92204.webp",
     "assetSha256": "03fff8d922045904094f96d50a40caf6c2d82a0d12e228ad406b02ab42d9a0c6",
     "changes": "Resized, cropped to 1200 × 675 and compressed as WebP. No day-to-night alteration."
+  },
+  {
+    "cityId": "celje",
+    "sourceTitle": "File:Old castle of Celje.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Old_castle_of_Celje.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Old_castle_of_Celje.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Old_castle_of_Celje.jpg",
+    "downloadSha256": "0c62409608b3a0be4d6d4e44f325def579f397f75068a26500f206a230fd0d99",
+    "asset": "/images/city-night/celje-night-4151b4f572be.webp",
+    "assetSha256": "4151b4f572bec81314aabdb9bbab3b877888e576b7c55c3fe3ced9dfc5f6b2da",
+    "contentBounds": null,
+    "author": "Klemen1972 (watermark: Klemen Jagodič)",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "identityEvidence": {
+      "sourceCoordinates": [
+        46.220906,
+        15.2707
+      ],
+      "landmark": "Celje Castle / Stari grad Celje, Cesta na grad 78, Celje",
+      "primaryReferences": [
+        "https://vloge.celje.si/objava/59751",
+        "https://www.visitcelje.eu/sl/izdelek/ogledi-starega-gradu-celje/"
+      ],
+      "observations": "Hilltop medieval castle; rectangular battlemented tower on left, steep central pavilion roof, large broken wall and rounded arch openings to right. Source GPS and named heritage category match municipal castle."
+    },
+    "pixelReview": "2026-11-14 actual full2306×1536 original re-inspected. Recognizable clear medieval hilltopcastle, warm orange/red artificial floodlighting against blue/purple predawnsky. NoSunvisible, no windshield/glare-dominatedroad, no motionblur. Strong visible photographer watermark lowerleft must bepreserved. This is bluehour beforeSunrise, notpitchblacknight and not evening. Parent inspected full original on 2026-11-14; castle and full lower-left signature readable. Accept as real pre-sunrise photograph, not full-dark-night capture.",
+    "changes": "Content bounds full source. Resized without upscaling, cropped to 1200 × 675 and compressed as WebP. No day-to-night alteration."
   }
 ]

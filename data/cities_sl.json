@@ -157,6 +157,21 @@
         "local_path": "/images/cities/celje.jpg",
         "sha256": "7fafce163a81b3eb5871e102b1c7948029d2f13149cc14aca485c23b6d179a2d",
         "retrieved_on": "2026-10-20"
+      },
+      "night_photo": {
+        "source": "https://commons.wikimedia.org/wiki/File:Old_castle_of_Celje.jpg",
+        "author": "Klemen1972 (watermark: Klemen Jagodič)",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Old_castle_of_Celje.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "local_path": "/images/city-night/celje-night-4151b4f572be.webp",
+        "sha256": "4151b4f572bec81314aabdb9bbab3b877888e576b7c55c3fe3ced9dfc5f6b2da",
+        "width": 1200,
+        "height": 675,
+        "retrieved_on": "2026-11-14",
+        "alt": "Osvetljeni Stari grad Celje pred sončnim vzhodom",
+        "caption": "Celje pred sončnim vzhodom",
+        "light_period": "predawn"
       }
     },
     {
