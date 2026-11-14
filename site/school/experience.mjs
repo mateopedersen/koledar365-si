@@ -61,8 +61,7 @@ function initSchoolPage(root) {
   function activeBreaks() {return schoolBreaks(data, level, region);}
   function download(events, scope) {
     if (!events.length) return toast('Za to izbiro ni preverjenih datumov za izvoz.');
-    const contents = buildICS(events, scope), url = URL.createObjectURL(new Blob([contents], {type:'text/calendar;charset=utf-8'}));
-    const link = document.createElement('a'); link.href = url; link.download = 'koledar365-' + scope.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase() + '.ics'; document.body.append(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url), 15000);
+    globalThis.Calendar365Downloads.save(buildICS(events,scope),'koledar365-' + scope.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase() + '.ics','text/calendar;charset=utf-8');
     toast('Datoteka ICS je pripravljena za uvoz v vaš koledar.');
   }
   function selectedCalendar(uni) {return uni.calendars?.find(calendar=>calendar.id===selectedFaculties[uni.id]);}

@@ -91,7 +91,7 @@ export function yearHTML(payload, events, interactive = true) {
   return result.join('');
 }
 export function download(content, filename, type) {
-  const url = URL.createObjectURL(new Blob([content], { type })); const anchor = document.createElement('a'); anchor.href = url; anchor.download = filename; anchor.hidden = true; document.body.append(anchor); anchor.click(); anchor.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+  return globalThis.Calendar365Downloads.save(content,filename,type);
 }
 function initEducation(root) {
   const payload = JSON.parse(document.getElementById('education-data').textContent); const form = root.querySelector('[data-ed-filters]');
