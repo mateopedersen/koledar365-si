@@ -453,14 +453,7 @@
       'END:VEVENT'
     ]);
     const calendar = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Koledar365//SL', 'CALSCALE:GREGORIAN', ...events, 'END:VCALENDAR', ''].map(foldIcsLine).join('\r\n');
-    const url = URL.createObjectURL(new Blob([calendar], { type: 'text/calendar;charset=utf-8' }));
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `koledar365-oddihi-${result.year}.ics`;
-    document.body.append(link);
-    link.click();
-    link.remove();
-    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+    globalThis.Calendar365Downloads.save(calendar,`koledar365-oddihi-${result.year}.ics`,'text/calendar;charset=utf-8');
     $('[data-vacation-status]').textContent = 'Datoteka ICS je pripravljena za uvoz v tvoj koledar.';
   }
 

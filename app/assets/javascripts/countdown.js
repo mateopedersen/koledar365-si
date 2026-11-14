@@ -180,7 +180,7 @@
    }
    lines.push(`SUMMARY:${esc(entry.title)}`,`DESCRIPTION:${esc(entry.detail||`Odštevanje na koledar365.si · ${entry.zone}`)}`,'END:VEVENT');
   });
-  lines.push('END:VCALENDAR','');const blob=new Blob([lines.join('\r\n')],{type:'text/calendar;charset=utf-8'}),url=URL.createObjectURL(blob),anchor=document.createElement('a');anchor.href=url;anchor.download='koledar365-odstevanje.ics';document.body.append(anchor);anchor.click();anchor.remove();URL.revokeObjectURL(url);
+  lines.push('END:VCALENDAR','');globalThis.Calendar365Downloads.save(lines.join('\r\n'),'koledar365-odstevanje.ics','text/calendar;charset=utf-8');
  };
 
  $$('[data-event-filter]').forEach(button=>button.addEventListener('click',()=>{activeFilter=button.dataset.eventFilter;visibleCount=12;$$('[data-event-filter]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));$('[data-region-control]').hidden=activeFilter==='holiday'||activeFilter==='favorite';renderEvents()}));

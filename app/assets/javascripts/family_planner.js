@@ -433,11 +433,7 @@
   data.groceries=data.groceries.filter(item=>!item.bought);
   persist(groceryStatus,'Kupljeni izdelki so odstranjeni.');
  });
- function download(blob,name){
-  const url=URL.createObjectURL(blob),anchor=make('a');
-  anchor.href=url;anchor.download=name;anchor.style.display='none';document.body.append(anchor);anchor.click();anchor.remove();
-  setTimeout(()=>URL.revokeObjectURL(url),1000);
- }
+ function download(blob,name){return globalThis.Calendar365Downloads.save(blob,name)}
  $('[data-family-export-ics]').addEventListener('click',()=>{
   try{
    const content=core.toICS(data);
