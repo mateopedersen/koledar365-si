@@ -16,7 +16,7 @@
     <% end %>
   </header>
 
-  <section class="observance-dates" aria-labelledby="observance-dates-title"><div class="observance-heading"><div><span class="eyebrow">NAČRTUJTE VNAPREJ</span><h2 id="observance-dates-title">Datumi v letih 2027–2030</h2></div><span class="observance-date-rule"><%= ui_icon('calendar') %><%= @observance.fixed? ? 'Stalen datum' : 'Datum se med leti spreminja' %></span></div>
+  <section class="observance-dates" aria-labelledby="observance-dates-title"><div class="observance-heading"><div><span class="eyebrow">NAČRTUJTE VNAPREJ</span><h2 id="observance-dates-title"><%= @title %>: kdaj v letih 2027–2030?</h2></div><span class="observance-date-rule"><%= ui_icon('calendar') %><%= @observance.fixed? ? 'Stalen datum' : 'Datum se med leti spreminja' %></span></div>
     <div class="observance-year-grid">
       <% @observance.by_year.each do |year,events| %><section class="observance-year-card" id="datum-<%= year %>" aria-labelledby="datum-title-<%= year %>"><div class="observance-card-top"><h3 id="datum-title-<%= year %>"><%= year %></h3><span><%= Date.gregorian_leap?(year) ? 'Prestopno leto' : '365 dni' %></span></div>
         <% events.each do |event| %><div class="observance-date-entry" data-observance-date="<%= event.on %>"><time datetime="<%= event.on %>"><strong><%= event.on.day %>.</strong><span><%= CalendarEngine::MONTHS[event.on.month-1] %><b><%= CalendarEngine::DAYS[event.on.cwday-1].sub(/\A./,&:upcase) %></b></span></time><% if events.size>1 %><p class="observance-event-label"><%= holiday_title(event) %></p><% end %><p class="observance-date-status"><span class="<%= 'is-free' if event.work_free %>"></span><%= holiday_status(event) %></p>

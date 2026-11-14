@@ -2,13 +2,14 @@ require 'digest'
 require 'json'
 require 'nokogiri'
 require 'time'
+require_relative '../app/services/numeric_date_presentation'
 
 # lastmod describes an observed content revision, never the time of a routine build.
 # Unknown historical modification dates are omitted instead of invented.
 module PublicationRevisions
   module_function
   def fingerprint(html, ignore_countdown_ticks: true)
-    doc=Nokogiri::HTML(html)
+    doc=Nokogiri::HTML(NumericDatePresentation.html(html))
     content=doc.at_css('main')&.dup
     content&.css('script,style')&.remove
     # The absolute event date remains in data-countdown. Only its clock-driven

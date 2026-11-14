@@ -4,6 +4,7 @@ module SeoHelper
   def seo_title = "#{seo_page_title} | Koledar365"
 
   def seo_page_title
+    return "#{@title} 2027–2030 | Datumi" if @observance && !@clock_change
     return "Prestopno leto: kalkulator in pravilo 29. februarja" if page_path == "/prestopno-leto/"
 
     title = (@title.presence || "Slovenski koledar").sub(/ +[·|] +Koledar365\z/, "")

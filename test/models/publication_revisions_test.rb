@@ -10,6 +10,12 @@ class PublicationRevisionsTest < ActiveSupport::TestCase
     again=PublicationRevisions.revision(html:html('Vsebina','b.css'),previous_html:html,previous_record:first,now:Time.utc(2026,10,23))
     assert_equal first,again
   end
+  test 'numeric date spacing is presentation while a different date is content' do
+    before=html('Datum dogodka: 31. 10. 2026')
+    compact=html('Datum dogodka: 31.10.2026')
+    assert_equal PublicationRevisions.fingerprint(before),PublicationRevisions.fingerprint(compact)
+    refute_equal PublicationRevisions.fingerprint(before),PublicationRevisions.fingerprint(html('Datum dogodka: 1.11.2026'))
+  end
   test 'a real content change dates the page and stays stable on the next build' do
     now=Time.utc(2026,10,22,13)
     changed=PublicationRevisions.revision(html:html('Novo'),previous_html:html,previous_record:nil,now:now)
