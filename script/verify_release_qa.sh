@@ -31,6 +31,8 @@ PY
 kill -0 "$task_server_pid" 2>/dev/null || { cat "$task_log" >&2; exit 1; }
 # Fail fast on the calendar regression before the longer site-wide scans.
 pnpm exec playwright test test/browser/calendar-event-labels.spec.mjs
+# Exercise cold-runtime tab readiness before the longer matrix.
+pnpm exec playwright test test/browser/seo-interactions.spec.mjs --grep "date calculator tabs"
 QA_WORKERS=1 node script/qa_browser.mjs
 QA_OUT=evidence/qa/css-layout node script/qa_css_layout.mjs
 QA_WORKERS=1 QA_MODE=a11y node script/qa_browser.mjs

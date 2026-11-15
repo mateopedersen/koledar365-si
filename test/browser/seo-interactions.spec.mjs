@@ -2,9 +2,13 @@ import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
 test('date calculator tabs preserve calculations and submit only active fields',async({page})=>{
+  // WebKit can initialize the portable Ruby runtime during the first workday request.
+  test.setTimeout(120000);
   await page.goto('/datumski-kalkulator/');
   const form=page.locator('[data-date-form]');
-  const calculate=()=>form.locator('[data-date-submit]').click();
+  const submit=form.locator('[data-date-submit]');
+  const ready=()=>expect(submit).toBeEnabled({timeout:60000});
+  const calculate=async()=>{await ready();await submit.click()};
   const primary=page.locator('[data-result-primary]');
   const oneStart=async()=>expect(await form.evaluate(element=>new FormData(element).getAll('from').length)).toBe(1);
   await form.locator('[data-date-from]').fill('2028-02-01');
@@ -20,6 +24,7 @@ test('date calculator tabs preserve calculations and submit only active fields',
   const work=page.getByRole('tab',{name:'Delovni dnevi',exact:true});
   await expect(work).toBeFocused();await expect(work).toHaveAttribute('aria-selected','true');
   await expect(page.getByRole('tabpanel',{name:'Delovni dnevi',exact:true})).toBeVisible();
+  await ready();
   await form.locator('[data-work-from]').fill('2028-02-01');
   await form.locator('[data-work-to]').fill('2028-02-29');
   await calculate();await expect(primary).toHaveText('20 delovnih dni');await oneStart();
