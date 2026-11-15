@@ -1,6 +1,26 @@
 require 'test_helper'
 
 class ObservancesTest < ActionDispatch::IntegrationTest
+  test 'every published observance keeps one brand separator across page and social titles' do
+    slugs=CalendarEvent.where(on:Date.new(2027,1,1)..Date.new(2030,12,31)).distinct.pluck(:slug)
+    pages=Page.where("path LIKE ? OR path LIKE ? OR path LIKE ?",'/prazniki/%/','/pomembni-dnevi/%/','/letni-casi/%/').select { |page|slugs.include?(page.path.split('/').last) }
+    assert_operator pages.length,:>,50
+    pages.each do |page|
+      page.update!(status:'published')
+      get page.path
+      assert_response :success
+      title=css_select('title').sole.text
+      assert_match(/\A[^|]+ \| Koledar365\z/,title,page.path)
+      assert_includes title,'datumi 2027–2030',page.path
+      assert_select 'meta[property="og:title"]',count:1 do |tags|
+        assert_equal title,tags.sole['content'],page.path
+      end
+      assert_select 'meta[name="twitter:title"]',count:1 do |tags|
+        assert_equal title,tags.sole['content'],page.path
+      end
+    end
+  end
+
   test 'a date inside the introduction remains a complete sentence' do
     assert_equal 'Marijino vnebovzetje, imenovano tudi veliki šmaren, obeležujemo 15. avgusta.',ObservancePage.new('marijino-vnebovzetje').lead
   end
