@@ -1,0 +1,9 @@
+<% if AdvertisingConfig.eligible?(section: @section, path: page_path, noindex: @noindex, not_found: @not_found) %>
+<section class="ad-placement" data-advertising-slot aria-label="Oglas">
+  <span class="ad-placement-label">Oglas</span>
+  <div class="ad-placement-stage" data-advertising-stage>
+    <div class="ad-placeholder" data-advertising-placeholder><p>Na tem mestu se oglasi prikažejo samo z vašim dovoljenjem.</p><button type="button" data-advertising-open>Nastavitve oglasov</button></div>
+  </div>
+  <button type="button" class="ad-placement-settings" data-advertising-open>Spremeni dovoljenje za oglase</button>
+</section>
+<% end %>

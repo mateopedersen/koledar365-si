@@ -21,6 +21,8 @@ on:
       - 'data/astronomy/**'
       - 'data/garden/**'
       - 'data/payments/**'
+      - 'data/advertising.json'
+      - 'public/advertising/**'
       - 'data/shopping-guides.json'
       - 'data/shopping-html/**'
       - 'public/shopping/**'

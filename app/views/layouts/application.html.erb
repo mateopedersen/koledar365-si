@@ -55,6 +55,7 @@
 <%= stylesheet_link_tag 'social_share' %><%= javascript_include_tag 'social_share', defer: true %>
 <% if TopicExperience.page(page_path) %><link rel="stylesheet" href="/topics/experience.css"><script type="module" src="/topics/experience.mjs"></script><% end %>
 
+<link rel="stylesheet" href="/advertising/advertising.css"><script id="advertising-config" type="application/json"><%= raw json_escape(AdvertisingConfig::DATA.to_json) %></script><script type="module" src="/advertising/advertising.mjs"></script>
 <link rel="icon" href="/icon.png" type="image/png" sizes="512x512">
 <% if @section=='shopping_guide' || @section=='important_days' %><link rel="stylesheet" href="<%= ShoppingGuides::DATA.fetch('css') %>"><% end %>
 </head>
@@ -67,6 +68,7 @@
 <% if flash[:notice] %><p class="notice" role="status"><%= flash[:notice] %></p><% end %><% if flash[:alert] %><p class="error" role="alert"><%= flash[:alert] %></p><% end %>
 <% if @section=='shopping_guide' %><div class="sg-share-row"><%= render 'layouts/social_share', sharing_image: sharing_image %></div><% end %>
 <%= yield %>
+<%= render 'layouts/advertising' %>
 </main>
 <footer class="site-footer">
   <div class="site-footer__inner">
@@ -99,6 +101,7 @@
           <a href="/zasebnost/">Zasebnost</a>
           <a href="/pogoji-uporabe/">Pogoji uporabe</a>
           <button class="site-footer__cookie-link" type="button" data-cookie-open>Nastavitve piškotkov</button>
+          <button class="site-footer__cookie-link footer-advertising-choice" type="button" data-advertising-open>Nastavitve oglasov</button>
         </section>
         <section class="site-footer__group site-footer__group--contact" aria-labelledby="footer-contact">
           <h2 id="footer-contact">Kontakt</h2>

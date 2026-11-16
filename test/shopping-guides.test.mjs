@@ -35,3 +35,11 @@ test('All localized calendar files match their exclusive dates and stable IDs',a
  }
  assert.equal(ids.size,10);
 });
+
+ test('Each shopping guide answers four distinct questions',()=>{
+  for(const page of config.pages){
+   const questions=page.faq.map(([question])=>question.trim().toLocaleLowerCase('sl-SI'));
+   assert.equal(questions.length,4,page.slug);
+   assert.equal(new Set(questions).size,questions.length,page.slug);
+  }
+ });

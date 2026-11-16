@@ -7,6 +7,7 @@ task_python="${PYTHON_BIN:-python3}"
 "$task_python" script/qa_seo.py
 bundle exec ruby script/audit_numeric_dates.rb
 "$task_python" script/audit_calendar_independent.py
+node script/test_advertising.mjs
 node script/test_qa_image_loading.mjs
 task_port="${K365_QA_PORT:-19783}"
 export K365_BASE_URL="http://127.0.0.1:$task_port"
