@@ -1,9 +1,9 @@
 require 'test_helper'
 module AdvertisingFeatureFixture
-  def with_advertising_enabled
+  def with_advertising_enabled(enabled: true)
     production_config = AdvertisingConfig::DATA
     AdvertisingConfig.send(:remove_const, :DATA)
-    AdvertisingConfig.const_set(:DATA, production_config.merge('enabled' => true).freeze)
+    AdvertisingConfig.const_set(:DATA, production_config.merge('enabled' => enabled).freeze)
     yield
   ensure
     AdvertisingConfig.send(:remove_const, :DATA)
@@ -48,7 +48,8 @@ class AdvertisingResponsePolicyTest < ActionDispatch::IntegrationTest
       assert_no_match /script-src[^;]*'unsafe-inline'|bauval|nresystems|storageimagedisplay/, response.headers['Content-Security-Policy']
     end
   end
-  test 'production hold removes public slots and keeps strict CSP with granted browser preference' do
+  test 'disabled delivery flag removes public slots and restores strict CSP' do
+    with_advertising_enabled(enabled: false) do
     assert_equal false, AdvertisingConfig::DATA['enabled']
     assert_not AdvertisingConfig.enabled?
     get '/pomembni-dnevi/crni-petek/'
@@ -56,6 +57,17 @@ class AdvertisingResponsePolicyTest < ActionDispatch::IntegrationTest
     assert_no_match /data-advertising-slot/, response.body
     assert_no_match /script-src[^;]*'unsafe-inline'|bauval|nresystems|storageimagedisplay/, response.headers['Content-Security-Policy']
     assert_match /'nonce-/, response.headers['Content-Security-Policy']
+    end
+  end
+  test 'approved production provides one public slot without granting private or query permissions' do
+    assert_equal true, AdvertisingConfig::DATA['enabled']
+    get '/pomembni-dnevi/crni-petek/'
+    assert_response :success
+    assert_equal 1, response.body.scan('data-advertising-slot').length
+    assert_match /script-src[^;]*'unsafe-inline'/, response.headers['Content-Security-Policy']
+    get '/pomembni-dnevi/crni-petek/?q=private'
+    assert_no_match /data-advertising-slot/, response.body
+    assert_no_match /script-src[^;]*'unsafe-inline'|bauval|nresystems|storageimagedisplay/, response.headers['Content-Security-Policy']
   end
   test 'only public ad pages receive inline policy and query pages retain strict nonce policy' do
     %w[/kontakt/ /zasebnost/ /piskotki/ /druzinski-planer/].each do |path|

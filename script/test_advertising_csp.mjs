@@ -46,11 +46,13 @@ test('public exception also requires 200 HTML, a real slot, and the base CSP', a
   assert.equal(await result.text(), '<section data-advertising-slot>Advertising</section>');
 });
 
-test('production hold leaves no page with advertising CSP permissions',()=>{
- assert.deepEqual(productionAdPaths,[]);
+test('approved production routes match real public ad slots and preserve strict private/query policy',()=>{
+ const actualPaths=new Set(productionAdPaths);assert.equal(actualPaths.size,productionAdPaths.length);assert(actualPaths.has('/pomembni-dnevi/crni-petek/'));
+ for(const path of ["/", "/zasebnost/", "/piskotki/", "/kontakt/", "/druzinski-planer/", "/ustvari-koledar/"])assert(!actualPaths.has(path),path);
+ for(const path of actualPaths){const html=fs.readFileSync(new URL('../site'+path+'index.html',import.meta.url),'utf8');assert.equal((html.match(/data-advertising-slot/g)||[]).length,1,path);}
  const headers=fs.readFileSync(new URL('../site/_headers',import.meta.url),'utf8');
- const policy=headers.match(/Content-Security-Policy: ([^\n]+)/)[1];
- assert.doesNotMatch(policy,/bauval|nresystems|storageimagedisplay/);
- assert.doesNotMatch(policy.match(/script-src ([^;]+)/)[1],/'unsafe-inline'/);
- assert.equal(advertisingCandidate(new Request('https://koledar365.si/public/'),new Set(productionAdPaths),hosts),false);
+ const policy=headers.match(/Content-Security-Policy: ([^\n]+)/)[1];assert.doesNotMatch(policy,/bauval|nresystems|storageimagedisplay/);assert.doesNotMatch(policy.match(/script-src ([^;]+)/)[1],/'unsafe-inline'/);
+ const productionHosts=['koledar365.si'];assert(advertisingCandidate(new Request('https://koledar365.si/pomembni-dnevi/crni-petek/'),actualPaths,productionHosts));
+ assert(!advertisingCandidate(new Request('https://koledar365.si/pomembni-dnevi/crni-petek/?q=private'),actualPaths,productionHosts));
+ for(const path of ["/", "/zasebnost/", "/piskotki/", "/kontakt/", "/druzinski-planer/", "/ustvari-koledar/"])assert(!advertisingCandidate(new Request('https://koledar365.si'+path),actualPaths,productionHosts),path);
 });

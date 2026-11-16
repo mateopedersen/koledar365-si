@@ -23,3 +23,5 @@ test('old city or analytics choices cannot become advertising consent',()=>{
  for(const value of [null,{version:2,preferences:true,expiresAt:now+5000},{version:1,analytics:true,expiresAt:now+5000},{...valid,advertising:'true'},{...valid,expiresAt:now},{...valid,expiresAt:now+181*86400000}])assert(!validConsent(value,now));
  const denied=consentRecord(false,now);assert(validConsent(denied,now));assert.equal(denied.advertising,false);
 });
+
+test('production is enabled after provider safety confirmation',()=>{assert.equal(productionConfig.enabled,true);});
