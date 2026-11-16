@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {consentRecord,validConsent,validUnit,unitForWidth} from '../public/advertising/ad-policy.mjs';
-const config=JSON.parse(readFileSync(new URL('../data/advertising.json',import.meta.url)));
+const productionConfig=JSON.parse(readFileSync(new URL('../data/advertising.json',import.meta.url)));
+const config={...productionConfig,enabled:true};
 test('Slovenian real banner units are exact and selected only when they fit',()=>{
  assert.equal(config.enabled,true);
  assert.equal(config.mobile.key,'8396e9ab561be1cb8eca2e425a8712b7');

@@ -1,6 +1,19 @@
 require 'test_helper'
+module AdvertisingFeatureFixture
+  def with_advertising_enabled
+    production_config = AdvertisingConfig::DATA
+    AdvertisingConfig.send(:remove_const, :DATA)
+    AdvertisingConfig.const_set(:DATA, production_config.merge('enabled' => true).freeze)
+    yield
+  ensure
+    AdvertisingConfig.send(:remove_const, :DATA)
+    AdvertisingConfig.const_set(:DATA, production_config)
+  end
+end
 class AdvertisingConfigTest < ActiveSupport::TestCase
+  include AdvertisingFeatureFixture
   test 'advertising never enters private tools, legal pages or editors' do
+    with_advertising_enabled do
     %w[unknown info search home planner school_timetable tool vacation calendar_studio about privacy cookie_policy terms methodology].each do |section|
       assert_not AdvertisingConfig.eligible?(section: section, path: '/')
     end
@@ -11,11 +24,14 @@ class AdvertisingConfigTest < ActiveSupport::TestCase
     assert_not AdvertisingConfig.eligible?(section: 'calendar', path: '/koledar/2027/', not_found: true)
     assert AdvertisingConfig.eligible?(section: 'shopping_guide', path: '/pomembni-dnevi/crni-petek/')
     assert AdvertisingConfig.eligible?(section: 'calendar', path: '/koledar/2027/')
+    end
   end
 end
 
 class AdvertisingResponsePolicyTest < ActionDispatch::IntegrationTest
+  include AdvertisingFeatureFixture
   test 'production-like public response allows creative inline code without a blocking nonce' do
+    with_advertising_enabled do
       get '/pomembni-dnevi/crni-petek/'
       assert_response :success
       assert_match /data-advertising-slot/, response.body
@@ -30,6 +46,16 @@ class AdvertisingResponsePolicyTest < ActionDispatch::IntegrationTest
       assert_no_match /script-src[^;]*'unsafe-inline'|bauval|nresystems|storageimagedisplay/, response.headers['Content-Security-Policy']
       get '/kontakt/'
       assert_no_match /script-src[^;]*'unsafe-inline'|bauval|nresystems|storageimagedisplay/, response.headers['Content-Security-Policy']
+    end
+  end
+  test 'production hold removes public slots and keeps strict CSP with granted browser preference' do
+    assert_equal false, AdvertisingConfig::DATA['enabled']
+    assert_not AdvertisingConfig.enabled?
+    get '/pomembni-dnevi/crni-petek/'
+    assert_response :success
+    assert_no_match /data-advertising-slot/, response.body
+    assert_no_match /script-src[^;]*'unsafe-inline'|bauval|nresystems|storageimagedisplay/, response.headers['Content-Security-Policy']
+    assert_match /'nonce-/, response.headers['Content-Security-Policy']
   end
   test 'only public ad pages receive inline policy and query pages retain strict nonce policy' do
     %w[/kontakt/ /zasebnost/ /piskotki/ /druzinski-planer/].each do |path|
