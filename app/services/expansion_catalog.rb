@@ -23,18 +23,20 @@ class ExpansionCatalog
       .merge('/solski-urnik/'=>EducationCalendar::TIMETABLE.merge(family:'education'))
       .merge(GardenCalendar::PATH=>{title:GardenCalendar::TITLE,description:GardenCalendar::DESCRIPTION,family:'garden'})
       .merge(PaymentCalendar::PAGES.transform_values{|page|page.merge(family:'payments')})
+      .merge(ShoppingGuides.pages)
   end
   def self.page(path) = pages[path]
   def self.apply!
     pages.each do |path,metadata|
       page=Page.find_or_initialize_by(path:path)
       page.assign_attributes(title:metadata.fetch(:title),description:metadata.fetch(:description),family:metadata[:family]||page.family||'information',status:'published')
-      page.metadata=(page.metadata||{}).merge('source_reviewed_on'=>REVIEWED_ON,'editorial_registry'=>'advanced-calendar-expansion')
-      page.updated_at=Time.utc(2026,10,21,17,0,0) if page.changed?
+      page.metadata=(page.metadata||{}).merge('source_reviewed_on'=>(ShoppingGuides.page(path) ? ShoppingGuides::CHECKED : REVIEWED_ON),'editorial_registry'=>'advanced-calendar-expansion')
+      page.updated_at=(ShoppingGuides.page(path) ? Time.utc(2026,11,16,12,0,0) : Time.utc(2026,10,21,17,0,0)) if page.changed?
       page.save! if page.changed?
     end
   end
   def self.image(path)
+    return ShoppingGuides.image(path) if ShoppingGuides.page(path)
     return GardenCalendar.image if path==GardenCalendar::PATH
     if PaymentCalendar.paths.include?(path)
       pension=PaymentCalendar.page(path).fetch(:kind)=='pension'

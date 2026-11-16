@@ -1,4 +1,6 @@
-<% if page_path=='/kontakt/' %>
+<% if @section=='shopping_guide' %>
+<%= raw ShoppingGuides.body(page_path) %>
+<% elsif page_path=='/kontakt/' %>
 <%= render 'contact' %>
 <% elsif page_path=='/koledar/' %>
 <%= render 'calendar_directory' %>

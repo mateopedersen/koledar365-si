@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Koledar365//Shopping calendar//sl-SI
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:crni-petek-2027@koledar365.si
+DTSTAMP:20261116T000000Z
+DTSTART;VALUE=DATE:20271126
+DTEND;VALUE=DATE:20271127
+SUMMARY:Črni petek 2027
+DESCRIPTION:Nakupovalni dan\, ne zakonsko določen dela prost dan.\nhttps:
+ //koledar365.si/pomembni-dnevi/crni-petek/
+URL:https://koledar365.si/pomembni-dnevi/crni-petek/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Črni petek
+END:VALARM
+END:VEVENT
+END:VCALENDAR

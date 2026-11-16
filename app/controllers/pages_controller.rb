@@ -114,6 +114,7 @@ class PagesController < ApplicationController
   end
   def section_for(path)
     return 'name' if @person
+    return 'shopping_guide' if ShoppingGuides.page(path)
     return 'home' if path=='/'
     return 'about' if path=='/o-nas/'
     return 'terms' if path=='/pogoji-uporabe/'

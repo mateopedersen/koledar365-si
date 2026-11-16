@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Koledar365//Shopping calendar//sl-SI
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kibernetski-ponedeljek-2027@koledar365.si
+DTSTAMP:20261116T000000Z
+DTSTART;VALUE=DATE:20271129
+DTEND;VALUE=DATE:20271130
+SUMMARY:Kibernetski ponedeljek 2027
+DESCRIPTION:Nakupovalni dan\, ne zakonsko določen dela prost dan.\nhttps:
+ //koledar365.si/pomembni-dnevi/kibernetski-ponedeljek/
+URL:https://koledar365.si/pomembni-dnevi/kibernetski-ponedeljek/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+DESCRIPTION:Kibernetski ponedeljek
+END:VALARM
+END:VEVENT
+END:VCALENDAR

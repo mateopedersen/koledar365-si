@@ -1,0 +1,315 @@
+{
+  "site": "Koledar365",
+  "origin": "https://koledar365.si",
+  "locale": "sl-SI",
+  "zone": "Europe/Ljubljana",
+  "country": "SLOVENIJA",
+  "theme": "si",
+  "paths": [
+    "/pomembni-dnevi/crni-petek/",
+    "/pomembni-dnevi/kibernetski-ponedeljek/"
+  ],
+  "hub": "/pomembni-dnevi/",
+  "hubName": "Pomembni dnevi",
+  "asset": "/shopping/",
+  "related": [
+    [
+      "/odstevanje/",
+      "Odštevajte do nakupovalnega dne"
+    ],
+    [
+      "/prazniki/2027/",
+      "Prazniki v Sloveniji 2027"
+    ],
+    [
+      "/koledar/2027/",
+      "Koledar za naslednje leto"
+    ]
+  ],
+  "labels": {
+    "edition": "NAKUPOVALNI VODNIK",
+    "checked": "Preverjeno 16. 11. 2026",
+    "stores": "Kje iskati ponudbe v Sloveniji?",
+    "storeIntro": "Objavljene akcije slovenskih trgovcev ter pogoji, ki vplivajo na končno ceno. Zalogo in dostavo preverite pri prodajalcu.",
+    "visit": "Odpri ponudbo trgovca",
+    "when": "Datumi",
+    "offers": "Preverjeni primeri ponudb",
+    "offerIntro": "Cene in pogoji so bili preverjeni 16. 11. 2026. To ni cenik v živo ali potrdilo o najnižji tržni ceni.",
+    "source": "Informacije trgovca",
+    "reference": "Primerjalna cena, prikazana na strani",
+    "member": "Članstvo in pogoji ponudbe",
+    "dates": "Datumi od 2026 do 2030",
+    "dateNote": "Črni petek sledi četrtemu četrtku v novembru v ZDA. Kibernetski ponedeljek je naslednji ponedeljek. Trajanje akcije določi trgovec.",
+    "year": "Leto",
+    "friday": "Črni petek",
+    "monday": "Kibernetski ponedeljek",
+    "calendar": "Dodaj v koledar",
+    "download": "Prenesi ICS",
+    "google": "Google Koledar",
+    "calendarNote": "Datoteko ICS lahko uvozite v Apple, Outlook in druge združljive koledarje. Uvoz je enkraten. Opomnik preverite v svoji aplikaciji.",
+    "legal": "Kako presoditi popust?",
+    "calc": "Katera košarica je ugodnejša?",
+    "calcIntro": "Primerjajte ceno istega izdelka, dostavo in obvezne stroške. Začetni zneski so učni primer, ne ponudba trgovcev.",
+    "a": "Možnost A",
+    "b": "Možnost B",
+    "price": "Cena izdelka (€)",
+    "shipping": "Dostava in obvezni stroški (€)",
+    "total": "Končni znesek",
+    "difference": "Razlika",
+    "equal": "Obe možnosti staneta enako.",
+    "winner": "Ugodnejša možnost",
+    "invalid": "V vsako polje vnesite nenegativno število.",
+    "faq": "Pogosta vprašanja",
+    "related": "Načrtujte naprej",
+    "plan": "Načrt pred nakupom",
+    "status": "Stanje akcije",
+    "confirmed": "Akcija objavljena",
+    "announced": "Datum objavljen",
+    "unknown": "Preverite veljavnost",
+    "ended": "Rok tega primera je potekel",
+    "expired": "Zaključena akcija",
+    "review": "Trenutno ceno preverite pri trgovcu.",
+    "next": "Preberite tudi",
+    "heroLine": "IZDELEK + DOSTAVA",
+    "heroTotal": "PRIMERJAJTE KONČNI ZNESEK",
+    "heroDate": "NOVEMBER",
+    "noHoliday": "Nakupovalni dan, ne zakonsko določen dela prost dan."
+  },
+  "legal": [
+    [
+      "Prejšnja cena ni poljubna redna cena",
+      "Pri objavljenem znižanju preverite prejšnjo ceno: praviloma gre za najnižjo ceno v zadnjih 30 dneh pred znižanjem. Odstotek popusta mora izhajati iz te cene. Primerjajte tudi enak model pri drugih prodajalcih.",
+      "https://www.gov.si/novice/2024-11-12-pasti-popustov-crnega-petka/",
+      "Tržni inšpektorat o popustih"
+    ],
+    [
+      "Spletni nakup in nakup v trgovini",
+      "Pri spletnem nakupu praviloma velja 14-dnevni rok za obvestilo o odstopu po prejemu izdelka; obstajajo izjeme. Brezhibnega izdelka, kupljenega v poslovalnici, prodajalec ni samodejno dolžan vzeti nazaj. Popust ne odpravi pravic ob neskladnosti blaga.",
+      "https://www.gov.si/novice/2024-11-12-pasti-popustov-crnega-petka/",
+      "Uradna pojasnila za potrošnike"
+    ]
+  ],
+  "pages": [
+    {
+      "kind": "friday",
+      "slug": "crni-petek",
+      "name": "Črni petek",
+      "title": "Črni petek 2026 v Sloveniji: datum, popusti in trgovci",
+      "description": "Kdaj je črni petek 2026? Primeri ponudb pri Merkurju in mimovrste, roki akcij Shoppster, kuponi, primerjava cen ter datumi do leta 2030.",
+      "intro": "Črni petek 2026 bo v Sloveniji 27. novembra. Več trgovcev je akcije začelo že prej. Tukaj so konkretni primeri, objavljeni roki in praktična razlaga, kako preveriti popust, ne da bi vas prepričala samo velika prečrtana cena.",
+      "lead": "Dober nakup ima jasen namen in jasen račun.",
+      "sections": [
+        [
+          "Kdaj se začnejo slovenske akcije?",
+          "Koledarski datum je 27. november, vendar mimovrste pri izbranem seznamu navaja začetek 2. novembra, Merkur pa za svojo ponudbo 4. november. Zato je pomembnejši rok posamezne akcije kot enoten naziv črni petek. Pred odhodom v poslovalnico preverite, ali spletna ponudba velja tudi tam."
+        ],
+        [
+          "Kaj primerjati pri večjem nakupu?",
+          "Pri televizorju shranite celotno oznako modela, pri prenosniku pa procesor, pomnilnik in operacijski sistem. Pri beli tehniki preverite še dostavo, vnos v stanovanje, priklop in odvoz starega aparata. Dodatne storitve lahko spremenijo vrstni red dveh navidezno podobnih ponudb."
+        ],
+        [
+          "Kako prepoznati uporaben popust?",
+          "Zapišite prejšnjo najnižjo ceno in trenutni znesek. Če stran ponuja kodo, jo preverite za točno izbrani izdelek in dejanskega prodajalca. Na spletni tržnici ni nujno, da vse izdelke prodaja ista družba. Različna embalaža, komplet ali dobavni rok lahko pojasnijo del cenovne razlike."
+        ]
+      ],
+      "stores": [
+        [
+          "MERKUR",
+          "Mali aparati in bela tehnika",
+          "Črni petek za izbrane skupine traja od 4. 11. do 1. 12. 2026 oziroma do prodaje zalog. Na strani so objavljene konkretne akcijske cene.",
+          "Različne akcije in spletne kode se ne seštevajo. Preverite izdelek in obseg morebitnih dodatnih storitev.",
+          "https://www.merkur.si/crni-petek-2026/mga/",
+          "confirmed"
+        ],
+        [
+          "mimovrste",
+          "Izbrani izdelki in kuponi",
+          "Seznam izbranih ponudb navaja obdobje od 2. 11. do najpozneje 30. 11. 2026 oziroma do prodaje zalog.",
+          "Preverite partnerja prodajalca. Koda CP10SLO26 je na preverjenem primeru označena le pri upravičenem izdelku.",
+          "https://www.mimovrste.com/seznami/crni-petek-100top",
+          "confirmed"
+        ],
+        [
+          "Shoppster",
+          "Tehnika, dom in orodje",
+          "Kampanja je objavljena do 29. 11. 2026 oziroma do prodaje zalog.",
+          "Ta objavljeni rok je pred kibernetskim ponedeljkom. Ne predpostavljajte samodejnega podaljšanja na 30. november.",
+          "https://www.shoppster.si/black-friday",
+          "confirmed"
+        ],
+        [
+          "BTC City Ljubljana",
+          "Ponudbe različnih poslovalnic",
+          "Pregled črnega petka povezuje kampanje trgovcev v nakupovalnem središču.",
+          "Ni enega skupnega popusta za vse trgovine. Datum, lokacijo poslovalnice in pogoje preverite pri izbranem trgovcu.",
+          "https://www.btc-city.com/index.php/sl/crni-petek",
+          "unknown"
+        ]
+      ],
+      "offers": [
+        [
+          "MERKUR",
+          "Cvrtnik na vroči zrak Philips NA353/10",
+          "119,99 €",
+          "299,99 €",
+          "Trgovec prikazuje 60 % znižanje. Objavljeni čas akcije 4. 11.–1. 12. 2026, do prodaje zalog.",
+          "https://www.merkur.si/crni-petek-2026/mga/",
+          "2026-12-01"
+        ],
+        [
+          "mimovrste",
+          "Vileda Turbo Mop, komplet 163422",
+          "26,99 € s kodo",
+          "29,99 €",
+          "Na izbranem izdelku je naveden 10 % popust s kodo CP10SLO26 do 30. 11. 2026. Preverite partnerja in dostavo.",
+          "https://www.mimovrste.com/seznami/crni-petek-100top",
+          "2026-11-30"
+        ]
+      ],
+      "plan": [
+        [
+          "Naredite kratek seznam",
+          "Izberite točne modele in najvišji skupni znesek, ki ga želite porabiti."
+        ],
+        [
+          "Preverite izdelek in prodajalca",
+          "Primerjajte model, paket, prodajalca ter 30-dnevno prejšnjo ceno."
+        ],
+        [
+          "Shranite pogoje",
+          "Po nakupu shranite račun, potrdilo naročila in pogoje morebitnega kupona."
+        ]
+      ],
+      "faq": [
+        [
+          "Kdaj je črni petek 2026 v Sloveniji?",
+          "V petek, 27. novembra 2026. Posamezne akcije lahko trajajo več dni ali tednov pred tem datumom in po njem."
+        ],
+        [
+          "Ali sta Black Friday in črni petek isto?",
+          "Da. Black Friday je angleški naziv istega nakupovalnega dne. Izraza Black Week in črni teden opisujeta daljše akcijsko obdobje."
+        ],
+        [
+          "Ali kupon velja tudi za že znižane izdelke?",
+          "Samo če to dovoljujejo objavljeni pogoji. Merkur pri preverjeni akciji izrecno navaja, da se različne akcije in spletne kode ne seštevajo."
+        ],
+        [
+          "Ali je črni petek dela prost dan?",
+          "Ne zaradi same nakupovalne akcije. Delovni čas trgovine in svoj delovni urnik preverite ločeno."
+        ]
+      ]
+    },
+    {
+      "kind": "monday",
+      "slug": "kibernetski-ponedeljek",
+      "name": "Kibernetski ponedeljek",
+      "title": "Kibernetski ponedeljek 2026: spletni popusti v Sloveniji",
+      "description": "Cyber Monday 2026 je 30. novembra. Preverite slovenske spletne ponudbe, veljavnost kod, dostavo in razliko do črnega petka; datumi 2026–2030.",
+      "intro": "Kibernetski ponedeljek oziroma Cyber Monday bo 30. novembra 2026. Pri slovenskih trgovcih se roki razlikujejo: nekatere ponudbe trajajo do ponedeljka, druge se končajo že v nedeljo. Pred plačilom preverite točen izdelek in veljavnost ugodnosti.",
+      "lead": "Ponedeljkova ponudba velja toliko, kot piše v pogojih.",
+      "sections": [
+        [
+          "Kaj je spletni oziroma kibernetski ponedeljek?",
+          "Gre za ponedeljek po črnem petku, povezan predvsem s spletnimi nakupi. Nekateri trgovci objavijo nove ugodnosti, drugi zaključujejo daljšo novembrsko kampanjo. Nov napis na vrhu strani še ne pomeni novega znižanja. Za primerjavo uporabite isto košarico, ki ste jo preverili med vikendom."
+        ],
+        [
+          "Kdo ima objavljen rok do ponedeljka?",
+          "Pri izbranem seznamu mimovrste je naveden rok do 30. 11. 2026. Merkurjeva preverjena ponudba malih aparatov traja do 1. 12. 2026. Shoppsterjev objavljeni rok pa je 29. 11. 2026. To ni potrdilo, da bo v ponedeljek sledila nova akcija; če jo trgovec objavi, preverite njene pogoje posebej."
+        ],
+        [
+          "Košarica ni samo cena izdelka",
+          "Dodajte dostavo, morebitno doplačilo ob prevzemu in storitve, ki jih res potrebujete. Če naročate darilo, preverite predvideni prihod, ne le čas odpreme. Pri različnih partnerjih v isti tržnici so lahko ločeni paketi, različni stroški in različni naslovi za vračilo."
+        ]
+      ],
+      "stores": [
+        [
+          "mimovrste",
+          "Izbrani kupon do 30. 11.",
+          "Preverjeni seznam vključuje ponudbe z rokom do kibernetskega ponedeljka. Pri kompletu Vileda je prikazana koda CP10SLO26.",
+          "Koda ni potrjena za ves asortiment. Preverite značko ob izdelku, prodajalca in končni znesek.",
+          "https://www.mimovrste.com/seznami/crni-petek-100top",
+          "confirmed"
+        ],
+        [
+          "MERKUR",
+          "Ponudba še do 1. 12.",
+          "Objavljeni čas izbrane ponudbe malih gospodinjskih aparatov zajema tudi 30. november.",
+          "Gre za že objavljeno akcijo črnega petka, ne za obljubo dodatnega ponedeljkovega popusta.",
+          "https://www.merkur.si/crni-petek-2026/mga/",
+          "confirmed"
+        ],
+        [
+          "Shoppster",
+          "Objavljeni rok je 29. 11.",
+          "Preverjena kampanja ima nedeljski zaključek, dan pred kibernetskim ponedeljkom.",
+          "Za 30. 11. preverite novo objavo. Stare nedeljske cene ali kode ne štejejo kot potrjena ponedeljkova ponudba.",
+          "https://www.shoppster.si/black-friday",
+          "unknown"
+        ],
+        [
+          "Enaa",
+          "Primerjava računalniške opreme",
+          "Trgovčev vodnik omenja Cyber Monday med obdobji za preverjanje prenosnikov.",
+          "V preverjenem vodniku ni potrjenega skupnega kupona ali cene za 30. 11. 2026. Preverite konkreten model na strani trgovca.",
+          "https://www.enaa.com/blog/prenosnik-akcija-kako-najti-pravo-ponudbo-zase/",
+          "unknown"
+        ]
+      ],
+      "offers": [
+        [
+          "MERKUR",
+          "Grelnik vode Gorenje K17DS",
+          "19,99 €",
+          "39,99 €",
+          "Na preverjeni strani je prikazano 50 % znižanje. Akcija traja do 1. 12. 2026 oziroma do prodaje zalog.",
+          "https://www.merkur.si/crni-petek-2026/mga/",
+          "2026-12-01"
+        ],
+        [
+          "mimovrste",
+          "Koda na izbranem kompletu Vileda",
+          "CP10SLO26",
+          "",
+          "Na kompletu Turbo Mop 163422 je označen 10 % popust do 30. 11. 2026. Pred plačilom preverite sprejem kode.",
+          "https://www.mimovrste.com/seznami/crni-petek-100top",
+          "2026-11-30"
+        ]
+      ],
+      "plan": [
+        [
+          "Preverite rok",
+          "Najprej izločite ponudbe, ki so se končale v nedeljo."
+        ],
+        [
+          "Ohranite enako košarico",
+          "Primerjajte isti model, opremo in izbrani način dostave."
+        ],
+        [
+          "Potrdite kodo",
+          "Preverite končno vsoto po vnosu kupona in shranite potrdilo."
+        ]
+      ],
+      "faq": [
+        [
+          "Kdaj je kibernetski ponedeljek 2026?",
+          "V ponedeljek, 30. novembra 2026. To je ponedeljek po črnem petku, ki bo 27. novembra."
+        ],
+        [
+          "Ali je Cyber Monday isto kot spletni ponedeljek?",
+          "Da, v slovenskih besedilih se uporabljata tudi poimenovanji spletni in kibernetski ponedeljek. Gre za isti nakupovalni dan."
+        ],
+        [
+          "Ali so vse akcije črnega petka veljavne tudi v ponedeljek?",
+          "Ne. Preverjena Shoppsterjeva kampanja se konča 29. 11. 2026, medtem ko imata navedena primera mimovrste in Merkur poznejša roka. Vedno preverite izbrani izdelek."
+        ],
+        [
+          "Kdaj bo kibernetski ponedeljek 2030?",
+          "V ponedeljek, 2. decembra 2030. Črni petek bo tisto leto 29. novembra, zato naslednji ponedeljek pade v december."
+        ]
+      ]
+    }
+  ],
+  "checked": "2026-11-16",
+  "css": "/shopping/guides-e7475ee5ef2f.css",
+  "script": "/shopping/guide-d245d9bcf38b.js"
+}

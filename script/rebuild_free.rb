@@ -4,6 +4,7 @@ root=File.expand_path('..',__dir__);Dir.chdir(root)
 def run!(*command)
   raise "Build failed: #{command.first(3).join(' ')}" unless system(*command)
 end
+run!('node','script/prepare_shopping.mjs')
 run!('bundle','exec','rails','db:prepare')
 run!('bundle','exec','ruby','script/restore_editorial.rb')
 run!('bundle','exec','ruby','script/lunar/prepare.rb')
