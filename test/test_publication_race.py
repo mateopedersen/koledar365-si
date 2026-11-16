@@ -10,7 +10,7 @@ import unittest
 
 PUBLISH = Path(__file__).resolve().parents[1] / "script" / "save_pages_publication.sh"
 GENERATED = (
-    "site/index.html", "evidence/indexability-audit.json", "functions/cities.js",
+    "site/index.html", "evidence/indexability-audit.json", "functions/cities.js", "functions/advertising-routes.js",
     "public/horoscope/daily.json", "data/editorial/horoscopes.json",
     "data/editorial/pages.json", "docs/advanced-calendar-live-urls.txt",
 )

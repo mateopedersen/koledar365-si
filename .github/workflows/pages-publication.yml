@@ -48,6 +48,8 @@ on:
       - 'data/horoscope/**'
       - 'public/horoscope/**'
       - 'functions/horoskop/**'
+      - 'functions/_middleware.js'
+      - 'lib/advertising*'
       - 'cloudflare/free/**'
       - 'script/**'
       - 'test/test_publication_race.py'

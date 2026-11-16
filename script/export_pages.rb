@@ -6,6 +6,7 @@ require 'base64'
 require 'open3'
 require_relative '../lib/svg_asset_references'
 require_relative '../lib/publication_revisions'
+require_relative '../lib/advertising_routes'
 ENV['OPERATOR_CONTACT']='koledar365@gmail.com'
 out=Rails.root.join(ENV.fetch('STATIC_OUT','site'));FileUtils.mkdir_p(out)
 partial=ENV['STATIC_ONLY']&.split(',')
@@ -247,7 +248,7 @@ headers=<<~HEADERS
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(self)
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://bauval.org 'wasm-unsafe-eval' 'sha256-#{cookie_script_hash}'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://bauval.org; font-src 'self' blob:; connect-src 'self' blob: https://bauval.org; frame-src https://docs.google.com/forms/ https://bauval.org; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-#{cookie_script_hash}'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' blob:; connect-src 'self' blob:; frame-src https://docs.google.com/forms/; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'
   Cache-Control: public, max-age=0, must-revalidate
 /*.ics
   Content-Type: text/calendar; charset=utf-8
@@ -312,7 +313,7 @@ PublicPagePolicy::REDIRECTS.each do |source,destination|
  [source,source.delete_suffix('/')].each { |path| redirect_lines << "#{path} #{destination} 301" }
 end
 redirect_file.write(redirect_lines.join("\n")+"\n")
-out.join('_routes.json').write(JSON.generate({version:1,include:['/vreme/*','/horoskop/*','/city-detect*','/koledar-z-imenom','/koledar-z-imenom/*','/imena','/imena/*','/godovi','/godovi/*','/free/names','/free/names/*','/free/search.json','/sitemap-names.xml','/sitemap.xml','/sitemap-pages.xml','/robots.txt'],exclude:[]}))
+AdvertisingRoutes.generate(root: Rails.root, output: out, existing_routes: ['/vreme/*','/horoskop/*','/city-detect*','/koledar-z-imenom','/koledar-z-imenom/*','/imena','/imena/*','/godovi','/godovi/*','/free/names','/free/names/*','/free/search.json','/sitemap-names.xml','/sitemap.xml','/sitemap-pages.xml','/robots.txt'])
 # Re-materialize after all page and asset transforms so the final static tree
 # always contains every content-addressed SVG referenced by generated CSS/HTML.
 SvgAssetReferences.materialize_fingerprinted_assets!(Rails.root.join('public'),out)
