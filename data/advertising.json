@@ -1,8 +1,6 @@
 {
   "enabled": true,
-  "mode": "sponsored-link",
-  "directLink": "https://asiafilm.org/4/6b6aabe64d2bbfcdadd73b76443164f4",
-  "directLinkUnit": "32322917",
+  "mode": "display-banner",
   "storageKey": "koledar365:advertising-consent:v1",
   "hosts": [
     "koledar365.si",
@@ -34,5 +32,9 @@
     "policy": "Politika zasebnosti",
     "allowed": "Oglasi so dovoljeni.",
     "denied": "Oglasi niso dovoljeni."
+  },
+  "displayLabels": {
+    "on": "Oglasi so vključeni. Sprememba v celoti velja ob naslednjem nalaganju strani.",
+    "off": "Oglasi so izključeni. Shranite nedokončano delo in osvežite stran, da ustavite že naloženo oglasno kodo."
   }
 }

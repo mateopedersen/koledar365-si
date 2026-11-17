@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('static sponsored ad appears before the main script and remains visible after rejecting cookies', async ({ page }) => {
+test('preview serves a real display stage without paid requests while preference choices work before the main script', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.addInitScript(() => {
     if (sessionStorage.getItem('consent-test-reset') !== 'done') {
@@ -24,9 +24,9 @@ test('static sponsored ad appears before the main script and remains visible aft
   const response = await page.goto('/prazniki/2027/', { waitUntil: 'commit' });
   expect(response?.ok()).toBe(true);
   await applicationRequested;
-  const ad = page.locator('[data-sponsored-link]');
-  await expect(ad).toBeVisible();
-  await expect(ad).toHaveAttribute('href', 'https://asiafilm.org/4/6b6aabe64d2bbfcdadd73b76443164f4');
+  const ad = page.locator('[data-advertising-stage]');
+  await expect(ad).toBeAttached();
+  await expect(page.locator('[data-sponsored-link]')).toHaveCount(0);
   const consent = page.locator('.cookie-choice-banner');
   await expect(consent).toBeVisible();
   await expect(page.locator('#cookies')).toBeHidden();
@@ -48,14 +48,14 @@ test('static sponsored ad appears before the main script and remains visible aft
 
   releaseApplication();
   await page.waitForLoadState('load');
-  await consent.getByRole('button', { name: 'Samo nujni' }).click();
+  await consent.getByRole('button', { name: 'Brez shranjevanja' }).click();
   await expect(consent).toBeHidden();
-  await expect(ad).toBeVisible();
+  await expect(ad).toBeAttached();
   expect(await page.locator('script[src*="bauval"],iframe[src*="bauval"]').count()).toBe(0);
   await expect(page.locator('#cookies')).toBeHidden();
   await page.reload();
   await expect(consent).toBeHidden();
-  await expect(ad).toBeVisible();
+  await expect(ad).toBeAttached();
   expect(await page.locator('script[src*="bauval"],iframe[src*="bauval"]').count()).toBe(0);
   await expect(page.locator('#cookies')).toBeHidden();
 });

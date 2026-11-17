@@ -31,7 +31,7 @@ end
 
 class AdvertisingResponsePolicyTest < ActionDispatch::IntegrationTest
   include AdvertisingFeatureFixture
-  test 'public sponsored links render immediately while retaining nonce protection' do
+  test 'public display stages render immediately while retaining nonce protection' do
     with_advertising_enabled do
       get '/pomembni-dnevi/crni-petek/'
       assert_response :success
@@ -43,7 +43,8 @@ class AdvertisingResponsePolicyTest < ActionDispatch::IntegrationTest
       assert_no_match /bauval|asiafilm/, scripts
       assert_match /object-src 'none'/, policy
       assert_no_match /storageimagedisplay|bauval/, policy
-      assert_match /data-sponsored-link/, response.body
+      assert_match /data-advertising-stage/, response.body
+      assert_no_match /data-sponsored-link/, response.body
       assert_no_match /<section[^>]*data-advertising-slot[^>]*hidden/, response.body
       get '/pomembni-dnevi/crni-petek/?q=private'
       assert_no_match /data-advertising-slot/, response.body
@@ -74,7 +75,7 @@ class AdvertisingResponsePolicyTest < ActionDispatch::IntegrationTest
     assert_no_match /data-advertising-slot/, response.body
     assert_no_match /script-src[^;]*'unsafe-inline'|bauval|nresystems|storageimagedisplay/, response.headers['Content-Security-Policy']
   end
-  test 'all public sponsored-link pages and private/query pages retain strict nonce policy' do
+  test 'all public display-banner pages and private/query pages retain strict nonce policy' do
     %w[/kontakt/ /zasebnost/ /piskotki/ /druzinski-planer/].each do |path|
       get path
       policy = response.headers['Content-Security-Policy']

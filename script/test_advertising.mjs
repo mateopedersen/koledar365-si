@@ -24,4 +24,4 @@ test('old city or analytics choices cannot become advertising consent',()=>{
  const denied=consentRecord(false,now);assert(validConsent(denied,now));assert.equal(denied.advertising,false);
 });
 
-test('production serves static sponsor HTML rather than a vendor tag',()=>{assert.equal(productionConfig.enabled,true);assert.equal(productionConfig.mode,'sponsored-link');assert.equal(productionConfig.directLinkUnit,'32322917');});
+test('production serves the approved responsive display Banner units',()=>{assert.equal(productionConfig.enabled,true);assert.equal(productionConfig.mode,'display-banner');assert.equal(productionConfig.desktop.width,728);assert.equal(productionConfig.mobile.width,300);});
