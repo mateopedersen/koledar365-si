@@ -3,6 +3,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import productionAdPaths from '../functions/advertising-routes.js';
 import {advertisingCandidate,advertisingCsp,advertisingResponse} from '../lib/advertising-csp.mjs';
+import {onRequest} from '../functions/_middleware.js';
 const original="default-src 'self'; script-src 'self' 'sha256-abc' 'nonce-xyz'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-src https://docs.google.com; object-src 'none'; form-action 'self'; frame-ancestors 'none'";
 const host='koledar365.si',hosts=[host],paths=new Set(['/']);
 test('official creative permissions retain base hashes, nonces and blocked event handlers',()=>{
@@ -27,4 +28,22 @@ test('the generated public placement inventory is unique and excludes queries/pr
 });
 test('every generated eligible page has one actual display stage and no handmade offer panel',()=>{
  for(const p of productionAdPaths){const html=fs.readFileSync(new URL('../site'+p+'index.html',import.meta.url),'utf8');assert.equal((html.match(/data-advertising-slot/g)||[]).length,1,p);assert.match(html,/data-advertising-mode="display-banner"/,p);assert.match(html,/data-advertising-stage/,p);assert.doesNotMatch(html,/data-sponsored-link|sponsored-banner__cta/,p);}
+});
+test('the actual Pages entry point applies the verified provider policy to every generated public placement',async()=>{
+ for(const path of productionAdPaths){
+  if(/^\/(?:upravljanje|prijava|odjava|api|free)(?:\/|$)/.test(path))continue;
+  const html=fs.readFileSync(new URL('../site'+path+'index.html',import.meta.url),'utf8');
+  let calls=0;const response=await onRequest({request:new Request(`https://${host}${path}`),next:async()=>{calls++;return new Response(html,{headers:{'Content-Type':'text/html; charset=utf-8','Content-Security-Policy':original}});}});
+  assert.equal(calls,1,path);assert.match(response.headers.get('Content-Security-Policy'),/https:\/\/bauval.org/,path);
+  assert.match(response.headers.get('Content-Security-Policy'),/script-src-attr 'none'/,path);
+  assert.equal(await response.text(),html,path);
+ }
+});
+test('the actual Pages entry point preserves private, query, error and non-HTML responses',async()=>{
+ for(const [url,method,status,type]of [[`https://${host}/?q=private`,'GET',200,'text/html'],...['upravljanje','prijava','odjava','api','free'].map(path=>[`https://${host}/${path}/`,'GET',200,'text/html']),['https://preview.pages.dev/','GET',200,'text/html'],[`https://${host}/`,'POST',200,'text/html'],[`https://${host}/`,'GET',404,'text/html'],[`https://${host}/`,'GET',200,'application/pdf']]){
+  const originalResponse=new Response('private',{status,headers:{'Content-Type':type,'Content-Security-Policy':original}});
+  originalResponse.clone=()=>{throw Error('Non-ad response must not be buffered');};
+  const response=await onRequest({request:new Request(url,{method}),next:async()=>originalResponse});
+  assert.equal(response,originalResponse);assert.equal(response.headers.get('Content-Security-Policy'),original);
+ }
 });
