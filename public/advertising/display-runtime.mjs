@@ -9,7 +9,7 @@ export function mountDisplayBanner(config,target=window){
  let canonicalPath;try{canonicalPath=new URL(canonical).pathname;}catch{}
  const live=config?.enabled===true&&config.mode==='display-banner'&&config.hosts?.includes(target.location.hostname)&&!target.location.search&&!target.location.hash&&canonicalPath===target.location.pathname;
  const valid=unit=>{try{const u=new URL(unit.src);return ((unit.width===728&&unit.height===90)||(unit.width===300&&unit.height===250))&&/^[a-f0-9]{32}$/.test(unit.key)&&u.protocol==='https:'&&config.scriptHosts.includes(u.hostname)&&!u.port&&!u.username&&!u.password&&!u.search&&!u.hash&&u.pathname==='/22/'+unit.key;}catch{return false;}};
- const read=()=>{try{const v=JSON.parse(target.localStorage.getItem(config.storageKey)||'null');return v?.version===1&&typeof v.advertising==='boolean'&&Number.isFinite(v.expiresAt)&&v.expiresAt>Date.now()&&v.expiresAt<=Date.now()+180*86400000?v:null;}catch{return null;}};
+ const read=()=>{try{const v=JSON.parse(target.localStorage.getItem(config.storageKey)||'null');const advertising=typeof v?.advertising==='boolean'?v.advertising:typeof v?.allowed==='boolean'?v.allowed:null;return v?.version===1&&advertising!==null&&Number.isFinite(v.expiresAt)&&v.expiresAt>Date.now()&&v.expiresAt<=Date.now()+180*86400000?{...v,advertising}:null;}catch{return null;}};
  let choice=read(),loaded=false,unitWidth=0;
  const update=()=>{slot.hidden=!live||choice?.advertising===false;doc.querySelectorAll('[data-banner-status]').forEach(el=>{el.textContent=(choice?.advertising===false?config.displayLabels?.off:config.displayLabels?.on)||'';});};
  const load=()=>{

@@ -28,4 +28,3 @@ test('the generated public placement inventory is unique and excludes queries/pr
 test('every generated eligible page has one actual display stage and no handmade offer panel',()=>{
  for(const p of productionAdPaths){const html=fs.readFileSync(new URL('../site'+p+'index.html',import.meta.url),'utf8');assert.equal((html.match(/data-advertising-slot/g)||[]).length,1,p);assert.match(html,/data-advertising-mode="display-banner"/,p);assert.match(html,/data-advertising-stage/,p);assert.doesNotMatch(html,/data-sponsored-link|sponsored-banner__cta/,p);}
 });
-
