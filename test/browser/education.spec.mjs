@@ -1,5 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import { test, expect } from '@playwright/test';
+import {chooseNecessaryCookies} from './cookie-helpers.mjs';
 
 const timetableKey = 'k365.school-timetable.v1';
 
@@ -11,8 +12,7 @@ test.beforeEach(async ({ page }) => {
 async function openPage(page, path) {
   const response = await page.goto(path);
   expect(response?.status()).toBe(200);
-  const consent = page.locator('[data-consent="necessary"]');
-  if (await consent.isVisible()) await consent.click();
+  await chooseNecessaryCookies(page);
   await expect(page.locator('h1')).toHaveCount(1);
   if (path === '/solski-urnik/') await page.getByRole('tab', { name: 'Urnik za obdobje' }).click();
 }

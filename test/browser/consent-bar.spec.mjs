@@ -26,6 +26,7 @@ test('cookie consent appears before the main script and stays within a usable mo
   await applicationRequested;
   const consent = page.locator('.cookie-choice-banner');
   await expect(consent).toBeVisible();
+  await expect(page.locator('#cookies')).toBeHidden();
 
   expect(applicationReleased).toBe(false);
 
@@ -46,6 +47,8 @@ test('cookie consent appears before the main script and stays within a usable mo
   await page.waitForLoadState('load');
   await consent.getByRole('button', { name: 'Samo nujni' }).click();
   await expect(consent).toBeHidden();
+  await expect(page.locator('#cookies')).toBeHidden();
   await page.reload();
   await expect(consent).toBeHidden();
+  await expect(page.locator('#cookies')).toBeHidden();
 });

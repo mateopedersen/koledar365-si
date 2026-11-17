@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-const dismiss=async page=>{const button=page.locator('[data-consent="necessary"]');if(await button.isVisible())await button.click();};
+import {chooseNecessaryCookies as dismiss} from './cookie-helpers.mjs';
 const downloadedText=async download=>{const stream=await download.createReadStream();let value='';for await(const chunk of stream)value+=chunk.toString('utf8');return value;};
 
 test('garden filter and private plan support real edit, persistence, backup and ICS',async({page})=>{

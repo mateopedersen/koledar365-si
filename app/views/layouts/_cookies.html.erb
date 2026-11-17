@@ -33,7 +33,7 @@
 <script nonce="<%= content_security_policy_nonce %>">
 (()=>{
   const bar=document.getElementById('cookies');
-  if(!bar)return;
+  if(!bar||document.getElementById('advertising-config'))return;
   let hasValidChoice=false;
   try{
     const choice=JSON.parse(localStorage.getItem('k365.consent')||'null');
