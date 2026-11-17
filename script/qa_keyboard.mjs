@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
-import {chromium,webkit} from '@playwright/test';
+import {chromium,webkit,expect} from '@playwright/test';
 const base=process.env.K365_BASE_URL||'http://127.0.0.1:19783';
 const out=process.env.QA_OUT||'evidence/qa/keyboard';fs.mkdirSync(out,{recursive:true});
 const engine=process.env.QA_BROWSER||'chromium';
@@ -62,7 +62,16 @@ await scenario('Menu Enter, Escape and focus return',async()=>{
  await page.goto(base+'/');const trigger=page.locator('[data-navigation-menu]>summary');await trigger.focus();await page.keyboard.press('Enter');assert(await page.locator('[data-navigation-menu]').getAttribute('open')!==null);await page.keyboard.press('Escape');assert(await trigger.evaluate(el=>el===document.activeElement));assert(await page.locator('[data-navigation-menu]').getAttribute('open')===null);
 });
 await scenario('Lunar arrow keys, Home, End and Space',async()=>{
- await page.goto(base+'/lunin-koledar/2028/februar/');const first=page.locator('#dan-2028-02-01');await first.focus();await page.keyboard.press('ArrowRight');assert(await page.locator('#dan-2028-02-02').evaluate(el=>el===document.activeElement));await page.keyboard.press('End');assert(await page.locator('#dan-2028-02-29').evaluate(el=>el===document.activeElement));await page.keyboard.press('Home');await page.keyboard.press('Space');assert(await first.getAttribute('aria-pressed')==='true');
+ // Day selection awaits the real month JSON on a cold visit. Keep the exact
+ // focus/selection requirements, but wait for the asynchronous user action.
+ await page.goto(base+'/lunin-koledar/2028/februar/');
+ const first=page.locator('#dan-2028-02-01');
+ await first.focus();await page.keyboard.press('ArrowRight');
+ await expect(page.locator('#dan-2028-02-02')).toBeFocused();
+ await page.keyboard.press('End');
+ await expect(page.locator('#dan-2028-02-29')).toBeFocused();
+ await page.keyboard.press('Home');await expect(first).toBeFocused();
+ await page.keyboard.press('Space');await expect(first).toHaveAttribute('aria-pressed','true');
 });
 await scenario('Studio arrows, modal Tab containment, Escape and focus return',async()=>{
  await page.goto(base+'/ustvari-koledar/');await page.locator('[data-tab=design]').focus();await page.keyboard.press('ArrowRight');assert(await page.locator('[data-tab=layout]').getAttribute('aria-selected')==='true');

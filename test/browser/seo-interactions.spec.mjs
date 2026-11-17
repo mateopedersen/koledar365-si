@@ -108,3 +108,29 @@ test('the lunar calendar remembers a selection made while the month is loading',
   await page.goBack();
   await expect(page.locator('#lunar-date')).toHaveValue('2028-01-24');
 });
+
+test('lunar keyboard focus follows the first key after a cold month response', async ({page}) => {
+  let releaseMonth;
+  const waiting = new Promise(resolve => { releaseMonth = resolve; });
+  await page.route('**/lunar/data/2028-02.json', async route => {
+    await waiting;
+    await route.continue();
+  });
+  try {
+    await page.goto('/lunin-koledar/2028/februar/');
+    const first = page.locator('#dan-2028-02-01');
+    await first.focus();
+    await first.press('ArrowRight');
+  } finally {
+    releaseMonth();
+  }
+  await expect(page.locator('#dan-2028-02-02')).toBeFocused();
+  await expect(page.locator('#dan-2028-02-02')).toHaveAttribute('aria-pressed', 'true');
+  await page.keyboard.press('End');
+  await expect(page.locator('#dan-2028-02-29')).toBeFocused();
+  await page.keyboard.press('Home');
+  await expect(page.locator('#dan-2028-02-01')).toBeFocused();
+  await page.keyboard.press('Space');
+  await expect(page.locator('#dan-2028-02-01')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page).toHaveURL(/#dan-2028-02-01$/);
+});
