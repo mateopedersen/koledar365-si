@@ -77,7 +77,7 @@ jobs:
       - name: SEO and observance contracts
         run: bundle exec ruby -r ./config/environment script/audit_seo.rb && bundle exec ruby -r ./config/environment script/audit_observances.rb
       - name: Verify consent and responsive advertising runtime
-        run: node --test test/advertising-runtime.test.mjs
+        run: node script/test_advertising_runtime.mjs
       - name: PostgreSQL backup and isolated restore
         env:
           PG_CONTAINER: ${{ job.services.postgres.id }}
