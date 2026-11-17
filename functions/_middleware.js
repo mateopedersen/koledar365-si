@@ -1,4 +1,2 @@
-import paths from './advertising-routes.js';
-import { advertisingResponse } from '../lib/advertising-csp.mjs';
-const publicPaths = new Set(paths);
-export const onRequest = context => advertisingResponse(context, publicPaths, ['koledar365.si', 'www.koledar365.si']);
+// Sponsored links are first-party HTML; preserve the normal response policy.
+export const onRequest = context => context.next();

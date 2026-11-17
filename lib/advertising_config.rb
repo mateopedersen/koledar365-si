@@ -2,7 +2,7 @@ require 'json'
 module AdvertisingConfig
   DATA = JSON.parse(File.read(Rails.root.join('data/advertising.json'))).freeze
   def self.enabled?
-    DATA['enabled'] == true
+    DATA['enabled'] == true && DATA['mode'] == 'sponsored-link' && DATA['directLink'].to_s.match?(%r{\Ahttps://asiafilm\.org/4/[a-f0-9]{32}\z})
   end
   def self.eligible_request?(request)
     controller = request.env['action_controller.instance']

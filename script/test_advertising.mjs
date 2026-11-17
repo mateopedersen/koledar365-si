@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {consentRecord,validConsent,validUnit,unitForWidth} from '../public/advertising/ad-policy.mjs';
 const productionConfig=JSON.parse(readFileSync(new URL('../data/advertising.json',import.meta.url)));
 const config={...productionConfig,enabled:true};
-test('Slovenian real banner units are exact and selected only when they fit',()=>{
+test('retained legacy banner identifiers reject wrong origins and dimensions',()=>{
  assert.equal(config.enabled,true);
  assert.equal(config.mobile.key,'8396e9ab561be1cb8eca2e425a8712b7');
  assert.equal(config.desktop.key,'930b3493b3bb201e6f196e0ba536267d');
@@ -24,4 +24,4 @@ test('old city or analytics choices cannot become advertising consent',()=>{
  const denied=consentRecord(false,now);assert(validConsent(denied,now));assert.equal(denied.advertising,false);
 });
 
-test('production is enabled after provider safety confirmation',()=>{assert.equal(productionConfig.enabled,true);});
+test('production serves static sponsor HTML rather than a vendor tag',()=>{assert.equal(productionConfig.enabled,true);assert.equal(productionConfig.mode,'sponsored-link');assert.equal(productionConfig.directLinkUnit,'32322917');});

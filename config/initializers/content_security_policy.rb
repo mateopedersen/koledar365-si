@@ -11,5 +11,5 @@ Rails.application.config.content_security_policy do |p|
   p.form_action :self
   p.frame_ancestors :none
 end
-Rails.application.config.content_security_policy_nonce_generator = ->(request) { AdvertisingConfig.eligible_request?(request) ? nil : SecureRandom.base64(24) }
+Rails.application.config.content_security_policy_nonce_generator = ->(_request) { SecureRandom.base64(24) }
 Rails.application.config.content_security_policy_nonce_directives = %w[script-src]
