@@ -148,6 +148,7 @@ jobs:
             evidence/qa/**/*.txt
             evidence/qa/**/*.md
             test-results/**/*.json
+            test-results/**/trace.zip
             test-results/**/error-context.md
             test-results/**/test-failed-*.png
           retention-days: 7

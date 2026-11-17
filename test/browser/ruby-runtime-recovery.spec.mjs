@@ -1,5 +1,23 @@
 import {test,expect} from '@playwright/test';
 
+test('a silent worker cannot leave the date calculator disabled and its replacement computes real workdays',async({page})=>{
+ test.setTimeout(90000);let workers=0;
+ await page.route('**/free/ruby-worker.js',async route=>{
+  workers++;
+  if(workers===1){await route.fulfill({contentType:'application/javascript',body:'self.onmessage=()=>{};'});return;}
+  await route.continue();
+ });
+ await page.goto('/datumski-kalkulator/');
+ await page.getByRole('tab',{name:'Delovni dnevi',exact:true}).click();
+ const form=page.locator('[data-date-form]'),submit=form.locator('[data-date-submit]');
+ await expect(submit).toBeEnabled({timeout:60000});
+ await form.locator('[data-work-from]').fill('2028-02-01');
+ await form.locator('[data-work-to]').fill('2028-02-29');
+ await submit.click();
+ await expect(page.locator('[data-result-primary]')).toHaveText('20 delovnih dni',{timeout:15000});
+ expect(workers).toBe(2);await expect(submit).toBeEnabled();
+});
+
 test('workday calculation survives a trapped Ruby VM and uses a fresh real engine',async({page})=>{
  test.setTimeout(120000);
  let workers=0;
