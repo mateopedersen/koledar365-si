@@ -59,16 +59,16 @@
 <link rel="icon" href="/icon.png" type="image/png" sizes="512x512">
 <% if @section=='shopping_guide' || @section=='important_days' %><link rel="stylesheet" href="<%= ShoppingGuides::DATA.fetch('css') %>"><% end %>
 </head>
-<body class="<%= [gallery_page? ? 'gallery-page' : nil, @section=='holidays' ? 'holiday-guide' : nil, @section=='home' ? 'home-page' : nil, @section=='terms' ? 'terms-page' : nil, page_path=='/druzinski-planer/' ? 'family-planner-page' : nil, page_path=='/razpored-izmen/' ? 'shift-page' : nil, page_path=='/solski-urnik/' ? 'student-timetable-page' : nil].compact.join(' ') %>">
+<body id="page-top" class="<%= [gallery_page? ? 'gallery-page' : nil, @section=='holidays' ? 'holiday-guide' : nil, @section=='home' ? 'home-page' : nil, @section=='terms' ? 'terms-page' : nil, page_path=='/druzinski-planer/' ? 'family-planner-page' : nil, page_path=='/razpored-izmen/' ? 'shift-page' : nil, page_path=='/solski-urnik/' ? 'student-timetable-page' : nil].compact.join(' ') %>">
 <a class="skip" href="#vsebina">Na vsebino</a>
 <%= render 'layouts/navigation' %>
 <%= render 'layouts/social_share', sharing_image: sharing_image unless @section=='shopping_guide' || @not_found || page_path.start_with?('/upravljanje/') || (@noindex && Rails.env.production?) %>
+<%= render 'layouts/advertising' %>
 <main id="vsebina" tabindex="-1">
 <% unless breadcrumbs.empty? %><nav class="breadcrumb" aria-label="Drobtinice"><% breadcrumbs.each_with_index do |(label,path),i| %><% if i>0 %><span aria-hidden="true">›</span><% end %><% if i==breadcrumbs.size-1 %><span aria-current="page"><%= label %></span><% else %><a href="<%= path %>"><%= label %></a><% end %><% end %></nav><% end %>
 <% if flash[:notice] %><p class="notice" role="status"><%= flash[:notice] %></p><% end %><% if flash[:alert] %><p class="error" role="alert"><%= flash[:alert] %></p><% end %>
 <% if @section=='shopping_guide' %><div class="sg-share-row"><%= render 'layouts/social_share', sharing_image: sharing_image %></div><% end %>
 <%= yield %>
-<%= render 'layouts/advertising' %>
 </main>
 <footer class="site-footer">
   <div class="site-footer__inner">
@@ -100,8 +100,8 @@
           <a href="/fotografije-in-licence/">Fotografije in licence</a>
           <a href="/zasebnost/">Zasebnost</a>
           <a href="/pogoji-uporabe/">Pogoji uporabe</a>
-          <button class="site-footer__cookie-link" type="button" data-cookie-open>Nastavitve piškotkov</button>
-          <button class="site-footer__cookie-link footer-advertising-choice" type="button" data-advertising-open>Nastavitve oglasov</button>
+          <button class="site-footer__cookie-link" type="button" data-cookie-preferences>Nastavitve piškotkov</button>
+
         </section>
         <section class="site-footer__group site-footer__group--contact" aria-labelledby="footer-contact">
           <h2 id="footer-contact">Kontakt</h2>
@@ -111,7 +111,7 @@
         </section>
       </nav>
     </div>
-    <div class="site-footer__bottom"><span>© <%= Time.zone.today.year %> Koledar365 · Vse pravice pridržane.</span><span>Ustvarjeno za Slovenijo. <span aria-hidden="true">🇸🇮 ❤️</span></span></div>
+    <div class="site-footer__bottom"><span class="site-footer__copyright"><strong>© <%= Time.zone.today.year %> Koledar365</strong><span>Vse pravice pridržane.</span></span><span>Ustvarjeno za Slovenijo. <span aria-hidden="true">🇸🇮 ❤️</span></span><a class="site-footer__back-top" href="#page-top">Na vrh <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></a></div>
   </div>
 </footer>
 <%= render 'layouts/cookies' %>

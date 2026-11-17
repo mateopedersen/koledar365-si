@@ -5,6 +5,7 @@ test('cookie consent appears before the main script and stays within a usable mo
   await page.addInitScript(() => {
     if (sessionStorage.getItem('consent-test-reset') !== 'done') {
       localStorage.removeItem('k365.consent');
+      localStorage.removeItem('koledar365:advertising-consent:v1');
       sessionStorage.setItem('consent-test-reset', 'done');
     }
   });
@@ -21,10 +22,9 @@ test('cookie consent appears before the main script and stays within a usable mo
   });
 
   const response = await page.goto('/prazniki/2027/', { waitUntil: 'commit' });
-  const policy = response?.headers()['content-security-policy'] || '';
-  test.skip(!policy.includes('sha256-'), 'Wait for the Pages build to publish the consent script hash before testing its static output.');
+  expect(response?.ok()).toBe(true);
   await applicationRequested;
-  const consent = page.locator('#cookies');
+  const consent = page.locator('.cookie-choice-banner');
   await expect(consent).toBeVisible();
 
   expect(applicationReleased).toBe(false);
@@ -32,19 +32,19 @@ test('cookie consent appears before the main script and stays within a usable mo
   const layout = await consent.evaluate((bar) => ({
     height: bar.getBoundingClientRect().height,
     bottom: Math.round(innerHeight - bar.getBoundingClientRect().bottom),
-    choices: [...bar.querySelectorAll('.cookie-actions button')].map((button) => ({
-      consent: button.dataset.consent || 'settings',
+    choices: [...bar.querySelectorAll('button')].map((button) => ({
+      consent: button.dataset.advertisingChoice,
       height: button.getBoundingClientRect().height,
     })),
   }));
   expect(layout.height).toBeLessThanOrEqual(await page.evaluate(() => innerHeight * 0.78 + 1));
-  expect(layout.bottom).toBe(0);
+  expect(layout.bottom).toBe(8);
   expect(layout.choices).toHaveLength(3);
   expect(layout.choices.every((choice) => choice.height >= 44)).toBe(true);
 
   releaseApplication();
   await page.waitForLoadState('load');
-  await consent.getByRole('button', { name: 'Ne shrani mesta' }).click();
+  await consent.getByRole('button', { name: 'Samo nujni' }).click();
   await expect(consent).toBeHidden();
   await page.reload();
   await expect(consent).toBeHidden();

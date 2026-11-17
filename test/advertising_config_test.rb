@@ -12,18 +12,19 @@ module AdvertisingFeatureFixture
 end
 class AdvertisingConfigTest < ActiveSupport::TestCase
   include AdvertisingFeatureFixture
-  test 'advertising never enters private tools, legal pages or editors' do
+  test 'all canonical public sections receive advertising; internal and error routes stay excluded' do
     with_advertising_enabled do
-    %w[unknown info search home planner school_timetable tool vacation calendar_studio about privacy cookie_policy terms methodology].each do |section|
-      assert_not AdvertisingConfig.eligible?(section: section, path: '/')
-    end
-    %w[/kontakt/ /fotografije-in-licence/ /upravljanje/dogodki/].each do |path|
-      assert_not AdvertisingConfig.eligible?(section: 'info', path: path)
-    end
-    assert_not AdvertisingConfig.eligible?(section: 'calendar', path: '/koledar/2027/', noindex: true)
-    assert_not AdvertisingConfig.eligible?(section: 'calendar', path: '/koledar/2027/', not_found: true)
-    assert AdvertisingConfig.eligible?(section: 'shopping_guide', path: '/pomembni-dnevi/crni-petek/')
-    assert AdvertisingConfig.eligible?(section: 'calendar', path: '/koledar/2027/')
+      %w[info search home planner school_timetable tool vacation calendar_studio about privacy cookie_policy terms methodology].each do |section|
+        assert AdvertisingConfig.eligible?(section: section, path: '/')
+      end
+      %w[/kontakt/ /fotografije-in-licence/ /druzinski-planer/].each do |path|
+        assert AdvertisingConfig.eligible?(section: 'info', path: path)
+      end
+      %w[/upravljanje/dogodki/ /prijava/ /404/ /500/].each do |path|
+        assert_not AdvertisingConfig.eligible?(section: 'info', path: path)
+      end
+      assert AdvertisingConfig.eligible?(section: 'calendar', path: '/koledar/2027/', noindex: true)
+      assert_not AdvertisingConfig.eligible?(section: 'calendar', path: '/koledar/2027/', not_found: true)
     end
   end
 end
@@ -45,7 +46,8 @@ class AdvertisingResponsePolicyTest < ActionDispatch::IntegrationTest
       assert_no_match /data-advertising-slot/, response.body
       assert_no_match /script-src[^;]*'unsafe-inline'|bauval|nresystems|storageimagedisplay/, response.headers['Content-Security-Policy']
       get '/kontakt/'
-      assert_no_match /script-src[^;]*'unsafe-inline'|bauval|nresystems|storageimagedisplay/, response.headers['Content-Security-Policy']
+      assert_equal 1, response.body.scan('data-advertising-slot').length
+      assert_match /script-src[^;]*'unsafe-inline'/, response.headers['Content-Security-Policy']
     end
   end
   test 'disabled delivery flag removes public slots and restores strict CSP' do
@@ -74,10 +76,9 @@ class AdvertisingResponsePolicyTest < ActionDispatch::IntegrationTest
       get path
       policy = response.headers['Content-Security-Policy']
       assert policy.present?
-      # Private and legal responses retain the original strict nonce policy.
-      assert_no_match /script-src[^;]*'unsafe-inline'/, policy
-      assert_no_match /bauval|nresystems|storageimagedisplay/, policy
-      assert_match /'nonce-/, policy
+      assert_equal 1, response.body.scan('data-advertising-slot').length
+      assert_match /script-src[^;]*'unsafe-inline'/, policy
+      assert_match /bauval/, policy
     end
     get '/pomembni-dnevi/crni-petek/?q=private'
     assert_no_match /data-advertising-slot/, response.body

@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 
 const chooseNecessaryCookies = async page => {
- const choice=page.locator('[data-consent="necessary"]');
+ const choice=page.locator('.cookie-choice-banner [data-advertising-choice="deny"]');
  if(await choice.isVisible()) await choice.click();
 };
 
@@ -73,12 +73,13 @@ test('all 69 city cards show their own lazy photo and linked photo credits',asyn
 
 test('the mobile privacy choice stays a compact, usable bottom ribbon',async({page})=>{
  await page.setViewportSize({width:390,height:844});
+ await page.addInitScript(()=>localStorage.removeItem('koledar365:advertising-consent:v1'));
  await page.goto('/soncni-vzhod-in-zahod/');
- const banner=page.locator('#cookies');
+ const banner=page.locator('.cookie-choice-banner');
  await expect(banner).toBeVisible();
  const layout=await page.evaluate(()=>{
-  const bar=document.querySelector('#cookies').getBoundingClientRect();
-  const choices=[...document.querySelectorAll('#cookies .cookie-actions button')].map(button=>{
+  const bar=document.querySelector('.cookie-choice-banner').getBoundingClientRect();
+  const choices=[...document.querySelectorAll('.cookie-choice-banner button')].map(button=>{
    const box=button.getBoundingClientRect();
    return{visible:box.width>0&&box.height>0,inside:box.top>=bar.top&&box.bottom<=bar.bottom+1};
   });

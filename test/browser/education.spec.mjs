@@ -193,12 +193,12 @@ test('timetable JSON restore requires a choice and rejects invalid backups witho
   };
   const file = { name: 'urnik.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(imported)) };
   await page.locator('[data-tt-import]').setInputFiles(file);
-  await expect(page.locator('dialog')).toContainText('Urnik 8. a');
-  await page.locator('dialog [data-cancel]').click();
+  await expect(page.locator('dialog:has([data-accept])')).toContainText('Urnik 8. a');
+  await page.locator('dialog:has([data-accept]) [data-cancel]').click();
   await expect(page.locator('[data-tt-lessons]')).toContainText('Obstoječi predmet');
 
   await page.locator('[data-tt-import]').setInputFiles(file);
-  await page.locator('dialog [data-accept]').click();
+  await page.locator('dialog:has([data-accept]) [data-accept]').click();
   await expect(page.locator('[data-tt-title]')).toHaveText('Urnik 8. a · 8. a');
   await expect(page.locator('[data-tt-lessons]')).toContainText('Fizika');
   await expect(page.locator('[data-tt-lessons]')).not.toContainText('Obstoječi predmet');
@@ -206,7 +206,7 @@ test('timetable JSON restore requires a choice and rejects invalid backups witho
     name: 'neveljaven.json', mimeType: 'application/json', buffer: Buffer.from('{"schema":"unknown","lessons":[]}'),
   });
   await expect(page.locator('[data-tt-toast]')).toContainText('Datoteka ni veljavna kopija');
-  await expect(page.locator('dialog')).toHaveCount(0);
+  await expect(page.locator('dialog:has([data-accept])')).toHaveCount(0);
   await page.reload();
   await expect(page.locator('[data-tt-lesson-count]')).toHaveText('1');
   await expect(page.locator('[data-tt-lessons]')).toContainText('Fizika');
