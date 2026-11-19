@@ -20,7 +20,7 @@
   </div>
   <details id="cookie-settings">
     <summary>Podrobne nastavitve</summary>
-    <p class="cookie-explanation">Tu ločeno uredite pomnjenje mesta. Oglasne povezave ne potrebujejo ločenega dovoljenja. Osebne načrte shranimo v tem brskalniku, ko jih ustvarite. Zavrnitev ne omeji uporabe koledarja. Izbiro hranimo 180 dni.</p>
+    <p class="cookie-explanation">Tu ločeno uredite pomnjenje mesta. Osebne načrte shranimo v tem brskalniku, ko jih ustvarite. Zavrnitev ne omeji uporabe koledarja. Izbiro hranimo 180 dni.</p>
     <div class="cookie-category"><div><strong>Nujna hramba</strong><p>Seja, varnost obrazcev in vaša izbira zasebnosti.</p></div><span class="necessary-label">Vedno dejavna</span></div>
     <label class="cookie-category"><span><strong>Zapomni si mesto</strong><small>Izbrano mesto za fotografijo in vreme ob naslednjem obisku. Hramba največ 180 dni.</small></span><input id="cookie-preferences" type="checkbox" role="switch"></label>
 
@@ -33,7 +33,7 @@
 <script nonce="<%= content_security_policy_nonce %>">
 (()=>{
   const bar=document.getElementById('cookies');
-  if(!bar||document.getElementById('advertising-config'))return;
+  if(!bar||document.getElementById('cookie-preferences-runtime'))return;
   let hasValidChoice=false;
   try{
     const choice=JSON.parse(localStorage.getItem('k365.consent')||'null');

@@ -313,7 +313,7 @@ PublicPagePolicy::REDIRECTS.each do |source,destination|
  [source,source.delete_suffix('/')].each { |path| redirect_lines << "#{path} #{destination} 301" }
 end
 redirect_file.write(redirect_lines.join("\n")+"\n")
-AdvertisingRoutes.generate(root: Rails.root, output: out, existing_routes: ['/vreme/*','/horoskop/*','/city-detect*','/koledar-z-imenom','/koledar-z-imenom/*','/imena','/imena/*','/godovi','/godovi/*','/free/names','/free/names/*','/free/search.json','/sitemap-names.xml','/sitemap.xml','/sitemap-pages.xml','/robots.txt'])
+AdvertisingRoutes.generate(root: Rails.root, output: out, enabled: AdvertisingConfig.enabled?, existing_routes: ['/vreme/*','/horoskop/*','/city-detect*','/koledar-z-imenom','/koledar-z-imenom/*','/imena','/imena/*','/godovi','/godovi/*','/free/names','/free/names/*','/free/search.json','/sitemap-names.xml','/sitemap.xml','/sitemap-pages.xml','/robots.txt'])
 # Re-materialize after all page and asset transforms so the final static tree
 # always contains every content-addressed SVG referenced by generated CSS/HTML.
 SvgAssetReferences.materialize_fingerprinted_assets!(Rails.root.join('public'),out)

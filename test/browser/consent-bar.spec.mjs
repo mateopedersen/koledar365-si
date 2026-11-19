@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('preview serves a real display stage without paid requests while preference choices work before the main script', async ({ page }) => {
+test('cookie consent appears without advertising before the main script loads', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.addInitScript(() => {
     if (sessionStorage.getItem('consent-test-reset') !== 'done') {
@@ -25,7 +25,7 @@ test('preview serves a real display stage without paid requests while preference
   expect(response?.ok()).toBe(true);
   await applicationRequested;
   const ad = page.locator('[data-advertising-stage]');
-  await expect(ad).toBeAttached();
+  await expect(ad).toHaveCount(0);
   await expect(page.locator('[data-sponsored-link]')).toHaveCount(0);
   const consent = page.locator('.cookie-choice-banner');
   await expect(consent).toBeVisible();
@@ -37,7 +37,7 @@ test('preview serves a real display stage without paid requests while preference
     height: bar.getBoundingClientRect().height,
     bottom: Math.round(innerHeight - bar.getBoundingClientRect().bottom),
     choices: [...bar.querySelectorAll('button')].map((button) => ({
-      consent: button.dataset.advertisingChoice,
+      consent: button.dataset.cookieChoice,
       height: button.getBoundingClientRect().height,
     })),
   }));
@@ -50,12 +50,12 @@ test('preview serves a real display stage without paid requests while preference
   await page.waitForLoadState('load');
   await consent.getByRole('button', { name: 'Brez shranjevanja' }).click();
   await expect(consent).toBeHidden();
-  await expect(ad).toBeAttached();
+  await expect(ad).toHaveCount(0);
   expect(await page.locator('script[src*="bauval"],iframe[src*="bauval"]').count()).toBe(0);
   await expect(page.locator('#cookies')).toBeHidden();
   await page.reload();
   await expect(consent).toBeHidden();
-  await expect(ad).toBeAttached();
+  await expect(ad).toHaveCount(0);
   expect(await page.locator('script[src*="bauval"],iframe[src*="bauval"]').count()).toBe(0);
   await expect(page.locator('#cookies')).toBeHidden();
 });

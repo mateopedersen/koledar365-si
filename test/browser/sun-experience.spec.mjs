@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 
 const chooseNecessaryCookies = async page => {
- const choice=page.locator('.cookie-choice-banner [data-advertising-choice="deny"]');
+ const choice=page.locator('.cookie-choice-banner [data-cookie-choice="deny"]');
  if(await choice.isVisible()) await choice.click();
 };
 

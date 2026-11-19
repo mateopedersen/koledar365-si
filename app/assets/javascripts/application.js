@@ -25,7 +25,7 @@ function rememberCityAllowed(){return currentConsent()?.preferences===true}
 try{localStorage.removeItem('k365.theme');if(!rememberCityAllowed())localStorage.removeItem('k365.city')}catch{}
 const cookieBar=$('#cookies');
 window.K365Preferences={choice:currentConsent,choose(allowed){const value={version:consentVersion,preferences:allowed===true,analytics:false,advertising:false,expiresAt:Date.now()+consentTTL};const saved=store.set('k365.consent',value);if(!allowed){try{localStorage.removeItem('k365.city')}catch{}}document.dispatchEvent(new CustomEvent('k365:consent',{detail:{preferences:allowed&&saved}}));}};
-if(cookieBar&&!document.getElementById('advertising-config')){
+if(cookieBar&&!document.getElementById('cookie-preferences-runtime')){
  const preferences=$('#cookie-preferences');
  let cookieOpener=null;
  const closeCookies=()=>{cookieBar.hidden=true;$('#cookie-settings').open=false;$('[data-consent-settings]').setAttribute('aria-expanded','false');if(cookieOpener?.isConnected)cookieOpener.focus()};
