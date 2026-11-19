@@ -21,23 +21,18 @@ test('only successful public HTML actually containing the display slot gains the
   const result=await advertisingResponse({request:new Request(`https://${host}/`),next:async()=>response},paths,hosts);assert.equal(result.headers.get('Content-Security-Policy').includes('https://bauval.org'),expected);assert.equal(await result.text(),body);assert.equal(result.headers.get('Cache-Control'),'public,max-age=0');
  }
 });
-test('the generated public placement inventory is unique and excludes queries/preview hosts/writes',()=>{
- const exact=new Set(productionAdPaths);assert.equal(exact.size,productionAdPaths.length);assert(exact.has('/'));
- assert(advertisingCandidate(new Request(`https://${host}/`),exact,hosts));
- assert(!advertisingCandidate(new Request(`https://${host}/?private=note`),exact,hosts));assert(!advertisingCandidate(new Request('https://preview.pages.dev/'),exact,hosts));assert(!advertisingCandidate(new Request(`https://${host}/`,{method:'POST'}),exact,hosts));
+test('published HTML contains no Adsterra placement or configuration',()=>{
+ assert.deepEqual(productionAdPaths,[]);
+ const site=new URL('../site/',import.meta.url);
+ const pages=fs.readdirSync(site,{recursive:true}).filter(file=>file.endsWith('.html'));
+ assert(pages.length>100,'all public HTML is available');
+ for(const file of pages)assert.doesNotMatch(fs.readFileSync(new URL(encodeURI(file),site),'utf8'),/data-advertising-slot|id="advertising-config"|data-sponsored-link|data-banner-choice|adsterra\.com|bauval\.org/i,file);
 });
-test('every generated eligible page has one actual display stage and no handmade offer panel',()=>{
- for(const p of productionAdPaths){const html=fs.readFileSync(new URL('../site'+p+'index.html',import.meta.url),'utf8');assert.equal((html.match(/data-advertising-slot/g)||[]).length,1,p);assert.match(html,/data-advertising-mode="display-banner"/,p);assert.match(html,/data-advertising-stage/,p);assert.doesNotMatch(html,/data-sponsored-link|sponsored-banner__cta/,p);}
-});
-test('the actual Pages entry point applies the verified provider policy to every generated public placement',async()=>{
- for(const path of productionAdPaths){
-  if(/^\/(?:upravljanje|prijava|odjava|api|free)(?:\/|$)/.test(path))continue;
-  const html=fs.readFileSync(new URL('../site'+path+'index.html',import.meta.url),'utf8');
-  let calls=0;const response=await onRequest({request:new Request(`https://${host}${path}`),next:async()=>{calls++;return new Response(html,{headers:{'Content-Type':'text/html; charset=utf-8','Content-Security-Policy':original}});}});
-  assert.equal(calls,1,path);assert.match(response.headers.get('Content-Security-Policy'),/https:\/\/bauval.org/,path);
-  assert.match(response.headers.get('Content-Security-Policy'),/script-src-attr 'none'/,path);
-  assert.equal(await response.text(),html,path);
- }
+
+test('Pages keeps its original CSP for public HTML',async()=>{
+ const response=new Response('public',{headers:{'Content-Type':'text/html','Content-Security-Policy':original}});
+ assert.equal(await onRequest({request:new Request(`https://${host}/`),next:async()=>response}),response);
+ assert.equal(response.headers.get('Content-Security-Policy'),original);
 });
 test('the actual Pages entry point preserves private, query, error and non-HTML responses',async()=>{
  for(const [url,method,status,type]of [[`https://${host}/?q=private`,'GET',200,'text/html'],...['upravljanje','prijava','odjava','api','free'].map(path=>[`https://${host}/${path}/`,'GET',200,'text/html']),['https://preview.pages.dev/','GET',200,'text/html'],[`https://${host}/`,'POST',200,'text/html'],[`https://${host}/`,'GET',404,'text/html'],[`https://${host}/`,'GET',200,'application/pdf']]){

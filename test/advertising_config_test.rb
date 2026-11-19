@@ -31,29 +31,6 @@ end
 
 class AdvertisingResponsePolicyTest < ActionDispatch::IntegrationTest
   include AdvertisingFeatureFixture
-  test 'public display stages render immediately while retaining nonce protection' do
-    with_advertising_enabled do
-      get '/pomembni-dnevi/crni-petek/'
-      assert_response :success
-      assert_match /data-advertising-slot/, response.body
-      policy = response.headers['Content-Security-Policy']
-      scripts = policy.match(/(?:^|; )script-src ([^;]+)/)[1]
-      assert_no_match /'unsafe-inline'/, scripts
-      assert_match /nonce-/, scripts
-      assert_no_match /bauval|asiafilm/, scripts
-      assert_match /object-src 'none'/, policy
-      assert_no_match /storageimagedisplay|bauval/, policy
-      assert_match /data-advertising-stage/, response.body
-      assert_no_match /data-sponsored-link/, response.body
-      assert_no_match /<section[^>]*data-advertising-slot[^>]*hidden/, response.body
-      get '/pomembni-dnevi/crni-petek/?q=private'
-      assert_no_match /data-advertising-slot/, response.body
-      assert_no_match /script-src[^;]*'unsafe-inline'|bauval|nresystems|storageimagedisplay/, response.headers['Content-Security-Policy']
-      get '/kontakt/'
-      assert_equal 1, response.body.scan('data-advertising-slot').length
-      assert_no_match /script-src[^;]*'unsafe-inline'/, response.headers['Content-Security-Policy']
-    end
-  end
   test 'disabled delivery flag removes public slots and restores strict CSP' do
     with_advertising_enabled(enabled: false) do
     assert_equal false, AdvertisingConfig::DATA['enabled']
@@ -65,22 +42,12 @@ class AdvertisingResponsePolicyTest < ActionDispatch::IntegrationTest
     assert_match /'nonce-/, response.headers['Content-Security-Policy']
     end
   end
-  test 'approved production provides one public slot without granting private or query permissions' do
-    assert_equal true, AdvertisingConfig::DATA['enabled']
-    get '/pomembni-dnevi/crni-petek/'
-    assert_response :success
-    assert_equal 1, response.body.scan('data-advertising-slot').length
-    assert_no_match /script-src[^;]*'unsafe-inline'/, response.headers['Content-Security-Policy']
-    get '/pomembni-dnevi/crni-petek/?q=private'
-    assert_no_match /data-advertising-slot/, response.body
-    assert_no_match /script-src[^;]*'unsafe-inline'|bauval|nresystems|storageimagedisplay/, response.headers['Content-Security-Policy']
-  end
-  test 'all public display-banner pages and private/query pages retain strict nonce policy' do
+  test 'public and query pages retain strict nonce policy without advertising' do
     %w[/kontakt/ /zasebnost/ /piskotki/ /druzinski-planer/].each do |path|
       get path
       policy = response.headers['Content-Security-Policy']
       assert policy.present?
-      assert_equal 1, response.body.scan('data-advertising-slot').length
+      assert_no_match /data-advertising-slot|advertising-config|data-banner-choice/, response.body
       assert_no_match /script-src[^;]*'unsafe-inline'/, policy
       assert_no_match /bauval|asiafilm/, policy
     end
