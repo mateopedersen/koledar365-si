@@ -55,7 +55,7 @@
 <%= stylesheet_link_tag 'social_share' %><%= javascript_include_tag 'social_share', defer: true %>
 <% if TopicExperience.page(page_path) %><link rel="stylesheet" href="/topics/experience.css"><script type="module" src="/topics/experience.mjs"></script><% end %>
 
-<link rel="stylesheet" href="/advertising/advertising.css"><script id="advertising-config" type="application/json"><%= raw json_escape(AdvertisingConfig::DATA.to_json) %></script><script type="module" src="/advertising/advertising.mjs"></script>
+<link rel="stylesheet" href="/cookie-preferences.css"><script type="module" src="/cookie-preferences.mjs"></script>
 <link rel="icon" href="/icon.png" type="image/png" sizes="512x512">
 <% if @section=='shopping_guide' || @section=='important_days' %><link rel="stylesheet" href="<%= ShoppingGuides::DATA.fetch('css') %>"><% end %>
 </head>
@@ -63,7 +63,6 @@
 <a class="skip" href="#vsebina">Na vsebino</a>
 <%= render 'layouts/navigation' %>
 <%= render 'layouts/social_share', sharing_image: sharing_image unless @section=='shopping_guide' || @not_found || page_path.start_with?('/upravljanje/') || (@noindex && Rails.env.production?) %>
-<%= render 'layouts/advertising' %>
 <main id="vsebina" tabindex="-1">
 <% unless breadcrumbs.empty? %><nav class="breadcrumb" aria-label="Drobtinice"><% breadcrumbs.each_with_index do |(label,path),i| %><% if i>0 %><span aria-hidden="true">›</span><% end %><% if i==breadcrumbs.size-1 %><span aria-current="page"><%= label %></span><% else %><a href="<%= path %>"><%= label %></a><% end %><% end %></nav><% end %>
 <% if flash[:notice] %><p class="notice" role="status"><%= flash[:notice] %></p><% end %><% if flash[:alert] %><p class="error" role="alert"><%= flash[:alert] %></p><% end %>

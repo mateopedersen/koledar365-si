@@ -24,4 +24,4 @@ test('old city or analytics choices cannot become advertising consent',()=>{
  const denied=consentRecord(false,now);assert(validConsent(denied,now));assert.equal(denied.advertising,false);
 });
 
-test('production serves the approved responsive display Banner units',()=>{assert.equal(productionConfig.enabled,true);assert.equal(productionConfig.mode,'display-banner');assert.equal(productionConfig.desktop.width,728);assert.equal(productionConfig.mobile.width,300);});
+test('production advertising is disabled',()=>{assert.equal(productionConfig.enabled,false);});
