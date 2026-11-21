@@ -158,7 +158,7 @@ function initializeSearchResults(){
   const {results,total}=searchRecords(data,query,{limit:10000});panel.removeAttribute('aria-busy');panel.replaceChildren();
   if(!total){panel.append(element('p',`Za »${query}« nismo našli zadetkov. Poskusite krajši izraz ali preverite zapis.`,'search-empty-copy'));const links=element('div',undefined,'search-shortcuts');popularSearches.slice(0,4).forEach((item,index)=>links.append(makeSearchLink(item,`empty-${index}`)));panel.append(links);return}
   const categoryCounts=new Map();for(const row of results)categoryCounts.set(row.category,(categoryCounts.get(row.category)||0)+1);
-  panel.append(element('p',`Najdenih ${total.toLocaleString('sl-SI')} rezultatov. Izberite kategorijo ali odprite želeni zadetek.`,'search-summary'));
+  panel.append(element('p',`Najdenih ${total.toLocaleString('sl-SI', {useGrouping:false})} rezultatov. Izberite kategorijo ali odprite želeni zadetek.`,'search-summary'));
   const filters=element('div',undefined,'search-filters');filters.setAttribute('role','group');filters.setAttribute('aria-label','Filtriraj rezultate');
   const list=element('ul',undefined,'search-results'),showMore=element('button','Pokaži še zadetke','search-more');let activeCategory='Vse',visibleCount=50;
   const renderRows=()=>{list.replaceChildren();const filtered=activeCategory==='Vse'?results:results.filter(row=>row.category===activeCategory);filtered.slice(0,visibleCount).forEach((row,index)=>{const li=element('li',undefined,'search-result');li.append(makeSearchLink({...row,detail:row.category},`result-${index}`));list.append(li)});showMore.hidden=filtered.length<=visibleCount;showMore.textContent=`Pokaži še ${Math.min(50,filtered.length-visibleCount)} zadetkov`;};
