@@ -112,7 +112,7 @@ function initDateCalculator(root){
  const stats={one:result.querySelector('[data-stat="one"]'),two:result.querySelector('[data-stat="two"]'),three:result.querySelector('[data-stat="three"]'),four:result.querySelector('[data-stat="four"]')};
  const formatter=new Intl.DateTimeFormat('sl-SI',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
  const weekdayFormatter=new Intl.DateTimeFormat('sl-SI',{weekday:'long',timeZone:'UTC'});
- const numberFormatter=new Intl.NumberFormat('sl-SI',{maximumFractionDigits:2});
+ const numberFormatter=new Intl.NumberFormat('sl-SI',{useGrouping:false,maximumFractionDigits:2});
  const dateInput=(value)=>{const match=/^(\d{4})-(\d{2})-(\d{2})$/.exec(value||'');if(!match)return null;const date=new Date(Date.UTC(+match[1],+match[2]-1,+match[3]));return date.getUTCFullYear()===+match[1]&&date.getUTCMonth()===+match[2]-1&&date.getUTCDate()===+match[3]?date:null};
  const dateISO=(date)=>date.toISOString().slice(0,10);
  const dayDiff=(a,b)=>Math.round((b-a)/86400000);

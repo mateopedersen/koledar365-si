@@ -2,7 +2,7 @@
 (()=>{'use strict';
 const card=document.getElementById('city-card');if(!card||card.dataset.liveInitialized)return;card.dataset.liveInitialized='true';
 const $=id=>card.querySelector('#'+id),select=$('city-select'),fetchWeather=window.fetch.bind(window);
-const zone='Europe/Ljubljana',timeFormat=new Intl.DateTimeFormat('sl-SI',{timeZone:zone,hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}),dayFormat=new Intl.DateTimeFormat('sl-SI',{timeZone:zone,weekday:'long',day:'numeric',month:'long',year:'numeric'}),zoneFormat=new Intl.DateTimeFormat('en-GB',{timeZone:zone,timeZoneName:'short'}),shortTime=new Intl.DateTimeFormat('sl-SI',{timeZone:zone,hour:'2-digit',minute:'2-digit'}),number=new Intl.NumberFormat('sl-SI',{maximumFractionDigits:0});
+const zone='Europe/Ljubljana',timeFormat=new Intl.DateTimeFormat('sl-SI',{timeZone:zone,hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}),dayFormat=new Intl.DateTimeFormat('sl-SI',{timeZone:zone,weekday:'long',day:'numeric',month:'long',year:'numeric'}),zoneFormat=new Intl.DateTimeFormat('en-GB',{timeZone:zone,timeZoneName:'short'}),shortTime=new Intl.DateTimeFormat('sl-SI',{timeZone:zone,hour:'2-digit',minute:'2-digit'}),number=new Intl.NumberFormat('sl-SI',{useGrouping:false,maximumFractionDigits:0});
 let clockTimer,weatherTimer,request,revision=0,lastFetch=0,displayed=null,manualCityPreference=false,manualCityChange=false,cityInitializationComplete=false;const memory=new Map();
 let cityPhotos;
 function updateCityPhoto(id=select.value){cityPhotos??=import('/photo-time/slovenia-9ae27fc9896105e3.mjs').then(module=>module.createSiteCityPhotos(card,select));return cityPhotos.then(controller=>controller.select(id));}

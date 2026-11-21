@@ -3,14 +3,14 @@
   const cardinal = new Intl.PluralRules('sl-SI');
   const workdayLabel = value => ({one:'delovni dan',two:'delovna dneva',few:'delovni dnevi',other:'delovnih dni'})[cardinal.select(value)];
   const dayLabel = value => ({one:'dan',two:'dneva',few:'dnevi',other:'dni'})[cardinal.select(value)];
-  const hourText = new Intl.NumberFormat('sl-SI', {style:'unit',unit:'hour',unitDisplay:'long',maximumFractionDigits:2});
+  const hourText = new Intl.NumberFormat('sl-SI', {useGrouping:false,style:'unit',unit:'hour',unitDisplay:'long',maximumFractionDigits:2});
   const calculator = document.querySelector('[data-workday-calculator]');
   if (calculator) {
     const tabs = [...calculator.querySelectorAll('[data-wdc-mode]')];
     const panels = [...calculator.querySelectorAll('[data-wdc-panel]')];
     const result = calculator.querySelector('[data-wdc-result]');
     const status = calculator.querySelector('[data-wdc-status]');
-    const number = new Intl.NumberFormat('sl-SI', { maximumFractionDigits: 2 });
+    const number = new Intl.NumberFormat('sl-SI', {useGrouping:false, maximumFractionDigits: 2 });
     const dateFormat = new Intl.DateTimeFormat('sl-SI', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
     const weekdayFormat = new Intl.DateTimeFormat('sl-SI', { weekday: 'long', timeZone: 'UTC' });
     const parseDate = (value) => {
@@ -209,7 +209,7 @@
   const weekdayInputs = [...controls.querySelectorAll('.workdays-weekdays input')];
   const cards = [...dashboard.querySelectorAll('[data-workdays-card]')];
   const year = Number(dashboard.dataset.year);
-  const formatter = new Intl.NumberFormat('sl-SI', { maximumFractionDigits: 2 });
+  const formatter = new Intl.NumberFormat('sl-SI', {useGrouping:false, maximumFractionDigits: 2 });
 
 
   const update = () => {

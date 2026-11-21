@@ -18,7 +18,7 @@
  const addIsoDays=(value,amount)=>{const date=dateAsUtc(value);if(!date)return value;date.setUTCDate(date.getUTCDate()+amount);return date.toISOString().slice(0,10)};
  const dateFormatter=new Intl.DateTimeFormat('sl-SI',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
  const shortMonthFormatter=new Intl.DateTimeFormat('sl-SI',{month:'short',timeZone:'UTC'});
- const numberFormatter=new Intl.NumberFormat('sl-SI');
+ const numberFormatter=new Intl.NumberFormat('sl-SI', {useGrouping:false});
  const dateAsUtc=value=>{const p=dateParts(value);return p?new Date(Date.UTC(p.year,p.month-1,p.day)):null};
  const formatDate=value=>{const date=dateAsUtc(value);return date?dateFormatter.format(date):value};
  const formatRange=event=>event.end_date&&event.end_date!==event.date?`${formatDate(event.date)} – ${formatDate(event.end_date)}`:formatDate(event.date);
