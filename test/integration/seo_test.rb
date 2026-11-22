@@ -118,14 +118,15 @@ class SeoTest < ActionDispatch::IntegrationTest
     get '/soncni-vzhod-in-zahod/unknown-place/'
     assert_response :not_found
   end
-  test 'legal pages contain an accessible nonmodal consent bar with opt in off' do
+  test 'legal pages contain an independent storage notice and city preference' do
     get '/piskotki/'
     assert_response :success
-    assert_select 'section.cookie-bar[hidden]'
-    assert_select 'dialog#cookies',count:0
+    assert_select 'section#storage-notice[hidden]'
+    assert_select 'section#storage-notice a[href="/piskotki/"]'
+    assert_select 'dialog.cookie-preferences-dialog'
     assert_select '#cookie-preferences[checked]',count:0
-    assert_select '[data-consent="necessary"]'
-    assert_select '[data-consent="all"]'
+    assert_select '[data-storage-dismiss]'
+    assert_select '[data-storage-close]'
     get '/prazniki/gregorjevo/'
     assert_select 'a[href="https://www.ljubljana.si/sl/aktualno/novice/na-gregorjevo-se-pticki-zenijo"]'
   end

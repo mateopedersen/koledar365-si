@@ -55,7 +55,7 @@
 <%= stylesheet_link_tag 'social_share' %><%= javascript_include_tag 'social_share', defer: true %>
 <% if TopicExperience.page(page_path) %><link rel="stylesheet" href="/topics/experience.css"><script type="module" src="/topics/experience.mjs"></script><% end %>
 
-<link rel="stylesheet" href="/cookie-preferences.css"><script id="cookie-preferences-runtime" type="module" src="/cookie-preferences.mjs"></script>
+<link rel="stylesheet" href="/cookie-preferences.css">
 <link rel="icon" href="/icon.png" type="image/png" sizes="512x512">
 <% if @section=='shopping_guide' || @section=='important_days' %><link rel="stylesheet" href="<%= ShoppingGuides::DATA.fetch('css') %>"><% end %>
 <%= stylesheet_link_tag 'editorial_guides' %>

@@ -1,47 +1,35 @@
-<section id="cookies" class="cookie-bar" aria-labelledby="cookie-title" aria-describedby="cookie-intro" hidden>
-  <div class="cookie-bar-main">
-    <div class="cookie-bar-icon" aria-hidden="true">
-      <%= ui_icon('cookie') %>
-      <span class="cookie-flag"><%= slovenia_flag %></span>
+<section id="storage-notice" class="storage-notice" aria-labelledby="storage-title" aria-describedby="storage-description" hidden>
+  <div class="storage-notice__inner">
+    <img class="storage-notice__art" src="/visuals/cookie-privacy.svg" width="88" height="88" alt="">
+    <div class="storage-notice__heading">
+      <p>Vaša zasebnost</p>
+      <h2 id="storage-title">Kako uporabljamo shrambo brskalnika</h2>
     </div>
-    <div class="cookie-bar-copy">
-      <span class="cookie-bar-eyebrow">Vaša zasebnost</span>
-      <h2 id="cookie-title">Vi odločate, kaj si zapomnimo.</h2>
-      <p id="cookie-intro">Z vašim dovoljenjem si do 180 dni zapomnimo izbrano mesto za krajevni čas in vreme. Lastne analitike ne uporabljamo. <a href="/piskotki/">Podrobnosti</a></p>
+    <p id="storage-description" class="storage-notice__description">Vaši koledarski vnosi in nastavitve ostanejo v tem brskalniku. Oglasnih in analitičnih piškotkov ne uporabljamo.</p>
+    <div class="storage-notice__actions">
+      <a href="/piskotki/">Politika piškotkov</a>
+      <button type="button" data-storage-dismiss>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 5 5 9-10" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Zapri obvestilo
+      </button>
     </div>
-    <div class="cookie-actions" role="group" aria-label="Izbira nastavitev zasebnosti">
-      <button type="button" data-consent="necessary"><span class="cookie-action-icon"><%= ui_icon('shield') %></span><span>Ne shrani mesta</span></button>
-      <button type="button" data-consent="all"><span class="cookie-action-icon"><%= ui_icon('pin') %></span><span>Zapomni si mesto</span></button>
-      <button type="button" data-consent-settings aria-expanded="false" aria-controls="cookie-settings"><span class="cookie-action-icon"><%= ui_icon('settings') %></span><span>Nastavitve</span></button>
-    </div>
-    <button type="button" class="cookie-close" data-cookie-close aria-label="Zapri brez spremembe nastavitev">
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    <button type="button" class="storage-notice__close" data-storage-close aria-label="Zapri obvestilo na tej strani">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
   </div>
-  <details id="cookie-settings">
-    <summary>Podrobne nastavitve</summary>
-    <p class="cookie-explanation">Tu ločeno uredite pomnjenje mesta. Osebne načrte shranimo v tem brskalniku, ko jih ustvarite. Zavrnitev ne omeji uporabe koledarja. Izbiro hranimo 180 dni.</p>
-    <div class="cookie-category"><div><strong>Nujna hramba</strong><p>Seja, varnost obrazcev in vaša izbira zasebnosti.</p></div><span class="necessary-label">Vedno dejavna</span></div>
-    <label class="cookie-category"><span><strong>Zapomni si mesto</strong><small>Izbrano mesto za fotografijo in vreme ob naslednjem obisku. Hramba največ 180 dni.</small></span><input id="cookie-preferences" type="checkbox" role="switch"></label>
-
-    <button type="button" data-consent="custom" class="button">Shrani izbrane nastavitve</button>
-    <button type="button" data-consent="withdraw" class="text-button">Prekliči dovoljenje za pomnjenje mesta</button>
-    <p class="cookie-links"><a href="/piskotki/">Politika piškotkov</a><span>·</span><a href="/zasebnost/">Varstvo osebnih podatkov</a><span>·</span>Izbiro lahko kadar koli spremenite.</p>
-  </details>
-  <output id="cookie-status" role="status"></output>
 </section>
-<script nonce="<%= content_security_policy_nonce %>">
-(()=>{
-  const bar=document.getElementById('cookies');
-  if(!bar||document.getElementById('cookie-preferences-runtime'))return;
-  let hasValidChoice=false;
-  try{
-    const choice=JSON.parse(localStorage.getItem('k365.consent')||'null');
-    hasValidChoice=choice?.version===2&&Number.isFinite(choice.expiresAt)&&choice.expiresAt>Date.now();
-  }catch{}
-  if(!hasValidChoice){
-    bar.hidden=false;
-    document.documentElement.style.setProperty('--cookie-space',`${bar.getBoundingClientRect().height}px`);
-  }
-})();
-</script>
+
+<dialog class="cookie-preferences-dialog" aria-labelledby="cookie-settings-title">
+  <form>
+    <h2 id="cookie-settings-title">Pomnjenje izbranega mesta</h2>
+    <p>Izbrano mesto za fotografijo in vremensko napoved lahko ta brskalnik hrani do 180 dni.</p>
+    <label><input id="cookie-preferences" type="checkbox" autofocus> Zapomni si izbrano mesto</label>
+    <p class="cookie-preferences-status" role="status" hidden></p>
+    <div class="cookie-preferences-actions">
+      <button type="button" data-cookie-cancel>Prekliči</button>
+      <button type="submit">Shrani izbiro</button>
+    </div>
+    <a href="/piskotki/">Politika piškotkov</a>
+  </form>
+</dialog>
+<script id="cookie-preferences-runtime" type="module" async src="/cookie-preferences.mjs"></script>

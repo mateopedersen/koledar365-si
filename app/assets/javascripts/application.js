@@ -18,35 +18,7 @@ document.addEventListener('keydown',event=>{
  if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}
  else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}
 });
-// Only remembered city selection is optional; personal plans remain user-requested storage.
-const consentVersion=2,consentTTL=180*24*60*60*1000;
-function currentConsent(){const value=store.get('k365.consent',null);return value?.version===consentVersion&&Number.isFinite(value.expiresAt)&&value.expiresAt>Date.now()?value:null}
-function rememberCityAllowed(){return currentConsent()?.preferences===true}
-try{localStorage.removeItem('k365.theme');if(!rememberCityAllowed())localStorage.removeItem('k365.city')}catch{}
-const cookieBar=$('#cookies');
-window.K365Preferences={choice:currentConsent,choose(allowed){const value={version:consentVersion,preferences:allowed===true,analytics:false,advertising:false,expiresAt:Date.now()+consentTTL};const saved=store.set('k365.consent',value);if(!allowed){try{localStorage.removeItem('k365.city')}catch{}}document.dispatchEvent(new CustomEvent('k365:consent',{detail:{preferences:allowed&&saved}}));}};
-if(cookieBar&&!document.getElementById('cookie-preferences-runtime')){
- const preferences=$('#cookie-preferences');
- let cookieOpener=null;
- const closeCookies=()=>{cookieBar.hidden=true;$('#cookie-settings').open=false;$('[data-consent-settings]').setAttribute('aria-expanded','false');if(cookieOpener?.isConnected)cookieOpener.focus()};
- const openCookies=(event)=>{preferences.checked=rememberCityAllowed();cookieBar.hidden=false;if(event){cookieOpener=event.currentTarget;$('[data-consent-settings]').focus()}};
- new ResizeObserver(([entry])=>{const height=entry.borderBoxSize?.[0]?.blockSize??entry.contentRect.height;requestAnimationFrame(()=>document.documentElement.style.setProperty('--cookie-space',cookieBar.hidden?'0px':height+'px'))}).observe(cookieBar);
- if(!currentConsent())openCookies();
- $$('[data-cookie-open]').forEach(b=>b.addEventListener('click',openCookies));
- $('[data-cookie-close]').addEventListener('click',closeCookies);
- cookieBar.addEventListener('keydown',e=>{if(e.key==='Escape')closeCookies()});
- $$('[data-consent]').forEach(b=>b.addEventListener('click',()=>{
-   const choice=b.dataset.consent,allowed=choice==='all'||choice==='custom'&&preferences.checked;
-   const value={version:consentVersion,choice,preferences:allowed,analytics:false,advertising:false,at:new Date().toISOString(),expiresAt:Date.now()+consentTTL};
-   if(!allowed){try{localStorage.removeItem('k365.city')}catch{}}
-   const saved=store.set('k365.consent',value);
-   preferences.checked=allowed&&saved;
-   document.dispatchEvent(new CustomEvent('k365:consent',{detail:{preferences:allowed&&saved}}));
-   if(saved)closeCookies();else say($('#cookie-status'),'Brskalnik ne omogoča shranjevanja izbire. Koledar lahko uporabljate brez pomnjenja mesta; obvestilo zaprite z gumbom ×.',true);
- }));
- $('[data-consent-settings]').addEventListener('click',()=>{const details=$('#cookie-settings');details.open=!details.open;$('[data-consent-settings]').setAttribute('aria-expanded',String(details.open));if(details.open)preferences.focus()});
- $('#cookie-settings').addEventListener('toggle',()=>{$('[data-consent-settings]').setAttribute('aria-expanded',String($('#cookie-settings').open))});
-}
+try{localStorage.removeItem('k365.theme')}catch{}
 $$('.api-form').forEach(form=>form.addEventListener('submit',async e=>{e.preventDefault();const result=$('.result',form),button=$('button',form);button.disabled=true;say(result,'Računamo …');try{const body=await api(form.action,formObject(form));say(result,body.result);if(body.countdown)document.dispatchEvent(new CustomEvent('k365:countdown',{detail:body.countdown}));if(body.entries){if(form.id==='shift-form'){const from=form.elements.from.value,to=form.elements.to.value;const key=entry=>[entry.date,entry.code||'',entry.title||'',entry.person||'',entry.time||'',entry.end_time||''].join('\u0000');plannerEntries=plannerEntries.filter(entry=>!(entry.source==='shift-cycle'&&entry.date>=from&&entry.date<=to));const seen=new Set(plannerEntries.map(key));const added=body.entries.map(entry=>({...entry,source:'shift-cycle'})).filter(entry=>{const signature=key(entry);if(seen.has(signature))return false;seen.add(signature);return true});plannerEntries.push(...added);say(result,`${body.result} ${added.length} novih vnosov. Osebni vnosi in drugi zapisi so ohranjeni.`)}else plannerEntries=body.entries;savePlannerEntries();renderPlannerEntries()}}catch(error){say(result,error.message,true)}finally{button.disabled=false}}));
 let personal=store.get('k365.personal.v1',{events:[],notes:{}});const planner=$('#personal-planner');
 function savePersonal(){if(!store.set('k365.personal.v1',personal))say($('#personal-status'),'Shramba ni na voljo. Shranite varnostno kopijo.',true)}
