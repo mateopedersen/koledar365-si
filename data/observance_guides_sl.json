@@ -72,7 +72,7 @@
     },
     "dan-slovenskega-sporta": {
       "text": "Dan slovenskega športa spominja na prvi zlati olimpijski medalji samostojne Slovenije v Sydneyju. Septembra so z njim povezane predstavitve športnih društev in dejavnosti za širšo javnost. Za obisk preverite lokalne objave oziroma program Olimpijskega komiteja Slovenije.",
-      "link_path": "/festivali/#vrsta-sport",
+      "link_path": "/festivali/?vrsta=sport#festivalski-katalog",
       "link_title": "Športne prireditve v Sloveniji"
     },
     "dan-suverenosti": {
@@ -138,14 +138,14 @@
       "text": "Jaslice, potica in družinska srečanja so del raznolikega božičnega izročila, Slovenski etnografski muzej pa dokumentira tudi pripravo poprtnika. Za ogled jaslic ali prazničnega sejma preverite kraj in odpiralni čas. Božični večer 24. decembra in božič 25. decembra imata različni vlogi.",
       "source_url": "https://www.etno-muzej.si/sl/poprtnik-bozicni-kruh",
       "source_title": "Slovenski etnografski muzej – poprtnik",
-      "link_path": "/festivali/#vrsta-zima",
+      "link_path": "/festivali/?vrsta=zima#festivalski-katalog",
       "link_title": "Praznični sejmi in zimski programi"
     },
     "advent": {
       "text": "V adventnem času se ob nedeljah prižigajo sveče na adventnem vencu, nekateri kraji pripravijo tudi sejme in prižige luči. Prva adventna nedelja se vsako leto premakne. Datumi lučk v Ljubljani, Celju, Kopru ali Mariboru so vezani na občinski program.",
       "source_url": "https://katoliska-cerkev.si/cerkveno-leto",
       "source_title": "Katoliška cerkev – štiri adventne nedelje",
-      "link_path": "/festivali/#vrsta-zima",
+      "link_path": "/festivali/?vrsta=zima#festivalski-katalog",
       "link_title": "Preverjeni datumi adventnih programov"
     },
     "sveti-trije-kralji": {
@@ -223,7 +223,7 @@
       "text": "Martinovanja v Slovenskih goricah, na Krasu ali v Brdih povezujejo novo vino, krajevno hrano in tradicijo simbolnega krsta mošta. Datum martinovega je 11. november. Prireditve potekajo tudi ob bližnjih vikendih, zato poiščite termin konkretnega kraja.",
       "source_url": "https://www.slovenia.info/sl/zgodbe/martinovanje-veselje-ob-novi-letini-vina",
       "source_title": "Slovenska turistična organizacija – martinovanja",
-      "link_path": "/festivali/#vrsta-kulinarika",
+      "link_path": "/festivali/?vrsta=kulinarika#festivalski-katalog",
       "link_title": "Kulinarične prireditve in sejmi",
       "correct_date_source": true
     },
@@ -231,7 +231,7 @@
       "text": "Miklavževi prihodi in obdarovanje se pogosto začnejo že 5. decembra zvečer, njegov god pa je 6. decembra. Spremljajo ga angeli in parkeljni v različnih krajevnih različicah običaja. Pri javnem sprevodu preverite, ali je del mestnega prazničnega programa.",
       "source_url": "https://www.etno-muzej.si/sl/naprejvpreteklost-blog-nesnovna-dediscina/miklavz-je-eden-od-decembrskih-obdarovalcev-otrok",
       "source_title": "Slovenski etnografski muzej – miklavževanje",
-      "link_path": "/festivali/#vrsta-zima",
+      "link_path": "/festivali/?vrsta=zima#festivalski-katalog",
       "link_title": "Decembrski dogodki po krajih"
     },
     "silvestrovo": {
@@ -259,7 +259,7 @@
     },
     "zimski-solsticij": {
       "text": "V okolici zimskega solsticija je v Sloveniji najmanj dnevne svetlobe. Najzgodnejši sončni zahod in najpoznejši vzhod se lahko zgodita na različnih datumih. Za zimski sprehod zato preverite uro po kraju, za obisk stojnic pa program mesta.",
-      "link_path": "/festivali/#vrsta-zima",
+      "link_path": "/festivali/?vrsta=zima#festivalski-katalog",
       "link_title": "Zimske prireditve in sejmi"
     },
     "premik-ure": {
