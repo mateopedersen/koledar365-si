@@ -24,9 +24,29 @@ function parseCsv(source) {
   return lines.map((line) => Object.fromEntries(parseLine(line).map((value, index) => [headers[index], value])));
 }
 
+const legalDates = parseCsv(readFileSync(new URL('../../data/source/yasal-tatil-tarihleri-2027-2030.csv', import.meta.url), 'utf8'));
+const occasions = JSON.parse(readFileSync(new URL('../../data/source/slovenian-occasions.json', import.meta.url), 'utf8'));
+const isoDate = (date) => date.toISOString().slice(0, 10);
+const plusDays = (date, days) => new Date(date.valueOf() + days * 86_400_000);
+const easterSundays = ['2026-04-05', ...legalDates.filter((row) => row.name_sl === 'velikonočna nedelja').map((row) => row.date)];
+
 const sourceEvents = [
-  ...parseCsv(readFileSync(new URL('../../data/source/yasal-tatil-tarihleri-2027-2030.csv', import.meta.url), 'utf8')).map((row) => ({ date: row.date, title: row.name_sl })),
+  ...legalDates.map((row) => ({ date: row.date, title: row.name_sl })),
   ...parseCsv(readFileSync(new URL('../../data/source/ek-onemli-gun-tarihleri-2027-2030.csv', import.meta.url), 'utf8')).map((row) => ({ date: row.date || row.start_date, title: row.title_sl })),
+  ...occasions.observances.flatMap(({ title, rule }) => {
+    const dates = rule.kind === 'fixed'
+      ? [2026, 2027, 2028, 2029, 2030].flatMap((year) => rule.days.map((day) => new Date(Date.UTC(year, rule.month - 1, day))))
+      : easterSundays.flatMap((sunday) => rule.offsets_days.map((offset) => plusDays(new Date(sunday), offset)));
+    return dates.map((date) => ({ date: isoDate(date), title }));
+  }),
+  ...occasions.festivals.flatMap((festival) => festival.editions.flatMap((edition) => {
+    const title = edition.label ? `${festival.title} · ${edition.label}` : festival.title;
+    const dates = [];
+    for (let day = new Date(edition.start); day <= new Date(edition.end); day = plusDays(day, 1)) {
+      dates.push({ date: isoDate(day), title });
+    }
+    return dates;
+  })),
 ];
 
 test('all 48 monthly calendars show compact labels without expanding and retain full event names', async ({ page }) => {
