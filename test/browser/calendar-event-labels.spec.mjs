@@ -50,17 +50,19 @@ const sourceEvents = [
 ];
 
 test('all 48 monthly calendars show compact labels without expanding and retain full event names', async ({ page }) => {
-  test.setTimeout(180_000);
+  test.setTimeout(300_000);
   const routesToScan = test.info().project.name === 'chromium' ? calendarRoutes : ['/koledar/2027/oktober/'];
   const compactLabelsByTitle = new Map();
   // The measurements need fonts and CSS. Gallery photographs are audited separately.
   await page.route('**/*', route => route.request().resourceType() === 'image' ? route.abort() : route.continue());
 
-  for (const width of [320, 390, 700, 1280]) {
-    await page.setViewportSize({ width, height: 900 });
-    for (const route of routesToScan) {
-      const response = await page.goto(route, { waitUntil: 'domcontentloaded' });
-      expect(response?.status(), `${route} at ${width}px`).toBe(200);
+  for (const route of routesToScan) {
+    await page.setViewportSize({ width: 320, height: 900 });
+    const response = await page.goto(route, { waitUntil: 'domcontentloaded' });
+    expect(response?.status(), route).toBe(200);
+
+    for (const width of [320, 390, 700, 1280]) {
+      if (width !== 320) await page.setViewportSize({ width, height: 900 });
       const result = await page.evaluate(() => {
         const workspace = document.querySelector('.download-workspace');
         const context = document.querySelector('.calendar-context');

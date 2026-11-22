@@ -444,7 +444,7 @@
 /* Match the Studio's vertical-rail breakpoint and its readable 15px labels.
    The general button padding and 900px mobile rule must not widen these tabs. */
 @media screen and (min-width: 851px) {
-  #vsebina .studio-workspace { grid-template-columns: 112px 300px minmax(0, 1fr); }
+  #vsebina .studio-workspace { grid-template-columns: 132px 300px minmax(0, 1fr); }
   #vsebina .studio-rail > button {
     flex: 0 0 auto;
     width: 100%;
@@ -456,10 +456,10 @@
   }
 }
 @media screen and (min-width: 851px) and (max-width: 1150px) {
-  #vsebina .studio-workspace { grid-template-columns: 112px 270px minmax(0, 1fr); }
+  #vsebina .studio-workspace { grid-template-columns: 132px 270px minmax(0, 1fr); }
 }
 @media screen and (min-width: 1700px) {
-  #vsebina .studio-workspace { grid-template-columns: 112px 325px minmax(0, 1fr); }
+  #vsebina .studio-workspace { grid-template-columns: 132px 325px minmax(0, 1fr); }
 }
 
 
@@ -547,6 +547,12 @@
 }
 @media screen and (max-width:850px){
   #vsebina .studio-rail>button{--k365-control-height:54px;padding:6px 4px!important}
+}
+@media screen and (max-width:780px){
+  #vsebina .studio-rail{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media screen and (max-width:360px){
+  #vsebina .studio-rail{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media screen and (max-width:600px){
   #vsebina .design-card .actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}

@@ -171,7 +171,7 @@ button:hover,.button:hover{box-shadow:none}
   line-height: 1.15;
   font-variant-numeric: tabular-nums;
 }
-@container (max-width: 32.5rem) {
+@container (max-width: 38rem) {
   .stats > div {
     --stats-icon-size: 2.75rem;
     grid-template-columns: minmax(0, 1fr);

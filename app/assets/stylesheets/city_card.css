@@ -116,7 +116,7 @@
   --wx-ink: #173755;
   --wx-caption: #365674;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(66px, 45%);
+  grid-template-columns: minmax(0, 1fr) minmax(60px, 40%);
   align-items: center;
   gap: 3px 4px;
   min-height: 135px;
@@ -182,7 +182,7 @@
 }
 #city-card #weather-temperature {
   font-size: 34px;
-  font-size: clamp(26px, 18cqi, 52px);
+  font-size: clamp(24px, 14cqi, 50px);
   line-height: 1.04;
   font-weight: 820;
   letter-spacing: -.045em;
