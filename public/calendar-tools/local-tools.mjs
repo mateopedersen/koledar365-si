@@ -220,7 +220,7 @@ function pension(root) {
         const criterion = path.minYears === 15 ? '15 let zavarovalne dobe' :
           path.date < '2035-01-01' ? '40 let dobe brez dokupa' : '40 let pokojninske dobe';
         card.append(make('strong', criterion + ' · ' + formatDate(path.date)),
-          make('small', `Starostni pogoj za to leto: ${years} let${months ? ' in ' + months + ' mesecev' : ''}. Doba: ${formatDate(path.serviceDate)}.`));
+          make('small', `Starostni pogoj za to leto: ${years} let${months ? ' in ' + months + (months === 3 ? ' mesece' : ' mesecev') : ''}. Doba: ${formatDate(path.serviceDate)}.`));
         timeline.append(card);
       }
       timeline.hidden = false;

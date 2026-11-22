@@ -94,8 +94,8 @@
 .tool-guidance{border-left:3px solid #3a83bf;padding:10px 12px;background:#edf6fe;border-radius:0 8px 8px 0}
 .tool-theme-luna .tool-intro{background:radial-gradient(ellipse at 90% 10%,#254a70,transparent 72%),#102e50;border-color:#102e50;color:#fff}
 .tool-theme-luna .tool-intro h1{color:#fff}
-.tool-theme-luna .tool-intro p:not(.tool-eyebrow){color:#e1effd}
-.tool-theme-luna .tool-intro p.tool-eyebrow{color:#ffdd95}
+#vsebina .tool-theme-luna .tool-intro p:not(.tool-eyebrow){color:#e1effd!important}
+#vsebina .tool-theme-luna .tool-intro p.tool-eyebrow{color:#ffdd95!important}
 .tool-moon-art{width:100%;max-width:360px}
 .tool-trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
 .tool-trio>div{display:grid;align-content:space-between;gap:7px;padding:10px;border:1px solid var(--tool-edge);background:#fff;border-radius:9px}
