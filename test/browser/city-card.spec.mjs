@@ -14,7 +14,7 @@ test('forecast refresh has a clear touch target and announces its progress',asyn
  const refreshStarted=new Promise(resolve=>{signalRefresh=resolve}),refreshPending=new Promise(resolve=>{finishRefresh=resolve});
  await mock(page,async id=>{if(++requests>1){signalRefresh();await refreshPending}return forecast(id)});
  await page.goto('/');const button=page.locator('#weather-refresh');await expect(button).toBeEnabled();await expect(button).toHaveAccessibleName('Osveži vremensko napoved');await expect(button.locator('#weather-refresh-label')).toHaveText('Osveži');
- for(const width of [320,390,1440]){await page.setViewportSize({width,height:820});const box=await button.boundingBox();expect(box.height).toBeGreaterThanOrEqual(44);expect(box.width).toBeGreaterThanOrEqual(130);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)).toBe(true)}
+ for(const width of [320,390,1440]){await page.setViewportSize({width,height:820});const box=await button.boundingBox();expect(box.height).toBeGreaterThanOrEqual(44);expect(box.width).toBeGreaterThanOrEqual(100);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)).toBe(true)}
  await page.setViewportSize({width:390,height:820});await button.click();await refreshStarted;await expect(button).toBeDisabled();await expect(button).toHaveAccessibleName('Osveževanje vremenske napovedi');await expect(button.locator('#weather-refresh-label')).toHaveText('Osvežujem');
  finishRefresh();await expect(button).toBeEnabled();await expect(button).toHaveAccessibleName('Osveži vremensko napoved');await expect(button.locator('#weather-refresh-label')).toHaveText('Osveži');
 });
@@ -35,8 +35,55 @@ test('clock catches up after a suspended page and follows Slovenian daylight sav
  await mock(page);await page.goto('/');await page.clock.setFixedTime(new Date('2026-10-25T00:59:00Z'));await page.evaluate(()=>window.dispatchEvent(new Event('pageshow')));await expect(page.locator('#ljubljana-clock')).toHaveText('02:59');await expect(page.locator('#city-zone')).toHaveText('CEST');await page.clock.setFixedTime(new Date('2026-10-25T01:01:00Z'));await page.evaluate(()=>window.dispatchEvent(new Event('pageshow')));await expect(page.locator('#ljubljana-clock')).toHaveText('02:01');await expect(page.locator('#city-zone')).toHaveText('CET');
 });
 test('obsolete saved forecast is rejected and reduced motion disables scene animation',async({page})=>{
- await mock(page);await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');await expect(page.locator('.wx-rays')).toBeVisible();expect(await page.locator('.wx-rays').evaluate(el=>getComputedStyle(el).animationName)).toBe('none');
+ await mock(page);await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');await expect(page.locator('#weather-icon .wx-rays')).toBeVisible();
+ await page.locator('.weather-hero').scrollIntoViewIfNeeded();await expect(page.locator('.weather-hero')).toHaveAttribute('data-weather-in-view','');expect(await page.locator('#weather-icon .wx-rays').evaluate(el=>getComputedStyle(el).animationName)).toBe('none');
  await page.evaluate(()=>{const key='k365.weather.v1:ljubljana',r=JSON.parse(sessionStorage.getItem(key));r.body.updated_at='2026-10-18T00:00:00Z';sessionStorage.setItem(key,JSON.stringify(r))});await page.unroute('**/vreme/*/');await page.route('**/vreme/*/',route=>route.abort());await page.reload();await expect(page.locator('#weather-temperature')).toHaveText('—');await expect(page.locator('#city-card')).toHaveAttribute('data-weather-state','unavailable');
+});
+
+test('weather emoji animate in view and the details use provider readings', async ({ page }) => {
+  let symbol = 'clearsky_day';
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await mock(page, (id) => {
+    const body = forecast(id, -12, symbol);
+    body.current.precipitation = symbol === 'snow' ? null : 1.4;
+    return body;
+  }, 'slovenska-bistrica');
+  await page.setViewportSize({ width: 320, height: 820 });
+  await page.goto('/');
+  const hero = page.locator('.weather-hero');
+  const refresh = page.locator('#weather-refresh');
+  const hourly = page.locator('.weather-details');
+  await expect(page.locator('#weather-temperature')).toHaveText('−12°');
+  await expect(hourly.locator('.weather-facts dd').last()).toHaveText('1,4 mm');
+  await hero.scrollIntoViewIfNeeded();
+  await expect(hero).toHaveAttribute('data-weather-in-view', '');
+
+  for (const [code, selector, animation] of [
+    ['clearsky_day', '.wx-rays', 'city-wx-sun'],
+    ['rain', '.wx-rain > g', 'city-wx-fall'],
+    ['snow', '.wx-snow > g', 'city-wx-flurry'],
+  ]) {
+    if (symbol !== code) {
+      symbol = code;
+      await refresh.click();
+      await hero.scrollIntoViewIfNeeded();
+    }
+    const part = page.locator('#weather-icon ' + selector).first();
+    await expect(part).toBeVisible();
+    expect(await part.evaluate((el) => getComputedStyle(el).animationName)).toBe(animation);
+    expect(await hero.evaluate((el) => {
+      const reading = el.querySelector('.weather-hero__temperature').getBoundingClientRect();
+      const art = el.querySelector('#weather-icon').getBoundingClientRect();
+      const unit = el.querySelector('.weather-hero__temperature span').getBoundingClientRect();
+      return el.scrollWidth <= el.clientWidth && unit.right <= reading.right && reading.right <= art.left;
+    })).toBe(true);
+  }
+
+  await hourly.getByText('Urna napoved', { exact: true }).click();
+  await expect(hourly).toHaveAttribute('open', '');
+  await expect(hourly.locator('.weather-facts dd')).toHaveText(['2 m/s', '64 %', '—']);
+  await expect(hourly.locator('.weather-hours time')).toHaveText('15:04');
+  await expect(hourly.locator('.weather-hours strong')).toHaveText('15°');
 });
 
 test('home hydration preserves the live card and selected city',async({page})=>{

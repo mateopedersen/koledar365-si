@@ -182,18 +182,23 @@ unless limit||partial
   end
  end
 end
-# A partial home publication must refresh the source-bound city catalogue in
-# every saved calendar view too. Keep each view's calendar and personal layout.
+# Keep the weather markup, styles and script together in saved calendar views
+# when a partial publication replaces the home page.
 if partial&.include?('/')
  home=out.join('index.html').read
- city_select=home[/<select\b[^>]*\bid="city-select"[^>]*>.*?<\/select>/m]
- city_script=home[/<script\b[^>]*\bsrc="\/assets\/city_card-[^"]+\.js"[^>]*><\/script>/m]
- raise 'Home city catalogue is missing' unless city_select&&city_script
+ shared_components=[
+   /<section\b[^>]*\bid="city-card"[^>]*>.*?<\/section>/m,
+   /<style\b[^>]*\bdata-page-styles="home"[^>]*>.*?<\/style>/m,
+   /<script\b[^>]*\bsrc="\/assets\/city_card-[^"]+\.js"[^>]*><\/script>/m
+ ].to_h do |pattern|
+   [pattern, home[pattern] || raise('A shared home component is missing')]
+ end
  Dir[out.join('free/views/home/*.html')].each do |file|
   source=File.read(file)
-  next unless source.include?('id="city-select"')
-  source=source.sub(/<select\b[^>]*\bid="city-select"[^>]*>.*?<\/select>/m){city_select}
-  source=source.sub(/<script\b[^>]*\bsrc="\/assets\/city_card-[^"]+\.js"[^>]*><\/script>/m){city_script}
+  next unless source.include?('id="city-card"')
+  shared_components.each do |pattern, component|
+   raise "Missing shared home component in #{file}" unless source.sub!(pattern) { component }
+  end
   File.write(file,source)
  end
 end
