@@ -30,6 +30,13 @@ end
 [:title,:description].each do |key|
  rows.group_by { |r|r[key] }.select { |_,v|v.size>1 }.each { |text,items|issues<<{problem:"duplicate_#{key}",paths:items.map { |r|r[:path] },text:text} }
 end
+links.grep(%r{\A/festivali/[a-z0-9-]+/\d{4}-\d{2}-\d{2}\.ics\z}).each do |path|
+ session.get(path)
+ response=session.response
+ if response.status==200 && response.media_type=='text/calendar' && response.body.start_with?('BEGIN:VCALENDAR') && response.body.include?('BEGIN:VEVENT')
+  known.add(path)
+ end
+end
 unknown=links.reject do |path|
  known.include?(path) || path.match?(%r{\A/prazniki/20(?:27|28|29|30)\.ics\z}) ||
   (path.match?(%r{\A/(?:premik-ure|astronomy|payments|garden|education|shopping)/[^.].*\.(?:ics|webp|svg|json)\z}) && Rails.root.join('public',path.delete_prefix('/')).file?) ||
