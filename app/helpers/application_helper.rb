@@ -87,6 +87,8 @@ module ApplicationHelper
     'Ta veseli dan kulture' => 'Kult.',
     'Teden otroka®' => 'Teden',
     'Dan slovenskega športa' => 'Šport',
+    'Dan Maribora – praznik Mestne občine Maribor' => 'Marib.',
+    'December v Ljubljani' => 'Dec.',
     'dan Primoža Trubarja' => 'Trubar',
     'dan Rudolfa Maistra' => 'Mais.',
     'dan Triglava' => 'Trig.',
@@ -137,8 +139,8 @@ module ApplicationHelper
     # Calendar sources include editorial observances as well as legal holidays.
     # Bound any future unmapped title so a narrow day cell can never become a paragraph.
     graphemes = normalized_title.scan(/\X/)
-    return title if graphemes.length <= 6
-    "#{graphemes.first(6).join}…"
+    return title if graphemes.length <= 5
+    "#{graphemes.first(4).join}…"
   end
 
   # Keep the visible compact label in the accessible name while preserving
