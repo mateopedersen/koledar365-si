@@ -3,6 +3,34 @@ import { test, expect } from '@playwright/test';
 const widths = [320, 390, 600, 768, 1024, 1280, 1440, 1920];
 const paths = ['/', '/koledar/2029/februar/', '/koledar/2027/', '/kalkulator-delovnih-dni/', '/solski-koledar/', '/setveni-koledar/', '/druzinski-planer/'];
 
+test('primary navigation uses one hover mark and a visible keyboard focus ring', async ({ page, browserName }) => {
+  await page.goto('/prazniki/');
+  const topbar = page.locator('.topbar');
+  const nav = topbar.getByRole('navigation', { name: 'Glavna navigacija' });
+  const active = nav.getByRole('link', { name: 'Prazniki' });
+  await expect(active).toHaveAttribute('aria-current', 'page');
+  await expect(active).toHaveCSS('box-shadow', /inset/);
+
+  if (await page.evaluate(() => matchMedia('(hover: hover)').matches)) {
+    for (const link of await nav.getByRole('link').all()) {
+      await link.hover();
+      await expect(link).toHaveCSS('text-decoration-line', 'none');
+      await expect(link).toHaveCSS('box-shadow', /inset/);
+    }
+    await page.mouse.move(1, 1);
+  }
+
+  const linkTab = browserName === 'webkit' && process.platform === 'darwin' ? 'Alt+Tab' : 'Tab';
+  await topbar.locator('> .brand').focus();
+  await page.keyboard.press(linkTab);
+  await expect(nav.getByRole('link', { name: 'Koledar', exact: true })).toBeFocused();
+  await page.keyboard.press(linkTab);
+  await expect(active).toBeFocused();
+  await expect(active).toHaveCSS('outline-style', 'solid');
+  await expect(active).toHaveCSS('outline-width', '3px');
+  await expect(active).toHaveCSS('box-shadow', 'none');
+});
+
 test('navigation vector assets and every referenced symbol resolve in the publication', async ({ page }) => {
   await page.goto('/');
   const refs = await page.locator('.topbar svg use, .site-navigation svg use').evaluateAll(nodes => [...new Set(nodes.map(node => node.getAttribute('href')))]);
