@@ -26,7 +26,13 @@ for(const width of [320,360,768,1024,1440,1920,2560])test(`shared content axis a
  }
  if(width<=1100){const cta=await page.locator('.calendar-studio-cta').boundingBox();expect(Math.abs(cta.x+cta.width/2-width/2)).toBeLessThanOrEqual(1.1);}
  for(const control of geometry.controls){expect(control.left).toBeGreaterThanOrEqual(geometry.left);expect(control.right).toBeLessThanOrEqual(geometry.right);expect(control.width).toBeGreaterThan(40);}
- if(width<=480){
+ if(width<360){
+  const [year,month,submit]=geometry.controls;
+  expect(Math.abs(year.top-month.top)).toBeLessThanOrEqual(1);
+  expect(submit.top).toBeGreaterThan(year.top);
+  expect(Math.abs(submit.left-year.left)).toBeLessThanOrEqual(1);
+  expect(Math.abs(submit.right-month.right)).toBeLessThanOrEqual(1);
+ }else if(width<=480){
   for(const control of geometry.controls)expect(Math.abs(control.top-geometry.controls[0].top)).toBeLessThanOrEqual(1);
  }
  await page.locator('.period-form select[name=year]').selectOption('2030');

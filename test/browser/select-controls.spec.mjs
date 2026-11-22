@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 
-for(const width of [320,390,768,1024,1440])test(`period labels have room beside one dropdown indicator at ${width}px`,async({page})=>{
+for(const width of [320,360,390,768,1024,1440])test(`period labels have room beside one dropdown indicator at ${width}px`,async({page})=>{
  await page.setViewportSize({width,height:900});
  await page.goto('/');
  await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
@@ -13,12 +13,13 @@ for(const width of [320,390,768,1024,1440])test(`period labels have room beside 
   const state=await select.evaluate(el=>{
    const s=getComputedStyle(el),canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');
    ctx.font=`${s.fontWeight} ${s.fontSize} ${s.fontFamily}`;
-   return {appearance:s.appearance,image:s.backgroundImage,repeat:s.backgroundRepeat,usable:el.clientWidth-parseFloat(s.paddingLeft)-parseFloat(s.paddingRight),text:ctx.measureText(el.selectedOptions[0].textContent).width};
+   const labels=[...el.options].map(option=>({text:option.textContent,width:ctx.measureText(option.textContent).width}));
+   return {appearance:s.appearance,image:s.backgroundImage,repeat:s.backgroundRepeat,usable:el.clientWidth-parseFloat(s.paddingLeft)-parseFloat(s.paddingRight),labels};
   });
   expect(state.appearance).toBe('none');
   expect(state.image).toContain('data:image/svg+xml');
   expect(state.repeat).toBe('no-repeat');
-  expect(state.usable).toBeGreaterThanOrEqual(state.text);
+  for(const label of state.labels)expect(state.usable,label.text).toBeGreaterThanOrEqual(label.width);
  }
  // The existing city shell already supplies its own SVG; don't double its caret.
  await expect(page.locator('#city-select')).toHaveCSS('background-image','none');
