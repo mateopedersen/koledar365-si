@@ -117,7 +117,15 @@
 
   <section class="family-backup" aria-labelledby="family-backup-title">
     <div><span class="family-kicker">VAŠI PODATKI, VAŠ IZBOR</span><h3 id="family-backup-title">Varnostna kopija in koledar</h3><p>Načrte lahko prenesete kot iCalendar ali shranite v datoteko, ki jo lahko pozneje obnovite.</p></div>
-    <div class="family-backup-actions"><button class="family-button" type="button" data-family-backup>Ustvari kopijo JSON</button><label class="family-import-button">Obnovi kopijo<input type="file" accept="application/json,.json" data-family-restore></label></div>
+    <div class="family-backup-actions">
+      <button class="family-button calendar-file-action" type="button" data-family-backup>
+        <%= ui_icon('backup-save') %><span>Ustvari kopijo JSON</span>
+      </button>
+      <label class="family-import-button calendar-file-action">
+        <%= ui_icon('backup-restore') %><span>Obnovi kopijo</span>
+        <input type="file" accept="application/json,.json" data-family-restore>
+      </label>
+    </div>
     <output class="family-status" data-family-backup-status role="status"></output>
   </section>
 </section>

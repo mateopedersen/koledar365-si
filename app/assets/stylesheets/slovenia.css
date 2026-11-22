@@ -243,9 +243,42 @@ a{color:#0054b8}
 
 main :where(p,li,dd,figcaption) a:not(.button):not(.card-credit){text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 
-/* Equalize the four personal calendar actions, including labels with hidden file inputs. */
-.right-panel .button-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(64px,1fr);align-items:stretch}
+/* Keep the personal calendar action tiles equal, including labels with hidden file inputs. */
+.right-panel .button-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(104px,1fr);align-items:stretch}
 .right-panel .button-grid>button,.right-panel .button-grid>.button{align-self:stretch;justify-self:stretch;width:100%;min-width:0;min-height:64px;margin:0;box-sizing:border-box;text-align:center;white-space:normal;overflow-wrap:anywhere;line-height:1.3}
+
+#vsebina .calendar-file-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+#vsebina .calendar-file-action > .ui-icon {
+  display: block;
+  width: 34px;
+  height: 34px;
+  flex: none;
+}
+#vsebina .calendar-file-action > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+#vsebina label.calendar-file-action:focus-within {
+  outline: 3px solid #0054b8;
+  outline-offset: 2px;
+}
+#vsebina .right-panel .button-grid > .calendar-file-action {
+  display: grid;
+  grid-template-rows: 46px 1fr;
+  justify-items: center;
+  gap: 5px;
+  min-height: 104px;
+  padding: 8px 6px;
+}
+#vsebina .right-panel .calendar-file-action > .ui-icon {
+  width: 46px;
+  height: 46px;
+}
 
 /* A prominent, keyboard-accessible entrance to the calendar editor. */
 #vsebina .intro>a.calendar-studio-cta{position:relative;display:grid;grid-template-columns:80px minmax(0,1fr) 24px;gap:16px;flex:0 0 auto;--k365-control-height:116px;min-height:116px;max-width:100%;padding:16px 22px 16px 14px;border:1px solid #b8cce2;border-radius:18px;background:linear-gradient(120deg,#fff 25%,#f0f6fd);color:#153b66;box-shadow:0 7px 22px #173f6a0e,inset 0 1px 0 #fff;text-align:left;text-decoration:none;white-space:normal;transition:border-color .18s,box-shadow .18s,transform .18s}

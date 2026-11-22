@@ -70,7 +70,16 @@
 
       <section class="student-panel student-backup" aria-labelledby="student-backup-title">
         <div><span class="student-section-index">TVOJI PODATKI</span><h3 id="student-backup-title">Shrani kopijo</h3><p>Če zamenjaš brskalnik ali napravo, urnik in obveznosti prenesi s seboj.</p></div>
-        <div class="student-backup-actions"><button class="button" type="button" data-student-backup>Prenesi kopijo</button><label class="button student-file-button">Obnovi kopijo<input type="file" data-student-restore accept="application/json,.json"></label></div><output data-backup-status role="status"></output>
+        <div class="student-backup-actions">
+          <button class="button calendar-file-action" type="button" data-student-backup>
+            <%= ui_icon('backup-save') %><span>Prenesi kopijo</span>
+          </button>
+          <label class="button student-file-button calendar-file-action">
+            <%= ui_icon('backup-restore') %><span>Obnovi kopijo</span>
+            <input type="file" data-student-restore accept="application/json,.json">
+          </label>
+        </div>
+        <output data-backup-status role="status"></output>
       </section>
     </div>
   </div>

@@ -1,6 +1,7 @@
 require_relative '../config/environment'
 require 'nokogiri'
 require 'digest'
+require_relative '../lib/svg_asset_references'
 session=ActionDispatch::Integration::Session.new(Rails.application);session.host!('localhost');session.get('/o-nas/')
 doc=Nokogiri::HTML(session.response.body)
 doc.at_css('title').content='Urejanje vsebine | Koledar365'
@@ -23,5 +24,6 @@ body='<div class="page-heading"><span class="eyebrow">UREDNIŠTVO</span><h1>Urej
 links.each { |title,(href,text)|body+=%(<a class="feature panel" href="#{href}"><h2>#{ERB::Util.html_escape(title)}</h2><p>#{ERB::Util.html_escape(text)}</p><span>Odpri v GitHubu →</span></a>) }
 body+='</div><section class="panel prose"><h2>Postopek objave</h2><ol><li>Uredite javno vsebino v GitHubu in predlagajte spremembo.</li><li>Preverite samodejne preglede ter predogled izdaje.</li><li>Združite preverjeno spremembo v glavno vejo; Cloudflare objavi pripravljeno izdajo.</li></ol><p>Osebni načrti obiskovalcev in njihove fotografije ostanejo na njihovih napravah. Uredništvo do njih nima dostopa. Kontaktna sporočila prejmete na <a href="mailto:koledar365@gmail.com">koledar365@gmail.com</a>.</p></section>'
 doc.at_css('#vsebina').inner_html=body
+SvgAssetReferences.rewrite_document!(doc, Rails.root.join('public'))
 script=Nokogiri::XML::Node.new('script',doc);script['type']='module';script['src']="/free/client-#{Digest::SHA256.file(Rails.root.join('cloudflare/free/client.js')).hexdigest[0,16]}.js";doc.at_css('head').add_child(script)
 FileUtils.mkdir_p(Rails.root.join('site/upravljanje'));Rails.root.join('site/upravljanje/index.html').write(doc.to_html)

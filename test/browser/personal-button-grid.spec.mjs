@@ -3,6 +3,15 @@ import { test, expect } from '@playwright/test';
 const views = ['month', 'week', 'day', 'list', 'year'];
 const widths = [320, 390, 644, 768, 1024, 1440];
 
+async function expectIcons(group, names) {
+  const symbols = group.locator(':scope > * > svg > use');
+  await expect(symbols).toHaveCount(names.length);
+  await expect.poll(() => symbols.evaluateAll((icons) => icons.map((icon) => ({
+    name: icon.getAttribute('href').split('#').pop(),
+    rendered: icon.getBBox().width > 0 && icon.getBBox().height > 0,
+  })))).toEqual(names.map((name) => ({ name, rendered: true })));
+}
+
 test('personal calendar action borders align and fit across home views and screen widths', async ({ page }) => {
   for (const view of views) {
     await page.goto(`/?year=2026&month=10&date=2026-10-22&view=${view}`);
@@ -11,6 +20,7 @@ test('personal calendar action borders align and fit across home views and scree
     const grid = page.locator('.right-panel .button-grid');
     await expect(grid, `${view} view exposes the shared personal calendar actions`).toBeVisible();
     await expect(grid.locator(':scope > *')).toHaveCount(4);
+    await expectIcons(grid, ['ics-import', 'ics-export', 'backup-save', 'backup-restore']);
 
     for (const width of widths) {
       await page.setViewportSize({ width, height: 1000 });
@@ -18,6 +28,8 @@ test('personal calendar action borders align and fit across home views and scree
         const gridRect = container.getBoundingClientRect();
         const controls = [...container.children].map((item) => {
           const rect = item.getBoundingClientRect();
+          const icon = item.querySelector('svg').getBoundingClientRect();
+          const label = item.querySelector('span').getBoundingClientRect();
           return {
             left: rect.left,
             top: rect.top,
@@ -28,6 +40,9 @@ test('personal calendar action borders align and fit across home views and scree
             margin: getComputedStyle(item).margin,
             clientWidth: item.clientWidth,
             scrollWidth: item.scrollWidth,
+            iconWidth: icon.width,
+            iconCenterOffset: Math.abs(icon.left + icon.width / 2 - (rect.left + rect.width / 2)),
+            iconLabelGap: label.top - icon.bottom,
           };
         });
         const rows = [...new Set(controls.map((box) => Math.round(box.top)))].map((top) =>
@@ -56,6 +71,9 @@ test('personal calendar action borders align and fit across home views and scree
         expect(control.top, `top border at ${view}, ${width}px`).toBeGreaterThanOrEqual(layout.grid.top - 1);
         expect(control.bottom, `bottom border at ${view}, ${width}px`).toBeLessThanOrEqual(layout.grid.bottom + 1);
         expect(control.scrollWidth, `content fits control at ${view}, ${width}px`).toBeLessThanOrEqual(control.clientWidth + 1);
+        expect(control.iconWidth).toBeGreaterThanOrEqual(44);
+        expect(control.iconCenterOffset).toBeLessThanOrEqual(1);
+        expect(control.iconLabelGap).toBeGreaterThanOrEqual(4);
       }
     }
   }
@@ -63,14 +81,14 @@ test('personal calendar action borders align and fit across home views and scree
 
 test('backup and restore action borders align on the other planner pages', async ({ page }) => {
   const groups = [
-    { path: '/solski-urnik/', selector: '.student-backup-actions', count: 2 },
-    { path: '/druzinski-planer/', selector: '.family-backup-actions', count: 2 },
-    { path: '/razpored-izmen/', selector: '.shift-saved__actions', count: 3 },
+    { path: '/solski-urnik/', selector: '.student-backup-actions', icons: ['backup-save', 'backup-restore'] },
+    { path: '/druzinski-planer/', selector: '.family-backup-actions', icons: ['backup-save', 'backup-restore'] },
+    { path: '/razpored-izmen/', selector: '.shift-saved__actions', icons: ['ics-export', 'backup-save', 'backup-restore'] },
     // The planner backup group is shared by all calendar download templates.
-    { path: '/prazen-koledar/', selector: '.planner-backup-actions', count: 3, openDetails: true },
+    { path: '/prazen-koledar/', selector: '.planner-backup-actions', icons: ['ics-export', 'backup-save', 'backup-restore'], openDetails: true },
   ];
 
-  for (const { path, selector, count, openDetails } of groups) {
+  for (const { path, selector, icons, openDetails } of groups) {
     await page.goto(path);
     if (openDetails) {
       await page.locator('[data-context-expand]').click();
@@ -80,7 +98,8 @@ test('backup and restore action borders align on the other planner pages', async
     }
     const group = page.locator(selector);
     await expect(group, `${path} exposes its backup actions`).toBeVisible();
-    await expect(group.locator(':scope > *')).toHaveCount(count);
+    await expect(group.locator(':scope > *')).toHaveCount(icons.length);
+    await expectIcons(group, icons);
 
     for (const width of [390, 1280]) {
       await page.setViewportSize({ width, height: 1000 });

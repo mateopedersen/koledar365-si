@@ -71,7 +71,18 @@
     <div><span class="eyebrow">VAŠ NAČRT</span><h2 id="shift-saved-title">Vse izmene na enem mestu</h2><p>Posamezne izmene lahko uredite, izvozite v koledarsko aplikacijo ali shranite varnostno kopijo.</p></div>
     <a class="button shift-saved__link" href="#design-gallery">Izberi predlogo za tisk <span aria-hidden="true">↓</span></a>
     <div id="planner-entries" aria-live="polite"></div>
-    <div class="actions shift-saved__actions"><button id="planner-ics" type="button">Izvozi v koledar (ICS)</button><button id="planner-backup" type="button">Prenesi varnostno kopijo</button><label class="file-button">Obnovi kopijo<input id="planner-restore" type="file" accept="application/json,.json"></label></div>
+    <div class="actions shift-saved__actions">
+      <button id="planner-ics" class="calendar-file-action" type="button">
+        <%= ui_icon('ics-export') %><span>Izvozi v koledar (ICS)</span>
+      </button>
+      <button id="planner-backup" class="calendar-file-action" type="button">
+        <%= ui_icon('backup-save') %><span>Prenesi varnostno kopijo</span>
+      </button>
+      <label class="file-button calendar-file-action">
+        <%= ui_icon('backup-restore') %><span>Obnovi kopijo</span>
+        <input id="planner-restore" type="file" accept="application/json,.json">
+      </label>
+    </div>
     <output id="planner-entry-status" role="status"></output>
   </section>
 
