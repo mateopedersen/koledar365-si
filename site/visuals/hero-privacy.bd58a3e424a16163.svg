@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380">
+  <defs>
+    <filter id="cast" x="-.38" y="-.4" width="1.8" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10" />
+      <feOffset dx="4" dy="12" result="shadow" />
+      <feFlood flood-color="#19304d" flood-opacity=".21" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <radialGradient id="light">
+      <stop stop-color="#fff" />
+      <stop offset="1" stop-color="#d8e8f6" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="paper" x2="1" y2="1">
+      <stop stop-color="#fffef9" />
+      <stop offset=".48" stop-color="#fff" />
+      <stop offset="1" stop-color="#e3eaf0" />
+    </linearGradient>
+    <linearGradient id="blue" x2="1" y2="1">
+      <stop stop-color="#548eb3" />
+      <stop offset=".48" stop-color="#1d5479" />
+      <stop offset="1" stop-color="#0b2845" />
+    </linearGradient>
+    <linearGradient id="steel" x2="1" y2="1">
+      <stop stop-color="#fff" />
+      <stop offset=".48" stop-color="#a5bbcc" />
+      <stop offset="1" stop-color="#526f8b" />
+    </linearGradient>
+    <linearGradient id="ink" x2="1" y2="1">
+      <stop stop-color="#395777" />
+      <stop offset=".48" stop-color="#203956" />
+      <stop offset="1" stop-color="#112439" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="297" cy="195" rx="280" ry="177" fill="url(#light)" />
+  <ellipse cx="301" cy="334" rx="207" ry="23" fill="#d4e4f1" opacity=".44" />
+  <use href="#art-shape-1" filter="url(#cast)" />
+  <g transform="rotate(-7 290 182)" id="art-shape-1">
+    <rect x="84" y="60" width="422" height="259" rx="23" fill="url(#ink)" stroke="#91afc9" stroke-width="3" />
+    <rect x="96" y="73" width="396" height="231" rx="14" fill="url(#paper)" />
+    <path d="M96 94v-7q0-14 14-14h368q14 0 14 14v7Z" fill="#b8d1e4" />
+    <g fill="#456981">
+      <circle cx="115" cy="84" r="3" />
+      <circle cx="126" cy="84" r="3" />
+      <circle cx="137" cy="84" r="3" />
+    </g>
+    <rect x="110" y="105" width="137" height="184" rx="5" fill="#d9e7ed" />
+    <path d="M122 149h98m-98 21h74m-74 21h107m-107 21h86" stroke="#a0b6c6" stroke-width="4" stroke-linecap="round" />
+    <rect x="271" y="117" width="199" height="158" rx="10" fill="#e6edf2" stroke="#d0dde7" />
+    <path d="M326 189v-25a28 28 0 1 1 56 0v25" fill="none" stroke="url(#steel)" stroke-width="12" />
+    <rect x="312" y="177" width="82" height="66" rx="12" fill="url(#blue)" stroke="#31516e" />
+    <path d="M354 197a9 9 0 0 1 5 16l1 13h-12l1-13a9 9 0 0 1 5-16" fill="#c6dbe7" />
+    <path d="M322 188h58" stroke="#a6cddb" opacity=".64" stroke-width="2" stroke-linecap="round" />
+  </g>
+  <text x="130" y="124" fill="#3e6381" font-family="system-ui,sans-serif" font-size="15" font-weight="700" transform="rotate(-7 290 182)">Zasebnost</text>
+</svg>

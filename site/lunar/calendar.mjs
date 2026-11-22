@@ -4,7 +4,8 @@ if(root){
  const gen=['januarja','februarja','marca','aprila','maja','junija','julija','avgusta','septembra','oktobra','novembra','decembra'];
  const label=d=>{const [y,m,day]=d.split('-').map(Number);return `${day}. ${gen[m-1]} ${y}`};
  const percent=d=>new Intl.NumberFormat('sl-SI',{minimumFractionDigits:1,maximumFractionDigits:1}).format(d.illuminationFraction*100)+'\u00a0%';
- const moon=(svg,date,alt,full=false)=>{const i=Number(date.slice(-2))-1,size=full?768:384;svg.setAttribute('viewBox',`${i%6*size} ${Math.floor(i/6)*size} ${size} ${size}`);const image=svg.querySelector('image');image.setAttribute('width',6*size);image.setAttribute('height',6*size);image.setAttribute('href',`/lunar/atlas/${date.slice(0,7)}-${full?'1':'screen'}.webp`);svg.setAttribute('aria-label',alt)};
+ const atlasPath = (date, full) => `/lunar/atlas/${date.slice(0, 7)}-${full ? '1' : 'screen'}.webp`;
+ const moon=(svg,date,alt,full=false)=>{const i=Number(date.slice(-2))-1,size=full?768:384;svg.setAttribute('viewBox',`${i%6*size} ${Math.floor(i/6)*size} ${size} ${size}`);const image=svg.querySelector('image');image.setAttribute('width',6*size);image.setAttribute('height',6*size);image.setAttribute('href',atlasPath(date,full));svg.setAttribute('aria-label',alt)};
  const event=e=>`${e.phaseNameSl} · ${label(e.localDate)} ob ${e.localTime.replace(':','.')} (UTC${e.localDateTime.slice(-6)})`;
  root.querySelector('.lunar-print')?.addEventListener('click',()=>window.print());
  root.querySelector('#lunar-phase-filter')?.addEventListener('change',e=>root.querySelectorAll('[data-phase]').forEach(r=>{r.hidden=e.target.value!=='all'&&r.dataset.phase!==e.target.value}));
@@ -83,13 +84,28 @@ if(root){
   addEventListener('hashchange', selectFromUrl);
   const dialog = root.querySelector('dialog');
   const enlarge = root.querySelector('.lunar-enlarge');
+  let previewRequest = 0;
   enlarge.addEventListener('click', async () => {
    if (!data && !await loadMonth()) return;
    if (!current) select(data.days[0].date);
    if (!current || dialog.open) return;
-   moon(dialog.querySelector('svg'), current.date, `Luna ${label(current.date)}, ${percent(current)}.`, true);
-   dialog.querySelector('[data-dialog-caption]').textContent = `${label(current.date)} · ${percent(current)} · ob 12.00 v Sloveniji`;
+   const preview = ++previewRequest;
+   const date = current.date;
+   const illumination = percent(current);
+   const svg = dialog.querySelector('svg');
+   const description = `Luna ${label(date)}, ${illumination}.`;
+   moon(svg, date, description);
+   dialog.querySelector('[data-dialog-caption]').textContent = `${label(date)} · ${illumination} · ob 12.00 v Sloveniji`;
    dialog.showModal();
+   if (svg.getBoundingClientRect().width <= 384) return;
+   const fullImage = new Image();
+   fullImage.src = atlasPath(date, true);
+   try {
+    await fullImage.decode();
+    if (dialog.open && preview === previewRequest) moon(svg, date, description, true);
+   } catch {
+    // The screen image is already visible if the larger file fails to load.
+   }
   });
   dialog.querySelector('[data-close]').addEventListener('click', () => dialog.close());
   dialog.addEventListener('close', () => enlarge.focus({preventScroll:true}));

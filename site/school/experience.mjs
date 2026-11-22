@@ -54,6 +54,7 @@ function initSchoolPage(root) {
   let savedOnly = false, today = ljubljanaToday(), month = (today < '2026-09-01' ? '2026-09' : today > '2027-08-31' ? '2027-08' : today.slice(0,7));
   let favorites = new Set();
   try {const stored = JSON.parse(localStorage.getItem('koledar365-school-favorites') || '[]'); if (Array.isArray(stored)) favorites = new Set(stored.filter(id => data.breaks.some(row => row.id === id)));} catch { /* Storage may be unavailable; the page still works. */ }
+  const cardImageSizes = $('.sp-card-art img')?.sizes || '100vw';
   const tip = $('.sp-tip').outerHTML;
   let toastTimer;
   function toast(message) { const output = $('[data-school-toast]'); output.textContent = message; output.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => output.hidden = true, 4200); }
@@ -94,7 +95,7 @@ function initSchoolPage(root) {
     const cards = activeBreaks().filter(row => !savedOnly || favorites.has(row.id));
     $('[data-holiday-grid]').innerHTML = cards.map(row => {
       const photo = data.photos?.[row.photo];
-      const image = photo ? `<img src="${escapeHTML(photo.display_path || photo.path)}" srcset="${escapeHTML(photo.srcset || '')}" sizes="(max-width:600px) 50vw, (max-width:1000px) 45vw, 320px" width="${photo.width || 640}" height="${photo.height || 420}" alt="${escapeHTML(photo.alt)}" loading="lazy" decoding="async">` : '';
+      const image = photo ? `<img src="${escapeHTML(photo.display_path || photo.path)}" srcset="${escapeHTML(photo.srcset || '')}" sizes="${escapeHTML(cardImageSizes)}" width="${photo.width || 640}" height="${photo.height || 420}" alt="${escapeHTML(photo.alt)}" loading="lazy" decoding="async">` : '';
       const credit = photo ? `<div class="sp-photo-credit"><a href="${escapeHTML(photo.source)}" target="_blank" rel="noopener noreferrer" title="${escapeHTML(photo.title)}">Foto: ${escapeHTML(photo.author)}</a><span aria-hidden="true"> · </span>${photo.licenseUrl ? `<a href="${escapeHTML(photo.licenseUrl)}" target="_blank" rel="license noopener noreferrer">${escapeHTML(photo.license)}</a>` : `<span>${escapeHTML(photo.license)}</span>`}</div>` : '';
       return `<article id="pocitnice-${row.id}" class="sp-holiday sp-${row.season}" data-break-id="${row.id}"><div class="sp-card-art">${image}<span class="sp-season-tag">${{autumn:'JESEN',festive:'PRAZNIČNI ČAS',winter:'ZIMA',spring:'POMLAD',summer:'POLETJE'}[row.season]}</span><button type="button" class="sp-favorite" data-favorite="${row.id}" aria-label="${favorites.has(row.id)?'Odstrani iz shranjenih':'Shrani'}: ${escapeHTML(row.name)}" aria-pressed="${favorites.has(row.id)}">${icon('heart')}</button>${credit}</div><div class="sp-card-content"><small>${escapeHTML(row.tag)}</small><h3>${escapeHTML(row.name)}</h3><div class="sp-card-date">${icon('calendar')}<time datetime="${row.start}">${rangeText(row)}</time></div><div class="sp-card-bottom"><span><strong>${daysInclusive(row.start,row.end)}</strong> koledarskih dni <small>uradnega obdobja</small></span><button type="button" data-export-break="${row.id}" aria-label="Izvozi: ${escapeHTML(row.name)}">${icon('download')}</button></div></div></article>`;
     }).join('') + (!savedOnly ? tip : '');

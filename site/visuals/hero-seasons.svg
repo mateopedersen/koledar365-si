@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380">
+  <defs>
+    <filter id="cast" x="-.38" y="-.4" width="1.8" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10" />
+      <feOffset dx="4" dy="12" result="shadow" />
+      <feFlood flood-color="#19304d" flood-opacity=".21" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <filter id="lift" x="-.35" y="-.4" width="1.75" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+      <feOffset dx="2" dy="5" result="shadow" />
+      <feFlood flood-color="#142c46" flood-opacity=".24" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <radialGradient id="light">
+      <stop stop-color="#fff" />
+      <stop offset="1" stop-color="#d8e8f6" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="steel" x2="1" y2="1">
+      <stop stop-color="#fff" />
+      <stop offset=".48" stop-color="#a5bbcc" />
+      <stop offset="1" stop-color="#526f8b" />
+    </linearGradient>
+    <linearGradient id="red" x2="1" y2="1">
+      <stop stop-color="#f69a82" />
+      <stop offset=".48" stop-color="#c74351" />
+      <stop offset="1" stop-color="#8d2b45" />
+    </linearGradient>
+    <linearGradient id="green" x2="1" y2="1">
+      <stop stop-color="#a3c396" />
+      <stop offset=".48" stop-color="#438665" />
+      <stop offset="1" stop-color="#205c50" />
+    </linearGradient>
+    <linearGradient id="cream" x2="1" y2="1">
+      <stop stop-color="#fff7dd" />
+      <stop offset=".48" stop-color="#eee0c1" />
+      <stop offset="1" stop-color="#cfb488" />
+    </linearGradient>
+    <linearGradient id="leather" x2="1" y2="1">
+      <stop stop-color="#557486" />
+      <stop offset=".48" stop-color="#2f526b" />
+      <stop offset="1" stop-color="#17364e" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="297" cy="195" rx="280" ry="177" fill="url(#light)" />
+  <ellipse cx="301" cy="334" rx="207" ry="23" fill="#d4e4f1" opacity=".44" />
+  <use href="#art-shape-1" filter="url(#cast)" />
+  <g transform="rotate(-7 222 225)" id="art-shape-1">
+    <path d="M99 187h260l-16 122H117Z" fill="url(#leather)" stroke="#23445d" />
+    <path d="M99 187h260l-30-33H127Z" fill="#587585" />
+    <path d="M112 193h235m-230 39h225m-219 37h214" stroke="#a0bac6" opacity=".48" stroke-width="2" />
+    <ellipse cx="143" cy="177" rx="28" ry="13" fill="#372f28" stroke="#b29a75" stroke-width="3" />
+    <ellipse cx="225" cy="177" rx="28" ry="13" fill="#372f28" stroke="#b29a75" stroke-width="3" />
+    <ellipse cx="307" cy="177" rx="28" ry="13" fill="#372f28" stroke="#b29a75" stroke-width="3" />
+    <path d="M145 183q-2-35 8-58M223 181q7-43 0-80M308 182q-8-43 5-66" stroke="#3d754d" stroke-width="4" fill="none" />
+    <path d="M149 151q-41-8-39-40 27 3 39 40q2-39 34-43-2 32-34 43M224 138q-35-18-28-49 19 6 28 49q13-33 50-34-12 29-50 34M306 153q-22-20-28-43 23 0 28 43q8-36 42-39-14 30-42 39" fill="url(#green)" stroke="#468366" />
+  </g>
+  <use href="#art-shape-2" filter="url(#cast)" />
+  <g transform="rotate(14 418 188)" id="art-shape-2">
+    <path d="M361 64h121v222l-61 29-60-29Z" fill="url(#cream)" stroke="#c9ad80" />
+    <path d="M361 80h121m-121 192h121" stroke="#bd9d73" stroke-dasharray="3 3" />
+    <text x="375" y="116" fill="#4f6b49" font-family="system-ui,sans-serif" font-size="20" font-weight="700">Sezona</text>
+    <text x="376" y="142" fill="#6c5940" font-family="system-ui,sans-serif" font-size="15" font-weight="700">9 · 10 · 11</text>
+    <path d="M391 236q15-62 67-65-3 61-67 65Z" fill="url(#red)" />
+    <path d="m381 246 64-63m-43 43 1-27m13 13 24-4" stroke="#723f36" stroke-width="2" />
+  </g>
+  <use href="#art-shape-3" filter="url(#lift)" />
+  <g transform="translate(325 314) rotate(-5)" id="art-shape-3">
+    <path d="M0 0l18-7v14Z" fill="url(#steel)" />
+    <path d="M0 0l4-1.6v3.2Z" fill="#152a42" />
+    <rect x="17" y="-7" width="150" height="14" rx="5" fill="url(#green)" />
+    <path d="M21 -3L160 -3" fill="none" stroke="#e8f3f8" stroke-width="1.5" stroke-linecap="round" opacity=".58" />
+    <path d="M128 5h33q8 0 8-6" stroke="url(#steel)" stroke-width="3" fill="none" />
+  </g>
+</svg>

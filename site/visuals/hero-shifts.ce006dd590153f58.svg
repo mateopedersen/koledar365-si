@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380">
+  <defs>
+    <filter id="cast" x="-.38" y="-.4" width="1.8" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10" />
+      <feOffset dx="4" dy="12" result="shadow" />
+      <feFlood flood-color="#19304d" flood-opacity=".21" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <filter id="lift" x="-.35" y="-.4" width="1.75" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+      <feOffset dx="2" dy="5" result="shadow" />
+      <feFlood flood-color="#142c46" flood-opacity=".24" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <radialGradient id="light">
+      <stop stop-color="#fff" />
+      <stop offset="1" stop-color="#d8e8f6" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="paper" x2="1" y2="1">
+      <stop stop-color="#fffef9" />
+      <stop offset=".48" stop-color="#fff" />
+      <stop offset="1" stop-color="#e3eaf0" />
+    </linearGradient>
+    <linearGradient id="steel" x2="1" y2="1">
+      <stop stop-color="#fff" />
+      <stop offset=".48" stop-color="#a5bbcc" />
+      <stop offset="1" stop-color="#526f8b" />
+    </linearGradient>
+    <linearGradient id="red" x2="1" y2="1">
+      <stop stop-color="#f69a82" />
+      <stop offset=".48" stop-color="#c74351" />
+      <stop offset="1" stop-color="#8d2b45" />
+    </linearGradient>
+    <linearGradient id="ink" x2="1" y2="1">
+      <stop stop-color="#395777" />
+      <stop offset=".48" stop-color="#203956" />
+      <stop offset="1" stop-color="#112439" />
+    </linearGradient>
+    <linearGradient id="glass" x2="1" y2="1">
+      <stop stop-color="#fff" />
+      <stop offset=".48" stop-color="#c1e2ef" />
+      <stop offset="1" stop-color="#598eb2" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="297" cy="195" rx="280" ry="177" fill="url(#light)" />
+  <ellipse cx="301" cy="334" rx="207" ry="23" fill="#d4e4f1" opacity=".44" />
+  <use href="#art-shape-1" filter="url(#cast)" />
+  <g transform="rotate(-9 280 186)" id="art-shape-1">
+    <rect x="124" y="49" width="304" height="283" rx="16" fill="url(#ink)" stroke="#4c657f" stroke-width="2" />
+    <rect x="148" y="61" width="257" height="251" rx="7" fill="url(#paper)" stroke="#aebfcb" />
+    <path d="M219 63h109v23H219Z" fill="url(#steel)" stroke="#718ea3" />
+    <path d="M243 65V53q0-10 10-10h41q10 0 10 10v12" fill="none" stroke="url(#steel)" stroke-width="8" />
+    <text x="171" y="120" fill="#173751" font-family="system-ui,sans-serif" font-size="23" font-weight="700">Razpored izmen</text>
+    <rect x="166" y="140" width="221" height="40" rx="5" fill="#c2dfd1" />
+    <text x="180" y="165" fill="#173751" font-family="system-ui,sans-serif" font-size="16" font-weight="700">Jutranja</text>
+    <text x="370" y="165" fill="#416178" font-family="system-ui,sans-serif" font-size="15" font-weight="700" text-anchor="end">06–14</text>
+    <rect x="166" y="193" width="221" height="40" rx="5" fill="#f6dbad" />
+    <text x="180" y="218" fill="#173751" font-family="system-ui,sans-serif" font-size="16" font-weight="700">Popoldanska</text>
+    <text x="370" y="218" fill="#416178" font-family="system-ui,sans-serif" font-size="15" font-weight="700" text-anchor="end">14–22</text>
+    <rect x="166" y="246" width="221" height="40" rx="5" fill="#d6dbf1" />
+    <text x="180" y="271" fill="#173751" font-family="system-ui,sans-serif" font-size="16" font-weight="700">Nočna</text>
+    <text x="370" y="271" fill="#416178" font-family="system-ui,sans-serif" font-size="15" font-weight="700" text-anchor="end">22–06</text>
+  </g>
+  <use href="#art-shape-2" filter="url(#lift)" />
+  <g transform="rotate(13 438 244)" id="art-shape-2">
+    <rect x="402" y="203" width="97" height="115" rx="13" fill="url(#glass)" stroke="#88a9bd" />
+    <rect x="437" y="213" width="26" height="7" rx="4" fill="#789bb3" />
+    <rect x="412" y="239" width="77" height="65" rx="7" fill="url(#paper)" />
+    <circle cx="451" cy="258" r="9" fill="#99b0c6" />
+    <path d="M435 286q1-16 16-16t16 16Z" fill="#99b0c6" />
+  </g>
+  <use href="#art-shape-3" filter="url(#lift)" />
+  <g transform="translate(370 333) rotate(-11)" id="art-shape-3">
+    <path d="M0 0l18-7v14Z" fill="url(#steel)" />
+    <path d="M0 0l4-1.6v3.2Z" fill="#152a42" />
+    <rect x="17" y="-7" width="101" height="14" rx="5" fill="url(#red)" />
+    <path d="M21 -3L111 -3" fill="none" stroke="#e8f3f8" stroke-width="1.5" stroke-linecap="round" opacity=".58" />
+    <path d="M79 5h33q8 0 8-6" stroke="url(#steel)" stroke-width="3" fill="none" />
+  </g>
+</svg>

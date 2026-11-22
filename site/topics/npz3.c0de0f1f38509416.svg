@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="360" viewBox="0 0 520 360">
+  <defs>
+    <filter id="cast" x="-.38" y="-.4" width="1.8" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10" />
+      <feOffset dx="4" dy="12" result="shadow" />
+      <feFlood flood-color="#19304d" flood-opacity=".21" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <filter id="lift" x="-.35" y="-.4" width="1.75" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+      <feOffset dx="2" dy="5" result="shadow" />
+      <feFlood flood-color="#142c46" flood-opacity=".24" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <radialGradient id="light">
+      <stop stop-color="#fff" />
+      <stop offset="1" stop-color="#d8e8f6" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="paper" x2="1" y2="1">
+      <stop stop-color="#fffef9" />
+      <stop offset=".48" stop-color="#fff" />
+      <stop offset="1" stop-color="#e3eaf0" />
+    </linearGradient>
+    <linearGradient id="blue" x2="1" y2="1">
+      <stop stop-color="#548eb3" />
+      <stop offset=".48" stop-color="#1d5479" />
+      <stop offset="1" stop-color="#0b2845" />
+    </linearGradient>
+    <linearGradient id="steel" x2="1" y2="1">
+      <stop stop-color="#fff" />
+      <stop offset=".48" stop-color="#a5bbcc" />
+      <stop offset="1" stop-color="#526f8b" />
+    </linearGradient>
+    <linearGradient id="brass" x2="1" y2="1">
+      <stop stop-color="#fff0b5" />
+      <stop offset=".48" stop-color="#c88d47" />
+      <stop offset="1" stop-color="#87552e" />
+    </linearGradient>
+    <linearGradient id="red" x2="1" y2="1">
+      <stop stop-color="#f69a82" />
+      <stop offset=".48" stop-color="#c74351" />
+      <stop offset="1" stop-color="#8d2b45" />
+    </linearGradient>
+    <linearGradient id="green" x2="1" y2="1">
+      <stop stop-color="#a3c396" />
+      <stop offset=".48" stop-color="#438665" />
+      <stop offset="1" stop-color="#205c50" />
+    </linearGradient>
+    <linearGradient id="cream" x2="1" y2="1">
+      <stop stop-color="#fff7dd" />
+      <stop offset=".48" stop-color="#eee0c1" />
+      <stop offset="1" stop-color="#cfb488" />
+    </linearGradient>
+  </defs>
+  <g transform="translate(0 15.333) scale(.866667)">
+    <ellipse cx="297" cy="195" rx="280" ry="177" fill="url(#light)" />
+    <ellipse cx="301" cy="334" rx="207" ry="23" fill="#d4e4f1" opacity=".44" />
+    <use href="#art-shape-1" filter="url(#cast)" />
+    <g transform="rotate(-9 229.5 178.0)" id="art-shape-1">
+      <rect x="108" y="61" width="247" height="244" rx="5" fill="#aabcc9" />
+      <rect x="106" y="56" width="247" height="244" rx="5" fill="url(#paper)" stroke="#bccdd8" />
+      <path d="M123 109L336 109" fill="none" stroke="#205579" stroke-width="2" stroke-linecap="round" />
+      <text x="123" y="95" fill="#205579" font-family="system-ui,sans-serif" font-size="18" font-weight="700">Jezik in matematika</text>
+      <path d="M128 135L321 135" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+      <path d="M128 154L304 154" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+      <path d="M128 173L287 173" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+      <path d="M128 192L321 192" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+      <path d="M128 211L304 211" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+      <path d="M128 230L287 230" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+      <text x="128" y="278" fill="#91624e" font-family="system-ui,sans-serif" font-size="19" font-weight="700">3. razred</text>
+    </g>
+    <use href="#art-shape-2" filter="url(#cast)" />
+    <g transform="rotate(12 405 209)" id="art-shape-2">
+      <rect x="348" y="130" width="152" height="141" rx="14" fill="url(#cream)" stroke="#bba379" />
+      <path d="M365 144v111m33-111v111m34-111v111m34-111v111m-105-84h125m-125 32h125m-125 32h125" stroke="#ac926c" opacity=".38" />
+      <path d="M371 189h45v43h-45z" fill="url(#blue)" />
+      <path d="M438 232 460 188l23 44Z" fill="url(#red)" />
+      <circle cx="424" cy="161" r="17" fill="url(#green)" />
+    </g>
+    <use href="#art-shape-3" filter="url(#lift)" />
+    <g transform="translate(159 322) rotate(-4)" id="art-shape-3">
+      <path d="M0 0l18-7v14Z" fill="url(#steel)" />
+      <path d="M0 0l4-1.6v3.2Z" fill="#152a42" />
+      <rect x="17" y="-7" width="151" height="14" rx="5" fill="url(#brass)" />
+      <path d="M21 -3L161 -3" fill="none" stroke="#e8f3f8" stroke-width="1.5" stroke-linecap="round" opacity=".58" />
+      <path d="M129 5h33q8 0 8-6" stroke="url(#steel)" stroke-width="3" fill="none" />
+    </g>
+  </g>
+</svg>

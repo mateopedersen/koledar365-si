@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+  <defs>
+    <linearGradient id="bag" x1="9" y1="13" x2="27" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#7ba0d1"/><stop offset="1" stop-color="#334d8b"/></linearGradient>
+    <linearGradient id="pocket" x1="9" y1="24" x2="26" y2="35" gradientUnits="userSpaceOnUse"><stop stop-color="#d8e8fa"/><stop offset="1" stop-color="#8daedb"/></linearGradient>
+    <linearGradient id="sun" x1="29" y1="6" x2="36" y2="16" gradientUnits="userSpaceOnUse"><stop stop-color="#fff0b9"/><stop offset="1" stop-color="#e7a94f"/></linearGradient>
+  </defs>
+  <ellipse cx="19" cy="36.7" rx="14.5" ry="2.2" fill="#24395e" opacity=".14"/>
+  <path d="M28 4v2m5-.5-1.4 1.4M35 10h2m-3.1 4.5 1.4 1.4" stroke="#bc7c30" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="28" cy="11.5" r="4.8" fill="url(#sun)" stroke="#c28a3f"/>
+  <path d="M13.5 12V9.5a3.5 3.5 0 0 1 7 0V12" stroke="#30497a" stroke-width="2.1"/>
+  <path d="M5.5 33V20a9.5 9.5 0 0 1 9.5-9.5h3.5A9.5 9.5 0 0 1 28 20v13a3 3 0 0 1-3 3H8.5a3 3 0 0 1-3-3Z" fill="url(#bag)" stroke="#2e4a79"/>
+  <path d="M8 21a8.5 8.5 0 0 1 8.5-8.3H18" stroke="#c9def9" stroke-opacity=".75" stroke-linecap="round"/>
+  <path d="M26 24h5a2 2 0 0 1 2 2v5a3 3 0 0 1-3 3h-4" fill="#5a77ae" stroke="#344f83"/>
+  <rect x="8.5" y="23" width="16.5" height="10" rx="3" fill="url(#pocket)" stroke="#45658e"/>
+  <path d="M11 26.5h11.5m-3 0v2" stroke="#3e5b86" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

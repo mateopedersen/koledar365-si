@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+  <defs>
+    <linearGradient id="board" x1="7" y1="8" x2="34" y2="35" gradientUnits="userSpaceOnUse"><stop stop-color="#77b7b9"/><stop offset="1" stop-color="#226774"/></linearGradient>
+    <linearGradient id="clip" x1="11" y1="5" x2="28" y2="13" gradientUnits="userSpaceOnUse"><stop stop-color="#dbeff0"/><stop offset="1" stop-color="#81afb8"/></linearGradient>
+  </defs>
+  <ellipse cx="20" cy="36.6" rx="14.5" ry="2.2" fill="#1b4b58" opacity=".14"/>
+  <rect x="7" y="7" width="26" height="29" rx="4.7" fill="url(#board)" stroke="#246474"/>
+  <rect x="10" y="10" width="20" height="22.8" rx="2.1" fill="#f9fdfd" stroke="#98c4c9" stroke-width=".8"/>
+  <path d="M14 8a2 2 0 0 1 2-2h1.2a2.8 2.8 0 0 1 5.6 0H24a2 2 0 0 1 2 2v3H14Z" fill="url(#clip)" stroke="#426c7c" stroke-linejoin="round"/>
+  <path d="m13 17 1.6 1.5 2.7-3m-4.3 7 1.6 1.5 2.7-3m-4.3 7 1.6 1.5 2.7-3" stroke="#227d75" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M21 17.25h5m-5 5.5h5m-5 5.5h5" stroke="#80a5ae" stroke-width="1.55" stroke-linecap="round"/>
+</svg>

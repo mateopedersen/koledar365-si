@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380">
+  <defs>
+    <filter id="cast" x="-.38" y="-.4" width="1.8" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10" />
+      <feOffset dx="4" dy="12" result="shadow" />
+      <feFlood flood-color="#19304d" flood-opacity=".21" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <filter id="lift" x="-.35" y="-.4" width="1.75" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+      <feOffset dx="2" dy="5" result="shadow" />
+      <feFlood flood-color="#142c46" flood-opacity=".24" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <radialGradient id="light">
+      <stop stop-color="#fff" />
+      <stop offset="1" stop-color="#d8e8f6" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="paper" x2="1" y2="1">
+      <stop stop-color="#fffef9" />
+      <stop offset=".48" stop-color="#fff" />
+      <stop offset="1" stop-color="#e3eaf0" />
+    </linearGradient>
+    <linearGradient id="steel" x2="1" y2="1">
+      <stop stop-color="#fff" />
+      <stop offset=".48" stop-color="#a5bbcc" />
+      <stop offset="1" stop-color="#526f8b" />
+    </linearGradient>
+    <linearGradient id="red" x2="1" y2="1">
+      <stop stop-color="#f69a82" />
+      <stop offset=".48" stop-color="#c74351" />
+      <stop offset="1" stop-color="#8d2b45" />
+    </linearGradient>
+    <linearGradient id="green" x2="1" y2="1">
+      <stop stop-color="#a3c396" />
+      <stop offset=".48" stop-color="#438665" />
+      <stop offset="1" stop-color="#205c50" />
+    </linearGradient>
+    <linearGradient id="cream" x2="1" y2="1">
+      <stop stop-color="#fff7dd" />
+      <stop offset=".48" stop-color="#eee0c1" />
+      <stop offset="1" stop-color="#cfb488" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="297" cy="195" rx="280" ry="177" fill="url(#light)" />
+  <ellipse cx="301" cy="334" rx="207" ry="23" fill="#d4e4f1" opacity=".44" />
+  <use href="#art-shape-1" filter="url(#cast)" />
+  <g transform="rotate(8 312 172)" id="art-shape-1">
+    <rect x="107" y="62" width="401" height="249" rx="16" fill="#987453" />
+    <rect x="114" y="62" width="389" height="235" rx="12" fill="url(#cream)" stroke="#b89c74" />
+    <rect x="130" y="78" width="358" height="203" rx="7" fill="#d9c3a5" stroke="#b19b85" />
+    <path d="M134 84h346m-347 8h350m-349 44h347m-348 39h350m-349 44h347m-348 42h350" stroke="#aa947c" opacity=".37" stroke-dasharray="1 4" />
+  </g>
+  <use href="#art-shape-2" filter="url(#cast)" />
+  <g transform="rotate(-11 233.5 190.5)" id="art-shape-2">
+    <rect x="144" y="113" width="183" height="165" rx="5" fill="#aabcc9" />
+    <rect x="142" y="108" width="183" height="165" rx="5" fill="url(#paper)" stroke="#bccdd8" />
+    <path d="M159 161L308 161" fill="none" stroke="#396e71" stroke-width="2" stroke-linecap="round" />
+    <text x="159" y="147" fill="#396e71" font-family="system-ui,sans-serif" font-size="18" font-weight="700">Družinski teden</text>
+    <text x="159" y="185" fill="#173751" font-family="system-ui,sans-serif" font-size="16" font-weight="700">Skupni čas</text>
+    <path d="M158 213L298 213" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+    <path d="M158 235L281 235" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+  </g>
+  <use href="#art-shape-3" filter="url(#lift)" />
+  <g transform="rotate(13 397 194)" id="art-shape-3">
+    <rect x="341" y="119" width="119" height="133" rx="4" fill="#dfe9cd" />
+    <path d="M341 230h119l-21 22h-98Z" fill="#bbd0a2" />
+    <circle cx="398" cy="130" r="9" fill="url(#red)" stroke="#a55b52" />
+    <text x="356" y="166" fill="#4f694c" font-family="system-ui,sans-serif" font-size="17" font-weight="700">Opravila</text>
+    <path d="M357 186L441 186" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+    <path d="M357 202L424 202" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+    <path d="M357 218L407 218" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+  </g>
+  <use href="#art-shape-4" filter="url(#lift)" />
+  <g transform="translate(334 288) rotate(-21)" id="art-shape-4">
+    <circle cx="4" cy="4" r="29" fill="#bfd2dd" />
+    <circle r="29" fill="url(#red)" stroke="#b5686d" />
+    <path d="M0 17-19-2c-11-12 8-24 19-10C11-26 30-14 19-2Z" fill="#fff6df" opacity=".86" />
+  </g>
+  <use href="#art-shape-5" filter="url(#lift)" />
+  <g transform="translate(153 307) rotate(-3)" id="art-shape-5">
+    <path d="M0 0l18-7v14Z" fill="url(#steel)" />
+    <path d="M0 0l4-1.6v3.2Z" fill="#152a42" />
+    <rect x="17" y="-7" width="133" height="14" rx="5" fill="url(#green)" />
+    <path d="M21 -3L143 -3" fill="none" stroke="#e8f3f8" stroke-width="1.5" stroke-linecap="round" opacity=".58" />
+    <path d="M111 5h33q8 0 8-6" stroke="url(#steel)" stroke-width="3" fill="none" />
+  </g>
+</svg>

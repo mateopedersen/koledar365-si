@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="silver" x1="0" x2="0.6" y2="1">
+      <stop stop-color="#fffdf1"/>
+      <stop offset=".46" stop-color="#dce7f0"/>
+      <stop offset="1" stop-color="#849cbe"/>
+    </linearGradient>
+    <clipPath id="crescent">
+      <path d="M34 8a22 22 0 1 0 19 32A21.5 21.5 0 0 1 34 8Z"/>
+    </clipPath>
+  </defs>
+  <ellipse cx="32" cy="55" rx="21" ry="3" fill="#091f39" opacity=".46"/>
+  <path d="M34 8a22 22 0 1 0 19 32A21.5 21.5 0 0 1 34 8Z" fill="url(#silver)" stroke="#e3edf7" stroke-width=".8"/>
+  <g clip-path="url(#crescent)">
+    <g fill="#677e9d" opacity=".33">
+      <circle cx="18" cy="28" r="4.5"/>
+      <circle cx="24" cy="43" r="5.3"/>
+      <circle cx="36" cy="47" r="3"/>
+      <circle cx="15" cy="36" r="1.6"/>
+      <circle cx="25" cy="20" r="2"/>
+    </g>
+    <path d="M11 30A23 23 0 0 0 44 50" fill="none" stroke="#c1d3e9" opacity=".65"/>
+  </g>
+  <path d="m44 11 1.05 4.6L50 17l-4.95 1.4L44 23l-1.1-4.6L38 17l4.9-1.4Z" fill="#ffdc9e"/>
+  <circle cx="53" cy="28" r="1.8" fill="#a5c8eb"/>
+</svg>

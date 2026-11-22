@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380">
+  <defs>
+    <filter id="cast" x="-.38" y="-.4" width="1.8" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10" />
+      <feOffset dx="4" dy="12" result="shadow" />
+      <feFlood flood-color="#19304d" flood-opacity=".21" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <linearGradient id="blue" x2="1" y2="1">
+      <stop stop-color="#548eb3" />
+      <stop offset=".48" stop-color="#1d5479" />
+      <stop offset="1" stop-color="#0b2845" />
+    </linearGradient>
+    <linearGradient id="steel" x2="1" y2="1">
+      <stop stop-color="#fff" />
+      <stop offset=".48" stop-color="#a5bbcc" />
+      <stop offset="1" stop-color="#526f8b" />
+    </linearGradient>
+    <linearGradient id="red" x2="1" y2="1">
+      <stop stop-color="#f69a82" />
+      <stop offset=".48" stop-color="#c74351" />
+      <stop offset="1" stop-color="#8d2b45" />
+    </linearGradient>
+    <linearGradient id="ink" x2="1" y2="1">
+      <stop stop-color="#395777" />
+      <stop offset=".48" stop-color="#203956" />
+      <stop offset="1" stop-color="#112439" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" rx="24" fill="url(#blue)" />
+  <path d="M0 291q118-16 258-1t342-40v130H0Z" fill="#13324f" />
+  <path d="M0 333q126-22 246-8t354-35v90H0Z" fill="#153b5b" />
+  <use href="#art-shape-1" filter="url(#cast)" />
+  <g transform="rotate(13 437 198)" id="art-shape-1">
+    <path d="M422 67V48h31v19" fill="url(#steel)" />
+    <rect x="411" y="37" width="52" height="15" rx="5" fill="url(#steel)" />
+    <path d="m519 102 15-14 13 13-15 14" fill="url(#steel)" />
+    <circle cx="437" cy="198" r="128" fill="url(#steel)" stroke="#789db7" stroke-width="2" />
+    <circle cx="437" cy="198" r="115" fill="url(#ink)" stroke="#0d283f" stroke-width="3" />
+    <path d="M437 77v17" stroke="#a7c5da" stroke-width="3" transform="rotate(0 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(6 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(12 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(18 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(24 437 198)" />
+    <path d="M437 77v17" stroke="#a7c5da" stroke-width="3" transform="rotate(30 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(36 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(42 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(48 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(54 437 198)" />
+    <path d="M437 77v17" stroke="#a7c5da" stroke-width="3" transform="rotate(60 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(66 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(72 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(78 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(84 437 198)" />
+    <path d="M437 77v17" stroke="#a7c5da" stroke-width="3" transform="rotate(90 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(96 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(102 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(108 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(114 437 198)" />
+    <path d="M437 77v17" stroke="#a7c5da" stroke-width="3" transform="rotate(120 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(126 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(132 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(138 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(144 437 198)" />
+    <path d="M437 77v17" stroke="#a7c5da" stroke-width="3" transform="rotate(150 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(156 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(162 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(168 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(174 437 198)" />
+    <path d="M437 77v17" stroke="#a7c5da" stroke-width="3" transform="rotate(180 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(186 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(192 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(198 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(204 437 198)" />
+    <path d="M437 77v17" stroke="#a7c5da" stroke-width="3" transform="rotate(210 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(216 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(222 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(228 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(234 437 198)" />
+    <path d="M437 77v17" stroke="#a7c5da" stroke-width="3" transform="rotate(240 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(246 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(252 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(258 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(264 437 198)" />
+    <path d="M437 77v17" stroke="#a7c5da" stroke-width="3" transform="rotate(270 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(276 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(282 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(288 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(294 437 198)" />
+    <path d="M437 77v17" stroke="#a7c5da" stroke-width="3" transform="rotate(300 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(306 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(312 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(318 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(324 437 198)" />
+    <path d="M437 77v17" stroke="#a7c5da" stroke-width="3" transform="rotate(330 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(336 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(342 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(348 437 198)" />
+    <path d="M437 77v7" stroke="#a7c5da" stroke-width="1.5" transform="rotate(354 437 198)" />
+    <path d="M437 103v14m0 161v13m-94-93h14m160 0h14" stroke="#e4f1f8" stroke-width="3" stroke-linecap="round" />
+    <circle cx="434" cy="160" r="25" stroke="#86a4bf" fill="#173650" />
+    <path d="m433 165 6-14" stroke="#e3b56b" stroke-width="2" />
+    <path d="M430 213 472 124" stroke="#fe887c" stroke-width="4" stroke-linecap="round" />
+    <circle cx="437" cy="198" r="7" fill="url(#red)" stroke="#ffc4a0" />
+    <path d="M357 147q46-77 130-43" stroke="#fff" stroke-opacity=".22" stroke-width="4" fill="none" stroke-linecap="round" />
+  </g>
+</svg>

@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generated_at": "2026-11-22T09:44:24Z",
-  "source_commit": "d5e928223cf2bf18ea423ee7f601c17014a2a7ab",
+  "generated_at": "2026-11-22T20:51:21Z",
+  "source_commit": "dd9d3cc4e680781ac29bd578a20a6b659f25b864",
   "scope": "Every indexable canonical URL in the prepared publication; live verification happens after Cloudflare deployment.",
-  "count": 467,
+  "count": 526,
   "expanded_count": 81,
   "expanded_urls": [
     "https://koledar365.si/delovni-dnevi/",
@@ -97,7 +97,17 @@
       "h1": [
         "Slovenski koledar za vaše načrte."
       ],
-      "image": "https://koledar365.si/druzabno/pages/1/267662f58263b633aab6.png"
+      "image": "https://koledar365.si/druzabno/pages/1/8d42659aea5bc7fd0ff9.png"
+    },
+    {
+      "url": "https://koledar365.si/astronomski-koledar/",
+      "path": "/astronomski-koledar/",
+      "title": "Astronomski koledar 2026–2030 za Slovenijo | Koledar365",
+      "description": "Na enem mestu poglejte lunine mene, enakonočja, solsticije, mrke in opazovalne noči Perzeidov. Filtrirajte leto in vrsto dogodka.",
+      "h1": [
+        "Astronomski koledar 2026–2030 za Slovenijo"
+      ],
+      "image": "https://koledar365.si/druzabno/pages/472/fdf06e39757b89446abc.png"
     },
     {
       "url": "https://koledar365.si/blog/",
@@ -107,7 +117,7 @@
       "h1": [
         "Vodniki za koledar in načrtovanje"
       ],
-      "image": "https://koledar365.si/druzabno/pages/361/295cb75d61de19d7a97d.png"
+      "image": "https://koledar365.si/druzabno/pages/473/d9a70ae1a4ab8035f9dd.png"
     },
     {
       "url": "https://koledar365.si/blog/casovnica-projekta-od-konca-nazaj/",
@@ -310,6 +320,16 @@
       "image": "https://koledar365.si/images/blog/tedenski-koledar-pregled-v-30-minutah.webp"
     },
     {
+      "url": "https://koledar365.si/bolnisko-nadomestilo/",
+      "path": "/bolnisko-nadomestilo/",
+      "title": "Bolniško nadomestilo: kdo plača in kako preveriti obračun | Koledar365",
+      "description": "Vodnik po bolniškem nadomestilu v Sloveniji. Razlika med delovnimi in koledarskimi dnevi, prehod na ZZZS in pregled potrebnih podatkov.",
+      "h1": [
+        "Bolniško nadomestilo: kdo plača in kako preveriti obračun"
+      ],
+      "image": "https://koledar365.si/druzabno/pages/466/7c799dd38d966a71cba9.png"
+    },
+    {
       "url": "https://koledar365.si/dan-v-letu/",
       "path": "/dan-v-letu/",
       "title": "Dan v letu | Koledar365",
@@ -337,7 +357,7 @@
       "h1": [
         "Davčni koledar 2027–2030: izbrani roki FURS"
       ],
-      "image": "https://koledar365.si/druzabno/pages/451/6686b533c152579f5df4.png"
+      "image": "https://koledar365.si/druzabno/pages/455/4e1ac7f82e10c903dc39.png"
     },
     {
       "url": "https://koledar365.si/delovni-dnevi/",
@@ -347,7 +367,7 @@
       "h1": [
         "Delovni dnevi in ure 2026–2030 v Sloveniji"
       ],
-      "image": "https://koledar365.si/druzabno/pages/9/94c8b06de77dba11cdf8.png"
+      "image": "https://koledar365.si/druzabno/pages/9/fecfc63a9c08e117ade0.png"
     },
     {
       "url": "https://koledar365.si/delovni-dnevi/2026/",
@@ -880,6 +900,16 @@
       "image": "https://koledar365.si/druzabno/pages/170/bc9b61285461612ba186.png"
     },
     {
+      "url": "https://koledar365.si/denarna-socialna-pomoc/",
+      "path": "/denarna-socialna-pomoc/",
+      "title": "Denarna socialna pomoč in pomoč za ogrevanje: pogoji in vloga | Koledar365",
+      "description": "Preverite redno in izredno denarno socialno pomoč pri CSD, osnovni znesek minimalnega dohodka ter možnosti ob izrednih stroških ogrevanja.",
+      "h1": [
+        "Denarna socialna pomoč in pomoč za ogrevanje: pogoji in vloga"
+      ],
+      "image": "https://koledar365.si/druzabno/pages/467/e68df05ffb400e7e2b4a.png"
+    },
+    {
       "url": "https://koledar365.si/dnevi-za-zastavo/",
       "path": "/dnevi-za-zastavo/",
       "title": "Dnevi za slovensko zastavo 2027–2030 | Koledar365",
@@ -887,7 +917,7 @@
       "h1": [
         "Dnevi za slovensko zastavo 2027–2030"
       ],
-      "image": "https://koledar365.si/druzabno/pages/447/e82ce886b78001738f6a.png"
+      "image": "https://koledar365.si/druzabno/pages/451/a1e8742080a2ac0cd01c.png"
     },
     {
       "url": "https://koledar365.si/dnevni-planer/",
@@ -922,12 +952,462 @@
     {
       "url": "https://koledar365.si/festivali/",
       "path": "/festivali/",
-      "title": "Festivali in prireditve v Sloveniji 2027–2030 | Koledar365",
-      "description": "Kdaj in kje potekajo slovenski festivali, sejmi, koncerti in športne prireditve? Preverite potrjene termine, prizorišča, uradne programe in prenesite izbrane dogodke v koledar.",
+      "title": "Festivali in prireditve v Sloveniji | Koledar365",
+      "description": "Poiščite festivale in tradicionalne prireditve po kraju, vrsti in letu. Oglejte si fotografije, preverite objavljene termine in shranite dogodek v koledar.",
       "h1": [
-        "Festivali in prireditve v Sloveniji 2027–2030"
+        "Festivali in prireditve v Sloveniji"
       ],
-      "image": "https://koledar365.si/druzabno/pages/430/226e919c10b7f470c6ce.png"
+      "image": "https://koledar365.si/images/observances/pust.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/alpski-vecer/",
+      "path": "/festivali/alpski-vecer/",
+      "title": "Alpski večer v Bohinju | Koledar365",
+      "description": "Alpski večer je bohinjska glasbena prireditev, ki združuje narodnozabavne nastope in glasbeno tradicijo alpskega prostora. Organizator je za leto 2027 objavil dva večera v Dvorani Danica.",
+      "h1": [
+        "Alpski večer v Bohinju"
+      ],
+      "image": "https://koledar365.si/images/festivals/bohinj.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/biatlon-pokljuka/",
+      "path": "/festivali/biatlon-pokljuka/",
+      "title": "Odprto evropsko prvenstvo v biatlonu | Koledar365",
+      "description": "Biatlonsko prvenstvo na Pokljuki povezuje tek na smučeh in streljanje na prizorišču na Rudnem polju.",
+      "h1": [
+        "Odprto evropsko prvenstvo v biatlonu"
+      ],
+      "image": "https://koledar365.si/images/observances/zimski-solsticij.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/bogracfest/",
+      "path": "/festivali/bogracfest/",
+      "title": "Bogračfest | Koledar365",
+      "description": "Na Bogračfestu ekipe pred obiskovalci kuhajo bograč v kotličkih. Mestno središče je na dan tekmovanja tudi prizorišče glasbenega programa in druženja v okviru Festivala Vinarium.",
+      "h1": [
+        "Bogračfest"
+      ],
+      "image": "https://koledar365.si/images/cities/lendava.jpg"
+    },
+    {
+      "url": "https://koledar365.si/festivali/carobni-maribor/",
+      "path": "/festivali/carobni-maribor/",
+      "title": "Čarobni Maribor | Koledar365",
+      "description": "Čarobni Maribor je zimski mestni program z lučkami, koncerti in prazničnimi prizorišči na mestnih trgih.",
+      "h1": [
+        "Čarobni Maribor"
+      ],
+      "image": "https://koledar365.si/images/city-night/maribor-night-5b0238de0f63.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/dan-slovenskih-planincev/",
+      "path": "/festivali/dan-slovenskih-planincev/",
+      "title": "Dan slovenskih planincev | Koledar365",
+      "description": "Dan planincev je vseslovensko srečanje planinskih društev z dejavnostmi na prostem. Prizorišče izberejo za posamezno leto.",
+      "h1": [
+        "Dan slovenskih planincev"
+      ],
+      "image": "https://koledar365.si/images/festivals/planinska-pot.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/december-v-ljubljani/",
+      "path": "/festivali/december-v-ljubljani/",
+      "title": "December v Ljubljani | Koledar365",
+      "description": "Praznični program v Ljubljani povezuje luči, sejme, koncerte in silvestrovanje. Prireditve so razporejene po različnih mestnih lokacijah.",
+      "h1": [
+        "December v Ljubljani"
+      ],
+      "image": "https://koledar365.si/images/festivals/december-ljubljana.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/dirka-po-sloveniji/",
+      "path": "/festivali/dirka-po-sloveniji/",
+      "title": "Dirka po Sloveniji | Koledar365",
+      "description": "Dirka po Sloveniji je večetapna cestna kolesarska dirka. Kraji startov, ciljev in prehodov se spreminjajo z izbrano traso.",
+      "h1": [
+        "Dirka po Sloveniji"
+      ],
+      "image": "https://koledar365.si/images/festivals/dirka.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/dnevi-narodnih-nos/",
+      "path": "/festivali/dnevi-narodnih-nos/",
+      "title": "Dnevi narodnih noš in oblačilne dediščine | Koledar365",
+      "description": "Kamniški festival, ki se je začel leta 1966, predstavlja pokrajinska oblačila, folkloro in obrti. Nedeljska povorka je priložnost, da na enem mestu primerjate kostume in običaje različnih krajev.",
+      "h1": [
+        "Dnevi narodnih noš in oblačilne dediščine"
+      ],
+      "image": "https://koledar365.si/images/cities/kamnik.jpg"
+    },
+    {
+      "url": "https://koledar365.si/festivali/druga-godba/",
+      "path": "/festivali/druga-godba/",
+      "title": "Druga godba | Koledar365",
+      "description": "Druga godba je mednarodni glasbeni festival, kjer se srečujejo svetovne glasbe, sodobni zvoki in manj pogosto slišane glasbene tradicije.",
+      "h1": [
+        "Druga godba"
+      ],
+      "image": "https://koledar365.si/images/festivals/druga-godba.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/eurobasket-ljubljana-2029/",
+      "path": "/festivali/eurobasket-ljubljana-2029/",
+      "title": "EuroBasket 2029 v Ljubljani | Koledar365",
+      "description": "Ljubljana je eno od potrjenih prizorišč moškega evropskega prvenstva v košarki leta 2029. Stožice bodo gostile eno skupino, sklepni del pa bo v Madridu.",
+      "h1": [
+        "EuroBasket 2029 v Ljubljani"
+      ],
+      "image": "https://koledar365.si/images/cities/ljubljana.jpg"
+    },
+    {
+      "url": "https://koledar365.si/festivali/fantazima-koper/",
+      "path": "/festivali/fantazima-koper/",
+      "title": "Fantazima | Koledar365",
+      "description": "Fantazima je koprski praznični program s koncerti, zimsko okrasitvijo in dogodki za otroke.",
+      "h1": [
+        "Fantazima"
+      ],
+      "image": "https://koledar365.si/images/city-night/koper-night-9cecdb491e7b.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/festival-alpskega-cvetja/",
+      "path": "/festivali/festival-alpskega-cvetja/",
+      "title": "Mednarodni festival alpskega cvetja | Koledar365",
+      "description": "Bohinjski festival poveže naravo in življenje v alpski pokrajini. Program po vaseh in na terenu vključuje opazovanje rastlin, vodene sprehode ter delavnice o naravi in lokalni ponudbi.",
+      "h1": [
+        "Mednarodni festival alpskega cvetja"
+      ],
+      "image": "https://koledar365.si/images/festivals/planinska-pot.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/festival-cokolade/",
+      "path": "/festivali/festival-cokolade/",
+      "title": "Festival čokolade Radovljica | Koledar365",
+      "description": "Festival čokolade poveže slovenske in gostujoče čokoladnice v starem jedru Radovljice. Krajevno zaledje dogodka je tudi čokoladna tradicija Lesc.",
+      "h1": [
+        "Festival čokolade Radovljica"
+      ],
+      "image": "https://koledar365.si/images/cities/radovljica.jpg"
+    },
+    {
+      "url": "https://koledar365.si/festivali/festival-gorniskega-filma/",
+      "path": "/festivali/festival-gorniskega-filma/",
+      "title": "Festival gorniškega filma | Koledar365",
+      "description": "Festival gorniškega filma prikazuje filme o gorah, alpinizmu in življenju v gorskem okolju. Ljubljanski del je objavljen za Kosovelovo in Linhartovo dvorano.",
+      "h1": [
+        "Festival gorniškega filma"
+      ],
+      "image": "https://koledar365.si/images/festivals/planinska-pot.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/festival-idrijske-cipke/",
+      "path": "/festivali/festival-idrijske-cipke/",
+      "title": "Festival idrijske čipke | Koledar365",
+      "description": "Festival prikazuje tehnike klekljanja in sodobno uporabo idrijske čipke. Poleg razstav lahko program vključuje prikaze dela in tekmovanja v klekljanju.",
+      "h1": [
+        "Festival idrijske čipke"
+      ],
+      "image": "https://koledar365.si/images/cities/idrija.jpg"
+    },
+    {
+      "url": "https://koledar365.si/festivali/festival-lent/",
+      "path": "/festivali/festival-lent/",
+      "title": "Festival Lent | Koledar365",
+      "description": "Festival Lent je večžanrski mariborski festival. Koncerti, gledališče in ulične prireditve se odvijajo na več odrih.",
+      "h1": [
+        "Festival Lent"
+      ],
+      "image": "https://koledar365.si/images/festivals/lent-2009.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/graficni-bienale/",
+      "path": "/festivali/graficni-bienale/",
+      "title": "Grafični bienale Ljubljana | Koledar365",
+      "description": "Ljubljanski grafični bienale raziskuje grafiko, tisk in širše načine kroženja podob. Razstave povezuje kuratorski koncept posamezne izdaje.",
+      "h1": [
+        "Grafični bienale Ljubljana"
+      ],
+      "image": "https://koledar365.si/images/cities/ljubljana.jpg"
+    },
+    {
+      "url": "https://koledar365.si/festivali/jazz-festival-ljubljana/",
+      "path": "/festivali/jazz-festival-ljubljana/",
+      "title": "Jazz festival Ljubljana | Koledar365",
+      "description": "Jazz festival Ljubljana predstavlja domače in mednarodne zasedbe ter različne pristope k improvizirani glasbi. Program lahko združuje zunanje in dvoranske koncerte.",
+      "h1": [
+        "Jazz festival Ljubljana"
+      ],
+      "image": "https://koledar365.si/images/festivals/jazz-ljubljana.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/jurjevanje/",
+      "path": "/festivali/jurjevanje/",
+      "title": "Jurjevanje v Beli krajini | Koledar365",
+      "description": "Jurjevanje v Beli krajini je folklorna prireditev v Črnomlju. Slovenske in tuje skupine predstavljajo plese, glasbo in oblačilno dediščino.",
+      "h1": [
+        "Jurjevanje v Beli krajini"
+      ],
+      "image": "https://koledar365.si/images/cities/crnomelj.jpg"
+    },
+    {
+      "url": "https://koledar365.si/festivali/kravji-bal/",
+      "path": "/festivali/kravji-bal/",
+      "title": "Kravji bal v Bohinju | Koledar365",
+      "description": "Bohinjski Kravji bal oživlja vrnitev živine s planin ob koncu pašne sezone. V sprevodu pokažejo okrašene trope in opremo, s katero so se planšarji vračali v dolino.",
+      "h1": [
+        "Kravji bal v Bohinju"
+      ],
+      "image": "https://koledar365.si/images/festivals/bohinj.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/kurentovanje/",
+      "path": "/festivali/kurentovanje/",
+      "title": "Kurentovanje | Koledar365",
+      "description": "Ptujski pustni festival združuje kurente, druge tradicionalne like in karnevalske povorke. Obhodi kurentov so vpisani na Unescov seznam nesnovne kulturne dediščine.",
+      "h1": [
+        "Kurentovanje"
+      ],
+      "image": "https://koledar365.si/images/observances/pust.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/lendavska-trgatev/",
+      "path": "/festivali/lendavska-trgatev/",
+      "title": "Lendavska trgatev | Koledar365",
+      "description": "Etnološka povorka prikaže obiranje, prenašanje in prešanje grozdja ter druge običaje s slovenskega in madžarskega jezikovnega območja. Spremljajo jo folklora, kulinarika društev in domača tržnica.",
+      "h1": [
+        "Lendavska trgatev"
+      ],
+      "image": "https://koledar365.si/images/cities/lendava.jpg"
+    },
+    {
+      "url": "https://koledar365.si/festivali/liffe/",
+      "path": "/festivali/liffe/",
+      "title": "Ljubljanski mednarodni filmski festival LIFFe | Koledar365",
+      "description": "LIFFe je ljubljanski mednarodni filmski festival s pregledom sodobnega avtorskega filma in več programskimi sklopi.",
+      "h1": [
+        "Ljubljanski mednarodni filmski festival LIFFe"
+      ],
+      "image": "https://koledar365.si/images/city-night/ljubljana-night-739fb3e76ccf.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/linhartovo-srecanje/",
+      "path": "/festivali/linhartovo-srecanje/",
+      "title": "Linhartovo srečanje | Koledar365",
+      "description": "Državni festival ljubiteljskih gledaliških skupin v Postojni predstavi uprizoritve, izbrane po območnih in regijskih srečanjih. Poleg predstav so del festivalskega programa tudi priznanja za gledališko ustvarjanje.",
+      "h1": [
+        "Linhartovo srečanje"
+      ],
+      "image": "https://koledar365.si/images/cities/postojna.jpg"
+    },
+    {
+      "url": "https://koledar365.si/festivali/ljubljana-festival/",
+      "path": "/festivali/ljubljana-festival/",
+      "title": "Ljubljana Festival | Koledar365",
+      "description": "Ljubljana Festival je poletni glasbeni in uprizoritveni festival. Med njegovimi osrednjimi prizorišči so Križanke, del programa pa gostijo še druge mestne dvorane.",
+      "h1": [
+        "Ljubljana Festival"
+      ],
+      "image": "https://koledar365.si/images/festivals/ljubljana-festival.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/luv-fest/",
+      "path": "/festivali/luv-fest/",
+      "title": "LUV fest | Koledar365",
+      "description": "LUV fest med Prešernovim dnevom in gregorjevim poveže umetniške postavitve, vodstva in kulturne prireditve. Del doživetja je razpršen po mestnih ulicah.",
+      "h1": [
+        "LUV fest"
+      ],
+      "image": "https://koledar365.si/images/cities/ljubljana.jpg"
+    },
+    {
+      "url": "https://koledar365.si/festivali/martinovanje-maribor/",
+      "path": "/festivali/martinovanje-maribor/",
+      "title": "Martinovanje v Mariboru | Koledar365",
+      "description": "Mariborsko martinovanje praznuje štajersko vinogradniško dediščino. Osrednji običaj je simbolični krst mošta, ki ga spremljajo nastopi, stojnice in lokalna kulinarika.",
+      "h1": [
+        "Martinovanje v Mariboru"
+      ],
+      "image": "https://koledar365.si/images/cities/maribor.jpg"
+    },
+    {
+      "url": "https://koledar365.si/festivali/pikin-festival/",
+      "path": "/festivali/pikin-festival/",
+      "title": "Pikin festival | Koledar365",
+      "description": "Pikin festival je velenjska prireditev za otroke in družine, poimenovana po Piki Nogavički. Povezuje delavnice, predstave in srečanja z ustvarjalci.",
+      "h1": [
+        "Pikin festival"
+      ],
+      "image": "https://koledar365.si/images/cities/velenje.jpg"
+    },
+    {
+      "url": "https://koledar365.si/festivali/pivo-in-cvetje/",
+      "path": "/festivali/pivo-in-cvetje/",
+      "title": "Pivo in cvetje | Koledar365",
+      "description": "Laško Pivo in cvetje združuje glasbene nastope, mestno dogajanje in laško pivovarsko tradicijo.",
+      "h1": [
+        "Pivo in cvetje"
+      ],
+      "image": "https://koledar365.si/images/cities/lasko.jpg"
+    },
+    {
+      "url": "https://koledar365.si/festivali/planica-poleti-2028/",
+      "path": "/festivali/planica-poleti-2028/",
+      "title": "Svetovno prvenstvo v smučarskih poletih Planica 2028 | Koledar365",
+      "description": "Planica bo gostila svetovno prvenstvo v smučarskih poletih leta 2028. To prvenstvo je samostojen dogodek in ima svoj razpored tekem.",
+      "h1": [
+        "Svetovno prvenstvo v smučarskih poletih Planica 2028"
+      ],
+      "image": "https://koledar365.si/images/festivals/planica.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/planica/",
+      "path": "/festivali/planica/",
+      "title": "Finale svetovnega pokala v Planici | Koledar365",
+      "description": "Planica je prizorišče finalnih tekem svetovnega pokala v smučarskih skokih oziroma poletih na letalnici bratov Gorišek.",
+      "h1": [
+        "Finale svetovnega pokala v Planici"
+      ],
+      "image": "https://koledar365.si/images/festivals/planica.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/pokal-vitranc/",
+      "path": "/festivali/pokal-vitranc/",
+      "title": "Pokal Vitranc | Koledar365",
+      "description": "Pokal Vitranc je moška tekma svetovnega pokala v alpskem smučanju na strmini v Podkorenu.",
+      "h1": [
+        "Pokal Vitranc"
+      ],
+      "image": "https://koledar365.si/images/festivals/kranjska-gora.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/pravljicno-celje/",
+      "path": "/festivali/pravljicno-celje/",
+      "title": "Pravljično Celje | Koledar365",
+      "description": "Adventni program v Celju povezuje osvetljeno mestno jedro, družinske prireditve in dogodke na mestnih trgih.",
+      "h1": [
+        "Pravljično Celje"
+      ],
+      "image": "https://koledar365.si/images/city-night/celje-night-4151b4f572be.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/praznik-cesenj/",
+      "path": "/festivali/praznik-cesenj/",
+      "title": "Praznik češenj | Koledar365",
+      "description": "Praznik češenj v Brdih je povezan s sezono obiranja in predstavitvijo briškega sadja, kulinarike in lokalnih navad.",
+      "h1": [
+        "Praznik češenj"
+      ],
+      "image": "https://koledar365.si/images/festivals/brda.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/praznik-idrijskih-zlikrofov/",
+      "path": "/festivali/praznik-idrijskih-zlikrofov/",
+      "title": "Praznik idrijskih žlikrofov | Koledar365",
+      "description": "Idrijsko jed iz testa s krompirjevim nadevom ponudniki predstavijo v tradicionalnih in sodobnih kombinacijah. Program leta 2026 je poleg pokušanj vključil gostujoče kuharje in otroške delavnice.",
+      "h1": [
+        "Praznik idrijskih žlikrofov"
+      ],
+      "image": "https://koledar365.si/images/cities/idrija.jpg"
+    },
+    {
+      "url": "https://koledar365.si/festivali/praznik-kakijev/",
+      "path": "/festivali/praznik-kakijev/",
+      "title": "Praznik kakijev | Koledar365",
+      "description": "Jesenska prireditev v Strunjanu je posvečena kakiju in pridelovalcem slovenske Istre. Program v letu 2026 je zajemal prodajo pridelkov, strokovno predavanje ter šolske razstave.",
+      "h1": [
+        "Praznik kakijev"
+      ],
+      "image": "https://koledar365.si/images/festivals/strunjan.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/praznik-refoska/",
+      "path": "/festivali/praznik-refoska/",
+      "title": "Praznik refoška in slovenske Istre | Koledar365",
+      "description": "Marezige gostijo prireditev o refošku, istrskih jedeh in vinarjih. Večdnevni program ob predstavitvah pridelovalcev povezuje vodene pokušine in družabno dogajanje v vasi.",
+      "h1": [
+        "Praznik refoška in slovenske Istre"
+      ],
+      "image": "https://koledar365.si/images/festivals/marezige.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/punk-rock-holiday/",
+      "path": "/festivali/punk-rock-holiday/",
+      "title": "Punk Rock Holiday | Koledar365",
+      "description": "Punk Rock Holiday združuje punkrockovske in sorodne zasedbe na festivalskem prizorišču ob Soči.",
+      "h1": [
+        "Punk Rock Holiday"
+      ],
+      "image": "https://koledar365.si/images/cities/tolmin.jpg"
+    },
+    {
+      "url": "https://koledar365.si/festivali/skoki-ljubno/",
+      "path": "/festivali/skoki-ljubno/",
+      "title": "Svetovni pokal v smučarskih skokih na Ljubnem | Koledar365",
+      "description": "Ljubno ob Savinji gosti tekme svetovnega pokala v ženskih smučarskih skokih.",
+      "h1": [
+        "Svetovni pokal v smučarskih skokih na Ljubnem"
+      ],
+      "image": "https://koledar365.si/images/festivals/ljubno.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/solinarski-praznik/",
+      "path": "/festivali/solinarski-praznik/",
+      "title": "Solinarski praznik ob sv. Juriju | Koledar365",
+      "description": "Spomladanski praznik ob sv. Juriju predstavi piransko solinarsko dediščino. Program iz leta 2026 je vključeval stojnice, razstave, predavanja o solinah in delavnice.",
+      "h1": [
+        "Solinarski praznik ob sv. Juriju"
+      ],
+      "image": "https://koledar365.si/images/festivals/soline.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/tolminator/",
+      "path": "/festivali/tolminator/",
+      "title": "Tolminator | Koledar365",
+      "description": "Tolminator je večdnevni metalski festival v Tolminu, povezan s koncerti na območju sotočja.",
+      "h1": [
+        "Tolminator"
+      ],
+      "image": "https://koledar365.si/images/cities/tolmin.jpg"
+    },
+    {
+      "url": "https://koledar365.si/festivali/veslanje-bled/",
+      "path": "/festivali/veslanje-bled/",
+      "title": "Evropsko prvenstvo v veslanju na Bledu | Koledar365",
+      "description": "Na evropskem prvenstvu na Bledu posadke tekmujejo na veslaški progi na jezeru. Dogodek ni isto kot veteranska svetovna regata, ki jo je Bled gostil leta 2026.",
+      "h1": [
+        "Evropsko prvenstvo v veslanju na Bledu"
+      ],
+      "image": "https://koledar365.si/images/cities/bled.jpg"
+    },
+    {
+      "url": "https://koledar365.si/festivali/vilenica/",
+      "path": "/festivali/vilenica/",
+      "title": "Mednarodni literarni festival Vilenica | Koledar365",
+      "description": "Vilenica povezuje pisatelje, pesnike in prevajalce na literarnih branjih ter pogovorih. Ime je povezano s kraško jamo Vilenico.",
+      "h1": [
+        "Mednarodni literarni festival Vilenica"
+      ],
+      "image": "https://koledar365.si/images/festivals/vilenica.webp"
+    },
+    {
+      "url": "https://koledar365.si/festivali/vuc-u-vodo/",
+      "path": "/festivali/vuc-u-vodo/",
+      "title": "Vuč u vodo ob gregorjevem | Koledar365",
+      "description": "Tržiški običaj obuja spomin na čevljarje, ki so ob daljših dnevih prenehali delati pri umetni svetlobi. Otroci in družine na predvečer gregorjevega pripravijo male osvetljene hiške, imenovane gregorčki.",
+      "h1": [
+        "Vuč u vodo ob gregorjevem"
+      ],
+      "image": "https://koledar365.si/images/cities/trzic.jpg"
+    },
+    {
+      "url": "https://koledar365.si/festivali/zimska-pravljica-bled/",
+      "path": "/festivali/zimska-pravljica-bled/",
+      "title": "Zimska pravljica na Bledu | Koledar365",
+      "description": "Zimska pravljica ob blejskem jezeru povezuje praznično osvetlitev, stojnice in družinski program na promenadi.",
+      "h1": [
+        "Zimska pravljica na Bledu"
+      ],
+      "image": "https://koledar365.si/images/city-night/bled-night-cf1e2b9e98dd.webp"
     },
     {
       "url": "https://koledar365.si/fotografije-in-licence/",
@@ -942,40 +1422,40 @@
     {
       "url": "https://koledar365.si/horoskop/",
       "path": "/horoskop/",
-      "title": "Dnevni horoskop | Koledar365",
-      "description": "Dnevni horoskop za vseh 12 znamenj v slovenščini. Izberite svoje znamenje, preberite današnje razvedrilno besedilo in spoznajte datume ter izračun ascendenta.",
+      "title": "Dnevni horoskop za danes – vseh 12 znamenj | Koledar365",
+      "description": "Preberite današnji horoskop za vseh 12 znamenj zodiaka. Izberite znamenje za dnevni zapis o ljubezni, delu in počutju ali izračunajte ascendent.",
       "h1": [
-        "Dnevni horoskop.Trenutek za vas."
+        "Dnevni horoskop za danes"
       ],
       "image": "https://koledar365.si/druzabno/pages/312/d12ef266da11fa8b2847.png"
     },
     {
       "url": "https://koledar365.si/horoskop/bik/",
       "path": "/horoskop/bik/",
-      "title": "Bik: dnevni horoskop | Koledar365",
-      "description": "Bik: dnevni horoskop za danes v slovenščini. Razvedrilno branje o odnosih, potrpežljivosti in vsakdanjem ritmu. Preverite tudi datume znamenja in ascendent.",
+      "title": "Bik – dnevni horoskop za danes | Koledar365",
+      "description": "Preberite horoskop za Bika za danes. Dnevni zapis obravnava odnose, delovne navade in vsakdanji ritem, stran pa prikazuje tudi datume znamenja.",
       "h1": [
-        "BikVaš dnevni horoskop."
+        "Dnevni horoskop za Bika"
       ],
       "image": "https://koledar365.si/druzabno/pages/314/770f37c34c0fb0645c42.png"
     },
     {
       "url": "https://koledar365.si/horoskop/devica/",
       "path": "/horoskop/devica/",
-      "title": "Devica: dnevni horoskop | Koledar365",
-      "description": "Devica: dnevni horoskop za danes v slovenščini. Razvedrilno branje o urejanju obveznosti, odnosih in majhnih korakih. Preverite tudi datume znamenja in ascendent.",
+      "title": "Devica – dnevni horoskop za danes | Koledar365",
+      "description": "Horoskop za Devico za danes z razmislekom o odnosih, zaporedju opravil in času za počitek. Na strani so tudi datumi Device in izračun ascendenta.",
       "h1": [
-        "DevicaVaš dnevni horoskop."
+        "Dnevni horoskop za Devico"
       ],
       "image": "https://koledar365.si/druzabno/pages/318/9ce323257f15177ebad4.png"
     },
     {
       "url": "https://koledar365.si/horoskop/dvojcka/",
       "path": "/horoskop/dvojcka/",
-      "title": "Dvojčka: dnevni horoskop | Koledar365",
-      "description": "Dvojčka: dnevni horoskop za danes v slovenščini. Razvedrilno branje o pogovorih, novih idejah in izbiri prednostnih nalog. Preverite tudi datume znamenja in ascendent.",
+      "title": "Dvojčka – dnevni horoskop za danes | Koledar365",
+      "description": "Dnevni horoskop za Dvojčka prinaša razmislek o pogovorih, odnosih, delu in počutju. Primerjajte današnji in včerajšnji zapis ter datume znamenja.",
       "h1": [
-        "DvojčkaVaš dnevni horoskop."
+        "Dnevni horoskop za Dvojčka"
       ],
       "image": "https://koledar365.si/druzabno/pages/315/311f0f087dc5d2eea6bf.png"
     },
@@ -985,119 +1465,129 @@
       "title": "Izračun horoskopskega znamenja | Koledar365",
       "description": "Brezplačno izračunajte sončno in vzhajajoče znamenje (ascendent) glede na datum, točno uro in kraj rojstva. Izračun je geometrijski in namenjen razvedrilu.",
       "h1": [
-        "Vaše znamenje.Še bolj osebno."
+        "Izračun ascendenta"
       ],
       "image": "https://koledar365.si/druzabno/pages/325/2a7ae1bfe8a5172d8a6d.png"
     },
     {
       "url": "https://koledar365.si/horoskop/kozorog/",
       "path": "/horoskop/kozorog/",
-      "title": "Kozorog: dnevni horoskop | Koledar365",
-      "description": "Kozorog: dnevni horoskop za danes v slovenščini. Razvedrilno branje o odgovornosti, delu in času za počitek. Preverite tudi datume znamenja in ascendent.",
+      "title": "Kozorog – dnevni horoskop za danes | Koledar365",
+      "description": "Preberite današnji horoskop za Kozoroga o delu, odnosih in času zase. Primerjajte izdaji Danes in Včeraj ter preverite datume znamenja in ascendent.",
       "h1": [
-        "KozorogVaš dnevni horoskop."
+        "Dnevni horoskop za Kozoroga"
       ],
       "image": "https://koledar365.si/druzabno/pages/322/058d7f09c95114133919.png"
     },
     {
       "url": "https://koledar365.si/horoskop/lev/",
       "path": "/horoskop/lev/",
-      "title": "Lev: dnevni horoskop | Koledar365",
-      "description": "Lev: dnevni horoskop za danes v slovenščini. Razvedrilno branje o ustvarjalnosti, sodelovanju in osebnih ciljih. Preverite tudi datume znamenja in ascendent.",
+      "title": "Lev – dnevni horoskop za danes | Koledar365",
+      "description": "Dnevni horoskop za Leva z razmislekom o ustvarjalnosti, ljubezni, delu in počutju. Preverite današnji zapis, datume znamenja in ascendent.",
       "h1": [
-        "LevVaš dnevni horoskop."
+        "Dnevni horoskop za Leva"
       ],
       "image": "https://koledar365.si/druzabno/pages/317/8a18deed1db3bc0a3d75.png"
     },
     {
       "url": "https://koledar365.si/horoskop/oven/",
       "path": "/horoskop/oven/",
-      "title": "Oven: dnevni horoskop | Koledar365",
-      "description": "Oven: dnevni horoskop za danes v slovenščini. Razvedrilno branje o pobudi, sodelovanju in današnjih načrtih. Preverite tudi datume znamenja in ascendent.",
+      "title": "Oven – dnevni horoskop za danes | Koledar365",
+      "description": "Današnji horoskop za Ovna z namigi za pobudo pri delu, jasnejše pogovore in čas za počitek. Preberite dnevni zapis ali preverite datume znamenja.",
       "h1": [
-        "OvenVaš dnevni horoskop."
+        "Dnevni horoskop za Ovna"
       ],
       "image": "https://koledar365.si/druzabno/pages/313/c0e2d87df61090f79887.png"
     },
     {
       "url": "https://koledar365.si/horoskop/rak/",
       "path": "/horoskop/rak/",
-      "title": "Rak: dnevni horoskop | Koledar365",
-      "description": "Rak: dnevni horoskop za danes v slovenščini. Razvedrilno branje o bližnjih, domačem okolju in času zase. Preverite tudi datume znamenja in ascendent.",
+      "title": "Rak – dnevni horoskop za danes | Koledar365",
+      "description": "Današnji horoskop za Raka ponuja razmislek o odnosih z bližnjimi, delu in počitku. Oglejte si tudi datume Raka in izračun ascendenta.",
       "h1": [
-        "RakVaš dnevni horoskop."
+        "Dnevni horoskop za Raka"
       ],
       "image": "https://koledar365.si/druzabno/pages/316/65573e86605e0e054698.png"
     },
     {
       "url": "https://koledar365.si/horoskop/ribi/",
       "path": "/horoskop/ribi/",
-      "title": "Ribi: dnevni horoskop | Koledar365",
-      "description": "Ribi: dnevni horoskop za danes v slovenščini. Razvedrilno branje o občutkih, odnosih in trenutkih zase. Preverite tudi datume znamenja in ascendent.",
+      "title": "Ribi – dnevni horoskop za danes | Koledar365",
+      "description": "Današnji horoskop za Ribi vključuje odnose, delo, vsakdanji ritem in misel za razmislek. Na voljo so datumi znamenja in izračun ascendenta.",
       "h1": [
-        "RibiVaš dnevni horoskop."
+        "Dnevni horoskop za Ribi"
       ],
       "image": "https://koledar365.si/druzabno/pages/324/0f5f089bea03d55ebf4c.png"
     },
     {
       "url": "https://koledar365.si/horoskop/skorpijon/",
       "path": "/horoskop/skorpijon/",
-      "title": "Škorpijon: dnevni horoskop | Koledar365",
-      "description": "Škorpijon: dnevni horoskop za danes v slovenščini. Razvedrilno branje o zaupanju, zbranosti in odnosih. Preverite tudi datume znamenja in ascendent.",
+      "title": "Škorpijon – dnevni horoskop za danes | Koledar365",
+      "description": "Današnji horoskop za Škorpijona prinaša razmislek o zaupanju, delu, odnosih in počitku. Preverite datum zapisa in običajni razpon znamenja.",
       "h1": [
-        "ŠkorpijonVaš dnevni horoskop."
+        "Dnevni horoskop za Škorpijona"
       ],
       "image": "https://koledar365.si/druzabno/pages/320/c7f0adb7ad4322350f23.png"
     },
     {
       "url": "https://koledar365.si/horoskop/strelec/",
       "path": "/horoskop/strelec/",
-      "title": "Strelec: dnevni horoskop | Koledar365",
-      "description": "Strelec: dnevni horoskop za danes v slovenščini. Razvedrilno branje o novih zamislih, učenju in današnjih načrtih. Preverite tudi datume znamenja in ascendent.",
+      "title": "Strelec – dnevni horoskop za danes | Koledar365",
+      "description": "Dnevni horoskop za Strelca o učenju, načrtih, odnosih in počutju. Preberite današnji zapis in preverite datume znamenja ali svoj ascendent.",
       "h1": [
-        "StrelecVaš dnevni horoskop."
+        "Dnevni horoskop za Strelca"
       ],
       "image": "https://koledar365.si/druzabno/pages/321/998c8b850fd8980378b0.png"
     },
     {
       "url": "https://koledar365.si/horoskop/tehtnica/",
       "path": "/horoskop/tehtnica/",
-      "title": "Tehtnica: dnevni horoskop | Koledar365",
-      "description": "Tehtnica: dnevni horoskop za danes v slovenščini. Razvedrilno branje o ravnovesju, dogovorih in današnjih odločitvah. Preverite tudi datume znamenja in ascendent.",
+      "title": "Tehtnica – dnevni horoskop za danes | Koledar365",
+      "description": "Preberite današnji horoskop za Tehtnico o odnosih, sodelovanju in vsakdanjih odločitvah. Oglejte si datume Tehtnice in izračun vzhajajočega znamenja.",
       "h1": [
-        "TehtnicaVaš dnevni horoskop."
+        "Dnevni horoskop za Tehtnico"
       ],
       "image": "https://koledar365.si/druzabno/pages/319/f4ef3e50772fb58b5e93.png"
     },
     {
       "url": "https://koledar365.si/horoskop/vodnar/",
       "path": "/horoskop/vodnar/",
-      "title": "Vodnar: dnevni horoskop | Koledar365",
-      "description": "Vodnar: dnevni horoskop za danes v slovenščini. Razvedrilno branje o idejah, prijateljstvu in sodelovanju. Preverite tudi datume znamenja in ascendent.",
+      "title": "Vodnar – dnevni horoskop za danes | Koledar365",
+      "description": "Horoskop za Vodnarja za danes. Preberite dnevni zapis o zamislih, prijateljstvih, delu in počutju ter preverite datume Vodnarja.",
       "h1": [
-        "VodnarVaš dnevni horoskop."
+        "Dnevni horoskop za Vodnarja"
       ],
       "image": "https://koledar365.si/druzabno/pages/323/c5ce468f4f53c3dd0b87.png"
     },
     {
       "url": "https://koledar365.si/izplacila-pokojnin/",
       "path": "/izplacila-pokojnin/",
-      "title": "Izplačila pokojnin 2026: datumi in naslednje nakazilo | Koledar365",
-      "description": "Preverite naslednje izplačilo pokojnine in vseh 12 datumov ZPIZ za leto 2026. Pregled po mesecih, koledar za tisk in brezplačen prenos ICS.",
+      "title": "Izplačila pokojnin 2027 – mesečni pregled in vloga ZPIZ | Koledar365",
+      "description": "Preverite okvir po mesecih za pokojnine 2027, naslednje potrjeno nakazilo, letni in zimski dodatek ter postopek za prvo starostno pokojnino pri ZPIZ.",
       "h1": [
-        "Izplačila pokojnin 2026"
+        "Izplačila pokojnin 2027"
       ],
       "image": "https://koledar365.si/images/payments/pokojnine-2026.webp"
     },
     {
       "url": "https://koledar365.si/izplacila-socialnih-transferjev/",
       "path": "/izplacila-socialnih-transferjev/",
-      "title": "Izplačila socialnih transferjev 2026: koledar CSD | Koledar365",
-      "description": "Datumi CSD za otroški in varstveni dodatek, socialno pomoč, štipendije ter druge prejemke. Filtrirajte izplačila in prenesite koledar ICS.",
+      "title": "Izplačila socialnih transferjev 2027 – koledar CSD in vloge | Koledar365",
+      "description": "Mesečni pregled objavljenih datumov CSD za 2027 in arhiv 2026. Otroški in varstveni dodatek, socialna pomoč, štipendije in vloge.",
       "h1": [
-        "Izplačila socialnih transferjev 2026"
+        "Izplačila socialnih transferjev 2027"
       ],
       "image": "https://koledar365.si/images/payments/socialni-transferji-2026.webp"
+    },
+    {
+      "url": "https://koledar365.si/kalkulator-ddv/",
+      "path": "/kalkulator-ddv/",
+      "title": "Kalkulator DDV: izračun neto in bruto cene v Sloveniji | Koledar365",
+      "description": "Dodajte ali izločite DDV po stopnjah 22 %, 9,5 % in 5 %. Izračun prikaže davčno osnovo, znesek DDV in končno ceno.",
+      "h1": [
+        "Kalkulator DDV: izračun neto in bruto cene v Sloveniji"
+      ],
+      "image": "https://koledar365.si/druzabno/pages/470/30a138af84c75f51e606.png"
     },
     {
       "url": "https://koledar365.si/kalkulator-delovnih-dni/",
@@ -1110,6 +1600,26 @@
       "image": "https://koledar365.si/druzabno/pages/296/d02ee0a263661bc1fb1d.png"
     },
     {
+      "url": "https://koledar365.si/kalkulator-dohodnine/",
+      "path": "/kalkulator-dohodnine/",
+      "title": "Kalkulator dohodnine 2027 in 2026 – koliko ostane od plače | Koledar365",
+      "description": "Iz bruto plač izračunajte letni neto, dohodnino ter predvideno vračilo ali doplačilo. Primerjajte uradno lestvico 2026 in projekcijo za 2027.",
+      "h1": [
+        "Kalkulator dohodnine 2027 in 2026 – koliko ostane od plače"
+      ],
+      "image": "https://koledar365.si/druzabno/pages/469/e18905c8b61c48359c90.png"
+    },
+    {
+      "url": "https://koledar365.si/kalkulator-place/",
+      "path": "/kalkulator-place/",
+      "title": "Kalkulator plače 2026: bruto v neto v Sloveniji | Koledar365",
+      "description": "Izračunajte neto plačo iz bruto zneska za leto 2026. Pregled prispevkov, obveznega zdravstvenega prispevka in akontacije dohodnine.",
+      "h1": [
+        "Kalkulator plače 2026: bruto v neto v Sloveniji"
+      ],
+      "image": "https://koledar365.si/druzabno/pages/468/6d0bdd2e946aaeff08da.png"
+    },
+    {
       "url": "https://koledar365.si/kalkulator-upokojitve/",
       "path": "/kalkulator-upokojitve/",
       "title": "Kalkulator upokojitve: datum in okvirna pokojnina | Koledar365",
@@ -1117,7 +1627,7 @@
       "h1": [
         "Kalkulator upokojitve: datum in okvirna pokojnina"
       ],
-      "image": "https://koledar365.si/druzabno/pages/454/2b0ac3d7b6de68f0bb30.png"
+      "image": "https://koledar365.si/druzabno/pages/458/aca7a574e069782f17cd.png"
     },
     {
       "url": "https://koledar365.si/koledar-svetnikov/",
@@ -1127,7 +1637,7 @@
       "h1": [
         "Izbrani godovi in osebni koledar godov"
       ],
-      "image": "https://koledar365.si/druzabno/pages/448/31fbac793b308be8b898.png"
+      "image": "https://koledar365.si/druzabno/pages/452/2f03c9b61f98beae857c.png"
     },
     {
       "url": "https://koledar365.si/koledar-za-tiskanje/",
@@ -1192,8 +1702,8 @@
     {
       "url": "https://koledar365.si/koledar/2027/",
       "path": "/koledar/2027/",
-      "title": "Koledar 2027 | Koledar365",
-      "description": "Slovenski koledar za 2027: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar 2027 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar 2027 za tiskanje. 15 predlog PDF A3 in slik za prenos. Praznični petek ob začetku leta in prvi novembrski ponedeljek.",
       "h1": [
         "Koledar 2027"
       ],
@@ -1202,128 +1712,128 @@
     {
       "url": "https://koledar365.si/koledar/2027/april/",
       "path": "/koledar/2027/april/",
-      "title": "Koledar za april 2027 | Koledar365",
-      "description": "Slovenski koledar za april 2027: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za april 2027 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za april 2027 za tiskanje. 15 predlog PDF A3 in slik za prenos. Dan upora proti okupatorju je v torek, 27. aprila.",
       "h1": [
-        "Koledar – april 2027"
+        "Koledar za april 2027"
       ],
       "image": "https://koledar365.si/druzabno/pages/22/a9288d5ebf743f437f28.png"
     },
     {
       "url": "https://koledar365.si/koledar/2027/avgust/",
       "path": "/koledar/2027/avgust/",
-      "title": "Koledar za avgust 2027 | Koledar365",
-      "description": "Slovenski koledar za avgust 2027: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za avgust 2027 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za avgust 2027 za tiskanje. 15 predlog PDF A3 in slik za prenos. Marijino vnebovzetje je v nedeljo, 15. avgusta.",
       "h1": [
-        "Koledar – avgust 2027"
+        "Koledar za avgust 2027"
       ],
       "image": "https://koledar365.si/druzabno/pages/26/471f169648e0293948bd.png"
     },
     {
       "url": "https://koledar365.si/koledar/2027/december/",
       "path": "/koledar/2027/december/",
-      "title": "Koledar za december 2027 | Koledar365",
-      "description": "Slovenski koledar za december 2027: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za december 2027 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za december 2027 za tiskanje. 15 predlog PDF A3 in slik za prenos. Božič in dan samostojnosti sta v soboto in nedeljo.",
       "h1": [
-        "Koledar – december 2027"
+        "Koledar za december 2027"
       ],
       "image": "https://koledar365.si/druzabno/pages/30/4bf74c707ea8faa86a78.png"
     },
     {
       "url": "https://koledar365.si/koledar/2027/februar/",
       "path": "/koledar/2027/februar/",
-      "title": "Koledar za februar 2027 | Koledar365",
-      "description": "Slovenski koledar za februar 2027: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za februar 2027 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za februar 2027 za tiskanje. 15 predlog PDF A3 in slik za prenos. Prešernov dan je v ponedeljek, mesec pa ima 28 dni.",
       "h1": [
-        "Koledar – februar 2027"
+        "Koledar za februar 2027"
       ],
       "image": "https://koledar365.si/druzabno/pages/20/dd28cfef743e3b2ccc7a.png"
     },
     {
       "url": "https://koledar365.si/koledar/2027/januar/",
       "path": "/koledar/2027/januar/",
-      "title": "Koledar za januar 2027 | Koledar365",
-      "description": "Slovenski koledar za januar 2027: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za januar 2027 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za januar 2027 za tiskanje. 15 predlog PDF A3 in slik za prenos. Novo leto je v petek in soboto, prvi ponedeljek je 4. januar.",
       "h1": [
-        "Koledar – januar 2027"
+        "Koledar za januar 2027"
       ],
       "image": "https://koledar365.si/druzabno/pages/19/3d4d487680def8b9afa0.png"
     },
     {
       "url": "https://koledar365.si/koledar/2027/julij/",
       "path": "/koledar/2027/julij/",
-      "title": "Koledar za julij 2027 | Koledar365",
-      "description": "Slovenski koledar za julij 2027: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za julij 2027 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za julij 2027 za tiskanje. 15 predlog PDF A3 in slik za prenos. Julij ima 31 dni in 22 delovnikov pri petdnevnem tednu.",
       "h1": [
-        "Koledar – julij 2027"
+        "Koledar za julij 2027"
       ],
       "image": "https://koledar365.si/druzabno/pages/25/f2c1fa4a023483eeaaa6.png"
     },
     {
       "url": "https://koledar365.si/koledar/2027/junij/",
       "path": "/koledar/2027/junij/",
-      "title": "Koledar za junij 2027 | Koledar365",
-      "description": "Slovenski koledar za junij 2027: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za junij 2027 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za junij 2027 za tiskanje. 15 predlog PDF A3 in slik za prenos. Dan državnosti je v petek, 25. junija.",
       "h1": [
-        "Koledar – junij 2027"
+        "Koledar za junij 2027"
       ],
       "image": "https://koledar365.si/druzabno/pages/24/6e6e62b36a3a5f3e73d2.png"
     },
     {
       "url": "https://koledar365.si/koledar/2027/maj/",
       "path": "/koledar/2027/maj/",
-      "title": "Koledar za maj 2027 | Koledar365",
-      "description": "Slovenski koledar za maj 2027: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za maj 2027 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za maj 2027 za tiskanje. 15 predlog PDF A3 in slik za prenos. Prvi in drugi maj sta na koncu tedna. Binkošti so 16. maja.",
       "h1": [
-        "Koledar – maj 2027"
+        "Koledar za maj 2027"
       ],
       "image": "https://koledar365.si/druzabno/pages/23/df26277e2a89836b7afe.png"
     },
     {
       "url": "https://koledar365.si/koledar/2027/marec/",
       "path": "/koledar/2027/marec/",
-      "title": "Koledar za marec 2027 | Koledar365",
-      "description": "Slovenski koledar za marec 2027: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za marec 2027 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za marec 2027 za tiskanje. 15 predlog PDF A3 in slik za prenos. Velikonočna nedelja je 28. marca, prosti ponedeljek pa 29. marca.",
       "h1": [
-        "Koledar – marec 2027"
+        "Koledar za marec 2027"
       ],
       "image": "https://koledar365.si/druzabno/pages/21/6ae931d13b3a8bedac60.png"
     },
     {
       "url": "https://koledar365.si/koledar/2027/november/",
       "path": "/koledar/2027/november/",
-      "title": "Koledar za november 2027 | Koledar365",
-      "description": "Slovenski koledar za november 2027: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za november 2027 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za november 2027 za tiskanje. 15 predlog PDF A3 in slik za prenos. Dan spomina na mrtve je v ponedeljek, 1. novembra.",
       "h1": [
-        "Koledar – november 2027"
+        "Koledar za november 2027"
       ],
       "image": "https://koledar365.si/druzabno/pages/29/bd6de4bcafa6672b3f63.png"
     },
     {
       "url": "https://koledar365.si/koledar/2027/oktober/",
       "path": "/koledar/2027/oktober/",
-      "title": "Koledar za oktober 2027 | Koledar365",
-      "description": "Slovenski koledar za oktober 2027: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za oktober 2027 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za oktober 2027 za tiskanje. 15 predlog PDF A3 in slik za prenos. Dan reformacije je v nedeljo, prosti ponedeljek pa sledi 1. novembra.",
       "h1": [
-        "Koledar – oktober 2027"
+        "Koledar za oktober 2027"
       ],
       "image": "https://koledar365.si/druzabno/pages/28/33f3dd38d9c66564b239.png"
     },
     {
       "url": "https://koledar365.si/koledar/2027/september/",
       "path": "/koledar/2027/september/",
-      "title": "Koledar za september 2027 | Koledar365",
-      "description": "Slovenski koledar za september 2027: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za september 2027 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za september 2027 za tiskanje. 15 predlog PDF A3 in slik za prenos. Mesec se začne v sredo in ima 22 delovnikov.",
       "h1": [
-        "Koledar – september 2027"
+        "Koledar za september 2027"
       ],
       "image": "https://koledar365.si/druzabno/pages/27/053f8d6f3730ac5b734a.png"
     },
     {
       "url": "https://koledar365.si/koledar/2028/",
       "path": "/koledar/2028/",
-      "title": "Koledar 2028 | Koledar365",
-      "description": "Slovenski koledar za 2028: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar 2028 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar 2028 za tiskanje. 15 predlog PDF A3 in slik za prenos. Prestopno leto z 29. februarjem in prazničnim ponedeljkom ter torkom v maju.",
       "h1": [
         "Koledar 2028"
       ],
@@ -1332,128 +1842,128 @@
     {
       "url": "https://koledar365.si/koledar/2028/april/",
       "path": "/koledar/2028/april/",
-      "title": "Koledar za april 2028 | Koledar365",
-      "description": "Slovenski koledar za april 2028: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za april 2028 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za april 2028 za tiskanje. 15 predlog PDF A3 in slik za prenos. Velika noč je 16. in 17. aprila. Dan upora je v četrtek.",
       "h1": [
-        "Koledar – april 2028"
+        "Koledar za april 2028"
       ],
       "image": "https://koledar365.si/druzabno/pages/35/b1df2104ceccb54df875.png"
     },
     {
       "url": "https://koledar365.si/koledar/2028/avgust/",
       "path": "/koledar/2028/avgust/",
-      "title": "Koledar za avgust 2028 | Koledar365",
-      "description": "Slovenski koledar za avgust 2028: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za avgust 2028 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za avgust 2028 za tiskanje. 15 predlog PDF A3 in slik za prenos. Marijino vnebovzetje je v torek, 15. avgusta.",
       "h1": [
-        "Koledar – avgust 2028"
+        "Koledar za avgust 2028"
       ],
       "image": "https://koledar365.si/druzabno/pages/39/49d832a771f6bc29a09a.png"
     },
     {
       "url": "https://koledar365.si/koledar/2028/december/",
       "path": "/koledar/2028/december/",
-      "title": "Koledar za december 2028 | Koledar365",
-      "description": "Slovenski koledar za december 2028: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za december 2028 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za december 2028 za tiskanje. 15 predlog PDF A3 in slik za prenos. Božič in dan samostojnosti sta v ponedeljek in torek.",
       "h1": [
-        "Koledar – december 2028"
+        "Koledar za december 2028"
       ],
       "image": "https://koledar365.si/druzabno/pages/43/e9a137fcd173b6d8f8d1.png"
     },
     {
       "url": "https://koledar365.si/koledar/2028/februar/",
       "path": "/koledar/2028/februar/",
-      "title": "Koledar za februar 2028 | Koledar365",
-      "description": "Slovenski koledar za februar 2028: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za februar 2028 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za februar 2028 za tiskanje. 15 predlog PDF A3 in slik za prenos. Prestopni februar ima 29 dni. Zadnji datum je torek.",
       "h1": [
-        "Koledar – februar 2028"
+        "Koledar za februar 2028"
       ],
       "image": "https://koledar365.si/druzabno/pages/33/63bb3228da888507aaa9.png"
     },
     {
       "url": "https://koledar365.si/koledar/2028/januar/",
       "path": "/koledar/2028/januar/",
-      "title": "Koledar za januar 2028 | Koledar365",
-      "description": "Slovenski koledar za januar 2028: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za januar 2028 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za januar 2028 za tiskanje. 15 predlog PDF A3 in slik za prenos. Novoletna praznika sta v soboto in nedeljo.",
       "h1": [
-        "Koledar – januar 2028"
+        "Koledar za januar 2028"
       ],
       "image": "https://koledar365.si/druzabno/pages/32/ab7b1a9528cb964395b8.png"
     },
     {
       "url": "https://koledar365.si/koledar/2028/julij/",
       "path": "/koledar/2028/julij/",
-      "title": "Koledar za julij 2028 | Koledar365",
-      "description": "Slovenski koledar za julij 2028: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za julij 2028 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za julij 2028 za tiskanje. 15 predlog PDF A3 in slik za prenos. Mesec se začne v soboto in konča v ponedeljek.",
       "h1": [
-        "Koledar – julij 2028"
+        "Koledar za julij 2028"
       ],
       "image": "https://koledar365.si/druzabno/pages/38/5587b1aa36f888d07a56.png"
     },
     {
       "url": "https://koledar365.si/koledar/2028/junij/",
       "path": "/koledar/2028/junij/",
-      "title": "Koledar za junij 2028 | Koledar365",
-      "description": "Slovenski koledar za junij 2028: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za junij 2028 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za junij 2028 za tiskanje. 15 predlog PDF A3 in slik za prenos. Binkošti so 4. junija, dan državnosti pa 25. junija. Oba sta v nedeljo.",
       "h1": [
-        "Koledar – junij 2028"
+        "Koledar za junij 2028"
       ],
       "image": "https://koledar365.si/druzabno/pages/37/2071a8d2abf4b5c96321.png"
     },
     {
       "url": "https://koledar365.si/koledar/2028/maj/",
       "path": "/koledar/2028/maj/",
-      "title": "Koledar za maj 2028 | Koledar365",
-      "description": "Slovenski koledar za maj 2028: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za maj 2028 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za maj 2028 za tiskanje. 15 predlog PDF A3 in slik za prenos. Praznik dela je v ponedeljek in torek, 1. in 2. maja.",
       "h1": [
-        "Koledar – maj 2028"
+        "Koledar za maj 2028"
       ],
       "image": "https://koledar365.si/druzabno/pages/36/ab9f356cd5889ea11500.png"
     },
     {
       "url": "https://koledar365.si/koledar/2028/marec/",
       "path": "/koledar/2028/marec/",
-      "title": "Koledar za marec 2028 | Koledar365",
-      "description": "Slovenski koledar za marec 2028: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za marec 2028 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za marec 2028 za tiskanje. 15 predlog PDF A3 in slik za prenos. Marec ima 23 delovnikov. Velikonočni prazniki so aprila.",
       "h1": [
-        "Koledar – marec 2028"
+        "Koledar za marec 2028"
       ],
       "image": "https://koledar365.si/druzabno/pages/34/ef28f706d610e8eecff4.png"
     },
     {
       "url": "https://koledar365.si/koledar/2028/november/",
       "path": "/koledar/2028/november/",
-      "title": "Koledar za november 2028 | Koledar365",
-      "description": "Slovenski koledar za november 2028: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za november 2028 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za november 2028 za tiskanje. 15 predlog PDF A3 in slik za prenos. Prvi november je v sredo. Običajni delovnik se nadaljuje v četrtek.",
       "h1": [
-        "Koledar – november 2028"
+        "Koledar za november 2028"
       ],
       "image": "https://koledar365.si/druzabno/pages/42/9c0c3bfc5cbe8ff221f3.png"
     },
     {
       "url": "https://koledar365.si/koledar/2028/oktober/",
       "path": "/koledar/2028/oktober/",
-      "title": "Koledar za oktober 2028 | Koledar365",
-      "description": "Slovenski koledar za oktober 2028: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za oktober 2028 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za oktober 2028 za tiskanje. 15 predlog PDF A3 in slik za prenos. Dan reformacije je v torek, naslednji praznik v sredo, 1. novembra.",
       "h1": [
-        "Koledar – oktober 2028"
+        "Koledar za oktober 2028"
       ],
       "image": "https://koledar365.si/druzabno/pages/41/d606e14309ba336a7fd6.png"
     },
     {
       "url": "https://koledar365.si/koledar/2028/september/",
       "path": "/koledar/2028/september/",
-      "title": "Koledar za september 2028 | Koledar365",
-      "description": "Slovenski koledar za september 2028: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za september 2028 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za september 2028 za tiskanje. 15 predlog PDF A3 in slik za prenos. September se začne s petkom in konča v soboto.",
       "h1": [
-        "Koledar – september 2028"
+        "Koledar za september 2028"
       ],
       "image": "https://koledar365.si/druzabno/pages/40/dff7a079df1e996a9439.png"
     },
     {
       "url": "https://koledar365.si/koledar/2029/",
       "path": "/koledar/2029/",
-      "title": "Koledar 2029 | Koledar365",
-      "description": "Slovenski koledar za 2029: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar 2029 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar 2029 za tiskanje. 15 predlog PDF A3 in slik za prenos. Prvi april je velikonočna nedelja. Junijski dan državnosti pade na ponedeljek.",
       "h1": [
         "Koledar 2029"
       ],
@@ -1462,128 +1972,128 @@
     {
       "url": "https://koledar365.si/koledar/2029/april/",
       "path": "/koledar/2029/april/",
-      "title": "Koledar za april 2029 | Koledar365",
-      "description": "Slovenski koledar za april 2029: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za april 2029 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za april 2029 za tiskanje. 15 predlog PDF A3 in slik za prenos. Velika noč je 1. in 2. aprila. Dan upora je 27. aprila, v petek.",
       "h1": [
-        "Koledar – april 2029"
+        "Koledar za april 2029"
       ],
       "image": "https://koledar365.si/druzabno/pages/48/d4a397a81ce456dd7d37.png"
     },
     {
       "url": "https://koledar365.si/koledar/2029/avgust/",
       "path": "/koledar/2029/avgust/",
-      "title": "Koledar za avgust 2029 | Koledar365",
-      "description": "Slovenski koledar za avgust 2029: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za avgust 2029 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za avgust 2029 za tiskanje. 15 predlog PDF A3 in slik za prenos. Marijino vnebovzetje je v sredo, 15. avgusta.",
       "h1": [
-        "Koledar – avgust 2029"
+        "Koledar za avgust 2029"
       ],
       "image": "https://koledar365.si/druzabno/pages/52/cd99f8409d52950717dd.png"
     },
     {
       "url": "https://koledar365.si/koledar/2029/december/",
       "path": "/koledar/2029/december/",
-      "title": "Koledar za december 2029 | Koledar365",
-      "description": "Slovenski koledar za december 2029: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za december 2029 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za december 2029 za tiskanje. 15 predlog PDF A3 in slik za prenos. Božič je v torek, dan samostojnosti pa v sredo.",
       "h1": [
-        "Koledar – december 2029"
+        "Koledar za december 2029"
       ],
       "image": "https://koledar365.si/druzabno/pages/56/28a53e933c62a4d1b03a.png"
     },
     {
       "url": "https://koledar365.si/koledar/2029/februar/",
       "path": "/koledar/2029/februar/",
-      "title": "Koledar za februar 2029 | Koledar365",
-      "description": "Slovenski koledar za februar 2029: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za februar 2029 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za februar 2029 za tiskanje. 15 predlog PDF A3 in slik za prenos. Prešernov dan je v četrtek, 8. februarja.",
       "h1": [
-        "Koledar – februar 2029"
+        "Koledar za februar 2029"
       ],
       "image": "https://koledar365.si/druzabno/pages/46/1f46667ccee67edcba4e.png"
     },
     {
       "url": "https://koledar365.si/koledar/2029/januar/",
       "path": "/koledar/2029/januar/",
-      "title": "Koledar za januar 2029 | Koledar365",
-      "description": "Slovenski koledar za januar 2029: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za januar 2029 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za januar 2029 za tiskanje. 15 predlog PDF A3 in slik za prenos. Prva dva januarska dneva sta v ponedeljek in torek.",
       "h1": [
-        "Koledar – januar 2029"
+        "Koledar za januar 2029"
       ],
       "image": "https://koledar365.si/druzabno/pages/45/1cc75528a4568c31f2b7.png"
     },
     {
       "url": "https://koledar365.si/koledar/2029/julij/",
       "path": "/koledar/2029/julij/",
-      "title": "Koledar za julij 2029 | Koledar365",
-      "description": "Slovenski koledar za julij 2029: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za julij 2029 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za julij 2029 za tiskanje. 15 predlog PDF A3 in slik za prenos. Julij se začne v nedeljo. Prvi ponedeljek je 2. julija.",
       "h1": [
-        "Koledar – julij 2029"
+        "Koledar za julij 2029"
       ],
       "image": "https://koledar365.si/druzabno/pages/51/9d893817250cecf80b42.png"
     },
     {
       "url": "https://koledar365.si/koledar/2029/junij/",
       "path": "/koledar/2029/junij/",
-      "title": "Koledar za junij 2029 | Koledar365",
-      "description": "Slovenski koledar za junij 2029: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za junij 2029 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za junij 2029 za tiskanje. 15 predlog PDF A3 in slik za prenos. Dan državnosti je v ponedeljek, 25. junija.",
       "h1": [
-        "Koledar – junij 2029"
+        "Koledar za junij 2029"
       ],
       "image": "https://koledar365.si/druzabno/pages/50/bc80d1d34248c7944a3c.png"
     },
     {
       "url": "https://koledar365.si/koledar/2029/maj/",
       "path": "/koledar/2029/maj/",
-      "title": "Koledar za maj 2029 | Koledar365",
-      "description": "Slovenski koledar za maj 2029: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za maj 2029 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za maj 2029 za tiskanje. 15 predlog PDF A3 in slik za prenos. Prvi in drugi maj sta v torek in sredo. Binkošti so 20. maja.",
       "h1": [
-        "Koledar – maj 2029"
+        "Koledar za maj 2029"
       ],
       "image": "https://koledar365.si/druzabno/pages/49/9a9861c6f41fb47ddc04.png"
     },
     {
       "url": "https://koledar365.si/koledar/2029/marec/",
       "path": "/koledar/2029/marec/",
-      "title": "Koledar za marec 2029 | Koledar365",
-      "description": "Slovenski koledar za marec 2029: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za marec 2029 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za marec 2029 za tiskanje. 15 predlog PDF A3 in slik za prenos. Zadnji dan je sobota pred velikonočno nedeljo, 1. aprila.",
       "h1": [
-        "Koledar – marec 2029"
+        "Koledar za marec 2029"
       ],
       "image": "https://koledar365.si/druzabno/pages/47/081ecb17fdb47abef939.png"
     },
     {
       "url": "https://koledar365.si/koledar/2029/november/",
       "path": "/koledar/2029/november/",
-      "title": "Koledar za november 2029 | Koledar365",
-      "description": "Slovenski koledar za november 2029: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za november 2029 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za november 2029 za tiskanje. 15 predlog PDF A3 in slik za prenos. Prvi november je v četrtek, petek po njem je 2. november.",
       "h1": [
-        "Koledar – november 2029"
+        "Koledar za november 2029"
       ],
       "image": "https://koledar365.si/druzabno/pages/55/e12cc60a9902da16a9fa.png"
     },
     {
       "url": "https://koledar365.si/koledar/2029/oktober/",
       "path": "/koledar/2029/oktober/",
-      "title": "Koledar za oktober 2029 | Koledar365",
-      "description": "Slovenski koledar za oktober 2029: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za oktober 2029 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za oktober 2029 za tiskanje. 15 predlog PDF A3 in slik za prenos. Reformacija je v sredo, 31. oktobra, dan spomina na mrtve v četrtek.",
       "h1": [
-        "Koledar – oktober 2029"
+        "Koledar za oktober 2029"
       ],
       "image": "https://koledar365.si/druzabno/pages/54/ca00ca7d4b136b32cbf8.png"
     },
     {
       "url": "https://koledar365.si/koledar/2029/september/",
       "path": "/koledar/2029/september/",
-      "title": "Koledar za september 2029 | Koledar365",
-      "description": "Slovenski koledar za september 2029: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za september 2029 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za september 2029 za tiskanje. 15 predlog PDF A3 in slik za prenos. Prvi september je v soboto. Mesec ima 20 delovnikov.",
       "h1": [
-        "Koledar – september 2029"
+        "Koledar za september 2029"
       ],
       "image": "https://koledar365.si/druzabno/pages/53/0c81875d1d0bd4f93d21.png"
     },
     {
       "url": "https://koledar365.si/koledar/2030/",
       "path": "/koledar/2030/",
-      "title": "Koledar 2030 | Koledar365",
-      "description": "Slovenski koledar za 2030: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar 2030 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar 2030 za tiskanje. 15 predlog PDF A3 in slik za prenos. Prešernov dan je v petek, 31. oktober in 1. november sta zaporedna prosta dneva.",
       "h1": [
         "Koledar 2030"
       ],
@@ -1592,120 +2102,120 @@
     {
       "url": "https://koledar365.si/koledar/2030/april/",
       "path": "/koledar/2030/april/",
-      "title": "Koledar za april 2030 | Koledar365",
-      "description": "Slovenski koledar za april 2030: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za april 2030 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za april 2030 za tiskanje. 15 predlog PDF A3 in slik za prenos. Velika noč je 21. in 22. aprila, dan upora pa v soboto, 27. aprila.",
       "h1": [
-        "Koledar – april 2030"
+        "Koledar za april 2030"
       ],
       "image": "https://koledar365.si/druzabno/pages/61/dc6ed3048cba73244ca8.png"
     },
     {
       "url": "https://koledar365.si/koledar/2030/avgust/",
       "path": "/koledar/2030/avgust/",
-      "title": "Koledar za avgust 2030 | Koledar365",
-      "description": "Slovenski koledar za avgust 2030: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za avgust 2030 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za avgust 2030 za tiskanje. 15 predlog PDF A3 in slik za prenos. Marijino vnebovzetje je v četrtek, 15. avgusta.",
       "h1": [
-        "Koledar – avgust 2030"
+        "Koledar za avgust 2030"
       ],
       "image": "https://koledar365.si/druzabno/pages/65/e01cb7184ae3448729ba.png"
     },
     {
       "url": "https://koledar365.si/koledar/2030/december/",
       "path": "/koledar/2030/december/",
-      "title": "Koledar za december 2030 | Koledar365",
-      "description": "Slovenski koledar za december 2030: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za december 2030 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za december 2030 za tiskanje. 15 predlog PDF A3 in slik za prenos. Božič in dan samostojnosti sta v sredo in četrtek.",
       "h1": [
-        "Koledar – december 2030"
+        "Koledar za december 2030"
       ],
       "image": "https://koledar365.si/druzabno/pages/69/d2510e2ea3ef2f167bd3.png"
     },
     {
       "url": "https://koledar365.si/koledar/2030/februar/",
       "path": "/koledar/2030/februar/",
-      "title": "Koledar za februar 2030 | Koledar365",
-      "description": "Slovenski koledar za februar 2030: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za februar 2030 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za februar 2030 za tiskanje. 15 predlog PDF A3 in slik za prenos. Prešernov dan je v petek, 8. februarja.",
       "h1": [
-        "Koledar – februar 2030"
+        "Koledar za februar 2030"
       ],
       "image": "https://koledar365.si/druzabno/pages/59/56b0d4be2948e10d7c55.png"
     },
     {
       "url": "https://koledar365.si/koledar/2030/januar/",
       "path": "/koledar/2030/januar/",
-      "title": "Koledar za januar 2030 | Koledar365",
-      "description": "Slovenski koledar za januar 2030: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za januar 2030 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za januar 2030 za tiskanje. 15 predlog PDF A3 in slik za prenos. Novo leto zasede torek in sredo, prvi delovnik je četrtek, 3. januarja.",
       "h1": [
-        "Koledar – januar 2030"
+        "Koledar za januar 2030"
       ],
       "image": "https://koledar365.si/druzabno/pages/58/8ec9a03071044d49344f.png"
     },
     {
       "url": "https://koledar365.si/koledar/2030/julij/",
       "path": "/koledar/2030/julij/",
-      "title": "Koledar za julij 2030 | Koledar365",
-      "description": "Slovenski koledar za julij 2030: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za julij 2030 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za julij 2030 za tiskanje. 15 predlog PDF A3 in slik za prenos. Julij se začne v ponedeljek in ima 23 delovnikov.",
       "h1": [
-        "Koledar – julij 2030"
+        "Koledar za julij 2030"
       ],
       "image": "https://koledar365.si/druzabno/pages/64/ccbe6446a1730bc590fe.png"
     },
     {
       "url": "https://koledar365.si/koledar/2030/junij/",
       "path": "/koledar/2030/junij/",
-      "title": "Koledar za junij 2030 | Koledar365",
-      "description": "Slovenski koledar za junij 2030: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za junij 2030 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za junij 2030 za tiskanje. 15 predlog PDF A3 in slik za prenos. Dan državnosti je v torek, 25. junija. Binkošti so 9. junija.",
       "h1": [
-        "Koledar – junij 2030"
+        "Koledar za junij 2030"
       ],
       "image": "https://koledar365.si/druzabno/pages/63/2935df26821b660a0b80.png"
     },
     {
       "url": "https://koledar365.si/koledar/2030/maj/",
       "path": "/koledar/2030/maj/",
-      "title": "Koledar za maj 2030 | Koledar365",
-      "description": "Slovenski koledar za maj 2030: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za maj 2030 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za maj 2030 za tiskanje. 15 predlog PDF A3 in slik za prenos. Praznik dela je v sredo in četrtek, 1. in 2. maja.",
       "h1": [
-        "Koledar – maj 2030"
+        "Koledar za maj 2030"
       ],
       "image": "https://koledar365.si/druzabno/pages/62/5aa5aebf99e08368500d.png"
     },
     {
       "url": "https://koledar365.si/koledar/2030/marec/",
       "path": "/koledar/2030/marec/",
-      "title": "Koledar za marec 2030 | Koledar365",
-      "description": "Slovenski koledar za marec 2030: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za marec 2030 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za marec 2030 za tiskanje. 15 predlog PDF A3 in slik za prenos. Marec se začne v petek, konča v nedeljo in ima 21 delovnikov.",
       "h1": [
-        "Koledar – marec 2030"
+        "Koledar za marec 2030"
       ],
       "image": "https://koledar365.si/druzabno/pages/60/173e70fa5a70cd9240a9.png"
     },
     {
       "url": "https://koledar365.si/koledar/2030/november/",
       "path": "/koledar/2030/november/",
-      "title": "Koledar za november 2030 | Koledar365",
-      "description": "Slovenski koledar za november 2030: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za november 2030 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za november 2030 za tiskanje. 15 predlog PDF A3 in slik za prenos. Dan spomina na mrtve je v petek, 1. novembra.",
       "h1": [
-        "Koledar – november 2030"
+        "Koledar za november 2030"
       ],
       "image": "https://koledar365.si/druzabno/pages/68/26feba10dbbb099bee5a.png"
     },
     {
       "url": "https://koledar365.si/koledar/2030/oktober/",
       "path": "/koledar/2030/oktober/",
-      "title": "Koledar za oktober 2030 | Koledar365",
-      "description": "Slovenski koledar za oktober 2030: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za oktober 2030 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za oktober 2030 za tiskanje. 15 predlog PDF A3 in slik za prenos. Četrtkov dan reformacije se nadaljuje s prostim petkom, 1. novembra.",
       "h1": [
-        "Koledar – oktober 2030"
+        "Koledar za oktober 2030"
       ],
       "image": "https://koledar365.si/druzabno/pages/67/ebc1582f675bfd5da59f.png"
     },
     {
       "url": "https://koledar365.si/koledar/2030/september/",
       "path": "/koledar/2030/september/",
-      "title": "Koledar za september 2030 | Koledar365",
-      "description": "Slovenski koledar za september 2030: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje.",
+      "title": "Koledar za september 2030 – PDF za tisk in slika | Koledar365",
+      "description": "Koledar za september 2030 za tiskanje. 15 predlog PDF A3 in slik za prenos. Prvi september je v nedeljo. Prvi polni teden se začne 2. septembra.",
       "h1": [
-        "Koledar – september 2030"
+        "Koledar za september 2030"
       ],
       "image": "https://koledar365.si/druzabno/pages/66/4b27bdb74a2c49966851.png"
     },
@@ -2357,7 +2867,7 @@
       "h1": [
         "Lunin vzhod in zahod v Sloveniji"
       ],
-      "image": "https://koledar365.si/druzabno/pages/453/a34ed29055e9ecb2fda2.png"
+      "image": "https://koledar365.si/druzabno/pages/457/ea5a75ba307db6afe873.png"
     },
     {
       "url": "https://koledar365.si/lunine-mene/",
@@ -2377,7 +2887,7 @@
       "h1": [
         "Matura 2027"
       ],
-      "image": "https://koledar365.si/druzabno/pages/348/99973455f703c1cb116b.png"
+      "image": "https://koledar365.si/druzabno/pages/348/b60c58bd644eb5e737dd.png"
     },
     {
       "url": "https://koledar365.si/matura/2027/poklicna/",
@@ -2387,7 +2897,7 @@
       "h1": [
         "Poklicna matura 2027"
       ],
-      "image": "https://koledar365.si/druzabno/pages/350/da19e0bb979fd234bd17.png"
+      "image": "https://koledar365.si/druzabno/pages/350/bf326148e41376a04125.png"
     },
     {
       "url": "https://koledar365.si/matura/2027/splosna/",
@@ -2397,7 +2907,7 @@
       "h1": [
         "Splošna matura 2027"
       ],
-      "image": "https://koledar365.si/druzabno/pages/349/2591d8374769a1096a41.png"
+      "image": "https://koledar365.si/druzabno/pages/349/b4d9c610f1e623976156.png"
     },
     {
       "url": "https://koledar365.si/mesecni-koledar/",
@@ -2407,7 +2917,7 @@
       "h1": [
         "Mesečni koledar za tiskanje: PDF in Excel"
       ],
-      "image": "https://koledar365.si/druzabno/pages/3/3a9ccef97cb266d74628.png"
+      "image": "https://koledar365.si/druzabno/pages/3/9084b87e926f24f7d72f.png"
     },
     {
       "url": "https://koledar365.si/mlaj/",
@@ -2427,7 +2937,17 @@
       "h1": [
         "Načrtovalnik dopusta.Več časa za oddih."
       ],
-      "image": "https://koledar365.si/druzabno/pages/297/7ecb6c87d64df48cf53c.png"
+      "image": "https://koledar365.si/druzabno/pages/297/7436553829677dac1a55.png"
+    },
+    {
+      "url": "https://koledar365.si/nadomestilo-za-brezposelnost/",
+      "path": "/nadomestilo-za-brezposelnost/",
+      "title": "Nadomestilo za brezposelnost 2026: bruto zneski in vloga | Koledar365",
+      "description": "Ocenite bruto mesečno nadomestilo za brezposelnost za polni delovni čas po pravilih 2026. Preverite tudi rok za prijavo na Zavodu.",
+      "h1": [
+        "Nadomestilo za brezposelnost 2026: bruto zneski in vloga"
+      ],
+      "image": "https://koledar365.si/druzabno/pages/465/a3d778245f5102c32e50.png"
     },
     {
       "url": "https://koledar365.si/npz/",
@@ -2437,7 +2957,7 @@
       "h1": [
         "NPZ 2027"
       ],
-      "image": "https://koledar365.si/druzabno/pages/351/4d8db4d8cd142e6a31e7.png"
+      "image": "https://koledar365.si/druzabno/pages/351/4fd116c3e16789e9a6b8.png"
     },
     {
       "url": "https://koledar365.si/npz/3-razred/",
@@ -2447,7 +2967,7 @@
       "h1": [
         "NPZ 2027 · 3. razred"
       ],
-      "image": "https://koledar365.si/druzabno/pages/352/8ba2c372b25af6218b47.png"
+      "image": "https://koledar365.si/druzabno/pages/352/ece88291734e1eb61e48.png"
     },
     {
       "url": "https://koledar365.si/npz/6-razred/",
@@ -2457,7 +2977,7 @@
       "h1": [
         "NPZ 2027 · 6. razred"
       ],
-      "image": "https://koledar365.si/druzabno/pages/353/66b81a574216d1aecbee.png"
+      "image": "https://koledar365.si/druzabno/pages/353/74facd00c9290ccfaa17.png"
     },
     {
       "url": "https://koledar365.si/npz/9-razred/",
@@ -2467,7 +2987,7 @@
       "h1": [
         "NPZ 2027 · 9. razred"
       ],
-      "image": "https://koledar365.si/druzabno/pages/354/c5860f8f986ccc5b0d0d.png"
+      "image": "https://koledar365.si/druzabno/pages/354/fa95123b4e85cee7591e.png"
     },
     {
       "url": "https://koledar365.si/o-nas/",
@@ -2485,9 +3005,9 @@
       "title": "Odštevanje do datuma: prazniki in vaši dogodki | Koledar365",
       "description": "Koliko dni je do izbranega datuma? Odštevajte do praznikov, šolskih počitnic ali svojega dogodka. Shranite seznam in prenesite datume v koledar ICS.",
       "h1": [
-        "Odštevanje do datuma.Vaš dan je vse bližje."
+        "Odštevanje do datuma"
       ],
-      "image": "https://koledar365.si/druzabno/pages/298/1b829057b18995466ac1.png"
+      "image": "https://koledar365.si/druzabno/pages/298/a5812711956e40196202.png"
     },
     {
       "url": "https://koledar365.si/orodja/",
@@ -2498,6 +3018,16 @@
         "Koledarji, planerji in kalkulatorji"
       ],
       "image": "https://koledar365.si/druzabno/pages/16/33924670303dcfb99e84.png"
+    },
+    {
+      "url": "https://koledar365.si/otroski-dodatek/",
+      "path": "/otroski-dodatek/",
+      "title": "Otroški dodatek 2026: lestvica in informativni izračun | Koledar365",
+      "description": "Ocenite osnovni mesečni otroški dodatek v Sloveniji po dohodkovnem razredu, vrstnem redu otroka in šolanju. Preverite pogoje in vlogo CSD.",
+      "h1": [
+        "Otroški dodatek 2026: lestvica in informativni izračun"
+      ],
+      "image": "https://koledar365.si/druzabno/pages/460/057da82f52cf7681d7e9.png"
     },
     {
       "url": "https://koledar365.si/perzeidi/",
@@ -2677,7 +3207,7 @@
       "h1": [
         "Dan Civilne zaščite"
       ],
-      "image": "https://koledar365.si/druzabno/pages/404/27813875a514a8774e96.png"
+      "image": "https://koledar365.si/druzabno/pages/363/da67ab52cf04d11e0f1d.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/dan-clovekovih-pravic/",
@@ -2687,7 +3217,7 @@
       "h1": [
         "Dan človekovih pravic"
       ],
-      "image": "https://koledar365.si/druzabno/pages/429/1273507e5adbb4dfbebd.png"
+      "image": "https://koledar365.si/druzabno/pages/404/71d8eb8e08b7ba80f0cb.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/dan-maribora/",
@@ -2697,7 +3227,7 @@
       "h1": [
         "Dan Maribora – praznik Mestne občine Maribor"
       ],
-      "image": "https://koledar365.si/druzabno/pages/432/b76388dfb3d37d5afe17.png"
+      "image": "https://koledar365.si/druzabno/pages/383/aa05a1634fcac85a02bd.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/dan-policije/",
@@ -2707,7 +3237,7 @@
       "h1": [
         "Dan policije"
       ],
-      "image": "https://koledar365.si/druzabno/pages/418/ccb8aad2a1b04c78ea4e.png"
+      "image": "https://koledar365.si/druzabno/pages/377/2a8253afa6b7779a2a8b.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/dan-slovenske-diplomacije/",
@@ -2717,7 +3247,7 @@
       "h1": [
         "Dan slovenske diplomacije"
       ],
-      "image": "https://koledar365.si/druzabno/pages/415/3af2f67fa82883d61aeb.png"
+      "image": "https://koledar365.si/druzabno/pages/374/0c40adac2e35af030e35.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/dan-slovenske-hrane/",
@@ -2737,7 +3267,7 @@
       "h1": [
         "Dan Slovenske vojske"
       ],
-      "image": "https://koledar365.si/druzabno/pages/413/83ca4fe8b9710bdb6dbb.png"
+      "image": "https://koledar365.si/druzabno/pages/372/b0f654f10d49175b328d.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/dan-slovenske-zastave/",
@@ -2747,7 +3277,7 @@
       "h1": [
         "Dan slovenske zastave"
       ],
-      "image": "https://koledar365.si/druzabno/pages/407/dbb729f8e549b405e6c4.png"
+      "image": "https://koledar365.si/druzabno/pages/366/f41b23c23be4c43a5d2a.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/dan-slovenskega-krvodajalstva/",
@@ -2777,7 +3307,7 @@
       "h1": [
         "Dan slovenskih splošnih knjižnic"
       ],
-      "image": "https://koledar365.si/druzabno/pages/420/edce54f10f71a023d27a.png"
+      "image": "https://koledar365.si/druzabno/pages/379/46a3b72c8c8d06d25f46.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/dan-spomina-na-zrtve-holokavsta/",
@@ -2837,7 +3367,7 @@
       "h1": [
         "Gospodov vnebohod"
       ],
-      "image": "https://koledar365.si/druzabno/pages/412/0ed0f23f6fa7c8bc07fe.png"
+      "image": "https://koledar365.si/druzabno/pages/371/ac1ddad28eb3dc519741.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/januar/",
@@ -2857,7 +3387,7 @@
       "h1": [
         "Jožefovo"
       ],
-      "image": "https://koledar365.si/druzabno/pages/405/6ea63e59803fdcdbb087.png"
+      "image": "https://koledar365.si/druzabno/pages/364/7e14fc4accc88d2fd2d9.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/julij/",
@@ -2897,7 +3427,7 @@
       "h1": [
         "Kresna noč"
       ],
-      "image": "https://koledar365.si/druzabno/pages/417/d31a276f2881bf739e66.png"
+      "image": "https://koledar365.si/druzabno/pages/376/9593cc9ff1111a63358c.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/maj/",
@@ -2937,7 +3467,7 @@
       "h1": [
         "Mednarodni dan gora"
       ],
-      "image": "https://koledar365.si/druzabno/pages/422/012e7d849b0ffc193f16.png"
+      "image": "https://koledar365.si/druzabno/pages/381/fe1b5ffac2c8b0f28515.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/mednarodni-dan-invalidov/",
@@ -2947,7 +3477,7 @@
       "h1": [
         "Mednarodni dan invalidov"
       ],
-      "image": "https://koledar365.si/druzabno/pages/428/ea2e6d3d862366a283cd.png"
+      "image": "https://koledar365.si/druzabno/pages/403/f0c200e9b644145e0b23.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/mednarodni-dan-knjig-za-otroke/",
@@ -2957,7 +3487,7 @@
       "h1": [
         "Mednarodni dan knjig za otroke"
       ],
-      "image": "https://koledar365.si/druzabno/pages/406/ea3b663829e923622c3a.png"
+      "image": "https://koledar365.si/druzabno/pages/365/1d12f31db1d2a431e985.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/mednarodni-dan-maternega-jezika/",
@@ -2977,7 +3507,7 @@
       "h1": [
         "Mednarodni dan miru"
       ],
-      "image": "https://koledar365.si/druzabno/pages/425/a47b524338e2c2184dd9.png"
+      "image": "https://koledar365.si/druzabno/pages/400/82093e88c635834fb369.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/mednarodni-dan-mladih/",
@@ -2987,7 +3517,7 @@
       "h1": [
         "Mednarodni dan mladih"
       ],
-      "image": "https://koledar365.si/druzabno/pages/423/3379dfce13ee823d1ef3.png"
+      "image": "https://koledar365.si/druzabno/pages/398/eaa880873e6e5056f93e.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/mednarodni-dan-muzejev/",
@@ -2997,7 +3527,7 @@
       "h1": [
         "Mednarodni dan muzejev"
       ],
-      "image": "https://koledar365.si/druzabno/pages/414/8b65e44e67e082751b19.png"
+      "image": "https://koledar365.si/druzabno/pages/373/a983c31bd8bf85cd5a9e.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/mednarodni-dan-pismenosti/",
@@ -3007,7 +3537,7 @@
       "h1": [
         "Mednarodni dan pismenosti"
       ],
-      "image": "https://koledar365.si/druzabno/pages/424/5a108876d23b4942b59f.png"
+      "image": "https://koledar365.si/druzabno/pages/399/bcbfd7e33705025a2e7c.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/mednarodni-dan-prostovoljstva/",
@@ -3017,7 +3547,7 @@
       "h1": [
         "Mednarodni dan prostovoljstva"
       ],
-      "image": "https://koledar365.si/druzabno/pages/421/521866caf58898ced734.png"
+      "image": "https://koledar365.si/druzabno/pages/380/201c2a16c5ae43ece963.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/mednarodni-dan-starejsih/",
@@ -3027,7 +3557,7 @@
       "h1": [
         "Mednarodni dan starejših"
       ],
-      "image": "https://koledar365.si/druzabno/pages/426/3687b9177d5bee0b7803.png"
+      "image": "https://koledar365.si/druzabno/pages/401/0ef220fe60d304e0b3c5.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/noc-carovnic/",
@@ -3067,7 +3597,7 @@
       "h1": [
         "Pepelnica"
       ],
-      "image": "https://koledar365.si/druzabno/pages/403/0f2861cb10cbca6ed7ac.png"
+      "image": "https://koledar365.si/druzabno/pages/362/ffa597a0324a0e6f2aa6.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/praznik-celja/",
@@ -3077,7 +3607,7 @@
       "h1": [
         "Praznik Mestne občine Celje"
       ],
-      "image": "https://koledar365.si/druzabno/pages/433/9392bc864096cac3d50f.png"
+      "image": "https://koledar365.si/druzabno/pages/384/1f96c1674b3cb44dffce.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/praznik-idrije/",
@@ -3087,7 +3617,7 @@
       "h1": [
         "Praznik Občine Idrija"
       ],
-      "image": "https://koledar365.si/druzabno/pages/439/83b71d845c7bb15b4fa3.png"
+      "image": "https://koledar365.si/druzabno/pages/390/0f4e19698a408028577b.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/praznik-kopra/",
@@ -3097,7 +3627,7 @@
       "h1": [
         "Praznik Mestne občine Koper"
       ],
-      "image": "https://koledar365.si/druzabno/pages/434/80116d1216178382e370.png"
+      "image": "https://koledar365.si/druzabno/pages/385/54880ce1022b66511b79.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/praznik-kranja/",
@@ -3107,7 +3637,7 @@
       "h1": [
         "Praznik Mestne občine Kranj"
       ],
-      "image": "https://koledar365.si/druzabno/pages/442/e2c41ad4f34290428b20.png"
+      "image": "https://koledar365.si/druzabno/pages/393/5cde779274e37451cd70.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/praznik-krskega/",
@@ -3117,7 +3647,7 @@
       "h1": [
         "Občinski praznik Krškega"
       ],
-      "image": "https://koledar365.si/druzabno/pages/445/d41045ab8d01401dfcac.png"
+      "image": "https://koledar365.si/druzabno/pages/396/41cb6fe5b4d9238e4dbc.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/praznik-ljubljane/",
@@ -3127,7 +3657,7 @@
       "h1": [
         "Mestni praznik Ljubljane"
       ],
-      "image": "https://koledar365.si/druzabno/pages/431/54f4eb178565ac49df33.png"
+      "image": "https://koledar365.si/druzabno/pages/382/145465f58eaca8f01652.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/praznik-murske-sobote/",
@@ -3137,7 +3667,7 @@
       "h1": [
         "Praznik Mestne občine Murska Sobota"
       ],
-      "image": "https://koledar365.si/druzabno/pages/437/00b4d6167f63048e41b1.png"
+      "image": "https://koledar365.si/druzabno/pages/388/7acce01519d97349fece.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/praznik-nove-gorice/",
@@ -3147,7 +3677,7 @@
       "h1": [
         "Praznik Mestne občine Nova Gorica"
       ],
-      "image": "https://koledar365.si/druzabno/pages/440/38ff0cd900d5ad8eb51f.png"
+      "image": "https://koledar365.si/druzabno/pages/391/a92b9c71a3c6879c2df8.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/praznik-novega-mesta/",
@@ -3157,7 +3687,7 @@
       "h1": [
         "Občinski praznik Novega mesta"
       ],
-      "image": "https://koledar365.si/druzabno/pages/436/858fa1fc6d5aa84a9401.png"
+      "image": "https://koledar365.si/druzabno/pages/387/6787db27488114cca128.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/praznik-ptuja/",
@@ -3167,7 +3697,7 @@
       "h1": [
         "Praznik Mestne občine Ptuj in jurjevo"
       ],
-      "image": "https://koledar365.si/druzabno/pages/435/ed69d0eca02718d87eaa.png"
+      "image": "https://koledar365.si/druzabno/pages/386/8ddcdf680441bf5a1124.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/praznik-skofje-loke/",
@@ -3177,7 +3707,7 @@
       "h1": [
         "Občinski praznik Škofje Loke"
       ],
-      "image": "https://koledar365.si/druzabno/pages/438/f32547ae3414d4de3c08.png"
+      "image": "https://koledar365.si/druzabno/pages/389/b83e44cc7cbbdca2f764.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/praznik-slovenj-gradca/",
@@ -3187,7 +3717,7 @@
       "h1": [
         "Občinski praznik Slovenj Gradca"
       ],
-      "image": "https://koledar365.si/druzabno/pages/446/04993448fbfe56230292.png"
+      "image": "https://koledar365.si/druzabno/pages/397/2ad79c64a2b3203e6967.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/praznik-velenja/",
@@ -3197,7 +3727,7 @@
       "h1": [
         "Praznik Mestne občine Velenje"
       ],
-      "image": "https://koledar365.si/druzabno/pages/441/531c9e952f2158f83a24.png"
+      "image": "https://koledar365.si/druzabno/pages/392/0256d52661d322175ddd.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/september/",
@@ -3217,7 +3747,7 @@
       "h1": [
         "Slovenski dan brez zavržene hrane"
       ],
-      "image": "https://koledar365.si/druzabno/pages/443/441e29b2570e1529e448.png"
+      "image": "https://koledar365.si/druzabno/pages/394/43a0872380cbb25ede1b.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/spomin-vseh-vernih-rajnih/",
@@ -3237,7 +3767,7 @@
       "h1": [
         "Štefanovo in blagoslov konj"
       ],
-      "image": "https://koledar365.si/druzabno/pages/444/fe4c0c74f79d71bbc68f.png"
+      "image": "https://koledar365.si/druzabno/pages/395/238e07bb594cc9f94aca.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/svecnica/",
@@ -3247,7 +3777,7 @@
       "h1": [
         "Svečnica"
       ],
-      "image": "https://koledar365.si/druzabno/pages/402/81b780db216e047266c5.png"
+      "image": "https://koledar365.si/druzabno/pages/361/d81cb15d0d4168d953c1.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/sveto-resnje-telo-in-kri/",
@@ -3257,7 +3787,7 @@
       "h1": [
         "Sveto Rešnje telo in kri"
       ],
-      "image": "https://koledar365.si/druzabno/pages/416/39fc7a766208312900fa.png"
+      "image": "https://koledar365.si/druzabno/pages/375/7cb61b5ff5affbe9afa9.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/svetovni-dan-hrane/",
@@ -3267,7 +3797,7 @@
       "h1": [
         "Svetovni dan hrane"
       ],
-      "image": "https://koledar365.si/druzabno/pages/427/095c799df4e2feb9e921.png"
+      "image": "https://koledar365.si/druzabno/pages/402/2e3c988622405675d7dd.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/svetovni-dan-knjige-in-avtorskih-pravic/",
@@ -3307,7 +3837,7 @@
       "h1": [
         "Svetovni dan Romov"
       ],
-      "image": "https://koledar365.si/druzabno/pages/409/3bcbfb4badfc85900180.png"
+      "image": "https://koledar365.si/druzabno/pages/368/283bd0b93db7c3fc6b94.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/svetovni-dan-turizma/",
@@ -3317,7 +3847,7 @@
       "h1": [
         "Svetovni dan turizma"
       ],
-      "image": "https://koledar365.si/druzabno/pages/419/abb75036d6cc8f4b51c4.png"
+      "image": "https://koledar365.si/druzabno/pages/378/2015d792e824ed8a72bb.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/svetovni-dan-uciteljev/",
@@ -3347,7 +3877,7 @@
       "h1": [
         "Svetovni dan zdravja"
       ],
-      "image": "https://koledar365.si/druzabno/pages/408/14a6b076b1d7c50a1582.png"
+      "image": "https://koledar365.si/druzabno/pages/367/3003864a1e56f15b37fb.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/svetovni-dan-zivali/",
@@ -3387,7 +3917,7 @@
       "h1": [
         "Velika sobota"
       ],
-      "image": "https://koledar365.si/druzabno/pages/411/6958b5ef6b1bf69d428c.png"
+      "image": "https://koledar365.si/druzabno/pages/370/3f6fcaa1af2d90fe34e8.png"
     },
     {
       "url": "https://koledar365.si/pomembni-dnevi/veliki-cetrtek/",
@@ -3397,7 +3927,17 @@
       "h1": [
         "Veliki četrtek"
       ],
-      "image": "https://koledar365.si/druzabno/pages/410/8c397f0a4d174b33c804.png"
+      "image": "https://koledar365.si/druzabno/pages/369/32cf1775149d6c0baebf.png"
+    },
+    {
+      "url": "https://koledar365.si/pomoc-ob-rojstvu-otroka/",
+      "path": "/pomoc-ob-rojstvu-otroka/",
+      "title": "Pomoč ob rojstvu otroka 2026: znesek in roki | Koledar365",
+      "description": "Preverite enkratno državno pomoč za novorojenčka, rok za vlogo pred porodom ali po rojstvu in možnost ločene občinske pomoči.",
+      "h1": [
+        "Pomoč ob rojstvu otroka 2026: znesek in roki"
+      ],
+      "image": "https://koledar365.si/druzabno/pages/461/3e962571562219f6e087.png"
     },
     {
       "url": "https://koledar365.si/prazen-koledar/",
@@ -3820,6 +4360,16 @@
       "image": "https://koledar365.si/images/observances/zdruzitev-prekmurskih-slovencev.webp"
     },
     {
+      "url": "https://koledar365.si/predloge-urnikov/",
+      "path": "/predloge-urnikov/",
+      "title": "Predloge urnikov za tiskanje: delovni, šolski in tedenski | Koledar365",
+      "description": "Pripravite prazen delovni razpored, šolski urnik ali tedenski planer. Izberite začetek tedna in natisnite predlogo ali jo shranite kot PDF.",
+      "h1": [
+        "Predloge urnikov za tiskanje: delovni, šolski in tedenski"
+      ],
+      "image": "https://koledar365.si/druzabno/pages/471/88e7ff987654da1c0101.png"
+    },
+    {
       "url": "https://koledar365.si/premik-ure/",
       "path": "/premik-ure/",
       "title": "Premik ure 2026–2030: poletni in zimski čas | Koledar365",
@@ -3877,7 +4427,17 @@
       "h1": [
         "Sezonski opomniki za dom in vrt"
       ],
-      "image": "https://koledar365.si/druzabno/pages/452/ebb2e823db4664d94762.png"
+      "image": "https://koledar365.si/druzabno/pages/456/eae8e84d943ce4cb6e6a.png"
+    },
+    {
+      "url": "https://koledar365.si/socialni-prejemki/",
+      "path": "/socialni-prejemki/",
+      "title": "Socialni prejemki v Sloveniji: pravice, vloge in izplačila | Koledar365",
+      "description": "Poiščite otroški in starševski dodatek, pomoč ob rojstvu, znižano plačilo vrtca, bolniško nadomestilo ali pomoč ob izgubi dohodka.",
+      "h1": [
+        "Socialni prejemki v Sloveniji: pravice, vloge in izplačila"
+      ],
+      "image": "https://koledar365.si/druzabno/pages/459/8e6afc9862f565bcdbbf.png"
     },
     {
       "url": "https://koledar365.si/solske-pocitnice/",
@@ -3887,7 +4447,7 @@
       "h1": [
         "Šolske počitnice 2026/2027 v Sloveniji"
       ],
-      "image": "https://koledar365.si/druzabno/pages/8/f7064a69739b51d3ee82.png"
+      "image": "https://koledar365.si/druzabno/pages/8/6cd463ed0904226bff91.png"
     },
     {
       "url": "https://koledar365.si/solski-koledar/",
@@ -3897,7 +4457,7 @@
       "h1": [
         "Šolski koledar 2026/2027"
       ],
-      "image": "https://koledar365.si/druzabno/pages/347/9472c96cdd3c2ab2c18d.png"
+      "image": "https://koledar365.si/druzabno/pages/347/da8b23893668ac63aed6.png"
     },
     {
       "url": "https://koledar365.si/solski-urnik/",
@@ -3907,7 +4467,7 @@
       "h1": [
         "Šolski urnik za učence in dijake"
       ],
-      "image": "https://koledar365.si/druzabno/pages/304/a8ee3572177b22573091.png"
+      "image": "https://koledar365.si/druzabno/pages/304/69716553d781249e68ec.png"
     },
     {
       "url": "https://koledar365.si/soncni-mrk/",
@@ -4620,6 +5180,26 @@
       "image": "https://koledar365.si/og.png"
     },
     {
+      "url": "https://koledar365.si/starsevski-dodatek/",
+      "path": "/starsevski-dodatek/",
+      "title": "Starševski dodatek 2026: znesek, trajanje in vloga | Koledar365",
+      "description": "Preverite starševski dodatek za starše brez pravice do starševskega nadomestila. Objavljeni mesečni znesek, trajanje in roki za vlogo.",
+      "h1": [
+        "Starševski dodatek 2026: znesek, trajanje in vloga"
+      ],
+      "image": "https://koledar365.si/druzabno/pages/463/f1a17431d99b8fe8c851.png"
+    },
+    {
+      "url": "https://koledar365.si/starsevski-dopust/",
+      "path": "/starsevski-dopust/",
+      "title": "Materinski, očetovski in starševski dopust v Sloveniji | Koledar365",
+      "description": "Izračunajte predvideni začetek materinskega dopusta in primerjajte delitev starševskega dopusta. Pogoji za nadomestilo in oddajo vloge na CSD.",
+      "h1": [
+        "Materinski, očetovski in starševski dopust v Sloveniji"
+      ],
+      "image": "https://koledar365.si/druzabno/pages/462/69571c352b41caea524c.png"
+    },
+    {
       "url": "https://koledar365.si/stevilka-tedna/",
       "path": "/stevilka-tedna/",
       "title": "Številka tedna | Koledar365",
@@ -4637,7 +5217,7 @@
       "h1": [
         "Študijski koledar 2026/2027"
       ],
-      "image": "https://koledar365.si/druzabno/pages/355/4d0afc930b5b11ce6252.png"
+      "image": "https://koledar365.si/druzabno/pages/355/9ecb96d34c19d2121618.png"
     },
     {
       "url": "https://koledar365.si/studijski-nacrtovalnik/",
@@ -4647,7 +5227,7 @@
       "h1": [
         "Študijski načrtovalnik in načrt učenja za izpit"
       ],
-      "image": "https://koledar365.si/druzabno/pages/449/22a02ce6316266dfe021.png"
+      "image": "https://koledar365.si/druzabno/pages/453/fcec4802dd057a57f635.png"
     },
     {
       "url": "https://koledar365.si/tedenski-koledar/",
@@ -4657,7 +5237,7 @@
       "h1": [
         "Tedenski koledar in planer za tiskanje"
       ],
-      "image": "https://koledar365.si/druzabno/pages/4/9f9565198f20a98a36af.png"
+      "image": "https://koledar365.si/druzabno/pages/4/45d489aecb2a2133f73e.png"
     },
     {
       "url": "https://koledar365.si/tedenski-koledar/2026/",
@@ -4745,9 +5325,9 @@
       "title": "Vpisni koledar 2027/2028: srednje šole in študij | Koledar365",
       "description": "Preverite uradne informativne dneve, prijavne roke in rezultate za vpis v srednje in višje strokovne šole. Spremljajte tudi objave eVŠ.",
       "h1": [
-        "Vpisni koledar 2027/2028: srednje šole in študij"
+        "Vpisni koledar 2027/2028"
       ],
-      "image": "https://koledar365.si/druzabno/pages/450/a6c356f2e4f3b779ae52.png"
+      "image": "https://koledar365.si/druzabno/pages/454/079a31df713d477f1481.png"
     },
     {
       "url": "https://koledar365.si/zasebnost/",
@@ -4758,6 +5338,16 @@
         "Vaši načrti. Vaša zasebnost."
       ],
       "image": "https://koledar365.si/druzabno/pages/330/67c4e8a957c0579bc103.png"
+    },
+    {
+      "url": "https://koledar365.si/znizano-placilo-vrtca/",
+      "path": "/znizano-placilo-vrtca/",
+      "title": "Znižano plačilo vrtca: kalkulator po dohodkovnem razredu | Koledar365",
+      "description": "Izračunajte okvirno mesečno plačilo vrtca po slovenski lestvici. Primerjajte delež staršev, ceno programa in pogoje za oprostitev.",
+      "h1": [
+        "Znižano plačilo vrtca: kalkulator po dohodkovnem razredu"
+      ],
+      "image": "https://koledar365.si/druzabno/pages/464/0b7a5c119baf5f40cfd9.png"
     }
   ]
 }

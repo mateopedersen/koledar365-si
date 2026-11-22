@@ -1,30 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
   <title>Koledar365 – slovenski koledar</title>
   <defs>
-    <linearGradient id="cover" x1="12" y1="13" x2="69" y2="74" gradientUnits="userSpaceOnUse"><stop stop-color="#164E91"/><stop offset="1" stop-color="#062D61"/></linearGradient>
-    <linearGradient id="paper" x1="21" y1="25" x2="62" y2="69" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF"/><stop offset=".72" stop-color="#FAFBFD"/><stop offset="1" stop-color="#E5EBF3"/></linearGradient>
-    <linearGradient id="ribbon" x1="15" y1="15" x2="67" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#0757AA"/><stop offset="1" stop-color="#003B80"/></linearGradient>
-    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#40546A"/><stop offset=".42" stop-color="#E3EAF2"/><stop offset=".7" stop-color="#869BAF"/><stop offset="1" stop-color="#30475F"/></linearGradient>
-    <linearGradient id="fold" x1="55" y1="54" x2="66" y2="66" gradientUnits="userSpaceOnUse"><stop stop-color="#F16A75"/><stop offset="1" stop-color="#BD1232"/></linearGradient>
+    <linearGradient id="case" x1="9" y1="14" x2="67" y2="74" gradientUnits="userSpaceOnUse"><stop stop-color="#4278ae"/><stop offset=".48" stop-color="#215080"/><stop offset="1" stop-color="#102b4a"/></linearGradient>
+    <linearGradient id="paper" x1="12" y1="17" x2="62" y2="67" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#dce9f7"/></linearGradient>
+    <linearGradient id="strip" x1="12" y1="14" x2="66" y2="31" gradientUnits="userSpaceOnUse"><stop stop-color="#79a8d5"/><stop offset=".54" stop-color="#3976ad"/><stop offset="1" stop-color="#1b4c7d"/></linearGradient>
+    <linearGradient id="ring" x1="0" x2="1"><stop stop-color="#4b6680"/><stop offset=".42" stop-color="#edf6ff"/><stop offset="1" stop-color="#7da0bf"/></linearGradient>
+    <linearGradient id="seal" x1="49" y1="43" x2="70" y2="69" gradientUnits="userSpaceOnUse"><stop stop-color="#e37084"/><stop offset=".55" stop-color="#cf3657"/><stop offset="1" stop-color="#a91c3e"/></linearGradient>
   </defs>
-  <!-- The offset cover, cut paper edges and rolled corner remain distinct at small sizes. -->
-  <ellipse cx="42" cy="73" rx="29" ry="3.5" fill="#102B4A" opacity=".12"/>
-  <path d="M15 16h49a7 7 0 0 1 7 7v43a7 7 0 0 1-7 7H15a5 5 0 0 1-5-5V21a5 5 0 0 1 5-5Z" fill="url(#cover)"/>
-  <rect x="12" y="16" width="56" height="54" rx="5" fill="#CDD7E3" stroke="#A6B5C7"/>
-  <path d="M15 65h49M15 67h49" stroke="#F6F8FC"/>
-  <path d="M13 17a5 5 0 0 1 5-5h44a5 5 0 0 1 5 5v39L55 68H18a5 5 0 0 1-5-5Z" fill="url(#paper)" stroke="#CAD6E3"/>
-  <path d="M18 12h44a5 5 0 0 1 5 5v13H13V17a5 5 0 0 1 5-5Z" fill="url(#ribbon)"/>
-  <path d="M14 27h52v3H14Z" fill="#E5223D"/>
-  <path d="M18 14h44" stroke="#FFF" stroke-opacity=".23" stroke-linecap="round"/>
-  <g fill="#052B5C"><ellipse cx="25" cy="18" rx="4" ry="2.5"/><ellipse cx="55" cy="18" rx="4" ry="2.5"/></g>
-  <g stroke="#30475F" stroke-width=".7"><rect x="22.5" y="5" width="5" height="15" rx="2.5" fill="url(#steel)"/><rect x="52.5" y="5" width="5" height="15" rx="2.5" fill="url(#steel)"/></g>
-  <path d="M24 7v10M54 7v10" stroke="#FFF" stroke-opacity=".8" stroke-linecap="round"/>
-  <!-- A restrained printed calendar grid, with one unmistakable red selected day. -->
-  <g stroke="#DFE5ED" stroke-width=".7"><path d="M20 40h40M20 49h40M20 58h31M29 35v26M40 35v26M51 35v15"/></g>
-  <g fill="#214D7B"><rect x="22" y="35" width="4" height="3" rx=".7"/><rect x="33" y="35" width="4" height="3" rx=".7"/><rect x="44" y="35" width="4" height="3" rx=".7"/><rect x="55" y="35" width="4" height="3" rx=".7"/><rect x="22" y="44" width="4" height="3" rx=".7"/><rect x="33" y="44" width="4" height="3" rx=".7"/><rect x="22" y="53" width="4" height="3" rx=".7"/><rect x="33" y="53" width="4" height="3" rx=".7"/></g>
-  <rect x="42" y="41" width="9" height="9" rx="2" fill="#D81937"/>
-  <path d="m44 45 1.7 1.7 3-3.2" stroke="#FFF" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="m55 68 12-12H59a4 4 0 0 0-4 4Z" fill="#092E60" opacity=".13" transform="translate(-1 -1)"/>
-  <path d="m55 68 12-12H59a4 4 0 0 0-4 4Z" fill="url(#fold)"/>
-  <path d="M59 57h6l-9 9v-6a3 3 0 0 1 3-3Z" stroke="#FFF" stroke-opacity=".35" stroke-width=".6"/>
+  <ellipse cx="40" cy="73.5" rx="32" ry="3.8" fill="#193a5c" opacity=".14"/>
+  <rect x="7" y="13" width="64" height="58" rx="12" fill="url(#case)"/>
+  <rect x="8" y="12" width="60" height="55" rx="10" fill="url(#paper)" stroke="#5f88b0" stroke-width="1.3"/>
+  <path d="M8.8 22a9.3 9.3 0 0 1 9.3-9.3h40.2a9 9 0 0 1 9 9V31H8.8Z" fill="url(#strip)"/>
+  <path d="M12 31h53" stroke="#a0bfdc" stroke-width="1.35" stroke-linecap="round"/>
+  <path d="M14 65h25" stroke="#fff" stroke-width="1.1" stroke-linecap="round" opacity=".8"/>
+  <g fill="url(#ring)" stroke="#204568" stroke-width="1.2">
+    <rect x="20" y="5.5" width="7.6" height="16.3" rx="3.8"/>
+    <rect x="49" y="5.5" width="7.6" height="16.3" rx="3.8"/>
+  </g>
+  <path d="M23 8.3v10.1m29-10.1v10.1" stroke="#fff" stroke-width="1.1" stroke-linecap="round" opacity=".66"/>
+  <g stroke="#6d92b5" stroke-width="4.6" stroke-linecap="round">
+    <path d="M19.5 40h5m8.5 0h5m8.5 0h5m-32 9.5h5m8.5 0h5m-18.5 9.5h5m8.5 0h5"/>
+  </g>
+  <circle cx="59" cy="58.7" r="14.6" fill="#781a34" opacity=".32"/>
+  <circle cx="58.3" cy="57" r="14.2" fill="url(#seal)" stroke="#9c2242" stroke-width="1.2"/>
+  <path d="M47.7 51.6c2.4-4.3 6.4-6.3 10.7-6.4" stroke="#ffc3cf" stroke-opacity=".78" stroke-width="1.35" stroke-linecap="round"/>
+  <path d="m52.2 57 4 4.1 7.7-8.4" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

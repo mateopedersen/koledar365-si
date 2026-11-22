@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="360" viewBox="0 0 520 360">
+  <defs>
+    <filter id="cast" x="-.38" y="-.4" width="1.8" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10" />
+      <feOffset dx="4" dy="12" result="shadow" />
+      <feFlood flood-color="#19304d" flood-opacity=".21" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <filter id="lift" x="-.35" y="-.4" width="1.75" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+      <feOffset dx="2" dy="5" result="shadow" />
+      <feFlood flood-color="#142c46" flood-opacity=".24" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <radialGradient id="light">
+      <stop stop-color="#fff" />
+      <stop offset="1" stop-color="#d8e8f6" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="paper" x2="1" y2="1">
+      <stop stop-color="#fffef9" />
+      <stop offset=".48" stop-color="#fff" />
+      <stop offset="1" stop-color="#e3eaf0" />
+    </linearGradient>
+    <linearGradient id="cream" x2="1" y2="1">
+      <stop stop-color="#fff7dd" />
+      <stop offset=".48" stop-color="#eee0c1" />
+      <stop offset="1" stop-color="#cfb488" />
+    </linearGradient>
+    <linearGradient id="ink" x2="1" y2="1">
+      <stop stop-color="#395777" />
+      <stop offset=".48" stop-color="#203956" />
+      <stop offset="1" stop-color="#112439" />
+    </linearGradient>
+    <linearGradient id="leather" x2="1" y2="1">
+      <stop stop-color="#557486" />
+      <stop offset=".48" stop-color="#2f526b" />
+      <stop offset="1" stop-color="#17364e" />
+    </linearGradient>
+  </defs>
+  <g transform="translate(0 15.333) scale(.866667)">
+    <ellipse cx="297" cy="195" rx="280" ry="177" fill="url(#light)" />
+    <ellipse cx="301" cy="334" rx="207" ry="23" fill="#d4e4f1" opacity=".44" />
+    <use href="#art-shape-1" filter="url(#cast)" />
+    <g transform="rotate(-11 222 200)" id="art-shape-1">
+      <path d="M102 100q82-22 150 9v191q-74-29-150-5Z" fill="url(#cream)" stroke="#c2ac85" />
+      <path d="M252 109q86-37 152-15v199q-78-14-152 7Z" fill="url(#paper)" stroke="#abbcc8" />
+      <path d="M252 111v189" stroke="#a6b6bb" stroke-width="2" />
+      <text x="123" y="139" fill="#426980" font-family="system-ui,sans-serif" font-size="21" font-weight="700">Tuji jezik</text>
+      <path d="M122 165L234 165" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+      <path d="M122 183L217 183" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+      <path d="M122 201L200 201" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+      <path d="M122 219L234 219" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+      <path d="M122 237L217 237" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+      <text x="275" y="138" fill="#173751" font-family="system-ui,sans-serif" font-size="22" font-weight="700">6. razred</text>
+      <path d="M275 163L378 163" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+      <path d="M275 181L361 181" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+      <path d="M275 199L344 199" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+      <path d="M275 217L378 217" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+      <path d="M275 235L361 235" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+    </g>
+    <use href="#art-shape-2" filter="url(#lift)" />
+    <g transform="rotate(12 439 220)" id="art-shape-2">
+      <path d="M390 226v-49a47 47 0 0 1 94 0v49" stroke="url(#leather)" stroke-width="13" fill="none" />
+      <path d="M402 177a35 35 0 1 1 70 0" stroke="#6490a8" stroke-width="2" fill="none" />
+      <rect x="378" y="196" width="28" height="47" rx="11" fill="url(#ink)" stroke="#53768f" />
+      <rect x="468" y="196" width="28" height="47" rx="11" fill="url(#ink)" stroke="#53768f" />
+      <path d="M486 242q0 59-43 68h-23" stroke="#3a566d" stroke-width="2" fill="none" />
+    </g>
+  </g>
+</svg>

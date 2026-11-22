@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380">
+  <defs>
+    <filter id="cast" x="-.38" y="-.4" width="1.8" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10" />
+      <feOffset dx="4" dy="12" result="shadow" />
+      <feFlood flood-color="#19304d" flood-opacity=".21" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <filter id="lift" x="-.35" y="-.4" width="1.75" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+      <feOffset dx="2" dy="5" result="shadow" />
+      <feFlood flood-color="#142c46" flood-opacity=".24" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <radialGradient id="light">
+      <stop stop-color="#fff" />
+      <stop offset="1" stop-color="#d8e8f6" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="brass" x2="1" y2="1">
+      <stop stop-color="#fff0b5" />
+      <stop offset=".48" stop-color="#c88d47" />
+      <stop offset="1" stop-color="#87552e" />
+    </linearGradient>
+    <linearGradient id="red" x2="1" y2="1">
+      <stop stop-color="#f69a82" />
+      <stop offset=".48" stop-color="#c74351" />
+      <stop offset="1" stop-color="#8d2b45" />
+    </linearGradient>
+    <linearGradient id="green" x2="1" y2="1">
+      <stop stop-color="#a3c396" />
+      <stop offset=".48" stop-color="#438665" />
+      <stop offset="1" stop-color="#205c50" />
+    </linearGradient>
+    <linearGradient id="cream" x2="1" y2="1">
+      <stop stop-color="#fff7dd" />
+      <stop offset=".48" stop-color="#eee0c1" />
+      <stop offset="1" stop-color="#cfb488" />
+    </linearGradient>
+    <linearGradient id="leather" x2="1" y2="1">
+      <stop stop-color="#557486" />
+      <stop offset=".48" stop-color="#2f526b" />
+      <stop offset="1" stop-color="#17364e" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="297" cy="195" rx="280" ry="177" fill="url(#light)" />
+  <ellipse cx="301" cy="334" rx="207" ry="23" fill="#d4e4f1" opacity=".44" />
+  <use href="#art-shape-1" filter="url(#cast)" />
+  <g transform="rotate(-9 297 190)" id="art-shape-1">
+    <path d="M79 105q125-36 220 10 108-47 225-10l-7 186q-116-33-218 12-107-43-221-9Z" fill="url(#leather)" />
+    <path d="M91 98q112-35 208 12 101-43 213-11l-6 181q-108-28-207 14-99-36-208-9Z" fill="#d6c9ac" />
+    <path d="M95 92q113-35 204 14 98-49 209-17l-5 178q-111-22-204 18-93-39-204-9Z" fill="url(#cream)" stroke="#c4af8d" />
+    <path d="M298 106v178m-7-174v164m14-165v166" stroke="#a6967a" opacity=".48" />
+    <path d="M454 92v98l15-14 13 14V90Z" fill="url(#red)" />
+    <text x="122" y="137" fill="#674836" font-family="system-ui,sans-serif" font-size="30" font-weight="700">Godovi</text>
+    <text x="123" y="169" fill="#88664c" font-family="system-ui,sans-serif" font-size="14" font-weight="700">Imena in datumi</text>
+    <path d="M123 188L252 188" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+    <path d="M123 207L235 207" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+    <path d="M123 226L218 226" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+    <path d="M123 245L252 245" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+    <text x="324" y="147" fill="#674836" font-family="system-ui,sans-serif" font-size="21" font-weight="700">24. junij</text>
+    <text x="324" y="186" fill="#64493e" font-family="system-ui,sans-serif" font-size="26" font-weight="700" font-style="italic">Janez</text>
+    <path d="M329 206L454 206" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+    <path d="M329 225L437 225" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+    <path d="M329 244L420 244" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+  </g>
+  <use href="#art-shape-2" filter="url(#lift)" />
+  <g transform="translate(395 276) rotate(16)" id="art-shape-2">
+    <path d="M4 48Q48 32 98-45" stroke="#426948" stroke-width="3" fill="none" />
+    <path d="M53 11Q29-30 18-23Q21 3 53 11M67-5Q49-47 44-40Q39-18 67-5M77-20Q67-58 64-59Q56-40 77-20M62 0q43 15 58-8Q92-16 62 0M37 26q48 16 65-6Q64 12 37 26" fill="url(#green)" />
+    <g fill="url(#cream)" stroke="#ad8975">
+      <circle cx="96" cy="-47" r="10" />
+      <circle cx="108" cy="-52" r="8" />
+      <circle cx="94" cy="-57" r="7" />
+    </g>
+    <circle cx="98" cy="-50" r="4" fill="url(#brass)" />
+  </g>
+</svg>

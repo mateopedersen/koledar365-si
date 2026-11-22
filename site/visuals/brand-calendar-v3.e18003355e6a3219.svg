@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <title>Koledar365 – slovenski koledar</title>
+  <defs>
+    <linearGradient id="case" x1="9" y1="14" x2="67" y2="74" gradientUnits="userSpaceOnUse"><stop stop-color="#4278ae"/><stop offset=".48" stop-color="#215080"/><stop offset="1" stop-color="#102b4a"/></linearGradient>
+    <linearGradient id="paper" x1="12" y1="17" x2="62" y2="67" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#dce9f7"/></linearGradient>
+    <linearGradient id="strip" x1="12" y1="14" x2="66" y2="31" gradientUnits="userSpaceOnUse"><stop stop-color="#79a8d5"/><stop offset=".54" stop-color="#3976ad"/><stop offset="1" stop-color="#1b4c7d"/></linearGradient>
+    <linearGradient id="ring" x1="0" x2="1"><stop stop-color="#4b6680"/><stop offset=".42" stop-color="#edf6ff"/><stop offset="1" stop-color="#7da0bf"/></linearGradient>
+    <linearGradient id="seal" x1="49" y1="43" x2="70" y2="69" gradientUnits="userSpaceOnUse"><stop stop-color="#e37084"/><stop offset=".55" stop-color="#cf3657"/><stop offset="1" stop-color="#a91c3e"/></linearGradient>
+  </defs>
+  <ellipse cx="40" cy="73.5" rx="32" ry="3.8" fill="#193a5c" opacity=".14"/>
+  <rect x="7" y="13" width="64" height="58" rx="12" fill="url(#case)"/>
+  <rect x="8" y="12" width="60" height="55" rx="10" fill="url(#paper)" stroke="#5f88b0" stroke-width="1.3"/>
+  <path d="M8.8 22a9.3 9.3 0 0 1 9.3-9.3h40.2a9 9 0 0 1 9 9V31H8.8Z" fill="url(#strip)"/>
+  <path d="M12 31h53" stroke="#a0bfdc" stroke-width="1.35" stroke-linecap="round"/>
+  <path d="M14 65h25" stroke="#fff" stroke-width="1.1" stroke-linecap="round" opacity=".8"/>
+  <g fill="url(#ring)" stroke="#204568" stroke-width="1.2">
+    <rect x="20" y="5.5" width="7.6" height="16.3" rx="3.8"/>
+    <rect x="49" y="5.5" width="7.6" height="16.3" rx="3.8"/>
+  </g>
+  <path d="M23 8.3v10.1m29-10.1v10.1" stroke="#fff" stroke-width="1.1" stroke-linecap="round" opacity=".66"/>
+  <g stroke="#6d92b5" stroke-width="4.6" stroke-linecap="round">
+    <path d="M19.5 40h5m8.5 0h5m8.5 0h5m-32 9.5h5m8.5 0h5m-18.5 9.5h5m8.5 0h5"/>
+  </g>
+  <circle cx="59" cy="58.7" r="14.6" fill="#781a34" opacity=".32"/>
+  <circle cx="58.3" cy="57" r="14.2" fill="url(#seal)" stroke="#9c2242" stroke-width="1.2"/>
+  <path d="M47.7 51.6c2.4-4.3 6.4-6.3 10.7-6.4" stroke="#ffc3cf" stroke-opacity=".78" stroke-width="1.35" stroke-linecap="round"/>
+  <path d="m52.2 57 4 4.1 7.7-8.4" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
