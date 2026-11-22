@@ -3,7 +3,10 @@ require_relative '../config/environment'
 Page.where("path LIKE ?", "/godovi/%").delete_all
 Page.transaction do
   JSON.parse(Rails.root.join('data/editorial/pages.json').read).each do |row|
-    page=Page.find_by!(path:row.fetch('path'))
+    path=row.fetch('path')
+    next if path.start_with?(EditorialCatalog::HUB)
+
+    page=Page.find_by!(path:path)
     status=row.fetch('status');raise 'Neveljaven status strani.' unless %w[draft published held].include?(status)
     status='held' if page.metadata['content_gate'].present?
     attributes=row.slice('title','description','body','created_at','updated_at').merge('status'=>status)

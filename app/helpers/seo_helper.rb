@@ -99,9 +99,18 @@ module SeoHelper
     graph[0]['publisher']={"@id"=>organization.fetch('@id')}
     graph[1]['publisher']={"@id"=>organization.fetch('@id')}
     if @blog_article
+      photo = @blog_article.fetch('photo')
+      image = seo_image
+      image_id = "#{image.fetch(:url)}#image"
+      graph << {
+        '@type' => 'ImageObject', '@id' => image_id, 'contentUrl' => image.fetch(:url),
+        'caption' => @blog_article.fetch('image_alt'), 'width' => image.fetch(:width), 'height' => image.fetch(:height),
+        'creditText' => photo.fetch('credit'), 'license' => photo.fetch('license_url'), 'isBasedOn' => photo.fetch('source')
+      }
+      graph[1]['primaryImageOfPage'] = {'@id' => image_id}
       graph << {
         '@type' => 'BlogPosting', '@id' => "#{canonical_url}#article", 'mainEntityOfPage' => canonical_url,
-        'headline' => @title, 'description' => @description, 'image' => seo_image.fetch(:url), 'inLanguage' => 'sl-SI',
+        'headline' => @title, 'description' => @description, 'image' => {'@id' => image_id}, 'inLanguage' => 'sl-SI',
         'author' => {'@type' => 'Organization', 'name' => EditorialCatalog::CREDIT, 'url' => "#{site_origin}/uredniska-politika/"},
         'publisher' => {'@id' => organization.fetch('@id')},
         'citation' => @blog_article.fetch('sources').map { |key| EditorialCatalog.sources.fetch(key).last }

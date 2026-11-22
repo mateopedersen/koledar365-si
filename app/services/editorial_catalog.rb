@@ -1,7 +1,7 @@
 class EditorialCatalog
   HUB = '/blog/'
   TITLE = 'Vodniki za koledar in načrtovanje'
-  DESCRIPTION = 'Praktični slovenski vodniki o praznikih, delovnih dneh, šolskem koledarju, tisku in opazovanju neba.'
+  DESCRIPTION = 'Praktični vodniki za letni, mesečni in tedenski koledar, razporejanje dela, šolske roke in načrtovanje prostega časa.'
   CREDIT = 'Uredništvo Koledar365'
 
   def self.read(name)
@@ -24,6 +24,7 @@ class EditorialCatalog
     rows = { HUB => { 'title' => TITLE, 'description' => DESCRIPTION } }
     articles.each { |slug, record| rows[path(slug)] = record }
     Page.transaction do
+      Page.where(family: 'blog').where.not(path: rows.keys).delete_all
       rows.each do |pathname, record|
         page = Page.find_or_initialize_by(path: pathname)
         page.assign_attributes(title: record.fetch('title'), description: record.fetch('description'), family: 'blog', status: 'published')

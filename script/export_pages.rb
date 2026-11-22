@@ -20,7 +20,7 @@ unless partial
  # These generated atlases and photo variants must mirror their source directories.
  # Retaining superseded variants would eventually exceed the Pages Free file limit.
  PublicPagePolicy::REDIRECTS.each_key { |path| FileUtils.rm_rf(out.join(path.delete_prefix('/'))) }
- %w[lunar/atlas images/responsive].each { |relative| FileUtils.rm_rf(out.join(relative)) }
+ %w[lunar/atlas images/responsive images/blog].each { |relative| FileUtils.rm_rf(out.join(relative)) }
  FileUtils.cp_r(Rails.root.join('public/.'),out)
 end
 SvgAssetReferences.materialize_fingerprinted_assets!(Rails.root.join('public'),out)
@@ -154,7 +154,9 @@ unless partial || ENV['STATIC_LIMIT']
  end
  (previous_paths-paths.map(&:first)).each do |old_path|
    next unless old_path.start_with?('/') && old_path.end_with?('/') && !old_path.include?('..') && !old_path.start_with?('/free/')
-   FileUtils.rm_f(out.join(old_path.delete_prefix('/'),'index.html'))
+   directory=out.join(old_path.delete_prefix('/'))
+   FileUtils.rm_f(directory.join('index.html'))
+   Dir.rmdir(directory) if directory.directory? && directory.empty?
  end
  out.join('source-page-manifest.json').write(JSON.pretty_generate({paths:paths.map(&:first).sort})+"\n")
 end

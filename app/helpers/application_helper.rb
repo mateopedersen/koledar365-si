@@ -33,6 +33,20 @@ module ApplicationHelper
     @editorial_route_titles.fetch(route)
   end
 
+  def editorial_paragraph(paragraph)
+    parts = []
+    offset = 0
+    paragraph.scan(%r{\[([^\]\n]+)\]\((/(?:[a-z0-9-]+/)*|@[a-z0-9-]+)\)}) do |label, target|
+      match = Regexp.last_match
+      parts << paragraph[offset...match.begin(0)]
+      destination = target.start_with?('@') ? EditorialCatalog.sources.fetch(target.delete_prefix('@')).last : target
+      parts << link_to(label, destination)
+      offset = match.end(0)
+    end
+    parts << paragraph[offset..]
+    safe_join(parts)
+  end
+
   def sl_date(d) = I18n.l(d.to_date,format: :long)
   def compact_day_month(date) = "#{date.day}.#{date.month}."
   def month_url(year,month,family='koledar') = "/#{family}/#{year}/#{CalendarEngine::MONTHS[month-1]}/"

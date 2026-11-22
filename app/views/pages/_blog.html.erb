@@ -1,5 +1,6 @@
 <% if @blog_article %>
   <% article = @blog_article; slug = page_path.delete_prefix(EditorialCatalog::HUB).delete_suffix('/') %>
+  <% photo = article.fetch('photo') %>
   <article class="editorial-article">
     <header class="editorial-article__header">
       <p class="editorial-kicker"><%= article.fetch('category') %></p>
@@ -9,26 +10,32 @@
     </header>
     <figure class="editorial-cover">
       <img src="<%= EditorialCatalog.image(slug) %>" alt="<%= article.fetch('image_alt') %>" width="1200" height="630" fetchpriority="high">
-      <figcaption><a href="/fotografije-in-licence/#blog-<%= slug %>">Izvirna infografika Koledar365 · navedba in pogoji uporabe</a></figcaption>
+      <figcaption>Foto: <%= photo.fetch('credit') %> · <%= link_to 'Izvirna objava', photo.fetch('source') %> · <%= link_to photo.fetch('license'), photo.fetch('license_url') %> · <a href="/fotografije-in-licence/#blog-<%= slug %>">Podatki o fotografiji</a></figcaption>
     </figure>
     <div class="editorial-article__body">
       <% article.fetch('sections').each do |section| %>
         <section>
           <h2><%= section.fetch('heading') %></h2>
-          <% section.fetch('paragraphs').each do |paragraph| %><p><%= paragraph %></p><% end %>
+          <% section.fetch('paragraphs').each do |paragraph| %><p><%= editorial_paragraph(paragraph) %></p><% end %>
         </section>
       <% end %>
       <section class="editorial-related">
-        <h2>Preizkusite na koledarju</h2>
+        <h2>Koledarji in orodja iz vodnika</h2>
         <ul>
           <% article.fetch('related').each do |route| %>
             <li><a href="<%= route %>"><%= editorial_route_title(route) %></a></li>
           <% end %>
         </ul>
-        <h2>Viri za preverjanje</h2>
+        <h2>Viri</h2>
         <ul>
           <% article.fetch('sources').each do |key|; label, url = EditorialCatalog.sources.fetch(key) %>
             <li><a href="<%= url %>"><%= label %></a></li>
+          <% end %>
+        </ul>
+        <h2>Sorodni vodniki</h2>
+        <ul>
+          <% article.fetch('related_articles').each do |route| %>
+            <li><a href="<%= route %>"><%= EditorialCatalog.article(route).fetch('title') %></a></li>
           <% end %>
         </ul>
         <a href="<%= EditorialCatalog::HUB %>">Vsi vodniki za koledar in načrtovanje</a>

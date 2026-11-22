@@ -38,7 +38,7 @@ class EditorialNote
     note("#{name}: primer krajevne svetlobe",
       ["Za 21. junij 2027 model za središče kraja #{name} (#{coordinate.call(latitude)}° S, #{coordinate.call(longitude)}° V) izračuna vzhod ob #{rise} in zahod ob #{set}. Svetli del dneva traja približno #{hours} ur in #{minutes} minut po slovenskem času.",
        "Za svoj načrt na vrhu strani izberite dejanski datum. V drugem kraju uporabite isti datum in primerjajte tudi dolžino dneva. Če opazujete iz ulice, doline ali z vzpetine, upoštevajte dejansko obzorje."],
-      ["/soncni-vzhod-in-zahod/#{reference}/", '/dolzina-dneva/', '/blog/primerjava-vzhoda-koper-murska-sobota/'], %w[sun])
+      ["/soncni-vzhod-in-zahod/#{reference}/", '/dolzina-dneva/', '/blog/nacrt-izleta-po-svetlobi/'], %w[sun])
   end
 
   def self.period(family, year, month)
@@ -68,7 +68,7 @@ class EditorialNote
       end
       note("#{year}: preverite predlog s svojim urnikom",
         [text, 'Pri primerjavi terminov si zabeležite po dve številki: dolžino oddiha in delovne dni, ki bi jih morali pokriti z dopustom. Praznik med vašimi običajnimi prostimi dnevi sam po sebi ne poveča števila prostih dni.'],
-        [holidays, '/nacrtovalnik-dopusta/', '/blog/podaljsani-vikend-en-dan-dopusta/'], %w[holidays leave])
+        [holidays, '/nacrtovalnik-dopusta/', '/blog/dopust-s-prazniki-in-solskim-letom/'], %w[holidays leave])
     when 'lunin-koledar'
       lunar_summary(label, from, to, month)
     when 'pomembni-dnevi'
@@ -76,7 +76,7 @@ class EditorialNote
       note("#{year}: primerjajte stalne in premične dneve",
         ["Velikonočna nedelja je #{date_label(movable)}, pri dnevu kulture pa izhajajte iz stalnega datuma 8. februarja. Dopust, običaj in mednarodno obeležje preverjajte v ustreznih pregledih.",
          'Pri premičnem običaju za načrtovanje uporabite izbrano leto, pri lokalnem dogodku pa je merodajen program organizatorja. Tako se zlahka izognete kopiranju termina iz drugega leta.'],
-        [holidays, "/koledar/#{year}/", '/blog/praznik-ali-dela-prost-dan/'], %w[holidays])
+        [holidays, "/koledar/#{year}/", '/blog/letni-koledar-nacrt-za-12-mesecev/'], %w[holidays])
     end
   end
 
@@ -94,7 +94,7 @@ class EditorialNote
     calendar_link = month || family == 'tedenski-koledar' ? "/koledar/#{from.year}/" : month_route
     note("#{label}: datum, teden in delovni urnik",
       [text, 'Pri planiranju odsotnosti preverite še razliko med koledarskim datumom praznika in delovnim dnem. Pri tisku mesečnega ali letnega pregleda izberite format lista pred prenosom.'],
-      [calendar_link, holidays, work, '/blog/teden-iso-na-prehodu-leta/'], %w[iso holidays])
+      [calendar_link, holidays, work, '/blog/tedenski-koledar-pregled-v-30-minutah/'], %w[iso holidays])
   end
 
   def self.work_summary(label, from, to, month, holidays, work)
@@ -127,7 +127,7 @@ class EditorialNote
     end
     note("#{label}: kako preveriti delovne ure",
       [intro, insight, 'Pri drugačnem urniku najprej prilagodite delovne dneve, nato dnevno število ur. Primer je pomoč za načrtovanje; opravljene ure preverite v svoji evidenci.'],
-      [holidays, month ? work : '/kalkulator-delovnih-dni/', '/blog/delovni-dnevi-ure-razlicni-urniki/'], %w[holidays labour])
+      [holidays, month ? work : '/kalkulator-delovnih-dni/', '/blog/delovne-ure-zmogljivost-ekipe/'], %w[holidays labour])
   end
 
   def self.lunar_summary(label, from, to, month)
@@ -148,7 +148,7 @@ class EditorialNote
     end
     note("#{label}: kako uporabiti lunine podatke",
       [text, context],
-      [month ? "/lunin-koledar/#{from.year}/" : '/lunine-mene/', '/polna-luna/', '/blog/lunina-mena-ali-vzhod-lune/'], %w[moon sun])
+      [month ? "/lunin-koledar/#{from.year}/" : '/lunine-mene/', '/polna-luna/', '/blog/lunin-koledar-opazovalni-dnevnik/'], %w[moon sun])
   end
 
   def self.holiday_summary(year, from, to, work)
@@ -157,7 +157,7 @@ class EditorialNote
     note("#{year}: kateri prosti dnevi vplivajo na delovni teden?",
       ["V letu #{year} je v koledarju #{days.size} različnih zakonsko dela prostih datumov, od tega #{weekdays} od ponedeljka do petka. Običajni petdnevni urnik zato izloči teh #{weekdays} delovnih datumov.",
        'Pri razporedu, ki vključuje sobote ali nedelje, rezultat preračunajte s svojimi delovnimi dnevi. Če praznike uvozite v osebni koledar, najprej preverite, da je datoteka za izbrano leto.'],
-      [work, '/kalkulator-delovnih-dni/', '/blog/ics-prazniki-brez-podvajanj/'], %w[holidays])
+      [work, '/kalkulator-delovnih-dni/', '/blog/osebni-koledar-ics-med-napravami/'], %w[holidays])
   end
 
   def self.event(observance)
@@ -187,7 +187,7 @@ class EditorialNote
     month_route = "/koledar/#{first.on.year}/#{MONTH_NAMES.fetch(first.on.month - 1)}/"
     note("#{first.title.sub(/\A./, &:upcase)} v koledarskem načrtu",
       [sentence, status],
-      [month_route, observance.free? ? "/delovni-dnevi/#{first.on.year}/" : "/pomembni-dnevi/#{first.on.year}/", '/blog/praznik-ali-dela-prost-dan/'], source)
+      [month_route, observance.free? ? "/delovni-dnevi/#{first.on.year}/" : "/pomembni-dnevi/#{first.on.year}/", '/blog/letni-koledar-nacrt-za-12-mesecev/'], source)
   end
 
   def self.horoscope(title)

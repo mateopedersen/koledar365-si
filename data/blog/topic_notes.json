@@ -22,7 +22,7 @@
     "links": [
       "/delovni-dnevi/",
       "/stevilka-tedna/",
-      "/blog/pdf-koledar-tisk-100-odstotkov/"
+      "/blog/stenski-koledar-izbira-in-tisk/"
     ],
     "sources": [
       "iso",
@@ -37,7 +37,7 @@
     "links": [
       "/tedenski-koledar/",
       "/dnevni-planer/",
-      "/blog/tedenski-urnik-druzine/"
+      "/blog/druzinski-planer-odgovornosti-prevozi/"
     ],
     "sources": [
       "iso"
@@ -51,7 +51,7 @@
     "links": [
       "/stevilka-tedna/",
       "/mesecni-koledar/",
-      "/blog/teden-iso-na-prehodu-leta/"
+      "/blog/tedenski-koledar-pregled-v-30-minutah/"
     ],
     "sources": [
       "iso"
@@ -66,7 +66,7 @@
     "links": [
       "/delovni-dnevi/",
       "/kalkulator-delovnih-dni/",
-      "/blog/praznik-ali-dela-prost-dan/"
+      "/blog/letni-koledar-nacrt-za-12-mesecev/"
     ],
     "sources": [
       "holidays"
@@ -80,7 +80,7 @@
     "links": [
       "/prazniki/",
       "/mesecni-koledar/",
-      "/blog/praznik-ali-dela-prost-dan/"
+      "/blog/letni-koledar-nacrt-za-12-mesecev/"
     ],
     "sources": [
       "holidays"
@@ -94,7 +94,7 @@
     "links": [
       "/kalkulator-delovnih-dni/",
       "/razpored-izmen/",
-      "/blog/delovni-dnevi-ure-razlicni-urniki/"
+      "/blog/delovne-ure-zmogljivost-ekipe/"
     ],
     "sources": [
       "labour",
@@ -109,7 +109,7 @@
     "links": [
       "/delovni-dnevi/",
       "/datumski-kalkulator/",
-      "/blog/delovni-dnevi-ure-razlicni-urniki/"
+      "/blog/delovne-ure-zmogljivost-ekipe/"
     ],
     "sources": [
       "labour",
@@ -124,7 +124,7 @@
     "links": [
       "/dan-v-letu/",
       "/kalkulator-delovnih-dni/",
-      "/blog/stetje-datumov-zacetek-konec/"
+      "/blog/casovnica-projekta-od-konca-nazaj/"
     ],
     "sources": [
       "iso",
@@ -139,7 +139,7 @@
     "links": [
       "/tedenski-koledar/",
       "/koledar/2027/januar/",
-      "/blog/teden-iso-na-prehodu-leta/"
+      "/blog/tedenski-koledar-pregled-v-30-minutah/"
     ],
     "sources": [
       "iso"
@@ -153,7 +153,7 @@
     "links": [
       "/prestopno-leto/",
       "/datumski-kalkulator/",
-      "/blog/februar-29-in-ponavljanja/"
+      "/blog/rojstnodnevni-koledar-opomniki-za-vse-leto/"
     ],
     "sources": [
       "leap",
@@ -168,7 +168,7 @@
     "links": [
       "/koledar/2028/februar/",
       "/rojstnodnevni-koledar/",
-      "/blog/februar-29-in-ponavljanja/"
+      "/blog/rojstnodnevni-koledar-opomniki-za-vse-leto/"
     ],
     "sources": [
       "leap",
@@ -183,7 +183,7 @@
     "links": [
       "/nacrtovalnik-dopusta/",
       "/podaljsani-vikendi/2027/",
-      "/blog/podaljsani-vikend-en-dan-dopusta/"
+      "/blog/dopust-s-prazniki-in-solskim-letom/"
     ],
     "sources": [
       "holidays",
@@ -198,7 +198,7 @@
     "links": [
       "/podaljsani-vikendi/",
       "/kalkulator-delovnih-dni/",
-      "/blog/podaljsani-vikend-en-dan-dopusta/"
+      "/blog/dopust-s-prazniki-in-solskim-letom/"
     ],
     "sources": [
       "holidays",
@@ -213,7 +213,7 @@
     "links": [
       "/kalkulator-delovnih-dni/",
       "/premik-ure/",
-      "/blog/nocna-izmena-cez-polnoc/"
+      "/blog/razpored-izmen-stiritedenski-cikel/"
     ],
     "sources": [
       "labour",
@@ -228,7 +228,7 @@
     "links": [
       "/datumski-kalkulator/",
       "/premik-ure/",
-      "/blog/stetje-datumov-zacetek-konec/"
+      "/blog/casovnica-projekta-od-konca-nazaj/"
     ],
     "sources": [
       "iso",
@@ -243,7 +243,7 @@
     "links": [
       "/tedenski-koledar/",
       "/druzinski-planer/",
-      "/blog/tedenski-urnik-druzine/"
+      "/blog/druzinski-planer-odgovornosti-prevozi/"
     ],
     "sources": [
       "ics"
@@ -257,7 +257,7 @@
     "links": [
       "/solski-urnik/",
       "/tedenski-koledar/",
-      "/blog/tedenski-urnik-druzine/"
+      "/blog/druzinski-planer-odgovornosti-prevozi/"
     ],
     "sources": [
       "ics"
@@ -271,7 +271,7 @@
     "links": [
       "/prestopno-leto/",
       "/druzinski-planer/",
-      "/blog/februar-29-in-ponavljanja/"
+      "/blog/rojstnodnevni-koledar-opomniki-za-vse-leto/"
     ],
     "sources": [
       "ics"
@@ -285,7 +285,7 @@
     "links": [
       "/koledar-za-tiskanje/",
       "/ustvari-koledar/",
-      "/blog/pdf-koledar-tisk-100-odstotkov/"
+      "/blog/stenski-koledar-izbira-in-tisk/"
     ],
     "sources": [
       "paper"
@@ -299,7 +299,7 @@
     "links": [
       "/prazen-koledar/",
       "/ustvari-koledar/",
-      "/blog/pdf-koledar-tisk-100-odstotkov/"
+      "/blog/stenski-koledar-izbira-in-tisk/"
     ],
     "sources": [
       "paper"
@@ -313,7 +313,7 @@
     "links": [
       "/koledar-za-tiskanje/",
       "/zasebnost/",
-      "/blog/osebni-koledar-varnostna-kopija/"
+      "/blog/oblikuj-lastni-koledar-projekt-pdf-izvoz/"
     ],
     "sources": [
       "paper",
@@ -328,7 +328,7 @@
     "links": [
       "/solski-koledar/",
       "/druzinski-planer/",
-      "/blog/zimske-pocitnice-obcine-in-regije/"
+      "/blog/solski-koledar-nacrt-za-dve-regiji/"
     ],
     "sources": [
       "basic-school",
@@ -343,7 +343,7 @@
     "links": [
       "/solske-pocitnice/",
       "/npz/",
-      "/blog/npz-in-matura-razlicni-roki/"
+      "/blog/izpitni-roki-koledar-ucenja/"
     ],
     "sources": [
       "basic-school",
@@ -358,7 +358,7 @@
     "links": [
       "/solski-koledar/",
       "/stevilka-tedna/",
-      "/blog/tedenski-urnik-druzine/"
+      "/blog/druzinski-planer-odgovornosti-prevozi/"
     ],
     "sources": [
       "basic-school",
@@ -373,7 +373,7 @@
     "links": [
       "/tedenski-koledar/",
       "/dnevni-planer/",
-      "/blog/stetje-datumov-zacetek-konec/"
+      "/blog/casovnica-projekta-od-konca-nazaj/"
     ],
     "sources": [
       "studies"
@@ -388,7 +388,7 @@
       "/npz/3-razred/",
       "/npz/6-razred/",
       "/npz/9-razred/",
-      "/blog/npz-in-matura-razlicni-roki/"
+      "/blog/izpitni-roki-koledar-ucenja/"
     ],
     "sources": [
       "basic-school"
@@ -402,7 +402,7 @@
     "links": [
       "/matura/2027/splosna/",
       "/matura/2027/poklicna/",
-      "/blog/npz-in-matura-razlicni-roki/"
+      "/blog/izpitni-roki-koledar-ucenja/"
     ],
     "sources": [
       "secondary-school"
@@ -416,7 +416,7 @@
     "links": [
       "/matura/2027/",
       "/matura/2027/poklicna/",
-      "/blog/npz-in-matura-razlicni-roki/"
+      "/blog/izpitni-roki-koledar-ucenja/"
     ],
     "sources": [
       "secondary-school"
@@ -430,7 +430,7 @@
     "links": [
       "/matura/2027/",
       "/matura/2027/splosna/",
-      "/blog/npz-in-matura-razlicni-roki/"
+      "/blog/izpitni-roki-koledar-ucenja/"
     ],
     "sources": [
       "secondary-school"
@@ -444,7 +444,7 @@
     "links": [
       "/letni-casi/",
       "/mesecni-koledar/",
-      "/blog/setveni-nacrt-tla-in-slana/"
+      "/blog/setveni-koledar-stiritedenski-vrtni-nacrt/"
     ],
     "sources": [
       "garden",
@@ -487,7 +487,7 @@
     "links": [
       "/dolzina-dneva/",
       "/soncni-vzhod-in-zahod/ljubljana/",
-      "/blog/primerjava-vzhoda-koper-murska-sobota/"
+      "/blog/nacrt-izleta-po-svetlobi/"
     ],
     "sources": [
       "sun"
@@ -501,7 +501,7 @@
     "links": [
       "/soncni-vzhod-in-zahod/",
       "/letni-casi/",
-      "/blog/zlata-ura-pred-sprehodom/"
+      "/blog/nacrt-izleta-po-svetlobi/"
     ],
     "sources": [
       "sun"
@@ -515,7 +515,7 @@
     "links": [
       "/lunine-mene/",
       "/polna-luna/",
-      "/blog/lunina-mena-ali-vzhod-lune/"
+      "/blog/lunin-koledar-opazovalni-dnevnik/"
     ],
     "sources": [
       "moon",
@@ -530,7 +530,7 @@
     "links": [
       "/lunin-koledar/",
       "/mlaj/",
-      "/blog/lunina-mena-ali-vzhod-lune/"
+      "/blog/lunin-koledar-opazovalni-dnevnik/"
     ],
     "sources": [
       "moon",
@@ -545,7 +545,7 @@
     "links": [
       "/lunine-mene/",
       "/lunin-koledar/",
-      "/blog/lunina-mena-ali-vzhod-lune/"
+      "/blog/lunin-koledar-opazovalni-dnevnik/"
     ],
     "sources": [
       "moon",
@@ -560,7 +560,7 @@
     "links": [
       "/lunine-mene/",
       "/perzeidi/",
-      "/blog/lunina-mena-ali-vzhod-lune/"
+      "/blog/lunin-koledar-opazovalni-dnevnik/"
     ],
     "sources": [
       "moon",
@@ -575,7 +575,7 @@
     "links": [
       "/lunin-mrk/",
       "/soncni-vzhod-in-zahod/",
-      "/blog/opazovanje-mrka-lokalna-vidnost/"
+      "/blog/letni-koledar-neba-opazovalni-veceri/"
     ],
     "sources": [
       "safety",
@@ -590,7 +590,7 @@
     "links": [
       "/soncni-mrk/",
       "/lunine-mene/",
-      "/blog/opazovanje-mrka-lokalna-vidnost/"
+      "/blog/letni-koledar-neba-opazovalni-veceri/"
     ],
     "sources": [
       "eclipses",
@@ -605,7 +605,7 @@
     "links": [
       "/lunin-koledar/",
       "/soncni-vzhod-in-zahod/",
-      "/blog/perzeidi-nacrt-opazovanja/"
+      "/blog/letni-koledar-neba-opazovalni-veceri/"
     ],
     "sources": [
       "perseids",
@@ -620,7 +620,7 @@
     "links": [
       "/razpored-izmen/",
       "/datumski-kalkulator/",
-      "/blog/premik-ure-ponavljajoci-dogodek/"
+      "/blog/osebni-koledar-ics-med-napravami/"
     ],
     "sources": [
       "clock",
@@ -635,7 +635,7 @@
     "links": [
       "/dolzina-dneva/",
       "/soncni-vzhod-in-zahod/",
-      "/blog/zlata-ura-pred-sprehodom/"
+      "/blog/nacrt-izleta-po-svetlobi/"
     ],
     "sources": [
       "seasons"
@@ -719,7 +719,7 @@
     "links": [
       "/piskotki/",
       "/kontakt/",
-      "/blog/osebni-koledar-varnostna-kopija/"
+      "/blog/oblikuj-lastni-koledar-projekt-pdf-izvoz/"
     ],
     "sources": [
       "privacy"
@@ -785,7 +785,7 @@
   "/fotografije-in-licence/": {
     "title": "Kaj preveriti pred ponovno uporabo slike",
     "paragraphs": [
-      "Poiščite navedbo za točno podobo. Zapišite avtorja, povezavo do izvirnika in pogoje uporabe. Če se napis na kartici razlikuje od izvirnega zapisa, odprite izvirni vir. Infografike v vodnikih imajo ločene navedbe na tej strani."
+      "Poiščite navedbo za točno podobo. Zapišite avtorja, povezavo do izvirnika in pogoje uporabe. Če se napis na kartici razlikuje od izvirnega zapisa, odprite izvirni vir. Avtorji, izvirne objave in licence fotografij iz vodnikov so zbrani na tej strani."
     ],
     "links": [
       "/blog/",
@@ -1007,7 +1007,7 @@
     "links": [
       "/npz/",
       "/solski-koledar/",
-      "/blog/npz-in-matura-razlicni-roki/"
+      "/blog/izpitni-roki-koledar-ucenja/"
     ],
     "sources": [
       "basic-school"
@@ -1021,7 +1021,7 @@
     "links": [
       "/npz/",
       "/npz/9-razred/",
-      "/blog/npz-in-matura-razlicni-roki/"
+      "/blog/izpitni-roki-koledar-ucenja/"
     ],
     "sources": [
       "basic-school"
@@ -1035,7 +1035,7 @@
     "links": [
       "/npz/",
       "/solski-koledar/",
-      "/blog/npz-in-matura-razlicni-roki/"
+      "/blog/izpitni-roki-koledar-ucenja/"
     ],
     "sources": [
       "basic-school"
@@ -1049,7 +1049,7 @@
     "links": [
       "/letni-casi/",
       "/dolzina-dneva/",
-      "/blog/zlata-ura-pred-sprehodom/"
+      "/blog/nacrt-izleta-po-svetlobi/"
     ],
     "sources": [
       "seasons",
@@ -1064,7 +1064,7 @@
     "links": [
       "/letni-casi/",
       "/dolzina-dneva/",
-      "/blog/primerjava-vzhoda-koper-murska-sobota/"
+      "/blog/nacrt-izleta-po-svetlobi/"
     ],
     "sources": [
       "seasons",
@@ -1094,7 +1094,7 @@
     "links": [
       "/letni-casi/",
       "/soncni-vzhod-in-zahod/",
-      "/blog/zlata-ura-pred-sprehodom/"
+      "/blog/nacrt-izleta-po-svetlobi/"
     ],
     "sources": [
       "seasons",
