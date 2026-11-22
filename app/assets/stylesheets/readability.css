@@ -93,10 +93,6 @@
   #vsebina .mini .outside-date { font-size: 13px; font-weight: 650; }
   #vsebina .mini .calendar .event-label { font-size: 11px; }
 
-  #vsebina .stats dt,
-  #vsebina .stats small { color: #40536b; font-size: 14px !important; font-weight: 600; }
-  #vsebina .stats dd,
-  #vsebina .stats strong { font-weight: 800; }
 
   /* Keep light copy on the dark solar hero legible against its blue gradient. */
   #vsebina .sun-masthead p { color: #e0ecf8 !important; }

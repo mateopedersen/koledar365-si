@@ -34,6 +34,38 @@ test('period controls remain reachable at 200 percent zoom',async({page})=>{
  }
 });
 
+test('date statistics keep visible, centered icons and aligned values at each width', async ({ page }) => {
+ await page.goto('/?year=2028&month=2&date=2028-02-29', { waitUntil: 'domcontentloaded' });
+ await expect(page.locator('html')).toHaveAttribute('data-free-ready', 'true');
+ const stats = page.locator('.stats');
+ await expect(stats.locator('dd')).toHaveText(['9', '60', '29']);
+ for (const width of [320, 390, 520, 547, 768, 1024, 1440]) {
+  await page.setViewportSize({ width, height: 900 });
+  const layout = await stats.evaluate(async element => {
+   await document.fonts.ready;
+   const rect = el => el.getBoundingClientRect().toJSON();
+   return [...element.children].map(cell => ({
+    cell: rect(cell), icon: rect(cell.querySelector('svg')),
+    label: rect(cell.querySelector('dt')), value: rect(cell.querySelector('dd')),
+   }));
+  });
+  for (const { cell, icon, label, value } of layout) {
+   const groupLeft = Math.min(icon.left, label.left, value.left);
+   const groupRight = Math.max(icon.right, label.right, value.right);
+   const stacked = icon.bottom <= value.top;
+   expect(icon.width, width + 'px').toBeGreaterThanOrEqual(stacked ? 44 : 52);
+   expect(icon.width, width + 'px').toBe(icon.height);
+   expect(Math.abs((groupLeft + groupRight) / 2 - (cell.left + cell.right) / 2), width + 'px').toBeLessThanOrEqual(1);
+   expect(value.bottom, width + 'px').toBeLessThanOrEqual(label.top);
+   expect(Math.abs(value.top - layout[0].value.top), width + 'px').toBeLessThanOrEqual(1);
+   expect(Math.abs(label.top - layout[0].label.top), width + 'px').toBeLessThanOrEqual(1);
+   const offset = stacked ? (icon.left + icon.right - value.left - value.right) / 2 : value.left - label.left;
+   expect(Math.abs(offset), width + 'px').toBeLessThanOrEqual(1);
+  }
+  expect(await page.evaluate(() => document.documentElement.scrollWidth), width + 'px').toBeLessThanOrEqual(width + 1);
+ }
+});
+
 for(const width of [850,851,900,1024,1100,1101])test(`city controls stay inside their card at ${width}px`,async({page})=>{
  await page.setViewportSize({width,height:900});await page.goto('/');
  await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
