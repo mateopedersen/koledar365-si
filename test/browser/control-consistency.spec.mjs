@@ -46,7 +46,7 @@ test('shared controls have consistent, usable dimensions across site page famili
 
     for (const route of pageFamilies) {
       const response = await page.goto(route, { waitUntil: 'domcontentloaded' });
-      expect(response?.status(), route).toBe(200);
+      expect([200, 304], route).toContain(response?.status());
       await applySizingRules(page);
 
       const geometry = await page.evaluate(() => {

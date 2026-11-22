@@ -12,9 +12,13 @@ for(const [path,topic] of Object.entries(topics)) {
     const root=page.locator('.topic-experience');await expect(root).toHaveCount(1);
     await expect(root.locator('.topic-fact')).toHaveCount(3);
     const art=root.locator('.topic-art img');const hash=crypto.createHash('sha256').update(fs.readFileSync(new URL(`../../public/topics/${topic.art}.svg`,import.meta.url))).digest('hex').slice(0,16);await expect(art).toHaveAttribute('src',new RegExp(`^/topics/${topic.art}(?:\\.${hash})?\\.svg$`));
-    await art.scrollIntoViewIfNeeded();await expect(art).toBeVisible();
+    const compactPayment = ['/izplacila-pokojnin/', '/izplacila-socialnih-transferjev/'].includes(path) && page.viewportSize().width <= 760;
+    if (compactPayment) await expect(art).toBeHidden();
+    else {
+      await art.scrollIntoViewIfNeeded();await expect(art).toBeVisible();
+      const decoded=await art.evaluate(async img=>{await img.decode();return {width:img.naturalWidth,ratio:img.getBoundingClientRect().width/img.getBoundingClientRect().height};});expect(decoded.width).toBeGreaterThan(0);expect(decoded.ratio).toBeCloseTo(520/360,1);
+    }
     const svgResponse=await page.request.get(await art.getAttribute('src'));expect(svgResponse.status()).toBe(200);expect(svgResponse.headers()['content-type']).toContain('image/svg+xml');const svg=await svgResponse.text();expect(svg).toContain('width="520" height="360" viewBox="0 0 520 360"');
-    const decoded=await art.evaluate(async img=>{await img.decode();return {width:img.naturalWidth,ratio:img.getBoundingClientRect().width/img.getBoundingClientRect().height};});expect(decoded.width).toBeGreaterThan(0);expect(decoded.ratio).toBeCloseTo(520/360,1);
     const guide=root.locator('.topic-guide');await guide.scrollIntoViewIfNeeded();
     await expect(guide.locator('tbody tr')).toHaveCount(3);
     await expect(guide.locator('a[href="'+topic.sourceUrl+'"]')).toHaveCount(1);

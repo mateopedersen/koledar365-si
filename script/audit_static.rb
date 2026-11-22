@@ -69,12 +69,14 @@ Dir[site.join('**/*.html')].sort.each do |file|
    if relative=='solski-urnik/index.html'
     gallery_description=doc.at_css('#design-gallery .student-gallery-copy')&.text.to_s
     fail_with.call('Student planner must expose its labelled workspace and one practical PDF/WebP gallery paragraph') unless doc.at_css('#student-schedule[aria-labelledby="student-workspace-title"]') && doc.at_css('#design-gallery[aria-labelledby="design-gallery-title"]') && doc.css('#design-gallery .student-gallery-copy').size==1 && %w[PDF 600\ ppi].all? { |term|gallery_description.include?(term) } && gallery_description.match?(/slik/i)
+   elsif relative.match?(%r{\Akoledar/20(?:27|28|29|30)/})
+    intro=doc.at_css('.calendar-collection-intro')
+    formats=doc.css('.calendar-collection-file-guide dd').map(&:text)
+    fail_with.call('Collection needs a period introduction, download link and accessible context control') unless intro && intro.element_children.count { |node| node.name=='p' }==1 && intro.at_css('a[href="#calendar-designs"]') && doc.at_css('[data-context-expand][aria-expanded=false][aria-controls=gallery-context-content]')
+    fail_with.call('Collection print guide must specify A3 and CMYK FOGRA39 for the PDF and 600 ppi for the matching image') unless formats.any? { |copy| copy.include?('PDF') && copy.include?('A3') && copy.include?('CMYK FOGRA39') } && formats.any? { |copy| copy.include?('.webp') && copy.include?('600 ppi') }
    else
     description=doc.at_css('.page-heading > p')&.text.to_s
     fail_with.call('Expected one practical download paragraph and an accessible context control') unless doc.css('.page-heading > p').size==1 && (description.include?('600 ppi')||description.include?('600 dpi')) && doc.at_css('[data-context-expand][aria-expanded=false][aria-controls=gallery-context-content]')
-   end
-   if relative.match?(%r{\Akoledar/20(?:27|28|29|30)/})
-    fail_with.call('Collection gallery description must state A3, CMYK FOGRA39 and 600 dpi') unless description.include?('A3')&&description.include?('CMYK FOGRA39')&&description.include?('600 dpi')
    end
   end
   fail_with.call('Gallery must stay open and contain all 15 designs') unless gallery.css('[data-calendar-design],.design-card').size==15 && !gallery.ancestors.any? { |parent|parent.name=='details'||parent.key?('hidden') }
