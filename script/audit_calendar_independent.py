@@ -38,9 +38,13 @@ for year in range(2027,2031):
      if ('weekend' in classes)!=(date.weekday()>4):errors.append('weekend flag '+iso)
   days=calendar.monthrange(year,month)[1];working=sum(dt.date(year,month,d).weekday()<5 and dt.date(year,month,d) not in free for d in range(1,days+1));annual+=working
   if len(all_dates)!=days or len(set(all_dates))!=days:errors.append('missing or repeated dates')
-  facts=re.search(r'<section class="panel prose calendar-facts".*?</section>',html,re.S).group()
-  if f'<strong>{working} delovnih dni</strong>' not in facts:errors.append('workday fact')
-  if f'{working*8} ur' not in facts:errors.append('working hours')
+  facts=re.search(r'<section\b[^>]*class="panel calendar-collection-notes__period"[^>]*>(.*?)</section>',html,re.S)
+  if not facts:
+   errors.append('missing calendar period facts')
+  else:
+   workday_fact=re.search(r'<dt>Delovni dnevi</dt>\s*<dd>(\d+)</dd>',facts[1])
+   if not workday_fact or int(workday_fact[1])!=working:errors.append('workday fact')
+   if f'{working*8} delovnih ur' not in text(facts[1]):errors.append('working hours')
   h1=text(re.search(r'<h1\b[^>]*>(.*?)</h1>',html,re.S)[1]).casefold()
   if name not in h1 or str(year) not in h1:errors.append('wrong H1 period')
   if f'/lunin-koledar/{year}/{name}/' not in html:errors.append('context lunar link')
