@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Koledar365//SL
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+DTSTAMP:20261122T092040Z
+UID:si-festival:planica:2027@koledar365.si
+DTSTART;VALUE=DATE:20270318
+DTEND;VALUE=DATE:20270322
+DESCRIPTION:Rateče\nNordijski center Planica\nVir: https://www.planica.si/
+ sl/program
+SUMMARY:Finale svetovnega pokala v Planici
+END:VEVENT
+END:VCALENDAR

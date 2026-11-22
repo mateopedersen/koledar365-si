@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Koledar365//SL
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+DTSTAMP:20261122T092040Z
+UID:si-festival:festival-gorniskega-filma:2027@koledar365.si
+DTSTART;VALUE=DATE:20270208
+DTEND;VALUE=DATE:20270213
+DESCRIPTION:Ljubljana\nCankarjev dom\nVir: https://cd-cc.si/kultura/film/21
+ -festival-gorniskega-filma
+SUMMARY:Festival gorniškega filma · Program v Cankarjevem domu
+END:VEVENT
+END:VCALENDAR

@@ -1,1573 +1,1864 @@
 {
   "/": {
-    "sha256": "6f52c1221160bfc1f0fab71a8011ad43513cc27e9cb93cb470f42008a85c58cf",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "45690346ec86bd9691d271f4cee13ec2a5b324211257d34a2d3b46beaf21a829",
+    "modified_at": "2026-11-22T08:53:08Z"
+  },
+  "/blog/": {
+    "sha256": "e4d796ea910ccedcbf9eed174049e01099ddff7ebea10361c84cbc28d0c2693a",
+    "modified_at": "2026-11-22T07:41:18Z"
+  },
+  "/blog/casovnica-projekta-od-konca-nazaj/": {
+    "sha256": "ff46aa38aff6ed3dfc96b784c08fb35f2ab30bf7106b4d91937186f151acf929",
+    "modified_at": "2026-11-22T07:45:39Z"
+  },
+  "/blog/delovne-ure-zmogljivost-ekipe/": {
+    "sha256": "db6b6e6f89d67191bebb29e624805fb9351f08a5b8a873f2b1bd1bacd4fa636f",
+    "modified_at": "2026-11-22T07:45:39Z"
+  },
+  "/blog/dnevni-planer-casovni-bloki/": {
+    "sha256": "a14c8834ac821fa7b73cf1f0d51ca88f9cdff1ee6ae738eac89328d2948196b4",
+    "modified_at": "2026-11-22T07:45:39Z"
+  },
+  "/blog/dopust-s-prazniki-in-solskim-letom/": {
+    "sha256": "5a77cd46cc0943404d8d350c1ef71c3528a434d465873d7e5adea24c4917b9ed",
+    "modified_at": "2026-11-22T07:45:39Z"
+  },
+  "/blog/druzinski-planer-odgovornosti-prevozi/": {
+    "sha256": "fc84b95aef365dbe557bcd724680966124ee8165c11f34a97f6458a51bf424cf",
+    "modified_at": "2026-11-22T07:45:39Z"
+  },
+  "/blog/izpitni-roki-koledar-ucenja/": {
+    "sha256": "39f64ce9f4770287e8720cf5ad10ca2fe083612b288120e0fadd2dd344148175",
+    "modified_at": "2026-11-22T07:45:39Z"
+  },
+  "/blog/koledar-gospodinjstva-izplacila-in-racuni/": {
+    "sha256": "10b613bc2954d4f7b3b7ea555e8e31c20f0f1ce418bce2225ada5acfb6151b5a",
+    "modified_at": "2026-11-22T07:45:39Z"
+  },
+  "/blog/letni-koledar-nacrt-za-12-mesecev/": {
+    "sha256": "ffa2de8bcbe20be35918dbf394e8814d30f8ff66707e6ee9cb20aac1cf7aa20b",
+    "modified_at": "2026-11-22T07:45:39Z"
+  },
+  "/blog/letni-koledar-neba-opazovalni-veceri/": {
+    "sha256": "83f63f611bc3bdfd655a65ea5dbc2ab1122b7ae8ace9c204710ef9cbec5c72fe",
+    "modified_at": "2026-11-22T07:45:39Z"
+  },
+  "/blog/lunin-koledar-opazovalni-dnevnik/": {
+    "sha256": "95d710dcbd5d75ba9e0c1fd3957bc2a16f1ce4f1e7ceba0f28a06305d12446b6",
+    "modified_at": "2026-11-22T07:45:39Z"
+  },
+  "/blog/mesecni-koledar-ponavljajoce-obveznosti/": {
+    "sha256": "44c6f3b9ca1d893ef112a621b97537b722740f6ea6b174410d4fb4ba7ab56f65",
+    "modified_at": "2026-11-22T07:45:39Z"
+  },
+  "/blog/nacrt-izleta-po-svetlobi/": {
+    "sha256": "aaafcb627d80e27105c0edbe693c7fcc963180173fac74f705e58ebd151796f6",
+    "modified_at": "2026-11-22T07:45:39Z"
+  },
+  "/blog/oblikuj-lastni-koledar-projekt-pdf-izvoz/": {
+    "sha256": "23f4ed9daa574901f87f796cf9f85c5eddbd5b9c76ec8c3f33b79c96cffaa341",
+    "modified_at": "2026-11-22T07:45:39Z"
+  },
+  "/blog/osebni-koledar-ics-med-napravami/": {
+    "sha256": "797da9b04adfa386663c66c97aa68645a6367f4e662d0295082a5d6664cfbd9b",
+    "modified_at": "2026-11-22T07:45:39Z"
+  },
+  "/blog/razpored-izmen-stiritedenski-cikel/": {
+    "sha256": "771efb127925b33e554097cab6106acf026eff4575aa6a570ad97a99afa5bdd3",
+    "modified_at": "2026-11-22T07:45:39Z"
+  },
+  "/blog/rojstnodnevni-koledar-opomniki-za-vse-leto/": {
+    "sha256": "18ee8836925ef5341d0f86266346043ce33dc292a981ac82fcd334b955c9b7ea",
+    "modified_at": "2026-11-22T07:45:39Z"
+  },
+  "/blog/setveni-koledar-stiritedenski-vrtni-nacrt/": {
+    "sha256": "61796049a0ef77b09711b15fd0abe3f7673ca4b81230594ae018e27d2625d1a5",
+    "modified_at": "2026-11-22T07:45:39Z"
+  },
+  "/blog/solski-koledar-nacrt-za-dve-regiji/": {
+    "sha256": "f0c589371f9bbfcb42385b0e64412047ba11eb6b192adeef24c4560a0013ed37",
+    "modified_at": "2026-11-22T07:45:39Z"
+  },
+  "/blog/stenski-koledar-izbira-in-tisk/": {
+    "sha256": "aa72de9e0b3b0df56f538468ef2748fbdf229310fec509dc639673093f4f113f",
+    "modified_at": "2026-11-22T07:45:39Z"
+  },
+  "/blog/tedenski-koledar-pregled-v-30-minutah/": {
+    "sha256": "35e995f91d3173afeae5080a734734d4aa76076aa6a3bf8d4aefac95d363c21d",
+    "modified_at": "2026-11-22T07:45:39Z"
   },
   "/dan-v-letu/": {
-    "sha256": "f41d9ceb308a4d15f50a0683c85a20a23e8116e81f94e9648ab2d07e1598a2b1",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "27cff8d5bdaf03aa2e3817fe3f593ed047d5e494abcdd794d47e2a3fcfb6d0ff",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/datumski-kalkulator/": {
-    "sha256": "83788bd9701834f92d8ee4181e1a9f116e7d7368106f09783304e2896b13a3af",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "73eb40ec7361b23e869fe77ff26a30c47acca703e81fcb9e493bfbe8b08886d2",
+    "modified_at": "2026-11-22T08:12:11Z"
+  },
+  "/davcni-koledar/": {
+    "sha256": "9cc9294296ffef151e17d77aab488ec2bf1965cd8c96251d5e765c30e2fc11d3",
+    "modified_at": "2026-11-22T09:16:41Z"
   },
   "/delovni-dnevi/": {
-    "sha256": "35993cb955e9b263f4bf01ffaf31e03cee547cd54ee2c8137ff0a48c01248b6f",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "dba59ac48126f2570b5fcccc60b05c0f102d4e2388397820b1b27341bca6bdbb",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2026/": {
-    "sha256": "b5f08ffcc58cc213c7a23746681dc7d7deff64c2d106db5c9ce0b68985702e62",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "528f586581e5c688729a4c61c7fbc57bb8815cd40c769b3f791e185d1a634343",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2027/": {
-    "sha256": "d2349c4187c1337dc79108b0b13ea93a411610bf315ccef75240254199c0b652",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "a27d4734f7860c05b230bc62e39828ba556ca0f2977a72dd5c17801d93af12ff",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2027/april/": {
-    "sha256": "a85f2bcd1f4566a02ad344577850d85bae03770e0de198b69be629a78b1e2b9f",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "d0bc755df02b2d42f5a314baa61afb1d334b58623076f9c0fa2a9d9201df344d",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2027/avgust/": {
-    "sha256": "20f495215d4c2ca76bfe85c3ca776e8bf56cf1b5f1a24b7981b71dcc6a7bfcb5",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "5e34e6222aca7b93542175b870fcf2432ce4197098263024e13c93295aaa6f13",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2027/december/": {
-    "sha256": "87fc2d0561bb68f2922d19ad42585380a9b9c4f9fe4c10dac84859e27e6cf510",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "51077ebefed9a7908809798aea046efa4b8042102b3ae1679a087f401c6127e7",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2027/februar/": {
-    "sha256": "40595573bdcdb10f7355c78fe4d732a0412546a750024e252516026e7b31d60b",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "255bba9fd339ef319fa33481d3d0d5bd06fb253ccab7621f861ba96bb2f23ee6",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2027/januar/": {
-    "sha256": "d3890003204782a6f25507c28e93d7efb45f76259792b4257f070ae318b36982",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "adf22905272bb34cc9b58208b06726c9497040e00684ab79d1b68fabb3ad67f8",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2027/julij/": {
-    "sha256": "fec55a7f53071541d316803c59f9cbadeda47fac8ee3a1106d739fa641059426",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "9bedaddd2778b9a3c79abd21f2c86e3e7fabcb271f300d8199704b1c2da26373",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2027/junij/": {
-    "sha256": "c4387796bb6297eddfe4d24415415f71c62bbd0fb76bd1090933c2848e705de2",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "0bafa8f3cc8a4b9a34bc6e97747460a55f279d18b591820c10a859e0dd467fb7",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2027/maj/": {
-    "sha256": "35d75b8d0d5770a2af109d590abe8b5e66da5dd2ef2363b6134e130905e269bf",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "dee01be12b8381acb1acad922169c1b66d0781ba75b3d938cf1a5072a531b000",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2027/marec/": {
-    "sha256": "0404252cfe05c1ae5992cf82891b4a009b01f1ac89229b13716a546fa422f810",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "e8bd73c02548aab66b4eb63656522004c8764baf7323bb6a33cc3ca5381ef8e8",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2027/november/": {
-    "sha256": "2819e458f5062930dfed7b80d75273af1bd19cfb7b878ac54a7a3ab2f1a5b182",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "20ff581c6514f55a1c3ede66e79fbe5afe057ca7d4e6c539ec3202660ac2e50f",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2027/oktober/": {
-    "sha256": "1ac64219f1b69dae304fce51df0e544d65678195926d742d400526bf668325f7",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "634e1ed0fe76dd621de66b7830fd15d3ee983bc10533c2263e00d5e4f67623e3",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2027/september/": {
-    "sha256": "31a66ee356618dd27a7c018b7a24a9733f0f4b0b4a20129904cac209b2dd88ad",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "00552de00efe21c145ad923277a71646fe608156513decc5b45ffb6af29e3d90",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2028/": {
-    "sha256": "d66d03b8c5aee0e52e9ba7a344a6fd27b64308516ee6bd82b31408719081b3b0",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "fa1a050391beb75df3e4091931ca67eeff64603487ab640cfa28e804ddf46bc1",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2028/april/": {
-    "sha256": "6898bd8d05bc786ab18c0a97dc563422843f96a04d07d960297e2340cc1d0a8d",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "4d857ae8d27a5da26eba7d81f5303f0d05fab7532fb2dfbc96e56f54a7dcb359",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2028/avgust/": {
-    "sha256": "9843f92a1b9a6b72f5e41edfec048d7514387710a6251f8e56e6aa0064abebde",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "c69fa99a8cb98c979fc8ea880c0884e0ec6a45a17f3d779b48d7843fdb800615",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2028/december/": {
-    "sha256": "457ae4c46b9bf5d4201ac04fed1bbcc5c894855cdf91b234907aed73e8d2754e",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "0a44bc81cf9a117e278252b911aa03ec594c5e19f123e6d7d22e7eb0c94549ef",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2028/februar/": {
-    "sha256": "296a22fddcf718a41933bc0a592074cce4be16674779df9707ef8b879c851b27",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "eb1bcb5bd8bc61a50776c309eb9dcd100716ad2e72188065731a8ebf267c47a8",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2028/januar/": {
-    "sha256": "65dcf3967c4862aeaffeb5e28ccbcc76a64dc58bfb7df477d96f36c78859cacc",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "12ce5552b50626a31b1f0c9865516c63e40b0702d5e9d14444482a3d9c87ad3d",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2028/julij/": {
-    "sha256": "fad0771e071550b56df5bfa8b180495c383b503602efdb139e0af67bf2d9fcdc",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "53c53c923d9361e0cb3befa97afb65019ab97bcc5c636a8961365334f305049f",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2028/junij/": {
-    "sha256": "f82618281dd3cdd438563600a73cfecad6cb5a4e9a7558e55fed85643f19e5cb",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "859da3a2cab5bc1bb9df73b8cfb08610dd215f884d89781e70fa6726e33be9b6",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2028/maj/": {
-    "sha256": "892253fd9632dc60f85403d4d8a58733c035b4941d65cf391ed90ac51aba5e0b",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "3f97ba4f2f691893c3aaa37cfd2d05d3c1c653e0ce9a68836630cc6e86088246",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2028/marec/": {
-    "sha256": "c85378d90dd3d32c1b0960d20e32666c8a6abc7934d99cfbf71ccfc4afa48f70",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "b77998da1caa4978a9af56c9c88da9c91a361f641501d522919f1055e53730f8",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2028/november/": {
-    "sha256": "74b2c43ac38b245dc2bccfc4c740ab98527cbaa76ea15f75983a51b81088feff",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "a1fbac02f806bf04740b62d0bb3a9a2fccfdd4556b0da37884998b240a6a33ca",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2028/oktober/": {
-    "sha256": "bbe29d33a9011202368897d258a3e4750e6c2b887b0397859607971269f428ce",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "faf64cabcc2441b51968398ed5d042ea4a8aaf222306c45922a782a1ffdebc6d",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2028/september/": {
-    "sha256": "4ae0ae994d0fb3fa2d8f8de638ed3a71bf0a0ac4f63069466329416b5330dd11",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "80bdd985766a66da8dd983c1e617d7492ea2b2e13d25209b1d8faa5e361851fa",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2029/": {
-    "sha256": "d5a91c6bacbca11c6a47092887b447b077798feb2141087a468b2d156b395389",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "77ff1260f0c001c18a857bdd62cd1010c5b27baa6e7419b3c5f16c4ada0b9072",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2029/april/": {
-    "sha256": "efb4508912a7cc63fb3c54f5b2124ecb154263f991614395db376a8603787fe4",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "341bf98625fb02039e4730f04345b44c6fd68fe95c9325326f7955621c2d1cc1",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2029/avgust/": {
-    "sha256": "1ec6dbc042cd8b519baf6c450709a11cdfa7a338631e76f188c54eb59a198e53",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "331c7471b09bcfbdb5ef43ae056abadd0aad2b81296a52026b41e27089aee14b",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2029/december/": {
-    "sha256": "e7be7edc9d442e14d26118fd00e542673d9accf5f5a7928e0e93d06127643d86",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "9021c5528baf316f68f7f4c3ccba23ca23048dbf22f774a5801af6fae447254a",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2029/februar/": {
-    "sha256": "fa1af50094c852dba55161d7659c844b4605044480d1b71203f52d07bf3b2c53",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "247a42be80309bdb16c324569580aa2714ddef03ba2b1e1ba371c72773efa8bc",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2029/januar/": {
-    "sha256": "a9a604d03991e540ce6b37573b43a8ee126694b834a7c96d279c204726d3edd5",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "d588c6e3fdb72d1dc8b30bf27e05be79417f5073771280943a1d7b70a9b8a056",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2029/julij/": {
-    "sha256": "f5b05d755e20fa72f59ad4d5a887ea7ec659f02760264641f86951f3771583d6",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "96083041bad4365153c1b957230beeaa5c6ef8a27aedaf54932b6080c55b6e6a",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2029/junij/": {
-    "sha256": "e7cac7cba3215e695742f1544a71b4ddd501bd7c5f5c8ee5be946f16d58ae4f3",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "a95435c370e0d3c92720cab98e88ad362febdfdee1633967821626564ed11ed1",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2029/maj/": {
-    "sha256": "d3e6f0df1ea0e3cdd6aa67722301786b8cd36810ffd8e3b6d65759ab116443f6",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "a5edd8deb1ff3c32147f6709b8635ee3f07592c759ca58f33cbbabb300790efb",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2029/marec/": {
-    "sha256": "92b04a12d0a4d452c50dd3161a5e36e3721ae71fde502a790a54a313a23199df",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "c625e32f377990852d89c341ef129513e2ad04697e84ac7d8afa35d8617af05d",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2029/november/": {
-    "sha256": "667ad958ed34d8f0bb48d801c904b941107cf93f28600a74e75c198fcb8c801d",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "9fd1f5adb53aeaed324bfee1be7f519659a3fcd536fd0ea4545f0dbdc49ac81c",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2029/oktober/": {
-    "sha256": "ab562a54656788954bbd3497925297bd10866b3c7250c8262caf7460bc696f64",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "3a0aa991ced2a13d0ba67a7d1681772b7882c1ad7ae203da4289ed07f51f60ec",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2029/september/": {
-    "sha256": "aaa124f2cf85bc076ebda6a832ff03590de9f5aadeb54c43f79c060d5507056b",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "1fd5b6907e0c6b95b2e3dfdf442e73651412d383a09268bf29fa2b57c9634a99",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2030/": {
-    "sha256": "70fdba4903808f42f678f1399e4585474bb46d8525b423d167d687b9474c583e",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "a0c6656135b6222cf1d973868e8f14e8ceea05cec08bb73e574e375fd0f583ea",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2030/april/": {
-    "sha256": "6547014c4ed8d18f8a9d51c7593c3f61d21bc3608d39206c94feb71bdc4376f5",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "a4423ddd1c24696dbc9b36a911bb35df9a4ee7a709b35dfe8110ffc027b54ca3",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2030/avgust/": {
-    "sha256": "62eea4d924ca3bf56caae2df7fbfbabda45d113eb137f3656ce9adf0c913453b",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "383bcf067a57529539e83cbcdd950ad3e4b0e7dbbf9a3e9a3c6d270501346b7d",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2030/december/": {
-    "sha256": "7c879e9a265b565851ff9676d8c4bacdf9c136077ada454f0ddb850b5ae29614",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "badf448dbb3a57ae70946932285a26668455b4612a46d434f5bf71388a6286a2",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2030/februar/": {
-    "sha256": "71b930d6a7afb2e2a32f7e33d6c33127840defd5c7ae014ede472060ccb8693e",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "ac0e497cc3e369c750b676ce0105c92c4c291a2052388d6f7c7a0e194457a804",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2030/januar/": {
-    "sha256": "98b560049d407f0911461a04ea671ab636a1364cfa4df943d191fd042f2194a1",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "9d4a1daf64d76c4267d3e5c4ecdc2af946806c6541c7956a3797b6b2f8944e0a",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2030/julij/": {
-    "sha256": "e261160a1676e1298122bab74856323d69b49ce3a2a28166a0875d26552aeb86",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "701bb34aab199a1639fe9f8ef98b27387c543a24c9d6df11e447ca0dc62f0c23",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2030/junij/": {
-    "sha256": "d53cafaf4f70ef804d505918a097c033b7e9ae602d0378c671beedce5f76d773",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "0e94592cc57c40d2ee203b2a611e857c39e426432786d04065f68f055b33259b",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2030/maj/": {
-    "sha256": "497a4c633a3d86f88dec412e9a913abac23a88183a6665555b0f1b409cc0501d",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "508f3bb4528548feffe2438dafb5b470c4d7071b7c017f2c998508783edcf766",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2030/marec/": {
-    "sha256": "f6bd457a4eeed2f8ed57f165b3927b409143bbeccba554d62a49924bbd548c4f",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "22af86cb7eaaed7d3226469246a6ce76e55118a7d71a7f0e5c2c5fb3c4d62363",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2030/november/": {
-    "sha256": "bd76b366e047a9c07d174abd3a3dc9b137432527b78ca7b660bdab361efb2593",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "7f165fb4a3b151b5ec74f1a4b71f04b60ad9d9c44d40a9e381185cc1c4293da8",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2030/oktober/": {
-    "sha256": "13869493aaddd59452182d1272eddbb046f1e6b8da7cf0ca0cb217e38bdffd5a",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "24b039f2b9fc0bd130f19ab065ceb4913f763d8bb46dd0c9580d72c99a3d8545",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/delovni-dnevi/2030/september/": {
-    "sha256": "85d6c69ed27ee4492d21501bdc076ff996a0eccd57eb3732e456db5f3b8f5e3d",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "d58831b54797e6f9e977caea8634d5f6404d505aefb27486cb4f18fe97c74be7",
+    "modified_at": "2026-11-22T07:32:07Z"
+  },
+  "/dnevi-za-zastavo/": {
+    "sha256": "574bcb7961a137631e782a47acd59fa3404db9ce27730d97fd55cc69afb2d31b",
+    "modified_at": "2026-11-22T09:16:41Z"
   },
   "/dnevni-planer/": {
-    "sha256": "92d985a9eed8b01b04232e1a41abb4933c74241920bb5dea2cabdfbbb3cbb83d",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "366e36ef419e727a94ed6fb55a9bff6f65ef0d9f5702ca4565bc5e4b967eca2c",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/dolzina-dneva/": {
-    "sha256": "daadb54f797ff2109442c6f283300c005172041d94f99d695d53408733131f0e",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "63caed9a1c94f7bd815e9a57024f072c9097af47fc4e60282551a2135216a9e5",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/druzinski-planer/": {
-    "sha256": "1ead7f0942ccaae700a862278227a53c220df01ebdd435edae74aee0f57d9277",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "95e6b2965d888d7ceff0bdd21ac3ea5609b021bed9e44f1b6ae824bc47e55455",
+    "modified_at": "2026-11-22T08:12:11Z"
+  },
+  "/festivali/": {
+    "sha256": "518993e0387ed08356cb4070717cf2e82a3ff6fd72fcad7739d4c8b68a40500b",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/horoskop/": {
-    "sha256": "3e23bb0c7c43f09eb0567faba017bdf4acce73d1797b2f8b41720189c486360d",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "fe471045819e008df2c8bff6bb09fbdc46bb8d91eb897cade07b4d02b685f4d1",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/horoskop/bik/": {
-    "sha256": "aaff7dd7f67fa8e0ea3ae6217f67ed88a6eb846a7bd31715b56e5fa8a0b2d379",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "9670e8a89a8fba78e7100af89fff0d6970277503cf1c063fd4fe6b97689b7374",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/horoskop/devica/": {
-    "sha256": "064bdc80b2e69b51e684844f7fe141819726a1e469e817a98df68177aaf6c201",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "3dd3c884ddfd6ca558e9eb21b7b996cddb61fa364424952d4e1616c71543845b",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/horoskop/dvojcka/": {
-    "sha256": "7851e7fe8f52c618fd3bbd43e710149dc382383d6fd76864debd3fb144210427",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "7baace40fbef1e2f9caad3f825e1700109206d16460c27627f71ac2a225c46a4",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/horoskop/izracun-znamenja/": {
-    "sha256": "1195c75b71d7451ff00498735d6be2a45ae64cad78a1b5b224149c1d29964d6d",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "11596b587fde0864a14a9409055ba587ac420036352f3d9b3ab06f1d9047185b",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/horoskop/kozorog/": {
-    "sha256": "ce0d9f2960a9467a1aabfd22f1dcbf7a3964ca8381e25d9ca2d22e4c09a2bd31",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "03e1ac060491bc208f2ae16eeeec06d9aa8620887ef85ba98c65873060dcce76",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/horoskop/lev/": {
-    "sha256": "ad380893b3f94733f8c09396314da51793f49f3bbfca2746a2a67f82d2ca48bf",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "8c317d03fc27518778f14b2d436802d1fa245cbd71c012b433eb9b407ae6dbf8",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/horoskop/oven/": {
-    "sha256": "2f8a153bbb95c9c4bd3c5d115dae9025667d3efd8437e72921cd0dcfcec1440a",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "05a3ec96fdfdcb9971e92776601e65612243c0bc8372531bda366f7bce29ca9e",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/horoskop/rak/": {
-    "sha256": "29bf95274535dbe2245ed337de057970a16720de252d0a241889f72c8152a5c3",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "b9f1f37d1d2aa49cebdcc5c2e4a6f794bb0ad8f780f064247f1bb9d7b67d002c",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/horoskop/ribi/": {
-    "sha256": "d99f3dfae227d37b3a54e5b5987d3a1030bdedb40f8b715f3790df2d7a651a8b",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "393710f32a345b03e4f9ce933a152764c052521a004a1d0a233997467a744026",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/horoskop/skorpijon/": {
-    "sha256": "b46e7cf29cd7572954e561b4fc27524ff7c902cbdcd08a4dbcd30c26b3b9a908",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "b1c22ee8f9b74ff39e7336ff9e8d0099ada5928c0a27cba95722c62341ab0c53",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/horoskop/strelec/": {
-    "sha256": "ab92660333edfcdb3a9b06117853145ea7a17486707c71a2e61ad4b9b9f895c9",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "f5295d92dae483be55243baa5f1429094cb1b41595006bbda2c472d1fe327f89",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/horoskop/tehtnica/": {
-    "sha256": "872c452e2296f477e3e4eed5fdddbda0cd9533dc1deb7894348e488b2768bc40",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "a1a1cfe5458cde6b0c7b0a7a5eb913733a55e8a85267b265830f35c58b2d874e",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/horoskop/vodnar/": {
-    "sha256": "4b43b04c59f74f9234f8daf6de6a227630b9c89f9f8e0560a22eb6b2590106e7",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "4523b472595120ddecc3f137adf40ae351d4c477692e8ce1f816b3997b0600ed",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/izplacila-pokojnin/": {
-    "sha256": "7701dd3c9781ecfa661657b7b9ed406d37fbb8fef941e51dc852c3aea62217c4",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "2d37f4eb2a5230988cf1bc4f0c634a4fb95dc4b1be16a52001323d438edaf324",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/izplacila-socialnih-transferjev/": {
-    "sha256": "c78270eb8ac966735a51989617cd0146676d786406430c9d3283558604cf2f22",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "0c332adb0606543bd4610786605b1ad66dca3940061d0c356f583e70ea2e884c",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/kalkulator-delovnih-dni/": {
-    "sha256": "a30903fa7829aecff968a713045d5d66eeb9a9dd428c3b4d995c147c4815d23f",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "2a8f86c987d3837a611c9ea3e9988388a0f8f32ce524929f7e753143f82119af",
+    "modified_at": "2026-11-22T07:32:07Z"
+  },
+  "/kalkulator-upokojitve/": {
+    "sha256": "7df0abeb602da9f92958b304bd649a3d88406a05b69a7f74c0b966746057f70a",
+    "modified_at": "2026-11-22T09:16:41Z"
+  },
+  "/koledar-svetnikov/": {
+    "sha256": "d17265296a1cf61bcc652e9cd48da6081a6fe3c0dbcf41812f5d6efbb7cc107a",
+    "modified_at": "2026-11-22T09:16:41Z"
   },
   "/koledar-za-tiskanje/": {
-    "sha256": "1f2e843a0be99f4cd1762246a5d91f40b71ec58f9c009df7b8300eccc68e9932",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "cc82555150d4699053627912420bdc7155aa76a339027c1ba4ae7013c8d85528",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/koledar/": {
-    "sha256": "f92572604c72f148998770d045129a796cb9dffa8b6696c9c7d7d8e6257cb740",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "dd2633189a2f07d11695f56ae5a0075cd4a906887c2d3669efd10d4632aa202d",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/koledar/2026/": {
-    "sha256": "88d1268a317c1342e511e21be0ea01302368a2b4fa72f4189b8f3121f6dd45ba",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "888853065e088ddd6e43cdb4f90f8d110ecdc6d521ff3f472aa61180deed38cf",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/koledar/2026/december/": {
-    "sha256": "c4b74ffd7cf40648c998f6a6d2b1cf12aaa757b0f283de7df5b376766a5be8c8",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "51ca759810a637337796db7a8c4e7290a310b18fb4d459f79b2eed48a06bbf87",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/koledar/2026/november/": {
-    "sha256": "28d4d6f116b618bf106f4daf58dbdd0cda8d659a97c94c1843480ea530f0fd53",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "8f352d3326c5cf6e0654aa565d7a8da6d31a43b6adad8a56389e9df317295887",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/koledar/2026/oktober/": {
-    "sha256": "f3e9026a69b0dfb2f5dfe87ddf5339172019404567456996fcd2aa7d2ab72f43",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "5832cd2f90764aa4490ef183eb1b2b64efed06b5da02a54eb332996fc87b25e9",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/koledar/2027/": {
-    "sha256": "d2b1056165a3d4bdcca5ae4c6474254a9ff2f65aa280f98db15ce32b5acb850a",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "c8940af5a37f7a880b786e7e24d5ca2a6dd4912952c66e0cb29c3a2128109c5d",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/koledar/2027/april/": {
-    "sha256": "daa08399d4461d289b6dc34d8db916cff5380983582be1ae4daa1b90b49b7bf3",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "79f528c5e96a114f0eab8e1e9fe48feb6d6d4b55a4375c683b0002b31199cb72",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/koledar/2027/avgust/": {
-    "sha256": "7a1ab4040ed00a5506a92aca653db045bbbe42810f925a8c5be41822a258b553",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "b051e3381838ec38dabfee2905fc779bcc3190bc747119dace0f4194dc746aea",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/koledar/2027/december/": {
-    "sha256": "aec8acd8fb0fff3510918ee8d7a4586d88bb43056ecb0b9dcdbf4db36bc99d39",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "abebcb5d0b10f064b3f270809a9b6cd245f13de9a15efd3f6048efdb51cfaa09",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/koledar/2027/februar/": {
-    "sha256": "f53fe3c42b05aa254f9c3516378808bd2bc5ea71aad92007a24cf03f3aa87a64",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "a1477e0250c75c71a7d57dc79e735cb092d87441b7c42c181ea36ebab209f883",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/koledar/2027/januar/": {
-    "sha256": "a0c63c0197b8f015bd87a65c593decdaf392f834052a914f1463aa0acb0b276f",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "da0463b18d7bae139239d4aff416850ec40c8124e21d560f88610e02d1cd2ba1",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/koledar/2027/julij/": {
-    "sha256": "970605c6dc8ed988c6e017dbd3d463deaaf7937a48540deab790fb721b0486b6",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "82d1899257da3639eab3fbdcec9ea795b706e6f06315851f06f1f2b719dae502",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/koledar/2027/junij/": {
-    "sha256": "31bdc17973ea24941fec0a6f66906d874fc86852d4b5abc3dd1a462e3bea3007",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "31ec59400c4f2804bcea2e104ee83b6f48417df5e42dca64b524f110d2043d07",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/koledar/2027/maj/": {
-    "sha256": "ff72bf5c7b1b7d1c15485aa4ec3ec69c9fc8291ea378a5dc862b454323f7edf8",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "a0eae2d5119abc0c934d835abe5f42362a57145a967ff686294c0e3eb684eed9",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/koledar/2027/marec/": {
-    "sha256": "995395ecdaf87853c9285e6c587dbda69676ed0c6ec2c2afec35dc31a8ac559d",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "7c450a542a70acd5fc8299bd07d6754a15b4b2ff627261245524c35e694f7eb6",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/koledar/2027/november/": {
-    "sha256": "cda3f0f95d1397b3616647c50bc9c0fc945eb5f355cad673bca8acb9be6be8fe",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "5979829d08f0e73a0c40203d85c1e420740d84d2a8d89d00bc88b877ebc3d609",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/koledar/2027/oktober/": {
-    "sha256": "7ecdd74d89dd5a4971cdfc82f4882717fec07b64ab96cc2a3f095b8cd38da28d",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "1cc2d295f41708186550d17a184ceb22fd7ee6a48a42cd86614d4921bace0511",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/koledar/2027/september/": {
-    "sha256": "c90bc0cb8ba44b9779050ae91733e0698a237acd255ff12ace208587deb69db5",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "d545e736d44be115a6b1f32d2754fff2c2ee1cbbfe4c592cff4b790902cdf5eb",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/koledar/2028/": {
-    "sha256": "2d44b4b70b8b7b0380e67fac0a303ba0ae93e339ee5449e141e71625fec5b9f6",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "105803599f3c39cd1ee09dd9c2a61b190b918f215a153a8ed41ab2c6c6eda123",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/koledar/2028/april/": {
-    "sha256": "d9578485a8c36e62f8d1f42dc383eb3cd0f3824bdde1ef541a7b9f471aaea6a4",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "19f50243742e8f13c2c1d0f5c6db9576f9139795f0481f338129ca4b34986f83",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/koledar/2028/avgust/": {
-    "sha256": "d29b889fe223c87fc3f43f111f644ee29a3c164ec9af402426410c265e0f294c",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "82272277c0dc8e53b9b774d8aaa7ea68c0fca569e7ab2293d3747acf658b2685",
+    "modified_at": "2026-11-22T08:41:46Z"
   },
   "/koledar/2028/december/": {
-    "sha256": "ee99dde8dda3a35597cb66962b2cc798c45aaaf0218b70e1459c6ceb8486558e",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "acecab6040e690677f0ea8294e1be3e3c2e5dddcc66199c06d8a4095fbb5d45e",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/koledar/2028/februar/": {
-    "sha256": "401fc04cc4164917b390a4e1d34801bc6294585285eb13a7ada7ec77a4b74412",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "0ed5b78e3bc14e7fb5177c73fec03246c24a59eb3f415049ea16d93dbfc9391f",
+    "modified_at": "2026-11-22T08:41:46Z"
   },
   "/koledar/2028/januar/": {
-    "sha256": "cb5e405289db3bc670e2c23ccd22e7485d84d1a9ab70e2ff227ede7dbb9307b9",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "25d9a93f3a2d79d56f00ada3c20faa17c6bf872cf7e9884cbf66e432db8ac50a",
+    "modified_at": "2026-11-22T08:41:46Z"
   },
   "/koledar/2028/julij/": {
-    "sha256": "33583662002dc4011bdf3fab25d302099a2d01a4ec90cc78c8731276db105244",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "f6e9f4dd5861205b3d098fd2a78d9af06725ea351af1b3fa806779b14e3b2d0a",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/koledar/2028/junij/": {
-    "sha256": "49ec19545b456ca7e9ecf9f7dd3c216a6cd2abc7c79b9e7cc31b8839cfd92a28",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "0ed86e23f17b351217095ab0d41cf4666ae4ca29ddadc321d470ee1606989056",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/koledar/2028/maj/": {
-    "sha256": "dcebb9fce76f596624f1953abdd1d70fa740f20a3f150e05b0aabd7b91681eac",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "3f3b94deeb24658f49b798b2c64c201487ccd055886f9fde975dd3e314166a34",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/koledar/2028/marec/": {
-    "sha256": "e7e23bdbc44da141f2d6146f8e295dbab6a2e685b19e0af813e33cdda6198276",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "a15fd56973094dfcdc74f94675b0529901ad2d240b9e93568de7cc71a7d75448",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/koledar/2028/november/": {
-    "sha256": "994fa8796caff0659392c8ba974deac9617ad7bbd35b1a47d01c4e3b0ed526f0",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "1ef07c47475bea57a0a130eb61f795864d42cd07211777f3d4db5023113544de",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/koledar/2028/oktober/": {
-    "sha256": "35ba03d5daef301f564ffb240acab5f1db15c1d1761a3d1a2d220028f4c23a54",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "f2a076f208e5c0cd9f39f0f29481b8e6287a927bf8b31d90fda88e4ebb8ece9b",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/koledar/2028/september/": {
-    "sha256": "7fb3cff03c1d13a03e258a99e1ba336ec399c352d74bd835b1b677a1cba4c7f0",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "96438082343318bb8892f4b602674cff33f22eb6ff095f26feeee1a3f5f153c7",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/koledar/2029/": {
-    "sha256": "e14b4a083e1799274b7c338ca6420832a196ca4597086bf9c868532c702f4dda",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "0eb3f5c3afb9f0f84f56a00b358cea9b221378f89a72f80a0ed13310f2083fb3",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/koledar/2029/april/": {
-    "sha256": "bf3024d1dace1d780d946ff047768063137b203cc4abf06b39098e2b7f7905b1",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "ef14b095608920ebf9863df3a2b7d1556af8b261eb729507274991be63e09e32",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/koledar/2029/avgust/": {
-    "sha256": "f7f79bb3fb824eba9b6386262eaf43b690b6283afb6665ef5b98348868feae69",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "ca48ea4408d46539a39cbb04bf2c494a69b3cf872ab476a61e93c1f46e26d74a",
+    "modified_at": "2026-11-22T08:41:46Z"
   },
   "/koledar/2029/december/": {
-    "sha256": "9a6e4dc81c58ce6760093024e660aa0170d5690bbfada49fa454f5ef08318eb4",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "37e8d4b97138f39a221ee5be5d7a3bca36c6b73b1ed18d23d82df7fa909138a6",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/koledar/2029/februar/": {
-    "sha256": "65e37be6c1eeaa581babf613262cb48d90741542e2d9317274c93fc8571e4083",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "af2a9a57a7b3c32d91300e6a616a54329f98190f5f2f085538248b6de2cddc90",
+    "modified_at": "2026-11-22T08:41:46Z"
   },
   "/koledar/2029/januar/": {
-    "sha256": "a0c57048f4a7607a691fb6e1ee992368e343c3eb11736c801fd1f65e252a6d65",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "c9f2e0aa4016f46d911586d2bad6a3f50f647f00358e0ed3fc717fc372a6ce7b",
+    "modified_at": "2026-11-22T08:41:46Z"
   },
   "/koledar/2029/julij/": {
-    "sha256": "45839640dbeef837050198d6f34914e3f28ecf1694f25da9e210aa9c0ad5602d",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "9525bf6f580925b3ccd4feffb288cd95d2ba03f4b97aa3c707095efb8b555470",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/koledar/2029/junij/": {
-    "sha256": "cf1ce1efba6bec05ddb3e5af9cbc75ca89363279c1da3e940f9d70f1a9d1a99c",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "462c38b4c0835871e62b6e6945f8a46d7df0fcc2742f0dc1f9dc2f037d7452e6",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/koledar/2029/maj/": {
-    "sha256": "bb539c5457f8013042496d3c1e2df232f293de9a94da5bf8ef97a672619a4efa",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "3cfe230a12792db56873ae1b94443c107ef2f55aaba793c19b85326ce4f7268d",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/koledar/2029/marec/": {
-    "sha256": "885be3fd1c1273f36ae9683aea7e3400a4bab6fcfa37bcad0e3d11a54febb171",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "c44757a3437c71d0f4e1c23f72ade29831b85146e02316966246793020a22d6c",
+    "modified_at": "2026-11-22T08:41:46Z"
   },
   "/koledar/2029/november/": {
-    "sha256": "386477d965125d5570945856fefe6cdc6efd25390c02e8572b533d0cc497c89c",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "87032a38079774c561e76bed825e4d9d30d11feae7f5e00c629533ad4e1d8804",
+    "modified_at": "2026-11-22T08:41:46Z"
   },
   "/koledar/2029/oktober/": {
-    "sha256": "21c0a2513cc6eee3b22390fd2b876e764c6a0078e66df3292e71891dd9d93d66",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "07cae9d5963d6fd51b98994baa4c4c4c9c64ed3f1e45b6e8b9c32aa2099a3c0e",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/koledar/2029/september/": {
-    "sha256": "dab0b5fe5074d160cabec776339500a0932a6712cf64690a08581c1001fbf3a4",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "ce0392b6383fa29de8279a86755faf712a4920f458c801bce479091d71e53d0f",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/koledar/2030/": {
-    "sha256": "39896c4bee6f504f2af16e0fbc4458cf89ed4ea5c0b4e53f814f402ed9ad3438",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "ba19810e16f52914dd37ea80ca73abe14091cd6e204908d93243ef44ff805b7b",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/koledar/2030/april/": {
-    "sha256": "460854dbb1c83cbc03dc263f2a0cd4585e157055ec926947b5d7e1303fc9d701",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "37325423581dbb1c264e022be670cb20c85d766428ebb1f8689f645f5903c33c",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/koledar/2030/avgust/": {
-    "sha256": "c38c7ece02f6e894a9ee0f2d49bd243124a226323d7b2986de95b602e379846f",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "350724c3bc7bff5eaa3985e535798448486720ec991108316de56377b8860b55",
+    "modified_at": "2026-11-22T08:41:46Z"
   },
   "/koledar/2030/december/": {
-    "sha256": "7ae4666107ee17b395399dfac63c1d69847d7386239833afd93560391ee0e6ad",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "ab99d42f68014a1e429d0a74e58e216909c2e5a03e6e56462745452115499313",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/koledar/2030/februar/": {
-    "sha256": "3c04713280ae2f9e32ba3595ec3eeeadfb3b7bec530c97a925f05b7bdc01e522",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "409556fe1d888d66c93123ec138113f0f1e32c8f44f2ecbace2c6d1f53ccde2c",
+    "modified_at": "2026-11-22T08:41:46Z"
   },
   "/koledar/2030/januar/": {
-    "sha256": "a25492134ba1828ea7950d80bcaa43ac1d98539bc031876ac45373e1f12e7fd1",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "2d53c40e2f28e03118109f54123e9ebd9b77db9e7583a1d4864cbfdbcc26bdad",
+    "modified_at": "2026-11-22T08:41:46Z"
   },
   "/koledar/2030/julij/": {
-    "sha256": "47eba487a40b7fd7c86e31f248faf62dd94f995a88d3d7427bd8e1fb635ffb60",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "5d493119984044064ca4e1ef3fb92742dcccf178856a15eb94192e55934c224f",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/koledar/2030/junij/": {
-    "sha256": "002889d3cf5a8b2340f1ef803fbe5c333277b4e005084f6272a474522b760671",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "d395fbf513caa8902f3b754d02d7a8275c3ec893b3d116b9cf8a6f801a07ec0e",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/koledar/2030/maj/": {
-    "sha256": "769b386f043244980d05a989006fbf023c85f95fb5c74623682daf9eb0952aee",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "feea709b0d175a4c6e044e791d737398131466674d66265161135906a06d0611",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/koledar/2030/marec/": {
-    "sha256": "57968bd8b25331ed01bd351c4e1d1e335d9137d13ed6dfcf8cf124f963c68227",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "9f410c63a7d321d077079fd8e79b55b7ae8ac18cebeb31b380e0eab15c81dfdf",
+    "modified_at": "2026-11-22T08:41:46Z"
   },
   "/koledar/2030/november/": {
-    "sha256": "9722ea97ec2f7452221d5a4b2d47b0d2e9df93160418d144687320d88d577e04",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "29338625246465ad0adcd6dfece24b4807a0a8e4fd0f78d90c9b6dce1f67d042",
+    "modified_at": "2026-11-22T08:41:46Z"
   },
   "/koledar/2030/oktober/": {
-    "sha256": "dd082d25ab040a1c3dcd76d55aeb5c8dd8a93fb044a648d2ddef07230b4527b4",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "c1e6b7657acf724ab9835800bdaa349ea6437d7b3ae17ecf3b27a9ae33238cb2",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/koledar/2030/september/": {
-    "sha256": "c5c8bbdc3df03208d68623d78b1a8bab8cb8381ba1359d88b551c10ccf4e70fd",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "0ced50ac83eba83417bfa871f00abf81221eab53f7e402316a96fb67e09002e1",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/kontakt/": {
-    "sha256": "b55371d29a285af31c3280c3c0b3de9ece2a1fee4657b553cd2d19c0459ef58c",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "8803c5a54ca9ec1bc0fbc45f50704c6877e20594ac732861e519ac61f9a814e4",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/letni-casi/": {
-    "sha256": "739e9aef37e4c2ea2671500151c42f7b85c02e9fa084fcf55421741142eeb0b8",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "346ed81f7087dfcaa7341de8c1dd53608df5141a2106d5299062f355fdab818e",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/letni-casi/jesensko-enakonocje/": {
-    "sha256": "e2a63de75dd848fdadd7a2449f1d68171b24dc579f2a7b22b7b56f9e75a8722a",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "1458157cf88a99703041cd875db97d6a2bd59b04663c52d78e0e96002ad5d317",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/letni-casi/poletni-solsticij/": {
-    "sha256": "b9d69d36b9c4258151a2dccf952275c5be6dd0286986ce24611ea09df0f0f5f7",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "13c935d5b0a4d34eb269eeccf9506986aca0f887a1dfb26dce1d41b3199380e0",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/letni-casi/pomladno-enakonocje/": {
-    "sha256": "9836deff8142189360fa769d0095f16ef94fea9f20b360344d42f4e34252bf77",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "fd2db1d59f9d25a08eac90ed132e371234b88ea48936a0a066d890d43c858e56",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/letni-casi/zimski-solsticij/": {
-    "sha256": "e4efe69be4f5321fd2b6b8aa14b3225a08239c4ab744ca7d2c9de064dfe66696",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "ec72466678e7d1560e64194b072556f845f326f84a1bf904628b99b261c937c5",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/lunin-koledar/": {
-    "sha256": "46d76cea92537c98ec8966bc68ec052bbdabea2e9fa5cddddfef95293f90716e",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "13733e683c08add6430397bace268fc7d4a84c2e14f74d89e8112de3417bd188",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2026/": {
-    "sha256": "21a9689b69f2cc9f01f57dec67d9bd345f7f9492cb082427cc7486ef262b9387",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "c54233ae8ef2346d110fa8750c7de079cb0233da5c4f21751758342a4bf7fc42",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2026/december/": {
-    "sha256": "9a3d1d38d0d9e6a27e82013b2bad9a988ebad1168bfe9e3f509585f8dd05cef0",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "1002c51ca318d9491fc901d40270d633e756fa340061d9b2ca14d15325893113",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2026/november/": {
-    "sha256": "8499938610adeec85918815148311ab79eb6e7e98b8b689a94c6286fed93e632",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "c5581be23689661f99afa8cf955f2e88b111c4cdbb4db70a87bcb783cdb11837",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2026/oktober/": {
-    "sha256": "e345672affa575aeb6911158090bd11c2cbf90f14529ae8e49c8d0ee7b1f3811",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "993f0b23bbb3b9bf6ed95ab3c3f45475c86cb7036f7415db60c16db49c1b671e",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2027/": {
-    "sha256": "e805833e9ad027aeaf13c2280614a71e793edbfbc4b9751180807e4077ce3796",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "d20e2ab7baa00cf65831f0483c9789a1fc0151cbce82c468546d43a7bcfb31cb",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2027/april/": {
-    "sha256": "f9523b9ad5d0d6b791e235ec3b7b5e5d977966a93e87c6845ba65696cee21624",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "a58be75b2a0f08c50dddcffa15e9c281bc3e2f895d861553178cd247700db58b",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2027/avgust/": {
-    "sha256": "947c80a5f6970508d74eb32d74d01a6978e78ed09f1febf6292709a4a2615a6c",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "aad4e7320bd868067e145e65a635e750662ed8c43e8d6000f00e7d35225e373b",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2027/december/": {
-    "sha256": "5349476efae123f0022b97c9731bdb172d114d701ea5d41f130e297ae2381d25",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "d9cb6ff9d9e90ce7f8b5fbc8b7bc8d0eaf84789ed21fe03e3c99f761234eb335",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2027/februar/": {
-    "sha256": "c114eb8d4f18bf316b0e807c9115d3370c668ff97d167bc38f3fd5deaa7a3bc1",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "deef03ed224dd4a4fdd14e06244f071c6199c0be5d2fb933662cfc4131f1932b",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2027/januar/": {
-    "sha256": "c64681dcd53e4f1b9ad71117be0f90bb821867c404a025fe93a6a1bd34f05417",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "257a0d26cac599896aacf2f835ce1cf93436d020462911778d8a8c0286e5edff",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2027/julij/": {
-    "sha256": "ee0fbd7568300413668f98494b6aa15289f83b4a0a833a1aa7d54e7cc1257d31",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "42a42551c4c4ab4562bc3c666e113e4b446daec065427a57387b163788ca5c77",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2027/junij/": {
-    "sha256": "99141815c66b8d2bcc2c73e9e54ed7b63fb4b44aae21f78e17ece8586e0dd903",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "b66434c3b9655c4dff9e55c08a3941f5d3e77dd49c4ea0292c64ea99992b2edb",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2027/maj/": {
-    "sha256": "0ef11a4b0f8c21a860b2c9268354b851b02635b0d03225189671489f8293037d",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "5a13b306c54f2a0d65b02dbeb223fe0940dfde6e2fb0c1a3d95a0b3e91cb9dcb",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2027/marec/": {
-    "sha256": "e76fc74a1c5a9e76c5819e4794b335f98cdb829266b4f3ee0a26b29f79dc4343",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "b341fdbeee6d0bd8fc24e9d3d3fc4ab0b814a2b754c913c094c36c19f080d412",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2027/november/": {
-    "sha256": "e0aa4fbf787cf35cefb04dd8c58832916bf99fae5a9c298310a095ae6a164fee",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "e8088a24d4fe3161071805b43986b70fbf69498665e9654d18d8f1156c5d2c7e",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2027/oktober/": {
-    "sha256": "f97e3d2e129b34988c8365528f742816144df027a8ebead749b95d3244426407",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "3d233ff168d8249a321c3d6189a116ff7157536940890c07eea20b67113c482e",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2027/september/": {
-    "sha256": "34f7802c635aaa34ab975c374fba17d624b14c29abd951d6c5b712f80d88952d",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "5e777f4dcdf78952a25088478c42e82e748e5a3b4afe2213e1708a2e30a3311e",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2028/": {
-    "sha256": "496afad616deebc612e587906b341d63906d7131ac273a827d3dadef92ec277f",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "03235220ff74a4784efd3fb7d09a694404fbe779351cac53691540481e362ea5",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2028/april/": {
-    "sha256": "47cc851ebf8823b873ffc62803421ab1a5f83af2e58d5ac87f082be27468d4cc",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "1f40c2a592c8b73eb04f352bf43ba6cd1ebaad31968f729de6dfdeb7659ddc42",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2028/avgust/": {
-    "sha256": "92000ff7847b423ec9ece65f4178facb14b075848876820eae751480d8d0104b",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "aeeaa75535100ba274625e23d98e5564624f66153cb43bca104d458d2dc3d151",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2028/december/": {
-    "sha256": "54b2700f987021723e16935d1a4409ead7ff9ede9d4f44c4d615188a1f4680b7",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "2d1c0d7b590bb77eec02cbd44143e403e9b89804df5a81fee9801cd716126320",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2028/februar/": {
-    "sha256": "a6c8f4701d6ad34ef0fd8813fda388fe77e36781b01ae63f92973d0c6d0c3e0e",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "64904ff76b5ea93079d2ab8b9bec9ba3361e803f11f8c4821bd4ed221e89afc3",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2028/januar/": {
-    "sha256": "8a52adae5e88d21100bc0c77d2ff219ab45279a934be36cf7bee004a7af71b27",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "cc33c74b744e971c9c80dcfa290a1e7e092b9807484e8b249eef013293bccdfe",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2028/julij/": {
-    "sha256": "e496368943bf5862471b10755bb290be252a07daef675d0f53b8a8825a9b41d5",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "2a8cd24cfa0a975f4e1aa63ac0336edcac710de3c1d710d308556b01bcf14acd",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2028/junij/": {
-    "sha256": "1d2a5d76e17e2be19830c21685797e65d46509d073b8f20fe211255dd3e95c54",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "295fa82824467b8803b475efa9bf4cbf3118c66ec50205432a8b19d9e243a9b8",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2028/maj/": {
-    "sha256": "7f8d0a6c4257f27645e023ecbb255b8876fce1bc5ab8e6fc8ba00decd3bf6291",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "052c62ee7a4b3779ec151ccd8d58b3ceed5a11ec1a44b2926ab95f06b00e4a6f",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2028/marec/": {
-    "sha256": "1023179b1e7ee47a689b847bd44bbef6a9ee53e9a0da979979c73bb156ab8e3d",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "13891d7def03edf6dbd50acae91d327f68a171a382293686ea4a7e9822f63665",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2028/november/": {
-    "sha256": "d4113495d87cca04258e7fc274a53674b586efb3659b576d5805d3a04abcdbdd",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "fe48e338a6f2abae9eb70a2c7ca80c8449d00bbe39c691b9df3b6be16141a562",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2028/oktober/": {
-    "sha256": "43f3d8734946414079cf216b430ee12327efb672f4545ca07de8d361b05941e3",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "8a28b355af443f69d5d820e6fae8581998803dd885f7f01758d1524761a6ec9d",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2028/september/": {
-    "sha256": "4a92b03b402f79d689ada32013b7755aa4160d054aef23f440c9d0d3e22aa303",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "7b29d7bbd39f27d285167e53066586b3c8bba9ee7b22ab16e8fb0b4890f94f70",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2029/": {
-    "sha256": "4c0e119e6771a89910efe8d0274e339b4fa4b461174ed8f6ef8a734bbbd96011",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "72a0638e5cb78f8eb8e9415d94740ea30934a30ab29371eeda5d14011f04b7c9",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2029/april/": {
-    "sha256": "792394d1c9ab0031729a3c74ab53f983a2cbc0e172bbf5d517b6ee75ef886a8d",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "85fbeac6134d3f78b7f9002c613aa0a4e26986f1e393a879626c3b7d85736d8c",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2029/avgust/": {
-    "sha256": "30cef9b67fe4d1a39464f729d600c7448d4c0d363c1611d3de49c284969ce627",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "0038db4755d0882a2f91391d1c45ca390e084a64261be9ceb5246bf136dcc841",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2029/december/": {
-    "sha256": "a70cc30e498ebc4d99d9a173a9452db54ae954cd9ff0f71faa6752dd3d7a6e11",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "737e84379b8fcdc9aa29ae86ce4427f3207aca3c38d9d82671ffd18e30aaab0c",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2029/februar/": {
-    "sha256": "9629765c26ccbf556d61a080cf63deda4bfe8582ebd38696e5c826dfc99d0126",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "9bfa78076558361c9551819ee8462eb1feabba278917f9ebb89cbde55ee60f42",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2029/januar/": {
-    "sha256": "12fe21fb5f5bd32a855d59ccd73d846ac127ad44c54de443ebb9894653eb8007",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "4aa36a73ef978f4ebca9487c85f58f37f6b203eb6c9a361138ff3971b67ffe9f",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2029/julij/": {
-    "sha256": "427d0f345de7893bb342e2a4ce35ebde3f594694c3b895b769c09f6c57db9153",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "6caa38a63bd5708ef12eab58d4cc4c9b42039296fd9112576f86e2b03ebadf4b",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2029/junij/": {
-    "sha256": "acde7fd4536348c373fe253ad6b9267321f2a0958f8847b9efaa99a9ffd7e542",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "e01d1d7bfef5959e99c54347fe6e6926b116abd5dfcf0bd561407b206b5cb743",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2029/maj/": {
-    "sha256": "d6e21fe1b4be90ff89fec69dec24a592de173e6b065b5895fa2eac00985db7f6",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "9166ec878a983c7091fab1ffea24e25a8508d7c7ad11cf365fd56d459464ed26",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2029/marec/": {
-    "sha256": "157caf024939cfb0b7941aa8574ed7cae27ec0b97f297ef7302572fab9944577",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "908120cadb44e3b3d39b21c0a787e26d212e59654fd6b20e4cdbf9bce06fd8fd",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2029/november/": {
-    "sha256": "95a06e2b86f611ffab0fcd02fc9d3a2bf5f43e8cbbe7f96b7f6cea40b4621991",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "2a54299a13e9effcec882719da3a44d7341d5bf3670076d11b9b846273c663b9",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2029/oktober/": {
-    "sha256": "f5ad5b6b702502f5730b319a5bab3aa5b11819f8691ae919a481a8bc8557608e",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "23abb73c45100c8ea7227b49bc32a3f7693d68bd153e2040981d7a8dfd002574",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2029/september/": {
-    "sha256": "bbaa25c3af114d72035d4fbbe33b1d725d808f796c59b1a53a273f29a889522e",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "3805d96298d7e2a617f25dd1bc8ab40cff9cbbfac31ec69a7e90ca10777b9752",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2030/": {
-    "sha256": "b14a30aace97caed2fa588b884e8851ac5163cb4382a62daaf61c716679d26e7",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "fd73b8676a59e32dac1ba0384ea0f8d78ef4bde678644994fbfbf5357e1be2af",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2030/april/": {
-    "sha256": "3400971611dd1842280d302f52dcdc6a61ec18a23c0a90312688f625bf9b70c3",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "d00d362d77af01fda613ddb83fb8526f093355c36b48a3f17b22176047a1675d",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2030/avgust/": {
-    "sha256": "c85fdbf984c8b839cf7b781ee819a4339c51a8b38fcd6dc775d005f37a5b8f6f",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "abfabf62a541e1cd65917d8a137ed66976dedca02402bf3b563547559a4e305e",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2030/december/": {
-    "sha256": "9fd4dd65f42e163467fdd5dff015efbef67724483e0ab93e686a51fa1de1e85f",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "47a4ff4608aef46ca38f8b9b74b857e0fd8bacf6274bd2d9c62e8e0463f605a1",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2030/februar/": {
-    "sha256": "7a7c3b63b03ce368d4fec08dd338c269ff1954d1f8c31db84c5925c8ee844a6d",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "1d33bb6ba074a94326b27d74ff7a8e884fecc8800bd14cda01206e90f9fb8f39",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2030/januar/": {
-    "sha256": "5fa2377aacd7bfe22ad71cc50ef06c82d1341f7a364b238ac8648784a55da100",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "43501cc9afdb235bec5e864002a59a58b5ee550c874b07f3f1e0db48c6069c58",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2030/julij/": {
-    "sha256": "a848b578b176e7527c074798901d6453f453ffdc47baa2ff442b85a7fb2798d1",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "b1d21751b5655526b38b79e3b6916435e05fabce2574ec51b20b3edea1846c9c",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2030/junij/": {
-    "sha256": "a125215369867f97e3ce7adf1bc19790be4bd43f134ba38db2ebdd67ffa7d721",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "7de9ee3f033b9ee2423c58b1d0a4163e348990126a7a6212777ba179b9b967a1",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2030/maj/": {
-    "sha256": "a729267e36fdab7fadf6ace712a4a27bc06369dea5a009a17e2e1bf55ebf24f1",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "7f7120675492debe714a8e7a862fd5a910d1d8d86b627a3b6e1d9b9aa65687c1",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2030/marec/": {
-    "sha256": "a8d183b2747ddbfc7f37cdc39a483c9a578cdb42c0936b2bcf277b2f0dcda2e3",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "8f5fd5df3dac986e800e3003f95ffb3d369a48562c7e185e528bdda171e2498e",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2030/november/": {
-    "sha256": "516a682785b09af98c7ddc74e8338341814e6f2fae884787e7e22e4bcb1c2d94",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "39cb9733322dd3af886257f038709dd7d4f6a279d8b7033fd77533dabb7c5413",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2030/oktober/": {
-    "sha256": "8e16ea5faaf5427906ac4d7d04bfe7edb02d7f6910581a312e543ae3a76b2a6e",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "b608c0b3d71fd0fbd31ba695155570d67037a50a5288d715317351df39f57e67",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-koledar/2030/september/": {
-    "sha256": "c350fb93b02ee1a7e0f6aadc2a58be078258a0235762efa221b7b5a358961c13",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "389b083f1ab12426ae81d55437ba4f29b9ee0aea188dc91077a7350b4b3799ae",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/lunin-mrk/": {
-    "sha256": "5a072d74e00c138c4ac5fe5c6c1f1f673038ef3b1ecc6f98e3b33c629543ef77",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "db29667cd505beef2e70386d0d628a1851cf8e009870739d2f1cb4a635954a07",
+    "modified_at": "2026-11-22T08:12:11Z"
+  },
+  "/lunin-vzhod-in-zahod/": {
+    "sha256": "06325a463a6b5ce035afe79ebcd24854dc9d50dde744bcfb7113d1f78b2ed85f",
+    "modified_at": "2026-11-22T09:16:41Z"
   },
   "/lunine-mene/": {
-    "sha256": "fee1ef1a8efb3df7a4a8934f543bec2f11dc239431ffccdc7946d1097f36ce98",
-    "modified_at": "2026-11-17T14:11:28Z"
+    "sha256": "8e5db5ab65ce98b5b225814eaf6ca675d9b82d0eeb05deeb39124228cc32ceb8",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/matura/2027/": {
-    "sha256": "d944c8895dc96b3cc958071b687690b17fcf0318c39ea9276e34630eea0018f8",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "35ebab9b8013ef76b0254fff8ee3f8dee13f7eeee3ae3b10254a06e72098bbd5",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/matura/2027/poklicna/": {
-    "sha256": "c95aba1f17a2246742d018a43370205812dd0f8035f3fae65c698b57513d71e4",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "083af69f72cd036def36c4e4d548125282779ca48290ac162971d3a13056b5e8",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/matura/2027/splosna/": {
-    "sha256": "d1ecb47dea4ea829689321c0890fe64ad00268df910df808fe0a8cac388b0ffc",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "8d195b98646e11f4340d8e4204d23c110c9693916c110dc7b8cf85f94b01ef03",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/mesecni-koledar/": {
-    "sha256": "14947dd4f9552ac06c69ae392f628e43f85024feaa49d4b131d5a6ab5cb728e9",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "d7700ac64a745858d026f1e783e722eb0b9da51446e1d24b30dee90a1601dd6b",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/mlaj/": {
-    "sha256": "330e2409105ffa305bb22d1baa55c8af58da5e95f7f56cce4f3d4ab1a2ed50c8",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "9b9c96c8d3af757c96e15f298414262ca5b5617adceef5a114be7147e074e6e4",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/nacrtovalnik-dopusta/": {
-    "sha256": "3db4f0cea90de2eb6e78db14e35a9296d4ca43578ad325381a17bf4d3b7ff5f3",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "a30a9daa31bad744283b0bab35b46334ea3014619c3131163f3391a7f2610bf7",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/npz/": {
-    "sha256": "8ae67c190a5f55aa83fd87629334fa50523ffd1f88e648ca9f6d81e274cd1f97",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "e00e160a3217c8d5a5ec332b371b2a5039e0d26847aed4a9d170dc0a5a8651e1",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/npz/3-razred/": {
-    "sha256": "bac18ec9eb6fe1751f41a5c0ee6951b3261032acf93c8c2c0ae54213b4043758",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "3a72810438cf4a7e359ab7414ae7115525f8622a389726b9e59513e7e7d1132a",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/npz/6-razred/": {
-    "sha256": "96b9731f12e23e984ec77df40e40c3a8f814906a719d3dde7d51cc2c7b049bc5",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "4109bbf03786c9649c4454a08bdbffba5a8a8bcbba6b89bac672337f7a1dc099",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/npz/9-razred/": {
-    "sha256": "1913dd2032767aca6e310a2b32e94f3c34739729c6d385764852e705cc9c75ac",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "3b7883e233a0f353657d56c3a98a05814bc43056bb573e2f304c049a511c44b5",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/o-nas/": {
-    "sha256": "d00b3727168f64ffcca1c5e0f4707d73dc5aa17640eedd85898015b53a5d49bf",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "63a39816d88c32d48b1958401ec123bc730741e2c156448a903c8953b533ffac",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/odstevanje/": {
-    "sha256": "c7c848b764ea8a5032fbd3f4036b91ac5c24956c1adedd52cdbfa5fd09d0ac86",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "a33ff122906519b3f6b82796e64e267aaec416c5eebd9f808284d9317ac5552b",
+    "modified_at": "2026-11-22T09:14:13Z"
   },
   "/orodja/": {
-    "sha256": "b70e5ebf852d938005209ff92bf532253fc9a1cb3af5eab93db19802ffc248f9",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "4fc809dfc3b3f3387d408472e2dab96d701135a2079d3ef694be23562f9e6662",
+    "modified_at": "2026-11-22T09:14:13Z"
   },
   "/perzeidi/": {
-    "sha256": "4930e31775fafdc032393ff2eb5ed03a3d0f900b4f6b0e38a17d20a570f7eba3",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "e4a21b896243637b033581e537a728bc8ffe70137452e3977ba8f2acea26cef4",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/piskotki/": {
-    "sha256": "c0d66f5da62b3439248cae3af171c47249cc0f2803ed403d1982c66ff088d4f9",
-    "modified_at": "2026-11-19T16:39:43Z"
+    "sha256": "7e86821b25be54cbd6d383e78249f472eb6fc12e2dc4c514c9769e1209834d26",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/podaljsani-vikendi/": {
-    "sha256": "6ee145c0c55e29bbd842e5f85ffbedd076e1fcd396638514e98a46c14315205d",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "0bc92ea26e4e0a8dfa5c923c9ddf18ea426332d70c7af3e8ab0a80ae2c722919",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/podaljsani-vikendi/2027/": {
-    "sha256": "8b53d033d011783774c42103185155507c7665a00e8c7a9649185e64ac3cbc28",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "58101343f8cd82e62ce17128e5bce52a6576d95f71edc8a5b69542aad7b0777b",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/podaljsani-vikendi/2028/": {
-    "sha256": "5252ee4e57d1f3ad1f25fac2e3c5b31e89a18e60de6a3e39cd0c729f66702a96",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "464ed76c18ab7d81e2e55177fd502ee7b5d4b59aa0186536edbd2da902cf68c3",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/podaljsani-vikendi/2029/": {
-    "sha256": "c3eff02732bde5c0aa88f8cf52520a0b18eff8a30e222d7fb087693c89302b94",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "1548301db497d0da822eb6d68e4a4206d409bd261bc373ba5775670e8d750a10",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/podaljsani-vikendi/2030/": {
-    "sha256": "7f0f2ad610866ef967106874efec2765e7aa22e37e04ac09229b3dd9c2f7cb23",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "21016d5352da9d4b5d734a2867be6c752df9c97415600543b41c905b43bc2dbc",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/pogoji-uporabe/": {
-    "sha256": "8f4fe8cddbcceacc8d443f9c5067ac43fae6f6dc7dc71eedf2a681cac517844b",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "39f8ce4aacbf8f9b3718f07a09e0535bb43cd87cb8f550dea9d1c594c2545758",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/polna-luna/": {
-    "sha256": "97d22c0069f7febe337ca11a502f4bc2f18a44f3aeae294ae07915baee9aa8cb",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "70ca5da4d6f4dab773c8f872e9f7393e8cecb08c0d2234ed5774e496b5dbb75b",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/pomembni-dnevi/": {
-    "sha256": "7b1762f17fc9183b84cea15d97695bb997f0eeb1af312d4e44a53ff46d2570fe",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "b5a657427a6073692e17ba43c802f6159fc1365664c5fc4c22aea0c8789baafc",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/pomembni-dnevi/2027/": {
-    "sha256": "4af22229036d06e75c8e4e82757fd9e15d88a358920f422fce6f0956b8ca1e8c",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "0e0c7c4ad40da59d27987be3207708b73d709da32e9eee811ebbcc3de2703245",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/pomembni-dnevi/2028/": {
-    "sha256": "88046f652e12ef0720781fbeeaa4e12ff40ee1051eeb7867fc39d31ba9325c7c",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "a528cf9d3c2f445ce31c4b6e76d8816da9ac9e268fb490a7f3fe2a942cd00ecf",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/pomembni-dnevi/2029/": {
-    "sha256": "3c95f5b3dff1ac1387d50701d72c7420681a4b35cff727bc62d74bafebde23fd",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "5ef049276a3e244c0a439fb632e2f27dbadd537953d1f071ceefec5fd8081e79",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/pomembni-dnevi/2030/": {
-    "sha256": "38a4d0f0a4c8d8cfb25ed5255880885a6afcbdb3b478639908ff35ca77c43881",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "140a20b272cfebe43a64f1b7520bec82c6f028031910c2918736b1cbf2fb51f7",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/pomembni-dnevi/april/": {
-    "sha256": "a14d317b34d76972356be489dff31316987a96fb8896108c5505af07027a614a",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "65f1ac4aeefae3189e905dea5d40c67625c4d3a0740ff0a5f2ebae513f0e5d5f",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/pomembni-dnevi/avgust/": {
-    "sha256": "396d2f929fd8e0012726274f13522e329ee8cb6d0706484b273819245114e2d1",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "031736fe0e7968cfdb750822f500d44feca58cbdfb8e8850a18b1802408f895b",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/pomembni-dnevi/crni-petek/": {
-    "sha256": "a01c6cca7c82c9694b6ff205dafd7d9266babe23cdca8066c21e054a5a95b0ce",
-    "modified_at": "2026-11-17T04:12:29Z"
+    "sha256": "6903fd8754676083ef24d3cfca4d8cdc4803a5cf7ba211419d404a3874ad0f90",
+    "modified_at": "2026-11-22T07:04:48Z"
+  },
+  "/pomembni-dnevi/dan-civilne-zascite/": {
+    "sha256": "e4842000555613ec40bccec0431913f320583389848ac03857a45930d3c08210",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/dan-clovekovih-pravic/": {
+    "sha256": "850d6cc31d1726eb79ed596340b274c641cd145a55af1ddece4ce805b6a7eff0",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/dan-maribora/": {
+    "sha256": "feb8c1c258f08fce9e10a52b861a86cef96d2574591fb7d0ae621e804bd05df0",
+    "modified_at": "2026-11-22T08:53:08Z"
+  },
+  "/pomembni-dnevi/dan-policije/": {
+    "sha256": "7a91f834bf74e6f81f2a52e7106fcfacc4c6027df2669e89d7895289e7040620",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/dan-slovenske-diplomacije/": {
+    "sha256": "a83babdc4847b1212af655af4679b06282291997225d2fd8e08b4f3f86df9a65",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/dan-slovenske-hrane/": {
-    "sha256": "16668d21d888400af2ab178699467e187e7819189ac237053662dbdd6a17f85b",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "e46c384bcb62012be3f1d1cc1dc7a206656a2884ec8fa02c55031af8fd387880",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/dan-slovenske-vojske/": {
+    "sha256": "2104f1aba2ba8705268cf447093312fc0887e91cb4cc70833015b81e8b0c137a",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/dan-slovenske-zastave/": {
+    "sha256": "87b27ff19a3b705259f5cb282f4cfd71cdefddccd06de6b244b1f843af30e665",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/dan-slovenskega-krvodajalstva/": {
-    "sha256": "6bc3b3f96bf1712fa31e2ecbfba847d159147f3e6b2d7c2f5d163e1996f1c373",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "d399b0a28d9f8535231345c480940d998e802d267c5f533ec485c3085d305f9f",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/dan-slovenskega-znakovnega-jezika/": {
-    "sha256": "8dfd6144447926d6a7f86f7e8c0f5d0fcf8aa863d3c5b3a0743d17e51cadeb4d",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "aa480788ef845639570a894fc25b63274922dc6c36483fdd28bf25f9a12d2bbb",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/dan-splosnih-knjiznic/": {
+    "sha256": "d1f0330ebd9e556ba9a0f067e6ef6fc4cec5e19edeb44c839dd694490cd0a8bc",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/dan-spomina-na-zrtve-holokavsta/": {
-    "sha256": "81d3434d9a627e6eedc961c6bed0e560756597ce802f2069a1e2463bd0ad05e8",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "a973ad3da8da7d988e1956c5e64fb6b4a459abd64a6b462eba16553ba6f63583",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/december/": {
-    "sha256": "2745ce0bc0899ef288d9318df3eec8bea3adefc558c30a2388f869af3a40dc58",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "e1bc5ae797f0bb63c0b171883bde95321fd9363bfe802d140d8edfa0cbe5e63b",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/pomembni-dnevi/evropski-dan-jezikov/": {
-    "sha256": "b18ea950c745b7b72db25948789798a3f1f4ae7b310025a7ba641a9e38291ebc",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "b5697266d8a417cd5f914c816ad0052db7f2c32ac2010f5dedfd6132e0186a27",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/evropski-dan-spomina-na-zrtve-totalitarnih-rezimov/": {
-    "sha256": "990bb07881ba93a0ff71e85a910030dd86b466826e073659d8f37f073a7b093e",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "60cdb66d881aed6e0ea5b15329d455ddd4534e5c6e03fdda33dce74a45910168",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/februar/": {
-    "sha256": "65b381b8bc7bc48c20c1c71ece039d488d848013bd093d5e3b13f8bbce6f4228",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "19385339f378442d5316bbd8f7e68f1992c10ed4d7c10e659b66f7caeadf25f6",
+    "modified_at": "2026-11-22T08:53:08Z"
+  },
+  "/pomembni-dnevi/gospodov-vnebohod/": {
+    "sha256": "cb2482e26a26890d7c04e937488c409587506666a64e8726c760446936a76c15",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/januar/": {
-    "sha256": "e94f9d2cc4c7dbab75b7e6fece5842fe41e9fa0b99cb18769d7c2cba5463f7c2",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "2af2feebf7e819161ce012ba6a151041eb09ae58c62a75098e8dd938f3b5f8c0",
+    "modified_at": "2026-11-22T08:53:08Z"
+  },
+  "/pomembni-dnevi/jozefovo/": {
+    "sha256": "6faf79c0e0ca3f53a39b18700d68a0fd717aa7b57e543a36b8014ab876e0e616",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/julij/": {
-    "sha256": "ab2eb95402c62e38ffdc48a56569ae2418893d934328b4771e788e54e09baec7",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "ce8776d32623ba2b70ffbef1533462455ea6e04267ed493b909ce1db2725b01c",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/pomembni-dnevi/junij/": {
-    "sha256": "5b048d10aaf3bfb22acc8567a6aa9d7e5de6b7e7a89b649d6ec1744d2846eed7",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "5b6e0755167e428d0a6d377d72ba2578011914cb9353839df77e09819d0b6294",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/pomembni-dnevi/kibernetski-ponedeljek/": {
-    "sha256": "bfa5c38cc093762281f0567959d836fd1898fcd8dd33f055343243e1aa5c7be2"
+    "sha256": "bde75a2acf35ea9d9a299b52ec94bf6f1849d4a778fabb5af1ddac6ff31b03a0",
+    "modified_at": "2026-11-22T07:04:48Z"
+  },
+  "/pomembni-dnevi/kresna-noc/": {
+    "sha256": "8738fdc32f774a4a796189e6b67107bd38d96d9ca115b81261ae6972c83496e5",
+    "modified_at": "2026-11-22T08:55:06Z"
   },
   "/pomembni-dnevi/maj/": {
-    "sha256": "07c7d81d953f1aae1a5946a5f3752d7299d890a7cdf713ea214bbad3dfeab1ba",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "8439ce25a1be0917ab545576b0c2ccc5a3c6837b7e85b35eb0d62711d0bfd6d8",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/pomembni-dnevi/marec/": {
-    "sha256": "77a0908cadd44b40dc081702f90c74ce52f5bc78f0cb46fec319947bc7f7f9c3",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "6301dd9ee35f58f8ef7355249bf31f1b66d1ea33cf8eb67541f7acb7670fba64",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/pomembni-dnevi/mednarodni-dan-druzin/": {
-    "sha256": "926aebc5169751dfff5b4eee5a0999320da2745851b398d08ee8cf1e065654ed",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "1ff2331365eb21e72c348380bfd479074c980f1651a9eb0df0c3516f2b191a2c",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/mednarodni-dan-gora/": {
+    "sha256": "18e6d15120798b57febb168a23f0ad7b80122bd6c7cba1b310338c2cad821663",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/mednarodni-dan-invalidov/": {
+    "sha256": "e2bb051eaaaa9cc938ff0a8f5a302fa7d684055c3dc9b86e98e1cc48869e0d8d",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/mednarodni-dan-knjig-za-otroke/": {
+    "sha256": "7d3e00a8b10e47ab21bb3d201932a9a10c1d5c6e068a71e0be439afc1ebdfc9a",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/mednarodni-dan-maternega-jezika/": {
-    "sha256": "c68fe253fba3b8654b9a03c13880439cbf93e0734438d9f777368828e0932f90",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "b165d6b09a9443f07510920861a729ee9adf047591697d3834ae5677d6db839b",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/mednarodni-dan-miru/": {
+    "sha256": "255c828bdcbbecdf452d04e9e4311e5523c692b70a27d7e559d225087a4b14c9",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/mednarodni-dan-mladih/": {
+    "sha256": "c0d1cc204bb1a3916910f8e2f4f7d6f15f7d04cc8f6573e0955ea34880a5ea7f",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/mednarodni-dan-muzejev/": {
+    "sha256": "369bdda0c10fe51f55220044f56e05ca5e3f2ca9e37406c6f0f1fe4409af7633",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/mednarodni-dan-pismenosti/": {
+    "sha256": "02140e2acdfcaefb3013702a761d45328f524b18292058ba02ce809aaa91b486",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/mednarodni-dan-prostovoljstva/": {
+    "sha256": "c9fa5bc01666e97d1069ce17c4e0f895be48aa35b0ae31120bd442bd6c520204",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/mednarodni-dan-starejsih/": {
+    "sha256": "a05e11e98dfe58b90910a6e6c8ced413ae566408ee6fa1738a0279d23643168b",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/noc-carovnic/": {
-    "sha256": "ccfb8103c20bd9322f05cfb27d3eee201a7089e0474f96f7f68d5f30df50ad12",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "ca40e162a224a7f280e95bedffdbd4979671a3d38223f92ef139a5caa93edf83",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/november/": {
-    "sha256": "8ed9ee86034a2d0edb1e759c9f8c962511d16c7f975af1da12bb79627c6cffe1",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "6022c86a4542f3311e6298978c46a1393f3d50ffb11183e03f3e6f8c4d6fd81b",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/pomembni-dnevi/oktober/": {
-    "sha256": "e3c228b4919560dd789dac2d67fe9179e15b29e2eb1821b5492b3762c6d5bc1a",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "0ef1db73305702702cd724c9e92b4392aa49db77ee582172e240ccece52552b7",
+    "modified_at": "2026-11-22T08:53:08Z"
+  },
+  "/pomembni-dnevi/pepelnica/": {
+    "sha256": "ceba7f31a574b47b00c5684e09d086a7221a622725cb8a38274ec725b6a5cd6c",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/praznik-celja/": {
+    "sha256": "8905f5f8706c87e6efbd17d5923b1fff702dd9b90e60479cfa4ddf411c98d452"
+  },
+  "/pomembni-dnevi/praznik-idrije/": {
+    "sha256": "4266111b85c365051a9eda2bf531f119d004cf81b39f64c01af6d0e4bb7c1a58",
+    "modified_at": "2026-11-22T08:55:06Z"
+  },
+  "/pomembni-dnevi/praznik-kopra/": {
+    "sha256": "846540ff7f8edfa3106c373bcc97db5c479c47d6b1d5eca2b57f5738231f6ebf",
+    "modified_at": "2026-11-22T08:53:08Z"
+  },
+  "/pomembni-dnevi/praznik-kranja/": {
+    "sha256": "d4f5e1b9050007dc9e630cf19919b45994efc0f880ffd79163cb5d450f92677a",
+    "modified_at": "2026-11-22T08:53:08Z"
+  },
+  "/pomembni-dnevi/praznik-krskega/": {
+    "sha256": "832532f0929e38bd63ca4e96b6fb639cd58059c68839625048a436f64b596433"
+  },
+  "/pomembni-dnevi/praznik-ljubljane/": {
+    "sha256": "f776927c67c51ae61ce80ad5844ef2459f5bd584db09c44f20e432e82e58d239",
+    "modified_at": "2026-11-22T08:53:08Z"
+  },
+  "/pomembni-dnevi/praznik-murske-sobote/": {
+    "sha256": "0fedb7a9701b016b5899d7d982cdf26cb270d89dab30ac4dea4c87af3c1adcd8",
+    "modified_at": "2026-11-22T08:53:08Z"
+  },
+  "/pomembni-dnevi/praznik-nove-gorice/": {
+    "sha256": "5ee414c7932b684df7024dcd956fee7a4ee02a39c0cc8b04ff8b36c221e8a009",
+    "modified_at": "2026-11-22T08:53:08Z"
+  },
+  "/pomembni-dnevi/praznik-novega-mesta/": {
+    "sha256": "da45489c83c522b82fcbbee6a0649c93d8fbf6d848ff1169efd85d1c5f4a7d91"
+  },
+  "/pomembni-dnevi/praznik-ptuja/": {
+    "sha256": "9f54337e51aa9858785009a7950fb8841220cf4c553b2a1d1541724db2b4364b",
+    "modified_at": "2026-11-22T08:55:06Z"
+  },
+  "/pomembni-dnevi/praznik-skofje-loke/": {
+    "sha256": "f1d9983864d2ad6fde4bac95372d7dcd9abd297bd9b70d810cf058bb1fbbf7c8",
+    "modified_at": "2026-11-22T08:53:08Z"
+  },
+  "/pomembni-dnevi/praznik-slovenj-gradca/": {
+    "sha256": "3f955a6ea564484849481e2ea96fc5de04dfe7fa5687fe8d7d7a622426b057d1"
+  },
+  "/pomembni-dnevi/praznik-velenja/": {
+    "sha256": "aada7fcd3a0f1494a1ce9e265dda66242799f1d2650b64d8c83b4ba019ca5292",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/pomembni-dnevi/september/": {
-    "sha256": "fe5ea85cffd6c0e37c61c7fac376c33ce7a5dc282c5575208db8277fa6794d3a",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "5efe191981d91798d191b56e02b08cc2fc30717b964b62aa88292d853c3446c8",
+    "modified_at": "2026-11-22T08:53:08Z"
+  },
+  "/pomembni-dnevi/slovenski-dan-brez-zavrzene-hrane/": {
+    "sha256": "25f138990ce3e4906d252b0f3f615d8f3f29f109550fd34941a7d1a30c755f55"
   },
   "/pomembni-dnevi/spomin-vseh-vernih-rajnih/": {
-    "sha256": "f0ce9a75dd942cbab5c01fc04630c07a4fb4673e9e735f3b24cd286a9e9d51ae",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "5c2665de1bad145ba9b5c79818f17d3ffe5c42646d1010ade0e8c51834e4f5fc",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/stefanovo/": {
+    "sha256": "97861ef7e062f64ed9fd4bb6dd402d5547e60218e8411ed70a87898e4f63b639"
+  },
+  "/pomembni-dnevi/svecnica/": {
+    "sha256": "6e929056ebf5091985813cbe9d95580c26105207c2d84baa9728ff542fb9d7c3",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/sveto-resnje-telo-in-kri/": {
+    "sha256": "6d14b18558a39857d63004ad9b73c445fb1465ef45313ec05f0ff0e03cf4e93a",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/svetovni-dan-hrane/": {
+    "sha256": "3f2aa8183e182aa69ed31cda20897a0c8dcf60b2cf99b774401c7c9b115c2819",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/svetovni-dan-knjige-in-avtorskih-pravic/": {
-    "sha256": "4e68d4b6cce7b869dec2fa44f27418719ae7ab3e41f10c59a2c3bfa3cfbfd10a",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "e829816704ab779a4921aaaf885b775d87449a86b782247fe20886a68b4597e8",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/svetovni-dan-okolja/": {
-    "sha256": "5979cfd8224c17161182a827fb9e3420040d8fbdff2a104151b00c49786de374",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "31dc0d0eb48cc5f1b74aa776307ae2f0f267590a1cf5fbcb5c1cf6a76e007a57",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/svetovni-dan-otrok/": {
-    "sha256": "aae899ef611e9211ab7d8c966477c424061688f96c9b1fb8c214332ede852373",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "1f921f0ae36cde55ce3c3019d3bec89967a737b3564de38217fab3a9f98b6f80",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/svetovni-dan-romov/": {
+    "sha256": "3994cfa690cfd5d39d74591df52e32df24595ab2bcba0518914efc9da8406aae",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/svetovni-dan-turizma/": {
+    "sha256": "e9830e422853a3ef4ba71c49b4e59777987b28313e8199ac692e481b0ba9fbfb",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/svetovni-dan-uciteljev/": {
-    "sha256": "34bcf02c99e0867b898127e1bcc51fd2f5f61652272236c9329ab890408733c5",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "252b5c3865137e6c1797cd51da94f5dccea546ca086d1604f14389f9f9a5949d",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/svetovni-dan-voda/": {
-    "sha256": "56ca71140f932d665b7e4dfadcc3b98b1f5b17d1b4c6d3042544392c60dd9cb3",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "751cdff4204c2f833ebc934b2d763579a9087dcd2e4c8c53c81f8037d4a8513e",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/svetovni-dan-zdravja/": {
+    "sha256": "5a1fbc4044286a689928acd237f160f689403a0c5b98e83e574eba209f9bf727",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/svetovni-dan-zivali/": {
-    "sha256": "cc4c1856e1b80267e2114d30f3b32ab7c6dde22030e73aaee081ede1345369a8",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "2cab41898a5952550fc179f9e6cfa57777407e0911d1654b3049567d8aceec36",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/ta-veseli-dan-kulture/": {
-    "sha256": "f3a543de5b9103ecda2394a19f515a5d4c4db1dc75cd25f0f86595301462d693",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "ed32ed33c28646a4087d7288d5299ea3f9ed618528323b3495d5ac07262915b8",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/pomembni-dnevi/teden-otroka/": {
-    "sha256": "c4b6584069701fbcc715be0824f18c529ab24f65d3f313c42da507c5da3f0f42",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "ce484d92aa9e2a3565b1e222fa33d17840c579283aac3088a6e058d81ac26465",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/velika-sobota/": {
+    "sha256": "cdbc7ab38324bf53c7866f8ff333861f914c9a9f05ec8d0c556657fda40c0f05",
+    "modified_at": "2026-11-22T08:50:25Z"
+  },
+  "/pomembni-dnevi/veliki-cetrtek/": {
+    "sha256": "3e15ef9991fd4fca648a9a8ac8bd414acc165e9429d925fb3fb35f85890ac783",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazen-koledar/": {
-    "sha256": "29900f0df89134e9c744bdf7dbca901d13a601931e29d33bf01b25a77865653e",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "29bb267acff4da1a8ef04b6ac85d153a241b7ca6120b7913b475841a65de3e26",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/prazniki/": {
-    "sha256": "d6c43f2bde61aa0c388b895d254cf4fe7e95f41d9d74e7c16b56448590319d23",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "0baf4e5f740acddce3c20f71a93d4fdbd52a76705d66a2cea1a1d55027342270",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/prazniki/2026/": {
-    "sha256": "ad2e057dff8df94895516a6ba8402944eb730dc445140b21dec783cb5691a638",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "7061aadcb5338a60de9142315073d72c032399f339d8752730e5cb58177af966",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/prazniki/2027/": {
-    "sha256": "cb2c947f90ba2bfe352e1ccb59caa3e321a325e077fa729800bfe5aaa08d6257",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "dcfc8ff6e6c282dcda941bc7169868646fcaefcfe58987d7fc138fbea656d949",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/prazniki/2028/": {
-    "sha256": "51fff33907b2c37ebe8dc4623fec44d2681d04a1ba538a1c33eb3286401650d3",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "170bc081d557b9c230732b35cef24756fe9658621c653751388698de00d87e84",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/prazniki/2029/": {
-    "sha256": "fa7ba8a1779ccd06d93b0888d5abc1ea3095524753fcc2aa1c694bca3b7fc145",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "d60cdc5484d2282f0ffb23b6d9b8bfddff6fe70bbd65e5a68bcd15fcad1906e7",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/prazniki/2030/": {
-    "sha256": "8f75e47b7e243dd1d9fc1c64078e227df2ec00d13ba14352cccfcbf184b2d7fe",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "5aaf3f9aff4cf9105525903a8f8e323e9db382d41017bb031032426c3cdfce7e",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/prazniki/advent/": {
-    "sha256": "4debc16f7a0f4b780bd54cdb5d8ff55de6b972c6d5505d703dd08be2f816c1ff",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "ea477b68115e94b9d0643cd8a93b652367f1bf9721ba09f0e5a5b3372e5443d6",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/binkosti/": {
-    "sha256": "254e64528200e33297661d370bae7baf3abb457ca264518f0ee2ad39605e7a71",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "5b3b2e334202f07ebefcd13d7bfc96663a515c45e77a0bea849768fda6bb4fcd",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/bozic/": {
-    "sha256": "8067b86de4748c9c0ee7a87836d12bc04bb04deccb1f11313e99c9a999731cf3",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "f0096c98b947732e11ad2d90b701ba1c961c3c347388df775b0b7c4d91ef389f",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/cvetna-nedelja/": {
-    "sha256": "43b4fcd1a44e9588b8587c6278fd360a488e4d955fe73b311d2846e12c245599",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "39b77e35a1f9e6a3c40425bd07b74a351665e487c6fb85e89bc37cc97a6dd19c",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/dan-drzavnosti/": {
-    "sha256": "4a907e31c0ab18cd82d1da6b18d8d1b2783216746e93479cb71aa18ab23aa23e",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "6664071b69299432b83a7394fa15d991bc6ab9f017aa01ec34ae26a62125efd9",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/prazniki/dan-evrope/": {
-    "sha256": "fadacabc527f77dc5b74b29908c921100543209b44701b1fa1b733ca3291845e",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "02878d56ed53e91deeaa663866e3c96aa328b30aa65ceeeeef170c529e6abe87",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/dan-primoza-trubarja/": {
-    "sha256": "59728c24078aaf52555055f3be17c2156712a366855f2b8d4ad5a11edf11e1a4",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "711f60bbc9c7bfd43ec044776430d5e38d2bf6ae13a4b2f6a43ea68725bd0d60",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/dan-reformacije/": {
-    "sha256": "93919ae1a312d16c224a7aa9d8f41c45dd0064afb76244cf0a2865858719a397",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "d515d1b62e3d89ae0d60bde49f9aa8cbaab22d4a658adf8e252ddcf4afe6b755",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/dan-rudolfa-maistra/": {
-    "sha256": "98cc2c25c709ca963fcbcb06c529e1c5d886da4d7a41215cdfef10d59afe8e0a",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "c673d3be1858dc715138382afcaa78b6bcc20938c30d24e84a1e4b622114284a",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/dan-samostojnosti-in-enotnosti/": {
-    "sha256": "74f3fb43dca9dfbb87f60ffc0b1594e700c92aab641f42288142aa273244f8d1",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "cff7cca81055261b03bfd0361a1fc5ae10ef93c9925411f77c76d2a40e999e07",
+    "modified_at": "2026-11-22T08:53:08Z"
   },
   "/prazniki/dan-slovenskega-sporta/": {
-    "sha256": "94627912e9d7008bb6b1f3635ad24fb7090a98699ea3515fb4c8ed4fddd2ac32",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "f58e5e8b9dbad4e0f5db5e67d7f4f97f91be0c7bacebe052604e638af1ddd418",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/dan-spomina-na-mrtve/": {
-    "sha256": "ada7b82ff6cb21f2f93a79d3ab84f20d4235bdb93358dae70f5f12b58cdabb48",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "24057fefc951c34f6dbfed5cf3e622b7725c0459d247c571fdfaf5db33a189be",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/dan-suverenosti/": {
-    "sha256": "0b3da480ad563d410cb26ec436b4c0b6cb7f3c32c63543ccb2a869a9b8f1207a",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "56bf706825d1c3be11c449b09fff2d3c7feca6c59b8c74399a046bd3ca5206ee",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/dan-triglava/": {
-    "sha256": "07c5b1bbe1b8eaf8d0d1b8b87cae9e77fba358db6709865d0acfff57c2fa2860",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "131c1725162c701f18725a3f88d384f19f82a7929f7cef918a7517ffe505fc17",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/dan-upora-proti-okupatorju/": {
-    "sha256": "74ce9813427934b8d7c6a84c91b7823ce279ca76de2a7040f481d92fcfe3ce45",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "6a49e3fe18e0534d6f213fdf29f44869a128b94bac437458bdc6e04e45e5fa89",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/dan-zena/": {
-    "sha256": "5fb24a0c8087433838fb7c4ae82ceaa46675c01b7df9e6df373a07d455a9ee9d",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "96cba7109662570c4874d71664db0fb5be2fb284d429c7c0126bc3a80508bc0a",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/dan-znanosti/": {
-    "sha256": "f50f967a90de92dbc21d813119e2bce1b7ea3371d61f074ac17bdefa0d50921b",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "18f03668e8d5d82657b02ece2dce3021de24c9b515b5b3eb77a27d9fbc61f677",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/gregorjevo/": {
-    "sha256": "6d38007c14bd3a234c9b7633871942ab7f41204a8df4975e4f2e0868dfa17497",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "d19b9e52b9475448cc46f68cba904d3f9e2268349cecd10bb7b66e1d96072fb9",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/marijino-vnebovzetje/": {
-    "sha256": "68ff5b84c6fb6a03b4742fdddbe4d7568b41502e8934bea7a5a6caecefcd9b27",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "7c5b280563f8c3ff9c7205c9e7835de60192e58aa58ce1257626f1a4f99ab133",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/martinovo/": {
-    "sha256": "6620a5f51edaf178c6464e59e5ce6bd98c4e19dfcde316406c3755827870c726",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "b6258bd2721e68c09408b12aca8dbcbbc85fed681c084096a6ede1501ec43191",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/materinski-dan/": {
-    "sha256": "f36c33591679f9e1f94c1a1b42c8e640d955dd72ca2850da6a09d4bbbf88bce0",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "96f1fd0f0a408e4299c9590c9d1fd83f3e533fcdbaa7e4e4c2057eb2d1fa9d1b",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/miklavz/": {
-    "sha256": "c493fbb70f924691fa3f8dbad768dcae1d8e8a1313b8a328ab109fc2be0a939a",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "e28d561fcb41b79c0a48df3f8ce3b84a4b7f3ec073d01ce956c4e7fc7f0843f8",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/novo-leto/": {
-    "sha256": "f705ae26e88129215fb3b88310ab0684dcf9e163aa648bcaeecb9681b2244de1",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "8a8e19db523b030119d8d0cbdce086b53b5ab9494d525e05143a2009a436b6ae",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/praznik-dela/": {
-    "sha256": "67cc6d355611c0f99cec9dd374bbedc9bc9bdebe9c97cbc80b78516121c131d6",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "6a6e2849d13936d1790ee31ee8ef87af31a338ee7f6bd1e14f9a884b393eaa23",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/presernov-dan/": {
-    "sha256": "99aa9b56fdc3fc9da80a092453e2873fc777db03a17dd1194037400693afee66",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "dee00391d4ec19460495c824292533a998e9f38aa88e11e5219bbee2b6d693d8",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/pust/": {
-    "sha256": "7b08b1303ffa0bfb538648c51b631fd51256fb1f73d5bf7fdadff99123a9d75f",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "368484e843a4450d950339ff469962713329f30c603e724d6da9f10eea72b857",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/silvestrovo/": {
-    "sha256": "1e6871e541bb2b6602d353c001027e356108f824cff4815fda23265149bd0fde",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "2902f0afd4bef92bd7f15c669958712540271e2f981a7f28662dea0937408975",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/sveti-trije-kralji/": {
-    "sha256": "5913a8ba23e9bd87e109d90e6e2a5a0380a7effdd0c2b96a1b92cd97a569c7f2",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "4c50f60851a8d5b4689ffe0d121a4180c643818b3d7e2a8afdd6b03b1f3a9915",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/svetovni-dan-cebel/": {
-    "sha256": "561f515777daeaf07f92dd1f76c54f1df644103f9f31ff309d68c6fa6f110adb",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "bcf03b96a96d381e126614fb6636dcb9b476becd5d47fbf8c988ed14053617ac",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/svetovni-dan-zemlje/": {
-    "sha256": "b3f2ff9b3020a663765b4ecf7b5ac49f018636b92599751b61b59c817cbdca5a",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "f54582272cc0efa5138f6eaf45328a24e770acd88c1001dfb76f1efe363834d4",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/valentinovo/": {
-    "sha256": "bd8867721116fae06783b4f00ecb865aa7976c1a9e955ef409e7d7232326968c",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "2bb4324d77cc2a375d2064ef20c485478ef6f7905cd6a9e7b4afd563307bea8a",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/velika-noc/": {
-    "sha256": "ddf3d498de165baa328e4d9d30801d02fb82b67357d7877870768fc7ccd2ecb3",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "e1aa00b37301b75324b368fb8f9c438f8ec3ce7df3f1d2603258aa2bc9d34173",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/veliki-petek/": {
-    "sha256": "d3a268792d06cf1918dc82d748b1c5fc5166bca5068e031815c821ede7a8f516",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "f3a3c2cc46656408d91fd66c840055c69d092c12044fc240b3f8a473ccbcfab6",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/vrnitev-primorske/": {
-    "sha256": "7e2c82c00349adcaf515af617d7a8c08a321f9f01f25c144392c07b5bd0bb91b",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "cddd78988470bf2a11e3ff0ef14fdc8111c8ef37437efe7b69f36c2a4cc8ff88",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/prazniki/zdruzitev-prekmurskih-slovencev/": {
-    "sha256": "ce573ccd38dbcc0d1ba1e22bacccf00c54988fd25e310a1f5ca8f642e6f91c0f",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "6a89fd5f030dd527bdf0da096471a2830eaf0a8edaf348268eb2f7a722345d10",
+    "modified_at": "2026-11-22T08:50:25Z"
   },
   "/premik-ure/": {
-    "sha256": "7a4d5c1c288c48e0b48d7126ef82b03827d635cb995fd06a038a077b06d72567",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "0f4d92e81740d99f191af4ca39fda8c349e41ad945b624e9942fb552620ad0f5",
+    "modified_at": "2026-11-22T08:41:46Z"
   },
   "/prestopno-leto/": {
-    "sha256": "517f705aa04c9b63fd22394deeae2b2d64518101f731d448e753ab0492607bc5",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "933eb3301cf9e8f01b505606aad9fa086d4d299f864ad24dbc1e16241d874c1e",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/razpored-izmen/": {
-    "sha256": "19a456adfaf9a2c917ed595a14122b200c5e049defc75ec55e41343ddb8cf7a5",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "23e25948eeda727947bb2378560cec52ff751b84cdf3ec500e413ec720c226d6",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/rojstnodnevni-koledar/": {
-    "sha256": "511f5c375a7995e7f0460498b8b4af36940da2ccaa1645f697ae34ca4210a9f8",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "72ceedf3b14e595f796f9696800f70f2bafc30186179fa10b7ac9fc345456d95",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/setveni-koledar/": {
-    "sha256": "6190882c15cab96bb0a9d9b27b72df919ab146e26bfa00b841657ef17d7491a8",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "b7ec7890e4053bfb9aa5a4252f0068fc753d2a1085faf045ef75bf25cb103e84",
+    "modified_at": "2026-11-22T08:12:11Z"
+  },
+  "/sezonski-opomniki/": {
+    "sha256": "f31e77c0f6c72d2568e43b19040c63dbe77b72afac556bf8dc31e9f7296828c4",
+    "modified_at": "2026-11-22T09:16:41Z"
   },
   "/solske-pocitnice/": {
-    "sha256": "1b65d48e3834b3ddd4bbf2eeb53f6cbd8bf0ec55efef86255455eef0a7607b9c",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "539a322f149071102bd5492f037bd278cdd8905f523c73cb8c910e230763f9fb",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/solski-koledar/": {
-    "sha256": "549d6864092bd06926b333549111b0dc263f885e6061f5f2b4b7b19e982bb856",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "2e79fac514c5f8f55af70c33141e001863764c0838c6e308abd5972ae4f7e553",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/solski-urnik/": {
-    "sha256": "cb6feb5d50e88438f226def0dae45e38e1c4a53b1e28aa0c3bf58d154ef58bfe",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "fcdf4a9de578b92941af4c94893950ef140e75264240a95daf4fd43c6ada85e6",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/soncni-mrk/": {
-    "sha256": "25326ef00b0e7072946768d95c2b249884491ba597da2dc01dcf032cb6ec9510",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "b661054810edc22c93391d77abc99deda4c3a7ed1d9812cc007353adb81b8e19",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/soncni-vzhod-in-zahod/": {
-    "sha256": "221eec8b83117102a80b74ae6d26dbed14cf5133f24ee1b5531cb0a0fa973022",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "2d6f26ead2c40faadb28d7d82efb22f8ca7006ed6ca06a5c2f887daab491c99d",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/celje/": {
-    "sha256": "77779b9ad0dd479f2ee17a1db678f485aaf582065cf3df905261a5d73b8a7d1c",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "7ae47c92cdb474e79aac51ec2a2788f13b0272a60af13d566cd90783bad983d0",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/koper/": {
-    "sha256": "51fc2cba9c2eee4ad37447c1c09e55f47c11e88c835ca95b6b39ceabd2a851a5",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "a432d8837a3020e9b686e73b1252b9898994bf42db2aad0a0fda261e6046c5fe",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/kranj/": {
-    "sha256": "cacf0b9b7221277f982f0b6a91d844adab41364a21bb6086ee2d0ff67d366fdd",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "61f8cfff92aa9c7979e261a5bd046d4e2680bb01343a7201ebccb3e2c6403e86",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/ljubljana/": {
-    "sha256": "a0a81037080e97b44eb42cd437a672cc7de128af6507dc3491379ac1b1ee37e6",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "2707411e0655ed5248f2393b48b32601be7b3de49dde75af0cd9fa2cb8c1d4da",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/maribor/": {
-    "sha256": "c8d7121c8a529091294777a93321bcd4e1262229c575ad3fb1cf460c6e1e28f7",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "f62e137ba87db0db24bd885654e490c3c7122acc21a5d4c74539fcc5bd40da8e",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/murska-sobota/": {
-    "sha256": "2242e36dbfba0ef7abbf2165bc50bd34bb3285a2740c98544189ec0a49c7542c",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "aa68c629eea8f8e84de460aa9128e3f9f542e52aa4d3ea1ca3f7726f7b516a75",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/nova-gorica/": {
-    "sha256": "232361f36445e1b2858ca0a51d2e0879164d01f75705f7179731102ef7e8624b",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "dc457b2d8cb42ac5af82a860f45289b3964aef72050b20be2b2fff0aeda35f1c",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/novo-mesto/": {
-    "sha256": "561c41a58f20b340470e7ab8876885af5bb321c0ceac4ec5952ad338e2932ecd",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "119d918bdda494dde6c614c379b6c253decb381531350e4022c29cd9894abb5a",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/stevilka-tedna/": {
-    "sha256": "ad903f4432617d96f2f07334df4b47a9a7aa4eac0814a229ece6069d87e74c37",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "fc764a8149d0783659f6e9316b2c2ae955bab76a6e13925421bc3e312d1d3a22",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/studijski-koledar/": {
-    "sha256": "72bfa1d6326e8d40fc7df35da4cbd3d20bfaf920742d4106078e095b4524e156",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "04215656055176abf6ec7bec3507819a1cd5f5e278b190aae1b4d78509025d54",
+    "modified_at": "2026-11-22T07:34:47Z"
+  },
+  "/studijski-nacrtovalnik/": {
+    "sha256": "905cef8690b6b6222f4062dfadb74db3d6d95fae8aced2956e49b48b52041ee8",
+    "modified_at": "2026-11-22T09:16:41Z"
   },
   "/tedenski-koledar/": {
-    "sha256": "267474c4f237278bda0ed67ee1e4420ba31ddc0720f15b121fb8e879f73e28c0",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "e16dcd708660c160f38faf7ca3758985e85302e74b295900b5da7e38d504b347",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/tedenski-koledar/2026/": {
-    "sha256": "84cf8c8d0a12182766674ada0be8812dd8aef2432dad4f9ee72eab531d968261",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "4942757936e8a62a51cf832d0bcfb3fcbfd9fb816485a5c953b11c5a6ad595e1",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/tedenski-koledar/2027/": {
-    "sha256": "4108f6926442c20e3a2e92d559a9de52d396296c56eed0b04ea0d440c0f7e7e3",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "24e4bf904bc628219bf25e050dbffa0033255211cf9b012725dfb97daf8468a3",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/tedenski-koledar/2028/": {
-    "sha256": "8de57b3fed51fab093dd46d0d28eda3ce8617990d50bc59142a404dcacd52298",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "b62e76ea26ddccdc1ef0e30f346ea4c2e036ab7d12ad83cfa49606414dbdc986",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/tedenski-koledar/2029/": {
-    "sha256": "5d57a36a3ef26e3bc5be0fb78fa318b8d81303f00b56392fb93ad661067a8ad7",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "d107f799846aa1e66e9b77f586a0a614d975b468001c6e2f0d84a550457a53eb",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/tedenski-koledar/2030/": {
-    "sha256": "63ac395bc30fd838f158fc6287e1649cea8467acce6a22f4e9cc0f30e0ad83e0",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "68f6b64fbfb9dafe3e8f414a99ec8e9ef3b58f9631d68ba1342d4327cc865dc9",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/uredniska-politika/": {
-    "sha256": "4d656f5835cbcab327b1392ae289e0bf3720b416b06981d86603734793068797",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "2d209e18d65fca93d56bc0bdec2c69bda2c6bc958de70d54e404eb46ce581a97",
+    "modified_at": "2026-11-22T07:04:48Z"
   },
   "/ustvari-koledar/": {
-    "sha256": "0169b1659ef88fb052c282bf009edf44fb90e8ff2d6d99ad20d239993fe84563",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "f703330ed9639bb6438ac484b68e3189f6516fe4a0bf96a7e2988626689b562b",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/viri-in-metodologija/": {
-    "sha256": "d39de53826c1830c3cef4220ae94216055c2a68b1421afd014fc088ef47ef02d",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "aebee0ba92297982d0c453deaeef0ee5bb274557eca317fc6a81ee5f86cd7d4c",
+    "modified_at": "2026-11-22T07:43:40Z"
+  },
+  "/vpisni-koledar/": {
+    "sha256": "711e203e06b03b8eda705baede438bdebea03a16c4263ede0d49b7a01c3b264a",
+    "modified_at": "2026-11-22T09:16:41Z"
   },
   "/zasebnost/": {
-    "sha256": "6545a552d7413046725345a966170b06efd26b41ecedb318efb0ed328cfc1772",
-    "modified_at": "2026-11-19T16:39:43Z"
+    "sha256": "00df7a8f942ff79e3c570b1d3f6dd0e76ad547ee3610c98ba1f373e939f6c105",
+    "modified_at": "2026-11-22T08:12:11Z"
   },
   "/soncni-vzhod-in-zahod/ajdovscina/": {
-    "sha256": "35de5d764e4383da0af0fc5d5afa481efe5cb27e17de60a1047fa63d3867ea9e",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "c6305f9486474802922334e00244e7cc4acaab65f83efc49ad248930af79e502",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/bled/": {
-    "sha256": "a1aa5e17c1a7a5c1e90ffeb3a87757ea26f1988bfc56f4a1b0e71305aa28589f",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "2818aa9eea9386fa39a195cc69d9ccc99cf2f32361afc11c7161699b45adb112",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/bovec/": {
-    "sha256": "c2244d6a196d20160354fb269488b5daa871d2166a56c86d5acd4a5e7fde3025",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "0db8c1c1ecce3b286da36ce5a3a2972b0ad8e5c2bf3f26b33f18fb781ae347ba",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/brezice/": {
-    "sha256": "a48a35ee83a037235cc3b6be4661a3063dfb3179571505359910a96605181d34",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "4da6743e3c5a282fcfa17fa71b0ea64570871af9c6324fa6c57924b644f37ab5",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/cerknica/": {
-    "sha256": "170d84765aa0e288dda4539cb4459cf738a416a8ef14f32019a94f5e17b25a4f",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "5c78335f024f1910bdda96f7e492d6f161980e702fd72680f39fc8a54321c135",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/crnomelj/": {
-    "sha256": "853b5fab6888616874263902dd3606933a95519dc49fa21524d872873cba3ff2",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "8c6697b498f19274f0c7fa8e18f698b3722e88c5025eeaa42745fa47ff90d669",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/domzale/": {
-    "sha256": "26a23adb06d4f63ad388701030c7e5869b9e44c6e2ddd4ddee74d21f0e5fd64a",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "7176926e8c45e69a8cabe864eb6e09cdcfe4a8ff7a39b574b4b67b734ad8cab5",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/dravograd/": {
-    "sha256": "90c897899b49d2320e63b206b7833ca0fe6f20e4962ffe5893a0acbb828e4dbe",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "84377a63ca9355a7b59d111ecf795f7d25fa8e245d84343b6af7ce6ad0503313",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/gornja-radgona/": {
-    "sha256": "9eaa2ec0396c23a72087240deb7cdeb06294793cefee879e75d0f43664781857",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "45e9cddb63055591530614486d945e82fb161a625ea1eac916edb293a8dcd989",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/grosuplje/": {
-    "sha256": "77bb9b69f4c763fd7b1443517d809dc00aed04bb28065d179a0eab77eef6ed53",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "0cb17ec2cc3ac9ecc4de2d7bd86f8835a2e23b96237cb0125ae3f6bf85fa0146",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/hrastnik/": {
-    "sha256": "4554dc75d8b36ba95ee0928a07f3d8f9e935745f7ef5d7eea3cae67ec331dc96",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "3dd884a4ba1f87e1d5258c3294855bf0a42f1426d553f87e968b741f975f47f1",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/idrija/": {
-    "sha256": "1609d9d487d0dc1ebbeb83c19b68233c83870c08ed48372d3b79ee8330f19dd9",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "1f0e84a2baf072889b7c3c69e9789d1188a480de6a892daa202c545c4d447c85",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/ilirska-bistrica/": {
-    "sha256": "f08bd78d893fa3ee83bd35833612ae132eec9933d5db04df2a0a85e165f99538",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "ef1e0651bbb1ce3fd8430cdbba92a1e518303ea28a727175d14835f068816d69",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/izola/": {
-    "sha256": "b4ab48632f30bfa3761920b312e389b93ec38f13628e1d4e6746db4ee5e60950",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "90cc8ea4022e61ce6f7962f5bd9e4958e64acb79972994839079e309facf4e0d",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/jesenice/": {
-    "sha256": "686aabc99307f820eb5488e7ccfea65d50e16e1597aef9f3060ae8a4dc129c10",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "7a0a04e988ca6746d1d32e047dcd841d3f931c2b57708c23721848d24b7ecfab",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/kamnik/": {
-    "sha256": "fc736a6fea6d159b2c3aa3876a9e0f9cb05bced4a0f50b7fd416722eb6384b00",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "630edfa01043f8f146d243778882ada1b5b736ff263e36d5f15592bc6af98740",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/kocevje/": {
-    "sha256": "a34ed7f50df0050d2281bc2f87ee7e6c8f609f582282fcaa28e320783349aa71",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "2361c7f51dd5adee9a889b0e3cb5d48ff88609d0005808fc1faef6cea18d1c2b",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/kostanjevica-na-krki/": {
-    "sha256": "b79b17eb97dd2cbd2c95c52cd0adcff36d94d51244719d48f909d16473266ce6",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "33f950cf213a3563b0a780fb47c5aa7d7df04ec2d0f6bacd281ca2d49d8d21ab",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/krsko/": {
-    "sha256": "c454a2a3dc7edf184243365aa2fb445ab094a312de8998b1066d7c003c2b51e8",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "26f3b9534e66015afd6b77ac7d1dbe66bd6dfb70655df203d04867cd61863e56",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/lasko/": {
-    "sha256": "ead178eee03bf19cc7b691647576160dd0bb7f3c5578b128cd89fa6cd6066cf1",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "2864b93927e59ba9e4b8d1327a6e73972b1dbad4841361ba1679b9c0715d417f",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/lenart-v-slovenskih-goricah/": {
-    "sha256": "35f420d527768c75ff26cf90c48ebae63dc24cf4394ae01f1a3120f0639d29c8",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "087c99e24037911df3dbf8ff04e1eebf0aaa79b47e5c162b77be76fd159bd6b6",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/lendava/": {
-    "sha256": "93ae2a5dd32d48dbd2c59d8e9450d8956d442d9b185730702348ea7426f9d2fb",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "08d772703015f94e70cf8f83c96e30f142b057361aaa81f0d3cd0f06434f3fbe",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/litija/": {
-    "sha256": "ce6f4508c1cc3b7a7a4679e32ebac306173a68f62be40c34ea151bb614e32ebc",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "88a10533afc3b9bf536b87f6b4bd14c3f8b5f6f11eb479967277a148f8d08925",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/ljutomer/": {
-    "sha256": "629d303d4f61712d475997fb96c47f54ba0b9599e4b34d3cdbecfcb75688a3ee",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "bc3b56b39655be6bcf632eeb1fcacb82d2ae42d46d5944b4d9307f94730bdd6f",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/logatec/": {
-    "sha256": "e8729f3e196e93602a64966d2b011fa74e87949b8dc249457e8843cd7bb8c2a8",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "733ae4e6aa2da144ec00b05fe66d10a667b7f0f3c14833486d3dc0b9b1ad8ce3",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/medvode/": {
-    "sha256": "8fcfd473565aa0fc694503ddd9726101dbe245157c87c4e00ab3cd2dea6d469a",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "6c62029366c48a0fde1602b929ebb1a1e0463e450d4df5dcfa0356577b0e3975",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/menges/": {
-    "sha256": "b23ea7eea454e3d684691ab819d222fb83b563ff27cfd5b6e8660fa08195cd54",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "dc7b8695929476af80ee3e695c5a3de34f5691e804b9d890c832124ec46b4f0c",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/metlika/": {
-    "sha256": "d6f5f94f936a1b7ce06a08ef04e1a4c10d49bd34f69942ad401ffb4967ee0480",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "803bb4b6b347768f1cfaad07d353a1e6dcf9b9f54d5296c7bd3c52ca5b0b8a06",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/mezica/": {
-    "sha256": "444f4a5b84a5c433d46cf58edbd54b5259dc21e784b4ff3343bfcb7e71251151",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "f823d71e60315d1ddb8901a7c23c76961a077bfadb893644d5848f1fb4faa28e",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/ormoz/": {
-    "sha256": "b44a75952c21cfb47b7765b31efbbf6c6349e82cf55dcffb60411db835e2aae4",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "280fc10c9080b11850a7d742e928fdbf8744d927221bbe53047ec36639b2e231",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/piran/": {
-    "sha256": "1562eed3b88dc2c410ace86446727e46fbed67546169580304fc943f2f25fe6e",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "dd0ab2e40e14fd6a933420beed9eb151fb979408b7b82a5d95f8e5cde013728a",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/postojna/": {
-    "sha256": "59a027824492d4d094872d622e031b5e28689444ea425556cb8300a58006764d",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "7bf6bb900617879c7cc4c030929792deb958f522f52306042453cfd418f3fea2",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/prevalje/": {
-    "sha256": "e2684775d015644c8760c2273a2dd7a0363deb54a9cca5fe9afef3690b5e3a8a",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "7e4c495a0cccb63ee1c04e4b04f209a4e8e7a7bf1dbfacc9ac1341122c4a02ad",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/ptuj/": {
-    "sha256": "b824ca9e3007e36594d7b7e1de90437b7bf64542a8d2e5e40e036dde97b1b17d",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "3775bcda2c75193df152ed25f34cc32ef2d4b041a412c2ccf6469ba2c7270d6d",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/radece/": {
-    "sha256": "29b8a09921d5e673ee5c015ac6e22dfebe48cd1c9790c541163da9b3869e3ffe",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "60d2424ae6a48a0f870326ad9264d245c8be7c87c5d9b2e0923608b888fc973c",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/radovljica/": {
-    "sha256": "53df5d298a6c4aeda3b079c0b454eb8428de00b53ddcd910bde8905103e4e97a",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "3d3d27aeadac5693d502c0b752e771863d619269e1011325d78ab31b6fa9e96e",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/ravne-na-koroskem/": {
-    "sha256": "e37d24174d58975e10c057ba2978c0635bc1e723332d097738e3e76513bd4daa",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "534fa3f1cd832af24d60c6757a6bdd262e777eb3c6f03e967940c8794bb6fafc",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/ribnica/": {
-    "sha256": "16714ac5a9395faf99a329a878856fc30a3ad9b21a76484afa0e529d1a207cbe",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "9939394aa4e4a1d1bdfd162e6d9dc1badf1e2b998e7403c4b930e175f2d714f8",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/rogaska-slatina/": {
-    "sha256": "d9551ae61534fb8f1caaad68eac0a96ce522b42ec8e71af05bacfb15c794891c",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "de29f6ca6d4b67ee873f306308bab975446d47e9bd51a7b29baa8dbc78f13b4d",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/ruse/": {
-    "sha256": "69c20a6678eae120928973e6956661a62063831a0d4ee3237881e274c05f67dd",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "8a66a7696071816995ef6b1c276f71e15efbb4ab3f9dfc9c3cc4ac2a63838fca",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/sempeter-pri-gorici/": {
-    "sha256": "46bbec750377d29c9dbb5e13a99bdc78ec0057110d652e5f133cf312d348a70d",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "6b367817c21d73b2579111fa87a2802a09bd230197c5ed74335568229a7023b3",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/sentjur/": {
-    "sha256": "082e863d77161a23f3add5a037bfae69769384bb8697b7e68e977905d8114ac5",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "ad1d531c0d836579ce07e7f2c4a207e74b7b44723880eaba4a84736387b9a13b",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/sevnica/": {
-    "sha256": "79e78acb78f48e83b94dc6ff26d4decfd8c2a7904b2b96cd86696c5f058386c0",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "34de7d1b2e999931c97b9ff49d5e82861958ed1a7dbc272de8fb37e4c5c748c5",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/sezana/": {
-    "sha256": "84c872abfb2670474052615ac94ef261e564f22ac5ac78e98345db6ce33916b1",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "f77a46e9993e07e59821510cf3b6fa9a99fda6d3d5423db255a83259c49b1411",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/skofja-loka/": {
-    "sha256": "983c93b1371064dbd9914d51f34f015f7abc6ee8e3ec68117c6f0914352982cc",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "69cb1f636652d98c95e0c6675cd267c9dfc7f295f1d53c077f9ad3dbaa1c6309",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/slovenj-gradec/": {
-    "sha256": "f5c12e311920aef3a90ed96bc0bf511cac7c5f5e89fa4f058499887dc9ea7eda",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "b0b304e21510eeb131f4d8524e70173b611420114cc9a53e91f73a75f619352f",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/slovenska-bistrica/": {
-    "sha256": "735ad7416e791370cd155f394c7fb9dc66a3b5780712cb9911b548bf3f52b6f1",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "717804ca5fe1caac227ba57bc25151a955d595aa2cd5c3995f59ee59a4d785f4",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/slovenske-konjice/": {
-    "sha256": "3f7f8e41d3fbe2b0279859af4870a8afd4d740ace9f0744047709a3482e84e19",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "6948b8013085235110cef50be534e4353f08cb3c05fb0977c2a26c0a26701c82",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/sostanj/": {
-    "sha256": "e864ea88c996f3e6aea744edf2d419df5f11694aa7f4bc9a4c075048b1ad601e",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "4172df91437d25eeb2d66ddc897389a8ef60d164f7873a9dae273068119ef66e",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/tolmin/": {
-    "sha256": "6b9564c43cda97243757d35d8d8a07a1974612b4c5fc94fc6e9743c332133dc1",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "afe65e0d11727b3377368a50493b199504238582a45c186868c73800c097ed69",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/trbovlje/": {
-    "sha256": "01a28f31e6f4f1f3a49474143aa760137d9e450fd20af68e3314dd9684ffbd5f",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "6a7c8917362d6817e96189ae226109342a9804b76a990f6dd63c3472491d47a2",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/trebnje/": {
-    "sha256": "e4796c018b0abfddb7eda42c79f8ec49daf92accbeea2506b9fac3fe2a9032cc",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "3fc900e81182431ccaf6ad3879f324d8c70df0059337e314826c3c11dd6d4131",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/trzic/": {
-    "sha256": "551779f8c92d29b4e67cd6cae0680cab5b99abc821e5ba27435e353a56c7e14e",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "38d508a601f1b6d82f4f829fe55406b88db1681fd0e92bd0a7f13669a8c9e387",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/velenje/": {
-    "sha256": "9145ecb79dc9dd069814a38235778ccbd7539bc648d09a61b115b7a20e51f1a6",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "8341db192ca4bdd4afe0dbff9be5074b8bd31de1fa02ecc74c34912489f9247b",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/visnja-gora/": {
-    "sha256": "cc9a258a4aa692cb543dcc73c28605dc5f793b0222fbea5480c371a8eb9b20a2",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "a876c9fc8f866f76e4e37c68d3227fe1c64328f346f67853129a25dd7c4fe3fd",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/vrhnika/": {
-    "sha256": "de06cdf9d6966f6f9a401d81fb47f1e9e3cf964b38c129a0bfe2bb706d725ae2",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "4427062946d7a1319837b21b258d63e680cbe2c8a2d9afea0d4d8fd861944b5e",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/zagorje-ob-savi/": {
-    "sha256": "53220b226011b3d3052dae1068cfc07ce2afb2a4050d7d72c49b7582fd0fefad",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "ca9158ede5744430650ced44b9ad3457b774238e277c0073e7ce303f07c3d6c3",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/zalec/": {
-    "sha256": "8d8d489d4b513b4ad2bcfd0e642ca75cc1e71cbf718ba07f9b82345b7f942403",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "b89bed571b23804940edc21abbd6601adfaa6120de10fc20acc6094bd02271d7",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/zelezniki/": {
-    "sha256": "a4943685bf4ab08f6e032ba849fde447bccf9db50db832f63c95eac13427d829",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "7f64e52c64760eaac3e404db27609f60dcf938539d92a42844afedf7e58e7163",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/ziri/": {
-    "sha256": "bcab7e7feed44a9e95fd30ee961bef01c0a037792d029890f2d7874dae796139",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "d83c41acb64d55717761547d0bfcde8efdc5547aebeb5224efce868b38384455",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/soncni-vzhod-in-zahod/zrece/": {
-    "sha256": "34b94c25f78195c9e54e74f2006478cf84c36810c8ed6a586ef88c2c0f77697d",
-    "modified_at": "2026-11-21T20:49:43Z"
+    "sha256": "cf9b7ad075c3426bef3430afa94eee9158c70609e28fb2928a931ec3457be31c",
+    "modified_at": "2026-11-22T07:32:07Z"
   },
   "/fotografije-in-licence/": {
-    "sha256": "a742d4c3087dc22dcd159d6de6671d586dbfd6ccaf4280c733e59d283a5d3993",
-    "modified_at": "2026-11-16T16:15:43Z"
+    "sha256": "d6e3e409bdc75b01115edebdf29f0676124cc870d7856970765e477c8f45cf2c",
+    "modified_at": "2026-11-22T07:32:07Z"
   }
 }
