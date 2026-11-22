@@ -85,8 +85,12 @@
 <% elsif kind=='workdays' %>
 <section class="workday-tool" data-workday-calculator aria-labelledby="workday-tool-title">
   <div class="workday-tool__intro">
-    <div><span class="workday-tool__eyebrow"><span aria-hidden="true">▦</span> ORODJE ZA NAČRTOVANJE</span><h2 id="workday-tool-title">Roki in delovne dni, izračunani po slovenskem koledarju</h2><p>Preštejte delovne dni med datumoma ali poiščite datum po določenem številu delovnih dni. Prilagodite svoj urnik in po želji izključite slovenske dela proste praznike.</p></div>
-    <div class="workday-tool__quick-facts" aria-label="Značilnosti kalkulatorja"><span><strong>01</strong> obdobje</span><span><strong>02</strong> datum roka</span><span><strong>2026–2030</strong> koledar</span></div>
+    <div>
+      <span class="workday-tool__eyebrow"><span aria-hidden="true">▦</span> ORODJE ZA NAČRTOVANJE</span>
+      <h2 id="workday-tool-title">Roki in delovne dni, izračunani po slovenskem koledarju</h2>
+      <p>Preštejte delovne dni med datumoma ali poiščite datum po določenem številu delovnih dni. Prilagodite svoj urnik in po želji izključite slovenske dela proste praznike.</p>
+      <%= render 'hero_features', label: 'Možnosti kalkulatorja delovnih dni', items: [['calculator', 'Izračun obdobja'], ['clock', 'Datum delovnega roka'], ['calendar', 'Koledar 2026–2030']] %>
+    </div>
   </div>
 
   <div class="workday-tool__workspace">

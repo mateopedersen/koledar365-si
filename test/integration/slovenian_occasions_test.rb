@@ -35,26 +35,56 @@ class SlovenianOccasionsTest < ActionDispatch::IntegrationTest
   test 'the festival directory shows sourced editions and undated future years' do
     get '/festivali/'
     assert_response :success
-    assert_select '#kurentovanje time[datetime="2027-02-03"]', count: 1
-    assert_select '#kurentovanje time[datetime="2027-02-09"]', count: 1
+    assert_select '[data-festival-card] a picture img[alt]', count: OccasionCatalog.festivals.size
+    assert_select 'select[name=kraj] option[value=bohinj]', text: 'Bohinj'
+    assert_select '#kurentovanje a[href="/festivali/kurentovanje/"]', count: 1
+
+    get '/festivali/kurentovanje/'
+    assert_response :success
+    assert_select 'link[rel=canonical][href="https://koledar365.si/festivali/kurentovanje/"]', count: 1
+    assert_select '#kurentovanje .festival-edition time[datetime="2027-02-03"]', count: 1
+    assert_select '#kurentovanje .festival-edition time[datetime="2027-02-09"]', count: 1
     assert_select '#kurentovanje .festival-years dd', text: /Termin še ni objavljen/, count: 3
-    assert_select '#festival-idrijske-cipke .festival-edition', count: 0
+
+    get '/festivali/festival-idrijske-cipke/'
+    assert_select '#festival-idrijske-cipke .festival-edition .festival-status', text: 'Pretekla izvedba'
+    assert_select '#festival-idrijske-cipke .festival-edition time[datetime="2026-06-19"]', count: 1
+    assert_select '#festival-idrijske-cipke a[download]', count: 0
+
+    get '/festivali/fantazima-koper/'
     assert_select '#fantazima-koper time[datetime="2027-01-03"]', count: 1
     assert_select '#fantazima-koper time[datetime="2027-01-10"]', count: 0
+
+    get '/festivali/alpski-vecer/2027-04-23.ics'
+    assert_response :success
+    assert_equal ['2027-04-23', '2027-04-24'], IcsService.import(response.body).sole.values_at('date', 'end_date')
+    assert_includes SearchService.call('solinarski strunjan').map { |result| result.fetch(:path) }, '/festivali/solinarski-praznik/'
+    assert_includes SearchService.call('kravji bal').map { |result| result.fetch(:path) }, '/festivali/kravji-bal/'
   end
 
-  test 'an edition finishing in January is visible and importable in both calendar years' do
+  test 'an edition finishing in January remains discoverable and importable across calendar years' do
     get '/pomembni-dnevi/2027/', params: { category: 'festival', month: 1, q: 'Koper' }
     assert_response :success
     assert_select 'tbody a[href="/festivali/#fantazima-koper"]', count: 1
 
-    get '/', params: { date: '2027-01-02', view: 'day' }
-    assert_response :success
-    assert_select '.week-view a[href="/festivali/#fantazima-koper"]', count: 1
-
     get '/prazniki/2027.ics', params: { all: '1', category: 'festival', month: 1, q: 'Koper' }
     assert_response :success
     assert_equal ['2026-12-05', '2027-01-03'], IcsService.import(response.body).sole.values_at('date', 'end_date')
+  end
+
+  test 'the homepage calendar shows only statutory days off from the public catalog' do
+    get '/', params: { year: 2026, month: 11 }
+    assert_response :success
+    assert_select '.calendar-panel .date-events a', count: 2
+    assert_select '.calendar-panel td[data-date="2026-10-31"].holiday .event-label', count: 1
+    assert_select '.calendar-panel td[data-date="2026-11-01"].holiday .event-label', count: 1
+
+    %w[week day list].each do |view|
+      get '/', params: { date: '2027-01-02', view: view }
+      assert_response :success
+      assert_select '.calendar-panel a[href="/festivali/#fantazima-koper"]', count: 0
+      assert_select '.calendar-panel a[href="/prazniki/novo-leto/"]', minimum: 1
+    end
   end
 
   test 'a festival is discoverable by location and downloads the entire verified date range' do

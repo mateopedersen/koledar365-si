@@ -258,3 +258,160 @@ html:has(.download-workspace){scroll-behavior:auto}
   #vsebina :is(.calendar-design-info,.design-card>div)>h3{font-size:17px}
   #vsebina :is(.calendar-design-card,.design-card) .calendar-download-action{flex-direction:row;gap:8px;min-height:70px;padding:10px 6px}
 }
+
+/* Collection guides sit outside the download workspace so the gallery remains easy to reach. */
+.gallery-page .calendar-collection-intro {
+  max-width: none;
+  padding: clamp(14px, 2.3vw, 28px);
+  border: 1px solid #cddcec;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fff, #edf5fc);
+}
+.gallery-page .calendar-collection-intro h1 {
+  color: #14365b;
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  line-height: 1.14;
+}
+#vsebina .calendar-collection-intro p {
+  max-width: 75ch;
+  margin: 0;
+  line-height: 1.58;
+}
+.calendar-collection-intro__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 13px 0 10px;
+}
+.calendar-collection-intro__actions .button {
+  white-space: normal;
+  text-align: center;
+}
+.calendar-collection-intro__actions .ui-icon {
+  width: 19px;
+  height: 19px;
+}
+.calendar-collection-numbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0;
+}
+.calendar-collection-intro .hero-features { margin-top: 10px; }
+@media screen and (min-width: 860px) {
+  .gallery-page .calendar-collection-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(12rem, 25%);
+    column-gap: clamp(16px, 3vw, 40px);
+  }
+  .calendar-collection-intro > :not(.hero-features) { grid-column: 1; }
+  .calendar-collection-intro__actions { margin-bottom: 0; }
+  .calendar-collection-intro .hero-features {
+    grid-area: 1 / 2 / span 3;
+    align-self: center;
+    margin: 0;
+  }
+  .calendar-collection-intro .hero-features__list { grid-template-columns: 1fr; }
+}
+.calendar-collection-notes {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 14px;
+  scroll-margin-top: 18px;
+}
+.calendar-collection-notes .panel {
+  min-width: 0;
+  margin: 0;
+  padding: clamp(14px, 2vw, 24px);
+  border: 1px solid #d4e0eb;
+  border-radius: 13px;
+}
+.calendar-collection-notes h2 {
+  color: #14365b;
+  margin: 0 0 8px;
+}
+.calendar-collection-notes h3 {
+  margin: 15px 0 5px;
+}
+.calendar-collection-numbers div {
+  flex: 1 1 105px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid #d9e6f1;
+  border-radius: 9px;
+  background: #f2f7fb;
+}
+#vsebina .calendar-collection-numbers :is(dt,dd) {
+  margin: 0;
+  line-height: 1.35;
+}
+#vsebina .calendar-collection-numbers dt {
+  font-size: .86rem;
+}
+#vsebina .calendar-collection-numbers dd {
+  color: #153b65;
+  font-size: 1.4rem;
+  font-weight: 780;
+  font-variant-numeric: tabular-nums;
+}
+.calendar-collection-file-guide {
+  margin: 0;
+}
+.calendar-collection-file-guide div {
+  padding: 10px 0;
+  border-top: 1px solid #dde7ef;
+}
+#vsebina .calendar-collection-file-guide dt {
+  color: #194677;
+  font-weight: 750;
+}
+.calendar-collection-file-guide dd {
+  margin: 0;
+}
+.calendar-collection-notes p:last-child {
+  margin-bottom: 0;
+}
+.calendar-collection-holidays summary {
+  padding: 7px 0;
+  cursor: pointer;
+}
+.calendar-collection-dates {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.calendar-collection-dates li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1px 8px;
+  padding: 5px 0;
+  border-bottom: 1px solid #e0e9f2;
+}
+.calendar-collection-dates time {
+  flex: 0 0 8.75rem;
+  color: #274b6a;
+}
+.calendar-collection-dates span {
+  flex: 1 1 10rem;
+}
+.calendar-collection-dates small {
+  display: block;
+}
+#vsebina .calendar-collection-source {
+  font-size: .88rem;
+}
+@media (max-width: 740px) {
+  .calendar-collection-notes { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 390px) {
+  .calendar-collection-intro__actions .button { width: 100%; }
+}
+@media print {
+  .gallery-page .calendar-collection-intro { padding: 0; border: 0; background: none; }
+  .calendar-collection-intro__actions, .calendar-collection-intro .hero-features { display: none !important; }
+}

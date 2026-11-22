@@ -2,7 +2,7 @@
 <article class="calendar-directory" data-calendar-directory>
   <header class="cd-heading">
     <div><span class="cd-kicker">PREGLEDNO DO PRAVEGA DATUMA</span><h1>Koledarji <%= years.first %>–<%= years.last %></h1><p>Letni in mesečni koledarji, urejeni po letih in mesecih. Izberite obdobje ter odprite koledar za ogled ali prenos.</p></div>
-    <div class="cd-summary" aria-label="Obseg pregleda"><span><strong><%= years.size %></strong> leta</span><span><strong><%= years.size*12 %></strong> mesecev</span></div>
+    <%= render 'hero_features', label: 'Obseg pregleda', items: [['calendar', years.size, 'Letni pregledi'], ['week', years.size * 12, 'Mesečni koledarji']] %>
   </header>
 
   <section class="cd-periods" aria-labelledby="cd-period-title">

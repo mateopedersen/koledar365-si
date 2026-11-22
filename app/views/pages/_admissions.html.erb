@@ -1,0 +1,162 @@
+<%
+  sources = LocalTools::ADMISSION_SOURCES
+  deadlines = LocalToolDeadlines.admission.group_by { |row| row.fetch(:category) }
+  stages = LocalToolDeadlines::ADMISSION_STAGES
+  tracks = {
+    'srednja' => ['Srednje šole', 'Po osnovni šoli', 'school'],
+    'visja' => ['Višje strokovne šole', 'Višješolski strokovni programi', 'briefcase'],
+    'fakulteta' => ['Visokošolski študij', 'Fakultete in akademije', 'compass']
+  }
+  checked_on = Date.iso8601(LocalTools::CHECKED_ON)
+%>
+<article class="tool-workspace admissions" data-tool="vpis" aria-labelledby="admissions-title">
+  <header class="admissions-hero">
+    <div class="admissions-hero__copy">
+      <p class="admissions-country"><%= slovenia_flag %> Izobraževanje v Sloveniji</p>
+      <h1 id="admissions-title">Vpisni koledar <span>2027/2028</span></h1>
+      <p>Na enem mestu preverite informativne dneve, prijavne roke in rezultate. Izberite raven izobraževanja ter si pomembne datume dodajte v svoj koledar.</p>
+      <div class="admissions-actions">
+        <a class="tool-primary" href="#vpis-roki">Poglej roke</a>
+        <a class="tool-secondary" href="#moji-opomniki">Moj vpisni načrt</a>
+      </div>
+    </div>
+    <div class="admissions-hero__visual" aria-hidden="true"><%= page_hero_art('admissions') %></div>
+  </header>
+
+  <section class="admissions-workbench" id="vpis-roki" aria-labelledby="admissions-tracks-title">
+    <h2 id="admissions-tracks-title">Kam se vpisujete?</h2>
+    <nav class="admissions-tracks" aria-label="Raven izobraževanja">
+      <% tracks.each do |key, (name, cue, icon)| %>
+        <a href="#vpis-<%= key %>" aria-controls="vpis-<%= key %>" data-admission-track>
+          <span class="admissions-tracks__icon"><%= ui_icon(icon) %></span>
+          <span><strong><%= name %></strong><small><%= cue %></small></span>
+        </a>
+      <% end %>
+    </nav>
+
+    <% tracks.each do |key, (name, _, _)| %>
+      <section class="admissions-panel" id="vpis-<%= key %>" data-admission-panel aria-labelledby="vpis-heading-<%= key %>">
+        <% if (rows = deadlines[key]) %>
+          <% secondary = key == 'srednja' %>
+          <div class="admissions-timeline" data-tool-list>
+            <div class="admissions-timeline__head">
+              <div class="admissions-timeline__intro">
+                <div>
+                  <h3 id="vpis-heading-<%= key %>"><%= name %></h3>
+                  <p><%= secondary ? 'Roki za prvi letnik gimnazijskih, strokovnih in poklicnih programov.' : 'Prvi in drugi prijavni rok za vpis v prvi letnik višješolskih programov.' %></p>
+                </div>
+                <%= source_link(sources.fetch(key), secondary ? 'Rokovnik (PDF)' : 'Roki na GOV.SI') %>
+              </div>
+              <div class="admissions-filters">
+                <label for="vpis-faza-<%= key %>">Faza vpisa
+                  <select id="vpis-faza-<%= key %>" data-row-stage aria-label="Faza vpisa" disabled>
+                    <option value="">Vse faze</option>
+                    <% stages.slice(*rows.pluck(:stage)).each do |stage, title| %>
+                      <option value="<%= stage %>"><%= title %></option>
+                    <% end %>
+                  </select>
+                </label>
+                <button type="button" class="tool-secondary" data-row-export disabled><%= ui_icon('download') %> Prenesi roke (.ics)</button>
+              </div>
+              <p class="admissions-filter-count" data-row-count role="status"></p>
+            </div>
+            <ol class="admissions-dates" role="list">
+              <% rows.each do |row| %>
+                <% start = Date.iso8601(row.fetch(:date)); finish = row[:end] && Date.iso8601(row.fetch(:end)) %>
+                <% reminder_date = row[:stage] == 'prijava' && row[:end] ? finish : start %>
+                <li class="admissions-date" data-tool-row data-category="<%= key %>" data-stage="<%= row.fetch(:stage) %>"
+                    data-date="<%= start.iso8601 %>" data-end="<%= row[:end] %>" data-title="<%= row.fetch(:title) %>" data-source="<%= row.fetch(:source) %>">
+                  <div class="admissions-date__time">
+                    <time datetime="<%= start.iso8601 %>" title="<%= sl_date(start) %>"><%= l(start, format: '%-d. %b.') %></time>
+                    <% if finish %>
+                      <span class="admissions-date__dash" aria-hidden="true">–</span>
+                      <span class="admissions-date__end"><span class="admissions-date__to">do </span><time datetime="<%= finish.iso8601 %>" title="<%= sl_date(finish) %>"><%= l(finish, format: '%-d. %b.') %></time></span>
+                    <% end %>
+                  </div>
+                  <div class="admissions-date__copy">
+                    <span class="admissions-stage"><%= stages.fetch(row.fetch(:stage)) %></span>
+                    <h4><%= row.fetch(:title) %></h4>
+                    <p><%= row.fetch(:detail) %></p>
+                  </div>
+                  <button type="button" class="admissions-remind" disabled data-reminder-pick data-reminder-date="<%= reminder_date.iso8601 %>"
+                          data-name="<%= row.fetch(:title) %>" aria-label="Opomnik za <%= row.fetch(:title) %>">
+                    <%= ui_icon('plus') %><span>Opomnik</span>
+                  </button>
+                </li>
+              <% end %>
+            </ol>
+            <p class="admissions-empty" data-row-empty hidden>Za izbrano fazo ni prikazanih datumov.</p>
+          </div>
+
+          <aside class="admissions-guide" aria-label="Navodila za prijavo">
+            <h3>Kako se prijavite?</h3>
+            <% if secondary %>
+              <ol>
+                <li>Preverite, kateri programi so razpisani, in na informativnem dnevu šolo vprašajte o posebnih pogojih.</li>
+                <li>Oddajte prijavo elektronsko prek vpisne aplikacije ali izpolnite fizično prijavnico za izbrano šolo.</li>
+                <li>Po oddaji spremljajte stanje prijav, morebitne prenose in navodila šole za dokončni vpis.</li>
+              </ol>
+              <%= source_link('https://www.gov.si/teme/vpis-v-srednjo-solo/', 'Prijavnice in navodila na GOV.SI') %>
+              <p>Poklicno-tehniški programi in maturitetni tečaj imajo svoja rokovnika. Poiščite ju na strani ministrstva.</p>
+            <% else %>
+              <ol>
+                <li>V razpisu preverite program, vpisne pogoje in morebitni preizkus.</li>
+                <li>V eVŠ razvrstite želje, dodajte zahtevane priloge in oddajte prijavo v veljavnem roku.</li>
+                <li>Sklep poiščite v eVŠ, pri sprejemu pa sledite povabilu šole k vpisu.</li>
+              </ol>
+              <%= source_link('https://portal.evs.gov.si/prijava/visjesole', 'Odpri prijavo za višje šole v eVŠ') %>
+            <% end %>
+          </aside>
+        <% else %>
+          <div class="admissions-timeline admissions-university" data-admission-pending>
+            <div class="admissions-timeline__head">
+              <h3 id="vpis-heading-<%= key %>"><%= name %></h3>
+              <p>Dodiplomski in enoviti magistrski programi imajo ločene prijavne roke od višjih strokovnih šol.</p>
+            </div>
+            <div class="admissions-publication">
+              <strong>Datumi skupnega razpisa 2027/2028 še niso bili objavljeni na GOV.SI</strong>
+              <p>Ob pregledu <time datetime="<%= checked_on.iso8601 %>"><%= l(checked_on) %></time> je bil na državni strani še naveden skupni razpis 2026/2027. Preverite aktualno objavo ministrstva in razpis svojega programa.</p>
+            </div>
+            <%= source_link(sources.fetch(key), 'Preveri aktualni razpis na GOV.SI') %>
+          </div>
+          <aside class="admissions-guide" aria-label="Priprava na visokošolski vpis">
+            <h3>Kaj lahko pripravite?</h3>
+            <ol>
+              <li>Primerjajte pogoje za programe in izberite ustrezno vrsto prijave.</li>
+              <li>Preverite, katera dokazila potrebujete in ali program zahteva preizkus.</li>
+              <li>Ko je prijava odprta, jo oddajte v eVŠ in tam spremljajte sklep.</li>
+            </ol>
+            <%= source_link('https://portal.evs.gov.si/prijava/', 'Odpri portal eVŠ') %>
+            <%= source_link('https://www.gov.si/zbirke/storitve/vpis-v-visokosolski-studij/', 'Navodila za oddajo prijave') %>
+          </aside>
+        <% end %>
+      </section>
+    <% end %>
+  </section>
+
+  <%= render 'local_tool_reminders', kind: 'vpis', heading: 'Moj vpisni načrt',
+      hint: 'Uporabite rok s seznama ali vnesite svoj datum za preizkus, oddajo dokazil ali vpis.',
+      today: @today.iso8601 %>
+
+  <section class="admissions-faq" aria-labelledby="admissions-faq-title">
+    <h2 id="admissions-faq-title">Pogosta vprašanja o vpisu</h2>
+    <details>
+      <summary>Kakšna je razlika med prijavo in vpisom?</summary>
+      <p>S prijavo kandidirate za mesto. Vpis opravite po sprejemu in po navodilih šole ali fakultete, ki vam sporoči, kaj morate oddati.</p>
+    </details>
+    <details>
+      <summary>Za kateri datum naj si nastavim opomnik?</summary>
+      <p>Pri prijavnem obdobju orodje predlaga zadnji dan roka. Datum lahko spremenite in si opomnik nastavite prej. Če šola določi tudi uro, jo preverite v izvirnem rokovniku. Datoteka ICS vsebuje celodnevne datume.</p>
+    </details>
+    <details>
+      <summary>Kje preverim termine za svojo šolo?</summary>
+      <p>Rokovniki ministrstva podajo okvir. Uro informativnega dne, preizkusa ali vpisa poiščite v objavi izbrane šole. Na portalu eVŠ preverite prijave in sklepe, ki potekajo prek portala.</p>
+    </details>
+  </section>
+  <nav class="tool-source-links admissions-related" aria-label="Povezana orodja">
+    <%= link_to 'Šolski koledar', '/solski-koledar/' %>
+    <%= link_to 'Matura 2027', '/matura/2027/' %>
+    <%= link_to 'Univerzitetni koledarji', '/studijski-koledar/' %>
+    <%= link_to 'Odštevanje do roka', '/odstevanje/' %>
+  </nav>
+</article>

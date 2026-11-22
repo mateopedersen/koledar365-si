@@ -1,10 +1,18 @@
 class HoroscopeGuide
   PROFILES = JSON.parse(Rails.root.join('data/horoscope/signs.json').read).map(&:freeze).freeze
+  SIGN_EDITORIAL = JSON.parse(Rails.root.join('data/horoscope/sign_editorial.json').read).freeze
+
+  def self.editorial_for_path(path)
+    slug = path[%r{\A/horoskop/([a-z]+)/\z}, 1]
+    SIGN_EDITORIAL[slug]
+  end
+
   attr_reader :today, :slug
   def initialize(today, slug)
     @today, @slug = today, slug
   end
   def profile = PROFILES.find { |row| row['slug'] == slug }
+  def sign_editorial = SIGN_EDITORIAL.fetch(slug)
   def calculator? = slug == 'izracun-znamenja'
   def profiles = PROFILES
   def edition

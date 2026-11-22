@@ -1,7 +1,7 @@
 class OccasionCatalog
   PATH = '/festivali/'.freeze
-  TITLE = 'Festivali in prireditve v Sloveniji 2027–2030'.freeze
-  DESCRIPTION = 'Kdaj in kje potekajo slovenski festivali, sejmi, koncerti in športne prireditve? Preverite potrjene termine, prizorišča, uradne programe in prenesite izbrane dogodke v koledar.'.freeze
+  TITLE = 'Festivali in prireditve v Sloveniji'.freeze
+  DESCRIPTION = 'Poiščite festivale in tradicionalne prireditve po kraju, vrsti in letu. Oglejte si fotografije, preverite objavljene termine in shranite dogodek v koledar.'.freeze
   KINDS = {
     'dediscina' => 'Izročilo in dediščina', 'kultura' => 'Kultura in umetnost',
     'glasba' => 'Glasba', 'film' => 'Film', 'kulinarika' => 'Kulinarika',
@@ -15,9 +15,54 @@ class OccasionCatalog
   def self.checked_on = data.fetch('checked_on')
   def self.observances = data.fetch('observances')
   def self.festivals = data.fetch('festivals')
+  def self.festival(slug) = festivals.find { |row| row.fetch('slug') == slug }
   def self.observance(slug) = observances.find { |row| row.fetch('slug') == slug }
   def self.festival_path(slug) = "#{PATH}##{slug}"
+  def self.festival_detail_path(slug) = "#{PATH}#{slug}/"
   def self.ics_path(slug, start) = "#{PATH}#{slug}/#{start}.ics"
+  def self.festival_places(festival) = festival.fetch('places') { [festival.fetch('place')] }
+  def self.place_key(name) = ActiveSupport::Inflector.transliterate(name).parameterize
+  def self.places = festivals.flat_map { |festival| festival_places(festival) }.uniq.sort_by { |name| place_key(name) }
+  def self.photo_assets = data.fetch('festival_photos')
+
+  def self.festival_photo(festival)
+    reference = festival.fetch('photo')
+    type, key = reference.split(':', 2)
+    case type
+    when 'city', 'night'
+      city = CityCatalog.find(key)
+      name = city.fetch('name')
+      if type == 'night'
+        photo = city.fetch('night_photo')
+        return photo.merge('kind' => 'kraj', 'alt' => photo['alt'].presence || photo['caption'].presence || "#{name} v temi",
+          'credit_path' => "/fotografije-in-licence/##{key}-noc")
+      end
+
+      photo = city.fetch('photo')
+      image = WebImageCatalog.find(photo.fetch('local_path'))
+      photo.merge('local_path' => image.fetch('src'), 'srcset' => image.fetch('srcset'),
+        'avif_srcset' => image.fetch('avif_srcset'),
+        'width' => image.fetch('width'), 'height' => image.fetch('height'),
+        'alt' => "#{name} – pogled na mesto", 'kind' => 'kraj', 'credit_path' => "/fotografije-in-licence/##{key}")
+    when 'holiday'
+      photo = HolidayPhotoCatalog.find(key)
+      photo.merge('alt' => photo.fetch('alt_sl'), 'kind' => key == 'pust' ? 'dogodek' : 'kraj',
+        'credit_path' => "/fotografije-in-licence/#praznik-#{key}")
+    else
+      photo_assets.fetch(reference).merge('credit_path' => "/fotografije-in-licence/#festival-foto-#{reference}")
+    end
+  end
+
+  def self.festival_search_text(festival)
+    dates = festival.fetch('editions').flat_map do |edition|
+      range = date_range(edition)
+      [range.begin, range.end].uniq.flat_map do |date|
+        [date.iso8601, "#{date.day}. #{CalendarEngine::MONTHS.fetch(date.month - 1)} #{date.year}"]
+      end
+    end
+    [festival.fetch('title'), *festival_places(festival), festival.fetch('venue'),
+      KINDS.fetch(festival.fetch('kind')), festival['edition_year'], *dates].compact.join(' ')
+  end
 
   def self.ics(event)
     notes = [event.metadata['place'], event.metadata['venue'], "Vir: #{event.source_url}"].compact.join("\n")
@@ -40,7 +85,14 @@ class OccasionCatalog
           title: guide.fetch('page_title'), description: guide.fetch('page_description'), family: 'Ek önemli gün konuları'
         }]
       end.to_h
-      new_days.merge(existing_days, PATH => { title: TITLE, description: DESCRIPTION, family: 'festivals' }).freeze
+      festival_pages = festivals.to_h do |festival|
+        [festival_detail_path(festival.fetch('slug')), {
+          title: festival.fetch('title'),
+          description: festival.fetch('description'),
+          family: 'festival_detail'
+        }]
+      end
+      new_days.merge(existing_days, festival_pages, PATH => { title: TITLE, description: DESCRIPTION, family: 'festivals' }).freeze
     end
   end
 

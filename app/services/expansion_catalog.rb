@@ -27,6 +27,7 @@ class ExpansionCatalog
       .merge(ShoppingGuides.pages)
       .merge(OccasionCatalog.pages)
       .merge(LocalTools.pages)
+      .merge(SlovenianResources.pages)
   end
   def self.page(path) = pages[path]
   def self.apply!
@@ -37,6 +38,10 @@ class ExpansionCatalog
         OccasionCatalog.checked_on
       elsif LocalTools::PAGES.key?(path)
         LocalTools::CHECKED_ON
+      elsif SlovenianResources::PAGES.key?(path)
+        SlovenianResources::CHECKED_ON
+      elsif PaymentCalendar::PAGES.key?(path)
+        PaymentCalendar::REVIEWED_ON
       elsif ShoppingGuides.page(path)
         ShoppingGuides::CHECKED
       else

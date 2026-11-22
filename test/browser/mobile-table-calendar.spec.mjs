@@ -45,6 +45,26 @@ test('calendar markers stay inside their days and full event names follow filter
   await page.setViewportSize({width:320,height:900});
   await page.addInitScript(()=>localStorage.setItem('k365.personal.v1',JSON.stringify({events:[{uid:'layout-event',date:'2026-10-31',title:'Srečanje z ekipo in pregled načrta',category:'personal',kind:'event',time:'10:00'}],notes:{}})));
   await page.goto('/?year=2026&month=10&date=2026-10-31');
+  await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
+  for (const width of [520, 1280]) {
+    await page.setViewportSize({width,height:900});
+    const layout = await page.locator('#event-search').evaluate(input => {
+      const textStyle = getComputedStyle(input, '::placeholder');
+      const style = getComputedStyle(input);
+      const icon = input.previousElementSibling.getBoundingClientRect();
+      const field = input.getBoundingClientRect();
+      const textStart = field.left + parseFloat(style.paddingLeft);
+      const canvas = document.createElement('canvas').getContext('2d');
+      canvas.font = `${textStyle.fontWeight} ${textStyle.fontSize} ${textStyle.fontFamily}`;
+      const textWidth = canvas.measureText(input.placeholder).width;
+      return {
+        textFits: textStart + textWidth <= field.right - parseFloat(style.paddingRight),
+        iconFits: icon.left >= field.left && icon.right < textStart,
+      };
+    });
+    expect(layout).toEqual({textFits:true,iconFits:true});
+  }
+  await page.setViewportSize({width:320,height:900});
   const agenda=page.getByRole('region',{name:'Dogodki v prikazu'});
   await expect(agenda.getByRole('link',{name:/Srečanje z ekipo in pregled načrta/})).toBeVisible();
   await expect(agenda.getByRole('link',{name:/dan reformacije/})).toBeVisible();
@@ -79,6 +99,14 @@ test('calendar markers stay inside their days and full event names follow filter
 test('desktop event text and printed tables retain their full layout',async({page})=>{
   await page.setViewportSize({width:1280,height:900});
   await page.goto('/?year=2026&month=10');
+  await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
+  const centers = await page.locator('.calendar-title .actions > :is(h2, .button)').evaluateAll(elements =>
+    elements.map(element => {
+      const { top, height } = element.getBoundingClientRect();
+      return top + height / 2;
+    })
+  );
+  expect(Math.max(...centers) - Math.min(...centers)).toBeLessThanOrEqual(1);
   const event=page.locator('td[data-date="2026-10-31"] .event-label').first();
   await expect(event).toContainText('dan reformacije');
   expect(await event.evaluate(e=>parseFloat(getComputedStyle(e).paddingLeft))).toBeGreaterThanOrEqual(10);

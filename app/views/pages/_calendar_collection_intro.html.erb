@@ -1,0 +1,9 @@
+<header class="page-heading calendar-collection-intro" aria-labelledby="calendar-collection-title">
+  <h1 id="calendar-collection-title"><%= @title %></h1>
+  <p><%= editorial_paragraph(copy.fetch('intro')) %></p>
+  <nav class="calendar-collection-intro__actions" aria-label="Vsebina koledarja">
+    <a class="button primary" href="#calendar-designs">Izberite predlogo za tisk <%= ui_icon('download') %></a>
+    <a class="button" href="#calendar-facts">Datumi in navodila za tisk</a>
+  </nav>
+  <%= render 'hero_features', label: 'Oblike za prenos', items: [['print', 'PDF', 'Za tisk na A3'], ['image', 'Slika', '600 ppi v polni velikosti'], ['grid', 'Excel', 'Preglednica za urejanje']] %>
+</header>

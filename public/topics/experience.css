@@ -304,7 +304,8 @@
 #vsebina .topic-experience :is(h2,.astro-section-heading h2){font-size:29px!important}
 #vsebina .topic-experience :is(.ed-hero h1,.garden-hero h1,.payment-hero h1,.astro-intro h1){font-size:37px;overflow-wrap:anywhere}
 #vsebina .topic-experience :is(.ed-navigation,.garden-jump,.payment-nav){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-#vsebina .topic-experience :is(.ed-navigation a,.garden-jump a,.payment-nav a){padding:12px;font-size:17px;display:flex;align-items:center;line-height:1.4;min-width:0}
+#vsebina .topic-experience :is(.ed-navigation a,.garden-jump a,.payment-nav a){padding:9px 12px;font-size:clamp(14px,3.9vw,17px);display:flex;align-items:center;line-height:1.35;min-width:0;white-space:normal;overflow-wrap:anywhere}
+#vsebina .topic-experience .payment-nav a:last-child:nth-child(odd){grid-column:1/-1;margin-left:0;justify-content:space-between}
 #vsebina .topic-experience .ed-navigation a{white-space:normal}
 #vsebina .topic-snapshot{grid-template-columns:1fr;gap:12px}
 #vsebina .topic-fact{padding:21px 22px 21px 30px;border-left:4px solid #005da4}
@@ -466,4 +467,13 @@
 #vsebina .topic-experience .mobile-record-table tbody>tr>th{font-size:21px!important;font-weight:850}
 #vsebina .topic-experience .mobile-record-table tbody>tr>:is(td,th)::before{font-size:16px;font-weight:800;line-height:1.5;margin-bottom:7px}
 #vsebina .topic-experience .mobile-record-table time{white-space:normal;overflow-wrap:anywhere}
+}
+
+@media screen and (max-width:760px) {
+  #vsebina .topic-experience .payment-next > .topic-art{display:none}
+  #vsebina .topic-experience .payment-next-top{font-size:12px;line-height:1.35;gap:6px}
+  #vsebina .topic-experience .payment-next h2{font-size:20px!important}
+  #vsebina .topic-experience .payment-next-date{font-size:25px}
+  #vsebina .topic-experience .payment-next-month span{font-size:13px;aspect-ratio:auto;min-height:27px;height:auto}
+  #vsebina .topic-experience :is(.payment-next-weekday,.payment-next-countdown,.payment-next-caption){font-size:14px!important;line-height:1.45!important}
 }

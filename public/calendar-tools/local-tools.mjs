@@ -43,7 +43,7 @@ function directory(root) {
     for (const section of groups) {
       let shown = 0;
       for (const card of all(section, '[data-tool-card]')) {
-        const searchable = normalized(card.textContent + ' ' + card.pathname.replace(/[/-]/g, ' '));
+        const searchable = normalized([card.textContent, card.pathname.replace(/[/-]/g, ' '), card.dataset.toolKeywords].join(' '));
         card.hidden = !words.every(word => searchable.includes(word));
         if (!card.hidden) shown += 1;
       }
@@ -80,7 +80,9 @@ function filterRows(root) {
     const category = list.querySelector('[data-row-category]');
     const rows = all(list, '[data-tool-row]');
     const empty = list.querySelector('[data-row-empty]');
-    const pending = list.querySelector('[data-admission-pending]');
+    const stage = list.querySelector('[data-row-stage]');
+    const countLabel = list.querySelector('[data-row-count]');
+    if (stage) stage.disabled = false;
     const download = list.querySelector('[data-row-export]');
     const render = () => {
       const query = normalized(search?.value || '');
@@ -88,16 +90,18 @@ function filterRows(root) {
       for (const row of rows) {
         row.hidden = Boolean((year?.value && row.dataset.year !== year.value) ||
           (category?.value && row.dataset.category !== category.value) ||
+          (stage?.value && row.dataset.stage !== stage.value) ||
           (query && !normalized(row.textContent).includes(query)));
         if (!row.hidden) count += 1;
       }
-      if (pending) pending.hidden = !!(category?.value && category.value !== 'fakulteta');
-      if (empty) empty.hidden = count > 0 || Boolean(pending && !pending.hidden);
+      if (empty) empty.hidden = count > 0;
+      if (countLabel) countLabel.textContent = stage?.value ? `Prikazani termini: ${count}` : '';
       if (download) download.disabled = !count;
     };
     search?.addEventListener('input', render);
     year?.addEventListener('change', render);
     category?.addEventListener('change', render);
+    stage?.addEventListener('change', render);
     download?.addEventListener('click', () => {
       const selected = rows.filter(row => !row.hidden).map(row => ({
         date: row.dataset.date, end: row.dataset.end, title: row.dataset.title,
@@ -108,6 +112,34 @@ function filterRows(root) {
     });
     render();
   }
+}
+
+function admissionsTracks(root) {
+  const links = all(root, '[data-admission-track]');
+  if (!links.length) return;
+  const panels = all(root, '[data-admission-panel]');
+
+  function activate(active) {
+    for (const link of links) {
+      if (link === active) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    }
+    for (const panel of panels) panel.hidden = '#' + panel.id !== active.hash;
+  }
+
+  for (const link of links) {
+    link.addEventListener('click', event => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      history.replaceState(null, '', link.hash);
+      activate(link);
+    });
+  }
+  window.addEventListener('hashchange', () => {
+    const linked = links.find(link => link.hash === location.hash);
+    if (linked) activate(linked);
+  });
+  activate(links.find(link => link.hash === location.hash) || links[0]);
 }
 
 function reminders(root) {
@@ -179,8 +211,10 @@ function reminders(root) {
     render();
   });
   for (const button of all(root, '[data-reminder-pick]')) {
+    button.disabled = false;
     button.addEventListener('click', () => {
       form.elements.title.value = button.dataset.name;
+      if (civilDate(button.dataset.reminderDate)) form.elements.date.value = button.dataset.reminderDate;
       const monthDay = button.dataset.recurringDay;
       if (monthDay) {
         const today = slToday();
@@ -379,6 +413,7 @@ if (tool) {
   for (const fieldset of all(tool, '[data-local-fields]')) fieldset.disabled = false;
   filterRows(tool);
   reminders(tool);
+  if (tool.dataset.tool === 'vpis') admissionsTracks(tool);
   if (tool.dataset.tool === 'pokojnina') pension(tool);
   if (tool.dataset.tool === 'studij') study(tool);
   if (tool.dataset.tool === 'luna') moon(tool);

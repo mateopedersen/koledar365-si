@@ -4,19 +4,19 @@
       <p class="tool-eyebrow"><%= slovenia_flag %> Koledar365</p>
       <h1>Koledarji, planerji in kalkulatorji</h1>
       <p>Poiščite slovenske praznike, načrtujte rok ali izračunajte datum. Vsa orodja lahko uporabljate brez računa.</p>
-      <label class="tool-query"><%= ui_icon('search') %><span class="sr-only">Išči med orodji</span><input type="search" data-tool-query placeholder="Poiščite orodje, npr. upokojitev ali vpis" autocomplete="off"></label>
+      <label class="tool-query"><%= ui_icon('search') %><span class="sr-only">Išči med orodji</span><input type="search" data-tool-query placeholder="Poiščite orodje…" autocomplete="off"></label>
     </div>
-    <div class="tool-directory-art" aria-hidden="true"><%= ui_icon('calendar') %><%= ui_icon('calculator') %><%= ui_icon('moon') %></div>
+    <div class="tool-directory-art" aria-hidden="true"><%= page_hero_art('directory') %></div>
   </header>
   <div class="tool-picks">
-    <% [['/odstevanje/', 'Naslednji pomemben dan', 'Izberite praznik ali festival', 'clock'], ['/kalkulator-upokojitve/', 'Kdaj v pokoj?', 'Primerjajte dve poti do starostne pokojnine', 'briefcase'], ['/vpisni-koledar/', 'Roki za vpis', 'Srednje in višje strokovne šole', 'school']].each do |path, label, description, icon| %>
-      <a href="<%= path %>"><%= ui_icon(icon) %><span><strong><%= label %></strong><small><%= description %></small></span></a>
+    <% [['/odstevanje/', 'Naslednji pomemben dan', 'Izberite praznik ali festival', 'pick-next-day'], ['/kalkulator-upokojitve/', 'Kdaj v pokoj?', 'Primerjajte dve poti do starostne pokojnine', 'pick-retirement'], ['/vpisni-koledar/', 'Roki za vpis', 'Srednje in višje strokovne šole', 'pick-admissions']].each do |path, label, description, icon| %>
+      <a href="<%= path %>"><%= tool_directory_icon(icon) %><span><strong><%= label %></strong><small><%= description %></small></span></a>
     <% end %>
   </div>
   <div class="tool-index-layout">
     <nav class="tool-category" aria-label="Vrste orodij">
-      <a href="#vsa-orodja" aria-current="true" data-tool-category="all"><%= ui_icon('grid') %><span>Vsa orodja</span></a>
-      <% ToolsDirectory::GROUPS.each do |key, (label, icon, _)| %><a href="#<%= key %>" data-tool-category="<%= key %>"><%= ui_icon(icon) %><span><%= label %></span></a><% end %>
+      <a href="#vsa-orodja" aria-current="true" data-tool-category="all"><%= tool_directory_icon('category-all') %><span>Vsa orodja</span></a>
+      <% ToolsDirectory::GROUPS.each do |key, (label, icon, _)| %><a href="#<%= key %>" data-tool-category="<%= key %>"><%= tool_directory_icon(icon) %><span><%= label %></span></a><% end %>
     </nav>
     <div id="vsa-orodja">
       <p class="tool-index-count" data-tool-count role="status"><%= ToolsDirectory::GROUPS.values.sum { |_, _, rows| rows.size } %> orodij</p>
@@ -25,7 +25,7 @@
           <h2><%= label %></h2>
           <div class="tool-index-cards">
             <% rows.each do |path, title, icon, description| %>
-              <a href="<%= path %>" data-tool-card><span class="tool-card-symbol"><%= icon=='flag' ? slovenia_flag : ui_icon(icon) %></span><span><strong><%= title %></strong><small><%= description %></small></span></a>
+              <%= link_to path, data: { tool_card: true, tool_keywords: SlovenianResources::SEARCH_TERMS[path] } do %><%= tool_directory_icon(icon) %><span><strong><%= title %></strong><small><%= description %></small></span><% end %>
             <% end %>
           </div>
         </section>

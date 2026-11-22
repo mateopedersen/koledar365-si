@@ -68,6 +68,9 @@ test('search dropdown fits a narrow phone and date suggestions open the right ca
   await page.goto('/');
 
   const input = page.locator('#search');
+  if (await page.evaluate(() => matchMedia('(pointer: coarse)').matches)) {
+    await expect(input).toHaveCSS('font-size', '16px');
+  }
   const suggestions = page.locator('[data-search-suggestions]').first();
   await input.fill('25. december 2027');
   await expect(suggestions).toBeVisible();

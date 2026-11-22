@@ -1,0 +1,73 @@
+<% months = guide.year_overview %>
+<section class="payment-overview" id="koledar-2027" aria-labelledby="payment-overview-title">
+  <div class="payment-overview-heading">
+    <div>
+      <h2 id="payment-overview-title"><%= guide.pension? ? 'Pokojnine po mesecih 2027' : 'Socialni transferji po mesecih 2027' %></h2>
+      <% if guide.pension? %>
+        <p>»Najpozneje« označuje zadnji delovni dan po 111. členu ZPIZ-2. ZPIZ lahko izbere zgodnejši dan. Objavljeni termini so posebej označeni.</p>
+      <% else %>
+        <p>V januarju je prikazan potrjeni prenos iz decembrskega plana 2026. Preostale termine dodamo po objavi terminskega plana za 2027.</p>
+      <% end %>
+    </div>
+    <a class="button" href="<%= guide.pension? ? guide.source.fetch('url') : PaymentCalendar::SOCIAL_PLANS %>"><%= guide.pension? ? 'Preveri ZPIZ' : 'Preveri plan CSD' %></a>
+  </div>
+  <ul class="payment-month-grid">
+    <% months.each do |row| %>
+      <li data-payment-2027-month="<%= row.fetch(:month).strftime('%Y-%m') %>">
+        <h3><%= CalendarEngine::MONTHS.fetch(row.fetch(:month).month - 1).capitalize %></h3>
+        <% if row.fetch(:confirmed).any? %>
+          <small class="payment-month-state is-confirmed">Objavljeno</small>
+          <ul class="payment-month-events">
+            <% row.fetch(:confirmed).each do |event|; date = Date.iso8601(event.fetch('date')) %>
+              <li><time datetime="<%= date.iso8601 %>"><%= l(date, format: '%-d. %B') %></time>
+                <% unless guide.pension? %>
+                  <p><%= guide.label(event) %><%= ' · plan 2026' if event.fetch('plan_month').start_with?('2026') %></p>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        <% elsif row[:latest] %>
+          <small class="payment-month-state">Najpozneje</small>
+          <time datetime="<%= row[:latest].iso8601 %>"><%= l(row[:latest], format: '%-d. %B') %></time>
+        <% else %>
+          <small class="payment-month-state">Čaka na objavo</small>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+  <% if guide.pension? %>
+    <div class="payment-supplements">
+      <section>
+        <h3>Dodatek iz 2026 · april</h3>
+        <p>Če je bila pravica do letnega dodatka za 2026 priznana naknadno, ZPIZ zimski dodatek za 2026 izplača skupaj z rednimi prejemki za april 2027.</p>
+        <%= link_to 'Pojasnilo ZPIZ', PaymentCalendar::WINTER_SUPPLEMENT %>
+      </section>
+      <section>
+        <h3>Letni dodatek · junij</h3>
+        <p>ZPIZ-2 določa izplačilo skupaj z junijsko pokojnino ali nadomestilom. Za naknadno priznane pravice in tuje pokojnine veljajo posebni roki.</p>
+      </section>
+      <section>
+        <h3>Zimski dodatek · november</h3>
+        <p>V letu 2027 znaša 190 € za upravičence do letnega dodatka. Pri sorazmernih pokojninah po mednarodnih pogodbah se tudi dodatek izplača sorazmerno. Pri naknadnem priznanju pravice je predvideno poznejše izplačilo.</p>
+      </section>
+    </div>
+    <p class="payment-overview-source"><%= link_to 'ZPIZ-2 – letni in zimski dodatek ter izplačevanje pokojnin', PaymentCalendar::ZPIZ_RULE %></p>
+  <% else %>
+    <p class="payment-overview-source">Otroški dodatek se po pojasnilu ministrstva izplača najpozneje 15. dne v mesecu za pretekli mesec. <%= link_to 'GOV.SI – pravila za otroški dodatek', SlovenianResources::CHILD.last %></p>
+  <% end %>
+</section>
+
+<section class="payment-overview payment-applications" id="kako-do-izplacila" aria-labelledby="payment-applications-title">
+  <h2 id="payment-applications-title"><%= guide.pension? ? 'Kako do prve starostne pokojnine?' : 'Kako zaprositi za socialne prejemke?' %></h2>
+  <ol>
+    <% guide.application_steps.each do |title, content, links| %>
+      <li>
+        <h3><%= title %></h3>
+        <p><%= content %></p>
+        <ul class="payment-application-links">
+          <% links.each do |label, path| %><li><%= link_to label, path %></li><% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ol>
+</section>

@@ -24,14 +24,10 @@
 .date-guide__aside ol,
 .date-faq details p,
 .date-related a span { color: var(--muted); }
-.date-hero__tags span {
-  border-color: var(--line);
-  background: var(--surface);
-  color: var(--ink);
-}
-.date-hero__tags i { background: var(--blue); }
-.date-hero__tags span:nth-child(2) i { background: var(--red); }
-.date-hero__tags span:nth-child(3) i { background: var(--blue); }
+
+
+
+
 
 .date-tool.panel,
 .date-guide {

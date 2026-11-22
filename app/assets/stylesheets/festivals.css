@@ -1,110 +1,175 @@
 .festival-directory {
-  --festival-ink: #163657;
-  --festival-line: #d5e1ed;
-  --festival-blue: #eaf3fc;
+  --festival-ink: #122f50;
+  --festival-blue: #105a94;
+  --festival-muted: #466279;
+  --festival-line: #cadced;
+  --festival-soft: #edf5fb;
   display: grid;
-  gap: clamp(18px, 3vw, 34px);
   min-width: 0;
+  gap: clamp(20px, 3.4vw, 42px);
 }
+.festival-directory [hidden] { display: none !important; }
+.festival-directory :is(h2, h3) { margin: 0; color: var(--festival-ink); overflow-wrap: anywhere; }
+.festival-directory h2 { font-size: clamp(1.35rem, 2.5vw, 2rem); line-height: 1.18; }
+.festival-directory :is(a, button, input, select, summary):focus-visible { outline: 3px solid #237cca; outline-offset: 3px; }
 .festival-masthead {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1fr);
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid #1b4970;
+  border-radius: 24px;
+  background: radial-gradient(ellipse at 14% 120%, #205785, transparent 66%), #112f50;
+  color: #fafdff;
+}
+.festival-masthead__copy {
+  display: grid;
+  min-width: 0;
+  align-content: center;
+  justify-items: start;
+  gap: 14px;
+  padding: clamp(17px, 3.2vw, 47px);
+}
+#vsebina .festival-directory .festival-kicker {
+  display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 18px;
-  padding: clamp(20px, 4vw, 48px);
-  border: 1px solid #cbdeee;
-  border-radius: 22px;
-  background: linear-gradient(128deg, #f3f9ff 46%, #e2eefb 100%);
+  gap: 7px;
+  margin: 0;
+  color: #ffdb8e;
+  font-size: .9rem;
+  font-weight: 760;
 }
+.festival-kicker .country-flag { flex: none; width: 27px; height: 17px; object-fit: contain; }
+.festival-kicker .ui-icon { flex: none; width: 23px; height: 23px; }
 .festival-masthead h1 {
-  max-width: 20ch;
-  margin: 0 0 10px;
-  color: var(--festival-ink);
-  font-size: clamp(30px, 5vw, 58px);
-  line-height: 1.08;
-  letter-spacing: -.035em;
+  max-width: 18ch;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.98rem, 4.45vw, 4.1rem);
+  line-height: 1.02;
+  letter-spacing: -.046em;
+  overflow-wrap: anywhere;
 }
-.festival-masthead p { max-width: 62ch; margin: 0 0 17px; }
-.festival-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 9px 15px; }
-.festival-actions > a { max-width: 100%; white-space: normal; }
-.festival-masthead__mark { position: relative; padding: 0 16px; transform: rotate(-7deg); }
-.festival-masthead__mark > .icon-calendar { width: clamp(106px, 16vw, 220px); height: auto; }
-.festival-masthead__mark > .icon-pin { position: absolute; width: 39%; height: auto; right: 0; bottom: 3%; }
-.festival-directory :is(h2, h3) { margin: 0; color: var(--festival-ink); overflow-wrap: anywhere; }
-.festival-agenda__grid,
-.festival-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 268px), 1fr));
-  gap: 12px;
-  margin-top: 12px;
-}
-.festival-agenda__item {
-  display: grid;
-  align-content: start;
-  gap: 3px;
-  padding: 13px 15px;
-  border: 1px solid var(--festival-line);
-  border-radius: 12px;
-  color: var(--festival-ink);
-  background: #fff;
-  text-decoration: none;
-}
-.festival-agenda__item:hover { background: var(--festival-blue); }
-.festival-agenda__item > span { color: #185890; font-weight: 750; font-variant-numeric: tabular-nums; }
-.festival-kinds { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; }
-.festival-kinds a {
+#vsebina .festival-masthead__copy > p:not(.festival-kicker) { max-width: 51ch; margin: 0; color: #d8e8f6; line-height: 1.55; }
+.festival-primary {
   display: inline-flex;
   align-items: center;
+  gap: 10px;
   min-height: 44px;
-  padding: 5px 12px;
-  border: 1px solid var(--festival-line);
-  border-radius: 9px;
-  background: #fff;
-  color: #184b78;
-  font-weight: 700;
+  padding: 9px 13px;
+  border: 1px solid #fff3d8;
+  border-radius: 10px;
+  color: #183852;
+  background: #ffdf9b;
+  font-weight: 780;
   text-decoration: none;
 }
-.festival-kinds a:hover { background: var(--festival-blue); }
-.festival-directory .festival-policy { margin: -7px 0 0; }
-.festival-group, .festival-card, .festival-agenda { scroll-margin-top: 22px; }
-.festival-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  min-width: 0;
-  padding: 15px;
-  border: 1px solid var(--festival-line);
-  border-radius: 14px;
-  background: #fff;
-}
-.festival-card:target { outline: 2px solid #1c6eb8; outline-offset: 3px; }
-.festival-card :is(p, dl, dd) { margin: 0; }
-.festival-card :is(.festival-place, .festival-venue) { color: #3d5974; font-size: 14px; }
-.festival-card .festival-place { display: flex; align-items: center; gap: 5px; font-weight: 750; }
-.festival-place svg { flex: none; width: 23px; height: 23px; }
-.festival-edition {
+.festival-primary:hover { color: #16334e; background: #ffebbf; text-decoration: none; }
+.festival-primary .ui-icon { width: 17px; height: 17px; flex: none; }
+.festival-masthead__photo {
+  position: relative;
   display: grid;
-  gap: 5px;
-  width: 100%;
-  padding: 9px;
-  border: 1px solid var(--festival-line);
-  border-radius: 10px;
-  background: #f0f7ff;
+  min-width: 0;
+  min-height: 310px;
+  margin: 0;
+  overflow: hidden;
+  isolation: isolate;
+  align-items: end;
+  text-decoration: none;
+  border-radius: 17px;
+  background: #183f63;
 }
-.festival-status { color: #1e6755; font-size: 13px; font-weight: 750; }
-.festival-status.is-past { color: #40556b; }
-.festival-edition__links { display: flex; flex-wrap: wrap; gap: 2px 10px; }
-.festival-edition__links a { display: inline-flex; align-items: center; min-height: 33px; font-size: 14px; }
-.festival-years { width: 100%; margin-top: auto; border-top: 1px solid var(--festival-line); }
-.festival-years summary { min-height: 44px; padding: 7px 0; cursor: pointer; }
-.festival-years dl { display: grid; gap: 4px; margin-bottom: 7px; }
-.festival-years dl > div { display: grid; grid-template-columns: auto 1fr; gap: 10px; }
-.festival-years dl > div > dt { font-weight: 750 !important; }
-.festival-footer { padding: 16px; }
-.festival-footer .festival-policy { margin-top: 10px; }
-@media (max-width: 520px) {
-  .festival-masthead { grid-template-columns: minmax(0, 1fr); }
-  .festival-masthead__mark { display: none; }
-  .festival-agenda__item { min-width: 0; }
+.festival-masthead__photo:focus-visible { outline-offset: -4px; }
+.festival-masthead__photo :is(picture,img), .festival-card__cover :is(picture,img) { display:block;width:100%;height:100%;object-fit:cover; }
+.festival-masthead__photo picture { position: absolute; inset: 0; }
+.festival-masthead__photo::after, .festival-card__cover::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background: linear-gradient(0deg, #071b30ed, #071b3030 39%, transparent 65%);
+  pointer-events: none;
+}
+.festival-masthead__caption { position: relative; z-index: 1; display:grid; gap:2px; padding:17px 55px 17px 18px;color:#fff;letter-spacing:.01em; }
+.festival-masthead__caption span { font-size:.84rem;color:#f4e1b7;font-weight:700; }
+.festival-masthead__caption strong { font-size:clamp(1.15rem,2.4vw,1.9rem);line-height:1.15; }
+.festival-masthead__caption a { color:#fff; text-decoration:underline;text-underline-offset:3px; }
+.festival-cover-arrow { display:grid; place-items:center; width:35px;height:35px;flex:none;background:#edf5fc;border:1px solid #c8deef;border-radius:10px; }
+.festival-cover-arrow .ui-icon { width:16px;height:16px; }
+.festival-masthead__photo > .festival-cover-arrow { position:absolute;z-index:1;bottom:16px;right:16px; }
+.festival-agenda { margin:4px 0 17px; }
+.festival-agenda h3 { font-size:1.1rem; }
+.festival-agenda__grid { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-top:8px; }
+.festival-agenda__item { display:flex;align-items:center;gap:10px;padding:9px;border:1px solid var(--festival-line);border-radius:12px;color:var(--festival-ink);background:#fff;text-decoration:none;min-width:0; }
+.festival-agenda__item:hover { background:var(--festival-soft);border-color:#91b7d8;text-decoration:none; }
+.festival-agenda__copy { min-width:0; }
+.festival-agenda__copy > :is(strong,small) { display:block;overflow-wrap:anywhere;line-height:1.3; }
+.festival-agenda__copy strong { color:var(--festival-ink);font-size:.98rem; }
+.festival-agenda__copy small { margin-top:4px;color:var(--festival-muted);font-size:.8rem; }
+.festival-agenda__date { display:grid;flex:none;width:48px;min-height:51px;align-content:center;justify-items:center;line-height:1.1;background:#e8f2fb;color:#154b79;border-radius:9px;font-weight:750; }
+.festival-agenda__date > strong { font-size:1.35rem; }
+.festival-agenda__date > span { font-size:.77rem; }
+#festivalski-katalog, .festival-card, #termini { scroll-margin-top:22px; }
+.festival-results-head { display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px 15px;margin-bottom:12px; }
+#vsebina .festival-results-head p { margin:0;color:var(--festival-muted);font-weight:700; }
+.festival-filters { display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr) minmax(0,1.12fr) minmax(0,.72fr) auto;align-items:end;gap:10px;margin-bottom:14px;padding:12px;border:1px solid var(--festival-line);border-radius:14px;background:var(--festival-soft); }
+#vsebina .festival-filters label { display:grid;gap:5px;min-width:0;margin:0;color:var(--festival-ink);font-size:.87rem;font-weight:760; }
+#vsebina .festival-filters :is(input,select,button) { box-sizing:border-box;min-width:0;min-height:48px;width:100%;margin:0;border:1px solid #b9cfe3;border-radius:8px;padding:8px 9px;background:#fff;color:var(--festival-ink);font-size:1rem; }
+.festival-filters button { cursor:pointer;background:#e0eef8;white-space:normal;font-size:.9rem;font-weight:750; }
+.festival-filters button:hover { background:#d6e8f6; }
+.festival-grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(9px,1.6vw,18px); }
+.festival-card { min-width:0; }
+.festival-card:target { outline:2px solid var(--festival-blue);outline-offset:4px;border-radius:16px; }
+.festival-card__link { display:flex;flex-direction:column;height:100%;border:1px solid var(--festival-line);border-radius:16px;overflow:hidden;text-decoration:none;background:#fff;box-shadow:0 3px 9px #1435550c; }
+.festival-card__link:hover { border-color:#83afd3;box-shadow:0 5px 14px #18395c1b;text-decoration:none; }
+.festival-card__cover { position:relative;isolation:isolate;overflow:hidden;aspect-ratio:16/9;background:#dceaf7; }
+.festival-card__category { position:absolute;z-index:1;top:9px;left:9px;max-width:calc(100% - 18px);padding:4px 8px;border-radius:7px;background:#f4f9ff;color:#174369;font-size:.76rem;font-weight:780;line-height:1.25; }
+.festival-card__photo-label { position:absolute;z-index:1;bottom:7px;right:9px;color:#fff;font-size:.76rem;font-weight:740;line-height:1.2; }
+.festival-card__body { display:flex;flex:1;flex-direction:column;min-width:0;gap:7px;padding:clamp(10px,1.4vw,17px); }
+.festival-card__body h3 { font-size:clamp(1.05rem,1.5vw,1.35rem);line-height:1.18; }
+#vsebina .festival-place { display:flex;align-items:center;gap:4px;min-width:0;margin:0;color:var(--festival-muted);font-size:.9rem;font-weight:740;line-height:1.25;overflow-wrap:anywhere; }
+.festival-place .ui-icon { flex:none;width:20px;height:20px; }
+.festival-card__bottom { display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:auto;padding-top:3px; }
+.festival-status { display:inline-block;max-width:100%;padding:5px 8px;border-radius:7px;background:#edf3f9;color:#33556f;font-size:.81rem;font-weight:750;line-height:1.28; }
+.festival-status.is-confirmed { background:#e3f4ea;color:#235e46; }
+.festival-empty { margin:0;padding:15px;border-radius:12px;background:var(--festival-soft);color:var(--festival-ink); }
+.festival-detail__grid { display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:14px;align-items:start; }
+.festival-detail__panel,.festival-footer { min-width:0;padding:clamp(13px,2.4vw,25px);border:1px solid var(--festival-line);border-radius:15px;background:#fff; }
+.festival-detail__panel { display:grid;gap:12px; }
+#vsebina .festival-detail__panel p { margin:0;color:var(--festival-muted);line-height:1.55; }
+.festival-detail__panel .festival-pending { padding:10px;border-radius:9px;background:#f2f7fc; }
+.festival-detail__panel .festival-place { color:var(--festival-ink); }
+.festival-edition { display:grid;justify-items:start;gap:6px;padding:11px;border:1px solid var(--festival-line);border-radius:10px;background:#f9fcff; }
+.festival-edition__links,.festival-footer nav,.festival-place-links { display:flex;flex-wrap:wrap;gap:7px 12px; }
+.festival-edition__links a,.festival-footer a,.festival-place-links a { display:inline-flex;align-items:center;min-height:37px; }
+.festival-years summary { min-height:44px;padding:8px 0;color:var(--festival-blue);font-size:1rem;font-weight:740; }
+.festival-years dl { display:grid;gap:5px;margin:4px 0; }
+.festival-years dl > div { display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px; }
+.festival-years dt,.festival-years dd { margin:0; }
+.festival-footer { background:#f5fafe; }
+#vsebina .festival-footer p { margin:7px 0 4px; }
+.festival-share { display:flex;justify-content:flex-end;margin-top:13px; }
+.festival-share .site-share { position:relative;inset:auto;z-index:4; }
+#vsebina .festival-share .site-share__trigger { color:#fff;font-weight:750; }
+@media(max-width:1020px) {
+  .festival-agenda__grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .festival-filters { grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .festival-filter-search { grid-column:1/-1; }
+  .festival-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:680px) {
+  .festival-masthead,.festival-detail__grid { grid-template-columns:minmax(0,1fr); }
+  .festival-masthead { border-radius:17px; }
+  .festival-masthead__copy { gap:9px;padding:13px 11px 11px; }
+  .festival-masthead__photo { min-height:0;aspect-ratio:16/8.6;border-radius:11px; }
+  .festival-masthead__caption { padding:12px 48px 10px 11px; }
+  .festival-masthead__photo > .festival-cover-arrow { right:9px;bottom:8px; }
+  .festival-filters { grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:9px; }
+}
+@media(max-width:530px) {
+  .festival-grid { grid-template-columns:minmax(0,1fr); }
+  .festival-agenda__item { align-items:flex-start;gap:5px;padding:7px; }
+  .festival-agenda__date { width:35px;min-height:42px; }
+  .festival-agenda__copy strong { font-size:.88rem; }
 }

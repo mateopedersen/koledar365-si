@@ -2,9 +2,12 @@
 <%= render 'blog' %>
 <% elsif @section=='shopping_guide' %>
 <%= raw ShoppingGuides.body(page_path) %>
-<% elsif @section=='festivals' %>
-<%= render 'festivals' %>
-<% elsif %w[local_tool tools_index].include?(@section) %>
+<%= render 'occasion_planner', entries: [] %>
+<% elsif %w[festivals festival_detail].include?(@section) %>
+<%= render @section %>
+<% elsif page_path=='/vpisni-koledar/' %>
+<%= render 'admissions' %>
+<% elsif %w[local_tool tools_index slovenian_resource].include?(@section) %>
 <%= render @section %>
 <% elsif page_path=='/kontakt/' %>
 <%= render 'contact' %>
@@ -20,18 +23,18 @@
 <% elsif %w[about terms privacy cookie_policy holidays observance school calendar_studio horoscope methodology garden_calendar payment_calendar education_calendar school_timetable moon_phases astronomy_events].include?(@section) %>
 <%= render @section %>
 <% else %>
-<% if page_path=='/datumski-kalkulator/' %>
+<% if @calendar_collection %>
+<%= render 'calendar_collection_intro', copy: @calendar_collection %>
+<% elsif page_path=='/datumski-kalkulator/' %>
 <div class="date-hero">
-  <div class="date-hero__copy"><span class="eyebrow">KOLEDAR365 · DATUMSKA ORODJA</span><h1><%= @title %></h1><p><%= @description %></p><div class="date-hero__tags"><span><i></i> Takojšen izračun</span><span><i></i> Slovenski prazniki</span><span><i></i> Povezava za deljenje</span></div></div>
+  <div class="date-hero__copy">
+    <span class="eyebrow">KOLEDAR365 · DATUMSKA ORODJA</span>
+    <h1><%= @title %></h1>
+    <p><%= @description %></p>
+    <%= render 'hero_features', label: 'Možnosti datumskega kalkulatorja', items: [['calculator', 'Razlika in premik datuma'], ['holidays', 'Delovniki in prazniki'], ['share', 'Povezava do rezultata']] %>
+  </div>
   <div class="date-hero__art" aria-hidden="true">
-    <svg viewBox="0 0 380 260" role="presentation" focusable="false" xmlns:xlink="http://www.w3.org/1999/xlink">
-<defs><linearGradient id="dateScene" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#e8f0fa"/></linearGradient></defs>
-<ellipse cx="185" cy="230" rx="125" ry="12" fill="#15385d" opacity=".08"/><circle cx="300" cy="64" r="39" fill="#eaf2fb"/>
-<% date_icon_calendar = "#{IllustrationHelper.versioned_svg_url('/visuals/ui-material-v3.svg')}#calendar"; date_icon_clock = "#{IllustrationHelper.versioned_svg_url('/visuals/ui-material-v3.svg')}#clock" %>
-<g transform="rotate(-7 164 120)"><use href="<%= date_icon_calendar %>" xlink:href="<%= date_icon_calendar %>" x="44" y="-3" width="245" height="245"/></g>
-<rect x="226" y="116" width="111" height="111" rx="24" fill="url(#dateScene)" stroke="#d8e4f0"/><use href="<%= date_icon_clock %>" xlink:href="<%= date_icon_clock %>" x="238" y="121" width="88" height="88"/>
-<path d="M306 35v13m-6-6h12M49 170v10m-5-5h10" stroke="#97b3d0" stroke-width="2" stroke-linecap="round"/>
-</svg>
+    <%= page_hero_art('date') %>
   </div>
 </div>
 <% elsif page_path=='/prestopno-leto/' %>
@@ -40,9 +43,7 @@
     <span class="leap-kicker"><i aria-hidden="true"></i> KOLEDAR365 · GREGORIJANSKI KOLEDAR</span>
     <h1 id="leap-title">Prestopno leto: preverite leto in 29. februar</h1>
     <p>Prestopno leto ima 366 dni. Izračunajte izbrano leto in v jasnem pregledu preverite, zakaj nekatera stoletna leta preskočijo dodatni dan.</p>
-    <div class="leap-hero__facts" aria-label="Ključna dejstva">
-      <span><strong>365</strong><small>običajno leto</small></span><span class="leap-hero__plus" aria-hidden="true">+</span><span><strong>1</strong><small>dodatni dan</small></span><span class="leap-hero__date"><strong>29. 2.</strong><small>v februarju</small></span>
-    </div>
+    <%= render 'hero_features', label: 'Običajno in prestopno leto', items: [['calendar', '365 dni', 'Običajno leto'], ['week', '366 dni', 'Prestopno leto'], ['plus', '29. februar', 'Dodatni dan']] %>
   </div>
   <div class="leap-hero__art">
     <svg viewBox="0 0 520 360" role="img" aria-labelledby="leap-art-title leap-art-desc" focusable="false">
@@ -90,32 +91,10 @@
     <span class="eyebrow">KOLEDAR365 · ORODJE ZA DELO</span>
     <h1 id="shift-hero-title">Razpored izmen, pripravljen za vaš ritem</h1>
     <p>Vnesite zaporedje izmen in obdobje. Takoj preverite mesečni pregled, nato razpored shranite, izvozite ali natisnite kot PDF ali sliko pri 600 ppi.</p>
-    <div class="shift-hero__benefits" aria-label="Prednosti orodja">
-      <span><i aria-hidden="true"></i> Takojšen predogled</span>
-      <span><i aria-hidden="true"></i> Brez registracije</span>
-      <span><i aria-hidden="true"></i> PDF, Slika in ICS</span>
-    </div>
+    <%= render 'hero_features', label: 'Možnosti razporeda izmen', items: [['week', 'Ponavljajoče se izmene'], ['shield', 'Brez računa'], ['download', 'PDF, slika in ICS']] %>
   </div>
   <div class="shift-hero__art" aria-hidden="true">
-    <svg viewBox="0 0 470 330" focusable="false">
-      <defs>
-        <linearGradient id="shiftPaper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#eef4fb"/></linearGradient>
-        <linearGradient id="shiftBlue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4a9dde"/><stop offset="1" stop-color="#005da4"/></linearGradient>
-        <linearGradient id="shiftRed" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f06b75"/><stop offset="1" stop-color="#c52d45"/></linearGradient>
-      </defs>
-      <circle cx="337" cy="89" r="72" fill="#dceaf6"/><circle cx="337" cy="89" r="49" fill="#fff"/>
-      <path d="M309 89h56M337 61v56" stroke="#c52d45" stroke-width="5" stroke-linecap="round"/>
-      <g transform="rotate(-5 220 170)">
-        <rect x="72" y="39" width="272" height="244" rx="20" fill="url(#shiftPaper)" stroke="#d6e3ef" stroke-width="2"/>
-        <path d="M72 69a30 30 0 0 1 30-30h212a30 30 0 0 1 30 30v24H72z" fill="url(#shiftBlue)"/>
-        <path d="M107 31v19m202-19v19" stroke="#15365c" stroke-width="8" stroke-linecap="round"/>
-        <g fill="#6a819a" font-family="system-ui,sans-serif" font-size="12" font-weight="700" text-anchor="middle"><text x="119" y="119">PON</text><text x="171" y="119">TOR</text><text x="223" y="119">SRE</text><text x="275" y="119">ČET</text><text x="327" y="119">PET</text></g>
-        <g stroke="#dbe5ef" stroke-width="1.5"><path d="M94 133h229M94 179h229M94 225h229"/><path d="M145 127v121m52-121v121m52-121v121m52-121v121"/></g>
-        <g><rect x="101" y="143" width="36" height="25" rx="7" fill="url(#shiftBlue)"/><rect x="154" y="189" width="36" height="25" rx="7" fill="url(#shiftRed)"/><rect x="207" y="143" width="36" height="25" rx="7" fill="url(#shiftBlue)"/><rect x="260" y="189" width="36" height="25" rx="7" fill="url(#shiftRed)"/><rect x="313" y="143" width="8" height="25" rx="4" fill="#dce5ee"/></g>
-      </g>
-      <rect x="26" y="254" width="145" height="42" rx="13" fill="#fff" stroke="#e0e8f0"/><circle cx="48" cy="275" r="7" fill="#005da4"/><text x="64" y="280" fill="#354e69" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Dnevna izmena</text>
-      <rect x="195" y="254" width="137" height="42" rx="13" fill="#fff" stroke="#e0e8f0"/><circle cx="217" cy="275" r="7" fill="#c52d45"/><text x="233" y="280" fill="#354e69" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Nočna izmena</text>
-</svg>
+    <%= page_hero_art('shifts') %>
   </div>
 </section>
 <% elsif @section=='workdays' && !@page.month %>
@@ -125,17 +104,10 @@
     <h1 id="workdays-title"><%= @title %></h1>
     <p><%= @description %></p>
     <div class="workdays-hero__actions"><a class="button primary" href="#workdays-overview">Razišči letni pregled <span aria-hidden="true">↓</span></a><a class="button" href="/kalkulator-delovnih-dni/">Izračunaj obdobje <span aria-hidden="true">↗</span></a></div>
-    <div class="workdays-hero__meta"><span><i aria-hidden="true"></i> Uradni dela prosti dnevi</span><span><i aria-hidden="true"></i> Prilagodljiv urnik</span><span><i aria-hidden="true"></i> Takojšen izračun</span></div>
+    <%= render 'hero_features', label: 'Podatki o delovnem koledarju', items: [['holidays', 'Dela prosti dnevi'], ['settings', 'Prilagodljiv delovnik'], ['clock', 'Mesečni pregled ur']] %>
   </div>
   <div class="workdays-hero__visual" aria-hidden="true">
-    <svg viewBox="0 0 430 310" focusable="false">
-      <defs><linearGradient id="wdCard" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#eaf3fb"/></linearGradient><linearGradient id="wdRibbon" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fff"/><stop offset=".5" stop-color="#1764ad"/><stop offset="1" stop-color="#d9233d"/></linearGradient></defs>
-      <circle cx="220" cy="156" r="132" fill="#fff" opacity=".6"/><circle cx="220" cy="156" r="112" fill="none" stroke="#b9d2e8" stroke-dasharray="2 9" stroke-width="2"/>
-      <g transform="rotate(-7 215 150)"><rect x="96" y="52" width="234" height="205" rx="24" fill="#16365a" opacity=".12"/><rect x="88" y="42" width="234" height="205" rx="24" fill="url(#wdCard)" stroke="#c8dced" stroke-width="2"/><path d="M89 66a24 24 0 0 1 24-24h186a24 24 0 0 1 24 24v24H89Z" fill="#0b4779"/><path d="M89 84h234" stroke="url(#wdRibbon)" stroke-width="4"/><path d="M137 31v28m136-28v28" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
-        <g fill="#d8e5f1"><rect x="119" y="118" width="31" height="27" rx="7"/><rect x="164" y="118" width="31" height="27" rx="7"/><rect x="209" y="118" width="31" height="27" rx="7"/><rect x="254" y="118" width="31" height="27" rx="7"/><rect x="119" y="159" width="31" height="27" rx="7"/><rect x="164" y="159" width="31" height="27" rx="7"/><rect x="209" y="159" width="31" height="27" rx="7"/><rect x="254" y="159" width="31" height="27" rx="7"/></g><rect x="209" y="159" width="31" height="27" rx="7" fill="#d9233d"/><path d="m218 172 6 6 11-13" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </g>
-      <rect x="250" y="211" width="139" height="64" rx="19" fill="#fff" stroke="#d6e3f0"/><circle cx="273" cy="243" r="7" fill="#1764ad"/><path d="M288 243h79" stroke="#1764ad" stroke-width="5" stroke-linecap="round"/><path d="M288 256h51" stroke="#d9233d" stroke-width="4" stroke-linecap="round" opacity=".8"/><circle cx="75" cy="84" r="7" fill="#d9233d"/><circle cx="356" cy="81" r="5" fill="#1764ad"/><path d="M65 219h20m-10-10v20M355 123h18m-9-9v18" stroke="#1764ad" stroke-width="2" stroke-linecap="round" opacity=".65"/>
-    </svg>
+    <%= render 'workdays_hero_art' %>
   </div>
 </section>
 <% elsif page_path=='/lunin-koledar/' %>
@@ -144,9 +116,7 @@
     <span class="lunar-hub-kicker">KOLEDAR365 <i aria-hidden="true"></i> LUNA 2027–2030</span>
     <h1 id="lunar-hub-title"><%= @title %></h1>
     <p><%= @description %></p>
-    <div class="lunar-hub-facts" aria-label="Vsebina luninega koledarja">
-      <span><strong>4</strong> leta</span><span><strong>48</strong> mesecev</span><span><strong>Europe/Ljubljana</strong> lokalni čas</span>
-    </div>
+    <%= render 'hero_features', label: 'Vsebina luninega koledarja', dark: true, items: [['calendar', '2027–2030', 'Letni pregledi'], ['moon', '48 mesecev', 'Lunine mene'], ['clock', 'Krajevni čas', 'Slovenija']] %>
   </div>
   <div class="lunar-hub-masthead__art" aria-hidden="true">
     <%= render 'responsive_photo', path: '/lunar/photos/artemis-earthset.jpg', alt: '', sizes: '(max-width:650px) min(330px, calc(100vw - 70px)), (max-width:900px) 28vw, 440px' %>
@@ -163,4 +133,4 @@
 
 <% if @page&.body.present? && page_path!='/koledar/' && !%w[observance school horoscope calendar_studio methodology garden_calendar payment_calendar education_calendar school_timetable moon_phases astronomy_events].include?(@section) %><section class="panel prose"><%= simple_format(@page.body) %></section><% end %>
 
-<%= render 'editorial_note' unless @section == 'blog' %>
+<%= render 'editorial_note' unless @section == 'blog' || @calendar_collection %>

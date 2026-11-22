@@ -6,14 +6,17 @@ class CountdownCatalog
 
   def self.events(today:)
     through=Date.new([LAST_CALENDAR_YEAR,today.year].max,12,31)
-    holidays=CalendarEvent.where(category:'legal',on:today..through).ordered.map do |event|
-      {id:"holiday-#{event.slug}-#{event.on.iso8601}",title:event.title.sub(/\A./,&:upcase),date:event.on.iso8601,category:'holiday',work_free:event.work_free,state_holiday:event.state_holiday,source:'holiday'}
-    end
     paths=Page.published.pluck(:path).to_set
+    holidays=CalendarEvent.where(category:'legal',on:today..through).ordered.map do |event|
+      path = ["/prazniki/#{event.slug}/", "/prazniki/#{event.on.year}/", '/prazniki/'].find { |candidate| paths.include?(candidate) }
+      {id:"holiday-#{event.slug}-#{event.on.iso8601}",title:event.title.sub(/\A./,&:upcase),date:event.on.iso8601,
+       category:'holiday',work_free:event.work_free,state_holiday:event.state_holiday,source:'holiday',path:path}
+    end
     occasions=ImportantDays.events_in(today..through).filter_map do |event|
       next if %w[legal civil_time astronomical].include?(event.category)
       if event.category=='festival'
-        path=OccasionCatalog.festival_path(event.slug)
+        detail_path=OccasionCatalog.festival_detail_path(event.slug)
+        path=paths.include?(detail_path) ? detail_path : OccasionCatalog.festival_path(event.slug)
         category='festival'
       else
         path=%w[pomembni-dnevi prazniki].map { |group| "/#{group}/#{event.slug}/" }.find { |candidate| paths.include?(candidate) }

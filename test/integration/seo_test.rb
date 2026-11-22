@@ -10,7 +10,7 @@ class SeoTest < ActionDispatch::IntegrationTest
     assert_select 'script[type="application/ld+json"]' do |tags|
       schema=JSON.parse(tags.first.text)
       crumbs=schema['@graph'].find { |r|r['@type']=='BreadcrumbList' }['itemListElement']
-      assert_equal ['Domov','Letni koledarji','Koledar – februar 2028'],crumbs.map { |r|r['name'] }
+      assert_equal ['Domov','Letni koledarji','Koledar za februar 2028'],crumbs.map { |r|r['name'] }
       refute tags.first['nonce'].blank?
     end
   end
@@ -152,6 +152,6 @@ end
 class SocialImageTest < ActionDispatch::IntegrationTest
   test 'social images identify the calendar period' do
     get '/koledar/2029/april/'
-    assert_select 'meta[property="og:image:alt"][content="Koledar – april 2029"]'
+    assert_select 'meta[property="og:image:alt"][content="Koledar za april 2029"]'
   end
 end

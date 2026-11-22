@@ -129,6 +129,12 @@ export function calendarDocument(entries, now = new Date()) {
       'DTSTAMP:' + stamp, 'DTSTART;VALUE=DATE:' + compact(entry.date),
       'DTEND;VALUE=DATE:' + compact(isoDate(byDays(end, 1))), 'SUMMARY:' + escapeText(entry.title));
     if (entry.note) lines.push('DESCRIPTION:' + escapeText(entry.note));
+    if (entry.location) lines.push('LOCATION:' + escapeText(entry.location));
+    if (entry.reminderAt instanceof Date && Number.isFinite(entry.reminderAt.getTime())) {
+      const trigger = entry.reminderAt.toISOString().replace(/[-:]/g, '').replace(/\.\d+Z$/, 'Z');
+      lines.push('BEGIN:VALARM', 'ACTION:DISPLAY', 'DESCRIPTION:' + escapeText(entry.title),
+        'TRIGGER;VALUE=DATE-TIME:' + trigger, 'END:VALARM');
+    }
     lines.push('END:VEVENT');
   });
   lines.push('END:VCALENDAR', '');

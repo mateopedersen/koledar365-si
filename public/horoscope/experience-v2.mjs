@@ -44,7 +44,12 @@ if(root){
     for(const card of $$('[data-sign-card]'))card.hidden=filter!=='all'&&card.dataset.element!==filter;
   });
   const checkDay=()=>{if(document.hidden)return;const expected=mode==='yesterday'?yesterday():localDate();if(root.dataset.editionDay!==expected||Date.now()-lastChecked>900000)refresh();};
-  setTimeout(()=>refresh(),50);setInterval(checkDay,60000);document.addEventListener('visibilitychange',checkDay);
+  setTimeout(() => {
+    // An early click may already be loading a different edition.
+    if (requestId === 0) refresh();
+  }, 50);
+  setInterval(checkDay, 60000);
+  document.addEventListener('visibilitychange', checkDay);
 
   const form=$('[data-birth-form]'),result=$('[data-birth-result]'),place=$('[data-birth-place]');
   const cities=[

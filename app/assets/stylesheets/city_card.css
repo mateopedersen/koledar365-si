@@ -1,28 +1,96 @@
 /* The live city card is isolated from the dense calendar's spacing rules. */
 #city-card{display:block;padding:0;overflow:hidden;border:1px solid #e1e7ef;border-radius:18px;background:#fff;box-shadow:0 8px 25px #1c365e0a}
-#city-card .today-heading{display:flex;align-items:center;gap:10px;padding:17px 15px 15px;background:linear-gradient(120deg,#fff 30%,#faf4f4);position:relative}
-#city-card .today-location{width:29px;height:37px;flex:none;display:block;filter:drop-shadow(0 3px 3px #c72a3d1c)}
-#city-card .today-location svg{width:100%;height:100%}
-#city-card .today-eyebrow{display:block;font-size:8px;line-height:1.4;letter-spacing:1.7px;text-transform:uppercase;font-weight:800;color:#9d4c5b;margin:0 0 3px}
-#city-card .today-heading h2{font-size:17px;line-height:1.2;letter-spacing:-.5px;margin:0;color:#173052}
-#city-card .today-live{margin-left:auto;white-space:nowrap;align-self:flex-start;font-size:8px;font-weight:650;letter-spacing:.1px;color:#657b8a;display:flex;gap:4px;align-items:center;margin-top:2px}
-#city-card .today-live i{width:5px;height:5px;border-radius:50%;background:#0054b8;box-shadow:0 0 0 3px #0054b813}
+#city-card .today-heading {
+  display: grid;
+  grid-template-columns: 35px minmax(0, 1fr);
+  align-items: center;
+  gap: 9px;
+  padding: 13px 15px;
+  border-bottom: 1px solid #e3ebf3;
+  background: #fff;
+}
+#city-card .today-location .ui-icon {
+  display: block;
+  width: 35px;
+  height: 35px;
+}
+#city-card .today-heading h2 {
+  margin: 0;
+  color: #173052;
+  font-size: 17px;
+  line-height: 1.2;
+}
+#city-card .today-heading .today-date {
+  margin: 3px 0 0;
+  color: #4c627d;
+  font-size: 12px;
+  font-weight: 550;
+  line-height: 1.4;
+}
 #city-card .city-photo{display:block;position:relative;grid-column:auto;grid-row:auto;height:155px;margin:0;border-radius:0;background:#e4edf6}
 #city-card .city-photo:after{content:'';position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 1px 0 #ffffff30}
 #city-card .city-photo img{height:100%;width:100%;object-fit:cover}
-#city-card .city-photo figcaption{padding:32px 15px 12px;background:linear-gradient(transparent,#081e39bf);font-size:12px;letter-spacing:.1px}
+#city-card .city-photo figcaption {
+  gap: 8px;
+  padding: 32px 15px 12px;
+  background: linear-gradient(transparent, #081e39dc);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: .1px;
+}
 #city-card .city-photo figcaption a{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;border:1px solid #ffffff70;background:#ffffff17;backdrop-filter:blur(5px)}
 #city-card .today-body{padding:15px 15px 10px;min-width:0}
-#city-card .today-date{margin:0 0 13px;font-size:12px;color:#556c87;font-weight:650;line-height:1.45}
-#city-card .time-row{display:grid;grid-template-columns:54px minmax(0,1fr);gap:11px;align-items:center;margin:0 0 17px;position:relative}
-#city-card .city-clock{width:54px;height:54px;filter:drop-shadow(0 3px 4px #1c3b6010)}
-#city-card .city-clock path[class]{transform-origin:32px 32px}
-#city-card .clock-hour-hand{transform:rotate(var(--clock-hour,0deg))}#city-card .clock-minute-hand{transform:rotate(var(--clock-minute,0deg))}#city-card .clock-second-hand{transform:rotate(var(--clock-second,0deg))}
-#city-card .clock-caption{display:block;text-transform:uppercase;font-size:8px;font-weight:800;letter-spacing:1.3px;color:#7e8fa3;margin:0 0 2px}
-#city-card .clock-digits{display:flex;align-items:baseline;gap:5px;line-height:1}
-#city-card #ljubljana-clock{font-size:40px;line-height:1.05;font-weight:850;letter-spacing:-1.8px;color:#112f53;font-variant-numeric:tabular-nums}
-#city-card #city-clock-seconds{font-size:13px;font-weight:600;color:#9b5470;font-variant-numeric:tabular-nums;letter-spacing:.1px}
-#city-card .clock-zone{position:absolute;right:0;top:1px;padding:3px 5px;border-radius:4px;background:#f0f4f8;color:#6c7e93;font-size:8px;font-weight:750;letter-spacing:.4px}
+#city-card .time-row {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 11px;
+  align-items: center;
+  margin: 0 0 14px;
+}
+#city-card .city-clock {
+  width: 54px;
+  height: 54px;
+}
+#city-card .city-clock path[class] { transform-origin: 32px 32px; }
+#city-card .clock-hour-hand { transform: rotate(var(--clock-hour, 0deg)); }
+#city-card .clock-minute-hand { transform: rotate(var(--clock-minute, 0deg)); }
+#city-card .clock-second-hand { transform: rotate(var(--clock-second, 0deg)); }
+#city-card .clock-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0 8px;
+  margin-bottom: 2px;
+  color: #526174;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.35;
+}
+#city-card .clock-zone { font-size: 11px; }
+#city-card .clock-zone:empty,
+#city-card #city-clock-seconds:empty { display: none; }
+#city-card .clock-digits {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  line-height: 1;
+}
+#city-card #ljubljana-clock {
+  font-size: 40px;
+  line-height: 1.05;
+  font-weight: 850;
+  letter-spacing: -.045em;
+  color: #112f53;
+  font-variant-numeric: tabular-nums;
+}
+#city-card #city-clock-seconds {
+  color: #526174;
+  font-size: 13px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+#city-card #city-clock-seconds::before { content: ":"; margin-inline-end: 1px; }
 #city-card .city-picker{margin:0 0 10px}
 #city-card .city-picker>label{display:block;font-size:9px;font-weight:750;color:#7b8999;letter-spacing:1px;text-transform:uppercase;margin:0 0 6px}
 #city-card .city-location-status{display:block;margin:5px 2px 0;color:#465e79;font-size:10px;line-height:1.45}
@@ -236,21 +304,8 @@
   padding: 10px 12px;
 }
 #city-card .weather-source__status {
-  display: grid;
-  grid-template-columns: 7px minmax(0, 1fr);
-  align-items: start;
-  gap: 7px;
   min-width: 0;
 }
-#city-card .weather-source .status-dot {
-  width: 7px;
-  height: 7px;
-  margin-top: 5px;
-  border-radius: 50%;
-  background: #8094ac;
-}
-#city-card[data-weather-state=ready] .status-dot { background: #287d6d; }
-#city-card:is([data-weather-state=saved], [data-weather-state=unavailable]) .status-dot { background: #b36c22; }
 #city-card :is(#weather-updated, #weather-published) {
   display: block;
   overflow-wrap: anywhere;
@@ -258,6 +313,7 @@
   line-height: 1.4;
 }
 #city-card #weather-updated { color: #294861; font-weight: 750; }
+#city-card:is([data-weather-state=saved], [data-weather-state=unavailable]) #weather-updated { color: #805018; }
 #city-card #weather-published { margin-top: 1px; color: #4f657a; }
 #city-card #weather-refresh {
   display: inline-flex;
@@ -293,7 +349,7 @@
   text-align: center;
 }
 #city-card .city-photo picture { display: block; width: 100%; height: 100%; }
-#city-card :is(.clock-caption, .clock-zone, .city-picker > label, .today-live) { color: #526174; }
+#city-card .city-picker > label { color: #526174; }
 
 @container (min-width: 313px) {
   #city-card .weather-hero { padding-inline: 16px; }
@@ -334,7 +390,7 @@
 }
 
 /* Match the workspace breakpoint: above 850px this card occupies the narrow sidebar. */
-@media(min-width:650px) and (max-width:850px){#city-card{display:grid;grid-template-columns:minmax(190px,.85fr) minmax(250px,1fr)}#city-card .today-heading{grid-column:1/-1;padding:15px 18px}#city-card .city-photo{height:100%;min-height:320px;grid-column:1;grid-row:2}#city-card .today-body{padding:15px 20px}#city-card .today-heading h2{font-size:19px}#city-card .today-eyebrow{font-size:9px}#city-card .today-live{font-size:9px}}
-@media(max-width:649px){#city-card .today-heading{padding:17px 18px}#city-card .today-heading h2{font-size:19px}#city-card .today-eyebrow{font-size:9px}#city-card .today-location{width:32px;height:38px}#city-card .city-photo{height:175px}#city-card .today-body{padding:17px 19px 12px}#city-card .today-date{font-size:13px}#city-card .time-row{grid-template-columns:60px minmax(0,1fr);gap:14px}#city-card .city-clock{width:60px;height:60px}#city-card #ljubljana-clock{font-size:46px}#city-card .clock-caption{font-size:9px}#city-card .clock-zone{font-size:9px}#city-card .city-select-shell select{height:46px;font-size:16px}}
-@media(max-width:359px){#city-card .today-heading{padding:15px 13px;gap:8px}#city-card .today-heading h2{font-size:17px}#city-card .today-live{font-size:7px}#city-card .today-body{padding:15px 14px 10px}#city-card #ljubljana-clock{font-size:41px}}
+@media(min-width:650px) and (max-width:850px){#city-card{display:grid;grid-template-columns:minmax(190px,.85fr) minmax(250px,1fr)}#city-card .today-heading{grid-column:1/-1;padding:15px 18px}#city-card .city-photo{height:100%;min-height:320px;grid-column:1;grid-row:2}#city-card .today-body{padding:15px 20px}#city-card .today-heading h2{font-size:19px}}
+@media(max-width:649px){#city-card .today-heading{padding:17px 18px}#city-card .today-heading h2{font-size:19px}#city-card .city-photo{height:175px}#city-card .today-body{padding:17px 19px 12px}#city-card .time-row{grid-template-columns:60px minmax(0,1fr);gap:14px}#city-card .city-clock{width:60px;height:60px}#city-card #ljubljana-clock{font-size:46px}#city-card .city-select-shell select{height:46px;font-size:16px}}
+@media(max-width:359px){#city-card .today-heading{padding:15px 13px;gap:8px}#city-card .today-heading h2{font-size:17px}#city-card .today-body{padding:15px 14px 10px}#city-card #ljubljana-clock{font-size:41px}}
 @media(prefers-reduced-motion:reduce){#city-card *,#city-card *:before,#city-card *:after{animation:none!important;transition:none!important}}

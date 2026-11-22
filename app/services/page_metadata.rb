@@ -1,6 +1,9 @@
 class PageMetadata
   # Describe the actual tool/data on a page; do not append lists of SEO keywords.
   def self.description(page, year:)
+    collection_description = CalendarCollectionEditorial.description(page)
+    return collection_description if collection_description
+
     return 'Izračunajte številko tedna ISO za izbrani datum. Preverite začetek tedna v ponedeljek, razliko med letom ISO in koledarskim letom ter primere ob novem letu.' if page.path=='/stevilka-tedna/'
     return 'Kateri dan v letu je izbrani datum? Izračunajte zaporedno številko dneva, preverite vpliv 29. februarja in število dni do konca navadnega ali prestopnega leta.' if page.path=='/dan-v-letu/'
     return 'Kako Koledar365 preverja vire, ločuje izračune od uradnih datumov in obravnava popravke. Pravila za avtomatizacijo, umetno inteligenco in jezikovni pregled.' if page.path=='/uredniska-politika/'
@@ -12,6 +15,9 @@ class PageMetadata
     return ClockChangeSchedule::DESCRIPTION if page.path=='/premik-ure/'
     return 'Ustvarite svoj letni ali mesečni koledar z imenom, fotografijami, logotipom in dogodki. Prilagodite pisave, barve in začetek tedna ter prenesite PDF, PNG ali SVG.' if page.path=='/ustvari-koledar/'
     return 'Pogoji uporabe Koledar365 pojasnjujejo rabo koledarjev in orodij, navajanje virov, avtorske pravice, omejitve podatkov ter prijavo napak.' if page.path=='/pogoji-uporabe/'
+    return 'Preberite današnji horoskop za vseh 12 znamenj zodiaka. Izberite znamenje za dnevni zapis o ljubezni, delu in počutju ali izračunajte ascendent.' if page.path == '/horoskop/'
+    sign_editorial = HoroscopeGuide.editorial_for_path(page.path)
+    return sign_editorial.fetch('description') if sign_editorial
     return page.description if page.description.present?
     path = page.path
     fixed = JSON.parse(Rails.root.join("data/page_descriptions_sl.json").read)

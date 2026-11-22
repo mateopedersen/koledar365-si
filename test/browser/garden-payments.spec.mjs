@@ -28,11 +28,75 @@ test('pensions use the December 29 official exception and export the filtered da
   expect(calendar.match(/BEGIN:VEVENT/g)).toHaveLength(1);expect(calendar).toContain('DTSTART;VALUE=DATE:20261229');
 });
 
+test('the payment date and all month cells remain readable together on phones and tablets', async ({page}) => {
+  await page.clock.setFixedTime(new Date('2026-10-21T12:00:00Z'));
+  for (const route of ['/izplacila-pokojnin/', '/izplacila-socialnih-transferjev/']) {
+    await page.goto(route);
+    await dismiss(page);
+    const month = page.locator('.payment-next-month');
+    for (const width of [320, 390, 530, 600, 760, 768, 1024]) {
+      await page.setViewportSize({width, height: 900});
+      const cellsFit = await month.evaluate(grid => {
+        const card = grid.closest('.payment-next').getBoundingClientRect();
+        const month = grid.getBoundingClientRect();
+        const date = grid.closest('.payment-next').querySelector('.payment-next-date').getBoundingClientRect();
+        const overlapsDate = month.left < date.right && month.right > date.left &&
+          month.top < date.bottom && month.bottom > date.top;
+        return !overlapsDate && month.right <= card.right && [...grid.children].every(cell => {
+          const rect = cell.getBoundingClientRect();
+          return rect.left >= month.left && rect.right <= month.right + 1 && rect.width >= 16;
+        });
+      });
+      expect(cellsFit, route + ' at ' + width).toBe(true);
+    }
+  }
+});
+
 test('payment coverage ends honestly and preserves the single January carry-over',async({page})=>{
   await page.clock.setFixedTime(new Date('2027-01-06T12:00:00Z'));await page.goto('/izplacila-pokojnin/');await dismiss(page);
   await expect(page.locator('[data-payment-next-date]')).toContainText('Ni potrjenega');await expect(page.locator('[data-payment-next-date]')).not.toHaveAttribute('datetime',/\d/);
   await page.goto('/izplacila-socialnih-transferjev/?mesec=2027-01&prihodnji=0');
   await expect(page.locator('[data-payment-row]:visible')).toHaveCount(1);await expect(page.locator('[data-payment-row]:visible')).toContainText('2027');await expect(page.locator('[data-payment-row]:visible')).toContainText(/december 2026/i);
+});
+
+test('2027 pension limits and transfer publication status stay distinct from confirmed downloads', async ({page}) => {
+  await page.goto('/izplacila-pokojnin/');
+  await dismiss(page);
+  await expect(page.locator('[data-payment-2027-month]')).toHaveCount(12);
+  await expect(page.locator('[data-payment-2027-month="2027-01"] time')).toHaveAttribute('datetime', '2027-01-29');
+  await expect(page.locator('[data-payment-2027-month="2027-12"]')).toContainText('Najpozneje');
+  await expect(page.locator('[data-payment-download]')).toHaveAttribute('href', '/payments/pokojnine-2026.ics');
+  await expect(page.locator('#kako-do-izplacila').getByRole('link', {name: 'Uradna zahteva in dokazila'})).toBeVisible();
+
+  await page.goto('/izplacila-socialnih-transferjev/');
+  await expect(page.locator('[data-payment-2027-month]')).toHaveCount(12);
+  await expect(page.locator('#koledar-2027 [datetime]')).toHaveCount(1);
+  await expect(page.locator('[data-payment-2027-month="2027-01"] time')).toHaveAttribute('datetime', '2027-01-05');
+  await expect(page.locator('[data-payment-2027-month="2027-02"]')).toContainText('Čaka na objavo');
+  await expect(page.locator('#kako-do-izplacila').getByRole('link', {name: 'Uradna vloga za varstveni dodatek'})).toBeVisible();
+});
+
+test('annual net and income tax use year-specific thresholds and reconcile withheld tax once', async ({page}) => {
+  await page.goto('/kalkulator-dohodnine/');
+  await dismiss(page);
+  const form = page.locator('[data-sl-calculator="annual_tax"] form');
+  const results = page.locator('[data-sl-result]');
+  const compute = () => form.getByRole('button', {name: 'Izračunaj'}).click();
+
+  await compute();
+  await expect(results).toContainText('19291,55');
+  await expect(results).toContainText('Predvideno vračilo');
+  await expect(results).toContainText('149,49');
+
+  await form.locator('[name="year"]').selectOption('2026');
+  await compute();
+  await expect(results).toContainText('19141,17');
+  await expect(results).toContainText('Predvideno doplačilo');
+  await expect(results).toContainText('0,89');
+
+  await form.locator('[name="advance"]').fill('25000');
+  await compute();
+  await expect(results).toContainText('ne smejo presegati bruto plač');
 });
 
 test('new source-led tools and methodology fit a 320px phone with one main heading',async({page})=>{

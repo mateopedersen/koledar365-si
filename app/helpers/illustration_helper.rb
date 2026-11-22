@@ -5,7 +5,7 @@ module IllustrationHelper
   UI_ICON_NAMES = %w[
     calendar week clock pin sun moon person search settings plus check note download upload print info chevron-right
     gift image grid star briefcase calculator cloud shield cookie compass family school holidays personal work
-    vacation birthday sunset heart arrow refresh sprout ics-import ics-export backup-save backup-restore
+    vacation birthday sunset heart arrow share refresh sprout ics-import ics-export backup-save backup-restore
   ].freeze
   UI_ICON_SPRITE = '/visuals/ui-material-v3.svg'.freeze
   CALENDAR_FILE_ICONS = {
@@ -13,8 +13,25 @@ module IllustrationHelper
     'webp' => '/visuals/download-webp-v1.svg'
   }.freeze
 
+  LOCAL_TOOL_ART = {
+    'dnevi' => 'flag-days',
+    'godovi' => 'name-days',
+    'studij' => 'study-plan',
+    'vpis' => 'admissions',
+    'davki' => 'taxes',
+    'sezone' => 'seasons',
+    'luna' => 'moonrise',
+    'pokojnina' => 'retirement'
+  }.freeze
+
   def self.versioned_svg_url(path)
     SvgAssetReferences.versioned_url(Rails.root.join('public'), path)
+  end
+
+  def page_hero_art(name, css_class: nil)
+    image_tag(IllustrationHelper.versioned_svg_url("/visuals/hero-#{name}.svg"),
+      alt: '', class: ['page-hero-art', css_class].compact.join(' '), width: 600, height: 380,
+      decoding: 'async')
   end
 
   def ui_icon(name)
@@ -25,6 +42,18 @@ module IllustrationHelper
     content_tag(:svg, content_tag(:use, nil, href: url, 'xlink:href': url),
       class: "ui-icon icon-#{name}", viewBox: '0 0 64 64', width: 24, height: 24,
       'aria-hidden': 'true', focusable: 'false', 'xmlns:xlink': 'http://www.w3.org/1999/xlink')
+  end
+
+  def tool_directory_icon(name)
+    reference = "#{IllustrationHelper.versioned_svg_url(UI_ICON_SPRITE)}#tool-art-#{name}"
+    content_tag(:svg, content_tag(:use, nil, href: reference, 'xlink:href': reference),
+      class: 'tool-directory-icon', viewBox: '0 0 64 64', width: 52, height: 52,
+      'aria-hidden': 'true', focusable: 'false', 'xmlns:xlink': 'http://www.w3.org/1999/xlink')
+  end
+
+  def navigation_icon(name)
+    image_tag(IllustrationHelper.versioned_svg_url("/visuals/navigation/#{name}.svg"),
+      alt: '', width: 28, height: 28, class: 'nav-art', 'aria-hidden': 'true')
   end
 
   def calendar_file_icon(format)

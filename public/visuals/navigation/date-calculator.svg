@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+  <defs>
+    <linearGradient id="page" x1="7" y1="6" x2="29" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#dbe8f6"/></linearGradient>
+    <linearGradient id="keys" x1="22" y1="15" x2="35" y2="36" gradientUnits="userSpaceOnUse"><stop stop-color="#76b7c9"/><stop offset="1" stop-color="#205e70"/></linearGradient>
+  </defs>
+  <ellipse cx="20.5" cy="36.4" rx="16" ry="2.2" fill="#193b62" opacity=".14"/>
+  <rect x="4.5" y="6.7" width="24.5" height="25.8" rx="4.7" fill="url(#page)" stroke="#6d8cb1"/>
+  <path d="M5 11.5a4.5 4.5 0 0 1 4.5-4.5h14.7a4.5 4.5 0 0 1 4.5 4.5v3H5z" fill="#426da5"/>
+  <path d="M11.5 5v5m10-5v5" stroke="#273f66" stroke-width="2.8" stroke-linecap="round"/>
+  <path d="M11 19h3m3 0h3m-9 5.5h3m3 0h3m-9 5h3" stroke="#6e92b9" stroke-width="2" stroke-linecap="round"/>
+  <rect x="22" y="16" width="14" height="20" rx="3.3" fill="url(#keys)" stroke="#21576e"/>
+  <rect x="24.5" y="18.9" width="9" height="4.2" rx="1.1" fill="#dbedf2" stroke="#386f80" stroke-width=".65"/>
+  <path d="M24.7 27h4m-2-2v4m4.4-2h2.7m-2.3 4.9h2.5m-9.2 0h3.7" stroke="#fff" stroke-width="1.36" stroke-linecap="round"/>
+</svg>

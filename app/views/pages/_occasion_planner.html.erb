@@ -1,0 +1,79 @@
+<% selected = OccasionPlanner.selected(entries, @today, preferred: params[:datum])
+   share_url = canonical_url
+   date_url = selected ? "#{share_url}?datum=#{selected.fetch(:start)}#dodaj-v-koledar" : share_url
+   rows_have_distinct_titles = entries.map { |row| row[:title] }.uniq.many?
+   calendar_file = "koledar365-#{page_path.split('/').last}" %>
+<section class="occasion-planner" id="dodaj-v-koledar" aria-labelledby="occasion-planner-heading"
+  data-occasion-planner data-occasion-url="<%= share_url %>" data-occasion-file="<%= calendar_file %>" data-occasion-title="<%= @title %>">
+  <div class="occasion-planner__heading">
+    <span class="occasion-planner__heading-icon"><%= ui_icon(selected ? 'calendar' : 'share') %></span>
+    <h2 id="occasion-planner-heading"><%= selected ? 'Dodajte datum v koledar' : 'Delite stran' %></h2>
+  </div>
+
+  <% if selected %>
+    <script type="application/json" data-occasion-dates><%= raw json_escape(entries.to_json) %></script>
+    <div class="occasion-planner__event">
+      <div class="occasion-planner__calendar" aria-hidden="true">
+        <span data-occasion-month><%= selected.fetch(:month) %></span>
+        <strong data-occasion-day><%= selected.fetch(:day) %></strong>
+        <span data-occasion-weekday><%= selected.fetch(:weekday) %></span>
+      </div>
+      <div class="occasion-planner__event-info">
+        <h3 data-occasion-label><%= selected.fetch(:title) %></h3>
+        <time datetime="<%= selected.fetch(:start) %>" data-occasion-date><%= selected.fetch(:label) %></time>
+        <p data-occasion-detail><%= selected.fetch(:detail) %></p>
+        <p class="occasion-planner__date-state" data-occasion-date-state <%= 'hidden' if selected.fetch(:end) >= @today.iso8601 %>>Pretekli datum</p>
+      </div>
+    </div>
+    <div class="occasion-planner__columns">
+      <div class="occasion-planner__controls">
+        <label for="occasion-date-select">Datum</label>
+        <select id="occasion-date-select" data-occasion-select disabled>
+          <% entries.each do |row| %>
+            <option value="<%= row.fetch(:key) %>" <%= 'selected' if row == selected %>><%= row.fetch(:label) %><%= " · #{row.fetch(:title)}" if rows_have_distinct_titles %></option>
+          <% end %>
+        </select>
+        <label for="occasion-reminder">Opomnik</label>
+        <select id="occasion-reminder" data-occasion-reminder disabled>
+          <option value="none">Brez opomnika</option>
+          <option value="evening">Dan prej ob 21.00</option>
+          <option value="morning">Na dan dogodka ob 9.00</option>
+          <option value="week">Teden prej ob 9.00</option>
+        </select>
+        <p class="occasion-planner__hint">Dogodek je celodneven. Opomnik uporablja slovenski čas. V Google Koledarju nastavite obvestilo pri shranjevanju.</p>
+      </div>
+
+      <div class="occasion-planner__actions">
+        <a class="occasion-planner__action occasion-planner__action--primary" data-occasion-google
+          href="<%= OccasionPlanner.google_url(selected, date_url) %>" target="_blank" rel="noopener noreferrer">
+          <span class="occasion-planner__action-icon"><%= ui_icon('calendar') %></span>
+          <span><strong>Google Koledar</strong><span class="occasion-planner__action-detail">Odpri pripravljen dogodek</span></span>
+          <%= ui_icon('chevron-right') %>
+        </a>
+        <a class="occasion-planner__action" data-occasion-ics
+          href="data:text/calendar;charset=utf-8;base64,<%= Base64.strict_encode64(OccasionPlanner.default_ics(selected, date_url)) %>"
+          download="<%= calendar_file %>-<%= selected.fetch(:start) %>.ics">
+          <span class="occasion-planner__action-icon"><%= ui_icon('download') %></span>
+          <span><strong>Apple Calendar in Outlook</strong><span class="occasion-planner__action-detail">Prenesi datoteko ICS</span></span>
+          <%= ui_icon('chevron-right') %>
+        </a>
+        <button type="button" class="occasion-planner__action" data-occasion-local hidden>
+          <span class="occasion-planner__action-icon"><%= ui_icon('plus') %></span>
+          <span><strong>Moj Koledar365</strong><span class="occasion-planner__action-detail">Shrani v tem brskalniku</span></span>
+          <%= ui_icon('chevron-right') %>
+        </button>
+      </div>
+    </div>
+  <% elsif local_assigns[:pending] %>
+    <p class="occasion-planner__pending">Organizator še ni objavil novega termina. Povezavo lahko delite že zdaj.</p>
+  <% end %>
+
+  <div class="occasion-planner__share">
+    <button type="button" data-occasion-native hidden><%= ui_icon('share') %> <%= selected ? 'Deli datum' : 'Deli stran' %></button>
+    <button type="button" data-occasion-copy hidden><%= ui_icon('note') %> Kopiraj povezavo</button>
+    <a data-occasion-mail href="mailto:?subject=<%= ERB::Util.url_encode(@title) %>&body=<%= ERB::Util.url_encode(date_url) %>">Pošlji po e-pošti</a>
+    <a data-occasion-home hidden href="/#personal-planner">Odpri moj koledar <%= ui_icon('chevron-right') %></a>
+  </div>
+  <input data-occasion-link type="text" readonly hidden aria-label="Povezava za deljenje">
+  <p class="occasion-planner__message" data-occasion-message role="status" hidden></p>
+</section>

@@ -12,6 +12,9 @@ class ObservancesTest < ActionDispatch::IntegrationTest
       title=css_select('title').sole.text
       assert_match(/\A[^|]+ \| Koledar365\z/,title,page.path)
       assert_includes title,'datumi 2027–2030',page.path
+      assert_select 'section[data-occasion-planner]', count: 1
+      assert_select 'select[data-occasion-select] option', minimum: 4
+      assert_select 'a[data-occasion-ics][download]', count: 1
       assert_select 'meta[property="og:title"]',count:1 do |tags|
         assert_equal title,tags.sole['content'],page.path
       end

@@ -1,17 +1,49 @@
 <% city=CityCatalog.default; city_image=WebImageCatalog.find(city.dig('photo','local_path')) %>
 <section class="panel today-panel" id="city-card" data-cities-url="/cities.json" data-weather-state="loading">
   <header class="today-heading">
-    <span class="today-location" aria-hidden="true"><svg viewBox="0 0 48 56" fill="none"><defs><linearGradient id="today-pin-red" x1="9" y1="4" x2="37" y2="43" gradientUnits="userSpaceOnUse"><stop stop-color="#ff6673"/><stop offset="1" stop-color="#c9203b"/></linearGradient></defs><ellipse cx="24" cy="51" rx="10" ry="3" fill="#c9203b" opacity=".13"/><path d="M24 3C13.5 3 6 10.4 6 20.2c0 12 18 27.3 18 27.3s18-15.3 18-27.3C42 10.4 34.5 3 24 3Z" fill="url(#today-pin-red)"/><circle cx="24" cy="20" r="7.5" fill="white"/><path d="M12 18a12.5 12.5 0 0 1 10-9" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity=".5"/></svg></span>
-    <div><span class="today-eyebrow">Tukaj in zdaj</span><h2>Danes v Sloveniji</h2></div>
-    <span class="today-live" title="Krajevni čas v Sloveniji"><i aria-hidden="true"></i> V živo</span>
+    <span class="today-location"><%= ui_icon('pin') %></span>
+    <div>
+      <h2>Danes v Sloveniji</h2>
+      <p class="today-date" id="city-today"><%= CalendarEngine::DAYS[@today.cwday-1].capitalize %>, <%= sl_date(@today) %></p>
+    </div>
   </header>
   <figure class="city-photo"><picture><source id="city-photo-avif" type="image/avif" srcset="<%= city_image&.fetch('avif_srcset') %>" sizes="<%= WebImageCatalog::CITY_SIZES %>"><img id="city-photo" src="<%= city_image&.fetch('src') || city.dig('photo','local_path') %>" srcset="<%= city_image&.fetch('srcset') %>" sizes="<%= WebImageCatalog::CITY_SIZES %>" alt="<%= city['name'] %> – pogled na mesto" width="<%= city_image&.fetch('width') || 960 %>" height="<%= city_image&.fetch('height') || 600 %>" fetchpriority="high" decoding="sync"></picture><figcaption><span id="city-caption"><%= city['name'] %>, Slovenija</span><a id="city-credit" href="/fotografije-in-licence/#<%= city['id'] %>" aria-label="Avtor in licenca fotografije"><%= ui_icon('info') %></a></figcaption></figure>
   <div class="today-body">
-    <p class="today-date" id="city-today"><%= CalendarEngine::DAYS[@today.cwday-1].capitalize %>, <%= sl_date(@today) %></p>
     <div class="time-row">
-      <svg class="city-clock" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#f2f6fc" stroke="#d5e1ef"/><circle cx="32" cy="32" r="25" fill="white"/><path d="M32 9v3m23 20h-3M32 55v-3M9 32h3M20.5 12l1.5 2.6m21.5-2.6L42 14.6M52 20.5 49.4 22M52 43.5 49.4 42M43.5 52 42 49.4M20.5 52l1.5-2.6M12 43.5l2.6-1.5M12 20.5l2.6 1.5" stroke="#9cadc3" stroke-width="1.5" stroke-linecap="round"/><path class="clock-hour-hand" d="M32 32V20" stroke="#153355" stroke-width="3.2" stroke-linecap="round"/><path class="clock-minute-hand" d="M32 32V14" stroke="#153355" stroke-width="2.2" stroke-linecap="round"/><path class="clock-second-hand" d="M32 38V11" stroke="#df3e53" stroke-width="1.2" stroke-linecap="round"/><circle cx="32" cy="32" r="3" fill="#df3e53"/></svg>
-      <div class="clock-readout"><span class="clock-caption">Krajevni čas</span><div class="clock-digits"><time id="ljubljana-clock" aria-label="Krajevni čas v Sloveniji">—:—</time><span id="city-clock-seconds" aria-hidden="true">00</span></div></div>
-      <span class="clock-zone" id="city-zone">Ljubljana</span>
+      <svg class="city-clock" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="city-clock-rim" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#edf5fb"/>
+            <stop offset=".47" stop-color="#a2b8cd"/>
+            <stop offset=".75" stop-color="#f5f9fc"/>
+            <stop offset="1" stop-color="#7791aa"/>
+          </linearGradient>
+          <radialGradient id="city-clock-dial" cx=".44" cy=".36" r=".65">
+            <stop stop-color="#fff"/>
+            <stop offset=".76" stop-color="#f9fbfd"/>
+            <stop offset="1" stop-color="#e7eff6"/>
+          </radialGradient>
+        </defs>
+        <circle cx="32" cy="33" r="29.5" fill="#8da6bf"/>
+        <circle cx="32" cy="31.5" r="29" fill="url(#city-clock-rim)" stroke="#a2b7cb"/>
+        <circle cx="32" cy="31.5" r="25.5" fill="url(#city-clock-dial)" stroke="#a4b9cd"/>
+        <path d="M32 9v4m23 19h-4M32 55v-4M9 32h4" stroke="#42617c" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M20.5 12l1.5 2.6m21.5-2.6L42 14.6M52 20.5 49.4 22M52 43.5 49.4 42M43.5 52 42 49.4M20.5 52 22 49.4M12 43.5l2.6-1.5M12 20.5l2.6 1.5" stroke="#6987a0" stroke-width="1.25" stroke-linecap="round"/>
+        <path class="clock-hour-hand" d="M32 32V20" stroke="#153355" stroke-width="3.2" stroke-linecap="round"/>
+        <path class="clock-minute-hand" d="M32 32V14" stroke="#153355" stroke-width="2.2" stroke-linecap="round"/>
+        <path class="clock-second-hand" d="M32 38V11" stroke="#ae3047" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="32" cy="32" r="2.4" fill="#ae3047" stroke="#fff" stroke-width=".6"/>
+      </svg>
+      <div class="clock-readout">
+        <div class="clock-meta">
+          <span class="clock-caption">Krajevni čas</span>
+          <span class="clock-zone" id="city-zone"></span>
+        </div>
+        <div class="clock-digits">
+          <time id="ljubljana-clock" aria-label="Krajevni čas v Sloveniji">—:—</time>
+          <span id="city-clock-seconds" aria-hidden="true"></span>
+        </div>
+      </div>
     </div>
     <div class="city-picker"><label for="city-select">Vaše mesto</label><div class="city-select-shell"><%= ui_icon('pin') %><select id="city-select" aria-label="Izberite mesto v Sloveniji"><% CityCatalog.all.each do |c|; image=WebImageCatalog.find(c.dig('photo','local_path')) %><option value="<%= c['id'] %>" data-photo="<%= image&.fetch('src') || c.dig('photo','local_path') %>" data-photo-srcset="<%= image&.fetch('srcset') %>" data-photo-avif="<%= image&.fetch('avif_srcset') %>" data-credit="/fotografije-in-licence/#<%= c['id'] %>" data-latitude="<%= c.fetch('coordinates').first.fetch('lat') %>" data-longitude="<%= c.fetch('coordinates').first.fetch('lon') %>" data-night-photo="<%= c.dig('night_photo','local_path') %>" <%= 'selected' if c['id']==city['id'] %>><%= c['name'] %></option><% end %></select><%= ui_icon('chevron-right') %></div><small id="city-location-status" class="city-location-status" role="status" aria-live="polite">Samodejno določamo bližnje mesto …</small></div>
     <div class="weather-widget" id="city-weather">
@@ -39,11 +71,8 @@
       </details>
       <div class="weather-source">
         <div class="weather-source__status">
-          <span class="status-dot" aria-hidden="true"></span>
-          <div>
-            <span id="weather-updated" role="status">Povezujemo se z vremenskim virom …</span>
-            <span id="weather-published">Modelna napoved · MET Norway</span>
-          </div>
+          <span id="weather-updated" role="status">Povezujemo se z vremenskim virom …</span>
+          <span id="weather-published">Modelna napoved · MET Norway</span>
         </div>
         <button type="button" id="weather-refresh" aria-label="Osveži vremensko napoved">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M19.5 10a7.5 7.5 0 0 0-13.1-4.9L4.5 7m0 0V3.5m0 3.5H8m-3.5 7a7.5 7.5 0 0 0 13.1 4.9l1.9-1.9m0 0v3.5m0-3.5H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>

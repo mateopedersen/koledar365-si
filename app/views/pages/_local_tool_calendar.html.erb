@@ -1,32 +1,27 @@
-<% flags=kind=='dnevi'; tax=kind=='davki'; admission=kind=='vpis'; years=CalendarEngine::YEARS; initial_year=@today.year.clamp(years.first,years.last) %>
-<% rows=flags ? LocalTools.flags : tax ? LocalToolDeadlines.tax : LocalToolDeadlines.admission %>
-<% labels=if flags then {'required'=>'Obvezno na poslopjih organov','optional'=>'Izobešanje je dovoljeno'} elsif tax then {'dohodnina'=>'Dohodnina','najem'=>'Najem','kapital'=>'Kapital','dejavnost'=>'Dejavnost'} else {'srednja'=>'Srednje šole','visja'=>'Višje strokovne šole','fakulteta'=>'Visokošolski študij'} end %>
+<% flags=kind=='dnevi'; tax=kind=='davki'; years=CalendarEngine::YEARS; initial_year=@today.year.clamp(years.first,years.last) %>
+<% rows=flags ? LocalTools.flags : LocalToolDeadlines.tax %>
+<% labels=if flags then {'required'=>'Obvezno na poslopjih organov','optional'=>'Izobešanje je dovoljeno'} else {'dohodnina'=>'Dohodnina','najem'=>'Najem','kapital'=>'Kapital','dejavnost'=>'Dejavnost'} end %>
 <section class="tool-block" data-tool-list>
-  <h2><%= flags ? 'Datumi za izobešanje zastave' : tax ? 'Izbrani datumi za oddajo' : 'Prijave in rezultati 2027/2028' %></h2>
+  <h2><%= flags ? 'Datumi za izobešanje zastave' : 'Izbrani datumi za oddajo' %></h2>
   <% if flags %>
     <p>Ob zakonsko določenih praznikih je zastava obvezna na poslopjih državnih in lokalnih organov. Na domovih jo lahko izobesite tudi sami. Za druge spodaj navedene državne praznike velja možnost izobešanja.</p>
-  <% elsif tax %>
-    <p>Datumi so izračunani iz rednih rokov po trenutno veljavnih predpisih. Premik na naslednji delovnik je posebej označen. Posebne obveznosti, roke za plačilo in spremembe preverite v eDavkih.</p>
   <% else %>
-    <p>Izberite raven izobraževanja. Datumi za srednje in višje strokovne šole so iz rokovnikov ministrstva. Pri posamezni šoli preverite uro in pot prijave.</p>
+    <p>Datumi so izračunani iz rednih rokov po trenutno veljavnih predpisih. Premik na naslednji delovnik je posebej označen. Posebne obveznosti, roke za plačilo in spremembe preverite v eDavkih.</p>
   <% end %>
   <div class="tool-filter-row">
-    <% unless admission %><label>Leto<select data-row-year><% years.each do |year| %><option <%= 'selected' if year==initial_year %>><%= year %></option><% end %></select></label><% end %>
-    <label><%= flags ? 'Pravila izobešanja' : tax ? 'Vrsta napovedi' : 'Raven izobraževanja' %><select data-row-category><option value="">Vse</option><% labels.each do |key,label| %><option value="<%= key %>"><%= label %></option><% end %></select></label>
+    <label>Leto<select data-row-year><% years.each do |year| %><option <%= 'selected' if year==initial_year %>><%= year %></option><% end %></select></label>
+    <label><%= flags ? 'Pravila izobešanja' : 'Vrsta napovedi' %><select data-row-category><option value="">Vse</option><% labels.each do |key,label| %><option value="<%= key %>"><%= label %></option><% end %></select></label>
     <button type="button" class="tool-secondary" data-row-export>Prenesi prikazane datume (.ics)</button>
   </div>
   <div class="tool-line-list">
     <% rows.each do |row| %><% date=Date.iso8601(row.fetch(:date)); key=row[:category] || row[:type]; finish=row[:end]; shifted=row[:nominal] && row[:nominal]!=row[:date] %>
-      <div class="tool-card-line" data-tool-row data-year="<%= date.year %>" data-category="<%= key %>" data-title="<%= row.fetch(:title) %>" data-date="<%= date %>" data-end="<%= finish %>" data-source="<%= row[:source] || (flags ? LocalTools::FLAGS_SOURCE : '') %>" <%= 'hidden' if !admission && date.year!=initial_year %>>
+      <div class="tool-card-line" data-tool-row data-year="<%= date.year %>" data-category="<%= key %>" data-title="<%= row.fetch(:title) %>" data-date="<%= date %>" data-end="<%= finish %>" data-source="<%= row[:source] || (flags ? LocalTools::FLAGS_SOURCE : '') %>" <%= 'hidden' if date.year!=initial_year %>>
         <time class="tool-date-chip" datetime="<%= date %>"><%= date.strftime('%-d. %-m.') %><% if finish %>– <%= Date.iso8601(finish).strftime('%-d. %-m.') %><% end %></time>
         <div><span class="tool-kind-label"><%= labels.fetch(key) %></span><strong><%= row.fetch(:title) %></strong><% if row[:detail] %><p><%= row.fetch(:detail) %></p><% end %><% if shifted %><p>Redni datum <%= Date.iso8601(row[:nominal]).strftime('%-d. %-m.') %> · premik na delovnik</p><% end %></div>
         <% if flags %><%= link_to 'O prazniku',row.fetch(:url) %><% else %><%= source_link(row.fetch(:source),'Uradni vir') %><% end %>
       </div>
     <% end %>
   </div>
-  <% if admission %>
-    <div class="tool-guidance" data-admission-pending><strong>Visokošolski vpis 2027/2028</strong><p>Za dodiplomski in enoviti magistrski študij spremljajte objavo skupnega razpisa. Posamezni programi in posebni roki so objavljeni pri izvajalcih oziroma v eVŠ.</p><%= source_link(LocalTools::ADMISSION_SOURCES.fetch('fakulteta'),'Razpisi za visokošolski študij') %></div>
-  <% end %>
   <p data-row-empty hidden>Za izbrani filter še ni objavljenega datuma.</p>
   <% if flags %>
     <p>Zakonski seznam vsebuje pet praznikov oziroma šest datumov, saj se praznik dela praznuje dva dni. Dan žalovanja Vlada določi posebej.</p>
@@ -35,5 +30,5 @@
     <div class="tool-source-links"><%= source_link(LocalToolDeadlines::TAX_LAW,'ZDavP-2 – tek rokov') %><%= source_link(LocalToolDeadlines::E_DAVKI,'Osebni koledar v eDavkih') %></div>
   <% end %>
 </section>
-<% if tax || admission %><%= render 'local_tool_reminders', kind: kind, heading: tax ? 'Moji davčni opomniki' : 'Moj vpisni načrt', hint: tax ? 'Zabeležite lastni rok, ki ste ga prejeli v eDavkih ali na odločbi.' : 'Dodajte datum šole, preverjanja ali oddaje dokazil.', today: today %><% end %>
+<% if tax %><%= render 'local_tool_reminders', kind: kind, heading: 'Moji davčni opomniki', hint: 'Zabeležite lastni rok, ki ste ga prejeli v eDavkih ali na odločbi.', today: today %><% end %>
 <div class="tool-source-links"><%= link_to 'Odštevanje do datuma','/odstevanje/' %><%= link_to 'Vsa orodja','/orodja/' %></div>

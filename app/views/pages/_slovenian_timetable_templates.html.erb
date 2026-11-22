@@ -1,0 +1,27 @@
+<% templates = {
+  'work' => ['Delovni razpored', ['Dopoldanska izmena', 'Popoldanska izmena', 'Nočna izmena', 'Opombe']],
+  'school' => ['Šolski urnik', (1..8).map { |number| "#{number}. ura" }],
+  'weekly' => ['Tedenski planer', %w[Jutro Dopoldne Popoldne Večer]]
+} %>
+<section class="sl-resource-panel sl-template-panel" id="orodje" data-sl-templates>
+  <h2 class="sl-template-heading">Predogled predloge</h2>
+  <p class="sl-template-heading">Predlogo lahko izpolnite po tiskanju. Datum ni obvezen, zato jo lahko uporabite tudi večkrat.</p>
+  <div class="sl-resource-form" data-sl-template-controls hidden>
+    <label>Vrsta predloge<select data-sl-template-select><% templates.each do |key, (label, _)| %><option value="<%= key %>"><%= label %></option><% end %></select></label>
+    <label>Datum v izbranem tednu<input type="date" data-sl-template-date min="1900-01-01" max="2100-12-31"></label>
+    <button type="button" class="button primary" data-sl-print>Natisni / shrani PDF</button>
+  </div>
+  <% templates.each do |key, (title, slots)| %>
+    <section class="sl-template-sheet" data-sl-template-sheet="<%= key %>">
+      <h3><%= title %></h3>
+      <p>Teden <span data-sl-template-week>__________________</span></p>
+      <div class="sl-template-table">
+        <table>
+          <caption class="sr-only"><%= title %> po dnevih v tednu</caption>
+          <thead><tr><th scope="col"><%= { 'work' => 'Izmena', 'school' => 'Učna ura', 'weekly' => 'Del dneva' }.fetch(key) %></th><% CalendarEngine::DAYS.take(key == 'school' ? 5 : 7).each_with_index do |day, index| %><th scope="col"><%= day.capitalize %><small data-sl-day="<%= index %>"></small></th><% end %></tr></thead>
+          <tbody><% slots.each do |slot| %><tr><th scope="row"><%= slot %></th><% (key == 'school' ? 5 : 7).times do %><td></td><% end %></tr><% end %></tbody>
+        </table>
+      </div>
+    </section>
+  <% end %>
+</section>

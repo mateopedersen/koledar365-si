@@ -397,14 +397,12 @@
 
   #vsebina :is(.workdays-month-card__number,.family-day__name,.family-day__add,
     .family-legend,.family-agenda-empty,.family-grocery-empty,.family-next-empty,
-    [data-family-grocery-count],.z-art-caption,.z-small-note,.z-sign-overline>b,
-    [data-reading-day]:not(.is-active),.z-reading-section>span[aria-hidden],
+    [data-family-grocery-count],.z-art-caption,.z-small-note,
     .astro-muted,.astro-status.is-invisible,.vacation-section-kicker,
-    [data-feature-kicker],.countdown-kicker,.countdown-saved__count,
-    .countdown-event-card__distance,.leap-table-note,.leap-cycle__year small,
+    .leap-table-note,.leap-cycle__year small,
     .shift-preview__badge,.shift-calendar__day--off,
     #studio-preview-label,.studio-canvas-footer,.studio-statusbar,
-    .studio-hero-note>span,.privacy-art-window__bar>span) { color: #475b72; }
+    .studio-hero-note>span) { color: #475b72; }
   #vsebina .family-legend { font-size: 12px; }
   #vsebina .family-day__name { font-size: 12px; }
   #vsebina .studio-canvas-footer { font-size: 12px; }
@@ -421,12 +419,11 @@
   #vsebina .holiday-check-intro p { color: #edf5ff !important; }
   #vsebina .wdc-result :is(h2,p) { color: #edf5ff !important; }
   #vsebina .lunar-hub-masthead p { color: #edf5ff !important; }
-  #vsebina :is(.z-sign-overline>span,.z-season>div>span,.z-next-sign span,
-    .payment-next-month span:not(.is-payment-day),.garden-timeline thead th,
+  #vsebina :is(.payment-next-month span:not(.is-payment-day),.garden-timeline thead th,
     .calendar-gallery-toolbar>span,[data-calendar-month]:not([aria-current])>span,
     .calendar-experience__preview-bar>span,.calendar-sheet__month .is-outside>span,
     .vacation-range-labels>span,.vacation-plan-item__details>span,
-    .vacation-suggestion-card__stats>div>span,.countdown-clock>div>span,
+    .vacation-suggestion-card__stats>div>span,
     [data-leap-preset]>span,.leap-cycle__year small,.leap-page a small,
     .shift-person>span,.garden-jump a>span,.garden-plan-form label>span,
     .garden-method-steps li>span) { color: #475b72 !important; }
@@ -464,9 +461,7 @@
 @media screen and (min-width: 1700px) {
   #vsebina .studio-workspace { grid-template-columns: 112px 325px minmax(0, 1fr); }
 }
-@media screen and (max-width: 600px) {
-  #vsebina .studio-rail button { flex: 0 0 76px; min-width: 76px; white-space: normal; overflow-wrap: anywhere; }
-}
+
 
 @media screen {
   #vsebina :is(a,button,input,select,textarea,summary,[tabindex]):focus-visible,
@@ -551,15 +546,9 @@
   #vsebina .design-card .calendar-download-action{height:auto;min-height:56px;white-space:normal}
 }
 @media screen and (max-width:850px){
-  #vsebina .studio-rail{max-width:100%;min-width:0;overflow-x:auto;justify-content:flex-start}
-  #vsebina .studio-rail>button{flex:0 0 auto;min-width:100px;max-width:none;padding:10px 12px;white-space:normal}
+  #vsebina .studio-rail>button{--k365-control-height:54px;padding:6px 4px!important}
 }
 @media screen and (max-width:600px){
-  #vsebina .countdown-shortcuts{grid-template-columns:minmax(0,1fr)}
-  #vsebina .countdown-shortcuts button{grid-template-columns:38px minmax(0,1fr) 20px;min-height:76px}
-  #vsebina .countdown-shortcuts :is(strong,small){white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:break-word}
-  #vsebina .countdown-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}
-  #vsebina .countdown-filters>button{width:100%;white-space:normal;min-height:48px;height:auto}
   #vsebina .design-card .actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
   #vsebina .design-card .actions>button:not([data-format]){grid-column:1/-1}
   #vsebina .design-card .calendar-download-action{min-width:0;padding-inline:7px}

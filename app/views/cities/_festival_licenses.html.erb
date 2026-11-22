@@ -1,0 +1,12 @@
+<section class="editorial-note" id="fotografije-festivalov" aria-labelledby="festival-image-heading">
+  <h2 id="festival-image-heading">Fotografije festivalov in prizorišč</h2>
+  <p>Na karticah so arhivski posnetki prireditev ter fotografije krajev ali prizorišč. Oznaka pri vsaki sliki pove, kaj prikazuje. Fotografije so pomanjšane in stisnjene v WebP, okvir kartice lahko obreže robove.</p>
+  <ul>
+    <% OccasionCatalog.photo_assets.each do |key, photo| %>
+      <li id="festival-foto-<%= key %>">
+        <strong><%= photo.fetch('alt') %></strong><br>
+        Foto: <%= photo.fetch('author') %> · <%= link_to 'Izvirna fotografija', photo.fetch('source') %> · <%= link_to photo.fetch('license'), photo.fetch('license_url') %>
+      </li>
+    <% end %>
+  </ul>
+</section>

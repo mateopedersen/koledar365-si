@@ -178,3 +178,41 @@ test('the native tools disclosure remains usable when JavaScript is unavailable'
   await expect(page).toHaveURL(/\/druzinski-planer\/$/);
   await context.close();
 });
+
+test('tool categories and search share the complete catalogue on desktop and mobile', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/');
+  await page.locator('[data-navigation-menu] > summary').click();
+  const panel = page.locator('#site-tools-menu');
+  const search = panel.getByRole('searchbox', { name: 'Išči med orodji' });
+  const shown = panel.locator('[data-navigation-tool]:visible');
+
+  await expect(shown).toHaveCount(66);
+  const pension = panel.getByRole('button', { name: 'Prejemki in upokojitev' });
+  await pension.click();
+  await expect(pension).toHaveAttribute('aria-pressed', 'true');
+  await expect(shown).toHaveCount(7);
+  await expect(panel.getByRole('link', { name: /Kalkulator upokojitve/ })).toBeVisible();
+
+  await search.fill('zxq-neobstoj');
+  await expect(shown).toHaveCount(0);
+  await expect(panel.locator('[data-navigation-empty]')).toBeVisible();
+  await search.fill('solski koledar');
+  await expect(panel.locator('[data-navigation-tool][href="/solski-koledar/"]')).toBeVisible();
+  await search.fill('kalkulator ddv');
+  await expect(shown).toHaveCount(1);
+  await expect(shown.first()).toHaveAttribute('href', '/kalkulator-ddv/');
+
+  await page.setViewportSize({ width: 320, height: 420 });
+  await expect(panel).toBeInViewport({ ratio: 0.99 });
+  const category = panel.getByLabel('Kategorija', { exact: true });
+  await expect(category).toHaveValue('all');
+  await category.selectOption('narava');
+  await expect(search).toHaveValue('');
+  await expect(shown).toHaveCount(3);
+  await expect(panel.getByRole('link', { name: /Setveni koledar/ })).toBeVisible();
+
+  await search.fill('lunine mene');
+  await expect(category).toHaveValue('all');
+  await expect(panel.getByRole('link', { name: /^Lunine mene/ })).toBeVisible();
+});

@@ -21,8 +21,11 @@ class FullSeoTest < ActionDispatch::IntegrationTest
   end
   test 'February 2028 contains real facts and useful matching period links' do
     get '/koledar/2028/februar/'
-    assert_select '#calendar-facts-title',text:'Februar 2028: datumi in načrtovanje'
-    assert_select '.prose strong',text:'29 dni'
+    assert_select '.calendar-collection-intro h1', text: 'Koledar za februar 2028'
+    assert_select 'meta[name="description"][content*="Prestopni februar"]', count: 1
+    assert_select '.calendar-collection-numbers dd', text: '29', count: 1
+    assert_select '.calendar-collection-intro a[href="#calendar-designs"]', count: 1
+    assert_select '#calendar-facts a[href="https://www.gov.si/teme/drzavni-prazniki-in-dela-prosti-dnevi/"]', count: 1
     assert_select 'time[datetime="2028-02-29"]'
     assert_select 'a[href="/delovni-dnevi/2028/februar/"]'
     assert_select 'a[href="/lunin-koledar/2028/februar/"]'

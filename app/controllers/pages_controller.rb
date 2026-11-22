@@ -25,10 +25,13 @@ class PagesController < ApplicationController
     else
       (@person ? @person.status : @page.status)!='published'
     end
+    @calendar_collection = CalendarCollectionEditorial.find(path)
     @title=if @person
       "Koledar z imenom #{@person.exact}"
     elsif @sun_city_id
       "Sončni vzhod in zahod – #{SunEngine::CITIES.fetch(@sun_city_id).first}"
+    elsif @calendar_collection
+      CalendarCollectionEditorial.title(@page)
     else
       @page.title
     end
@@ -74,7 +77,12 @@ class PagesController < ApplicationController
     # Keep that extra context in the grid map without widening annual lists.
     grid_start=[range_start,CalendarEngine.weeks(@year,1).first.first].min
     grid_end=[range_end,CalendarEngine.weeks(@year,12).last.last].max
-    calendar_events=ImportantDays.events_in(grid_start..grid_end)
+    grid_range=grid_start..grid_end
+    calendar_events=if path=='/'
+      CalendarEvent.where(on:grid_range,category:'legal',work_free:true).ordered.to_a
+    else
+      ImportantDays.events_in(grid_range)
+    end
     (grid_start.year..grid_end.year).each do |year|
       CalendarEngine.statutory_work_free_events(year).each do |attributes|
         next unless attributes[:on].between?(grid_start,grid_end)
@@ -82,9 +90,10 @@ class PagesController < ApplicationController
       end
     end
     @events=calendar_events.select { |event| ImportantDays.overlaps?(event, range_start..range_end) }
-    @event_map=ImportantDays.by_date(calendar_events, grid_start..grid_end)
+    @event_map=ImportantDays.by_date(calendar_events, grid_range)
     @upcoming=CalendarEvent.where(on:@today..).where(category:'legal').ordered.limit(3)
     @blog_article = EditorialCatalog.article(path)
+    @festival = OccasionCatalog.festival(path.split('/').last) if path.start_with?(OccasionCatalog::PATH) && path != OccasionCatalog::PATH
     @section=section_for(path)
     @education_calendar=EducationCalendar.new(path:path) if @section=='education_calendar'
     @payment_calendar=PaymentCalendar.new(path:path,today:@today) if @section=='payment_calendar'
@@ -118,6 +127,7 @@ class PagesController < ApplicationController
     return 'shopping_guide' if ShoppingGuides.page(path)
     return 'home' if path=='/'
     return 'festivals' if path==OccasionCatalog::PATH
+    return 'festival_detail' if @festival
     return 'blog' if path == EditorialCatalog::HUB || @blog_article
     return 'about' if path=='/o-nas/'
     return 'terms' if path=='/pogoji-uporabe/'
@@ -146,6 +156,7 @@ class PagesController < ApplicationController
     return 'planner' if %w[/ustvari-koledar/ /prazen-koledar/ /razpored-izmen/ /solski-urnik/ /rojstnodnevni-koledar/ /dnevni-planer/ /druzinski-planer/ /koledar-za-tiskanje/].include?(path)
     return 'tools_index' if path=='/orodja/'
     return 'local_tool' if LocalTools::PAGES.key?(path)
+    return 'slovenian_resource' if SlovenianResources::PAGES.key?(path)
     'info'
   end
   def search

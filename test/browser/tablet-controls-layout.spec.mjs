@@ -10,6 +10,8 @@ for(const route of ['/solske-pocitnice/','/odstevanje/']){
   if(route==='/solske-pocitnice/'){
    await university.selectOption('eu');
    await expect(university).toHaveValue('eu');
+  }else{
+   await page.getByRole('button',{name:'Šolski termini',exact:true}).click();
   }
   for(const width of [320,360,390,768,1024,1440]){
    await page.setViewportSize({width,height:1000});

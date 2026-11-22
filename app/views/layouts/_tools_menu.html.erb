@@ -1,0 +1,61 @@
+<% groups = ToolsDirectory::GROUPS
+   tool_count = groups.values.sum { |_, _, rows| rows.size } %>
+<details class="nav-explorer" data-navigation-menu>
+  <summary aria-controls="site-tools-menu"><%= navigation_icon('more-tools') %><span>Več orodij</span><svg class="nav-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7 5 5 5-5"/></svg></summary>
+  <div class="nav-directory" id="site-tools-menu">
+    <div class="nav-directory__head">
+      <h2>Orodja za načrtovanje</h2>
+      <label class="nav-directory__search" hidden data-navigation-filter>
+        <%= ui_icon('search') %>
+        <span class="sr-only">Išči med orodji</span>
+        <input type="search" data-navigation-query placeholder="Poiščite orodje…" autocomplete="off">
+      </label>
+      <button class="nav-directory__close" type="button" data-navigation-close aria-label="Zapri meni orodij" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg></button>
+    </div>
+    <div class="nav-directory__body">
+      <nav class="nav-directory__side" aria-label="Kategorije orodij" data-navigation-categories hidden>
+        <div class="nav-directory__categories">
+          <button type="button" data-navigation-category="all" aria-pressed="true"><%= tool_directory_icon('category-all') %><span>Vsa orodja</span></button>
+          <% groups.each do |key, (label, icon, _)| %>
+            <button type="button" data-navigation-category="<%= key %>" aria-pressed="false"><%= tool_directory_icon(icon) %><span><%= label %></span></button>
+          <% end %>
+        </div>
+        <div class="nav-directory__category-select">
+          <label for="site-tools-category">Kategorija</label>
+          <span class="nav-directory__select-field">
+            <select id="site-tools-category" data-navigation-category-select>
+              <option value="all">Vsa orodja</option>
+              <% groups.each do |key, (label, _, _)| %>
+                <option value="<%= key %>"><%= label %></option>
+              <% end %>
+            </select>
+            <%= ui_icon('chevron-right') %>
+          </span>
+        </div>
+      </nav>
+      <div class="nav-directory__results">
+        <div class="nav-directory__groups">
+          <% groups.each do |key, (heading, _, links)| %>
+            <section class="nav-directory__group" data-navigation-group="<%= key %>" aria-label="<%= heading %>">
+              <h3><%= heading %></h3>
+              <div class="nav-directory__cards">
+                <% links.each do |href, label, icon, description| %>
+                  <%= link_to href, data: { navigation_tool: true, tool_keywords: SlovenianResources::SEARCH_TERMS[href] }, aria: { current: page_path == href && !main_destination ? 'page' : nil } do %>
+                    <span class="nav-directory__card-icon"><%= tool_directory_icon(icon) %></span>
+                    <span class="nav-directory__card-copy"><strong><%= label %></strong><small><%= description %></small></span>
+                    <span class="nav-directory__card-arrow"><%= ui_icon('chevron-right') %></span>
+                  <% end %>
+                <% end %>
+              </div>
+            </section>
+          <% end %>
+        </div>
+        <p class="nav-directory__empty" data-navigation-empty hidden role="status">Ni zadetkov. Poskusite s krajšim izrazom.</p>
+      </div>
+    </div>
+    <div class="nav-directory__footer">
+      <span data-navigation-count role="status"><%= tool_count %> orodij</span>
+      <a href="/orodja/">Katalog orodij <%= ui_icon('chevron-right') %></a>
+    </div>
+  </div>
+</details>

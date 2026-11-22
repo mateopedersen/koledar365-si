@@ -1,0 +1,7 @@
+<% rows = ToolsDirectory::GROUPS.values.flat_map(&:last).index_by(&:first) %>
+<ul class="sl-resource-links">
+  <% paths.each do |path| %>
+    <% _, name, icon, description = rows.fetch(path) %>
+    <li><a href="<%= path %>"><%= tool_directory_icon(icon) %><span><strong><%= name %></strong><% if local_assigns[:descriptions] %><small><%= description %></small><% end %></span><span aria-hidden="true">→</span></a></li>
+  <% end %>
+</ul>

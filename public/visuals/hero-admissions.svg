@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380">
+  <defs>
+    <filter id="cast" x="-.38" y="-.4" width="1.8" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10" />
+      <feOffset dx="4" dy="12" result="shadow" />
+      <feFlood flood-color="#19304d" flood-opacity=".21" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <filter id="lift" x="-.35" y="-.4" width="1.75" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+      <feOffset dx="2" dy="5" result="shadow" />
+      <feFlood flood-color="#142c46" flood-opacity=".24" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <radialGradient id="light">
+      <stop stop-color="#fff" />
+      <stop offset="1" stop-color="#d8e8f6" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="paper" x2="1" y2="1">
+      <stop stop-color="#fffef9" />
+      <stop offset=".48" stop-color="#fff" />
+      <stop offset="1" stop-color="#e3eaf0" />
+    </linearGradient>
+    <linearGradient id="blue" x2="1" y2="1">
+      <stop stop-color="#548eb3" />
+      <stop offset=".48" stop-color="#1d5479" />
+      <stop offset="1" stop-color="#0b2845" />
+    </linearGradient>
+    <linearGradient id="brass" x2="1" y2="1">
+      <stop stop-color="#fff0b5" />
+      <stop offset=".48" stop-color="#c88d47" />
+      <stop offset="1" stop-color="#87552e" />
+    </linearGradient>
+    <linearGradient id="ink" x2="1" y2="1">
+      <stop stop-color="#395777" />
+      <stop offset=".48" stop-color="#203956" />
+      <stop offset="1" stop-color="#112439" />
+    </linearGradient>
+    <linearGradient id="glass" x2="1" y2="1">
+      <stop stop-color="#fff" />
+      <stop offset=".48" stop-color="#c1e2ef" />
+      <stop offset="1" stop-color="#598eb2" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="297" cy="195" rx="280" ry="177" fill="url(#light)" />
+  <ellipse cx="301" cy="334" rx="207" ry="23" fill="#d4e4f1" opacity=".44" />
+  <use href="#art-shape-1" filter="url(#cast)" />
+  <g transform="rotate(-9 261 214)" id="art-shape-1">
+    <rect x="100" y="133" width="318" height="180" rx="14" fill="#6f8d9a" />
+    <path d="M100 144 259 38l159 106-159 134Z" fill="url(#blue)" />
+    <use href="#art-shape-3" filter="url(#cast)" />
+    <g transform="rotate(6 269.0 173.0)" id="art-shape-3">
+      <rect x="167" y="84" width="208" height="188" rx="5" fill="#aabcc9" />
+      <rect x="165" y="79" width="208" height="188" rx="5" fill="url(#paper)" stroke="#bccdd8" />
+      <path d="M182 132L356 132" fill="none" stroke="#205579" stroke-width="2" stroke-linecap="round" />
+      <text x="182" y="118" fill="#205579" font-family="system-ui,sans-serif" font-size="18" font-weight="700">Vpisna prijava</text>
+      <path d="M183 151L333 151" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+      <path d="M183 170L316 170" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+      <path d="M183 189L299 189" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+      <path d="M183 208L333 208" fill="none" stroke="#abbfd0" stroke-width="1" stroke-linecap="round" />
+      <text x="184" y="233" fill="#3b7969" font-family="system-ui,sans-serif" font-size="27" font-weight="700">✓</text>
+    </g>
+    <path d="m100 147 159 94 159-94v154q0 12-12 12H112q-12 0-12-12Z" fill="url(#glass)" stroke="#88a9bd" />
+    <path d="m106 302 152-88 154 88" fill="none" stroke="#e7f7fe" stroke-width="2" />
+  </g>
+  <use href="#art-shape-2" filter="url(#lift)" />
+  <g transform="translate(444 235) rotate(13)" id="art-shape-2">
+    <path d="M-57 3 0-26 56 3 0 34Z" fill="url(#ink)" stroke="#305676" stroke-width="2" />
+    <path d="M-31 19v23Q0 62 30 42V19L0 35Z" fill="url(#blue)" />
+    <path d="M0 5 42 15v27" stroke="url(#brass)" stroke-width="3" fill="none" />
+    <path d="M38 52l4-14 5 14" fill="url(#brass)" />
+  </g>
+</svg>

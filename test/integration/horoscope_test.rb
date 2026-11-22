@@ -14,7 +14,7 @@ class HoroscopeTest < ActionDispatch::IntegrationTest
         assert_select '[data-birth-fields][disabled]',count:1
         assert_select '[data-birth-form] input[name]',count:0
         assert_select '[data-birth-form] select[name]',count:0
-        assert_select 'script[src="/horoscope/experience-v1.mjs"][type=module]',count:1
+        assert_select 'script[src="/horoscope/experience-v2.mjs"][type=module]',count:1
         assert_select 'script#zodiac-profiles' do |nodes|
           assert_equal 12,JSON.parse(nodes.first.text).size
         end
@@ -22,9 +22,19 @@ class HoroscopeTest < ActionDispatch::IntegrationTest
     end
   end
   test 'sign pages contain four complete dated sections and calculated solar boundaries' do
-    Zodiac::SIGNS.each do |slug,label|
+    assert_equal Zodiac::SIGNS.keys.sort, HoroscopeGuide::SIGN_EDITORIAL.keys.sort
+
+    Zodiac::SIGNS.each do |slug, label|
+      editorial = HoroscopeGuide::SIGN_EDITORIAL.fetch(slug)
       get "/horoskop/#{slug}/"
-      assert_select 'h1',/#{Regexp.escape(label)}/
+      assert_select 'h1', text: "Dnevni horoskop za #{editorial.fetch('accusative')}"
+      assert_select 'title', text: "#{label} – dnevni horoskop za danes | Koledar365"
+      assert_select 'meta[name="description"]' do |nodes|
+        assert_equal editorial.fetch('description'), nodes.first['content']
+      end
+      assert_select '.z-sign-editorial > p', count: 2
+      assert_select '#dnevni-zapis [data-edition-date]', count: 1
+      assert_select '[data-moon-sign]', count: 1
       assert_select '[data-reading-field]',count:6
       assert_select '[data-reading-field=overview]' do |nodes| assert_operator nodes.first.text.length,:>,180 end
       assert_select ".z-hero-art img[src='/horoscope/art/#{slug}-v1.svg']",count:1
@@ -38,8 +48,8 @@ class HoroscopeTest < ActionDispatch::IntegrationTest
     assert_select '.z-card-date',count:12
     get '/'
     assert_select '.subnav a[href="/horoskop/"] strong',text:'Dnevni horoskop'
-    assert_select '.subnav a[href="/horoskop/"] img' do |icons|
-      assert_match %r{\A/horoscope/art/wheel-icon-v1\.[a-f0-9]{16}\.svg\z},icons.first['src']
+    assert_select '.subnav a[href="/horoskop/"] .tool-directory-icon use' do |icons|
+      assert_match %r{\A/visuals/ui-material-v3\.[a-f0-9]{16}\.svg#tool-art-daily-horoscope\z}, icons.first['href']
     end
     assert_select '.home-zodiac-link[href="/horoskop/"]'
   end

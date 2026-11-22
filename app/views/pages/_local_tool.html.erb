@@ -7,8 +7,7 @@
       <p><%= tool.fetch(:description) %></p>
       <a href="/orodja/" class="tool-back">Vsa orodja</a>
     </div>
-    <% if kind == 'luna' %><%= render 'local_tool_moon_art' %>
-    <% else %><div class="tool-hero-art" aria-hidden="true"><%= kind == 'dnevi' ? slovenia_flag : ui_icon(tool.fetch(:icon)) %><%= ui_icon(kind=='godovi' ? 'heart' : kind=='pokojnina' ? 'calculator' : 'calendar') %></div><% end %>
+    <div class="tool-hero-art" aria-hidden="true"><%= page_hero_art(IllustrationHelper::LOCAL_TOOL_ART.fetch(kind)) %></div>
   </header>
 
   <noscript><p class="tool-guidance">Za izračune, filtre in shranjevanje opomnikov omogočite JavaScript.</p></noscript>
@@ -148,5 +147,8 @@
 
   <% else %>
     <%= render 'local_tool_calendar', kind: kind, today: today %>
+  <% end %>
+  <% if page_path == '/davcni-koledar/' %>
+    <p class="tool-block">Za letni neto in poračun preglejte <a href="<%= SlovenianResources::ANNUAL_TAX %>">letni izračun dohodnine</a>. Za mesečno akontacijo uporabite <a href="/kalkulator-place/">izračun bruto in neto plače</a>, za davek na računih pa <a href="/kalkulator-ddv/">kalkulator DDV</a>.</p>
   <% end %>
 </article>

@@ -1,0 +1,110 @@
+<% kind = resource.fetch(:calculator) %>
+<section class="sl-resource-panel sl-calculator-panel" id="orodje" data-sl-calculator="<%= kind %>">
+  <h2><%= resource.fetch(:action) %></h2>
+  <p id="sl-calculator-note"><%= resource.fetch(:note) %></p>
+  <script type="application/json" data-sl-rules><%= raw json_escape(SlovenianCalculationTables.data(kind).to_json) %></script>
+  <div class="sl-calculator-workspace" data-sl-workspace hidden>
+  <form class="sl-resource-form" aria-describedby="sl-calculator-note" hidden>
+    <% case kind %>
+    <% when :child, :kindergarten %>
+      <label>Mesečni dohodek na osebo (€)<input type="text" name="income" data-minimum="0" data-maximum="100000" pattern="[0-9]+([.,][0-9]{1,2})?" maxlength="11" inputmode="decimal" value="650" required></label>
+      <% if kind == :child %>
+        <label>Vrstni red otroka<select name="order"><option value="0">Prvi otrok</option><option value="1">Drugi otrok</option><option value="2">Tretji ali naslednji otrok</option></select></label>
+        <label>Šolanje<select name="school"><option value="primary">Brez srednje šole</option><option value="secondary">Srednja šola do 18. leta</option></select></label>
+      <% else %>
+        <label>Cena programa vrtca (€)<input type="text" name="price" data-minimum="0" data-maximum="10000" pattern="[0-9]+([.,][0-9]{1,2})?" maxlength="11" value="500" inputmode="decimal" required></label>
+        <label>Oprostitev plačila<select name="exemption"><option value="none">Po dohodkovni lestvici</option><option value="younger">Mlajši sorojenec v vrtcu</option><option value="third">Tretji ali naslednji otrok</option></select></label>
+      <% end %>
+    <% when :birth, :parent, :leave %>
+      <label>Predvideni datum poroda<input type="date" name="due" min="1900-01-01" max="2100-12-31" <%= 'required' if kind == :leave %>></label>
+      <% if kind == :leave %>
+        <label>Prenos starševskega dopusta<select name="transfer"><option value="0">Brez prenosa</option><option value="1">Z očeta na mater</option><option value="-1">Z matere na očeta</option></select></label>
+        <label>Število prenesenih dni<input type="number" name="days" min="0" max="100" step="1" value="100" inputmode="numeric" required disabled></label>
+      <% else %>
+        <label>Dejanski datum rojstva, če je otrok že rojen<input type="date" name="birth" min="1900-01-01" max="<%= @today.iso8601 %>"></label>
+      <% end %>
+    <% when :unemployment %>
+      <label>Povprečna mesečna bruto osnova (€)<input type="text" name="base" data-minimum="0.01" data-maximum="100000" pattern="[0-9]+([.,][0-9]{1,2})?" maxlength="11" value="2200" inputmode="decimal" required></label>
+    <% when :salary %>
+      <label>Mesečna bruto plača (€)<input type="text" name="gross" data-minimum="<%= SlovenianCalculationTables::SALARY_2026.fetch(:min) %>" data-maximum="100000" pattern="[0-9]+([.,][0-9]{1,2})?" maxlength="11" value="2500" inputmode="decimal" required></label>
+    <% when :annual_tax %>
+      <label>Davčno leto
+        <select name="year">
+          <option value="2027">2027 – projekcija</option>
+          <option value="2026">2026 – uradna lestvica</option>
+        </select>
+      </label>
+      <% [
+        ['gross', 'Letna vsota bruto plač (€)', '30000'],
+        ['contributions', 'Letni prispevki zaposlenega z OZP (€)', '7397,94'],
+        ['advance', 'Plačana akontacija dohodnine (€)', '3460'],
+        ['relief', 'Dodatne priznane olajšave (€)', '0']
+      ].each do |name, label, value| %>
+        <label><%= label %><input type="text" name="<%= name %>" data-minimum="0" data-maximum="10000000" pattern="[0-9]+([.,][0-9]{1,2})?" maxlength="11" inputmode="decimal" value="<%= value %>" required></label>
+      <% end %>
+    <% when :vat %>
+      <label>Znesek (€)<input type="text" name="amount" data-minimum="0" data-maximum="10000000" pattern="[0-9]+([.,][0-9]{1,2})?" maxlength="11" value="100" inputmode="decimal" required></label>
+      <label>Stopnja DDV<select name="rate"><% SlovenianCalculationTables::VAT_RATES.each do |rate| %><option value="<%= rate %>"><%= rate.to_s.tr('.', ',') %> %</option><% end %></select></label>
+      <label>Vrsta izračuna<select name="direction"><option value="add">Dodaj DDV</option><option value="remove">Izloči DDV</option></select></label>
+    <% end %>
+    <button type="submit" class="button primary">Izračunaj</button>
+  </form>
+  <div class="sl-calculator-output">
+    <h3 data-sl-result-title>Informativni rezultat</h3>
+    <div class="sl-result" data-sl-result role="status" aria-live="polite"></div>
+  </div>
+  </div>
+  <noscript><p>Za izračun v brskalniku vključite JavaScript. Razlaga in uradni viri so na voljo spodaj.</p></noscript>
+  <% if kind == :annual_tax %>
+    <details class="sl-calc-brackets">
+      <summary>Poglejte meje davčnih razredov</summary>
+      <% rates = SlovenianCalculationTables.data(kind) %>
+      <table>
+        <caption>Letna davčna osnova in mejne davčne stopnje</caption>
+        <thead>
+          <tr><th scope="col">Stopnja</th><th scope="col">Meja 2026</th><th scope="col">Meja 2027 (projekcija)</th></tr>
+        </thead>
+        <tbody>
+          <% rates.fetch('2026').fetch(:tax).each_with_index do |(lower, _, rate), index| %>
+            <tr>
+              <th scope="row"><%= rate %> %</th>
+              <% [lower, rates.fetch('2027').fetch(:tax).fetch(index).first].each do |limit| %>
+                <td><%= index.zero? ? 'od 0 €' : "nad #{number_to_currency(limit, unit: '€', separator: ',', delimiter: '', format: '%n %u')}" %></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </details>
+  <% end %>
+  <% if kind == :child || kind == :kindergarten %>
+    <details class="sl-calc-brackets">
+      <summary><%= kind == :child ? 'Dohodkovna lestvica in zneski 2026' : 'Dohodkovna lestvica za vrtec 2026' %></summary>
+      <% format_money = ->(amount) { number_to_currency(amount, unit: '€', separator: ',', delimiter: '', format: '%n %u') } %>
+      <% amount_tables = kind == :child ? [
+        ['Do konca osnovne šole', SlovenianCalculationTables::CHILD_2026],
+        ['Srednja šola do 18. leta', SlovenianCalculationTables::SECONDARY_2026]
+      ] : [['Delež staršev', SlovenianCalculationTables::KINDERGARTEN_2026]] %>
+      <% amount_tables.each do |heading, amounts| %>
+        <table>
+          <caption><%= heading %></caption>
+          <thead><tr><th scope="col">Dohodek na osebo</th><% if kind == :child %><th scope="col">1. otrok</th><th scope="col">2. otrok</th><th scope="col">3. in naslednji</th><% else %><th scope="col">Delež cene</th><% end %></tr></thead>
+          <tbody><% amounts.each_with_index do |value, index| %>
+            <% limit = SlovenianCalculationTables::INCOME_2026[index] %>
+            <% previous_limit = index.positive? ? SlovenianCalculationTables::INCOME_2026[index - 1] : nil %>
+            <tr><th scope="row"><%= if !limit
+                "nad #{format_money.call(previous_limit)}"
+              elsif previous_limit
+                "#{format_money.call(previous_limit + 0.01)} – #{format_money.call(limit)}"
+              else
+                "do #{format_money.call(limit)}"
+              end %></th>
+              <% if kind == :child %><% value.each do |amount| %><td><%= format_money.call(amount) %></td><% end %>
+              <% else %><td><%= value %> %</td><% end %>
+            </tr>
+          <% end %></tbody>
+        </table>
+      <% end %>
+    </details>
+  <% end %>
+</section>

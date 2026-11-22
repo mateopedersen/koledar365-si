@@ -17,7 +17,6 @@ module ApplicationHelper
   def gallery_description
     return 'Preverite datume luninih men in čas v Sloveniji. Med predlogami izberite koledar za tisk v obliki PDF ali sliko pri 600 ppi.' if legacy_lunar_gallery?
     return 'Načrtujte družinski teden, delite pregled z domačimi v tem brskalniku in prenesite koledar PDF ali sliko, pripravljen pri 600 ppi.' if page_path == '/druzinski-planer/'
-    return 'Izberite med 15 izvirnimi slovenskimi oblikovanji za tisk. Vsak koledar je na voljo kot vektorski PDF A3 CMYK FOGRA39 in slika celotne strani v sRGB pri 600 dpi.' if @section == 'calendar' && @page&.path&.start_with?('/koledar/') && @year.to_i.between?(2027, 2030)
     'V galeriji izberite eno od 15 predlog: PDF za tisk in ujemajočo se sliko pri 600 ppi, s podpisom Koledar365 na vsaki strani. Večstranski slikovni izvoz je v datoteki ZIP; PDF tiskajte v merilu 100 %.'
   end
   def page_path
@@ -33,6 +32,33 @@ module ApplicationHelper
 
     @editorial_route_titles ||= Page.pluck(:path, :title).to_h
     @editorial_route_titles.fetch(route)
+  end
+
+  def editorial_recommendation(route)
+    @editorial_tools ||= ToolsDirectory::GROUPS.values.flat_map(&:last).index_by(&:first)
+    tool = @editorial_tools[route]
+    icon = case route.split('/')[1]
+    when 'horoskop' then route == '/horoskop/izracun-znamenja/' ? 'compass' : 'zodiac'
+    when 'lunin-koledar', 'lunine-mene', 'lunin-vzhod-in-zahod', 'polna-luna', 'mlaj', 'lunin-mrk' then 'moon'
+    when 'soncni-vzhod-in-zahod', 'soncni-mrk', 'dolzina-dneva', 'letni-casi' then 'sun'
+    when 'prazniki', 'pomembni-dnevi', 'festivali' then 'holidays'
+    when 'delovni-dnevi', 'razpored-izmen', 'izplacila-pokojnin', 'izplacila-socialnih-transferjev' then 'briefcase'
+    when 'datumski-kalkulator', 'kalkulator-delovnih-dni', 'kalkulator-upokojitve' then 'calculator'
+    when 'podaljsani-vikendi', 'nacrtovalnik-dopusta' then 'vacation'
+    when 'stevilka-tedna', 'tedenski-koledar' then 'week'
+    when 'premik-ure', 'odstevanje' then 'clock'
+    when 'matura', 'npz', 'studijski-koledar', 'vpisni-koledar', 'solski-koledar', 'solski-urnik', 'solske-pocitnice' then 'school'
+    when 'koledar-za-tiskanje' then 'print'
+    when 'blog' then 'note'
+    when 'setveni-koledar' then 'sprout'
+    when 'perzeidi' then 'star'
+    when 'zasebnost', 'piskotki', 'pogoji-uporabe' then 'shield'
+    when 'fotografije-in-licence' then 'image'
+    when 'viri-in-metodologija', 'uredniska-politika', 'kontakt' then 'info'
+    else 'calendar'
+    end
+
+    [route, tool ? tool[1] : editorial_route_title(route), tool&.last, icon]
   end
 
   def editorial_paragraph(paragraph)
@@ -163,6 +189,11 @@ module ApplicationHelper
     return I18n.l(first) if first == last
     return "#{first.day}.–#{I18n.l(last)}" if first.year == last.year && first.month == last.month
     "#{I18n.l(first)}–#{I18n.l(last)}"
+  end
+
+  def festival_photo_label(photo)
+    { 'dogodek' => 'Arhiv prireditve', 'prizorisce' => 'Prizorišče', 'kraj' => 'Fotografija kraja',
+      'motiv' => 'Fotografija iz okolice' }.fetch(photo.fetch('kind'))
   end
   def page_links(prefix)
     Page.where('path LIKE ?',"#{prefix}%").order(:path)

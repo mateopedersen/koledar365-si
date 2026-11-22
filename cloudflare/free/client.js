@@ -112,9 +112,45 @@ function makeSearchLink(result,index,asOption=false){const link=element('a',unde
 function attachSearchSuggestions(form){
  const input=form.querySelector('[data-search-input]'),popup=form.querySelector('[data-search-suggestions]'),list=popup?.querySelector('[data-search-options]'),status=popup?.querySelector('[data-search-status]');if(!input||!popup||!list||!status)return;
  let activeIndex=-1,timer=0,request=0;
+ const viewport = window.visualViewport;
+ const notice = document.getElementById('storage-notice');
+ const gap = 8;
+ const keepOptionVisible = option => {
+  const panel = popup.getBoundingClientRect();
+  const row = option.getBoundingClientRect();
+  if (row.bottom > panel.bottom - gap) popup.scrollTop += row.bottom - panel.bottom + gap;
+  else if (row.top < panel.top + gap) popup.scrollTop -= panel.top + gap - row.top;
+ };
+ const fitPopup = () => {
+  if (popup.hidden) return;
+  const anchor = form.getBoundingClientRect();
+  const top = viewport?.offsetTop || 0;
+  let bottom = top + (viewport?.height || window.innerHeight);
+  if (notice && !notice.hidden && getComputedStyle(notice).position === 'fixed') {
+   const noticeTop = notice.getBoundingClientRect().top;
+   if (noticeTop > anchor.bottom) bottom = Math.min(bottom, noticeTop);
+  }
+  const above = Math.max(0, anchor.top - top - 2 * gap);
+  const below = Math.max(0, bottom - anchor.bottom - 2 * gap);
+  const placeAbove = below < Math.min(160, popup.scrollHeight) && above > below;
+  popup.toggleAttribute('data-search-above', placeAbove);
+  popup.style.setProperty('--search-visible-height', `${Math.floor(placeAbove ? above : below)}px`);
+  const selected = list.querySelector('[aria-selected="true"]');
+  if (selected) keepOptionVisible(selected);
+ };
  const close=()=>{clearTimeout(timer);request++;popup.hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');activeIndex=-1};
- const open=()=>{popup.hidden=false;input.setAttribute('aria-expanded','true')};
- const render=(rows,message)=>{list.replaceChildren();activeIndex=-1;status.textContent=message||'';status.hidden=!message;list.hidden=!rows.length;if(!message)rows.forEach((row,index)=>list.append(makeSearchLink(row,index,true)));open()};
+ const open=()=>{popup.hidden=false;input.setAttribute('aria-expanded','true');fitPopup()};
+ const render = (rows, message) => {
+  list.replaceChildren();
+  popup.scrollTop = 0;
+  activeIndex = -1;
+  input.removeAttribute('aria-activedescendant');
+  status.textContent = message || '';
+  status.hidden = !message;
+  list.hidden = !rows.length;
+  if (!message) rows.forEach((row, index) => list.append(makeSearchLink(row, `${input.id}-${index}`, true)));
+  open();
+ };
  const update=async()=>{
   const query=input.value.trim().slice(0,120),sequence=++request;
   if(!query){render(popularSearches);return}
@@ -137,8 +173,16 @@ function attachSearchSuggestions(form){
   else return;
   options.forEach((option,index)=>option.setAttribute('aria-selected',String(index===activeIndex)));
   input.setAttribute('aria-activedescendant',options[activeIndex].id);
+  keepOptionVisible(options[activeIndex]);
  });
- popup.addEventListener('click',event=>{if(event.target.closest('a[role="option"]'))close()});
+ viewport?.addEventListener('resize', fitPopup);
+ viewport?.addEventListener('scroll', fitPopup);
+ window.addEventListener('scroll', fitPopup, { passive: true });
+ window.addEventListener('resize', fitPopup);
+ popup.addEventListener('mousedown', event => {
+  // Keep the field focused until the option receives its native click, including on Safari touch.
+  if (event.button === 0 && event.target.closest('a[role="option"]')) event.preventDefault();
+ });
  document.addEventListener('pointerdown',event=>{if(!form.contains(event.target))close()});
  form.addEventListener('focusout',event=>{if(event.relatedTarget&&!form.contains(event.relatedTarget))close()});
  form.addEventListener('submit',close);
@@ -183,8 +227,8 @@ async function prepareViews({year,month,view,selected,today}){
  if(location.pathname==='/'){const d=new Date(selected+'T12:00Z'),mode=view,title=$('.calendar-title h2');let previous=new Date(d),following=new Date(d);if(mode==='week'){const iso=new Date(d);iso.setUTCDate(iso.getUTCDate()+4-(iso.getUTCDay()||7));const number=Math.ceil((((iso-new Date(Date.UTC(iso.getUTCFullYear(),0,1)))/86400000)+1)/7);title.textContent=`Teden ${number} · ${iso.getUTCFullYear()}`;previous.setUTCDate(previous.getUTCDate()-7);following.setUTCDate(following.getUTCDate()+7)}else if(mode==='day'){title.textContent=new Intl.DateTimeFormat('sl-SI',{timeZone:'UTC',day:'2-digit',month:'2-digit',year:'numeric'}).format(d);previous.setUTCDate(previous.getUTCDate()-1);following.setUTCDate(following.getUTCDate()+1)}else if(mode==='year'){previous=new Date(Date.UTC(year-1,month-1,1,12));following=new Date(Date.UTC(year+1,month-1,1,12))}else{previous=new Date(Date.UTC(year,month-2,1,12));following=new Date(Date.UTC(year,month,1,12))}const labels={week:['Prejšnji teden','Naslednji teden'],day:['Prejšnji dan','Naslednji dan'],year:['Prejšnje leto','Naslednje leto']};$$('.calendar-title a.square').forEach(link=>link.remove());[previous,following].forEach((date,index)=>{const iso=date.toISOString().slice(0,10);if(iso<'2026-01-01'||iso>'2030-12-31')return;const link=element('a',index?'›':'‹','button square');link.setAttribute('aria-label',(labels[mode]||['Prejšnji mesec','Naslednji mesec'])[index]);link.href='/?'+new URLSearchParams({year:date.getUTCFullYear(),month:date.getUTCMonth()+1,date:iso,view:mode});if(index)title.after(link);else title.before(link)});const todayLink=$$('.calendar-title a.button').find(link=>link.textContent.trim()==='Danes');if(todayLink)todayLink.href='/?'+new URLSearchParams({year:today.slice(0,4),month:Number(today.slice(5,7)),date:today,view:mode})}
  if(location.pathname==='/')for(const link of $$('.calendar-toolbar .tabs a')){const mode=new URL(link.href).searchParams.get('view');link.href='/?'+new URLSearchParams({year,month,date:selected,view:mode});}
  const week=$('.week-view');if(week&&location.pathname==='/'){
-  const rows=await events(),first=new Date(selected+'T12:00Z');if(view==='week')first.setUTCDate(first.getUTCDate()-(first.getUTCDay()||7)+1);week.replaceChildren();
-  for(let index=0;index<(view==='day'?1:7);index++){const current=new Date(first);current.setUTCDate(first.getUTCDate()+index);const day=current.toISOString().slice(0,10);if(day<'2026-01-01'||day>'2030-12-31')continue;const section=element('section'),heading=element('h3'),link=element('a',new Intl.DateTimeFormat('sl-SI',{weekday:'long',day:'numeric',timeZone:'UTC'}).format(current));link.href=`/?year=${current.getUTCFullYear()}&month=${current.getUTCMonth()+1}&date=${day}&view=day`;heading.append(link);section.append(heading);for(const row of rows.filter(row=>eventInPeriod(row,day,day))){const a=element('a',row.title);a.href=row.path;section.append(a)}section.append(element('p','Načrte dodajte v razdelku Moj dan.','muted'));week.append(section)}
+  const holidays=(await events()).filter(row=>row.category==='legal'&&row.work_free),first=new Date(selected+'T12:00Z');if(view==='week')first.setUTCDate(first.getUTCDate()-(first.getUTCDay()||7)+1);week.replaceChildren();
+  for(let index=0;index<(view==='day'?1:7);index++){const current=new Date(first);current.setUTCDate(first.getUTCDate()+index);const day=current.toISOString().slice(0,10);if(day<'2026-01-01'||day>'2030-12-31')continue;const section=element('section'),heading=element('h3'),link=element('a',new Intl.DateTimeFormat('sl-SI',{weekday:'long',day:'numeric',timeZone:'UTC'}).format(current));link.href=`/?year=${current.getUTCFullYear()}&month=${current.getUTCMonth()+1}&date=${day}&view=day`;heading.append(link);section.append(heading);for(const row of holidays.filter(row=>row.on===day)){const a=element('a',row.title);a.href=row.path;section.append(a)}section.append(element('p','Načrte dodajte v razdelku Moj dan.','muted'));week.append(section)}
  }
  const important=$('.important-controls');if(important){
   const form=important.querySelector('form');for(const key of ['month','category','q','display'])if(params.has(key)&&form.elements[key])form.elements[key].value=params.get(key);

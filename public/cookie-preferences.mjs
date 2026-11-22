@@ -62,7 +62,8 @@ function noticeAcknowledged() {
 }
 
 function updateClearance() {
-  const height = notice.hidden ? 0 : Math.ceil(notice.getBoundingClientRect().height);
+  const floating = !notice.hidden && getComputedStyle(notice).position === 'fixed';
+  const height = floating ? Math.ceil(notice.getBoundingClientRect().height) : 0;
   document.documentElement.style.setProperty('--cookie-space', `${height}px`);
 }
 
@@ -113,4 +114,5 @@ window.addEventListener('storage', event => {
   if ([noticeKey, cityConsentKey, null].includes(event.key)) updateNotice();
 });
 new ResizeObserver(updateClearance).observe(notice);
+window.addEventListener('resize', updateClearance);
 updateNotice();

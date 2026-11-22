@@ -2,6 +2,7 @@
   <h2 id="seasons-explanation">Kdaj se začnejo letni časi v Sloveniji?</h2>
   <p>Astronomska pomlad in jesen se začneta ob enakonočju, poletje in zima pa ob solsticiju. Spodaj so natančni začetki za severno poloblo v letih 2027–2030. Ure so preračunane v slovenski čas (Europe/Ljubljana): CET pomeni UTC + 1, CEST pa UTC + 2.</p>
   <p>Meteorološki letni časi se začnejo na prvi dan meseca: pomlad 1. marca, poletje 1. junija, jesen 1. septembra in zima 1. decembra. Ti datumi se razlikujejo od astronomskih začetkov v preglednici.</p>
+  <p>Za skupni pregled enakonočij, luninih men in mrkov odprite <a href="<%= SlovenianSkyCalendar::PATH %>">astronomski koledar</a>.</p>
   <nav class="year-links" aria-label="Izberite leto začetkov letnih časov"><% (2027..2030).each do |year| %><a class="button" href="#letni-casi-<%= year %>"><%= year %></a><% end %></nav>
 </section>
 <% (2027..2030).each do |year| %>

@@ -8,7 +8,7 @@
       <nav class="holiday-years" aria-label="Izberite leto praznikov"><% CalendarEngine::YEARS.each do |year| %><a href="/prazniki/<%= year %>/"><%= year %></a><% end %></nav>
       <div class="holiday-hero-actions"><a class="holiday-primary" href="#holiday-directory-years"><%= ui_icon('calendar') %> Primerjajte leta <%= ui_icon('chevron-right') %></a><a href="/prazniki/2026/">Arhiv 2026</a></div>
     </div>
-    <div class="holiday-visual"><%= render 'holiday_illustration' %><span class="holiday-visual-caption"><%= ui_icon('pin') %> Slovenski prazniki, razloženi.</span></div>
+    <div class="holiday-visual"><%= render 'holiday_illustration', directory: true %><span class="holiday-visual-caption"><%= ui_icon('pin') %> Slovenski prazniki, razloženi.</span></div>
   </section>
   <section class="holiday-comparison" id="holiday-directory-years" aria-labelledby="holiday-directory-years-title">
     <div class="holiday-section-heading"><div><h2 id="holiday-directory-years-title">Kdaj boste imeli <strong>več prostih dni?</strong></h2><p>Primerjava velja za delovni teden od ponedeljka do petka.</p></div></div>

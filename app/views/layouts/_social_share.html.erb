@@ -1,4 +1,4 @@
-<aside class="site-share" data-site-share data-share-title="<%= @title.presence || 'Slovenski koledar' %>" data-share-url="<%= canonical_url %>" aria-label="Deljenje strani">
+<aside class="site-share" data-site-share<% if local_assigns[:inline] %> data-site-share-inline<% end %> data-share-title="<%= @title.presence || 'Slovenski koledar' %>" data-share-url="<%= canonical_url %>" aria-label="Deljenje strani">
   <details class="site-share__details">
     <summary class="site-share__trigger">
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 12.5 16.2 7.8M8 11.5l8.2 4.7"/><circle cx="5.5" cy="12" r="2.5"/><circle cx="18.5" cy="6.5" r="2.5"/><circle cx="18.5" cy="17.5" r="2.5"/></svg>

@@ -5,7 +5,7 @@
       <h1 id="contact-title">Dober koledar nastaja<br><em>tudi z vašo pomočjo.</em></h1>
       <p>Ste opazili napačen datum, potrebujete pomoč ali imate dobro idejo? Povejte nam. Vaše sporočilo pomaga izboljšati Koledar365 za vse.</p>
       <div class="contact-actions"><a class="contact-button contact-button--red" href="#sporocilo">Napišite sporočilo <span aria-hidden="true">↗</span></a><a class="contact-button contact-button--glass" href="#pogosta-vprasanja">Najprej poiščite odgovor</a></div>
-      <div class="contact-hero__facts"><span><%= ui_icon('person') %> Pišete neposredno ekipi</span><span><%= ui_icon('shield') %> Odgovori niso javni</span><span><%= ui_icon('note') %> Obrazec ali e-pošta</span></div>
+      <%= render 'hero_features', label: 'Stik z uredništvom', items: [['person', 'Neposredno uredništvu'], ['shield', 'Zasebno sporočilo'], ['note', 'Obrazec ali e-pošta']] %>
     </div>
     <div class="contact-hero__art" aria-hidden="true">
       <svg viewBox="0 0 480 360" focusable="false">

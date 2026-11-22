@@ -40,7 +40,7 @@ transform=lambda do |body,path,indexable:true|
  doc.css('script[src]').each { |script|src=script['src'];script.remove unless kept_scripts.include?(src)||src.include?('city_card-')||src.include?('sun-')||src.start_with?('/studio/','/horoscope/','/premik-ure/')||src.split('?',2).first=='/school/experience.mjs' }
  doc.css('meta[name="csrf-token"],meta[name="csrf-param"],meta[name="csp-nonce"],meta[http-equiv="Content-Security-Policy"],input[name="authenticity_token"]').remove
  if doc.at_css('[data-lunar]')
-   lunar_script=Nokogiri::XML::Node.new('script',doc);lunar_script['type']='module';lunar_script['src']='/lunar/calendar.mjs?v=20261112';doc.at_css('head').add_child(lunar_script)
+   lunar_script=Nokogiri::XML::Node.new('script',doc);lunar_script['type']='module';lunar_script['src']='/lunar/calendar.mjs?v=20261122';doc.at_css('head').add_child(lunar_script)
  end
 
  doc.css('[nonce]').each { |node|node.remove_attribute('nonce') }
@@ -224,7 +224,11 @@ search=Page.published.reject { |page|page.path.match?(removed_name_path) || Publ
  when %r{\A/(?:koledar|mesecni-koledar|tedenski-koledar|prazen-koledar)/} then 'koledar datum dnevi mesec leto tedenski mesečni letni koledar'
  else ''
  end
- {title:page.title,path:page.path,type:(page.family == 'blog' ? 'Vodniki' : 'Koledar in orodja'),folded:PersonName.fold([page.title,page.path,page.description,keywords].compact.join(' ')),priority:0}
+ festival = page.family == 'festival_detail' ? OccasionCatalog.festival(page.path.split('/').last) : nil
+ type = festival ? 'Festivali in prireditve' : (page.family == 'blog' ? 'Vodniki' : 'Koledar in orodja')
+ keywords = OccasionCatalog.festival_search_text(festival) if festival
+ keywords = SlovenianResources::SEARCH_TERMS.fetch(page.path, keywords)
+ {title:page.title,path:page.path,type:type,folded:PersonName.fold([page.title,page.path,page.description,keywords].compact.join(' ')),priority:0}
 end
 search+=SunEngine::CITIES.map { |id,values|{title:"Sončni vzhod in zahod – #{values[0]}",path:"/soncni-vzhod-in-zahod/#{id}/",type:'Sončni časi',folded:PersonName.fold("#{values[0]} sončni vzhod sončni zahod zlata ura dolžina dneva mesto"),priority:1} }
 # Retired name URLs stay out of public search, just as they stay out of the sitemap.
@@ -234,18 +238,13 @@ event_path=lambda do |event|
  ["/prazniki/#{event.slug}/","/pomembni-dnevi/#{event.slug}/","/letni-casi/#{event.slug}/"].find { |path|page_paths.include?(path) }||"/pomembni-dnevi/#{event.on.year}/"
 end
 events=CalendarEvent.ordered.to_a
-search+=events.map do |event|
+search+=events.reject { |event| event.category == 'festival' }.map do |event|
  path=event_path.call(event)
- kind=event.category=='festival' ? 'Festivali in prireditve' : 'Prazniki in dnevi'
+ kind='Prazniki in dnevi'
  tags=[event.title,event.on.iso8601,"#{event.on.day}. #{CalendarEngine::MONTHS.fetch(event.on.month-1)} #{event.on.year}",CalendarEngine::DAYS.fetch(event.on.cwday-1),event.metadata['place'],kind]
  tags<<'dela prost dan dela prost dan' if event.work_free
  tags<<'državni praznik' if event.state_holiday
  {title:event.title.sub(/\A./) { |letter|letter.upcase },path:path,type:kind,folded:PersonName.fold(tags.compact.join(' ')),priority:event.work_free ? -2 : 2}
-end
-search+=OccasionCatalog.festivals.select { |festival| festival.fetch('editions').empty? }.map do |festival|
- title=festival.fetch('title')
- {title:title,path:OccasionCatalog.festival_path(festival.fetch('slug')),type:'Festivali in prireditve',
-  folded:PersonName.fold([title,festival.fetch('place'),OccasionCatalog::KINDS.fetch(festival.fetch('kind'))].join(' ')),priority:2}
 end
 out.join('free/search.json').write(JSON.generate(search))
 out.join('free/events.json').write(events.map { |event| event.attributes.merge('path'=>event_path.call(event)) }.to_json)

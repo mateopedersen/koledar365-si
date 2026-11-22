@@ -1,0 +1,113 @@
+<% profile = guide.profile
+   editorial = guide.sign_editorial
+   reading = guide.reading
+   season = guide.season %>
+<header class="z-hero z-sign-hero">
+  <div class="z-sign-hero-heading">
+    <h1>Dnevni horoskop za <%= editorial.fetch('accusative') %></h1>
+  </div>
+  <div class="z-sign-hero-text">
+    <p><%= editorial.fetch('intro') %></p>
+    <div class="z-hero-actions">
+      <a class="z-hero-button z-hero-button--primary" href="#dnevni-zapis">
+        Preberite dnevni zapis
+        <span class="z-button-icon z-button-icon--down"><%= ui_icon('chevron-right') %></span>
+      </a>
+      <a class="z-hero-button" href="#ascendent">
+        Izračunajte ascendent
+        <span class="z-button-icon z-button-icon--down"><%= ui_icon('chevron-right') %></span>
+      </a>
+    </div>
+  </div>
+  <div class="z-hero-art z-sign-hero-art">
+    <img src="/horoscope/art/<%= profile.fetch('slug') %>-v1.svg" width="320" height="310" alt="<%= profile.fetch('art_alt') %>" fetchpriority="high">
+  </div>
+</header>
+
+<div class="z-detail-layout">
+  <div class="z-sign-main">
+    <article class="z-reading" id="dnevni-zapis" aria-labelledby="z-reading-title">
+      <div class="z-reading-top">
+        <%= render 'horoscope_edition', guide: guide, part: :date %>
+        <div class="z-reading-switch" role="group" aria-label="Izberite datum horoskopa">
+          <button type="button" data-reading-day="today" aria-pressed="true">Danes</button>
+          <button type="button" data-reading-day="yesterday" aria-pressed="false">Včeraj</button>
+        </div>
+      </div>
+      <p class="z-refresh-note" data-refresh-note role="status" hidden></p>
+      <div class="z-reading-intro">
+        <h2 id="z-reading-title" data-reading-field="title"><%= reading['title'] || 'Dnevni zapis se pripravlja.' %></h2>
+        <p class="z-reading-lead" data-reading-field="overview"><%= reading['overview'] %></p>
+      </div>
+      <% [['love', 'Ljubezen in odnosi', 'heart'], ['work', 'Delo in opravila', 'briefcase'], ['wellbeing', 'Ritem in počutje', 'sun']].each do |key, label, icon| %>
+        <section class="z-reading-section">
+          <span class="z-reading-icon"><%= ui_icon(icon) %></span>
+          <div>
+            <h3><%= label %></h3>
+            <p data-reading-field="<%= key %>"><%= reading[key] %></p>
+          </div>
+        </section>
+      <% end %>
+      <section class="z-thought">
+        <span class="z-reading-icon"><%= ui_icon('note') %></span>
+        <div>
+          <h3>Misel za razmislek</h3>
+          <p data-reading-field="thought"><%= reading['thought'] %></p>
+        </div>
+      </section>
+      <p class="z-edition-credit">Horoskop je namenjen razvedrilu. <a href="#z-metoda">Kako nastane dnevni zapis?</a></p>
+    </article>
+
+    <section class="z-sign-editorial" aria-labelledby="z-sign-guide-title">
+      <h2 id="z-sign-guide-title"><%= editorial.fetch('heading') %></h2>
+      <% editorial.fetch('details').each do |paragraph| %>
+        <p><%= paragraph %></p>
+      <% end %>
+      <% if season %>
+        <div class="z-season">
+          <h3>Sončev prehod v letu <%= guide.today.year %></h3>
+          <dl>
+            <div>
+              <dt>Vstop v znamenje</dt>
+              <dd><time datetime="<%= season.fetch('starts_at') %>"><%= Time.iso8601(season.fetch('starts_at')).in_time_zone('Europe/Ljubljana').strftime('%-d. %-m. %Y ob %H:%M') %></time></dd>
+            </div>
+            <div>
+              <dt>Vstop v naslednje znamenje</dt>
+              <dd><time datetime="<%= season.fetch('ends_at') %>"><%= Time.iso8601(season.fetch('ends_at')).in_time_zone('Europe/Ljubljana').strftime('%-d. %-m. %Y ob %H:%M') %></time></dd>
+            </div>
+          </dl>
+          <p>To sta izračunana trenutka v slovenskem času. Če ste rojeni na mejni dan, v kalkulator vnesite tudi uro in kraj rojstva.</p>
+        </div>
+      <% end %>
+    </section>
+  </div>
+
+  <div class="z-sign-sidebar">
+    <aside class="z-sign-summary" aria-labelledby="z-sign-summary-title">
+      <section class="z-sign-facts">
+        <h2 id="z-sign-summary-title"><%= profile.fetch('name') %> v astrologiji</h2>
+        <dl class="z-sign-facts-list">
+          <div><dt>Običajni datumi</dt><dd><%= profile.fetch('dates') %></dd></div>
+          <div><dt>Element</dt><dd><%= profile.fetch('element') %></dd></div>
+          <div><dt>Način znamenja</dt><dd><%= profile.fetch('mode') %></dd></div>
+          <div><dt>Astrološki vladar</dt><dd><%= profile.fetch('ruler') %></dd></div>
+        </dl>
+      </section>
+      <%= render 'horoscope_edition', guide: guide, part: :moon %>
+    </aside>
+
+    <div class="z-calculator-aside">
+      <%= render 'ascendant' %>
+    </div>
+  </div>
+</div>
+
+<nav class="z-sign-nav" aria-label="Vseh 12 znamenj">
+  <h2>Izberite drugo znamenje</h2>
+  <ul>
+    <% guide.profiles.each do |sign| %>
+      <li><a href="/horoskop/<%= sign.fetch('slug') %>/" <%= 'aria-current=page' if profile['slug'] == sign['slug'] %>><%= sign.fetch('name') %></a></li>
+    <% end %>
+  </ul>
+  <a class="z-sign-directory" href="/horoskop/">Vsi dnevni horoskopi <%= ui_icon('chevron-right') %></a>
+</nav>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380">
+  <defs>
+    <filter id="cast" x="-.38" y="-.4" width="1.8" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10" />
+      <feOffset dx="4" dy="12" result="shadow" />
+      <feFlood flood-color="#19304d" flood-opacity=".21" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <filter id="lift" x="-.35" y="-.4" width="1.75" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+      <feOffset dx="2" dy="5" result="shadow" />
+      <feFlood flood-color="#142c46" flood-opacity=".24" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <radialGradient id="light">
+      <stop stop-color="#fff" />
+      <stop offset="1" stop-color="#d8e8f6" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="blue" x2="1" y2="1">
+      <stop stop-color="#548eb3" />
+      <stop offset=".48" stop-color="#1d5479" />
+      <stop offset="1" stop-color="#0b2845" />
+    </linearGradient>
+    <linearGradient id="steel" x2="1" y2="1">
+      <stop stop-color="#fff" />
+      <stop offset=".48" stop-color="#a5bbcc" />
+      <stop offset="1" stop-color="#526f8b" />
+    </linearGradient>
+    <linearGradient id="cream" x2="1" y2="1">
+      <stop stop-color="#fff7dd" />
+      <stop offset=".48" stop-color="#eee0c1" />
+      <stop offset="1" stop-color="#cfb488" />
+    </linearGradient>
+    <linearGradient id="ink" x2="1" y2="1">
+      <stop stop-color="#395777" />
+      <stop offset=".48" stop-color="#203956" />
+      <stop offset="1" stop-color="#112439" />
+    </linearGradient>
+    <linearGradient id="leather" x2="1" y2="1">
+      <stop stop-color="#557486" />
+      <stop offset=".48" stop-color="#2f526b" />
+      <stop offset="1" stop-color="#17364e" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="297" cy="195" rx="280" ry="177" fill="url(#light)" />
+  <ellipse cx="301" cy="334" rx="207" ry="23" fill="#d4e4f1" opacity=".44" />
+  <use href="#art-shape-1" filter="url(#cast)" />
+  <g transform="rotate(-12 275 194)" id="art-shape-1">
+    <path d="M216 91V62q0-14 14-14h69q14 0 14 14v29" fill="none" stroke="url(#steel)" stroke-width="10" />
+    <path d="M235 48h57" stroke="#305671" stroke-width="15" stroke-linecap="round" />
+    <circle cx="160" cy="306" r="14" fill="#1c3141" />
+    <circle cx="356" cy="306" r="14" fill="#1c3141" />
+    <rect x="123" y="87" width="272" height="223" rx="31" fill="url(#blue)" stroke="#3c6784" stroke-width="2" />
+    <rect x="137" y="99" width="242" height="196" rx="24" fill="url(#leather)" stroke="#9ebbd1" stroke-opacity=".66" />
+    <path d="M166 115v162m26-164v168m26-168v168m25-168v168m26-168v168m25-168v168m26-168v168m26-165v161" stroke="#18364c" stroke-width="3" opacity=".55" />
+    <path d="M169 114v162m26-163v166m26-167v166m25-166v166m26-166v166m25-166v166m26-166v166m26-163v158" stroke="#b0cad9" opacity=".48" />
+    <path d="M129 182h263" stroke="#173249" stroke-width="7" />
+    <path d="M129 181h263" stroke="#acc5d5" stroke-dasharray="1 4" stroke-width="2" />
+  </g>
+  <path d="M327 99q44 1 60 77" fill="none" stroke="#ac824e" stroke-width="3" />
+  <use href="#art-shape-2" filter="url(#lift)" />
+  <g transform="rotate(15 420 213)" id="art-shape-2">
+    <path d="M382 160h78l18 20v85h-114v-85Z" fill="url(#cream)" stroke="#c1a070" />
+    <circle cx="421" cy="172" r="5" fill="#98774d" stroke="#faefd4" stroke-width="2" />
+    <text x="421" y="217" fill="#584b35" font-family="system-ui,sans-serif" font-size="22" font-weight="700" text-anchor="middle">Dopust</text>
+    <path d="M385 239h72" stroke="#ac956f" stroke-dasharray="3 4" />
+  </g>
+  <use href="#art-shape-3" filter="url(#lift)" />
+  <g transform="rotate(7 433 294)" stroke="#a06d42" stroke-width="4" id="art-shape-3">
+    <path d="M367 281q12-14 38-13 22 1 26 15 5-14 29-15 27-1 39 13l-5 15q-3 13-24 14-24 1-33-18l-6-9-6 9q-9 20-32 18-21-1-24-14Z" fill="url(#ink)" />
+    <path d="m376 284 26-10m47 12 28-12" stroke="#c5d9eb" opacity=".54" stroke-width="2" />
+  </g>
+</svg>

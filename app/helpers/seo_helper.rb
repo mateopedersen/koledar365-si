@@ -4,7 +4,12 @@ module SeoHelper
   def seo_title = "#{seo_page_title} | Koledar365"
 
   def seo_page_title
+    return "#{@title} – PDF za tisk in slika" if @calendar_collection
     return "#{@title}: datumi 2027–2030" if @observance && !@clock_change
+    return "Dnevni horoskop za danes – vseh 12 znamenj" if page_path == "/horoskop/"
+    if (sign = @horoscope_guide&.profile)
+      return "#{sign.fetch('name')} – dnevni horoskop za danes"
+    end
     return "Prestopno leto: kalkulator in pravilo 29. februarja" if page_path == "/prestopno-leto/"
 
     title = (@title.presence || "Slovenski koledar").sub(/ +[·|] +Koledar365\z/, "")
@@ -29,6 +34,11 @@ module SeoHelper
   end
 
   def seo_image
+    if @festival || @section == 'festivals'
+      image = OccasionCatalog.festival_photo(@festival || OccasionCatalog.festival('kurentovanje'))
+      return { url: site_origin + image.fetch('local_path'), width: image.fetch('width'),
+        height: image.fetch('height'), alt: image.fetch('alt') }
+    end
     if @blog_article
       slug = page_path.delete_prefix(EditorialCatalog::HUB).delete_suffix('/')
       return {url: site_origin + EditorialCatalog.image(slug), width: 1200, height: 630, alt: @blog_article.fetch('image_alt')}
@@ -52,6 +62,9 @@ module SeoHelper
   def breadcrumbs
     return [] if page_path == "/" || @not_found
     rows = [["Domov", "/"]]
+    if (resource = SlovenianResources::PAGES[page_path])
+      return rows + [['Orodja', '/orodja/'], [resource.fetch(:name), page_path]]
+    end
     parent = "/#{page_path.split("/").reject(&:blank?).first}/"
     record = Page.find_by(path: parent) if parent != page_path
     rows << [record.title, record.path] if record
@@ -257,8 +270,13 @@ module SeoHelper
 
   def expansion_citations
     return GardenCalendar.sources.values.map{|source|source.fetch('url')} if @section=='garden_calendar'
-    return [@payment_calendar.source.fetch('url')] if @section=='payment_calendar' && @payment_calendar
+    if @section == 'payment_calendar' && @payment_calendar
+      return [@payment_calendar.source.fetch('url'), *@payment_calendar.current_sources.map(&:last)].uniq
+    end
     return @education_calendar.sources.map{|source|source.fetch('url')} if @section=='education_calendar' && @education_calendar
+    if @section == 'slovenian_resource'
+      return SlovenianResources::PAGES.fetch(page_path).fetch(:sources).map(&:last)
+    end
     if @section=='astronomy_events'
       kind=AstronomySchedule::PATHS.key(page_path)
       return AstronomySchedule.new(kind:kind).sources.map(&:last)
@@ -269,11 +287,16 @@ module SeoHelper
   def expansion_tool_features
     case @section
     when 'garden_calendar' then ['Pregled 16 vrtnin po mesecih in opravilih','Osebni setveni načrt v brskalniku','Tisk, varnostna kopija JSON in izvoz ICS']
-    when 'payment_calendar' then ['Uradno objavljeni datumi izplačil','Filtri po prejemkih in mesecih','Koledar za tisk in izvoz ICS']
+    when 'payment_calendar' then ['Mesečni pregled za leto 2027','Uradno objavljeni termini in izvoz ICS','Pogoji in uradne vloge']
     when 'education_calendar' then ['Uradni roki z izbiro šole, razreda ali izpita','Seznam in dvanajstmesečni pregled','Osebni izbor datumov, tisk in izvoz ICS']
     when 'school_timetable' then ['Predmeti, ure, učilnice in učitelji','Opozorila ob prekrivanju ur','Tedensko ponavljanje, tisk, JSON in ICS']
     when 'moon_phases' then ['Lunine mene v času Europe/Ljubljana','Naslednji trenutek in letni pregled','Tisk in koledar ICS']
     when 'astronomy_events' then ['Lokalne razmere za osem slovenskih krajev','Prikaz nad obzorjem in časovni potek','Koledar za tisk in izvoz ICS']
+    when 'slovenian_resource'
+      return ['Izbira leta in vrste astronomskega dogodka', 'Prikaz lokalnega časa Slovenije'] if page_path == SlovenianSkyCalendar::PATH
+      return ['Delovni, šolski ali tedenski razpored', 'Izbirni datum tedna in tisk v PDF'] if page_path == '/predloge-urnikov/'
+      resource = SlovenianResources::PAGES.fetch(page_path)
+      [resource.fetch(:action)] if resource[:calculator]
     when 'calendar'
       return ['Izbira leta, meseca ali tedna ISO','Osebni zapiski','PDF in urejevalna preglednica XLSX'] if page_path=='/mesecni-koledar/'
       return ['Izbira datuma ali tedna ISO','Osebni zapiski za vsak dan','Tedenski planer za tisk in PDF'] if page_path=='/tedenski-koledar/'

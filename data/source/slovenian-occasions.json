@@ -645,7 +645,9 @@
           "end": "2027-02-09",
           "source_url": "https://kurentovanje.net/"
         }
-      ]
+      ],
+      "photo": "holiday:pust",
+      "highlight": "Na Ptujskem lahko ločite obhode kurentov od festivalske povorke z različnimi maskami. Za vpogled v pustne like je uporaben etnografski del, za večje skupinske nastope pa program osrednjega sprevoda. Urnik oba dela navaja posebej."
     },
     {
       "slug": "luv-fest",
@@ -663,7 +665,8 @@
           "end": "2027-03-12",
           "source_url": "https://www.visitljubljana.com/sl/obiskovalci/prireditve/prireditve-v-ljubljani/luv-fest"
         }
-      ]
+      ],
+      "photo": "city:ljubljana"
     },
     {
       "slug": "festival-gorniskega-filma",
@@ -682,7 +685,8 @@
           "source_url": "https://cd-cc.si/kultura/film/21-festival-gorniskega-filma",
           "label": "Program v Cankarjevem domu"
         }
-      ]
+      ],
+      "photo": "planinska-pot"
     },
     {
       "slug": "festival-cokolade",
@@ -700,7 +704,8 @@
           "end": "2027-04-18",
           "source_url": "https://www.festival-cokolade.si/"
         }
-      ]
+      ],
+      "photo": "city:radovljica"
     },
     {
       "slug": "druga-godba",
@@ -718,7 +723,8 @@
           "end": "2027-05-29",
           "source_url": "https://drugagodba.si/"
         }
-      ]
+      ],
+      "photo": "druga-godba"
     },
     {
       "slug": "graficni-bienale",
@@ -736,7 +742,8 @@
           "end": "2027-10-17",
           "source_url": "https://www.slovenia.info/en/stories/whats-new-in-slovenia-2027"
         }
-      ]
+      ],
+      "photo": "city:ljubljana"
     },
     {
       "slug": "ljubljana-festival",
@@ -755,7 +762,8 @@
           "source_url": "https://www.slovenia.info/en/stories/whats-new-in-slovenia-2027",
           "label": "Začetek 75. festivala"
         }
-      ]
+      ],
+      "photo": "ljubljana-festival"
     },
     {
       "slug": "jazz-festival-ljubljana",
@@ -773,7 +781,8 @@
           "end": "2027-07-03",
           "source_url": "https://cd-cc.si/68-jazz-festival-ljubljana"
         }
-      ]
+      ],
+      "photo": "jazz-ljubljana"
     },
     {
       "slug": "tolminator",
@@ -791,7 +800,8 @@
           "end": "2027-08-01",
           "source_url": "https://tolminator.com/sl"
         }
-      ]
+      ],
+      "photo": "city:tolmin"
     },
     {
       "slug": "punk-rock-holiday",
@@ -810,7 +820,8 @@
           "source_url": "https://www.punkrockholiday.com/",
           "label": "Redni festivalski termin"
         }
-      ]
+      ],
+      "photo": "city:tolmin"
     },
     {
       "slug": "planica",
@@ -828,7 +839,8 @@
           "end": "2027-03-21",
           "source_url": "https://www.planica.si/sl/program"
         }
-      ]
+      ],
+      "photo": "planica"
     },
     {
       "slug": "pokal-vitranc",
@@ -846,7 +858,8 @@
           "end": "2027-01-03",
           "source_url": "https://pokal-vitranc.com/"
         }
-      ]
+      ],
+      "photo": "kranjska-gora"
     },
     {
       "slug": "skoki-ljubno",
@@ -864,7 +877,8 @@
           "end": "2027-01-10",
           "source_url": "https://www.ljubno-skoki.si/sl"
         }
-      ]
+      ],
+      "photo": "ljubno"
     },
     {
       "slug": "biatlon-pokljuka",
@@ -883,7 +897,8 @@
           "source_url": "https://www.biathlon-pokljuka.com/"
         }
       ],
-      "edition_year": 2027
+      "edition_year": 2027,
+      "photo": "holiday:zimski-solsticij"
     },
     {
       "slug": "dirka-po-sloveniji",
@@ -901,7 +916,8 @@
           "end": "2027-06-20",
           "source_url": "https://www.slovenia.info/en/stories/whats-new-in-slovenia-2027"
         }
-      ]
+      ],
+      "photo": "dirka"
     },
     {
       "slug": "veslanje-bled",
@@ -920,7 +936,8 @@
           "source_url": "https://www.slovenia.info/en/stories/whats-new-in-slovenia-2027"
         }
       ],
-      "edition_year": 2027
+      "edition_year": 2027,
+      "photo": "city:bled"
     },
     {
       "slug": "december-v-ljubljani",
@@ -938,7 +955,8 @@
           "end": "2027-01-14",
           "source_url": "https://www.visitljubljana.com/sl/obiskovalci/prireditve/prireditve-v-ljubljani/december-v-ljubljani"
         }
-      ]
+      ],
+      "photo": "december-ljubljana"
     },
     {
       "slug": "carobni-maribor",
@@ -956,7 +974,8 @@
           "end": "2027-01-02",
           "source_url": "https://www.visitmaribor.si/sl/dogodki/tradicionalni-dogodki/carobni-maribor/"
         }
-      ]
+      ],
+      "photo": "night:maribor"
     },
     {
       "slug": "pravljicno-celje",
@@ -974,7 +993,8 @@
           "end": "2027-01-03",
           "source_url": "https://www.visitcelje.eu/sl/mediji-pr/do-priziga-luck-pravljicnega-celja-2026-se-mesec-dni/"
         }
-      ]
+      ],
+      "photo": "night:celje"
     },
     {
       "slug": "zimska-pravljica-bled",
@@ -992,7 +1012,8 @@
           "end": "2027-01-10",
           "source_url": "https://www.bled.si/sl/prireditve/2026101615293461/"
         }
-      ]
+      ],
+      "photo": "night:bled"
     },
     {
       "slug": "fantazima-koper",
@@ -1010,7 +1031,8 @@
           "end": "2027-01-03",
           "source_url": "https://visitkoper.si/prireditve/fantazima-2026/"
         }
-      ]
+      ],
+      "photo": "night:koper"
     },
     {
       "slug": "festival-lent",
@@ -1018,11 +1040,24 @@
       "kind": "kultura",
       "place": "Maribor",
       "venue": "Prizorišča ob Dravi in drugod po mestu",
-      "source_url": "https://www.festival-lent.si/",
+      "source_url": "https://nd-mb.si/festival-lent/2026/10/02/predstavite-se-na-festivalu-lent-2027/",
       "source_title": "Narodni dom Maribor",
       "description": "Festival Lent je večžanrski mariborski festival. Koncerti, gledališče in ulične prireditve se odvijajo na več odrih.",
       "visit": "Lent je ime festivala in območja ob Dravi. Pri dogodku preverite dejanski naslov prizorišča in režim vstopa, saj ni vse dogajanje zbrano ob reki.",
-      "editions": []
+      "editions": [
+        {
+          "start": "2026-06-26",
+          "end": "2026-07-04",
+          "source_url": "https://www.youtube.com/watch?v=FpA2FmQASQQ"
+        },
+        {
+          "start": "2027-06-25",
+          "end": "2027-07-03",
+          "source_url": "https://nd-mb.si/festival-lent/festival-lent-2026/"
+        }
+      ],
+      "period": "Junij in julij",
+      "photo": "lent-2009"
     },
     {
       "slug": "festival-idrijske-cipke",
@@ -1034,7 +1069,15 @@
       "source_title": "Festival idrijske čipke",
       "description": "Festival prikazuje tehnike klekljanja in sodobno uporabo idrijske čipke. Poleg razstav lahko program vključuje prikaze dela in tekmovanja v klekljanju.",
       "visit": "Za obisk delavnice posebej preverite prijavo. Na festivalu je mogoče primerjati izdelavo čipk z muzejskimi zbirkami in delom lokalnih klekljaric.",
-      "editions": []
+      "editions": [
+        {
+          "start": "2026-06-19",
+          "end": "2026-06-21",
+          "source_url": "https://www.visit-idrija.si/en/events/?m=10&y=2026"
+        }
+      ],
+      "period": "Junij",
+      "photo": "city:idrija"
     },
     {
       "slug": "pikin-festival",
@@ -1046,7 +1089,8 @@
       "source_title": "Festival Velenje",
       "description": "Pikin festival je velenjska prireditev za otroke in družine, poimenovana po Piki Nogavički. Povezuje delavnice, predstave in srečanja z ustvarjalci.",
       "visit": "Pred družinskim obiskom primerjajte starostne skupine delavnic, morebitne rezervacije in ustrezno prizorišče. Navedeni vir prikazuje zasnovo izvedbe leta 2026.",
-      "editions": []
+      "editions": [],
+      "photo": "city:velenje"
     },
     {
       "slug": "pivo-in-cvetje",
@@ -1058,7 +1102,8 @@
       "source_title": "STIK Laško",
       "description": "Laško Pivo in cvetje združuje glasbene nastope, mestno dogajanje in laško pivovarsko tradicijo.",
       "visit": "Za obisk izberite koncert in prizorišče, nato preverite prihod v Laško in pozni povratek. Termin stare izvedbe ni napoved novega programa.",
-      "editions": []
+      "editions": [],
+      "photo": "city:lasko"
     },
     {
       "slug": "liffe",
@@ -1076,7 +1121,8 @@
           "end": "2026-11-22",
           "source_url": "https://www.cd-cc.si/festivali"
         }
-      ]
+      ],
+      "photo": "night:ljubljana"
     },
     {
       "slug": "vilenica",
@@ -1088,19 +1134,28 @@
       "source_title": "Mednarodni literarni festival Vilenica",
       "description": "Vilenica povezuje pisatelje, pesnike in prevajalce na literarnih branjih ter pogovorih. Ime je povezano s kraško jamo Vilenico.",
       "visit": "Prizorišča so razpršena, zato pri izbranem branju upoštevajte kraj in jezik dogodka. Zaključna slovesnost in branja v drugih krajih imajo vsak svoj program.",
-      "editions": []
+      "editions": [],
+      "photo": "vilenica"
     },
     {
       "slug": "jurjevanje",
       "title": "Jurjevanje v Beli krajini",
       "kind": "dediscina",
       "place": "Črnomelj",
-      "venue": "Jurjevanska draga in staro mestno jedro",
+      "venue": "Jurjevanjska draga in staro mestno jedro",
       "source_url": "https://jurjevanje.si/",
       "source_title": "Jurjevanje v Beli krajini",
       "description": "Jurjevanje v Beli krajini je folklorna prireditev v Črnomlju. Slovenske in tuje skupine predstavljajo plese, glasbo in oblačilno dediščino.",
       "visit": "Folklorni festival in pomladne šege ob svetem Juriju sta povezana po izročilu, a imata ločena termina. Festivalu sledite po objavah organizatorja v Črnomlju.",
-      "editions": []
+      "editions": [
+        {
+          "start": "2026-06-22",
+          "end": "2026-06-28",
+          "source_url": "https://www.jurjevanje.si/sl/o-festivalu/"
+        }
+      ],
+      "period": "Junij",
+      "photo": "city:crnomelj"
     },
     {
       "slug": "praznik-cesenj",
@@ -1108,11 +1163,19 @@
       "kind": "kulinarika",
       "place": "Brda",
       "venue": "Dobrovo in okoliške vasi",
-      "source_url": "https://www.brda.si/sl/",
+      "source_url": "https://www.brda.si/sl/spoznaj/festivali/",
       "source_title": "Zavod za turizem, kulturo, mladino in šport Brda",
       "description": "Praznik češenj v Brdih je povezan s sezono obiranja in predstavitvijo briškega sadja, kulinarike in lokalnih navad.",
       "visit": "Dogajanje je lahko razporejeno med več vasi in vikendov. Pred izletom preverite točen kraj, rezervacijo pri ponudniku in lokalni prevoz, ko organizator objavi program.",
-      "editions": []
+      "editions": [
+        {
+          "start": "2026-06-06",
+          "end": "2026-06-07",
+          "source_url": "https://www.brda.si/sl/spoznaj/festivali/"
+        }
+      ],
+      "period": "Junij",
+      "photo": "brda"
     },
     {
       "slug": "planica-poleti-2028",
@@ -1131,7 +1194,8 @@
           "end": "2028-03-26",
           "source_url": "https://assets.fis-ski.com/f/252177/x/25cbbd615b/2025_10_21_fis_council_summaryminutes.pdf"
         }
-      ]
+      ],
+      "photo": "planica"
     },
     {
       "slug": "eurobasket-ljubljana-2029",
@@ -1144,7 +1208,8 @@
       "source_title": "Košarkarska zveza Slovenije",
       "description": "Ljubljana je eno od potrjenih prizorišč moškega evropskega prvenstva v košarki leta 2029. Stožice bodo gostile eno skupino, sklepni del pa bo v Madridu.",
       "visit": "Dnevi tekem v Ljubljani še niso objavljeni. Ko izide urnik, preverite tekme svoje skupine in prodajo vstopnic posebej za Stožice.",
-      "editions": []
+      "editions": [],
+      "photo": "city:ljubljana"
     },
     {
       "slug": "dan-slovenskih-planincev",
@@ -1163,7 +1228,547 @@
           "source_url": "https://mail.pzs.si/novice/18614-razpis-za-soorganizacijo-dneva-planincev-in-podelitve-najvisjih-priznanj-pzs-v-letu-2027/",
           "label": "Razpisani dan srečanja; kraj po objavi organizatorja"
         }
-      ]
+      ],
+      "photo": "planinska-pot"
+    },
+    {
+      "slug": "kravji-bal",
+      "title": "Kravji bal v Bohinju",
+      "kind": "dediscina",
+      "place": "Ukanc",
+      "venue": "Prireditveni prostor v Ukancu",
+      "source_url": "https://tdbohinj.si/prireditev/67-tradicionalni-kravji-bal/",
+      "source_title": "Turistično društvo Bohinj",
+      "description": "Bohinjski Kravji bal oživlja vrnitev živine s planin ob koncu pašne sezone. V sprevodu pokažejo okrašene trope in opremo, s katero so se planšarji vračali v dolino.",
+      "visit": "Ukanc leži na zahodnem koncu Bohinjskega jezera. V programu poiščite čas sprevoda, informacije o vstopnicah ter navodila za dostop z avtobusom ali parkiranje.",
+      "period": "September",
+      "editions": [
+        {
+          "start": "2026-09-20",
+          "end": "2026-09-20",
+          "source_url": "https://tdbohinj.si/prireditev/67-tradicionalni-kravji-bal/"
+        }
+      ],
+      "places": [
+        "Ukanc",
+        "Bohinj"
+      ],
+      "photo": "bohinj"
+    },
+    {
+      "slug": "dnevi-narodnih-nos",
+      "title": "Dnevi narodnih noš in oblačilne dediščine",
+      "kind": "dediscina",
+      "place": "Kamnik",
+      "venue": "Staro mestno jedro Kamnika",
+      "source_url": "https://www.visitkamnik.com/sl/prireditve/top-prireditve/dnevi-narodnih-nos-in-oblacilne-dediscine",
+      "source_title": "Visit Kamnik",
+      "description": "Kamniški festival, ki se je začel leta 1966, predstavlja pokrajinska oblačila, folkloro in obrti. Nedeljska povorka je priložnost, da na enem mestu primerjate kostume in običaje različnih krajev.",
+      "visit": "Za povorko si vnaprej izberite mesto ob trasi. Koncerti, razstave in rokodelske predstavitve so na različnih prizoriščih, zato podatke o zaporah in urah preverite v programu.",
+      "period": "September",
+      "editions": [
+        {
+          "start": "2026-09-11",
+          "end": "2026-09-13",
+          "source_url": "https://www.visitkamnik.com/sl/prireditve/top-prireditve/dnevi-narodnih-nos-in-oblacilne-dediscine"
+        }
+      ],
+      "photo": "city:kamnik",
+      "highlight": "Osrednji del je povorka oblačil in folklornih skupin. Organizator v programu objavlja tudi razstave in nastope, kjer si lahko oblačila ogledate od blizu ter slišite razlago njihovega nastanka in rabe."
+    },
+    {
+      "slug": "solinarski-praznik",
+      "title": "Solinarski praznik ob sv. Juriju",
+      "kind": "dediscina",
+      "place": "Piran",
+      "venue": "Piran, Portorož ter Sečoveljske in Strunjanske soline",
+      "source_url": "https://www.piran.si/post/1266468",
+      "source_title": "Občina Piran in Avditorij Portorož",
+      "description": "Spomladanski praznik ob sv. Juriju predstavi piransko solinarsko dediščino. Program iz leta 2026 je vključeval stojnice, razstave, predavanja o solinah in delavnice.",
+      "visit": "Program se seli med obalo in solinami. Pred obiskom poglejte urnik za želeno prizorišče ter ločeno napoved poletnega solinarskega praznika ob sv. Jerneju.",
+      "period": "April, ob sv. Juriju",
+      "editions": [
+        {
+          "start": "2026-04-24",
+          "end": "2026-04-26",
+          "source_url": "https://www.piran.si/post/1266468"
+        }
+      ],
+      "places": [
+        "Piran",
+        "Portorož",
+        "Sečovlje",
+        "Strunjan"
+      ],
+      "photo": "soline",
+      "highlight": "Soline in mesto predstavljajo različne dele zgodbe. Na solinskem prizorišču je v ospredju krajina pridelave soli, mestni program pa pokaže, kako je bila sol povezana z življenjem Pirana. V letu 2026 so se vključili tudi muzeji in kulturna društva."
+    },
+    {
+      "slug": "bogracfest",
+      "title": "Bogračfest",
+      "kind": "kulinarika",
+      "place": "Lendava",
+      "venue": "Staro mestno jedro Lendave",
+      "source_url": "https://www.lendava-lendva.si/dogodek/581/Festival-Vinarium%3A-Bogracfest-2026",
+      "source_title": "Zavod za turizem in razvoj Lendava",
+      "description": "Na Bogračfestu ekipe pred obiskovalci kuhajo bograč v kotličkih. Mestno središče je na dan tekmovanja tudi prizorišče glasbenega programa in druženja v okviru Festivala Vinarium.",
+      "visit": "Za ogled kuhanja pridite v dnevnem delu programa. Ocenjevanje, razglasitev in večerni koncerti imajo ločene ure, ki jih objavi organizator.",
+      "period": "Avgust",
+      "editions": [
+        {
+          "start": "2026-08-22",
+          "end": "2026-08-22",
+          "source_url": "https://www.lendava-lendva.si/dogodek/581/Festival-Vinarium%3A-Bogracfest-2026"
+        }
+      ],
+      "photo": "city:lendava"
+    },
+    {
+      "slug": "lendavska-trgatev",
+      "title": "Lendavska trgatev",
+      "kind": "dediscina",
+      "place": "Lendava",
+      "venue": "Mestne ulice in prireditveni prostor Lendave",
+      "source_url": "https://www.lendava-lendva.si/novica/582/Festival-Vinarium%3A-47.-Lendavska-trgatev",
+      "source_title": "Zavod za turizem in razvoj Lendava",
+      "description": "Etnološka povorka prikaže obiranje, prenašanje in prešanje grozdja ter druge običaje s slovenskega in madžarskega jezikovnega območja. Spremljajo jo folklora, kulinarika društev in domača tržnica.",
+      "visit": "Povorka in večerni koncert imata različna dela programa. Pri načrtovanju prihoda preverite traso, prevoz med prizorišči in prometne zapore.",
+      "period": "Pozno poletje",
+      "editions": [
+        {
+          "start": "2026-08-29",
+          "end": "2026-08-29",
+          "source_url": "https://www.lendava-lendva.si/novica/582/Festival-Vinarium%3A-47.-Lendavska-trgatev"
+        }
+      ],
+      "photo": "city:lendava",
+      "highlight": "V povorki leta 2026 so domača društva prikazala nošenje polnih brent, tlačenje grozdja in nekdanje prešanje. Ob takšnem prikazu se lažje opazi, kako se je podeželsko delo razlikovalo od današnje pridelave."
+    },
+    {
+      "slug": "praznik-idrijskih-zlikrofov",
+      "title": "Praznik idrijskih žlikrofov",
+      "kind": "kulinarika",
+      "place": "Idrija",
+      "venue": "Park Mejca ob Idrijci",
+      "source_url": "https://www.idrijski-zlikrofi.si/program/",
+      "source_title": "Praznik idrijskih žlikrofov",
+      "description": "Idrijsko jed iz testa s krompirjevim nadevom ponudniki predstavijo v tradicionalnih in sodobnih kombinacijah. Program leta 2026 je poleg pokušanj vključil gostujoče kuharje in otroške delavnice.",
+      "visit": "Mejca je ob reki Idrijci. Za kuharsko delavnico, izlet ali degustacijo preverite prijave posebej, saj se ponudba in dostop razlikujeta po dogodkih.",
+      "period": "Avgust",
+      "editions": [
+        {
+          "start": "2026-08-22",
+          "end": "2026-08-22",
+          "source_url": "https://www.idrijski-zlikrofi.si/program/"
+        }
+      ],
+      "photo": "city:idrija"
+    },
+    {
+      "slug": "festival-alpskega-cvetja",
+      "title": "Mednarodni festival alpskega cvetja",
+      "kind": "dediscina",
+      "place": "Bohinj",
+      "venue": "Bohinjske vasi in vodene poti",
+      "source_url": "https://bohinj.si/mednarodni-festival-alpskega-cvetja/",
+      "source_title": "Turizem Bohinj",
+      "description": "Bohinjski festival poveže naravo in življenje v alpski pokrajini. Program po vaseh in na terenu vključuje opazovanje rastlin, vodene sprehode ter delavnice o naravi in lokalni ponudbi.",
+      "visit": "Pri izbiri izleta preverite dolžino in zahtevnost poti ter rezervacijo. Čas cvetenja je odvisen od vremena in nadmorske višine.",
+      "period": "Maj in junij",
+      "editions": [
+        {
+          "start": "2026-05-22",
+          "end": "2026-06-07",
+          "source_url": "https://bohinj.si/mednarodni-festival-alpskega-cvetja/"
+        }
+      ],
+      "photo": "planinska-pot",
+      "highlight": "Vodstva potekajo v različnih bohinjskih vaseh; izhodišče, višinski vzpon in tema so navedeni pri vsakem dogodku. Zanimiva izbira za krajši obisk so terenske delavnice, ki obravnavajo rastline na eni sami lokaciji."
+    },
+    {
+      "slug": "praznik-kakijev",
+      "title": "Praznik kakijev",
+      "kind": "kulinarika",
+      "place": "Strunjan",
+      "venue": "Strunjan in prireditveni šotor",
+      "source_url": "https://www.portoroz.si/sl/dogodek/praznik-kakijev-strunjan/",
+      "source_title": "Turistično združenje Portorož",
+      "description": "Jesenska prireditev v Strunjanu je posvečena kakiju in pridelovalcem slovenske Istre. Program v letu 2026 je zajemal prodajo pridelkov, strokovno predavanje ter šolske razstave.",
+      "visit": "Za nakup sadja in obisk razstave preverite odpiralni čas. Predavanje o gojenju in spremljevalni sprehodi so v programu navedeni posebej.",
+      "period": "November",
+      "editions": [
+        {
+          "start": "2026-11-13",
+          "end": "2026-11-15",
+          "source_url": "https://www.portoroz.si/sl/dogodek/praznik-kakijev-strunjan/"
+        }
+      ],
+      "photo": "strunjan"
+    },
+    {
+      "slug": "praznik-refoska",
+      "title": "Praznik refoška in slovenske Istre",
+      "kind": "kulinarika",
+      "place": "Marezige",
+      "venue": "Vaško jedro Marezig",
+      "source_url": "https://praznik-refoska.si/",
+      "source_title": "Praznik refoška in slovenske Istre",
+      "description": "Marezige gostijo prireditev o refošku, istrskih jedeh in vinarjih. Večdnevni program ob predstavitvah pridelovalcev povezuje vodene pokušine in družabno dogajanje v vasi.",
+      "visit": "Za posamezno pokušino preverite rezervacije in pogoje vstopa. Pred prihodom poglejte tudi objavo organizatorja o prevozih med Koprom in Marezigami.",
+      "period": "Maj",
+      "editions": [
+        {
+          "start": "2026-05-15",
+          "end": "2026-05-17",
+          "source_url": "https://praznik-refoska.si/"
+        }
+      ],
+      "photo": "marezige"
+    },
+    {
+      "slug": "vuc-u-vodo",
+      "title": "Vuč u vodo ob gregorjevem",
+      "kind": "dediscina",
+      "place": "Tržič",
+      "venue": "Breg Tržiške Bistrice",
+      "source_url": "https://visit-trzic.com/sl/prireditve/gregorjevo-vuc-u-vodo",
+      "source_title": "Visit Tržič",
+      "description": "Tržiški običaj obuja spomin na čevljarje, ki so ob daljših dnevih prenehali delati pri umetni svetlobi. Otroci in družine na predvečer gregorjevega pripravijo male osvetljene hiške, imenovane gregorčki.",
+      "visit": "Oglejte si razstavo hišk in spremljajte navodila ob reki. Ob visokem vodostaju lahko spuščanje prevzamejo gasilci, zato je pomembna objava na dan prireditve.",
+      "period": "11. marec, predvečer gregorjevega",
+      "editions": [
+        {
+          "start": "2026-03-11",
+          "end": "2026-03-11",
+          "source_url": "https://visit-trzic.com/sl/prireditve/gregorjevo-vuc-u-vodo"
+        }
+      ],
+      "photo": "city:trzic",
+      "highlight": "Ime »Vuč u vodo« v tržiškem govoru pomeni luč v vodo. Razstava gregorčkov pride pred spuščanjem, zato je primerna tudi za obiskovalce, ki si običaj želijo ogledati zunaj obrežnega dela programa."
+    },
+    {
+      "slug": "martinovanje-maribor",
+      "title": "Martinovanje v Mariboru",
+      "kind": "dediscina",
+      "place": "Maribor",
+      "venue": "Trg Leona Štuklja, Grajski trg in druga prizorišča",
+      "source_url": "https://www.visitmaribor.si/sl/dogodki/aktualni-dogodki/8861-martinovanje-v-mariboru-2026/",
+      "source_title": "Zavod za turizem Maribor",
+      "description": "Mariborsko martinovanje praznuje štajersko vinogradniško dediščino. Osrednji običaj je simbolični krst mošta, ki ga spremljajo nastopi, stojnice in lokalna kulinarika.",
+      "visit": "Osrednje praznovanje je povezano z 11. novembrom. Za degustacije, spremljevalne kraje in spremembe mestnega prevoza si oglejte program posameznega leta.",
+      "period": "November, ob martinovem",
+      "editions": [
+        {
+          "start": "2026-11-06",
+          "end": "2026-11-11",
+          "source_url": "https://www.visitmaribor.si/sl/dogodki/aktualni-dogodki/8861-martinovanje-v-mariboru-2026/"
+        }
+      ],
+      "photo": "city:maribor",
+      "highlight": "Obiskovalci lahko izbirajo med stojnicami v središču, nastopi na Trgu Leona Štuklja in manjšimi praznovanji v okolici. Leta 2026 so bili nekateri spremljevalni programi večdnevni, čeprav je bila osrednja prireditev 11. novembra."
+    },
+    {
+      "slug": "alpski-vecer",
+      "title": "Alpski večer v Bohinju",
+      "kind": "glasba",
+      "place": "Bohinjska Bistrica",
+      "venue": "Dvorana Danica, Triglavska ulica 60",
+      "source_url": "https://tdbohinj.si/en/events/",
+      "source_title": "Turistično društvo Bohinj",
+      "description": "Alpski večer je bohinjska glasbena prireditev, ki združuje narodnozabavne nastope in glasbeno tradicijo alpskega prostora. Organizator je za leto 2027 objavil dva večera v Dvorani Danica.",
+      "visit": "Izberite večer in preverite začetek ter vstopnico za svoj termin. Dvorana je v Bohinjski Bistrici, ne ob jezeru v Ukancu.",
+      "period": "Pomlad",
+      "editions": [
+        {
+          "start": "2027-04-23",
+          "end": "2027-04-24",
+          "source_url": "https://tdbohinj.si/en/events/"
+        }
+      ],
+      "places": [
+        "Bohinjska Bistrica",
+        "Bohinj"
+      ],
+      "photo": "bohinj"
+    },
+    {
+      "slug": "linhartovo-srecanje",
+      "title": "Linhartovo srečanje",
+      "kind": "kultura",
+      "place": "Postojna",
+      "venue": "Kulturni dom Postojna",
+      "source_url": "https://jskd.si/gledalisce-in-lutke/festivali_gledalisce/linhart_gledalisce/linhart_26/uvod_linhart_26.htm",
+      "source_title": "Javni sklad RS za kulturne dejavnosti",
+      "description": "Državni festival ljubiteljskih gledaliških skupin v Postojni predstavi uprizoritve, izbrane po območnih in regijskih srečanjih. Poleg predstav so del festivalskega programa tudi priznanja za gledališko ustvarjanje.",
+      "visit": "Izberite predstavo po urniku, saj posamezne uprizoritve trajajo različno dolgo. Za vstopnice ali rezervacije preverite navodila JSKD in Kulturnega doma Postojna.",
+      "period": "September",
+      "editions": [
+        {
+          "start": "2026-09-17",
+          "end": "2026-09-19",
+          "source_url": "https://jskd.si/gledalisce-in-lutke/festivali_gledalisce/linhart_gledalisce/linhart_26/uvod_linhart_26.htm"
+        }
+      ],
+      "photo": "city:postojna",
+      "highlight": "Zasedbe se na državno srečanje uvrstijo po predhodnih selekcijah. Obisk je priložnost za ogled različnih gledaliških pristopov v kratkem času, od sodobnih avtorskih uprizoritev do priredb dramskih besedil."
     }
-  ]
+  ],
+  "festival_photos": {
+    "planica": {
+      "local_path": "/images/festivals/planica.webp",
+      "small_path": "/images/festivals/planica-640.webp",
+      "small_width": 640,
+      "small_height": 271,
+      "width": 1280,
+      "height": 541,
+      "alt": "Skakalnice in letalnica v nordijskem centru Planica",
+      "kind": "prizorisce",
+      "author": "Tiia Monto",
+      "source": "https://commons.wikimedia.org/wiki/File:Planica_ski_jumps.jpg",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source_sha256": "2ee367f5522b351fa1a177f478a96163ef4f497e27e8b98b924585344b022812",
+      "sha256": "0381d0da88a529db7798ad4ad035ce458701e9df57b7dfec5f0bc0d2dbbc79d0"
+    },
+    "bohinj": {
+      "local_path": "/images/festivals/bohinj.webp",
+      "small_path": "/images/festivals/bohinj-640.webp",
+      "small_width": 640,
+      "small_height": 209,
+      "width": 1280,
+      "height": 417,
+      "alt": "Bohinjsko jezero z zasneženimi pobočji in odsevi v vodi",
+      "kind": "kraj",
+      "author": "Smihael",
+      "source": "https://commons.wikimedia.org/wiki/File:Bohinjsko_jezero.jpg",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source_sha256": "f92bb305eb1f74c9702817e2b60628af36a5614c144cf2d9f0cccf17013ab25d",
+      "sha256": "d9cce53bc5c84bf1847254185917332ce7f428ac7ed5b31b06db5120c06d653c"
+    },
+    "brda": {
+      "local_path": "/images/festivals/brda.webp",
+      "small_path": "/images/festivals/brda-640.webp",
+      "small_width": 640,
+      "small_height": 428,
+      "width": 1271,
+      "height": 850,
+      "alt": "Razgled iz Šmartnega na briške griče",
+      "kind": "kraj",
+      "author": "Wolfgang Sauber",
+      "source": "https://commons.wikimedia.org/wiki/File:%C5%A0martno_-_Aussicht_1.jpg",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source_sha256": "d6bf7ce66929cc53907bd8b7b00fc1d1fab8ab327d074e28532544bd0bad2f6f",
+      "sha256": "003619947793f262c7641214cbcdbce449afaa52345a5dcb5cf72e1fd826372a"
+    },
+    "soline": {
+      "local_path": "/images/festivals/soline.webp",
+      "small_path": "/images/festivals/soline-640.webp",
+      "small_width": 640,
+      "small_height": 427,
+      "width": 1275,
+      "height": 850,
+      "alt": "Solinska polja v Sečoveljskih solinah",
+      "kind": "prizorisce",
+      "author": "Agustabell",
+      "source": "https://commons.wikimedia.org/wiki/File:01_Soline.jpg",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_sha256": "98ad0e0b0ccb04a55d756aa06a659eddcc931fac64c618b21cc1185da82d21f6",
+      "sha256": "7a46a30040da909f669c992e691db1e625037e01a3a022b37319986971f480b9"
+    },
+    "ljubno": {
+      "local_path": "/images/festivals/ljubno.webp",
+      "small_path": "/images/festivals/ljubno-640.webp",
+      "small_width": 640,
+      "small_height": 402,
+      "width": 1280,
+      "height": 804,
+      "alt": "Smučarska skakalnica na Ljubnem ob Savinji",
+      "kind": "prizorisce",
+      "author": "Zoran Kurelić Rabko",
+      "source": "https://commons.wikimedia.org/wiki/File:Ljubno_ob_Savinji_-_Ski_Jump.jpg",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source_sha256": "55c814b4782787a4c574efbf7aee8928c35f846069b9508c4fa10ea0b3be4c29",
+      "sha256": "9c07a4fdc44f99adcedee247dcedca6ad74031af5e54534e09d20c3309d859e7"
+    },
+    "december-ljubljana": {
+      "local_path": "/images/festivals/december-ljubljana.webp",
+      "small_path": "/images/festivals/december-ljubljana-640.webp",
+      "small_width": 640,
+      "small_height": 351,
+      "width": 1280,
+      "height": 701,
+      "alt": "Praznične luči na ljubljanskem božičnem sejmu",
+      "kind": "dogodek",
+      "author": "Oleg Brovko from Trieste, Italy",
+      "source": "https://commons.wikimedia.org/wiki/File:Ljubljana_Christmas_Market_Lights_(24941684308).jpg",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "source_sha256": "153beae61a96dd54ef4e7a92f60c82fdd9be7a0dc23e7be37b30adbd275c904f",
+      "sha256": "29a7efd73d670dbbcd58aa8f4b3284aed742bb82dc5af50456692e059a133d0e"
+    },
+    "ljubljana-festival": {
+      "local_path": "/images/festivals/ljubljana-festival.webp",
+      "small_path": "/images/festivals/ljubljana-festival-640.webp",
+      "small_width": 640,
+      "small_height": 427,
+      "width": 1273,
+      "height": 850,
+      "alt": "Kitarist Mak Grgić nastopa na Ljubljana Festivalu",
+      "kind": "dogodek",
+      "author": "MarkoPolo12345",
+      "source": "https://commons.wikimedia.org/wiki/File:Mak_Grgic_Ljubljana_Festival.jpg",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_sha256": "aad708a7cfaa323d9593aedcab32ae4bed074f3282c168b906454b63d5dc10e8",
+      "sha256": "41c1206d275c7646df0ae956978361fe86666ff59409bc31063ebb98a1beea3b"
+    },
+    "druga-godba": {
+      "local_path": "/images/festivals/druga-godba.webp",
+      "small_path": "/images/festivals/druga-godba-640.webp",
+      "small_width": 640,
+      "small_height": 480,
+      "width": 1133,
+      "height": 850,
+      "alt": "Skupina na odru Križank med festivalom Druga Godba",
+      "kind": "dogodek",
+      "author": "discosour",
+      "source": "https://commons.wikimedia.org/wiki/File:Slovenia_062_Ljubljana_Druga_Godba_%2706_at_Krizanke_-_Egypt_80_(170888010).jpg",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "source_sha256": "7a4f7162c4071b6c57941b3cdff42d7a5bf6dfa9fd3727bbc9a23067c79d44f6",
+      "sha256": "2ee715091c8067805e8b210f9418e39ee3b474f570074171f175c95f38086150"
+    },
+    "jazz-ljubljana": {
+      "local_path": "/images/festivals/jazz-ljubljana.webp",
+      "small_path": "/images/festivals/jazz-ljubljana-640.webp",
+      "small_width": 640,
+      "small_height": 426,
+      "width": 800,
+      "height": 532,
+      "alt": "Macy Gray med nastopom na Jazz Festivalu Ljubljana leta 2013",
+      "kind": "dogodek",
+      "author": "Prunk",
+      "source": "https://commons.wikimedia.org/wiki/File:Macy_Gray_in_Ljubljana,_Slovenia_by_Jan_Prunk_(2013).JPG",
+      "license": "CC BY-SA 3.0",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "source_sha256": "9622864b3f079c2db5e2962b03c9cd9e57f726873bca6d2e2206aeae717aa678",
+      "sha256": "9716f58918b41a5f6130fe9291fbfa4ab001cdef7d02be35aa0e6384dca6a332"
+    },
+    "planinska-pot": {
+      "local_path": "/images/festivals/planinska-pot.webp",
+      "small_path": "/images/festivals/planinska-pot-640.webp",
+      "small_width": 569,
+      "small_height": 480,
+      "width": 1007,
+      "height": 850,
+      "alt": "Planinska pot nad Staro Fužino v Triglavskem narodnem parku",
+      "kind": "motiv",
+      "author": "Tiia Monto",
+      "source": "https://commons.wikimedia.org/wiki/File:Triglav_National_Park_-_trail.jpg",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source_sha256": "2aaedf61629405384064bd7c52a35fe6c344c567b99d311874dfa3f9876d7df7",
+      "sha256": "6c50705fefe7b231466cf4c02680af7c9c7c0531a53fff82d4ce99e610ea766d"
+    },
+    "marezige": {
+      "local_path": "/images/festivals/marezige.webp",
+      "small_path": "/images/festivals/marezige-640.webp",
+      "small_width": 640,
+      "small_height": 480,
+      "width": 1133,
+      "height": 850,
+      "alt": "Cesta skozi Marezige z avtobusom in zvonikom v ozadju",
+      "kind": "kraj",
+      "author": "Shabicht",
+      "source": "https://commons.wikimedia.org/wiki/File:Marezige_view.jpg",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_sha256": "3033aad33684bc154ca7e7fe369e4be299d9e0683800bc92277c3f5b8055bfbf",
+      "sha256": "1668bb50630f99eab4c3cf96c288fc55d78e862826a556eb20332124b99ce913"
+    },
+    "vilenica": {
+      "local_path": "/images/festivals/vilenica.webp",
+      "small_path": "/images/festivals/vilenica-640.webp",
+      "small_width": 361,
+      "small_height": 480,
+      "width": 639,
+      "height": 850,
+      "alt": "Vhod v jamo Vilenica na Krasu za kovinsko ograjo",
+      "kind": "prizorisce",
+      "author": "Ondrej Pospisil",
+      "source": "https://commons.wikimedia.org/wiki/File:Vilenica_(16822087135).jpg",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "source_sha256": "808d915e7821eb5dc5acd48f7f44be7ad366e68d4451081d3e1745eb902efcc6",
+      "sha256": "cc48ad73042aea9225bb4dddb2c69303822e4f8589e591e95a01dd4164e8fcf9"
+    },
+    "strunjan": {
+      "local_path": "/images/festivals/strunjan.webp",
+      "small_path": "/images/festivals/strunjan-640.webp",
+      "small_width": 640,
+      "small_height": 480,
+      "width": 1133,
+      "height": 850,
+      "alt": "Solinski bazeni pri Strunjanu",
+      "kind": "kraj",
+      "author": "Stefan.lefnaer",
+      "source": "https://commons.wikimedia.org/wiki/File:Abandoned_salt_basin_next_to_Strunjan_sl1.jpg",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_sha256": "87fe117058851dd88cdfcbff0347b206fdb2cd7f14db826e86a805f2565a517f",
+      "sha256": "670bb0cd55b5f33da4fff159c998cd99f7271e11e400e346d64faefee96d0e42"
+    },
+    "kranjska-gora": {
+      "local_path": "/images/festivals/kranjska-gora.webp",
+      "small_path": "/images/festivals/kranjska-gora-640.webp",
+      "small_width": 640,
+      "small_height": 480,
+      "width": 1133,
+      "height": 850,
+      "alt": "Jezero Jasna in gore pri Kranjski Gori",
+      "kind": "kraj",
+      "author": "Snoflaxe",
+      "source": "https://commons.wikimedia.org/wiki/File:Jezioro_Jasna_-_Kranjska_Gora_2024.jpg",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_sha256": "1b80f66867d63dd0ef1aed3c3bf08ab878e26ac234c3ca90c9d3f038a6cb50ee",
+      "sha256": "6e540baeb1d515683dfcbba64f6e02419de6bb4825b0e3b3064ae9fb283dd3a2"
+    },
+    "dirka": {
+      "local_path": "/images/festivals/dirka.webp",
+      "small_path": "/images/festivals/dirka-640.webp",
+      "small_width": 640,
+      "small_height": 379,
+      "width": 1280,
+      "height": 758,
+      "alt": "Glavnina kolesarjev na prvi etapi Dirke po Sloveniji leta 2022",
+      "kind": "dogodek",
+      "author": "Petar Milošević",
+      "source": "https://commons.wikimedia.org/wiki/File:2022_Tour_of_Slovenia_(Stage_1,_Peloton).jpg",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source_sha256": "ea6852ba424ab97259b4a741dbfbe0a0019ba7fc3f0c300ca503f23950a2ff8a",
+      "sha256": "3961d923dda7be06333f2633d7e5364d003e77ca8287d776677e3b00cc103fac"
+    },
+    "lent-2009": {
+      "local_path": "/images/festivals/lent-2009.webp",
+      "small_path": "/images/festivals/lent-2009-640.webp",
+      "small_width": 640,
+      "small_height": 480,
+      "width": 1280,
+      "height": 960,
+      "alt": "Osvetljene tribune in šotori na Festivalu Lent leta 2009",
+      "kind": "dogodek",
+      "author": "Sl-Ziga",
+      "source": "https://commons.wikimedia.org/wiki/File:LentFestival1.JPG",
+      "license": "Javna domena",
+      "license_url": "https://commons.wikimedia.org/wiki/File:LentFestival1.JPG#Licensing",
+      "source_sha256": "aded2cf5c079cd15a44e3295478f896da026fb965471a3ccaa5f63e66052ff32",
+      "sha256": "1355e72d591d0131974bc0f4e0333cde04fc55d51ce4d9c92cd1888887ed2dd8"
+    }
+  }
 }

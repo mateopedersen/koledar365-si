@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380">
+  <defs>
+    <filter id="cast" x="-.38" y="-.4" width="1.8" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10" />
+      <feOffset dx="4" dy="12" result="shadow" />
+      <feFlood flood-color="#19304d" flood-opacity=".21" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <filter id="lift" x="-.35" y="-.4" width="1.75" height="2">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+      <feOffset dx="2" dy="5" result="shadow" />
+      <feFlood flood-color="#142c46" flood-opacity=".24" />
+      <feComposite in2="shadow" operator="in" />
+    </filter>
+    <radialGradient id="light">
+      <stop stop-color="#fff" />
+      <stop offset="1" stop-color="#d8e8f6" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="paper" x2="1" y2="1">
+      <stop stop-color="#fffef9" />
+      <stop offset=".48" stop-color="#fff" />
+      <stop offset="1" stop-color="#e3eaf0" />
+    </linearGradient>
+    <linearGradient id="brass" x2="1" y2="1">
+      <stop stop-color="#fff0b5" />
+      <stop offset=".48" stop-color="#c88d47" />
+      <stop offset="1" stop-color="#87552e" />
+    </linearGradient>
+    <linearGradient id="red" x2="1" y2="1">
+      <stop stop-color="#f69a82" />
+      <stop offset=".48" stop-color="#c74351" />
+      <stop offset="1" stop-color="#8d2b45" />
+    </linearGradient>
+    <linearGradient id="leather" x2="1" y2="1">
+      <stop stop-color="#557486" />
+      <stop offset=".48" stop-color="#2f526b" />
+      <stop offset="1" stop-color="#17364e" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="297" cy="195" rx="280" ry="177" fill="url(#light)" />
+  <ellipse cx="301" cy="334" rx="207" ry="23" fill="#d4e4f1" opacity=".44" />
+  <use href="#art-shape-1" filter="url(#cast)" />
+  <g transform="rotate(-8 208 187)" id="art-shape-1">
+    <path d="M94 97q0-12 12-12h227q12 0 12 12v181q0 12-12 12H106q-12 0-12-12Z" fill="url(#leather)" stroke="#34596c" />
+    <path d="M107 101h224v173H107z" fill="none" stroke="#bfd6dc" stroke-dasharray="2 4" opacity=".5" />
+  </g>
+  <use href="#art-shape-2" filter="url(#cast)" />
+  <g transform="rotate(5 260.5 179.0)" id="art-shape-2">
+    <rect x="140" y="77" width="245" height="214" rx="5" fill="#aabcc9" />
+    <rect x="138" y="72" width="245" height="214" rx="5" fill="url(#paper)" stroke="#bccdd8" />
+    <path d="M155 125L366 125" fill="none" stroke="#205579" stroke-width="2" stroke-linecap="round" />
+    <text x="155" y="111" fill="#205579" font-family="system-ui,sans-serif" font-size="18" font-weight="700">Pokojninska doba</text>
+    <path d="M167 185L340 185" fill="none" stroke="#8ca4b5" stroke-width="3" stroke-linecap="round" />
+    <text x="173" y="218" fill="#173751" font-family="system-ui,sans-serif" font-size="17" font-weight="700">15 let</text>
+    <text x="287" y="218" fill="#173751" font-family="system-ui,sans-serif" font-size="17" font-weight="700">40 let</text>
+    <circle cx="217" cy="185" r="7" fill="#42828a" stroke="#fff" stroke-width="3" />
+    <circle cx="312" cy="185" r="7" fill="#b56457" stroke="#fff" stroke-width="3" />
+  </g>
+  <use href="#art-shape-3" filter="url(#cast)" />
+  <g id="art-shape-3">
+    <path d="M374 163q17-32 64-31 52 3 63 39l18 4v36l-20 5-13 25v20h-21l-4-15h-42l-4 15h-20l-1-23q-19-8-25-26l-11 1v-27l12-2Z" fill="url(#red)" stroke="#8a3d4e" stroke-width="2" />
+    <path d="M455 151q4-24 26-29l4 38" fill="url(#red)" stroke="#a6555d" stroke-width="2" />
+    <path d="M400 154q12-11 27-11m-18 13h31" stroke="#904450" stroke-width="4" stroke-linecap="round" />
+    <path d="M381 177q6-16 19-22" stroke="#ffdbca" opacity=".62" stroke-width="3" fill="none" />
+    <circle cx="485" cy="185" r="4" fill="#51293c" />
+    <path d="M369 203q-14 18-21 1t8-9q1 9-14 7" fill="none" stroke="#a24d5b" stroke-width="3" />
+  </g>
+  <use href="#art-shape-4" filter="url(#lift)" />
+  <g id="art-shape-4">
+    <ellipse cx="427" cy="296" rx="39" ry="13.0" fill="url(#brass)" stroke="#966936" />
+    <ellipse cx="427" cy="289" rx="39" ry="13.0" fill="url(#brass)" stroke="#966936" />
+    <ellipse cx="427" cy="282" rx="39" ry="13.0" fill="url(#brass)" stroke="#966936" />
+    <ellipse cx="427" cy="275" rx="39" ry="13.0" fill="url(#brass)" stroke="#966936" />
+    <ellipse cx="427" cy="268" rx="39" ry="13.0" fill="url(#brass)" stroke="#966936" />
+    <ellipse cx="427" cy="261" rx="39" ry="13.0" fill="url(#brass)" stroke="#966936" />
+    <ellipse cx="477" cy="307" rx="39" ry="13.0" fill="url(#brass)" stroke="#966936" />
+    <ellipse cx="477" cy="300" rx="39" ry="13.0" fill="url(#brass)" stroke="#966936" />
+    <ellipse cx="477" cy="293" rx="39" ry="13.0" fill="url(#brass)" stroke="#966936" />
+    <ellipse cx="393" cy="314" rx="36" ry="12.0" fill="url(#brass)" stroke="#966936" />
+    <ellipse cx="393" cy="307" rx="36" ry="12.0" fill="url(#brass)" stroke="#966936" />
+    <text x="427" y="260" fill="#78502c" font-family="system-ui,sans-serif" font-size="16" font-weight="700" text-anchor="middle">€</text>
+  </g>
+</svg>

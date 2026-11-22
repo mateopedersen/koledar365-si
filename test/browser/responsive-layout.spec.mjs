@@ -21,6 +21,7 @@ const pagePaths = [
 
 test('shared navigation and cookie bar stay inside narrow screens across page families', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 900 });
+  await page.addInitScript(() => localStorage.removeItem('koledar365:cookie-preferences:v1'));
 
   for (const path of pagePaths) {
     const response = await page.goto(path, { waitUntil: 'load' });
@@ -28,7 +29,7 @@ test('shared navigation and cookie bar stay inside narrow screens across page fa
 
     const layout = await page.evaluate(() => {
       const nav = document.querySelector('.subnav');
-      const cookie = document.querySelector('.cookie-bar');
+      const cookie = document.getElementById('storage-notice');
       const bounds = (element) => {
         if (!element) return null;
         const rect = element.getBoundingClientRect();
@@ -107,4 +108,63 @@ test('blog posts align their header, cover and body on one reading column', asyn
   await share.locator('summary').click();
   await expect(share.locator('.site-share__panel')).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
+});
+
+test('narrow payment shortcuts and month chips contain their full labels', async ({ page }) => {
+  for (const [path, width, selector] of [
+    ['/izplacila-pokojnin/', 320, '.payment-nav a'],
+    ['/izplacila-socialnih-transferjev/', 320, '.payment-nav a'],
+    ['/mesecni-koledar/', 320, '.calendar-experience__months strong'],
+    ['/mesecni-koledar/', 768, '.calendar-experience__months small'],
+  ]) {
+    await page.setViewportSize({ width, height: 850 });
+    await page.goto(path);
+    await page.evaluate(() => document.fonts.ready);
+    const clips = await page.locator(selector).evaluateAll(nodes => nodes.flatMap(node => {
+      const box = node.getBoundingClientRect();
+      const contents = document.createRange();
+      contents.selectNodeContents(node);
+      const label = contents.getBoundingClientRect();
+      return label.right > box.right + 1 || label.left < box.left - 1 ? [node.textContent] : [];
+    }));
+    expect(clips, path + ' at ' + width).toEqual([]);
+  }
+});
+
+test('sharing stays below the page controls on phones', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 850 });
+  await page.goto('/soncni-vzhod-in-zahod/');
+  const share = page.locator('body > .site-share');
+  await expect(share).toHaveCSS('position', 'static');
+  await share.getByText('Deli stran', { exact: true }).click();
+  await expect(share.getByText('Kopiraj povezavo')).toBeVisible();
+  const [panel, main] = await Promise.all([
+    share.locator('.site-share__panel').boundingBox(),
+    page.locator('main').boundingBox(),
+  ]);
+  expect(panel.x).toBeGreaterThanOrEqual(0);
+  expect(panel.x + panel.width).toBeLessThanOrEqual(320);
+  expect(panel.y).toBeGreaterThanOrEqual(main.y + main.height);
+});
+
+test('filled workday and astronomy actions retain contrast on hover', async ({ page }) => {
+  test.skip(!await page.evaluate(() => matchMedia('(hover: hover)').matches), 'Desktop hover state');
+  for (const [path, selector] of [
+    ['/kalkulator-delovnih-dni/', '[data-wdc-form="range"] .wdc-submit'],
+    ['/lunin-mrk/', '.astro-toolbar .astro-button'],
+    ['/o-nas/', '.about-hero__actions .primary'],
+  ]) {
+    await page.goto(path);
+    const action = page.locator(selector).first();
+    await action.hover();
+    await expect.poll(() => action.evaluate(element => {
+      const css = getComputedStyle(element);
+      const luminance = color => color.match(/\d+(?:\.\d+)?/g).slice(0, 3)
+        .map(Number).map(channel => channel / 255)
+        .map(channel => channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4)
+        .reduce((sum, channel, index) => sum + channel * [0.2126, 0.7152, 0.0722][index], 0);
+      const colors = [css.color, css.backgroundColor].map(luminance).sort((a, b) => b - a);
+      return (colors[0] + 0.05) / (colors[1] + 0.05);
+    }), { message: path }).toBeGreaterThanOrEqual(4.5);
+  }
 });

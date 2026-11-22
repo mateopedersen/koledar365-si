@@ -1,0 +1,86 @@
+<% resource = SlovenianResources::PAGES.fetch(page_path)
+   guide = SlovenianResourceEditorial::GUIDES.fetch(page_path)
+   metric = guide[:fact] || resource.fetch(:metric)
+   has_tool = resource[:calculator] || [SlovenianResources::HUB, SlovenianSkyCalendar::PATH, '/predloge-urnikov/'].include?(page_path) %>
+<article class="sl-resource sl-resource--<%= guide.fetch(:theme) %> <%= 'sl-print-page' if page_path == '/predloge-urnikov/' %>">
+  <header class="sl-resource-hero">
+    <div class="sl-resource-hero-copy">
+      <h1><%= resource.fetch(:title) %></h1>
+      <p><%= resource.fetch(:description) %></p>
+      <div class="sl-resource-hero-actions">
+        <a class="button primary" href="#<%= has_tool ? 'orodje' : 'prakticni-pregled' %>"><%= guide.fetch(:action) %><span aria-hidden="true">↓</span></a>
+        <a class="button" href="#sl-sources">Uradni viri</a>
+      </div>
+    </div>
+    <div class="sl-resource-highlight">
+      <%= tool_directory_icon(resource.fetch(:icon)) %>
+      <div><strong><%= metric.first %></strong><span><%= metric.last %></span></div>
+    </div>
+  </header>
+
+  <% if resource[:calculator] %>
+    <%= render 'slovenian_calculator', resource: resource %>
+  <% elsif page_path == SlovenianResources::HUB %>
+    <div class="sl-resource-catalog" id="orodje">
+      <% [['Družina in varstvo otrok', SlovenianResources::FAMILY_PATHS], ['Zaposlitev, zdravje in socialna pomoč', SlovenianResources::SUPPORT_PATHS]].each do |heading, paths| %>
+        <section class="sl-resource-panel">
+          <h2><%= heading %></h2>
+          <%= render 'slovenian_resource_links', paths: paths, descriptions: true %>
+        </section>
+      <% end %>
+    </div>
+  <% elsif page_path == SlovenianSkyCalendar::PATH %>
+    <%= render 'slovenian_sky_calendar' %>
+  <% elsif page_path == '/predloge-urnikov/' %>
+    <%= render 'slovenian_timetable_templates' %>
+  <% end %>
+
+  <section class="sl-resource-panel sl-resource-example" id="prakticni-pregled" aria-labelledby="sl-example">
+    <div>
+      <h2 id="sl-example"><%= guide.fetch(:question) %></h2>
+      <p><%= guide.fetch(:answer) %></p>
+      <% source = resource.fetch(:sources).first %>
+      <p class="sl-case-source"><%= link_to source.first, source.last %></p>
+      <% unless page_path == SlovenianResources::HUB %>
+        <div class="sl-example-links">
+          <% guide.fetch(:routes).each do |path| %>
+            <%= link_to editorial_recommendation(path)[1], path %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="sl-resource-checklist">
+      <h3><%= guide.fetch(:heading) %></h3>
+      <ol>
+        <% guide.fetch(:steps).each do |label, text| %>
+          <li><strong><%= label %></strong><p><%= text %></p></li>
+        <% end %>
+      </ol>
+    </div>
+  </section>
+
+  <div class="sl-resource-reading">
+    <section class="sl-resource-panel sl-resource-copy">
+      <% resource.fetch(:sections).each do |heading, text| %>
+        <h2><%= heading %></h2>
+        <p><%= text %></p>
+      <% end %>
+    </section>
+    <aside class="sl-resource-panel sl-resource-sources" aria-labelledby="sl-sources">
+      <h2 id="sl-sources">Uradni viri</h2>
+      <ul>
+        <% resource.fetch(:sources).each do |label, url| %>
+          <li><%= link_to label, url %></li>
+        <% end %>
+      </ul>
+      <p>Preverjeno <time datetime="<%= SlovenianResources::CHECKED_ON %>">22. 11. 2026</time></p>
+    </aside>
+  </div>
+  <% extra_routes = resource.fetch(:related) - (page_path == SlovenianResources::HUB ? [] : guide.fetch(:routes)) %>
+  <% if extra_routes.any? %>
+    <nav class="sl-resource-panel" aria-labelledby="sl-related">
+      <h2 id="sl-related">Povezana orodja</h2>
+      <%= render 'slovenian_resource_links', paths: extra_routes %>
+    </nav>
+  <% end %>
+</article>

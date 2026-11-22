@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+  <defs>
+    <linearGradient id="body" x1="8" y1="16" x2="33" y2="35" gradientUnits="userSpaceOnUse"><stop stop-color="#ef8e9e"/><stop offset="1" stop-color="#ad2c4b"/></linearGradient>
+    <linearGradient id="ribbon" x1="15" y1="6" x2="25" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#fff1cb"/><stop offset=".55" stop-color="#edbf6b"/><stop offset="1" stop-color="#c68b40"/></linearGradient>
+  </defs>
+  <ellipse cx="20" cy="36.5" rx="15" ry="2.3" fill="#69423e" opacity=".14"/>
+  <rect x="8.5" y="17" width="23" height="18" rx="3.5" fill="url(#body)" stroke="#a83f59"/>
+  <path d="M20 15c-3.6-.2-10-2-10-6 0-2.1 2.6-3.1 4.6-1.7 2.6 1.7 4.4 4.9 5.4 7.7Zm0 0c3.6-.2 10-2 10-6 0-2.1-2.6-3.1-4.6-1.7-2.6 1.7-4.4 4.9-5.4 7.7Z" stroke="#ad7435" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M20 15c-3.6-.2-10-2-10-6 0-2.1 2.6-3.1 4.6-1.7 2.6 1.7 4.4 4.9 5.4 7.7Zm0 0c3.6-.2 10-2 10-6 0-2.1-2.6-3.1-4.6-1.7-2.6 1.7-4.4 4.9-5.4 7.7Z" stroke="url(#ribbon)" stroke-width="2.4"/>
+  <rect x="6.5" y="14.5" width="27" height="8" rx="2.5" fill="#ce5571" stroke="#a83f59"/>
+  <path d="M9 16h22" stroke="#f5a2b2" stroke-linecap="round"/>
+  <path d="M17 14.5h6V35h-6z" fill="url(#ribbon)"/>
+  <path d="M18.4 16.5v15.7" stroke="#fff4db" stroke-opacity=".7" stroke-linecap="round"/>
+</svg>

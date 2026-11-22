@@ -1,0 +1,7 @@
+<% sizes = eager ? '(max-width: 680px) 100vw, 52vw' : '(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw' %>
+<% srcset = photo['srcset'] || (photo['small_path'] && "#{photo.fetch('small_path')} #{photo.fetch('small_width')}w, #{photo.fetch('local_path')} #{photo.fetch('width')}w") %>
+<picture>
+  <% if photo['avif_srcset'] %><source type="image/avif" srcset="<%= photo['avif_srcset'] %>" sizes="<%= sizes %>"><% end %>
+  <%= image_tag photo.fetch('local_path'), alt: photo.fetch('alt'), width: photo.fetch('width'), height: photo.fetch('height'),
+    srcset: srcset, sizes: sizes, loading: eager ? 'eager' : 'lazy', fetchpriority: (eager ? 'high' : nil), decoding: 'async' %>
+</picture>

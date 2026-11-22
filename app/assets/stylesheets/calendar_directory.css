@@ -5,9 +5,9 @@
 #vsebina .calendar-directory .cd-kicker{display:block;color:#a52b40;font-size:11px;font-weight:800;letter-spacing:1.3px;line-height:1.6}
 #vsebina .calendar-directory h1{font-size:clamp(32px,4vw,46px);line-height:1.15;letter-spacing:-1.4px;margin:10px 0 15px;color:#142f52}
 #vsebina .calendar-directory .cd-heading p{max-width:680px;margin:0;color:#40536b}
-.calendar-directory .cd-summary{display:flex;gap:30px;padding-left:30px;border-left:1px solid #d4deea;flex-shrink:0;color:#526783;font-size:13px;font-weight:650}
-.calendar-directory .cd-summary span{display:flex;flex-direction:column;gap:3px}
-.calendar-directory .cd-summary strong{font-size:42px;line-height:1.15;color:#084f95;font-weight:800}
+
+
+
 .calendar-directory .cd-section-heading{display:flex;align-items:center;justify-content:space-between;gap:22px;margin:0 0 19px}
 #vsebina .calendar-directory h2{font-size:24px;line-height:1.3;margin:5px 0;color:#18324e;letter-spacing:-.45px}
 .calendar-directory .cd-section-heading>a{color:#084f95;font-size:14px;font-weight:750;text-decoration:none;white-space:nowrap;padding:10px 0}
@@ -60,11 +60,22 @@
 .calendar-directory :is(a,button,select):focus-visible,.calendar-directory .cd-table-wrap:focus-visible{outline:3px solid #2373c6;outline-offset:3px}
 .calendar-directory[data-single-year=true] .cd-period-table{min-width:0}
 .calendar-directory[data-single-year=true] .cd-period-table th:first-child{width:40%}
-@media(max-width:900px){.calendar-directory .cd-filters{flex-wrap:wrap;gap:14px}.calendar-directory .cd-filters fieldset{flex-basis:100%}.calendar-directory .cd-filters label{flex:1}.calendar-directory .cd-summary{gap:18px;padding-left:20px}.calendar-directory .cd-summary strong{font-size:32px}}
-@media(max-width:700px){.calendar-directory .cd-heading{display:block;margin-top:0;padding-bottom:22px}.calendar-directory .cd-summary{margin-top:20px;padding:0;border:0;gap:28px}.calendar-directory .cd-summary span{flex-direction:row;align-items:baseline;gap:7px}.calendar-directory .cd-summary strong{font-size:26px}.calendar-directory .cd-section-heading{display:block}.calendar-directory .cd-section-heading>a{display:inline-block;white-space:normal}.calendar-directory .cd-filters{padding:14px 12px}.calendar-directory .cd-year-buttons button{flex:1;min-width:0;padding:8px 7px;font-size:13px!important}.calendar-directory .cd-filters label{min-width:130px}.calendar-directory .cd-scroll-hint{display:block;font-size:13px;color:#526783}.calendar-directory[data-single-year=true] .cd-scroll-hint{display:none}.calendar-directory .cd-period-table thead th{padding:16px 12px}.calendar-directory .cd-period-table tbody th{padding:13px 10px}.calendar-directory .cd-month-number{width:19px;margin-right:4px}.calendar-directory .cd-tool-table{background:transparent}.calendar-directory .cd-tool-table th[scope=row]{background:transparent}.calendar-directory .cd-tools{margin-top:32px}}
-@media print{.calendar-directory .cd-filters,.calendar-directory .cd-reset,.calendar-directory .cd-summary,.calendar-directory .cd-scroll-hint{display:none!important}.calendar-directory .cd-table-wrap{overflow:visible;border:0}.calendar-directory .cd-period-table{min-width:0;font-size:9pt}.calendar-directory .cd-period-table thead th{background:#fff;color:#000;padding:8px}.calendar-directory .cd-period-table thead small{color:#333}.calendar-directory .cd-period-table td a{font-size:9pt;padding:4px;min-height:0}.calendar-directory .cd-period-table tbody th{position:static;padding:8px;font-size:9pt}.calendar-directory .cd-period-table tr{break-inside:avoid}.calendar-directory .cd-heading{margin:0;padding:0;border:0}.calendar-directory .cd-tool-table{font-size:9pt}}
+@media(max-width:900px){.calendar-directory .cd-filters{flex-wrap:wrap;gap:14px}.calendar-directory .cd-filters fieldset{flex-basis:100%}.calendar-directory .cd-filters label{flex:1}}
+@media(max-width:700px){.calendar-directory .cd-heading{display:block;margin-top:0;padding-bottom:22px}.calendar-directory .cd-section-heading{display:block}.calendar-directory .cd-section-heading>a{display:inline-block;white-space:normal}.calendar-directory .cd-filters{padding:14px 12px}.calendar-directory .cd-year-buttons button{flex:1;min-width:0;padding:8px 7px;font-size:13px!important}.calendar-directory .cd-filters label{min-width:130px}.calendar-directory .cd-scroll-hint{display:block;font-size:13px;color:#526783}.calendar-directory[data-single-year=true] .cd-scroll-hint{display:none}.calendar-directory .cd-period-table thead th{padding:16px 12px}.calendar-directory .cd-period-table tbody th{padding:13px 10px}.calendar-directory .cd-month-number{width:19px;margin-right:4px}.calendar-directory .cd-tool-table{background:transparent}.calendar-directory .cd-tool-table th[scope=row]{background:transparent}.calendar-directory .cd-tools{margin-top:32px}}
+@media print{.calendar-directory .cd-filters,.calendar-directory .cd-reset,.calendar-directory .cd-heading>.hero-features,.calendar-directory .cd-scroll-hint{display:none!important}.calendar-directory .cd-table-wrap{overflow:visible;border:0}.calendar-directory .cd-period-table{min-width:0;font-size:9pt}.calendar-directory .cd-period-table thead th{background:#fff;color:#000;padding:8px}.calendar-directory .cd-period-table thead small{color:#333}.calendar-directory .cd-period-table td a{font-size:9pt;padding:4px;min-height:0}.calendar-directory .cd-period-table tbody th{position:static;padding:8px;font-size:9pt}.calendar-directory .cd-period-table tr{break-inside:avoid}.calendar-directory .cd-heading{margin:0;padding:0;border:0}.calendar-directory .cd-tool-table{font-size:9pt}}
 
 @media screen{#vsebina .calendar-directory .cd-period-table thead small{color:#e1ebf6!important;font-size:12px!important;font-weight:600}
 #vsebina .calendar-directory .cd-period-table tbody th small{color:#526783!important;font-size:12px!important}}
 @media(max-width:400px){.calendar-directory .cd-month-number{display:none}}
 .calendar-directory .cd-month-number { color: #475b72; }
+
+.calendar-directory .cd-heading > .hero-features {
+  flex: 0 1 21rem;
+  margin-top: 0;
+}
+.calendar-directory .cd-heading .hero-features__list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 690px) {
+  .calendar-directory .cd-heading > .hero-features { margin-top: 14px; }
+}

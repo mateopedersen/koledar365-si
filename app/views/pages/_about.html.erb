@@ -8,11 +8,7 @@
         <a class="button primary" href="/koledar/2027/"><%= ui_icon('calendar') %> Odprite koledar</a>
         <a class="button about-button-light" href="/viri-in-metodologija/">Viri in pravila <%= ui_icon('chevron-right') %></a>
       </div>
-      <ul class="about-trust" aria-label="Osnovna dejstva o projektu">
-        <li><%= ui_icon('check') %> Neodvisen projekt</li>
-        <li><%= ui_icon('pin') %> Časovni pas Slovenije</li>
-        <li><%= ui_icon('shield') %> Brez uporabniškega računa</li>
-      </ul>
+      <%= render 'hero_features', label: 'Osnovna dejstva o projektu', dark: true, items: [['check', 'Neodvisen projekt'], ['pin', 'Časovni pas Slovenije'], ['shield', 'Brez računa']] %>
     </div>
     <div class="about-hero__visual">
       <figure class="about-photo">

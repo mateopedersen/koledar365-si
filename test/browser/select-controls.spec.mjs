@@ -6,8 +6,10 @@ for(const width of [320,390,768,1024,1440])test(`period labels have room beside 
  await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
  await page.evaluate(()=>document.fonts.ready);
  const year=page.locator('.period-form select[name=year]');
+ const month=page.locator('.period-form select[name=month]');
  await year.selectOption('2030');
- for(const select of [year,page.locator('.period-form select[name=month]')]){
+ await month.selectOption('9');
+ for(const select of [year,month]){
   const state=await select.evaluate(el=>{
    const s=getComputedStyle(el),canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');
    ctx.font=`${s.fontWeight} ${s.fontSize} ${s.fontFamily}`;
@@ -21,7 +23,8 @@ for(const width of [320,390,768,1024,1440])test(`period labels have room beside 
  // The existing city shell already supplies its own SVG; don't double its caret.
  await expect(page.locator('#city-select')).toHaveCSS('background-image','none');
  await expect(year).toHaveValue('2030');
+ await expect(month).toHaveValue('9');
  await year.focus();await page.keyboard.press('Tab');
- await expect(page.locator('.period-form select[name=month]')).toBeFocused();
+ await expect(month).toBeFocused();
  await page.locator('.period-form').screenshot({path:test.info().outputPath('period-controls.png')});
 });

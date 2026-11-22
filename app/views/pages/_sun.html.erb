@@ -13,10 +13,8 @@
     <div class="sun-masthead__copy">
       <span class="sun-kicker"><span aria-hidden="true"></span> SONCE NAD SLOVENIJO</span>
       <h1 id="sun-title">Sončni vzhod in zahod</h1>
-      <p>Izberite eno od 69 slovenskih mest, nastavite datum in raziščite pot Sonca od jutranjega svita do večernega mraka.</p>
-      <div class="sun-masthead__facts" aria-label="Značilnosti izračuna">
-        <span><b>69</b> mest</span><span>lokalni čas <b>Europe/Ljubljana</b></span><span>prosta simulacija</span>
-      </div>
+      <p>Izberite mesto in datum ter raziščite pot Sonca od jutranjega svita do večernega mraka.</p>
+      <%= render 'hero_features', label: 'Značilnosti izračuna', dark: true, items: [['pin', "#{city_names.size} slovenskih mest"], ['clock', 'Krajevni čas v Sloveniji'], ['sun', 'Simulacija poti Sonca']] %>
     </div>
     <a class="sun-masthead__scroll" href="#izracun"><span aria-hidden="true">↓</span> Izberite mesto in datum</a>
     <div class="sun-masthead__ornament" aria-hidden="true">

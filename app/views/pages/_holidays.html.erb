@@ -13,7 +13,7 @@
       <nav class="holiday-years" aria-label="Leto praznikov"><% CalendarEngine::INTERACTIVE_YEARS.each do |year| %><a href="/prazniki/<%= year %>/" <%= 'aria-current=page' if year==@year %>><%= year %></a><% end %></nav>
       <div class="holiday-hero-actions"><a class="holiday-primary" href="#prazniki-seznam"><%= ui_icon('calendar') %> Pregled praznikov <%= ui_icon('chevron-right') %></a><a href="#holiday-downloads"><%= ui_icon('download') %> PDF in slike</a></div>
     </div>
-    <div class="holiday-visual"><%= render 'holiday_illustration' %><span class="holiday-visual-caption"><%= ui_icon('pin') %> Slovenski koledar. Vaši načrti.</span></div>
+    <div class="holiday-visual"><%= render 'holiday_illustration', directory: false %><span class="holiday-visual-caption"><%= ui_icon('pin') %> Slovenski koledar. Vaši načrti.</span></div>
   </section>
 
   <dl class="holiday-facts" aria-label="Povzetek leta">

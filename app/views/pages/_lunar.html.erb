@@ -14,9 +14,16 @@
       </div>
       <div class="lunar-year-card__body">
         <div class="lunar-year-summary"><span><%= days %> dni</span><span><%= year_events.size %> glavnih luninih men</span></div>
-        <a class="lunar-year-open" href="<%= LunarCalendar.path(y) %>">Odprite letni pregled <span aria-hidden="true">↗</span></a>
+        <a class="lunar-year-open" href="<%= LunarCalendar.path(y) %>">Odprite letni pregled <%= ui_icon('chevron-right') %></a>
         <h3>Izberite mesec</h3>
-        <nav class="lunar-month-links" aria-label="Meseci leta <%= y %>"><% (1..12).each_with_index do |m,index| %><a href="<%= LunarCalendar.path(y,m) %>"><span><%= format('%02d',index+1) %></span><%= LunarCalendar::MONTHS[m-1].capitalize %></a><% end %></nav>
+        <nav class="lunar-month-links" aria-label="Meseci leta <%= y %>">
+          <% (1..12).each do |m| %>
+            <a href="<%= LunarCalendar.path(y,m) %>">
+              <span class="lunar-month-index" aria-hidden="true"><%= format('%02d', m) %></span>
+              <span class="lunar-month-name"><%= LunarCalendar::MONTHS[m-1].capitalize %></span>
+            </a>
+          <% end %>
+        </nav>
       </div>
     </article>
   <% end %></div>
@@ -54,5 +61,5 @@
 <% end %>
 <% end %>
 <p class="lunar-note">Podatki o menah: USNO. Dnevna osvetljenost: Astronomy Engine, preverjena z efemerido JPL DE440s. Naslovne fotografije: NASA / <a href="https://images.nasa.gov/details/art002e020904">Artemis II</a>, <a href="https://images.nasa.gov/details/art002e021219">Artemis II</a>, <a href="https://images.nasa.gov/details/as17-152-23311">Apollo 17</a> in <a href="https://images.nasa.gov/details/as08-18-2883">Apollo 8</a>. Prikazi luninih men: NASA's Scientific Visualization Studio. <a href="/viri-in-metodologija/">Viri in metodologija</a>.</p>
-</section><script type="module" src="/lunar/calendar.mjs?v=20261112"></script>
+</section><script type="module" src="/lunar/calendar.mjs?v=20261122"></script>
 <% end %>

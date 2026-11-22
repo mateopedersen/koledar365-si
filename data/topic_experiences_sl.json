@@ -61,18 +61,18 @@
       "snapshot": [
         {
           "value": "12",
-          "label": "rednih datumov",
-          "note": "Objavljeni koledar ZPIZ za leto 2026."
+          "label": "mesecev v letu 2027",
+          "note": "Za vsak mesec je prikazan objavljeni datum ali najpoznejši delovni dan."
         },
         {
-          "value": "29. 12.",
-          "label": "decembrsko izplačilo",
-          "note": "Objavljeni datum se razlikuje od konca meseca."
+          "value": "190 €",
+          "label": "zimski dodatek 2027",
+          "note": "Za upravičence, praviloma z novembrsko pokojnino."
         },
         {
           "value": "ICS",
           "label": "datumi v koledarju",
-          "note": "Prenos izbranega ali celotnega pregleda."
+          "note": "Prenos izključno objavljenih terminov ZPIZ."
         }
       ],
       "guideTitle": "Kaj vam pove datum pokojnine?",
@@ -90,8 +90,8 @@
         ],
         [
           "Letni ali zimski dodatek",
-          "Ločena pravica; ni del tega seznama rednih izplačil.",
-          "Aktualna pojasnila ZPIZ."
+          "Praviloma skupaj z junijsko oziroma novembrsko pokojnino.",
+          "Razdelek za dodatke in aktualna pojasnila ZPIZ."
         ],
         [
           "Ura priliva",
@@ -427,7 +427,7 @@
     },
     "/npz/3-razred/": {
       "art": "npz3",
-      "artAlt": "Zvezek, pisalo in učni pripomočki za NPZ v 3. razredu.",
+      "artAlt": "List za jezik in matematiko, svinčnik ter barvni geometrijski liki za 3. razred.",
       "artCaption": "Dva preizkusa: jezik in matematika.",
       "snapshot": [
         {
@@ -480,7 +480,7 @@
     },
     "/npz/6-razred/": {
       "art": "npz6",
-      "artAlt": "Zvezek, pisalo in učni pripomočki za NPZ v 6. razredu.",
+      "artAlt": "Odprt zvezek za tuji jezik in slušalke za 6. razred.",
       "artCaption": "Trije preizkusi, vključno s tujim jezikom.",
       "snapshot": [
         {
@@ -533,7 +533,7 @@
     },
     "/npz/9-razred/": {
       "art": "npz9",
-      "artAlt": "Zvezek, pisalo in učni pripomočki za NPZ v 9. razredu.",
+      "artAlt": "Tablica s seznamom preizkusov iz jezika, matematike in tretjega predmeta za 9. razred.",
       "artCaption": "Ime tretjega predmeta preverite pri svoji šoli.",
       "snapshot": [
         {

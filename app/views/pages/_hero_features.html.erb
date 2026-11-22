@@ -1,0 +1,13 @@
+<div class="hero-features<%= ' hero-features--dark' if local_assigns[:dark] %>">
+  <ul class="hero-features__list" role="list" aria-label="<%= label %>">
+    <% items.each do |icon, title, detail| %>
+      <li class="hero-features__item">
+        <span class="hero-features__icon"><%= ui_icon(icon) %></span>
+        <span class="hero-features__copy">
+          <strong><%= title %></strong>
+          <% if detail %><small><%= detail %></small><% end %>
+        </span>
+      </li>
+    <% end %>
+  </ul>
+</div>

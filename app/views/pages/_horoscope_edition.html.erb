@@ -1,0 +1,21 @@
+<% if part == :date %>
+  <div class="z-daily-item">
+    <span class="z-daily-icon"><%= ui_icon('calendar') %></span>
+    <div>
+      <span class="z-daily-label" data-edition-status><%= guide.current? ? 'Današnja izdaja' : (guide.edition_date ? 'Zadnja pripravljena izdaja' : 'Dnevna izdaja') %></span>
+      <time class="z-daily-value" data-edition-date datetime="<%= guide.edition['local_date'] %>"><%= guide.edition_date ? sl_date(guide.edition_date) : 'Izdaja se pripravlja' %></time>
+    </div>
+  </div>
+<% else %>
+  <% moon = guide.edition.dig('sky', 'moon') || {} %>
+  <div class="z-daily-item">
+    <span class="z-daily-icon z-daily-icon--moon">
+      <%= image_tag(IllustrationHelper.versioned_svg_url('/horoscope/art/moon-edition-v1.svg'),
+        width: 64, height: 64, alt: '', decoding: 'async') %>
+    </span>
+    <div>
+      <strong class="z-daily-value" data-moon-sign><%= moon['locative'] ? "Luna v #{moon['locative']}" : 'Luna' %></strong>
+      <span class="z-daily-label" data-moon-phase><%= moon['phase'] ? "#{moon['phase']} · #{moon['illumination']} % osvetljenosti" : 'Podatki se pripravljajo' %></span>
+    </div>
+  </div>
+<% end %>

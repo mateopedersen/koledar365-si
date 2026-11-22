@@ -1,224 +1,610 @@
 'use strict';
 
-(()=>{
- const root=document.querySelector('[data-countdown-root]');
- if(!root)return;
+(() => {
+  const root = document.querySelector('[data-countdown-root]');
+  if (!root) return;
 
- const eventsNode=root.querySelector('[data-countdown-events]');
- let events=[];
- try{events=JSON.parse(eventsNode?.textContent||'[]')}catch{events=[]}
- const STORAGE_KEY='k365.countdowns.v1';
- const REGION_KEY='k365.countdowns.region';
- const allowedZones=new Set(['Europe/Ljubljana','Europe/Vienna','Europe/London','America/New_York','UTC']);
- const categories=['holiday','school','festival','observance','custom'];
- const dayInSlovenia=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Ljubljana',dateStyle:'short'});
- const relativeDay=new Intl.RelativeTimeFormat('sl-SI',{numeric:'auto'});
- const fold=value=>value.normalize('NFD').replace(/\p{M}/gu,'').toLocaleLowerCase('sl');
- const zoneFormatters=new Map();
- const $=(selector,parent=root)=>parent.querySelector(selector);
- const $$=(selector,parent=root)=>[...parent.querySelectorAll(selector)];
- const esc=value=>String(value??'').replace(/[\\;,]/g,char=>`\\${char}`).replace(/\r?\n/g,'\\n');
- const dateParts=value=>{const match=/^(\d{4})-(\d{2})-(\d{2})$/.exec(value||'');if(!match)return null;const result={year:+match[1],month:+match[2],day:+match[3]};const check=new Date(Date.UTC(result.year,result.month-1,result.day));return check.getUTCFullYear()===result.year&&check.getUTCMonth()===result.month-1&&check.getUTCDate()===result.day?result:null};
- const validTime=value=>/^(?:[01]\d|2[0-3]):[0-5]\d$/.test(value||'');
- const addIsoDays=(value,amount)=>{const date=dateAsUtc(value);if(!date)return value;date.setUTCDate(date.getUTCDate()+amount);return date.toISOString().slice(0,10)};
- const dateFormatter=new Intl.DateTimeFormat('sl-SI',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
- const shortMonthFormatter=new Intl.DateTimeFormat('sl-SI',{month:'short',timeZone:'UTC'});
- const numberFormatter=new Intl.NumberFormat('sl-SI', {useGrouping:false});
- const dateAsUtc=value=>{const p=dateParts(value);return p?new Date(Date.UTC(p.year,p.month-1,p.day)):null};
- const formatDate=value=>{const date=dateAsUtc(value);return date?dateFormatter.format(date):value};
- const formatRange=event=>event.end_date&&event.end_date!==event.date?`${formatDate(event.date)} – ${formatDate(event.end_date)}`:formatDate(event.date);
- const cleanEntry=entry=>{
-  if(!entry||typeof entry!=='object'||!dateParts(entry.date)||!validTime(entry.time)||!allowedZones.has(entry.zone)||typeof entry.title!=='string')return null;
-  const title=entry.title.trim().slice(0,64);if(!title)return null;
-  return {id:String(entry.id||`custom-${Date.now()}-${Math.random().toString(36).slice(2,8)}`).slice(0,120),title,date:entry.date,time:entry.time,zone:entry.zone,category:categories.includes(entry.category)?entry.category:'custom',detail:String(entry.detail||'').slice(0,230),end_date:dateParts(entry.end_date)?entry.end_date:null,all_day:entry.all_day===true,provisional:entry.provisional===true,region:['east','west'].includes(entry.region)?entry.region:'all',school_level:['primary','secondary'].includes(entry.school_level)?entry.school_level:'all'};
- };
- const zonedInstant=(date,time,zone)=>{
-  const p=dateParts(date);if(!p||!validTime(time)||!allowedZones.has(zone))return null;
-  const [hour,minute]=time.split(':').map(Number),desired=Date.UTC(p.year,p.month-1,p.day,hour,minute,0);
-  let guess=desired;
-  if(!zoneFormatters.has(zone))zoneFormatters.set(zone,new Intl.DateTimeFormat('en-GB',{timeZone:zone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}));
-  const formatter=zoneFormatters.get(zone);
-  for(let pass=0;pass<5;pass++){
-   const parts=Object.fromEntries(formatter.formatToParts(new Date(guess)).filter(item=>item.type!=='literal').map(item=>[item.type,Number(item.value)]));
-   const represented=Date.UTC(parts.year,parts.month-1,parts.day,parts.hour,parts.minute,parts.second);
-   const difference=desired-represented;
-   if(difference===0)break;
-   guess+=difference;
+  const get = (selector, within = root) => within.querySelector(selector);
+  const all = (selector, within = root) => [...within.querySelectorAll(selector)];
+  const picker = get('[data-event-picker]');
+  const tabs = all('[data-event-filter]');
+  const eventSelect = get('[data-event-select]');
+  const search = get('[data-event-search]');
+  const yearSelect = get('[data-event-year]');
+  const schoolLevel = get('[data-school-level]');
+  const schoolRegion = get('[data-school-region]');
+  const eventTime = get('[data-event-time]');
+  const eventBoundary = get('[data-event-boundary]');
+  const customForm = get('[data-custom-form]');
+  const display = get('[data-feature-card]');
+  const featureHeading = get('[data-feature-title]');
+  const featureSave = get('[data-feature-save]');
+  const featureShare = get('[data-feature-share]');
+  const featureNotice = get('[data-feature-notice]');
+  const shareField = get('[data-share-field]');
+  const shareInput = get('[data-share-url]');
+
+  const STORAGE_KEY = 'k365.countdowns.v1';
+  const REGION_KEY = 'k365.countdowns.region';
+  const SLOVENIAN_ZONE = 'Europe/Ljubljana';
+  const zones = new Map([...customForm.elements.zone.options].map(option => [option.value, option.text]));
+  const categoryNames = {
+    holiday: 'Slovenski praznik',
+    festival: 'Festival ali prireditev',
+    observance: 'Poseben dan',
+    school: 'Šolski termin',
+    custom: 'Osebni datum'
+  };
+  const searchExamples = { holiday: 'Božič', festival: 'Ljubljana', observance: 'Pust', school: 'počitnice' };
+  const units = ['days', 'hours', 'minutes', 'seconds'];
+  const DAY = 86400000;
+  const dateLabels = new Intl.DateTimeFormat('sl-SI', { timeZone: 'UTC', dateStyle: 'long' });
+  const shortDateLabels = new Intl.DateTimeFormat('sl-SI', { timeZone: 'UTC', dateStyle: 'medium' });
+  const shortMonth = new Intl.DateTimeFormat('sl-SI', { timeZone: 'UTC', month: 'short' });
+  const localDates = new Intl.DateTimeFormat('sv-SE', { timeZone: SLOVENIAN_ZONE, dateStyle: 'short' });
+  const localDate = () => localDates.format(Date.now());
+  const zoneFormatters = new Map();
+  const validTime = value => /^(?:[01]\d|2[0-3]):[0-5]\d$/.test(value || '');
+  const fold = value => value.normalize('NFD').replace(/\p{M}/gu, '').toLocaleLowerCase('sl');
+  const setText = (node, value) => { if (node.textContent !== value) node.textContent = value; };
+
+  function dateMs(value) {
+    if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value) || value < '1900-01-01') return NaN;
+    const date = new Date(value + 'T00:00:00Z');
+    return Number.isFinite(+date) && date.toISOString().slice(0, 10) === value ? +date : NaN;
   }
-  const final=Object.fromEntries(formatter.formatToParts(new Date(guess)).filter(item=>item.type!=='literal').map(item=>[item.type,Number(item.value)]));
-  if(final.year!==p.year||final.month!==p.month||final.day!==p.day||final.hour!==hour||final.minute!==minute)return null;
-  return new Date(guess);
- };
- const asEntry=event=>cleanEntry({id:event.id,title:event.title,date:event.date,time:event.time||'00:00',zone:'Europe/Ljubljana',category:event.category,detail:event.detail||'',end_date:event.end_date,all_day:true,provisional:event.provisional,region:event.region,school_level:event.school_level});
- const safeStorage={get(){try{const raw=localStorage.getItem(STORAGE_KEY);const list=raw?JSON.parse(raw):[];return Array.isArray(list)?list.map(cleanEntry).filter(Boolean).slice(0,50):[]}catch{return[]}},set(list){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(list.slice(0,50)));return true}catch{return false}}};
- let saved=safeStorage.get();
- let activeFilter='all';
- let visibleCount=12;
- let schoolRegion='west',schoolLevel='primary';
- try{const prior=localStorage.getItem(REGION_KEY);if(prior==='east'||prior==='west')schoolRegion=prior}catch{}
- try{const prior=localStorage.getItem(`${REGION_KEY}.level`);if(prior==='primary'||prior==='secondary')schoolLevel=prior}catch{}
- const regionControl=$('[data-school-region]');
- if(regionControl){regionControl.value=schoolRegion;regionControl.addEventListener('change',()=>{schoolRegion=regionControl.value==='east'?'east':'west';try{localStorage.setItem(REGION_KEY,schoolRegion)}catch{};renderEvents()})}
- const levelControl=$('[data-school-level]');
- if(levelControl){levelControl.value=schoolLevel;levelControl.addEventListener('change',()=>{schoolLevel=levelControl.value==='secondary'?'secondary':'primary';try{localStorage.setItem(`${REGION_KEY}.level`,schoolLevel)}catch{};renderEvents()})}
 
- const iconNode=kind=>{
-  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('fill','none');svg.setAttribute('stroke','currentColor');svg.setAttribute('stroke-width','1.8');svg.setAttribute('stroke-linecap','round');svg.setAttribute('stroke-linejoin','round');svg.setAttribute('aria-hidden','true');
-  const shapes=kind==='school'?[['path',{d:'M3 9.5 12 4l9 5.5-9 5.5-9-5.5Z'}],['path',{d:'M6.5 12v5.2c3.2 2.2 7.8 2.2 11 0V12'}],['path',{d:'M21 10v6'}]]:kind==='custom'?[['rect',{x:'4',y:'5',width:'16',height:'16',rx:'2'}],['path',{d:'M8 3v4m8-4v4M4 10h16'}],['path',{d:'m9 15 2 2 4-4'}]]:[['path',{d:'M12 3.5 14.6 9l6 .8-4.3 4.2 1 6-5.3-2.8-5.3 2.8 1-6-4.3-4.2 6-.8L12 3.5Z'}]];
-  shapes.forEach(([tag,attrs])=>{const node=document.createElementNS('http://www.w3.org/2000/svg',tag);Object.entries(attrs).forEach(([key,value])=>node.setAttribute(key,value));svg.append(node)});return svg;
- };
- const savedHas=id=>saved.some(item=>item.id===id);
- const storedEvent=event=>asEntry(event);
- const upcomingEvents=()=>{
-  const today=dayInSlovenia.format(Date.now());
-  return events.filter(event=>(event.end_date||event.date)>=today).sort((a,b)=>a.date.localeCompare(b.date)||a.title.localeCompare(b.title,'sl'));
- };
- const availableEvents=()=>upcomingEvents().filter(event=>{
-  if(event.source==='school'&&event.region&&event.region!=='all'&&event.region!==schoolRegion)return false;
-  if(event.source==='school'&&event.school_level&&event.school_level!=='all'&&event.school_level!==schoolLevel)return false;
-  return true;
- });
- const query=new URLSearchParams(location.search);
- const shareDate=query.get('date'),shareTime=query.get('time')||'00:00',shareZone=query.get('zone')||'Europe/Ljubljana',shareTitle=query.get('title');
- let featured=null;
- if(dateParts(shareDate)&&validTime(shareTime)&&allowedZones.has(shareZone)&&shareTitle?.trim()&&zonedInstant(shareDate,shareTime,shareZone)){
-  featured=cleanEntry({id:`shared-${shareDate}-${shareTime}`,title:shareTitle,date:shareDate,time:shareTime,zone:shareZone,category:'custom',detail:'Deljeni odštevalnik',all_day:false});
- }
- if(!featured)featured=availableEvents()[0]?storedEvent(availableEvents()[0]):cleanEntry({id:'welcome',title:'Vaš naslednji pomemben dan',date:new Date(Date.now()+86400000).toISOString().slice(0,10),time:'00:00',zone:'Europe/Ljubljana',category:'custom'});
- let tickTimer=null;
- const distanceLabel=entry=>{
-  const today=dayInSlovenia.format(Date.now());
-  if(entry.date<today)return entry.end_date>=today?'Poteka':'Dogodek je nastopil';
-  const distance=(dateAsUtc(entry.date)-dateAsUtc(today))/86400000;
-  return relativeDay.format(distance,'day').replace(/^./,letter=>letter.toLocaleUpperCase('sl'));
- };
- const countdownValues=entry=>{const target=zonedInstant(entry.date,entry.time,entry.zone);if(!target)return null;const remaining=Math.max(0,Math.floor((target.getTime()-Date.now())/1000));return {remaining,days:Math.floor(remaining/86400),hours:Math.floor(remaining/3600)%24,minutes:Math.floor(remaining/60)%60,seconds:remaining%60,started:target.getTime()<=Date.now()}};
- const pad=(n)=>String(n).padStart(2,'0');
- const setText=(selector,value,parent=root)=>{const node=$(selector,parent);if(node)node.textContent=value};
- const featureSave=$('[data-feature-save]');
- const renderFeature=()=>{
-  if(!featured)return;
-  setText('[data-feature-title]',featured.title);
-  setText('[data-feature-date]',formatRange(featured));
-  setText('[data-feature-status]',featured.provisional?'Predviden datum · uradni šolski koledar še ni objavljen.':`Časovni pas: ${featured.zone==='Europe/Ljubljana'?'Slovenija · Ljubljana':featured.zone}.`);
-  setText('[data-feature-kicker]',featured.category==='school'?'NASLEDNJI ŠOLSKI TERMIN':featured.category==='holiday'?'SLOVENSKI PRAZNIK':featured.category==='festival'?'FESTIVAL ALI PRIREDITEV':featured.category==='observance'?'POSEBNI DAN':'VAŠ IZBRANI ODŠTEVALNIK');
-  featureSave.textContent=savedHas(featured.id)?'✓ Shranjeno v mojem seznamu':'+ Dodaj v moj seznam';
-  featureSave.classList.toggle('is-added',savedHas(featured.id));
-  featureSave.disabled=savedHas(featured.id);
-  const data=countdownValues(featured);
-  if(!data){['days','hours','minutes','seconds'].forEach(unit=>setText(`[data-feature-${unit}]`,'—'));return}
-  setText('[data-feature-days]',numberFormatter.format(data.days));setText('[data-feature-hours]',pad(data.hours));setText('[data-feature-minutes]',pad(data.minutes));setText('[data-feature-seconds]',pad(data.seconds));
-  if(data.started)setText('[data-feature-status]','Ta dan se je že začel. Izberite naslednji datum, ki ga želite spremljati.');
- };
- featureSave.addEventListener('click',()=>addSaved(featured));
+  const validDate = value => Number.isFinite(dateMs(value));
+  const afterDay = date => new Date(dateMs(date) + DAY).toISOString().slice(0, 10);
+  const formatDate = (date, formatter = dateLabels) => formatter.format(dateMs(date));
+  const rangeLabel = entry => entry.end_date
+    ? `${formatDate(entry.date)} – ${formatDate(entry.end_date)}`
+    : formatDate(entry.date);
 
- const renderSaved=()=>{
-  const list=$('[data-saved-list]');list.replaceChildren();
-  const empty=$('[data-saved-empty]');empty.hidden=saved.length>0;
-  const exportButton=$('[data-export-ics]');exportButton.disabled=saved.length===0;
-  const count=$('[data-saved-count]');count.textContent=saved.length===1?'1 shranjen datum':`${saved.length} shranjenih datumov`;
-  saved.forEach((entry,index)=>{
-   const card=document.createElement('article');card.className=`countdown-saved-card countdown-saved-card--${entry.category}`;card.dataset.savedId=entry.id;
-   const head=document.createElement('div');head.className='countdown-saved-card__head';const icon=document.createElement('span');icon.className='countdown-saved-card__icon';icon.append(iconNode(entry.category));
-   const copy=document.createElement('div');copy.className='countdown-saved-card__copy';const title=document.createElement('strong');title.textContent=entry.title;const date=document.createElement('span');date.textContent=formatRange(entry);copy.append(title,date);head.append(icon,copy);
-   const time=document.createElement('div');time.className='countdown-saved-card__time';time.setAttribute('aria-label','Čas do dogodka');[['days','dni'],['hours','ur'],['minutes','min'],['seconds','sek']].forEach(([key,label])=>{const unit=document.createElement('div'),value=document.createElement('strong'),caption=document.createElement('span');value.dataset.savedUnit=key;caption.textContent=label;unit.append(value,caption);time.append(unit)});
-   const actions=document.createElement('div');actions.className='countdown-saved-card__actions';const share=document.createElement('button');share.type='button';share.textContent='Deli povezavo';share.addEventListener('click',()=>shareEntry(entry,share));const remove=document.createElement('button');remove.type='button';remove.className='is-remove';remove.textContent='Odstrani';remove.setAttribute('aria-label',`Odstrani ${entry.title} iz mojih odštevalnikov`);remove.addEventListener('click',()=>{saved.splice(index,1);safeStorage.set(saved);renderSaved();renderEvents();renderFeature()});actions.append(share,remove);
-   card.append(head,time,actions);list.append(card);
-  });
-  updateTimers();
- };
- const renderEvents=()=>{
-  const list=$('[data-event-list]');list.replaceChildren();
-  const search=fold(($('[data-event-search]').value||'').trim());
-  const sourceEvents=activeFilter==='favorite'?upcomingEvents():availableEvents();
-  const filtered=sourceEvents.filter(event=>{
-   if(activeFilter==='favorite'&&!savedHas(event.id))return false;
-   if(activeFilter!=='all'&&activeFilter!=='favorite'&&event.category!==activeFilter)return false;
-   if(search&&!fold(`${event.title} ${event.detail||''}`).includes(search))return false;
-   return true;
-  });
-  const shown=filtered.slice(0,visibleCount);
-  shown.forEach(event=>{
-   const card=document.createElement('article');card.className=`countdown-event-card countdown-event-card--${event.category}`;
-   const date=document.createElement('div');date.className='countdown-event-card__date';const month=document.createElement('small');month.textContent=shortMonthFormatter.format(dateAsUtc(event.date)).replace('.','');const day=document.createElement('strong');day.textContent=String(dateParts(event.date).day);date.append(month,day);
-   const body=document.createElement('div');body.className='countdown-event-card__body';const title=document.createElement('h3');title.textContent=event.title;const detail=document.createElement('p');detail.textContent=event.category==='festival'?[formatRange(event),event.detail].filter(Boolean).join(' · '):event.detail||formatRange(event);body.append(title,detail);
-   const tags=document.createElement('div');tags.className='countdown-event-card__tags';
-   const addTag=(text,kind='')=>{const tag=document.createElement('span');tag.textContent=text;if(kind)tag.className=kind;tags.append(tag)};
-   if(event.category==='holiday')addTag(event.work_free?'Dela prost dan':'Ni dela prost dan',event.work_free?'is-red':'');
-   else if(event.category==='festival')addTag('Objavljen termin','is-gold');
-   else if(event.category==='observance')addTag('Obeležitev','is-green');
-   else addTag(event.provisional?'Predviden termin':'Šolski koledar',event.provisional?'is-gold':'is-green');
-   if(event.category==='school')addTag(event.school_level==='secondary'?'Srednja šola':event.school_level==='primary'?'Osnovna šola':'Vse stopnje','is-green');
-   if(event.category==='school'&&event.region&&event.region!=='all')addTag(event.region==='east'?'Vzhodna skupina':'Zahodna skupina','is-green');
-   if(event.category==='school'&&event.region==='all')addTag('Vse regije','is-green');
-   body.append(tags);
-   if(event.path){
-    const details=document.createElement('a');details.href=event.path;details.textContent='O dogodku';
-    details.className='countdown-event-card__source';body.append(details);
-   }
-   const actions=document.createElement('div');actions.className='countdown-event-card__actions';const distance=document.createElement('span');distance.className='countdown-event-card__distance';distance.dataset.countdownDistance='';distance.dataset.date=event.date;distance.dataset.endDate=event.end_date||'';distance.textContent=distanceLabel(event);const add=document.createElement('button');add.type='button';add.textContent=savedHas(event.id)?'✓ Dodano':'+ Odštevaj';add.classList.toggle('is-added',savedHas(event.id));add.disabled=savedHas(event.id);add.addEventListener('click',()=>addSaved(storedEvent(event)));actions.append(distance,add);
-   const selectEvent=()=>{featured=storedEvent(event);renderFeature()};card.append(date,body,actions);card.addEventListener('click',eventClick=>{if(eventClick.target.closest('button,a'))return;selectEvent()});card.addEventListener('keydown',eventKey=>{if(eventKey.target===card&&(eventKey.key==='Enter'||eventKey.key===' ')){eventKey.preventDefault();selectEvent()}});card.tabIndex=0;card.setAttribute('role','group');card.setAttribute('aria-label',`${event.title}. Izberi ta datum za predogled odštevanja.`);list.append(card);
-  });
-  setText('[data-event-count]',filtered.length?`${numberFormatter.format(filtered.length)} prihajajočih datumov`:'');
-  $('[data-no-events]').hidden=filtered.length>0;
-  const load=$('[data-load-more]');load.hidden=filtered.length<=visibleCount;load.textContent=visibleCount>=filtered.length?'':'Pokaži še dogodke ↓';
- };
- const updateTimers=()=>{
-  const featureData=countdownValues(featured);if(featureData){setText('[data-feature-days]',numberFormatter.format(featureData.days));setText('[data-feature-hours]',pad(featureData.hours));setText('[data-feature-minutes]',pad(featureData.minutes));setText('[data-feature-seconds]',pad(featureData.seconds));if(featureData.started)setText('[data-feature-status]','Ta dan se je že začel. Izberite naslednji datum, ki ga želite spremljati.')}
-  $$('[data-saved-id]').forEach(card=>{const entry=saved.find(value=>value.id===card.dataset.savedId);if(!entry)return;const data=countdownValues(entry);if(!data)return;card.querySelector('[data-saved-unit="days"]').textContent=numberFormatter.format(data.days);card.querySelector('[data-saved-unit="hours"]').textContent=pad(data.hours);card.querySelector('[data-saved-unit="minutes"]').textContent=pad(data.minutes);card.querySelector('[data-saved-unit="seconds"]').textContent=pad(data.seconds)});
-  if(!tickTimer)tickTimer=setInterval(()=>{updateTimers();$$('[data-countdown-distance]').forEach(node=>node.textContent=distanceLabel({date:node.dataset.date,end_date:node.dataset.endDate}))},1000);
- };
- function addSaved(entry){
-  const value=cleanEntry(entry);if(!value)return;
-  if(savedHas(value.id)){featured=value;renderFeature();return}
-  if(saved.length>=50){const status=$('[data-custom-status]');status.textContent='Shranite največ 50 datumov. Odstranite enega in poskusite znova.';status.classList.add('is-error');return}
-  saved.unshift(value);const persisted=safeStorage.set(saved);featured=value;renderSaved();renderEvents();renderFeature();
-  const status=$('[data-custom-status]');if(status)status.textContent=persisted?'Odštevanje je dodano na vaš osebni seznam.':'Odštevanje je prikazano, vendar brskalnik ne dovoli shranjevanja.';
- }
- async function shareEntry(entry,button){
-  const url=new URL(location.href);url.search='';url.searchParams.set('date',entry.date);url.searchParams.set('time',entry.time);url.searchParams.set('zone',entry.zone);url.searchParams.set('title',entry.title);
-  try{if(navigator.share){await navigator.share({title:`Odštevanje: ${entry.title}`,text:`Spremljaj čas do dogodka ${entry.title}.`,url:url.href});return}await navigator.clipboard.writeText(url.href);button.textContent='Povezava kopirana ✓';setTimeout(()=>button.textContent='Deli povezavo',1800)}catch(error){if(error?.name==='AbortError')return;try{await navigator.clipboard.writeText(url.href);button.textContent='Povezava kopirana ✓';setTimeout(()=>button.textContent='Deli povezavo',1800)}catch{button.textContent='Odpri v skupni rabi';button.title=url.href}}
- }
- const exportIcs=()=>{
-  if(!saved.length)return;
-  const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Koledar365//Odštevanje//SL','CALSCALE:GREGORIAN','METHOD:PUBLISH'];
-  saved.forEach(entry=>{
-   const p=dateParts(entry.date);if(!p)return;
-   lines.push('BEGIN:VEVENT',`UID:${encodeURIComponent(entry.id)}@koledar365.si`,`DTSTAMP:${new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'')}`);
-   if(entry.all_day){
-    lines.push(`DTSTART;VALUE=DATE:${entry.date.replace(/-/g,'')}`);
-    const end=entry.end_date||entry.date,endParts=dateParts(end),next=new Date(Date.UTC(endParts.year,endParts.month-1,endParts.day+1));
-    lines.push(`DTEND;VALUE=DATE:${next.toISOString().slice(0,10).replace(/-/g,'')}`);
-   }else{
-    const start=zonedInstant(entry.date,entry.time,entry.zone);if(!start)return;
-    const end=new Date(start.getTime()+3600000);
-    const utc=date=>date.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');
-    lines.push(`DTSTART:${utc(start)}`,`DTEND:${utc(end)}`);
-   }
-   lines.push(`SUMMARY:${esc(entry.title)}`,`DESCRIPTION:${esc(entry.detail||`Odštevanje na koledar365.si · ${entry.zone}`)}`,'END:VEVENT');
-  });
-  lines.push('END:VCALENDAR','');globalThis.Calendar365Downloads.save(lines.join('\r\n'),'koledar365-odstevanje.ics','text/calendar;charset=utf-8');
- };
+  function wallClockMs(instant, zone) {
+    if (!zoneFormatters.has(zone)) {
+      zoneFormatters.set(zone, new Intl.DateTimeFormat('en-GB', {
+        timeZone: zone, year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+      }));
+    }
+    const parts = Object.fromEntries(zoneFormatters.get(zone).formatToParts(instant).map(part => [part.type, Number(part.value)]));
+    return Date.UTC(parts.year, parts.month - 1, parts.day, parts.hour, parts.minute, parts.second);
+  }
 
- $$('[data-event-filter]').forEach(button=>button.addEventListener('click',()=>{activeFilter=button.dataset.eventFilter;visibleCount=12;$$('[data-event-filter]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));$('[data-region-control]').hidden=!['all','school'].includes(activeFilter);renderEvents()}));
- $('[data-event-search]').addEventListener('input',()=>{visibleCount=12;renderEvents()});
- $('[data-load-more]').addEventListener('click',()=>{visibleCount+=12;renderEvents()});
- $('[data-export-ics]').addEventListener('click',exportIcs);
- $('[data-custom-form]').addEventListener('submit',event=>{
-  event.preventDefault();const form=event.currentTarget,title=form.elements.title.value.trim(),date=form.elements.date.value,time=form.elements.time.value,zone=form.elements.zone.value,status=$('[data-custom-status]');
-  status.textContent='';status.classList.remove('is-error');
-  if(!title||!dateParts(date)||!validTime(time)||!allowedZones.has(zone)){status.textContent='Preverite ime, datum, uro in časovni pas.';status.classList.add('is-error');return}
-  if(!zonedInstant(date,time,zone)){status.textContent='Izbrana ura v tem časovnem pasu ne obstaja zaradi premika ure.';status.classList.add('is-error');return}
-  addSaved({id:`custom-${Date.now()}-${Math.random().toString(36).slice(2,8)}`,title,date,time,zone,category:'custom',detail:'Osebni datum',all_day:false});form.reset();form.elements.date.value=addIsoDays(root.dataset.today||date,1);form.elements.time.value='00:00';form.elements.zone.value='Europe/Ljubljana';
- });
- $$('[data-quick]').forEach(button=>button.addEventListener('click',()=>{
-  const kind=button.dataset.quick;
-  if(kind==='custom'){document.querySelector('#moj-datum').scrollIntoView({behavior:'smooth'});$('[data-custom-title]').focus({preventScroll:true});return}
-  const upcoming=availableEvents();
-  if(kind==='holiday')featured=storedEvent(upcoming.find(item=>item.category==='holiday'&&item.work_free)||upcoming.find(item=>item.category==='holiday')||upcoming[0]);
-  if(kind==='school'){activeFilter='school';$$('[data-event-filter]').forEach(item=>item.setAttribute('aria-pressed',String(item.dataset.eventFilter==='school')));$('[data-region-control]').hidden=false;renderEvents();const next=availableEvents().find(item=>item.category==='school');if(next)featured=storedEvent(next)}
-  if(kind==='christmas')featured=storedEvent(upcoming.find(item=>item.title.toLocaleLowerCase('sl').includes('božič'))||upcoming.find(item=>item.title.toLocaleLowerCase('sl').includes('novolet'))||upcoming[0]);
-  if(featured)renderFeature();document.querySelector('#izberi-dogodek').scrollIntoView({behavior:'smooth',block:'start'});
- }));
- renderSaved();renderEvents();renderFeature();updateTimers();
+  function instantAt(date, time, zone) {
+    if (!validDate(date) || !validTime(time) || !zones.has(zone)) return null;
+
+    const requested = Date.parse(date + 'T' + time + ':00Z');
+    // Inspect both sides of a possible clock change. Matching no offset means the
+    // wall time was skipped. Matching two offsets means we use the first occurrence.
+    const candidates = [requested - DAY, requested, requested + DAY].map(sample =>
+      requested - (wallClockMs(sample, zone) - sample)
+    ).filter(instant => wallClockMs(instant, zone) === requested);
+    return candidates.length ? Math.min(...candidates) : null;
+  }
+
+  function readEvents() {
+    try {
+      const data = JSON.parse(get('[data-countdown-events]').textContent);
+      return data.filter(event => validDate(event.date) && Object.hasOwn(categoryNames, event.category))
+        .sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.title, 'sl'));
+    } catch {
+      return [];
+    }
+  }
+
+  const events = readEvents();
+  const eventMap = new Map(events.map(event => [event.id, event]));
+
+  function storedString(key) {
+    try { return localStorage.getItem(key); } catch { return null; }
+  }
+
+  function storeString(key, value) {
+    try { localStorage.setItem(key, value); return true; } catch { return false; }
+  }
+
+  function cleanEntry(value) {
+    if (!value || typeof value.title !== 'string' || !value.title.trim() || !value.id) return null;
+    if (!validDate(value.date) || !validTime(value.time) || !zones.has(value.zone)) return null;
+
+    const endDate = validDate(value.end_date) && value.end_date > value.date ? value.end_date : null;
+    return {
+      id: String(value.id).slice(0, 180),
+      event_id: typeof value.event_id === 'string' ? value.event_id : null,
+      title: value.title.trim().slice(0, 130),
+      date: value.date,
+      end_date: endDate,
+      time: value.time,
+      zone: value.zone,
+      boundary: endDate && value.boundary === 'end' ? 'end' : 'start',
+      category: Object.hasOwn(categoryNames, value.category) ? value.category : 'custom',
+      detail: typeof value.detail === 'string' ? value.detail.slice(0, 330) : '',
+      all_day: value.all_day === true,
+      provisional: value.provisional === true
+    };
+  }
+
+  function entryDate(entry) {
+    return entry.boundary === 'end' ? afterDay(entry.end_date) : entry.date;
+  }
+
+  function entryInstant(entry) {
+    return instantAt(entryDate(entry), entry.time, entry.zone);
+  }
+
+  function readSaved() {
+    try {
+      const items = JSON.parse(storedString(STORAGE_KEY));
+      if (Array.isArray(items)) return items.map(cleanEntry).filter(Boolean).slice(0, 50);
+    } catch { /* A damaged local list can be replaced by the next save. */ }
+    return [];
+  }
+
+  const saved = readSaved();
+  let savedTimers = [];
+  let active = null;
+  let category = 'holiday';
+  schoolRegion.value = storedString(REGION_KEY) === 'east' ? 'east' : 'west';
+  schoolLevel.value = storedString(REGION_KEY + '.level') === 'secondary' ? 'secondary' : 'primary';
+
+  function calendarEntry(event, boundary = 'start', time = '00:00') {
+    const endsLater = Boolean(event.end_date && event.end_date > event.date);
+    const useEnd = endsLater && boundary === 'end';
+    return cleanEntry({
+      ...event, event_id: event.id, zone: SLOVENIAN_ZONE,
+      id: useEnd ? event.id + ':end' : time === '00:00' ? event.id : event.id + ':' + time,
+      time: useEnd ? '00:00' : time, boundary: useEnd ? 'end' : 'start',
+      all_day: useEnd || time === '00:00'
+    });
+  }
+
+  function defaultEntry(event) {
+    const start = calendarEntry(event);
+    if (event.end_date && entryInstant(start) <= Date.now()) return calendarEntry(event, 'end');
+    return start;
+  }
+
+  function upcoming(kind) {
+    const today = localDate();
+    return events.filter(event => event.category === kind && (event.end_date || event.date) >= today).filter(event =>
+      kind !== 'school' ||
+        ((!event.region || ['all', schoolRegion.value].includes(event.region)) &&
+        (!event.school_level || ['all', schoolLevel.value].includes(event.school_level)))
+    );
+  }
+
+  function firstFuture(kind) {
+    const today = localDate();
+    const future = upcoming(kind).filter(event => event.date > today);
+    return (kind === 'holiday' && future.find(event => event.work_free)) || future[0];
+  }
+
+  function configureCategory(kind) {
+    category = kind;
+    tabs.forEach(tab => tab.setAttribute('aria-pressed', String(tab.dataset.eventFilter === kind)));
+    picker.hidden = kind === 'custom';
+    customForm.hidden = kind !== 'custom';
+    get('[data-region-control]').hidden = kind !== 'school';
+    search.value = '';
+    if (!picker.hidden) search.placeholder = 'npr. ' + searchExamples[kind];
+    updateYears();
+  }
+
+  function updateYears() {
+    const years = [...new Set(upcoming(category).map(event => event.date.slice(0, 4)))];
+    yearSelect.replaceChildren(new Option('Vsa leta', 'all'), ...years.map(year => new Option(year, year)));
+  }
+
+  function describeEvent(event) {
+    const parts = [shortDateLabels.format(dateMs(event.date))];
+    if (event.end_date) parts[0] += ' – ' + shortDateLabels.format(dateMs(event.end_date));
+    if (event.category === 'festival' && event.detail) parts.push(event.detail);
+    if (event.provisional) parts.push('Predviden termin');
+    return event.title + ' · ' + parts.join(' · ');
+  }
+
+  function renderOptions(selectedId = '') {
+    const words = fold(search.value.trim()).split(/\s+/).filter(Boolean);
+    const year = yearSelect.value;
+    const matches = upcoming(category).filter(event => {
+      const searchable = fold([event.title, event.detail, event.date, formatDate(event.date)].filter(Boolean).join(' '));
+      return (year === 'all' || event.date.startsWith(year)) && words.every(word => searchable.includes(word));
+    });
+    eventSelect.replaceChildren(
+      new Option(matches.length ? 'Izberite dogodek' : 'Ni zadetkov', ''),
+      ...matches.map(event => new Option(describeEvent(event), event.id))
+    );
+    eventSelect.disabled = matches.length === 0;
+    eventSelect.value = matches.some(event => event.id === selectedId) ? selectedId : '';
+    const showCount = words.length > 0 || year !== 'all';
+    setText(get('[data-event-note]'), matches.length
+      ? showCount ? `Število datumov: ${matches.length}` : ''
+      : 'Poskusite z drugim iskanjem, letom ali kategorijo.');
+    updateEventSettings();
+  }
+
+  const timerElements = units.map(unit => get(`[data-feature-${unit}]`));
+
+  function updateEventSettings() {
+    const event = eventMap.get(eventSelect.value);
+    const entry = active?.entry;
+    const showingEvent = Boolean(event && entry?.event_id === event.id);
+    get('[data-event-settings]').hidden = !showingEvent;
+    if (!showingEvent) {
+      setText(get('[data-time-note]'), '');
+      return;
+    }
+
+    const hasRange = Boolean(event.end_date && event.end_date > event.date);
+    get('[data-event-boundary-wrap]').hidden = !hasRange;
+    eventBoundary.value = entry.boundary;
+    eventTime.value = entry.boundary === 'end' ? '00:00' : entry.time;
+    get('[data-event-time-wrap]').hidden = entry.boundary === 'end';
+    setText(get('[data-time-note]'), entry.boundary === 'end'
+      ? 'Cilj je polnoč po zadnjem dnevu dogodka.'
+      : 'Uro lahko spremenite. Velja slovenski čas.');
+  }
+
+  function revealTimer(force = false) {
+    if (!force && !matchMedia('(max-width: 820px)').matches) return;
+    featureHeading.focus({ preventScroll: true });
+    display.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  }
+
+  function setActive(value, { reveal = false } = {}) {
+    const entry = cleanEntry(value);
+    if (!entry) return false;
+    const instant = entryInstant(entry);
+    if (instant === null) return false;
+
+    const event = eventMap.get(entry.event_id || entry.id);
+    if (event) entry.event_id = event.id;
+    active = {
+      entry,
+      instant,
+      began: entry.end_date ? instantAt(entry.date, '00:00', entry.zone) : null,
+      ends: entry.end_date ? instantAt(afterDay(entry.end_date), '00:00', entry.zone) : null,
+      targetLabel: `${formatDate(entryDate(entry))} ob ${entry.time}`
+    };
+    display.dataset.category = entry.category;
+    shareField.hidden = true;
+    setText(featureNotice, '');
+
+    setText(featureHeading, entry.title);
+    setText(get('[data-feature-zone]'), zones.get(entry.zone));
+    const categoryLabel = event?.category === 'holiday'
+      ? event.work_free ? 'Dela prosti praznik' : 'Praznik · ni dela prost dan'
+      : categoryNames[entry.category];
+    setText(get('[data-feature-category]'), categoryLabel);
+    setText(get('[data-feature-date]'), `${rangeLabel(entry)}${entry.end_date ? '' : ' ob ' + entry.time}`);
+    const venue = get('[data-feature-venue]');
+    venue.hidden = !(entry.category === 'festival' && event?.detail);
+    if (!venue.hidden) setText(venue, event.detail);
+    const source = get('[data-feature-source]');
+    const sourcePath = event?.path || event?.source_url;
+    source.hidden = !sourcePath;
+    if (sourcePath) source.href = sourcePath;
+
+    featureShare.disabled = false;
+    updateSaveButton();
+    updateEventSettings();
+    tick();
+    if (reveal) revealTimer(reveal === 'always');
+    return true;
+  }
+
+  function updateSaveButton() {
+    const alreadySaved = active && saved.some(entry => entry.id === active.entry.id);
+    featureSave.disabled = !active || alreadySaved;
+    setText(get('[data-save-label]'), alreadySaved ? 'Shranjeno' : 'Shrani');
+  }
+
+  const pad = n => String(n).padStart(2, '0');
+
+  function writeTimer(instant, slots, now) {
+    if (instant === null) return;
+    const total = Math.max(0, Math.ceil((instant - now) / 1000));
+    const values = [Math.floor(total / 86400), Math.floor(total / 3600) % 24, Math.floor(total / 60) % 60, total % 60];
+    slots[0].toggleAttribute('data-long', values[0] >= 1000);
+    slots.forEach((slot, index) => setText(slot, pad(values[index])));
+  }
+
+  function tick() {
+    const now = Date.now();
+    if (active) {
+      const { entry, instant, began, ends, targetLabel } = active;
+      const finished = instant <= now;
+      const current = began !== null && ends !== null && began <= now && now < ends;
+      writeTimer(instant, timerElements, now);
+      display.dataset.state = current ? 'ongoing' : finished ? 'finished' : 'pending';
+      setText(get('[data-feature-state]'), current ? 'Dogodek poteka' : finished ? 'Čas je potekel' : 'Odštevanje');
+      const status = current && finished ? 'Dogodek se je začel. Za odštevanje izberite konec zadnjega dne.'
+        : entry.provisional ? 'Predviden šolski termin'
+        : entry.boundary === 'end' ? `Konec zadnjega dne · ${targetLabel}`
+        : entry.end_date ? `Začetek · ${targetLabel}`
+        : '';
+      setText(get('[data-feature-status]'), status);
+    }
+    savedTimers.forEach(timer => writeTimer(timer.instant, timer.slots, now));
+  }
+
+  function chooseCalendarEvent(event, settings = {}) {
+    if (!event) return;
+    configureCategory(event.category);
+    if (event.category === 'school') {
+      if (['primary', 'secondary'].includes(event.school_level)) schoolLevel.value = event.school_level;
+      if (['east', 'west'].includes(event.region)) schoolRegion.value = event.region;
+      updateYears();
+    }
+    renderOptions(event.id);
+    setActive(settings.entry || defaultEntry(event), { reveal: settings.reveal });
+  }
+
+  function updateNext() {
+    const list = get('.countdown-next__list');
+    const dates = [];
+    all('[data-next-item]', list).forEach(item => {
+      const button = get('[data-next-event]', item);
+      const event = firstFuture(button.dataset.nextEvent);
+      item.hidden = !event;
+      button.dataset.eventId = event?.id || '';
+      if (!event) return;
+
+      dates.push({ item, date: event.date });
+      const fullDate = formatDate(event.date);
+      const date = get('[data-next-date]', button);
+      date.dateTime = event.date;
+      setText(get('[data-next-day]', date), String(Number(event.date.slice(8))));
+      setText(get('[data-next-month]', date), shortMonth.format(dateMs(event.date)));
+      setText(get('[data-next-year]', date), event.date.slice(0, 4));
+      setText(get('[data-next-name]', button), event.title);
+      button.setAttribute('aria-label', `Odštevaj · ${event.title} · ${fullDate}`);
+      const context = get('[data-next-context]', button);
+      const place = event.category === 'festival' ? event.detail : null;
+      context.hidden = !place;
+      setText(context, place || '');
+    });
+    dates.sort((a, b) => a.date.localeCompare(b.date));
+    list.append(...dates.map(slot => slot.item));
+    get('[data-next-section]').hidden = dates.length === 0;
+  }
+
+  const node = (tag, className = '', label) => {
+    const element = document.createElement(tag);
+    if (className) element.className = className;
+    if (label !== undefined) element.textContent = label;
+    return element;
+  };
+
+  function renderSaved() {
+    const list = get('[data-saved-list]');
+    list.replaceChildren();
+    savedTimers = [];
+    const hasSaved = saved.length > 0;
+    get('[data-saved-empty]').hidden = hasSaved;
+    const exportButton = get('[data-export-ics]');
+    exportButton.disabled = !hasSaved;
+    exportButton.hidden = !hasSaved;
+
+    saved.forEach((entry, index) => {
+      const card = node('article', 'countdown-saved-card');
+      const title = node('h3', '', entry.title);
+      const goal = node('p', '', `${formatDate(entryDate(entry))} ob ${entry.time} · ${zones.get(entry.zone)}`);
+      const timer = node('div', 'countdown-saved-card__clock');
+      timer.setAttribute('role', 'timer');
+      timer.setAttribute('aria-live', 'off');
+      timer.setAttribute('aria-label', 'Preostali čas');
+      const slots = ['dni', 'ur', 'min', 'sek'].map(label => {
+        const item = node('div');
+        const value = node('strong', '', '—');
+        item.append(value, node('span', '', label));
+        timer.append(item);
+        return value;
+      });
+      savedTimers.push({ slots, instant: entryInstant(entry) });
+
+      const actions = node('div', 'countdown-saved-card__actions');
+      const load = node('button', 'countdown-link', 'Prikaži');
+      load.type = 'button';
+      load.addEventListener('click', () => {
+        const event = eventMap.get(entry.event_id || entry.id);
+        if (event) chooseCalendarEvent(event, { entry });
+        else showCustom(entry);
+        featureHeading.focus({ preventScroll: true });
+        display.scrollIntoView({ block: 'start' });
+      });
+      const remove = node('button', 'countdown-link countdown-remove', 'Odstrani');
+      remove.type = 'button';
+      remove.setAttribute('aria-label', `Odstrani ${entry.title}`);
+      remove.addEventListener('click', () => {
+        saved.splice(index, 1);
+        const persisted = storeString(STORAGE_KEY, JSON.stringify(saved));
+        renderSaved();
+        updateSaveButton();
+        setText(get('[data-saved-status]'), persisted ? 'Odštevanje je odstranjeno.' : 'Spremembe ni mogoče shraniti v brskalnik.');
+        const nextControl = all('.countdown-remove', list)[index] || get('.countdown-remove', list) || get('#countdown-saved-title');
+        nextControl.focus();
+      });
+
+      actions.append(load, remove);
+      card.append(title, goal, timer, actions);
+      list.append(card);
+    });
+    tick();
+  }
+
+  featureSave.addEventListener('click', () => {
+    if (!active || saved.some(entry => entry.id === active.entry.id)) return;
+    if (saved.length >= 50) {
+      setText(featureNotice, 'Seznam je poln. Pred shranjevanjem odstranite en datum.');
+      return;
+    }
+    saved.unshift(active.entry);
+    const persisted = storeString(STORAGE_KEY, JSON.stringify(saved));
+    renderSaved();
+    updateSaveButton();
+    setText(featureNotice, persisted ? 'Odštevanje je shranjeno.' : 'Brskalnik ni dovolil trajnega shranjevanja.');
+  });
+
+  featureShare.addEventListener('click', async () => {
+    if (!active) return;
+    const { entry } = active;
+    const url = new URL(location.pathname, location.origin);
+    url.searchParams.set('date', entryDate(entry));
+    url.searchParams.set('time', entry.time);
+    url.searchParams.set('zone', entry.zone);
+    url.searchParams.set('title', entry.title);
+    const eventId = entry.event_id || (eventMap.has(entry.id) ? entry.id : null);
+    if (eventId) {
+      url.searchParams.set('event', eventId);
+      if (entry.boundary === 'end') url.searchParams.set('target', 'end');
+    }
+
+    shareInput.value = url.href;
+    shareField.hidden = false;
+    try {
+      await navigator.clipboard.writeText(url.href);
+      if (active?.entry.id === entry.id) setText(featureNotice, 'Povezava je kopirana.');
+    } catch {
+      if (active?.entry.id !== entry.id) return;
+      setText(featureNotice, 'Kopirajte povezavo iz prikazanega polja.');
+      shareInput.select();
+    }
+  });
+
+  const escapeIcs = value => value.replace(/[\\;,]/g, match => '\\' + match).replace(/\r?\n/g, '\\n');
+  const dateIcs = value => value.replace(/-/g, '');
+  const utcIcs = value => new Date(value).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
+
+  get('[data-export-ics]').addEventListener('click', () => {
+    const lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Koledar365//Odstevanje//SL', 'CALSCALE:GREGORIAN'];
+    saved.forEach(entry => {
+      const instant = entryInstant(entry);
+      if (instant === null) return;
+      lines.push('BEGIN:VEVENT', `UID:${encodeURIComponent(entry.id)}@koledar365.si`, `DTSTAMP:${utcIcs(Date.now())}`);
+      if (entry.all_day) {
+        lines.push(`DTSTART;VALUE=DATE:${dateIcs(entry.date)}`, `DTEND;VALUE=DATE:${dateIcs(afterDay(entry.end_date || entry.date))}`);
+      } else {
+        lines.push(`DTSTART:${utcIcs(instant)}`, `DTEND:${utcIcs(instant + 3600000)}`);
+      }
+      lines.push(`SUMMARY:${escapeIcs(entry.title)}`, `DESCRIPTION:${escapeIcs(entry.detail || 'Odštevanje na Koledar365.si')}`, 'END:VEVENT');
+    });
+    lines.push('END:VCALENDAR', '');
+    globalThis.Calendar365Downloads.save(lines.join('\r\n'), 'koledar365-odstevanje.ics', 'text/calendar;charset=utf-8');
+  });
+
+  function showCustom(entry, reveal = false) {
+    configureCategory('custom');
+    const form = customForm.elements;
+    form.title.value = entry.title;
+    form.date.value = entryDate(entry);
+    form.time.value = entry.time;
+    form.zone.value = entry.zone;
+    setActive(entry, { reveal });
+  }
+
+  function restoreShared() {
+    const params = new URLSearchParams(location.search);
+    const event = eventMap.get(params.get('event'));
+    const time = params.get('time') || '00:00';
+    if (event) {
+      const selected = calendarEntry(event, params.get('target'), time);
+      if (selected && entryInstant(selected) !== null) {
+        chooseCalendarEvent(event, { entry: selected });
+        return true;
+      }
+    }
+
+    const date = params.get('date');
+    const zone = params.get('zone') || SLOVENIAN_ZONE;
+    const title = params.get('title');
+    if (!title?.trim() || instantAt(date, time, zone) === null) return false;
+    showCustom({ id: `shared-${date}-${time}-${zone}-${title.slice(0, 64)}`, title, date, time, zone, category: 'custom' });
+    return true;
+  }
+
+  tabs.forEach(tab => tab.addEventListener('click', () => {
+    const kind = tab.dataset.eventFilter;
+    if (kind === category) return;
+    configureCategory(kind);
+    if (kind === 'custom') {
+      customForm.elements.title.focus();
+      return;
+    }
+    const first = firstFuture(kind) || upcoming(kind)[0];
+    renderOptions(first?.id);
+    if (first) setActive(defaultEntry(first));
+  }));
+
+  [search, yearSelect].forEach(control => control.addEventListener(control === search ? 'input' : 'change', () => {
+    renderOptions(active?.entry.event_id);
+  }));
+
+  [
+    [schoolLevel, REGION_KEY + '.level'],
+    [schoolRegion, REGION_KEY]
+  ].forEach(([control, key]) => control.addEventListener('change', () => {
+    storeString(key, control.value);
+    updateYears();
+    const first = firstFuture('school') || upcoming('school')[0];
+    renderOptions(first?.id);
+    if (first) setActive(defaultEntry(first));
+    updateNext();
+  }));
+
+  eventSelect.addEventListener('change', () => {
+    const event = eventMap.get(eventSelect.value);
+    if (event) setActive(defaultEntry(event), { reveal: true });
+    else updateEventSettings();
+  });
+
+  [eventBoundary, eventTime].forEach(control => control.addEventListener('change', () => {
+    const event = eventMap.get(eventSelect.value);
+    if (!event) return;
+    const selection = calendarEntry(event, eventBoundary.value, eventTime.value);
+    if (!setActive(selection)) setText(get('[data-time-note]'), 'Izbrana ura ne obstaja. Izberite drugo uro.');
+  }));
+
+  customForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const form = customForm.elements;
+    const title = form.title.value.trim();
+    const date = form.date.value;
+    const time = form.time.value;
+    const zone = form.zone.value;
+    const status = get('[data-custom-status]');
+    if (!title || !validDate(date) || !validTime(time) || !zones.has(zone)) {
+      setText(status, 'Preverite ime, datum, uro in časovni pas.');
+      return;
+    }
+    const id = `custom-${date}-${time}-${zone}-${title}`;
+    if (!setActive({ id, title, date, time, zone, category: 'custom', detail: 'Osebni datum' }, { reveal: true })) {
+      setText(status, 'Izbrana ura v tem časovnem pasu ne obstaja zaradi premika ure.');
+      return;
+    }
+    setText(status, '');
+  });
+
+  all('[data-next-event]').forEach(button => button.addEventListener('click', () => {
+    chooseCalendarEvent(eventMap.get(button.dataset.eventId), { reveal: 'always' });
+  }));
+
+  if (!restoreShared()) {
+    const initial = firstFuture('holiday') || firstFuture('festival') || firstFuture('school') || firstFuture('observance');
+    if (initial) chooseCalendarEvent(initial);
+    else { configureCategory('holiday'); renderOptions(); }
+  }
+  if (category !== 'custom') {
+    customForm.elements.date.value = afterDay(localDate());
+    if (location.hash === '#moj-datum') {
+      configureCategory('custom');
+      requestAnimationFrame(() => customForm.scrollIntoView());
+    }
+  }
+  updateNext();
+  renderSaved();
+  setInterval(tick, 1000);
+  document.addEventListener('visibilitychange', tick);
 })();

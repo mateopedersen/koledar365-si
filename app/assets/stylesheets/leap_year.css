@@ -34,13 +34,13 @@
 .leap-kicker > i { width: 8px; height: 8px; border-radius: 50%; background: #c9233f; box-shadow: 0 0 0 4px #c9233f16; }
 .leap-hero h1 { max-width: 670px; margin: 17px 0 14px; color: #172f4a; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; letter-spacing: -1.9px; }
 .leap-hero__copy > p { max-width: 61ch; margin: 0; color: #4d6278; font-size: 17px; line-height: 1.7; }
-.leap-hero__facts { display: flex; align-items: center; gap: 15px; margin-top: 28px; }
-.leap-hero__facts > span:not(.leap-hero__plus) { display: grid; gap: 0; }
-.leap-hero__facts strong { color: #143a60; font-size: 26px; line-height: 1.15; letter-spacing: -.7px; }
-.leap-hero__facts small { color: #60758a; font-size: 12px; }
-.leap-hero__plus { color: #c9233f; font-size: 24px; font-weight: 500; }
-.leap-hero__facts .leap-hero__date { margin-left: 13px; padding: 9px 14px; border: 1px solid #e0b6bf; border-radius: 12px; background: #fff6f7; }
-.leap-hero__date strong { color: #b51f39; font-size: 20px; }
+
+
+
+
+
+
+
 .leap-hero__art { min-width: 0; text-align: center; }
 .leap-hero__art svg { display: block; width: min(100%, 520px); height: auto; margin: -8px auto -4px; }
 .leap-hero__caption { display: inline-flex; align-items: center; gap: 8px; color: #536b83; font-size: 13px; }
@@ -91,7 +91,7 @@
 .leap-rule-card::before { position: absolute; top: 0; right: 0; left: 0; height: 4px; background: #145b97; content: ""; }
 .leap-rule-card--red::before { background: #c9233f; }
 .leap-rule-card--gold::before { background: #d29a37; }
-.leap-rule-card__number { position: absolute; top: 17px; right: 18px; color: #91a2b3; font-size: 11px; font-weight: 800; letter-spacing: 1px; }
+.leap-rule-card__number { position: absolute; top: 17px; right: 18px; color: #526982; font-size: 11px; font-weight: 800; letter-spacing: 1px; }
 .leap-rule-card__math { display: grid; width: 66px; height: 66px; place-items: center; margin: 0 0 18px; border: 1px solid #cadae9; border-radius: 18px; background: #eff5fa; color: #145b97; font-size: 22px; font-weight: 850; }
 .leap-rule-card--red .leap-rule-card__math { border-color: #edc8cf; background: #fff3f5; color: #bd233b; }
 .leap-rule-card--gold .leap-rule-card__math { border-color: #ebdcbb; background: #fff9ea; color: #9c6b13; }
@@ -132,8 +132,8 @@
 .leap-cycle__year > span:not(.leap-cycle__dot) { font-size: 13px; }
 .leap-cycle__year small { color: #78899a; font-size: 12px; }
 .leap-cycle__year.is-leap strong,.leap-cycle__year.is-leap > span:not(.leap-cycle__dot) { color: #b1203b; font-weight: 800; }
-.leap-cycle__footnote { margin: 22px 0 0; padding-top: 16px; border-top: 1px solid #dbe5ed; color: #667b8e; font-size: 11px; line-height: 1.7; }
-#vsebina .leap-cycle__footnote { color: #667b8e; font-size: 12px; line-height: 1.7; }
+.leap-cycle__footnote { margin: 22px 0 0; padding-top: 16px; border-top: 1px solid #dbe5ed; color: #536a80; font-size: 11px; line-height: 1.7; }
+#vsebina .leap-cycle__footnote { color: #536a80; font-size: 12px; line-height: 1.7; }
 .leap-cycle__footnote a { display: inline; margin-left: 3px; font-size: inherit; }
 .leap-faq .leap-section-heading { margin-bottom: 14px; }
 .leap-faq details { padding: 15px 18px; border-bottom: 1px solid #dce5ee; background: #fff; }
@@ -153,7 +153,7 @@
 .leap-related strong { font-size: 14px; }
 .leap-related small { color: #687d90; font-size: 14px; line-height: 1.45; }
 #vsebina .leap-presets button { font-size: 13px !important; font-weight: 750 !important; }
-#vsebina .leap-hero__facts small { color: #60758a !important; font-size: 12px !important; line-height: 1.4; }
+
 #vsebina .leap-cycle__year small { color: #78899a !important; font-size: 12px !important; line-height: 1.3; }
 #vsebina .leap-related small { color: #687d90 !important; font-size: 14px !important; line-height: 1.45; }
 .leap-related > a > b { margin-left: auto; color: #145b97; font-size: 17px; }
@@ -169,7 +169,7 @@
   .leap-hero { grid-template-columns: minmax(0, 1fr); min-height: 0; gap: 5px; margin-bottom: 21px; padding: 27px 22px 18px; border-radius: 20px; }
   .leap-hero h1 { max-width: 560px; font-size: clamp(32px, 9vw, 43px); }
   #vsebina .leap-hero__copy > p { max-width: 58ch; font-size: 16px; }
-  .leap-hero__facts { margin-top: 21px; }
+
   .leap-hero__art { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; margin: -2px auto -4px; }
   .leap-hero__art svg { width: min(100%, 410px); max-height: 290px; margin: -8px auto -5px; }
   .leap-check { grid-template-columns: minmax(0, 1fr); gap: 20px; margin-bottom: 39px; padding: 22px; border-radius: 18px; }
@@ -199,9 +199,9 @@
 }
 @media (max-width: 390px) {
   .leap-hero { padding-right: 16px; padding-left: 16px; }
-  .leap-hero__facts { gap: 10px; }
-  .leap-hero__facts strong { font-size: 23px; }
-  .leap-hero__facts .leap-hero__date { margin-left: 2px; padding: 8px 10px; }
+
+
+
   .leap-check { padding: 18px 15px; }
   .leap-check__input-row { grid-template-columns: minmax(0, 1fr); }
   .leap-check__submit { width: 100%; }

@@ -2,19 +2,18 @@ class SearchService
   def self.call(query)
     return [] if query.blank?
     f=PersonName.fold(query);tokens=f.split
-    pages=Page.published.reject { |p| p.path.match?(PagesController::REMOVED_NAME_PATHS) || PublicPagePolicy.redirect(p.path) }.filter_map do |p|
-      hay=PersonName.fold(p.title+' '+p.path)
+    pages=Page.published.reject { |p| p.family == 'festival_detail' || p.path.match?(PagesController::REMOVED_NAME_PATHS) || PublicPagePolicy.redirect(p.path) }.filter_map do |p|
+      hay=PersonName.fold([p.title, p.path, SlovenianResources::SEARCH_TERMS[p.path]].compact.join(' '))
       score=tokens.count { |w| hay.include?(w) }
       next if score==0
       {title:p.title,path:p.path,type:'Koledar in orodja',score:score*10-(p.path.count('/')/10.0)}
     end
     pages.concat(OccasionCatalog.festivals.filter_map do |festival|
       title=festival.fetch('title')
-      hay=PersonName.fold([title,festival.fetch('place'),OccasionCatalog::KINDS.fetch(festival.fetch('kind')),
-        *festival.fetch('editions').map { |edition| edition.fetch('start') }].join(' '))
+      hay=PersonName.fold(OccasionCatalog.festival_search_text(festival))
       score=tokens.count { |word| hay.include?(word) }
       next if score==0
-      {title:title,path:OccasionCatalog.festival_path(festival.fetch('slug')),type:'Festivali in prireditve',score:score*10}
+      {title:title,path:OccasionCatalog.festival_detail_path(festival.fetch('slug')),type:'Festivali in prireditve',score:score*10}
     end)
     aliases={'lunine mene'=>'/lunine-mene/','polna luna'=>'/polna-luna/','izracun znamenja'=>'/horoskop/izracun-znamenja/'}
     if aliases[f]
