@@ -45,7 +45,12 @@ class PortableRecord
   def local_time = instant.in_time_zone('Europe/Ljubljana')
 end
 class CalendarEvent
-  def self.all = @all ||= PortableRows.new(JSON.parse(File.read('/app/data/events.json')).map { |data| PortableRecord.new(data.merge('on'=>Date.iso8601(data['on']))) })
+  def self.all
+    @all ||= PortableRows.new(JSON.parse(File.read('/app/data/events.json')).map do |data|
+      %w[on ends_on].each { |key| data[key] = Date.iso8601(data[key]) if data[key] }
+      PortableRecord.new(data)
+    end)
+  end
   def self.where(**conditions) = all.where(**conditions)
 end
 class AstronomicalEvent
@@ -69,6 +74,7 @@ class ApplicationController
   def initialize(data) = @params=data.with_indifferent_access
   def params = @params
   attr_reader :response
+  def headers = (@headers ||= {})
   def render(json:,**options) = @response=json
   def send_data(body,**options) = @response={binary:Base64.strict_encode64(body),mime:options[:type],filename:options[:filename]}
 end

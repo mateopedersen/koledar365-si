@@ -153,8 +153,14 @@ module ApplicationHelper
     site_origin+page_path
   end
   def event_path(event)
+    return OccasionCatalog.festival_path(event.slug) if event.category=='festival'
     candidates=["/prazniki/#{event.slug}/","/pomembni-dnevi/#{event.slug}/","/letni-casi/#{event.slug}/"]
     candidates.find { |s| @all_page_paths.include?(s) } || "/pomembni-dnevi/#{event.on.year}/"
+  end
+  def occasion_date_label(first, last = first)
+    return I18n.l(first) if first == last
+    return "#{first.day}.–#{I18n.l(last)}" if first.year == last.year && first.month == last.month
+    "#{I18n.l(first)}–#{I18n.l(last)}"
   end
   def page_links(prefix)
     Page.where('path LIKE ?',"#{prefix}%").order(:path)

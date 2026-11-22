@@ -12,14 +12,14 @@ class ObservancePage
   end
 
   def by_year = events.group_by { |event|event.on.year }
-  def lead = TopicContent.body(slug).split(/(?<=[.!?])\s+(?=[[:upper:]])/).first
+  def lead = TopicContent.body(slug).split(/(?<!\bsv\.)(?<!\bdr\.)(?<!\bprof\.)(?<=[.!?])\s+(?=[[:upper:]])/,2).first
   def fixed? = by_year.values.map { |rows|rows.map { |event|event.on.strftime('%m-%d') } }.uniq.size==1
   def legal? = events.first.category=='legal'
   def free? = events.all?(&:work_free)
   def state? = events.any?(&:state_holiday)
   def theme
     return 'memorial' if MEMORIAL.include?(slug)
-    return 'faith' if RELIGIOUS.include?(slug)
+    return 'faith' if religious?
     return 'nature' if events.first.category.match?(/environment|astronomical/) || slug=='dan-triglava'
     return 'civic' if legal?
     return 'community' if events.first.category.match?(/international|european/)
@@ -27,14 +27,16 @@ class ObservancePage
   end
   def category
     return 'Državni praznik' if state?
-    return 'Verski praznik' if RELIGIOUS.include?(slug)
+    return 'Verski praznik' if religious?
     return 'Spominski dan' if MEMORIAL.include?(slug)
     return 'Astronomski dogodek' if events.first.category=='astronomical'
     return 'Premik ure' if events.first.category=='civil_time'
+    return 'Občinski praznik' if events.first.category=='slovenian_municipal'
     return 'Mednarodni dan' if events.first.category.start_with?('international')
     return 'Evropski dan' if events.first.category.start_with?('european')
     'Slovensko izročilo in pomembni dnevi'
   end
+  def religious? = RELIGIOUS.include?(slug) || events.first.category.start_with?('religious')
   def status = free? ? 'Zakonsko dela prost dan' : 'Sam po sebi ni dela prost dan'
   def related
     rows=CalendarEvent.where(on:Date.new(2027,1,1)..Date.new(2027,12,31),category:events.first.category).where.not(slug:slug).ordered.to_a

@@ -24,14 +24,23 @@ class ExpansionCatalog
       .merge(GardenCalendar::PATH=>{title:GardenCalendar::TITLE,description:GardenCalendar::DESCRIPTION,family:'garden'})
       .merge(PaymentCalendar::PAGES.transform_values{|page|page.merge(family:'payments')})
       .merge(ShoppingGuides.pages)
+      .merge(OccasionCatalog.pages)
   end
   def self.page(path) = pages[path]
   def self.apply!
     pages.each do |path,metadata|
       page=Page.find_or_initialize_by(path:path)
       page.assign_attributes(title:metadata.fetch(:title),description:metadata.fetch(:description),family:metadata[:family]||page.family||'information',status:'published')
-      page.metadata=(page.metadata||{}).merge('source_reviewed_on'=>(ShoppingGuides.page(path) ? ShoppingGuides::CHECKED : REVIEWED_ON),'editorial_registry'=>'advanced-calendar-expansion')
-      page.updated_at=(ShoppingGuides.page(path) ? Time.utc(2026,11,16,12,0,0) : Time.utc(2026,10,21,17,0,0)) if page.changed?
+      reviewed_on=if OccasionCatalog.pages.key?(path)
+        OccasionCatalog.checked_on
+      elsif ShoppingGuides.page(path)
+        ShoppingGuides::CHECKED
+      else
+        REVIEWED_ON
+      end
+      page.metadata=(page.metadata||{}).merge('source_reviewed_on'=>reviewed_on,'editorial_registry'=>'advanced-calendar-expansion')
+      hour=reviewed_on==REVIEWED_ON ? '17:00:00' : '12:00:00'
+      page.updated_at=Time.iso8601("#{reviewed_on}T#{hour}Z") if page.changed?
       page.save! if page.changed?
     end
   end

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post '/ics/uvoz/' => 'tools#import_ics'
   post '/ics/izvoz/' => 'tools#export_ics'
   get '/prazniki/:year.ics' => 'tools#holidays_ics'
+  get '/festivali/:slug/:date.ics' => 'tools#festival_ics', constraints: { date: /\d{4}-\d{2}-\d{2}/ }
   post '/fotografija/' => 'photos#create'
   post '/zasebni-predogled/' => 'previews#personal'
   post '/planer/ics/' => 'tools#planner_ics'

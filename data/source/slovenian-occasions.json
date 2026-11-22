@@ -1,0 +1,1169 @@
+{
+  "checked_on": "2026-11-22",
+  "observances": [
+    {
+      "slug": "svecnica",
+      "title": "Svečnica",
+      "category": "religious_catholic",
+      "rule": {
+        "kind": "fixed",
+        "month": 2,
+        "days": [
+          2
+        ]
+      },
+      "source_url": "https://katoliska-cerkev.si/cerkveno-leto",
+      "source_title": "Katoliška cerkev v Sloveniji",
+      "description": "Svečnica je katoliški praznik Jezusovega darovanja v templju. V koledarju je 2. februarja, štirideseti dan, če začnemo šteti z božičnim dnem.",
+      "practice": "Ime je povezano s svečami, ki jih ob prazniku blagoslovijo pri bogoslužju. Za obisk maše ali blagoslova preverite oznanila svoje župnije."
+    },
+    {
+      "slug": "pepelnica",
+      "title": "Pepelnica",
+      "category": "religious_catholic",
+      "rule": {
+        "kind": "gregorian_easter",
+        "offsets_days": [
+          -46
+        ]
+      },
+      "source_url": "https://www.katoliska-cerkev.si/postni-cas-v-katoliski-cerkvi2020",
+      "source_title": "Slovenska škofovska konferenca",
+      "description": "Pepelnica ali pepelnična sreda sledi pustnemu torku. V rimskokatoliškem koledarju je 46 koledarskih dni pred velikonočno nedeljo in označuje začetek posta.",
+      "practice": "Pri bogoslužju je značilno pepeljenje, pri katerem verniki prejmejo znamenje s pepelom. Uro obreda določi župnija. Od pustne povorke do pepelnice se tako v nekaj dneh spremeni namen obeležitve."
+    },
+    {
+      "slug": "dan-civilne-zascite",
+      "title": "Dan Civilne zaščite",
+      "category": "slovenian_commemorative",
+      "rule": {
+        "kind": "fixed",
+        "month": 3,
+        "days": [
+          1
+        ]
+      },
+      "source_url": "https://www.gov.si/novice/2024-03-01-kipec-civilne-zascite-letos-prejel-bojan-kopac/",
+      "source_title": "Uprava RS za zaščito in reševanje",
+      "description": "Dan Civilne zaščite v Sloveniji obeležujemo 1. marca v zahvalo ljudem, ki sodelujejo pri preprečevanju nesreč ter zaščiti in reševanju.",
+      "practice": "Na državni slovesnosti podeljujejo priznanja za delo v sistemu varstva pred nesrečami. Leta 2024 je potekala na Brdu pri Kranju. Kraj in udeležbo za posamezno leto objavi organizator."
+    },
+    {
+      "slug": "jozefovo",
+      "title": "Jožefovo",
+      "category": "religious_catholic",
+      "rule": {
+        "kind": "fixed",
+        "month": 3,
+        "days": [
+          19
+        ]
+      },
+      "source_url": "https://www.katoliska-cerkev.si/praznik-sv-jozefa-moza-device-marije1",
+      "source_title": "Slovenska škofovska konferenca",
+      "description": "Jožefovo je 19. marca. V katoliškem izročilu je sv. Jožef, Jezusov skrbnik, tudi zavetnik očetov, družin in obrtnikov.",
+      "practice": "V Celju je z Jožefovim povezan romarski shod pri cerkvi sv. Jožefa na Jožefovem hribu. Obeležitev očetovstva ima v različnih državah različne datume; tukaj je vpisan datum slovenskega cerkvenega izročila."
+    },
+    {
+      "slug": "mednarodni-dan-knjig-za-otroke",
+      "title": "Mednarodni dan knjig za otroke",
+      "category": "international_cultural",
+      "rule": {
+        "kind": "fixed",
+        "month": 4,
+        "days": [
+          2
+        ]
+      },
+      "source_url": "https://www.ibby.org/awards-activities/activities/international-childrens-book-day",
+      "source_title": "Mednarodna zveza za mladinsko književnost IBBY",
+      "description": "Mednarodni dan knjig za otroke je povezan z 2. aprilom, rojstnim dnem Hansa Christiana Andersena. IBBY ga namenja spodbujanju branja in vidnosti mladinske književnosti.",
+      "practice": "V knjižnici izberite knjigo za skupno branje ali preverite, ali pripravljajo pravljično uro. Letošnji plakat in poslanico poiščite pri IBBY; vsako leto ju pripravi druga nacionalna sekcija."
+    },
+    {
+      "slug": "dan-slovenske-zastave",
+      "title": "Dan slovenske zastave",
+      "category": "slovenian_commemorative",
+      "rule": {
+        "kind": "fixed",
+        "month": 4,
+        "days": [
+          7
+        ]
+      },
+      "source_url": "https://www.gov.si/novice/2021-04-07-dan-slovenske-zastave/",
+      "source_title": "Ministrstvo za obrambo",
+      "description": "Sedmi april obeležuje prvo izobešanje slovenske narodne trobojnice v Ljubljani leta 1848. Dogodek je povezan z Lovrom Tomanom in Wolfovo ulico.",
+      "practice": "K temi sodijo spominske slovesnosti in prikaz zgodovine zastave. Ko obiščete Wolfovo ulico, ločite zgodovinsko belo-modro-rdečo trobojnico od današnje državne zastave z grbom."
+    },
+    {
+      "slug": "svetovni-dan-zdravja",
+      "title": "Svetovni dan zdravja",
+      "category": "international_awareness",
+      "rule": {
+        "kind": "fixed",
+        "month": 4,
+        "days": [
+          7
+        ]
+      },
+      "source_url": "https://www.who.int/campaigns/world-health-day/",
+      "source_title": "Svetovna zdravstvena organizacija",
+      "description": "Svetovni dan zdravja je 7. aprila, na obletnico ustanovitve Svetovne zdravstvene organizacije. WHO za posamezno leto izbere osrednjo temo.",
+      "practice": "Slovenske zdravstvene ustanove lahko ob tej priložnosti ponudijo predavanja in predstavitve preventive. Tema kampanje in termini krajevnih dejavnosti se preverjajo posebej."
+    },
+    {
+      "slug": "svetovni-dan-romov",
+      "title": "Svetovni dan Romov",
+      "category": "international_commemoration",
+      "rule": {
+        "kind": "fixed",
+        "month": 4,
+        "days": [
+          8
+        ]
+      },
+      "source_url": "https://www.gov.si/novice/2026-04-08-iskrene-cestitke-ob-svetovnem-dnevu-romov/",
+      "source_title": "Urad Vlade RS za narodnosti",
+      "description": "Svetovni dan Romov obeležujemo 8. aprila. Posvečen je romski kulturi, jeziku in enakopravnemu sodelovanju v družbi.",
+      "practice": "Za javne prireditve poiščite objave romskih društev, kulturnih centrov ali lokalnih ustanov. Datum obeležitve ostaja 8. april, razstave in proslave pa lahko potekajo tudi v drugem terminu."
+    },
+    {
+      "slug": "veliki-cetrtek",
+      "title": "Veliki četrtek",
+      "category": "religious_catholic",
+      "rule": {
+        "kind": "gregorian_easter",
+        "offsets_days": [
+          -3
+        ]
+      },
+      "source_url": "https://katoliska-cerkev.si/veliki-cetrtek2026",
+      "source_title": "Slovenska škofovska konferenca",
+      "description": "Veliki četrtek je četrtek pred veliko nočjo. Z večernim bogoslužjem ob spominu na zadnjo večerjo se začne velikonočno tridnevje.",
+      "practice": "Krizmova maša in večerno bogoslužje imata različna namena in lahko potekata v različnih cerkvah. Oznanila škofije ali župnije so zato za obisk uporabnejša od splošnega datuma."
+    },
+    {
+      "slug": "velika-sobota",
+      "title": "Velika sobota",
+      "category": "religious_catholic",
+      "rule": {
+        "kind": "gregorian_easter",
+        "offsets_days": [
+          -1
+        ]
+      },
+      "source_url": "https://katoliska-cerkev.si/velika-sobota2026",
+      "source_title": "Slovenska škofovska konferenca",
+      "description": "Velika sobota je dan pred velikonočno nedeljo. V Sloveniji je med prepoznavnimi običaji blagoslov velikonočnih jedi, denimo kruha, pirhov in hrena.",
+      "practice": "V mnogih krajih je blagoslov jedi čez dan, velikonočna vigilija pa zvečer. Ure in zbirna mesta preverite pri krajevni župniji."
+    },
+    {
+      "slug": "gospodov-vnebohod",
+      "title": "Gospodov vnebohod",
+      "category": "religious_catholic",
+      "rule": {
+        "kind": "gregorian_easter",
+        "offsets_days": [
+          39
+        ]
+      },
+      "source_url": "https://katoliska-cerkev.si/praznik-gospodovega-vnebohoda",
+      "source_title": "Slovenska škofovska konferenca",
+      "description": "Gospodov vnebohod v katoliškem koledarju pade na četrtek. Gre za štirideseti dan, če je velikonočna nedelja prvi dan štetja.",
+      "practice": "Obeležitev je povezana s pripovedjo o Jezusovem vnebohodu. Praznična bogoslužja imajo krajevne urnike, od binkoštne nedelje pa jih loči deset dni."
+    },
+    {
+      "slug": "dan-slovenske-vojske",
+      "title": "Dan Slovenske vojske",
+      "category": "slovenian_commemorative",
+      "rule": {
+        "kind": "fixed",
+        "month": 5,
+        "days": [
+          15
+        ]
+      },
+      "source_url": "https://www.gov.si/novice/2026-05-16-slovesnost-ob-koncu-praznovanja-dneva-slovenske-vojske-2026-v-novem-mestu/",
+      "source_title": "Ministrstvo za obrambo",
+      "description": "Slovenska vojska svoj dan obeležuje 15. maja, ko so leta 1991 prvo generacijo slovenskih nabornikov začeli usposabljati na Igu in v Pekrah.",
+      "practice": "Z obeležitvijo so povezane javne predstavitve in slovesnosti. Primer iz leta 2026 je predstavitev na Glavnem trgu v Novem mestu. Prihodnji kraj in program objavita vojska ali obrambno ministrstvo."
+    },
+    {
+      "slug": "mednarodni-dan-muzejev",
+      "title": "Mednarodni dan muzejev",
+      "category": "international_cultural",
+      "rule": {
+        "kind": "fixed",
+        "month": 5,
+        "days": [
+          18
+        ]
+      },
+      "source_url": "https://www.gov.si/novice/2026-05-15-mednarodni-dan-muzejev-2026/",
+      "source_title": "Ministrstvo za kulturo",
+      "description": "Mednarodni dan muzejev je 18. maja. Nastal je na pobudo mednarodnega muzejskega sveta ICOM in javnost vabi k raziskovanju muzejskih zbirk.",
+      "practice": "Slovenski muzeji in galerije pripravljajo izbrane oglede, delavnice in druge programe. Pri konkretni ustanovi preverite uro, vstop in prijavo. Poletna muzejska noč ima svoj ločen program."
+    },
+    {
+      "slug": "dan-slovenske-diplomacije",
+      "title": "Dan slovenske diplomacije",
+      "category": "slovenian_commemorative",
+      "rule": {
+        "kind": "fixed",
+        "month": 5,
+        "days": [
+          22
+        ]
+      },
+      "source_url": "https://www.gov.si/novice/2026-05-19-ministrica-fajon-ponosna-sem-na-slovensko-diplomacijo/",
+      "source_title": "Ministrstvo za zunanje in evropske zadeve",
+      "description": "Dan slovenske diplomacije je 22. maja, na obletnico sprejema Slovenije v Organizacijo združenih narodov leta 1992.",
+      "practice": "Obeležitev zajema delo diplomatskih predstavništev in slovensko sodelovanje v mednarodnih organizacijah. Ministrska slovesnost je lahko na drug dan; leta 2026 je potekala 19. maja."
+    },
+    {
+      "slug": "sveto-resnje-telo-in-kri",
+      "title": "Sveto Rešnje telo in kri",
+      "category": "religious_catholic",
+      "rule": {
+        "kind": "gregorian_easter",
+        "offsets_days": [
+          60
+        ]
+      },
+      "source_url": "https://katoliska-cerkev.si/praznik-sv-resnjega-telesa-in-krvi",
+      "source_title": "Slovenska škofovska konferenca",
+      "description": "Sveto Rešnje telo in kri, tudi telovo, je katoliški praznik evharistije. Datum je drugi četrtek po binkoštih, 60 dni po velikonočni nedelji.",
+      "practice": "Poleg bogoslužja ponekod pripravijo procesijo. Pot procesije in uro preverite v župnijskih oznanilih, saj se izvedba med kraji razlikuje."
+    },
+    {
+      "slug": "kresna-noc",
+      "title": "Kresna noč",
+      "category": "folk",
+      "rule": {
+        "kind": "fixed",
+        "month": 6,
+        "days": [
+          23
+        ]
+      },
+      "source_url": "https://www.etno-muzej.si/sl/blog-nesnovna-dediscina/na-kresno-noc-spletite-vencek-sv-ivana",
+      "source_title": "Slovenski etnografski muzej",
+      "description": "Kresna ali ivanjska noč je večer 23. junija pred godom sv. Janeza Krstnika. Sodi v poletno ljudsko izročilo.",
+      "practice": "Na Krasu in v nekaterih primorskih krajih se ohranja spletanje venčkov sv. Ivana, ki jih pritrdijo na vrata. Kresne prireditve imajo svoje datume in se razlikujejo tudi od prvomajskega kresovanja."
+    },
+    {
+      "slug": "dan-policije",
+      "title": "Dan policije",
+      "category": "slovenian_commemorative",
+      "rule": {
+        "kind": "fixed",
+        "month": 6,
+        "days": [
+          27
+        ]
+      },
+      "source_url": "https://www.policija.si/index.php/o-policiji/202",
+      "source_title": "Policija",
+      "description": "Slovenska policija praznuje 27. junija. Datum je povezan z vlogo takratne milice ob začetku osamosvojitvene vojne leta 1991.",
+      "practice": "Slovesnosti in javne predstavitve objavi policija. Državna slovesnost lahko poteka že v začetku junija, zato 27. junij služi kot datum obeležitve, ne ura ali kraj prireditve."
+    },
+    {
+      "slug": "svetovni-dan-turizma",
+      "title": "Svetovni dan turizma",
+      "category": "international_awareness",
+      "rule": {
+        "kind": "fixed",
+        "month": 9,
+        "days": [
+          27
+        ]
+      },
+      "source_url": "https://www.gov.si/novice/2023-09-26-nalozbe-v-ljudi-planet-in-blaginjo-obelezujemo-svetovni-dan-turizma-2023/",
+      "source_title": "Ministrstvo za gospodarstvo, turizem in šport",
+      "description": "Svetovni dan turizma je 27. septembra. Z njim se izpostavljajo vplivi turizma na kraje, njihovo prebivalstvo, gospodarstvo in okolje.",
+      "practice": "Za lokalna vodenja ali druge tematske dogodke preverite objave turistično-informacijskega centra. Isti datum ima lahko vsako leto drugačno mednarodno temo."
+    },
+    {
+      "slug": "dan-splosnih-knjiznic",
+      "title": "Dan slovenskih splošnih knjižnic",
+      "category": "slovenian_cultural",
+      "rule": {
+        "kind": "fixed",
+        "month": 11,
+        "days": [
+          20
+        ]
+      },
+      "source_url": "https://www.ljubljana.si/sl/aktualno/novice/teden-slovenskih-splosnih-knjiznic",
+      "source_title": "Mestna občina Ljubljana in splošne knjižnice",
+      "description": "Dan slovenskih splošnih knjižnic je 20. novembra. Poudarja delo knjižnic, ki poleg izposoje ponujajo prostor za učenje, branje in srečevanje.",
+      "practice": "Obeležitev se povezuje s tednom splošnih knjižnic. Posamezne knjižnice izberejo različne dejavnosti, od bralnih srečanj do predstavitev storitev."
+    },
+    {
+      "slug": "mednarodni-dan-prostovoljstva",
+      "title": "Mednarodni dan prostovoljstva",
+      "category": "international_social",
+      "rule": {
+        "kind": "fixed",
+        "month": 12,
+        "days": [
+          5
+        ]
+      },
+      "source_url": "https://www.gov.si/novice/2019-12-05-5-decembra-obelezujemo-mednarodni-dan-prostovoljstva/",
+      "source_title": "Vlada Republike Slovenije",
+      "description": "Mednarodni dan prostovoljstva je 5. decembra. Namenjen je priznanju prostovoljskemu delu in spodbujanju sodelovanja v skupnosti.",
+      "practice": "V Sloveniji lahko organizacije ob dnevu pripravijo srečanja ali predstavijo možnosti za pomoč. Če vas zanima sodelovanje, preverite pogoje in uvajanje pri organizaciji v svojem kraju."
+    },
+    {
+      "slug": "mednarodni-dan-gora",
+      "title": "Mednarodni dan gora",
+      "category": "international_environment",
+      "rule": {
+        "kind": "fixed",
+        "month": 12,
+        "days": [
+          11
+        ]
+      },
+      "source_url": "https://pzs.si/medijsko-sredisce/891-mednarodni-dan-gora-gore-se-spreminjajo-poslanica-pzs-2025/",
+      "source_title": "Planinska zveza Slovenije",
+      "description": "Mednarodni dan gora je 11. decembra. Pogovor o gorah vključuje življenje v gorskih skupnostih, naravne procese in varovanje občutljivega okolja.",
+      "practice": "Planinska zveza Slovenije objavlja tematske prispevke. Na zimski izlet se odpravite po preverjanju razmer in dostopnosti, za obeležitev pa lahko izberete tudi predavanje ali ogled razstave."
+    },
+    {
+      "slug": "praznik-ljubljane",
+      "title": "Mestni praznik Ljubljane",
+      "category": "slovenian_municipal",
+      "rule": {
+        "kind": "fixed",
+        "month": 5,
+        "days": [
+          9
+        ]
+      },
+      "source_url": "https://www.ljubljana.si/sl/mestna-obcina/o-ljubljani/mestni-simboli-in-mestni-praznik",
+      "source_title": "Mestna občina Ljubljana",
+      "description": "Ljubljana praznuje 9. maja, na obletnico osvoboditve mesta leta 1945. Na isti datum je dan Evrope, ki ima svoj zgodovinski pomen.",
+      "practice": "Ob prazniku mesto pripravlja slovesnosti, v majski program pa sodi tudi pohod po Poti spominov in tovarištva. Pohod in podelitev mestnih priznanj imata svoj urnik, ki ga mesto objavi za izbrano leto.",
+      "place": "Ljubljana",
+      "link_path": "/prazniki/dan-evrope/",
+      "link_title": "Dan Evrope na isti datum"
+    },
+    {
+      "slug": "dan-maribora",
+      "title": "Dan Maribora – praznik Mestne občine Maribor",
+      "category": "slovenian_municipal",
+      "rule": {
+        "kind": "fixed",
+        "month": 10,
+        "days": [
+          20
+        ]
+      },
+      "source_url": "https://maribor.si/moje-mesto/mestni-simboli-in-prazniki/",
+      "source_title": "Mestna občina Maribor",
+      "description": "Maribor praznuje občinski praznik 20. oktobra. Datum se navezuje na prvo pisno omembo leta 1164.",
+      "practice": "Prireditve ob dnevu Maribora lahko vključujejo mestna vodstva, razstave in slovesnost s podelitvijo občinskih priznanj. Pri prijavi na ogled uporabite aktualni program mesta.",
+      "place": "Maribor",
+      "link_path": "/festivali/#festival-lent",
+      "link_title": "Festival Lent v Mariboru"
+    },
+    {
+      "slug": "praznik-celja",
+      "title": "Praznik Mestne občine Celje",
+      "category": "slovenian_municipal",
+      "rule": {
+        "kind": "fixed",
+        "month": 4,
+        "days": [
+          11
+        ]
+      },
+      "source_url": "https://moc.celje.si/praznik-mestne-obcine-celje/",
+      "source_title": "Mestna občina Celje",
+      "description": "Celje obeležuje občinski praznik 11. aprila. Datum je povezan z listino, s katero je Celje leta 1451 prejelo mestne pravice.",
+      "practice": "Ob občinskem prazniku podeljujejo celjske grbe. Ob obisku starega mestnega jedra ali gradu preverite program in kraj osrednje slovesnosti, saj je občinski praznik datum obeležitve.",
+      "place": "Celje",
+      "link_path": "/festivali/#pravljicno-celje",
+      "link_title": "Pravljično Celje in zimski program"
+    },
+    {
+      "slug": "praznik-kopra",
+      "title": "Praznik Mestne občine Koper",
+      "category": "slovenian_municipal",
+      "rule": {
+        "kind": "fixed",
+        "month": 5,
+        "days": [
+          15
+        ]
+      },
+      "source_url": "https://www.koper.si/wp-content/uploads/2026/09/Statut-Mestne-obcine-Koper-NPB7.pdf",
+      "source_title": "Statut Mestne občine Koper – 16. člen in občinski praznik",
+      "description": "Koper praznuje 15. maja v spomin na protifašistični upor v Marezigah leta 1921. Datum je del koledarja Mestne občine Koper.",
+      "practice": "Spominske vsebine lahko iščete tudi v Marezigah, ne le v mestnem jedru Kopra. Občinski program objavlja kraj slovesnosti in spremljevalne dogodke posebej.",
+      "place": "Koper",
+      "link_path": "/festivali/#fantazima-koper",
+      "link_title": "Fantazima v Kopru"
+    },
+    {
+      "slug": "praznik-ptuja",
+      "title": "Praznik Mestne občine Ptuj in jurjevo",
+      "category": "slovenian_municipal",
+      "rule": {
+        "kind": "fixed",
+        "month": 4,
+        "days": [
+          23
+        ]
+      },
+      "source_url": "https://pisrs.si/api/datoteke/integracije/458018522",
+      "source_title": "Veljavni statut Mestne občine Ptuj, 2. člen",
+      "description": "Ptuj praznuje občinski praznik 23. aprila, na god sv. Jurija, zavetnika mesta. Novi datum se uporablja od leta 2024; v starejših objavah je naveden 5. avgust.",
+      "practice": "Ob prazniku so z mestnim izročilom povezani cerkev sv. Jurija ter Jurijev sejem in vodenja. Datum sejma določa aktualni program. Zimsko Kurentovanje je druga ptujska prireditev.",
+      "place": "Ptuj",
+      "link_path": "/festivali/#kurentovanje",
+      "link_title": "Kurentovanje na Ptuju"
+    },
+    {
+      "slug": "praznik-novega-mesta",
+      "title": "Občinski praznik Novega mesta",
+      "category": "slovenian_municipal",
+      "rule": {
+        "kind": "fixed",
+        "month": 4,
+        "days": [
+          7
+        ]
+      },
+      "source_url": "https://www.novomesto.si/o-novem-mestu/obcinski-praznik-mestne-obcine-novo-mesto",
+      "source_title": "Mestna občina Novo mesto",
+      "description": "Sedmi april je občinski praznik Novega mesta. Leta 1365 je kraj na ta datum dobil mestne pravice.",
+      "practice": "Mesto praznik obeleži s slavnostno sejo, kulturno prireditvijo in podelitvijo priznanj. Med prizorišči je praviloma Kulturni center Janeza Trdine; za izbrano leto preverite občinsko vabilo.",
+      "place": "Novo mesto"
+    },
+    {
+      "slug": "praznik-murske-sobote",
+      "title": "Praznik Mestne občine Murska Sobota",
+      "category": "slovenian_municipal",
+      "rule": {
+        "kind": "fixed",
+        "month": 7,
+        "days": [
+          16
+        ]
+      },
+      "source_url": "https://www.murska-sobota.si/mestna-obcina/murska-sobota/osebna-izkaznica",
+      "source_title": "Mestna občina Murska Sobota",
+      "description": "Mestna občina Murska Sobota praznuje 16. julija. Praznik se navezuje na listino iz leta 1348, v kateri je kraj zapisan kot Muraszombatha.",
+      "practice": "Mestni svet ob prazniku podeljuje občinska priznanja. Primer prizorišča je Gledališče Park; morebitni koncerti in slavnostna seja imajo v vsakoletnem programu svoje ure.",
+      "place": "Murska Sobota",
+      "link_path": "/prazniki/zdruzitev-prekmurskih-slovencev/",
+      "link_title": "Državni praznik, povezan s Prekmurjem"
+    },
+    {
+      "slug": "praznik-skofje-loke",
+      "title": "Občinski praznik Škofje Loke",
+      "category": "slovenian_municipal",
+      "rule": {
+        "kind": "fixed",
+        "month": 6,
+        "days": [
+          30
+        ]
+      },
+      "source_url": "https://www.skofjaloka.si/objave/191",
+      "source_title": "Občina Škofja Loka",
+      "description": "Občina Škofja Loka praznuje 30. junija. Na ta dan leta 973 je bila Loka omenjena v darilni listini cesarja Otona II.",
+      "practice": "Ob obiskovanju starega jedra preverite, ali občina ob prazniku organizira slovesnost ali ogled. Datumi drugih prireditev, denimo Škofjeloškega pasijona, imajo ločene programe.",
+      "place": "Škofja Loka"
+    },
+    {
+      "slug": "praznik-idrije",
+      "title": "Praznik Občine Idrija",
+      "category": "slovenian_municipal",
+      "rule": {
+        "kind": "fixed",
+        "month": 6,
+        "days": [
+          22
+        ]
+      },
+      "source_url": "https://idrija.si/objava/647955",
+      "source_title": "Občina Idrija",
+      "description": "Idrija praznuje 22. junija, na dan sv. Ahacija. Občinski vir ga povezuje z odkritjem bogatega nahajališča cinabarita leta 1508.",
+      "practice": "Slavnostne seje lahko gostijo v gradu Gewerkenegg. Ob obisku preverite še program muzeja in rudniške dediščine. Festival idrijske čipke ima svoj datum.",
+      "place": "Idrija",
+      "link_path": "/festivali/#festival-idrijske-cipke",
+      "link_title": "Festival idrijske čipke"
+    },
+    {
+      "slug": "praznik-nove-gorice",
+      "title": "Praznik Mestne občine Nova Gorica",
+      "category": "slovenian_municipal",
+      "rule": {
+        "kind": "fixed",
+        "month": 9,
+        "days": [
+          9
+        ]
+      },
+      "source_url": "https://www.nova-gorica.si/sl/o-obcini/obcinski-simboli/",
+      "source_title": "Mestna občina Nova Gorica",
+      "description": "Nova Gorica obeležuje občinski praznik 9. septembra v spomin na Goriško fronto iz leta 1943.",
+      "practice": "Mestni praznik spremljajo septembrske kulturne in druge prireditve. Ker se program razteza čez več dni in krajev, izberite dogodek po občinskem napovedniku.",
+      "place": "Nova Gorica",
+      "link_path": "/prazniki/vrnitev-primorske/",
+      "link_title": "Državni praznik 15. septembra na Primorskem"
+    },
+    {
+      "slug": "praznik-velenja",
+      "title": "Praznik Mestne občine Velenje",
+      "category": "slovenian_municipal",
+      "rule": {
+        "kind": "fixed",
+        "month": 9,
+        "days": [
+          20
+        ]
+      },
+      "source_url": "https://www.velenje.si/v-velenju-septembra-praznujemo/",
+      "source_title": "Mestna občina Velenje",
+      "description": "Velenje praznuje občinski praznik 20. septembra. September ima v mestu več ločenih občinskih in kulturnih dogodkov.",
+      "practice": "Leta 2026 je na praznični dan Titov trg gostil kulturna društva, krajevne skupnosti in kulinarični program. Osrednja slavnostna seja je bila drug dan v Domu kulture Velenje.",
+      "place": "Velenje",
+      "link_path": "/festivali/#pikin-festival",
+      "link_title": "Pikin festival v Velenju"
+    },
+    {
+      "slug": "praznik-kranja",
+      "title": "Praznik Mestne občine Kranj",
+      "category": "slovenian_municipal",
+      "rule": {
+        "kind": "fixed",
+        "month": 12,
+        "days": [
+          3
+        ]
+      },
+      "source_url": "https://www.kranj.si/v-kranju-bodo-na-obcinski-praznik-prizgali-praznicne-luci",
+      "source_title": "Mestna občina Kranj",
+      "description": "Kranj svoj občinski praznik obeležuje 3. decembra, na Prešernov rojstni dan. Datum sovpada z vseslovenskim Ta veselim dnem kulture.",
+      "practice": "Občinski praznik se lahko poveže s prižigom luči na Glavnem trgu in začetkom Prešernega decembra. Za slovesnost, koncert in ogled muzeja poglejte posamezne termine.",
+      "place": "Kranj",
+      "link_path": "/pomembni-dnevi/ta-veseli-dan-kulture/",
+      "link_title": "Ta veseli dan kulture po Sloveniji"
+    },
+    {
+      "slug": "slovenski-dan-brez-zavrzene-hrane",
+      "title": "Slovenski dan brez zavržene hrane",
+      "category": "slovenian_cultural",
+      "rule": {
+        "kind": "fixed",
+        "month": 4,
+        "days": [
+          24
+        ]
+      },
+      "source_url": "https://www.gov.si/novice/2023-04-13-odlocitve-s-45-seje-vlade-s-podrocja-kmetijstva-gozdarstva-in-prehrane-122557/",
+      "source_title": "Vlada Republike Slovenije – sklep o razglasitvi",
+      "description": "Vlada je 24. april razglasila za slovenski dan brez zavržene hrane. Namen obeležitve je zmanjševanje izgub in odpadne hrane v celotni preskrbovalni verigi.",
+      "practice": "Med praktičnimi dejavnostmi so načrtovanje obrokov, pregled živil pred nakupom in spremljanje zavržkov v gospodinjstvu. Slovenski aprilski dan je ločen od mednarodne obeležitve 29. septembra.",
+      "link_path": "/pomembni-dnevi/dan-slovenske-hrane/",
+      "link_title": "Teden slovenske hrane in tradicionalni zajtrk"
+    },
+    {
+      "slug": "stefanovo",
+      "title": "Štefanovo in blagoslov konj",
+      "category": "folk",
+      "rule": {
+        "kind": "fixed",
+        "month": 12,
+        "days": [
+          26
+        ]
+      },
+      "source_url": "https://www.bled.si/sl/kaj-videti-poceti/znamenitosti/22/cerkev-sv-stefana/",
+      "source_title": "Turizem Bled – cerkev sv. Štefana",
+      "description": "Štefanovo je 26. decembra. V delu slovenskega izročila ga spremlja blagoslov konj; eno od prizorišč je cerkev sv. Štefana na Kupljeniku pri Bohinjski Beli.",
+      "practice": "Na Štefanovo v Stari Fužini in Studorju poznajo tudi otepanje, obhode zamaskiranih skupin v božično-novoletnem času. Za obisk blagoslova preverite krajevni urnik. Prosti dan na isti datum izhaja iz dneva samostojnosti in enotnosti.",
+      "place": "Bohinjska Bela",
+      "link_path": "/prazniki/dan-samostojnosti-in-enotnosti/",
+      "link_title": "Državni praznik 26. decembra"
+    },
+    {
+      "slug": "praznik-krskega",
+      "title": "Občinski praznik Krškega",
+      "category": "slovenian_municipal",
+      "rule": {
+        "kind": "fixed",
+        "month": 6,
+        "days": [
+          7
+        ]
+      },
+      "description": "Občinski praznik Krškega je 7. junija. Povezan je s spominom na prve krške žrtve in na vrnitev izgnancev po drugi svetovni vojni.",
+      "practice": "Na prireditvah ob prazniku zazveni glasbeno avizo Dejana Učakarja v izvedbi Simfoničnega orkestra Glasbene šole Krško. Občina na svoji strani objavlja program posameznih slovesnosti in njihovih prizorišč. Za obisk izberite dogodek iz programa izbranega leta.",
+      "source_url": "https://www.krsko.si/municipalholiday",
+      "source_title": "Mestna občina Krško – 7. junij in program praznovanja",
+      "place": "Krško"
+    },
+    {
+      "slug": "praznik-slovenj-gradca",
+      "title": "Občinski praznik Slovenj Gradca",
+      "category": "slovenian_municipal",
+      "rule": {
+        "kind": "fixed",
+        "month": 9,
+        "days": [
+          19
+        ]
+      },
+      "description": "Slovenj Gradec praznuje 19. septembra. Na ta datum je mesto leta 1989 od Združenih narodov prejelo naziv glasnik miru.",
+      "practice": "Mestni svet ob prazniku na slavnostni seji podeljuje občinske nagrade in plakete. Na proslavi leta 2023 je bil v Koroški galeriji likovnih umetnosti tudi glasbeni program. Za obisk v prihodnjem letu preverite občinske napovedi in prizorišče.",
+      "source_url": "https://www.slovenjgradec.si/Aktualno/Novice/19-september-ob%C4%8Dinski-praznik-mestne-ob%C4%8Dine-slovenj-gradec",
+      "source_title": "Mestna občina Slovenj Gradec – datum, glasnik miru in proslava",
+      "place": "Slovenj Gradec"
+    }
+  ],
+  "festivals": [
+    {
+      "slug": "kurentovanje",
+      "title": "Kurentovanje",
+      "kind": "dediscina",
+      "place": "Ptuj",
+      "venue": "Mestno jedro in druga prizorišča",
+      "source_url": "https://kurentovanje.net/",
+      "source_title": "Kurentovanje",
+      "description": "Ptujski pustni festival združuje kurente, druge tradicionalne like in karnevalske povorke. Obhodi kurentov so vpisani na Unescov seznam nesnovne kulturne dediščine.",
+      "visit": "Program ločuje etnografske predstavitve, otroške dogodke in glavno povorko. Za povorko poiščite traso in ureditev prometa; pustni torek na koledarju je samostojen datum.",
+      "editions": [
+        {
+          "start": "2027-02-03",
+          "end": "2027-02-09",
+          "source_url": "https://kurentovanje.net/"
+        }
+      ]
+    },
+    {
+      "slug": "luv-fest",
+      "title": "LUV fest",
+      "kind": "kultura",
+      "place": "Ljubljana",
+      "venue": "Več prizorišč v mestu",
+      "source_url": "https://www.visitljubljana.com/sl/obiskovalci/prireditve/prireditve-v-ljubljani/luv-fest",
+      "source_title": "Turizem Ljubljana",
+      "description": "LUV fest med Prešernovim dnevom in gregorjevim poveže umetniške postavitve, vodstva in kulturne prireditve. Del doživetja je razpršen po mestnih ulicah.",
+      "visit": "Pri sprehodu lahko izberete instalacije na prostem, za vodstva in predstave pa najprej preverite prijavo. Festival poteka več tednov, posamezen dogodek ima svoj termin.",
+      "editions": [
+        {
+          "start": "2027-02-08",
+          "end": "2027-03-12",
+          "source_url": "https://www.visitljubljana.com/sl/obiskovalci/prireditve/prireditve-v-ljubljani/luv-fest"
+        }
+      ]
+    },
+    {
+      "slug": "festival-gorniskega-filma",
+      "title": "Festival gorniškega filma",
+      "kind": "film",
+      "place": "Ljubljana",
+      "venue": "Cankarjev dom",
+      "source_url": "https://cd-cc.si/kultura/film/21-festival-gorniskega-filma",
+      "source_title": "Cankarjev dom",
+      "description": "Festival gorniškega filma prikazuje filme o gorah, alpinizmu in življenju v gorskem okolju. Ljubljanski del je objavljen za Kosovelovo in Linhartovo dvorano.",
+      "visit": "Objavljeni razpon velja za program Cankarjevega doma. Za posamezno projekcijo preverite dvorano in vstop, za morebitne dogodke v drugih krajih pa spremljajte festivalski program.",
+      "editions": [
+        {
+          "start": "2027-02-08",
+          "end": "2027-02-12",
+          "source_url": "https://cd-cc.si/kultura/film/21-festival-gorniskega-filma",
+          "label": "Program v Cankarjevem domu"
+        }
+      ]
+    },
+    {
+      "slug": "festival-cokolade",
+      "title": "Festival čokolade Radovljica",
+      "kind": "kulinarika",
+      "place": "Radovljica",
+      "venue": "Linhartov trg, Radovljiška graščina in Radovljiški park",
+      "source_url": "https://www.festival-cokolade.si/o-festivalu/",
+      "source_title": "Turizem Radovljica",
+      "description": "Festival čokolade poveže slovenske in gostujoče čokoladnice v starem jedru Radovljice. Krajevno zaledje dogodka je tudi čokoladna tradicija Lesc.",
+      "visit": "Pred ogledom primerjajte program trga, parka in graščine. Za degustacije preverite festivalski način plačevanja; pri prihodu z javnim prevozom poglejte povratne povezave.",
+      "editions": [
+        {
+          "start": "2027-04-17",
+          "end": "2027-04-18",
+          "source_url": "https://www.festival-cokolade.si/"
+        }
+      ]
+    },
+    {
+      "slug": "druga-godba",
+      "title": "Druga godba",
+      "kind": "glasba",
+      "place": "Ljubljana",
+      "venue": "Več koncertnih prizorišč",
+      "source_url": "https://drugagodba.si/",
+      "source_title": "Zavod Druga godba",
+      "description": "Druga godba je mednarodni glasbeni festival, kjer se srečujejo svetovne glasbe, sodobni zvoki in manj pogosto slišane glasbene tradicije.",
+      "visit": "Med koncerti se lahko menjajo prizorišča. Izberite večer po nastopajočih in preverite, ali vstopnica velja za en koncert, večer ali širši sklop.",
+      "editions": [
+        {
+          "start": "2027-05-26",
+          "end": "2027-05-29",
+          "source_url": "https://drugagodba.si/"
+        }
+      ]
+    },
+    {
+      "slug": "graficni-bienale",
+      "title": "Grafični bienale Ljubljana",
+      "kind": "kultura",
+      "place": "Ljubljana",
+      "venue": "Prizorišča MGLC in partnerske lokacije",
+      "source_url": "https://mglc.si/sl/zakulisje/novica/85/jose-roca-imenovan-za-kuratorja-37-graficnega-bienala-ljubljana/",
+      "source_title": "Mednarodni grafični likovni center",
+      "description": "Ljubljanski grafični bienale raziskuje grafiko, tisk in širše načine kroženja podob. Razstave povezuje kuratorski koncept posamezne izdaje.",
+      "visit": "Daljše trajanje razstav omogoča več obiskov. Preverite program otvoritev posebej, pri rednem obisku pa odpiralne ure posameznega razstavišča.",
+      "editions": [
+        {
+          "start": "2027-06-04",
+          "end": "2027-10-17",
+          "source_url": "https://www.slovenia.info/en/stories/whats-new-in-slovenia-2027"
+        }
+      ]
+    },
+    {
+      "slug": "ljubljana-festival",
+      "title": "Ljubljana Festival",
+      "kind": "glasba",
+      "place": "Ljubljana",
+      "venue": "Več festivalskih prizorišč",
+      "source_url": "https://www.ljubljanafestival.si/",
+      "source_title": "Festival Ljubljana",
+      "description": "Ljubljana Festival je poletni glasbeni in uprizoritveni festival. Med njegovimi osrednjimi prizorišči so Križanke, del programa pa gostijo še druge mestne dvorane.",
+      "visit": "Za leto 2027 je potrjen začetek 75. festivala. Posamezne koncerte, konec programa in pravila za dogodke na prostem preverite pri Festivalu Ljubljana.",
+      "editions": [
+        {
+          "start": "2027-06-19",
+          "end": "2027-06-19",
+          "source_url": "https://www.slovenia.info/en/stories/whats-new-in-slovenia-2027",
+          "label": "Začetek 75. festivala"
+        }
+      ]
+    },
+    {
+      "slug": "jazz-festival-ljubljana",
+      "title": "Jazz festival Ljubljana",
+      "kind": "glasba",
+      "place": "Ljubljana",
+      "venue": "Prizorišča Cankarjevega doma in partnerjev",
+      "source_url": "https://cd-cc.si/68-jazz-festival-ljubljana",
+      "source_title": "Cankarjev dom",
+      "description": "Jazz festival Ljubljana predstavlja domače in mednarodne zasedbe ter različne pristope k improvizirani glasbi. Program lahko združuje zunanje in dvoranske koncerte.",
+      "visit": "Ob nakupu preverite, na kateri koncert se nanaša vstopnica. Med dnevnimi koncerti in večernimi sklopi pustite dovolj časa za premik do naslednjega prizorišča.",
+      "editions": [
+        {
+          "start": "2027-06-30",
+          "end": "2027-07-03",
+          "source_url": "https://cd-cc.si/68-jazz-festival-ljubljana"
+        }
+      ]
+    },
+    {
+      "slug": "tolminator",
+      "title": "Tolminator",
+      "kind": "glasba",
+      "place": "Tolmin",
+      "venue": "Sotočje Soče in Tolminke",
+      "source_url": "https://tolminator.com/sl",
+      "source_title": "Tolminator",
+      "description": "Tolminator je večdnevni metalski festival v Tolminu, povezan s koncerti na območju sotočja.",
+      "visit": "Datum konca sega v avgust. Če prenočujete v kampu, ločeno preverite prijavo v kamp, čas prihoda in pravila za parkiranje. Prvega dne dogodka ne zamenjajte z morebitnim zgodnjim prihodom.",
+      "editions": [
+        {
+          "start": "2027-07-28",
+          "end": "2027-08-01",
+          "source_url": "https://tolminator.com/sl"
+        }
+      ]
+    },
+    {
+      "slug": "punk-rock-holiday",
+      "title": "Punk Rock Holiday",
+      "kind": "glasba",
+      "place": "Tolmin",
+      "venue": "Sotočje Soče in Tolminke",
+      "source_url": "https://www.punkrockholiday.com/",
+      "source_title": "Punk Rock Holiday",
+      "description": "Punk Rock Holiday združuje punkrockovske in sorodne zasedbe na festivalskem prizorišču ob Soči.",
+      "visit": "V koledarju je redni festivalski termin. Organizator obravnava zgodnji prihod in uvodni večer posebej. Pred odhodom preverite informacije za kampiste, prevzem zapestnice in dostop.",
+      "editions": [
+        {
+          "start": "2027-08-10",
+          "end": "2027-08-13",
+          "source_url": "https://www.punkrockholiday.com/",
+          "label": "Redni festivalski termin"
+        }
+      ]
+    },
+    {
+      "slug": "planica",
+      "title": "Finale svetovnega pokala v Planici",
+      "kind": "sport",
+      "place": "Rateče",
+      "venue": "Nordijski center Planica",
+      "source_url": "https://www.planica.si/sl/program",
+      "source_title": "Organizacijski komite Planica",
+      "description": "Planica je prizorišče finalnih tekem svetovnega pokala v smučarskih skokih oziroma poletih na letalnici bratov Gorišek.",
+      "visit": "Program je večdneven, od kvalifikacij do finalnih tekem. Pri izbiri dneva poglejte razpored, priporočeni prihod in možnosti javnega prevoza; vreme lahko vpliva na urnik.",
+      "editions": [
+        {
+          "start": "2027-03-18",
+          "end": "2027-03-21",
+          "source_url": "https://www.planica.si/sl/program"
+        }
+      ]
+    },
+    {
+      "slug": "pokal-vitranc",
+      "title": "Pokal Vitranc",
+      "kind": "sport",
+      "place": "Kranjska Gora",
+      "venue": "Podkoren",
+      "source_url": "https://pokal-vitranc.com/",
+      "source_title": "Pokal Vitranc",
+      "description": "Pokal Vitranc je moška tekma svetovnega pokala v alpskem smučanju na strmini v Podkorenu.",
+      "visit": "Pri izbiri dneva preverite, katera disciplina je na sporedu in kdaj so dostopi do prizorišča odprti. Program za gledalce se lahko spremeni glede na snežne razmere.",
+      "editions": [
+        {
+          "start": "2027-01-02",
+          "end": "2027-01-03",
+          "source_url": "https://pokal-vitranc.com/"
+        }
+      ]
+    },
+    {
+      "slug": "skoki-ljubno",
+      "title": "Svetovni pokal v smučarskih skokih na Ljubnem",
+      "kind": "sport",
+      "place": "Ljubno ob Savinji",
+      "venue": "Skakalnica na Ljubnem",
+      "source_url": "https://www.ljubno-skoki.si/sl",
+      "source_title": "Ljubno Skoki",
+      "description": "Ljubno ob Savinji gosti tekme svetovnega pokala v ženskih smučarskih skokih.",
+      "visit": "Pri načrtovanju obiska preverite razliko med treningi, kvalifikacijami in tekmo. Za zimski prihod upoštevajte objave o parkiranju in morebitnih prevozih do skakalnice.",
+      "editions": [
+        {
+          "start": "2027-01-09",
+          "end": "2027-01-10",
+          "source_url": "https://www.ljubno-skoki.si/sl"
+        }
+      ]
+    },
+    {
+      "slug": "biatlon-pokljuka",
+      "title": "Odprto evropsko prvenstvo v biatlonu",
+      "kind": "sport",
+      "place": "Pokljuka",
+      "venue": "Športni center na Rudnem polju",
+      "source_url": "https://www.biathlon-pokljuka.com/",
+      "source_title": "Biatlon Pokljuka",
+      "description": "Biatlonsko prvenstvo na Pokljuki povezuje tek na smučeh in streljanje na prizorišču na Rudnem polju.",
+      "visit": "Tekmovalni teden in posamezne tekme imajo različne termine. Pred obiskom preverite posebej start izbrane discipline, dostop na planoto in razmere na cesti.",
+      "editions": [
+        {
+          "start": "2027-01-25",
+          "end": "2027-01-31",
+          "source_url": "https://www.biathlon-pokljuka.com/"
+        }
+      ],
+      "edition_year": 2027
+    },
+    {
+      "slug": "dirka-po-sloveniji",
+      "title": "Dirka po Sloveniji",
+      "kind": "sport",
+      "place": "Slovenija",
+      "venue": "Različne lokacije po etapah",
+      "source_url": "https://tourofslovenia.si/sl",
+      "source_title": "Dirka po Sloveniji",
+      "description": "Dirka po Sloveniji je večetapna cestna kolesarska dirka. Kraji startov, ciljev in prehodov se spreminjajo z izbrano traso.",
+      "visit": "Ko so objavljene etape, izberite kraj ogleda po času prehoda in zaporah. Razpon v koledarju je datum dirke, ne čas prehoda skozi posamezno občino.",
+      "editions": [
+        {
+          "start": "2027-06-17",
+          "end": "2027-06-20",
+          "source_url": "https://www.slovenia.info/en/stories/whats-new-in-slovenia-2027"
+        }
+      ]
+    },
+    {
+      "slug": "veslanje-bled",
+      "title": "Evropsko prvenstvo v veslanju na Bledu",
+      "kind": "sport",
+      "place": "Bled",
+      "venue": "Blejsko jezero",
+      "source_url": "https://worldrowing.com/",
+      "source_title": "World Rowing",
+      "description": "Na evropskem prvenstvu na Bledu posadke tekmujejo na veslaški progi na jezeru. Dogodek ni isto kot veteranska svetovna regata, ki jo je Bled gostil leta 2026.",
+      "visit": "Za finale posamezne kategorije preverite dnevni program. Dostop z obale in prireditvene cone se določijo v organizatorjevih navodilih za gledalce.",
+      "editions": [
+        {
+          "start": "2027-05-28",
+          "end": "2027-05-30",
+          "source_url": "https://www.slovenia.info/en/stories/whats-new-in-slovenia-2027"
+        }
+      ],
+      "edition_year": 2027
+    },
+    {
+      "slug": "december-v-ljubljani",
+      "title": "December v Ljubljani",
+      "kind": "zima",
+      "place": "Ljubljana",
+      "venue": "Staro mestno jedro in druga mestna prizorišča",
+      "source_url": "https://www.visitljubljana.com/sl/obiskovalci/prireditve/prireditve-v-ljubljani/december-v-ljubljani",
+      "source_title": "Turizem Ljubljana",
+      "description": "Praznični program v Ljubljani povezuje luči, sejme, koncerte in silvestrovanje. Prireditve so razporejene po različnih mestnih lokacijah.",
+      "visit": "Razpon velja za celoten mestni program 2026/27. Mestne stojnice, grajski sejem in koncerti imajo svoje zaključne datume, zato za izbrani obisk odprite ustrezni del programa.",
+      "editions": [
+        {
+          "start": "2026-11-27",
+          "end": "2027-01-14",
+          "source_url": "https://www.visitljubljana.com/sl/obiskovalci/prireditve/prireditve-v-ljubljani/december-v-ljubljani"
+        }
+      ]
+    },
+    {
+      "slug": "carobni-maribor",
+      "title": "Čarobni Maribor",
+      "kind": "zima",
+      "place": "Maribor",
+      "venue": "Glavni trg, Trg Leona Štuklja in mestno jedro",
+      "source_url": "https://www.visitmaribor.si/sl/dogodki/tradicionalni-dogodki/carobni-maribor/",
+      "source_title": "Visit Maribor",
+      "description": "Čarobni Maribor je zimski mestni program z lučkami, koncerti in prazničnimi prizorišči na mestnih trgih.",
+      "visit": "Za sejem in nastope preverite lokacijo posebej: Glavni trg in Trg Leona Štuklja imata različna programa. Termin v koledarju označuje celotno prireditev.",
+      "editions": [
+        {
+          "start": "2026-11-26",
+          "end": "2027-01-02",
+          "source_url": "https://www.visitmaribor.si/sl/dogodki/tradicionalni-dogodki/carobni-maribor/"
+        }
+      ]
+    },
+    {
+      "slug": "pravljicno-celje",
+      "title": "Pravljično Celje",
+      "kind": "zima",
+      "place": "Celje",
+      "venue": "Mestno središče",
+      "source_url": "https://www.visitcelje.eu/sl/mediji-pr/do-priziga-luck-pravljicnega-celja-2026-se-mesec-dni/",
+      "source_title": "Zavod Celeia Celje",
+      "description": "Adventni program v Celju povezuje osvetljeno mestno jedro, družinske prireditve in dogodke na mestnih trgih.",
+      "visit": "Organizator loči termin uradnega programa od časa, ko je mesto še okrašeno. Za Pravljično deželo in posamezna vodstva preverite dnevni program.",
+      "editions": [
+        {
+          "start": "2026-11-28",
+          "end": "2027-01-03",
+          "source_url": "https://www.visitcelje.eu/sl/mediji-pr/do-priziga-luck-pravljicnega-celja-2026-se-mesec-dni/"
+        }
+      ]
+    },
+    {
+      "slug": "zimska-pravljica-bled",
+      "title": "Zimska pravljica na Bledu",
+      "kind": "zima",
+      "place": "Bled",
+      "venue": "Jezerska promenada in Zdraviliški park",
+      "source_url": "https://www.bled.si/sl/prireditve/2026101615293461/",
+      "source_title": "Turizem Bled",
+      "description": "Zimska pravljica ob blejskem jezeru povezuje praznično osvetlitev, stojnice in družinski program na promenadi.",
+      "visit": "Prižig luči je samostojen večerni dogodek. Za konkreten večer preverite razpored odra in odpiralni čas stojnic, ki se med tednom in vikendom razlikuje.",
+      "editions": [
+        {
+          "start": "2026-11-27",
+          "end": "2027-01-10",
+          "source_url": "https://www.bled.si/sl/prireditve/2026101615293461/"
+        }
+      ]
+    },
+    {
+      "slug": "fantazima-koper",
+      "title": "Fantazima",
+      "kind": "zima",
+      "place": "Koper",
+      "venue": "Mestno jedro Kopra",
+      "source_url": "https://visitkoper.si/prireditve/fantazima-2026/",
+      "source_title": "Visit Koper",
+      "description": "Fantazima je koprski praznični program s koncerti, zimsko okrasitvijo in dogodki za otroke.",
+      "visit": "Pri izbiri večera primerjajte prizorišča in termine odra, sejma ter drugih dejavnosti. Praznična osvetlitev ima lahko širši časovni okvir od posamezne prireditve.",
+      "editions": [
+        {
+          "start": "2026-12-05",
+          "end": "2027-01-03",
+          "source_url": "https://visitkoper.si/prireditve/fantazima-2026/"
+        }
+      ]
+    },
+    {
+      "slug": "festival-lent",
+      "title": "Festival Lent",
+      "kind": "kultura",
+      "place": "Maribor",
+      "venue": "Prizorišča ob Dravi in drugod po mestu",
+      "source_url": "https://www.festival-lent.si/",
+      "source_title": "Narodni dom Maribor",
+      "description": "Festival Lent je večžanrski mariborski festival. Koncerti, gledališče in ulične prireditve se odvijajo na več odrih.",
+      "visit": "Lent je ime festivala in območja ob Dravi. Pri dogodku preverite dejanski naslov prizorišča in režim vstopa, saj ni vse dogajanje zbrano ob reki.",
+      "editions": []
+    },
+    {
+      "slug": "festival-idrijske-cipke",
+      "title": "Festival idrijske čipke",
+      "kind": "dediscina",
+      "place": "Idrija",
+      "venue": "Staro mestno jedro, čipkarska šola in muzejska prizorišča",
+      "source_url": "https://www.festivalidrijskecipke.si/",
+      "source_title": "Festival idrijske čipke",
+      "description": "Festival prikazuje tehnike klekljanja in sodobno uporabo idrijske čipke. Poleg razstav lahko program vključuje prikaze dela in tekmovanja v klekljanju.",
+      "visit": "Za obisk delavnice posebej preverite prijavo. Na festivalu je mogoče primerjati izdelavo čipk z muzejskimi zbirkami in delom lokalnih klekljaric.",
+      "editions": []
+    },
+    {
+      "slug": "pikin-festival",
+      "title": "Pikin festival",
+      "kind": "kultura",
+      "place": "Velenje",
+      "venue": "Več mestnih prizorišč",
+      "source_url": "https://www.festival-velenje.si/medijsko-sredisce/sporocila-za-medije/2026/08/417-Pikine-zgodbe-V-mesto-prihaja-37-Pikin-festival",
+      "source_title": "Festival Velenje",
+      "description": "Pikin festival je velenjska prireditev za otroke in družine, poimenovana po Piki Nogavički. Povezuje delavnice, predstave in srečanja z ustvarjalci.",
+      "visit": "Pred družinskim obiskom primerjajte starostne skupine delavnic, morebitne rezervacije in ustrezno prizorišče. Navedeni vir prikazuje zasnovo izvedbe leta 2026.",
+      "editions": []
+    },
+    {
+      "slug": "pivo-in-cvetje",
+      "title": "Pivo in cvetje",
+      "kind": "glasba",
+      "place": "Laško",
+      "venue": "Prireditvena prizorišča v Laškem",
+      "source_url": "https://lasko.info/festival-pivo-in-cvetje-lasko/",
+      "source_title": "STIK Laško",
+      "description": "Laško Pivo in cvetje združuje glasbene nastope, mestno dogajanje in laško pivovarsko tradicijo.",
+      "visit": "Za obisk izberite koncert in prizorišče, nato preverite prihod v Laško in pozni povratek. Termin stare izvedbe ni napoved novega programa.",
+      "editions": []
+    },
+    {
+      "slug": "liffe",
+      "title": "Ljubljanski mednarodni filmski festival LIFFe",
+      "kind": "film",
+      "place": "Ljubljana",
+      "venue": "Cankarjev dom in druga kino prizorišča",
+      "source_url": "https://www.liffe.si/",
+      "source_title": "LIFFe",
+      "description": "LIFFe je ljubljanski mednarodni filmski festival s pregledom sodobnega avtorskega filma in več programskimi sklopi.",
+      "visit": "Pri rezervaciji poglejte lokacijo, uro, jezik podnapisov in morebitno ponovitev projekcije. Datum festivala sam po sebi še ne pove, kdaj je na sporedu izbrani film.",
+      "editions": [
+        {
+          "start": "2026-11-11",
+          "end": "2026-11-22",
+          "source_url": "https://www.cd-cc.si/festivali"
+        }
+      ]
+    },
+    {
+      "slug": "vilenica",
+      "title": "Mednarodni literarni festival Vilenica",
+      "kind": "kultura",
+      "place": "Kras in druga prizorišča",
+      "venue": "Jama Vilenica in partnerske lokacije",
+      "source_url": "https://vilenica.si/",
+      "source_title": "Mednarodni literarni festival Vilenica",
+      "description": "Vilenica povezuje pisatelje, pesnike in prevajalce na literarnih branjih ter pogovorih. Ime je povezano s kraško jamo Vilenico.",
+      "visit": "Prizorišča so razpršena, zato pri izbranem branju upoštevajte kraj in jezik dogodka. Zaključna slovesnost in branja v drugih krajih imajo vsak svoj program.",
+      "editions": []
+    },
+    {
+      "slug": "jurjevanje",
+      "title": "Jurjevanje v Beli krajini",
+      "kind": "dediscina",
+      "place": "Črnomelj",
+      "venue": "Jurjevanska draga in staro mestno jedro",
+      "source_url": "https://jurjevanje.si/",
+      "source_title": "Jurjevanje v Beli krajini",
+      "description": "Jurjevanje v Beli krajini je folklorna prireditev v Črnomlju. Slovenske in tuje skupine predstavljajo plese, glasbo in oblačilno dediščino.",
+      "visit": "Folklorni festival in pomladne šege ob svetem Juriju sta povezana po izročilu, a imata ločena termina. Festivalu sledite po objavah organizatorja v Črnomlju.",
+      "editions": []
+    },
+    {
+      "slug": "praznik-cesenj",
+      "title": "Praznik češenj",
+      "kind": "kulinarika",
+      "place": "Brda",
+      "venue": "Dobrovo in okoliške vasi",
+      "source_url": "https://www.brda.si/sl/",
+      "source_title": "Zavod za turizem, kulturo, mladino in šport Brda",
+      "description": "Praznik češenj v Brdih je povezan s sezono obiranja in predstavitvijo briškega sadja, kulinarike in lokalnih navad.",
+      "visit": "Dogajanje je lahko razporejeno med več vasi in vikendov. Pred izletom preverite točen kraj, rezervacijo pri ponudniku in lokalni prevoz, ko organizator objavi program.",
+      "editions": []
+    },
+    {
+      "slug": "planica-poleti-2028",
+      "title": "Svetovno prvenstvo v smučarskih poletih Planica 2028",
+      "kind": "sport",
+      "place": "Rateče",
+      "venue": "Letalnica bratov Gorišek, Planica",
+      "edition_year": 2028,
+      "source_url": "https://www.planica.si/sl/novica/2024-06-04-planica-gostiteljica-svetovnega-prvenstva-v-poletih-2028",
+      "source_title": "Organizacijski komite Planica",
+      "description": "Planica bo gostila svetovno prvenstvo v smučarskih poletih leta 2028. To prvenstvo je samostojen dogodek in ima svoj razpored tekem.",
+      "visit": "Dnevi v koledarju sledijo terminu, ki ga navaja svet FIS. Objave organizatorja preverite za kvalifikacije, dnevni urnik, vstopnice in pot do letalnice.",
+      "editions": [
+        {
+          "start": "2028-03-24",
+          "end": "2028-03-26",
+          "source_url": "https://assets.fis-ski.com/f/252177/x/25cbbd615b/2025_10_21_fis_council_summaryminutes.pdf"
+        }
+      ]
+    },
+    {
+      "slug": "eurobasket-ljubljana-2029",
+      "title": "EuroBasket 2029 v Ljubljani",
+      "kind": "sport",
+      "place": "Ljubljana",
+      "venue": "Dvorana Stožice",
+      "edition_year": 2029,
+      "source_url": "https://www.kzs.si/novica/eurobasket-znova-v-sloveniji-v-stozicah-2029-ena-izmed-skupin-ep",
+      "source_title": "Košarkarska zveza Slovenije",
+      "description": "Ljubljana je eno od potrjenih prizorišč moškega evropskega prvenstva v košarki leta 2029. Stožice bodo gostile eno skupino, sklepni del pa bo v Madridu.",
+      "visit": "Dnevi tekem v Ljubljani še niso objavljeni. Ko izide urnik, preverite tekme svoje skupine in prodajo vstopnic posebej za Stožice.",
+      "editions": []
+    },
+    {
+      "slug": "dan-slovenskih-planincev",
+      "title": "Dan slovenskih planincev",
+      "kind": "dediscina",
+      "place": "Slovenija",
+      "venue": "Prizorišče objavi Planinska zveza Slovenije",
+      "source_url": "https://pzs.si/novice/18466-prva-seja-upravnega-odbora-pzs-v-mandatnem-obdobju-2026-2030/",
+      "source_title": "Planinska zveza Slovenije",
+      "description": "Dan planincev je vseslovensko srečanje planinskih društev z dejavnostmi na prostem. Prizorišče izberejo za posamezno leto.",
+      "visit": "Planinska zveza Slovenije je za leto 2027 razpisala soboto, 12. junija. Podrobnosti o kraju, poteh in organiziranih prevozih preverite v aktualnem programu.",
+      "editions": [
+        {
+          "start": "2027-06-12",
+          "end": "2027-06-12",
+          "source_url": "https://mail.pzs.si/novice/18614-razpis-za-soorganizacijo-dneva-planincev-in-podelitve-najvisjih-priznanj-pzs-v-letu-2027/",
+          "label": "Razpisani dan srečanja; kraj po objavi organizatorja"
+        }
+      ]
+    }
+  ]
+}

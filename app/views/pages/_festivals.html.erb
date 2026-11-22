@@ -1,0 +1,95 @@
+<article class="festival-directory">
+  <header class="festival-masthead">
+    <div>
+      <h1><%= @title %></h1>
+      <p>Od Kurentovanja na Ptuju do poletnih koncertov v Ljubljani in Tolminu. Izberite prireditev, preverite kraj in shranite potrjeni termin v svoj koledar.</p>
+      <div class="festival-actions">
+        <a class="button" href="#festivalski-koledar">Potrjeni termini</a>
+        <a class="button" href="/pomembni-dnevi/">Pomembni dnevi</a>
+      </div>
+    </div>
+    <div class="festival-masthead__mark" aria-hidden="true"><%= ui_icon('calendar') %><%= ui_icon('pin') %></div>
+  </header>
+
+  <section class="festival-agenda" id="festivalski-koledar" aria-labelledby="festival-agenda-title">
+    <h2 id="festival-agenda-title">Prireditve s potrjenim terminom</h2>
+    <div class="festival-agenda__grid">
+      <% upcoming_festivals=OccasionCatalog.upcoming(@today, limit: 6) %>
+      <% upcoming_festivals.each do |festival, edition, dates| %>
+        <a class="festival-agenda__item" href="#<%= festival.fetch('slug') %>">
+          <span><%= occasion_date_label(dates.begin, dates.end) %></span>
+          <strong><%= festival.fetch('title') %></strong>
+          <small><%= festival.fetch('place') %><%= " · #{edition['label']}" if edition['label'] %></small>
+        </a>
+      <% end %>
+      <% if upcoming_festivals.empty? %>
+        <p>V tem pregledu trenutno ni prihodnjih potrjenih terminov. Pri posamezni prireditvi najdete povezavo do organizatorja.</p>
+      <% end %>
+    </div>
+  </section>
+
+  <nav class="festival-kinds" aria-label="Vrste festivalov in prireditev">
+    <% OccasionCatalog::KINDS.each do |key, title| %><a href="#vrsta-<%= key %>"><%= title %></a><% end %>
+  </nav>
+  <p class="festival-policy">Datumi se nanašajo na objavljeni program. Na karticah so navedeni tudi kraji in viri za prireditve, pri katerih prihodnji termin še ni objavljen.</p>
+
+  <% OccasionCatalog::KINDS.each do |kind, title| %>
+    <section class="festival-group" id="vrsta-<%= kind %>" aria-labelledby="festival-kind-<%= kind %>">
+      <h2 id="festival-kind-<%= kind %>"><%= title %></h2>
+      <div class="festival-grid">
+        <% OccasionCatalog.festivals.select { |festival| festival.fetch('kind')==kind }.each do |festival| %>
+          <% slug=festival.fetch('slug'); editions=festival.fetch('editions'); published_years=editions.map { |edition| OccasionCatalog.date_range(edition).begin.year }; edition_year=festival['edition_year']; years=edition_year ? [edition_year] : CalendarEngine::YEARS %>
+          <article class="festival-card" id="<%= slug %>">
+            <header>
+              <p class="festival-place"><%= ui_icon('pin') %><%= festival.fetch('place') %></p>
+              <h3><%= festival.fetch('title') %></h3>
+              <p class="festival-venue"><%= festival.fetch('venue') %></p>
+            </header>
+            <% editions.each do |edition| %>
+              <% dates=OccasionCatalog.date_range(edition) %>
+              <div class="festival-edition">
+                <span class="festival-status <%= 'is-past' if dates.end < @today %>"><%= dates.end < @today ? 'Pretekla izvedba' : dates.begin <= @today ? 'Poteka' : 'Potrjen termin' %></span>
+                <strong>
+                  <time datetime="<%= dates.begin %>"><%= I18n.l(dates.begin) %></time>
+                  <% if dates.end > dates.begin %><span aria-hidden="true"> – </span><time datetime="<%= dates.end %>"><%= I18n.l(dates.end) %></time><% end %>
+                </strong>
+                <% if edition['label'] %><p><%= edition.fetch('label') %></p><% end %>
+                <div class="festival-edition__links">
+                  <a href="<%= calendar_path(dates.begin) %>">Poglej v koledarju</a>
+                  <a href="<%= OccasionCatalog.ics_path(slug, dates.begin) %>" download>Dodaj v koledar (ICS)</a>
+                  <%= source_link(edition.fetch('source_url'), 'Vir termina') %>
+                </div>
+              </div>
+            <% end %>
+            <p><%= festival.fetch('description') %></p>
+            <p><%= festival.fetch('visit') %></p>
+            <details class="festival-years">
+              <summary><%= edition_year ? "Termin za leto #{edition_year}" : 'Termini po letih 2027–2030' %></summary>
+              <dl>
+                <% years.each do |year| %>
+                  <div><dt><%= year %></dt><dd>
+                    <% if published_years.include?(year) %>Objavljen termin zgoraj
+                    <% elsif editions.any? { |edition| OccasionCatalog.date_range(edition).end.year==year } %>Zaključek programa iz <%= year-1 %>; nov termin še ni objavljen
+                    <% elsif edition_year %>Prizorišče potrjeno, termin še ni objavljen
+                    <% else %>Termin še ni objavljen<% end %>
+                  </dd></div>
+                <% end %>
+              </dl>
+            </details>
+            <%= source_link(festival.fetch('source_url'), festival.fetch('source_title')) %>
+          </article>
+        <% end %>
+      </div>
+    </section>
+  <% end %>
+  <section class="festival-footer panel">
+    <h2>Načrtujte obisk</h2>
+    <p>Preverite, ali termin sovpada s praznikom ali šolskimi počitnicami. Pred odhodom pri organizatorju preverite še dnevni program, vstopnice in dostop.</p>
+    <div class="festival-actions">
+      <a href="/prazniki/">Prazniki in dela prosti dnevi</a>
+      <a href="/solske-pocitnice/">Šolske počitnice</a>
+      <a href="/kontakt/">Sporočite spremembo termina</a>
+    </div>
+    <p class="festival-policy">Viri pregledani <time datetime="<%= OccasionCatalog.checked_on %>"><%= I18n.l(Date.iso8601(OccasionCatalog.checked_on)) %></time>.</p>
+  </section>
+</article>

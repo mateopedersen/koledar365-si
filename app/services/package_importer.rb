@@ -59,6 +59,7 @@ class PackageImporter
         end
       end
     end
+    OccasionCatalog.apply!
     ExpansionCatalog.apply!
     EditorialCatalog.apply!
     {pages:Page.count,names:PersonName.count,events:CalendarEvent.count,astronomy:AstronomicalEvent.count}

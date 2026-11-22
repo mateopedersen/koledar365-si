@@ -14,6 +14,7 @@ Page.transaction do
     page.update!(attributes)
   end
 end
+OccasionCatalog.apply!
 ExpansionCatalog.apply!
 EditorialCatalog.apply!
 Horoscope.transaction do

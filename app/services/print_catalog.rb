@@ -63,7 +63,12 @@ class PrintCatalog
     "koledar365-#{i['type']}#{personal}-#{i['period']}-#{i['template_id']}-#{i['paper']}-#{i['orientation']}-#{i['color_mode']}-v#{VERSION}"
   end
   def self.source_version(options)
-    events=CalendarEvent.where(on:Date.new(options['year'],1,1)..Date.new(options['year'],12,31)).order(:on,:slug).pluck(:on,:slug,:title,:work_free,:state_holiday)
+    events=CalendarEvent.where(on:Date.new(options['year'],1,1)..Date.new(options['year'],12,31)).order(:on,:slug).filter_map do |event|
+      # Preserve the verified catalogue's historical signature. New editorial
+      # dates are for the web and ICS, and never affect PDF holiday rules.
+      next if event.key.start_with?('si-day:', 'si-festival:')
+      [event.on,event.slug,event.title,event.work_free,event.state_holiday]
+    end
     moon=options['type']=='lunar' ? AstronomicalEvent.where(kind:'moon').order(:instant).pluck(:instant,:title) : []
     Digest::SHA256.hexdigest([events,moon].to_json)
   end

@@ -97,8 +97,8 @@ class ToolsController < ApplicationController
   def holidays_ics
     year=Integer(params[:year]);raise ArgumentError,'Leto ni podprto.' unless CalendarEngine::YEARS.include?(year)
     if params[:all]=='1'
-      events=CalendarEvent.where(on:Date.new(year,1,1)..Date.new(year,12,31)).ordered.to_a
-      events=ImportantDays.filter(events,month:params[:month],category:params[:category],query:params[:q])
+      events=ImportantDays.events_in(ImportantDays.period(year, params[:month]))
+      events=ImportantDays.filter(events,year:year,month:params[:month],category:params[:category],query:params[:q])
     else
       events=HolidayYear.new(year).filter(month:params[:month],kind:params[:kind],query:params[:q])
     end
@@ -114,10 +114,16 @@ class ToolsController < ApplicationController
       description=[event.work_free ? 'Dela prost dan' : 'Ni dela prost dan',
         event.state_holiday ? 'Državni praznik' : nil,
         "Vir: #{event.source_url}",'Koledar365 · koledar365.si'].compact.join("\n")
-      {'uid'=>event.key,'date'=>event.on.iso8601,'title'=>event.title,'notes'=>description}
+      {'uid'=>event.key,'date'=>event.on.iso8601,'end_date'=>event.ends_on&.to_s,'title'=>event.title,'notes'=>description}
     end
-    response.headers['X-Robots-Tag']='noindex'
+    headers['X-Robots-Tag']='noindex'
     send_data IcsService.export(rows),type:'text/calendar; charset=utf-8',filename:"koledar365-#{params[:all]=='1' ? 'pomembni-dnevi' : 'prazniki'}-#{year}.ics"
+  end
+
+  def festival_ics
+    event=CalendarEvent.find_by!(category:'festival',slug:params[:slug],on:Date.iso8601(params[:date]))
+    headers['X-Robots-Tag']='noindex'
+    send_data OccasionCatalog.ics(event),type:'text/calendar; charset=utf-8',filename:"#{event.slug}-#{event.on}.ics"
   end
   def bad_input(e)
     render json:{error:InputError.message(e)},status: :unprocessable_entity

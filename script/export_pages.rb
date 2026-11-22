@@ -228,16 +228,36 @@ search=Page.published.reject { |page|page.path.match?(removed_name_path) || Publ
 end
 search+=SunEngine::CITIES.map { |id,values|{title:"Sončni vzhod in zahod – #{values[0]}",path:"/soncni-vzhod-in-zahod/#{id}/",type:'Sončni časi',folded:PersonName.fold("#{values[0]} sončni vzhod sončni zahod zlata ura dolžina dneva mesto"),priority:1} }
 # Retired name URLs stay out of public search, just as they stay out of the sitemap.
-search+=CalendarEvent.ordered.map do |event|
- path=["/prazniki/#{event.slug}/","/pomembni-dnevi/#{event.slug}/","/letni-casi/#{event.slug}/"].find { |candidate|Page.exists?(path:candidate) }||"/pomembni-dnevi/#{event.on.year}/"
- tags=[event.title,event.on.iso8601,"#{event.on.day}. #{CalendarEngine::MONTHS.fetch(event.on.month-1)} #{event.on.year}",CalendarEngine::DAYS.fetch(event.on.cwday-1),event.category,'praznik']
+page_paths=Page.pluck(:path).to_set
+event_path=lambda do |event|
+ next OccasionCatalog.festival_path(event.slug) if event.category=='festival'
+ ["/prazniki/#{event.slug}/","/pomembni-dnevi/#{event.slug}/","/letni-casi/#{event.slug}/"].find { |path|page_paths.include?(path) }||"/pomembni-dnevi/#{event.on.year}/"
+end
+events=CalendarEvent.ordered.to_a
+search+=events.map do |event|
+ path=event_path.call(event)
+ kind=event.category=='festival' ? 'Festivali in prireditve' : 'Prazniki in dnevi'
+ tags=[event.title,event.on.iso8601,"#{event.on.day}. #{CalendarEngine::MONTHS.fetch(event.on.month-1)} #{event.on.year}",CalendarEngine::DAYS.fetch(event.on.cwday-1),event.metadata['place'],kind]
  tags<<'dela prost dan dela prost dan' if event.work_free
  tags<<'državni praznik' if event.state_holiday
- {title:event.title.sub(/\A./) { |letter|letter.upcase },path:path,type:'Prazniki in dnevi',folded:PersonName.fold(tags.compact.join(' ')),priority:event.work_free ? -2 : 2}
+ {title:event.title.sub(/\A./) { |letter|letter.upcase },path:path,type:kind,folded:PersonName.fold(tags.compact.join(' ')),priority:event.work_free ? -2 : 2}
+end
+search+=OccasionCatalog.festivals.select { |festival| festival.fetch('editions').empty? }.map do |festival|
+ title=festival.fetch('title')
+ {title:title,path:OccasionCatalog.festival_path(festival.fetch('slug')),type:'Festivali in prireditve',
+  folded:PersonName.fold([title,festival.fetch('place'),OccasionCatalog::KINDS.fetch(festival.fetch('kind'))].join(' ')),priority:2}
 end
 out.join('free/search.json').write(JSON.generate(search))
-events=CalendarEvent.all.map { |event|event.attributes.merge('path'=>['/prazniki/','/pomembni-dnevi/','/letni-casi/'].map { |prefix|prefix+event.slug+'/' }.find { |path|Page.exists?(path:path) }||"/pomembni-dnevi/#{event.on.year}/") }
-out.join('free/events.json').write(events.to_json)
+out.join('free/events.json').write(events.map { |event| event.attributes.merge('path'=>event_path.call(event)) }.to_json)
+unless partial && !partial.include?(OccasionCatalog::PATH)
+  files=events.select { |event| event.category=='festival' }.to_h do |event|
+    [OccasionCatalog.ics_path(event.slug,event.on), OccasionCatalog.ics(event)]
+  end
+  Dir[out.join('festivali/**/*.ics')].each do |file|
+    FileUtils.rm_f(file) unless files.key?("/#{Pathname.new(file).relative_path_from(out)}")
+  end
+  files.each { |path, body| write.call(path,body) }
+end
 %w[sitemap.xml sitemap-pages.xml robots.txt].each do |path|
  session.get('/'+path)
  body=session.response.body

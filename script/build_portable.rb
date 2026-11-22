@@ -20,7 +20,7 @@ FileUtils.cp(Rails.root.join('lib/portable/boot.rb'),root.join('boot.rb'))
 FileUtils.cp(Rails.root.join('config/locales/sl.yml'),root.join('config/sl.yml'))
 FileUtils.cp(Rails.root.join('config/locales/sl.rb'),root.join('config/sl.rb'))
 %w[print-template-specification slovenia-localisation slovenia-additional-observances usno-moon-2027 usno-moon-2028 usno-moon-2029 usno-moon-2030].each { |name|FileUtils.cp(Rails.root.join("data/source/#{name}.json"),root.join('data/source')) }
-root.join('data/events.json').write(CalendarEvent.order(:key).map { |row|row.attributes.slice('key','slug','title','on','ends_on','category','work_free','state_holiday','source_url') }.to_json)
+root.join('data/events.json').write(CalendarEvent.order(:key).map { |row|row.attributes.slice('key','slug','title','on','ends_on','category','work_free','state_holiday','source_url','metadata') }.to_json)
 root.join('data/astronomy.json').write(AstronomicalEvent.order(:key).map { |row|row.attributes.slice('key','kind','title','instant','source_url') }.to_json)
 files=Dir[root.join('**/*')].select { |file|File.file?(file) }.sort
 fingerprint=Digest::SHA256.hexdigest(files.map { |file|[Pathname.new(file).relative_path_from(root).to_s,Digest::SHA256.file(file).hexdigest] }.to_json)

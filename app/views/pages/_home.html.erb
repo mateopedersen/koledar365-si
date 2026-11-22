@@ -11,6 +11,20 @@
 <aside aria-label="Osebni načrtovalnik" class="right-panel" id="personal-planner" data-selected-date="<%= @selected %>"><%= render 'personal' %></aside>
 </div>
 <%= render 'editorial_home' %>
+<% local_events=OccasionCatalog.upcoming(@today, limit: 3) %>
+<section class="panel related-topics home-festivals">
+  <div class="section-heading"><h2>Festivali in prireditve v Sloveniji</h2><a href="/festivali/">Vsi festivali in termini</a></div>
+  <% if local_events.any? %>
+    <div class="link-grid">
+      <% local_events.each do |festival, _, dates| %>
+        <a href="<%= OccasionCatalog.festival_path(festival.fetch('slug')) %>">
+          <strong><%= festival.fetch('title') %></strong>
+          <small><%= festival.fetch('place') %> · <%= occasion_date_label(dates.begin,dates.end) %></small>
+        </a>
+      <% end %>
+    </div>
+  <% end %>
+</section>
 <%= render 'expansion_discovery' %>
 <section class="panel discovery home-discovery"><div class="section-heading"><h2>Več možnosti. Vse na enem mestu.</h2><a href="/orodja/">Vsa orodja →</a></div><div class="feature-grid"><div><h3><%= ui_icon('calendar') %> Koledarji 2027–2030</h3><p>Letni in mesečni koledarji za vsak načrt.</p><div class="year-links"><% (2027..2030).each do |y| %><a href="/koledar/<%= y %>/"><%= y %></a><% end %></div></div><a href="/datumski-kalkulator/" class="feature"><h3><%= ui_icon('calculator') %> Datumski kalkulator</h3><p>Preštejte dneve in poiščite pravi datum.</p><span>Izračunaj →</span></a><% next_day_off = @upcoming.find(&:work_free) %>
 <article class="feature feature--holiday">

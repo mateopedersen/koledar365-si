@@ -74,15 +74,15 @@ class PagesController < ApplicationController
     # Keep that extra context in the grid map without widening annual lists.
     grid_start=[range_start,CalendarEngine.weeks(@year,1).first.first].min
     grid_end=[range_end,CalendarEngine.weeks(@year,12).last.last].max
-    calendar_events=CalendarEvent.where(on:grid_start..grid_end).ordered.to_a
+    calendar_events=ImportantDays.events_in(grid_start..grid_end)
     (grid_start.year..grid_end.year).each do |year|
       CalendarEngine.statutory_work_free_events(year).each do |attributes|
         next unless attributes[:on].between?(grid_start,grid_end)
         calendar_events<<CalendarEvent.new(attributes) unless calendar_events.any?{|event|event.key==attributes[:key]}
       end
     end
-    @events=calendar_events.select { |event| event.on.between?(range_start,range_end) }
-    @event_map=calendar_events.group_by(&:on)
+    @events=calendar_events.select { |event| ImportantDays.overlaps?(event, range_start..range_end) }
+    @event_map=ImportantDays.by_date(calendar_events, grid_start..grid_end)
     @upcoming=CalendarEvent.where(on:@today..).where(category:'legal').ordered.limit(3)
     @blog_article = EditorialCatalog.article(path)
     @section=section_for(path)
@@ -117,6 +117,7 @@ class PagesController < ApplicationController
     return 'name' if @person
     return 'shopping_guide' if ShoppingGuides.page(path)
     return 'home' if path=='/'
+    return 'festivals' if path==OccasionCatalog::PATH
     return 'blog' if path == EditorialCatalog::HUB || @blog_article
     return 'about' if path=='/o-nas/'
     return 'terms' if path=='/pogoji-uporabe/'
