@@ -120,7 +120,10 @@ elsif path=='/solski-urnik/'
    doc.css('p').each { |node|node.inner_html=node.inner_html.gsub('kontaktnega obrazca','e-pošte').gsub('obdelava podatkov na strežniku','tehnični podatki ob obisku') }
  end
  if path=='/zasebnost/'
-   doc.at_css('main').inner_html=ApplicationController.render(partial:'pages/privacy_free')
+   main = doc.at_css('main')
+   note = main.at_css('.editorial-note')&.unlink
+   main.inner_html = ApplicationController.render(partial: 'pages/privacy_free')
+   main.add_child(note) if note
  end
  if path.start_with?('/koledar/','/tedenski-koledar/')
   doc.css('.calendar-toolbar .tabs a').each { |node|node['href']='/'+node['href'] if node['href'].start_with?('?') }
@@ -215,7 +218,7 @@ search=Page.published.reject { |page|page.path.match?(removed_name_path) || Publ
  when %r{\A/(?:koledar|mesecni-koledar|tedenski-koledar|prazen-koledar)/} then 'koledar datum dnevi mesec leto tedenski mesečni letni koledar'
  else ''
  end
- {title:page.title,path:page.path,type:'Koledar in orodja',folded:PersonName.fold([page.title,page.path,page.description,keywords].compact.join(' ')),priority:0}
+ {title:page.title,path:page.path,type:(page.family == 'blog' ? 'Vodniki' : 'Koledar in orodja'),folded:PersonName.fold([page.title,page.path,page.description,keywords].compact.join(' ')),priority:0}
 end
 search+=SunEngine::CITIES.map { |id,values|{title:"Sončni vzhod in zahod – #{values[0]}",path:"/soncni-vzhod-in-zahod/#{id}/",type:'Sončni časi',folded:PersonName.fold("#{values[0]} sončni vzhod sončni zahod zlata ura dolžina dneva mesto"),priority:1} }
 # Retired name URLs stay out of public search, just as they stay out of the sitemap.

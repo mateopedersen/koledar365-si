@@ -60,6 +60,7 @@ class PackageImporter
       end
     end
     ExpansionCatalog.apply!
+    EditorialCatalog.apply!
     {pages:Page.count,names:PersonName.count,events:CalendarEvent.count,astronomy:AstronomicalEvent.count}
   end
   def self.store_event(v)

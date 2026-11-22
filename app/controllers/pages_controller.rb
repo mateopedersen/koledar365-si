@@ -84,6 +84,7 @@ class PagesController < ApplicationController
     @events=calendar_events.select { |event| event.on.between?(range_start,range_end) }
     @event_map=calendar_events.group_by(&:on)
     @upcoming=CalendarEvent.where(on:@today..).where(category:'legal').ordered.limit(3)
+    @blog_article = EditorialCatalog.article(path)
     @section=section_for(path)
     @education_calendar=EducationCalendar.new(path:path) if @section=='education_calendar'
     @payment_calendar=PaymentCalendar.new(path:path,today:@today) if @section=='payment_calendar'
@@ -116,6 +117,7 @@ class PagesController < ApplicationController
     return 'name' if @person
     return 'shopping_guide' if ShoppingGuides.page(path)
     return 'home' if path=='/'
+    return 'blog' if path == EditorialCatalog::HUB || @blog_article
     return 'about' if path=='/o-nas/'
     return 'terms' if path=='/pogoji-uporabe/'
     return 'privacy' if path=='/zasebnost/'
@@ -173,6 +175,9 @@ class PagesController < ApplicationController
             # reviewed page-level content history is available.
             x.loc(base+path)
             x['image'].image { x['image'].loc(base+ClockChangeSchedule::IMAGE_PATH) } if path=='/premik-ure/'
+            if EditorialCatalog.article(path)
+              x['image'].image { x['image'].loc(base+EditorialCatalog.image(path.delete_prefix(EditorialCatalog::HUB).delete_suffix('/'))) }
+            end
             image=ExpansionCatalog.image(path)
             x['image'].image { x['image'].loc(base+image.fetch('path')) } if image
               if (calendar_page=collection_pages[path])

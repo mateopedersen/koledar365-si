@@ -1,0 +1,838 @@
+{
+  "praznik-ali-dela-prost-dan": {
+    "category": "Koledar",
+    "title": "Praznik ali dela prost dan? Kako prebrati slovenski koledar",
+    "description": "Preverite razliko med državnim praznikom, dela prostim dnem in običajem ter jo uporabite pri načrtovanju dela ali dopusta.",
+    "lead": "Oznaka v koledarju odgovarja na vprašanje, kaj se na datum obeležuje. Za razpored dela morate izvedeti še, kakšen je zakonski status dneva in ali je bil dan v vašem urniku sploh deloven. Ta tri vprašanja je koristno rešiti v tem vrstnem redu.",
+    "sections": [
+      {
+        "heading": "Tri oznake, trije pomeni",
+        "paragraphs": [
+          "25. junij, dan državnosti, je državni praznik in dela prost dan. Dan Primoža Trubarja, 8. junij, je državni praznik, ki sam po sebi ni dela prost dan. Pust je premični običaj. Teh vnosov ne obravnavajte enako, tudi če so v mesečnem prikazu vsi poudarjeni."
+        ]
+      },
+      {
+        "heading": "Preverjanje z dvema datumoma",
+        "paragraphs": [
+          "Na seznamu praznikov poiščite 8. in 25. junij istega leta. Najprej preberite oznaki in nato preverite dan v tednu. Pri rednem delovnem tednu od ponedeljka do petka je učinek prostega petka drugačen od učinka praznika, ki pade na soboto. Za običajen urnik se sobota sama ne prenese na ponedeljek."
+        ]
+      },
+      {
+        "heading": "Od koledarja do osebnega urnika",
+        "paragraphs": [
+          "V kalkulatorju izberite dneve, ko dejansko delate. Če je na primer delovna tudi sobota, jo vključite pred izračunom. Dobljeni pregled primerjajte z razporedom delodajalca, zlasti pri izmenskem delu. Tako boste ločili število dni brez dela od razlogov za odsotnost na posamezen dan."
+        ]
+      }
+    ],
+    "related": [
+      "/prazniki/",
+      "/delovni-dnevi/",
+      "/pomembni-dnevi/"
+    ],
+    "sources": [
+      "holidays",
+      "labour"
+    ],
+    "image_labels": [
+      "Vpis v koledar",
+      "Zakonski status",
+      "Vaš urnik",
+      "Dogovor"
+    ],
+    "image_alt": "Prikaz štirih preverjanj pred načrtovanjem odsotnosti na dan praznika"
+  },
+  "podaljsani-vikend-en-dan-dopusta": {
+    "category": "Delo in dopust",
+    "title": "Kako z enim dnem dopusta sestaviti štiridnevni oddih",
+    "description": "Izračunajte, koliko dopusta porabite za podaljšani konec tedna, in po koledarju preverite še rezervni termin.",
+    "lead": "Najprej poiščite obdobje, v katerem je najmanj delovnih dni med prostimi. Nato ločeno zapišite dolžino oddiha in porabo dopusta. Štirje zaporedni prosti dnevi lahko po običajnem petdnevnem urniku pomenijo en sam dan dopusta.",
+    "sections": [
+      {
+        "heading": "Primer od 25. do 28. junija 2027",
+        "paragraphs": [
+          "Petek, 25. junij, je dan državnosti. Če običajno ne delate ob sobotah in nedeljah, dobite s prostim ponedeljkom, 28. junija, štiri zaporedne dni od petka do ponedeljka. V tem primeru je ponedeljek edini načrtovani dan dopusta. Če delate v soboto, spremenite vhodne dneve in izračun ponovite."
+        ]
+      },
+      {
+        "heading": "Primerjajte dva predloga z istim proračunom",
+        "paragraphs": [
+          "Pripravite tudi rezervni termin, pri katerem je mogoče prestaviti le en dan. Za vsak predlog zapišite datum odhoda, datum vrnitve, število koledarskih dni in dneve, ki jih mora potrditi delodajalec. Pri primerjavi cen rezervacije upoštevajte število nočitev posebej od števila prostih dni."
+        ]
+      },
+      {
+        "heading": "Preverite razpored pred rezervacijo",
+        "paragraphs": [
+          "Rezultat načrtovalnika temelji na izbranem urniku in praznikih. Za leto uporabite ustrezno preglednico. Odsotnost potrdite pri delodajalcu, nato preverite še pogoje spremembe rezervacije. Če imata dva člana gospodinjstva različna urnika, naredite izračun za vsakega."
+        ]
+      }
+    ],
+    "related": [
+      "/podaljsani-vikendi/2027/",
+      "/nacrtovalnik-dopusta/",
+      "/kalkulator-delovnih-dni/"
+    ],
+    "sources": [
+      "holidays",
+      "leave"
+    ],
+    "image_labels": [
+      "PE prosto",
+      "SO vikend",
+      "NE vikend",
+      "PO dopust"
+    ],
+    "image_alt": "Časovnica štirih prostih dni od prazničnega petka do ponedeljka na dopustu"
+  },
+  "delovni-dnevi-ure-razlicni-urniki": {
+    "category": "Delo in dopust",
+    "title": "Delovni dnevi in ure pri štiri- ali petdnevnem urniku",
+    "description": "Praktičen primer, ki pokaže, zakaj pri izračunu delovnih ur najprej izberete dneve in nato dnevni obseg.",
+    "lead": "Število delovnih dni določa razpored, ure pa dnevni obseg. Dve osebi imata lahko za isto obdobje enako število delovnih dni in različno število ur. Praznik vpliva na izračun le, če se ujema z delovnim dnem po izbranem razporedu.",
+    "sections": [
+      {
+        "heading": "Izračun v istem tednu",
+        "paragraphs": [
+          "Vzemimo ponedeljek do petka brez praznika. Pri petih delovnih dneh in 7,5 ure na dan je rezultat 37,5 ure. Če delate od ponedeljka do četrtka po 8 ur, je rezultat 32 ur. Kadar je petek dela prost po zakonu, se pri prvem urniku odšteje petek. Pri drugem petek v izračunu že ni vključen."
+        ]
+      },
+      {
+        "heading": "Kako preveriti kalkulator",
+        "paragraphs": [
+          "Vnesite isti začetni in končni datum, označite ustrezne dneve tedna ter nastavite ure. Če se vaše izmene različno dolgo ponavljajo, uporabite razpored izmen ali razdelite obdobje na dele z enakim številom ur. Pri seštevanju naj se deli ne prekrivajo."
+        ]
+      },
+      {
+        "heading": "Kaj primerjati z evidenco",
+        "paragraphs": [
+          "V izračunu ločite načrt ur, dejansko opravljene ure in odsotnosti. Mesečni pregled je uporaben za načrt in odkrivanje razlik, dejanski prihod ali odhod pa preverite v svoji evidenci. Za nepravilno označeni praznik preverite letni seznam in pravila v vašem razporedu."
+        ]
+      }
+    ],
+    "related": [
+      "/delovni-dnevi/",
+      "/kalkulator-delovnih-dni/",
+      "/razpored-izmen/"
+    ],
+    "sources": [
+      "labour",
+      "holidays"
+    ],
+    "image_labels": [
+      "Obdobje",
+      "Delovni dnevi",
+      "Prazniki",
+      "Ure"
+    ],
+    "image_alt": "Zaporedje nastavitev od izbire datumov do izračuna delovnih ur"
+  },
+  "teden-iso-na-prehodu-leta": {
+    "category": "Koledar",
+    "title": "Zakaj ima 1. januar včasih številko tedna prejšnjega leta",
+    "description": "Razlaga tedna ISO z mejnim primerom iz leta 2027 in napotki za nedvoumne zapise v urniku.",
+    "lead": "Oznaka tedna ISO ima dve pomembni sestavini: leto tedna in številko tedna. V prvih dneh januarja se lahko leto tedna razlikuje od leta na datumu. To je pomembno pri dobavah, izmenah in skupnih preglednicah.",
+    "sections": [
+      {
+        "heading": "Pravilo prvega četrtka",
+        "paragraphs": [
+          "Tedni ISO trajajo od ponedeljka do nedelje. Prvi teden ISO vsebuje prvi četrtek koledarskega leta. Enakovredno pravilo je, da mora imeti prvi teden vsaj štiri dni v novem letu. Če so v začetnem tednu le petek, sobota in nedelja, še pripada prejšnjemu letu tedna."
+        ]
+      },
+      {
+        "heading": "Primer 1. januarja 2027",
+        "paragraphs": [
+          "Petek, 1. januar 2027, je v tednu ISO 2026-W53. Nedelja, 3. januarja, je zadnji dan istega tedna. V ponedeljek, 4. januarja, se začne 2027-W01. Številko preverite z orodjem na obeh datumih, saj je prav čez ta prehod najlažje prepisati napačno leto."
+        ]
+      },
+      {
+        "heading": "Dve polji za nedvoumen dogovor",
+        "paragraphs": [
+          "Pri skupnem načrtovanju poleg zapisa 2026-W53 dodajte datum začetka tedna. Če načrtujete opravilo na točno določen dan, pripišite tudi koledarski datum. Tabela ostane uporabna tudi za sodelavca, katerega aplikacija začne teden v nedeljo."
+        ]
+      }
+    ],
+    "related": [
+      "/stevilka-tedna/",
+      "/tedenski-koledar/2027/",
+      "/koledar/2027/januar/"
+    ],
+    "sources": [
+      "iso"
+    ],
+    "image_labels": [
+      "31. 12.",
+      "1. 1.",
+      "3. 1.",
+      "4. 1."
+    ],
+    "image_alt": "Koledarski prehod, na katerem se novi teden ISO začne 4. januarja 2027"
+  },
+  "stetje-datumov-zacetek-konec": {
+    "category": "Koledar",
+    "title": "Koliko dni je med datumoma, če štejem tudi prvi dan?",
+    "description": "Z enim primerom primerjajte razliko med preteklimi, vključenimi in delovnimi dnevi.",
+    "lead": "Beseda »med« je pri datumih lahko dvoumna. Pred izračunom si zapišite, ali iščete razdaljo med datumoma, število datumov v obdobju ali le dneve, ki so delovni po vašem urniku.",
+    "sections": [
+      {
+        "heading": "Primer od 10. do 13. maja",
+        "paragraphs": [
+          "Od polnoči 10. maja do polnoči 13. maja pretečejo tri koledarske noči. Če med rezervacijo sobe vnašate datum prihoda in odhoda, so to tri nočitve. Če v dnevnem seznamu zajamete 10., 11., 12. in 13. maj, dobite štiri označene datume."
+        ]
+      },
+      {
+        "heading": "Preverite oba robova",
+        "paragraphs": [
+          "Označite, ali se prvi in zadnji datum vštevata. Pri izračunu delovnih dni določite še dneve tedna in izločanje praznikov. Če je rok zapisan v urah ali vključuje natančno uro, vpišite tudi uro in časovni pas. Koledarska razlika v dnevih sama ne pove, koliko ur mine ob premiku ure."
+        ]
+      },
+      {
+        "heading": "Kako deliti rezultat",
+        "paragraphs": [
+          "Poleg števila vedno napišite, kaj šteje. Zapis »štirje vključeni datumi od 10. do 13. maja« bo jasnejši od zapisa »štirje dnevi«. Pri uradnem roku preverite navodilo, ki rok določa, saj kalkulator uporablja pravila, ki jih izberete sami."
+        ]
+      }
+    ],
+    "related": [
+      "/datumski-kalkulator/",
+      "/kalkulator-delovnih-dni/",
+      "/odstevanje/"
+    ],
+    "sources": [
+      "iso"
+    ],
+    "image_labels": [
+      "10. 5.",
+      "11. 5.",
+      "12. 5.",
+      "13. 5."
+    ],
+    "image_alt": "Štirje zaporedni datumi za primerjavo razlike treh dni z vključujočim štetjem štirih dni"
+  },
+  "februar-29-in-ponavljanja": {
+    "category": "Koledar",
+    "title": "29. februar v praksi: prestopna leta in ponavljajoči se opomniki",
+    "description": "Preverite pravilo 4, 100 in 400 ter načrtujte obletnice in ponovitve za leta brez 29. februarja.",
+    "lead": "Pri datumu 29. februarja sta pomembni dve odločitvi. Koledar določa, ali datum v izbranem letu obstaja. Pri ponavljajočem se opomniku morate določiti še, kaj želite v letih, ko datum manjka.",
+    "sections": [
+      {
+        "heading": "Pravilo gregorijanskega koledarja",
+        "paragraphs": [
+          "Leto, deljivo s 4, je praviloma prestopno. Če je deljivo tudi s 100, mora biti deljivo še s 400. Zato ima leto 2028 29. februar, leto 2100 pa ne. Za primerjavo je bilo leto 2000 prestopno, ker je deljivo s 400."
+        ]
+      },
+      {
+        "heading": "Ponavljanje dogodka preizkusite vnaprej",
+        "paragraphs": [
+          "V programu lahko letni opomnik na 29. februar v letu brez tega datuma izpusti ponovitev. Če želite vsakoletni opomnik, zavestno izberite 28. februar ali 1. marec in takšno odločitev zapišite v opombo. Začnite s preizkusnim dogodkom, da vidite, kako ga prikaže drugi koledar."
+        ]
+      },
+      {
+        "heading": "Če gre za rok",
+        "paragraphs": [
+          "Za pogodbeno ali uradno obletnico veljajo pravila dokumenta, ki določa rok. Pri rednem domačem načrtovanju pa je najbolj zanesljiv vnaprej dogovorjeni nadomestni datum in preverjanje na prikazu naslednjega februarja."
+        ]
+      }
+    ],
+    "related": [
+      "/prestopno-leto/",
+      "/koledar/2028/februar/",
+      "/rojstnodnevni-koledar/"
+    ],
+    "sources": [
+      "leap",
+      "ics"
+    ],
+    "image_labels": [
+      "2028 ima 29.",
+      "2030 nima 29.",
+      "2100 ni deljivo s 400",
+      "Izberite pravilo"
+    ],
+    "image_alt": "Primeri prestopnega in navadnega leta ter odločitev o opomniku za februar"
+  },
+  "zimske-pocitnice-obcine-in-regije": {
+    "category": "Šola",
+    "title": "Zimske šolske počitnice: kako določiti pravi termin za šolo",
+    "description": "Preverite občino šole, regionalno razdelitev in izjeme, preden uskladite varstvo ali dopust.",
+    "lead": "Za zimske počitnice sta v šolskem koledarju lahko dva termina. Najprej ugotovite, v katero skupino spada šola, šele nato primerjajte datume družine. Upoštevati je treba uradno razdelitev in navedene izjeme po občinah.",
+    "sections": [
+      {
+        "heading": "Začnite pri šoli",
+        "paragraphs": [
+          "V uradnem koledarju za izbrano šolsko leto preberite oba zapisa za zimske počitnice. Poiščite območje in poglejte, ali so pri njem navedene izjeme. Če otrok obiskuje šolo zunaj domače občine, se opirajte na urnik njegove šole. Izraz »jugovzhodna Slovenija« brez seznama izjem za odločitev ni dovolj."
+        ]
+      },
+      {
+        "heading": "Dve šoli v istem gospodinjstvu",
+        "paragraphs": [
+          "Zapišite po eno vrstico za vsakega otroka: šola, občina, začetek, konec in potrditveno obvestilo. Najprej označite presek prostih dni. Če je presek krajši od načrtovanega dopusta, določite dneve varstva ločeno od skupnega potovanja."
+        ]
+      },
+      {
+        "heading": "Preden dokončate načrt",
+        "paragraphs": [
+          "V skupni planer vnesite potrjeni termin in zabeležite, kdaj ste preverili šolsko obvestilo. Ločeno označite praznike, dneve pouka in vikende. Pred rezervacijo preverite še znane posebnosti šole, ki lahko vplivajo na prevoz ali varstvo."
+        ]
+      }
+    ],
+    "related": [
+      "/solske-pocitnice/",
+      "/solski-koledar/",
+      "/druzinski-planer/"
+    ],
+    "sources": [
+      "basic-school"
+    ],
+    "image_labels": [
+      "Šolsko leto",
+      "Šola in občina",
+      "Izjeme",
+      "Potrjen termin"
+    ],
+    "image_alt": "Prikaz preverjanja šolskega leta, občine in izjem pri zimskih počitnicah"
+  },
+  "npz-in-matura-razlicni-roki": {
+    "category": "Šola",
+    "title": "NPZ in matura: kako ločiti preizkus, rezultate in roke",
+    "description": "Sestavite pregled iz uradnih rokov brez zamenjave NPZ, splošne in poklicne mature.",
+    "lead": "Nacionalno preverjanje znanja in matura imata različne urnike in različna pojasnila. Tudi znotraj posameznega postopka datum pisanja, seznanitev z rezultati in morebitni rok za naslednji korak niso ista stvar.",
+    "sections": [
+      {
+        "heading": "Najprej razred ali vrsta mature",
+        "paragraphs": [
+          "Pri NPZ izberite razred. Pri maturi ločite splošno in poklicno maturo ter preverite izpitni rok in predmet. Ne kopirajte datuma iz drugega izpitnega roka niti iz tabele za druge dijake. Za razpored, ki se določa v šoli, preverite njeno obvestilo."
+        ]
+      },
+      {
+        "heading": "Koledar s tremi vrstami vnosov",
+        "paragraphs": [
+          "Uporabite oznake »uradni datum«, »obvestilo šole« in »osebna priprava«. Datum pisanja dodajte kot celodnevni vnos ali kot termin z uro, če je ta potrjena. Termin priprav naj ne prepiše dejanskega roka. Če podatka še ni, si zabeležite, kje ga boste preverili."
+        ]
+      },
+      {
+        "heading": "Pred vsakim ponovnim izvozom",
+        "paragraphs": [
+          "Preverite, ali so se spremenili predmet, lokacija ali navodila. Pri novem uvozu v svoj koledar primerjajte nove zapise s starimi, da ne ostaneta dva navidez enaka dogodka. Šolska obvestila in državne koledarje hranite kot povezave, ki jih lahko odprete neposredno iz opombe."
+        ]
+      }
+    ],
+    "related": [
+      "/npz/",
+      "/matura/2027/",
+      "/solski-koledar/"
+    ],
+    "sources": [
+      "basic-school",
+      "secondary-school"
+    ],
+    "image_labels": [
+      "Prijava, če je predvidena",
+      "Preizkus",
+      "Rezultati",
+      "Ustrezno obvestilo"
+    ],
+    "image_alt": "Primer ločenih zapisov za preizkus, rezultate in druga obvestila"
+  },
+  "tedenski-urnik-druzine": {
+    "category": "Načrtovanje",
+    "title": "Družinski tedenski urnik: kdo, kam in do kdaj",
+    "description": "Preizkusite preprost tedenski pregled za prevzeme otrok, prevoze in opravila, ki si jih deli več ljudi.",
+    "lead": "Družinski urnik potrebuje predvsem jasne dogovore. Za prevoz ali prevzem otroka poleg ure zapišite odgovorno osebo, kraj in po potrebi rezervni dogovor. Dolg seznam brez imen ne pokaže, kdo mora ukrepati, če se urnik spremeni.",
+    "sections": [
+      {
+        "heading": "Najprej zaveze, nato opravila",
+        "paragraphs": [
+          "Vnesite dejavnosti z nespremenljivo uro: pouk, prevoz ali dogovorjen obisk. Šele nato razporedite opravila, pri katerih je termin prožen. Med dvema lokacijama pustite dovolj časa za pot. Če se odhod in prevzem prekrivata, določite, kdo prevzame drugo nalogo."
+        ]
+      },
+      {
+        "heading": "Vzorec za sredo",
+        "paragraphs": [
+          "Primer vrstice: »16.15 – prevzem pri glavnem vhodu – oseba A«. V naslednji vrstici naj bo »17.00 – vadba – oseba B«. Če rezervna oseba ni potrjena, to zapišite neposredno ob dogodku. Ko označite le kraj ali le uro, je pri spremembi dogovor težje razbrati."
+        ]
+      },
+      {
+        "heading": "Delite pregled na primeren način",
+        "paragraphs": [
+          "Za tablo doma je lahko uporaben natisnjen teden, za osebo na poti pa fotografija ali datoteka z dogovorjenimi urami. Pri izmenjavi koledarskih datotek naj vsak prejemnik preveri datum in čas po uvozu. Občutljive opombe shranite ločeno od različice, ki jo delite širše."
+        ]
+      }
+    ],
+    "related": [
+      "/druzinski-planer/",
+      "/tedenski-koledar/",
+      "/solski-urnik/"
+    ],
+    "sources": [
+      "ics"
+    ],
+    "image_labels": [
+      "Oseba",
+      "Ura",
+      "Lokacija",
+      "Rezervni dogovor"
+    ],
+    "image_alt": "Štirje podatki, ki jih potrebuje uporabna vrstica v skupnem družinskem urniku"
+  },
+  "ics-prazniki-brez-podvajanj": {
+    "category": "Načrtovanje",
+    "title": "Uvoz praznikov v koledar ICS brez podvojenih dogodkov",
+    "description": "Ločite enkratni uvoz od naročnine ter preverite celodnevne praznike pred dodajanjem v osebni koledar.",
+    "lead": "Datoteka ICS je način izmenjave dogodkov. Pri enkratnem uvozu kopirate zapise iz datoteke v aplikacijo. Naročnina lahko prikazuje posodobitve, če jo izdajatelj in aplikacija podpirata. Pred uvozom je vredno vedeti, katero od teh možnosti uporabljate.",
+    "sections": [
+      {
+        "heading": "Najprej v ločen koledar",
+        "paragraphs": [
+          "V aplikaciji ustvarite poseben koledar za slovenske praznike. Uvozite datoteko za eno leto in odprite 25. junij ter še en znani praznik. Preverite, ali sta zapisa celodnevna in ali sta na pravilnem datumu. Različni koledarji lahko istočasno prikazujejo tudi že vgrajene praznike."
+        ]
+      },
+      {
+        "heading": "Kaj storiti, če vidite dva zapisa",
+        "paragraphs": [
+          "Začasno skrijte uvoženi koledar. Če eden od vnosov izgine, dvojnika verjetno prihajata iz dveh koledarjev. Če sta oba v istem koledarju, preverite, ali je bila datoteka uvožena dvakrat. Zato je ločen koledar praktičen tudi pri čiščenju."
+        ]
+      },
+      {
+        "heading": "Po uvozu preverite spremembe",
+        "paragraphs": [
+          "Enkratnega uvoza ne obravnavajte kot samodejno osveževanje. Ob novi različici datoteke se odločite, ali želite star koledar zamenjati ali ga ohraniti kot arhiv. Za osebne dogodke poskrbite ločeno, da jih med menjavo praznikov ne odstranite po pomoti."
+        ]
+      }
+    ],
+    "related": [
+      "/prazniki/2027/",
+      "/tedenski-koledar/",
+      "/viri-in-metodologija/"
+    ],
+    "sources": [
+      "ics",
+      "holidays"
+    ],
+    "image_labels": [
+      "Ločen koledar",
+      "Uvoz datoteke",
+      "Preizkus datuma",
+      "Preverjanje dvojnikov"
+    ],
+    "image_alt": "Postopek za preverjen uvoz praznikov v ločen koledar"
+  },
+  "pdf-koledar-tisk-100-odstotkov": {
+    "category": "Načrtovanje",
+    "title": "Kako natisniti koledar PDF v pravem merilu",
+    "description": "Izberite A3 ali A4, preverite usmerjenost in poskusno stran za berljiv koledar brez odrezanih robov.",
+    "lead": "Pred tiskanjem preverite, v kateri velikosti je pripravljena predloga. PDF za A3 na tiskalniku z listi A4 potrebuje drugo predlogo ali zavestno zmanjšavo. Različna formata imata enako razmerje stranic, a nista enako velika.",
+    "sections": [
+      {
+        "heading": "Odprite PDF in preverite papir",
+        "paragraphs": [
+          "Izberite enako velikost papirja kot v predlogi, nato pokončno ali ležečo postavitev. Za ohranitev merila izberite dejansko velikost oziroma 100 %. Če zaradi netiskljivih robov manjka del mreže, poskusite manjše merilo ali predlogo z več roba. Na poskusnem listu poglejte vse štiri robove."
+        ]
+      },
+      {
+        "heading": "PDF ali slika?",
+        "paragraphs": [
+          "PDF je praviloma primeren za natančen tisk postavitve. Slika je uporabna za predogled in deljenje. Ko tiskate sliko, lahko program sam določi velikost glede na prikaz ali papir, zato znova preverite okno pred tiskanjem. Pri mesečnem koledarju naj ostane dovolj prostora za ročni vpis."
+        ]
+      },
+      {
+        "heading": "Najprej ena stran",
+        "paragraphs": [
+          "Natisnite stran z daljšim imenom meseca ali s praznikom, da opazite morebitno prekrivanje. Nato preverite svetle črte v sivinskem načinu. Ko se en list dobro bere z mesta, kjer bo visel, uporabite iste nastavitve za preostale strani."
+        ]
+      }
+    ],
+    "related": [
+      "/koledar-za-tiskanje/",
+      "/ustvari-koledar/",
+      "/prazen-koledar/"
+    ],
+    "sources": [
+      "paper"
+    ],
+    "image_labels": [
+      "Datoteka PDF",
+      "Format papirja",
+      "Merilo 100 %",
+      "Poskusni list"
+    ],
+    "image_alt": "Kontrolni seznam za tisk koledarja od izbire PDF do poskusnega lista"
+  },
+  "zlata-ura-pred-sprehodom": {
+    "category": "Sonce in Luna",
+    "title": "Sončni zahod, civilni mrak in zlata ura pri načrtovanju sprehoda",
+    "description": "Naučite se brati tri različne časovne oznake in pripravite realen načrt za vrnitev po svetlem.",
+    "lead": "Ura sončnega zahoda je dober orientir, toda svetloba na poti se lahko spremeni že prej. Pobočje, oblačnost ali gozd lahko zakrijejo Sonce. V koledarju primerjajte večerni začetek zlate ure, zahod in konec civilnega mraka.",
+    "sections": [
+      {
+        "heading": "Tri različne oznake",
+        "paragraphs": [
+          "Sončni zahod je izračun za standardno obzorje. Civilni mrak po zahodu traja, dokler se Sonce ne spusti približno šest stopinj pod obzorje. Zlata ura je fotografski približek ugodne nizke svetlobe in lahko zajema čas pred zahodom in krajši čas po njem."
+        ]
+      },
+      {
+        "heading": "Iz istega mesta in datuma",
+        "paragraphs": [
+          "V orodju izberite mesto in datum sprehoda. Če imate na poti dolino in odprt greben, podatek uporabljajte kot orientacijo. Za varno vrnitev primerjajte dolžino poti s časom do zahoda in si pustite rezervo. Oblačnost in meglo preverite posebej."
+        ]
+      },
+      {
+        "heading": "Primer s časovno rezervo",
+        "paragraphs": [
+          "Če v vašem primeru pričakujete zahod ob 18.00 in želite končati pot 30 minut prej, je ciljni čas 17.30. Za 75 minut hoje odštejte še uro in četrt. Odhod ob 16.15 je izhodiščni načrt, ki ga ob težjem terenu ustrezno prilagodite."
+        ]
+      }
+    ],
+    "related": [
+      "/soncni-vzhod-in-zahod/ljubljana/",
+      "/dolzina-dneva/",
+      "/soncni-vzhod-in-zahod/"
+    ],
+    "sources": [
+      "sun"
+    ],
+    "image_labels": [
+      "Zlata ura",
+      "Sončni zahod",
+      "Civilni mrak",
+      "Časovna rezerva"
+    ],
+    "image_alt": "Shema prehoda od večerne svetlobe prek sončnega zahoda v mrak"
+  },
+  "primerjava-vzhoda-koper-murska-sobota": {
+    "category": "Sonce in Luna",
+    "title": "Zakaj Sonce ne vzide ob isti uri v Kopru in Murski Soboti",
+    "description": "Primerjajte dve slovenski mesti na istem datumu in ločite čas vzhoda od dolžine svetlega dela dneva.",
+    "lead": "Koper in Murska Sobota uporabljata isti uradni čas. Kljub temu sta uri vzhoda in zahoda različni. Pri primerjavi morate ločiti vpliv lege proti vzhodu oziroma zahodu od vpliva zemljepisne širine na dolžino dneva.",
+    "sections": [
+      {
+        "heading": "Kako narediti pošteno primerjavo",
+        "paragraphs": [
+          "Na obeh straneh nastavite isti datum. Za vsako mesto prepišite tri vrednosti: vzhod, zahod in dolžino dneva. Če se vzhod razlikuje za več minut, razlika sama še ne pove, koliko časa je v enem mestu svetlo. Za to primerjajte že izračunano trajanje."
+        ]
+      },
+      {
+        "heading": "Ponovite poleti in pozimi",
+        "paragraphs": [
+          "Uporabite na primer 21. junij in 21. december istega leta. Razkorak v urah vzhoda med mestoma se lahko z datumom spremeni. Poleti višja zemljepisna širina prispeva k daljšemu svetlemu delu dneva, pozimi pa k krajšemu."
+        ]
+      },
+      {
+        "heading": "Ko je pomembno dejansko obzorje",
+        "paragraphs": [
+          "Pogled z obale, iz središča mesta ali iz doline ima različno vidno obzorje. Orodje primerja izračunane krajevne čase pod enakimi predpostavkami, dejansko prvo oziroma zadnjo neposredno svetlobo pa lahko zakrije krajina ali stavba. Za fotografiranje si pred dogodkom oglejte smer pogleda."
+        ]
+      }
+    ],
+    "related": [
+      "/soncni-vzhod-in-zahod/koper/",
+      "/soncni-vzhod-in-zahod/murska-sobota/",
+      "/dolzina-dneva/"
+    ],
+    "sources": [
+      "sun",
+      "timezone"
+    ],
+    "image_labels": [
+      "Isti datum",
+      "Murska Sobota",
+      "Koper",
+      "Vzhod in zahod"
+    ],
+    "image_alt": "Prikaz primerjave dveh krajev v istem časovnem pasu in na istem datumu"
+  },
+  "lunina-mena-ali-vzhod-lune": {
+    "category": "Sonce in Luna",
+    "title": "Lunina mena in vzhod Lune sta dva različna podatka",
+    "description": "Ugotovite, kateri podatek uporabiti za opazovanje polne Lune in kako pri tem upoštevati svoj kraj.",
+    "lead": "Podatek o polni Luni navaja trenutek astronomske mene. Če jo želite videti nad obzorjem, potrebujete še lokalni čas vzhoda ali zahoda Lune. Prepis časa mene v koledar zato ne pove samodejno, kdaj bo Luna vidna z vašega kraja.",
+    "sections": [
+      {
+        "heading": "Berite čas in datum skupaj",
+        "paragraphs": [
+          "Prikaz za Slovenijo uporablja lokalni čas. Uradna tabela, zapisana v UTC, se lahko po pretvorbi premakne tudi v naslednji koledarski dan. Če je na primer trenutek 23.30 UTC v času UTC+2, je v Sloveniji 1.30 naslednji dan. To je ponazoritev pretvorbe, ne datum konkretne mene."
+        ]
+      },
+      {
+        "heading": "Od časa mene do opazovanja",
+        "paragraphs": [
+          "Najprej izberite datum in zabeležite meno. Nato v krajevnem izračunu poiščite vzhod in zahod Lune za isti datum in za svojo lokacijo. Pri opazovanju z ozke doline upoštevajte še visok rob obzorja. Če je ob točnem trenutku oblačno, je lahko pogled primeren tudi na sosednji večer."
+        ]
+      },
+      {
+        "heading": "Osvetljenost je še tretji podatek",
+        "paragraphs": [
+          "Dnevna vrednost osvetljenosti pove, kolikšen del vidne Lunine ploskve je osvetljen ob navedenem času. V dnevnem koledarju je to vzorec za primerjavo datumov. Trenutek mene najdite v seznamu dogodkov, krajevno vidnost pa preverite za mesto ali koordinate."
+        ]
+      }
+    ],
+    "related": [
+      "/lunine-mene/",
+      "/polna-luna/",
+      "/lunin-koledar/"
+    ],
+    "sources": [
+      "moon",
+      "sun"
+    ],
+    "image_labels": [
+      "Trenutek mene",
+      "Krajevni vzhod",
+      "Lokalno obzorje",
+      "Čas opazovanja"
+    ],
+    "image_alt": "Ponazoritev razlike med trenutkom lunine mene in krajevno vidnostjo Lune"
+  },
+  "perzeidi-nacrt-opazovanja": {
+    "category": "Sonce in Luna",
+    "title": "Perzeidi: načrtujte noč, kraj in čas opazovanja",
+    "description": "Uskladite vrh meteorskega roja s temo, položajem Lune in jasnostjo neba za svoj kraj.",
+    "lead": "Avgustovski vrh Perzeidov je uporaben okvir za izbor noči. Dejansko število opaženih utrinkov je odvisno od teme, oblakov in položaja Lune. Več vrednosti ima primerjava dveh ali treh noči kot en sam termin, izbran samo po koledarskem vrhu.",
+    "sections": [
+      {
+        "heading": "Izberite mesto z odprtim pogledom",
+        "paragraphs": [
+          "Iščite varen in dovoljen prostor z malo bližnjimi svetilkami. Če je mogoče, si lokacijo oglejte po svetlem. Pomemben je širok pogled na nebo. Prinesite toplo oblačilo in pustite očem čas, da se prilagodijo temi. Za osnovno opazovanje ne potrebujete teleskopa."
+        ]
+      },
+      {
+        "heading": "Preverite Luno in čas mraka",
+        "paragraphs": [
+          "Vzemite izbrani datum in ločeno preverite krajevni čas mraka, lunino meno in morebitno prisotnost Lune nad obzorjem med opazovanjem. Svetla Luna lahko zmanjša vidnost šibkejših meteorjev. Preverite tudi, ali izraz »noč 12./13. avgusta« v vašem načrtu jasno zajema čas po polnoči."
+        ]
+      },
+      {
+        "heading": "Zabeležite, kaj ste res videli",
+        "paragraphs": [
+          "Zapišite začetek, konec, oblačnost in število opaženih utrinkov. Pri primerjavi dveh noči uporabite podobno dolg čas opazovanja. Tako bo vaš zapis bolj poveden od splošne napovedi o aktivnosti roja."
+        ]
+      }
+    ],
+    "related": [
+      "/perzeidi/",
+      "/lunin-koledar/",
+      "/soncni-vzhod-in-zahod/"
+    ],
+    "sources": [
+      "perseids",
+      "moon",
+      "sun"
+    ],
+    "image_labels": [
+      "Temen prostor",
+      "Luna",
+      "Oblaki",
+      "Rezervna noč"
+    ],
+    "image_alt": "Kontrolne točke za izbiro kraja in noči za opazovanje Perzeidov"
+  },
+  "premik-ure-ponavljajoci-dogodek": {
+    "category": "Sonce in Luna",
+    "title": "Premik ure in ponavljajoči se termini: ohranite pravi čas",
+    "description": "S praktičnim primerom preverite, ali naj koledar ohrani krajevno uro ali isti trenutek UTC.",
+    "lead": "»Vsak ponedeljek ob devetih« in »vsak teden ob istem trenutku UTC« sta različni pravili. V večini domačih urnikov je pravi cilj stalna krajevna ura. Pri usklajevanju z oddaljeno ekipo včasih šteje drugačno pravilo.",
+    "sections": [
+      {
+        "heading": "Primer stalnega termina v Sloveniji",
+        "paragraphs": [
+          "Če naj sestanek ostane ob 9.00 po slovenskem času, v dogodku nastavite časovni pas Europe/Ljubljana. Pri primerjanju dveh prikazov UTC se lahko ura med zimskim in poletnim časom razlikuje. To je pričakovana posledica premika lokalne ure."
+        ]
+      },
+      {
+        "heading": "Nočni termin potrebuje dodatno preverjanje",
+        "paragraphs": [
+          "Ob prehodu na poletni čas nekatere krajevne ure preskočimo. Ob jesenskem premiku se del noči ponovi. Če urnik vključuje nočne izmene ali samodejno obdelavo, preverite dejanski datum, čas in odmik UTC, ne le zapisa »2.30«."
+        ]
+      },
+      {
+        "heading": "Preizkus pri souporabi",
+        "paragraphs": [
+          "Odprite po en ponavljajoči se termin pred in po premiku ure. Pri mednarodni skupini poglejte prikaz za obe lokaciji. Pri izvozu ICS uvozite kopijo v testni koledar in preverite prvi prihodnji termin, preden povabite vse udeležence."
+        ]
+      }
+    ],
+    "related": [
+      "/premik-ure/",
+      "/tedenski-koledar/",
+      "/datumski-kalkulator/"
+    ],
+    "sources": [
+      "timezone",
+      "ics",
+      "clock"
+    ],
+    "image_labels": [
+      "Krajevna ura",
+      "Časovni pas",
+      "Naslednji termin",
+      "Preizkus po uvozu"
+    ],
+    "image_alt": "Shema preverjanja ponavljajočega se termina pred premikom ure in po njem"
+  },
+  "setveni-nacrt-tla-in-slana": {
+    "category": "Načrtovanje",
+    "title": "Setveni koledar v praksi: od okvirnega meseca do primernega dne",
+    "description": "Uskladite priporočeni mesec setve z razmerami na gredi, slano, temperaturo tal in navodili za sorto.",
+    "lead": "Setveni koledar je priročen za izbiro okvirnega obdobja. Natančen dan je odvisen od sorte, lege, tal in zaščite pred mrazom. Vrtnina na zavetni obalni gredi in enaka vrtnina v hladni kotlini ne potrebujeta nujno istega datuma.",
+    "sections": [
+      {
+        "heading": "Ločite tri opravila",
+        "paragraphs": [
+          "Posebej zapišite setev na prosto, vzgojo sadik v zavetju in presajanje. Vsaka ima drugačen pogoj. Datum, primeren za setev v zaščitenem prostoru, ni samodejno primeren za presajanje na prosto. Na vrečki semena preberite priporočila za konkretno sorto."
+        ]
+      },
+      {
+        "heading": "Uporabite dvostopenjski načrt",
+        "paragraphs": [
+          "Za občutljivo rastlino v mesečnem koledarju označite okvirni teden. Pred izvedbo preverite lokalno napoved, morebitno slano in razmere v tleh. Če je napoved negotova, pripravite zaščito ali premaknite opravilo. Že pri načrtu dodajte datum ponovnega preverjanja."
+        ]
+      },
+      {
+        "heading": "Vodite svoj zapis",
+        "paragraphs": [
+          "Na koncu zapišite datum setve, način in kratek opis lege, na primer »dvignjena greda pri južni steni«. Podatek o uspehu pri naslednjem načrtovanju primerjajte z lokalnimi razmerami tistega leta. Iz enega dobrega pridelka še ne morete sklepati, da bo isti datum primeren vsako leto."
+        ]
+      }
+    ],
+    "related": [
+      "/setveni-koledar/",
+      "/mesecni-koledar/",
+      "/letni-casi/"
+    ],
+    "sources": [
+      "garden",
+      "weather"
+    ],
+    "image_labels": [
+      "Vrtnina",
+      "Tla in slana",
+      "Način setve",
+      "Ponovni pregled"
+    ],
+    "image_alt": "Koraki od izbire vrtnine do preverjanja tal, slane in načina setve"
+  },
+  "osebni-koledar-varnostna-kopija": {
+    "category": "Načrtovanje",
+    "title": "Osebni koledar: preizkusite obnovitev, preden jo potrebujete",
+    "description": "Razlikujte datoteko projekta, izvoz dogodkov ICS in tiskani PDF ter preverite, kaj se lahko obnovi.",
+    "lead": "Videz urnika na papirju in podatki za nadaljnje urejanje sta dva različna izdelka. Preden menjate napravo ali počistite brskalnik, ugotovite, kateri izvoz potrebujete. Koledar na drugi napravi odprite s kopijo, medtem ko izvirnik ostane shranjen.",
+    "sections": [
+      {
+        "heading": "Tri vrste izvozov",
+        "paragraphs": [
+          "Datoteka projekta je namenjena nadaljnjemu urejanju v združljivem orodju. ICS je uporaben za prenos dogodkov, pri tem pa ne ohrani nujno videza predloge. PDF je zanesljiv prikaz za tisk, iz njega pa običajno ne morete obnoviti urejanja dogodkov."
+        ]
+      },
+      {
+        "heading": "Naredite preizkus z dvema vnosoma",
+        "paragraphs": [
+          "Vključite en celodnevni dogodek in enega z uro. Shranite projekt ter ga odprite v preizkusnem oknu ali na drugem združljivem brskalniku. Pri uvozu ICS preverite, ali sta ostala pravi dan in ura. Datoteko poimenujte z datumom in kratkim opisom."
+        ]
+      },
+      {
+        "heading": "Skrb za zasebne opombe",
+        "paragraphs": [
+          "Izvozne datoteke lahko vsebujejo osebne dogodke ali fotografije, vnesene v projekt. Hranite jih v mapi, do katere imajo dostop samo potrebne osebe. Za deljenje pripravite različico brez zasebnih opomb. Zapis o tem, kdaj je bila varnostna kopija narejena, vam pomaga izbrati novejšo različico."
+        ]
+      }
+    ],
+    "related": [
+      "/ustvari-koledar/",
+      "/druzinski-planer/",
+      "/zasebnost/"
+    ],
+    "sources": [
+      "ics"
+    ],
+    "image_labels": [
+      "Projekt",
+      "Dogodki ICS",
+      "PDF",
+      "Poskus obnovitve"
+    ],
+    "image_alt": "Primerjava namenov datoteke projekta, datoteke ICS in PDF s poskusno obnovitvijo"
+  },
+  "nocna-izmena-cez-polnoc": {
+    "category": "Delo in dopust",
+    "title": "Nočna izmena čez polnoč: kako pravilno zapisati datuma",
+    "description": "Primer nočne izmene od 22.00 do 6.00 pokaže, zakaj je končni datum prav tako pomemben kot končna ura.",
+    "lead": "Izmena od 22.00 do 6.00 prečka polnoč. Začetni datum je dan prihoda na delo, zaključni datum pa je naslednji dan. Če v datoteko zapišete samo dve uri, bo prejemnik koledarja težje ugotovil, kdaj se izmena zares konča.",
+    "sections": [
+      {
+        "heading": "Jasno zapišite začetek in konec",
+        "paragraphs": [
+          "Za običajno noč na primer vnesite »petek ob 22.00 – sobota ob 6.00«. Brez premika ure je med tema trenutkoma osem ur. Če vodite tudi odmor ali obračun, ga označite v ločenem polju po pravilih delodajalca. Sam koledarski vnos pove predvideni začetek in konec."
+        ]
+      },
+      {
+        "heading": "Izmena ob premiku ure",
+        "paragraphs": [
+          "Preverite, ali je ta noč v obdobju sezonskega premika ure. Enak par krajevnih ur ima takrat lahko drugačno dejansko trajanje. Če izvažate uro za obračun ali izmenjavo, naj bo časovni pas jasen, dejanske ure pa primerjajte z evidenco."
+        ]
+      },
+      {
+        "heading": "Prekrivanje in predaja",
+        "paragraphs": [
+          "Postavite naslednjo izmeno ob konec prejšnje. Če pričakujete 15 minut za predajo, naj bo teh 15 minut dogovorjenih posebej. Pri uvozu v drug koledar na dnevnem pogledu preverite oba datuma, da izmena ni končana pred polnočjo ali napačno podvojena."
+        ]
+      }
+    ],
+    "related": [
+      "/razpored-izmen/",
+      "/kalkulator-delovnih-dni/",
+      "/premik-ure/"
+    ],
+    "sources": [
+      "labour",
+      "timezone"
+    ],
+    "image_labels": [
+      "22.00 začetek",
+      "Polnoč",
+      "6.00 naslednji dan",
+      "Preverite odmik"
+    ],
+    "image_alt": "Časovnica nočne izmene, ki se konča na naslednji koledarski dan"
+  },
+  "opazovanje-mrka-lokalna-vidnost": {
+    "category": "Sonce in Luna",
+    "title": "Sončni in Lunin mrk: kako brati podatek o lokalni vidnosti",
+    "description": "Ločite globalni dogodek in vidnost iz svojega mesta ter pred opazovanjem preverite ure in zaščito oči.",
+    "lead": "Napoved mrka po svetu še ne pove, kaj bo vidno iz Slovenije. V lokalnem prikazu izberite mesto in preberite, kateri deli dogodka so nad obzorjem. Izberite pravo vrsto mrka in znova preverite časovni pas.",
+    "sections": [
+      {
+        "heading": "Kateri del dogodka lahko vidim?",
+        "paragraphs": [
+          "Razločite začetek, največjo fazo in konec. Pri Luninem mrku lahko Luna zaide, preden se pojav popolnoma konča. Pri Sončevem mrku je pomembno, kako se pot sence ujema z lokacijo opazovalca. Primerjajte tudi lokalni vzhod oziroma zahod, če je dogodek blizu obzorja."
+        ]
+      },
+      {
+        "heading": "Varnost pri Sončevem mrku",
+        "paragraphs": [
+          "Za neposredno opazovanje delnega Sončevega mrka uporabite za to namenjene filtre ali primerno posredno projekcijo. Običajna sončna očala niso zaščita. Skozi daljnogled, teleskop ali fotografski objektiv ne glejte v Sonce brez ustreznega filtra na sprednjem delu instrumenta. Pred opazovanjem sledite navodilom NASA."
+        ]
+      },
+      {
+        "heading": "Pripravite termin in rezervni pogled",
+        "paragraphs": [
+          "Za bližnji teren preverite smer in odprtost obzorja. Oblaki lahko opazovanje preprečijo tudi pri pravilnem astronomskem izračunu. Če pogoji ne omogočajo varnega ogleda, izberite organizirano opazovanje ali spremljajte uradni prenos, kadar je na voljo."
+        ]
+      }
+    ],
+    "related": [
+      "/soncni-mrk/",
+      "/lunin-mrk/",
+      "/soncni-vzhod-in-zahod/"
+    ],
+    "sources": [
+      "eclipses",
+      "safety",
+      "sun"
+    ],
+    "image_labels": [
+      "Vrsta mrka",
+      "Izberite mesto",
+      "Primerjajte čase",
+      "Pravila opazovanja"
+    ],
+    "image_alt": "Štirje koraki za preverjanje krajevne vidnosti sončnega ali luninega mrka"
+  }
+}

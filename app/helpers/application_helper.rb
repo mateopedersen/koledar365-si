@@ -23,6 +23,16 @@ module ApplicationHelper
     path=request&.path
     path.nil? || path=="/" ? "/" : path.delete_suffix("/")+"/"
   end
+  def editorial_route_title(route)
+    if (match = route.match(%r{\A/soncni-vzhod-in-zahod/([a-z0-9-]+)/\z}))
+      return "Sončni vzhod in zahod – #{SunEngine::CITIES.fetch(match[1]).first}"
+    end
+    return 'Fotografije in licence' if route == '/fotografije-in-licence/'
+
+    @editorial_route_titles ||= Page.pluck(:path, :title).to_h
+    @editorial_route_titles.fetch(route)
+  end
+
   def sl_date(d) = I18n.l(d.to_date,format: :long)
   def compact_day_month(date) = "#{date.day}.#{date.month}."
   def month_url(year,month,family='koledar') = "/#{family}/#{year}/#{CalendarEngine::MONTHS[month-1]}/"

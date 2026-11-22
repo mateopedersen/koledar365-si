@@ -13,7 +13,7 @@
 <link rel="preload" as="image" type="image/avif" href="<%= hero_image.fetch('variants').first.fetch('avif') %>" imagesrcset="<%= hero_image.fetch('avif_srcset') %>" imagesizes="<%= hero_sizes %>" fetchpriority="high">
 <% end %>
 <% unless @not_found %><% sharing_image=seo_image %><link rel="canonical" href="<%= canonical_url %>">
-<meta property="og:title" content="<%= seo_title %>"><meta property="og:description" content="<%= @description %>"><meta property="og:type" content="website"><meta property="og:site_name" content="Koledar365"><meta property="og:locale" content="sl_SI"><meta property="og:url" content="<%= canonical_url %>"><meta property="og:image" content="<%= sharing_image[:url] %>"><meta property="og:image:width" content="<%= sharing_image[:width] %>"><meta property="og:image:height" content="<%= sharing_image[:height] %>"><meta property="og:image:alt" content="<%= sharing_image[:alt] %>">
+<meta property="og:title" content="<%= seo_title %>"><meta property="og:description" content="<%= @description %>"><meta property="og:type" content="<%= @blog_article ? 'article' : 'website' %>"><meta property="og:site_name" content="Koledar365"><meta property="og:locale" content="sl_SI"><meta property="og:url" content="<%= canonical_url %>"><meta property="og:image" content="<%= sharing_image[:url] %>"><meta property="og:image:width" content="<%= sharing_image[:width] %>"><meta property="og:image:height" content="<%= sharing_image[:height] %>"><meta property="og:image:alt" content="<%= sharing_image[:alt] %>">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="<%= seo_title %>"><meta name="twitter:description" content="<%= @description %>"><meta name="twitter:image" content="<%= sharing_image[:url] %>"><meta name="twitter:image:alt" content="<%= sharing_image[:alt] %>">
 <% end %>
 <% if (schema=structured_data) %><script type="application/ld+json" nonce="<%= content_security_policy_nonce %>"><%= raw json_escape(schema.to_json) %></script><% end %>
@@ -58,6 +58,7 @@
 <link rel="stylesheet" href="/cookie-preferences.css"><script id="cookie-preferences-runtime" type="module" src="/cookie-preferences.mjs"></script>
 <link rel="icon" href="/icon.png" type="image/png" sizes="512x512">
 <% if @section=='shopping_guide' || @section=='important_days' %><link rel="stylesheet" href="<%= ShoppingGuides::DATA.fetch('css') %>"><% end %>
+<%= stylesheet_link_tag 'editorial_guides' %>
 </head>
 <body id="page-top" class="<%= [gallery_page? ? 'gallery-page' : nil, @section=='holidays' ? 'holiday-guide' : nil, @section=='home' ? 'home-page' : nil, @section=='terms' ? 'terms-page' : nil, page_path=='/druzinski-planer/' ? 'family-planner-page' : nil, page_path=='/razpored-izmen/' ? 'shift-page' : nil, page_path=='/solski-urnik/' ? 'student-timetable-page' : nil].compact.join(' ') %>">
 <a class="skip" href="#vsebina">Na vsebino</a>
@@ -95,6 +96,7 @@
         <section class="site-footer__group" aria-labelledby="footer-about">
           <h2 id="footer-about">O Koledarju365</h2>
           <a href="/o-nas/">O nas</a>
+          <a href="/blog/">Vodniki za načrtovanje</a>
           <a href="/viri-in-metodologija/">Viri in metodologija</a>
           <a href="/fotografije-in-licence/">Fotografije in licence</a>
           <a href="/zasebnost/">Zasebnost</a>

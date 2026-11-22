@@ -1,4 +1,6 @@
-<% if @section=='shopping_guide' %>
+<% if @section=='blog' %>
+<%= render 'blog' %>
+<% elsif @section=='shopping_guide' %>
 <%= raw ShoppingGuides.body(page_path) %>
 <% elsif page_path=='/kontakt/' %>
 <%= render 'contact' %>
@@ -156,3 +158,5 @@
 <% end %>
 
 <% if @page&.body.present? && page_path!='/koledar/' && !%w[observance school horoscope calendar_studio methodology garden_calendar payment_calendar education_calendar school_timetable moon_phases astronomy_events].include?(@section) %><section class="panel prose"><%= simple_format(@page.body) %></section><% end %>
+
+<%= render 'editorial_note' unless @section == 'blog' %>

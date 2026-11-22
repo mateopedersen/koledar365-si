@@ -29,6 +29,10 @@ module SeoHelper
   end
 
   def seo_image
+    if @blog_article
+      slug = page_path.delete_prefix(EditorialCatalog::HUB).delete_suffix('/')
+      return {url: site_origin + EditorialCatalog.image(slug), width: 1200, height: 630, alt: @blog_article.fetch('image_alt')}
+    end
     return {url:site_origin+ClockChangeSchedule::IMAGE_PATH,width:1200,height:720,alt:ClockChangeSchedule::IMAGE_ALT} if @clock_change
     if (image=ExpansionCatalog.image(page_path))
       return {url:site_origin+image.fetch('path'),width:image.fetch('width'),height:image.fetch('height'),alt:image.fetch('alt')}
@@ -94,6 +98,15 @@ module SeoHelper
     graph << organization
     graph[0]['publisher']={"@id"=>organization.fetch('@id')}
     graph[1]['publisher']={"@id"=>organization.fetch('@id')}
+    if @blog_article
+      graph << {
+        '@type' => 'BlogPosting', '@id' => "#{canonical_url}#article", 'mainEntityOfPage' => canonical_url,
+        'headline' => @title, 'description' => @description, 'image' => seo_image.fetch(:url), 'inLanguage' => 'sl-SI',
+        'author' => {'@type' => 'Organization', 'name' => EditorialCatalog::CREDIT, 'url' => "#{site_origin}/uredniska-politika/"},
+        'publisher' => {'@id' => organization.fetch('@id')},
+        'citation' => @blog_article.fetch('sources').map { |key| EditorialCatalog.sources.fetch(key).last }
+      }
+    end
     if ExpansionCatalog.page(page_path)
       graph[1]['author']={"@id"=>organization.fetch('@id')}
       citations=expansion_citations

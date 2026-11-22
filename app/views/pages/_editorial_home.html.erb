@@ -1,0 +1,24 @@
+<section class="editorial-index editorial-home" aria-labelledby="home-guides">
+  <div class="section-heading">
+    <div><h2 id="home-guides">Od datuma do načrta</h2>
+      <p>Primeri iz slovenskega koledarja, ki jih lahko takoj preizkusite z ustreznim orodjem.</p>
+    </div>
+    <a href="/blog/">Vseh 20 vodnikov <span aria-hidden="true">→</span></a>
+  </div>
+  <% examples = {
+    'praznik-ali-dela-prost-dan' => ['Načrtujem odsotnost', 'Poglejte, zakaj 8. in 25. junij v delovnem urniku nimata enakega učinka.'],
+    'zimske-pocitnice-obcine-in-regije' => ['Usklajujem počitnice', 'Poiščite termin po občini šole in preverite izjeme, preden rezervirate.'],
+    'zlata-ura-pred-sprehodom' => ['Izbiram čas za sprehod', 'Za primer zahoda ob 18.00 odštejte rezervo in čas hoje do cilja.'],
+    'pdf-koledar-tisk-100-odstotkov' => ['Tiskam koledar', 'Na poskusnem listu preverite velikost, rob in prostor za zapiske.']
+  } %>
+  <div class="editorial-index__cards">
+    <% examples.each do |slug, (heading, detail)|; article = EditorialCatalog.articles.fetch(slug) %>
+      <article>
+        <a href="<%= EditorialCatalog.path(slug) %>">
+          <img src="<%= EditorialCatalog.image(slug) %>" alt="<%= article.fetch('image_alt') %>" width="1200" height="630" loading="lazy" decoding="async">
+          <div><h3><%= heading %></h3><p><%= detail %></p></div>
+        </a>
+      </article>
+    <% end %>
+  </div>
+</section>

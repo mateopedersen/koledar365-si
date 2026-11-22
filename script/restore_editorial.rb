@@ -12,6 +12,7 @@ Page.transaction do
   end
 end
 ExpansionCatalog.apply!
+EditorialCatalog.apply!
 Horoscope.transaction do
   rows=JSON.parse(Rails.root.join('data/editorial/horoscopes.json').read)
   raise 'Preveč besedil.' unless rows.is_a?(Array)&&rows.length<=12000

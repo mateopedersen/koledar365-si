@@ -1,0 +1,14 @@
+<% if (note = EditorialNote.for(page_path, title: @title, city: @sun_city_id, observance: @observance)) %>
+  <section class="editorial-note" aria-labelledby="editorial-note-heading">
+    <h2 id="editorial-note-heading"><%= note.fetch('title') %></h2>
+    <% note.fetch('paragraphs').each do |paragraph| %><p><%= paragraph %></p><% end %>
+    <ul class="editorial-note__links">
+      <% note.fetch('links').uniq.reject { |route| route == page_path }.each do |route| %>
+        <li><a href="<%= route %>"><%= editorial_route_title(route) %></a></li>
+      <% end %>
+      <% note.fetch('sources').each do |source|; label, url = source.is_a?(Array) ? source : EditorialCatalog.sources.fetch(source) %>
+        <li><a href="<%= url %>"><%= label %></a></li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>

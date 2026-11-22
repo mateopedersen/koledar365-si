@@ -23,6 +23,7 @@ on:
       - 'data/payments/**'
       - 'data/advertising.json'
       - 'public/advertising/**'
+      - 'data/blog/**'
       - 'data/shopping-guides.json'
       - 'data/shopping-html/**'
       - 'public/shopping/**'
