@@ -353,14 +353,12 @@
       if (!event) return;
 
       dates.push({ item, date: event.date });
-      const fullDate = formatDate(event.date);
       const date = get('[data-next-date]', button);
       date.dateTime = event.date;
       setText(get('[data-next-day]', date), String(Number(event.date.slice(8))));
       setText(get('[data-next-month]', date), shortMonth.format(dateMs(event.date)));
       setText(get('[data-next-year]', date), event.date.slice(0, 4));
       setText(get('[data-next-name]', button), event.title);
-      button.setAttribute('aria-label', `Odštevaj · ${event.title} · ${fullDate}`);
       const context = get('[data-next-context]', button);
       const place = event.category === 'festival' ? event.detail : null;
       context.hidden = !place;

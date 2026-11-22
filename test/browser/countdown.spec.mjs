@@ -98,7 +98,7 @@ test('selects calendar events immediately and handles the end of a festival in p
 
   const upcomingDates = await page.locator('[data-next-item]:visible time').evaluateAll(dates => dates.map(date => date.dateTime));
   expect(upcomingDates).toEqual(['2027-11-01', '2028-02-10', '2028-02-28']);
-  const shortcut = page.getByRole('button', { name: /Odštevaj · Glasbeni festival/ });
+  const shortcut = page.getByRole('button', { name: /Festival Glasbeni festival Maribor Odštevaj/ });
   await expect(shortcut.locator('time')).toHaveAttribute('datetime', '2028-02-10');
   await shortcut.click();
   await expect(title).toHaveText('Glasbeni festival');
