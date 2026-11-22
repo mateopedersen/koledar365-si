@@ -187,6 +187,9 @@
   .lunar-year-grid + .lunar-phases { break-before: page; }
   .lunar-phases .table-wrap { overflow: visible; }
   #vsebina .lunar-note { font-size: 8pt !important; line-height: 1.25 !important; }
+  .lunar-experience:has(.lunar-year-grid) .lunar-phases { break-after: avoid-page; }
+  .lunar-experience:has(.lunar-year-grid) > .lunar-note { break-inside: avoid; }
+  #vsebina:has(.lunar-year-grid) > .editorial-note { display: none !important; }
   body.family-planner-page .family-hero,
   body.family-planner-page .family-stats { display: none !important; }
   body.family-planner-page .family-week-card { margin-top: 0; }

@@ -35,6 +35,7 @@ for source in report['rows']:
     first=pdf.pages[0].extract_text()
     assert all(month in first for month in ['Januar','Februar','Marec','April','Maj','Junij','Julij','Avgust','September','Oktober','November','December']),'All twelve lunar months must fit the first print sheet'
     assert all('2028' in page.extract_text() for page in pdf.pages),'A lunar print page contains only source notes'
+    assert any('Podatki o menah: USNO' in page.extract_text() for page in pdf.pages),'Printed lunar calendar must retain its data source'
    for page in pdf.pages:
     assert len(page.extract_text().strip())>30,'Blank or footer-only print page'
    expected=(297,420) if source['paper']=='A3' else (210,297)
