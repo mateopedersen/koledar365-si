@@ -16,6 +16,7 @@ class ExpansionCatalog
     '/soncni-mrk/'=>{title:'Sončni mrk v Sloveniji: datumi in lokalna vidnost',description:'Sončni mrki 2026–2030: izberite slovensko mesto, preverite krajevni potek in vidnost nad obzorjem. Varno opazovanje, izračuni in koledar ICS.',family:'astronomy'},
     '/lunin-mrk/'=>{title:'Lunin mrk v Sloveniji: datumi, potek in vidnost',description:'Lunini mrki 2026–2030 v Sloveniji: začetek, maksimum, konec in vidnost za izbrano mesto. Lokalni čas, razlaga pojava in koledar za opazovanje.',family:'astronomy'},
     '/perzeidi/'=>{title:'Perzeidi v Sloveniji: opazovalne noči in razmere',description:'Načrtujte opazovanje Perzeidov: noči 12. in 13. avgusta, tema, mesečina in razmere za slovenska mesta. Razlaga rojev, pregled ter prenos ICS.',family:'astronomy'},
+    '/orodja/'=>{title:'Koledarska orodja: planerji in kalkulatorji',description:'Poiščite slovenski koledar, odštevalnik, vpisne roke, kalkulator upokojitve in orodja za delo, šolo ter opazovanje neba.'},
     '/viri-in-metodologija/'=>{title:'Viri in metodologija: kako preverjamo koledarske podatke',description:'Kako Koledar365 izbira vire, ločuje uradne datume od izračunov ter obravnava spremembe. Časovni pas, opombe o slikah, popravki in odgovornost.'}
   }.freeze
   def self.pages
@@ -25,6 +26,7 @@ class ExpansionCatalog
       .merge(PaymentCalendar::PAGES.transform_values{|page|page.merge(family:'payments')})
       .merge(ShoppingGuides.pages)
       .merge(OccasionCatalog.pages)
+      .merge(LocalTools.pages)
   end
   def self.page(path) = pages[path]
   def self.apply!
@@ -33,6 +35,8 @@ class ExpansionCatalog
       page.assign_attributes(title:metadata.fetch(:title),description:metadata.fetch(:description),family:metadata[:family]||page.family||'information',status:'published')
       reviewed_on=if OccasionCatalog.pages.key?(path)
         OccasionCatalog.checked_on
+      elsif LocalTools::PAGES.key?(path)
+        LocalTools::CHECKED_ON
       elsif ShoppingGuides.page(path)
         ShoppingGuides::CHECKED
       else

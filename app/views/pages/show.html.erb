@@ -4,6 +4,8 @@
 <%= raw ShoppingGuides.body(page_path) %>
 <% elsif @section=='festivals' %>
 <%= render 'festivals' %>
+<% elsif %w[local_tool tools_index].include?(@section) %>
+<%= render @section %>
 <% elsif page_path=='/kontakt/' %>
 <%= render 'contact' %>
 <% elsif page_path=='/koledar/' %>

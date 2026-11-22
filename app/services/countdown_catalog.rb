@@ -9,8 +9,24 @@ class CountdownCatalog
     holidays=CalendarEvent.where(category:'legal',on:today..through).ordered.map do |event|
       {id:"holiday-#{event.slug}-#{event.on.iso8601}",title:event.title.sub(/\A./,&:upcase),date:event.on.iso8601,category:'holiday',work_free:event.work_free,state_holiday:event.state_holiday,source:'holiday'}
     end
-    school=school_events
-    (holidays+school).sort_by { |event| [event[:date],event[:title]] }
+    paths=Page.published.pluck(:path).to_set
+    occasions=ImportantDays.events_in(today..through).filter_map do |event|
+      next if %w[legal civil_time astronomical].include?(event.category)
+      if event.category=='festival'
+        path=OccasionCatalog.festival_path(event.slug)
+        category='festival'
+      else
+        path=%w[pomembni-dnevi prazniki].map { |group| "/#{group}/#{event.slug}/" }.find { |candidate| paths.include?(candidate) }
+        category='observance'
+      end
+      next unless path
+      {
+        id: "date-#{event.key}", title: event.title.sub(/\A./, &:upcase), date: event.on.iso8601,
+        end_date: event.ends_on&.iso8601, category: category, detail: event.metadata['place'],
+        path: path, source_url: event.source_url
+      }
+    end
+    (holidays+school_events+occasions).sort_by { |event| [event[:date],event[:title]] }
   end
 
   def self.school_events

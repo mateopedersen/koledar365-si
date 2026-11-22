@@ -10,6 +10,11 @@
  const STORAGE_KEY='k365.countdowns.v1';
  const REGION_KEY='k365.countdowns.region';
  const allowedZones=new Set(['Europe/Ljubljana','Europe/Vienna','Europe/London','America/New_York','UTC']);
+ const categories=['holiday','school','festival','observance','custom'];
+ const dayInSlovenia=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Ljubljana',dateStyle:'short'});
+ const relativeDay=new Intl.RelativeTimeFormat('sl-SI',{numeric:'auto'});
+ const fold=value=>value.normalize('NFD').replace(/\p{M}/gu,'').toLocaleLowerCase('sl');
+ const zoneFormatters=new Map();
  const $=(selector,parent=root)=>parent.querySelector(selector);
  const $$=(selector,parent=root)=>[...parent.querySelectorAll(selector)];
  const esc=value=>String(value??'').replace(/[\\;,]/g,char=>`\\${char}`).replace(/\r?\n/g,'\\n');
@@ -25,13 +30,14 @@
  const cleanEntry=entry=>{
   if(!entry||typeof entry!=='object'||!dateParts(entry.date)||!validTime(entry.time)||!allowedZones.has(entry.zone)||typeof entry.title!=='string')return null;
   const title=entry.title.trim().slice(0,64);if(!title)return null;
-  return {id:String(entry.id||`custom-${Date.now()}-${Math.random().toString(36).slice(2,8)}`).slice(0,120),title,date:entry.date,time:entry.time,zone:entry.zone,category:['holiday','school','custom'].includes(entry.category)?entry.category:'custom',detail:String(entry.detail||'').slice(0,230),end_date:dateParts(entry.end_date)?entry.end_date:null,all_day:entry.all_day===true,provisional:entry.provisional===true,region:['east','west'].includes(entry.region)?entry.region:'all',school_level:['primary','secondary'].includes(entry.school_level)?entry.school_level:'all'};
+  return {id:String(entry.id||`custom-${Date.now()}-${Math.random().toString(36).slice(2,8)}`).slice(0,120),title,date:entry.date,time:entry.time,zone:entry.zone,category:categories.includes(entry.category)?entry.category:'custom',detail:String(entry.detail||'').slice(0,230),end_date:dateParts(entry.end_date)?entry.end_date:null,all_day:entry.all_day===true,provisional:entry.provisional===true,region:['east','west'].includes(entry.region)?entry.region:'all',school_level:['primary','secondary'].includes(entry.school_level)?entry.school_level:'all'};
  };
  const zonedInstant=(date,time,zone)=>{
   const p=dateParts(date);if(!p||!validTime(time)||!allowedZones.has(zone))return null;
   const [hour,minute]=time.split(':').map(Number),desired=Date.UTC(p.year,p.month-1,p.day,hour,minute,0);
   let guess=desired;
-  const formatter=new Intl.DateTimeFormat('en-GB',{timeZone:zone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'});
+  if(!zoneFormatters.has(zone))zoneFormatters.set(zone,new Intl.DateTimeFormat('en-GB',{timeZone:zone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}));
+  const formatter=zoneFormatters.get(zone);
   for(let pass=0;pass<5;pass++){
    const parts=Object.fromEntries(formatter.formatToParts(new Date(guess)).filter(item=>item.type!=='literal').map(item=>[item.type,Number(item.value)]));
    const represented=Date.UTC(parts.year,parts.month-1,parts.day,parts.hour,parts.minute,parts.second);
@@ -43,7 +49,7 @@
   if(final.year!==p.year||final.month!==p.month||final.day!==p.day||final.hour!==hour||final.minute!==minute)return null;
   return new Date(guess);
  };
- const asEntry=event=>cleanEntry({id:event.id,title:event.title,date:event.date,time:event.time||'00:00',zone:'Europe/Ljubljana',category:event.category==='holiday'?'holiday':event.category==='school'?'school':'custom',detail:event.detail||'',end_date:event.end_date,all_day:true,provisional:event.provisional,region:event.region,school_level:event.school_level});
+ const asEntry=event=>cleanEntry({id:event.id,title:event.title,date:event.date,time:event.time||'00:00',zone:'Europe/Ljubljana',category:event.category,detail:event.detail||'',end_date:event.end_date,all_day:true,provisional:event.provisional,region:event.region,school_level:event.school_level});
  const safeStorage={get(){try{const raw=localStorage.getItem(STORAGE_KEY);const list=raw?JSON.parse(raw):[];return Array.isArray(list)?list.map(cleanEntry).filter(Boolean).slice(0,50):[]}catch{return[]}},set(list){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(list.slice(0,50)));return true}catch{return false}}};
  let saved=safeStorage.get();
  let activeFilter='all';
@@ -63,8 +69,10 @@
  };
  const savedHas=id=>saved.some(item=>item.id===id);
  const storedEvent=event=>asEntry(event);
- const isFuture=event=>{const target=zonedInstant(event.date,event.time||'00:00',event.zone||'Europe/Ljubljana');return target&&target.getTime()>Date.now()};
- const upcomingEvents=()=>events.filter(event=>isFuture({date:event.date,time:'00:00',zone:'Europe/Ljubljana'})).sort((a,b)=>a.date.localeCompare(b.date)||a.title.localeCompare(b.title,'sl'));
+ const upcomingEvents=()=>{
+  const today=dayInSlovenia.format(Date.now());
+  return events.filter(event=>(event.end_date||event.date)>=today).sort((a,b)=>a.date.localeCompare(b.date)||a.title.localeCompare(b.title,'sl'));
+ };
  const availableEvents=()=>upcomingEvents().filter(event=>{
   if(event.source==='school'&&event.region&&event.region!=='all'&&event.region!==schoolRegion)return false;
   if(event.source==='school'&&event.school_level&&event.school_level!=='all'&&event.school_level!==schoolLevel)return false;
@@ -78,7 +86,12 @@
  }
  if(!featured)featured=availableEvents()[0]?storedEvent(availableEvents()[0]):cleanEntry({id:'welcome',title:'Vaš naslednji pomemben dan',date:new Date(Date.now()+86400000).toISOString().slice(0,10),time:'00:00',zone:'Europe/Ljubljana',category:'custom'});
  let tickTimer=null;
- const distanceLabel=entry=>{const target=zonedInstant(entry.date,entry.time,entry.zone);if(!target)return'Preverite izbrani čas';const seconds=Math.floor((target.getTime()-Date.now())/1000);if(seconds<=0)return'Dogodek je nastopil';const days=Math.floor(seconds/86400);if(days===0)return'Danes';if(days===1)return'Jutri';return`Čez ${numberFormatter.format(days)} dni`};
+ const distanceLabel=entry=>{
+  const today=dayInSlovenia.format(Date.now());
+  if(entry.date<today)return entry.end_date>=today?'Poteka':'Dogodek je nastopil';
+  const distance=(dateAsUtc(entry.date)-dateAsUtc(today))/86400000;
+  return relativeDay.format(distance,'day').replace(/^./,letter=>letter.toLocaleUpperCase('sl'));
+ };
  const countdownValues=entry=>{const target=zonedInstant(entry.date,entry.time,entry.zone);if(!target)return null;const remaining=Math.max(0,Math.floor((target.getTime()-Date.now())/1000));return {remaining,days:Math.floor(remaining/86400),hours:Math.floor(remaining/3600)%24,minutes:Math.floor(remaining/60)%60,seconds:remaining%60,started:target.getTime()<=Date.now()}};
  const pad=(n)=>String(n).padStart(2,'0');
  const setText=(selector,value,parent=root)=>{const node=$(selector,parent);if(node)node.textContent=value};
@@ -88,7 +101,7 @@
   setText('[data-feature-title]',featured.title);
   setText('[data-feature-date]',formatRange(featured));
   setText('[data-feature-status]',featured.provisional?'Predviden datum · uradni šolski koledar še ni objavljen.':`Časovni pas: ${featured.zone==='Europe/Ljubljana'?'Slovenija · Ljubljana':featured.zone}.`);
-  setText('[data-feature-kicker]',featured.category==='school'?'NASLEDNJI ŠOLSKI TERMIN':featured.category==='holiday'?'NASLEDNJI SLOVENSKI PRAZNIK':'VAŠ IZBRANI ODŠTEVALNIK');
+  setText('[data-feature-kicker]',featured.category==='school'?'NASLEDNJI ŠOLSKI TERMIN':featured.category==='holiday'?'SLOVENSKI PRAZNIK':featured.category==='festival'?'FESTIVAL ALI PRIREDITEV':featured.category==='observance'?'POSEBNI DAN':'VAŠ IZBRANI ODŠTEVALNIK');
   featureSave.textContent=savedHas(featured.id)?'✓ Shranjeno v mojem seznamu':'+ Dodaj v moj seznam';
   featureSave.classList.toggle('is-added',savedHas(featured.id));
   featureSave.disabled=savedHas(featured.id);
@@ -116,31 +129,35 @@
  };
  const renderEvents=()=>{
   const list=$('[data-event-list]');list.replaceChildren();
-  const search=($('[data-event-search]').value||'').trim().toLocaleLowerCase('sl');
+  const search=fold(($('[data-event-search]').value||'').trim());
   const sourceEvents=activeFilter==='favorite'?upcomingEvents():availableEvents();
   const filtered=sourceEvents.filter(event=>{
-   const isSchool=event.category==='school';
-   if(activeFilter==='holiday'&&event.category!=='holiday')return false;
-   if(activeFilter==='school'&&!isSchool)return false;
    if(activeFilter==='favorite'&&!savedHas(event.id))return false;
-   if(search&&!`${event.title} ${event.detail||''}`.toLocaleLowerCase('sl').includes(search))return false;
+   if(activeFilter!=='all'&&activeFilter!=='favorite'&&event.category!==activeFilter)return false;
+   if(search&&!fold(`${event.title} ${event.detail||''}`).includes(search))return false;
    return true;
   });
   const shown=filtered.slice(0,visibleCount);
   shown.forEach(event=>{
    const card=document.createElement('article');card.className=`countdown-event-card countdown-event-card--${event.category}`;
    const date=document.createElement('div');date.className='countdown-event-card__date';const month=document.createElement('small');month.textContent=shortMonthFormatter.format(dateAsUtc(event.date)).replace('.','');const day=document.createElement('strong');day.textContent=String(dateParts(event.date).day);date.append(month,day);
-   const body=document.createElement('div');body.className='countdown-event-card__body';const title=document.createElement('h3');title.textContent=event.title;const detail=document.createElement('p');detail.textContent=event.detail||formatRange(event);body.append(title,detail);
+   const body=document.createElement('div');body.className='countdown-event-card__body';const title=document.createElement('h3');title.textContent=event.title;const detail=document.createElement('p');detail.textContent=event.category==='festival'?[formatRange(event),event.detail].filter(Boolean).join(' · '):event.detail||formatRange(event);body.append(title,detail);
    const tags=document.createElement('div');tags.className='countdown-event-card__tags';
    const addTag=(text,kind='')=>{const tag=document.createElement('span');tag.textContent=text;if(kind)tag.className=kind;tags.append(tag)};
    if(event.category==='holiday')addTag(event.work_free?'Dela prost dan':'Ni dela prost dan',event.work_free?'is-red':'');
+   else if(event.category==='festival')addTag('Objavljen termin','is-gold');
+   else if(event.category==='observance')addTag('Obeležitev','is-green');
    else addTag(event.provisional?'Predviden termin':'Šolski koledar',event.provisional?'is-gold':'is-green');
    if(event.category==='school')addTag(event.school_level==='secondary'?'Srednja šola':event.school_level==='primary'?'Osnovna šola':'Vse stopnje','is-green');
    if(event.category==='school'&&event.region&&event.region!=='all')addTag(event.region==='east'?'Vzhodna skupina':'Zahodna skupina','is-green');
    if(event.category==='school'&&event.region==='all')addTag('Vse regije','is-green');
    body.append(tags);
-   const actions=document.createElement('div');actions.className='countdown-event-card__actions';const distance=document.createElement('span');distance.className='countdown-event-card__distance';distance.dataset.countdownDistance='';distance.dataset.date=event.date;distance.textContent=distanceLabel({date:event.date,time:'00:00',zone:'Europe/Ljubljana'});const add=document.createElement('button');add.type='button';add.textContent=savedHas(event.id)?'✓ Dodano':'+ Odštevaj';add.classList.toggle('is-added',savedHas(event.id));add.disabled=savedHas(event.id);add.addEventListener('click',()=>addSaved(storedEvent(event)));actions.append(distance,add);
-   const selectEvent=()=>{featured=storedEvent(event);renderFeature()};card.append(date,body,actions);card.addEventListener('click',eventClick=>{if(eventClick.target.closest('button'))return;selectEvent()});card.addEventListener('keydown',eventKey=>{if(eventKey.key==='Enter'||eventKey.key===' '){eventKey.preventDefault();selectEvent()}});card.tabIndex=0;card.setAttribute('role','group');card.setAttribute('aria-label',`${event.title}. Izberi ta datum za predogled odštevanja.`);list.append(card);
+   if(event.path){
+    const details=document.createElement('a');details.href=event.path;details.textContent='O dogodku';
+    details.className='countdown-event-card__source';body.append(details);
+   }
+   const actions=document.createElement('div');actions.className='countdown-event-card__actions';const distance=document.createElement('span');distance.className='countdown-event-card__distance';distance.dataset.countdownDistance='';distance.dataset.date=event.date;distance.dataset.endDate=event.end_date||'';distance.textContent=distanceLabel(event);const add=document.createElement('button');add.type='button';add.textContent=savedHas(event.id)?'✓ Dodano':'+ Odštevaj';add.classList.toggle('is-added',savedHas(event.id));add.disabled=savedHas(event.id);add.addEventListener('click',()=>addSaved(storedEvent(event)));actions.append(distance,add);
+   const selectEvent=()=>{featured=storedEvent(event);renderFeature()};card.append(date,body,actions);card.addEventListener('click',eventClick=>{if(eventClick.target.closest('button,a'))return;selectEvent()});card.addEventListener('keydown',eventKey=>{if(eventKey.target===card&&(eventKey.key==='Enter'||eventKey.key===' ')){eventKey.preventDefault();selectEvent()}});card.tabIndex=0;card.setAttribute('role','group');card.setAttribute('aria-label',`${event.title}. Izberi ta datum za predogled odštevanja.`);list.append(card);
   });
   setText('[data-event-count]',filtered.length?`${numberFormatter.format(filtered.length)} prihajajočih datumov`:'');
   $('[data-no-events]').hidden=filtered.length>0;
@@ -149,7 +166,7 @@
  const updateTimers=()=>{
   const featureData=countdownValues(featured);if(featureData){setText('[data-feature-days]',numberFormatter.format(featureData.days));setText('[data-feature-hours]',pad(featureData.hours));setText('[data-feature-minutes]',pad(featureData.minutes));setText('[data-feature-seconds]',pad(featureData.seconds));if(featureData.started)setText('[data-feature-status]','Ta dan se je že začel. Izberite naslednji datum, ki ga želite spremljati.')}
   $$('[data-saved-id]').forEach(card=>{const entry=saved.find(value=>value.id===card.dataset.savedId);if(!entry)return;const data=countdownValues(entry);if(!data)return;card.querySelector('[data-saved-unit="days"]').textContent=numberFormatter.format(data.days);card.querySelector('[data-saved-unit="hours"]').textContent=pad(data.hours);card.querySelector('[data-saved-unit="minutes"]').textContent=pad(data.minutes);card.querySelector('[data-saved-unit="seconds"]').textContent=pad(data.seconds)});
-  if(!tickTimer)tickTimer=setInterval(()=>{updateTimers();$$('[data-countdown-distance]').forEach(node=>node.textContent=distanceLabel({date:node.dataset.date,time:'00:00',zone:'Europe/Ljubljana'}))},1000);
+  if(!tickTimer)tickTimer=setInterval(()=>{updateTimers();$$('[data-countdown-distance]').forEach(node=>node.textContent=distanceLabel({date:node.dataset.date,end_date:node.dataset.endDate}))},1000);
  };
  function addSaved(entry){
   const value=cleanEntry(entry);if(!value)return;
@@ -183,7 +200,7 @@
   lines.push('END:VCALENDAR','');globalThis.Calendar365Downloads.save(lines.join('\r\n'),'koledar365-odstevanje.ics','text/calendar;charset=utf-8');
  };
 
- $$('[data-event-filter]').forEach(button=>button.addEventListener('click',()=>{activeFilter=button.dataset.eventFilter;visibleCount=12;$$('[data-event-filter]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));$('[data-region-control]').hidden=activeFilter==='holiday'||activeFilter==='favorite';renderEvents()}));
+ $$('[data-event-filter]').forEach(button=>button.addEventListener('click',()=>{activeFilter=button.dataset.eventFilter;visibleCount=12;$$('[data-event-filter]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));$('[data-region-control]').hidden=!['all','school'].includes(activeFilter);renderEvents()}));
  $('[data-event-search]').addEventListener('input',()=>{visibleCount=12;renderEvents()});
  $('[data-load-more]').addEventListener('click',()=>{visibleCount+=12;renderEvents()});
  $('[data-export-ics]').addEventListener('click',exportIcs);

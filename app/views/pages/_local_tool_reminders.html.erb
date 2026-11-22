@@ -1,0 +1,12 @@
+<section class="tool-block" data-reminders="<%= kind %>" id="moji-opomniki">
+  <h2><%= heading %></h2>
+  <p><%= hint %></p>
+  <form data-reminder-form><fieldset class="tool-inline-form" disabled data-local-fields>
+    <label>Ime ali opravilo<input name="title" type="text" maxlength="90" required></label>
+    <label>Datum<input name="date" type="date" value="<%= today %>" min="1900-01-01" max="2130-12-31" required></label>
+    <button type="submit" class="tool-primary">Dodaj</button>
+  </fieldset></form>
+  <p data-reminder-message role="status"></p>
+  <ul class="tool-reminder-list" data-reminder-list></ul>
+  <div class="tool-actions"><button type="button" class="tool-secondary" data-reminder-export disabled>Prenesi opomnike (.ics)</button><p>Shranjeno v tem brskalniku.</p></div>
+</section>

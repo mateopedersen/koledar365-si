@@ -145,6 +145,7 @@ class PagesController < ApplicationController
     return 'calendar_studio' if path=='/ustvari-koledar/'
     return 'planner' if %w[/ustvari-koledar/ /prazen-koledar/ /razpored-izmen/ /solski-urnik/ /rojstnodnevni-koledar/ /dnevni-planer/ /druzinski-planer/ /koledar-za-tiskanje/].include?(path)
     return 'tools_index' if path=='/orodja/'
+    return 'local_tool' if LocalTools::PAGES.key?(path)
     'info'
   end
   def search

@@ -1,45 +1,48 @@
-<div class="tool-cards"><% descriptions={
-  '/mesecni-koledar/'=>['calendar','Izberite mesec, dodajte zapiske ter prenesite PDF ali urejevalni Excel.'],
-  '/tedenski-koledar/'=>['week','Načrtujte teden ISO z zapiski za vsak dan in osebnim PDF.'],
-  '/setveni-koledar/'=>['calendar','Primerjajte sezonska opravila za 16 vrtnin in sestavite svoj načrt vrta.'],
-  '/solski-koledar/'=>['note','Pouk, počitnice, NPZ in izpitni roki za šolsko leto 2026/2027.'],
-  '/matura/2027/'=>['note','Izberite vrsto mature in predmete ter shranite uradne datume RIC.'],
-  '/npz/'=>['note','Preverite preizkuse, dosežke in vpoglede za 3., 6. in 9. razred.'],
-  '/studijski-koledar/'=>['calendar','Primerjajte semestre in izpitna obdobja izbranih univerz in članic.'],
-  '/izplacila-pokojnin/'=>['calendar','Naslednje nakazilo in vseh 12 uradnih datumov ZPIZ za leto 2026.'],
-  '/izplacila-socialnih-transferjev/'=>['calendar','Izberite prejemek in preverite dejanski datum izplačila iz plana CSD.'],
-  '/premik-ure/'=>['clock','Preverite premik na poletni in zimski čas ter prenesite opomnike.'],
-  '/lunine-mene/'=>['moon','Mlaj, krajec in polna luna z lokalnimi urami ter izvozom ICS.'],
-  '/soncni-mrk/'=>['sun','Preverite potek mrkov in njihovo lokalno vidnost iz slovenskih mest.'],
-  '/lunin-mrk/'=>['moon','Časovnica Luninih mrkov z ločenim prikazom nad obzorjem.'],
-  '/perzeidi/'=>['moon','Primerjajte avgustovske opazovalne noči, temo in mesečino.'],
-  '/datumski-kalkulator/'=>['calculator','Preštejte dneve med datumoma ali poiščite datum po premiku.'],
-  '/kalkulator-delovnih-dni/'=>['briefcase','Izberite delovni teden, dnevne ure in upoštevanje praznikov.'],
-  '/nacrtovalnik-dopusta/'=>['calendar','Primerjajte porabo dopusta in skupno dolžino oddiha.'],
-  '/odstevanje/'=>['clock','Preverite, koliko časa je še do izbranega datuma.'],
-  '/stevilka-tedna/'=>['calendar','Poiščite številko tedna in leto po standardu ISO.'],
-  '/dan-v-letu/'=>['calendar','Zaporedna številka dneva in preostanek leta.'],
-  '/prestopno-leto/'=>['calculator','Preverite dolžino februarja in pravilo prestopnega leta.'],
-  '/ustvari-koledar/'=>['image','Izberite ime, leto in predlogo za svoj tiskani koledar.'],
-  '/razpored-izmen/'=>['briefcase','Razporedite ponavljajoči se cikel delovnih izmen.'],
-  '/solski-urnik/'=>['note','Uredite predmete, ure in učilnice.'],
-  '/rojstnodnevni-koledar/'=>['gift','Zberite rojstne dneve v letni pregled.'],
-  '/dnevni-planer/'=>['check','Organizirajte dnevne obveznosti, opravila in zapiske.'],
-  '/druzinski-planer/'=>['person','Povežite načrte družinskih članov v skupen pregled.'],
-  '/prazen-koledar/'=>['calendar','Pripravite prazen koledar za lastne zapise.'],
-  '/soncni-vzhod-in-zahod/'=>['sun','Izračunajte vzhod, zahod, zlato uro in dolžino dneva za 69 slovenskih mest.'],
-  '/horoskop/izracun-znamenja/'=>['zodiac','Izračunajte sončno in vzhajajoče znamenje (ascendent) po točnem času in kraju rojstva.']
-} %><% descriptions.each do |path,(icon,description)|;page=Page.find_by(path:path);next unless page %><a class="panel tool-card" href="<%= path %>"><span class="tool-icon"><%= ui_icon(icon) %></span><h2><%= page.title %></h2><p><%= description %></p><span class="tool-open">Odpri orodje <%= ui_icon('chevron-right') %></span></a><% end %></div>
+<article class="tool-workspace tool-directory" data-tools-directory>
+  <header class="tool-intro tool-directory-intro">
+    <div>
+      <p class="tool-eyebrow"><%= slovenia_flag %> Koledar365</p>
+      <h1>Koledarji, planerji in kalkulatorji</h1>
+      <p>Poiščite slovenske praznike, načrtujte rok ali izračunajte datum. Vsa orodja lahko uporabljate brez računa.</p>
+      <label class="tool-query"><%= ui_icon('search') %><span class="sr-only">Išči med orodji</span><input type="search" data-tool-query placeholder="Poiščite orodje, npr. upokojitev ali vpis" autocomplete="off"></label>
+    </div>
+    <div class="tool-directory-art" aria-hidden="true"><%= ui_icon('calendar') %><%= ui_icon('calculator') %><%= ui_icon('moon') %></div>
+  </header>
+  <div class="tool-picks">
+    <% [['/odstevanje/', 'Naslednji pomemben dan', 'Izberite praznik ali festival', 'clock'], ['/kalkulator-upokojitve/', 'Kdaj v pokoj?', 'Primerjajte dve poti do starostne pokojnine', 'briefcase'], ['/vpisni-koledar/', 'Roki za vpis', 'Srednje in višje strokovne šole', 'school']].each do |path, label, description, icon| %>
+      <a href="<%= path %>"><%= ui_icon(icon) %><span><strong><%= label %></strong><small><%= description %></small></span></a>
+    <% end %>
+  </div>
+  <div class="tool-index-layout">
+    <nav class="tool-category" aria-label="Vrste orodij">
+      <a href="#vsa-orodja" aria-current="true" data-tool-category="all"><%= ui_icon('grid') %><span>Vsa orodja</span></a>
+      <% ToolsDirectory::GROUPS.each do |key, (label, icon, _)| %><a href="#<%= key %>" data-tool-category="<%= key %>"><%= ui_icon(icon) %><span><%= label %></span></a><% end %>
+    </nav>
+    <div id="vsa-orodja">
+      <p class="tool-index-count" data-tool-count role="status"><%= ToolsDirectory::GROUPS.values.sum { |_, _, rows| rows.size } %> orodij</p>
+      <% ToolsDirectory::GROUPS.each do |key, (label, _, rows)| %>
+        <section class="tool-index-group" id="<%= key %>" data-tool-group="<%= key %>">
+          <h2><%= label %></h2>
+          <div class="tool-index-cards">
+            <% rows.each do |path, title, icon, description| %>
+              <a href="<%= path %>" data-tool-card><span class="tool-card-symbol"><%= icon=='flag' ? slovenia_flag : ui_icon(icon) %></span><span><strong><%= title %></strong><small><%= description %></small></span></a>
+            <% end %>
+          </div>
+        </section>
+      <% end %>
+      <p class="tool-card-line" data-tool-empty hidden>Ni zadetkov. Poskusite s krajšim izrazom ali izberite drugo vrsto orodja.</p>
+    </div>
+  </div>
+</article>
 
-<section class="panel prose" aria-labelledby="site-directory-title">
-  <h2 id="site-directory-title">Vse vsebine na enem mestu</h2>
-  <p>Iščete določen mesec, leto ali temo? Odprite skupino in izberite neposredno povezavo. Osebni predogledi in še nepotrjeni šolski termini niso del tega kazala.</p>
-  <% directory_pages=Page.published.order(:path).reject { |page| page.path.match?(PagesController::REMOVED_NAME_PATHS) || PublicPagePolicy.redirect(page.path) } %>
-  <% directory_pages.group_by { |page| page.path.split('/')[1].to_s }.each do |group,pages| %>
-    <% heading=directory_pages.find { |page| page.path=="/#{group}/" }&.title || pages.first.title %>
+<details class="tool-block tool-site-index">
+  <summary>Kazalo vseh vsebin</summary>
+  <% directory=Page.published.order(:path).reject { |page| page.path.match?(PagesController::REMOVED_NAME_PATHS) || PublicPagePolicy.redirect(page.path) } %>
+  <% directory.group_by { |page| page.path.split('/')[1].to_s }.each do |group,pages| %>
+    <% heading=pages.find { |page| page.path=="/#{group}/" }&.title || pages.first.title %>
     <details class="site-directory-group">
       <summary><strong><%= heading %></strong> <span class="muted">· <%= pages.size %></span></summary>
       <nav class="link-grid compact" aria-label="<%= heading %>"><% pages.each do |page| %><a href="<%= page.path %>"><%= page.title %></a><% end %></nav>
     </details>
   <% end %>
-</section>
+</details>

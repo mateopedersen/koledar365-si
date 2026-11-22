@@ -180,3 +180,7 @@
 @media screen and (max-width:520px){
   .countdown-custom-form__row{grid-template-columns:minmax(0,1fr) minmax(0,.76fr)}
 }
+
+.countdown-event-card__source{display:inline-flex;margin-top:7px;font-size:.88rem;text-underline-offset:3px;color:#164b7c}
+.countdown-event-card--festival .countdown-event-card__date{background:#fff0d4;color:#754917}
+.countdown-event-card--observance .countdown-event-card__date{background:#e5f3ef;color:#1c594d}

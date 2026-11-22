@@ -1,0 +1,152 @@
+<% tool=LocalTools.for(page_path); kind=tool.fetch(:kind); today=@today.iso8601 %>
+<article class="tool-workspace tool-detail tool-theme-<%= kind %>" data-tool="<%= kind %>" data-today="<%= today %>">
+  <header class="tool-intro">
+    <div>
+      <p class="tool-eyebrow"><%= slovenia_flag %> <%= tool.fetch(:group) %></p>
+      <h1><%= tool.fetch(:title) %></h1>
+      <p><%= tool.fetch(:description) %></p>
+      <a href="/orodja/" class="tool-back">Vsa orodja</a>
+    </div>
+    <% if kind == 'luna' %><%= render 'local_tool_moon_art' %>
+    <% else %><div class="tool-hero-art" aria-hidden="true"><%= kind == 'dnevi' ? slovenia_flag : ui_icon(tool.fetch(:icon)) %><%= ui_icon(kind=='godovi' ? 'heart' : kind=='pokojnina' ? 'calculator' : 'calendar') %></div><% end %>
+  </header>
+
+  <noscript><p class="tool-guidance">Za izračune, filtre in shranjevanje opomnikov omogočite JavaScript.</p></noscript>
+  <% if kind == 'pokojnina' %>
+    <div class="tool-split" data-pension>
+      <section class="tool-block">
+        <h2>Pogoji in datum upokojitve</h2>
+        <p>Vpišite datume, ko dosežete zahtevano dobo. Če jo že imate, vpišite datum, ko ste jo dopolnili.</p>
+        <form data-retirement-form><fieldset disabled data-local-fields>
+          <label>Datum rojstva<input type="date" name="birth" min="1900-01-01" max="<%= today %>" required></label>
+          <label>Datum dopolnitve 15 let zavarovalne dobe<input type="date" name="years15" min="1910-01-01" max="2130-12-31"></label>
+          <label>Datum dopolnitve 40 let pokojninske dobe brez dokupa<input type="date" name="years40" min="1940-01-01" max="2130-12-31"></label>
+          <details><summary>Pravila od leta 2035 naprej</summary><p>Od leta 2035 se pri poti s 40 leti upošteva pokojninska doba. Če bo datum drugačen, ga navedite posebej.</p><label>Datum dopolnitve 40 let pokojninske dobe<input type="date" name="years40all" min="1940-01-01" max="2130-12-31"></label></details>
+          <div class="tool-actions"><button class="tool-primary" type="submit">Izračunaj datum</button><button class="tool-secondary" type="button" data-pension-example>Preizkusi primer</button></div>
+        </fieldset></form>
+      </section>
+      <section class="tool-block tool-insight">
+        <h2>Prva izpolnitev splošnih pogojev</h2>
+        <output class="tool-output" data-retirement-result aria-live="polite">Vpišite rojstni datum in vsaj en datum dopolnitve dobe.</output>
+        <div class="tool-timeline" data-retirement-timeline hidden></div>
+        <p>Za priznanje pravice mora prenehati tudi obvezno zavarovanje. Osebne okoliščine, ki lahko znižajo starost ali vplivajo na odmero, preverite pri ZPIZ.</p>
+      </section>
+    </div>
+    <div class="tool-split">
+      <section class="tool-block">
+        <h2>Okvirna mesečna pokojnina</h2>
+        <p>Uporabite svojo pokojninsko osnovo iz informativnega izračuna ZPIZ.</p>
+        <form data-pension-amount><fieldset disabled data-local-fields>
+          <div class="tool-fields">
+            <label>Leto uveljavitve<input type="number" name="year" min="2026" max="2130" step="1" value="2027" required></label>
+            <label>Pokojninska osnova (€)<input type="number" name="base" min="1" max="100000" step="0.01" placeholder="npr. 1600" required></label>
+            <label>Polna leta pokojninske dobe<input type="number" name="years" min="15" max="60" step="1" value="40" required></label>
+            <label>Dodatni meseci<input type="number" name="months" min="0" max="11" step="1" value="0" required></label>
+          </div>
+          <button class="tool-primary" type="submit">Izračunaj odmero</button>
+        </fieldset></form>
+      </section>
+      <section class="tool-block tool-insight">
+        <h2>Osnovna odmera</h2>
+        <output class="tool-output" data-amount-result aria-live="polite">Vpišite pokojninsko osnovo.</output>
+        <div class="tool-progress" data-amount-progress hidden><div class="tool-progress-track"><span></span></div><p></p></div>
+        <p>Prikaz je produkt vnesene osnove in izračunanega odstotka. Znesek je pred morebitnimi odbitki, dodatki, omejitvami in ugodnejšim vrednotenjem po 40. letu dobe.</p>
+      </section>
+    </div>
+    <section class="tool-block">
+      <h2>Kako se spreminja starostna meja?</h2>
+      <div class="tool-age-grid">
+        <% [2026,2027,2028,2029,2030,2031,2032,2033,2034,2035].each do |year| %>
+          <% months=((year-2027)*3).clamp(0,24); extra=months%12 %>
+          <div><strong><%= year==2035 ? '2035 in pozneje' : year %></strong><span><%= 60+months/12 %> let<%= " in #{extra} mes." if extra.positive? %></span><span><%= 65+months/12 %> let<%= " in #{extra} mes." if extra.positive? %></span></div>
+        <% end %>
+      </div>
+      <p>Prva starost velja ob 40 letih predpisane dobe, druga ob najmanj 15 letih zavarovalne dobe. Od 1. januarja 2028 se starostni meji zvišujeta za tri mesece na leto.</p>
+      <p>Vnosi se obdelajo v brskalniku. Za izračun na podlagi uradne evidence, otroka, dela pred določeno starostjo, vojaškega roka ali dobe v tujini uporabite storitve ZPIZ.</p>
+      <div class="tool-source-links"><%= source_link(LocalTools::ZPIZ,'ZPIZ – splošni pogoji') %><%= source_link(LocalTools::LAW,'ZPIZ-2 – členi 27, 28 in 37') %><%= source_link(LocalTools::ZPIZ_CALCULATOR,'Uradni kalkulator ZPIZ') %><%= link_to 'Datumi izplačil pokojnin','/izplacila-pokojnin/' %></div>
+    </section>
+
+  <% elsif kind == 'luna' %>
+    <div class="tool-split">
+      <section class="tool-block">
+        <h2>Mesto in datum</h2>
+        <form data-moon-form><fieldset disabled data-local-fields>
+          <label>Slovensko mesto<select name="city"><% AstronomySchedule.data.fetch('cities').each do |city| %><option value="<%= city.fetch('id') %>"><%= city.fetch('name') %></option><% end %></select></label>
+          <label>Datum<input type="date" name="date" min="2026-01-01" max="2030-12-31" value="<%= @today.clamp(Date.new(2026,1,1),Date.new(2030,12,31)) %>" required></label>
+          <div class="tool-actions"><button class="tool-primary" type="submit">Prikaži Lunine čase</button><button class="tool-secondary" type="button" data-moon-today>Danes</button></div>
+        </fieldset></form>
+        <p>Časovni pas Europe/Ljubljana. Obzorje obravnavamo kot ravno. V hribih ali med stavbami se dejanski pogled na Luno lahko razlikuje.</p>
+      </section>
+      <section class="tool-block tool-insight" aria-labelledby="moon-result-title">
+        <h2 id="moon-result-title" data-moon-title>Lunini časi</h2>
+        <div class="tool-trio">
+          <div><span>Vzhod</span><strong data-moon-rise>–</strong></div>
+          <div><span>Zahod</span><strong data-moon-set>–</strong></div>
+          <div><span>Osvetljena ploskev opoldne</span><strong data-moon-light>–</strong></div>
+        </div>
+        <p data-moon-status role="status"></p>
+        <div class="tool-hour-axis" data-moon-axis hidden><div><span>00.00</span><span>06.00</span><span>12.00</span><span>18.00</span><span>24.00</span></div><div class="tool-hour-track" aria-hidden="true"><i data-axis-rise></i><i data-axis-set></i></div></div>
+      </section>
+    </div>
+    <section class="tool-block">
+      <h2>Lunini časi v naslednjih sedmih dneh</h2>
+      <div class="tool-line-list" data-moon-week></div>
+      <p>Če na dan ni vzhoda ali zahoda, se ta prehod obzorja zgodi na drug koledarski dan. Osvetljenost je izračunana za krajevno opoldne.</p>
+      <div class="tool-source-links"><%= source_link('https://github.com/cosinekitty/astronomy','Astronomy Engine – izračuni') %><%= source_link('https://aa.usno.navy.mil/data/RS_OneDay','USNO – primerjalni izračun') %><%= link_to 'Lunine mene','/lunine-mene/' %><%= link_to 'Sončni vzhod in zahod','/soncni-vzhod-in-zahod/' %></div>
+    </section>
+
+  <% elsif kind == 'studij' %>
+    <div class="tool-split">
+      <section class="tool-block">
+        <h2>Razporedite ure do izpita ali oddaje</h2>
+        <form data-study-form><fieldset disabled data-local-fields>
+          <div class="tool-fields">
+            <label>Začetek<input type="date" name="start" value="<%= today %>" required></label>
+            <label>Rok oziroma izpit<input type="date" name="end" value="<%= @today+14 %>" required></label>
+            <label>Skupaj ur učenja<input type="number" name="hours" min="0.5" max="600" step="0.5" value="18" required></label>
+            <label>Načrtovani dnevi<select name="strategy"><option value="workweek">Od ponedeljka do petka</option><option value="daily">Vsi dnevi</option><option value="weekend">Sobote in nedelje</option></select></label>
+          </div>
+          <label class="tool-check"><input type="checkbox" name="include"> Vključi datum izpita v čas za učenje</label>
+          <button class="tool-primary" type="submit">Sestavi načrt učenja</button>
+        </fieldset></form>
+      </section>
+      <section class="tool-block tool-insight"><h2>Ritem učenja</h2><output class="tool-output" data-study-result aria-live="polite">Izberite obdobje in ure.</output><div class="tool-study-bars" data-study-bars></div><button type="button" class="tool-secondary" data-study-ics disabled>Dodaj učne dni v koledar</button></section>
+    </div>
+    <p class="tool-guidance">Za rok 15. junija brez označene možnosti se načrt zaključi 14. junija. Izbrane ure porazdelimo po minutah, da se tedenski seštevki ujemajo s skupnim ciljem.</p>
+    <%= render 'local_tool_reminders', kind: kind, heading: 'Izpiti in oddaje', hint: 'Dodajte svoje predmete, izpite in roke za oddajo.', today: today %>
+    <div class="tool-source-links"><%= link_to 'Univerzitetni koledarji','/studijski-koledar/' %><%= link_to 'Vpisni koledar','/vpisni-koledar/' %><%= link_to 'Matura 2027','/matura/2027/' %></div>
+
+  <% elsif kind == 'sezone' %>
+    <section class="tool-block">
+      <h2>Izberite opravilo za svoj letni čas</h2>
+      <p>Predlog izberite z dotikom in mu določite datum. Za vrt upoštevajte vreme in razmere v svojem kraju.</p>
+      <% seasons = [['Pomlad','sun','Preglej zalogo semen','Pripravi vrtno orodje'],['Poletje','sunset','Preveri zalivanje vrta','Organiziraj poletni oddih'],['Jesen','sprout','Pospravi sezonsko opremo','Pripravi vrt na mraz'],['Zima','cloud','Načrtuj setev za pomlad','Preveri zimske zaloge']] %>
+      <div class="tool-season-grid">
+        <% seasons.each do |season, icon, *tasks| %><div><h3><%= ui_icon(icon) %><%= season %></h3><% tasks.each do |task| %><button type="button" class="tool-secondary" data-reminder-pick data-name="<%= task %>"><%= task %></button><% end %></div><% end %>
+      </div>
+    </section>
+    <%= render 'local_tool_reminders', kind: kind, heading: 'Moji sezonski opomniki', hint: 'Obkljukajte opravljena opravila in prenesite odprte opomnike v svoj koledar.', today: today %>
+    <div class="tool-source-links"><%= link_to 'Začetki letnih časov','/letni-casi/' %><%= link_to 'Setveni koledar','/setveni-koledar/' %><%= link_to 'Dolžina dneva','/dolzina-dneva/' %></div>
+
+  <% elsif kind == 'godovi' %>
+    <section class="tool-block" data-tool-list>
+      <h2>Izbrani godovi po imenih</h2>
+      <p>Primeri iz slovenskega katoliškega koledarja. Isti osebi je lahko blizu drug svetnik z istim imenom. Če že poznate svoj god, spodaj vpišite svoj datum.</p>
+      <label class="tool-standalone-search">Poišči po imenu<input type="search" data-row-search placeholder="npr. Nikolaj ali Jožef"></label>
+      <div class="tool-line-list">
+        <% LocalTools.saints.each do |saint| %><% month, day=saint.fetch(:date).split('-').map(&:to_i) %>
+          <div class="tool-card-line" data-tool-row>
+            <span class="tool-date-chip"><%= day %>. <%= month %>.</span><div><strong><%= saint.fetch(:names) %></strong><p><%= saint.fetch(:title) %></p></div>
+            <button type="button" class="tool-secondary" data-reminder-pick data-name="<%= saint.fetch(:title) %>" data-recurring-day="<%= saint.fetch(:date) %>">Uporabi datum</button>
+          </div>
+        <% end %>
+      </div>
+      <p data-row-empty hidden>Ime ni med izbranimi primeri. Če poznate datum, ga lahko dodate spodaj.</p>
+      <div class="tool-source-links"><%= source_link(LocalTools::SAINTS_SOURCE,'Slovenska škofovska konferenca – koledar 2026') %><%= source_link('https://katoliska-cerkev.si/cerkveno-leto','Cerkveno leto') %><%= link_to 'Miklavž','/prazniki/miklavz/' %></div>
+    </section>
+    <%= render 'local_tool_reminders', kind: kind, heading: 'Moji godovi', hint: 'Vnesite ime osebe in izberite datum za naslednje voščilo.', today: today %>
+
+  <% else %>
+    <%= render 'local_tool_calendar', kind: kind, today: today %>
+  <% end %>
+</article>

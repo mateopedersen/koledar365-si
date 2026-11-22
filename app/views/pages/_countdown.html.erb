@@ -5,7 +5,7 @@
     <div class="countdown-hero__copy">
       <p class="countdown-eyebrow"><%= slovenia_flag %><span>ČAS JE ZA NASLEDNJE LEPE NAČRTE</span></p>
       <h1 id="countdown-title">Odštevanje do datuma.<br><em>Vaš dan je vse bližje.</em></h1>
-      <p class="countdown-hero__lead">Odštevajte do slovenskih praznikov, šolskih počitnic, božiča ali svojega posebnega dne. Izberite, kar vam pomeni, in imejte datum vedno pri roki.</p>
+      <p class="countdown-hero__lead">Odštevajte do slovenskih praznikov, festivalov, šolskih počitnic ali svojega posebnega dne. Izberite, kar vam pomeni, in imejte datum vedno pri roki.</p>
       <div class="countdown-hero__proof" aria-label="Značilnosti odštevanja">
         <span><%= ui_icon('calendar') %> Slovenski prazniki</span>
         <span><%= ui_icon('school') %> Šolski termini po regijah</span>
@@ -67,7 +67,7 @@
 
   <section class="countdown-catalog" id="izberi-dogodek" aria-labelledby="countdown-catalog-title">
     <div class="countdown-section-heading countdown-catalog__heading">
-      <div><span class="countdown-kicker"><span class="countdown-kicker__number">02</span> PRIHODNOST JE V KOLEDARJU</span><h2 id="countdown-catalog-title">Do česa odštevamo?</h2><p>Prebrskajte dela proste praznike, šolske počitnice in priljubljene datume. Vsakemu lahko dodate svoj odštevalnik.</p></div>
+      <div><span class="countdown-kicker"><span class="countdown-kicker__number">02</span> PRIHODNOST JE V KOLEDARJU</span><h2 id="countdown-catalog-title">Do česa odštevamo?</h2><p>Poiščite praznike, obeležitve, potrjene festivale in šolske počitnice. Vsakemu lahko dodate svoj odštevalnik.</p></div>
       <label class="countdown-search"><span class="sr-only">Poišči dogodek</span><%= ui_icon('search') %><input type="search" placeholder="Poišči dogodek …" data-event-search></label>
     </div>
 
@@ -75,6 +75,8 @@
       <div class="countdown-filters" role="group" aria-label="Filtriraj dogodke">
         <button type="button" data-event-filter="all" aria-pressed="true">Vsi datumi</button>
         <button type="button" data-event-filter="holiday" aria-pressed="false">Slovenski prazniki</button>
+        <button type="button" data-event-filter="observance" aria-pressed="false">Posebni dnevi</button>
+        <button type="button" data-event-filter="festival" aria-pressed="false">Festivali</button>
         <button type="button" data-event-filter="school" aria-pressed="false">Šolski koledar</button>
         <button type="button" data-event-filter="favorite" aria-pressed="false">Moj izbor</button>
       </div>

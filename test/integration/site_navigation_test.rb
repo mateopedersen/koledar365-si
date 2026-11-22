@@ -8,11 +8,14 @@ class SiteNavigationTest < ActionDispatch::IntegrationTest
     assert_select '.site-navigation .nav-shortcut', count: 3
     assert_select 'details[data-navigation-menu]:not([open]) summary[aria-controls=site-tools-menu]'
     assert_select '#site-tools-menu .nav-directory__group', count: 3
-    assert_select '#site-tools-menu .nav-directory__group a', count: 12
+    assert_select '#site-tools-menu .nav-directory__group a', count: 15
     assert_select '#site-tools-menu a[href="/ustvari-koledar/"]'
     assert_select '#site-tools-menu a[href="/nacrtovalnik-dopusta/"]'
     assert_select '#site-tools-menu a[href="/druzinski-planer/"]'
     assert_select '#site-tools-menu a[href="/razpored-izmen/"]'
+    assert_select '#site-tools-menu a[href="/kalkulator-upokojitve/"]'
+    assert_select '#site-tools-menu a[href="/vpisni-koledar/"]'
+    assert_select '#site-tools-menu a[href="/lunin-vzhod-in-zahod/"]'
     doc = Nokogiri::HTML(response.body)
     destinations = doc.css('.topbar nav a, .site-navigation a').map { |link| link['href'] }
     assert_equal destinations.uniq, destinations
