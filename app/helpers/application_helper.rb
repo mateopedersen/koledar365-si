@@ -1,6 +1,8 @@
 module ApplicationHelper
   include IllustrationHelper
 
+  def site_operator_name = 'Filip Horvat'
+
   def legacy_lunar_gallery?
     @section == 'lunar' && (!page_path.start_with?(LunarCalendar.path) ||
       (page_path != LunarCalendar.path && !LunarCalendar::YEARS.cover?(@year.to_i)))
@@ -45,6 +47,11 @@ module ApplicationHelper
     end
     parts << paragraph[offset..]
     safe_join(parts)
+  end
+
+  def editorial_date(article)
+    date = Date.iso8601(article.fetch('editorial_date'))
+    tag.time(date.strftime('%-d. %-m. %Y'), datetime: date.iso8601)
   end
 
   def sl_date(d) = I18n.l(d.to_date,format: :long)

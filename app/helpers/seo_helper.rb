@@ -111,7 +111,7 @@ module SeoHelper
       graph << {
         '@type' => 'BlogPosting', '@id' => "#{canonical_url}#article", 'mainEntityOfPage' => canonical_url,
         'headline' => @title, 'description' => @description, 'image' => {'@id' => image_id}, 'inLanguage' => 'sl-SI',
-        'author' => {'@type' => 'Organization', 'name' => EditorialCatalog::CREDIT, 'url' => "#{site_origin}/uredniska-politika/"},
+        'author' => {'@type' => 'Person', 'name' => site_operator_name, 'url' => site_origin + EditorialCatalog::AUTHOR_PATH},
         'publisher' => {'@id' => organization.fetch('@id')},
         'citation' => @blog_article.fetch('sources').map { |key| EditorialCatalog.sources.fetch(key).last }
       }

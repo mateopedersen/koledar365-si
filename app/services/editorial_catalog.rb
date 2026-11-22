@@ -2,7 +2,7 @@ class EditorialCatalog
   HUB = '/blog/'
   TITLE = 'Vodniki za koledar in načrtovanje'
   DESCRIPTION = 'Praktični vodniki za letni, mesečni in tedenski koledar, razporejanje dela, šolske roke in načrtovanje prostega časa.'
-  CREDIT = 'Uredništvo Koledar365'
+  AUTHOR_PATH = '/o-nas/#o-urednistvu'
 
   def self.read(name)
     JSON.parse(Rails.root.join("data/blog/#{name}.json").read)

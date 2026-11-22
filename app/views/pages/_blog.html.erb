@@ -6,7 +6,10 @@
       <p class="editorial-kicker"><%= article.fetch('category') %></p>
       <h1><%= @title %></h1>
       <p class="editorial-lead"><%= article.fetch('lead') %></p>
-      <a href="/uredniska-politika/"><%= EditorialCatalog::CREDIT %></a>
+      <div class="editorial-byline">
+        <%= link_to site_operator_name, EditorialCatalog::AUTHOR_PATH, rel: 'author' %>
+        <span>Datum prispevka: <%= editorial_date(article) %></span>
+      </div>
     </header>
     <figure class="editorial-cover">
       <img src="<%= EditorialCatalog.image(slug) %>" alt="<%= article.fetch('image_alt') %>" width="1200" height="630" fetchpriority="high">
@@ -41,6 +44,7 @@
         <a href="<%= EditorialCatalog::HUB %>">Vsi vodniki za koledar in načrtovanje</a>
       </section>
     </div>
+    <%= render 'layouts/social_share', sharing_image: seo_image unless @noindex && Rails.env.production? %>
   </article>
 <% else %>
   <div class="editorial-article__header">
@@ -55,7 +59,7 @@
           <article>
             <a href="<%= EditorialCatalog.path(slug) %>">
               <img src="<%= EditorialCatalog.image(slug) %>" alt="<%= article.fetch('image_alt') %>" width="1200" height="630" loading="lazy" decoding="async">
-              <div><h3><%= article.fetch('title') %></h3><p><%= article.fetch('description') %></p></div>
+              <div><h3><%= article.fetch('title') %></h3><p><%= article.fetch('description') %></p><small><%= editorial_date(article) %></small></div>
             </a>
           </article>
         <% end %>

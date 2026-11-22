@@ -66,3 +66,45 @@ test('holiday directory remains readable with a wider fallback font on a small s
   expect(layout.body).toBeLessThanOrEqual(321);
   expect(layout.right).toBeLessThanOrEqual(320.5);
 });
+
+test('blog posts align their header, cover and body on one reading column', async ({ page }) => {
+  test.setTimeout(60_000);
+  await page.goto('/blog/', { waitUntil: 'domcontentloaded' });
+  const paths = await page.locator('.editorial-index__cards article > a').evaluateAll(links => links.map(link => link.pathname));
+  expect(paths.length).toBeGreaterThan(0);
+
+  for (const path of paths) {
+    const response = await page.goto(path, { waitUntil: 'domcontentloaded' });
+    expect(response?.status(), path).toBe(200);
+    const layout = await page.evaluate(async () => {
+      await document.fonts.ready;
+      const selectors = [
+        '.breadcrumb', '.editorial-article h1', '.editorial-article .editorial-lead',
+        '.editorial-byline', '.editorial-cover img', '.editorial-cover figcaption',
+        '.editorial-article__body section:first-child > h2', '.editorial-article__body section:first-child > p',
+        '.editorial-related',
+      ];
+      return {
+        parts: selectors.map(selector => {
+          const { left, right } = document.querySelector(selector).getBoundingClientRect();
+          return { selector, left, right };
+        }),
+        viewport: document.documentElement.clientWidth,
+        scrollWidth: document.documentElement.scrollWidth,
+      };
+    });
+    const column = layout.parts[0];
+    expect(layout.scrollWidth, path).toBeLessThanOrEqual(layout.viewport + 1);
+    for (const part of layout.parts) {
+      const label = `${path} ${part.selector}`;
+      expect(Math.abs(part.left - column.left), label).toBeLessThanOrEqual(1);
+      expect(Math.abs(part.right - column.right), label).toBeLessThanOrEqual(1);
+    }
+  }
+
+  const share = page.locator('.editorial-article .site-share');
+  await expect(share).toHaveCSS('position', 'static');
+  await share.locator('summary').click();
+  await expect(share.locator('.site-share__panel')).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
+});
