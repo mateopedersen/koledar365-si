@@ -79,3 +79,28 @@ test('a manual city choice made during IP detection cannot be overwritten by the
 test('unavailable IP location keeps the safe default and lets the visitor choose',async({page})=>{
  await mock(page,null,{city:null,match:'unavailable',approximate:true});await page.goto('/');await expect(page.locator('#city-select')).toHaveValue('ljubljana');await expect(page.locator('#city-location-status')).toContainText('izberite');await page.locator('#city-select').selectOption('koper');await expect(page.locator('#city-select')).toHaveValue('koper');await expect(page.locator('#city-location-status')).toContainText('ročno');
 });
+
+test('a fresh forecast can be retried after a 503 without squeezing the status', async ({ page }) => {
+  await page.setViewportSize({ width: 370, height: 820 });
+  await mock(page);
+  let available = false;
+  await page.route('**/vreme/ljubljana/', route => {
+    if (available) return route.fallback();
+    return route.fulfill({ status: 503, json: { error: 'Vremenska napoved trenutno ni na voljo.' } });
+  });
+  await page.goto('/', { waitUntil: 'domcontentloaded' });
+
+  const card = page.locator('#city-card');
+  await expect(card).toHaveAttribute('data-weather-state', 'unavailable');
+  const status = await card.locator('.weather-source__status').boundingBox();
+  const refresh = card.locator('#weather-refresh');
+  const button = await refresh.boundingBox();
+  expect(button.y).toBeGreaterThan(status.y + status.height);
+  expect(Math.abs(status.width - button.width)).toBeLessThanOrEqual(1);
+
+  await expect(refresh).toBeEnabled();
+  available = true;
+  await refresh.click();
+  await expect(card).toHaveAttribute('data-weather-state', 'ready');
+  await expect(page.locator('#weather-temperature')).toHaveText('14°');
+});

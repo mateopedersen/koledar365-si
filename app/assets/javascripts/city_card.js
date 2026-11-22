@@ -86,7 +86,7 @@ async function initializeCity(){
  if(result&&validCity(result.city)){
   select.value=result.city;
   locationStatus(result.match==='nearby'?'Približna IP-lokacija: izbrano je najbližje mesto.':'Približna lokacija je določena iz IP-ja. Mesto lahko spremenite.');
- }else locationStatus('Lokacije ni mogoče oceniti; izberite svoje mesto.');
+ }else locationStatus('Prikazujemo privzeto mesto. Po želji izberite drugo.');
  cityInitializationComplete=true;changeCity();
 }
 select.addEventListener('change',()=>{manualCityChange=true;manualCityPreference=true;cityInitializationComplete=true;locationStatus('Mesto ste izbrali ročno.');remember();changeCity()});$('weather-refresh').addEventListener('click',()=>refresh(true));document.addEventListener('k365:consent',remember);
