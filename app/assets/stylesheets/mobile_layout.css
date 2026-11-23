@@ -196,7 +196,7 @@
 }
 @media screen and (max-width:480px) {
   .home-page .calendar-toolbar{display:grid;grid-template-columns:minmax(0,1fr);gap:7px}
-  .home-page .period-form{grid-template-columns:70px minmax(0,1fr) max-content;gap:5px}
+  .home-page .period-form{grid-template-columns:80px minmax(0,1fr) max-content;gap:5px}
   .home-page #vsebina .calendar-panel .period-form select{padding-inline:6px 22px;background-position:right 6px center;background-size:12px}
   .home-page #vsebina .calendar-panel .period-form button{grid-column:auto;padding-inline:7px!important;font-size:14px!important}
 }
