@@ -64,7 +64,7 @@ module ApplicationHelper
   def editorial_paragraph(paragraph)
     parts = []
     offset = 0
-    paragraph.scan(%r{\[([^\]\n]+)\]\((/(?:[a-z0-9-]+/)*|@[a-z0-9-]+)\)}) do |label, target|
+    paragraph.scan(%r{\[([^\]\n]+)\]\((/(?:[a-z0-9-]+/)*(?:#[a-z0-9-]+)?|@[a-z0-9-]+)\)}) do |label, target|
       match = Regexp.last_match
       parts << paragraph[offset...match.begin(0)]
       destination = target.start_with?('@') ? EditorialCatalog.sources.fetch(target.delete_prefix('@')).last : target

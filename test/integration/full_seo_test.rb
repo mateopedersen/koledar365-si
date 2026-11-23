@@ -31,6 +31,20 @@ class FullSeoTest < ActionDispatch::IntegrationTest
     assert_select 'a[href="/lunin-koledar/2028/februar/"]'
     assert_select 'th[scope=col][abbr="ponedeljek"]'
   end
+  test 'calendar editorial links reach the intended school holiday sections' do
+    {
+      '/koledar/2027/februar/' => 'zimske-regije',
+      '/koledar/2027/april/' => 'pocitnice-may',
+      '/koledar/2028/maj/' => 'pocitnice-may',
+      '/koledar/2029/februar/' => 'zimske-regije',
+      '/koledar/2029/junij/' => 'pocitnice-summer',
+      '/koledar/2030/december/' => 'pocitnice-newyear'
+    }.each do |path, section|
+      get path
+      assert_response :success
+      assert_select 'main a[href=?]', "/solske-pocitnice/##{section}", count: 1
+    end
+  end
   test 'homepage has one responsive preload instead of repeated identical declarations' do
     get '/'
     assert_select 'link[rel=preload][as=image]',count:1
