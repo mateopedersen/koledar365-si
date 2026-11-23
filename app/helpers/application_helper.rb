@@ -182,7 +182,7 @@ module ApplicationHelper
   def calendar_event_accessible_title(event)
     title = event.title
     compact_title = calendar_event_compact_title(event)
-    compact_title == title ? title : "#{compact_title} (#{title})"
+    compact_title == title ? title : "#{title} #{compact_title}"
   end
 
   def canonical_url

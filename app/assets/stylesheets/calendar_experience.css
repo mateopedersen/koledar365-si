@@ -98,7 +98,7 @@
 .calendar-sheet__day{min-width:0;border-bottom:1px solid var(--cal-line);padding:.8rem 0 .7rem}
 .calendar-sheet__day h4{display:flex;justify-content:space-between;align-items:center;gap:.5rem;margin:0 0 .3rem;font-size:.74rem;color:var(--cal-ink);font-weight:750}
 .calendar-sheet__day time{font-size:.72rem;color:var(--cal-blue);font-variant-numeric:tabular-nums}
-.calendar-sheet__day.is-weekend h4{color:var(--cal-muted)}
+.calendar-sheet__day.is-weekend h4{color:#52657d}
 .calendar-sheet__day.is-holiday h4,.calendar-sheet__day.is-holiday time{color:var(--cal-red)}
 .calendar-sheet__day.is-today time{background:var(--cal-blue);color:white;border-radius:4px;padding:.1rem .4rem}
 .calendar-sheet__holiday{font-size:.58rem;line-height:1.5;color:var(--cal-red);margin:.2rem 0 .4rem}

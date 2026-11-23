@@ -18,7 +18,7 @@
           <div class="calendar-design-downloads">
             <% [['pdf', 'PDF'], ['webp', 'Slika']].each do |format, label| %>
               <% file = files.fetch(format) %>
-              <a class="button calendar-download-action calendar-download-action--<%= format %>" href="<%= file %>" download="<%= File.basename(file) %>" data-calendar-download="<%= format %>" aria-label="Prenesi <%= label == "PDF" ? "PDF" : "sliko" %> (<%= period %>, <%= design_name %>)"><%= calendar_file_icon(format) %><span class="calendar-download-action__copy"><strong><%= label %></strong> <small>Prenesi</small></span></a>
+              <a class="button calendar-download-action calendar-download-action--<%= format %>" href="<%= file %>" download="<%= File.basename(file) %>" data-calendar-download="<%= format %>" aria-label="<%= label %> Prenesi (<%= period %>, <%= design_name %>)"><%= calendar_file_icon(format) %><span class="calendar-download-action__copy"><strong><%= label %></strong> <small>Prenesi</small></span></a>
             <% end %>
           </div>
         </div>
