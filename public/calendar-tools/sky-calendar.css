@@ -137,7 +137,7 @@
 .sky-schedule__header p, .sky-reading header p, .sky-sources p, .sky-example > p:not(.sky-kicker) { margin-top: 8px; color: var(--sky-text); }
 .sky-filters {
   display: grid;
-  grid-template-columns: minmax(90px, .62fr) minmax(128px, 1fr) minmax(205px, 1.6fr);
+  grid-template-columns: minmax(90px, .62fr) minmax(155px, 1fr) minmax(205px, 1.6fr);
   gap: 10px;
   margin-top: 18px;
 }
@@ -234,7 +234,8 @@
   .sky-glyph svg { width: 25px; height: 25px; }
   .sky-topic strong { font-size: .92rem; overflow-wrap: anywhere; }
   #vsebina .sky-topic small { font-size: .8rem; }
-  .sky-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 8px; }
+  .sky-filters { grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); gap: 10px 8px; }
+  .sky-filters select { padding-inline: 7px 24px; background-position: right 5px center; }
   .sky-filters label:last-child { grid-column: 1/-1; }
   .sky-reading__grid, .sky-sources { grid-template-columns: minmax(0, 1fr); }
 }

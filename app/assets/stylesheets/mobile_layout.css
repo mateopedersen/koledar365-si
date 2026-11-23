@@ -201,3 +201,10 @@
   .home-page #vsebina .calendar-panel .period-form button{grid-column:auto;padding-inline:7px!important;font-size:14px!important}
 }
 @media print{.calendar-agenda,.table-scroll-hint{display:none!important}}
+
+@media screen and (max-width:480px) {
+  .home-page .intro:has(>.calendar-studio-cta) { gap: 6px; margin-bottom: 8px; }
+  .home-page #vsebina .intro > a.calendar-studio-cta { --k365-control-height: 44px; min-height: 44px; padding-block: 4px; }
+  .home-page .calendar-title { row-gap: 4px; margin-bottom: 8px; }
+  .home-page .calendar-toolbar { row-gap: 5px; margin-bottom: 8px; }
+}

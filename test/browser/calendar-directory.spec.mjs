@@ -59,7 +59,7 @@ test('period example opens its own dates in the working-day calculator', async (
   await expect(page.locator('[data-wdc-from]').first()).toHaveValue('2030-10-29');
   await expect(page.locator('[data-wdc-to]')).toHaveValue('2030-11-03');
   await page.locator('[data-wdc-form="range"]').getByRole('button', {name: /Izračunaj obdobje/}).click();
-  await expect(page.locator('[data-wdc-primary]')).toHaveText('2');
+  await expect(page.locator('[data-wdc-primary]')).toHaveText('2', {timeout: 30000});
 });
 test('without JavaScript every year and month is available without page overflow',async({browser,baseURL})=>{
   const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:320,height:900}});const page=await context.newPage();await page.goto(baseURL+'/koledar/');

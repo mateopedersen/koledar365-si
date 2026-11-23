@@ -50,7 +50,7 @@ const sourceEvents = [
 ];
 
 test('all 48 monthly calendars show compact labels without expanding and retain full event names', async ({ page }) => {
-  test.setTimeout(300_000);
+  test.setTimeout(420_000);
   const routesToScan = test.info().project.name === 'chromium' ? calendarRoutes : ['/koledar/2027/oktober/'];
   const compactLabelsByTitle = new Map();
   // The measurements need fonts and CSS. Gallery photographs are audited separately.

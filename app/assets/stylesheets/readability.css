@@ -562,7 +562,8 @@
 @media screen and (max-width:900px){
   #vsebina :is(.important-controls .filters,.event-list-filters){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:end}
   #vsebina .important-controls .filters>label:has(input[type="search"]){grid-column:1/-1}
-  #vsebina .important-controls .filters > button { margin-block: 0; }
+  #vsebina .important-controls .filters > button { min-width: 0; margin-block: 0; white-space: normal; }
+  #vsebina .important-controls .filters :is(label, select, input) { min-width: 0; max-width: 100%; }
 }
 @media screen and (max-width:600px){
   #vsebina .design-card .actions{grid-template-columns:minmax(0,1fr)}

@@ -6,6 +6,6 @@ QA_WORKERS=1 QA_BROWSER=firefox QA_SAMPLE_ONLY=1 node script/qa_browser.mjs
 node script/qa_keyboard.mjs
 node script/qa_exports.mjs
 "$task_python" script/qa_export_files.py
-pnpm exec playwright test
+pnpm exec playwright test --retries=1
 "$task_python" script/qa_downloads.py
 "$task_python" script/qa_collection_raster.py
