@@ -51,4 +51,23 @@ class ImageRightsTest < ActiveSupport::TestCase
       assert_equal photo['source'], object['acquireLicensePage'], path
     end
   end
+
+  test 'editorial photographs carry attribution from their reviewed source' do
+    EditorialCatalog.articles.each do |slug, article|
+      photo = article.fetch('photo')
+      object = {
+        '@type' => 'ImageObject',
+        'contentUrl' => 'https://koledar365.si' + EditorialCatalog.image(slug),
+        'creditText' => photo.fetch('credit'),
+        'license' => photo.fetch('license_url')
+      }
+
+      ImageRights.apply!(object, origin: 'https://koledar365.si')
+
+      assert_equal photo['credit'], object.dig('creator', 'name'), slug
+      assert_equal photo['source'], object['acquireLicensePage'], slug
+      assert_equal photo['license_url'], object['license'], slug
+      assert_includes object['copyrightNotice'], photo['license'], slug
+    end
+  end
 end

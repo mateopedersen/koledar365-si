@@ -4,6 +4,7 @@ require 'uri'
 # An author's credit is not proof of current copyright ownership.
 class ImageRights
   OWNED_PREFIXES = %w[/koledarji/2027-2030/ /images/astronomy/ /images/payments/ /images/premik-ure/].freeze
+  EDITORIAL_STUDIOS = ['cottonbro studio', 'MART PRODUCTION', 'SHVETS production', 'Edge Training', 'kaboompics'].freeze
 
   def self.apply!(value, origin:)
     case value
@@ -17,7 +18,8 @@ class ImageRights
       if (photo = photos[path])
         author = photo['author'].to_s.strip
         unless author.empty?
-          kind = author.match?(/\b(?:NASA|ESA|NOAA|Koledar365|FotoBOBO)\b/i) ? 'Organization' : 'Person'
+          organization = EDITORIAL_STUDIOS.include?(author) || author.match?(/\b(?:NASA|ESA|NOAA|Koledar365|FotoBOBO)\b/i)
+          kind = organization ? 'Organization' : 'Person'
           value['creator'] ||= {'@type' => kind, 'name' => author}
           value['creditText'] ||= author
         end
@@ -57,8 +59,14 @@ class ImageRights
   end
 
   def self.photos
-    @photos ||= (HolidayPhotoCatalog.all + CityCatalog.all.map { |city| city['photo'] } + GardenCalendar.photos).compact.each_with_object({}) do |photo, index|
-      [photo['local_path'], photo['path'], photo['small_path']].compact.each { |path| index[path] = photo }
+    @photos ||= begin
+      editorial_photos = EditorialCatalog.articles.map do |slug, article|
+        photo = article.fetch('photo')
+        photo.merge('local_path' => EditorialCatalog.image(slug), 'author' => photo.fetch('credit'))
+      end
+      (HolidayPhotoCatalog.all + CityCatalog.all.map { |city| city['photo'] } + GardenCalendar.photos + editorial_photos).compact.each_with_object({}) do |photo, index|
+        [photo['local_path'], photo['path'], photo['small_path']].compact.each { |path| index[path] = photo }
+      end
     end
   end
 end
