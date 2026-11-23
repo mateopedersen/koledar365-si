@@ -16,6 +16,11 @@ class OccasionCatalog
   def self.observances = data.fetch('observances')
   def self.festivals = data.fetch('festivals')
   def self.festival(slug) = festivals.find { |row| row.fetch('slug') == slug }
+
+  def self.festival_guide(slug)
+    @festival_guides ||= JSON.parse(Rails.root.join('data/festival_guides_sl.json').read)
+    @festival_guides.fetch(slug)
+  end
   def self.observance(slug) = observances.find { |row| row.fetch('slug') == slug }
   def self.festival_path(slug) = "#{PATH}##{slug}"
   def self.festival_detail_path(slug) = "#{PATH}#{slug}/"

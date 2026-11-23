@@ -46,6 +46,8 @@ function initSchoolPage(root) {
   if (root.dataset.held === 'true') return;
   const data = JSON.parse(root.querySelector('#sp-data').textContent);
   const $ = selector => root.querySelector(selector), $$ = selector => [...root.querySelectorAll(selector)];
+  const explorerTitle = $('#sp-explorer-title');
+  const schoolTitle = explorerTitle.textContent;
   const params = new URLSearchParams(location.search);
   let level = ['primary','secondary','university'].includes(params.get('level')) ? params.get('level') : 'primary';
   let region = params.get('region') === 'east' ? 'east' : 'west';
@@ -140,7 +142,7 @@ function initSchoolPage(root) {
     $('[data-region-select]').value=region; $('[data-region-select]').disabled=level==='university'; $('[data-university-select]').value=university;
     $$('[data-region-choice]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.regionChoice===region)));
     renderUniversities();
-    $('#sp-explorer-title').textContent = level === 'university' ? 'Poiščite svoj študijski koledar.' : 'Kdaj odložimo šolske torbe?';
+    explorerTitle.textContent = level === 'university' ? 'Poiščite svoj študijski koledar.' : schoolTitle;
     renderCards(); renderCalendar(); renderCountdown(); calculate();
   }
   root.addEventListener('click', event=>{

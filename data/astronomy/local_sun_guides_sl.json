@@ -1,0 +1,485 @@
+{
+  "ajdovscina": {
+    "peer": "nova-gorica",
+    "date": "2027-02-20",
+    "title": "Jutranja svetloba v Vipavski dolini",
+    "body": "Za zimski sprehod skozi Ajdovščino ločite začetek svita od trenutka, ko Sonce obsije vašo stran ulice. Primerjava z Novo Gorico pokaže razliko, ki jo v modelu povzročijo koordinate. Če izberete razgled pri robu doline, upoštevajte še pobočje in smer pogleda.",
+    "related": "/dolzina-dneva/"
+  },
+  "bled": {
+    "peer": "radovljica",
+    "date": "2027-06-21",
+    "title": "Prvi posnetki Blejskega jezera ob solsticiju",
+    "body": "Za jutranji posnetek si najprej določite obalo, s katere želite fotografirati. Za sliko odseva je vredno priti že v civilnem svitu. Pri prehodu v Radovljico primerjajte oba izračuna za isti datum, vendar na Bledu uro neposredne svetlobe presodite glede na hribe okoli jezera.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "bovec": {
+    "peer": "tolmin",
+    "date": "2027-10-16",
+    "title": "Kdaj se zmrači med Bovcem in Tolminom?",
+    "body": "Pri poti ob Soči za zadnji odsek izberite čas v kraju, kjer boste pot končali. V Bovcu lahko dolinsko pobočje skrije Sonce, čeprav je v izračunu še nad obzorjem. Tolminski čas je koristen za primerjavo, ko vas načrt vodi naprej po dolini.",
+    "related": "/dolzina-dneva/"
+  },
+  "brezice": {
+    "peer": "krsko",
+    "date": "2027-03-21",
+    "title": "Spomladanski večer ob Savi iz Brežic",
+    "body": "Najprej določite, ali boste po Sončevem zahodu še na poti. Za pot proti Krškemu izračunajte svetlobo na obeh koncih poti. Pri odprtem odseku uporabite zahod kot mejo neposredne svetlobe, dolžina civilnega mraka pa pokaže, koliko pozneje se stemni.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "celje": {
+    "peer": "lasko",
+    "date": "2027-11-20",
+    "title": "Celje in Laško ob kratkem novembrskem dnevu",
+    "body": "Če načrtujete obisk Celja in Laškega isti dan, večerni del razporeda vežite na kraj, kjer ostanete nazadnje. Za pogled iz središča Celja na uro, ko Sonce preide obzorje, ne sklepajte samo po tem, kdaj se pod gradom pojavijo sence.",
+    "related": "/dolzina-dneva/"
+  },
+  "crnomelj": {
+    "peer": "metlika",
+    "date": "2027-08-21",
+    "title": "Od jutra v Črnomlju do večera v Metliki",
+    "body": "Umestite prvi postanek in zadnji sprehod na ločeni časovnici. Bližnji kraji v Beli krajini imajo podobno dolgo svetlobo, kar lahko preverite na istem avgustovskem datumu. Za zadnji postanek izberite mejo po času zahoda tam, kjer se boste dejansko ustavili.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "domzale": {
+    "peer": "menges",
+    "date": "2027-04-24",
+    "title": "Dve uri za popoldanski izlet iz Domžal",
+    "body": "Če lahko odidete šele po 17.00, od Sončevega zahoda odštejte trajanje poti in rezervo. Enak račun naredite za vrnitev v Mengeš, če je cilj na drugi strani poti. Minute v razpredelnici vam pomagajo pri izbiri ure odhoda, krošnje pa lahko pot zasenčijo že prej.",
+    "related": "/datumski-kalkulator/"
+  },
+  "gornja-radgona": {
+    "peer": "murska-sobota",
+    "date": "2027-09-11",
+    "title": "Jesenska svetloba na poti prek Mure",
+    "body": "Pri sestavljanju večernega načrta primerjajte, kdaj se začne civilni mrak ob Muri in v Murski Soboti. Za krajši postanek na odprtem je to uporabnejši podatek od ure Sončevega poldneva. Datum in izbrani kraj zapišite skupaj, da boste izračun pozneje lahko ponovili.",
+    "related": "/dolzina-dneva/"
+  },
+  "hrastnik": {
+    "peer": "trbovlje",
+    "date": "2027-12-18",
+    "title": "Zimski sprehod med zasavskimi pobočji",
+    "body": "Za sprehod v Hrastniku si pustite rezervo pred izračunanim zahodom. Če primerjate Hrastnik in Trbovlje, dobite podoben okvir ne glede na izbiro mesta. Razliko med dvema konkretnima ulicama pogosto bolje razloži pogled proti jugozahodu in višina roba doline kot minuta v preglednici.",
+    "related": "/letni-casi/"
+  },
+  "idrija": {
+    "peer": "ziri",
+    "date": "2027-05-15",
+    "title": "Dve merili časa za odhod iz Idrije",
+    "body": "Krajši ogled na prostem lahko začnete tudi pred Sončevim vzhodom, če potrebujete razpršeno svetlobo. Uro svita za Idrijo preverite posebej, za odsek v smeri Žirov pa shranite drug izračun. Za osvetljeno pročelje upoštevajte še njegovo lego glede na vzhodno obzorje.",
+    "related": "/dolzina-dneva/"
+  },
+  "ilirska-bistrica": {
+    "peer": "postojna",
+    "date": "2027-09-18",
+    "title": "Primerjajte svetlobo ob dveh postankih na Notranjskem",
+    "body": "Če zadnji postanek v okolici Ilirske Bistrice prestavite v Postojno, ohranite izbrani datum in spremenite kraj izračuna. Ob enakem času odhoda lahko na poti prej izgubite direktno svetlobo zaradi pobočja ali gozdnega roba. Za vrnitev pred temo si določite časovno rezervo.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "izola": {
+    "peer": "piran",
+    "date": "2027-05-29",
+    "title": "Večerni posnetek iz Izole ali Pirana",
+    "body": "Za primerjavo osvetlitve na obali izberite isti majski večer in enak položaj Sonca. Če ste v marini ali med hišami, je za izbiro stojišča pomembno, kaj vam zakriva pogled proti zahodu. Astronomski uri sta lahko podobni, tudi če je pogled z obeh krajev različen.",
+    "related": "/soncni-vzhod-in-zahod/"
+  },
+  "jesenice": {
+    "peer": "bled",
+    "date": "2027-08-28",
+    "title": "Od sence v jeseniški dolini do odprtega obzorja",
+    "body": "Čas na Jesenicah uporabite kot okvir za odhod. Če načrt vključuje še večer na Bledu, izračunajte svetlobo posebej na obeh koncih. Posebej si označite, kdaj želite videti Sončev disk, in kdaj vam zadošča razpršena svetloba po zahodu.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "kamnik": {
+    "peer": "domzale",
+    "date": "2027-01-16",
+    "title": "Januarska ura odhoda iz Kamnika",
+    "body": "Ob zimskem sprehodu v Kamniku vam dolžina dneva pove, koliko časa je med vzhodom in zahodom. Najpoznejšo uro vrnitve pa določite po zahodu in svoji poti. Če je zaključek v Domžalah, za tisti del načrta odprite še domžalski izračun.",
+    "related": "/dolzina-dneva/"
+  },
+  "kocevje": {
+    "peer": "ribnica",
+    "date": "2027-06-05",
+    "title": "Svetloba pod krošnjami pri Kočevju",
+    "body": "Pri gozdnem sprehodu začetek civilnega mraka pomeni nekaj drugega kot na odprti površini. Za Kočevje si zapišite zahod na ravnem obzorju in določite zgodnejšo uro vrnitve. Ribniški podatek uporabite pri primerjavi krajev, če se izlet zaključuje na drugi strani poti.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "koper": {
+    "peer": "lendava",
+    "date": "2027-09-25",
+    "title": "Zakaj je ob istem datumu zahod v Kopru drugačen kot na vzhodu?",
+    "body": "Za izbrano septembrsko soboto poglejte uro na slovenski obali in v Lendavi. Primerjajte vzhod in zahod, ne le ene ure. Iz dveh izračunov je razvidno, da se časi na uri zamaknejo tudi takrat, ko je celotna dolžina dneva podobna.",
+    "related": "/dolzina-dneva/"
+  },
+  "kostanjevica-na-krki": {
+    "peer": "novo-mesto",
+    "date": "2027-07-31",
+    "title": "Odsev ob Krki ob koncu julija",
+    "body": "Za odsev v vodi izberite smer pogleda in višino Sonca pred zahodom. Če isti dan fotografirate še v Novem mestu, uporabite oba krajevna časa. Ura zahoda pomaga pri pripravi, odsev pa je odvisen tudi od odprtega pogleda nad vodo in od vetra.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "kranj": {
+    "peer": "skofja-loka",
+    "date": "2027-04-10",
+    "title": "Aprilska svetloba nad kanjonom v Kranju",
+    "body": "Za posnetek pri kanjonu Kokre načrtujte uro po smeri svetlobe. Odprt pogled nad mestom in pogled iz kanjona nista enako osvetljena. Če se po ogledu odpravite v Škofjo Loko, za konec poti odprite tamkajšnji izračun.",
+    "related": "/dolzina-dneva/"
+  },
+  "krsko": {
+    "peer": "sevnica",
+    "date": "2027-11-06",
+    "title": "Zgodnja večerna svetloba med Krškim in Sevnico",
+    "body": "V začetku novembra uporabite ure po zimskem času. Dolžina popoldanskega postanka ob Savi je omejena z uro, ko želite biti na cilju, ne s časom odhoda. V Sevnici in Krškem primerjajte čas za isti koledarski dan.",
+    "related": "/premik-ure/"
+  },
+  "lasko": {
+    "peer": "celje",
+    "date": "2027-03-28",
+    "title": "Popoldan v Laškem na dan premika ure",
+    "body": "Če si za dogovor ob Savinji zabeležite krajši sprehod na zadnjo marčevsko nedeljo, uporabite prikaz v CEST. Celjska jutranja ura iz starejšega zapisa pred premikom ure ni uporabna skupaj z večerno uro po premiku. Za oba kraja nastavite isti datum.",
+    "related": "/premik-ure/"
+  },
+  "lendava": {
+    "peer": "murska-sobota",
+    "date": "2027-12-22",
+    "title": "Koliko je svetlega časa v Lendavi ob začetku zime?",
+    "body": "Na kratkem decembrskem dnevu je za daljši sprehod uporabno od zahoda odšteti tako čas poti kot rezervo za počitek. Za primerjavo v Prekmurju nastavite še Mursko Soboto. Svetloba na pobočju je odvisna od strani, s katere ste obrnjeni proti Soncu.",
+    "related": "/letni-casi/"
+  },
+  "litija": {
+    "peer": "zagorje-ob-savi",
+    "date": "2027-05-08",
+    "title": "Dva postanka ob Savi, en skupni termin vrnitve",
+    "body": "Začnite s časom zahoda v kraju, v katerem nameravate končati sprehod. Izračun za Litijo in Zagorje pokaže približno krajevno razliko; ovinek reke in zakrit pogled odseka lahko senco podaljšata. Pri izbiri termina za fotografijo zabeležite tudi smer pogleda.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "ljubljana": {
+    "peer": "maribor",
+    "date": "2027-06-20",
+    "title": "Načrtujte svetel večer v Ljubljani",
+    "body": "Če se po večerni poti vračate čez središče Ljubljane, uporabite konec civilnega mraka kot ločeno informacijo od zahoda. Za primerjavo z Mariborom ohranite isti datum in preverite, koliko minut se razlikuje ura zahoda, preden isti načrt prenesete v drugo mesto.",
+    "related": "/dolzina-dneva/"
+  },
+  "ljutomer": {
+    "peer": "ormoz",
+    "date": "2027-10-09",
+    "title": "Jesenski pogled med Ljutomerom in Ormožem",
+    "body": "Za fotografiranje iz vinogradniške pokrajine pridite pred večerno zlato uro. Orodje primerja čas nad ravnim obzorjem; za pogled proti zahodu je pomembno, ali bližnji grič zakriva del neba. Pri drugem postanku popoldne izberite Ormož in ponovite izračun.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "maribor": {
+    "peer": "ptuj",
+    "date": "2027-02-27",
+    "title": "Zimsko popoldne ob Dravi",
+    "body": "Za sprehod od mariborske do ptujske strani primerjajte kraj, kjer boste ob koncu dneva. V mestu imata lahko oba bregova različno senco še preden Sonce zaide. Če želite ostati zunaj dlje, posebej preverite konec civilnega mraka.",
+    "related": "/dolzina-dneva/"
+  },
+  "metlika": {
+    "peer": "crnomelj",
+    "date": "2027-04-18",
+    "title": "Pred spomladanskim odhodom proti Kolpi",
+    "body": "V Metliki izračunajte uro za zgodnji začetek, če želite izkoristiti ves svetli del dneva. Pri nadaljevanju proti Črnomlju preverite še čas zahoda, da ne bi ure jutranjega svita zamenjali z mejo večerne svetlobe. Ponekod ob vodi pogled zakrivajo drevesa.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "murska-sobota": {
+    "peer": "koper",
+    "date": "2027-03-20",
+    "title": "Isti marec na Pomurskem in na Obali",
+    "body": "Na obeh straneh države izberite dan okoli enakonočja. Zapišite čas, ko Sonce vzide, in čas, ko zaide, nato primerjajte trajanje med njima. Tako je ločeno vidno, ali je razlika v dolžini dneva ali predvsem v uri začetka dneva.",
+    "related": "/letni-casi/"
+  },
+  "nova-gorica": {
+    "peer": "sempeter-pri-gorici",
+    "date": "2027-07-10",
+    "title": "Kako izbrati uro za večer na Goriškem?",
+    "body": "Pri srečanju, ki se seli iz Nove Gorice v Šempeter, uporabite isti poletni datum. Za odprt pogled proti zahodu poglejte uro zahoda. Če se srečanje konča med stavbami, dodajte rezervo in se dogovorite za čas, ki ga lahko oba uporabita ne glede na kraj.",
+    "related": "/dolzina-dneva/"
+  },
+  "novo-mesto": {
+    "peer": "kostanjevica-na-krki",
+    "date": "2027-10-23",
+    "title": "Pozno oktobrsko popoldne ob Krki",
+    "body": "Če želite obiskati dva kraja ob Krki, namesto enega splošnega časa uporabite krajevni izračun za drugi postanek. Na načrt postavite zahod in konec civilnega mraka kot dve črti. Tako veste, kdaj neposredna svetloba izgine in koliko svetlobe je po tem še na voljo.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "ormoz": {
+    "peer": "ljutomer",
+    "date": "2027-07-24",
+    "title": "Kdaj začeti jutranje opazovanje na ormoškem območju?",
+    "body": "Zgodaj poleti je za miren jutranji ogled lahko primeren že čas pred vzhodom. Poglejte civilni svit v Ormožu. Ljutomerski izračun primerjajte, če je drugi del načrta v Prlekiji, in pri fotografiranju ob vodi upoštevajte morebitno meglo.",
+    "related": "/dolzina-dneva/"
+  },
+  "piran": {
+    "peer": "koper",
+    "date": "2027-12-29",
+    "title": "Decembrski zahod s piranskega polotoka",
+    "body": "Za pogled s polotoka poiščite odprto smer proti jugozahodu. V hladni polovici leta je Sončev zahod v drugačni smeri kot poleti. Če boste isti dan še v Kopru, primerjajte uri in preverite, na katerem postanku je pogled na obzorje bolj odprt.",
+    "related": "/letni-casi/"
+  },
+  "postojna": {
+    "peer": "cerknica",
+    "date": "2027-10-10",
+    "title": "Oktobrski urnik za Postojno in Cerkniško polje",
+    "body": "Za zunanji ogled pri Postojni uporabite Sončev zahod kot mejo dneva na ravnem obzorju. Za drugi postanek izračun ponovite za Cerknico. Za jutranje fotografije nad poljem si posebej zapišite civilni svit, ker se lahko svetloba pokaže še pred vzhodom.",
+    "related": "/soncni-vzhod-in-zahod/"
+  },
+  "ptuj": {
+    "peer": "maribor",
+    "date": "2027-08-14",
+    "title": "Pozno poletno srečanje na Ptuju",
+    "body": "Za čas zunanjega dela srečanja zabeležite, kdaj se začne mrak na Ptuju, preden ga prestavite v Maribor. Ob bregu Drave preverite tudi smer pogleda. Če vas zanima nočno nadaljevanje, čas začetka temačnejšega neba primerjajte z Lunino fazo.",
+    "related": "/lunine-mene/"
+  },
+  "radece": {
+    "peer": "lasko",
+    "date": "2027-01-23",
+    "title": "Kdaj ob Savi v Radečah pričakovati mrak?",
+    "body": "V januarju raje računajte z zgodnejšim zaključkom poti skozi dolino. Ob robu naselja je zahodni pogled lahko zakrit, zato čas iz tablice služi kot primerjava dveh krajev. Če se ustavite še v Laškem, izberite isti datum in tamkajšnjo dolžino dneva.",
+    "related": "/dolzina-dneva/"
+  },
+  "radovljica": {
+    "peer": "kranj",
+    "date": "2027-05-22",
+    "title": "Prvi del svetlega dneva v Radovljici",
+    "body": "Uro začetka za jutranji izlet določite po civilnem svitu, če želite biti na mestu že pred prvo neposredno svetlobo. Za drugi postanek v Kranju ponovno nastavite izbrani datum, da ne primerjate majske ure z uro drugega dne.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "ravne-na-koroskem": {
+    "peer": "prevalje",
+    "date": "2027-11-13",
+    "title": "Pozna jesenska svetloba v Mežiški dolini",
+    "body": "Če poteka pot med Ravnami in Prevaljami, naredite primerjavo za oba kraja z istim datumom. Za ulice ob pobočju je pomembna tudi smer odprtega pogleda; za čas vrnitve računajte glede na bolj senčen del poti.",
+    "related": "/dolzina-dneva/"
+  },
+  "sevnica": {
+    "peer": "krsko",
+    "date": "2027-02-13",
+    "title": "Popoldanska senca ob sevniškem delu Save",
+    "body": "Če načrtujete ogled okolice Sevnice, od izračunanega zahoda odštejte čas za vrnitev. Pri postanku v Krškem poglejte krajevni čas posebej. Če se do razgleda vzpenjate, ne uporabite trajanja poti nazaj kot ocene za prihod.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "sezana": {
+    "peer": "koper",
+    "date": "2027-08-07",
+    "title": "Večerni prehod s Krasa proti obali",
+    "body": "Na kraškem postanku pri Sežani opazujte, kdaj Sonce zapusti odprt pogled, nato izberite Koper za zadnji del poti. Če primerjate fotografiji, ju označite z dejanskima krajevnima urama. Podobna ura na časovnici ne pomeni istega pogleda na obzorje.",
+    "related": "/dolzina-dneva/"
+  },
+  "slovenska-bistrica": {
+    "peer": "slovenske-konjice",
+    "date": "2027-04-17",
+    "title": "Svetloba za popoldansko pot ob Pohorju",
+    "body": "Če se iz Slovenske Bistrice odpravljate proti Slovenskim Konjicam, začnite načrt pri času za prihod na cilj. Branje zahoda je lažje, če si poleg izračunane ure zabeležite, kje na poti stopite v senco. Izračun uporablja ravno obzorje v obeh krajih.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "slovenj-gradec": {
+    "peer": "dravograd",
+    "date": "2027-09-26",
+    "title": "Dva jesenska popoldneva na Koroškem",
+    "body": "Za primerjavo raje uporabite isti septembrski datum v Slovenj Gradcu in Dravogradu. Tudi če se uri razlikujeta le malo, si za vrnitev z odprtega odseka pustite rezervo. V zapiske ob uri dodajte ime kraja, da pri drugem načrtu ne uporabite starega izračuna.",
+    "related": "/dolzina-dneva/"
+  },
+  "slovenske-konjice": {
+    "peer": "zrece",
+    "date": "2027-06-12",
+    "title": "Večerni zaključek poti med Konjicami in Zrečami",
+    "body": "Najprej določite kraj zadnjega postanka. Če bo to v Zrečah, pazite, da izračun v Konjicah ne postane nadomestilo za izbiro obzorja na cilju. Za fotografijo v mehki svetlobi preverite tudi začetek večernega zlatega intervala.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "skofja-loka": {
+    "peer": "kranj",
+    "date": "2027-03-13",
+    "title": "Svetloba pred večerom v starem mestnem jedru",
+    "body": "V Škofji Loki se pri ozkih ulicah vprašajte, ali potrebujete Sonce na pročelju ali le svetlo nebo. S pomočjo ure zahoda načrtujte ogled v mestu, ločeno pa izračunajte čas za poznejši odhod v Kranju. Podatek ne vključuje senc posameznih stavb.",
+    "related": "/dolzina-dneva/"
+  },
+  "sostanj": {
+    "peer": "velenje",
+    "date": "2027-07-03",
+    "title": "Poletni večer ob poti iz Šoštanja",
+    "body": "Za zaključek večernega sprehoda preverite najprej, ali se konča v Šoštanju ali Velenju. Pri obeh časih upoštevajte morebitno zakrito obzorje. Za ogled na prostem po zahodu si posebej poglejte, kdaj se konča civilni mrak.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "tolmin": {
+    "peer": "bovec",
+    "date": "2027-06-26",
+    "title": "Jutranji prihod v Tolmin pred močnejšo svetlobo",
+    "body": "Če načrtujete zgodnji odhod, poglejte čas civilnega svita, ne le ur vzhoda. V Tolminu si za pogled iz doline pustite rezervo in preverite, od kod je nebo odprto. Za primerjavo proti Bovcu preverite isti datum v zgornjem delu doline.",
+    "related": "/soncni-vzhod-in-zahod/"
+  },
+  "trbovlje": {
+    "peer": "hrastnik",
+    "date": "2027-10-30",
+    "title": "Zadnje popoldne pred prestavitvijo ure",
+    "body": "V Trbovljah je 30. oktobra še poletni čas. Če isti načrt za popoldanski izlet prestavite na nedeljo, ponovno izračunajte čas zahoda; številka na uri se spremeni tudi zaradi prehoda na CET. Enako veljaven primer za sosednji Hrastnik dobite z izbiro istega datuma.",
+    "related": "/premik-ure/"
+  },
+  "trzic": {
+    "peer": "radovljica",
+    "date": "2027-09-05",
+    "title": "Nedeljski jutranji načrt za Tržič",
+    "body": "Pri zgodnjem odhodu iz Tržiča si zapišite začetek svita kot podatek o razpršeni svetlobi. Če pot vključuje še Radovljico, primerjajte oba jutranja prehoda. V gozdu višji rob obzorja ali drevesa zamaknejo trenutek neposrednih žarkov.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "velenje": {
+    "peer": "zalec",
+    "date": "2027-05-02",
+    "title": "Izbira ure za drugi del dneva v Velenju",
+    "body": "Če začnete dan pri Žalcu in popoldne pridete v Velenje, za zadnji odsek uporabite velenjski zahod. Na prostem ob vodi si zapišite tudi uro, ko želite priti do izbranega stojišča, da boste tam že pred začetkom večernega fotografiranja.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "visnja-gora": {
+    "peer": "grosuplje",
+    "date": "2027-10-02",
+    "title": "Čas za vrnitev z jesenskega sprehoda pri Višnji Gori",
+    "body": "Od časa Sončevega zahoda odštejte načrtovano hojo in dodatno rezervo. Na poti proti Grosuplju uporabite isti datum v sosednjem izračunu, če je vrnitev v drugem kraju. Pri delu poti skozi gozd upoštevajte, da se tam stemni prej kot na odprtem.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "vrhnika": {
+    "peer": "logatec",
+    "date": "2027-03-06",
+    "title": "Svetloba za krajši marčevski izlet z Vrhnike",
+    "body": "Najprej preverite, koliko ur ostane med odhodom in zahodom. Za primerjavo izračunajte isti dan še v Logatcu. Če se vračate po senčnem delu poti, je praktična meja za odhod prej, kot kaže sam zahod na ravnem obzorju.",
+    "related": "/dolzina-dneva/"
+  },
+  "zagorje-ob-savi": {
+    "peer": "litija",
+    "date": "2027-11-14",
+    "title": "Zgodnji večer pri Zagorju ob Savi",
+    "body": "Za pozno popoldne si zabeležite, kdaj se konča svetli del dneva in kdaj še poteka civilni mrak. Izračun za Litijo lahko služi za primerjavo na poti, vendar boste pri izbiri ure za ogled v Zagorju upoštevali predvsem pogled proti pobočju.",
+    "related": "/dolzina-dneva/"
+  },
+  "zalec": {
+    "peer": "celje",
+    "date": "2027-08-22",
+    "title": "Konec poletnega izleta v Spodnji Savinjski dolini",
+    "body": "Če se družina dogovori za odhod iz Žalca v Celje šele zvečer, najprej označite čas zadnjega dela poti. Za primerjavo večernih časov ohranite datum, pri izbiri posnetka pa uporabite obzorje na konkretnem postanku.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "cerknica": {
+    "peer": "postojna",
+    "date": "2027-10-17",
+    "title": "Od jutranjega svita do neposredne svetlobe na Cerkniškem polju",
+    "body": "Zgodaj zjutraj ločite uro civilnega svita od ure vzhoda. Če fotografirate proti robu polja, izračun ne upošteva meglice in zakritih delov obzorja. Postojnski izračun uporabite, če po prvem postanku nadaljujete tja.",
+    "related": "/dolzina-dneva/"
+  },
+  "dravograd": {
+    "peer": "ravne-na-koroskem",
+    "date": "2027-12-04",
+    "title": "Kratka decembrska pot med dvema dolinama",
+    "body": "Za Dravograd preverite zahod na izbrani dan in uro vrnitve pred temo. Če načrt končate na Ravnah, nastavite krajevno uro še za zadnji del poti. Na kratkem zimskem dnevu naj čas za vrnitev vključuje tudi postanke in iskanje poti.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "grosuplje": {
+    "peer": "visnja-gora",
+    "date": "2027-05-09",
+    "title": "Majsko popoldne na poti iz Grosuplja proti Višnji Gori",
+    "body": "Za pot s postanki označite uro prihoda in ne samo ure odhoda. Dan z več svetlobe ne pomeni, da je celotna popoldanska pot na Soncu. Koledarski izračun za Višnjo Goro primerjajte s svojimi postanki v Grosupljem.",
+    "related": "/dolzina-dneva/"
+  },
+  "logatec": {
+    "peer": "vrhnika",
+    "date": "2027-11-07",
+    "title": "Dva novembrska izračuna za pot z Logatca",
+    "body": "Za večerni odsek si najprej zapišite zahod v Logatcu. Nato preverite Vrhniko, če se tja odpravljate po ogledu. Pri presoji zadnje svetlobe vzdolž poti dodajte rezervo, ker primerjava velja za ravni horizont v središčih obeh krajev.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "medvode": {
+    "peer": "kranj",
+    "date": "2027-06-13",
+    "title": "Dolgo junijsko popoldne ob sotočju",
+    "body": "Za fotografiranje ob vodi v Medvodah je pomemben odprt pogled, tudi kadar je do zahoda še veliko časa. Če imate poznejši postanek v Kranju, poglejte uro za izbrani datum še v tistem kraju. Razlika v smeri obale lahko vpliva na odsev prej kot razlika v času zahoda.",
+    "related": "/soncni-vzhod-in-zahod/"
+  },
+  "menges": {
+    "peer": "kamnik",
+    "date": "2027-02-06",
+    "title": "Zimski začetek dneva v Mengšu in Kamniku",
+    "body": "Če si za delo na prostem določite začetek po vzhodu, uporabite izračun za kraj, kjer boste delali. Primerjava z bližnjim Kamnikom je uporabna kot kontrola krajevnega učinka. Pri razporedu si pustite čas tudi za dejansko osvetlitev delovne površine.",
+    "related": "/dolzina-dneva/"
+  },
+  "mezica": {
+    "peer": "prevalje",
+    "date": "2027-12-11",
+    "title": "Decembrska svetloba za pot iz Mežice",
+    "body": "Za kratek odhod iz Mežice po kosilu najprej izberite uro za vrnitev. Če počakate do konca civilnega mraka, je neposredna svetloba že izginila. Za pot do Prevalj nastavite isti datum, pri zakritem pogledu proti zahodu pa odhod oziroma povratek načrtujte prej.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "prevalje": {
+    "peer": "mezica",
+    "date": "2027-04-03",
+    "title": "Aprilski svit pred odhodom s Prevalj",
+    "body": "Če želite biti na razgledu ob vzhodu, račun začnite pri civilnem svitu in nato odštejte čas hoje do tja. Izračun za Mežico je koristen za primerjavo pri kasnejšem postanku. Svetloba na razgledu je odvisna od smeri pogleda glede na greben.",
+    "related": "/dolzina-dneva/"
+  },
+  "ribnica": {
+    "peer": "kocevje",
+    "date": "2027-08-29",
+    "title": "Zaključek avgustovskega sprehoda pri Ribnici",
+    "body": "Na poti, ki se začne pri Ribnici in konča v Kočevju, povežite zahod na cilju z načrtovanim časom hoje. Če je zadnji odsek skozi gozd, si pustite več rezerve. Primerjajte raje oba kraja na istem datumu kot podatka iz različnih vikendov.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "rogaska-slatina": {
+    "peer": "sentjur",
+    "date": "2027-07-18",
+    "title": "Pozno popoldne med Šentjurjem in Rogaško Slatino",
+    "body": "Če je zadnji sprehod pri Rogaški Slatini, zabeležite tamkajšnji čas zahoda, nato si preračunajte najpoznejši prihod iz Šentjurja. Za posedanje po zahodu lahko pomaga čas mraka. Pri obeh podatkih ohranite izbrani julijski datum.",
+    "related": "/dolzina-dneva/"
+  },
+  "ruse": {
+    "peer": "maribor",
+    "date": "2027-10-03",
+    "title": "Popoldanski izračun za Ruše in Maribor",
+    "body": "Čas odhoda iz Ruš uskladite s krajem, kjer boste končali sprehod. Izračun med Rušami in Mariborom pokaže krajevni zamik. Če je pogled na zahod zaprt ali ste ob vznožju Pohorja, uporabite zgodnejšo uro za del poti, ki ga želite opraviti po svetlem.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "sempeter-pri-gorici": {
+    "peer": "nova-gorica",
+    "date": "2027-02-21",
+    "title": "Sosednja kraja, primerljiv doseg dnevne svetlobe",
+    "body": "V istem zimskem dopoldnevu primerjajte vzhod v Šempetru pri Gorici in v Novi Gorici. Na mestnih ulicah opazujte, kdaj se na izbranem mestu začne neposredna osvetlitev. Ta opazovani čas primerjajte z modelom za odprto obzorje, ne s časom iz drugega meseca.",
+    "related": "/dolzina-dneva/"
+  },
+  "sentjur": {
+    "peer": "celje",
+    "date": "2027-10-31",
+    "title": "Nedeljska ura v Šentjurju po prehodu na zimski čas",
+    "body": "Če ponavljate sobotni načrt za sprehod, v nedeljo preverite nov čas zahoda. Ure v Šentjurju in Celju so na zadnjo oktobrsko nedeljo prikazane v CET. Pri primerjavi z dnevom prej ob istem času upoštevajte tudi prestavitev ure.",
+    "related": "/premik-ure/"
+  },
+  "trebnje": {
+    "peer": "novo-mesto",
+    "date": "2027-07-11",
+    "title": "Načrt svetlega dela dneva za dve dolenjski postaji",
+    "body": "Za prvi postanek pri Trebnjem si zapišite začetek jutranje svetlobe; če končate dan v Novem mestu, uporabite tamkajšnji zahod. Za oba časa izberite isti datum. Pri ogledu na prostem imejte ločeno mejo za konec dogodka in pot nazaj.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "zelezniki": {
+    "peer": "skofja-loka",
+    "date": "2027-12-19",
+    "title": "Zimska popoldanska pot skozi Selško dolino",
+    "body": "Pri Železnikih lahko razgled v dolini ostane v senci, še preden Sonce po modelu zaide. Časovni okvir primerjajte s Škofjo Loko in si za povratek določite zgodnejšo uro. Na jasen dan primerjajte tudi, kako dolgo nebo ostane svetlo po zahodu.",
+    "related": "/letni-casi/"
+  },
+  "ziri": {
+    "peer": "idrija",
+    "date": "2027-09-19",
+    "title": "Čas svetlobe za nedeljski premik med Žirmi in Idrijo",
+    "body": "Če si želite ogledati oba kraja v enem dnevu, naj bo najpoznejši odhod vezan na uro na cilju. V Žireh preverite civilni svit, če se izlet začne zelo zgodaj. V Idriji pa preberite zahod, če se tam konča, in upoštevajte senco dolinskih pobočij.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  },
+  "lenart-v-slovenskih-goricah": {
+    "peer": "gornja-radgona",
+    "date": "2027-09-12",
+    "title": "Večerni pogled s pobočja v Slovenskih goricah",
+    "body": "Za načrt zunaj Lenarta primerjajte osvetlitev z izračunom za središče kraja. Če imate večerni postanek še pri Gornji Radgoni, preklopite na isti datum. Pri opazovanju zahoda je odločilno, ali je pogled v smeri Sonca za izbrano mesto odprt.",
+    "related": "/dolzina-dneva/"
+  },
+  "zrece": {
+    "peer": "slovenske-konjice",
+    "date": "2027-01-30",
+    "title": "Januarski zaključek izleta pri Zrečah",
+    "body": "Pri zimskem načrtu iz Zreč odštejte čas vrnitve in postankov od Sončevega zahoda. Za občutek o vplivu koordinat uporabite še izračun za Slovenske Konjice. Če se vzpnete na drug del Pohorja, presodite obzorje na mestu, kjer boste končali.",
+    "related": "/blog/nacrt-izleta-po-svetlobi/"
+  }
+}

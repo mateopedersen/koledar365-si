@@ -2,6 +2,6 @@
 <div class="photo-license-grid holiday-photo-licenses"><% @holiday_photos.each do |photo| %><article class="panel photo-license" id="praznik-<%= photo['slug'] %>">
   <img src="<%= photo['small_path'] %>" alt="<%= photo['alt_sl'] %>" width="<%= photo['small_width'] %>" height="<%= photo['small_height'] %>" loading="lazy" decoding="async">
   <h2><%= photo['alt_sl'] %></h2><p class="photo-license-caption"><%= photo['caption_sl'] %></p>
-  <dl><dt>Avtor oziroma navedba avtorstva</dt><dd><%= photo['author'] %></dd><dt>Licenca oziroma pravni status</dt><dd><%= link_to photo['license'],photo['license_url'] %></dd><dt>Prilagoditev za prikaz</dt><dd><%= photo['adaptations_sl'] %></dd></dl>
-  <a href="<%= photo['source'] %>">Izvirna fotografija in podatki o avtorstvu ↗</a>
+  <dl><dt>Avtor oziroma navedba avtorstva</dt><dd><%= photo['author'] %></dd><dt>Licenca oziroma pravni status</dt><dd><%= link_to ImageRights.license_label(photo['license']),photo['license_url'] %></dd><dt>Prilagoditev za prikaz</dt><dd><%= photo['adaptations_sl'] %></dd></dl>
+  <a href="<%= photo['source'] %>">Izvirna fotografija in podatki o avtorstvu</a>
 </article><% end %></div>

@@ -1,23 +1,131 @@
-<section class="panel prose" aria-labelledby="seasons-explanation">
-  <h2 id="seasons-explanation">Kdaj se začnejo letni časi v Sloveniji?</h2>
-  <p>Astronomska pomlad in jesen se začneta ob enakonočju, poletje in zima pa ob solsticiju. Spodaj so natančni začetki za severno poloblo v letih 2027–2030. Ure so preračunane v slovenski čas (Europe/Ljubljana): CET pomeni UTC + 1, CEST pa UTC + 2.</p>
-  <p>Meteorološki letni časi se začnejo na prvi dan meseca: pomlad 1. marca, poletje 1. junija, jesen 1. septembra in zima 1. decembra. Ti datumi se razlikujejo od astronomskih začetkov v preglednici.</p>
-  <p>Za skupni pregled enakonočij, luninih men in mrkov odprite <a href="<%= SlovenianSkyCalendar::PATH %>">astronomski koledar</a>.</p>
-  <nav class="year-links" aria-label="Izberite leto začetkov letnih časov"><% (2027..2030).each do |year| %><a class="button" href="#letni-casi-<%= year %>"><%= year %></a><% end %></nav>
-</section>
-<% (2027..2030).each do |year| %>
-<section class="panel" id="letni-casi-<%= year %>" aria-labelledby="seasons-title-<%= year %>">
-  <h2 id="seasons-title-<%= year %>">Začetki letnih časov <%= year %></h2>
-  <div class="table-wrap"><table class="data-table" aria-label="Astronomski začetki letnih časov v letu <%= year %>">
-    <thead><tr><th scope="col">Dogodek</th><th scope="col">Datum v Sloveniji</th><th scope="col">Slovenski čas</th><th scope="col">UTC</th></tr></thead>
-    <tbody><% AstronomicalEvent.where(instant:Time.utc(year,1,1)...Time.utc(year+1,1,1),kind:%w[pomladno-enakonocje poletni-solsticij jesensko-enakonocje zimski-solsticij]).order(:instant).each do |event| %>
-      <tr data-season="<%= event.kind %>"><th scope="row"><a href="/letni-casi/<%= event.kind %>/"><%= event.title %></a></th><td><time datetime="<%= event.local_time.iso8601 %>"><%= I18n.l(event.local_time.to_date) %></time></td><td><%= event.local_time.strftime('%H:%M %Z') %></td><td><time datetime="<%= event.instant.utc.iso8601 %>"><%= event.instant.utc.strftime('%d. %m. %Y, %H:%M') %></time></td></tr>
-    <% end %></tbody>
-  </table></div>
-  <p>Vir: <a href="https://aa.usno.navy.mil/calculated/seasons?dst=false&amp;submit=Get+Data&amp;tz=0.00&amp;tz_label=false&amp;tz_sign=-1&amp;year=<%= year %>">U.S. Naval Observatory – enakonočja in solsticiji <%= year %></a>. Časi so navedeni na minuto natančno.</p>
-</section>
-<% end %>
-<section class="panel prose" aria-labelledby="seasons-planning">
-  <h2 id="seasons-planning">Načrtovanje skozi leto</h2>
-  <p>Začetek letnega časa sam po sebi ni dela prost dan. Preverite <a href="/prazniki/">praznike in dela proste dni</a>, <a href="/soncni-vzhod-in-zahod/">sončni vzhod in zahod za svoj kraj</a> ter <a href="/dolzina-dneva/">dolžino dneva</a>. Spremembe lokalnega časa pojasnjuje stran <a href="/premik-ure/">premik ure</a>.</p>
-</section>
+<%
+  years = 2027..2030
+  seasons = {
+    'pomladno-enakonocje' => { name: 'Pomlad', icon: 'sprout', meteorological: '1. marca' },
+    'poletni-solsticij' => { name: 'Poletje', icon: 'sun', meteorological: '1. junija' },
+    'jesensko-enakonocje' => { name: 'Jesen', icon: 'sunset', meteorological: '1. septembra' },
+    'zimski-solsticij' => { name: 'Zima', icon: 'moon', meteorological: '1. decembra' }
+  }
+  events_by_year = AstronomicalEvent
+    .where(instant: Time.utc(years.begin)...Time.utc(years.end + 1), kind: seasons.keys)
+    .order(:instant).group_by { |event| event.local_time.year }
+  usno_table = 'https://aa.usno.navy.mil/calculated/seasons?dst=false&submit=Get+Data&tz=0&tz_label=false&tz_sign=0'
+  arso_report = 'https://meteo.arso.gov.si/met/sl/climate/current/climate_year/'
+%>
+<article class="seasons-page">
+  <header class="seasons-hero">
+    <div class="seasons-hero__intro">
+      <h1>Letni časi v Sloveniji <span><%= years.begin %>–<%= years.end %></span></h1>
+      <p>Kdaj se začnejo pomlad, poletje, jesen in zima? Primerjajte datume in ure enakonočij in solsticijev v Sloveniji z začetki meteoroloških letnih časov.</p>
+      <nav class="year-links seasons-years" aria-label="Letni pregledi">
+        <% years.each do |year| %>
+          <a href="#letni-casi-<%= year %>"><%= year %></a>
+        <% end %>
+      </nav>
+    </div>
+
+    <section class="seasons-spotlight" aria-labelledby="seasons-spotlight-title">
+      <h2 id="seasons-spotlight-title">Začetki v letu <%= years.begin %></h2>
+      <div class="seasons-spotlight__grid">
+        <% events_by_year.fetch(years.begin, []).each do |event| %>
+          <% season = seasons.fetch(event.kind) %>
+          <% local = event.local_time %>
+          <div class="seasons-spotlight__item">
+            <a href="/letni-casi/<%= event.kind %>/" class="seasons-spotlight__link" aria-label="<%= "#{season.fetch(:name)} (#{event.title})" %>">
+              <%= ui_icon(season.fetch(:icon)) %>
+              <span><%= season.fetch(:name) %></span>
+              <%= ui_icon('chevron-right') %>
+            </a>
+            <time datetime="<%= local.iso8601 %>"><strong><%= I18n.l(local.to_date, format: '%-d. %B') %></strong><span><%= local.strftime('%H:%M %Z') %></span></time>
+            <p>Meteorološko <%= season.fetch(:meteorological) %></p>
+          </div>
+        <% end %>
+      </div>
+    </section>
+  </header>
+
+  <section aria-labelledby="seasons-dates-title">
+    <div class="seasons-section-heading">
+      <h2 id="seasons-dates-title">Datumi enakonočij in solsticijev</h2>
+      <p>Slovenski čas velja za vso državo. CET je UTC + 1 ura, CEST pa UTC + 2 uri. Ob datumu je posebej naveden tudi čas UTC.</p>
+    </div>
+
+    <div class="seasons-table-grid">
+      <% years.each do |year| %>
+        <section class="seasons-year" id="letni-casi-<%= year %>" aria-labelledby="seasons-title-<%= year %>">
+          <h3 id="seasons-title-<%= year %>"><%= year %></h3>
+          <table class="seasons-table" aria-label="Astronomski začetki letnih časov v letu <%= year %>">
+            <thead>
+              <tr><th scope="col">Dogodek</th><th scope="col">Slovenski čas</th><th scope="col">UTC</th></tr>
+            </thead>
+            <tbody>
+              <% events_by_year.fetch(year, []).each do |event| %>
+                <% local = event.local_time %>
+                <% utc = event.instant.utc %>
+                <tr data-season="<%= event.kind %>">
+                  <th scope="row"><a href="/letni-casi/<%= event.kind %>/"><%= event.title %></a></th>
+                  <td><time datetime="<%= local.iso8601 %>"><span><%= local.strftime('%-d. %-m.') %></span><span><%= local.strftime('%H:%M %Z') %></span></time></td>
+                  <td><time datetime="<%= utc.iso8601 %>"><span><%= utc.strftime('%-d. %-m.') %></span><span><%= utc.strftime('%H:%M') %></span></time></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <a class="seasons-year__source" href="<%= "#{usno_table}&year=#{year}" %>">Izvirna tabela USNO za <%= year %> <%= ui_icon('external-link') %></a>
+        </section>
+      <% end %>
+    </div>
+  </section>
+
+  <section class="seasons-guide" aria-labelledby="seasons-explanation">
+    <div class="seasons-section-heading">
+      <h2 id="seasons-explanation">Astronomski in meteorološki letni časi</h2>
+      <p>Izbira je odvisna od tega, ali iščete trenutek nebesnega pojava ali primerjate vremenske meritve skozi leta.</p>
+    </div>
+
+    <div class="seasons-guide__grid">
+      <div class="seasons-guide__article">
+        <h3>Enakonočji in solsticija označujejo astronomske začetke</h3>
+        <p>Zemljina os je nagnjena. Med kroženjem Zemlje okoli Sonca se zato spreminjata višina Sonca na nebu in dolžina svetlega dela dneva. Ob marčevskem in septembrskem enakonočju Sonce prečka nebesni ekvator. Junijski solsticij prinese Sloveniji najdaljši svetli del dneva v letu, decembrski pa najkrajšega. <a href="https://spaceplace.nasa.gov/seasons/en/">NASA pojasnjuje vlogo nagiba Zemljine osi</a>.</p>
+        <p>Ob enakonočju dan in noč trajata približno po 12 ur. Pri običajnem izračunu vzhoda in zahoda se upoštevata zgornji rob Sončeve ploskve in lom svetlobe v ozračju, zato je čas med vzhodom in zahodom na datum enakonočja nekoliko daljši od 12 ur. <a href="https://aa.usno.navy.mil/faq/equinoxes">Pojasnilo U.S. Naval Observatory o dnevu in noči ob enakonočju</a>.</p>
+      </div>
+      <div class="seasons-guide__article">
+        <h3>Meteorološki letni časi zajemajo po tri cele mesece</h3>
+        <p>Meteorološka pomlad obsega marec, april in maj. Poletje zajema junij, julij in avgust, jesen september, oktober in november, zima pa december, januar in februar. Celi meseci omogočajo primerjavo sezonskih temperatur in padavin med različnimi leti. Primer takšne razdelitve je <a href="<%= arso_report %>">podnebni pregled Agencije RS za okolje (ARSO)</a>.</p>
+        <p>Leto 2027 ima dva različna začetka pomladi. Za primerjavo spomladanskih temperatur štejemo od <strong>1. marca</strong>. Astronomska pomlad se po slovenskem času začne <strong>20. marca ob 21:25</strong>. Pri zapisu o meteorološki zimi 2027/28 štejemo december 2027 ter januar in februar 2028.</p>
+      </div>
+    </div>
+
+    <aside class="seasons-example" aria-labelledby="seasons-time-example">
+      <h3 id="seasons-time-example">Zakaj sta pri jesenskem enakonočju 2030 zapisana dva datuma?</h3>
+      <p>Enakonočje bo <strong>22. septembra ob 23:27 UTC</strong>. V Sloveniji se bo do takrat že začel naslednji dan. Lokalni trenutek je <strong>23. septembra ob 01:27 CEST</strong>. Če dogodek vpišete v slovenski koledar, izberite 23. september. Pri takšnem preračunu je pomemben <a href="/premik-ure/">prehod med poletnim in zimskim časom</a>.</p>
+    </aside>
+  </section>
+
+  <section class="seasons-planning" aria-labelledby="seasons-planning-title">
+    <h2 id="seasons-planning-title">Uporabite datume pri načrtovanju</h2>
+    <ul>
+      <li>
+        <%= ui_icon('sunset') %>
+        <div><a href="/soncni-vzhod-in-zahod/">Sončni vzhod in zahod po krajih</a><p>Za fotografiranje ali pot domov izberite kraj in dan. Izračun predpostavlja neovirano obzorje. V dolini lahko teren Sonce zakrije prej.</p></div>
+      </li>
+      <li>
+        <%= ui_icon('sun') %>
+        <div><a href="/dolzina-dneva/">Primerjava dolžine dneva</a><p>Primerjajte svetli del dneva v več slovenskih krajih na isti datum. Vzhod in zahod se med kraji razlikujeta, trenutek solsticija pa je skupen.</p></div>
+      </li>
+      <li>
+        <%= ui_icon('moon') %>
+        <div><a href="<%= SlovenianSkyCalendar::PATH %>">Astronomski koledar</a><p>Na istem koledarju poiščite še Lunine mene, mrke in druge pojave za opazovanje neba.</p></div>
+      </li>
+      <li>
+        <%= ui_icon('calendar') %>
+        <div><a href="/prazniki/">Prazniki in dela prosti dnevi</a><p>Začetek letnega časa sam po sebi ne prinese prostega dne. Za načrtovanje dopusta preverite slovenski koledar praznikov.</p></div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="seasons-method" aria-labelledby="seasons-method-title">
+    <h2 id="seasons-method-title">Od kod so podatki?</h2>
+    <p>Astronomske trenutke povzemamo po zbirki <a href="https://aa.usno.navy.mil/data/Earth_Seasons">Earth’s Seasons U.S. Naval Observatory</a>, ki objavlja datume in ure na minuto natančno. Isti trenutek prikažemo v UTC in v časovnem pasu <strong>Europe/Ljubljana</strong>. Povezava pod vsakim letom vodi do izvirne tabele. Meteorološka razdelitev sledi podnebnim pregledom ARSO.</p>
+    <p>Preberite <a href="/viri-in-metodologija/">kako preverjamo koledarske podatke</a> ali nam <a href="/kontakt/">sporočite napako</a>.</p>
+  </section>
+</article>

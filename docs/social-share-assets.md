@@ -14,3 +14,12 @@ The share panel uses the platforms' own distributed logo files. These marks iden
 | `public/social/mail.svg` | Koledar365 generic email drawing, not a platform logo |
 
 Review the linked platform guidelines when refreshing the assets.
+
+## Add-to-calendar marks
+
+| Local asset | Source |
+| --- | --- |
+| `public/visuals/calendar-providers/google-calendar.svg` | [Google Calendar product page](https://workspace.google.com/products/calendar/) · [Google's 2026 Calendar SVG](https://www.gstatic.com/images/branding/productlogos/calendar_2026/v2/web/192px.svg) |
+| `public/visuals/calendar-providers/apple.svg` | [Apple iCloud site](https://www.apple.com/icloud/) · the original header Apple mark with the navigation padding cropped from its SVG viewBox |
+| `public/visuals/calendar-providers/microsoft-outlook.svg` | [Microsoft Outlook product page](https://www.microsoft.com/en-us/microsoft-365/outlook/outlook-for-business) · [Microsoft's Outlook SVG](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/Outlook-Icon-FY26) |
+| `public/visuals/brand-calendar-v3.svg` | Koledar365's existing site mark |

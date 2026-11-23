@@ -1,0 +1,35 @@
+<header class="weekly-controls__heading">
+  <h2 id="calendar-workbench-title">Izberite teden</h2>
+  <button type="button" class="calendar-experience__today" data-calendar-today><%= ui_icon('calendar') %> Ta teden</button>
+</header>
+<nav class="calendar-experience__years" aria-label="Izberite leto ISO">
+  <% CalendarEngine::INTERACTIVE_YEARS.each do |value| %>
+    <a href="/tedenski-koledar/<%= value %>/" data-calendar-year="<%= value %>" <%= 'aria-current=true' if value == year %>><%= value %></a>
+  <% end %>
+</nav>
+<div class="weekly-controls__pickers">
+  <form action="/tedenski-koledar/" data-week-date-selection>
+    <label for="weekly-date">Datum v tednu</label>
+    <div class="weekly-controls__date">
+      <input id="weekly-date" type="date" name="date" min="<%= calendar_data[:min_date] %>" max="<%= calendar_data[:max_date] %>" value="<%= selected %>" data-week-date required>
+      <button type="submit">Pokaži teden</button>
+    </div>
+  </form>
+  <details class="weekly-controls__iso">
+    <summary>Izberi po številki tedna ISO</summary>
+    <form action="/tedenski-koledar/" data-week-selection>
+      <div class="calendar-experience__week-inputs">
+        <label>Leto ISO
+          <select name="year" data-week-year>
+            <% calendar_data[:iso_years].each do |value| %>
+              <option value="<%= value %>" <%= 'selected' if value == year %>><%= value > CalendarEngine::INTERACTIVE_YEARS.last ? "#{value} · 1. teden" : value %></option>
+            <% end %>
+          </select>
+        </label>
+        <label>Številka tedna<input type="number" name="week" min="1" max="<%= year > CalendarEngine::INTERACTIVE_YEARS.last ? 1 : Date.new(year, 12, 28).cweek %>" value="<%= selected.cweek %>" data-week-number required></label>
+      </div>
+      <button type="submit">Odpri teden ISO</button>
+    </form>
+  </details>
+</div>
+<output data-week-selection-status role="status"></output>

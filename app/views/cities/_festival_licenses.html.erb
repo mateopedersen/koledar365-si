@@ -5,7 +5,7 @@
     <% OccasionCatalog.photo_assets.each do |key, photo| %>
       <li id="festival-foto-<%= key %>">
         <strong><%= photo.fetch('alt') %></strong><br>
-        Foto: <%= photo.fetch('author') %> · <%= link_to 'Izvirna fotografija', photo.fetch('source') %> · <%= link_to photo.fetch('license'), photo.fetch('license_url') %>
+        Foto: <%= photo.fetch('author') %> · <%= link_to 'Izvirna fotografija', photo.fetch('source') %> · <%= link_to ImageRights.license_label(photo.fetch('license')), photo.fetch('license_url') %>
       </li>
     <% end %>
   </ul>

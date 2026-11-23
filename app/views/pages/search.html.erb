@@ -21,7 +21,7 @@
       <p class="search-summary"><%= t('results', count: @results.size) %></p>
       <ul class="search-results">
         <% @results.each do |result| %>
-          <li class="search-result"><a href="<%= result[:path] %>"><span class="site-search-option__copy"><strong><%= result[:title] %></strong><small><%= result[:type] %></small></span><span class="site-search-option__arrow" aria-hidden="true">↗</span></a></li>
+          <li class="search-result"><a href="<%= result[:path] %>"><span class="site-search-option__copy"><strong><%= result[:title] %></strong><small><%= result[:type] %></small></span><span class="site-search-option__arrow" aria-hidden="true"><%= ui_icon('chevron-right') %></span></a></li>
         <% end %>
       </ul>
     <% else %>

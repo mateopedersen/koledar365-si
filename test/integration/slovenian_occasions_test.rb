@@ -49,7 +49,9 @@ class SlovenianOccasionsTest < ActionDispatch::IntegrationTest
     get '/festivali/festival-idrijske-cipke/'
     assert_select '#festival-idrijske-cipke .festival-edition .festival-status', text: 'Pretekla izvedba'
     assert_select '#festival-idrijske-cipke .festival-edition time[datetime="2026-06-19"]', count: 1
-    assert_select '#festival-idrijske-cipke a[download]', count: 0
+    assert_select '#festival-idrijske-cipke .festival-edition time[datetime="2027-06-18"]', count: 1
+    assert_select '#festival-idrijske-cipke .festival-edition a[download][href="/festivali/festival-idrijske-cipke/2027-06-18.ics"]', count: 1
+    assert_select '#festival-idrijske-cipke .festival-edition a[download][href="/festivali/festival-idrijske-cipke/2026-06-19.ics"]', count: 0
 
     get '/festivali/fantazima-koper/'
     assert_select '#fantazima-koper time[datetime="2027-01-03"]', count: 1

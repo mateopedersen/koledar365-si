@@ -1,0 +1,47 @@
+<section id="studio-guide" class="studio-guide" aria-labelledby="studio-guide-title">
+  <header>
+    <h2 id="studio-guide-title">Kako izdelati svoj koledar za tisk</h2>
+    <p>Letna postavitev združi vseh 12 mesecev na enem listu. Mesečna postavitev ponuja več prostora za naslove dogodkov, večjo fotografijo in zapiske. Pred urejanjem se odločite, kam boste koledar postavili in koliko prostora imate na papirju.</p>
+  </header>
+
+  <article class="studio-guide__example">
+    <div>
+      <h3>Prvi projekt: družinski koledar za februar 2028</h3>
+      <p>Po odprtju primera v zavihku »Postavitev« izberite A4 in ležečo usmerjenost. V »Besedilo« vpišite naslov »Naš februar« in v »Dogodki« dodajte »Družinski izlet« za soboto, 19. februarja. Če je napis predolg, ga skrajšajte na »Izlet« in podrobnosti dodajte v zapiske.</p>
+      <p>V predogledu preverite Prešernov dan 8. februarja in zadnji dan meseca, torek 29. februarja. Datume lahko primerjate s <a href="/koledar/2028/februar/">koledarjem za februar 2028</a>. Ko ste s postavitvijo zadovoljni, v oknu »Prenesi koledar« izberite trenutni koledar in »PDF za tisk«.</p>
+    </div>
+    <%= link_to 'Odpri februar 2028 v urejevalniku', '/ustvari-koledar/?year=2028&month=2&view=month#studio-workspace', class: 'button primary' %>
+  </article>
+
+  <div class="studio-guide__topics">
+    <article>
+      <h3>Fotografija, logotip in čitljivi datumi</h3>
+      <p>V zavihku »Fotografije« dodajte JPG, PNG ali WebP do 20 MB. Pri glavni fotografiji »Zapolni okvir« zapolni pas in obreže odvečni del. Če želite ohraniti cel motiv, izberite »Prikaži celo fotografijo«. Večja višina slike v mesečnem pogledu pusti manj prostora za datume in dogodke. Ostrina tiska je odvisna tudi od kakovosti izvirne fotografije.</p>
+      <p>Za koledar podjetja dodajte logotip kot samostojno sliko in ga v »Elementi« postavite stran od datumov. Če fotografijo uporabite kot ozadje, zmanjšajte njeno vidnost, dokler se besedilo jasno loči od nje.</p>
+      <p><%= editorial_paragraph('Pred deljenjem preverite dovoljenja za uporabo izbrane slike. Pri [fotografiji z licenco CC BY 4.0](@cc-by) navedite avtorja, povezavo do licence in spremembe, na primer izrez. Za Koledar365 si lahko ogledate [seznam fotografij in licenc](/fotografije-in-licence/).') %></p>
+    </article>
+    <article>
+      <h3>Dogodki, prazniki in uvoz iz drugega koledarja</h3>
+      <p>Posamezen dogodek dodajte z datumom in naslovom. Za rojstni dan označite »Ponovi vsako leto«. Letni dogodek 29. februarja se prikaže v letih, ki imajo ta datum. Na letnem listu so osebni dogodki označeni s pikami, na mesečnem pa se izpišejo tudi naslovi, če je v polju dovolj prostora.</p>
+      <p>Za več dogodkov v zavihku »Dogodki« odprite uvoz ICS ali CSV. Za preizkus shranite to vrstico v datoteko CSV s kodiranjem UTF-8 in jo uvozite v februarski primer.</p>
+      <pre class="studio-guide__csv"><code>2028-02-22,"Obisk knjižnice, otroški oddelek",ne,#0054b8</code></pre>
+      <p><%= editorial_paragraph('Pri [formatu iCalendar (ICS)](@ics) studio uvozi začetni datum, naslov in letno ponavljanje. Ure in podrobnejše ponovitve preverite v izvirnem koledarju. Studio za vsa leta uporabi isti nabor praznikov in izračuna datume premičnih praznikov. Za sodobne datume odprite [uradni seznam dela prostih dni](@holidays), za zgodovinske koledarje pa preverite predpise iz tistega leta.') %></p>
+    </article>
+  </div>
+
+  <section class="studio-guide__files" aria-labelledby="studio-file-guide">
+    <h3 id="studio-file-guide">Katero datoteko izbrati?</h3>
+    <dl>
+      <div><dt>PDF za tisk</dt><dd>Izberite 300 dpi za podrobnejši odtis ali 150 dpi za manjšo datoteko. Pri mesečni postavitvi lahko prenesete vseh 12 mesecev. Po želji dodajte seznam osebnih dogodkov na koncu.</dd></div>
+      <div><dt>PNG za deljenje</dt><dd>Izvoz trenutnega lista kot slike. Uporabite ga, ko želite koledar poslati kot priponko ali prikazati na zaslonu.</dd></div>
+      <div><dt>SVG za grafično urejanje</dt><dd><%= editorial_paragraph('Obdrži mrežo in besedilo trenutnega lista v [vektorski obliki SVG](@svg-standard). Vdelane fotografije ostanejo rastrske slike. Po odprtju v drugem programu preverite pisavo.') %></dd></div>
+      <div><dt>JSON za nadaljevanje v studiu</dt><dd>V meniju »Projekt« shranite nastavitve, dogodke in slike v eno datoteko. Na drugi napravi jo uvozite z »Odpri projekt« in nadaljujte urejanje.</dd></div>
+    </dl>
+  </section>
+
+  <div class="studio-guide__notes">
+    <p><%= editorial_paragraph('Za poskusni tisk prenesite en list. V tiskalniku izberite enak [format papirja A4 ali A3 po ISO 216](@paper) in usmerjenost kot pri izvozu. Preizkusite merilo 100 %. Če tiskalnik odreže rob, uporabite prilagajanje strani in preverite velikost datumov. Postopek prikazujejo [Epsonova navodila za merilo tiskanja](@epson-print-scaling).') %></p>
+    <p>Če želite nadaljevati delo, shranite projekt, še preden izbrišete podatke brskalnika. Pred pošiljanjem PDF-ja ali projekta preverite, katere fotografije in osebne dogodke vključuje. Več o tem pojasnjuje <a href="/zasebnost/">politika zasebnosti</a>.</p>
+    <p>Za dodatne primere si oglejte <a href="/blog/oblikuj-lastni-koledar-projekt-pdf-izvoz/">vodnik za izdelavo in shranjevanje lastnega koledarja</a>. Pripravljene predloge so v <a href="/koledar-za-tiskanje/">zbirki koledarjev za tisk</a>. Če opazite težavo pri izrezu ali izvozu, nam <a href="/kontakt/">pošljite opis napake in izbrani format</a>.</p>
+  </div>
+</section>

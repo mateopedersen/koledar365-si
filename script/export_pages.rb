@@ -99,7 +99,7 @@ elsif path=='/solski-urnik/'
    design_name=PrintCatalog.designs.find { |row| row['id']==design }&.fetch('name_sl',design) || design
    node['alt']="Vzorec postavitve »#{design_name}«. Za svoje obdobje in vnose odprite Moj predogled."
  end
- doc.css('.design-section > p.muted').each { |node|node.content='Sličica prikazuje vzorec postavitve. »Moj predogled« pripravi izbrano obdobje in vaše vnose na tej napravi. PDF vsebuje vektorsko besedilo, slika pa celotno ločljivost 600 ppi. Večstranski prenos Slika je ZIP z vsemi stranmi in podatki za tisk.' }
+ doc.css('.design-section > p.muted').each { |node|node.content='Sličica prikazuje vzorec postavitve. »Moj predogled« pripravi izbrano obdobje in vaše vnose na tej napravi. PDF vsebuje vektorsko besedilo. Slike imajo ločljivost 600 ppi pri izbrani velikosti papirja. Pri večstranskem koledarju so slike in podatki za tisk v datoteki ZIP.' }
  doc.css('p').each do |node|
   if node.text.include?('Za osebni predogled in prenos jih pošljemo strežniku')
    node.content='Vnosi se shranijo na tej napravi. Osebni predogled, PDF in slike pripravimo v brskalniku. Fotografija ostane le do zaprtja strani; strežniku je ne pošljemo.'
@@ -206,6 +206,7 @@ unless limit
  session.get('/te-strani-ni/');write.call('/404.html',transform.call(session.response.body,'/404.html',indexable:false))
 end
 out.join('free/assets.json').write(JSON.generate(assets))
+search_titles = ExpansionCatalog.pages
 search=Page.published.reject { |page|page.path.match?(removed_name_path) || PublicPagePolicy.redirect(page.path) }.map do |page|
  keywords=case page.path
  when %r{\A/prazniki/} then 'prazniki državni praznik dela prost dan dela prosti dnevi javni praznik'
@@ -228,9 +229,9 @@ search=Page.published.reject { |page|page.path.match?(removed_name_path) || Publ
  type = festival ? 'Festivali in prireditve' : (page.family == 'blog' ? 'Vodniki' : 'Koledar in orodja')
  keywords = OccasionCatalog.festival_search_text(festival) if festival
  keywords = SlovenianResources::SEARCH_TERMS.fetch(page.path, keywords)
- {title:page.title,path:page.path,type:type,folded:PersonName.fold([page.title,page.path,page.description,keywords].compact.join(' ')),priority:0}
+ {title:search_titles.dig(page.path, :title) || page.display_title,path:page.path,type:type,folded:PersonName.fold([page.title,page.path,page.description,keywords].compact.join(' ')),priority:0}
 end
-search+=SunEngine::CITIES.map { |id,values|{title:"Sončni vzhod in zahod – #{values[0]}",path:"/soncni-vzhod-in-zahod/#{id}/",type:'Sončni časi',folded:PersonName.fold("#{values[0]} sončni vzhod sončni zahod zlata ura dolžina dneva mesto"),priority:1} }
+search+=SunEngine::CITIES.map { |id,values|{title:"Sončni vzhod in zahod (#{values[0]})",path:"/soncni-vzhod-in-zahod/#{id}/",type:'Sončni časi',folded:PersonName.fold("#{values[0]} sončni vzhod sončni zahod zlata ura dolžina dneva mesto"),priority:1} }
 # Retired name URLs stay out of public search, just as they stay out of the sitemap.
 page_paths=Page.pluck(:path).to_set
 event_path=lambda do |event|

@@ -1,4 +1,5 @@
 <% festival = @festival; slug = festival.fetch('slug'); photo = OccasionCatalog.festival_photo(festival) %>
+<% guide = OccasionCatalog.festival_guide(slug) %>
 <% editions = festival.fetch('editions'); edition_year = festival['edition_year']; years = edition_year ? [edition_year] : CalendarEngine::YEARS %>
 <% nearby = OccasionCatalog.festivals.reject { |other| other == festival }.sort_by { |other| [(OccasionCatalog.festival_places(other) & OccasionCatalog.festival_places(festival)).empty? ? 1 : 0, other['kind'] == festival['kind'] ? 0 : 1] }.first(3) %>
 <article class="festival-directory festival-detail" id="<%= slug %>">
@@ -9,7 +10,8 @@
       <p><%= festival.fetch('description') %></p>
       <div class="festival-masthead__actions">
         <%= link_to 'Termini in obisk', '#termini', class: 'festival-primary' %>
-        <%= link_to 'Dodaj v koledar ali deli', '#dodaj-v-koledar', class: 'observance-plan-jump' %>
+        <%= link_to 'Zgodba in program', '#zgodba', class: 'observance-plan-jump' %>
+        <%= link_to 'Dodaj v koledar', '#dodaj-v-koledar', class: 'observance-plan-jump' %>
       </div>
     </div>
     <figure class="festival-masthead__photo">
@@ -17,8 +19,6 @@
       <figcaption class="festival-masthead__caption"><span><%= festival_photo_label(photo) %> · <%= link_to 'Avtor in licenca', photo.fetch('credit_path') %></span></figcaption>
     </figure>
   </header>
-
-  <%= render 'occasion_planner', entries: OccasionPlanner.festival(festival, today: @today), pending: true %>
 
   <div class="festival-detail__grid" id="termini">
     <section class="festival-detail__panel" aria-labelledby="festival-dates-title">
@@ -63,6 +63,21 @@
       </div>
     </aside>
   </div>
+  <section class="festival-detail__panel festival-guide" id="zgodba" aria-labelledby="festival-story-title">
+    <div class="festival-guide__story">
+      <h2 id="festival-story-title">Zgodovina in namen</h2>
+      <% guide.fetch('history').each do |paragraph| %><p><%= editorial_paragraph(paragraph) %></p><% end %>
+      <% source = guide.fetch('source') %>
+      <p class="festival-guide__source"><strong>Vir:</strong> <%= source_link(source.fetch(1), source.fetch(0)) %></p>
+    </div>
+    <div class="festival-guide__experience">
+      <h2>Kaj se dogaja in kako načrtovati obisk</h2>
+      <% guide.fetch('experience').each do |paragraph| %><p><%= editorial_paragraph(paragraph) %></p><% end %>
+    </div>
+  </section>
+
+  <%= render 'occasion_planner', entries: OccasionPlanner.festival(festival, today: @today), pending: true %>
+
   <section class="festival-footer">
     <h2>Še več prireditev</h2>
     <nav aria-label="Sorodne prireditve"><% nearby.each do |other| %><%= link_to other.fetch('title'), OccasionCatalog.festival_detail_path(other.fetch('slug')) %><% end %><%= link_to 'Vsi festivali', OccasionCatalog::PATH %></nav>

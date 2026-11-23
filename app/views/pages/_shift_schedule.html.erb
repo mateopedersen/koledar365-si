@@ -32,7 +32,7 @@
             <p><strong>D</strong> je dnevna izmena, <strong>N</strong> nočna izmena, <strong>Prosto</strong> pa prost dan. Uporabite lahko tudi svoje kratke oznake.</p>
           </details>
           <label class="shift-person">Ime zaposlenega <span>(neobvezno)</span><input name="person" maxlength="80" placeholder="npr. Ana"></label>
-          <button class="primary shift-submit" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v15H4zM8 3v5m8-5v5M4 10h16M8 14h3m-3 3h7"/></svg> Ustvari razpored <span aria-hidden="true">→</span></button>
+          <button class="primary shift-submit" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v15H4zM8 3v5m8-5v5M4 10h16M8 14h3m-3 3h7"/></svg> Ustvari razpored <span aria-hidden="true"><%= ui_icon('arrow') %></span></button>
           <output class="result shift-result" aria-live="polite">Spremembe vzorca si lahko ogledate v predogledu, še preden jih dodate v načrt.</output>
           <p class="shift-privacy-note">Shranjene osebne vnose ohranimo. Nov cikel osveži samo prejšnje samodejno ustvarjene izmene v izbranem obdobju.</p>
         </form>
@@ -59,7 +59,7 @@
           <div><span class="shift-stat-icon shift-stat-icon--red" aria-hidden="true">●</span><span><strong id="shift-stat-night">10</strong><small>nočnih</small></span></div>
           <div><span class="shift-stat-icon shift-stat-icon--off" aria-hidden="true">○</span><span><strong id="shift-stat-free">8</strong><small>prosti dnevi</small></span></div>
         </div>
-        <div class="shift-calendar-toolbar"><button type="button" id="shift-month-prev" aria-label="Prejšnji mesec">‹</button><strong id="shift-month-title">januar 2027</strong><button type="button" id="shift-month-next" aria-label="Naslednji mesec">›</button></div>
+        <div class="shift-calendar-toolbar"><button type="button" id="shift-month-prev" aria-label="Prejšnji mesec"><%= ui_icon('chevron-left') %></button><strong id="shift-month-title">januar 2027</strong><button type="button" id="shift-month-next" aria-label="Naslednji mesec"><%= ui_icon('chevron-right') %></button></div>
         <div class="shift-calendar" id="shift-calendar" role="table" aria-label="Mesečni predogled razporeda izmen"></div>
         <div class="shift-calendar-legend" aria-label="Legenda izmen"><span><i class="shift-dot shift-dot--day"></i>Dnevna</span><span><i class="shift-dot shift-dot--night"></i>Nočna</span><span><i class="shift-dot shift-dot--off"></i>Prosto</span></div>
         <p id="shift-preview-status" class="shift-preview-status" role="status">Predogled se posodobi ob vsaki spremembi datuma ali vzorca.</p>
@@ -69,7 +69,7 @@
 
   <section class="shift-saved panel" aria-labelledby="shift-saved-title">
     <div><span class="eyebrow">VAŠ NAČRT</span><h2 id="shift-saved-title">Vse izmene na enem mestu</h2><p>Posamezne izmene lahko uredite, izvozite v koledarsko aplikacijo ali shranite varnostno kopijo.</p></div>
-    <a class="button shift-saved__link" href="#design-gallery">Izberi predlogo za tisk <span aria-hidden="true">↓</span></a>
+    <a class="button shift-saved__link" href="#design-gallery">Izberi predlogo za tisk <span aria-hidden="true"><%= ui_icon('arrow-down') %></span></a>
     <div id="planner-entries" aria-live="polite"></div>
     <div class="actions shift-saved__actions">
       <button id="planner-ics" class="calendar-file-action" type="button">

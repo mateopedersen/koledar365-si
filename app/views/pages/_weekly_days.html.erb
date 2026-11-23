@@ -1,0 +1,20 @@
+<div class="calendar-sheet__week" data-calendar-grid>
+  <% holidays = calendar_data[:holidays].index_by { |event| event[:date] } %>
+  <% 7.times do |offset| %>
+    <% date = monday + offset
+       holiday = holidays.dig(date.iso8601, :title)
+       today = date.iso8601 == calendar_data[:today] %>
+    <section class="calendar-sheet__day<%= ' is-weekend' if offset > 4 %><%= ' is-holiday' if holiday %><%= ' is-today' if today %>">
+      <h4><%= CalendarEngine::DAYS.fetch(offset).capitalize %> <time datetime="<%= date %>" <%= 'aria-current=date' if today %>><%= date.strftime('%-d. %-m.') %></time></h4>
+      <p class="calendar-sheet__holiday" <%= 'hidden' unless holiday %>><%= holiday %></p>
+      <label>
+        <span class="sr-only" data-week-day-label>Načrti za <%= sl_date(date) %></span>
+        <textarea rows="3" maxlength="200" data-day-notes="<%= date %>" placeholder="Dodajte načrt …"></textarea>
+      </label>
+    </section>
+  <% end %>
+  <div class="calendar-sheet__notes weekly-sheet__priorities">
+    <label for="calendar-period-notes">Prednostne naloge in zapiski</label>
+    <textarea id="calendar-period-notes" maxlength="2000" rows="3" placeholder="Kaj je ta teden najpomembnejše?" data-period-notes></textarea>
+  </div>
+</div>

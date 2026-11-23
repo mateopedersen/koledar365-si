@@ -1,25 +1,57 @@
 <% templates = {
-  'work' => ['Delovni razpored', ['Dopoldanska izmena', 'Popoldanska izmena', 'Nočna izmena', 'Opombe']],
-  'school' => ['Šolski urnik', (1..8).map { |number| "#{number}. ura" }],
-  'weekly' => ['Tedenski planer', %w[Jutro Dopoldne Popoldne Večer]]
+  'work' => { title: 'Delovni razpored', summary: '7 dni · 3 izmene in opombe', icon: 'briefcase', row_label: 'Izmena', rows: ['Dopoldanska izmena', 'Popoldanska izmena', 'Nočna izmena', 'Opombe'], days: 7 },
+  'school' => { title: 'Šolski urnik', summary: '5 dni · do 8 učnih ur', icon: 'school', row_label: 'Učna ura', rows: (1..8).map { |number| "#{number}. ura" }, days: 5 },
+  'weekly' => { title: 'Tedenski planer', summary: '7 dni · 4 deli dneva', icon: 'week', row_label: 'Del dneva', rows: %w[Jutro Dopoldne Popoldne Večer], days: 7 }
 } %>
-<section class="sl-resource-panel sl-template-panel" id="orodje" data-sl-templates>
-  <h2 class="sl-template-heading">Predogled predloge</h2>
-  <p class="sl-template-heading">Predlogo lahko izpolnite po tiskanju. Datum ni obvezen, zato jo lahko uporabite tudi večkrat.</p>
-  <div class="sl-resource-form" data-sl-template-controls hidden>
-    <label>Vrsta predloge<select data-sl-template-select><% templates.each do |key, (label, _)| %><option value="<%= key %>"><%= label %></option><% end %></select></label>
-    <label>Datum v izbranem tednu<input type="date" data-sl-template-date min="1900-01-01" max="2100-12-31"></label>
-    <button type="button" class="button primary" data-sl-print>Natisni / shrani PDF</button>
+<section class="sl-resource-panel sl-template-panel" id="orodje" aria-labelledby="sl-template-title" data-sl-templates>
+  <h2 id="sl-template-title">Pripravite urnik za tisk</h2>
+  <p>Izberite vrsto urnika in po želji datum v tednu. Natisnjeni list je pripravljen za ročni vpis.</p>
+
+  <div class="sl-template-controls" data-sl-template-controls hidden>
+    <fieldset class="sl-template-picker">
+      <legend>Vrsta urnika</legend>
+      <% templates.each do |key, template| %>
+        <label class="sl-template-choice">
+          <input type="radio" name="timetable-template" value="<%= key %>" <%= 'checked' if key == 'work' %>>
+          <%= ui_icon(template.fetch(:icon)) %>
+          <span><strong><%= template.fetch(:title) %></strong><small><%= template.fetch(:summary) %></small></span>
+        </label>
+      <% end %>
+    </fieldset>
+    <div class="sl-template-actions">
+      <label for="sl-template-date">Datum v tednu <small>(neobvezno)</small></label>
+      <div class="sl-template-date-row">
+        <input id="sl-template-date" type="date" data-sl-template-date min="1900-01-01" max="2100-12-31">
+        <button type="button" data-sl-template-clear>Počisti datum</button>
+      </div>
+      <button type="button" class="primary" data-sl-print><%= ui_icon('print') %> Natisni ali shrani PDF</button>
+    </div>
   </div>
-  <% templates.each do |key, (title, slots)| %>
-    <section class="sl-template-sheet" data-sl-template-sheet="<%= key %>">
-      <h3><%= title %></h3>
-      <p>Teden <span data-sl-template-week>__________________</span></p>
-      <div class="sl-template-table">
+
+  <% templates.each do |key, template| %>
+    <% label = template.fetch(:title); day_count = template.fetch(:days) %>
+    <section class="sl-template-sheet" data-sl-template-sheet="<%= key %>" aria-labelledby="sl-sheet-<%= key %>">
+      <header class="sl-template-sheet-header">
+        <div><h3 id="sl-sheet-<%= key %>"><%= label %></h3><p>Teden <span data-sl-template-week>__________________</span></p></div>
+        <span class="sl-template-paper">A4 · ležeče</span>
+      </header>
+      <p class="sl-template-scroll-hint">Za preostale dni pomaknite pregled vstran.</p>
+      <div class="sl-template-table" tabindex="0" role="region" aria-label="<%= label %> po dnevih v tednu">
         <table>
-          <caption class="sr-only"><%= title %> po dnevih v tednu</caption>
-          <thead><tr><th scope="col"><%= { 'work' => 'Izmena', 'school' => 'Učna ura', 'weekly' => 'Del dneva' }.fetch(key) %></th><% CalendarEngine::DAYS.take(key == 'school' ? 5 : 7).each_with_index do |day, index| %><th scope="col"><%= day.capitalize %><small data-sl-day="<%= index %>"></small></th><% end %></tr></thead>
-          <tbody><% slots.each do |slot| %><tr><th scope="row"><%= slot %></th><% (key == 'school' ? 5 : 7).times do %><td></td><% end %></tr><% end %></tbody>
+          <caption class="sr-only"><%= label %> po dnevih v tednu</caption>
+          <thead>
+            <tr>
+              <th scope="col"><%= template.fetch(:row_label) %></th>
+              <% CalendarEngine::DAYS.take(day_count).each_with_index do |day, index| %>
+                <th scope="col"><%= day.capitalize %><small data-sl-day="<%= index %>"></small></th>
+              <% end %>
+            </tr>
+          </thead>
+          <tbody>
+            <% template.fetch(:rows).each do |slot| %>
+              <tr><th scope="row"><%= slot %></th><% day_count.times do %><td></td><% end %></tr>
+            <% end %>
+          </tbody>
         </table>
       </div>
     </section>

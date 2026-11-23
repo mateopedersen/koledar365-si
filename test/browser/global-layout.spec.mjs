@@ -26,13 +26,7 @@ for(const width of [320,360,768,1024,1440,1920,2560])test(`shared content axis a
  }
  if(width<=1100){const cta=await page.locator('.calendar-studio-cta').boundingBox();expect(Math.abs(cta.x+cta.width/2-width/2)).toBeLessThanOrEqual(1.1);}
  for(const control of geometry.controls){expect(control.left).toBeGreaterThanOrEqual(geometry.left);expect(control.right).toBeLessThanOrEqual(geometry.right);expect(control.width).toBeGreaterThan(40);}
- if(width<360){
-  const [year,month,submit]=geometry.controls;
-  expect(Math.abs(year.top-month.top)).toBeLessThanOrEqual(1);
-  expect(submit.top).toBeGreaterThan(year.top);
-  expect(Math.abs(submit.left-year.left)).toBeLessThanOrEqual(1);
-  expect(Math.abs(submit.right-month.right)).toBeLessThanOrEqual(1);
- }else if(width<=480){
+ if(width<=480){
   for(const control of geometry.controls)expect(Math.abs(control.top-geometry.controls[0].top)).toBeLessThanOrEqual(1);
  }
  await page.locator('.period-form select[name=year]').selectOption('2030');
@@ -107,4 +101,60 @@ for(const width of [360,760,768,820,1024])test(`horoscope birth fields fit their
   expect(control.x+control.width).toBeLessThanOrEqual(card.x+card.width);
  }
  expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(width+1);
+});
+
+
+test('phone shortcuts, calendar filters and note actions share aligned rows', async ({page}) => {
+  await page.goto('/');
+  await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
+  for (const width of [320,390,480]) {
+    await page.setViewportSize({width,height:844});
+    const layout = await page.evaluate(() => {
+      const boxes = selector => [...document.querySelectorAll(selector)].map(node => node.getBoundingClientRect().toJSON());
+      return {
+        shortcuts: boxes('.nav-shortcut,.nav-explorer > summary'),
+        years: boxes('.nav-years a'),
+        filters: boxes('.calendar-category-select select,#event-search'),
+        notes: boxes('.calendar-notes-panel h2,#save-notes'),
+        gridTop: boxes('.calendar-panel .month-block .calendar')[0].top,
+        profile: boxes('#personal-planner,#city-card'),
+      };
+    });
+    for (const [index, shortcut] of layout.shortcuts.entries()) {
+      expect(shortcut.top).toBeCloseTo(layout.shortcuts[0].top,1);
+      expect(shortcut.height).toBeCloseTo(layout.shortcuts[0].height,1);
+      expect(shortcut.left).toBeCloseTo(layout.years[index].left,1);
+      expect(shortcut.right).toBeCloseTo(layout.years[index].right,1);
+    }
+    expect(layout.filters[0].top).toBeCloseTo(layout.filters[1].top,1);
+    expect(layout.filters[0].right).toBeLessThan(layout.filters[1].left);
+    const [heading, save] = layout.notes;
+    expect(heading.y + heading.height / 2).toBeCloseTo(save.y + save.height / 2,1);
+    expect(heading.right).toBeLessThan(save.left);
+    expect(layout.gridTop).toBeLessThan(790);
+    expect(layout.profile[0].bottom).toBeLessThan(layout.profile[1].top);
+  }
+  await page.setViewportSize({width:320,height:735});
+  await page.locator('[data-add-event]').click();
+  await expect(page.locator('#personal-form [name=title]')).toBeFocused();
+});
+
+test('day and week views use compact date rows and link to personal planning once', async ({page}) => {
+  await page.setViewportSize({width:320,height:844});
+  for (const [view,count] of [['day',1],['week',7]]) {
+    await page.goto(`/?year=2027&month=10&date=2027-10-04&view=${view}`);
+    await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
+    const calendar = page.locator('.week-view');
+    const rows = calendar.locator('> section');
+    await expect(rows).toHaveCount(count);
+    await expect(page.locator('.calendar-personal-hint a')).toHaveAttribute('href','#personal-title');
+    await expect(page.locator('#event-search')).toHaveCount(0);
+    const box = await calendar.boundingBox();
+    for (const row of await rows.all()) {
+      const rect = await row.boundingBox();
+      expect(rect.width).toBeCloseTo(box.width,1);
+      expect(rect.height).toBeGreaterThanOrEqual(44);
+      expect(rect.height).toBeLessThan(120);
+    }
+  }
 });

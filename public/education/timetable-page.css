@@ -16,3 +16,17 @@
   .timetable-page [data-timetable-panel][hidden]{display:none!important}
   .timetable-page [data-timetable-panel=weekly]>.download-workspace{display:none!important}
 }
+
+.student-timetable-guide-link {
+  display: inline-block;
+  margin-block: .65rem 0;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: .16em;
+}
+
+@media print {
+  .student-timetable-page main > .editorial-note {
+    display: none !important;
+  }
+}

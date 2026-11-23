@@ -1,0 +1,68 @@
+<section class="new-moon-guide" id="kaj-je-mlaj" aria-labelledby="new-moon-geometry-title">
+  <header class="moon-section-heading">
+    <h2 id="new-moon-geometry-title">Kaj je mlaj in zakaj Lune takrat ne vidimo?</h2>
+    <p>Mlaj ali prazna luna označuje začetek novega cikla <a href="/lunine-mene/">Luninih men</a>. Od enega mlaja do naslednjega mine v povprečju približno 29,5 dneva.</p>
+  </header>
+  <div class="new-moon-guide__geometry">
+    <%= render 'new_moon_geometry' %>
+    <div class="new-moon-guide__reading">
+      <p>V trenutku astronomskega mlaja imata Luna in Sonce enako navidezno ekliptično dolžino, gledano iz središča Zemlje. Luna je na Sončevi strani Zemlje, osvetljena polovica pa je obrnjena pretežno stran od nas. Ker je Luna navidezno blizu Sonca, jo ob mlaju pri običajnem opazovanju praviloma skrije tudi svetlo nebo. <a href="https://aa.usno.navy.mil/faq/moon_phases">Opredelitev mlaja pri USNO</a>.</p>
+      <h3>Zakaj ob vsakem mlaju ni mrka?</h3>
+      <p>Lunina tirnica je nagnjena glede na ravnino Zemljine tirnice okoli Sonca. Ob večini mlajev Luna potuje navidezno nad Soncem ali pod njim. Do <a href="/soncni-mrk/">Sončevega mrka</a> pride, ko je ob mlaju dovolj blizu presečišča teh ravnin, da njena senca doseže Zemljo. <a href="https://science.nasa.gov/eclipses/geometry/">NASA o geometriji mrkov</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="new-moon-guide" id="prvi-lunin-srp" aria-labelledby="new-moon-crescent-title">
+  <header class="moon-section-heading">
+    <h2 id="new-moon-crescent-title">Kdaj po mlaju lahko vidimo prvi Lunin srp?</h2>
+    <p>Prvi rastoči srp najprej iščemo nizko nad zahodnim obzorjem po sončnem zahodu. Število ur po mlaju samo po sebi ne določa vidnosti.</p>
+  </header>
+  <div class="new-moon-guide__geometry">
+    <% photo = LunarPhaseGuide.new_moon_photos.fetch('mlaj-paranal') %>
+    <figure class="new-moon-guide__photo">
+      <%= image_tag photo.fetch('path'), width: photo.fetch('width'), height: photo.fetch('height'), alt: photo.fetch('alt'), loading: 'lazy', decoding: 'async' %>
+      <figcaption>
+        <strong><%= photo.fetch('caption') %> · 27. oktobra 2011</strong>
+        <span><%= link_to photo.fetch('credit'), photo.fetch('credit_url') %> · <%= link_to 'Izvirnik in licenca', LunarPhaseGuide.credit_path('mlaj-paranal') %></span>
+      </figcaption>
+    </figure>
+    <div class="new-moon-guide__reading">
+      <h3>Izberite jasen večer z odprtim zahodom</h3>
+      <p>V preglednici poiščite čas mlaja. Nato za svoj kraj primerjajte <a href="/soncni-vzhod-in-zahod/">Sončev zahod</a> z <a href="/lunin-vzhod-in-zahod/">Luninim zahodom</a>. Daljši razmik običajno pomaga pri izbiri večera, ker Luna po zahodu Sonca dlje ostane nad obzorjem. Vidnost je odvisna tudi od oddaljenosti Lune od Sonca na nebu, njene višine, prosojnosti zraka in ovir na obzorju. Za večerni poskus počakajte, da Sonce zaide. <a href="https://aa.usno.navy.mil/faq/crescent">USNO o vidnosti mladega srpa</a>.</p>
+      <h3>Zakaj se na fotografiji vidi tudi temna ploskev?</h3>
+      <p>Svetli rob srpa osvetljuje Sonce neposredno. Šibka sivkasta svetloba na preostali ploskvi se odbije od Zemlje, pade na Luno in se odbije nazaj proti opazovalcu. Temu pojavu pravimo Zemljin sij. Na naslovnem posnetku z Mednarodne vesoljske postaje sta vidna oba dela. <a href="https://science.nasa.gov/earth/earth-observatory/earthshine-83782/">NASA Earth Observatory o Zemljinem siju</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="new-moon-comparison" aria-labelledby="new-moon-example-title">
+  <header class="moon-section-heading">
+    <h2 id="new-moon-example-title">Dva večera po istem mlaju v Ljubljani</h2>
+    <p>Aprilski mlaj 2027 je v izvirnih podatkih naveden 6. aprila ob 23:51 po univerzalnem času. Po slovenskem času je to <strong>7. aprila ob 01:51 CEST</strong>. Primerjava obeh večerov pokaže, koliko časa po zahodu Sonca bo Luna nad ravnim obzorjem.</p>
+  </header>
+  <div class="new-moon-comparison__days">
+    <section aria-labelledby="new-moon-april-7">
+      <h3 id="new-moon-april-7">7. april 2027</h3>
+      <dl><div><dt>Sonce zaide</dt><dd>19:38</dd></div><div><dt>Luna zaide</dt><dd>20:37</dd></div></dl>
+      <p><strong>59 min</strong> med zahodoma</p>
+      <meter min="0" max="150" value="59" aria-label="59 minut med zahodoma">59 min</meter>
+    </section>
+    <section aria-labelledby="new-moon-april-8">
+      <h3 id="new-moon-april-8">8. april 2027</h3>
+      <dl><div><dt>Sonce zaide</dt><dd>19:39</dd></div><div><dt>Luna zaide</dt><dd>21:54</dd></div></dl>
+      <p><strong>2 h 15 min</strong> med zahodoma</p>
+      <meter min="0" max="150" value="135" aria-label="135 minut med zahodoma">135 min</meter>
+    </section>
+  </div>
+  <p>8. aprila lahko počakate na temnejše nebo, medtem ko je Luna še nad ravnim obzorjem. Oblačnost in bližnji hribi lahko ta čas skrajšajo. Časi so v CEST. Izračuna USNO za Ljubljano za <a href="https://aa.usno.navy.mil/api/rstt/oneday?date=2027-04-07&amp;coords=46.0569,14.5058&amp;tz=2">7. april</a> in <a href="https://aa.usno.navy.mil/api/rstt/oneday?date=2027-04-08&amp;coords=46.0569,14.5058&amp;tz=2">8. april</a>.</p>
+</section>
+
+<section class="moon-related new-moon-related" aria-labelledby="new-moon-related-title">
+  <h2 id="new-moon-related-title">Še več za opazovanje nočnega neba</h2>
+  <ul>
+    <li><a href="/lunine-mene/"><%= ui_icon('moon') %><span><strong>Lunine mene v slikah</strong><small>Primerjajte srpe, krajca in polno luno</small></span></a></li>
+    <li><a href="/lunin-koledar/"><%= ui_icon('calendar') %><span><strong>Lunin koledar</strong><small>Dnevna osvetljenost in predloge za tisk</small></span></a></li>
+    <li><a href="/perzeidi/"><%= ui_icon('star') %><span><strong>Perzeidi v Sloveniji</strong><small>Obdobja teme in vpliv mesečine po krajih</small></span></a></li>
+  </ul>
+</section>

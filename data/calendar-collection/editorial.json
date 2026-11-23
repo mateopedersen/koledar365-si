@@ -1,314 +1,674 @@
 {
+  "/koledar/2026/": {
+    "snippet": "Letni pregled in povezave do oktobra, novembra ter decembra.",
+    "intro": "Letni koledar 2026 prikazuje vseh dvanajst mesecev in slovenske dela proste dneve. Uporabite ga za pregled preteklih datumov, oddajo poročila ali primerjavo zadnjega trimesečja s prvim trimesečjem 2027.",
+    "heading": "Preglejte zadnje mesece 2026 na enem listu",
+    "body": "Dan reformacije 31. oktobra in dan spomina na mrtve 1. novembra sta na istem vikendu. Božič pade na petek, 25. decembra, dan samostojnosti in enotnosti pa na soboto. Če zaključek projekta sega v naslednje leto, pripravite še [letni koledar 2027](/koledar/2027/) in na obeh listih označite datum predaje.",
+    "example": {
+      "from": "2026-10-01",
+      "to": "2026-12-31",
+      "title": "Načrt za zadnje trimesečje",
+      "text": "Na letnem listu označite, kdaj se oktobrski roki prevesijo v november in kako božični petek razdeli zadnje decembrske obveznosti. Za poročilo o zadnjem četrtletju uporabite izračun od 1. oktobra do 31. decembra. V [letnem pregledu delovnih dni 2026](/delovni-dnevi/2026/) lahko nato primerjate oktobrski, novembrski in decembrski fond."
+    }
+  },
+  "/koledar/2026/oktober/": {
+    "snippet": "Dan reformacije je v soboto, 31. oktobra.",
+    "intro": "Oktobrski koledar 2026 prikaže 31 dni, šolske obveznosti zadnjega tedna pa lahko na njem označite ob jesenskih počitnicah. Dan reformacije je v soboto, na zadnji dan meseca.",
+    "heading": "Ločite šolske počitnice od dela prostih dni",
+    "body": "Zadnji oktobrski konec tedna je na prehodu med dvema listoma. V soboto je dan reformacije, naslednji [novembrski list](/koledar/2026/november/) pa se začne z nedeljskim dnevom spomina na mrtve. Na papirju pustite mesto za oba datuma, tudi če osebni dogovor traja čez konec meseca.",
+    "example": {
+      "from": "2026-10-26",
+      "to": "2026-10-31",
+      "title": "Varstvo v tednu jesenskih počitnic",
+      "text": "Za družino sta pomembna dva različna podatka. Osnovnošolske jesenske počitnice trajajo od 26. do 30. oktobra, dan reformacije pa je v soboto, 31. oktobra. Na isti list vpišite dneve, ko otrok potrebuje varstvo, in dneve, ko odrasli delajo. Točen šolski razpored objavlja [ministrstvo](@basic-school)."
+    }
+  },
+  "/koledar/2026/november/": {
+    "snippet": "Prvi november je v nedeljo in mesec ima 30 dni.",
+    "intro": "November 2026 se začne v nedeljo, na dan spomina na mrtve. Na koledarju lahko poleg praznika vodite običajne novembrske roke in pripravite prehod v december.",
+    "heading": "Prva nedelja in začetek novembrskega delovnega tedna",
+    "body": "Nedeljo, 1. novembra, pri petdnevnem urniku že štejemo med konec tedna. Ponedeljek, 2. novembra, se zato začne kot običajen delovnik. Dan znanosti in dan Rudolfa Maistra sta državna praznika, njun status pa je naveden v [pregledu praznikov 2026](/prazniki/2026/).",
+    "example": {
+      "from": "2026-11-01",
+      "to": "2026-11-06",
+      "title": "Dogovor za prvi novembrski teden",
+      "text": "Če ob 1. novembru načrtujete družinski obisk, na listu ločite nedeljski obisk od ponedeljkove vrnitve v službo. Za več obiskov uporabite stolpce tedna od 2. do 6. novembra, za obveznosti drugih družinskih članov pa [družinski planer](/druzinski-planer/)."
+    }
+  },
+  "/koledar/2026/december/": {
+    "snippet": "Božič je v petek, 25. decembra, naslednji praznik je v soboto.",
+    "intro": "Decembrski koledar 2026 pokaže božični petek in sobotni dan samostojnosti in enotnosti. Mesečni list uporabite za decembrska naročila, obiske ali pregled šolskih počitnic čez novo leto.",
+    "heading": "Zadnji praznični teden in prehod v januar",
+    "body": "Na papirju ločite petek, 25. decembra, in soboto, 26. decembra, od zadnjih uradnih ali delovnih rokov leta. Silvestrovo je v četrtek. Če se obisk ali obveznost nadaljuje naslednji dan, označite še [januar 2027](/koledar/2027/januar/).",
+    "example": {
+      "from": "2026-12-24",
+      "to": "2026-12-31",
+      "title": "Družinski načrt med božičem in silvestrovim",
+      "text": "Od četrtka, 24. decembra, do silvestrovega naj bodo na listu ločeno označeni obiski in dnevi, ko je treba urediti opravke. Božič je v petek, 26. december pa v soboto. Za varstvo upoštevajte [objavljeni osnovnošolski koledar](@basic-school), v katerem so novoletne počitnice od 25. decembra do 2. januarja."
+    }
+  },
   "/koledar/2027/": {
-    "snippet": "Praznični petek ob začetku leta in prvi novembrski ponedeljek.",
-    "intro": "Letni koledar 2027 združi vseh dvanajst mesecev na enem listu. Na njem si označite velikonočni ponedeljek ob koncu marca, junijski dan državnosti in novembrski prosti ponedeljek. Spodaj lahko tak pregled prenesete v 15 oblikovanjih.",
+    "snippet": "Novoletni in junijski petek, novembrski ponedeljek.",
+    "intro": "Na letnem koledarju 2027 si najprej označite konec marca, praznični petek 25. junija in ponedeljek 1. novembra. Tako pri vpisovanju četrtletnih rokov hitro vidite, kateri teden ima manj delovnih dni.",
     "heading": "Začnite pri datumih, ki razdelijo leto",
-    "body": "Novo leto se začne v petek, 1. januarja, ki še spada v 53. teden ISO leta 2026. Za pomlad na letnem listu posebej označite [veliko noč](/prazniki/velika-noc/) 28. in 29. marca, nato 25. junij, ki pade na petek. Pri običajnem delovniku je tudi 1. november prost ponedeljek. Božič in dan samostojnosti pa sta tokrat v soboto in nedeljo. Če načrtujete odsotnost, primerjajte posamezne termine v [pregledu podaljšanih vikendov 2027](/podaljsani-vikendi/2027/). Celoten list obesite na vidno mesto, podrobnosti za posamezen termin pa dopišite v ustrezni mesečni koledar."
+    "example": {
+      "from": "2027-06-21",
+      "to": "2027-06-30",
+      "title": "Zaključek polletja okoli dneva državnosti",
+      "text": "Če pripravljate polletni pregled, razdelite delo na pripravo pred petkom, 25. junija, in potrditev po vikendu. V izračunu za 21.–30. junij vidite razpoložljive delovne dni pred rokom. Na [junijskem listu](/koledar/2027/junij/) lahko izdelavo in potrditev označite kot ločeni opravili."
+    },
+    "print_tip": "Za tablo v pisarni natisnite ležeči letni list z vsemi dvanajstimi meseci. Z eno barvo označite roke predaje, z drugo odgovorne osebe ali dežurstva. Junijski zaključek razdelite na rok pred državnim praznikom in prvi termin po njem. Posamične naloge nato prenesite na [junijski mesečni list](/koledar/2027/junij/)."
   },
   "/koledar/2028/": {
-    "snippet": "Prestopno leto z 29. februarjem in prazničnim ponedeljkom ter torkom v maju.",
-    "intro": "Koledar 2028 je prestopni letni pregled s 366 dnevi. Na istem listu vidite dodatni torek ob koncu februarja, aprilsko veliko noč ter pare praznikov v maju in decembru. Vsaka predloga vsebuje vseh dvanajst mesecev.",
+    "snippet": "Prestopno leto z 29. februarjem in dvema prostima dnevoma v začetku maja.",
+    "intro": "Letni koledar 2028 združuje 366 dni na enem listu. Pri prehodu iz februarja v marec upoštevajte torek, 29. februar, pri majskih rokih pa praznika na ponedeljek in torek.",
     "heading": "Povežite prestopni februar in krajše delovne tedne",
-    "body": "V [februarju 2028](/koledar/2028/februar/) je 29. februar torek. Označite ga na letnem izpisu, če pripravljate urnik, ki se ponavlja vsak mesec. Praznik dela 1. in 2. maja pade na ponedeljek in torek, prav tako božič in dan samostojnosti 25. in 26. decembra. To sta dva uporabna krajša tedna za načrtovanje ekipnih rokov. Letni izpis si razdelite na štiri četrtletja in ob vsakem označite en večji rok. Za mesece z več odsotnostmi odprite [pregled delovnih ur 2028](/delovni-dnevi/2028/) in primerjajte obremenitev."
+    "example": {
+      "from": "2028-02-21",
+      "to": "2028-02-29",
+      "title": "Dodaten dan za zaključek februarja",
+      "text": "Pri mesečnem poročilu z rokom zadnji dan meseca rezervirajte čas tudi za torek, 29. februarja. V mesečni preglednici preverite, ali formular ali ponavljajoči se opomnik uporablja zadnji dan meseca. Razlog za 29. dan pojasnjuje [prikaz pravila prestopnega leta](@leap)."
+    },
+    "print_tip": "Za vnaprejšnje rezervacije uporabite letno sliko na skupni tabli, na natisnjenem mesečnem listu pa pustite prostor za spremembe. Če je rok zapisan kot zadnji dan februarja, ga v [februarju 2028](/koledar/2028/februar/) označite pri 29. dnevu. Pri ponavljajočem se opravilu preverite, ali se ponavlja po datumu ali po zadnjem delovniku."
   },
   "/koledar/2029/": {
-    "snippet": "Prvi april je velikonočna nedelja. Junijski dan državnosti pade na ponedeljek.",
-    "intro": "Letni koledar 2029 se začne s prazničnim ponedeljkom in torkom. Izbirate lahko med pokončnimi in ležečimi predlogami, v katerih so skupaj vidni zgodnja aprilska velika noč, junijski praznik in novembrski prehod med meseci.",
+    "snippet": "Velika noč 1. aprila in praznični ponedeljek 25. junija.",
+    "intro": "Na letnem koledarju 2029 je velika noč takoj za marčevskim koncem četrtletja. Praznika 31. oktobra in 1. novembra sta v istem tednu. Pri projektih, ki gredo čez oba preloma, vnaprej vpišite tudi prvi termin po prazniku.",
     "heading": "Razporedite roke okoli prehodov med meseci",
-    "body": "Za prvo četrtletje si pustite viden [prehod iz marca v april](/koledar/2029/april/). Velikonočna nedelja je 1. aprila, velikonočni ponedeljek pa 2. aprila. Drugi prehod, ki ga je vredno označiti, je 31. oktober in 1. november, zaporedna prosta dneva v sredo in četrtek. Na letnem izpisu označite oba konca takega obdobja, da ga pri listanju mesecev ne spregledate. Za 25. junij, ki je prost ponedeljek, preverite še [načrtovalnik dopusta](/nacrtovalnik-dopusta/) in vnesite svoje delovne dneve."
+    "example": {
+      "from": "2029-10-29",
+      "to": "2029-11-04",
+      "title": "Rok, ki prečka oktober in november",
+      "text": "Ko obveznost prehaja med mesečnima listoma, na obeh označite isti rok. Od 29. oktobra do 4. novembra sta vmes dva zaporedna praznika, zato ločite čas za oddajo od rezervnega termina. Podrobnosti za zadnje oktobrske dni so na [oktobrskem koledarju](/koledar/2029/oktober/)."
+    },
+    "print_tip": "Na letni PDF vnesite samo končne datume, da ostane berljiv na skupni steni. Povezana opravila označite z isto barvo na [marčevskem](/koledar/2029/marec/) in [aprilskem listu](/koledar/2029/april/). Tako ostane marčevska oddaja vidna tudi takrat, ko se aprilski prevzem začne šele po velikonočnem ponedeljku."
   },
   "/koledar/2030/": {
-    "snippet": "Prešernov dan je v petek, 31. oktober in 1. november sta zaporedna prosta dneva.",
-    "intro": "Koledar 2030 je letni pregled za tisk, uporaben pri načrtovanju daljših projektov in odsotnosti. V njem na enem mestu vidite februarski prosti petek, majska praznika sredi tedna in dva prosta dneva na prehodu v november.",
+    "snippet": "Prešernov petek ter prosta 31. oktober in 1. november.",
+    "intro": "Pri načrtovanju leta 2030 so uporabni trije različni vzorci: prosti petek v februarju, zaporedna prosta dneva ob prehodu iz oktobra v november ter božična sreda in praznični četrtek.",
     "heading": "Označite tri obdobja, ki spremenijo delovni teden",
-    "body": "Na začetku leta obkrožite 8. februar, saj je [Prešernov dan](/prazniki/presernov-dan/) v petek. V maju sta prosta sreda in četrtek, 1. in 2. maja. Oktobra se podoben par razteza čez dva lista: dan reformacije je v četrtek, 31. oktobra, dan spomina na mrtve pa v petek, 1. novembra. Za načrtovanje konca leta dodajte še 25. in 26. december, sredo in četrtek. Če rok določite na začetku leta, v [kalkulatorju delovnih dni](/kalkulator-delovnih-dni/) preverite, koliko delovnikov je dejansko med njim in začetkom projekta."
+    "example": {
+      "from": "2030-10-28",
+      "to": "2030-11-03",
+      "title": "Krajši delovni teden pred prvim novembrskim vikendom",
+      "text": "Od ponedeljka, 28. oktobra, do nedelje, 3. novembra, sta praznika tik pred vikendom. Za projekt s potrditvijo v istem tednu označite zadnji razpoložljivi delovnik na [oktobrskem listu](/koledar/2030/oktober/) in datum nadaljevanja na [novembrskem](/koledar/2030/november/)."
+    },
+    "print_tip": "Letni PDF uporabite kot pregled daljših razponov, mesečne liste pa za razpored oseb. Kadar obrazec zajema več mesecev, označite začetni datum in zadnji datum vsakega razpona na istem letnem listu. Pri jesenski predaji vpišite sredo, 30. oktobra, na [oktobrsko predlogo](/koledar/2030/oktober/) in prvi redni ponedeljek na [novembrsko](/koledar/2030/november/)."
   },
   "/koledar/2027/januar/": {
-    "snippet": "Novo leto je v petek in soboto, prvi ponedeljek je 4. januar.",
-    "intro": "Januarski koledar 2027 jasno pokaže, kako se novo leto začne ob koncu tedna. Petek in sobota, 1. in 2. januar, sta praznika, v ponedeljek, 4. januarja, pa se začne prvi polni januarski teden.",
+    "snippet": "Novo leto v petek in soboto, prvi ponedeljek 4. januarja.",
+    "intro": "Januar 2027 se začne s prazničnim petkom in soboto. Ponedeljek, 4. januarja, je prvi ponedeljek v mesecu in dober mejnik za začetek tedenskega razporeda.",
     "heading": "Od prazničnega vikenda do prvega tedna ISO",
-    "body": "Dnevi od 1. do 3. januarja po številčenju ISO še sodijo v zadnji teden leta 2026. Če z ekipo načrtujete prvi januarski sestanek, pri zapisu termina uporabite datum in ga primerjajte s [številko tedna](/stevilka-tedna/). Na natisnjenem listu lahko prvo delovno vrstico začnete 4. januarja, preostale januarske roke pa označite ob ponedeljkih."
+    "example": {
+      "from": "2027-01-01",
+      "to": "2027-01-10",
+      "title": "Prvi januarski pregled rokov",
+      "text": "Natisnite januar in v prvi vrstici označite opravke ob začetku koledarskega leta. V naslednji vrstici začnite tedensko rutino s 4. januarjem. Če pri delu uporabljate zapis tedna namesto datuma, preverite [pravila za tedne ISO](@iso-week) in ob številki zapišite tudi leto."
+    },
+    "print_tip": "Na januarski list vpišite obiske v prvo vrstico, redne naloge pa začnite v vrstici s 4. januarjem. Če imate enak urnik več tednov zapored, naj bo na steni viden prvi ponedeljek vsake ponovitve. Za tekoče spremembe v službi uporabite [tedenski koledar](/tedenski-koledar/)."
   },
   "/koledar/2027/februar/": {
-    "snippet": "Prešernov dan je v ponedeljek, mesec pa ima 28 dni.",
-    "intro": "Februar 2027 ima 28 dni od ponedeljka do nedelje. Na mesečni predlogi so štirje polni tedni, v drugem pa je v ponedeljek, 8. februarja, označen slovenski kulturni praznik.",
+    "snippet": "Štirje celi tedni in prosti ponedeljek, 8. februarja.",
+    "intro": "Februar 2027 ima štiri cele tedne od ponedeljka do nedelje. Prešernov dan je v ponedeljek, 8. februarja. Drugi teden ima zato drugačen razpored od sosednjih.",
     "heading": "Štiri cele tedne uporabite za štiri sklope opravil",
-    "body": "Ker sta 1. in 28. februar na začetku oziroma koncu tedna, lahko vsak teden na papirju namenite enemu sklopu dela. Ponedeljek, 8. februarja, je [Prešernov dan](/prazniki/presernov-dan/), zato tedensko opravilo prestavite na naslednji delovnik, če je to potrebno. Pri družinskih načrtih odprite tudi [zimske počitnice po regijah](/solske-pocitnice/#zimske-regije)."
+    "example": {
+      "from": "2027-02-08",
+      "to": "2027-02-14",
+      "title": "Tedensko opravilo po Prešernovem dnevu",
+      "text": "Če je redni sestanek ob ponedeljkih, naredite izjemo za 8. februar in vpišite nov datum v isto tedensko vrstico. Za družinski urnik preverite tudi, v katero skupino spada občina otrokove šole, saj [uradni šolski koledar](@basic-school) razporeja zimske počitnice po območjih."
+    },
+    "print_tip": "Če natisnete februarski koledar za učilnico ali skupino, označite štiri tedenske vrstice z enakimi barvami. Pri drugem ponedeljku zabeležite prestavitev samo enkrat, nato od torka nadaljujte redni ritem. Za zimske počitnice preverite [razpored po regijah](/solske-pocitnice/#zimske-regije)."
   },
   "/koledar/2027/marec/": {
-    "snippet": "Velikonočna nedelja je 28. marca, prosti ponedeljek pa 29. marca.",
-    "intro": "Marec 2027 se konča z veliko nočjo. Če razporejate roke ali pripravljate družinski urnik pred prazniki, boste na eni mesečni strani videli nedeljo, 28. marca, in dela prost ponedeljek takoj za njo.",
+    "snippet": "Velika noč 28. marca, prosti ponedeljek 29. marca.",
+    "intro": "Marec 2027 se konča v sredo, kmalu po velikonočnem ponedeljku. Na natisnjenem mesečnem listu označite zadnji razpoložljivi petek, če se oddaja ali sestanek ne more premakniti v april.",
     "heading": "Zadnje obveznosti marca razporedite pred veliko noč",
-    "body": "Velikonočni ponedeljek 29. marca podaljša zadnji marčevski konec tedna, zato pri načrtovanju sestankov ločite zadnji polni delovni teden od dveh delovnikov, ki ostaneta do aprila. Če potrebujete tudi izračun urnika, odprite [delovne dneve marca 2027](/delovni-dnevi/2027/marec/). Za datume velikonočnih običajev je na voljo ločen [pregled velike noči](/prazniki/velika-noc/)."
+    "example": {
+      "from": "2027-03-26",
+      "to": "2027-03-31",
+      "title": "Predaja med veliko nočjo in zaključkom četrtletja",
+      "text": "V razponu od petka, 26. marca, do srede, 31. marca, na listu rezervirajte poseben termin za pregled opravljenega dela. Če sodelavci dokument potrebujejo še pred podaljšanim koncem tedna, določite čas predaje v petek. Čas za nadaljnje popravke pustite po velikonočnem ponedeljku."
+    },
+    "print_tip": "Za zaključek četrtletja na list napišite dva roka. Prvi naj bo za gradivo pred veliko nočjo, drugi za potrditve 30. ali 31. marca. Oba označite ločeno od prazničnega vikenda, da ima sodelavec na vpogled čas za odziv."
   },
   "/koledar/2027/april/": {
-    "snippet": "Dan upora proti okupatorju je v torek, 27. aprila.",
-    "intro": "Aprilski koledar 2027 prikaže 30 dni in praznični torek ob koncu meseca. Uporabite ga za načrt dela okoli 27. aprila ali za skupen pregled datumov pred prvomajskimi počitnicami.",
+    "snippet": "Torek, 27. aprila, je dan upora proti okupatorju.",
+    "intro": "Torek, 27. aprila 2027, razdeli zadnji aprilski delovni teden. Maj se začne v soboto, zato sta v skupnem dopustnem ali družinskem načrtu koristna dva sosednja mesečna lista.",
     "heading": "Zadnji aprilski teden načrtujte skupaj s prvim majem",
-    "body": "Ker [dan upora proti okupatorju](/prazniki/dan-upora-proti-okupatorju/) pade na torek, se zadnji aprilski delovni teden razdeli po ponedeljku. Prvi in drugi maj sledita v soboto in nedeljo. Če razporejate varstvo ali odhod na pot, poleg aprilskega lista odprite [prvomajske počitnice](/solske-pocitnice/#pocitnice-may) in preverite datume za ustrezno šolsko leto."
+    "example": {
+      "from": "2027-04-26",
+      "to": "2027-05-02",
+      "title": "Varstvo med torkovim praznikom in majskim vikendom",
+      "text": "Ponovite isti dogovor na aprilskem in [majskem listu](/koledar/2027/maj/), da dva datuma na koncu tedna ne ostaneta brez opombe. Če imate šoloobvezne otroke, vpišite dejanske proste dneve pouka z ministrstva in jih ločite od dni dopusta odraslih."
+    },
+    "print_tip": "Na aprilskem listu je lažje preveriti, kdo je dosegljiv v ponedeljek in kdo po torkovem prazniku. Zabeležite eno ime ob vsak dan nadomeščanja. Če dogovor velja tudi za vikend, isti znak uporabite v [majskem koledarju](/koledar/2027/maj/). Za načrt varstva preverite [prvomajske počitnice](/solske-pocitnice/#pocitnice-may) za ustrezno šolsko leto."
   },
   "/koledar/2027/maj/": {
-    "snippet": "Prvi in drugi maj sta na koncu tedna. Binkošti so 16. maja.",
-    "intro": "Maja 2027 sta prva dva datuma na soboto in nedeljo, binkoštna nedelja pa je 16. maja. Na mesečnem izpisu lahko te praznike vidite v sklopu celotnega konca tedna.",
+    "snippet": "Prvomajska praznika ob koncu tedna, binkošti 16. maja.",
+    "intro": "Prvi maj 2027 je v soboto, drugi v nedeljo, binkošti pa šestnajstega. Pri običajnem petdnevnem delovniku vse tri datume že zajema načrt koncev tedna.",
     "heading": "Majska praznovanja vnesite v načrt koncev tedna",
-    "body": "Pri ponedeljkovem začetku tedna sta 1. in 2. maj vidna kot zadnja dva stolpca prve vrstice. Pri urniku od ponedeljka do petka zato [praznik dela](/prazniki/praznik-dela/) v tem letu ne skrajša delovnega tedna. Če si rezervirate nedeljski izlet za binkošti, ob datumu pustite prostor za uro odhoda in rezervni termin."
+    "example": {
+      "from": "2027-05-13",
+      "to": "2027-05-17",
+      "title": "Rezervni termin za izlet ob binkoštih",
+      "text": "Če izlet načrtujete za nedeljo, 16. maja, dodajte na rob mesečnega lista rezervni termin in čas odhoda. Pri petdnevnem urniku binkoštna nedelja ne odšteje dodatnega delovnika. Za pomen in datum praznika odprite [pregled binkošti](/prazniki/binkosti/)."
+    },
+    "print_tip": "Za člane istega gospodinjstva na majskem koledarju izberite dva različna znaka za potrjen in rezervni termin. Pri izletu okoli 16. maja označite oba na natisnjenem listu. Označeno sliko shranite kot kopijo za družinski pogovor."
   },
   "/koledar/2027/junij/": {
-    "snippet": "Dan državnosti je v petek, 25. junija.",
-    "intro": "Junija 2027 je dan državnosti v petek in pred zadnjim junijskim vikendom. Ta mesečni koledar je primeren za pregled predaj ob koncu četrtletja ali za označevanje terminov ob začetku poletja.",
+    "snippet": "Dan državnosti v petek, 25. junija.",
+    "intro": "Junijski koledar 2027 razporedi dan državnosti na petek. Pri koncu polletja je zato pomemben četrtek, 24. junija, če čakate na odgovor ali pripravljate predajo.",
     "heading": "Od četrtkove predaje do prazničnega petka",
-    "body": "Če imate petdnevni delovnik, lahko predajo, predvideno za [dan državnosti](/prazniki/dan-drzavnosti/), zaključite do četrtka, 24. junija. Naslednji običajni delovnik je ponedeljek, 28. junija. Šolski zaključek in razpored poletnih počitnic preverite v [šolskem koledarju](/solski-koledar/) za ustanovo, ki vas zanima."
+    "example": {
+      "from": "2027-06-21",
+      "to": "2027-06-28",
+      "title": "Predaja dela pred prostim petkom",
+      "text": "Pripravo in potrditev ločite v dve celici. Pri rokih, ki ne morejo počakati do ponedeljka, na listu poudarite četrtek, 24. junija, in osebno potrdite ure dostave. Za drugačen delovni vzorec izračun za isti razpon prilagodite po svojih dnevih."
+    },
+    "print_tip": "Natisnjen list razdelite na zadnje opravke pred prostim petkom in obveznosti od ponedeljka, 28. junija. Za predajo z več koraki v Excelu dodajte stolpca za nosilca in status. Na skupni steni pustite le datume potrditve."
   },
   "/koledar/2027/julij/": {
-    "snippet": "Julij ima 31 dni in 22 delovnikov pri petdnevnem tednu.",
-    "intro": "Julijski koledar 2027 se začne v četrtek in konča v soboto. Mesec je uporaben za načrtovanje poletnih izmen, ker v njem ni zakonsko dela prostih praznikov in so vikendi razvidni iz koledarske mreže.",
+    "snippet": "31 dni in 22 delovnikov pri petdnevnem tednu.",
+    "intro": "Julijski koledar 2027 ima 31 dni in 22 delovnikov. Prva in zadnja vrstica zajemata tudi sosednji mesec, kar je uporabno pri predaji poletnih izmen.",
     "heading": "Na enem listu si zabeležite menjave med dopusti",
-    "body": "Če julija načrtujete več dopustov, v mrežo najprej vpišite dneve predaje in vrnitve. Zadnji dan meseca je v soboto, zato načrt za ponedeljek, 2. avgusta, dopišite na naslednji list. Kadar se vaš urnik ponavlja tudi ob sobotah, ga preračunajte v [razporedu izmen](/razpored-izmen/)."
+    "example": {
+      "from": "2027-07-26",
+      "to": "2027-08-02",
+      "title": "Predaja poletne izmene čez dva meseca",
+      "text": "Na julijski izpis zabeležite zadnjo izmeno pred zamenjavo, na [avgustovskega](/koledar/2027/avgust/) pa prvo izmeno novega bloka. Če si ekipa izmenjuje delovne vikende, primerjajte petdnevni izračun z dejanskim zaporedjem v [vodniku po ciklih izmen](/blog/razpored-izmen-stiritedenski-cikel/)."
+    },
+    "print_tip": "Pri izmenskem načrtu s svinčnikom označite osebo, ki je na vrsti ob koncu julija, nato isto oznako prenesite na [avgustovski list](/koledar/2027/avgust/). Na papir vpišite telefonski termin za predajo, sam vzorec izmen pa sestavite v [razporedu izmen](/razpored-izmen/)."
   },
   "/koledar/2027/avgust/": {
-    "snippet": "Marijino vnebovzetje je v nedeljo, 15. avgusta.",
-    "intro": "Koledar za avgust 2027 postavi Marijino vnebovzetje v nedeljski stolpec. Uporaben je za načrtovanje sredine poletja, ko želite posamezne proste termine videti ob vikendih in preostalih delovnikih.",
+    "snippet": "Marijino vnebovzetje v nedeljo, 15. avgusta.",
+    "intro": "Marijino vnebovzetje je v nedeljo, 15. avgusta 2027. Predlogo uporabite za pregled prihoda in odhoda ob koncu tedna, naslednji ponedeljek pa obravnavajte kot samostojen termin.",
     "heading": "Sredino avgusta berite skupaj z vikendom",
-    "body": "V nedeljo, 15. avgusta, je [Marijino vnebovzetje](/prazniki/marijino-vnebovzetje/). Naslednji dan ostane običajen ponedeljek pri petdnevnem urniku. V mesecu sta tudi dan Triglava in praznik združitve prekmurskih Slovencev z matičnim narodom. Njun pomen preverite v [pregledu praznikov 2027](/prazniki/2027/), kjer je naveden status vsakega datuma."
+    "example": {
+      "from": "2027-08-13",
+      "to": "2027-08-17",
+      "title": "Odhod in vrnitev ob nedeljskem prazniku",
+      "text": "Za obisk 15. avgusta posebej vpišite čas odhoda, ure ustanove in rezervni dan. Če vrnitev načrtujete v ponedeljek, naj bo to vidno na istem izpisu. Petdnevni izračun ponedeljek šteje med delovnike, urnik ustanove pa preverite pri njej."
+    },
+    "print_tip": "Na koledarju za avgust vpišite odhod in vrnitev v ločeni polji, pri katerih je razviden dan v tednu. Če razpored pošiljate več ljudem, delite ujemajočo se sliko lista in dodajte čas odhoda v sporočilo."
   },
   "/koledar/2027/september/": {
-    "snippet": "Mesec se začne v sredo in ima 22 delovnikov.",
-    "intro": "Septembra 2027 se prvi teden začne s tremi delovniki od srede do petka. Na predlogi lahko ločite uvodne šolske obveznosti od rutine naslednjih polnih tednov.",
+    "snippet": "Začetek v sredo ter 22 delovnikov.",
+    "intro": "September 2027 začne sreda. Prva vrstica je uporabna za uvodne dogovore, polni teden od 6. septembra pa za začetek ponavljajočih se obveznosti.",
     "heading": "Prvi septembrski teden naj ima svoj načrt",
-    "body": "Na koledar najprej vpišite ure, ki veljajo od 1. do 3. septembra, ponavljajoče se dejavnosti pa začnite v naslednji vrstici. Vrnitev Primorske in dan slovenskega športa sta praznika, na katera velja običajni delovnik. Za učilnice in predmete uporabite [šolski urnik](/solski-urnik/) in na izpis zapišite samo spremembe."
+    "example": {
+      "from": "2027-09-01",
+      "to": "2027-09-10",
+      "title": "Prvih deset septembrskih dni brez podvajanja urnika",
+      "text": "Za prve tri dni pripravite ločen dogovor o prevozih in prevzemih. Od 6. septembra z istim barvnim ključem označite redni urnik. Za objavljene datume pouka uporabite [šolski koledar ministrstva](@basic-school), urnik oddelka pa pridobite pri svoji šoli."
+    },
+    "print_tip": "Za september natisnite mesečni list in uvodni del ločite od stalnega urnika. Prve tri delovnike namenite enkratnim vpisom, ponovitve označite šele od prvega polnega tedna. Podroben urnik sestavite v [šolskem urniku](/solski-urnik/)."
   },
   "/koledar/2027/oktober/": {
-    "snippet": "Dan reformacije je v nedeljo, prosti ponedeljek pa sledi 1. novembra.",
-    "intro": "Oktobrski koledar 2027 se izteče z nedeljskim dnevom reformacije. Zadnji vikend je neposredno pred ponedeljkom, 1. novembrom, zato vam pri načrtovanju obiska koristita oba mesečna lista.",
+    "snippet": "Reformacija v nedeljo, prosti ponedeljek 1. novembra.",
+    "intro": "Dan reformacije je v nedeljo, 31. oktobra 2027. Prosti ponedeljek je že na novembrskem koledarju. Za načrt od petka do torka odprite oba meseca.",
     "heading": "Prehod z reformacije na 1. november",
-    "body": "Dan reformacije je 31. oktobra, dan spomina na mrtve pa že na naslednji strani, v [koledarju za november](/koledar/2027/november/). Na oktobrskem izpisu lahko v zadnjo vrstico dodate opombo o ponedeljku, če imate dogovor čez mejo mesecev. Za natančno število delovnikov v razponu uporabite [datumski kalkulator](/datumski-kalkulator/)."
+    "example": {
+      "from": "2027-10-29",
+      "to": "2027-11-02",
+      "title": "Razpored obiska čez mejo mesecev",
+      "text": "Na oktobrskem listu vnesite odhod, na novembrskem pa vrnitev. Če obisk zajame nedeljski dan reformacije in ponedeljkov dan spomina na mrtve, pustite na obeh listih enako oznako za isti dogovor. [Pomen dneva reformacije](/prazniki/dan-reformacije/) je opisan ločeno."
+    },
+    "print_tip": "Za družinski obisk uporabite oktobrski list za datum odhoda. Prvi november in torek po njem označite na [novembrski predlogi](/koledar/2027/november/), da se nobena obveznost pri prehodu med listoma ne izgubi."
   },
   "/koledar/2027/november/": {
-    "snippet": "Dan spomina na mrtve je v ponedeljek, 1. novembra.",
-    "intro": "Novembrski koledar 2027 se odpre z dela prostim ponedeljkom. Uporabite ga za premik prvega tedenskega sestanka ali za razpored opravil pred koncem jeseni.",
+    "snippet": "Dan spomina na mrtve v ponedeljek, 1. novembra.",
+    "intro": "November 2027 se odpre s prostim ponedeljkom, zato se običajni petdnevni urnik prvega tedna začne v torek. Koledar pomaga uskladiti prvi redni sestanek ali prevzem po prazniku.",
     "heading": "Prva novembrska delovna vrstica se začne v torek",
-    "body": "Pri običajnem urniku je prvi delovni dan torek, 2. novembra. Na listu si označite, kateri roki se dejansko premaknejo zaradi praznika. Dan znanosti in dan Rudolfa Maistra sta državna praznika z običajnim delovnikom. Za razlago obeh vrst datumov odprite [novembrski pregled praznikov](/prazniki/2027/)."
+    "example": {
+      "from": "2027-11-01",
+      "to": "2027-11-05",
+      "title": "Prvi redni novembrski sestanek",
+      "text": "Dogodke z rednim ponedeljkovim terminom prestavite posamezno in v novembrski mreži ohranite datum prvotnega dogovora. Če pripravljate zapisnik, vpišite tudi, do katerega delovnika morajo sodelavci potrditi spremembe. Tako je iz lista razviden sestanek in rok za odziv."
+    },
+    "print_tip": "Za novembrske roke na skupnem listu označite, kateri datum pomeni prejem in kateri je internemu delu namenjen rok. Če se tedensko opravilo običajno začne v ponedeljek, prvo opravilo v mesecu za ta list vpišite na torek."
   },
   "/koledar/2027/december/": {
-    "snippet": "Božič in dan samostojnosti sta v soboto in nedeljo.",
-    "intro": "Decembra 2027 sta 25. in 26. december na koncu tedna. Mesečni list da jasen pregled zadnjih delovnikov in datumov, ki jih boste želeli prenesti v januar.",
+    "snippet": "Božič v soboto, dan samostojnosti in enotnosti v nedeljo.",
+    "intro": "Božič in dan samostojnosti in enotnosti sta leta 2027 na koncu tedna. Na decembrskem koledarju si zato posebej označite delovne dni pred vikendom in prevzem nalog v januarju.",
     "heading": "Konec decembra povežite s prvim tednom 2028",
-    "body": "Božič je v soboto in dan samostojnosti in enotnosti v nedeljo. Ponedeljek po praznikih je 27. december. Če imate konec leta predaje ali račune, na papirju označite še petek, 31. decembra, ter na [januarskem koledarju 2028](/koledar/2028/januar/) ločeno vpišite, kdaj se delo nadaljuje."
+    "example": {
+      "from": "2027-12-24",
+      "to": "2028-01-03",
+      "title": "Predaja dežurstva iz decembra v januar",
+      "text": "Označite zadnjega odgovornega pred prazničnim vikendom in prvo osebo po njem. Petdnevni izračun v tem razponu božičnega vikenda in prvega januarskega vikenda ne odšteje še enkrat. Za razpored, ki vključuje sobote, odprite isti primer in izberite dejanske dni dela."
+    },
+    "print_tip": "Na decembrskem listu ločite osebo, ki zapira opravila v petek, 24. decembra, od tiste, ki prevzame po vikendu. Ob mesečnem listu pripnite [januar 2028](/koledar/2028/januar/), če dežurstvo ali obveznost zajema tudi novo leto."
   },
   "/koledar/2028/januar/": {
-    "snippet": "Novoletna praznika sta v soboto in nedeljo.",
-    "intro": "Januar 2028 se začne z novoletnim vikendom, 1. in 2. januarjem. Mesečna predloga omogoča, da prvo delovno vrstico začnete s ponedeljkom, 3. januarja, in takoj vidite začetek leta ISO.",
+    "snippet": "Novoletna praznika v soboto in nedeljo.",
+    "intro": "Januar prestopnega leta 2028 se začne na koncu tedna. Petdnevni delovnik se začne v ponedeljek, 3. januarja. Pri zapisovanju številk tednov bodite pozorni na razliko med koledarskim letom in letom ISO.",
     "heading": "Ob novem letu zapišite tudi leto tedna",
-    "body": "Sobota in nedelja na začetku meseca sodita v zadnji teden ISO leta 2027. Če nekaj načrtujete za prvi teden januarja, na izpisu poleg tedna zapišite še datum. Primer in druga pravila za konec leta so v [vodniku o tedenskih številkah](/stevilka-tedna/)."
+    "example": {
+      "from": "2028-01-01",
+      "to": "2028-01-07",
+      "title": "Uskladitev prvega tedna v skupnem koledarju",
+      "text": "Za prvi sestanek v ekipi pošljite datum 3. januar in številko tedna skupaj. Če kopirate lanski urnik, preverite, ali se dan ponovitve ujema z novim letom. Na letnem listu je lažje videti leto ISO, na mesečnem pa posamezne roke prvega delovnega tedna."
+    },
+    "print_tip": "Na levi strani januarskega lista označite, kateri teden pripada prejšnjemu letu ISO in kje se začne prvi teden 2028. Za urnike, ki jih izmenjujete z več ekipami, preverite številko v [kalkulatorju tedna ISO](/stevilka-tedna/)."
   },
   "/koledar/2028/februar/": {
-    "snippet": "Prestopni februar ima 29 dni. Zadnji datum je torek.",
-    "intro": "Februarski koledar 2028 vključuje torek, 29. februarja. Na mesečnem listu boste videli vseh 29 dni, kulturni praznik v torek, 8. februarja, in neprekinjen prehod v marčevski urnik.",
+    "snippet": "Prestopni februar ima 29 dni in se konča v torek.",
+    "intro": "V prestopnem letu 2028 pade 29. februar na torek. Pri mesečnem pregledu štejeta tako dodaten dan ob koncu meseca kot prosti torek, 8. februarja, ko je Prešernov dan.",
     "heading": "Za mesečne roke uporabite tudi 29. februar",
-    "body": "Na prestopni dan lahko opravilo z zadnjim dnem meseca vpišete v torek, 29. februarja. Če imate za letošnje načrte še lanski list, preverite, kje se konča, preden prepisujete roke. Več primerov je v [kalkulatorju prestopnega leta](/prestopno-leto/). Prešernov dan je letos prav tako v torek, tri tedne prej."
+    "example": {
+      "from": "2028-02-25",
+      "to": "2028-02-29",
+      "title": "Rok za zaključek prestopnega meseca",
+      "text": "Če se dogovor glasi »zadnji dan februarja«, označite torek, 29. februarja. Za opravilo, ki se ponavlja vsak mesec, ne prepišite 29. dne v vse mesece. [Pravilo prestopnih let](@leap) pojasnjuje dodatni dan, Excel pa je priročen za razvrščanje rokov po datumih."
+    },
+    "print_tip": "Natisnite februarski list in na 29. februar posebej označite rok »zadnji dan meseca«. V Excelu lahko ob isti datum dodate opombo o naslednjem koraku. Za razliko med zadnjim dnevom in zadnjim ponavljajočim se datumom uporabite [pravilo prestopnega leta](/prestopno-leto/)."
   },
   "/koledar/2028/marec/": {
-    "snippet": "Marec ima 23 delovnikov. Velikonočni prazniki so aprila.",
-    "intro": "Marec 2028 ima 31 dni in se začne v sredo. Mesečni koledar je primeren za zaključek prvega četrtletja, saj velikonočni prazniki pridejo šele v aprilu, po zadnjem petku marca.",
+    "snippet": "23 delovnikov in zaključek četrtletja v petek.",
+    "intro": "Marec 2028 ima 23 delovnikov pri običajnem petdnevnem tednu. Zadnji dan je petek, 31. marca, zato sta konec meseca in petkova predaja na istem mestu.",
     "heading": "Razpored za zaključek prvega četrtletja",
-    "body": "Pri petdnevnem delovniku je v marcu 23 delovnikov. Zadnji koledarski in delovni dan je petek, 31. marca. Na natisnjeni strani si označite teden za pregled priprav pred zaključkom, za naslednje roke pa odprite [aprilski koledar](/koledar/2028/april/), kjer sta velika noč in dan upora."
+    "example": {
+      "from": "2028-03-27",
+      "to": "2028-03-31",
+      "title": "Zadnji teden za poročilo prvega četrtletja",
+      "text": "Na mesečni predlogi namenite ponedeljek zbiranju podatkov, sredo pregledu in petek, 31. marca, oddaji. Za naloge, pri katerih je treba začeti več dni pred koncem, uporabite [načrtovanje od roka nazaj](/blog/casovnica-projekta-od-konca-nazaj/). Velikonočni prazniki so na naslednjem listu."
+    },
+    "print_tip": "Na marčevski PDF vpišite dan notranjega pregleda ločeno od roka oddaje. Petek na koncu zadnje vrstice naj bo rezerviran za potrditev. Prvo opravilo po zaključku označite na [aprilskem koledarju](/koledar/2028/april/)."
   },
   "/koledar/2028/april/": {
-    "snippet": "Velika noč je 16. in 17. aprila. Dan upora je v četrtek.",
-    "intro": "V aprilu 2028 sta velika noč 16. in 17. aprila, dan upora proti okupatorju pa je v četrtek, 27. aprila. Mesečni izpis vam pomaga videti oba praznična tedna hkrati.",
+    "snippet": "Velika noč 16. in 17. aprila, dan upora v četrtek.",
+    "intro": "Aprila 2028 sta velikonočna nedelja in ponedeljek sredi meseca. Četrtek, 27. aprila, je drug praznični mejnik. Pri naročilih pustite rezervo pred obema prekinitvama.",
     "heading": "Predaje razporedite okoli dveh prazničnih tednov",
-    "body": "V tednu po velikonočni nedelji odpade ponedeljek, 17. april, pozneje pa se konec meseca spremeni zaradi četrtka, 27. aprila. Naslednja ponedeljek in torek sta že majska praznika. Za pregled takega razpona odprite [načrtovalnik dopusta](/nacrtovalnik-dopusta/) in vanj vnesite tudi konec v maju."
+    "example": {
+      "from": "2028-04-14",
+      "to": "2028-04-18",
+      "title": "Prevzem naročila ob velikonočnem ponedeljku",
+      "text": "Če mora biti naročilo dostavljeno pred praznikom, naj bosta datum odpreme in datum prevzema v različnih celicah. Na listu boste videli petek, velikonočno nedeljo in prosti ponedeljek. Pri dostavi po praznikih potrdite termin s prevoznikom."
+    },
+    "print_tip": "Za dostavo okoli 17. aprila na mesečnem listu ločeno označite zadnji potrjeni termin in dan, ko pričakujete odgovor. Ob koncu meseca dodajte enako oznako pred 27. dnem. Tako lahko na prvi pogled ločite oba krajša delovna tedna."
   },
   "/koledar/2028/maj/": {
-    "snippet": "Praznik dela je v ponedeljek in torek, 1. in 2. maja.",
-    "intro": "Maj 2028 odpreta dva zaporedna dela prosta dneva. Če delate od ponedeljka do petka, je prvi delovni dan v mesecu sreda, 3. maja. V mesečni mreži je ta prehod razviden že v prvi vrstici.",
+    "snippet": "Praznik dela v ponedeljek in torek, 1. in 2. maja.",
+    "intro": "Prvi delovni teden maja 2028 se začne v sredo. Dva zaporedna prosta dneva sta na samem začetku meseca, zato je majski koledar praktičen za naročila in družinske dogovore.",
     "heading": "Dva prosta dneva na začetku istega tedna",
-    "body": "Prvi polni majski teden se začne s praznikom dela v ponedeljek in torek. Ob več rokih v sredo lahko na tisku vnaprej označite, katere predaje morajo biti pripravljene že aprila. Za družinski načrt poleg mesečne mreže odprite še [prvomajske počitnice](/solske-pocitnice/#pocitnice-may)."
+    "example": {
+      "from": "2028-04-29",
+      "to": "2028-05-07",
+      "title": "Načrt opravkov po dveh prvomajskih praznikih",
+      "text": "Na tedenskem listu odebelite sredo, 3. maja, kadar takrat obnovite običajni urnik. Družina naj si posebej zabeleži varstvo, če je povezano s šolskimi počitnicami. Za aktualno objavo takšnih terminov uporabite [šolski koledar ministrstva](@basic-school)."
+    },
+    "print_tip": "Na majskem listu vpišite praznika kot zaprtje prvega bloka. Sredo, četrtek in petek razporedite na nujne zadeve, nenujne pa prestavite po prvem vikendu. Za varstvo ob prehodu med mesecema glejte [prvomajske počitnice](/solske-pocitnice/#pocitnice-may)."
   },
   "/koledar/2028/junij/": {
-    "snippet": "Binkošti so 4. junija, dan državnosti pa 25. junija. Oba sta v nedeljo.",
-    "intro": "Junijski koledar 2028 vključuje dve praznični nedelji, na začetku in blizu konca meseca. Pri ponedeljkovem začetku tedna sta obe v zadnjem stolpcu, zato ju lahko hitro najdete.",
+    "snippet": "Binkošti in dan državnosti padeta na nedeljo.",
+    "intro": "Junija 2028 sta binkošti 4. junija in dan državnosti 25. junija oba v nedeljo. Pri petdnevnem urniku je za praktični načrt pomembno, kaj se začne v ponedeljek po vsakem od njiju.",
     "heading": "Dve nedelji in zaključek šolskega leta",
-    "body": "Binkošti 4. junija in dan državnosti 25. junija ne odvzameta delovnika običajnemu petdnevnemu tednu. Če v zadnji tretjini meseca načrtujete zaključne šolske obveznosti, si ločeno označite šolske termine iz [koledarja ministrstva](@basic-school). Za datume in izračun ur odprite [junijski pregled dela](/delovni-dnevi/2028/junij/)."
+    "example": {
+      "from": "2028-06-23",
+      "to": "2028-06-26",
+      "title": "Vikend ob dnevu državnosti in ponedeljkov urnik",
+      "text": "Če junija načrtujete pot, na listu ločite potovalni dan od prvega delovnika po prihodu. Dan državnosti pade v nedeljo, zato je ponedeljek, 26. junija, v tem izračunu običajen delovnik. Urnik prireditve poiščite pri organizatorju ali v [pregledu potrjenih prireditev](/festivali/)."
+    },
+    "print_tip": "Na junijskem PDF v dveh barvah ločite nedeljski dogodek in ponedeljkove obveznosti. Za zaključek pouka preverite objavo za ustrezni razred in v koledar vpišite zadnji dan pouka. [Šolski koledar](/solski-koledar/) vodi do šolskih rokov."
   },
   "/koledar/2028/julij/": {
-    "snippet": "Mesec se začne v soboto in konča v ponedeljek.",
-    "intro": "Koledar za julij 2028 postavi prva dva dneva na vikend, 31. julij pa v ponedeljek v zadnjo vrstico. Predloga je priročna pri razporejanju terminov, ki se nadaljujejo v avgust.",
+    "snippet": "Začetek v soboto in konec v ponedeljek.",
+    "intro": "Julij 2028 se začne v soboto in konča v ponedeljek. Delovni teden, ki se začne 31. julija, se nadaljuje v avgust.",
     "heading": "Zaključni ponedeljek julija povežite z avgustom",
-    "body": "Če načrtujete odsotnost od zadnjega ponedeljka julija naprej, natisnite [avgustovski koledar](/koledar/2028/avgust/) ob julijskem. Tako dobite dve sosednji strani, na katerih ostanejo vidni konec julija, nadaljevanje dopusta in naslednja predaja dela. Pri spremenljivem urniku označite tudi dneve, ko ste ob koncu tedna na izmeni."
+    "example": {
+      "from": "2028-07-24",
+      "to": "2028-07-31",
+      "title": "Ponedeljek na robu julijskega lista",
+      "text": "Za dopuste z menjavo konec julija naredite ločen zapis za ponedeljek, 31. julija. Na mesečnem izpisu je v zadnji koledarski vrstici, zato ga pri listanju med dopustom zlahka preskočite. Če zamenjava sega v avgust, dodajte povezavo ali opombo na [naslednji list](/koledar/2028/avgust/)."
+    },
+    "print_tip": "Za predajo po dopustu vnesite ponedeljek, 31. julija, na julijski list in kopijo zapiska pustite na [avgustovski predlogi](/koledar/2028/avgust/). Tako bo predaja vidna tudi sodelavcem, ki tablo že nastavijo na naslednji mesec."
   },
   "/koledar/2028/avgust/": {
-    "snippet": "Marijino vnebovzetje je v torek, 15. avgusta.",
-    "intro": "Avgusta 2028 pade Marijino vnebovzetje na torek. Mesečni koledar pomaga razporediti prevzeme ali kratke odsotnosti med ponedeljkom in praznikom sredi avgusta.",
+    "snippet": "Marijino vnebovzetje v torek, 15. avgusta.",
+    "intro": "Torek, 15. avgusta 2028, razdeli srednji teden meseca. V avgustovskem načrtu je ponedeljek pred praznikom samostojen delovni dan pri petdnevnem urniku.",
     "heading": "Torek, 15. avgusta, razdeli srednji delovni teden",
-    "body": "Pri običajnem urniku je ponedeljek, 14. avgusta, delovnik, torek pa dela prost. Če bi z enim dnem dopusta povezali vikend in praznik, v [načrtovalniku dopusta](/nacrtovalnik-dopusta/) preverite izbor od sobote do torka. Doma na tiskani predlogi pustite dovolj prostora za nadomeščanje in uro vrnitve."
+    "example": {
+      "from": "2028-08-12",
+      "to": "2028-08-15",
+      "title": "Štirje dnevi s prostim torkom na koncu",
+      "text": "Če pri petdnevnem urniku razmišljate o dopustu v ponedeljek, 14. avgusta, si označite soboto do torka kot en blok. Izračun kaže delovni ponedeljek pred praznikom. Za druge možnosti ob istem datumu odprite [podaljšane vikende 2028](/podaljsani-vikendi/2028/)."
+    },
+    "print_tip": "Na A3 mesečnem listu označite ponedeljek za nujne predaje in sredo za nadaljevanje dela. Če razmišljate o prostem ponedeljku, v [načrtovalniku dopusta](/nacrtovalnik-dopusta/) preverite, koliko dopusta porabi celoten razpon."
   },
   "/koledar/2028/september/": {
-    "snippet": "September se začne s petkom in konča v soboto.",
-    "intro": "Septembrski koledar 2028 se začne z enim delovnikom pred vikendom. Z njim lahko petek, 1. septembra, označite kot poseben dan in v naslednjo vrstico vpišete obveznosti prvega polnega tedna.",
+    "snippet": "Začetek v petek, prvi polni teden od 4. septembra.",
+    "intro": "September 2028 ima en uvodni delovnik pred prvim vikendom. V soboto in nedeljo lahko preverite naslednji tedenski načrt, preden se v ponedeljek začne prvi celoten teden.",
     "heading": "Začetni petek obravnavajte posebej",
-    "body": "Ponavljajoče se opravilo, ki ga uvajate v začetku meseca, lahko najprej vpišete za ponedeljek, 4. septembra, in nato označite dan v vsakem naslednjem tednu. Če gre za šolo ali obšolske dejavnosti, preverite še objavljene datume za šolsko leto 2028/29 v [uradnem šolskem koledarju](@basic-school) in obvestilih svoje šole."
+    "example": {
+      "from": "2028-09-01",
+      "to": "2028-09-08",
+      "title": "Enodnevni uvod in prvi polni septembrski teden",
+      "text": "September se začne v petek, zato na šolskem ali družinskem izpisu pripravite eno okence za uvod in naslednjo vrstico za ponavljajoča se opravila. Ko je urnik potrjen, prenesite redne ure v [šolski urnik](/solski-urnik/) in na mesečnem listu ohranite izjeme."
+    },
+    "print_tip": "Izberite prikaz za september in v petkovo polje vpišite le uvodna opravila. Dejavnosti, ki se ponavljajo po dnevih v tednu, prvič zapišite v vrstico od 4. septembra. Za razdelitev po urah odprite [šolski urnik](/solski-urnik/)."
   },
   "/koledar/2028/oktober/": {
-    "snippet": "Dan reformacije je v torek, naslednji praznik v sredo, 1. novembra.",
-    "intro": "Oktober 2028 se zaključi s torkovim dnevom reformacije. Naslednja sreda, 1. november, je prav tako dela prosta, zato je koristen pogled na prehod med mesečnima listoma.",
+    "snippet": "Reformacija v torek, naslednji praznik v sredo.",
+    "intro": "Konec oktobra 2028 sta dva praznika na dveh mesečnih listih. Dan reformacije je torek, 31. oktobra, november pa se začne s prostim sredinim dnem.",
     "heading": "Dva prosta dneva čez mejo oktobrskega lista",
-    "body": "Ponedeljek, 30. oktobra, je v običajnem urniku še delovnik. Torek in sredo označite kot povezano praznično obdobje, v [novembrskem koledarju](/koledar/2028/november/) pa za naslednji delovnik pustite četrtek, 2. novembra. Če prestavljate rok, uporabite [kalkulator delovnih dni](/kalkulator-delovnih-dni/)."
+    "example": {
+      "from": "2028-10-30",
+      "to": "2028-11-03",
+      "title": "Predaja pred torkovim in sredinim praznikom",
+      "text": "V istem tednu sta dan reformacije in dan spomina na mrtve, na dveh različnih mesečnih straneh. Če mora ekipa nekaj potrditi pred praznikoma, v ponedeljkovo celico dodajte rok in kontakt. Na [novembrskem listu](/koledar/2028/november/) posebej označite četrtkovo nadaljevanje."
+    },
+    "print_tip": "Oktobrski rok si na papirju označite pred torkom, če morate oddajo zaključiti pred praznikoma. Besedilo o nadaljevanju v četrtek zapišite na [novembrski list](/koledar/2028/november/), kjer sta vidna tudi dneva za prevzem."
   },
   "/koledar/2028/november/": {
-    "snippet": "Prvi november je v sredo. Običajni delovnik se nadaljuje v četrtek.",
-    "intro": "Novembra 2028 je prvi datum v sredo in je dela prost. Mesečni izpis lepo pokaže začetek meseca z dvema delovnikoma pred vikendom pri običajnem petdnevnem urniku.",
+    "snippet": "Začetek meseca s prostim sredinim dnem.",
+    "intro": "Dan spomina na mrtve je v sredo, 1. novembra 2028. Naslednja dva delovnika sta četrtek in petek. Predloga pokaže, koliko prostora ostane za roke v uvodni vrstici.",
     "heading": "Prvi novembrski teden vsebuje prehod iz oktobra",
-    "body": "Na listu označite začetek obiska v torek, 31. oktobra, če ga vežete na [dan spomina na mrtve](/prazniki/dan-spomina-na-mrtve/) dan pozneje. Za novembrske tedne po tem prehodu uporabite redni urnik. Dan znanosti in dan Rudolfa Maistra preverite v [letnem seznamu praznikov](/prazniki/2028/)."
+    "example": {
+      "from": "2028-11-01",
+      "to": "2028-11-04",
+      "title": "Prva novembrska opravila po sredinem prazniku",
+      "text": "Na novembrskem izpisu postavite prva dva običajna delovnika v četrtek in petek, 2. in 3. novembra. Na listu dodajte še to, kar mora počakati do naslednjega tedna. Tako se naloge, ki so nastale v sredo, ne pomešajo z roki za izvedbo."
+    },
+    "print_tip": "Za dogovore po prazniku na list natisnite pregledno predlogo in razlikujte opravke, ki jih končate do petka, od tistih za naslednji ponedeljek. Na Excelovem seznamu datumov lahko obe skupini shranite v isti datoteki."
   },
   "/koledar/2028/december/": {
-    "snippet": "Božič in dan samostojnosti sta v ponedeljek in torek.",
-    "intro": "Decembrski koledar 2028 pokaže praznični ponedeljek in torek v zadnjem polnem tednu leta. Na predlogi lahko ob božičnih obiskih označite tudi zadnje predaje pred januarjem.",
+    "snippet": "Božič v ponedeljek in dan samostojnosti v torek.",
+    "intro": "Decembra 2028 sta 25. in 26. december v ponedeljek in torek. V zadnjem decembrskem tednu ostanejo trije običajni delovniki: sreda, četrtek in petek.",
     "heading": "Zadnji delovni teden se skrči na tri dni",
-    "body": "Ponedeljek, 25. december, in torek, 26. december, sta prosta. Pri običajnem tednu ostanejo za delo sreda, četrtek in petek, od 27. do 29. decembra. Prva dva dneva januarja sta v ponedeljek in torek, zato lahko naredite skupen pregled z [januarjem 2029](/koledar/2029/januar/)."
+    "example": {
+      "from": "2028-12-23",
+      "to": "2028-12-27",
+      "title": "Dogovor o odzivih v božičnem tednu",
+      "text": "Če delite urnik s sodelavci, pred vikendom zapišite, kdo je dosegljiv in kdaj se nadaljuje običajno delo. Božič in dan samostojnosti in enotnosti sta v ponedeljek in torek. Za prihod na obisk sredo, 27. decembra, zabeležite ločeno od prazničnih dni."
+    },
+    "print_tip": "Če morate potrditi zaključek pred obema praznikoma, na papirju označite petek, 22. decembra. Na istem listu vizualno ločite tri delovne dni, ki sledijo. [Januar 2029](/koledar/2029/januar/) uporabite za obveznosti, ki gredo čez novo leto."
   },
   "/koledar/2029/januar/": {
-    "snippet": "Prva dva januarska dneva sta v ponedeljek in torek.",
-    "intro": "Januar 2029 se začne s prostim ponedeljkom in torkom. Na slovenskem mesečnem koledarju vidite razpored vseh tednov in lažje določite prvi delovni sestanek po novem letu.",
+    "snippet": "Prva dva januarska dneva sta ponedeljek in torek.",
+    "intro": "Leto 2029 se začne z dvema prostima dnevoma v istem delovnem tednu. Ob običajnem urniku je prvi delovnik sreda, 3. januarja.",
     "heading": "Prvi delovni termin predlagajte od 3. januarja naprej",
-    "body": "Teden ISO 1 se začne v ponedeljek, 1. januarja. Pri urniku od ponedeljka do petka je prvi delovnik v tem tednu sreda, 3. januarja. Na natisnjeno mrežo lahko najprej vnesete fiksne januarske roke, njihov razpored pa preverite v [pregledu delovnih dni](/delovni-dnevi/2029/januar/)."
+    "example": {
+      "from": "2029-01-01",
+      "to": "2029-01-07",
+      "title": "Prvi januarski teden z dvema prostima dnevoma",
+      "text": "Opravila, ki se vsakega januarja začnejo na prvem delovniku, v tem mesecu vpišite od srede, 3. januarja. Če morate oceniti, koliko časa ostane za pregled pripomb, izračun odprite z istim začetnim in končnim datumom ter prilagodite izključevanje praznikov."
+    },
+    "print_tip": "Na januarski predlogi označite sredo za sprejem nalog in petek za pregled odprtih zadev. Pri urniku s tremi začetnimi delovniki v prvo vrstico vnesite le opravila, ki imajo potrjen rok."
   },
   "/koledar/2029/februar/": {
-    "snippet": "Prešernov dan je v četrtek, 8. februarja.",
-    "intro": "Februar 2029 ima 28 dni in prosti četrtek v drugem tednu meseca. Predloga je uporabna za načrt dela, pouka ali obiskov, ki jih želite vnaprej razporediti okoli Prešernovega dne.",
+    "snippet": "Prešernov dan v četrtek, 8. februarja.",
+    "intro": "V februarju 2029 kulturni praznik pade v četrtek. Petek sam po sebi ostane delovni dan pri petdnevnem urniku. Mesec ima štiri vikende in se konča v sredo.",
     "heading": "Petek po Prešernovem dnevu ima lahko svoj načrt",
-    "body": "Osmi februar pade na četrtek. Če je petek, 9. februarja, v vašem urniku delovnik, ga pri načrtovanju obravnavajte posebej. Družine naj pri istem terminu preverijo še [regionalne zimske počitnice](/solske-pocitnice/#zimske-regije). Na papir vpišite samo potrjene datume, da ostanejo vidni tudi ob poznejših spremembah."
+    "example": {
+      "from": "2029-02-08",
+      "to": "2029-02-11",
+      "title": "Četrtkov kulturni praznik in rezervni petek",
+      "text": "Za obisk prireditve ob Prešernovem dnevu uporabite ločene oznake za četrtek, vožnjo in rezervni termin. Petek, 9. februarja, ostane delovnik v petdnevnem izračunu. Program proslave preverite na strani ustanove, ne v splošnem mesečnem koledarju."
+    },
+    "print_tip": "Na natisnjeni predlogi označite četrtek kot praznik, za petek pa ločeno vpišite dogovor ali zamenjavo. Družine naj pred rezervacijo preverijo [termin zimskih počitnic po regijah](/solske-pocitnice/#zimske-regije)."
   },
   "/koledar/2029/marec/": {
-    "snippet": "Zadnji dan je sobota pred velikonočno nedeljo, 1. aprila.",
-    "intro": "Marec 2029 se začne v četrtek in se konča v soboto tik pred veliko nočjo. V marčevski mreži vidite, kje se konča prvi kvartal in kje se začne aprilski praznični konec tedna.",
+    "snippet": "Sobota, 31. marca, je dan pred veliko nočjo.",
+    "intro": "Marec 2029 se konča tik pred velikonočno nedeljo, ki je 1. aprila. Za zadnje marčevske prevzeme je uporaben pregled od četrtka pred praznikom do torka po njem.",
     "heading": "Marčevske predaje zaključite pred aprilsko veliko nočjo",
-    "body": "Velikonočna nedelja pripada aprilu, čeprav sobota istega vikenda še pripada marcu. Zaključne roke za prvi kvartal lahko pri ponedeljkovem delovniku označite ob petku, 30. marca. Za nedeljo in dela prosti ponedeljek uporabite še [koledar za april 2029](/koledar/2029/april/)."
+    "example": {
+      "from": "2029-03-29",
+      "to": "2029-04-03",
+      "title": "Velikonočna opravila na dveh listih",
+      "text": "Priprave 29. in 30. marca vpišite v marec, obiske pa od 1. aprila na [aprilski list](/koledar/2029/april/). Pri skupni tabeli opravkov dodajte celoten datum in leto, da ne zamenjate zadnjih marčevskih dni s prvimi aprilskimi."
+    },
+    "print_tip": "Pri tisku marčevske predloge v zadnjo vrstico ob 31. marcu dopišite povezavo na prvi april. Drugi list naj pokaže velikonočni ponedeljek in torkov prevzem. Obe predlogi lahko pri vhodu obesite drugo ob drugo."
   },
   "/koledar/2029/april/": {
-    "snippet": "Velika noč je 1. in 2. aprila. Dan upora je 27. aprila, v petek.",
-    "intro": "Aprila 2029 se velika noč začne na prvi dan meseca. Drugi praznični konec tedna začne petek, 27. aprila, zato sta na mesečni predlogi opazna oba konca meseca.",
+    "snippet": "Velika noč na začetku meseca, dan upora v petek, 27. aprila.",
+    "intro": "April 2029 se začne z veliko nočjo in prostim ponedeljkom. Dan upora proti okupatorju na petek ob koncu meseca ustvari še ločen praznični konec tedna.",
     "heading": "Načrtujte od prvega do zadnjega prazničnega vikenda",
-    "body": "Aprilsko delo se pri običajnem urniku po veliki noči začne v torek, 3. aprila. Zadnji aprilski petek, 27. april, je dela prost, po vikendu je še ponedeljek pred prvomajskima praznikoma. Če želite obdobje gledati skupaj, aprilski list primerjajte z [majskim koledarjem](/koledar/2029/maj/) ter označite točen datum vsake odsotnosti."
+    "example": {
+      "from": "2029-04-26",
+      "to": "2029-04-30",
+      "title": "Rok pred prostim petkom ob koncu aprila",
+      "text": "Če mora biti obrazec oddan do konca meseca, preverite, ali je elektronska oddaja mogoča tudi 27. aprila. Za opravilo, ki zahteva osebni prevzem, se dogovorite pred praznikom ali v ponedeljek, 30. aprila. Dejanski odpiralni čas potrdi ustanova."
+    },
+    "print_tip": "Na aprilskem listu na začetku meseca označite prvi delovnik po velikonočnem ponedeljku, v zadnji pa četrtek, 26. aprila, za oddajo pred prostim petkom. Za majske obveznosti dodajte [predlogo naslednjega meseca](/koledar/2029/maj/)."
   },
   "/koledar/2029/maj/": {
-    "snippet": "Prvi in drugi maj sta v torek in sredo. Binkošti so 20. maja.",
-    "intro": "Maj 2029 se začne s prazničnima torkom in sredo. Binkoštna nedelja 20. maja se vidi v istem mesečnem pregledu, kar olajša vpis terminov za obe obdobji.",
+    "snippet": "Prvi in drugi maj v torek in sredo, binkošti 20. maja.",
+    "intro": "Maja 2029 sta 1. in 2. maj sredi uvodnega tedna. Binkošti sledijo v nedeljo, 20. maja. Za načrt na prehodu je pomemben ponedeljek, 30. aprila.",
     "heading": "Začetek maja preberite s koncem aprila",
-    "body": "Če imate za ponedeljek, 30. aprila, odobren dopust, se pri običajnem petdnevnem tednu konec aprila lahko poveže z obema prazničnima dnevoma v maju. Prvi delovni termin po majskih praznikih je četrtek, 3. maja. Za preverjanje potrebnih dni odsotnosti uporabite [podaljšane vikende 2029](/podaljsani-vikendi/2029/)."
+    "example": {
+      "from": "2029-04-30",
+      "to": "2029-05-04",
+      "title": "Krajši teden med ponedeljkom in četrtkom",
+      "text": "Če ekipa običajno razporeja naloge ob torkih, na majskem izpisu označite izjemen termin po 2. maju. Ponedeljek je še v aprilu. Na robu obeh listov zapišite isti rok, da ga sodelavci, ki spremljajo drug mesec, lahko prepoznajo."
+    },
+    "print_tip": "Na majskem PDF za opravke okoli praznika označite četrtek in petek po dveh prostih dnevih. Če morate prvi korak narediti v ponedeljek, dodajte datum tudi na [aprilski koledar](/koledar/2029/april/) pred prehodom med listoma."
   },
   "/koledar/2029/junij/": {
-    "snippet": "Dan državnosti je v ponedeljek, 25. junija.",
-    "intro": "Junijski koledar 2029 je primeren za pripravo zadnjih junijskih rokov, saj dan državnosti pade na ponedeljek, 25. junija. Na listu so vidni tudi dnevi do začetka poletnih razporedov.",
+    "snippet": "Dan državnosti 25. junija je v ponedeljek.",
+    "intro": "Junijski koledar 2029 postavi dan državnosti na ponedeljek. Ob začetku zadnje junijske delovne vrstice sta zato konec tedna in praznik povezani, običajen delovnik pa se nadaljuje v torek.",
     "heading": "Zadnji junijski teden začnite načrtovati s torkom",
-    "body": "Ponedeljek, 25. junija, je [dan državnosti](/prazniki/dan-drzavnosti/). Če imate redno tedensko predajo, na koledarju označite, ali bo potekala prej, v petek, ali po prazniku, v torek. Za poletne načrte doma poglejte še objavljene [poletne šolske počitnice](/solske-pocitnice/#pocitnice-summer)."
+    "example": {
+      "from": "2029-06-23",
+      "to": "2029-06-29",
+      "title": "Predaja ob koncu šolskega ali delovnega obdobja",
+      "text": "Junijski list naj loči zbor ali zaključek pouka od začetka obdobja, ko je družina odsotna. Ponedeljek, 25. junija, je dan državnosti in vpliva na delovni teden. Za šolski datum, ki je odvisen od razreda, odprite [srednješolski koledar ministrstva](@secondary-school) ali vprašajte šolo."
+    },
+    "print_tip": "Za razpored skupine na junijskem listu ločite konec tedna od torkove predaje. Pri družinskem planu pred vpisom dopusta preverite [objavljene datume poletnih počitnic](/solske-pocitnice/#pocitnice-summer) za ustrezen razred in vrsto šole."
   },
   "/koledar/2029/julij/": {
-    "snippet": "Julij se začne v nedeljo. Prvi ponedeljek je 2. julija.",
-    "intro": "Julijski koledar 2029 se začne z nedeljo v prvi vrstici in ponedeljkom, 2. julija, v naslednji. To je praktična razporeditev za družinski seznam odsotnosti in tedenske predaje pri delu.",
+    "snippet": "Mesec se začne v nedeljo, prvi ponedeljek je 2. julija.",
+    "intro": "V prvi koledarski vrstici je od julijskih dni samo nedelja, 1. julija. Prvi polni julijski teden se začne v ponedeljek, 2. julija. Tako je jasno, kje začeti ponavljajoč se poletni urnik.",
     "heading": "Ločite prvi dan meseca od prvega polnega tedna",
-    "body": "Nedeljo, 1. julija, na listu uporabite za uvodne označbe, tedenski razpored pa začnite od ponedeljka. Če si doma delite več terminov, vpišite ob vsakem imena ali barve in jih po potrebi ponovite v [družinskem planerju](/druzinski-planer/). Ob koncu meseca preverite še prvi avgustovski teden."
+    "example": {
+      "from": "2029-07-01",
+      "to": "2029-07-08",
+      "title": "Prvi polni poletni teden in pokritost ekipe",
+      "text": "Ker je 1. julij nedelja, naj se seznam nadomeščanj začne v ponedeljek, 2. julija. Na mesečnem listu ob vsakem odsotnem članu označite osebo za prevzem. Za razpored z več ponovitvami uporabite [razpored izmen](/razpored-izmen/)."
+    },
+    "print_tip": "Na julijski mesečni sliki naj bo razvidna razlika med enkratnim nedeljskim dogovorom in novim tedenskim urnikom. Na papirju najprej označite prvi ponedeljek, nato osebe za nadomeščanje v tednih, ki sledijo."
   },
   "/koledar/2029/avgust/": {
-    "snippet": "Marijino vnebovzetje je v sredo, 15. avgusta.",
-    "intro": "Avgustovska predloga za leto 2029 postavi dela prosti 15. avgust na sredo. To omogoča jasnejši pogled na dopuste in predaje, ki se razdelijo med dva dela istega delovnega tedna.",
+    "snippet": "Marijino vnebovzetje v sredo, 15. avgusta.",
+    "intro": "Avgusta 2029 je zakonsko prost dan sredi delovnega tedna. Ponedeljek in torek pred 15. avgustom ter četrtek in petek po njem sta dva ločena bloka.",
     "heading": "Načrt za teden s prosto sredo",
-    "body": "Pred sredinim praznikom sta v običajnem tednu dva delovnika, po njem prav tako dva. Če na izpis dodajate predaje, vsakemu sklopu določite ločen kontakt ali rok. Sedemnajstega avgusta je državni praznik združitve prekmurskih Slovencev z matičnim narodom, ki ne prinaša dodatnega prostega dne. Pregled pravnega statusa posameznih datumov najdete med [prazniki 2029](/prazniki/2029/)."
+    "example": {
+      "from": "2029-08-13",
+      "to": "2029-08-17",
+      "title": "Delovni teden razdeljen s sredinim praznikom",
+      "text": "Pripravo in pregled razdelite na dva bloka, če je ekipa sredi tedna odsotna. Za opravilo z več koraki pustite torek, 14. avgusta, za pregled in četrtek, 16. avgusta, za izvedbo. Na izpisu označite tudi, kdo potrdi spremembo roka."
+    },
+    "print_tip": "Na avgustovski predlogi naj bo s puščico označeno, katere torkove naloge dejansko prevzamete v četrtek. Pri daljšem dopustu preverite izbrani razpon v [kalkulatorju delovnih dni](/kalkulator-delovnih-dni/)."
   },
   "/koledar/2029/september/": {
-    "snippet": "Prvi september je v soboto. Mesec ima 20 delovnikov.",
-    "intro": "Septembrski koledar 2029 odpreta sobota in nedelja. Prvi polni teden se začne 3. septembra. Tako lahko v mesečni mreži ločeno vpišete priprave pred tednom in ponavljajoče se jesenske obveznosti.",
+    "snippet": "Začetek v soboto in 20 delovnikov.",
+    "intro": "Prvi dan septembra 2029 je sobota. Pri običajnem petdnevnem tednu vsebuje mesec 20 delovnikov, prva delovna vrstica pa se začne v ponedeljek, 3. septembra.",
     "heading": "Za prvo septembrsko vrstico uporabite vikend",
-    "body": "Na 1. in 2. september si napišite priprave, koledarske termine pri delu ali v šoli pa dodajte od ponedeljka, 3. septembra. Pri običajnem delovniku je v mesecu 20 delovnikov. Če upoštevate ure po predmetih, svoj razpored dopolnite v [šolskem urniku](/solski-urnik/)."
+    "example": {
+      "from": "2029-09-03",
+      "to": "2029-09-09",
+      "title": "Prva septembrska vrstica za ponavljajoče se vpise",
+      "text": "Za rutino od ponedeljka do petka uporabite vrstico, ki se začne 3. septembra. Pustite en stolpec za izjeme v prevozih, opremi ali urniku. Če imate več obveznosti za isti datum, jih razporedite v [tedenskem pregledu](/tedenski-koledar/)."
+    },
+    "print_tip": "Pri vpisovanju nove rutine pustite začetni vikend za pripravo ali pregled spiska. Če se obveznosti med uporabniki razlikujejo, je priročen skupni list s kraticami za imena in [družinski planer](/druzinski-planer/) za spremembe čez teden."
   },
   "/koledar/2029/oktober/": {
-    "snippet": "Reformacija je v sredo, 31. oktobra, dan spomina na mrtve v četrtek.",
-    "intro": "Oktober 2029 se izteče z dela prosto sredo. Ob njej v mesečnem pregledu načrtujte še četrtek, 1. novembra, ki nadaljuje dvodnevno praznično obdobje.",
+    "snippet": "Reformacija v sredo, 31. oktobra, in prosti četrtek v novembru.",
+    "intro": "Oktober 2029 se konča s praznično sredo. Prosti četrtek sledi na novembrskem listu, zato sta zadnji oktobrski in prvi novembrski delovni termin na dveh straneh.",
     "heading": "Sredin praznik na koncu oktobra",
-    "body": "Torek, 30. oktobra, je zadnji običajni delovnik v mesecu. Po prosti sredi in četrtku sledi petek, 2. novembra. Na obeh izpisih lahko označite isti termin z eno barvo. Za skupne roke uporabite [novembrski list 2029](/koledar/2029/november/) in [datumski kalkulator](/datumski-kalkulator/)."
+    "example": {
+      "from": "2029-10-29",
+      "to": "2029-11-02",
+      "title": "Oktobrska oddaja pred dvema prostima dnevoma",
+      "text": "Če mora pregled potekati pred obema praznikoma, primerjajte ponedeljek in torek med 29. in 30. oktobrom. Petek v istem tednu je že 2. november. Za dokument s popravki vpišite ločena datuma oddaje in ponovnega pregleda."
+    },
+    "print_tip": "Na natisnjen oktobrski list označite torek, 30. oktobra, kot zadnji možni dan za potrditev pred praznikoma. V [novembru](/koledar/2029/november/) nato označite petek, 2. novembra, če ga potrebujete za nujne prevzeme."
   },
   "/koledar/2029/november/": {
-    "snippet": "Prvi november je v četrtek, petek po njem je 2. november.",
-    "intro": "November 2029 se začne s prazničnim četrtkom po sredinem dnevu reformacije. Prvi novembrski delovnik v običajnem urniku je petek, 2. novembra.",
+    "snippet": "Prosti četrtek, 1. novembra, pred prvim novembrskim petkom.",
+    "intro": "November 2029 se začne na praznični četrtek. Petek, 2. novembra, je prvi običajni delovnik v mesecu in je ločen od polnega tedna, ki sledi.",
     "heading": "Prosti začetek meseca in vmesni petek",
-    "body": "Če želite povezati oktober, 1. november in konec tedna, na listu jasno zapišite, ali je petek, 2. novembra, delovnik ali odobren dopust. Druge novembrske obeležitve, vključno z dnevom Rudolfa Maistra, imajo svoj vpis v [koledarju praznikov 2029](/prazniki/2029/)."
+    "example": {
+      "from": "2029-11-01",
+      "to": "2029-11-05",
+      "title": "Premostitev od prostega četrtka do ponedeljka",
+      "text": "V primeru obiska ali odhoda naj mesečni list pokaže praznični četrtek, običajni petek in naslednji ponedeljek. Če v petek črpate dopust, si ga zabeležite kot osebno odsotnost. Za primerjavo različnih izrab dopusta uporabite [vodnik za povezovanje šolskih in državnih praznikov](/blog/dopust-s-prazniki-in-solskim-letom/)."
+    },
+    "print_tip": "Na predlogi za november označite petek za nujne opravke in prvi ponedeljek za začetek običajnega urnika. Če ekipa dela po drugačnem razporedu, v [razporedu izmen](/razpored-izmen/) najprej uskladite pokritost."
   },
   "/koledar/2029/december/": {
-    "snippet": "Božič je v torek, dan samostojnosti pa v sredo.",
-    "intro": "December 2029 ima praznična torek in sredo ob koncu meseca, 31. december pa je v ponedeljek. Na mesečni predlogi lahko jasno označite delo pred praznikoma in zadnji datum leta.",
+    "snippet": "Božič v torek in dan samostojnosti v sredo.",
+    "intro": "Božič in naslednji državni praznik decembra 2029 razdelita isti delovni teden. Ponedeljek, 24. decembra, stoji ločeno od četrtka in petka, ki sledita.",
     "heading": "Zaključne obveznosti razdelite pred 25. december in po 26. decembru",
-    "body": "Če načrtujete sestanek v božičnem tednu, je ponedeljek, 24. decembra, pred dvema prostima dnevoma, četrtek in petek pa po njiju. Zadnji koledarski dan je naslednji ponedeljek. Pri pregledu dolgih dogovorov si ga označite poleg [januarja 2030](/koledar/2030/januar/), ki se začne z dvema praznikoma."
+    "example": {
+      "from": "2029-12-24",
+      "to": "2029-12-30",
+      "title": "Praznična predaja pred torkom",
+      "text": "Če pred božičem zaključujete več naročil, v ponedeljkovo celico vpišite termin predaje in osebo, ki potrdi prevzem. Preostala opravila označite za četrtek ali petek, če so izvajalci dosegljivi. Družinske obiske zapišite ločeno od rokov za opravke."
+    },
+    "print_tip": "Na decembrskem listu naj ima vsaka odprta zadeva dva razločna zapisa, datum predaje in datum vrnitve. Če vrnitev sega v januar, odprite [prvi mesec 2030](/koledar/2030/januar/) ter vpišite prvi potrjeni termin."
   },
   "/koledar/2030/januar/": {
-    "snippet": "Novo leto zasede torek in sredo, prvi delovnik je četrtek, 3. januarja.",
-    "intro": "Januar 2030 se začne z dela prostima torkom in sredo. Na mesečnem izpisu boste videli, kateri načrti sodijo v prvi kratki teden in kateri v prvi polni delovni teden.",
+    "snippet": "Novo leto v torek in sredo, prvi delovnik 3. januarja.",
+    "intro": "Januar 2030 se začne s prostim torkom in sredo. Pri običajnem delovniku sta četrtek in petek dva kratka začetna termina, preden se začne prvi polni delovni teden.",
     "heading": "Prvi januar razdeli teden med dve leti",
-    "body": "Ponedeljek istega tedna je še 31. december 2029. Če potrebujete prvi sestanek v januarju, pri običajnem delovniku izberite četrtek, 3. januarja, ali pozneje. Ob zapisu dogovora uporabite [številko tedna ISO](/stevilka-tedna/) in pripišite datum, da bosta obe strani razumeli isto obdobje."
+    "example": {
+      "from": "2030-01-01",
+      "to": "2030-01-06",
+      "title": "Razpored prvega četrtka in petka v letu",
+      "text": "Na izpisu si pustite prostor za opravke, ki jih lahko prevzamete 3. in 4. januarja, ter za tiste, ki se bodo nadaljevali naslednji teden. Če vas zanima številka tedna, ob zapisu uporabite tudi datum, da ga ne zamenjate s prvim polnim delovnim tednom."
+    },
+    "print_tip": "Na januarskem listu preizkusite razpored z dvema oznakama za prvi teden. Ob četrtek in petek vpišite samo stvari, ki zahtevajo hiter odziv. Ponavljajoče se sestanke začnite v drugi vrstici."
   },
   "/koledar/2030/februar/": {
-    "snippet": "Prešernov dan je v petek, 8. februarja.",
-    "intro": "Februar 2030 povezuje Prešernov dan v petek z naslednjim vikendom. Mesečni koledar ima 28 dni, zadnji datum pa je četrtek, zato lahko roke razporedite tudi po koncu prazničnega tedna.",
+    "snippet": "Prešernov dan v petek, 8. februarja.",
+    "intro": "Prešernov dan leta 2030 pade v petek, 8. februarja. Na mesečnem listu je povezava s soboto in nedeljo jasna, če načrtujete tri zaporedne proste dni pri petdnevnem urniku.",
     "heading": "Praznični petek v drugem tednu meseca",
-    "body": "Če delate od ponedeljka do petka, načrtujte zaključek tedenskih obveznosti do četrtka, 7. februarja. Za obisk ali krajši izlet v mesečni mreži označite dneve od 8. do 10. februarja. Več o državnem kulturnem prazniku je na [strani Prešernovega dne](/prazniki/presernov-dan/)."
+    "example": {
+      "from": "2030-02-07",
+      "to": "2030-02-11",
+      "title": "Družinski dogovor ob prostem petku",
+      "text": "Za konec tedna ob Prešernovem dnevu označite odhod v petek in vrnitev v nedeljo ali ponedeljek. Ločeno preverite program prireditve in načrt prevozov. Kadar načrt zajema zimske šolske počitnice, upoštevajte [uradni koledar za regijo](@basic-school)."
+    },
+    "print_tip": "Pred daljšim koncem tedna označite četrtek za zadnji dogovor. Pri več osebah na deljeni sliki ločite datum odhoda od dneva, ko so ljudje ponovno dosegljivi. Za primerjavo uporabite tudi [podaljšane vikende](/podaljsani-vikendi/)."
   },
   "/koledar/2030/marec/": {
-    "snippet": "Marec se začne v petek, konča v nedeljo in ima 21 delovnikov.",
-    "intro": "Marčevski koledar 2030 ima na robovih meseca petek in nedeljo. Predloga ponudi prostor za priprave na pomlad in za razdelitev rokov pred koncem prvega četrtletja.",
+    "snippet": "21 delovnikov in nedeljski konec četrtletja.",
+    "intro": "Marec 2030 se konča v nedeljo. Petek, 29. marca, je zadnji običajni delovnik meseca, zato je praktičen za oddajo pred koncem četrtletja.",
     "heading": "Zaključek prvega četrtletja v petek, 29. marca",
-    "body": "Zadnji dan marca je nedelja, pri običajnem urniku pa je zadnji delovni dan petek, 29. marca. Na izpis si označite, kateri roki so vezani na datum in kateri na zadnji delovnik. Če načrtujete spomladanske obveznosti na prostem, pri izbiri ure pomaga [primerjava dolžine dneva](/dolzina-dneva/)."
+    "example": {
+      "from": "2030-03-25",
+      "to": "2030-03-31",
+      "title": "Nedeljski konec četrtletja in petkov delovni rok",
+      "text": "Za rok na zadnji dan marca preverite, ali gre za koledarski datum ali za zadnji delovnik. Pri petdnevnem urniku je to petek, 29. marca. Na izpisu označite oba in za opravila, ki se morajo začeti prej, uporabite [datumski kalkulator](/datumski-kalkulator/)."
+    },
+    "print_tip": "Za oddajo na papirju zabeležite dejanski koledarski konec v nedeljo in ločeno notranji rok v petek. V Excelov seznam vpišite tudi datum potrditve, če se razlikuje od roka. Rezervni aprilski termin vnesite na [naslednji list](/koledar/2030/april/)."
   },
   "/koledar/2030/april/": {
-    "snippet": "Velika noč je 21. in 22. aprila, dan upora pa v soboto, 27. aprila.",
-    "intro": "Aprilski list za leto 2030 pokaže velikonočno nedeljo 21. aprila, dela prosti ponedeljek, ki ji sledi, in dan upora proti okupatorju na naslednjo soboto.",
+    "snippet": "Velika noč 21. in 22. aprila, dan upora v soboto.",
+    "intro": "Velikonočni ponedeljek je 22. aprila 2030, dan upora proti okupatorju pa v soboto, 27. aprila. Na aprilskem koledarju sta oba mejnika v istem tednu ISO.",
     "heading": "Krajši teden po velikonočni nedelji",
-    "body": "Dela prosti ponedeljek je 22. april. Dan upora 27. aprila je na soboto, zato pri urniku od ponedeljka do petka v tem tednu ostanejo štirje delovniki od torka do petka. Družinske termine dopolnite z [uradnim šolskim koledarjem](@basic-school), ko preverjate objavljene počitnice."
+    "example": {
+      "from": "2030-04-19",
+      "to": "2030-04-27",
+      "title": "Velikonočni razpon in sobotni dan upora",
+      "text": "Od petka pred veliko nočjo do sobote, 27. aprila, ločite velikonočni ponedeljek od sobotnega dneva upora. Če načrtujete odsotnost za več zaporednih dni, primerjajte dejanske delovnike v tem razponu. Na izpis zapišite tudi prvi dan vrnitve."
+    },
+    "print_tip": "Pri načrtovanju prazničnega tedna označite torek kot prvi običajni delovnik po veliki noči. Pri poslih, ki se nadaljujejo v maju, označeno sliko delite skupaj z [majskim koledarjem](/koledar/2030/maj/) za prvi vikend."
   },
   "/koledar/2030/maj/": {
-    "snippet": "Praznik dela je v sredo in četrtek, 1. in 2. maja.",
-    "intro": "Maja 2030 sta sreda in četrtek na začetku meseca dela prosta. V prvi majski vrstici je po praznikih še petek, zato je list priročen za načrt predaj in odhodov.",
+    "snippet": "Prvi in drugi maj v sredo in četrtek.",
+    "intro": "Dva prvomajska praznika leta 2030 zasedeta sredo in četrtek. Petek, 3. maja, je pri običajnem delovniku samostojen delovni dan pred vikendom.",
     "heading": "Petek, 3. maja, loči praznika od vikenda",
-    "body": "Pri običajnem delovniku po sredinem in četrtkovem prazniku sledi petek, 3. maja. V [načrtovalniku dopusta](/nacrtovalnik-dopusta/) lahko preverite, koliko dopusta bi porabili za daljše obdobje. Na papirju označite izbrani petek tudi takrat, ko bo v istem tednu prazničen urnik več ljudi."
+    "example": {
+      "from": "2030-04-29",
+      "to": "2030-05-05",
+      "title": "Dve delovni skupini okoli srede in četrtka",
+      "text": "Za skupno delo pripravite prvo predajo do torka, drugi del pa predvidite za petek, 3. maja. Če je petek namenjen dopustu, celotni razpon odsotnosti primerjajte v [pregledu podaljšanih vikendov](/podaljsani-vikendi/2030/)."
+    },
+    "print_tip": "Na mesečnem listu okoli 3. maja jasno napišite, kdo bo dosegljiv in kdo ima dogovorjen prost dan. Če se delo začne že v ponedeljek ali torek, porazdelitev dopišite na [aprilski list](/koledar/2030/april/)."
   },
   "/koledar/2030/junij/": {
-    "snippet": "Dan državnosti je v torek, 25. junija. Binkošti so 9. junija.",
-    "intro": "Junijski koledar 2030 vključuje binkoštno nedeljo, 9. junija, in prosti torek, 25. junija. Obe obeležitvi sta na istem listu, tako da je pregled roka ob koncu meseca preprostejši.",
+    "snippet": "Dan državnosti v torek, binkošti v nedeljo 9. junija.",
+    "intro": "Junij 2030 ima dve različni praznični postavitvi. Binkošti so v nedeljo, dan državnosti pa v torek, 25. junija, ki prekine delovni teden.",
     "heading": "Ponedeljek pred dnevom državnosti označite ločeno",
-    "body": "Dan državnosti je v torek, ponedeljek, 24. junija, pa je pri običajnem urniku delovnik. Če si razdeljujete delo ali načrtujete odsotnost ob koncu junija, vpišite oba datuma. Za prilagojen preračun delovnih ur odprite [junijski pregled delovnih dni](/delovni-dnevi/2030/junij/)."
+    "example": {
+      "from": "2030-06-24",
+      "to": "2030-06-28",
+      "title": "Tedenski pregled okoli torkovega dneva državnosti",
+      "text": "Na junijskem listu rezervirajte ponedeljek za stvari, ki morajo biti zaključene pred torkovim praznikom. Sredino in četrtkovo nadaljevanje označite ločeno. Za načrt dogodka na prostem si lahko izračunate tudi [dolžino dneva za izbrani kraj](/dolzina-dneva/)."
+    },
+    "print_tip": "Označite ponedeljek, 24. junija, kot morebitni dan za predajo pred praznikom. Na list dodajte prvi termin za potrditev po torku. Za datume po šolskih programih odprite [šolski koledar](/solski-koledar/)."
   },
   "/koledar/2030/julij/": {
-    "snippet": "Julij se začne v ponedeljek in ima 23 delovnikov.",
-    "intro": "Julija 2030 se vrstice koledarja začnejo s ponedeljkom, 1. julija. Mesec ima 31 dni in je brez zakonsko dela prostih praznikov, zato je dober za pripravo preglednega poletnega urnika.",
+    "snippet": "Začetek v ponedeljek in 23 delovnikov.",
+    "intro": "Julij 2030 se začne v ponedeljek in ima 23 delovnikov. Prvi štirje tedni potekajo v celoti znotraj meseca, zadnja vrstica pa se podaljša v avgust.",
     "heading": "Prve štiri tedne uporabite za ponavljajoč urnik",
-    "body": "Polni tedni se začnejo 1., 8., 15. in 22. julija, nato sledijo zadnji trije dnevi od ponedeljka do srede. Za dopust ali večdnevni obisk na koledarju označite začetek in konec, pri izmenah pa si pripravite še [ponavljajoči se urnik](/razpored-izmen/)."
+    "example": {
+      "from": "2030-07-29",
+      "to": "2030-08-02",
+      "title": "Dopust, ki prečka konec julija",
+      "text": "Ob odsotnosti od zadnjega julijskega ponedeljka na oba mesečna lista vpišite isti blok in isto nadomeščanje. Na [avgustovskem listu](/koledar/2030/avgust/) posebej označite naslednjo predajo. Pri primerjavi z evidenco dopusta uporabite datuma začetka in konca celotnega bloka."
+    },
+    "print_tip": "Na julijskem listu označite ponavljajoče se naloge v prvih štirih vrsticah in spremembe ob koncu meseca posebej. Pri skupnem načrtu dopusta zapišite zadnji julijski dan odsotnosti ter datum vrnitve na [avgustovski predlogi](/koledar/2030/avgust/)."
   },
   "/koledar/2030/avgust/": {
-    "snippet": "Marijino vnebovzetje je v četrtek, 15. avgusta.",
-    "intro": "Sredino avgusta 2030 zaznamuje dela prost četrtek, 15. avgusta. Na mesečnem koledarju lahko najprej označite termin praznika in nato preverite, kaj se zgodi s petkom pred vikendom.",
+    "snippet": "Marijino vnebovzetje v četrtek, 15. avgusta.",
+    "intro": "Četrtek, 15. avgusta 2030, je prost dan sredi tedna. Pri običajnem urniku petek ostane delovni termin pred vikendom.",
     "heading": "Pred avgustovskim vikendom se odločite za termin vrnitve",
-    "body": "Petek, 16. avgusta, je pri običajnem urniku delovnik. Če želite obisk podaljšati, ga preverite v [pregledu podaljšanih vikendov 2030](/podaljsani-vikendi/2030/). V koledar vpišite tudi dan vrnitve, da lahko doma ali v službi predajo pripravite pravočasno."
+    "example": {
+      "from": "2030-08-15",
+      "to": "2030-08-18",
+      "title": "Četrtkov praznik in petkovo nadomeščanje",
+      "text": "Za konec tedna po Marijinem vnebovzetju označite, ali petek predstavlja delovni dan, izmeno ali odobreno odsotnost. Če se dogovor nanaša na več oseb, uporabite na papirju kratek seznam nadomeščanj in ločeno preverite individualne urnike."
+    },
+    "print_tip": "Za izbiro dneva vrnitve na avgustovski list dodajte dve možnosti. K petku napišite ime osebe, ki pokrije nujne naloge, k ponedeljku pa vpišite skupni pregled. Primerjavo prostih dni preverite v [načrtovalniku dopusta](/nacrtovalnik-dopusta/)."
   },
   "/koledar/2030/september/": {
-    "snippet": "Prvi september je v nedeljo. Prvi polni teden se začne 2. septembra.",
-    "intro": "Septembrski list 2030 postavi 1. september v nedeljo. V ponedeljek se začne prvi polni teden, zato lahko septembrske rutine načrtujete po celih tedenskih vrsticah.",
+    "snippet": "Prva nedelja in prvi polni teden od 2. septembra.",
+    "intro": "September 2030 se začne v nedeljo, prvi polni teden pa v ponedeljek, 2. septembra. Na predlogi sta uvodna nedelja in naslednji teden vizualno ločena.",
     "heading": "Jesenske rutine vnesite od drugega dne meseca",
-    "body": "Če sestavljate družinski razpored, si za nedeljo, 1. septembra, zapišite priprave, tedenske obveznosti pa začnite v ponedeljek. V mesecu sta tudi vrnitev Primorske in dan slovenskega športa, oba z običajnim delovnikom. Ko bodo šolski datumi za 2030/31 objavljeni, jih preverite v [koledarju ministrstva](@basic-school)."
+    "example": {
+      "from": "2030-09-02",
+      "to": "2030-09-08",
+      "title": "Prva septembrska tedenska rutina",
+      "text": "Septembrski list začnite z ločenim zapisom za nedeljo, 1. septembra, in v naslednji vrstici razporedite redne obveznosti. Če usklajujete različne šolske roke, vpišite datum, izvor obvestila in osebo za prevoz. Za druge šolske preglede uporabite [šolski koledar](/solski-koledar/)."
+    },
+    "print_tip": "Na natisnjenem listu uporabite prvo nedeljo kot opomnik za pripravo. V naslednjo vrstico vpišite šolske, službene ali družinske obveznosti po stolpcih. Če se ponavljajo po urah, odprite [tedenski planer](/tedenski-koledar/)."
   },
   "/koledar/2030/oktober/": {
-    "snippet": "Četrtkov dan reformacije se nadaljuje s prostim petkom, 1. novembra.",
-    "intro": "Oktobrski koledar 2030 se konča z dnevom reformacije v četrtek. Takoj za njim je prost tudi prvi novembrski petek, zato je koristen natisnjen par obeh mesecev.",
+    "snippet": "Reformacija v četrtek, prosti petek na novembrskem listu.",
+    "intro": "Četrtek, 31. oktobra 2030, in petek, 1. novembra, sta zaporedna prosta dneva. Pri predaji je koristno zadnje oktobrske roke označiti pred četrtkom.",
     "heading": "Praznični prehod od četrtka do nedelje",
-    "body": "Pri petdnevnem urniku se četrtek, 31. oktobra, in petek, 1. novembra, navežeta na soboto in nedeljo. Če za tisti konec meseca načrtujete rok, preverite, ali ga lahko zaključite do srede, 30. oktobra. [Novembrski koledar 2030](/koledar/2030/november/) odprite tudi za datum prvega naslednjega delovnika."
+    "example": {
+      "from": "2030-10-29",
+      "to": "2030-11-03",
+      "title": "Zadnja oktobrska oddaja pred dvema praznikoma",
+      "text": "Na zadnji oktobrski vrsti razporedite pregled za torek in oddajo za sredo, kadar delate pet dni na teden. V četrtek je dan reformacije, petek pa je že na novembrskem listu. Za odobritve, ki pridejo pozneje, dodajte na [novembrski list](/koledar/2030/november/) ločen datum."
+    },
+    "print_tip": "Natisnite oba lista in uporabite isti znak pri sredini predaji ter pri ponedeljkovi vrnitvi. Na [novembrskem koledarju](/koledar/2030/november/) lahko takoj preverite, kateri dnevi so še del prazničnega konca tedna."
   },
   "/koledar/2030/november/": {
-    "snippet": "Dan spomina na mrtve je v petek, 1. novembra.",
-    "intro": "November 2030 se začne s prostim petkom. Na mesečnem listu lahko že ob pogledu na prvo vrstico označite konec tedna in vse, kar morate urediti pred ponedeljkom, 4. novembra.",
+    "snippet": "Dan spomina na mrtve v petek, 1. novembra.",
+    "intro": "November 2030 se začne s prostim petkom in vikendom. Prvi ponedeljek je 4. novembra, zato je primeren za novembrski začetek tedenskega urnika.",
     "heading": "Začetna vrstica je namenjena prazniku in vikendu",
-    "body": "Zaradi praznika v petek se pri običajnem urniku prvi delovni teden začne v ponedeljek, 4. novembra. Če je ob koncu leta delovni razpored že poln, v [novembrskem pregledu delovnih dni](/delovni-dnevi/2030/november/) preverite razpoložljive dneve in ob strani izpisa zapišite, kdaj je mogoče prevzeti nove obveznosti."
+    "example": {
+      "from": "2030-11-01",
+      "to": "2030-11-08",
+      "title": "Od prazničnega petka do prvega polnega tedna",
+      "text": "Če imate tedensko sestavo dela, naj bo prvi novembrski blok od ponedeljka, 4. novembra. Dogovor za 1. november označite posebej. Če želite praznični obisk in delovne roke deliti z različnimi ljudmi, uporabite ločene oznake na istem mesečnem listu."
+    },
+    "print_tip": "Na papirju označite prvo vrstico kot praznični prehod in v ponedeljkovo polje vpišite prve potrjene obveznosti. Kadar je delo odvisno od konca oktobra, odprta opravila dodajte ob rob sosednjega lista."
   },
   "/koledar/2030/december/": {
-    "snippet": "Božič in dan samostojnosti sta v sredo in četrtek.",
-    "intro": "Decembra 2030 sta 25. in 26. december v sredo in četrtek. Mesečni koledar je uporaben za vpis zimske odsotnosti, ker so vidni tudi petek po praznikih ter zadnja dva dneva leta, ponedeljek in torek.",
+    "snippet": "Božič v sredo, dan samostojnosti in enotnosti v četrtek.",
+    "intro": "Decembra 2030 sta božična sreda in praznični četrtek znotraj istega tedna. Za predajo so pomembni termini pred sredo, nadaljevanje pa je smiselno posebej preveriti za petek.",
     "heading": "Praznični teden preberite po kosih",
-    "body": "Dela prosta dneva 25. in 26. decembra sta med začetkom tedna in petkom, 27. decembra. Zadnji dan je torek, 31. decembra. Pri družinskem urniku naročila ali obiske dopišite ob potrjene ure, trajanje šolskih počitnic pa preverite v [pregledu novoletnih počitnic](/solske-pocitnice/#pocitnice-newyear)."
+    "example": {
+      "from": "2030-12-23",
+      "to": "2030-12-31",
+      "title": "Potrditev rokov pred koncem leta",
+      "text": "Če delo zahteva pregled druge osebe, na listu določite termin pred 25. decembrom in rezervni termin po 26. decembru. Ločeno vpišite zadnja dva datuma leta. Za izvoz datumov, ki jih bo družina prenesla na drugo napravo, pomaga [vodnik za prenos ICS](/blog/osebni-koledar-ics-med-napravami/)."
+    },
+    "print_tip": "Na decembrskem listu označite 23. in 24. december za predajo, nato dodajte ločeno oznako za 27. december. Za varstvo preverite [novoletne počitnice](/solske-pocitnice/#pocitnice-newyear) po šolskem koledarju, praznika pa pustite označena na mreži."
   }
 }

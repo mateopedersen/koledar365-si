@@ -4,8 +4,12 @@
     <h1 id="privacy-title">Vaši načrti. <em>Vaša zasebnost.</em></h1>
     <p class="privacy-hero__lead">Preprosto in pregledno: kaj ostane v vašem brskalniku, katere zahteve prejme ponudnik gostovanja, kako dolgo se podatki hranijo in kako uveljavite svoje pravice.</p>
     <div class="privacy-hero__actions">
-      <a class="privacy-action privacy-action--primary" href="mailto:koledar365@gmail.com?subject=Koledar365%20%E2%80%93%20zasebnost"><%= ui_icon('note') %> Pišite o zasebnosti</a>
-      <button class="privacy-action privacy-action--quiet" type="button" data-cookie-open><%= ui_icon('settings') %> Nastavitve shranjevanja</button>
+      <a class="privacy-action privacy-action--primary" href="mailto:koledar365@gmail.com?subject=Koledar365%20%E2%80%93%20zasebnost">
+        <%= ui_icon('note') %><span class="privacy-action__label">Pišite o zasebnosti</span>
+      </a>
+      <button class="privacy-action privacy-action--quiet" type="button" data-cookie-open>
+        <%= ui_icon('settings') %><span class="privacy-action__label">Nastavitve shranjevanja</span>
+      </button>
     </div>
     <div class="privacy-proof" aria-label="Glavne značilnosti zasebnosti">
       <div><strong>V brskalniku</strong><span>osebni zapiski in vnosi</span></div>
@@ -19,7 +23,7 @@
 <section class="privacy-summary" aria-label="Povzetek varstva zasebnosti">
   <div class="privacy-summary__icon"><%= ui_icon('shield') %></div>
   <div><span class="privacy-kicker">NA KRATKO</span><h2>Vaši osebni načrti se obdelajo v brskalniku.</h2><p>Koledar365 ne zahteva računa. Koledarski zapiski, šolski urnik, vrtni načrt in fotografije v urejevalniku se obdelajo na vaši napravi. Ponudnik gostovanja prejme običajne zahteve za javne strani in datoteke. Če sami delite povezavo z nastavitvami, so njeni parametri del deljene povezave.</p></div>
-  <a href="#podatki">Poglejte, kaj se obdeluje <span aria-hidden="true">↓</span></a>
+  <a href="#podatki">Poglejte, kaj se obdeluje <span aria-hidden="true"><%= ui_icon('arrow-down') %></span></a>
 </section>
 
 <div class="privacy-layout">
@@ -80,7 +84,7 @@
       <div class="privacy-section__head"><span class="privacy-section__number">05</span><div><span class="privacy-kicker">VAŠ NADZOR</span><h2>Pravice in kako jih uveljavite</h2></div></div>
       <p>Če obdelujemo vaše osebne podatke, lahko pod pogoji GDPR zahtevate dostop, popravek, izbris, omejitev obdelave ali prenosljivost. Obdelavi, ki temelji na zakonitem interesu, lahko ugovarjate. Privolitev za pomnjenje mesta lahko kadar koli prekličete v <button class="privacy-inline-button" type="button" data-cookie-open>nastavitvah piškotkov</button>; preklic ne vpliva na zakonitost obdelave pred preklicem.</p>
       <p>Na zahtevo odgovorimo brez nepotrebnega odlašanja, najpozneje v enem mesecu. Če je zahteva zapletena, lahko rok podaljšamo za največ dva dodatna meseca; o podaljšanju in razlogih vas obvestimo v prvem mesecu. Kadar je to potrebno za zaščito podatkov, lahko prosimo za sorazmerno potrditev identitete.</p>
-      <div class="privacy-rights-panel"><div><span class="privacy-kicker">ZAHTEVE IN PRITOŽBE</span><h3>Obrnite se neposredno na nas.</h3><p>Pišite na <a href="mailto:koledar365@gmail.com?subject=Koledar365%20%E2%80%93%20zahteva%20za%20varstvo%20podatkov">koledar365@gmail.com</a>. Do osebnih načrtov, ki so shranjeni samo v vašem brskalniku, nimamo dostopa; izbrišete jih v orodju ali nastavitvah brskalnika. Če imate vprašanje o konkretni funkciji ali povezavi, nam pošljite njen naslov in opis težave brez zasebnih prilog.</p></div><a class="privacy-rights-panel__link" href="https://www.ip-rs.si/varstvo-osebnih-podatkov/pravice-posameznika/vlo%C5%BEitev-prijave">Informacijski pooblaščenec <span aria-hidden="true">↗</span><small>Dunajska cesta 22, 1000 Ljubljana · gp.ip@ip-rs.si</small></a></div>
+      <div class="privacy-rights-panel"><div><span class="privacy-kicker">ZAHTEVE IN PRITOŽBE</span><h3>Obrnite se neposredno na nas.</h3><p>Pišite na <a href="mailto:koledar365@gmail.com?subject=Koledar365%20%E2%80%93%20zahteva%20za%20varstvo%20podatkov">koledar365@gmail.com</a>. Do osebnih načrtov, ki so shranjeni samo v vašem brskalniku, nimamo dostopa; izbrišete jih v orodju ali nastavitvah brskalnika. Če imate vprašanje o konkretni funkciji ali povezavi, nam pošljite njen naslov in opis težave brez zasebnih prilog.</p></div><a class="privacy-rights-panel__link" href="https://www.ip-rs.si/varstvo-osebnih-podatkov/pravice-posameznika/vlo%C5%BEitev-prijave">Informacijski pooblaščenec <span aria-hidden="true"><%= ui_icon('chevron-right') %></span><small>Dunajska cesta 22, 1000 Ljubljana · gp.ip@ip-rs.si</small></a></div>
       <p>Če menite, da obdelava krši predpise, lahko vložite pritožbo pri slovenskem nadzornem organu <a href="https://www.ip-rs.si/varstvo-osebnih-podatkov/pravice-posameznika/">Informacijskem pooblaščencu</a> ali pri drugem pristojnem nadzornem organu v EU. Ne sprejemamo avtomatiziranih odločitev s pravnimi ali podobno pomembnimi učinki.</p>
     </section>
 

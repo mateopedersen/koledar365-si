@@ -20,7 +20,7 @@
     <div class="holiday-fact-free"><dt><span class="holiday-fact-icon"><%= ui_icon('calendar') %></span>Dela prostih datumov</dt><dd><strong><%= @holidays.free_dates.size %></strong><span>v letu <%= @year %></span></dd></div>
     <div class="holiday-fact-week"><dt><span class="holiday-fact-icon"><%= ui_icon('sun') %></span>Prostih med tednom</dt><dd><strong><%= @holidays.weekday_free_dates.size %></strong><span>ponedeljek–petek</span></dd></div>
     <div class="holiday-fact-weekend"><dt><span class="holiday-fact-icon"><%= ui_icon('clock') %></span>Praznikov ob koncu tedna</dt><dd><strong><%= @holidays.weekend_free_dates.size %></strong><span>sobota ali nedelja</span></dd></div>
-    <div class="holiday-fact-work"><dt><span class="holiday-fact-icon"><%= ui_icon('briefcase') %></span>Delovnih dni</dt><dd><strong><%= @holidays.working_days %></strong><a href="/delovni-dnevi/<%= @year %>/">Poglejte izračun ↗</a></dd></div>
+    <div class="holiday-fact-work"><dt><span class="holiday-fact-icon"><%= ui_icon('briefcase') %></span>Delovnih dni</dt><dd><strong><%= @holidays.working_days %></strong><a href="/delovni-dnevi/<%= @year %>/">Poglejte izračun</a></dd></div>
   </dl>
 
   <section class="holiday-date-tool" aria-labelledby="holiday-check-title">
@@ -41,7 +41,7 @@
             <label class="holiday-filter-chip"><input type="radio" name="kind" value="<%= value %>" <%= 'checked' if @holiday_kind==value %>><span><%= label %> <b><%= count %></b></span></label>
 <% end %>
         </fieldset>
-        <div class="holiday-filter-fields"><label><span class="sr-only">Poišči praznik</span><%= ui_icon('search') %><input name="q" type="search" value="<%= @holiday_query %>" maxlength="100" placeholder="Ime praznika ali dan v tednu …"></label><label><span class="sr-only">Mesec praznikov</span><select name="month"><option value="0">Vsi meseci</option><% CalendarEngine::MONTHS.each_with_index do |month,index| %><option value="<%= index+1 %>" <%= 'selected' if @holiday_month==index+1 %>><%= month.sub(/\A./,&:upcase) %></option><% end %></select></label><button type="submit">Pokaži</button></div>
+        <div class="holiday-filter-fields"><label><span class="sr-only">Poišči praznik</span><%= ui_icon('search') %><input name="q" type="search" value="<%= @holiday_query %>" maxlength="100" placeholder="Ime praznika ali dan"></label><label><span class="sr-only">Mesec praznikov</span><select name="month"><option value="0">Vsi meseci</option><% CalendarEngine::MONTHS.each_with_index do |month,index| %><option value="<%= index+1 %>" <%= 'selected' if @holiday_month==index+1 %>><%= month.sub(/\A./,&:upcase) %></option><% end %></select></label><button type="submit">Pokaži</button></div>
       </form>
       <nav class="holiday-month-rail" aria-label="Hitra izbira meseca"><a href="/prazniki/<%= @year %>/#prazniki-seznam" data-select-holiday-month="0">Vse leto</a><% CalendarEngine::MONTHS.each_with_index do |month,index| %><a href="/prazniki/<%= @year %>/?month=<%= index+1 %>#prazniki-seznam" data-select-holiday-month="<%= index+1 %>" aria-label="<%= month.first(3).sub(/\A./, &:upcase) %> – <%= month %>"><%= month.first(3).sub(/\A./,&:upcase) %></a><% end %></nav>
       <div class="holiday-results-bar"><p id="holiday-result-count" role="status" aria-live="polite">Prikazani datumi: <strong id="holiday-shown-count"><%= @filtered_holidays.size %></strong> od <%= @holidays.events.size %></p><a id="holiday-reset" href="/prazniki/<%= @year %>/">Počisti filtre</a></div>
@@ -69,14 +69,14 @@
 <% @holiday_breaks.each_with_index do |option,index| %><article class="<%= 'is-best' if index.zero? %>"><% if index.zero? %><span class="holiday-break-label"><%= ui_icon('sun') %> Najdaljši predlog</span><% end %><div class="holiday-break-count"><strong><%= option[:total] %></strong><span><%= holiday_break_label(option[:total]) %></span></div><time><%= I18n.l(option[:from],format:'%d. %m.') %> – <%= I18n.l(option[:to],format:'%d. %m. %Y') %></time><p><% if option[:leave].zero? %><b>Brez dodatnega dopusta.</b><% else %><b><%= option[:leave] %> dan dopusta:</b> <%= option[:leave_dates].map { |date| I18n.l(date) }.join(', ') %>.<% end %></p></article><% end %>
         <a class="holiday-more-link" href="/podaljsani-vikendi/<%= @year %>/">Več možnosti za oddih <%= ui_icon('chevron-right') %></a>
       </section>
-      <section class="holiday-note"><span class="holiday-note-icon"><%= ui_icon('info') %></span><h2>Praznik ni vedno <br><strong>prost dan.</strong></h2><p>Državni praznik je lahko običajen delovni dan. Tudi vsi dela prosti dnevi niso državni prazniki.</p><p>Če praznik pade na <strong>nedeljo, se ne prenese na ponedeljek.</strong></p><a href="#holiday-sources">Preverite pravno podlago →</a></section>
+      <section class="holiday-note"><span class="holiday-note-icon"><%= ui_icon('info') %></span><h2>Praznik ni vedno <br><strong>prost dan.</strong></h2><p>Državni praznik je lahko običajen delovni dan. Tudi vsi dela prosti dnevi niso državni prazniki.</p><p>Če praznik pade na <strong>nedeljo, se ne prenese na ponedeljek.</strong></p><a href="#holiday-sources">Preverite pravno podlago</a></section>
       <a class="holiday-planner-link" href="/nacrtovalnik-dopusta/"><%= ui_icon('briefcase') %><span><strong>Načrtujte svoj dopust.</strong><small>Od datumov do pravega oddiha.</small></span><%= ui_icon('chevron-right') %></a>
     </aside>
   </div>
 
 <%= render 'holiday_year_grid' %>
 
-  <section class="holiday-comparison" aria-labelledby="holiday-compare-title"><div class="holiday-section-heading"><div><span class="eyebrow">POGLEJTE ŠE KORAK NAPREJ</span><h2 id="holiday-compare-title">Katero leto prinese <strong>več prostih dni?</strong></h2><p>Primerjajte, koliko dela prostih praznikov pade med tednom.</p></div></div><div class="holiday-comparison-grid"><% @holiday_comparison.each do |period| %><a href="/prazniki/<%= period.year %>/" <%= 'aria-current=page' if period.year==@year %>><h3><%= period.year %><span aria-hidden="true">↗</span></h3><div class="holiday-comparison-highlight"><strong><%= period.weekday_free_dates.size %></strong><span>prostih praznikov<br>med tednom</span></div><dl><div><dt>Dela prosti datumi</dt><dd><%= period.free_dates.size %></dd></div><div><dt>Delovni dnevi</dt><dd><%= period.working_days %></dd></div></dl></a><% end %></div><p>Izračun velja za ponedeljek–petek. Prazniki na soboto ali nedeljo se ne odštejejo še enkrat. Dopust, bolniška odsotnost in individualni razporedi niso vključeni.</p></section>
+  <section class="holiday-comparison" aria-labelledby="holiday-compare-title"><div class="holiday-section-heading"><div><span class="eyebrow">POGLEJTE ŠE KORAK NAPREJ</span><h2 id="holiday-compare-title">Katero leto prinese <strong>več prostih dni?</strong></h2><p>Primerjajte, koliko dela prostih praznikov pade med tednom.</p></div></div><div class="holiday-comparison-grid"><% @holiday_comparison.each do |period| %><a href="/prazniki/<%= period.year %>/" <%= 'aria-current=page' if period.year==@year %>><h3><%= period.year %><span aria-hidden="true"><%= ui_icon('chevron-right') %></span></h3><div class="holiday-comparison-highlight"><strong><%= period.weekday_free_dates.size %></strong><span>prostih praznikov<br>med tednom</span></div><dl><div><dt>Dela prosti datumi</dt><dd><%= period.free_dates.size %></dd></div><div><dt>Delovni dnevi</dt><dd><%= period.working_days %></dd></div></dl></a><% end %></div><p>Izračun velja za ponedeljek–petek. Prazniki na soboto ali nedeljo se ne odštejejo še enkrat. Dopust, bolniška odsotnost in individualni razporedi niso vključeni.</p></section>
 
   <section class="holiday-downloads" id="holiday-downloads" aria-labelledby="holiday-print-title">
     <div class="page-heading holiday-print-heading"><span class="eyebrow">VAŠI PRAZNIKI. TUDI NA PAPIRJU.</span><h2 id="holiday-print-title">Izberite svojo <strong>najljubšo predlogo.</strong></h2><p><%= gallery_description %></p></div>
@@ -87,7 +87,7 @@
           <nav class="year-links" aria-label="Leto tiskanega koledarja"><% CalendarEngine::YEARS.each do |year| %><a href="/prazniki/<%= year %>/#holiday-downloads" <%= 'aria-current=page' if year==@year %>><%= year %></a><% end %></nav>
           <p><strong>15 različnih postavitev.</strong> Izberite papir in usmerjenost ter si oglejte predogled. PDF je pripravljen za tisk, slika pa za shranjevanje v polni ločljivosti.</p>
           <p><strong>Namig za tisk:</strong> v tiskalniku izberite merilo 100 %. Datumi in število prostih dni veljajo za izbrano leto.</p>
-          <a href="#prazniki-seznam">Nazaj na seznam praznikov ↑</a>
+          <a href="#prazniki-seznam">Nazaj na seznam praznikov</a>
         </div>
       </section>
       <%= render 'designs',type:'holidays' %>

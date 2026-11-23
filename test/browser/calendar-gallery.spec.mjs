@@ -23,13 +23,14 @@ for (const gallery of galleryPages) {
     const cards = page.locator(gallery.card);
     await expect(cards).toHaveCount(15);
     const first = cards.first();
-    await expect(cards.locator('.design-number')).toHaveCount(15);
+    const numbered = gallery.card === '.design-card';
+    await expect(cards.locator('.design-number')).toHaveCount(numbered ? 15 : 0);
     await expect(cards.locator('.design-title')).toHaveCount(15);
     await expect(cards.locator('.calendar-download-action')).toHaveCount(30);
     await expect(cards.locator('.calendar-download-action--pdf img')).toHaveCount(15);
     await expect(cards.locator('.calendar-download-action--webp img')).toHaveCount(15);
     const heading = first.locator(gallery.heading);
-    await expect(heading.locator('.design-number')).toHaveText('01');
+    if (numbered) await expect(heading.locator('.design-number')).toHaveText('01');
     await expect(heading.locator('.design-title')).toHaveText(/.+/);
 
     const actions = first.locator('.calendar-download-action');
@@ -49,8 +50,8 @@ for (const gallery of galleryPages) {
         const cards = [...document.querySelectorAll(cardSelector)];
         const titleRows = cards.map((card) => {
           const title = card.querySelector('h3 .design-title').getBoundingClientRect();
-          const number = card.querySelector('h3 .design-number').getBoundingClientRect();
-          return { titleLeft: title.left, titleRight: title.right, numberRight: number.right };
+          const number = card.querySelector('h3 .design-number')?.getBoundingClientRect();
+          return { titleLeft: title.left, titleRight: title.right, numberRight: number?.right ?? null };
         });
         const buttons = cards.flatMap((card) => [...card.querySelectorAll('.calendar-download-action')]);
         const buttonRows = buttons.map((button) => {
@@ -87,7 +88,7 @@ for (const gallery of galleryPages) {
       expect(layout.scrollWidth, `horizontal overflow at ${width}px`).toBeLessThanOrEqual(layout.clientWidth);
       expect(layout.overflowingMetadata, 'template metadata must wrap within the card').toBe(0);
       for (const [index, title] of layout.titleRows.entries()) {
-        expect(title.titleLeft, `card ${index + 1}: number/title collision at ${width}px`).toBeGreaterThan(title.numberRight);
+        if (title.numberRight !== null) expect(title.titleLeft, `card ${index + 1}: number/title collision at ${width}px`).toBeGreaterThan(title.numberRight);
       }
       for (const [index, button] of layout.buttonRows.entries()) {
         expect(button.width, `button ${index + 1} too narrow at ${width}px`).toBeGreaterThan(56);

@@ -4,6 +4,11 @@ class PageMetadata
     collection_description = CalendarCollectionEditorial.description(page)
     return collection_description if collection_description
 
+    return 'Tedenski koledar od ponedeljka do nedelje. Izberite datum ali teden ISO, preverite dela proste dni v Sloveniji, dodajte dnevne zapiske in prenesite PDF.' if page.path == '/tedenski-koledar/'
+    if page.path.start_with?('/tedenski-koledar/')
+      return "Tedenski planer #{page.year} za tisk. Odprite teden ISO, preverite slovenske dela proste dni, dodajte zapiske in izberite postavitev PDF."
+    end
+    return 'Izberite mesec od 2026 do 2030, preverite slovenske dela proste dni in dodajte zapiske. Prenesite mesečni koledar v PDF ali urejajte datume v Excelu.' if page.path == '/mesecni-koledar/'
     return 'Izračunajte številko tedna ISO za izbrani datum. Preverite začetek tedna v ponedeljek, razliko med letom ISO in koledarskim letom ter primere ob novem letu.' if page.path=='/stevilka-tedna/'
     return 'Kateri dan v letu je izbrani datum? Izračunajte zaporedno številko dneva, preverite vpliv 29. februarja in število dni do konca navadnega ali prestopnega leta.' if page.path=='/dan-v-letu/'
     return 'Kako Koledar365 preverja vire, ločuje izračune od uradnih datumov in obravnava popravke. Pravila za avtomatizacijo, umetno inteligenco in jezikovni pregled.' if page.path=='/uredniska-politika/'
@@ -13,7 +18,7 @@ class PageMetadata
     end
     return ExpansionCatalog.page(page.path).fetch(:description) if ExpansionCatalog.page(page.path)
     return ClockChangeSchedule::DESCRIPTION if page.path=='/premik-ure/'
-    return 'Ustvarite svoj letni ali mesečni koledar z imenom, fotografijami, logotipom in dogodki. Prilagodite pisave, barve in začetek tedna ter prenesite PDF, PNG ali SVG.' if page.path=='/ustvari-koledar/'
+    return 'Izdelajte svoj letni ali mesečni koledar s fotografijami, logotipom in dogodki. Uvozite ICS ali CSV, shranite projekt ter prenesite PDF, PNG ali SVG.' if page.path=='/ustvari-koledar/'
     return 'Pogoji uporabe Koledar365 pojasnjujejo rabo koledarjev in orodij, navajanje virov, avtorske pravice, omejitve podatkov ter prijavo napak.' if page.path=='/pogoji-uporabe/'
     return 'Preberite današnji horoskop za vseh 12 znamenj zodiaka. Izberite znamenje za dnevni zapis o ljubezni, delu in počutju ali izračunajte ascendent.' if page.path == '/horoskop/'
     sign_editorial = HoroscopeGuide.editorial_for_path(page.path)
@@ -29,8 +34,6 @@ class PageMetadata
     case path
     when %r{\A/koledar/}
       "Slovenski koledar za #{period}: datumi, številke tednov ISO in označeni dela prosti dnevi. Izberite prikaz ter prenesite koledar za tiskanje."
-    when %r{\A/tedenski-koledar/}
-      "Tedenski koledar #{year} s ponedeljkom na začetku tedna, številkami ISO in slovenskimi prazniki. Pripravite pregled za tiskanje."
     when %r{\A/lunin-koledar/}
       "Lunine mene za #{period}: mlaj, prvi krajec, polna luna in zadnji krajec. Natančni trenutki v slovenskem času iz podatkov USNO."
     when %r{\A/delovni-dnevi/}

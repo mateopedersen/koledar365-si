@@ -8,7 +8,7 @@
       <h1 id="countdown-title">Odštevanje do datuma</h1>
       <p>Izberite praznik, festival ali svoj datum in spremljajte, koliko časa je še do njega.</p>
     </div>
-    <a class="countdown-link" href="#moj-seznam">Moji odštevalniki <span aria-hidden="true">↓</span></a>
+    <a class="countdown-link" href="#moj-seznam">Moji odštevalniki <span aria-hidden="true"><%= ui_icon('arrow-down') %></span></a>
   </header>
 
   <div class="countdown-workspace">
@@ -108,7 +108,7 @@
       </div>
       <p class="countdown-display__notice" data-feature-notice role="status"></p>
       <a class="countdown-edit" href="#izberi-dogodek">Spremeni datum</a>
-      <a class="countdown-display__source" data-feature-source hidden>Podrobnosti dogodka <span aria-hidden="true">↗</span></a>
+      <a class="countdown-display__source" data-feature-source hidden>Podrobnosti dogodka <span aria-hidden="true"><%= ui_icon('chevron-right') %></span></a>
     </section>
   </div>
 

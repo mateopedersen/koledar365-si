@@ -157,7 +157,7 @@
   #vsebina .year-grid .mini .calendar td { height: 5mm !important; }
   #vsebina .year-grid .mini .date-link,
   #vsebina .year-grid .mini .outside-date { min-height: 0 !important; padding: 0 !important; font-size: 8pt !important; line-height: 1.15 !important; }
-  #vsebina .year-grid .mini .date-link span { min-width: 0 !important; height: auto !important; }
+  #vsebina .year-grid .mini .date-link > time { min-width: 0 !important; height: auto !important; }
   #vsebina .year-grid .mini .calendar th { padding: 1mm 0 !important; font-size: 7pt !important; }
 
   .lunar-download-hint { display: none !important; }

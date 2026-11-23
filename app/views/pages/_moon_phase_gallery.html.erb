@@ -1,0 +1,31 @@
+<section class="moon-phase-gallery" id="osem-luninih-men" aria-labelledby="moon-gallery-title">
+  <header class="moon-section-heading">
+    <h2 id="moon-gallery-title">Osem Luninih men v slikah</h2>
+    <p>Od mlaja do mlaja mine v povprečju 29,5 dneva. Štiri glavne mene imajo točno določen trenutek, oblike med njimi pa se spreminjajo iz dneva v dan. Posnetki so nastali ob različnih datumih in v različnih krajih.</p>
+  </header>
+
+  <ol class="moon-phase-gallery__grid" role="list">
+    <% LunarPhaseGuide.phases.each do |phase| %>
+      <% photo = phase['photo'] %>
+      <li class="moon-phase-card" id="<%= phase.fetch('id') %>">
+        <div class="moon-phase-card__image">
+          <% if photo %>
+            <%= image_tag photo.fetch('path'), alt: photo.fetch('alt'), width: photo.fetch('width'), height: photo.fetch('height'), loading: 'lazy', decoding: 'async' %>
+          <% else %>
+            <span class="moon-phase-card__dark-disk" aria-hidden="true"></span>
+            <span class="moon-phase-card__unlit">Ob mlaju je Luna navadno nevidna</span>
+          <% end %>
+        </div>
+        <div class="moon-phase-card__copy">
+          <h3><%= phase.fetch('name') %></h3>
+          <p class="moon-phase-card__stage"><%= phase.fetch('label') %></p>
+          <p><%= phase.fetch('description') %></p>
+          <% if photo %>
+            <small>Foto <%= link_to photo.fetch('credit'), LunarPhaseGuide.credit_path(phase.fetch('id')), dir: 'auto' %></small>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ol>
+  <p class="moon-gallery-note">Nagib osvetljenega roba je odvisen od časa, položaja opazovalca in zasuka fotoaparata. Za prepoznavanje mene je zanesljiveje opazovati, ali se svetli del iz večera v večer veča ali manjša. <a href="https://science.nasa.gov/moon/moon-phases/">NASA o Luninih menah</a>.</p>
+</section>

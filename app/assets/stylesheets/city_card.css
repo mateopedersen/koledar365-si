@@ -100,7 +100,7 @@
 #city-card .city-select-shell select:hover{border-color:#aabfd8}
 #city-card .city-select-shell>.ui-icon{position:absolute;width:16px;height:16px;top:14px;left:11px;color:#cf3f54;pointer-events:none;filter:none}
 #city-card .city-select-shell>.ui-icon *{pointer-events:none}
-#city-card .city-select-shell>.icon-chevron-right{left:auto;right:12px;width:13px;height:13px;top:16px;color:#486c92;transform:rotate(90deg);stroke-width:2.4}
+#city-card .city-select-shell>.icon-chevron-down{left:auto;right:12px;width:13px;height:13px;top:16px;color:#486c92}
 #city-card .weather-widget {
   container-type: inline-size;
   margin-top: 13px;
@@ -391,6 +391,16 @@
 
 /* Match the workspace breakpoint: above 850px this card occupies the narrow sidebar. */
 @media(min-width:650px) and (max-width:850px){#city-card{display:grid;grid-template-columns:minmax(190px,.85fr) minmax(250px,1fr)}#city-card .today-heading{grid-column:1/-1;padding:15px 18px}#city-card .city-photo{height:100%;min-height:320px;grid-column:1;grid-row:2}#city-card .today-body{padding:15px 20px}#city-card .today-heading h2{font-size:19px}}
-@media(max-width:649px){#city-card .today-heading{padding:17px 18px}#city-card .today-heading h2{font-size:19px}#city-card .city-photo{height:175px}#city-card .today-body{padding:17px 19px 12px}#city-card .time-row{grid-template-columns:60px minmax(0,1fr);gap:14px}#city-card .city-clock{width:60px;height:60px}#city-card #ljubljana-clock{font-size:46px}#city-card .city-select-shell select{height:46px;font-size:16px}}
-@media(max-width:359px){#city-card .today-heading{padding:15px 13px;gap:8px}#city-card .today-heading h2{font-size:17px}#city-card .today-body{padding:15px 14px 10px}#city-card #ljubljana-clock{font-size:41px}}
+@media screen and (max-width:649px) {
+  #city-card .today-heading { padding: 11px 14px; }
+  #city-card .today-heading h2 { font-size: 18px; }
+  #city-card .city-photo { height: clamp(120px, 36vw, 165px); }
+  #city-card .city-photo figcaption { padding: 25px 14px 8px; }
+  #city-card .today-body { padding: 12px 14px 10px; }
+  #city-card .time-row { margin-bottom: 10px; }
+  #city-card #ljubljana-clock { font-size: 42px; }
+  #city-card .city-select-shell select { height: 46px; font-size: 16px; }
+  #city-card .weather-widget { margin-top: 9px; }
+  #city-card .weather-hero { min-height: 124px; }
+}
 @media(prefers-reduced-motion:reduce){#city-card *,#city-card *:before,#city-card *:after{animation:none!important;transition:none!important}}

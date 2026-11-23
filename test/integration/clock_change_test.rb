@@ -33,7 +33,7 @@ class ClockChangeTest < ActionDispatch::IntegrationTest
       assert_select 'meta[name="description"][content=?]',ClockChangeSchedule::DESCRIPTION
       assert_select 'meta[property="og:description"][content=?]',ClockChangeSchedule::DESCRIPTION
       assert_select '[data-next-date][datetime="2026-10-25"]'
-      assert_select '[data-next-hours]',text:'03:00 → 02:00'
+      assert_select '[data-next-hours]',text:'03:00 na 02:00'
       assert_select '.observance-year-card',count:5
       assert_select '[data-observance-date]',count:10
       assert_select '.clock-change-figure img[src=?][alt=?]',ClockChangeSchedule::IMAGE_PATH,ClockChangeSchedule::IMAGE_ALT

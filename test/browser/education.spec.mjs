@@ -98,6 +98,29 @@ test('matura subjects and exam types preserve different result dates and export 
   await expect(page).toHaveURL(/examType=vocational/);
 });
 
+test('matura keeps long labels and date ranges readable on a narrow screen', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 740 });
+  await openPage(page, '/matura/2027/?examType=vocational');
+  const subjects = page.locator('[data-ed-subjects] label:visible');
+  await expect(subjects.first()).toBeVisible();
+  const [firstSubject, secondSubject] = await Promise.all([
+    subjects.nth(0).boundingBox(),
+    subjects.nth(1).boundingBox(),
+  ]);
+  expect(secondSubject.y).toBeGreaterThanOrEqual(firstSubject.y + firstSubject.height - 1);
+
+  const oralExam = page.locator('[data-ed-list] .ed-event[data-category="oral"]').first();
+  const [date, title, checkbox] = await Promise.all([
+    oralExam.locator('.ed-event-date').boundingBox(),
+    oralExam.locator('h4').boundingBox(),
+    oralExam.locator('input').boundingBox(),
+  ]);
+  expect(date.x).toBeGreaterThan(checkbox.x + checkbox.width);
+  expect(Math.abs(date.x - title.x)).toBeLessThan(1);
+  expect(title.y).toBeGreaterThanOrEqual(date.y + date.height - 1);
+  await expectNoOverflow(page);
+});
+
 test('NPZ grade pages and university filters keep their scopes on a narrow phone', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 900 });
   await openPage(page, '/npz/');

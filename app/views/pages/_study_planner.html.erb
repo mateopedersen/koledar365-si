@@ -1,0 +1,98 @@
+<header class="tool-intro study-intro">
+  <div>
+    <h1><%= tool.fetch(:title) %></h1>
+    <p>Imate izpit, kolokvij ali rok za oddajo? Vpišite, koliko ur dela vam je še ostalo, izberite dneve in preverite, ali načrt ustreza vašemu urniku.</p>
+    <nav class="study-jump" aria-label="Na tej strani">
+      <a href="#nacrt-ucenja">Sestavi načrt <%= ui_icon('chevron-down') %></a>
+      <a href="#moji-opomniki">Moji roki</a>
+      <a href="#vodnik-za-ucenje">Vodnik za učenje</a>
+    </nav>
+  </div>
+  <aside class="study-hero-example" aria-labelledby="study-example-title">
+    <div class="study-example-heading">
+      <div>
+        <h2 id="study-example-title">Primer za izpit 15. junija</h2>
+        <p>Od 7. do 14. junija 2027, od ponedeljka do petka</p>
+      </div>
+      <%= page_hero_art(IllustrationHelper::LOCAL_TOOL_ART.fetch('studij'), css_class: 'study-example-art') %>
+    </div>
+    <dl>
+      <div><dt>Skupaj</dt><dd>12 h</dd></div>
+      <div><dt>Učni dnevi</dt><dd>6</dd></div>
+      <div><dt>Na dan</dt><dd>2 h</dd></div>
+    </dl>
+  </aside>
+</header>
+
+<noscript><p class="tool-guidance">Za izračun in izvoz koledarja omogočite JavaScript. Vodnik za pripravo na izpit je na voljo spodaj.</p></noscript>
+
+<div class="tool-split study-workspace" id="nacrt-ucenja">
+  <section class="tool-block" aria-labelledby="study-form-title">
+    <h2 id="study-form-title">Nastavite učni urnik</h2>
+    <form data-study-form>
+      <fieldset disabled data-local-fields>
+        <label>Predmet ali naloga
+          <input type="text" name="title" maxlength="90" placeholder="Na primer Statistika" aria-describedby="study-name-hint">
+        </label>
+        <small class="study-field-hint study-input-hint" id="study-name-hint">Neobvezno. Ime bo vidno v izvoženem koledarju.</small>
+        <div class="tool-fields">
+          <label>Začetek učenja<input type="date" name="start" value="<%= today.iso8601 %>" required></label>
+          <label>Rok oziroma izpit<input type="date" name="end" value="<%= (today + 14).iso8601 %>" required></label>
+          <label>Preostale ure učenja<input type="number" name="hours" min="0.5" max="600" step="0.5" value="18" required></label>
+          <label>Učni dnevi
+            <select name="strategy">
+              <option value="workweek">Od ponedeljka do petka</option>
+              <option value="daily">Vsi dnevi</option>
+              <option value="weekend">Sobote in nedelje</option>
+              <option value="custom">Izberem posamezne dni</option>
+            </select>
+          </label>
+        </div>
+        <fieldset class="study-weekdays" data-study-weekdays disabled hidden>
+          <legend>Dnevi v tednu</legend>
+          <div>
+            <% %w[Ponedeljek Torek Sreda Četrtek Petek Sobota Nedelja].each_with_index do |label, index| %>
+              <label><input type="checkbox" name="weekday" value="<%= (index + 1) % 7 %>" <%= 'checked' if index < 5 %>><span><%= label %></span></label>
+            <% end %>
+          </div>
+        </fieldset>
+        <label>Največ minut na dan
+          <input type="number" name="dailyMinutes" min="1" max="1440" step="1" inputmode="numeric" placeholder="Na primer 90" aria-describedby="study-limit-hint">
+        </label>
+        <small class="study-field-hint study-input-hint" id="study-limit-hint">Neobvezno. Vpišite, koliko časa imate na učni dan.</small>
+        <label class="tool-check"><input type="checkbox" name="include"><span>V načrt vključi tudi dan izpita ali oddaje</span></label>
+        <div class="tool-actions study-actions">
+          <button class="tool-primary" type="submit">Sestavi načrt učenja</button>
+          <button class="tool-secondary" type="button" data-study-example>Uporabi primer</button>
+        </div>
+      </fieldset>
+    </form>
+  </section>
+
+  <section class="tool-block study-results" aria-labelledby="study-result-title">
+    <h2 id="study-result-title">Vaš načrt po dnevih in tednih</h2>
+    <output class="study-message" data-study-result aria-live="polite">Izberite datume in ure.</output>
+    <div class="study-result-body" data-study-details hidden>
+      <dl class="study-metrics">
+        <div><dt>Učni dnevi</dt><dd data-study-days></dd></div>
+        <div><dt>Povprečno na dan</dt><dd data-study-average></dd></div>
+        <div><dt>Skupaj v načrtu</dt><dd data-study-total></dd></div>
+      </dl>
+      <h3>Ure po tednih</h3>
+      <ul class="tool-study-bars" data-study-bars></ul>
+      <details class="study-session-details">
+        <summary>Poglej posamezne učne dni</summary>
+        <ol class="study-session-list" data-study-sessions></ol>
+      </details>
+      <div class="tool-actions study-actions">
+        <button type="button" class="tool-secondary" data-study-ics disabled><%= ui_icon('download') %> Prenesi učni urnik (.ics)</button>
+      </div>
+      <p class="study-field-hint">Datoteka vsebuje celodnevne vnose s trajanjem. Uro učenja določite v svojem koledarju.</p>
+    </div>
+  </section>
+</div>
+
+<%= render 'local_tool_reminders', kind: 'studij', heading: 'Moji izpiti in oddaje',
+  hint: 'Zabeležite izpit, prijavo nanj ali rok za oddajo. S seznama lahko prenesete tudi odprte roke.',
+  today: today.iso8601 %>
+<%= render 'study_planner_guide' %>

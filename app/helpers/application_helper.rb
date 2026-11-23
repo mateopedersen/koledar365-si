@@ -17,7 +17,15 @@ module ApplicationHelper
   def gallery_description
     return 'Preverite datume luninih men in čas v Sloveniji. Med predlogami izberite koledar za tisk v obliki PDF ali sliko pri 600 ppi.' if legacy_lunar_gallery?
     return 'Načrtujte družinski teden, delite pregled z domačimi v tem brskalniku in prenesite koledar PDF ali sliko, pripravljen pri 600 ppi.' if page_path == '/druzinski-planer/'
-    'V galeriji izberite eno od 15 predlog: PDF za tisk in ujemajočo se sliko pri 600 ppi, s podpisom Koledar365 na vsaki strani. Večstranski slikovni izvoz je v datoteki ZIP; PDF tiskajte v merilu 100 %.'
+    case page_path
+    when '/dnevni-planer/'
+      return 'Sestavite dnevni urnik po urah, dodajte termine in opombe ter izberite PDF ali sliko za tisk.'
+    when '/prazen-koledar/'
+      return 'Izberite prazno mesečno mrežo ali tedensko postavitev. Prilagodite polja za ročne zapiske in prenesite predlogo za tisk.'
+    when '/rojstnodnevni-koledar/'
+      return 'Zberite rojstne dneve na letnem listu, nastavite prikaz 29. februarja in izvozite datume v datoteki ICS.'
+    end
+    'V galeriji izberite eno od 15 predlog: PDF za tisk in ujemajočo se sliko pri 600 ppi, s podpisom Koledar365 na vsaki strani. Pri večstranskem koledarju so slike v datoteki ZIP. PDF tiskajte v merilu 100 %.'
   end
   def page_path
     return @canonical if @canonical
@@ -26,12 +34,12 @@ module ApplicationHelper
   end
   def editorial_route_title(route)
     if (match = route.match(%r{\A/soncni-vzhod-in-zahod/([a-z0-9-]+)/\z}))
-      return "Sončni vzhod in zahod – #{SunEngine::CITIES.fetch(match[1]).first}"
+      return "Sončni vzhod in zahod (#{SunEngine::CITIES.fetch(match[1]).first})"
     end
     return 'Fotografije in licence' if route == '/fotografije-in-licence/'
 
     @editorial_route_titles ||= Page.pluck(:path, :title).to_h
-    @editorial_route_titles.fetch(route)
+    Page.display_title(@editorial_route_titles.fetch(route), path: route)
   end
 
   def editorial_recommendation(route)
@@ -174,7 +182,7 @@ module ApplicationHelper
   def calendar_event_accessible_title(event)
     title = event.title
     compact_title = calendar_event_compact_title(event)
-    compact_title == title ? title : "#{compact_title} – #{title}"
+    compact_title == title ? title : "#{compact_title} (#{title})"
   end
 
   def canonical_url

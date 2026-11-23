@@ -202,23 +202,67 @@ if (calculator) {
 const sky = document.querySelector('[data-sl-sky-calendar]');
 if (sky) {
   const year = sky.querySelector('[data-sl-sky-year]');
+  const month = sky.querySelector('[data-sl-sky-month]');
   const type = sky.querySelector('[data-sl-sky-type]');
-  const groups = [...sky.querySelectorAll('[data-sl-sky-group]')];
+  const groups = sky.querySelectorAll('[data-sl-sky-group]');
   const count = sky.querySelector('[data-sl-sky-count]');
+  const empty = sky.querySelector('[data-sl-sky-empty]');
+  const params = new URLSearchParams(location.search);
+  const today = new Intl.DateTimeFormat('en', {
+    timeZone: 'Europe/Ljubljana', year: 'numeric', month: 'numeric'
+  }).formatToParts(new Date());
+  const localYear = today.find(part => part.type === 'year').value;
+  const localMonth = today.find(part => part.type === 'month').value;
+  const hasOption = (control, value) => Array.from(control.options).some(option => option.value === value);
+
+  if (hasOption(year, localYear)) year.value = localYear;
+  if (hasOption(year, params.get('year'))) year.value = params.get('year');
+  if (!params.has('year') && year.value === localYear) month.value = localMonth;
+  for (const control of [month, type]) {
+    const requested = params.get(control.name);
+    if (hasOption(control, requested)) control.value = requested;
+  }
+
   const update = () => {
     let shown = 0;
     for (const group of groups) {
       group.hidden = group.dataset.slSkyGroup !== year.value;
       if (group.hidden) continue;
-      for (const row of group.querySelectorAll('[data-sl-sky-row]')) {
-        row.hidden = type.value !== 'all' && type.value !== row.dataset.slSkyRow;
-        if (!row.hidden) shown += 1;
+      for (const section of group.querySelectorAll('[data-sl-sky-month-group]')) {
+        const matchingMonth = month.value === 'all' || month.value === section.dataset.slSkyMonthGroup;
+        let hasRows = false;
+        for (const row of section.querySelectorAll('[data-sl-sky-row]')) {
+          row.hidden = !matchingMonth || (type.value !== 'all' && type.value !== row.dataset.slSkyRow);
+          if (!row.hidden) {
+            shown += 1;
+            hasRows = true;
+          }
+        }
+        section.hidden = !hasRows;
       }
     }
-    count.textContent = 'Prikazano: ' + shown;
+    count.textContent = 'Število dogodkov: ' + shown;
+    empty.hidden = shown !== 0;
   };
-  year.addEventListener('change', update);
-  type.addEventListener('change', update);
+
+  const applyFilters = () => {
+    update();
+    const url = new URL(location.href);
+    url.searchParams.set('year', year.value);
+    for (const control of [month, type]) {
+      if (control.value === 'all') url.searchParams.delete(control.name);
+      else url.searchParams.set(control.name, control.value);
+    }
+    history.replaceState(history.state, '', url);
+  };
+
+  sky.querySelector('[data-sl-sky-controls]').addEventListener('change', applyFilters);
+  sky.querySelector('[data-sl-sky-reset]').addEventListener('click', () => {
+    month.value = 'all';
+    type.value = 'all';
+    applyFilters();
+    month.focus();
+  });
   sky.querySelector('[data-sl-sky-controls]').hidden = false;
   count.hidden = false;
   update();
@@ -226,28 +270,56 @@ if (sky) {
 
 const templates = document.querySelector('[data-sl-templates]');
 if (templates) {
-  const type = templates.querySelector('[data-sl-template-select]');
+  const choices = [...templates.querySelectorAll('input[name="timetable-template"]')];
   const date = templates.querySelector('[data-sl-template-date]');
+  const clear = templates.querySelector('[data-sl-template-clear]');
+  const printButton = templates.querySelector('[data-sl-print]');
   const sheets = templates.querySelectorAll('[data-sl-template-sheet]');
-  const update = () => {
+  const query = new URLSearchParams(location.search);
+  const requestedType = choices.find(choice => choice.value === query.get('type'));
+  if (requestedType) requestedType.checked = true;
+  date.value = query.get('date') || '';
+  if (!date.validity.valid) date.value = '';
+
+  const update = (shareSelection = false) => {
+    const selectedType = choices.find(choice => choice.checked).value;
     const value = date.validity.valid ? date.value : '';
     const weekday = value ? shiftDate(value, 0).getUTCDay() : null;
     const mondayOffset = weekday === null ? 0 : -((weekday + 6) % 7);
     const dayLabel = offset => value ? shortDate.format(shiftDate(value, mondayOffset + offset)) : '';
+    clear.disabled = !date.value && !date.validity.badInput;
+
     for (const sheet of sheets) {
-      sheet.hidden = sheet.dataset.slTemplateSheet !== type.value;
+      sheet.hidden = sheet.dataset.slTemplateSheet !== selectedType;
+      const days = sheet.querySelectorAll('[data-sl-day]');
       sheet.querySelector('[data-sl-template-week]').textContent = value
-        ? dateFormat.format(shiftDate(value, mondayOffset)) + ' – ' + dateFormat.format(shiftDate(value, mondayOffset + 6))
+        ? dateFormat.format(shiftDate(value, mondayOffset)) + ' – ' + dateFormat.format(shiftDate(value, mondayOffset + days.length - 1))
         : '__________________';
-      for (const day of sheet.querySelectorAll('[data-sl-day]')) {
+      for (const day of days) {
         day.textContent = dayLabel(Number(day.dataset.slDay));
       }
+      const table = sheet.querySelector('.sl-template-table');
+      table.scrollLeft = 0;
+    }
+
+    if (shareSelection) {
+      const url = new URL(location.href);
+      url.searchParams.set('type', selectedType);
+      if (value) url.searchParams.set('date', value);
+      else url.searchParams.delete('date');
+      history.replaceState(null, '', url);
     }
   };
-  type.addEventListener('change', update);
-  date.addEventListener('input', update);
-  templates.querySelector('[data-sl-print]').addEventListener('click', () => {
-    if (date.reportValidity()) window.print();
+  for (const choice of choices) choice.addEventListener('change', () => update(true));
+  date.addEventListener('input', () => update(true));
+  clear.addEventListener('click', () => {
+    date.value = '';
+    update(true);
+    printButton.focus({ preventScroll: true });
+  });
+  printButton.addEventListener('click', () => {
+    if (date.validity.valid) window.print();
+    else date.reportValidity();
   });
   templates.querySelector('[data-sl-template-controls]').hidden = false;
   update();

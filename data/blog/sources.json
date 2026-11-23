@@ -1,114 +1,190 @@
 {
   "holidays": [
-    "GOV.SI – državni prazniki in dela prosti dnevi",
+    "Državni prazniki in dela prosti dnevi (GOV.SI)",
     "https://www.gov.si/teme/drzavni-prazniki-in-dela-prosti-dnevi/"
   ],
   "labour": [
-    "GOV.SI – delovna razmerja in evidenca delovnega časa",
+    "Delovna razmerja in evidenca delovnega časa (GOV.SI)",
     "https://www.gov.si/teme/delovna-razmerja/"
   ],
   "leave": [
-    "Ministrstvo za delo – letni dopust po ZDR-1",
+    "Letni dopust po ZDR-1 (Ministrstvo za delo)",
     "https://www.gov.si/assets/ministrstva/MGDS/Dokumenti/Delovna-razmerja-in-pravice-iz-dela/Delovna-razmerja/Letni-dopust-in-regres.pdf"
   ],
   "iso": [
-    "ISO – oblika zapisovanja datumov in časa",
+    "Oblika zapisovanja datumov in časa (ISO)",
     "https://www.iso.org/iso-8601-date-and-time-format.html"
   ],
+  "iso-week": [
+    "Pravila za številčenje tednov ISO (Unicode CLDR)",
+    "https://unicode.org/reports/tr35/tr35-dates.html#Date_Patterns_Week_Of_Year"
+  ],
   "leap": [
-    "U.S. Naval Observatory – pravilo prestopnih let",
+    "Pravilo prestopnih let (U.S. Naval Observatory)",
     "https://aa.usno.navy.mil/faq/leap_years"
   ],
+  "school-organisation": [
+    "Organizacija pouka v osnovni šoli (GOV.SI)",
+    "https://www.gov.si/teme/o-osnovni-soli/"
+  ],
   "basic-school": [
-    "GOV.SI – šolski koledar za osnovne šole",
+    "Šolski koledar za osnovne šole (GOV.SI)",
     "https://www.gov.si/teme/solski-koledar-za-osnovne-sole/"
   ],
   "secondary-school": [
-    "GOV.SI – šolski koledar za srednje šole",
+    "Šolski koledar za srednje šole (GOV.SI)",
     "https://www.gov.si/teme/solski-koledar-za-srednje-sole/"
   ],
+  "ric-general-matura": [
+    "Koledar splošne mature (Državni izpitni center)",
+    "https://www.ric.si/splosna-matura/koledar-splosne-mature/"
+  ],
+  "ric-vocational-matura": [
+    "Koledar poklicne mature (Državni izpitni center)",
+    "https://www.ric.si/poklicna-matura/koledar-poklicne-mature/"
+  ],
+  "ric-npz": [
+    "Koledar NPZ (Državni izpitni center)",
+    "https://www.ric.si/nacionalno-preverjanje-znanja/koledar-npz/"
+  ],
+  "ric-npz-results": [
+    "Rezultati in vpogled pri NPZ (Državni izpitni center)",
+    "https://www.ric.si/nacionalno-preverjanje-znanja/vrednotenje-in-rezultati/"
+  ],
+  "ric-npz-portal": [
+    "Portal Dosežki NPZ (Državni izpitni center)",
+    "https://npz.ric.si/"
+  ],
+  "ric-npz-subjects": [
+    "Predmeti in pretekli preizkusi NPZ (Državni izpitni center)",
+    "https://www.ric.si/nacionalno-preverjanje-znanja/predmeti-npz/"
+  ],
+  "npz-third-subject": [
+    "Tretji predmet pri NPZ po šolah (GOV.SI)",
+    "https://www.gov.si/novice/2026-09-01-nacionalno-preverjanje-znanja-v-solskem-letu-20262027/"
+  ],
+  "gov-npz": [
+    "Nacionalno preverjanje znanja in vpis v srednjo šolo (GOV.SI)",
+    "https://www.gov.si/teme/nacionalno-preverjanje-znanja/"
+  ],
   "ics": [
-    "IETF – specifikacija iCalendar (RFC 5545)",
+    "Specifikacija iCalendar (RFC 5545) (IETF)",
     "https://www.rfc-editor.org/info/rfc5545/"
   ],
+  "cc-by": [
+    "Priznanje avtorstva 4.0 (Creative Commons)",
+    "https://creativecommons.org/licenses/by/4.0/deed.sl"
+  ],
+  "svg-standard": [
+    "Specifikacija za SVG (W3C)",
+    "https://www.w3.org/TR/SVG2/"
+  ],
+  "excel-filter": [
+    "Filtriranje podatkov v Excelu (Microsoft)",
+    "https://support.microsoft.com/sl-si/excel/get-started/filter-data-in-a-range-or-table-in-excel"
+  ],
+  "excel-subtotal": [
+    "Seštevanje filtriranih vrstic s funkcijo SUBTOTAL (Microsoft)",
+    "https://support.microsoft.com/sl-si/excel/functions/subtotal-function"
+  ],
   "pdf-scaling": [
-    "Adobe – prilagajanje velikosti strani pri tisku PDF",
+    "Prilagajanje velikosti strani pri tisku PDF (Adobe)",
     "https://helpx.adobe.com/acrobat/desktop/print-documents/set-up-and-print-pdfs/page-size.html"
   ],
+  "preview-printing": [
+    "Tiskanje PDF-jev in slik v Predogledu (Apple)",
+    "https://support.apple.com/guide/preview/print-pdfs-and-images-prvw15175/mac"
+  ],
+  "epson-print-scaling": [
+    "Prilagajanje merila in papirja pri tisku (Epson)",
+    "https://files.support.epson.com/docid/cpd5/cpd56774/source/printers/source/printing_software/windows_fy13/tasks/selecting_more_windows_bus_fy14.html"
+  ],
   "paper": [
-    "ISO 216 – velikosti papirja za tisk",
-    "https://www.iso.org/standard/36631.html"
+    "Velikosti papirja za tisk (ISO 216)",
+    "https://committee.iso.org/standard/36631.html"
   ],
   "sun": [
-    "U.S. Naval Observatory – Sonce, Luna in mrak za izbrani kraj",
+    "Sonce, Luna in mrak za izbrani kraj (U.S. Naval Observatory)",
     "https://aa.usno.navy.mil/data/RS_OneDay"
   ],
   "moon": [
-    "U.S. Naval Observatory – datumi glavnih Luninih men",
+    "Datumi glavnih Luninih men (U.S. Naval Observatory)",
     "https://aa.usno.navy.mil/data/MoonPhases"
   ],
   "seasons": [
-    "U.S. Naval Observatory – enakonočja in solsticiji",
+    "Enakonočja in solsticiji (U.S. Naval Observatory)",
     "https://aa.usno.navy.mil/data/Earth_Seasons"
   ],
   "perseids": [
-    "NASA – meteorski roj Perzeidov",
+    "Meteorski roj Perzeidov (NASA)",
     "https://science.nasa.gov/solar-system/meteors-meteorites/perseids/"
   ],
   "timezone": [
-    "IANA – zbirka pravil časovnih pasov",
+    "Zbirka pravil časovnih pasov (IANA)",
     "https://www.iana.org/time-zones"
   ],
   "clock": [
-    "Svet EU – sezonski premiki ure",
+    "Sezonski premiki ure (Svet EU)",
     "https://www.consilium.europa.eu/en/policies/seasonal-time-changes/"
   ],
   "eclipses": [
-    "NASA – Sončevi in Lunini mrki",
+    "Sončevi in Lunini mrki (NASA)",
     "https://science.nasa.gov/eclipses/"
   ],
   "safety": [
-    "NASA – navodila za varno opazovanje Sončevega mrka",
+    "Navodila za varno opazovanje Sončevega mrka (NASA)",
     "https://science.nasa.gov/eclipses/safety/"
   ],
   "garden": [
-    "KGZS – navodila za pridelavo solatnic in pripravo tal",
+    "Navodila za pridelavo solatnic in pripravo tal (KGZS)",
     "https://www.kgzs.si/uploads/dokumenti/strokovna_gradiva/tehnoloska_navodila_za_pridelavo_solatnic-splet_2.pdf"
   ],
   "weather": [
-    "ARSO – vremenska napoved za Slovenijo",
+    "Vremenska napoved za Slovenijo (ARSO)",
     "https://meteo.arso.gov.si/"
   ],
   "pension": [
-    "ZPIZ – uradna obvestila o pokojninah in izplačilih",
+    "Uradna obvestila o pokojninah in izplačilih (ZPIZ)",
     "https://www.zpiz.si/content2019/izplailni-dnevi"
   ],
   "benefits": [
-    "GOV.SI – razpored izplačil socialnih transferjev",
+    "Razpored izplačil socialnih transferjev (GOV.SI)",
     "https://www.gov.si/podrocja/socialna-varnost/pravice-iz-javnih-sredstev-socialnovarstveni-programi-in-ukrepi-na-podrocju-socialnega-varstva/#e156284"
   ],
   "privacy": [
-    "Informacijski pooblaščenec – varstvo osebnih podatkov",
+    "Varstvo osebnih podatkov (Informacijski pooblaščenec)",
     "https://www.ip-rs.si/"
   ],
   "rights": [
-    "Creative Commons – vrste licenc",
+    "Vrste licenc (Creative Commons)",
     "https://creativecommons.org/cc-licenses/"
   ],
   "sky": [
-    "NASA – opazovanje neba",
+    "Opazovanje neba (NASA)",
     "https://science.nasa.gov/skywatching/"
   ],
   "studies": [
-    "Univerza v Ljubljani – študijski koledar",
+    "Študijski koledar (Univerza v Ljubljani)",
     "https://www.uni-lj.si/studij#e27751"
   ],
   "consumer": [
-    "GOV.SI – varstvo potrošnikov",
+    "Varstvo potrošnikov (GOV.SI)",
     "https://www.gov.si/teme/varstvo-potrosnikov/"
   ],
   "earth": [
-    "GOV.SI – svetovni dan Zemlje in lokalno ukrepanje",
+    "Svetovni dan Zemlje in lokalno ukrepanje (GOV.SI)",
     "https://www.gov.si/novice/2026-04-21-svetovni-dan-zemlje-poudarja-pomen-skupnega-delovanja-odlocanja-in-odgovornosti-do-nasega-planeta/"
+  ],
+  "pension-before-retirement": [
+    "Postopek pred zaključkom dela (ZPIZ)",
+    "https://www.zpiz.si/cms/?inf=326"
+  ],
+  "trubar-facsimile": [
+    "NUK: prvi popolni faksimile Trubarjevih prvih knjig",
+    "https://www.dlib.si/details/URN:NBN:SI:doc-7KLA8QC5"
+  ],
+  "dalmatin-bible": [
+    "NUK: digitalizirani izvod Dalmatinove Biblije iz leta 1584",
+    "https://www.dlib.si/details/URN:NBN:SI:DOC-8NAJPUXS"
   ]
 }

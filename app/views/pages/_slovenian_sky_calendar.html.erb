@@ -1,27 +1,48 @@
-<% years = SlovenianSkyCalendar::YEARS; current_year = @today.year.clamp(years.first, years.last) %>
-<section class="sl-resource-panel sl-sky-panel" id="orodje" data-sl-sky-calendar>
-  <h2>Dogodki po datumu</h2>
-  <p>Ure so prikazane za Slovenijo. Pri mrkih izberite povezavo za ogled krajevne vidnosti.</p>
-  <div class="sl-resource-form" data-sl-sky-controls hidden>
-    <label>Leto<select data-sl-sky-year><% years.each do |year| %><option <%= 'selected' if year == current_year %>><%= year %></option><% end %></select></label>
-    <label>Vrsta dogodka<select data-sl-sky-type><option value="all">Vsi dogodki</option><% SlovenianSkyCalendar::TYPES.each do |key, (label, _)| %><option value="<%= key %>"><%= label %></option><% end %></select></label>
+<% years = SlovenianSkyCalendar::YEARS
+   current_year = @today.year.clamp(years.first, years.last)
+   months = I18n.t('date.month_names').drop(1) %>
+<section class="sky-schedule" id="orodje" data-sl-sky-calendar aria-labelledby="sky-schedule-title">
+  <header class="sky-schedule__header">
+    <h2 id="sky-schedule-title">Astronomski dogodki po datumu</h2>
+    <p>Ure veljajo za Slovenijo. Pri mrkih v podrobnostih preverite vidnost iz svojega kraja.</p>
+  </header>
+  <div class="sky-filters" data-sl-sky-controls hidden>
+    <label for="sky-year">Leto<select id="sky-year" name="year" data-sl-sky-year>
+      <% years.each do |year| %><option value="<%= year %>" <%= 'selected' if year == current_year %>><%= year %></option><% end %>
+    </select></label>
+    <label for="sky-month">Mesec<select id="sky-month" name="month" data-sl-sky-month>
+      <option value="all">Vsi meseci</option>
+      <% months.each_with_index do |name, index| %><option value="<%= index + 1 %>"><%= name.capitalize %></option><% end %>
+    </select></label>
+    <label for="sky-type">Vrsta dogodka<select id="sky-type" name="type" data-sl-sky-type>
+      <option value="all">Vsi dogodki</option>
+      <% SlovenianSkyCalendar::TYPES.each do |key, label| %><option value="<%= key %>"><%= label %></option><% end %>
+    </select></label>
   </div>
-  <p data-sl-sky-count role="status" hidden></p>
+  <p class="sky-schedule__count" data-sl-sky-count role="status" hidden></p>
+  <div class="sky-schedule__empty" data-sl-sky-empty hidden>
+    <p>V tem mesecu ni dogodkov izbrane vrste.</p>
+    <button type="button" class="sky-action" data-sl-sky-reset>Prikaži vse dogodke v letu</button>
+  </div>
   <% SlovenianSkyCalendar.events.group_by { |event| event.date.year }.each do |year, events| %>
-    <section class="sl-sky-year" data-sl-sky-group="<%= year %>">
-      <h3><%= year %></h3>
-      <ol class="sl-sky-list">
-        <% events.each do |event| %>
-          <li data-sl-sky-row="<%= event.kind %>">
-            <time datetime="<%= event.time&.iso8601 || event.date.iso8601 %>">
-              <strong><%= l(event.date, format: '%-d. %B') %></strong>
-              <% if event.time %><small><%= event.time.strftime('%H:%M %Z') %></small><% end %>
-            </time>
-            <div><a href="<%= event.path %>"><%= event.title %></a><% if event.note %><small><%= event.note %></small><% end %></div>
-            <span class="sl-sky-mark"><%= ui_icon(SlovenianSkyCalendar::TYPES.fetch(event.kind).last) %></span>
-          </li>
-        <% end %>
-      </ol>
-    </section>
+    <div data-sl-sky-group="<%= year %>">
+      <% events.group_by { |event| event.date.month }.each do |month, entries| %>
+        <section class="sky-month" data-sl-sky-month-group="<%= month %>">
+          <h3><%= months.fetch(month - 1).capitalize %> <%= year %></h3>
+          <ul role="list">
+            <% entries.each do |event| %>
+              <li data-sl-sky-row="<%= event.kind %>">
+                <time class="sky-row__day" datetime="<%= event.time&.iso8601 || event.date.iso8601 %>" aria-label="<%= astro_date(event.date.iso8601) %>"><%= event.date.day %>.</time>
+                <div class="sky-row__copy">
+                  <a href="<%= event.path %>"><%= event.title %></a>
+                  <% if event.note %><small><%= event.note %></small><% end %>
+                </div>
+                <% if event.time %><span class="sky-row__time"><%= event.time.strftime('%H:%M %Z') %></span><% end %>
+              </li>
+            <% end %>
+          </ul>
+        </section>
+      <% end %>
+    </div>
   <% end %>
 </section>

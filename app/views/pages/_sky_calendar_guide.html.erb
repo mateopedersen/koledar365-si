@@ -1,0 +1,97 @@
+<% resource = SlovenianResources::PAGES.fetch(SlovenianSkyCalendar::PATH)
+   cover = SlovenianSkyCalendar::COVER
+   years = SlovenianSkyCalendar::YEARS
+   title_start, title_years, title_end = resource.fetch(:title).partition("#{years.first}–#{years.last}")
+   eclipse = AstronomySchedule.data.fetch('solar').find { |event| event.fetch('id') == 'solar-2027-08-02' }
+   ljubljana = eclipse.fetch('cities').fetch('ljubljana').fetch('contacts')
+   eclipse_path = "/soncni-mrk/?year=2027&city=ljubljana&event=#{eclipse.fetch('id')}#astro-event-selection" %>
+<article class="sky-guide">
+  <header class="sky-masthead">
+    <div class="sky-masthead__copy">
+      <h1><%= title_start %><span><%= title_years %></span><%= title_end %></h1>
+      <p>Lunine mene, Sončevi in Lunini mrki, začetki letnih časov ter avgustovske noči za opazovanje Perzeidov. Poiščite datum in preverite, kaj se da videti iz vašega kraja.</p>
+      <div class="sky-masthead__actions">
+        <a class="sky-action" href="#orodje">Odpri koledar <%= ui_icon('arrow-down') %></a>
+        <a class="sky-action sky-action--quiet" href="#opazovanje">Načrtuj opazovanje</a>
+      </div>
+    </div>
+    <figure class="sky-masthead__photo">
+      <%= image_tag cover.fetch('path'), alt: cover.fetch('alt'), width: cover.fetch('width'), height: cover.fetch('height'), fetchpriority: 'high', decoding: 'async' %>
+      <figcaption><%= link_to 'Posnetek: NASA · Artemis II', cover.fetch('source') %></figcaption>
+    </figure>
+  </header>
+
+  <nav class="sky-topics" aria-label="Astronomski pojavi">
+    <% [
+      ['/lunine-mene/', 'moon', 'Lunine mene', 'Mlaj, polna luna in krajca'],
+      ['/soncni-mrk/', 'eclipse', 'Sončevi mrki', 'Časi in vidnost po krajih'],
+      ['/letni-casi/', 'seasons', 'Letni časi', 'Enakonočja in solsticiji'],
+      ['/perzeidi/', 'meteor', 'Perzeidi', 'Avgustovski utrinki']
+    ].each do |path, icon, label, detail| %>
+      <a class="sky-topic" href="<%= path %>">
+        <span class="sky-glyph sky-glyph--<%= icon %>"><%= render 'sky_calendar_icon', icon: icon %></span>
+        <span><strong><%= label %></strong><small><%= detail %></small></span>
+        <%= ui_icon('chevron-right') %>
+      </a>
+    <% end %>
+  </nav>
+
+  <div class="sky-layout">
+    <%= render 'slovenian_sky_calendar' %>
+    <aside class="sky-aside" aria-labelledby="sky-example-title">
+      <div class="sky-example">
+        <h2 id="sky-example-title">Sončev mrk v Ljubljani</h2>
+        <p class="sky-kicker"><time datetime="<%= eclipse.fetch('date') %>"><%= astro_date(eclipse.fetch('date')) %></time></p>
+        <p>V Ljubljani bo mrk <strong>delen</strong>. Za opazovanje uporabite krajevni potek v spodnjem prikazu, ure pa so v poletnem času (CEST).</p>
+        <dl class="sky-example__times">
+          <% [['Začetek v Ljubljani', ljubljana.fetch('partial_begin').fetch('utc')],
+               ['Največje prekritje v Ljubljani', ljubljana.fetch('peak').fetch('utc')],
+               ['Konec v Ljubljani', ljubljana.fetch('partial_end').fetch('utc')],
+               ['Globalni maksimum', eclipse.fetch('peak')]].each do |label, instant| %>
+            <div><dt><%= label %></dt><dd><time datetime="<%= instant %>"><%= astro_time(instant) %></time></dd></div>
+          <% end %>
+        </dl>
+        <a class="sky-action" href="<%= eclipse_path %>">Podrobnosti za Ljubljano <%= ui_icon('chevron-right') %></a>
+        <p class="sky-example__credit"><a href="https://eclipse.gsfc.nasa.gov/SEsearch/SEdata.php?Ecl=+20270802">NASA: globalni maksimum</a> · <a href="https://www.orion-drustvo.si/2022/10/23/vabilo-na-javno-opazovanje-delnega-soncevega-mrka/">Astronomsko društvo Orion: vidnost iz Slovenije</a></p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sky-reading" id="opazovanje" aria-labelledby="sky-observe-title">
+    <header>
+      <h2 id="sky-observe-title">Kako načrtovati opazovanje neba v Sloveniji</h2>
+      <p>Datum je prvi korak. Za izbiro ure in kraja preverite še obzorje, mesečino in oblačnost.</p>
+    </header>
+    <div class="sky-reading__grid">
+      <section class="sky-reading__card">
+        <h3>Kdaj sta mlaj in polna luna?</h3>
+        <p>V filtru <strong>Lunine mene</strong> so štirje glavni trenutki cikla. Ura polne lune pove, kdaj nastopi ščip. Za fotografiranje Luninega diska tik nad obzorjem posebej poiščite <a href="/lunin-vzhod-in-zahod/">Lunin vzhod in zahod za svoj kraj</a>. Če iščete temno nebo za opazovanje šibkih zvezd, primerjajte <a href="/mlaj/">datum mlaja</a> s časom, ko je Luna pod obzorjem.</p>
+      </section>
+      <section class="sky-reading__card">
+        <h3>Kdaj je mrk viden iz mojega kraja?</h3>
+        <p>Pri <a href="/soncni-mrk/">Sončevem mrku</a> in <a href="/lunin-mrk/">Luninem mrku</a> koledar navaja trenutek največjega mrka na Zemlji. V podrobnostih izberite kraj ter preverite, ali sta Sonce oziroma Luna med posameznimi fazami nad obzorjem. Delni Sončev mrk opazujte le z ustreznimi očali za opazovanje Sonca. Za daljnogled ali teleskop potrebujete primeren filter pred objektivom. <a href="https://science.nasa.gov/eclipses/safety/">Nasina navodila za varno opazovanje</a> pojasnjujejo tudi posredno projekcijo.</p>
+      </section>
+      <section class="sky-reading__card">
+        <h3>Zakaj je pri enakonočju včasih drug datum?</h3>
+        <p>V viru USNO je <a href="https://aa.usno.navy.mil/api/seasons?year=2030">jesensko enakonočje leta 2030</a> navedeno 22. septembra ob 23:27 po univerzalnem času. Po pretvorbi v slovenski poletni čas ga <a href="?year=2030&amp;month=9&amp;type=season#orodje">koledar prikaže 23. septembra ob 01:27 CEST</a>. Enako pravilo velja za solsticije. Za načrtovanje dneva primerjajte tudi <a href="/dolzina-dneva/">trajanje svetlega dela dneva v izbranem kraju</a>.</p>
+      </section>
+      <section class="sky-reading__card">
+        <h3>Katero noč izbrati za Perzeide?</h3>
+        <p>Avgusta so v koledarju tri predlagane noči okrog običajnega vrha roja. Navedeni datum je začetek noči. V <a href="/perzeidi/">krajevnem pregledu Perzeidov</a> primerjajte obdobje teme in mesečino. Poiščite odprt prostor stran od uličnih svetilk, počakajte, da se oči privadijo temi, in opazujte čim večji del neba s prostim očesom.</p>
+      </section>
+    </div>
+  </section>
+
+  <section class="sky-sources" id="sl-sources" aria-labelledby="sky-sources-title">
+    <div>
+      <h2 id="sky-sources-title">Viri in izračun časa</h2>
+      <p>Čas astronomskih pojavov pretvorimo v časovni pas <strong>Europe/Ljubljana</strong> (CET ali CEST) in prikažemo na minuto. Krajevne razmere za mrke izračunamo za središča izbranih mest brez upoštevanja stavb, reliefa ali vremena. Na strani <a href="/viri-in-metodologija/">Viri in metodologija</a> so zbrana pojasnila o podatkih in izračunih.</p>
+    </div>
+    <ul role="list">
+      <% resource.fetch(:sources).each do |label, url| %>
+        <li><%= link_to label, url %></li>
+      <% end %>
+      <li><a href="/fotografije-in-licence/#fotografije-astronomskega-koledarja">Fotografija in pogoji uporabe</a></li>
+    </ul>
+  </section>
+</article>

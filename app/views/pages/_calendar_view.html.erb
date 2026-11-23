@@ -1,4 +1,15 @@
 <% case @view;when 'year' %><div class="year-grid"><% 1.upto(12) do |m| %><%= calendar_month(@year,m,mini:true) %><% end %></div>
-<% when 'week','day' %><div class="week-view"><% dates=@view=='day' ? [@selected] : ((@selected-@selected.cwday+1)..(@selected-@selected.cwday+7));dates.each do |d|;next unless d.between?(Date.new(2026,1,1),Date.new(2030,12,31)) %><section><h3><a href="?year=<%= d.year %>&month=<%= d.month %>&date=<%= d %>&view=day"><%= CalendarEngine::DAYS[d.cwday-1] %> <%= d.day %>.</a></h3><% @event_map.fetch(d,[]).each do |e| %><a href="<%= event_path(e) %>"><%= e.title %></a><% end %><p class="muted">Načrte dodajte v razdelku Moj dan.</p></section><% end %></div>
+<% when 'week', 'day' %>
+  <% dates = @view == 'day' ? [@selected] : ((@selected - @selected.cwday + 1)..(@selected - @selected.cwday + 7)) %>
+  <div class="week-view">
+    <% dates.each do |date| %>
+      <% next unless date.between?(Date.new(2026, 1, 1), Date.new(2030, 12, 31)) %>
+      <section>
+        <h3><a href="?year=<%= date.year %>&month=<%= date.month %>&date=<%= date %>&view=day"><%= CalendarEngine::DAYS[date.cwday - 1] %> <%= date.day %>.</a></h3>
+        <% @event_map.fetch(date, []).each do |event| %><a href="<%= event_path(event) %>"><%= event.title %></a><% end %>
+      </section>
+    <% end %>
+  </div>
+  <% if @section == 'home' %><p class="calendar-personal-hint">Načrte dodajte v razdelku <a href="#personal-title">Moj dan</a>.</p><% end %>
 <% when 'list' %><%= render 'event_table',events:ImportantDays.filter(@events,year:@year,month:@month) %>
 <% else %><%= calendar_month(@year,@month) %><% end %>

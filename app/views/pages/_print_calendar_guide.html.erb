@@ -1,0 +1,57 @@
+<section class="panel print-calendar-guide" id="navodila-za-tisk" aria-labelledby="print-guide-title">
+  <header class="print-calendar-guide__heading">
+    <h2 id="print-guide-title">Od izbire predloge do prvega odtisa</h2>
+    <p>Najprej izberite, kaj mora biti na listu vidno na prvi pogled. Za ročne dopise pustite več prostora kot za pregled datumov.</p>
+  </header>
+
+  <div class="print-calendar-guide__uses">
+    <article>
+      <h3>Mesec na steni, teden na mizi</h3>
+      <p>Letni pregled pomaga pri izbiri terminov za dopust. Mesečna mreža pušča več prostora za posamezne dneve. Za teden, ki sega v dva meseca, izberite tedenski koledar in vnesite poljuben datum iz tega tedna.</p>
+      <p><%= link_to 'Prilagodite februar 2028', calendar_print_path(year: 2028, month: 2) %> ali <%= link_to 'odprite teden od 28. februarja do 5. marca 2028', calendar_print_path(year: 2028, month: 2, date: Date.new(2028, 2, 29), type: 'weekly') %>. Torek, 29. februar, je v obeh pogledih.</p>
+    </article>
+    <article>
+      <h3>Delovni dnevi, prazniki in lunine mene</h3>
+      <p>Za okviren pregled delovnega časa izberite koledar delovnih dni. Svoj izmenski cikel pripravite v <a href="/razpored-izmen/">načrtovalniku izmen</a>. V <a href="/prazniki/">pregledu slovenskih praznikov</a> preverite, kateri prazniki so tudi dela prosti dnevi.</p>
+      <p>Za seznam praznikov in za lunine mene so tiskovne predloge na voljo za leta 2027–2030. Točen čas posamezne mene v Sloveniji poiščite v <a href="/lunin-koledar/">luninem koledarju</a>.</p>
+    </article>
+    <article>
+      <h3>Dom, šola in osebne obveznosti</h3>
+      <p>Dnevni planer razporedi obveznosti po urah. V <a href="/druzinski-planer/">družinski planer</a> zabeležite, kdo prevzame posamezno opravilo, za predmete in učilnice pa uporabite <a href="/solski-urnik/">šolski urnik</a>.</p>
+      <p>V <a href="/rojstnodnevni-koledar/">rojstnodnevnem koledarju</a> lahko določite, kako se 29. februar prikaže v neprestopnem letu. Koledar z imenom uporabite za osebno darilo, <a href="/prazen-koledar/">prazno predlogo</a> pa za večkratno uporabo.</p>
+    </article>
+  </div>
+
+  <div class="print-calendar-guide__setup">
+    <section aria-labelledby="print-paper-title">
+      <h3 id="print-paper-title">Papir in usmerjenost</h3>
+      <dl class="print-calendar-guide__paper">
+        <div><dt>A4</dt><dd><span>210 × 297 mm</span>Za mesečni list na domačem tiskalniku.</dd></div>
+        <div><dt>A3</dt><dd><span>297 × 420 mm</span>Za stenski pregled z več prostora za dopise.</dd></div>
+        <div><dt>A5</dt><dd><span>148 × 210 mm</span>Za manjši osebni rokovnik.</dd></div>
+      </dl>
+      <p>Pri tedenski mreži poskusite ležečo postavitev, da dobite širše stolpce. Za dolg seznam je pogosto primernejša pokončna. <%= editorial_paragraph('[Velikosti papirja po standardu ISO 216](@paper).') %></p>
+    </section>
+
+    <section aria-labelledby="print-steps-title">
+      <h3 id="print-steps-title">Trije koraki pred tiskanjem</h3>
+      <ol>
+        <li><strong>Nastavite obdobje.</strong> V razdelku »Prilagodite svoj koledar« izberite vrsto in datum. Za imena, zapiske, fotografijo ali obveznosti razširite ustrezne nastavitve.</li>
+        <li><strong>Preverite vsebino.</strong> Nad predlogami izberite papir in usmerjenost. Pri izbrani predlogi odprite »Moj predogled«. Sličice v galeriji prikazujejo postavitev, osebni predogled pa izbrano obdobje in vaše vnose.</li>
+        <li><strong>Natisnite prvi list.</strong> Odprite preneseni PDF. Če sta velikost strani PDF in papir enaka, poskusite z dejansko velikostjo (100 %). Če tiskalnik odreže rob, izberite prilagoditev strani in preverite, ali besedilo in prostor za pisanje ostaneta dovolj velika.</li>
+      </ol>
+      <p><%= editorial_paragraph('Primer prilagoditve merila v sistemu Windows je v [Epsonovih navodilih za tisk](@epson-print-scaling). Za stenski koledar si oglejte tudi [izbiro predloge in poskusni tisk](/blog/stenski-koledar-izbira-in-tisk/).') %></p>
+    </section>
+  </div>
+
+  <section class="print-calendar-guide__files" aria-labelledby="print-files-title">
+    <h3 id="print-files-title">Katero datoteko prenesti?</h3>
+    <dl>
+      <div><dt>PDF</dt><dd>Za tisk in deljenje vseh strani v eni datoteki. Pred pošiljanjem preverite, ali dokument vključuje osebne zapiske ali fotografijo.</dd></div>
+      <div><dt>Slika WebP</dt><dd>Za slikovno kopijo pri 600 ppi. Če izvoz vsebuje več strani, razširite preneseni ZIP in odprite posamezne slike.</dd></div>
+      <div><dt>ICS in varnostna kopija</dt><dd><%= editorial_paragraph('Za prenos osebnih vnosov v koledarsko aplikacijo uporabite ICS ([specifikacija iCalendar](@ics)). Z možnostjo »Varnostna kopija« shranite datoteko JSON, ki jo lahko znova odprete z možnostjo »Obnovi kopijo«.') %></dd></div>
+    </dl>
+  </section>
+
+  <p class="print-calendar-guide__sources">Kako so izračunani datumi in kateri viri se uporabljajo, pojasnjujejo <a href="/viri-in-metodologija/">viri in metodologija Koledar365</a>. Za napačen datum ali težavo pri izvozu <a href="/kontakt/">nam sporočite vrsto koledarja, obdobje in izbrani format</a>.</p>
+</section>

@@ -21,7 +21,7 @@ test('one complete, crisp brand appears identically in the header and footer acr
    for(const state of states){
     expect(state.src).toMatch(/^\/visuals\/brand-calendar-v3\.[a-f0-9]{16}\.svg$/);
     expect(state.loaded).toBe(true);expect(state.opacity).toBe('1');
-    expect(state.href).toBe('/');expect(state.label).toBe('Koledar365 – domov');
+    expect(state.href).toBe('/');expect(state.label).toBe('Na začetno stran Koledar365');
     expect(state.width).toBeGreaterThanOrEqual(46);expect(state.height).toBe(state.width);
     expect(state.left).toBeGreaterThanOrEqual(0);expect(state.right).toBeLessThanOrEqual(width);
     expect(state.nameRight).toBeLessThanOrEqual(state.right+1);expect(state.nameBottom).toBeLessThanOrEqual(state.bottom+1);

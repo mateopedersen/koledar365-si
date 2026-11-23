@@ -2,13 +2,10 @@ class EditorialNote
   MONTH_NAMES = %w[januar februar marec april maj junij julij avgust september oktober november december].freeze
   MONTH_GENITIVE = %w[januarja februarja marca aprila maja junija julija avgusta septembra oktobra novembra decembra].freeze
   PERIOD = %r{\A/(koledar|tedenski-koledar|delovni-dnevi|prazniki|podaljsani-vikendi|lunin-koledar|pomembni-dnevi)/(202[6-9]|2030)(?:/([a-z]+))?/\z}
-  SUN_EXAMPLE = Date.new(2027, 6, 21)
 
-  def self.for(path, title:, city: nil, observance: nil)
+  def self.for(path, city: nil)
     return EditorialCatalog.notes[path] if EditorialCatalog.notes.key?(path)
-    return sun(city) if city
-    return event(observance) if observance
-    return horoscope(title) if path.start_with?('/horoskop/')
+    return SunLocalEditorial.for(city) if city
 
     match = PERIOD.match(path)
     return unless match
@@ -26,19 +23,6 @@ class EditorialNote
 
   def self.date_label(date)
     "#{date.day}. #{MONTH_GENITIVE.fetch(date.month - 1)} #{date.year}"
-  end
-
-  def self.sun(city)
-    name, latitude, longitude = SunEngine::CITIES.fetch(city)
-    times = SunEngine.calculate(SUN_EXAMPLE, city)
-    rise, set = times.values_at(:rise, :set).map { |time| Time.at((time.to_f / 60).round * 60).getlocal(time.utc_offset).strftime('%H.%M') }
-    hours, minutes = times.fetch(:minutes).divmod(60)
-    reference = longitude < 14.5 ? 'murska-sobota' : 'koper'
-    coordinate = ->(value) { format('%.3f', value).tr('.', ',') }
-    note("#{name}: primer krajevne svetlobe",
-      ["Za 21. junij 2027 model za središče kraja #{name} (#{coordinate.call(latitude)}° S, #{coordinate.call(longitude)}° V) izračuna vzhod ob #{rise} in zahod ob #{set}. Svetli del dneva traja približno #{hours} ur in #{minutes} minut po slovenskem času.",
-       "Za svoj načrt na vrhu strani izberite dejanski datum. V drugem kraju uporabite isti datum in primerjajte tudi dolžino dneva. Če opazujete iz ulice, doline ali z vzpetine, upoštevajte dejansko obzorje."],
-      ["/soncni-vzhod-in-zahod/#{reference}/", '/dolzina-dneva/', '/blog/nacrt-izleta-po-svetlobi/'], %w[sun])
   end
 
   def self.period(family, year, month)
@@ -103,6 +87,10 @@ class EditorialNote
     hours = 8 * data.fetch(:working_days)
     intro = "Med #{date_label(from)} in #{date_label(to)} je pri urniku od ponedeljka do petka #{data.fetch(:working_days)} delovnih dni oziroma #{hours} načrtovanih ur pri osmih urah na dan."
 
+    if month && (example = workday_examples[from.strftime('%Y-%m')])
+      return monthly_work_example(example, intro, holidays, work)
+    end
+
     insight = if month
       calendar_weekdays = (from..to).group_by(&:cwday)
       four_day_schedule = CalendarEngine.working_days(from, to, weekdays: [1, 2, 3, 4]).fetch(:working_days)
@@ -128,6 +116,28 @@ class EditorialNote
     note("#{label}: kako preveriti delovne ure",
       [intro, insight, 'Pri drugačnem urniku najprej prilagodite delovne dneve, nato dnevno število ur. Primer je pomoč za načrtovanje; opravljene ure preverite v svoji evidenci.'],
       [holidays, month ? work : '/kalkulator-delovnih-dni/', '/blog/delovne-ure-zmogljivost-ekipe/'], %w[holidays labour])
+  end
+
+  def self.workday_examples
+    @workday_examples ||= JSON.parse(Rails.root.join('data/calendar-collection/workday_examples_sl.json').read).freeze
+  end
+
+  def self.monthly_work_example(example, intro, holidays, work)
+    from, to = example.values_at('from', 'to').map { |date| Date.iso8601(date) }
+    weekdays = example.fetch('weekdays')
+    hours = example.fetch('hours')
+    result = CalendarEngine.working_days(from, to, weekdays: weekdays)
+    schedule = weekdays.map { |day| CalendarEngine::DAYS.fetch(day - 1) }.join(', ')
+    daily = format('%g', hours).tr('.', ',')
+    total = format('%g', hours * result.fetch(:working_days)).tr('.', ',')
+    excluded = result.fetch(:excluded_holidays)
+    outcome = "Od #{date_label(from)} do #{date_label(to)}, vključno z obema datumoma: #{result.fetch(:working_days)} delovnih dni × #{daily} ure na dan = #{total} načrtovanih ur."
+    holiday_note = excluded.empty? ?
+      'V tem vzorcu na izbrane dneve ne pade noben zakonsko dela prost dan.' :
+      "Dela prosti datumi, izločeni iz izbranega urnika: #{excluded.map { |day| date_label(day) }.join(', ')}."
+    directions = "V [kalkulatorju delovnih dni](/kalkulator-delovnih-dni/) označite naslednje dneve: #{schedule}. #{holiday_note}"
+    note(example.fetch('title'), [intro, example.fetch('body'), outcome, directions],
+         [holidays, work], %w[holidays labour])
   end
 
   def self.lunar_summary(label, from, to, month)
@@ -160,42 +170,5 @@ class EditorialNote
       [work, '/kalkulator-delovnih-dni/', '/blog/osebni-koledar-ics-med-napravami/'], %w[holidays])
   end
 
-  def self.event(observance)
-    events = observance.events
-    first = events.first
-    last = events.last
-    source = if observance.legal?
-      %w[holidays]
-    else
-      refs = TopicContent.references(observance.slug).filter_map do |row|
-        url = row['url']
-        [row['label'] || row['title'] || 'Izvorno pojasnilo o obeležju', url] if url&.start_with?('https://')
-      end
-      refs << ['Izvirni vir datuma ali obeležja', first.source_url] if refs.empty? && first.source_url&.start_with?('https://')
-      refs.uniq(&:last).first(2)
-    end
-    sentence = observance.fixed? ?
-      "Datum je določen v koledarju. Leta #{first.on.year} je prvi prikazani datum #{date_label(first.on)} (#{CalendarEngine::DAYS.fetch(first.on.cwday - 1)})." :
-      "Datum izberite po letu: prvi prikazani primer je #{date_label(first.on)}, zadnji pa #{date_label(last.on)}. Datum se pri načrtu za drugo leto lahko spremeni."
-    status = if observance.free?
-      'Za odsotnost preverite, ali bi bil ta datum po vašem urniku sicer deloven.'
-    elsif observance.legal?
-      'Državni praznik brez statusa dela prostega dne sam po sebi ne spremeni delovnega urnika.'
-    else
-      'Če je v kraju prireditev, uro in lokacijo preverite v programu organizatorja. Datum obeležja sam po sebi ne spremeni delovnega urnika.'
-    end
-    month_route = "/koledar/#{first.on.year}/#{MONTH_NAMES.fetch(first.on.month - 1)}/"
-    note("#{first.title.sub(/\A./, &:upcase)} v koledarskem načrtu",
-      [sentence, status],
-      [month_route, observance.free? ? "/delovni-dnevi/#{first.on.year}/" : "/pomembni-dnevi/#{first.on.year}/", '/blog/letni-koledar-nacrt-za-12-mesecev/'], source)
-  end
-
-  def self.horoscope(title)
-    sign = title.split(/\s+[–·-]\s+|:/).first
-    note("#{sign}: kako brati dnevni zapis",
-      "Pred branjem najprej preverite datum prikaza. Zapis za znamenje #{sign} je namenjen razvedrilu in razmisleku. Če iščete podatek o dejanski Luni ali času vzhoda, uporabite izračun, vezan na datum in kraj.",
-      ['/horoskop/', '/horoskop/izracun-znamenja/', '/lunine-mene/'], %w[sky])
-  end
-
-  private_class_method :note, :date_label, :sun, :period, :calendar, :work_summary, :lunar_summary, :holiday_summary, :event, :horoscope
+  private_class_method :note, :date_label, :period, :calendar, :work_summary, :workday_examples, :monthly_work_example, :lunar_summary, :holiday_summary
 end

@@ -894,7 +894,7 @@
         {
           "start": "2027-01-25",
           "end": "2027-01-31",
-          "source_url": "https://www.biathlon-pokljuka.com/"
+          "source_url": "https://www.biathlon-pokljuka.com/pokljuka-prevzela-zastavo-za-oech-2027/"
         }
       ],
       "edition_year": 2027,
@@ -1073,7 +1073,12 @@
         {
           "start": "2026-06-19",
           "end": "2026-06-21",
-          "source_url": "https://www.visit-idrija.si/en/events/?m=10&y=2026"
+          "source_url": "https://www.visit-idrija.si/en/news/news-archive/2026031011045463/44th-idrija-lace-festival/"
+        },
+        {
+          "start": "2027-06-18",
+          "end": "2027-06-20",
+          "source_url": "https://www.festivalidrijskecipke.si/aktualno/vabilo-k-sodelovanju-na-5-ljubiteljski-razstavi-klikl/"
         }
       ],
       "period": "Junij",
@@ -1089,7 +1094,13 @@
       "source_title": "Festival Velenje",
       "description": "Pikin festival je velenjska prireditev za otroke in družine, poimenovana po Piki Nogavički. Povezuje delavnice, predstave in srečanja z ustvarjalci.",
       "visit": "Pred družinskim obiskom primerjajte starostne skupine delavnic, morebitne rezervacije in ustrezno prizorišče. Navedeni vir prikazuje zasnovo izvedbe leta 2026.",
-      "editions": [],
+      "editions": [
+        {
+          "start": "2026-09-05",
+          "end": "2026-09-11",
+          "source_url": "https://www.festival-velenje.si/medijsko-sredisce/sporocila-za-medije/2026/08/417-Pikine-zgodbe-V-mesto-prihaja-37-Pikin-festival"
+        }
+      ],
       "photo": "city:velenje"
     },
     {
@@ -1102,7 +1113,13 @@
       "source_title": "STIK Laško",
       "description": "Laško Pivo in cvetje združuje glasbene nastope, mestno dogajanje in laško pivovarsko tradicijo.",
       "visit": "Za obisk izberite koncert in prizorišče, nato preverite prihod v Laško in pozni povratek. Termin stare izvedbe ni napoved novega programa.",
-      "editions": [],
+      "editions": [
+        {
+          "start": "2026-07-10",
+          "end": "2026-07-12",
+          "source_url": "https://2026.pivo-cvetje.si/"
+        }
+      ],
       "photo": "city:lasko"
     },
     {
@@ -1119,7 +1136,7 @@
         {
           "start": "2026-11-11",
           "end": "2026-11-22",
-          "source_url": "https://www.cd-cc.si/festivali"
+          "source_url": "https://cd-cc.si/kultura/film/37-ljubljanski-mednarodni-filmski-festival-liffe"
         }
       ],
       "photo": "night:ljubljana"
@@ -1134,7 +1151,13 @@
       "source_title": "Mednarodni literarni festival Vilenica",
       "description": "Vilenica povezuje pisatelje, pesnike in prevajalce na literarnih branjih ter pogovorih. Ime je povezano s kraško jamo Vilenico.",
       "visit": "Prizorišča so razpršena, zato pri izbranem branju upoštevajte kraj in jezik dogodka. Zaključna slovesnost in branja v drugih krajih imajo vsak svoj program.",
-      "editions": [],
+      "editions": [
+        {
+          "start": "2026-09-01",
+          "end": "2026-09-05",
+          "source_url": "https://vilenica.si/en/program/2309/"
+        }
+      ],
       "photo": "vilenica"
     },
     {

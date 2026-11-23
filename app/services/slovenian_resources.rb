@@ -145,7 +145,7 @@ class SlovenianResources
       related: [ANNUAL_TAX, '/kalkulator-ddv/', '/davcni-koledar/', '/delovni-dnevi/', '/nadomestilo-za-brezposelnost/']
     },
     ANNUAL_TAX => {
-      name: 'Letni izračun dohodnine', title: 'Kalkulator dohodnine 2027 in 2026 – koliko ostane od plače', icon: 'annual-tax',
+      name: 'Letni izračun dohodnine', title: 'Izračun dohodnine in neto plače za leti 2026 in 2027', icon: 'annual-tax',
       description: 'Iz bruto plač izračunajte letni neto, dohodnino ter predvideno vračilo ali doplačilo. Primerjajte uradno lestvico 2026 in projekcijo za 2027.',
       metric: ['+6,225 %', 'Napovedana uskladitev olajšav in mej razredov za 2027'],
       calculator: :annual_tax, action: 'Izračunajte letni neto po dohodnini',
@@ -174,25 +174,29 @@ class SlovenianResources
       related: ['/kalkulator-place/', '/davcni-koledar/']
     },
     '/predloge-urnikov/' => {
-      name: 'Predloge urnikov za tiskanje', title: 'Predloge urnikov za tiskanje: delovni, šolski in tedenski', icon: 'schedule-templates',
-      description: 'Pripravite prazen delovni razpored, šolski urnik ali tedenski planer. Izberite začetek tedna in natisnite predlogo ali jo shranite kot PDF.',
+      name: 'Predloge urnikov za tiskanje', title: 'Predloge urnikov za tiskanje: delovni, šolski in tedenski', icon: 'schedule-templates', checked_on: '2026-11-23',
+      description: 'Izberite delovni razpored, šolski urnik ali tedenski planer. Dodajte datume tedna, preverite predogled in predlogo natisnite ali shranite kot PDF na ležečem A4.',
       sections: [
-        ['Delovni razpored', 'Vpišite predvideni začetek in konec izmene ter ime osebe ali ekipe. Za ponavljajoč se cikel uporabite razpored izmen. Predloga služi načrtovanju prihodnjih ur, podatke o dejansko opravljenem delu vodite v evidenci.'],
-        ['Šolski urnik', 'V polja vpišite predmete in učilnice. Oštevilčene učne ure omogočajo uporabo pri različnih šolskih urnikih. Za shranjevanje ure začetka in prostora uporabite urejevalnik šolskega urnika.'],
-        ['Tedenski planer', 'Zapišite obveznosti in pustite prostor med jutranjim, popoldanskim in večernim blokom. Za tedenski koledar z vpisanimi slovenskimi prazniki odprite ločeno orodje.']
+        ['Delovni razpored za izmene', 'Sedem stolpcev pokriva tudi konec tedna. V vrstico izmene napišite ime in predvidene ure, spremembe pa v opombe. Če se izmena konča po polnoči, pripišite datum konca ali »naslednji dan«. Za ponavljajoče se cikle uporabite [izračun razporeda izmen](/razpored-izmen/).'],
+        ['Šolski urnik za ročni vpis', 'List zajema ponedeljek do petka in do osem učnih ur na dan. Pod predmet vpišite učilnico. Če želite ob predmetu shraniti tudi uro začetka ali pozneje popraviti urnik, odprite [urejevalnik šolskega urnika](/solski-urnik/).'],
+        ['Tedenski planer po delih dneva', 'Jutro, dopoldne, popoldne in večer imajo ločene vrstice. Najprej vnesite obveznosti s točno uro, nato opravila razporedite po prostih blokih. Za vnos zapiskov pred tiskanjem ali prikaz praznikov uporabite [tedenski koledar z zapiski](/tedenski-koledar/).']
       ],
-      sources: [['GOV.SI – Razporejanje dela in evidenca delovnega časa', 'https://www.gov.si/teme/delovna-razmerja/']],
+      sources: [
+        ['ISO 216 – mere papirja A4', 'https://committee.iso.org/standard/36631.html'],
+        ['Google Chrome – tiskanje in shranjevanje v PDF', 'https://support.google.com/chrome/answer/1069693?hl=sl']
+      ],
       related: ['/razpored-izmen/', '/solski-urnik/', '/tedenski-koledar/', '/koledar-za-tiskanje/']
     },
     '/astronomski-koledar/' => {
       name: 'Astronomski koledar', title: 'Astronomski koledar 2026–2030 za Slovenijo', icon: 'sky-calendar',
-      description: 'Na enem mestu poglejte lunine mene, enakonočja, solsticije, mrke in opazovalne noči Perzeidov. Filtrirajte leto in vrsto dogodka.',
-      sections: [
-        ['Berite dogodke v slovenskem času', 'Lunine mene in začetki letnih časov so trenutki, preračunani v Europe/Ljubljana. Pozimi je ura prikazana v CET, poleti v CEST. Zato je lahko krajevni datum drugačen od datuma v viru UTC.'],
-        ['Preverite vidnost pred odhodom', 'Pri mrku je označen globalni maksimum. Dogodek je lahko iz Slovenije viden le delno ali sploh ne. Izberite svoje mesto na strani mrka, kjer so prikazani lokalni časi in vidnost nad obzorjem.'],
-        ['Opazovalne noči Perzeidov', 'Tri avgustovske noči so v koledarju prikazane kot predlogi za opazovanje. Podrobnosti o temi in mesečini so na strani Perzeidov.']
+      description: 'Astronomski dogodki v Sloveniji 2026–2030. Poiščite polno luno, mlaj, Sončev ali Lunin mrk, solsticij, enakonočje in opazovalne noči Perzeidov.',
+      sources: [
+        ['USNO – datumi in ure Luninih men', 'https://aa.usno.navy.mil/data/MoonPhases'],
+        ['USNO – enakonočja in solsticiji', 'https://aa.usno.navy.mil/data/Earth_Seasons'],
+        ['NASA – katalog Sončevih mrkov 2021–2030', 'https://eclipse.gsfc.nasa.gov/SEdecade/SEdecade2021.html'],
+        ['NASA – katalog Luninih mrkov 2021–2030', 'https://eclipse.gsfc.nasa.gov/LEdecade/LEdecade2021.html'],
+        ['International Meteor Organization – koledar meteorskih rojev', 'https://www.imo.net/calendar/']
       ],
-      sources: [['U.S. Naval Observatory – Lunine mene', 'https://aa.usno.navy.mil/data/MoonPhases'], ['U.S. Naval Observatory – Enakonočja in solsticiji', 'https://aa.usno.navy.mil/data/Earth_Seasons'], ['NASA – Sončni mrki 2021–2030', 'https://eclipse.gsfc.nasa.gov/SEdecade/SEdecade2021.html'], ['NASA – Lunini mrki 2021–2030', 'https://eclipse.gsfc.nasa.gov/LEdecade/LEdecade2021.html']],
       related: ['/lunine-mene/', '/letni-casi/', '/soncni-vzhod-in-zahod/', '/dolzina-dneva/']
     }
   }.freeze
@@ -213,7 +217,7 @@ class SlovenianResources
     ANNUAL_TAX => 'dohodnina 2027 2026 letni bruto neto letna plača odmera dohodnine vračilo doplačilo dohodnine davčna lestvica olajšava',
     '/kalkulator-ddv/' => 'izračun davka na dodano vrednost',
     '/predloge-urnikov/' => 'predloga urnika delovni urnik šolski urnik tedenski planer za tiskanje',
-    '/astronomski-koledar/' => 'astronomski dogodki opazovanje neba meteorski roj'
+    '/astronomski-koledar/' => 'astronomski dogodki opazovanje neba lunine mene polna luna mlaj sončev mrk sončni mrk lunin mrk enakonočje solsticij perzeidi meteorski roj'
   }.freeze
 
   def self.pages

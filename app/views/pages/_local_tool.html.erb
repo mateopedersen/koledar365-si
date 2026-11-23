@@ -1,7 +1,8 @@
 <% tool=LocalTools.for(page_path); kind=tool.fetch(:kind); today=@today.iso8601 %>
 <article class="tool-workspace tool-detail tool-theme-<%= kind %>" data-tool="<%= kind %>" data-today="<%= today %>">
+  <% unless kind == 'studij' %>
   <header class="tool-intro">
-    <div>
+    <div class="tool-intro__copy">
       <p class="tool-eyebrow"><%= slovenia_flag %> <%= tool.fetch(:group) %></p>
       <h1><%= tool.fetch(:title) %></h1>
       <p><%= tool.fetch(:description) %></p>
@@ -11,6 +12,7 @@
   </header>
 
   <noscript><p class="tool-guidance">Za izračune, filtre in shranjevanje opomnikov omogočite JavaScript.</p></noscript>
+  <% end %>
   <% if kind == 'pokojnina' %>
     <div class="tool-split" data-pension>
       <section class="tool-block">
@@ -95,25 +97,7 @@
     </section>
 
   <% elsif kind == 'studij' %>
-    <div class="tool-split">
-      <section class="tool-block">
-        <h2>Razporedite ure do izpita ali oddaje</h2>
-        <form data-study-form><fieldset disabled data-local-fields>
-          <div class="tool-fields">
-            <label>Začetek<input type="date" name="start" value="<%= today %>" required></label>
-            <label>Rok oziroma izpit<input type="date" name="end" value="<%= @today+14 %>" required></label>
-            <label>Skupaj ur učenja<input type="number" name="hours" min="0.5" max="600" step="0.5" value="18" required></label>
-            <label>Načrtovani dnevi<select name="strategy"><option value="workweek">Od ponedeljka do petka</option><option value="daily">Vsi dnevi</option><option value="weekend">Sobote in nedelje</option></select></label>
-          </div>
-          <label class="tool-check"><input type="checkbox" name="include"> Vključi datum izpita v čas za učenje</label>
-          <button class="tool-primary" type="submit">Sestavi načrt učenja</button>
-        </fieldset></form>
-      </section>
-      <section class="tool-block tool-insight"><h2>Ritem učenja</h2><output class="tool-output" data-study-result aria-live="polite">Izberite obdobje in ure.</output><div class="tool-study-bars" data-study-bars></div><button type="button" class="tool-secondary" data-study-ics disabled>Dodaj učne dni v koledar</button></section>
-    </div>
-    <p class="tool-guidance">Za rok 15. junija brez označene možnosti se načrt zaključi 14. junija. Izbrane ure porazdelimo po minutah, da se tedenski seštevki ujemajo s skupnim ciljem.</p>
-    <%= render 'local_tool_reminders', kind: kind, heading: 'Izpiti in oddaje', hint: 'Dodajte svoje predmete, izpite in roke za oddajo.', today: today %>
-    <div class="tool-source-links"><%= link_to 'Univerzitetni koledarji','/studijski-koledar/' %><%= link_to 'Vpisni koledar','/vpisni-koledar/' %><%= link_to 'Matura 2027','/matura/2027/' %></div>
+    <%= render 'study_planner', tool: tool, today: @today %>
 
   <% elsif kind == 'sezone' %>
     <section class="tool-block">
@@ -128,25 +112,10 @@
     <div class="tool-source-links"><%= link_to 'Začetki letnih časov','/letni-casi/' %><%= link_to 'Setveni koledar','/setveni-koledar/' %><%= link_to 'Dolžina dneva','/dolzina-dneva/' %></div>
 
   <% elsif kind == 'godovi' %>
-    <section class="tool-block" data-tool-list>
-      <h2>Izbrani godovi po imenih</h2>
-      <p>Primeri iz slovenskega katoliškega koledarja. Isti osebi je lahko blizu drug svetnik z istim imenom. Če že poznate svoj god, spodaj vpišite svoj datum.</p>
-      <label class="tool-standalone-search">Poišči po imenu<input type="search" data-row-search placeholder="npr. Nikolaj ali Jožef"></label>
-      <div class="tool-line-list">
-        <% LocalTools.saints.each do |saint| %><% month, day=saint.fetch(:date).split('-').map(&:to_i) %>
-          <div class="tool-card-line" data-tool-row>
-            <span class="tool-date-chip"><%= day %>. <%= month %>.</span><div><strong><%= saint.fetch(:names) %></strong><p><%= saint.fetch(:title) %></p></div>
-            <button type="button" class="tool-secondary" data-reminder-pick data-name="<%= saint.fetch(:title) %>" data-recurring-day="<%= saint.fetch(:date) %>">Uporabi datum</button>
-          </div>
-        <% end %>
-      </div>
-      <p data-row-empty hidden>Ime ni med izbranimi primeri. Če poznate datum, ga lahko dodate spodaj.</p>
-      <div class="tool-source-links"><%= source_link(LocalTools::SAINTS_SOURCE,'Slovenska škofovska konferenca – koledar 2026') %><%= source_link('https://katoliska-cerkev.si/cerkveno-leto','Cerkveno leto') %><%= link_to 'Miklavž','/prazniki/miklavz/' %></div>
-    </section>
-    <%= render 'local_tool_reminders', kind: kind, heading: 'Moji godovi', hint: 'Vnesite ime osebe in izberite datum za naslednje voščilo.', today: today %>
+    <%= render 'name_day_calendar', kind: kind, today: today %>
 
   <% else %>
-    <%= render 'local_tool_calendar', kind: kind, today: today %>
+    <%= render(kind == 'dnevi' ? 'flag_dates' : 'local_tool_calendar', kind: kind, today: today) %>
   <% end %>
   <% if page_path == '/davcni-koledar/' %>
     <p class="tool-block">Za letni neto in poračun preglejte <a href="<%= SlovenianResources::ANNUAL_TAX %>">letni izračun dohodnine</a>. Za mesečno akontacijo uporabite <a href="/kalkulator-place/">izračun bruto in neto plače</a>, za davek na računih pa <a href="/kalkulator-ddv/">kalkulator DDV</a>.</p>

@@ -1,0 +1,19 @@
+<svg viewBox="0 0 36 36" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <% case icon
+     when 'moon' %>
+    <path d="M29 22.5A13 13 0 0 1 13.5 7 13 13 0 1 0 29 22.5Z" fill="currentColor" fill-opacity=".15"/>
+    <path d="M25 6v8m-4-4h8m3 5v4m-2-2h4"/>
+  <% when 'eclipse' %>
+    <circle cx="18" cy="18" r="9" fill="currentColor" fill-opacity=".16"/>
+    <path d="M18 4v3m0 22v3M4 18h3m22 0h3M8.1 8.1l2.1 2.1m15.6 15.6 2.1 2.1m0-19.8-2.1 2.1M10.2 25.8l-2.1 2.1"/>
+    <path d="M18 11a7 7 0 1 1 0 14 8.5 8.5 0 0 0 0-14Z" fill="currentColor" stroke="none"/>
+  <% when 'seasons' %>
+    <ellipse cx="18" cy="18" rx="14" ry="8" transform="rotate(-26 18 18)"/>
+    <circle cx="18" cy="18" r="4" fill="currentColor" fill-opacity=".24"/>
+    <circle cx="26" cy="10" r="2.7" fill="currentColor" stroke="none"/>
+    <circle cx="10" cy="26" r="2.7" fill="currentColor" stroke="none"/>
+  <% when 'meteor' %>
+    <path d="m29 7-15 7 8 1 2 8 7-15a1 1 0 0 0-2-1Z" fill="currentColor" fill-opacity=".19"/>
+    <path d="m17 19-9 9m13-5-5 5m-3-10-5 5m1-15v6m-3-3h6m18 14v6m-3-3h6"/>
+  <% end %>
+</svg>

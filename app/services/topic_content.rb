@@ -21,6 +21,11 @@ class TopicContent
   end
   def self.guide_data = @guide_data ||= JSON.parse(Rails.root.join('data/observance_guides_sl.json').read)
   def self.guides = guide_data.fetch('topics')
+  def self.chapters(slug)
+    @chapters ||= JSON.parse(Rails.root.join('data/observance_stories_sl.json').read)
+    @chapters.fetch(slug, [])
+  end
+
   def self.references(slug)
     @references ||= JSON.parse(Rails.root.join('data/topic_references_sl.json').read)
     @references.fetch(slug, [])

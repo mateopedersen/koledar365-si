@@ -59,3 +59,36 @@ for(const width of [820,1440])test(`studio paper keeps its dimensions while the 
  await page.locator('#studio-fit').click();
  await expect.poll(async()=>(await paper.boundingBox()).width).toBeCloseTo(after.width,0);
 });
+
+test('studio guide opens its example and keeps SVG scoped to the previewed month', async ({ page }) => {
+  await page.goto('/ustvari-koledar/');
+  await page.getByRole('link', { name: 'Kako izdelati koledar' }).click();
+  await expect(page).toHaveURL(/#studio-guide$/);
+  const guide = page.locator('#studio-guide');
+  for (const width of [320, 390, 768, 1366]) {
+    await page.setViewportSize({ width, height: 860 });
+    const overflow = await guide.evaluate(node => node.scrollWidth - node.clientWidth);
+    expect(overflow).toBeLessThanOrEqual(0);
+  }
+  await guide.getByRole('link', { name: 'Odpri februar 2028 v urejevalniku' }).click();
+  await expect(page.locator('#studio-preview-label')).toHaveText('februar 2028');
+  await page.locator('#studio-download').click();
+  await page.locator('#studio-export-scope').selectOption('all');
+  const [download] = await Promise.all([
+    page.waitForEvent('download'),
+    page.locator('#studio-export [data-export="svg"]').click(),
+  ]);
+  expect(download.suggestedFilename()).toMatch(/-2028-02\.svg$/);
+  expect(await download.failure()).toBeNull();
+  await page.locator('#studio-export-close').click();
+  await page.locator('[data-tab="text"]').click();
+  const title = page.locator('[data-setting="title"]');
+  await title.fill('Odprti osnutek');
+  await page.locator('#studio-open-project').setInputFiles({
+    name: 'primer.json',
+    mimeType: 'application/json',
+    buffer: Buffer.from(JSON.stringify({version: 1, title: 'Uvoženi projekt'})),
+  });
+  await expect(title).toHaveValue('Uvoženi projekt');
+  await expect(page.locator('.studio-menu summary')).toBeFocused();
+});

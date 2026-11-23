@@ -5,7 +5,7 @@
     <div class="festival-masthead__copy">
       <p class="festival-kicker"><%= slovenia_flag %> Po Sloveniji</p>
       <h1><%= @title %></h1>
-      <p>Načrtujete obisk pustne povorke, koncerta ali krajevnega praznika? Poiščite prireditev po kraju in preverite objavljeni program, prizorišče ter koledarske termine.</p>
+      <p>Načrtujete obisk pustne povorke, koncerta ali krajevnega praznika? Poiščite prireditev po kraju. Na vsaki strani so zgodba dogodka, opis programa, prizorišče in objavljeni termini.</p>
       <a class="festival-primary" href="#festivalski-katalog">Poišči prireditev <%= ui_icon('arrow') %></a>
     </div>
     <%= link_to OccasionCatalog.festival_detail_path(featured.fetch('slug')), class: 'festival-masthead__photo' do %>
@@ -72,7 +72,7 @@
   </section>
   <section class="festival-footer">
     <h2>Načrtujte obisk</h2>
-    <p>Na podrobnostih prireditve najdete prizorišče, vir in objavljene datume. Za izlet preverite tudi praznike in šolske počitnice.</p>
+    <p>»Potrjen termin« označuje datum, ki ga navaja organizator ali drug uradni vir. Arhivski datum pomaga pri orientaciji, za naslednjo izvedbo pa počakajte na novo objavo. Na posamezni strani lahko objavljeni termin dodate v koledar.</p>
     <nav aria-label="Načrtovanje obiska"><%= link_to 'Prazniki in dela prosti dnevi', '/prazniki/' %><%= link_to 'Šolske počitnice', '/solske-pocitnice/' %><%= link_to 'Fotografije in licence', '/fotografije-in-licence/#fotografije-festivalov' %></nav>
   </section>
 </article>

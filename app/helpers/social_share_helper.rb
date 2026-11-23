@@ -1,6 +1,6 @@
 module SocialShareHelper
   def social_share_links(url:, title:, image:)
-    message = "#{title} — #{url}"
+    message = "#{title}\n#{url}"
     links = [
       ['WhatsApp', 'whatsapp', "https://wa.me/?text=#{ERB::Util.url_encode(message)}"],
       ['Telegram', 'telegram', "https://t.me/share/url?url=#{ERB::Util.url_encode(url)}&text=#{ERB::Util.url_encode(title)}"],

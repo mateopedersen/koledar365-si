@@ -2,11 +2,12 @@ require 'digest'
 require_relative '../../lib/svg_asset_references'
 
 module IllustrationHelper
-  UI_ICON_NAMES = %w[
-    calendar week clock pin sun moon person search settings plus check note download upload print info chevron-right
+  DIRECTION_ICONS = %w[arrow arrow-left arrow-down arrow-up arrow-both chevron-right chevron-left chevron-down external-link trend-up trend-down].freeze
+  UI_ICON_NAMES = (%w[
+    calendar week clock pin sun moon person search settings plus check note download upload print info
     gift image grid star briefcase calculator cloud shield cookie compass family school holidays personal work
-    vacation birthday sunset heart arrow share refresh sprout ics-import ics-export backup-save backup-restore
-  ].freeze
+    vacation birthday sunset heart share refresh sprout ics-import ics-export backup-save backup-restore
+  ] + DIRECTION_ICONS).freeze
   UI_ICON_SPRITE = '/visuals/ui-material-v3.svg'.freeze
   CALENDAR_FILE_ICONS = {
     'pdf' => '/visuals/download-pdf-v1.svg',
@@ -40,7 +41,7 @@ module IllustrationHelper
     name = 'calendar' unless UI_ICON_NAMES.include?(name)
     url = "#{IllustrationHelper.versioned_svg_url(UI_ICON_SPRITE)}##{name}"
     content_tag(:svg, content_tag(:use, nil, href: url, 'xlink:href': url),
-      class: "ui-icon icon-#{name}", viewBox: '0 0 64 64', width: 24, height: 24,
+      class: ["ui-icon", "icon-#{name}", ("direction-icon" if DIRECTION_ICONS.include?(name))], viewBox: '0 0 64 64', width: 24, height: 24,
       'aria-hidden': 'true', focusable: 'false', 'xmlns:xlink': 'http://www.w3.org/1999/xlink')
   end
 

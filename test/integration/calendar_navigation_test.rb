@@ -57,18 +57,21 @@ class CalendarNavigationTest < ActionDispatch::IntegrationTest
       links.each { |a|assert_includes a['href'],"/original/#{year}/";assert a['href'].end_with?(format=='pdf' ? '.pdf' : '.webp') }
      end
     end
-    assert_select '.calendar-design-meta',text:/A3.*600 dpi/,count:15
+    assert_select '.calendar-design-meta',text:/A3 · (Ležeče|Pokončno)/,count:15
     assert_select 'a[href^="/koledar-za-tiskanje/"]',count:0
    end
-   assert_operator response.body.index('class="panel gallery-context'),:<,response.body.index('id="calendar-designs"')
+   assert_operator response.body.index('id="calendar-designs"'),:<,response.body.index('class="panel gallery-context')
   end
  end
  test 'all gallery families put controls beside an open complete gallery' do
-  ['/prazen-koledar/','/prazniki/2028/'].each do |path|
+  {
+   '/prazen-koledar/' => /prazno mesečno mrežo ali tedensko postavitev/,
+   '/prazniki/2028/' => /eno od 15 predlog: PDF za tisk/
+  }.each do |path, introduction|
    get path
    assert_response :success
    assert_select 'body.gallery-page'
-   assert_select '.page-heading p',text:ApplicationController.helpers.gallery_description
+   assert_select '.page-heading p',text:introduction
    assert_select '.download-workspace > .gallery-context #gallery-context-content'
    assert_select '.download-workspace [data-context-expand][aria-controls=gallery-context-content]'
    assert_select '.download-workspace .design-section .design-card',count:15
@@ -78,10 +81,10 @@ class CalendarNavigationTest < ActionDispatch::IntegrationTest
    end if path=='/prazen-koledar/'
   end
  end
- test 'calendar galleries separate design numbers and names and label distinct file icons' do
+ test 'calendar galleries provide unique design names and distinct file controls' do
   get '/koledar/2027/februar/'
   assert_response :success
-  assert_select '.calendar-design-info h3 .design-number[aria-hidden=true]',count:15
+  assert_select '.calendar-design-info h3 .design-number',count:0
   assert_select '.calendar-design-info h3 .design-title',count:15
   assert_select '.calendar-design-downloads .calendar-download-action--pdf img[src="/visuals/download-pdf-v1.svg"][alt=""]',count:15
   assert_select '.calendar-design-downloads .calendar-download-action--webp img[src="/visuals/download-webp-v1.svg"][alt=""]',count:15

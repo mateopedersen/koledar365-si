@@ -44,6 +44,39 @@
 #vsebina .calendar-directory .cd-download-note{display:flex;align-items:flex-start;gap:12px;margin:16px 0 0;padding:15px 18px;border-left:3px solid #bd2a40;background:#fff;font-size:14px;line-height:1.6;color:#40536b}
 .calendar-directory .cd-download-note .ui-icon{width:23px;height:23px;color:#084f95}
 .calendar-directory .cd-tools{margin-top:42px}
+.calendar-directory .cd-guide {
+  margin-block: clamp(24px, 3vw, 42px);
+  padding: clamp(14px, 2.5vw, 26px);
+  border: 1px solid #d4deea;
+  border-radius: 12px;
+  background: #fff;
+}
+.cd-guide-years {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: 10px;
+  margin-block: 14px;
+}
+.cd-guide-years article {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid #d9e5f0;
+  border-radius: 8px;
+  background: #f6f9fd;
+}
+.cd-guide-years article :is(h3, p, dl) { margin: 0; }
+.cd-guide-years article dl { margin-top: auto; }
+.cd-guide-years dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding-block: 5px;
+  border-top: 1px solid #d9e5f0;
+}
+.cd-guide-years dd { margin: 0; font-weight: 750; }
 .calendar-directory .cd-tool-table{margin:0;background:#fff}
 .calendar-directory .cd-tool-table th,.calendar-directory .cd-tool-table td{padding:17px 18px}
 .calendar-directory .cd-tool-table th[scope=row]{font-size:15px;background:#fff;color:#18324e}

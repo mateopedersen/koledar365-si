@@ -19,8 +19,10 @@ class OccasionPlanner
   def self.clock(changes)
     changes.map do |change|
       date = change.fetch(:date)
-      entry("premik-ure-#{date}", change.fetch(:period), date,
-        detail: "Premik ure #{change.fetch(:before)} → #{change.fetch(:after)} po slovenskem času")
+      period = change.fetch(:period)
+      entry("premik-ure-#{date}", period, date,
+        detail: "Premik ure #{change.fetch(:before)} na #{change.fetch(:after)} po slovenskem času")
+        .merge(option_label: "#{date.strftime('%-d. %-m. %Y')} · #{period.delete_prefix('Prehod na ')}")
     end
   end
 

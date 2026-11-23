@@ -2,15 +2,15 @@ class EducationCalendar
   PAGES = {
     '/solski-koledar/' => {
       kind: 'school', title: 'Šolski koledar 2026/2027: pouk, počitnice in izpiti',
-      heading: 'Šolski koledar 2026/2027', eyebrow: 'OD SEPTEMBRA DO AVGUSTA',
+      heading: 'Šolski koledar 2026/2027', eyebrow: 'OSNOVNE IN SREDNJE ŠOLE',
       description: 'Šolski koledar 2026/2027 za osnovne in srednje šole v Sloveniji. Pouk, počitnice, NPZ in izpitni roki z izbiro razreda, tiskom in izvozom ICS.',
-      intro: 'Pouk, počitnice in pomembni roki v enem pregledu. Izberite šolo, razred in regijo ter sestavite koledar za svoje šolsko leto.'
+      intro: 'Preverite zadnji dan pouka, zimske počitnice, NPZ in izpitne roke za svojo šolo. Izberite razred ali letnik ter pripravite koledar za tisk ali uvoz.'
     },
     '/matura/2027/' => {
       kind: 'matura', title: 'Matura 2027: datumi izpitov, prijav in rezultatov',
       heading: 'Matura 2027', eyebrow: 'OD PRIJAVE DO REZULTATOV',
-      description: 'Koledar mature 2027 po uradnih datumih RIC. Ločena splošna in poklicna matura, izbor predmetov, spomladanski in jesenski rok, tisk ter ICS.',
-      intro: 'Izberite vrsto mature, izpitni rok in svoje predmete. Prijave, pisni izpiti, ustna obdobja in rezultati ostanejo povezani v osebnem pregledu.'
+      description: 'Koledar mature 2027 z uradnimi datumi RIC za splošno in poklicno maturo. Preverite prijave, izpite in rezultate po rokih ter prenesite izbrane datume.',
+      intro: 'Preverite datume prijav, pisnih in ustnih izpitov ter rezultatov mature 2027. Izberite splošno ali poklicno maturo, izpitni rok in svoje predmete.'
     },
     '/matura/2027/splosna/' => {
       kind: 'matura', exam_type: 'general', title: 'Splošna matura 2027: koledar izpitov po predmetih',
@@ -25,10 +25,10 @@ class EducationCalendar
       intro: 'Pregled datumov za vaš izobraževalni program. Izberite predmete in izpitni rok; osebni termin ustnih izpitov in četrtega predmeta preverite na šoli.'
     },
     '/npz/' => {
-      kind: 'npz', title: 'NPZ 2027: datumi za 3., 6. in 9. razred',
+      kind: 'npz', title: 'NPZ 2027: datumi, predmeti in rezultati po razredih',
       heading: 'NPZ 2027', eyebrow: 'NACIONALNO PREVERJANJE ZNANJA',
-      description: 'Datumi NPZ 2027 za 3., 6. in 9. razred. Preverjanja, objava dosežkov, vpogledi in poizvedbe po razredih, s tiskom in koledarjem ICS.',
-      intro: 'Izberite razred in preverite datume preizkusov, objave dosežkov ter vpogledov. Vsak razred ima svoj razpored rezultatov.'
+      description: 'Koledar NPZ 2027 za 3., 6. in 9. razred. Preverite datume pisanja, rezultate, roke za vpogled in tretji predmet. Izbrane datume shranite kot PDF ali ICS.',
+      intro: 'Poiščite datume nacionalnega preverjanja znanja za 3., 6. in 9. razred v šolskem letu 2026/2027. Izberite razred za pregled preizkusov, rezultatov in rokov za vpogled.'
     },
     '/npz/3-razred/' => {
       kind: 'npz', grade: '3', title: 'NPZ 2027 za 3. razred: datumi in rezultati',
@@ -58,7 +58,7 @@ class EducationCalendar
   TIMETABLE = {
     title: 'Šolski urnik: ustvarite in natisnite tedenski razpored',
     heading: 'Moj šolski urnik',
-    description: 'Ustvarite šolski urnik s predmeti, urami, učilnicami in učitelji. Tedensko ponavljanje, pregled prekrivanj, tisk PDF ter izvoz ICS in varnostne kopije.'
+    description: 'Sestavi šolski urnik s predmeti, učilnicami in domačimi nalogami. Natisni tedenski planer kot PDF ali izvozi ure za šolsko obdobje v ICS.'
   }.freeze
   LINKS = [
     ['Šolski koledar', '/solski-koledar/'], ['Šolske počitnice', '/solske-pocitnice/'],

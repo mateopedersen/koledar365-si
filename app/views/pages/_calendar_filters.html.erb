@@ -1,0 +1,19 @@
+<% categories = { 'all' => 'Vse vrste', 'holidays' => 'Prazniki', 'personal' => 'Osebno', 'work' => 'Delo', 'family' => 'Družina', 'school' => 'Šola' } %>
+<div class="category-bar" role="group" aria-label="Filtri dogodkov">
+  <label class="calendar-category-select">
+    <span class="sr-only">Vrsta dogodka</span>
+    <select data-calendar-category disabled>
+      <% categories.each do |key, label| %><option value="<%= key %>"><%= label %></option><% end %>
+    </select>
+  </label>
+  <% categories.each do |key, label| %>
+    <% all = key == 'all' %>
+    <button type="button" class="category-chip<%= ' active' if all %>" data-category="<%= key %>" aria-pressed="<%= all %>">
+      <%= ui_icon(all ? 'grid' : key) %><%= all ? 'Vse' : label %>
+    </button>
+  <% end %>
+  <label class="event-search">
+    <%= ui_icon('search') %>
+    <input id="event-search" type="search" placeholder="Išči dogodek" aria-label="Poišči dogodek v prikazu">
+  </label>
+</div>

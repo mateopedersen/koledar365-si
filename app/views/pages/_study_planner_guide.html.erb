@@ -1,0 +1,46 @@
+<section class="tool-block study-guide" id="vodnik-za-ucenje" aria-labelledby="study-guide-title">
+  <h2 id="study-guide-title">Kako sestaviti načrt učenja za izpit</h2>
+  <p class="study-guide-lead">Dober načrt pove, kaj boste naredili v času, ki ga imate. Preden razdelite ure, izberite en izpit ali oddajo, preverite rok in zapišite naloge, ki jih je še treba opraviti.</p>
+
+  <div class="study-guide-grid">
+    <section>
+      <h3>Potrdite izpitni rok in prijavo</h3>
+      <p>V <%= link_to 'študijskem koledarju', '/studijski-koledar/' %> poiščite izpitno obdobje svoje univerze. Točen dan, uro, prostor in zadnji dan prijave nato preverite pri svoji fakulteti. Na <%= source_link 'https://fe.uni-lj.si/studij/studentska-pisarna/studijski-koledar-in-urnik/', 'Fakulteti za elektrotehniko UL' %> so na primer objavljeni študijski koledar in izpitni roki, prijavo na izpit pa študent odda v informacijskem sistemu. V osebni seznam zabeležite prijavo posebej od dneva izpita.</p>
+    </section>
+    <section>
+      <h3>Ocenite ure, ki so vam še ostale</h3>
+      <p><%= source_link 'https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina/2026-01-0304', 'Slovenska merila za ECTS' %> določajo 25–30 ur povprečne obremenitve na kreditno točko. Šest kreditnih točk tako predstavlja okvirno 150–180 ur celotnega dela pri predmetu, vključno s predavanji, vajami, nalogami in pripravo na preverjanje. V načrtovalnik vnesite oceno preostalega dela. Če vas čakajo tri dvourne vaje in dva enourna sklopa ponovitve, vnesite osem ur.</p>
+    </section>
+    <section>
+      <h3>Ure razdelite na konkretne naloge</h3>
+      <p>Pri statistiki si lahko na prvi učni dan zadate, da brez zapiskov rešite pet nalog iz verjetnosti. Naslednjič preverite rešitve in ponovite tipe nalog, pri katerih ste se zmotili. <%= source_link 'https://pubmed.ncbi.nlm.nih.gov/18276894/', 'Raziskava Karpicka in Roedigerja o priklicu iz spomina' %> na primeru učenja besedišča pokaže, zakaj je smiselno znanje preveriti tudi brez gradiva. Za razpored drugih predmetov in obveznosti odprite <%= link_to 'tedenski koledar', '/tedenski-koledar/' %>.</p>
+    </section>
+    <section>
+      <h3>Načrt za seminarsko nalogo ali projekt</h3>
+      <p>Od roka se pomaknite nazaj. Zadnji učni dan namenite pregledu citatov, preverjanju prilog in pripravi končne datoteke. Pred tem si rezervirajte termin za prvi osnutek in ločen termin za popravke. Če potrebujete komentar mentorja, pošljite osnutek dovolj zgodaj, da ga lahko še upoštevate. Pomaga tudi <%= link_to 'vodnik za načrtovanje projekta od roka nazaj', '/blog/casovnica-projekta-od-konca-nazaj/' %>.</p>
+    </section>
+  </div>
+
+  <section class="study-guide-example" aria-labelledby="study-guide-example-title">
+    <h3 id="study-guide-example-title">Primer načrta učenja za izpit iz statistike</h3>
+    <p>Za izpit 15. junija 2027 začnete 7. junija, izberete ponedeljek–petek in pustite dan izpita zunaj urnika. V šestih učnih dneh lahko 12 ur razdelite na po dve uri. Prvi teden je na voljo pet dni oziroma 10 ur, v ponedeljek 14. junija pa še dve uri. Prvi dve srečanji namenite osnovam in vajam, naslednji dve mešanim nalogam, peto poskusnemu izpitu in šesto pregledu napak.</p>
+    <p>Če lahko na dan namenite največ 90 minut, v tem obdobju razporedite devet ur, tri pa ostanejo brez termina. Za vseh 12 ur bi ob isti omejitvi potrebovali osem učnih dni. Dodate lahko dva dneva učenja, začnete prej ali ponovno ocenite obseg nalog.</p>
+    <%= link_to 'Odpri načrtovalnik', '#nacrt-ucenja' %>
+  </section>
+
+  <section class="study-questions" aria-labelledby="study-questions-title">
+    <h3 id="study-questions-title">Kako deluje izračun učnih ur?</h3>
+    <details>
+      <summary>Kateri dnevi so vključeni v razpored?</summary>
+      <p>Izračun upošteva začetni datum in izbrane dneve v tednu. Rok se šteje samo, če ga izrecno vključite in ustreza izbranim dnevom. Izbrani dnevi lahko vključujejo tudi praznike. Pred načrtovanjem preverite <%= link_to 'dela proste dni v Sloveniji', '/prazniki/' %> in svoje obveznosti.</p>
+    </details>
+    <details>
+      <summary>Zakaj se dnevni časi razlikujejo za minuto?</summary>
+      <p>Ure pretvorimo v cele minute in jih razporedimo čim bolj enakomerno. Če si za štiri dni zastavite 4,5 ure, boste imeli dva dneva po 68 minut in dva po 67 minut. Pri zelo majhnem cilju so v seznamu samo dnevi, ki dobijo vsaj minuto.</p>
+    </details>
+    <details>
+      <summary>Kje so shranjeni izpiti in učni urnik?</summary>
+      <p>Seznam izpitov in oddaj ostane v tem brskalniku. Učni urnik prenesite kot datoteko ICS in jo uvozite v aplikacijo za koledar. Vnosi so celodnevni in imajo trajanje v naslovu. Če spremenite načrt, izvozite novo datoteko in prejšnje vnose po potrebi odstranite v koledarju.</p>
+    </details>
+  </section>
+</section>

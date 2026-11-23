@@ -6,7 +6,7 @@ class SearchService
       hay=PersonName.fold([p.title, p.path, SlovenianResources::SEARCH_TERMS[p.path]].compact.join(' '))
       score=tokens.count { |w| hay.include?(w) }
       next if score==0
-      {title:p.title,path:p.path,type:'Koledar in orodja',score:score*10-(p.path.count('/')/10.0)}
+      {title:p.display_title,path:p.path,type:'Koledar in orodja',score:score*10-(p.path.count('/')/10.0)}
     end
     pages.concat(OccasionCatalog.festivals.filter_map do |festival|
       title=festival.fetch('title')
@@ -17,7 +17,7 @@ class SearchService
     end)
     aliases={'lunine mene'=>'/lunine-mene/','polna luna'=>'/polna-luna/','izracun znamenja'=>'/horoskop/izracun-znamenja/'}
     if aliases[f]
-      p=Page.find_by(path:aliases[f]);pages.unshift({title:p.title,path:p.path,type:'Orodje',score:100}) if p
+      p=Page.find_by(path:aliases[f]);pages.unshift({title:p.display_title,path:p.path,type:'Orodje',score:100}) if p
     end
     pages.sort_by { |v| -v[:score] }.uniq { |r|r[:path] }.first(50)
   end

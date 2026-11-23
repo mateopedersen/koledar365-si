@@ -31,6 +31,23 @@ test('study dates exclude the exam unless requested and minutes add up exactly',
   assert.equal(extra.weeks.reduce((sum, week) => sum + week.minutes, 0), 150);
 });
 
+test('study plans respect custom weekdays and cap the export to available minutes', () => {
+  const form = {
+    start: '2027-06-07', end: '2027-06-15', hours: 12,
+    strategy: 'custom', weekdays: [1, 4], dailyMinutes: 90
+  };
+  const plan = studyPlan(form);
+  assert.deepEqual(plan.days, [
+    { date: '2027-06-07', minutes: 90 },
+    { date: '2027-06-10', minutes: 90 },
+    { date: '2027-06-14', minutes: 90 }
+  ]);
+  assert.equal(plan.weeks.reduce((sum, week) => sum + week.minutes, 0), plan.scheduled);
+  assert.equal(plan.target - plan.scheduled, 450);
+  assert.throws(() => studyPlan({ ...form, weekdays: [] }), /ni dni za učenje/);
+  assert.throws(() => studyPlan({ ...form, dailyMinutes: 0 }), /minut na dan/);
+});
+
 test('calendar exports retain inclusive event days and fold international text safely', () => {
   const title = 'Š'.repeat(85) + ';\nDolgi dnevi';
   const body = calendarDocument([{ date: '2027-02-12', end: '2027-02-13', title }], new Date('2026-11-22T12:00:00Z'));

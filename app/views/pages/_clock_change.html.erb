@@ -5,7 +5,7 @@
       <h1>Premik ure v Sloveniji</h1>
       <p>V Sloveniji uro premaknemo dvakrat na leto: zadnjo nedeljo v marcu za eno uro naprej, zadnjo nedeljo v oktobru pa za eno uro nazaj.</p>
       <nav class="clock-change-years" aria-label="Premik ure po letih">
-        <% ClockChangeSchedule::YEARS.each do |year| %><a href="#datum-<%= year %>"><%= year %><span aria-hidden="true">↓</span></a><% end %>
+        <% ClockChangeSchedule::YEARS.each do |year| %><a href="#datum-<%= year %>"><%= year %><span aria-hidden="true"><%= ui_icon('arrow-down') %></span></a><% end %>
       </nav>
     </div>
     <% upcoming=@clock_change.next_change %>
@@ -13,10 +13,10 @@
       <span class="eyebrow" id="clock-change-next-title">Naslednji premik ure</span>
       <div data-clock-change-upcoming <%= 'hidden' unless upcoming %>>
         <time class="clock-change-next-date" data-next-date datetime="<%= upcoming&.dig(:date)&.iso8601 %>"><%= upcoming&.dig(:date_label) %></time>
-        <strong class="clock-change-next-hours" data-next-hours><%= upcoming&.dig(:before) %> → <%= upcoming&.dig(:after) %></strong>
+        <strong class="clock-change-next-hours" data-next-hours><%= upcoming&.dig(:before) %> na <%= upcoming&.dig(:after) %></strong>
         <p class="clock-change-direction" data-next-direction>Eno uro <%= upcoming&.dig(:direction) %></p>
         <p data-next-sentence><%= upcoming&.dig(:sentence) %></p>
-        <a data-next-year href="#datum-<%= upcoming&.dig(:date)&.year %>">Vsi datumi za to leto <span aria-hidden="true">↓</span></a>
+        <a data-next-year href="#datum-<%= upcoming&.dig(:date)&.year %>">Vsi datumi za to leto <span aria-hidden="true"><%= ui_icon('arrow-down') %></span></a>
       </div>
       <p data-clock-change-empty <%= 'hidden' if upcoming %>>Pregled zajema leta 2026–2030. Za naslednja leta preverite najnovejši uradni razpored.</p>
     </section>
@@ -25,7 +25,7 @@
   <%= render 'occasion_planner', entries: OccasionPlanner.clock(ClockChangeSchedule.transitions) %>
 
   <section class="clock-change-visual" aria-labelledby="clock-change-visual-title">
-    <div class="observance-heading"><div><span class="eyebrow">NAPREJ ALI NAZAJ?</span><h2 id="clock-change-visual-title">Kako premaknemo uro?</h2></div><a class="clock-change-download" href="<%= ClockChangeSchedule::IMAGE_BASE %>-2400.webp" download>Prenesi sliko <span aria-hidden="true">↓</span></a></div>
+    <div class="observance-heading"><div><span class="eyebrow">NAPREJ ALI NAZAJ?</span><h2 id="clock-change-visual-title">Kako premaknemo uro?</h2></div><a class="clock-change-download" href="<%= ClockChangeSchedule::IMAGE_BASE %>-2400.webp" download>Prenesi sliko <span aria-hidden="true"><%= ui_icon('download') %></span></a></div>
     <figure class="clock-change-figure">
       <a href="<%= ClockChangeSchedule::IMAGE_BASE %>-2400.webp" aria-label="Odpri večjo infografiko premika ure">
         <picture>
@@ -48,11 +48,11 @@
             <div class="observance-date-entry clock-change-entry is-<%= change[:season] %>" data-observance-date="<%= date.iso8601 %>">
               <p class="clock-change-period"><%= change[:period] %></p>
               <time datetime="<%= date.iso8601 %>"><strong><%= date.day %>.</strong><span><%= CalendarEngine::MONTHS.fetch(date.month-1) %><b>Nedelja</b></span></time>
-              <p class="clock-change-hours"><strong><%= change[:before] %> → <%= change[:after] %></strong><span>Eno uro <%= change[:direction] %></span></p>
+              <p class="clock-change-hours"><strong><%= change[:before] %> na <%= change[:after] %></strong><span>Eno uro <%= change[:direction] %></span></p>
               <% if year >= 2027 %>
-                <a class="observance-open-date" href="<%= month_url(year,date.month) %>?date=<%= date.iso8601 %>&view=day">Odpri dan v koledarju <span aria-hidden="true">↗</span></a>
+                <a class="observance-open-date" href="<%= month_url(year,date.month) %>?date=<%= date.iso8601 %>&view=day">Odpri dan v koledarju <span aria-hidden="true"><%= ui_icon('chevron-right') %></span></a>
               <% elsif date >= Date.new(2026,10,1) %>
-                <a class="observance-open-date" href="/?year=2026&month=<%= date.month %>&date=<%= date.iso8601 %>&view=day">Odpri dan v koledarju <span aria-hidden="true">↗</span></a>
+                <a class="observance-open-date" href="/?year=2026&month=<%= date.month %>&date=<%= date.iso8601 %>&view=day">Odpri dan v koledarju <span aria-hidden="true"><%= ui_icon('chevron-right') %></span></a>
               <% end %>
             </div>
           <% end %>
@@ -79,9 +79,9 @@
       <p><%= TopicContent.guide('premik-ure').fetch('text') %></p>
       <div class="observance-story-actions"><button type="button" data-print><%= ui_icon('print') %> Natisni datume</button><a class="button" href="<%= ClockChangeSchedule::IMAGE_BASE %>-2400.webp" download><%= ui_icon('download') %> Prenesi infografiko</a></div>
     </section>
-    <aside class="observance-planning"><span class="eyebrow">ČAS IN KOLEDAR</span><h2>Načrtujte svoj dan.</h2><a href="/soncni-vzhod-in-zahod/"><%= ui_icon('sun') %><span><strong>Sončni vzhod in zahod</strong><small>Preverite ure za izbrani kraj in datum.</small></span><span aria-hidden="true">↗</span></a><a href="/dolzina-dneva/"><%= ui_icon('clock') %><span><strong>Dolžina dneva</strong><small>Koliko časa je Sonce nad obzorjem?</small></span><span aria-hidden="true">↗</span></a><a href="/koledar/"><%= ui_icon('calendar') %><span><strong>Slovenski koledar</strong><small>Datumi, tedni in prazniki na enem mestu.</small></span><span aria-hidden="true">↗</span></a></aside>
+    <aside class="observance-planning"><span class="eyebrow">ČAS IN KOLEDAR</span><h2>Načrtujte svoj dan.</h2><a href="/soncni-vzhod-in-zahod/"><%= ui_icon('sun') %><span><strong>Sončni vzhod in zahod</strong><small>Preverite ure za izbrani kraj in datum.</small></span><span aria-hidden="true"><%= ui_icon('chevron-right') %></span></a><a href="/dolzina-dneva/"><%= ui_icon('clock') %><span><strong>Dolžina dneva</strong><small>Koliko časa je Sonce nad obzorjem?</small></span><span aria-hidden="true"><%= ui_icon('chevron-right') %></span></a><a href="/koledar/"><%= ui_icon('calendar') %><span><strong>Slovenski koledar</strong><small>Datumi, tedni in prazniki na enem mestu.</small></span><span aria-hidden="true"><%= ui_icon('chevron-right') %></span></a></aside>
   </div>
 
-  <section class="observance-sources"><div class="observance-source-mark"><%= ui_icon('shield') %></div><div><span class="eyebrow">URADNI VIRI V SLOVENŠČINI</span><h2>Viri in preverjanje datumov</h2><ul><% ClockChangeSchedule::SOURCES.each do |title,url| %><li><%= source_link(url,title) %></li><% end %></ul><p>Preverjeno: <time datetime="2026-10-21">21. 10. 2026</time>. Datumi veljajo po sedanji ureditvi. Ob spremembi zakonodaje bomo podatke posodobili.</p><div><a href="/uredniska-politika/">Uredniška pravila</a><a href="/kontakt/">Predlagajte popravek →</a></div></div></section>
+  <section class="observance-sources"><div class="observance-source-mark"><%= ui_icon('shield') %></div><div><span class="eyebrow">URADNI VIRI V SLOVENŠČINI</span><h2>Viri in preverjanje datumov</h2><ul><% ClockChangeSchedule::SOURCES.each do |title,url| %><li><%= source_link(url,title) %></li><% end %></ul><p>Preverjeno: <time datetime="2026-10-21">21. 10. 2026</time>. Datumi veljajo po sedanji ureditvi. Ob spremembi zakonodaje bomo podatke posodobili.</p><div><a href="/uredniska-politika/">Uredniška pravila</a><a href="/kontakt/">Predlagajte popravek</a></div></div></section>
   <script type="application/json" id="clock-change-data"><%= raw json_escape(@clock_change.payload.to_json) %></script>
 </article>

@@ -2,13 +2,37 @@
 <article class="education-page topic-experience" data-education-page data-kind="<%= kind %>">
   <nav class="ed-navigation" aria-label="Šola in študij"><% EducationCalendar::LINKS.each do |label,href| %><a href="<%= href %>" <%= 'aria-current=page' if href == education.path %>><%= label %></a><% end %></nav>
   <header class="ed-hero">
-    <div class="ed-hero-copy"><span class="ed-eyebrow"><i></i><%= config[:eyebrow] %></span><h1><%= config[:heading] %></h1><p><%= config[:intro] %></p><a class="ed-jump" href="#moj-pregled">Sestavite svoj pregled <span aria-hidden="true">↘</span></a><div class="ed-verification">Uradni viri v slovenščini <span>·</span> Preverjeno <time datetime="<%= reviewed %>"><%= education.date_label(reviewed) %></time></div></div>
+    <div class="ed-hero-copy">
+      <span class="ed-eyebrow"><i></i><%= config[:eyebrow] %></span>
+      <h1><%= config[:heading] %></h1>
+      <p><%= config[:intro] %></p>
+      <a class="ed-jump" href="#moj-pregled">Sestavite svoj pregled <span aria-hidden="true"><%= ui_icon('arrow-down') %></span></a>
+      <% if kind == 'school' %>
+        <p class="ed-reading-link"><a href="#editorial-note-heading">Kako uporabljati šolski koledar</a></p>
+      <% elsif education.path == '/matura/2027/' %>
+        <p class="ed-reading-link"><a href="#editorial-note-heading">Kako uporabljati koledar mature</a></p>
+      <% elsif education.path == '/npz/' %>
+        <p class="ed-reading-link"><a href="#editorial-note-heading">Rezultati, vpogled in priprava na NPZ</a></p>
+      <% end %>
+      <div class="ed-verification">Uradni viri v slovenščini <span>·</span> Preverjeno <time datetime="<%= reviewed %>"><%= education.date_label(reviewed) %></time></div>
+    </div>
     <%= render 'pages/topic_art', eager: true %>
   </header>
   <%= render 'pages/topic_snapshot' %>
 
-  <% if kind == 'matura' %><nav class="ed-type-links" aria-label="Vrsta mature"><a href="/matura/2027/splosna/" <%= 'aria-current=page' if config[:exam_type] == 'general' %>><span>01</span><strong>Splošna matura</strong><small>Predmeti in ravni zahtevnosti</small><b aria-hidden="true">↗</b></a><a href="/matura/2027/poklicna/" <%= 'aria-current=page' if config[:exam_type] == 'vocational' %>><span>02</span><strong>Poklicna matura</strong><small>Drugi in četrti predmet po programu</small><b aria-hidden="true">↗</b></a></nav><% end %>
-  <% if kind == 'npz' %><nav class="ed-grade-links" aria-label="NPZ po razredih"><% [3,6,9].each do |grade| %><a href="/npz/<%= grade %>-razred/" <%= 'aria-current=page' if config[:grade] == grade.to_s %>><strong><%= grade %>.</strong> razred <span aria-hidden="true">↗</span></a><% end %></nav><% end %>
+  <% if kind == 'matura' %>
+    <nav class="ed-type-links" aria-label="Vrsta mature">
+      <a href="/matura/2027/splosna/" <%= 'aria-current=page' if config[:exam_type] == 'general' %>>
+        <span class="ed-type-copy"><strong>Splošna matura</strong><small>Esej, pisni izpiti in izbirni predmeti</small></span>
+        <%= ui_icon('chevron-right') %>
+      </a>
+      <a href="/matura/2027/poklicna/" <%= 'aria-current=page' if config[:exam_type] == 'vocational' %>>
+        <span class="ed-type-copy"><strong>Poklicna matura</strong><small>Pisni in ustni izpiti ter četrti predmet</small></span>
+        <%= ui_icon('chevron-right') %>
+      </a>
+    </nav>
+  <% end %>
+  <% if kind == 'npz' %><nav class="ed-grade-links" aria-label="NPZ po razredih"><% [3,6,9].each do |grade| %><a href="/npz/<%= grade %>-razred/" <%= 'aria-current=page' if config[:grade] == grade.to_s %>><strong><%= grade %>.</strong> razred <span aria-hidden="true"><%= ui_icon('chevron-right') %></span></a><% end %></nav><% end %>
 
   <section class="ed-workspace" id="moj-pregled" aria-labelledby="ed-workspace-title">
     <section class="ed-filter-panel" aria-label="Filtri prikazanih datumov">
@@ -33,7 +57,7 @@
         <label class="ed-check"><input type="checkbox" name="upcoming"><span>Samo prihodnji in tekoči dogodki</span></label>
         <button type="reset" class="ed-reset" data-ed-requires-js disabled>Ponastavi filtre</button>
       </form>
-      <div class="ed-personal-help"><span class="ed-step">02</span><h3>Shranite pomembne datume</h3><p>Označite posamezne dogodke ali prenesite celoten prikaz. Datoteko ICS lahko uvozite v svoj koledar.</p><a href="#ed-sources">Kako preverjamo datume <span aria-hidden="true">↓</span></a></div>
+      <div class="ed-personal-help"><span class="ed-step">02</span><h3>Shranite pomembne datume</h3><p>Označite posamezne dogodke ali prenesite celoten prikaz. Datoteko ICS lahko uvozite v svoj koledar.</p><a href="#ed-sources">Kako preverjamo datume <span aria-hidden="true"><%= ui_icon('arrow-down') %></span></a></div>
     </section>
 
     <div class="ed-results">
@@ -46,7 +70,7 @@
       <noscript><p class="ed-context-note">Spodaj so uradni datumi za začetno izbiro. Za filtre, osebni izbor in izvoz omogočite JavaScript. Stran lahko natisnete z ukazom brskalnika.</p></noscript>
       <div class="ed-year-view" data-ed-year hidden></div><output class="ed-day-detail" data-ed-day-detail hidden aria-live="polite"></output>
       <div class="ed-timeline" data-ed-list>
-        <% rows.group_by { |event| event['start'][0,7] }.each do |month,items| %><section class="ed-month-group"><h3><%= CalendarEngine::MONTHS.fetch(month[5,2].to_i-1).capitalize %> <%= month[0,4] %></h3><div><% items.each do |event| %><article class="ed-event" data-event-id="<%= event['id'] %>" data-category="<%= event['category'] %>"><label class="ed-event-select"><input type="checkbox" data-ed-select="<%= event['id'] %>" aria-label="Izberi: <%= event['title'] %>, <%= education.range_label(event) %>"></label><div class="ed-event-date"><time datetime="<%= event['start'] %>"><%= education.range_label(event) %></time><span><%= education.data['categories'][event['category']] %></span></div><div class="ed-event-copy"><h4><%= event['title'] %></h4><% unless education.context(event).empty? %><small><%= education.context(event) %></small><% end %><% if event['note'] %><p><%= event['note'] %></p><% end %><a href="<%= education.source(event['source'])['url'] %>" target="_blank" rel="noopener">Uradni vir <span aria-hidden="true">↗</span></a></div></article><% end %></div></section><% end %>
+        <% rows.group_by { |event| event['start'][0,7] }.each do |month,items| %><section class="ed-month-group"><h3><%= CalendarEngine::MONTHS.fetch(month[5,2].to_i-1).capitalize %> <%= month[0,4] %></h3><div><% items.each do |event| %><article class="ed-event" data-event-id="<%= event['id'] %>" data-category="<%= event['category'] %>"><label class="ed-event-select"><input type="checkbox" data-ed-select="<%= event['id'] %>" aria-label="Izberi: <%= event['title'] %>, <%= education.range_label(event) %>"></label><div class="ed-event-date"><time datetime="<%= event['start'] %>"><%= education.range_label(event) %></time><span><%= education.data['categories'][event['category']] %></span></div><div class="ed-event-copy"><h4><%= event['title'] %></h4><% unless education.context(event).empty? %><small><%= education.context(event) %></small><% end %><% if event['note'] %><p><%= event['note'] %></p><% end %><a href="<%= education.source(event['source'])['url'] %>" target="_blank" rel="noopener">Uradni vir </a></div></article><% end %></div></section><% end %>
       </div>
       <div class="ed-empty" data-ed-empty hidden><strong>Za to izbiro ni dogodkov.</strong><p>Spremenite vrsto dogodka, razred ali izpitni rok. Pretekle datume vključite tako, da izključite filter prihodnjih dogodkov.</p></div>
       <div class="ed-print-sheet" data-ed-print-sheet></div>
@@ -55,7 +79,7 @@
 
   <%= render 'pages/topic_guide' %>
   <section class="ed-reading"><div><span class="ed-eyebrow">PREDEN SHRANITE KOLEDAR</span><h2>Datumi v pravem kontekstu</h2></div><div><% education.questions.each do |question,answer| %><details><summary><%= question %></summary><p><%= answer %></p></details><% end %></div></section>
-  <section class="ed-sources" id="ed-sources" aria-labelledby="ed-sources-title"><div><span class="ed-eyebrow">VIRI IN METODA</span><h2 id="ed-sources-title">Preverljivo do izvirnika.</h2><p>Datume povzemamo iz slovenskih objav ministrstva, Državnega izpitnega centra in izbranih univerz oziroma članic. Vsak dogodek vodi do svojega vira.</p><p>Datume in razlike med programi smo preverili <time datetime="<%= reviewed %>"><%= education.date_label(reviewed) %></time>. Uredniški pregled: <strong>Koledar365</strong>.</p></div><div><ol><% education.sources.each do |source| %><li><a href="<%= source['url'] %>" target="_blank" rel="noopener"><%= source['title'] %> <span aria-hidden="true">↗</span></a></li><% end %></ol><p>Prikazane so objavljene meje obdobij, vključno s prvim in zadnjim dnevom. Pri ustnih izpitih in univerzitetnih obdobjih ne sklepamo o osebnem terminu. Neobjavljenih prihodnjih šolskih let ne ocenjujemo.</p><div class="ed-source-links"><a href="/uredniska-politika/">Uredniška pravila</a><a href="/kontakt/">Sporočite popravek →</a></div></div></section>
+  <section class="ed-sources" id="ed-sources" aria-labelledby="ed-sources-title"><div><span class="ed-eyebrow">VIRI IN METODA</span><h2 id="ed-sources-title">Preverljivo do izvirnika.</h2><p>Datume povzemamo iz slovenskih objav ministrstva, Državnega izpitnega centra in izbranih univerz oziroma članic. Vsak dogodek vodi do svojega vira.</p><p>Datume in razlike med programi smo preverili <time datetime="<%= reviewed %>"><%= education.date_label(reviewed) %></time>. Uredniški pregled: <strong>Koledar365</strong>.</p></div><div><ol><% education.sources.each do |source| %><li><a href="<%= source['url'] %>" target="_blank" rel="noopener"><%= source['title'] %> <span aria-hidden="true"><%= ui_icon('chevron-right') %></span></a></li><% end %></ol><p>Prikazane so objavljene meje obdobij, vključno s prvim in zadnjim dnevom. Pri ustnih izpitih in univerzitetnih obdobjih ne sklepamo o osebnem terminu. Neobjavljenih prihodnjih šolskih let ne ocenjujemo.</p><div class="ed-source-links"><a href="/uredniska-politika/">Uredniška pravila</a><a href="/kontakt/">Sporočite popravek</a></div></div></section>
   <script type="application/json" id="education-data"><%= raw json_escape(education.payload.to_json) %></script>
   <div class="ed-toast" role="status" aria-live="polite" data-ed-toast hidden></div>
 </article>

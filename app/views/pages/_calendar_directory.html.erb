@@ -1,12 +1,12 @@
 <% years=CalendarEngine::YEARS.to_a; months=CalendarEngine::MONTHS; archives=@children.where(year:2026).reorder(:month).to_a %>
 <article class="calendar-directory" data-calendar-directory>
   <header class="cd-heading">
-    <div><span class="cd-kicker">PREGLEDNO DO PRAVEGA DATUMA</span><h1>Koledarji <%= years.first %>–<%= years.last %></h1><p>Letni in mesečni koledarji, urejeni po letih in mesecih. Izberite obdobje ter odprite koledar za ogled ali prenos.</p></div>
+    <div><h1>Koledarji <%= years.first %>–<%= years.last %></h1><p>V letnem pregledu so vsi meseci na enem listu. Za šolske obveznosti, izmene ali dopust odprite mesečno stran, kjer imate več prostora za zapiske. Datumi, tedni ISO in slovenski prazniki so vidni že v spletnem koledarju, predloge pa lahko prenesete kot PDF, sliko ali Excel.</p></div>
     <%= render 'hero_features', label: 'Obseg pregleda', items: [['calendar', years.size, 'Letni pregledi'], ['week', years.size * 12, 'Mesečni koledarji']] %>
   </header>
 
   <section class="cd-periods" aria-labelledby="cd-period-title">
-    <div class="cd-section-heading"><div><span class="cd-kicker">01 / IZBERITE OBDOBJE</span><h2 id="cd-period-title">Letni in mesečni koledarji</h2></div><a href="/koledar-za-tiskanje/">Vse predloge za tisk <span aria-hidden="true">↗</span></a></div>
+    <div class="cd-section-heading"><div><span class="cd-kicker">01 / IZBERITE OBDOBJE</span><h2 id="cd-period-title">Letni in mesečni koledarji</h2></div><a href="/koledar-za-tiskanje/">Vse predloge za tisk <span aria-hidden="true"><%= ui_icon('chevron-right') %></span></a></div>
     <div class="cd-filters" data-directory-filters hidden>
       <fieldset><legend>Prikaži leto</legend><div class="cd-year-buttons"><button type="button" data-directory-year="0" aria-pressed="true">Vsa leta</button><% years.each do |year| %><button type="button" data-directory-year="<%= year %>" aria-pressed="false"><%= year %></button><% end %></div></fieldset>
       <label for="cd-month">Prikaži mesec<select id="cd-month" data-directory-month><option value="0">Vsi meseci</option><% months.each_with_index do |month,index| %><option value="<%= index+1 %>"><%= month.capitalize %></option><% end %></select></label>
@@ -19,15 +19,37 @@
         <caption class="sr-only">Letni in mesečni koledarji <%= years.first %>–<%= years.last %>. Izberite povezavo v stolpcu želenega leta.</caption>
         <thead><tr><th scope="col">Obdobje</th><% years.each do |year| %><th scope="col" data-directory-column="<%= year %>"><strong><%= year %></strong><small><%= Date.gregorian_leap?(year) ? 366 : 365 %> dni<%= ' · prestopno leto' if Date.gregorian_leap?(year) %></small></th><% end %></tr></thead>
         <tbody>
-          <tr class="cd-annual-row" data-directory-row="0"><th scope="row"><%= ui_icon('calendar') %><span>Letni pregled<small>Vseh 12 mesecev</small></span></th><% years.each do |year| %><td data-directory-column="<%= year %>"><a href="/koledar/<%= year %>/" aria-label="Odprite letni koledar <%= year %>"><span>Koledar <b><%= year %></b></span><span aria-hidden="true">↗</span></a></td><% end %></tr>
-          <% months.each_with_index do |month,index| %><tr data-directory-row="<%= index+1 %>"><th scope="row"><span class="cd-month-number" aria-hidden="true"><%= '%02d' % (index+1) %></span><span><%= month.capitalize %></span></th><% years.each do |year| %><td data-directory-column="<%= year %>"><a href="<%= month_url(year,index+1) %>" aria-label="Odprite koledar za <%= month %> <%= year %>"><span><%= month.capitalize %> <b><%= year %></b></span><span aria-hidden="true">↗</span></a></td><% end %></tr><% end %>
+          <tr class="cd-annual-row" data-directory-row="0"><th scope="row"><%= ui_icon('calendar') %><span>Letni pregled<small>Vseh 12 mesecev</small></span></th><% years.each do |year| %><td data-directory-column="<%= year %>"><a href="/koledar/<%= year %>/" aria-label="Odprite letni koledar <%= year %>"><span>Koledar <b><%= year %></b></span><span aria-hidden="true"><%= ui_icon('chevron-right') %></span></a></td><% end %></tr>
+          <% months.each_with_index do |month,index| %><tr data-directory-row="<%= index+1 %>"><th scope="row"><span class="cd-month-number" aria-hidden="true"><%= '%02d' % (index+1) %></span><span><%= month.capitalize %></span></th><% years.each do |year| %><td data-directory-column="<%= year %>"><a href="<%= month_url(year,index+1) %>" aria-label="Odprite koledar za <%= month %> <%= year %>"><span><%= month.capitalize %> <b><%= year %></b></span><span aria-hidden="true"><%= ui_icon('chevron-right') %></span></a></td><% end %></tr><% end %>
         </tbody>
       </table>
     </div>
     <p class="cd-download-note"><%= ui_icon('download') %><span><strong>Iščete PDF ali sliko?</strong> Datoteke za prenos so na strani izbranega leta ali meseca, pod koledarskim pregledom.</span></p>
   </section>
 
-  <% if archives.any? %><details class="cd-archive"><summary><span><%= ui_icon('calendar') %> Koledarji za leto 2026</span><span aria-hidden="true">+</span></summary><p>Potrebujete pregled za leto 2026? Odprite leto ali enega od razpoložljivih mesecev.</p><nav aria-label="Koledarji za leto 2026"><% archives.each do |page| %><a href="<%= page.path %>"><%= page.month ? "#{months[page.month-1].capitalize} 2026" : 'Letni koledar 2026' %> <span aria-hidden="true">↗</span></a><% end %></nav></details><% end %>
+  <% if archives.any? %><details class="cd-archive"><summary><span><%= ui_icon('calendar') %> Koledarji za leto 2026</span><span aria-hidden="true">+</span></summary><p>Potrebujete pregled za leto 2026? Odprite leto ali enega od razpoložljivih mesecev.</p><nav aria-label="Koledarji za leto 2026"><% archives.each do |page| %><a href="<%= page.path %>"><%= page.month ? "#{months[page.month-1].capitalize} 2026" : 'Letni koledar 2026' %> <span aria-hidden="true"><%= ui_icon('chevron-right') %></span></a><% end %></nav></details><% end %>
+
+  <section class="cd-guide" aria-labelledby="cd-guide-title">
+    <h2 id="cd-guide-title">Kaj se spremeni med leti?</h2>
+    <p>Če načrtujete obseg dela ali dopust, primerjajte dneve v letu in število praznikov, ki dejansko padejo na ponedeljek–petek. Za družinske načrte ob tem preverite še <%= link_to 'šolske počitnice po regijah', '/solske-pocitnice/' %>. Termine pouka in počitnic po šolskih letih objavlja <%= editorial_paragraph('[Ministrstvo za vzgojo in izobraževanje](@basic-school)') %>.</p>
+    <div class="cd-guide-years">
+      <% years.each do |year| %>
+        <% year_path = "/koledar/#{year}/"; from = Date.new(year, 1, 1); to = Date.new(year, 12, 31); totals = CalendarEngine.working_days(from, to) %>
+        <article>
+          <h3><%= link_to "Koledar #{year}", year_path %></h3>
+          <p><%= CalendarCollectionEditorial.find(year_path).fetch('snippet') %></p>
+          <dl>
+            <div><dt>Vsi dnevi</dt><dd><%= totals.fetch(:calendar_days) %></dd></div>
+            <div><dt>Delovni dnevi</dt><dd><%= totals.fetch(:working_days) %></dd></div>
+            <div><dt>Prazniki na delovnik</dt><dd><%= totals.fetch(:excluded_holidays).size %></dd></div>
+          </dl>
+        </article>
+      <% end %>
+    </div>
+    <p><%= editorial_paragraph('Koledar365 pri štetju delovnikov upošteva urnik od ponedeljka do petka. [Metodologija izračuna](/viri-in-metodologija/) opisuje pravila za seštevek, [uradni pregled praznikov GOV.SI](@holidays) pa navaja pravni status datumov. Tedne v mreži označujemo po [pravilih ISO 8601](@iso-week).') %></p>
+    <p>Za skupno stensko tablo izberite letni PDF. Posamezne mesece natisnite, kadar potrebujete večje celice. Za razporejanje in prepisovanje datumov uporabite Excel. Če tiskate na računalniku Mac, lahko merilo preverite v <%= editorial_paragraph('[navodilih za tiskanje v Predogledu](@preview-printing)') %>. Za primer uporabe si oglejte še <%= link_to 'vodnik za načrtovanje vseh dvanajstih mesecev', '/blog/letni-koledar-nacrt-za-12-mesecev/' %>.</p>
+    <p>Če opazite napačen datum ali oznako, <%= link_to 'sporočite popravek Koledar365', '/kontakt/' %> in priložite povezavo do uradne objave.</p>
+  </section>
 
   <section class="cd-tools" aria-labelledby="cd-tools-title">
     <div class="cd-section-heading"><div><span class="cd-kicker">02 / IZBERITE NAMEN</span><h2 id="cd-tools-title">Drugi koledarji in načrtovalniki</h2></div></div>
@@ -40,7 +62,7 @@
         ['Prazen koledar','/prazen-koledar/','note','Prostor za lastne vpise in načrte','Predloge za tisk'],
         ['Delovni dnevi','/delovni-dnevi/','briefcase','Delovni dnevi, prazniki in obveznost','Pregledi in izračuni'],
         ['Ustvari koledar','/ustvari-koledar/','plus','Lastne fotografije in pomembni datumi','Osebna postavitev']
-      ].each do |title,url,icon,purpose,features| %><tr><th scope="row"><span class="cd-tool-name"><%= ui_icon(icon) %><%= title %></span></th><td><%= purpose %></td><td><%= features %></td><td><a href="<%= url %>" aria-label="Odpri: <%= title %>">Odpri <span aria-hidden="true">↗</span></a></td></tr><% end %>
+      ].each do |title,url,icon,purpose,features| %><tr><th scope="row"><span class="cd-tool-name"><%= ui_icon(icon) %><%= title %></span></th><td><%= purpose %></td><td><%= features %></td><td><a href="<%= url %>" aria-label="Odpri: <%= title %>">Odpri <span aria-hidden="true"><%= ui_icon('chevron-right') %></span></a></td></tr><% end %>
     </tbody></table></div>
   </section>
 

@@ -1,17 +1,18 @@
 <% first = Date.new(year, month || 1, 1); last = Date.new(year, month || 12, -1) %>
 <% holidays = CalendarEngine.statutory_work_free_events(year).select { |event| event.fetch(:on).between?(first, last) } %>
-<% workdays = CalendarEngine.working_days(first, last).fetch(:working_days) %>
-<% work_path = month ? month_url(year, month, 'delovni-dnevi') : "/delovni-dnevi/#{year}/" %>
+<% totals = CalendarEngine.working_days(first, last); workdays = totals.fetch(:working_days) %>
+<% catalogue_year = CalendarEngine::YEARS.include?(year) %>
+<% work_path = month && catalogue_year ? month_url(year, month, 'delovni-dnevi') : "/delovni-dnevi/#{year}/" %>
 <section id="calendar-facts" class="calendar-facts calendar-collection-notes" aria-labelledby="calendar-facts-title">
   <section class="panel calendar-collection-notes__period" aria-labelledby="calendar-facts-title">
     <h2 id="calendar-facts-title"><%= copy.fetch('heading') %></h2>
-    <p><%= editorial_paragraph(copy.fetch('body')) %></p>
+    <p><%= editorial_paragraph(copy.fetch(copy.key?('print_tip') ? 'intro' : 'body')) %></p>
     <dl class="calendar-collection-numbers">
       <div><dt>Dni v <%= month ? 'mesecu' : 'letu' %></dt><dd><%= (last - first).to_i + 1 %></dd></div>
-      <div><dt>Dela prosti prazniki</dt><dd><%= holidays.size %></dd></div>
+      <div><dt>Prazniki na delovnik</dt><dd><%= totals.fetch(:excluded_holidays).size %></dd></div>
       <div><dt>Delovni dnevi</dt><dd><%= workdays %></dd></div>
     </dl>
-    <p>Izračun vključuje <%= link_to "#{workdays * 8} delovnih ur", work_path %> pri osemurnem delovniku od ponedeljka do petka in upošteva zakonsko dela proste dneve.</p>
+    <p>Pri urniku od ponedeljka do petka in osmih urah na dan je to <%= link_to "#{workdays * 8} delovnih ur", work_path %>. Praznik, ki pade na soboto ali nedeljo, pri takem urniku ne zmanjša števila delovnikov.</p>
     <% if month %>
       <p>Prvi dan je <strong><%= CalendarEngine::DAYS.fetch(first.cwday - 1) %></strong>, zadnji pa <strong><%= CalendarEngine::DAYS.fetch(last.cwday - 1) %></strong>. Mesec zajema <%= link_to 'tedne ISO', '/stevilka-tedna/' %> od <%= first.cweek %>. (<%= first.cwyear %>) do <%= last.cweek %>. (<%= last.cwyear %>).</p>
     <% end %>
@@ -19,35 +20,60 @@
       <% if month %><h3>Dela prosti dnevi v mesecu</h3><% else %><details class="calendar-collection-holidays"><summary>Vseh <%= holidays.size %> dela prostih prazničnih datumov</summary><% end %>
       <ul class="calendar-collection-dates">
         <% holidays.each do |event|; date = event.fetch(:on) %>
-          <li><time datetime="<%= date.iso8601 %>"><%= sl_date(date) %></time><span><strong><%= event.fetch(:title).sub(/\A./, &:upcase) %></strong><small><%= CalendarEngine::DAYS.fetch(date.cwday - 1) %></small></span></li>
+          <li><time datetime="<%= date.iso8601 %>"><%= sl_date(date) %></time><span><strong><%= link_to event.fetch(:title).sub(/\A./, &:upcase), event_path(CalendarEvent.new(event)) %></strong><small><%= CalendarEngine::DAYS.fetch(date.cwday - 1) %></small></span></li>
         <% end %>
       </ul>
       <% unless month %></details><% end %>
     <% else %>
       <p>V tem mesecu ni zakonsko dela prostih praznikov. V <%= link_to "seznamu praznikov #{year}", "/prazniki/#{year}/" %> so navedeni tudi državni prazniki z običajnim delovnikom.</p>
     <% end %>
-    <% moon_path = month ? month_url(year, month, 'lunin-koledar') : "/lunin-koledar/#{year}/" %>
-    <p>Za večerne načrte preverite še <%= link_to "lunine mene #{month ? 'v tem mesecu' : "leta #{year}"}", moon_path %>.</p>
-    <p class="calendar-collection-source"><%= editorial_paragraph('Pravni status datumov preverite v [uradnem pregledu praznikov GOV.SI](@holidays).') %><% if holidays.any? %> Za vpliv na svoj urnik uporabite <%= link_to 'kalkulator delovnih dni', '/kalkulator-delovnih-dni/' %>.<% end %></p>
+    <% if catalogue_year %>
+      <p>Za večerne načrte preverite še <%= link_to "lunine mene #{month ? 'v tem mesecu' : "leta #{year}"}", month ? month_url(year, month, 'lunin-koledar') : "/lunin-koledar/#{year}/" %>.</p>
+    <% end %>
+    <p class="calendar-collection-source"><%= editorial_paragraph('Priprava predlog in izračun: Koledar365. Pravni status datumov preverite v [uradnem pregledu praznikov GOV.SI](@holidays). Izračun je opisan v [virih in metodologiji](/viri-in-metodologija/), postopek popravkov pa v [uredniški politiki](/uredniska-politika/).') %></p>
+  </section>
+
+  <div class="calendar-collection-notes__aside">
+  <% record, from, to, result = CalendarCollectionEditorial.example(copy) %>
+  <section class="panel calendar-collection-example" aria-labelledby="calendar-example-title">
+    <h2 id="calendar-example-title"><%= record.fetch('title') %></h2>
+    <p><%= editorial_paragraph(record.fetch('text')) %></p>
+    <p class="calendar-collection-example__range">
+      <time datetime="<%= from.iso8601 %>"><%= sl_date(from) %></time>
+      <span>do</span>
+      <time datetime="<%= to.iso8601 %>"><%= sl_date(to) %></time>
+    </p>
+    <dl class="calendar-collection-numbers">
+      <div><dt>Koledarski dnevi</dt><dd><%= result.fetch(:calendar_days) %></dd></div>
+      <div><dt>Delovni dnevi</dt><dd><%= result.fetch(:working_days) %></dd></div>
+    </dl>
+    <p class="calendar-collection-source">Všteta sta oba mejna datuma. Delovniki so od ponedeljka do petka brez zakonsko dela prostih dni.</p>
+    <%= link_to 'Odpri ta primer v kalkulatorju delovnih dni', "/kalkulator-delovnih-dni/?#{ {from: from.iso8601, to: to.iso8601, holidays: 1}.to_query }" %>
   </section>
 
   <section class="panel calendar-collection-notes__print" aria-labelledby="calendar-print-guide-title">
-    <h2 id="calendar-print-guide-title">Prenos in tisk koledarja</h2>
-    <p>V <%= link_to 'galeriji predlog', '#calendar-designs' %> sta pod vsakim oblikovanjem dve datoteki. Izberite ju glede na to, kje boste koledar uporabili.</p>
+    <h2 id="calendar-print-guide-title"><%= catalogue_year ? "Prenos in tisk: #{month ? CalendarEngine::MONTHS.fetch(month - 1).capitalize : 'leto'} #{year}" : 'Prenos in tisk koledarja' %></h2>
+    <% if (print_tip = copy['print_tip']) %>
+      <p class="calendar-collection-advice"><%= editorial_paragraph(print_tip) %></p>
+      <p>V <%= link_to 'galeriji predlog', '#calendar-designs' %> primerjajte pokončne in ležeče liste A3. <%= month ? 'Vsaka predloga prikazuje izbrani mesec na enem listu.' : 'Vseh dvanajst mesecev je na enem listu.' %> Klik sličice odpre izbrani PDF za predogled.</p>
+    <% else %>
+      <p>V <%= link_to 'galeriji predlog', '#calendar-designs' %> sta pod vsakim oblikovanjem dve datoteki. Izberite ju glede na to, kje boste koledar uporabili.</p>
+    <% end %>
     <dl class="calendar-collection-file-guide">
       <div>
         <dt>PDF za tisk</dt>
-        <dd>Prenesite vektorski PDF v barvnem profilu CMYK FOGRA39. Za list A3 izberite usmerjenost iz kartice in merilo 100 %, če stran ustreza tiskalnemu območju. Na tiskalniku A4 izberite prilagoditev strani in v predogledu preverite, ali so vidni vsi robovi. <%= editorial_paragraph('[Adobejeva navodila za merilo PDF](@pdf-scaling) pojasnjujejo obe nastavitvi.') %></dd>
+        <dd><% if catalogue_year %>Za predlogo A3 izberite usmerjenost iz kartice in merilo 100 %, kadar tiskalnik zmore natisniti celotno stran. Če tiskate na A4, izberite »Prilagodi strani« in v predogledu preverite robove ter berljivost datumov.<% else %>Nad predlogami izberite velikost papirja in usmerjenost, nato odprite PDF in preverite tiskalni predogled.<% end %> <%= editorial_paragraph('Za Mac so na voljo [navodila za tiskanje PDF-jev v Predogledu](@preview-printing).') %></dd>
       </div>
       <div>
         <dt>Slika za zaslon ali deljenje</dt>
-        <dd>Gumb »Slika« prenese ujemajoč se list kot datoteko .webp v barvnem prostoru sRGB. Celostranska slika ima pri velikosti A3 gostoto 600 ppi. Odprite jo v brskalniku ali jo dodajte digitalnemu načrtu.</dd>
+        <dd>Gumb »Slika« prenese izbrani list v obliki WebP<%= ' pri 600 ppi za velikost A3' if catalogue_year %>. Odprite ga v brskalniku, pošljite ga sodelavcem ali ga dodajte digitalnemu načrtu.</dd>
       </div>
       <div>
         <dt>Excel za lastne zapiske</dt>
         <dd>Če želite vnašati obveznosti ali razvrstiti datume, prenesite <%= link_to 'preglednico XLSX', '#calendar-spreadsheet-title' %>. <%= month ? 'Vsebuje mrežo tega meseca in urejevalni seznam datumov.' : 'Vsak mesec dobite na svojem delovnem listu.' %></dd>
       </div>
     </dl>
-    <p><% if month %>Za skupni pogled odprite <%= link_to "letni koledar #{year}", "/koledar/#{year}/" %>.<% else %>Odprite <%= link_to "mesečne predloge za januar #{year}", month_url(year, 1) %> in nato z mesečno navigacijo sestavite svoj komplet dvanajstih listov.<% end %> Za drug format papirja ali dodajanje fotografije uporabite <%= link_to 'izdelavo koledarja po meri', '/ustvari-koledar/' %>.</p>
+    <p><% if month %>Za skupni pogled odprite <%= link_to "letni koledar #{year}", "/koledar/#{year}/" %>.<% elsif catalogue_year %>Odprite <%= link_to "mesečne predloge za januar #{year}", month_url(year, 1) %> in z mesečno navigacijo sestavite komplet dvanajstih listov.<% else %>Za podroben pogled odprite <%= link_to 'oktober 2026', month_url(year, 10) %> ali izberite obdobje v <%= link_to 'mesečnem planerju', '/mesecni-koledar/' %>.<% end %> Za svoj naslov ali fotografijo uporabite <%= link_to 'izdelavo koledarja po meri', '/ustvari-koledar/' %>.</p>
   </section>
+  </div>
 </section>

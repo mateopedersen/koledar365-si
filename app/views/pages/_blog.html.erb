@@ -13,7 +13,7 @@
     </header>
     <figure class="editorial-cover">
       <img src="<%= EditorialCatalog.image(slug) %>" alt="<%= article.fetch('image_alt') %>" width="1200" height="630" fetchpriority="high">
-      <figcaption>Foto: <%= photo.fetch('credit') %> · <%= link_to 'Izvirna objava', photo.fetch('source') %> · <%= link_to photo.fetch('license'), photo.fetch('license_url') %> · <a href="/fotografije-in-licence/#blog-<%= slug %>">Podatki o fotografiji</a></figcaption>
+      <figcaption>Foto: <%= photo.fetch('credit') %> · <%= link_to 'Izvirna objava', photo.fetch('source') %> · <%= link_to ImageRights.license_label(photo.fetch('license')), photo.fetch('license_url') %> · <a href="/fotografije-in-licence/#blog-<%= slug %>">Podatki o fotografiji</a></figcaption>
     </figure>
     <div class="editorial-article__body">
       <% article.fetch('sections').each do |section| %>

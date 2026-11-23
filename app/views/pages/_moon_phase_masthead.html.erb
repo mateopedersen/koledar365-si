@@ -1,0 +1,31 @@
+<% new_moon = schedule.kind == 'new_moon' %>
+<% photo = new_moon ? LunarPhaseGuide.new_moon_hero : LunarPhaseGuide.hero %>
+<% credit_id = new_moon ? 'mlaj-iss' : 'luna-nad-piranom' %>
+<header class="moon-masthead<%= ' new-moon-masthead' if new_moon %>">
+  <div class="moon-masthead__intro">
+    <h1><%= schedule.title %> <span><%= LunarPhaseSchedule::YEARS.first %>–<%= LunarPhaseSchedule::YEARS.last %></span></h1>
+    <% if new_moon %>
+      <p>Kdaj je naslednji mlaj? Preverite datume in ure po slovenskem času ter ugotovite, kdaj po mlaju poiskati prvi Lunin srp.</p>
+    <% else %>
+      <p>Kako je videti prvi krajec in kdaj bo naslednja polna luna? Primerjajte fotografije Luninih men in poiščite datume ter ure mlaja, obeh krajcev in ščipa po slovenskem času.</p>
+    <% end %>
+    <nav class="moon-masthead__links" aria-label="Na tej strani">
+      <% if new_moon %>
+        <a href="#lunine-mene-datumi">Datumi mlaja <%= ui_icon('arrow-down') %></a>
+        <a href="#prvi-lunin-srp">Kdaj poiskati srp?</a>
+      <% else %>
+        <a href="#lunine-mene-datumi">Poglej datume <%= ui_icon('arrow-down') %></a>
+        <a href="#osem-luninih-men">Osem men v slikah</a>
+      <% end %>
+    </nav>
+  </div>
+
+  <figure class="moon-masthead__photo">
+    <%= image_tag photo.fetch('path'), srcset: "#{photo.fetch('small_path')} 640w, #{photo.fetch('path')} 1280w",
+          sizes: '(max-width:760px) calc(100vw - 24px), 52vw', width: photo.fetch('width'), height: photo.fetch('height'),
+          alt: photo.fetch('alt'), decoding: 'async', fetchpriority: 'high' %>
+    <figcaption><strong><%= photo.fetch('caption') %></strong><%= link_to photo.fetch('credit'), LunarPhaseGuide.credit_path(credit_id) %></figcaption>
+  </figure>
+
+  <%= render 'moon_phase_next', schedule: schedule, upcoming: upcoming %>
+</header>

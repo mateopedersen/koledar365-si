@@ -1,3 +1,15 @@
+<% if @calendar_collection_designs %>
+  <header class="calendar-period-intro" aria-labelledby="calendar-collection-title">
+    <div>
+      <h1 id="calendar-collection-title"><%= @title %></h1>
+      <p><strong><%= @calendar_collection_designs.size %> brezplačnih predlog A3</strong> v obliki PDF ali slike</p>
+    </div>
+    <nav aria-label="Podatki in preglednica">
+      <a href="#koledarski-pregled"><%= ui_icon('calendar') %> Datumi</a>
+      <a href="#calendar-spreadsheet-title"><%= ui_icon('grid') %> Excel</a>
+    </nav>
+  </header>
+<% else %>
 <header class="page-heading calendar-collection-intro" aria-labelledby="calendar-collection-title">
   <h1 id="calendar-collection-title"><%= @title %></h1>
   <p><%= editorial_paragraph(copy.fetch('intro')) %></p>
@@ -5,5 +17,6 @@
     <a class="button primary" href="#calendar-designs">Izberite predlogo za tisk <%= ui_icon('download') %></a>
     <a class="button" href="#calendar-facts">Datumi in navodila za tisk</a>
   </nav>
-  <%= render 'hero_features', label: 'Oblike za prenos', items: [['print', 'PDF', 'Za tisk na A3'], ['image', 'Slika', '600 ppi v polni velikosti'], ['grid', 'Excel', 'Preglednica za urejanje']] %>
+  <%= render 'hero_features', label: 'Oblike za prenos', items: [['print', 'PDF', CalendarEngine::YEARS.include?(@year) ? 'Za tisk na A3' : 'A3, A4 ali A5'], ['image', 'Slika', '600 ppi v polni velikosti'], ['grid', 'Excel', 'Preglednica za urejanje']] %>
 </header>
+<% end %>

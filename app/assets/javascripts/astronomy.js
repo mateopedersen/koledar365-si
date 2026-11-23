@@ -5,7 +5,10 @@
   const kinds = { partial: 'Delni mrk', total: 'Popolni mrk', annular: 'Kolobarjasti mrk', penumbral: 'Polsenčni mrk' };
   const labels = { penumbral_begin: 'Začetek polsenčne faze', partial_begin: 'Začetek delne faze', total_begin: 'Začetek popolne faze', peak: 'Maksimum mrka', total_end: 'Konec popolne faze', partial_end: 'Konec delne faze', penumbral_end: 'Konec polsenčne faze' };
   const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
-  const dateLabel = value => { const [y,m,d] = value.slice(0,10).split('-').map(Number); return `${d}. ${months[m-1]} ${y}`; };
+  const dateLabel = (value, compact = false) => {
+    const [year, month, day] = value.slice(0, 10).split('-').map(Number);
+    return compact ? `${day}.${month}.` : `${day}. ${months[month - 1]} ${year}`;
+  };
   const roundMinute = value => new Date(Math.round(new Date(value).getTime()/60000)*60000);
   const timeLabel = (value, withZone = false) => {
     if (!value) return '—';
@@ -53,7 +56,7 @@
   let year = isMoon ? localYear : upcoming?.year || localYear;
   if (data.years.includes(+params.get('year'))) year = +params.get('year');
   if (!data.years.includes(year)) year = data.years[data.years.length-1];
-  let selectedEvent = null;
+  let selectedEvent = params.get('event');
   const name = () => data.cities?.find(c => c.id === city)?.name || '';
   const rows = () => isPerseids ? data.events.find(e => e.year === year).nights : data.events.filter(e => e.year === year);
   const local = event => event.cities[city];
@@ -100,7 +103,7 @@
     }).join('');
     if (!rows().some(e => e.id === selectedEvent)) selectedEvent = (rows().find(e => local(e).visible) || rows()[0])?.id;
     const select = $('[data-astro-event]');
-    select.innerHTML = rows().map(e => `<option value="${e.id}">${dateLabel(e.date)} · ${kinds[e.kind]}</option>`).join('');
+    select.innerHTML = rows().map(e => `<option value="${e.id}">${dateLabel(e.date, true)} · ${kinds[e.kind]}</option>`).join('');
     select.value = selectedEvent;
     eventDetail();
   }
@@ -161,7 +164,8 @@
     ics.href = `/astronomy/${data.kind}-${year}${isMoon?'':`-${city}`}.ics`;
     ics.setAttribute('aria-disabled',count ? 'false':'true');
     if (!count) ics.removeAttribute('href');
-    ics.textContent = !count ? 'Ni vidnih mrkov za ICS' : isPerseids ? 'Dodaj noči · ICS' : 'Prenesi ICS';
+    const icsLabel = ics.querySelector('[data-astro-ics-label]') || ics;
+    icsLabel.textContent = !count ? 'Ni vidnih mrkov za ICS' : isPerseids ? 'Dodaj noči · ICS' : 'Prenesi ICS';
     if (isMoon) {
       moonRows();
       const source = $('[data-moon-source]');
@@ -171,6 +175,7 @@
     if (updateUrl) {
       const url = new URL(location.href); url.searchParams.set('year',year);
       if (!isMoon) url.searchParams.set('city',city);
+      if (!isMoon && !isPerseids && url.searchParams.has('event')) url.searchParams.set('event', selectedEvent);
       history.replaceState(null,'',url);
       put('[data-astro-announcement]',`${prefix} ${year}${isMoon?'':` · ${name()}`}. Prikaz je posodobljen.`);
     }
@@ -179,7 +184,7 @@
   announcement.className='sr-only'; announcement.dataset.astroAnnouncement=''; announcement.setAttribute('role','status'); root.append(announcement);
   $('[data-astro-form]').addEventListener('submit',event=>{event.preventDefault(); render(true);});
   $('[data-astro-year]').addEventListener('change',event=>{year=+event.target.value;selectedEvent=null;render(true);});
-  $('[data-astro-city]')?.addEventListener('change',event=>{city=event.target.value;selectedEvent=null;render(true);});
+  $('[data-astro-city]')?.addEventListener('change',event=>{city=event.target.value;render(true);});
   $('[data-astro-event]')?.addEventListener('change',event=>{selectedEvent=event.target.value;eventDetail();});
   root.addEventListener('click',event=>{
     const link=event.target.closest('[data-select-event]');

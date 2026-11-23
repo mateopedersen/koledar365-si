@@ -4,11 +4,15 @@ module SeoHelper
   def seo_title = "#{seo_page_title} | Koledar365"
 
   def seo_page_title
-    return "#{@title} – PDF za tisk in slika" if @calendar_collection
+    return "#{SunEngine::CITIES.fetch(@sun_city_id).first}: sončni vzhod in zahod" if @sun_city_id
+    return "#{@title} s 15 predlogami PDF za tisk" if @calendar_collection_designs
+    return "#{@title} za tisk in prenos" if @calendar_collection
+    return "Izdelava koledarja s fotografijami in izvozom PDF" if page_path == "/ustvari-koledar/"
+    return "Predloge koledarjev PDF za tiskanje v formatih A4, A3 in A5" if page_path == "/koledar-za-tiskanje/"
     return "#{@title}: datumi 2027–2030" if @observance && !@clock_change
-    return "Dnevni horoskop za danes – vseh 12 znamenj" if page_path == "/horoskop/"
-    if (sign = @horoscope_guide&.profile)
-      return "#{sign.fetch('name')} – dnevni horoskop za danes"
+    return "Današnji horoskop za vseh 12 znamenj" if page_path == "/horoskop/"
+    if @horoscope_guide&.profile
+      return "Dnevni horoskop za #{@horoscope_guide.sign_editorial.fetch('accusative')}"
     end
     return "Prestopno leto: kalkulator in pravilo 29. februarja" if page_path == "/prestopno-leto/"
 
@@ -54,7 +58,7 @@ module SeoHelper
     photo=seo_photo
     return {url:site_origin+photo['local_path'],width:photo['width'],height:photo['height'],alt:photo['alt_sl']} if photo
     record=@person || @page
-    return {url:"#{site_origin}/og.png",width:1200,height:630,alt:'Koledar365 – slovenski koledarji in načrtovanje'} unless record
+    return {url:"#{site_origin}/og.png",width:1200,height:630,alt:'Slovenski koledarji in orodja Koledar365'} unless record
     kind=@person ? 'names' : 'pages'
     {url:"#{site_origin}/druzabno/#{kind}/#{record.id}/#{SocialImage.key(record)}.png",width:1200,height:630,alt:@title}
   end
@@ -141,6 +145,11 @@ module SeoHelper
         "caption"=>illustration['caption']||illustration.fetch('alt'),"inLanguage"=>'sl-SI',
         "creditText"=>illustration['credit']||illustration['creator']||'Koledar365'}
       graph[1]['primaryImageOfPage']={"@id"=>"#{image_url}#image"}
+      if page_path == LunarPhaseGuide::PATH
+        graph.last.merge!('license'=>illustration.fetch('license_url'), 'acquireLicensePage'=>site_origin+LunarPhaseGuide::LICENSES_PATH)
+      elsif page_path == SlovenianSkyCalendar::PATH
+        graph.last.merge!('license'=>illustration.fetch('license_url'), 'isBasedOn'=>illustration.fetch('source'))
+      end
     end
     if (features=expansion_tool_features)
       graph << {"@type"=>'WebApplication',"@id"=>"#{canonical_url}#application","name"=>@title,"description"=>@description,
@@ -162,13 +171,12 @@ module SeoHelper
         "width"=>photo['width'],"height"=>photo['height'],"creditText"=>photo['author'],
         "license"=>photo['license_url'],"acquireLicensePage"=>photo['source']}
     end
-    if @section == 'calendar' && @page && page_path.start_with?('/koledar/') && (2027..2030).cover?(@year.to_i)
-      collection_rows = PublicCalendarGallery.rows_for(year: @year, month: @page.month)
-      graph << { "@type" => "ItemList", "name" => @title, "numberOfItems" => collection_rows.size,
-        "itemListElement" => collection_rows.each_with_index.map { |row, index|
+    if @calendar_collection_designs
+      graph << { "@type" => "ItemList", "name" => @title, "numberOfItems" => @calendar_collection_designs.size,
+        "itemListElement" => @calendar_collection_designs.each_with_index.map { |row, index|
           image = row.fetch('collection_seo')
           { "@type" => "ListItem", "position" => index + 1,
-            "item" => { "@type" => "ImageObject", "name" => image.fetch('title'),
+            "item" => { "@type" => "ImageObject", "name" => "#{@title} (#{image.fetch('design_name')})",
               "description" => image.fetch('alt'), "contentUrl" => site_origin + row.dig('files', 'webp'),
               "url" => site_origin + row.dig('files', 'preview'),
               "width" => row.dig('manifest', 'width_px'), "height" => row.dig('manifest', 'height_px'),
@@ -245,14 +253,7 @@ module SeoHelper
         "featureList" => ["Letni in mesečni koledar", "Imena, fotografije, logotipi in besedilni elementi",
           "Pisave, barve in postavitev", "Začetek tedna v ponedeljek ali nedeljo",
           "Dogodki in uvoz ICS ali CSV", "Prenos PDF, PNG in SVG", "Shranjevanje in odpiranje projektov"] }
-      questions = [
-        ["Ali lahko dodam svoje ime, fotografije in logotip?", "Da. Uredite naslov, ime ali podjetje, podnaslov in nogo. Dodajte glavno fotografijo ter samostojne slike in besedila, ki jih lahko premikate, vrtite in povečujete."],
-        ["Ali se lahko teden začne v nedeljo?", "V zavihku Postavitev izberite ponedeljek ali nedeljo. Spremenite lahko tudi jezik koledarja, leto, mesec, velikost papirja in usmerjenost."],
-        ["Kako shranim koledar in nadaljujem pozneje?", "Osnutek se samodejno shranjuje v tem brskalniku, če je shramba na voljo. Z možnostjo Projekt → Shrani projekt prenesete datoteko JSON z nastavitvami, dogodki in fotografijami. Pozneje jo odprete z možnostjo Odpri projekt."],
-        ["Kateri format je najboljši za tisk?", "PDF je pripravljen v izbrani velikosti papirja, pri 150 ali 300 dpi. Mesečni PDF lahko vsebuje vseh 12 mesecev in dodaten seznam vaših dogodkov. Za vektorsko urejanje izberite SVG; PNG je primeren za deljenje posamezne strani. Pri tisku izberite merilo 100 % in enako velikost papirja."],
-        ["Kam se pošljejo moje fotografije?", "Fotografije in projekt se obdelajo v brskalniku. Urejevalnik jih ne pošlje na strežnik. Osnutek lahko izbrišete v meniju Projekt; prenesene datoteke ostanejo tam, kamor jih shranite sami."]
-      ]
-      graph << { "@type" => "FAQPage", "@id" => "#{canonical_url}#faq", "mainEntity" => questions.map { |question, answer|
+      graph << { "@type" => "FAQPage", "@id" => "#{canonical_url}#faq", "mainEntity" => studio_faq.map { |question, answer|
         { "@type" => "Question", "name" => question, "acceptedAnswer" => { "@type" => "Answer", "text" => answer } }
       } }
     end
@@ -269,6 +270,10 @@ module SeoHelper
   end
 
   def expansion_citations
+    if page_path == LunarPhaseGuide::NEW_MOON_PATH
+      return ['https://aa.usno.navy.mil/data/MoonPhases', 'https://aa.usno.navy.mil/faq/crescent', 'https://science.nasa.gov/eclipses/geometry/', 'https://science.nasa.gov/earth/earth-observatory/earthshine-83782/']
+    end
+    return ['https://aa.usno.navy.mil/data/MoonPhases', 'https://science.nasa.gov/moon/moon-phases/'] if page_path == LunarPhaseGuide::PATH
     return GardenCalendar.sources.values.map{|source|source.fetch('url')} if @section=='garden_calendar'
     if @section == 'payment_calendar' && @payment_calendar
       return [@payment_calendar.source.fetch('url'), *@payment_calendar.current_sources.map(&:last)].uniq
@@ -284,6 +289,16 @@ module SeoHelper
     []
   end
 
+  def studio_faq
+    [
+      ['Kako izdelam koledar s svojo fotografijo?', 'V zavihku Fotografije naložite JPG, PNG ali WebP do 20 MB. Za glavno fotografijo izberite pas v glavi ali ozadje. Za logotip dodajte samostojno sliko in ji v zavihku Elementi nastavite položaj.'],
+      ['Ali se lahko teden začne v nedeljo?', 'Da. V zavihku Postavitev izberite nedeljo ali ponedeljek. Za urnik, ki uporablja številke tednov ISO, je najpreglednejša postavitev s ponedeljkom v prvem stolpcu.'],
+      ['Kako shranim koledar za poznejše urejanje?', 'Osnutek se shranjuje v tem brskalniku, ko je shramba na voljo. Za prenos med napravami v meniju Projekt izberite Shrani projekt (.json), nato na drugi napravi izberite Odpri projekt.'],
+      ['Kako prenesem vseh 12 mesecev za tisk?', 'Izberite mesečno postavitev. V možnosti Prenesi koledar nastavite obseg PDF na Vseh 12 mesecev in prenesite PDF za tisk. Izvoz PNG ali SVG pripravi trenutno prikazani list.'],
+      ['Kako se obdelajo moje fotografije?', 'Studio obdela fotografije v brskalniku. Fotografije se vključijo v shranjeni projekt JSON in v izvoz, če so del postavitve lista. Pred deljenjem preverite izbrano datoteko.']
+    ]
+  end
+
   def expansion_tool_features
     case @section
     when 'garden_calendar' then ['Pregled 16 vrtnin po mesecih in opravilih','Osebni setveni načrt v brskalniku','Tisk, varnostna kopija JSON in izvoz ICS']
@@ -293,12 +308,12 @@ module SeoHelper
     when 'moon_phases' then ['Lunine mene v času Europe/Ljubljana','Naslednji trenutek in letni pregled','Tisk in koledar ICS']
     when 'astronomy_events' then ['Lokalne razmere za osem slovenskih krajev','Prikaz nad obzorjem in časovni potek','Koledar za tisk in izvoz ICS']
     when 'slovenian_resource'
-      return ['Izbira leta in vrste astronomskega dogodka', 'Prikaz lokalnega časa Slovenije'] if page_path == SlovenianSkyCalendar::PATH
+      return ['Filtriranje astronomskih dogodkov po letu, mesecu in vrsti', 'Krajevni čas Slovenije in povezave do vidnosti po krajih'] if page_path == SlovenianSkyCalendar::PATH
       return ['Delovni, šolski ali tedenski razpored', 'Izbirni datum tedna in tisk v PDF'] if page_path == '/predloge-urnikov/'
       resource = SlovenianResources::PAGES.fetch(page_path)
       [resource.fetch(:action)] if resource[:calculator]
     when 'calendar'
-      return ['Izbira leta, meseca ali tedna ISO','Osebni zapiski','PDF in urejevalna preglednica XLSX'] if page_path=='/mesecni-koledar/'
+      return ['Izbira leta in meseca','Tedni ISO in dela prosti dnevi','Osebni zapiski','PDF in urejevalna preglednica XLSX'] if page_path=='/mesecni-koledar/'
       return ['Izbira datuma ali tedna ISO','Osebni zapiski za vsak dan','Tedenski planer za tisk in PDF'] if page_path=='/tedenski-koledar/'
       nil
     end

@@ -278,7 +278,7 @@
     --k365-control-radius: 9px;
   }
 
-  #vsebina :is(button, .button, .holiday-primary, input[type="submit"]):not(.text-button):not(.square):not(.category-chip):not(.student-icon-button):not(.garden-plant-button):not(.calendar-download-action) {
+  #vsebina :is(button, .button, .holiday-primary, input[type="submit"]):not(.text-button):not(.square):not(.category-chip):not(.student-icon-button):not(.garden-plant-button):not(.calendar-download-action):not(.occasion-planner__action) {
     box-sizing: border-box;
     min-width: 0;
     max-width: 100%;
@@ -559,10 +559,19 @@
   #vsebina .design-card .actions>button:not([data-format]){grid-column:1/-1}
   #vsebina .design-card .calendar-download-action{min-width:0;padding-inline:7px}
 }
-@media screen and (max-width:600px){
-  #vsebina .important-controls .filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:end}
+@media screen and (max-width:900px){
+  #vsebina :is(.important-controls .filters,.event-list-filters){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:end}
   #vsebina .important-controls .filters>label:has(input[type="search"]){grid-column:1/-1}
+  #vsebina .important-controls .filters > button { margin-block: 0; }
+}
+@media screen and (max-width:600px){
   #vsebina .design-card .actions{grid-template-columns:minmax(0,1fr)}
+  #vsebina :is(.important-controls .filters,.event-list-filters) > label {
+    margin-block: 0;
+  }
+  #vsebina :is(.important-controls .filters,.event-list-filters) > label:has([name="month"], [name="category"]) {
+    grid-column: 1 / -1;
+  }
 }
 @media screen and (max-width:600px){
   #vsebina .studio-project-actions{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;width:100%;align-items:stretch}

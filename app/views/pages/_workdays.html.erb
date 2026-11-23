@@ -12,8 +12,8 @@ end %>
 <% peak_days = [months.map { |month| month[:days] }.max.to_i, 1].max %>
 <section class="workdays-dashboard" id="workdays-overview" data-workdays-dashboard data-year="<%= @year %>">
   <header class="workdays-section-heading">
-    <div><span class="eyebrow">LETNI PREGLED</span><h2>Vaš delovni ritem v <%= @year %></h2><p>Izberite leto in prilagodite izračun svojemu tedenskemu urniku.</p></div>
-    <a class="workdays-method-link" href="/viri-in-metodologija/">Kako štejemo dneve <span aria-hidden="true">↗</span></a>
+    <div><span class="eyebrow">LETNI PREGLED</span><h2>Delovni dnevi in ure po mesecih v letu <%= @year %></h2><p>Izberite leto ter preverite mesečno in letno število delovnih dni po svojem urniku.</p></div>
+    <a class="workdays-method-link" href="<%= page_path == '/delovni-dnevi/' ? '#editorial-note-heading' : '/viri-in-metodologija/' %>">Kako štejemo dneve <span aria-hidden="true"><%= ui_icon('chevron-right') %></span></a>
   </header>
 
   <nav class="workdays-year-picker" aria-label="Izbira leta">
@@ -44,7 +44,7 @@ end %>
       <% holiday_count = entry[:holidays].count { |date| date.cwday <= 5 } %>
       <% day_label = entry[:days] == 1 ? 'delovni dan' : (entry[:days].between?(2, 4) ? 'delovni dnevi' : 'delovnih dni') %>
       <a class="workdays-month-card" href="<%= @year==2026 ? '/kalkulator-delovnih-dni/?'+{from:entry[:from].iso8601,to:entry[:to].iso8601,holidays:1,hours:8}.to_query : month_url(@year, entry[:month], 'delovni-dnevi') %>" data-workdays-card data-month="<%= entry[:month] %>" data-holidays="<%= entry[:holidays].map(&:iso8601).to_json %>" style="--month-progress:<%= percent %>%">
-        <span class="workdays-month-card__top"><span class="workdays-month-card__number"><%= '%02d' % entry[:month] %></span><span class="workdays-month-card__arrow" aria-hidden="true">↗</span></span>
+        <span class="workdays-month-card__top"><span class="workdays-month-card__number"><%= '%02d' % entry[:month] %></span><span class="workdays-month-card__arrow" aria-hidden="true"><%= ui_icon('chevron-right') %></span></span>
         <h3><%= CalendarEngine::MONTHS[entry[:month] - 1].capitalize %></h3>
         <div class="workdays-month-card__count"><strong data-month-days><%= entry[:days] %></strong><span data-month-day-label><%= day_label %></span></div>
         <div class="workdays-month-card__meter" aria-hidden="true"><span></span></div>
@@ -55,10 +55,12 @@ end %>
   <p class="workdays-footnote">Osnovni pregled upošteva delovni teden od ponedeljka do petka, 8 ur na dan in z zakonom določene dela proste dneve, ki padejo na izbrane delovne dni. Prazniki ob koncu tedna se ne odštevajo znova in se ne prenesejo samodejno. Izračun je informativen; ne določa pogodbenih pravic ali individualnega razporeda.</p>
 </section>
 
+<%= render 'editorial_note' if page_path == '/delovni-dnevi/' %>
+
 <nav class="workdays-discovery" aria-label="Sorodna orodja">
-  <a href="/kalkulator-delovnih-dni/"><span class="workdays-discovery__icon" aria-hidden="true">↔</span><span><strong>Kalkulator obdobja</strong><small>Izberite datuma, delovne dneve in dnevne ure.</small></span><b aria-hidden="true">↗</b></a>
-  <a href="<%= @year==2026 ? '/?year=2026&view=year' : "/prazniki/#{@year}/" %>"><span class="workdays-discovery__icon workdays-discovery__icon--red" aria-hidden="true">✦</span><span><strong>Prazniki v <%= @year %></strong><small><%= @year==2026 ? 'Odprite koledar z dela prostimi dnevi.' : 'Preverite vse praznike in njihov status.' %></small></span><b aria-hidden="true">↗</b></a>
-  <a href="/podaljsani-vikendi/"><span class="workdays-discovery__icon workdays-discovery__icon--blue" aria-hidden="true">⌑</span><span><strong>Načrtuj oddih</strong><small>Odkrijte, kako praznike povezati z dopustom.</small></span><b aria-hidden="true">↗</b></a>
+  <a href="/kalkulator-delovnih-dni/"><span class="workdays-discovery__icon" aria-hidden="true"><%= ui_icon('arrow-both') %></span><span><strong>Kalkulator obdobja</strong><small>Izberite datuma, delovne dneve in dnevne ure.</small></span><b aria-hidden="true"><%= ui_icon('chevron-right') %></b></a>
+  <a href="<%= @year==2026 ? '/?year=2026&view=year' : "/prazniki/#{@year}/" %>"><span class="workdays-discovery__icon workdays-discovery__icon--red" aria-hidden="true">✦</span><span><strong>Prazniki v <%= @year %></strong><small><%= @year==2026 ? 'Odprite koledar z dela prostimi dnevi.' : 'Preverite vse praznike in njihov status.' %></small></span><b aria-hidden="true"><%= ui_icon('chevron-right') %></b></a>
+  <a href="/podaljsani-vikendi/"><span class="workdays-discovery__icon workdays-discovery__icon--blue" aria-hidden="true">⌑</span><span><strong>Načrtuj oddih</strong><small>Odkrijte, kako praznike povezati z dopustom.</small></span><b aria-hidden="true"><%= ui_icon('chevron-right') %></b></a>
 </nav>
 <%= render 'designs', type: 'workdays' %>
 

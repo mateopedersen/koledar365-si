@@ -68,6 +68,53 @@ class LocalToolsTest < ActionDispatch::IntegrationTest
     assert_response :not_found
   end
 
+  test 'every flag date links to the matching published observance and exact date' do
+    required = {
+      '02-08' => 'presernov-dan', '04-27' => 'dan-upora-proti-okupatorju',
+      '05-01' => 'praznik-dela', '05-02' => 'praznik-dela', '06-25' => 'dan-drzavnosti',
+      '12-26' => 'dan-samostojnosti-in-enotnosti'
+    }
+    optional = {
+      '06-08' => 'dan-primoza-trubarja', '08-07' => 'dan-triglava',
+      '08-17' => 'zdruzitev-prekmurskih-slovencev', '09-15' => 'vrnitev-primorske',
+      '09-23' => 'dan-slovenskega-sporta', '10-25' => 'dan-suverenosti',
+      '11-10' => 'dan-znanosti', '11-23' => 'dan-rudolfa-maistra'
+    }
+
+    get '/dnevi-za-zastavo/'
+    assert_response :success
+    assert_select 'a[data-tool-row]', count: 56
+    assert_select 'a[href="/pomembni-dnevi/dan-slovenske-zastave/"]', count: 1
+
+    destinations = Hash.new { |hash, path| hash[path] = [] }
+    { 'required' => required, 'optional' => optional }.each do |rule, observances|
+      (2027..2030).each do |year|
+        observances.each do |month_day, slug|
+          date = "#{year}-#{month_day}"
+          path = "/prazniki/#{slug}/"
+          assert_select "a[data-category='#{rule}'][data-date='#{date}'][href='#{path}#datum-#{date}']", count: 1
+          destinations[path] << date
+        end
+      end
+    end
+
+    destinations.each do |path, dates|
+      get path
+      assert_response :success
+      assert_select 'link[rel=canonical][href=?]', "https://koledar365.si#{path}"
+      assert_select '.observance-flag-rule a[href="/dnevi-za-zastavo/"]', count: 1
+      dates.each do |date|
+        assert_select "#datum-#{date}", count: 1 do
+          assert_select "time[datetime='#{date}']", count: 1
+        end
+      end
+    end
+
+    get '/pomembni-dnevi/dan-slovenske-zastave/'
+    assert_response :success
+    assert_select '.observance-flag-rule a[href="/dnevi-za-zastavo/"]', count: 1
+  end
+
   test 'countdown includes actual sourced festival and local day dates' do
     events = CountdownCatalog.events(today: Date.new(2026, 11, 22))
     assert events.any? { |row| row[:path] == '/festivali/kurentovanje/' && row[:date] == '2027-02-03' && row[:end_date] == '2027-02-09' }

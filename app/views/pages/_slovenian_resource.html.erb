@@ -1,15 +1,16 @@
 <% resource = SlovenianResources::PAGES.fetch(page_path)
    guide = SlovenianResourceEditorial::GUIDES.fetch(page_path)
    metric = guide[:fact] || resource.fetch(:metric)
-   has_tool = resource[:calculator] || [SlovenianResources::HUB, SlovenianSkyCalendar::PATH, '/predloge-urnikov/'].include?(page_path) %>
-<article class="sl-resource sl-resource--<%= guide.fetch(:theme) %> <%= 'sl-print-page' if page_path == '/predloge-urnikov/' %>">
+   timetable = page_path == '/predloge-urnikov/'
+   has_tool = resource[:calculator] || [SlovenianResources::HUB, '/predloge-urnikov/'].include?(page_path) %>
+<article class="sl-resource sl-resource--<%= guide.fetch(:theme) %> <%= 'sl-print-page' if timetable %>">
   <header class="sl-resource-hero">
     <div class="sl-resource-hero-copy">
       <h1><%= resource.fetch(:title) %></h1>
       <p><%= resource.fetch(:description) %></p>
       <div class="sl-resource-hero-actions">
-        <a class="button primary" href="#<%= has_tool ? 'orodje' : 'prakticni-pregled' %>"><%= guide.fetch(:action) %><span aria-hidden="true">↓</span></a>
-        <a class="button" href="#sl-sources">Uradni viri</a>
+        <a class="button primary" href="#<%= has_tool ? 'orodje' : 'prakticni-pregled' %>"><%= guide.fetch(:action) %><span aria-hidden="true"><%= ui_icon('arrow-down') %></span></a>
+        <a class="button" href="#<%= timetable ? 'prakticni-pregled' : 'sl-sources' %>"><%= timetable ? 'Primer in navodila' : 'Uradni viri' %></a>
       </div>
     </div>
     <div class="sl-resource-highlight">
@@ -29,9 +30,7 @@
         </section>
       <% end %>
     </div>
-  <% elsif page_path == SlovenianSkyCalendar::PATH %>
-    <%= render 'slovenian_sky_calendar' %>
-  <% elsif page_path == '/predloge-urnikov/' %>
+  <% elsif timetable %>
     <%= render 'slovenian_timetable_templates' %>
   <% end %>
 
@@ -39,9 +38,13 @@
     <div>
       <h2 id="sl-example"><%= guide.fetch(:question) %></h2>
       <p><%= guide.fetch(:answer) %></p>
-      <% source = resource.fetch(:sources).first %>
-      <p class="sl-case-source"><%= link_to source.first, source.last %></p>
-      <% unless page_path == SlovenianResources::HUB %>
+      <% if timetable %>
+        <p class="sl-case-source"><a href="?type=school&amp;date=2028-09-06#orodje">Odpri primer šolskega urnika</a></p>
+      <% else %>
+        <% source = resource.fetch(:sources).first %>
+        <p class="sl-case-source"><%= link_to source.first, source.last %></p>
+      <% end %>
+      <% unless timetable || page_path == SlovenianResources::HUB %>
         <div class="sl-example-links">
           <% guide.fetch(:routes).each do |path| %>
             <%= link_to editorial_recommendation(path)[1], path %>
@@ -63,7 +66,7 @@
     <section class="sl-resource-panel sl-resource-copy">
       <% resource.fetch(:sections).each do |heading, text| %>
         <h2><%= heading %></h2>
-        <p><%= text %></p>
+        <p><%= timetable ? editorial_paragraph(text) : text %></p>
       <% end %>
     </section>
     <aside class="sl-resource-panel sl-resource-sources" aria-labelledby="sl-sources">
@@ -73,7 +76,8 @@
           <li><%= link_to label, url %></li>
         <% end %>
       </ul>
-      <p>Preverjeno <time datetime="<%= SlovenianResources::CHECKED_ON %>">22. 11. 2026</time></p>
+      <% checked_on = resource.fetch(:checked_on, SlovenianResources::CHECKED_ON) %>
+      <p>Preverjeno <time datetime="<%= checked_on %>"><%= Date.iso8601(checked_on).strftime('%-d. %-m. %Y') %></time></p>
     </aside>
   </div>
   <% extra_routes = resource.fetch(:related) - (page_path == SlovenianResources::HUB ? [] : guide.fetch(:routes)) %>

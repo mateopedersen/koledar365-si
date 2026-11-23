@@ -52,6 +52,105 @@ test('shared navigation and cookie bar stay inside narrow screens across page fa
   }
 });
 
+test('home calendar centers its heading and aligns action buttons on narrow phones', async ({ page }) => {
+  for (const width of [320, 390, 600]) {
+    await page.setViewportSize({ width, height: 900 });
+    // January 2026 has no previous-period link. The heading must still be centered.
+    await page.goto('/?year=2026&month=1');
+    await expect(page.locator('html')).toHaveAttribute('data-free-ready', 'true');
+    const title = page.locator('.calendar-title');
+    const heading = title.getByRole('heading', { name: 'Januar 2026' });
+    const today = title.getByRole('link', { name: 'Danes', exact: true });
+    const addEvent = title.getByRole('link', { name: 'Dodaj dogodek' });
+    const [frame, label, todayBox, addBox] = await Promise.all(
+      [title, heading, today, addEvent].map(locator => locator.boundingBox()),
+    );
+    expect(Math.abs((label.x + label.width / 2) - (frame.x + frame.width / 2))).toBeLessThanOrEqual(1);
+    expect(todayBox.y).toBeGreaterThanOrEqual(label.y + label.height);
+    expect(Math.abs(todayBox.y - addBox.y)).toBeLessThanOrEqual(1);
+    expect(Math.abs(todayBox.width - addBox.width)).toBeLessThanOrEqual(1);
+    expect(Math.abs(todayBox.height - addBox.height)).toBeLessThanOrEqual(1);
+
+    const footer = page.locator('.calendar-footer');
+    const buttons = await footer.locator('div > :is(a, button)').evaluateAll(elements =>
+      elements.map(element => element.getBoundingClientRect().toJSON()));
+    const bounds = await footer.boundingBox();
+    expect(buttons).toHaveLength(3);
+    for (const box of buttons) {
+      expect(box.left).toBeGreaterThanOrEqual(bounds.x - 1);
+      expect(box.right).toBeLessThanOrEqual(bounds.x + bounds.width + 1);
+      expect(Math.abs(box.width - buttons[0].width)).toBeLessThanOrEqual(1);
+      expect(Math.abs(box.top - buttons[0].top)).toBeLessThanOrEqual(1);
+    }
+  }
+  await page.getByRole('link', { name: 'Dodaj dogodek', exact: true }).click();
+  await expect(page.locator('#event-editor')).toHaveAttribute('open', '');
+});
+
+test('important-day filters and clock-change date picker keep long selections within their panels', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 900 });
+  for (const [path, panel, select] of [
+    ['/pomembni-dnevi/', '.important-controls .filters', '[name=category]'],
+    ['/pomembni-dnevi/september/', '.important-controls .filters', '[name=category]'],
+    ['/premik-ure/', '.occasion-planner__controls', '#occasion-date-select'],
+  ]) {
+    await page.goto(path);
+    const field = page.locator(select);
+    const longest = await field.evaluate(element =>
+      [...element.options].reduce((a, b) => a.text.length > b.text.length ? a : b).value);
+    await field.selectOption(longest);
+    const layout = await page.locator(panel).evaluate(async element => {
+      await document.fonts.ready;
+      return { content: element.scrollWidth, width: element.clientWidth, document: document.body.scrollWidth };
+    });
+    expect(layout.content, path).toBeLessThanOrEqual(layout.width + 1);
+    expect(layout.document, path).toBeLessThanOrEqual(321);
+    await expect(field).toHaveValue(longest);
+    if (path === '/premik-ure/') {
+      const optionFits = await field.evaluate(element => {
+        const style = getComputedStyle(element);
+        const text = document.createElement('canvas').getContext('2d');
+        text.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+        const available = element.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+        return text.measureText(element.selectedOptions[0].text).width <= available;
+      });
+      expect(optionFits).toBe(true);
+    } else {
+      const form = page.locator(panel);
+      const [view, submit] = await Promise.all([
+        form.locator('[name=display]').boundingBox(),
+        form.getByRole('button').boundingBox(),
+      ]);
+      expect(Math.abs(view.y - submit.y), path).toBeLessThanOrEqual(1);
+      expect(Math.abs(view.height - submit.height), path).toBeLessThanOrEqual(1);
+    }
+  }
+});
+
+test('the study schedule selector fits when the form column is narrow', async ({ page }) => {
+  await page.goto('/studijski-nacrtovalnik/');
+  const field = page.locator('[data-study-form] [name=strategy]');
+  for (const width of [390, 414, 768]) {
+    await page.setViewportSize({ width, height: 900 });
+    await field.selectOption('workweek');
+    const layout = await field.evaluate(async element => {
+      await document.fonts.ready;
+      const form = element.closest('form');
+      const style = getComputedStyle(element);
+      const text = document.createElement('canvas').getContext('2d');
+      text.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+      const available = element.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+      return {
+        formWidth: form.clientWidth,
+        formContent: form.scrollWidth,
+        fits: text.measureText(element.selectedOptions[0].text).width <= available,
+      };
+    });
+    expect(layout.formContent, `Study form at ${width}px`).toBeLessThanOrEqual(layout.formWidth + 1);
+    expect(layout.fits, `Study schedule option at ${width}px`).toBe(true);
+  }
+});
+
 test('holiday directory remains readable with a wider fallback font on a small screen', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 900 });
   await page.goto('/prazniki/', { waitUntil: 'domcontentloaded' });
@@ -166,5 +265,63 @@ test('filled workday and astronomy actions retain contrast on hover', async ({ p
       const colors = [css.color, css.backgroundColor].map(luminance).sort((a, b) => b - a);
       return (colors[0] + 0.05) / (colors[1] + 0.05);
     }), { message: path }).toBeGreaterThanOrEqual(4.5);
+  }
+});
+test('the school holiday calendar keeps Sunday and both month arrows inside its card', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 900 });
+  await page.goto('/solske-pocitnice/');
+  const card = page.locator('.sp-calendar-layout');
+  const next = card.getByRole('button', { name: 'Naslednji mesec' });
+  const before = await card.locator('[data-month-title]').innerText();
+  await next.click();
+  await expect(card.locator('[data-month-title]')).not.toHaveText(before);
+  for (const width of [320, 390, 480, 768]) {
+    await page.setViewportSize({ width, height: 900 });
+    const layout = await card.evaluate(element => {
+      const frame = element.getBoundingClientRect();
+      const selectors = '[data-prev-month], [data-next-month], .sp-calendar-days > *';
+      return [...element.querySelectorAll(selectors)].every(node => {
+        const rect = node.getBoundingClientRect();
+        return rect.left >= frame.left && rect.right <= frame.right;
+      });
+    });
+    expect(layout, width + 'px').toBe(true);
+  }
+});
+
+test('the working-days description and methodology link align on narrow screens', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 900 });
+  await page.goto('/delovni-dnevi/');
+  const heading = page.locator('.workdays-section-heading');
+  const text = await heading.locator(':scope > div').boundingBox();
+  const link = await heading.getByRole('link', { name: 'Kako štejemo dneve' }).boundingBox();
+  expect(link.y).toBeGreaterThanOrEqual(text.y + text.height);
+  expect(Math.abs(link.x - text.x)).toBeLessThan(1);
+});
+test('adjacent action buttons share both edges when a phone wraps the longer label', async ({ page }) => {
+  const rows = [
+    ['/mesecni-koledar/', '.calendar-experience__download-actions > button'],
+    ['/prazniki/2027/', '.holiday-list-actions > button'],
+    ['/matura/2027/', '.ed-export-bar > div:first-child > button'],
+    ['/zasebnost/', '.privacy-hero__actions > .privacy-action'],
+  ];
+
+  for (const [route, selector] of rows) {
+    await page.goto(route);
+    await page.evaluate(() => document.fonts.ready);
+    const actions = page.locator(selector);
+    await expect(actions).toHaveCount(2);
+
+    for (const width of [320, 390]) {
+      await page.setViewportSize({ width, height: 900 });
+      const [first, second] = await actions.evaluateAll(elements => elements.map(element => {
+        const { top, bottom, width, left, right } = element.getBoundingClientRect();
+        return { top, bottom, width, left, right };
+      }));
+      expect(first.right, route).toBeLessThanOrEqual(second.left);
+      expect(Math.abs(first.top - second.top), route).toBeLessThanOrEqual(1);
+      expect(Math.abs(first.bottom - second.bottom), route).toBeLessThanOrEqual(1);
+      expect(Math.abs(first.width - second.width), route).toBeLessThanOrEqual(1);
+    }
   }
 });

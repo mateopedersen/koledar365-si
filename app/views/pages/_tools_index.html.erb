@@ -1,6 +1,6 @@
 <article class="tool-workspace tool-directory" data-tools-directory>
   <header class="tool-intro tool-directory-intro">
-    <div>
+    <div class="tool-intro__copy">
       <p class="tool-eyebrow"><%= slovenia_flag %> Koledar365</p>
       <h1>Koledarji, planerji in kalkulatorji</h1>
       <p>Poiščite slovenske praznike, načrtujte rok ali izračunajte datum. Vsa orodja lahko uporabljate brez računa.</p>
@@ -37,12 +37,14 @@
 
 <details class="tool-block tool-site-index">
   <summary>Kazalo vseh vsebin</summary>
+  <% catalog = ExpansionCatalog.pages
+     entry_title = ->(page) { catalog.dig(page.path, :title) || page.display_title } %>
   <% directory=Page.published.order(:path).reject { |page| page.path.match?(PagesController::REMOVED_NAME_PATHS) || PublicPagePolicy.redirect(page.path) } %>
   <% directory.group_by { |page| page.path.split('/')[1].to_s }.each do |group,pages| %>
-    <% heading=pages.find { |page| page.path=="/#{group}/" }&.title || pages.first.title %>
+    <% heading=entry_title.call(pages.find { |page| page.path=="/#{group}/" } || pages.first) %>
     <details class="site-directory-group">
       <summary><strong><%= heading %></strong> <span class="muted">· <%= pages.size %></span></summary>
-      <nav class="link-grid compact" aria-label="<%= heading %>"><% pages.each do |page| %><a href="<%= page.path %>"><%= page.title %></a><% end %></nav>
+      <nav class="link-grid compact" aria-label="<%= heading %>"><% pages.each do |page| %><a href="<%= page.path %>"><%= entry_title.call(page) %></a><% end %></nav>
     </details>
   <% end %>
 </details>

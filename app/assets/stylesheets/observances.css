@@ -58,3 +58,60 @@
 
 .observance-date-rule,.observance-card-top>span,.observance-date-entry time b,.observance-date-status,.observance-meaning p,.observance-planning small,.observance-planning>p,.observance-sources p,.observance-related>.observance-heading>a,.observance-related-grid p{color:#526174}
 .observance-photo picture{display:block;width:100%;height:100%}
+
+
+.observance-date-entry[id] {
+  scroll-margin-top: 26px;
+}
+.observance-date-entry:target {
+  background: var(--observance-pale);
+  border-radius: 6px;
+  outline: 6px solid var(--observance-pale);
+}
+.observance-flag-rule {
+  margin-block: 20px;
+}
+.observance-flag-rule > .tool-directory-icon {
+  width: 25px;
+  height: 25px;
+}
+.observance-flag-rule h2 {
+  margin: 0 0 5px;
+  font-size: 1.12rem;
+}
+.observance-flag-rule p + p {
+  margin-top: 6px;
+}
+
+.observance-chapter {
+  max-width: 68ch;
+  margin-block: 22px;
+}
+.observance-chapter h3 {
+  margin: 0 0 .4em;
+  color: #2e4059;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+.observance-chapter p {
+  margin: 0 0 .75em;
+  color: #46566a;
+  line-height: 1.75;
+}
+.observance-chapter a {
+  text-decoration: underline;
+  text-underline-offset: .16em;
+}
+@media print {
+  .observance-chapter {
+    max-width: none;
+    margin-block: 12px;
+  }
+  .observance-chapter h3 {
+    break-after: avoid;
+    font-size: 12pt;
+  }
+  .observance-chapter p {
+    font-size: 11pt;
+  }
+}

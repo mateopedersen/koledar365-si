@@ -135,26 +135,15 @@ class SlovenianResourceEditorial
       routes: %w[/davcni-koledar/ /kalkulator-place/]
     },
     '/predloge-urnikov/' => {
-      theme: 'print', action: 'Izberi predlogo', fact: ['3 predloge', 'Delovni razpored, šolski urnik in tedenski planer'],
-      question: 'Katera predloga urnika je primerna za tiskanje?',
-      answer: 'Za delovne izmene uporabite sedemdnevni razpored s tremi izmenami. Za pouk izberite pet delovnikov in osem učnih ur. Če načrtujete opravila in dogovore doma, vam tedenski planer ponudi večje časovne bloke. Vsaka predloga se natisne ležeče na A4.',
-      heading: 'Od predogleda do lista',
+      theme: 'print', action: 'Izberi predlogo', fact: ['A4 ležeče', 'Tri predloge za ročni vpis'],
+      question: 'Primer: urnik za šolski teden',
+      answer: 'Izberite šolski urnik in kot datum vnesite sredo, 6. september 2028. Predogled izpiše datume od ponedeljka, 4. septembra, do petka, 8. septembra. Če želite isti list znova uporabiti, izberite »Počisti datum« in pustite prosto vrstico za obdobje.',
+      heading: 'Kako pripraviti en list',
       steps: [
-        ['Določite obdobje', 'Z datumom se izpolni ves teden od ponedeljka. Brez datuma dobite prazen list za večkratno uporabo.'],
-        ['Izberite tisk ali PDF', 'V pogovornem oknu brskalnika izberite tiskalnik ali shranjevanje v PDF. Pred tiskanjem preglejte ležečo postavitev A4.']
+        ['Odprite predogled tiskanja', 'Kliknite »Natisni ali shrani PDF«. Izberite ležeči format A4 in preverite, ali je v predogledu celotna mreža.'],
+        ['Natisnite ali shranite', 'V pogovornem oknu izberite tiskalnik ali možnost »Shrani kot PDF«. Če želite izkoristiti več prostora, v nastavitvah izklopite glavo in nogo brskalnika.']
       ],
       routes: %w[/razpored-izmen/ /solski-urnik/ /tedenski-koledar/]
-    },
-    '/astronomski-koledar/' => {
-      theme: 'sky', action: 'Poglej datume dogodkov', fact: ['2026–2030', 'Lunine mene, letni časi, mrki in opazovalne noči'],
-      question: 'Kdaj bodo naslednja polna luna, enakonočje ali mrk?',
-      answer: 'Za naslednjo polno luno izberite leto in filter Lunine mene. Za mrke poglejte še povezavo do krajevnega prikaza. Če je pri pojavu naveden globalni maksimum, ta ura sama še ne pove, ali bo Sonce ali Luna takrat nad vašim obzorjem.',
-      heading: 'Pripravite opazovalni večer',
-      steps: [
-        ['Izberite datum in vrsto dogodka', 'Začetke astronomskih letnih časov ter glavne Lunine mene poiščite po krajevnem datumu in času.'],
-        ['Poglejte razmere za kraj', 'Na strani izbranega mrka preverite vidnost. Pri Perzeidih primerjajte čas teme z Lunino osvetlitvijo.']
-      ],
-      routes: %w[/polna-luna/ /soncni-mrk/ /lunin-mrk/ /perzeidi/]
     }
   }.freeze
 end

@@ -116,6 +116,13 @@
 .sun-controls__heading p{color:#465d78;font-size:15px}
 .sun-form>label{color:#263f5d;font-size:13px}
 .sun-city-control select,.sun-date-row input{font-size:15px}
+.sun-locate > span { display: none; }
+@media screen and (max-width:380px) {
+  .sun-city-control { display: grid; grid-template-columns: minmax(0,1fr); }
+  .sun-city-control select { width: 100%; }
+  .sun-locate { display: inline-flex; align-items: center; justify-content: center; gap: 6px; width: auto; justify-self: start; }
+  .sun-locate > span { display: inline; }
+}
 .sun-control-help{color:#4d627b;font-size:12px}
 .sun-submit{font-size:14px}
 .sun-today{font-size:13px}

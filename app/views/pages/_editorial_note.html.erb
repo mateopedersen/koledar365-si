@@ -1,4 +1,4 @@
-<% if (note = EditorialNote.for(page_path, title: @title, city: @sun_city_id, observance: @observance)) %>
+<% if (note = EditorialNote.for(page_path, city: @sun_city_id)) %>
   <% recommendations = note.fetch('links').uniq.reject { |route| route == page_path }.map { |route| editorial_recommendation(route) }
      sources = note.fetch('sources').map do |source|
        label, url = source.is_a?(Array) ? source : EditorialCatalog.sources.fetch(source)
@@ -8,7 +8,7 @@
     <div class="editorial-note__intro">
       <h2 id="editorial-note-heading"><%= note.fetch('title') %></h2>
       <% note.fetch('paragraphs').each do |paragraph| %>
-        <p><%= paragraph %></p>
+        <p><%= editorial_paragraph(paragraph) %></p>
       <% end %>
     </div>
     <% if recommendations.any? || sources.any? %>

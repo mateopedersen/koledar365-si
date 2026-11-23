@@ -1,0 +1,34 @@
+<section class="editorial-note" id="fotografije-luninih-men" aria-labelledby="moon-photo-license-title">
+  <h2 id="moon-photo-license-title">Fotografije Luninih men</h2>
+  <p>Na strani <a href="<%= LunarPhaseGuide::PATH %>">Lunine mene</a> uporabljamo arhivske fotografije. Posnetki so nastali ob različnih datumih in na različnih krajih. Spodaj so izvirniki, avtorstvo, dovoljenja za uporabo ter spremembe spletnih kopij.</p>
+  <ul>
+    <% LunarPhaseGuide.photos.each do |id, photo| %>
+      <li id="luna-<%= id %>">
+        <strong><%= photo.fetch('caption', photo.fetch('alt')) %></strong><br>
+        Foto <bdi><%= photo.fetch('credit') %></bdi> · <%= link_to 'Izvirna fotografija', photo.fetch('source') %> · <%= link_to ImageRights.license_label(photo.fetch('license')), photo.fetch('license_url') %><br>
+        <%= photo.fetch('changes') %>
+      </li>
+    <% end %>
+  </ul>
+</section>
+
+<section class="editorial-note" id="fotografije-mlaja" aria-labelledby="new-moon-photo-license-title">
+  <h2 id="new-moon-photo-license-title">Fotografiji mlade Lune</h2>
+  <p>Na strani <a href="<%= LunarPhaseGuide::NEW_MOON_PATH %>">Mlaj</a> sta arhivska posnetka mladega srpa z Mednarodne vesoljske postaje in observatorija Paranal.</p>
+  <ul>
+    <% LunarPhaseGuide.new_moon_photos.each do |id, photo| %>
+      <li id="luna-<%= id %>">
+        <strong><%= photo.fetch('caption') %></strong><br>
+        Foto
+        <% if photo['credit_url'] %>
+          <%= link_to photo.fetch('credit'), photo.fetch('credit_url') %>
+        <% else %>
+          <bdi><%= photo.fetch('credit') %></bdi>
+        <% end %>
+        · <%= link_to 'Izvirna fotografija', photo.fetch('source') %> · <%= link_to ImageRights.license_label(photo.fetch('license')), photo.fetch('license_url') %>
+        <% if photo['terms'] %> · <%= link_to 'Pogoji ESO', photo.fetch('terms') %><% end %><br>
+        <%= photo.fetch('changes') %>
+      </li>
+    <% end %>
+  </ul>
+</section>

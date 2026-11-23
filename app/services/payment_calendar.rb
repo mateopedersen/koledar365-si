@@ -9,8 +9,8 @@ class PaymentCalendar
   STUDY_ALLOWANCE = 'https://e-uprava.gov.si/podrocja/izobrazevanje-kultura/stipendije/drzavna-stipendija.html?lang=si&view_mode=4'.freeze
   ZOIS_FORMS = 'https://www.srips-rs.si/sl/stipendije/zois'.freeze
   PAGES={
-    '/izplacila-pokojnin/'=>{kind:'pension',title:'Izplačila pokojnin 2027 – mesečni pregled in vloga ZPIZ',heading:'Izplačila pokojnin 2027',description:'Preverite okvir po mesecih za pokojnine 2027, naslednje potrjeno nakazilo, letni in zimski dodatek ter postopek za prvo starostno pokojnino pri ZPIZ.'},
-    '/izplacila-socialnih-transferjev/'=>{kind:'social',title:'Izplačila socialnih transferjev 2027 – koledar CSD in vloge',heading:'Izplačila socialnih transferjev 2027',description:'Mesečni pregled objavljenih datumov CSD za 2027 in arhiv 2026. Otroški in varstveni dodatek, socialna pomoč, štipendije in vloge.'}
+    '/izplacila-pokojnin/'=>{kind:'pension',title:'Izplačila pokojnin 2027 in vloga za pokojnino pri ZPIZ',heading:'Izplačila pokojnin 2027',description:'Preverite mesečni pregled nakazil pokojnin za leto 2027, naslednje potrjeno izplačilo, letni in zimski dodatek ter postopek za prvo starostno pokojnino pri ZPIZ.'},
+    '/izplacila-socialnih-transferjev/'=>{kind:'social',title:'Koledar izplačil socialnih transferjev CSD za leto 2027',heading:'Izplačila socialnih transferjev 2027',description:'Mesečni pregled objavljenih datumov CSD za 2027 in arhiv 2026. Otroški in varstveni dodatek, socialna pomoč, štipendije in vloge.'}
   }.freeze
   def self.data = @data ||= JSON.parse(Rails.root.join('public/payments/data.json').read)
   def self.paths = PAGES.keys

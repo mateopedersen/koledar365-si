@@ -24,11 +24,11 @@ class HoroscopeTest < ActionDispatch::IntegrationTest
   test 'sign pages contain four complete dated sections and calculated solar boundaries' do
     assert_equal Zodiac::SIGNS.keys.sort, HoroscopeGuide::SIGN_EDITORIAL.keys.sort
 
-    Zodiac::SIGNS.each do |slug, label|
+    Zodiac::SIGNS.each_key do |slug|
       editorial = HoroscopeGuide::SIGN_EDITORIAL.fetch(slug)
       get "/horoskop/#{slug}/"
       assert_select 'h1', text: "Dnevni horoskop za #{editorial.fetch('accusative')}"
-      assert_select 'title', text: "#{label} – dnevni horoskop za danes | Koledar365"
+      assert_select 'title', text: "Dnevni horoskop za #{editorial.fetch('accusative')} | Koledar365"
       assert_select 'meta[name="description"]' do |nodes|
         assert_equal editorial.fetch('description'), nodes.first['content']
       end

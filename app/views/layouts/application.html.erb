@@ -19,7 +19,11 @@
 <% if (schema=structured_data) %><script type="application/ld+json" nonce="<%= content_security_policy_nonce %>"><%= raw json_escape(schema.to_json) %></script><% end %>
 <%= csrf_meta_tags %><%= csp_meta_tag %><%= stylesheet_link_tag(*(['application', (page_path == '/datumski-kalkulator/' ? 'date_calculator_base' : nil), 'experience', (page_path == '/zasebnost/' ? 'privacy' : nil), 'slovenia', 'vector_identity', 'search', 'footer'].compact)) %><script src="/calendar-downloads.js" defer data-static-keep></script><%= javascript_include_tag 'application','planners',defer:true %><% if @section=='home' %><%= stylesheet_link_tag 'city_card' %><%= javascript_include_tag 'city_card',defer:true %><% end %>
 <% if %w[local_tool tools_index].include?(@section) %><%= stylesheet_link_tag 'local_tools' %><script type="module" src="/calendar-tools/local-tools.mjs"></script><% end %>
-<% if @section == 'slovenian_resource' %><link rel="stylesheet" href="/calendar-tools/slovenian-resources.css"><script type="module" src="/calendar-tools/slovenian-resources.mjs"></script><% end %>
+<% if @section == 'slovenian_resource' %>
+  <link rel="stylesheet" href="/calendar-tools/slovenian-resources.css">
+  <% if page_path == SlovenianSkyCalendar::PATH %><link rel="stylesheet" href="/calendar-tools/sky-calendar.css"><% end %>
+  <script type="module" src="/calendar-tools/slovenian-resources.mjs"></script>
+<% end %>
 <% if page_path=='/vpisni-koledar/' %><%= stylesheet_link_tag 'admissions' %><% end %>
 <% if @section=='about' %><%= stylesheet_link_tag 'about' %><% end %>
 <% if page_path=='/kontakt/' %><link rel="stylesheet" href="/contact/contact-v1.css"><script type="module" src="/contact/contact-v1.mjs"></script><% end %>
@@ -31,7 +35,7 @@
 <% if page_path == '/nacrtovalnik-dopusta/' %><%= stylesheet_link_tag 'vacation' %><%= javascript_include_tag 'vacation',defer:true %><% end %>
 <% if page_path == '/odstevanje/' %><%= stylesheet_link_tag 'countdown' %><%= javascript_include_tag 'countdown',defer:true %><% end %>
 <% if @section=='horoscope' %><%= stylesheet_link_tag 'horoscope' %><script type="module" src="/horoscope/experience-v2.mjs"></script><% end %>
-<% if page_path == '/ustvari-koledar/' %><link rel="stylesheet" href="/studio/studio.css?v=20261122-2"><script type="module" src="/studio/studio.mjs?v=20261020-1"></script><% end %>
+<% if page_path == '/ustvari-koledar/' %><link rel="stylesheet" href="/studio/studio.css?v=20261123-1"><script type="module" src="/studio/studio.mjs?v=20261123-1"></script><% end %>
 <% if @section=='holidays' %><%= stylesheet_link_tag 'holidays' %><%= javascript_include_tag 'holidays',defer:true %><% end %>
 <% if page_path == '/kalkulator-delovnih-dni/' || (@section=='workdays' && !@page.month) %><%= stylesheet_link_tag 'workdays' %><%= javascript_include_tag 'workdays',defer:true %><% end %>
 <% if @section=='observance' %><%= stylesheet_link_tag 'observances' %><% end %>
@@ -43,7 +47,7 @@
 <% if gallery_page? %><%= stylesheet_link_tag 'calendar_gallery' %><% end %>
 <% if page_path == '/razpored-izmen/' %><%= stylesheet_link_tag 'shift_schedule' %><%= javascript_include_tag 'shift_schedule',defer:true %><% end %>
 <% if page_path == '/solski-urnik/' %><%= stylesheet_link_tag 'student_timetable' %><%= javascript_include_tag 'student_timetable_core','student_timetable',defer:true %><% end %>
-<% if @section=='school' %><link rel="stylesheet" href="/school/experience.css?v=20261022-2"><script type="module" src="/school/experience.mjs?v=20261122"></script><% end %>
+<% if @section=='school' %><link rel="stylesheet" href="/school/experience.css?v=20261123"><script type="module" src="/school/experience.mjs?v=20261123"></script><% end %>
 <% if @section=='calendar' %><%= stylesheet_link_tag 'calendar_experience' %><script type="module" src="/calendar-tools/experience.mjs"></script><% end %>
 <% if %w[moon_phases astronomy_events].include?(@section) %><%= stylesheet_link_tag 'astronomy' %><%= javascript_include_tag 'astronomy',defer:true,data:{static_keep:true} %><% end %>
 <% if %w[education_calendar school_timetable].include?(@section) %><link rel="stylesheet" href="/education/experience.css"><script type="module" src="/education/<%= @section=='school_timetable' ? 'timetable-page':'experience' %>.mjs"></script><% end %>
@@ -69,20 +73,25 @@
 <% if festival_section %><%= stylesheet_link_tag 'festivals' %><% end %>
 <% if @section=='festivals' %><script type="module" src="/calendar-tools/festival-directory.mjs"></script><% end %>
 <%= stylesheet_link_tag 'editorial_guides', 'hero_features' %>
+<% if @section == 'seasons' %><%= stylesheet_link_tag 'seasons' %><% end %>
+<% if [LunarPhaseGuide::PATH, LunarPhaseGuide::NEW_MOON_PATH].include?(page_path) %><%= stylesheet_link_tag 'moon_phase_guide' %><% end %>
+<% if @calendar_collection_designs %><%= stylesheet_link_tag 'calendar_period' %><% end %>
 </head>
-<body id="page-top" class="<%= [gallery_page? ? 'gallery-page' : nil, @section=='holidays' ? 'holiday-guide' : nil, @section=='home' ? 'home-page' : nil, @section=='terms' ? 'terms-page' : nil, page_path=='/druzinski-planer/' ? 'family-planner-page' : nil, page_path=='/razpored-izmen/' ? 'shift-page' : nil, page_path=='/solski-urnik/' ? 'student-timetable-page' : nil].compact.join(' ') %>">
+<body id="page-top" data-direction-sprite="<%= IllustrationHelper.versioned_svg_url(IllustrationHelper::UI_ICON_SPRITE) %>" class="<%= [gallery_page? ? 'gallery-page' : nil, @section=='holidays' ? 'holiday-guide' : nil, @section=='home' ? 'home-page' : nil, @section=='terms' ? 'terms-page' : nil, page_path=='/druzinski-planer/' ? 'family-planner-page' : nil, page_path=='/razpored-izmen/' ? 'shift-page' : nil, page_path=='/solski-urnik/' ? 'student-timetable-page' : nil].compact.join(' ') %>">
 <a class="skip" href="#vsebina">Na vsebino</a>
 <%= render 'layouts/navigation' %>
 <%= render 'layouts/cookies' %>
 <main id="vsebina" tabindex="-1"<% if @blog_article %> class="editorial-reading"<% end %>>
-<% unless breadcrumbs.empty? %><nav class="breadcrumb" aria-label="Drobtinice"><% breadcrumbs.each_with_index do |(label,path),i| %><% if i>0 %><span aria-hidden="true">›</span><% end %><% if i==breadcrumbs.size-1 %><span aria-current="page"><%= label %></span><% else %><a href="<%= path %>"><%= label %></a><% end %><% end %></nav><% end %>
+<% unless breadcrumbs.empty? %><nav class="breadcrumb" aria-label="Drobtinice"><% breadcrumbs.each_with_index do |(label,path),i| %><% if i>0 %><span aria-hidden="true"><%= ui_icon('chevron-right') %></span><% end %><% if i==breadcrumbs.size-1 %><span aria-current="page"><%= label %></span><% else %><a href="<%= path %>"><%= label %></a><% end %><% end %></nav><% end %>
 <% if flash[:notice] %><p class="notice" role="status"><%= flash[:notice] %></p><% end %><% if flash[:alert] %><p class="error" role="alert"><%= flash[:alert] %></p><% end %>
 <% if @section=='shopping_guide' %><div class="sg-share-row"><%= render 'layouts/social_share', sharing_image: sharing_image %></div><% end %>
 <%= yield %>
+<% calendar_inline_share = @calendar_collection_designs || %w[/mesecni-koledar/ /koledar-za-tiskanje/ /ustvari-koledar/].include?(page_path) || page_path.start_with?('/tedenski-koledar/') %>
+<% if calendar_inline_share %><div class="calendar-tool-share"><%= render 'layouts/social_share', sharing_image: sharing_image, inline: true %></div><% end %>
 <% if festival_section %><div class="festival-share"><%= render 'layouts/social_share', sharing_image: sharing_image, inline: true %></div><% end %>
 <% if @section == 'slovenian_resource' %><div class="sl-resource-share"><%= render 'layouts/social_share', sharing_image: sharing_image, inline: true %></div><% end %>
 </main>
-<%= render 'layouts/social_share', sharing_image: sharing_image unless festival_section || @blog_article || %w[observance shopping_guide slovenian_resource].include?(@section) || page_path=='/odstevanje/' || @not_found || page_path.start_with?('/upravljanje/') || (@noindex && Rails.env.production?) %>
+<%= render 'layouts/social_share', sharing_image: sharing_image unless calendar_inline_share || festival_section || @blog_article || %w[observance shopping_guide slovenian_resource].include?(@section) || page_path=='/odstevanje/' || @not_found || page_path.start_with?('/upravljanje/') || (@noindex && Rails.env.production?) %>
 <footer class="site-footer">
   <div class="site-footer__inner">
     <div class="site-footer__main">
@@ -121,7 +130,7 @@
         <section class="site-footer__group site-footer__group--contact" aria-labelledby="footer-contact">
           <h2 id="footer-contact">Kontakt</h2>
           <p>Imate predlog ali ste opazili napako? Z veseljem bomo preverili.</p>
-          <a class="site-footer__contact-link" href="/kontakt/">Pišite nam <span aria-hidden="true">→</span></a>
+          <a class="site-footer__contact-link" href="/kontakt/">Pišite nam <span aria-hidden="true"><%= ui_icon('arrow') %></span></a>
           <a href="mailto:koledar365@gmail.com">koledar365@<wbr>gmail.com</a>
         </section>
       </nav>
@@ -139,7 +148,7 @@
       <a class="site-footer__back-top" href="#page-top">
         <span>Na vrh</span>
         <span class="site-footer__back-top-icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5m-6 6 6-6 6 6"/></svg>
+          <%= ui_icon('arrow-up') %>
         </span>
       </a>
     </div>

@@ -46,7 +46,7 @@ test('calendar markers stay inside their days and full event names follow filter
   await page.addInitScript(()=>localStorage.setItem('k365.personal.v1',JSON.stringify({events:[{uid:'layout-event',date:'2026-10-31',title:'Srečanje z ekipo in pregled načrta',category:'personal',kind:'event',time:'10:00'}],notes:{}})));
   await page.goto('/?year=2026&month=10&date=2026-10-31');
   await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
-  for (const width of [520, 1280]) {
+  for (const width of [320, 390, 520, 1280]) {
     await page.setViewportSize({width,height:900});
     const layout = await page.locator('#event-search').evaluate(input => {
       const textStyle = getComputedStyle(input, '::placeholder');
@@ -84,9 +84,15 @@ test('calendar markers stay inside their days and full event names follow filter
   await expect(agenda.getByRole('link')).toHaveCount(1);
   await expect(agenda.getByRole('link')).toContainText('dan reformacije');
   await page.locator('#event-search').fill('');
-  await page.getByRole('button',{name:'Osebno',exact:true}).click();
+  const category = page.getByRole('combobox',{name:'Vrsta dogodka'});
+  await category.selectOption('personal');
   await expect(agenda.getByRole('link')).toHaveCount(1);
   await expect(agenda.getByRole('link')).toContainText('Srečanje z ekipo');
+  await page.setViewportSize({width:1280,height:900});
+  await expect(page.getByRole('button',{name:'Osebno',exact:true})).toHaveAttribute('aria-pressed','true');
+  await page.getByRole('button',{name:'Vse',exact:true}).click();
+  await page.setViewportSize({width:320,height:900});
+  await expect(category).toHaveValue('all');
   const legend=page.getByLabel('Legenda koledarja');
   await expect(legend).toContainText('Dela prost dan');
   const separated=await legend.evaluate(e=>[...e.querySelectorAll('.calendar-legend-item')].every(item=>{

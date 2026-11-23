@@ -21,7 +21,7 @@ links={
  'Zgodovina in obnovitev'=>["#{repo}/commits/main",'Git hrani različice javne vsebine. Prejšnjo spremembo obnovite z razveljavitvijo ustreznega commita.'],
  'Dokazila o datotekah'=>["#{repo}/tree/main/evidence",'Preverite obdobja, kontrolne vsote, 600 ppi, barve, pisave in PDF/WebP ujemanje.']}
 body='<div class="page-heading"><span class="eyebrow">UREDNIŠTVO</span><h1>Urejanje vsebine</h1><p>Prijava in dovoljenja za objavo se upravljajo v GitHubu. Javni obiskovalci nimajo pravice spreminjati vsebine.</p></div><div class="feature-grid">'
-links.each { |title,(href,text)|body+=%(<a class="feature panel" href="#{href}"><h2>#{ERB::Util.html_escape(title)}</h2><p>#{ERB::Util.html_escape(text)}</p><span>Odpri v GitHubu →</span></a>) }
+links.each { |title,(href,text)|body+=%(<a class="feature panel" href="#{href}"><h2>#{ERB::Util.html_escape(title)}</h2><p>#{ERB::Util.html_escape(text)}</p><span>Odpri v GitHubu</span></a>) }
 body+='</div><section class="panel prose"><h2>Postopek objave</h2><ol><li>Uredite javno vsebino v GitHubu in predlagajte spremembo.</li><li>Preverite samodejne preglede ter predogled izdaje.</li><li>Združite preverjeno spremembo v glavno vejo; Cloudflare objavi pripravljeno izdajo.</li></ol><p>Osebni načrti obiskovalcev in njihove fotografije ostanejo na njihovih napravah. Uredništvo do njih nima dostopa. Kontaktna sporočila prejmete na <a href="mailto:koledar365@gmail.com">koledar365@gmail.com</a>.</p></section>'
 doc.at_css('#vsebina').inner_html=body
 SvgAssetReferences.rewrite_document!(doc, Rails.root.join('public'))

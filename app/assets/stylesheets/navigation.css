@@ -57,6 +57,7 @@
   }
   .subnav.site-navigation:has(.nav-explorer[open] > .nav-directory--floating) { z-index: 1050; }
   .nav-directory__head {
+    --nav-directory-control-size: 54px;
     display: grid;
     grid-template-columns: minmax(150px, 1fr) minmax(185px, 390px) auto;
     align-items: center;
@@ -73,8 +74,10 @@
     line-height: 1.2;
   }
   .nav-directory__close {
-    width: 44px;
-    min-height: 44px;
+    display: grid;
+    width: var(--nav-directory-control-size);
+    min-height: var(--nav-directory-control-size);
+    place-items: center;
     padding: 10px;
     border-color: #cfddeb;
     color: #244c70;
@@ -92,6 +95,7 @@
     align-items: center;
     gap: 8px;
     min-width: 0;
+    min-height: var(--nav-directory-control-size);
     margin: 0;
     padding: 0 10px;
     border: 1px solid #b8cde3;
@@ -419,14 +423,44 @@
       grid-template-columns: minmax(0, 1fr);
     }
   }
-  @media(max-width:600px) {
-    .site-navigation .subnav-track { grid-template-columns:repeat(2,minmax(0,1fr)); }
-    .nav-years { justify-content:stretch;gap:6px; }
-    .nav-years__label { margin:0 3px 0 0; }
-    .nav-years__label > span { display:none; }
-    .site-navigation .nav-years a { flex:1;min-width:0;min-height:40px;padding:7px;font-size:13px; }
-    .site-navigation a.nav-shortcut,.nav-explorer > summary { min-height:48px;padding:8px 10px;font-size:13px; }
-    .site-navigation .nav-art { width:25px; height:25px; }
+  @media (max-width: 600px) {
+    .topbar { row-gap: 4px; padding-block: 6px; }
+    .topbar nav { gap: 4px; }
+    .topbar nav a { padding-block: 4px; }
+    .subnav.site-navigation { padding-block: 7px; }
+    .site-navigation .subnav-track,
+    .nav-years {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 5px;
+    }
+    .nav-years__label { display: none; }
+    .site-navigation .nav-years a { min-width: 0; padding: 6px 4px; font-size: 13px; }
+    .site-navigation a.nav-shortcut,
+    .nav-explorer > summary {
+      position: relative;
+      display: grid;
+      grid-template-rows: 22px 1fr;
+      justify-content: stretch;
+      justify-items: center;
+      gap: 3px;
+      min-height: 62px;
+      padding: 5px 3px;
+      font-size: 12px;
+      line-height: 1.2;
+      text-align: center;
+    }
+    .site-navigation :is(.nav-shortcut, .nav-explorer > summary) > span {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    .site-navigation .nav-art { width: 22px; height: 22px; }
+    .nav-explorer > summary .nav-chevron {
+      position: absolute;
+      inset: 5px 4px auto auto;
+      width: 14px;
+      height: 14px;
+    }
   }
   @media(max-width:359px) { .topbar .country-label { display:none; }.topbar nav a { font-size:12px;gap:4px; }.topbar nav .nav-art { width:22px;height:22px; } }
   @media (min-width:500px) and (max-width:980px) and (max-height:450px) and (orientation:landscape) {
@@ -463,4 +497,14 @@
   .nav-directory--compact :is(.nav-directory__side, .nav-directory__results) { overflow: visible; }
   .nav-directory--compact .nav-directory__results { padding-block: 8px; }
   @media(prefers-reduced-motion:reduce) { .nav-chevron { transition:none; } }
+}
+
+/* Compact, single-stroke navigation marks follow the control's text color. */
+.direction-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex: none;
+  vertical-align: -.125em;
+  pointer-events: none;
 }

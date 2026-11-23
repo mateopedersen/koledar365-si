@@ -44,9 +44,22 @@ test('archive and purpose directory remain reachable with keyboard controls',asy
   await expect(archive).toHaveAttribute('open','');await expect(archive.locator('a[href="/koledar/2026/"]')).toBeVisible();
   await expect(archive.locator('a[href="/koledar/2026/oktober/"]')).toBeVisible();
   await expect(page.locator('.cd-tool-table tbody a')).toHaveCount(7);
-  for(const link of await page.locator('.calendar-directory a').all()){
+  for(const link of await page.locator(':is(.cd-period-table, .cd-archive, .cd-tool-table) a').all()){
     expect(await link.getAttribute('href')).toMatch(/^\/(?:koledar|mesecni-koledar|tedenski-koledar|lunin-koledar|solski-koledar|prazen-koledar|delovni-dnevi|ustvari-koledar)/);
   }
+});
+test('period example opens its own dates in the working-day calculator', async ({page}) => {
+  await page.goto('/koledar/2030/oktober/');
+  const example = page.locator('.calendar-collection-example');
+  const dates = await example.locator('time').evaluateAll(nodes => nodes.map(node => node.dateTime));
+  expect(dates).toEqual(['2030-10-29', '2030-11-03']);
+  const numbers = await example.locator('dd').allTextContents();
+  expect(numbers).toEqual(['6', '2']);
+  await example.getByRole('link', {name: 'Odpri ta primer v kalkulatorju delovnih dni'}).click();
+  await expect(page.locator('[data-wdc-from]').first()).toHaveValue('2030-10-29');
+  await expect(page.locator('[data-wdc-to]')).toHaveValue('2030-11-03');
+  await page.locator('[data-wdc-form="range"]').getByRole('button', {name: /Izračunaj obdobje/}).click();
+  await expect(page.locator('[data-wdc-primary]')).toHaveText('2');
 });
 test('without JavaScript every year and month is available without page overflow',async({browser,baseURL})=>{
   const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:320,height:900}});const page=await context.newPage();await page.goto(baseURL+'/koledar/');

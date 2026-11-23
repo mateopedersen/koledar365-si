@@ -1,0 +1,62 @@
+<header class="monthly-calendar-intro">
+  <h1><%= @title %></h1>
+  <p>Izberite mesec od leta 2026 do 2030 in preverite datume, tedne ISO in dela proste dni v Sloveniji. Pod mesečnim pregledom dodajte zapiske, nato prenesite PDF za tisk ali preglednico Excel za nadaljnje urejanje.</p>
+  <div class="monthly-calendar-intro__actions">
+    <a class="button primary" href="#mesecni-nacrt">Odpri mesečni planer</a>
+    <a class="button" href="#uporaba-mesecnega-koledarja">PDF ali Excel?</a>
+  </div>
+</header>
+
+<%= render 'calendar_hub' %>
+
+<section class="monthly-calendar-guide" id="uporaba-mesecnega-koledarja" aria-labelledby="monthly-guide-title">
+  <h2 id="monthly-guide-title">Mesečni koledar v praksi</h2>
+
+  <article class="monthly-calendar-guide__example" aria-labelledby="monthly-example-title">
+    <h3 id="monthly-example-title">Zakaj ima februar 2028 en delovni dan več?</h3>
+    <div class="monthly-calendar-guide__comparison">
+      <div>
+        <h4><a href="/mesecni-koledar/?year=2027&amp;month=2#mesecni-nacrt">Februar 2027</a></h4>
+        <p><strong>28 koledarskih dni · 19 delovnikov</strong><br>Mesec se začne v ponedeljek in zapolni štiri vrstice. Od 20 dni od ponedeljka do petka odštejemo ponedeljek, 8. februar.</p>
+      </div>
+      <div>
+        <h4><a href="/mesecni-koledar/?year=2028&amp;month=2#mesecni-nacrt">Februar 2028</a></h4>
+        <p><strong>29 koledarskih dni · 20 delovnikov</strong><br>Prestopni 29. februar je torek. Od 21 dni od ponedeljka do petka odštejemo torek, 8. februar.</p>
+      </div>
+    </div>
+    <p><%= editorial_paragraph('V obeh primerih odštejemo [Prešernov dan](/prazniki/presernov-dan/), ki je po [uradnem seznamu GOV.SI](@holidays) dela prost dan. Izračun velja za urnik od ponedeljka do petka. Za drugačen delovnik uporabite [kalkulator delovnih dni](/kalkulator-delovnih-dni/).') %></p>
+    <p><%= editorial_paragraph('Zakaj februar dobi dodaten dan, pojasnjuje [pravilo prestopnih let ameriškega mornariškega observatorija](@leap). Za razčlenitev ur in praznika odprite [delovne dni februarja 2028](/delovni-dnevi/2028/februar/).') %></p>
+  </article>
+
+  <article class="monthly-calendar-guide__year-end" aria-labelledby="monthly-year-end-title">
+    <h3 id="monthly-year-end-title">Ko en teden sega v dve leti</h3>
+    <p>Če konec leta pripravljate urnik, začnite z <a href="/koledar/2029/december/">decembrom 2029</a>. Ponedeljek, 31. december, je prvi dan 1. tedna ISO leta 2030. Ista vrstica se nadaljuje do nedelje, 6. januarja, v <a href="/koledar/2030/januar/">januarskem koledarju 2030</a>.</p>
+    <p>V januarskem prikazu sta torek in sreda, 1. in 2. januar, označena kot dela prosta dneva za <a href="/prazniki/novo-leto/">novo leto</a>. Za razpored celotnega tedna odprite <a href="/tedenski-koledar/?date=2029-12-31">tedenski planer od 31. decembra do 6. januarja</a> in za skupni dogovor navedite oba datuma.</p>
+  </article>
+
+  <div class="monthly-calendar-guide__topics">
+    <article>
+      <h3>PDF za tiskanje</h3>
+      <p>Za hiter pregled izberite »Mesečna mreža«. Če želite po tisku pisati ob koledarju, izberite »Več prostora za zapiske«. »Dnevni seznam« daje vsakemu datumu svojo vrstico in lahko zavzame več strani.</p>
+      <p>Pred prenosom nastavite papir A4, A3 ali A5 in usmerjenost. Vneseni zapiski so v PDF-ju v posebnem razdelku. Za sliko WebP in druge postavitve v orodju izberite »Vseh 15 predlog« ali odprite <a href="/koledar/2028/februar/">pripravljene predloge za februar 2028</a>.</p>
+    </article>
+
+    <article>
+      <h3>Excel za sprotno urejanje</h3>
+      <p>V datoteki XLSX so mesečna mreža, list »Datumi« in list »Navodila«. V mesečni mreži dopolnite dnevne celice. Na listu »Datumi« vpišite podrobnosti pod »Moji zapiski« in po stolpcu »Delovni dan (pon–pet)« filtrirajte vrstice z vrednostjo 1.</p>
+      <p><%= editorial_paragraph('Datumi v preglednici so Excelovi datumi. Za uporabo in brisanje filtrov sledite [Microsoftovim navodilom za Excel](@excel-filter). Mesečni list je nastavljen na ležeči A4. Spremembe v datoteki ostanejo v preglednici.') %></p>
+      <p><%= editorial_paragraph('Po filtriranju »Skupaj delovnih dni« na dnu še vedno prikazuje seštevek za ves mesec. Če želite sešteti le vidne delovnike, uporabite [Excelovo funkcijo SUBTOTAL](@excel-subtotal) nad vrednostmi v stolpcu F brez vrstice s skupno vsoto.') %></p>
+    </article>
+
+    <article>
+      <h3>Od mesečnega pregleda do urnika</h3>
+      <p>Najprej zapišite fiksne roke, nato izberite dneve za naloge, ki jih lahko prestavite. Sive številke na robu mreže pripadajo sosednjemu mesecu. Za dogovor v takem tednu odprite <a href="/tedenski-koledar/">tedenski koledar</a> in navedite začetni ter končni datum.</p>
+      <p><%= editorial_paragraph('»T« v prvem stolpcu označuje teden po [pravilih ISO](@iso-week), ki se začne v ponedeljek. Za naloge, ki se vrnejo vsak mesec, si oglejte [primer načrta ponavljajočih se obveznosti](/blog/mesecni-koledar-ponavljajoce-obveznosti/).') %></p>
+    </article>
+  </div>
+
+  <div class="monthly-calendar-guide__notes">
+    <p>Za deljenje izbranega meseca po izbiri kopirajte povezavo iz naslovne vrstice. Povezava vsebuje leto in mesec. Za deljenje osebnih zapiskov prenesite PDF ali XLSX in pred pošiljanjem preverite vsebino datoteke. Zapiski ostanejo shranjeni za izbrani mesec v <a href="/zasebnost/">lokalni shrambi vašega brskalnika</a>.</p>
+    <p>Način izračuna in uporabljene podatke pojasnjujejo <a href="/viri-in-metodologija/">viri in metodologija Koledar365</a>. Če opazite neskladje, <a href="/kontakt/">nam sporočite datum in vrsto prikaza ali datoteke</a>.</p>
+  </div>
+</section>

@@ -43,6 +43,10 @@ class ImageRights
     value
   end
 
+  def self.license_label(license)
+    { 'Public domain' => 'Javna domena', 'Pexels License' => 'Licenca Pexels' }.fetch(license, license)
+  end
+
   # A rights notice describes the reviewed license, without claiming that the
   # photographer is necessarily the current copyright owner.
   def self.rights_notice(photo)
@@ -51,7 +55,7 @@ class ImageRights
     return if license.empty?
     rights = case license
     when 'Public domain' then 'Javna domena (Public Domain Mark 1.0).'
-    when 'CC0' then 'CC0 1.0 — brez pridržanih avtorskih pravic.'
+    when 'CC0' then 'CC0 1.0 (brez pridržanih avtorskih pravic).'
     else "Uporaba po licenci #{license}."
     end
     author = photo['author'].to_s.strip
@@ -64,7 +68,10 @@ class ImageRights
         photo = article.fetch('photo')
         photo.merge('local_path' => EditorialCatalog.image(slug), 'author' => photo.fetch('credit'))
       end
-      (HolidayPhotoCatalog.all + CityCatalog.all.map { |city| city['photo'] } + GardenCalendar.photos + editorial_photos).compact.each_with_object({}) do |photo, index|
+      lunar_photos = (LunarPhaseGuide.photos.values + LunarPhaseGuide.new_moon_photos.values)
+        .map { |photo| photo.merge('author' => photo.fetch('credit')) }
+      (HolidayPhotoCatalog.all + CityCatalog.all.map { |city| city['photo'] } + GardenCalendar.photos +
+        editorial_photos + lunar_photos).compact.each_with_object({}) do |photo, index|
         [photo['local_path'], photo['path'], photo['small_path']].compact.each { |path| index[path] = photo }
       end
     end

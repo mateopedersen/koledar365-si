@@ -444,7 +444,7 @@
       button.textContent = 'Povezavo kopirajte iz naslovne vrstice';
       status.textContent = 'Brskalnik ni dovolil kopiranja. Povezavo lahko kopirate iz naslovne vrstice.';
     }
-    setTimeout(() => { button.innerHTML = '<span aria-hidden="true">↗</span> Kopiraj povezavo do izračuna'; }, 2400);
+    setTimeout(() => { button.textContent = 'Kopiraj povezavo do izračuna'; }, 2400);
   });
   window.addEventListener('popstate', () => {
     const current = new URL(window.location.href);

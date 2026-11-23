@@ -30,7 +30,8 @@
         <label for="occasion-date-select">Datum</label>
         <select id="occasion-date-select" data-occasion-select disabled>
           <% entries.each do |row| %>
-            <option value="<%= row.fetch(:key) %>" <%= 'selected' if row == selected %>><%= row.fetch(:label) %><%= " · #{row.fetch(:title)}" if rows_have_distinct_titles %></option>
+            <% option_label = row[:option_label] || [row.fetch(:label), (row.fetch(:title) if rows_have_distinct_titles)].compact.join(' · ') %>
+            <option value="<%= row.fetch(:key) %>" <%= 'selected' if row == selected %>><%= option_label %></option>
           <% end %>
         </select>
         <label for="occasion-reminder">Opomnik</label>
@@ -46,19 +47,25 @@
       <div class="occasion-planner__actions">
         <a class="occasion-planner__action occasion-planner__action--primary" data-occasion-google
           href="<%= OccasionPlanner.google_url(selected, date_url) %>" target="_blank" rel="noopener noreferrer">
-          <span class="occasion-planner__action-icon"><%= ui_icon('calendar') %></span>
+          <span class="occasion-planner__action-icon">
+            <%= image_tag '/visuals/calendar-providers/google-calendar.svg', alt: '', width: 34, height: 34 %>
+          </span>
           <span><strong>Google Koledar</strong><span class="occasion-planner__action-detail">Odpri pripravljen dogodek</span></span>
           <%= ui_icon('chevron-right') %>
         </a>
-        <a class="occasion-planner__action" data-occasion-ics
-          href="data:text/calendar;charset=utf-8;base64,<%= Base64.strict_encode64(OccasionPlanner.default_ics(selected, date_url)) %>"
-          download="<%= calendar_file %>-<%= selected.fetch(:start) %>.ics">
-          <span class="occasion-planner__action-icon"><%= ui_icon('download') %></span>
-          <span><strong>Apple Calendar in Outlook</strong><span class="occasion-planner__action-detail">Prenesi datoteko ICS</span></span>
-          <%= ui_icon('chevron-right') %>
-        </a>
+        <% ics_href = "data:text/calendar;charset=utf-8;base64,#{Base64.strict_encode64(OccasionPlanner.default_ics(selected, date_url))}"
+           ics_filename = "#{calendar_file}-#{selected.fetch(:start)}.ics" %>
+        <% [['Apple Calendar', 'apple.svg'], ['Microsoft Outlook', 'microsoft-outlook.svg']].each do |name, icon| %>
+          <a class="occasion-planner__action" data-occasion-ics href="<%= ics_href %>" download="<%= ics_filename %>">
+            <span class="occasion-planner__action-icon">
+              <%= image_tag "/visuals/calendar-providers/#{icon}", alt: '', width: 34, height: 34 %>
+            </span>
+            <span><strong><%= name %></strong><span class="occasion-planner__action-detail">Prenesi datoteko ICS</span></span>
+            <%= ui_icon('chevron-right') %>
+          </a>
+        <% end %>
         <button type="button" class="occasion-planner__action" data-occasion-local hidden>
-          <span class="occasion-planner__action-icon"><%= ui_icon('plus') %></span>
+          <span class="occasion-planner__action-icon"><%= brand_symbol %></span>
           <span><strong>Moj Koledar365</strong><span class="occasion-planner__action-detail">Shrani v tem brskalniku</span></span>
           <%= ui_icon('chevron-right') %>
         </button>

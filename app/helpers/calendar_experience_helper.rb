@@ -33,8 +33,11 @@ module CalendarExperienceHelper
     year=2027 unless years.include?(year)
     month=params[:month].to_i
     month=(today.year==year ? today.month : 1) unless month.between?(1,12)
-    if weekly && params[:week].present?
-      selected=Date.commercial(year,Integer(params[:week]),1) rescue selected
+    if weekly
+      week = params[:week].to_i
+      max_week = year > CalendarEngine::INTERACTIVE_YEARS.last ? 1 : Date.new(year, 12, 28).cweek
+      selected = Date.commercial(year, week, 1) if week.between?(1, max_week)
+      selected ||= Date.commercial(year, 1, 1) if @page&.year || params[:year].present?
     end
     selected||=(today.year==year && (weekly || today.month==month) ? today : (weekly ? Date.commercial(year,1,1) : Date.new(year,month,1)))
     selected=selected.clamp(Date.new(2026,1,1),Date.new(2030,12,31))

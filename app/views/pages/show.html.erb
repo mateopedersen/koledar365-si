@@ -7,12 +7,18 @@
 <%= render @section %>
 <% elsif page_path=='/vpisni-koledar/' %>
 <%= render 'admissions' %>
+<% elsif page_path == SlovenianSkyCalendar::PATH %>
+<%= render 'sky_calendar_guide' %>
 <% elsif %w[local_tool tools_index slovenian_resource].include?(@section) %>
 <%= render @section %>
 <% elsif page_path=='/kontakt/' %>
 <%= render 'contact' %>
 <% elsif page_path=='/koledar/' %>
 <%= render 'calendar_directory' %>
+<% elsif page_path=='/mesecni-koledar/' %>
+<%= render 'monthly_calendar' %>
+<% elsif page_path.start_with?('/tedenski-koledar/') %>
+<%= render 'weekly_calendar' %>
 <% elsif @section=='home' %>
 <div class="intro"><div><h1>Slovenski koledar za vaše načrte.</h1><p>Prazniki, osebni dogodki in orodja za vsak dan.</p></div><%= render 'calendar_studio_cta' %></div>
 <%= render 'home' %>
@@ -20,11 +26,13 @@
 <%= render 'vacation_planner' %>
 <% elsif @section=='tool' && page_path=='/odstevanje/' %>
 <%= render 'countdown' %>
-<% elsif %w[about terms privacy cookie_policy holidays observance school calendar_studio horoscope methodology garden_calendar payment_calendar education_calendar school_timetable moon_phases astronomy_events].include?(@section) %>
+<% elsif %w[about terms privacy cookie_policy holidays observance school calendar_studio horoscope methodology garden_calendar payment_calendar education_calendar school_timetable moon_phases astronomy_events seasons].include?(@section) %>
 <%= render @section %>
 <% else %>
 <% if @calendar_collection %>
 <%= render 'calendar_collection_intro', copy: @calendar_collection %>
+<% elsif page_path=='/koledar-za-tiskanje/' %>
+<%= render 'print_calendar_intro' %>
 <% elsif page_path=='/datumski-kalkulator/' %>
 <div class="date-hero">
   <div class="date-hero__copy">
@@ -103,7 +111,7 @@
     <span class="workdays-kicker"><i aria-hidden="true"></i> KOLEDAR365 <span>·</span> SLOVENIJA</span>
     <h1 id="workdays-title"><%= @title %></h1>
     <p><%= @description %></p>
-    <div class="workdays-hero__actions"><a class="button primary" href="#workdays-overview">Razišči letni pregled <span aria-hidden="true">↓</span></a><a class="button" href="/kalkulator-delovnih-dni/">Izračunaj obdobje <span aria-hidden="true">↗</span></a></div>
+    <div class="workdays-hero__actions"><a class="button primary" href="#workdays-overview">Razišči letni pregled <span aria-hidden="true"><%= ui_icon('arrow-down') %></span></a><a class="button" href="/kalkulator-delovnih-dni/">Izračunaj obdobje <span aria-hidden="true"><%= ui_icon('chevron-right') %></span></a></div>
     <%= render 'hero_features', label: 'Podatki o delovnem koledarju', items: [['holidays', 'Dela prosti dnevi'], ['settings', 'Prilagodljiv delovnik'], ['clock', 'Mesečni pregled ur']] %>
   </div>
   <div class="workdays-hero__visual" aria-hidden="true">
@@ -129,8 +137,9 @@
 <%= render 'student_timetable_hero' %>
 <% else %><div class="page-heading"><span class="eyebrow">KOLEDAR365 · SLOVENIJA</span><h1><%= @title %></h1><% unless @section=='events' && TopicContent.find(page_path.split('/').last) %><p><%= gallery_page? ? gallery_description : @description %></p><% end %></div><% end %>
 <%= render @section %>
+<%= render 'print_calendar_guide' if page_path=='/koledar-za-tiskanje/' %>
 <% end %>
 
 <% if @page&.body.present? && page_path!='/koledar/' && !%w[observance school horoscope calendar_studio methodology garden_calendar payment_calendar education_calendar school_timetable moon_phases astronomy_events].include?(@section) %><section class="panel prose"><%= simple_format(@page.body) %></section><% end %>
 
-<%= render 'editorial_note' unless @section == 'blog' || @calendar_collection %>
+<%= render 'editorial_note' unless %w[blog seasons].include?(@section) || @calendar_collection || ['/delovni-dnevi/', SlovenianSkyCalendar::PATH].include?(page_path) %>

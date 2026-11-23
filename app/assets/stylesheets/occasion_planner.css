@@ -2,6 +2,7 @@
   --occasion-blue: #184d79;
   --occasion-ink: #153451;
   --occasion-line: #c9daea;
+  --occasion-provider-width: 44px;
   min-width: 0;
   margin: 20px 0 30px;
   padding: clamp(14px, 2.5vw, 26px);
@@ -35,10 +36,20 @@
   background: #fff;
 }
 
-.occasion-planner__heading-icon .ui-icon,
-.occasion-planner__action-icon .ui-icon {
+.occasion-planner__heading-icon .ui-icon {
   width: 32px;
   height: 32px;
+}
+
+.occasion-planner__action-icon {
+  width: var(--occasion-provider-width);
+}
+
+.occasion-planner__action-icon img {
+  display: block;
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
 }
 
 #vsebina .occasion-planner__heading h2 {
@@ -120,6 +131,7 @@
 
 .occasion-planner__controls {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   align-content: start;
   gap: 4px;
   min-width: 0;
@@ -137,6 +149,8 @@
   min-height: 45px;
   margin: 0 0 5px;
   padding: 7px 9px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   border: 1px solid #b9ccdf;
   border-radius: 8px;
   background: #fff;
@@ -160,7 +174,7 @@
 
 #vsebina .occasion-planner__action {
   display: grid;
-  grid-template-columns: 44px minmax(0, 1fr) 18px;
+  grid-template-columns: var(--occasion-provider-width) minmax(0, 1fr) 18px;
   align-items: center;
   justify-content: stretch;
   gap: 9px;
@@ -216,6 +230,10 @@
   height: 17px;
   border-radius: 4px;
   background: #edf5fc;
+}
+
+.occasion-planner__action--primary > .ui-icon {
+  background: #ffffff26;
 }
 
 .occasion-planner__share {

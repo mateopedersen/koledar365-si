@@ -44,3 +44,18 @@
     box-shadow: none;
   }
 }
+
+.calendar-tool-share {
+  display: flex;
+  justify-content: flex-end;
+  margin-block-start: 14px;
+}
+
+.calendar-tool-share .site-share {
+  position: relative;
+  inset: auto;
+}
+
+@media print {
+  .calendar-tool-share { display: none; }
+}

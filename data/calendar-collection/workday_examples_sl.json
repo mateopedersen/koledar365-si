@@ -1,0 +1,658 @@
+{
+  "2027-01": {
+    "from": "2027-01-01",
+    "to": "2027-01-08",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 8.0,
+    "title": "Kako šteti prvi delovni teden po novem letu?",
+    "body": "V prvi obračunski izpis vključite petek, 1. januar. Primerjajte preštevanje datumov z delovnim urnikom in preverite, kateri dan je bil izločen zaradi praznika."
+  },
+  "2027-02": {
+    "from": "2027-02-05",
+    "to": "2027-02-12",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "hours": 8.0,
+    "title": "Prešernov dan pri štiridnevnem tednu",
+    "body": "Če od petka do nedelje ne delate, je od 5. do 12. februarja pomemben predvsem ponedeljek, 8. februar. Razpoložljivo delo razporedite od torka naprej."
+  },
+  "2027-03": {
+    "from": "2027-03-26",
+    "to": "2027-03-31",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 7.5,
+    "title": "Velikonočni ponedeljek v zadnjem marčevskem obračunu",
+    "body": "Za načrt zadnjih marčevskih dni od petka do srede naj bosta oba mejna datuma vključena. Upoštevajte 7,5 ure na delovni dan in preverite ponedeljek, 29. marca."
+  },
+  "2027-04": {
+    "from": "2027-04-23",
+    "to": "2027-04-30",
+    "weekdays": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "hours": 6.0,
+    "title": "Kako 27. april vpliva na urnik od torka do sobote?",
+    "body": "Pri delu, ki poteka tudi v soboto, ne uporabite privzetega petdnevnega urnika. V izračunu označite torek do sobote in posebej preverite torek, 27. april."
+  },
+  "2027-05": {
+    "from": "2027-05-01",
+    "to": "2027-05-07",
+    "weekdays": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "hours": 8.0,
+    "title": "Zakaj je prvomajska sobota pomembna pri izmenskem tednu?",
+    "body": "Če običajno delate v soboto, 1. maj v tem razponu izločite. Nedelja že sicer ni v urniku od torka do sobote, zato istega premora pri urah ne odštejte še enkrat."
+  },
+  "2027-06": {
+    "from": "2027-06-21",
+    "to": "2027-06-28",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 8.0,
+    "title": "Delovni zaključek tedna z dnem državnosti",
+    "body": "Delo, ki bi bilo načrtovano za petek, 25. junij, razporedite pred praznikom ali na ponedeljek. Pri izračunu ostane 28. junij v razponu samo, če ga vključite kot končni dan."
+  },
+  "2027-07": {
+    "from": "2027-07-10",
+    "to": "2027-07-18",
+    "weekdays": [
+      1,
+      3,
+      5
+    ],
+    "hours": 6.0,
+    "title": "Koliko časa ima ekipa za delo trikrat na teden?",
+    "body": "Za ekipo, ki se zbere v ponedeljek, sredo in petek, označite samo te dneve. Julijski devetdnevni razpon ne pomeni devet terminov."
+  },
+  "2027-08": {
+    "from": "2027-08-13",
+    "to": "2027-08-17",
+    "weekdays": [
+      5,
+      6,
+      7
+    ],
+    "hours": 5.0,
+    "title": "Avgustovski vikend v urniku, ki vključuje nedeljo",
+    "body": "V običajnem petdnevnem koledarju praznična nedelja 15. avgusta ne skrajša tedna. V urniku, ki šteje petek, soboto in nedeljo, pa praznik izloči načrtovani termin."
+  },
+  "2027-09": {
+    "from": "2027-09-01",
+    "to": "2027-09-10",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 7.5,
+    "title": "Kako preračunati delovne ure v prvih desetih dneh septembra?",
+    "body": "Če novi dogovor začne veljati 1. septembra, ne uporabite celotnega mesečnega fonda. Za vsak izbrani delovni dan uporabite 7,5 ure."
+  },
+  "2027-10": {
+    "from": "2027-10-25",
+    "to": "2027-10-31",
+    "weekdays": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "hours": 8.0,
+    "title": "Reformacija v nedeljo ob delu od torka do sobote",
+    "body": "Datumi od 25. do 31. oktobra zajamejo cel teden. Preverite, ali praznik 31. oktobra sploh seže v izbrane dneve dela, preden zmanjšate fond."
+  },
+  "2027-11": {
+    "from": "2027-11-01",
+    "to": "2027-11-05",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 8.0,
+    "title": "Prvo novembrsko ponedeljkovo naročilo",
+    "body": "Če dobavo, načrtovano za ponedeljek, preložite na torek, izračun prilagodite delovnim dnevom. Za prvi teden naj bo 1. november v časovnem razponu viden kot izločeni praznik."
+  },
+  "2027-12": {
+    "from": "2027-12-20",
+    "to": "2027-12-27",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 6.0,
+    "title": "December z božičnim vikendom in delovnim ponedeljkom",
+    "body": "Za zaključek kratkega projekta primerjajte ponedeljek pred božičem z naslednjim ponedeljkom. Pri urniku od ponedeljka do petka vikend ne odvzame dodatnih načrtovanih ur."
+  },
+  "2028-01": {
+    "from": "2028-01-01",
+    "to": "2028-01-09",
+    "weekdays": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "hours": 8.0,
+    "title": "Januarski prehod iz praznične sobote v delovni teden",
+    "body": "Če pri sprejemu naročil delate tudi v soboto, vpišite 1. januar in preverite praznično izločitev. Prvi naslednji delovni termin poiščite po svojem urniku, ne po privzetem ponedeljku."
+  },
+  "2028-02": {
+    "from": "2028-02-21",
+    "to": "2028-02-29",
+    "weekdays": [
+      1,
+      2,
+      4
+    ],
+    "hours": 6.5,
+    "title": "Prestopni torek pri urniku ponedeljek, torek in četrtek",
+    "body": "Za zadnji del februarja vključite 29. v mesecu. V letu 2028 je ta dan torek in zato prispeva ure, če vaš urnik vključuje torke."
+  },
+  "2028-03": {
+    "from": "2028-03-24",
+    "to": "2028-03-31",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 8.0,
+    "title": "Marčevski fond ob prehodu na poletni čas",
+    "body": "Dnevni fond in prestavitev ure sta različna podatka. Pri načrtu z osmimi urami na delovni dan preštejte svoje delovne datume, časovno območje pa posebej preverite pri nočnih izmenah."
+  },
+  "2028-04": {
+    "from": "2028-04-24",
+    "to": "2028-04-30",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 8.0,
+    "title": "Prosti četrtek v zadnjem tednu aprila",
+    "body": "Če je sestanek predviden 27. aprila, ga pri običajnem delovniku prenesite na drug dan. Za tedensko poročilo naj skupni razpon še vedno vključuje četrtek, da je praznik prikazan v izločitvah."
+  },
+  "2028-05": {
+    "from": "2028-05-01",
+    "to": "2028-05-07",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 7.0,
+    "title": "Majski prvi in drugi dan v istem delovnem tednu",
+    "body": "Dvodnevni premor je na ponedeljek in torek. Za preostanek tega tedna koristite sedem ur na dan le na datumih, ko je delo načrtovano."
+  },
+  "2028-06": {
+    "from": "2028-06-19",
+    "to": "2028-06-26",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "hours": 8.0,
+    "title": "Dan državnosti v nedeljo pri šestdnevnem urniku",
+    "body": "Pri urniku od ponedeljka do sobote nedelja že ni delovni dan. Za primer vključite tudi naslednji ponedeljek, če se naloge za zaključek junija prenesejo čez vikend."
+  },
+  "2028-07": {
+    "from": "2028-07-14",
+    "to": "2028-07-22",
+    "weekdays": [
+      2,
+      4,
+      6
+    ],
+    "hours": 5.0,
+    "title": "Julijska izmena vsak drugi dan v tednu",
+    "body": "Za primer vzemite torke, četrtke in sobote. Od 14. do 22. julija ob enakem trajanju izmen ni dovolj pomnožiti števila dni s petimi urami, ker se dela le ob izbranih dneh."
+  },
+  "2028-08": {
+    "from": "2028-08-11",
+    "to": "2028-08-18",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 8.0,
+    "title": "Avgustovski praznik pade na torek",
+    "body": "Med petkom in naslednjim petkom ne izpustite celotnega tedna zaradi praznika. Izločite torek, 15. avgust, in preštejte preostale običajne delovne dni."
+  },
+  "2028-09": {
+    "from": "2028-09-01",
+    "to": "2028-09-11",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "hours": 6.0,
+    "title": "Začetek septembra za ekipo brez petkov",
+    "body": "Če se redno sestajate od ponedeljka do četrtka, petek, 1. september, ne prispeva ur. Nato preverite, koliko načrtovanih delovnih dni se nabere do vključno 11. v mesecu."
+  },
+  "2028-10": {
+    "from": "2028-10-24",
+    "to": "2028-10-31",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 7.5,
+    "title": "Dan reformacije na zadnji oktobrski torek",
+    "body": "Če naročnik pričakuje izdelek do konca meseca, ne računajte s torkom, 31. oktobrom, kot z običajnim delovnim dnem. V urah preverite, koliko je bilo na voljo od 24. oktobra."
+  },
+  "2028-11": {
+    "from": "2028-11-01",
+    "to": "2028-11-10",
+    "weekdays": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "hours": 8.0,
+    "title": "Novembrski prvi dan v tednu z delovno sredo",
+    "body": "Teden brez torkov še vedno vključuje sredo, zato 1. november pri takem vzorcu zmanjša fond. V kalkulatorju izberite ponedeljek, sredo, četrtek in petek."
+  },
+  "2028-12": {
+    "from": "2028-12-22",
+    "to": "2028-12-29",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 8.0,
+    "title": "Dva zaporedna dela prosta dneva ob božiču",
+    "body": "Če načrt za konec leta zajame 25. in 26. december, izločite oba. Ob koncu petka 29. decembra preverite ure samo za dneve, ko je ekipa dejansko na voljo."
+  },
+  "2029-01": {
+    "from": "2029-01-01",
+    "to": "2029-01-12",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 8.0,
+    "title": "Začetek januarja z dvema prostima dnevoma",
+    "body": "Pri začetku dela po novoletnem premoru označite 1. in 2. januar kot dela prosta. Če pregled začnete pozneje, ločite začetek pogodbenega obdobja od prvega načrtovanega delovnega dne."
+  },
+  "2029-02": {
+    "from": "2029-02-02",
+    "to": "2029-02-09",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 6.0,
+    "title": "Praznični četrtek v februarju pri šesturnem delovniku",
+    "body": "Prešernov dan je 8. februarja v četrtek. Če običajno delate šest ur, pravilna razlika za ta izločeni dan v tem primeru ni osem ur."
+  },
+  "2029-03": {
+    "from": "2029-03-23",
+    "to": "2029-03-31",
+    "weekdays": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "hours": 7.0,
+    "title": "Marec, če je sobota delovna",
+    "body": "Za zadnji marčevski del meseca vključite sobote, če jih zahteva vaš urnik. Velikonočni ponedeljek je v tem letu aprila, zato ga ne odštejte od marčevskega razpona."
+  },
+  "2029-04": {
+    "from": "2029-04-23",
+    "to": "2029-04-30",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 8.0,
+    "title": "Aprilski praznik v petek in zaključek meseca",
+    "body": "Dan upora proti okupatorju je v petek, 27. aprila. Če velja običajni urnik, delo za zadnji aprilski ponedeljek ne izgine skupaj s petkom. V primer vključite oba datuma."
+  },
+  "2029-05": {
+    "from": "2029-05-01",
+    "to": "2029-05-10",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 7.5,
+    "title": "Prvi maj v torek in drugi maj v sredo",
+    "body": "Prvi teden maja ima dva prosta dneva sredi delovnega vzorca. Za spremljanje opravljenih ur primerjajte načrt z evidenco in na stran obeh praznikov ne dodajajte nadomestnega delovnega dne."
+  },
+  "2029-06": {
+    "from": "2029-06-22",
+    "to": "2029-06-29",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 8.0,
+    "title": "Ponoven začetek dela po junijskem ponedeljku",
+    "body": "Junijski praznik 25. v mesecu pade na ponedeljek. Če ste začeli v petek 22. junija, štejte petek in preostale delovne dni po ponedeljku, namesto da bi prvi teden projekta odrezali v celoti."
+  },
+  "2029-07": {
+    "from": "2029-07-01",
+    "to": "2029-07-12",
+    "weekdays": [
+      1,
+      3,
+      5
+    ],
+    "hours": 5.0,
+    "title": "Prve julijske rezervacije za tri delovne dni na teden",
+    "body": "Ob delu v ponedeljek, sredo in petek preverite prvi in zadnji datum razpona. Četrtek, 12. julij, ostane na časovnici, vendar ne prispeva delovnih ur."
+  },
+  "2029-08": {
+    "from": "2029-08-10",
+    "to": "2029-08-19",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 8.0,
+    "title": "Sreda, 15. avgust, med dvema vikendoma",
+    "body": "Načrt od petka do naslednje nedelje zajema vmesni praznik. Če boste aktivnosti okoli praznika zamenjali z delom, prilagodite dejanske dneve dela in obdržite isto začetno ter končno mejo."
+  },
+  "2029-09": {
+    "from": "2029-09-17",
+    "to": "2029-09-28",
+    "weekdays": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 7.0,
+    "title": "Dva septembrska tedna brez ponedeljkov",
+    "body": "Torki, srede, četrtki in petki sestavljajo drug fond kot običajni delovnik. Pri izračunu delovnih ur ne odštevajte prostega ponedeljka še ročno, če ponedeljek ni označen."
+  },
+  "2029-10": {
+    "from": "2029-10-26",
+    "to": "2029-10-31",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 8.0,
+    "title": "Reformacija na zadnji dan oktobra",
+    "body": "Dan reformacije je v sredo na samem koncu meseca. Če v obračunu končni datum izpustite, vikend ostane enak, v poročilu pa izgine tudi pojasnilo, da je bila sreda praznik."
+  },
+  "2029-11": {
+    "from": "2029-11-01",
+    "to": "2029-11-09",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 6.0,
+    "title": "November se začne z dela prostim četrtkom",
+    "body": "Označite prvi november kot praznik, nato preračunajte šesturne termine do drugega petka. Primer je načrt urnika, zato seštevek ur preverite še glede na dejansko opravljeno delo."
+  },
+  "2029-12": {
+    "from": "2029-12-21",
+    "to": "2029-12-31",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 8.0,
+    "title": "Božič v torek in nov tedenski list na silvestrovo",
+    "body": "Pri mesečnem fondu 31. december še pripada decembru. V tedenskem načrtu je to že prvi teden ISO leta 2030. Izračun ur zato primerjajte po datumih, ne samo po oznaki tedna."
+  },
+  "2030-01": {
+    "from": "2030-01-01",
+    "to": "2030-01-08",
+    "weekdays": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "hours": 7.5,
+    "title": "Urnik od torka do sobote po novoletnem premoru",
+    "body": "Novoletna praznika sta v torek in sredo. Če imate soboto običajno delovno in izračun obsega začetek meseca, soboto vključite, praznična dneva pa izločite."
+  },
+  "2030-02": {
+    "from": "2030-02-04",
+    "to": "2030-02-11",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 6.0,
+    "title": "Kulturni praznik v prvi polovici februarja",
+    "body": "Osmi februar je v petek. Pri šesturnem delovniku primerjajte konec tedna s ponedeljkom, 11. februarjem, če se nedokončana opravila prenesejo čez vikend."
+  },
+  "2030-03": {
+    "from": "2030-03-23",
+    "to": "2030-03-31",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 8.0,
+    "title": "Zadnji marčevski interval pred novim mesecem",
+    "body": "Če se obračun konča na nedeljo, od delovnih datumov v razponu ne odštejte še enkrat zadnjega vikenda. V obseg naj bodo vključene tudi ure za petek pred koncem meseca."
+  },
+  "2030-04": {
+    "from": "2030-04-22",
+    "to": "2030-04-30",
+    "weekdays": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "hours": 8.0,
+    "title": "Sobota 27. aprila pri delovniku od torka do sobote",
+    "body": "Za urnik, ki šteje sobote, aprilski praznik vpliva na razpoložljivo delo. Na istem seznamu preverite, ali bi vključili ponedeljek: pri navedenem urniku ponedeljek že ni izbran."
+  },
+  "2030-05": {
+    "from": "2030-05-01",
+    "to": "2030-05-09",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 7.0,
+    "title": "Dva majska praznika sredi tedna",
+    "body": "Prvi maj je v sredo, drugi maj v četrtek. Pri sedemurnem urniku naloge od srede in četrtka razporedite med druge termine, ko potrdite, koliko ur je na voljo do 9. maja."
+  },
+  "2030-06": {
+    "from": "2030-06-24",
+    "to": "2030-06-30",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "hours": 8.0,
+    "title": "Junijski teden brez petkovega dela in s prazničnim torkom",
+    "body": "Dan državnosti 25. junija je v torek. Za ekipo, ki dela samo od ponedeljka do četrtka, v tem razponu razlikujte praznični torek od petka, ki nikoli ni deloven."
+  },
+  "2030-07": {
+    "from": "2030-07-05",
+    "to": "2030-07-15",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 6.5,
+    "title": "Julijski izračun za šest ur in pol na dan",
+    "body": "Za izbrani julijski interval uporabite 6,5 ure, ne mesečnega povprečja. Če rok poteče 15. julija ob koncu dneva, vključite tudi ta ponedeljek."
+  },
+  "2030-08": {
+    "from": "2030-08-12",
+    "to": "2030-08-19",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 8.0,
+    "title": "Četrtkov avgustovski praznik in ponedeljkova predaja",
+    "body": "Marijino vnebovzetje je 15. avgusta v četrtek. Za predajo v ponedeljek 19. avgusta skupaj obravnavajte načrtovani obseg dela pred praznikom in preostanek po njem."
+  },
+  "2030-09": {
+    "from": "2030-09-02",
+    "to": "2030-09-13",
+    "weekdays": [
+      1,
+      3,
+      5
+    ],
+    "hours": 7.0,
+    "title": "Septembrski cikel ponedeljek, sreda, petek",
+    "body": "Pri delu trikrat na teden dva koledarska tedna ne pomenita deset delovnih dni. Označite vzorec in seštejte načrtovane ure od 2. do vključno 13. septembra."
+  },
+  "2030-10": {
+    "from": "2030-10-25",
+    "to": "2030-10-31",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 8.0,
+    "title": "Četrtek, 31. oktober, zunaj delovnega fonda",
+    "body": "Ko zaključujete oktobrsko evidenco, vključite 31. oktober v obdobju, da ostane praznik viden. Petek, 1. november, je naslednje obračunsko obdobje in ne zmanjšuje oktobra."
+  },
+  "2030-11": {
+    "from": "2030-11-01",
+    "to": "2030-11-08",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 6.0,
+    "title": "Prvi november začne podaljšani vikend",
+    "body": "Prvi november je petek. Če delate šest ur od ponedeljka do petka, ločite praznični petek od sobote in nedelje, ko že sicer ne delate."
+  },
+  "2030-12": {
+    "from": "2030-12-23",
+    "to": "2030-12-31",
+    "weekdays": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "hours": 8.0,
+    "title": "Sreda in četrtek sta ob božiču dela prosta",
+    "body": "Za zadnji del decembra od 23. dne upoštevajte 25. in 26. december ločeno. Pri predaji zadnji dan leta primerjajte skupne ure z razpoložljivimi dnevi, ki ostanejo po obeh praznikih."
+  }
+}

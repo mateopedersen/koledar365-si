@@ -54,11 +54,39 @@ function refreshDesignPreviews(){
 }
 $$('.export-paper,.export-orientation').forEach(el=>el.addEventListener('change',refreshDesignPreviews));
 plannerOptions?.addEventListener('change',refreshDesignPreviews);refreshDesignPreviews();
-$$('[data-export]').forEach(button=>button.addEventListener('click',async()=>{const section=button.closest('[data-export-options]'),card=button.closest('.design-card'),status=$('.export-status',card);const base=JSON.parse(section.dataset.exportOptions);const options={...base,...(plannerOptions?formObject(plannerOptions):{}),design:button.dataset.export,paper:$('.export-paper',section).value,orientation:$('.export-orientation',section).value};if(plannerOptions)options.entries=plannerEntries;button.disabled=true;say(status,'Datoteko pripravljamo …');try{const response=await api('/izvozi/',{options,format:button.dataset.format});const poll=async()=>{const r=await fetch(response.url);if(!r.ok)throw new Error('Datoteke ni mogoče preveriti.');const job=await r.json();if(job.status==='complete'){status.replaceChildren();const a=document.createElement('a');a.href=job.files[button.dataset.format];a.download=job.filenames?.[button.dataset.format]||'';a.textContent='Datoteka je pripravljena. Prenesi →';status.append(a);button.disabled=false;return}if(['failed','expired'].includes(job.status))throw new Error(job.error||'Izdelava ni uspela. Poskusite znova.');say(status,'Izdelava poteka v ozadju. To stran lahko pustite odprto.');setTimeout(()=>poll().catch(error=>{say(status,error.message,true);button.disabled=false}),2000)};await poll()}catch(error){say(status,error.message,true);button.disabled=false}}));
+$$('[data-export]').forEach(button=>button.addEventListener('click',async()=>{const section=button.closest('[data-export-options]'),card=button.closest('.design-card'),status=$('.export-status',card);const base=JSON.parse(section.dataset.exportOptions);const options={...base,...(plannerOptions?formObject(plannerOptions):{}),design:button.dataset.export,paper:$('.export-paper',section).value,orientation:$('.export-orientation',section).value};if(plannerOptions)options.entries=plannerEntries;button.disabled=true;say(status,'Datoteko pripravljamo …');try{const response=await api('/izvozi/',{options,format:button.dataset.format});const poll=async()=>{const r=await fetch(response.url);if(!r.ok)throw new Error('Datoteke ni mogoče preveriti.');const job=await r.json();if(job.status==='complete'){status.replaceChildren();const a=document.createElement('a');a.href=job.files[button.dataset.format];a.download=job.filenames?.[button.dataset.format]||'';a.textContent='Datoteka je pripravljena. Prenesi';status.append(a);button.disabled=false;return}if(['failed','expired'].includes(job.status))throw new Error(job.error||'Izdelava ni uspela. Poskusite znova.');say(status,'Izdelava poteka v ozadju. To stran lahko pustite odprto.');setTimeout(()=>poll().catch(error=>{say(status,error.message,true);button.disabled=false}),2000)};await poll()}catch(error){say(status,error.message,true);button.disabled=false}}));
 // The live city card boots independently in city_card.js.
 let activeCategory='all';function filterCalendar(){const query=($('#event-search')?.value||'').toLocaleLowerCase('sl');const holidays=$('#show-holidays')?.checked!==false,personalVisible=$('#show-personal')?.checked!==false;for(const node of $$('.date-events .event-label')){const category=node.dataset.category||'holidays';const categoryEnabled=$(`[data-category-toggle="${category}"]`)?.checked!==false;node.hidden=!(activeCategory==='all'||category===activeCategory)||!categoryEnabled||(category==='holidays'?!holidays:!personalVisible)||!node.textContent.toLocaleLowerCase('sl').includes(query)}}
-$$('[data-category]').filter(x=>x.matches('button')).forEach(button=>button.addEventListener('click',()=>{activeCategory=button.dataset.category;$$('.category-chip').forEach(x=>{x.classList.toggle('active',x===button);x.setAttribute('aria-pressed',String(x===button))});filterCalendar()}));$$('[data-category-toggle],#show-holidays,#show-personal,#event-search').forEach(input=>input.addEventListener('input',filterCalendar));
-$$('[data-add-event]').forEach(button=>button.addEventListener('click',()=>{if($('#event-editor')){$('#event-editor').open=true;$('#personal-form').elements.title.focus()}}));
+const calendarCategory = $('[data-calendar-category]');
+const calendarCategoryButtons = $$('.category-chip[data-category]');
+function selectCalendarCategory(category) {
+  activeCategory = category;
+  if (calendarCategory) calendarCategory.value = category;
+  for (const button of calendarCategoryButtons) {
+    const selected = button.dataset.category === category;
+    button.classList.toggle('active', selected);
+    button.setAttribute('aria-pressed', String(selected));
+  }
+  filterCalendar();
+}
+for (const button of calendarCategoryButtons) {
+  button.addEventListener('click', () => selectCalendarCategory(button.dataset.category));
+}
+if (calendarCategory) {
+  calendarCategory.addEventListener('change', () => selectCalendarCategory(calendarCategory.value));
+  calendarCategory.disabled = false;
+}
+$$('[data-category-toggle],#show-holidays,#show-personal,#event-search').forEach(input=>input.addEventListener('input',filterCalendar));
+for (const button of $$('[data-add-event]')) {
+  button.addEventListener('click', event => {
+    const editor = $('#event-editor');
+    const title = $('#personal-form')?.elements.title;
+    if (!editor || !title || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    editor.open = true;
+    title.focus();
+  });
+}
 
 function renderQuickTasks(){const root=$('#quick-tasks');if(!root||!planner)return;root.replaceChildren();const tasks=personal.events.filter(e=>e.kind==='task'&&e.date===planner.dataset.selectedDate);if(!tasks.length){const empty=document.createElement('p');empty.className='muted';empty.textContent='Kaj želite danes opraviti?';root.append(empty)}for(const task of tasks){const label=document.createElement('label');label.className='check'+(task.done?' task-done':'');const input=document.createElement('input');input.type='checkbox';input.checked=!!task.done;input.addEventListener('change',()=>{task.done=input.checked;savePersonal();renderPersonal()});label.append(input,document.createTextNode(task.title));root.append(label)}}
 $('#quick-task-form')?.addEventListener('submit',e=>{e.preventDefault();const input=$('#quick-task-title');personal.events.push({uid:crypto.randomUUID(),date:planner.dataset.selectedDate,title:input.value.trim(),time:'',repeat:'',kind:'task',category:'personal',done:false});savePersonal();input.value='';renderPersonal()});renderQuickTasks();
@@ -86,7 +114,6 @@ $$('[data-download-workspace]').forEach(workspace=>{
   const expanded=workspace.classList.toggle('context-expanded');
   button.setAttribute('aria-expanded',String(expanded));syncContext();
   button.replaceChildren(document.createTextNode(expanded?'Nazaj k galeriji':button.dataset.expandLabel));
-  const arrow=document.createElement('span');arrow.setAttribute('aria-hidden','true');arrow.textContent=expanded?'↙':'↗';button.append(arrow);
   if(!expanded)workspace.scrollIntoView({block:'start',behavior:'auto'});
  });
 });

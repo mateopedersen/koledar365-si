@@ -37,6 +37,12 @@
       "url": "https://www.gov.si/en/news/2023-09-22-lets-celebrate-the-day-of-slovenian-sport-actively/",
       "checked_on": "2026-10-20",
       "scope": "23. september; državni praznik, ki ni dela prost dan."
+    },
+    {
+      "title": "GOV.SI – dosežka v Sydneyju in praznični datum",
+      "url": "https://www.gov.si/dogodki/2021-09-23-predsednik-vlade-janez-jansa-na-drzavni-proslavi-ob-dnevu-slovenskega-sporta-in-otvoritvi-evropskega-tedna-sporta/",
+      "checked_on": "2026-11-23",
+      "scope": "Dve olimpijski zmagi 23. septembra 2000."
     }
   ],
   "dan-triglava": [
@@ -45,6 +51,12 @@
       "url": "https://pisrs.si/api/uradni-list/objava/u20261567.pdf",
       "checked_on": "2026-10-20",
       "scope": "Velja od 17. 10. 2026: dan Triglava in posodobljeni poimenovanji prekmurskega ter primorskega praznika; izjeme od dela prostih dni."
+    },
+    {
+      "title": "GOV.SI – slovenski državni simboli in Aljažev stolp",
+      "url": "https://www.gov.si/assets/vladne-sluzbe/UKOM/Promocija-Slovenije/Promocijske-publikacije/Simboli-Republike-Slovenije.pdf",
+      "checked_on": "2026-11-23",
+      "scope": "Triglav v državnem grbu in zgodovina stolpa."
     }
   ],
   "zdruzitev-prekmurskih-slovencev": [
@@ -53,6 +65,12 @@
       "url": "https://pisrs.si/api/uradni-list/objava/u20261567.pdf",
       "checked_on": "2026-10-20",
       "scope": "Velja od 17. 10. 2026: dan Triglava in posodobljeni poimenovanji prekmurskega ter primorskega praznika; izjeme od dela prostih dni."
+    },
+    {
+      "title": "GOV.SI – zgodovinsko ozadje zborovanja v Beltincih",
+      "url": "https://www.gov.si/dogodki/2019-08-17-predsednik-vlade-bo-nagovoril-prisotne-na-drzavni-proslavi-ob-100-obletnici-zdruzitve-prekmurskih-slovencev-z-maticnim-narodom/",
+      "checked_on": "2026-11-23",
+      "scope": "Časovnica prevzema uprave in zborovanje 17. avgusta 1919."
     }
   ],
   "vrnitev-primorske": [
@@ -61,6 +79,12 @@
       "url": "https://pisrs.si/api/uradni-list/objava/u20261567.pdf",
       "checked_on": "2026-10-20",
       "scope": "Velja od 17. 10. 2026: dan Triglava in posodobljeni poimenovanji prekmurskega ter primorskega praznika; izjeme od dela prostih dni."
+    },
+    {
+      "title": "GOV.SI – spomin na uveljavitev mirovne pogodbe",
+      "url": "https://www.gov.si/novice/2024-10-08-odlocitev-vlade-s-seje-vladnega-odbora/",
+      "checked_on": "2026-11-23",
+      "scope": "Zgodovinski pomen 15. septembra 1947."
     }
   ],
   "dan-znanosti": [
@@ -69,6 +93,114 @@
       "url": "https://pisrs.si/api/uradni-list/objava/u20261567.pdf",
       "checked_on": "2026-10-20",
       "scope": "Velja od 17. 10. 2026: dan Triglava in posodobljeni poimenovanji prekmurskega ter primorskega praznika; izjeme od dela prostih dni."
+    }
+  ],
+  "svetovni-dan-uciteljev": [
+    {
+      "title": "UNESCO – svetovni dan učiteljev",
+      "url": "https://www.unesco.org/en/days/teachers",
+      "checked_on": "2026-11-23",
+      "scope": "Datum 5. oktober, priporočili o učiteljskem poklicu in začetek mednarodne obeležitve leta 1994."
+    },
+    {
+      "title": "Ministrstvo za izobraževanje – svetovni dan učiteljev in nagrade za šolstvo",
+      "url": "https://www.gov.si/novice/2021-09-29-svetovni-dan-uciteljev-5-oktober/",
+      "checked_on": "2026-11-23",
+      "scope": "Zgodovina nagrad in časovni razmik med datumom obeležitve ter podelitvijo leta 2021."
+    }
+  ],
+  "dan-clovekovih-pravic": [
+    {
+      "title": "Združeni narodi – nastanek Splošne deklaracije",
+      "url": "https://www.un.org/en/about-us/udhr/history-of-the-declaration",
+      "checked_on": "2026-11-23",
+      "scope": "Sprejetje deklaracije 10. decembra 1948."
+    }
+  ],
+  "praznik-kopra": [
+    {
+      "title": "Mestna občina Koper – datum občinskega praznika",
+      "url": "https://www.koper.si/o-kopru/simboli-kopra/",
+      "checked_on": "2026-11-23",
+      "scope": "Datum praznika in povezava z Marezigami."
+    },
+    {
+      "title": "Mestna občina Koper – razstava ob stoletnici upora",
+      "url": "https://www.koper.si/v-mali-lozi-razstava-ob-100-obletnici-marezganskega-upora/",
+      "checked_on": "2026-11-23",
+      "scope": "Dogodek leta 1921 in občinska razstava leta 2021."
+    }
+  ],
+  "praznik-ptuja": [
+    {
+      "title": "Mestna občina Ptuj – občinski praznik in sveti Jurij",
+      "url": "https://www.ptuj.si/objave/191",
+      "checked_on": "2026-11-23",
+      "scope": "Sedanji datum in pomen svetega Jurija."
+    }
+  ],
+  "dan-primoza-trubarja": [
+    {
+      "title": "NUK: prvi popolni faksimile Trubarjevih prvih knjig",
+      "url": "https://www.dlib.si/details/URN:NBN:SI:doc-7KLA8QC5",
+      "checked_on": "2026-11-23",
+      "scope": "Faksimile Katekizma in Abecednika iz 1550 ter Abecednika iz 1555."
+    }
+  ],
+  "dan-reformacije": [
+    {
+      "title": "NUK: digitalizirani izvod Dalmatinove Biblije iz leta 1584",
+      "url": "https://www.dlib.si/details/URN:NBN:SI:DOC-8NAJPUXS",
+      "checked_on": "2026-11-23",
+      "scope": "Digitalni izvod in bibliografski zapis slovenskega prevoda."
+    }
+  ],
+  "dan-drzavnosti": [
+    {
+      "title": "GOV.SI – sprejetje osamosvojitvenih aktov",
+      "url": "https://www.gov.si/novice/2021-06-28-slovenija-praznuje-svoj-30-ti-dan-drzavnosti/",
+      "checked_on": "2026-11-23",
+      "scope": "Dokumenti iz 25. junija 1991 in slovesnost naslednjega dne."
+    }
+  ],
+  "dan-samostojnosti-in-enotnosti": [
+    {
+      "title": "Arhiv Republike Slovenije – plebiscit in osamosvojitev",
+      "url": "https://www.gov.si/assets/organi-v-sestavi/Arhiv-RS/Razstave-/Plebiscit/ZGO_DL-plebiscit-tretje_triletje.pdf",
+      "checked_on": "2026-11-23",
+      "scope": "Plebiscit leta 1990 in poznejši koraki osamosvajanja."
+    }
+  ],
+  "pomladno-enakonocje": [
+    {
+      "title": "USNO – dolžina dneva ob enakonočju",
+      "url": "https://aa.usno.navy.mil/faq/equinoxes",
+      "checked_on": "2026-11-23",
+      "scope": "Pomen roba Sonca in loma svetlobe pri izračunu vzhoda in zahoda."
+    }
+  ],
+  "jesensko-enakonocje": [
+    {
+      "title": "USNO – dolžina dneva ob enakonočju",
+      "url": "https://aa.usno.navy.mil/faq/equinoxes",
+      "checked_on": "2026-11-23",
+      "scope": "Povezava med prečkanjem nebesnega ekvatorja in dolžino dneva."
+    }
+  ],
+  "poletni-solsticij": [
+    {
+      "title": "USNO – sončni vzhodi in zahodi ob solsticiju",
+      "url": "https://aa.usno.navy.mil/faq/rs_solstices",
+      "checked_on": "2026-11-23",
+      "scope": "Razlika med najdaljšim dnevom in krajevnimi časi vzhoda ter zahoda."
+    }
+  ],
+  "zimski-solsticij": [
+    {
+      "title": "USNO – sončni vzhodi in zahodi ob solsticiju",
+      "url": "https://aa.usno.navy.mil/faq/rs_solstices",
+      "checked_on": "2026-11-23",
+      "scope": "Razlika med najkrajšim dnevom in najpoznejšim sončnim vzhodom."
     }
   ]
 }

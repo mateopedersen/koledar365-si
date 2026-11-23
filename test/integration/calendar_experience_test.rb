@@ -30,6 +30,11 @@ class CalendarExperienceTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select '[data-calendar-experience="monthly"][data-initial-year="2028"][data-initial-month="2"]'
     assert_select '[data-calendar-month]',count:12
+    assert_select 'main h1', count: 1, text: 'Mesečni koledar za tiskanje: PDF in Excel'
+    assert_select 'meta[name="description"][content*="od 2026 do 2030"]', count: 1
+    assert_select 'link[rel="canonical"][href="https://koledar365.si/mesecni-koledar/"]', count: 1
+    assert_select '.calendar-sheet__holidays time[datetime="2028-02-08"]', count: 1
+    assert_select '#uporaba-mesecnega-koledarja a[href="https://www.gov.si/teme/drzavni-prazniki-in-dela-prosti-dnevi/"]', count: 1
     assert_select 'a[data-calendar-month="2"][href="/koledar/2028/februar/"]'
     assert_select '[data-calendar-sheet] table.calendar td[data-date="2028-02-29"]'
     assert_select '[data-calendar-layout]',count:3
@@ -52,6 +57,38 @@ class CalendarExperienceTest < ActionDispatch::IntegrationTest
     get '/tedenski-koledar/2028/'
     assert_select '[data-calendar-experience="weekly"]'
     assert_select '[data-export-options] .design-card',count:15
+  end
+
+  test 'weekly hub renders dated public holidays and keeps the two selectors independent' do
+    get '/tedenski-koledar/', params: { date: '2030-12-31' }
+    assert_response :success
+    assert_select 'form[data-week-date-selection] input[name="date"][value="2030-12-31"]'
+    assert_select 'form[data-week-date-selection] select[name="year"]', count: 0
+    assert_select 'form[data-week-selection] input[name="date"]', count: 0
+    assert_select '[data-calendar-kicker]', 'TEDEN 1 / 2031'
+    assert_select '.is-holiday time[datetime="2031-01-01"]'
+    assert_select '.is-holiday time[datetime="2031-01-02"]'
+    assert_select 'main h1', count: 1
+    assert_select '#tedenski-vodic a[href="https://unicode.org/reports/tr35/tr35-dates.html#Date_Patterns_Week_Of_Year"]'
+    get '/tedenski-koledar/', params: { year: 2026, week: 53 }
+    assert_select '[data-calendar-kicker]', 'TEDEN 53 / 2026'
+  end
+
+  test 'each weekly year introduces a different verifiable planning example' do
+    {
+      2026 => ['2026-04-06', 'TEDEN 15 / 2026'],
+      2027 => ['2027-06-25', 'TEDEN 25 / 2027'],
+      2028 => ['2028-08-15', 'TEDEN 33 / 2028'],
+      2029 => ['2029-10-31', 'TEDEN 44 / 2029'],
+      2030 => ['2030-12-31', 'TEDEN 1 / 2031']
+    }.each do |year, (date, iso_week)|
+      path = "/tedenski-koledar/#{year}/"
+      get path, params: { date: date }
+      assert_response :success
+      assert_select '.weekly-guide__example a[href=?]', "#{path}?date=#{date}#tedenski-nacrt", count: 1
+      assert_select 'link[rel="canonical"][href=?]', "https://koledar365.si#{path}", count: 1
+      assert_select '[data-calendar-kicker]', iso_week
+    end
   end
 
   test 'workday calculator supports the complete current year and backward year transition' do

@@ -39,14 +39,22 @@
   #vsebina .month-block:not(.mini){max-width:100%;overflow-x:auto}
   #vsebina .month-block:not(.mini)>.calendar:not(.calendar-has-agenda){min-width:600px}
   #vsebina .calendar.calendar-has-agenda{width:100%;min-width:0}
-  #vsebina .calendar-has-agenda td{height:84px}
-  #vsebina .calendar-has-agenda .date-link{min-height:42px}
-  #vsebina .calendar-has-agenda .date-events{display:flex;flex-wrap:wrap;justify-content:center;align-content:flex-start;gap:0;padding:0 1px 5px;min-width:0}
+  #vsebina .calendar-has-agenda td{height:56px}
+  #vsebina .calendar-has-agenda :is(.date-link,.outside-date) {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:30px;
+    padding:2px;
+    font-size:13px;
+    line-height:1.2;
+  }
+  #vsebina .calendar-has-agenda .date-events{display:flex;flex-wrap:wrap;justify-content:center;gap:0;padding:0 1px;min-width:0}
   #vsebina .calendar-has-agenda .date-events .event-label{display:inline-flex;align-items:center;justify-content:center;flex:0 0 24px;width:24px;min-width:24px;max-width:24px;height:24px;min-height:24px;max-height:24px;margin:0;padding:0;border:0;border-radius:7px;font-size:0;line-height:0;overflow:hidden;text-decoration:none}
   #vsebina .calendar-has-agenda .date-events .event-label::before{position:static;display:block;flex:0 0 6px;width:6px;height:6px;margin:0;transform:none;background:currentColor}
   #vsebina .calendar-has-agenda .date-events .event-label[hidden]{display:none!important}
   #vsebina .calendar-has-agenda .date-events .personal-dot{color:#0757ad;background:#edf4ff}
-  .calendar-agenda{display:block;margin:18px 0 4px;padding-top:16px;border-top:1px solid var(--line,#d4deea)}
+  .calendar-agenda{display:block;margin:12px 0 4px;padding-top:10px;border-top:1px solid var(--line,#d4deea)}
   .calendar-agenda[hidden]{display:none!important}
   #vsebina .calendar-agenda h3{margin:0 0 12px;font-size:17px;line-height:1.35;color:#18324e}
   .calendar-agenda ul{display:grid;gap:8px;list-style:none;padding:0;margin:0}
@@ -65,33 +73,131 @@
 }
 @media screen {
   .home-page .center-panel{display:flex;flex-direction:column}
+  .calendar-category-select{display:none}
+  #vsebina .week-view:has(> section:only-child){grid-template-columns:minmax(0,1fr)}
+  #vsebina .week-view > section{min-height:0}
+  .week-view > section > h3{margin:0}
+  .week-view > section > a{display:block;margin-top:4px}
+  #vsebina .calendar-personal-hint{margin:8px 0 0;font-size:.9rem;line-height:1.5}
+}
+@media screen and (max-width:850px) {
+  .home-page .workspace > .right-panel{order:1}
+  .home-page .workspace > .left-panel{order:2}
 }
 @media screen and (min-width:601px) {
   .home-page .center-panel>.stats{order:-1}
 }
 @media screen and (max-width:600px) {
-  .home-page .center-panel>.stats{margin:0}
+  main#vsebina{padding-block-start:14px}
+  .breadcrumb{gap:3px 8px;margin-block-end:12px}
+  .home-page .center-panel>.stats{margin:0;padding-block:9px}
+  .home-page .right-panel{gap:10px}
+  .home-page .right-panel .empty{margin:8px 0 10px;padding:0}
+  .home-page #personal-events + details summary{min-height:44px;align-content:center}
   .home-page .home-discovery .feature-grid>*{min-height:0}
-}
-@media screen and (min-width:320px) and (max-width:480px) {
-  .home-page .calendar-title .actions{width:100%;flex-wrap:nowrap;gap:4px}
-  .home-page #vsebina .calendar-title h2{
-    display:grid;place-items:center;flex:1;min-width:0;text-align:center;
-    font-size:clamp(16px,4.8vw,20px)!important;line-height:1.16;
+  .home-page #vsebina > :is(.editorial-home,.home-festivals,.discovery,.editorial-note){margin-block:18px 0}
+  .home-page :is(.home-festivals,.discovery,.editorial-home) .section-heading{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:5px 12px;
+    margin-bottom:10px;
   }
-  .home-page .calendar-title .actions .button{flex:none}
+  .home-page :is(.home-festivals,.discovery,.editorial-home) .section-heading > a {
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    min-height:32px;
+    margin-top:0;
+  }
+  .home-page .discovery .feature-grid{gap:8px}
+  .home-page .discovery .feature-grid > :is(div,.feature){padding:12px}
+  .home-page .discovery .feature-grid h3{margin-block:0 5px}
+  .home-page .discovery .feature-grid p{margin:0}
+  .home-page .home-discovery .feature-grid>.feature>span{padding-top:8px}
+
+  #vsebina .week-view{grid-template-columns:minmax(0,1fr);gap:6px}
+  #vsebina .week-view > section{padding:0 10px;border-radius:8px}
+  .week-view > section > h3 > a {
+    display:flex;
+    align-items:center;
+    min-height:44px;
+    text-decoration:none;
+  }
+  .week-view > section > a{padding-bottom:10px}
+
+  .home-page .category-bar {
+    display:grid;
+    grid-template-columns:minmax(112px,.8fr) minmax(0,1.2fr);
+    gap:6px;
+    margin-block:0 10px;
+  }
+  .home-page .category-bar .category-chip{display:none}
+  .home-page .calendar-category-select{display:block;min-width:0;margin:0}
+  .home-page #vsebina .calendar-category-select select {
+    display:block;
+    width:100%;
+    padding-inline:7px 22px;
+    background-position:right 6px center;
+    background-size:12px;
+  }
+  .home-page .category-bar .event-search{min-width:0;margin:0}
+  .home-page #vsebina .event-search input{padding-inline:32px 8px}
+  .home-page .event-search .ui-icon{inset-inline-start:9px;width:17px;height:17px}
+
+  .home-page .calendar-title {
+    display: grid;
+    grid-template-columns: var(--k365-control-height) repeat(2, minmax(0, 1fr)) var(--k365-control-height);
+    align-items: stretch;
+    gap: 6px;
+  }
+
+  .home-page .calendar-title .actions { display: contents; }
+  .home-page .calendar-title .square:first-child { grid-area: 1 / 1; }
+  .home-page .calendar-title h2 + .square { grid-area: 1 / 4; }
+  .home-page #vsebina .calendar-title h2{
+    grid-area: 1 / 2 / 2 / 4;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    text-align: center;
+    font-size: clamp(18px, 4.8vw, 22px) !important;
+    line-height: 1.2;
+  }
+
+  .home-page .calendar-title .actions > .button:not(.square) { grid-area: 2 / 1 / 3 / 3; }
+  .home-page .calendar-title > .primary {
+    display: flex;
+    grid-area: 2 / 3 / 3 / 5;
+  }
+
+  .home-page .calendar-title .button { justify-content: center; }
+  .home-page .calendar-title > .primary .ui-icon { flex: none; width: 18px; height: 18px; }
+
+  .home-page .calendar-footer { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .home-page .calendar-footer > div {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .home-page #vsebina .calendar-footer > div > :is(button, .button) {
+    justify-content: center;
+    gap: 5px;
+    padding-inline: 4px;
+  }
+  .home-page .calendar-footer .ui-icon { flex: none; width: 17px; height: 17px; }
+}
+@media screen and (max-width:359px) {
+  .home-page #vsebina .calendar-title > .primary {
+    gap: 4px;
+    padding-inline: 4px !important;
+    font-size: 14px !important;
+  }
+}
+@media screen and (max-width:480px) {
   .home-page .calendar-toolbar{display:grid;grid-template-columns:minmax(0,1fr);gap:7px}
-  .home-page .period-form{gap:5px}
+  .home-page .period-form{grid-template-columns:70px minmax(0,1fr) max-content;gap:5px}
   .home-page #vsebina .calendar-panel .period-form select{padding-inline:6px 22px;background-position:right 6px center;background-size:12px}
-}
-@media screen and (min-width:360px) and (max-width:480px){
-  .home-page .period-form{grid-template-columns:78px minmax(0,1fr) max-content}
   .home-page #vsebina .calendar-panel .period-form button{grid-column:auto;padding-inline:7px!important;font-size:14px!important}
-}
-@media screen and (max-width:480px){
-  .home-page #vsebina .calendar-has-agenda td{height:62px}
-  .home-page .category-bar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
-  .home-page #vsebina .category-chip{min-width:0;min-height:44px!important;padding:6px 4px;gap:5px;font-size:13px!important}
-  .home-page .category-bar .event-search{grid-column:1/-1}
 }
 @media print{.calendar-agenda,.table-scroll-hint{display:none!important}}

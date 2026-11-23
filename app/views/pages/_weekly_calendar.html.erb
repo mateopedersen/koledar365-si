@@ -1,0 +1,59 @@
+<% current = calendar_hub_period(weekly: true).fetch(:date)
+   @year, @month, @selected = current.year, current.month, current
+   catalogue_year = @page.year
+   example_date, example_title, example_copy = {
+     2026 => ['2026-04-06', 'Velikonočni ponedeljek v 15. tednu', 'Teden od 6. do 12. aprila se začne z [velikonočnim ponedeljkom](/prazniki/velika-noc/). V načrtu, ki običajno zajema pet delovnikov, razporedite naloge od torka do petka.'],
+     2027 => ['2027-06-25', 'Dan državnosti v 25. tednu', 'Od 21. do 27. junija je [dan državnosti](/prazniki/dan-drzavnosti/) v petek. Če sta sobota in nedelja po vašem urniku prosti, lahko obveznosti razporedite do četrtka in načrtujete tri proste dni skupaj.'],
+     2028 => ['2028-08-15', 'Avgustovski praznik v 33. tednu', 'V tednu od 14. do 20. avgusta je [Marijino vnebovzetje](/prazniki/marijino-vnebovzetje/) v torek. Če po dogovoru vzamete dopust v ponedeljek, lahko pri urniku od ponedeljka do petka povežete konec tedna in praznik.'],
+     2029 => ['2029-10-31', 'Dva praznika v 44. tednu', 'V tednu od 29. oktobra do 4. novembra sta zaporedna dela prosta dneva. V sredo je [dan reformacije](/prazniki/dan-reformacije/), v četrtek [dan spomina na mrtve](/prazniki/dan-spomina-na-mrtve/). Pri običajnem petdnevnem urniku ostanejo ponedeljek, torek in petek.'],
+     2030 => ['2030-12-31', 'Konec decembra v 1. tednu ISO 2031', 'Ponedeljek, 30. december 2030, je začetek prvega tedna ISO 2031. Prikaz sega do nedelje, 5. januarja 2031, in vključuje oba dela prosta dneva za [novo leto](/prazniki/novo-leto/).']
+   }.fetch(catalogue_year, ['2027-01-01', 'Januarski datum v 53. tednu leta 2026', 'Petek, 1. januar 2027, spada v teden od ponedeljka, 28. decembra 2026, do nedelje, 3. januarja 2027. Prvi teden ISO leta 2027 se začne 4. januarja. Pri predaji nalog uporabite leto tedna in oba datuma.']) %>
+
+<header class="weekly-hero">
+  <div>
+    <h1><%= @title %></h1>
+    <p><%= catalogue_year ? "Odprite teden leta #{catalogue_year} po datumu ali številki ISO." : 'Odprite teden po datumu ali številki ISO.' %> Razporedite obveznosti od ponedeljka do nedelje, zapišite prednostne naloge in prenesite tedenski planer v PDF.</p>
+  </div>
+  <div class="weekly-hero__actions">
+    <a href="#tedenski-nacrt" class="button primary">Odpri tedenski planer</a>
+    <a href="#tedenski-vodic" class="button">Navodila in primer</a>
+  </div>
+</header>
+
+<%= render 'calendar_hub', weekly: true %>
+<% if catalogue_year %>
+  <div id="calendar-designs"><%= render 'designs', type: 'weekly' %></div>
+<% end %>
+
+<section id="tedenski-vodic" class="weekly-guide" aria-labelledby="weekly-guide-title">
+  <h2 id="weekly-guide-title">Kako sestaviti tedenski načrt</h2>
+  <article class="weekly-guide__example">
+    <div>
+      <h3><%= example_title %></h3>
+      <p><%= editorial_paragraph(example_copy) %></p>
+      <p><%= editorial_paragraph('Datume praznikov preverite na [uradnem seznamu GOV.SI](@holidays). Za lasten urnik uporabite [kalkulator delovnih dni](/kalkulator-delovnih-dni/).') %></p>
+    </div>
+    <%= link_to 'Prikaži primer v planerju', "#{page_path}?date=#{example_date}#tedenski-nacrt", class: 'button' %>
+  </article>
+
+  <div class="weekly-guide__topics">
+    <article>
+      <h3>Izberite pravi teden ISO</h3>
+      <p>Vnesite katerikoli datum iz tedna. Če imate številko tedna z urnika, odprite »Izberi po številki tedna ISO« in vnesite leto ISO ter številko od 1 do 52 ali 53.</p>
+      <p><%= editorial_paragraph('Po [pravilu za tedne ISO](@iso-week) se teden začne v ponedeljek, prvi teden leta pa vsebuje 4. januar. Na [strani za izračun številke tedna](/stevilka-tedna/) lahko za izbrani datum preverite tudi prvi in zadnji dan.') %></p>
+    </article>
+    <article>
+      <h3>Ločite roke od tedenskih nalog</h3>
+      <p>Roke in srečanja zapišite na točen dan. Naloge, ki jih lahko prestavite, dodajte v »Prednostne naloge in zapiski«. Ob koncu tedna neopravljeno nalogo prenesite na dan, ko jo boste lahko nadaljevali.</p>
+      <p>Če se roki kopičijo na začetku ali koncu meseca, odprite <a href="/mesecni-koledar/">mesečni planer</a>. Za kratek pregled vseh odprtih nalog uporabite <a href="/blog/tedenski-koledar-pregled-v-30-minutah/">primer 30-minutnega tedenskega pregleda</a>.</p>
+    </article>
+    <article>
+      <h3>Izberite obliko za tisk</h3>
+      <p>»Skupni tedenski pregled« je mreža za pogled čez ves teden. »Več prostora za zapiske« doda stranski prostor za ročne dopise. »Dan za dnem« nameni vsakemu dnevu svoj razdelek in lahko zajame več listov.</p>
+      <p><%= editorial_paragraph('Za prvo kopijo poskusite ležeči A4, pri manjšem rokovniku pa A5. Mere papirja določa [standard ISO 216](@paper). Dnevni zapisi in tedenske opombe so pri prenosu iz planerja vključeni tudi v ločene razdelke PDF-ja.') %></p>
+    </article>
+  </div>
+
+  <p>Zapiski so vezani na izbrani teden v <a href="/zasebnost/">shrambi tega brskalnika</a>. Za drugo napravo shranite PDF. Če želite deliti le datume tedna, po izbiri kopirajte naslov iz naslovne vrstice.</p>
+  <p>Koledar in razlago izračuna objavlja <a href="/o-nas/">Koledar365</a>. Za napačen datum ali težavo pri tisku <a href="/kontakt/">nam sporočite izbrani teden in postavitev</a>.</p>
+</section>

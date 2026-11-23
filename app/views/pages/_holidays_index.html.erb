@@ -13,7 +13,7 @@
   <section class="holiday-comparison" id="holiday-directory-years" aria-labelledby="holiday-directory-years-title">
     <div class="holiday-section-heading"><div><h2 id="holiday-directory-years-title">Kdaj boste imeli <strong>več prostih dni?</strong></h2><p>Primerjava velja za delovni teden od ponedeljka do petka.</p></div></div>
     <div class="holiday-comparison-grid"><% @holiday_comparison.each do |period| %>
-      <a href="/prazniki/<%= period.year %>/"><h3><%= period.year %><span aria-hidden="true">↗</span></h3><div class="holiday-comparison-highlight"><strong><%= period.weekday_free_dates.size %></strong><span>prostih praznikov<br>med tednom</span></div><dl><div><dt>Vsi dela prosti datumi</dt><dd><%= period.free_dates.size %></dd></div><div><dt>Delovni dnevi</dt><dd><%= period.working_days %></dd></div></dl><span>Odprite datume, izvoz in koledarje →</span></a>
+      <a href="/prazniki/<%= period.year %>/"><h3><%= period.year %><span aria-hidden="true"><%= ui_icon('chevron-right') %></span></h3><div class="holiday-comparison-highlight"><strong><%= period.weekday_free_dates.size %></strong><span>prostih praznikov<br>med tednom</span></div><dl><div><dt>Vsi dela prosti datumi</dt><dd><%= period.free_dates.size %></dd></div><div><dt>Delovni dnevi</dt><dd><%= period.working_days %></dd></div></dl><span>Odprite datume, izvoz in koledarje</span></a>
     <% end %></div>
   </section>
   <section class="panel prose" aria-labelledby="holiday-differences-title">

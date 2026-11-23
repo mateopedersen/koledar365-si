@@ -195,3 +195,141 @@ test('exported annual workday dashboards retain their year and recalculate a cus
   await expect(dashboard.locator('[data-year-days]')).toHaveText('261');
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
 });
+
+test('the print guide links open the calendar type and period described in the example', async ({ page }) => {
+  const path = '/koledar-za-tiskanje/';
+  await openPublication(page, path);
+
+  await expect(page.locator('main h1')).toHaveText('Koledar za tiskanje');
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /A4, A3 ali A5/);
+  const guide = page.locator('#navodila-za-tisk');
+  await page.getByRole('link', { name: 'Kako pripraviti koledar za tisk' }).click();
+  await expect(page).toHaveURL(/#navodila-za-tisk$/);
+  await expect(guide.getByRole('heading', { name: 'Trije koraki pred tiskanjem' })).toBeVisible();
+  await expect(page.locator('[data-site-share-inline]')).toHaveCount(1);
+  await expect(page.locator('.calendar-tool-share .site-share')).toHaveCSS('position', 'relative');
+
+  for (const [width, height] of [[320, 740], [390, 844], [1366, 850]]) {
+    await page.setViewportSize({ width, height });
+    expect(await guide.evaluate(node => node.scrollWidth)).toBeLessThanOrEqual(await guide.evaluate(node => node.clientWidth));
+  }
+
+  for (const example of [
+    { label: 'Prilagodite februar 2028', type: 'monthly', date: '2028-02-01' },
+    { label: 'odprite teden od 28. februarja do 5. marca 2028', type: 'weekly', date: '2028-02-29' },
+  ]) {
+    await guide.getByRole('link', { name: example.label }).click();
+    await expect(page.locator('html')).toHaveAttribute('data-free-ready', 'true');
+    await expect(page.locator('#planner-options [name="type"]')).toHaveValue(example.type);
+    await expect(page.locator('#planner-options [name="date"]')).toHaveValue(example.date);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://koledar365.si' + path);
+  }
+});
+
+test('monthly guide examples show the stated month, holiday and February length', async ({ page }) => {
+  await openPublication(page, '/mesecni-koledar/');
+  const guide = page.locator('#uporaba-mesecnega-koledarja');
+  const hub = page.locator('#mesecni-nacrt');
+  await page.getByRole('link', { name: 'PDF ali Excel?' }).click();
+  await expect(page).toHaveURL(/#uporaba-mesecnega-koledarja$/);
+  await expect(page.locator('.calendar-tool-share .site-share')).toHaveCSS('position', 'relative');
+
+  for (const width of [320, 390, 768, 1366]) {
+    await page.setViewportSize({ width, height: 844 });
+    const overflow = await guide.evaluate(node => node.scrollWidth - node.clientWidth);
+    expect(overflow, `monthly guide overflows at ${width}px`).toBeLessThanOrEqual(0);
+  }
+
+  for (const [year, days] of [[2027, 28], [2028, 29]]) {
+    await guide.getByRole('link', { name: `Februar ${year}`, exact: true }).click();
+    await expect(page).toHaveURL(new RegExp(`year=${year}&month=2#mesecni-nacrt$`));
+    await expect(hub.locator('[data-calendar-heading]')).toHaveText(`Februar ${year}`);
+    await expect(hub.locator('.calendar-sheet__month td:not(.is-outside)')).toHaveCount(days);
+    await expect(hub.locator(`.calendar-sheet__holidays time[datetime="${year}-02-08"]`)).toHaveCount(1);
+    await expect(hub.locator('[data-calendar-detail]')).toHaveAttribute('href', `/koledar/${year}/februar/`);
+  }
+});
+
+test('monthly preview arrows fit on phones and navigate across the calendar year', async ({ page }) => {
+  await openPublication(page, '/mesecni-koledar/?year=2029&month=12');
+  const hub = page.locator('#mesecni-nacrt');
+  const navigation = hub.getByRole('group', { name: 'Prikaz meseca' });
+  const previous = navigation.getByRole('button', { name: 'Prejšnji mesec' });
+  const next = navigation.getByRole('button', { name: 'Naslednji mesec' });
+  const heading = hub.locator('[data-calendar-heading]');
+  await expect(heading).toHaveText('December 2029');
+
+  for (const width of [320, 390, 768, 1366]) {
+    await page.setViewportSize({ width, height: 844 });
+    const sizes = await navigation.getByRole('button').evaluateAll(buttons => buttons.map(button => {
+      const bounds = button.getBoundingClientRect();
+      const icon = button.querySelector('svg').getBoundingClientRect();
+      return {
+        width: bounds.width,
+        height: bounds.height,
+        left: bounds.left,
+        right: bounds.right,
+        centerOffset: Math.abs((bounds.left + bounds.right - icon.left - icon.right) / 2),
+      };
+    }));
+    for (const size of sizes) {
+      expect(size.width).toBeGreaterThanOrEqual(48);
+      expect(size.width).toBe(size.height);
+      expect(size.centerOffset).toBeLessThanOrEqual(1);
+    }
+    expect(sizes[1].left - sizes[0].right).toBeGreaterThanOrEqual(8);
+    expect(sizes[1].right).toBeLessThanOrEqual(width);
+  }
+
+  await next.click();
+  await expect(heading).toHaveText('Januar 2030');
+  await expect(page).toHaveURL(/year=2030&month=1$/);
+  await expect(hub.locator('.calendar-sheet__month tbody th').first()).toHaveText('1');
+  await expect(hub.locator('.calendar-sheet__holidays time[datetime^="2030-01-"]')).toHaveCount(2);
+  await previous.press('Enter');
+  await expect(heading).toHaveText('December 2029');
+
+  await page.getByRole('link', { name: 'tedenski planer od 31. decembra do 6. januarja' }).click();
+  await expect(page.locator('[data-calendar-kicker]')).toHaveText('TEDEN 1 / 2030');
+  await expect(page.locator('[data-week-date]')).toHaveValue('2029-12-31');
+
+  await openPublication(page, '/mesecni-koledar/?year=2026&month=1');
+  await expect(previous).toBeDisabled();
+  await openPublication(page, '/mesecni-koledar/?year=2030&month=12');
+  await expect(next).toBeDisabled();
+});
+
+test('weekly planner keeps date and ISO controls usable and notes with their own week', async ({ page }) => {
+  await openPublication(page, '/tedenski-koledar/');
+  const hub = page.locator('#tedenski-nacrt');
+  const controls = hub.locator('.weekly-controls');
+  await page.getByRole('link', { name: 'Odpri tedenski planer' }).click();
+  await expect(page).toHaveURL(/#tedenski-nacrt$/);
+
+  for (const width of [320, 390, 768, 1366]) {
+    await page.setViewportSize({ width, height: 844 });
+    for (const region of [controls, hub.locator('.calendar-sheet__week'), hub.locator('#tedenski-pdf')]) {
+      expect(await region.evaluate(node => node.scrollWidth - node.clientWidth)).toBeLessThanOrEqual(1);
+    }
+  }
+
+  await controls.getByText('Izberi po številki tedna ISO').click();
+  await controls.locator('[data-week-year]').selectOption('2026');
+  await controls.locator('[data-week-number]').fill('53');
+  await controls.getByRole('button', { name: 'Odpri teden ISO' }).click();
+  await expect(hub.locator('[data-week-date]')).toHaveValue('2026-12-28');
+  await expect(hub.locator('[data-calendar-kicker]')).toHaveText('TEDEN 53 / 2026');
+  await expect(hub.locator('.is-holiday time[datetime="2027-01-01"]')).toHaveCount(1);
+
+  await hub.locator('[data-day-notes="2027-01-01"]').fill('Družinski načrt');
+  await hub.locator('[data-period-notes]').fill('Prosti petek');
+  await hub.getByRole('button', { name: 'Naslednji teden' }).click();
+  await expect(hub.locator('[data-period-notes]')).toHaveValue('');
+  await hub.getByRole('button', { name: 'Prejšnji teden' }).click();
+  await expect(hub.locator('[data-day-notes="2027-01-01"]')).toHaveValue('Družinski načrt');
+  await expect(hub.locator('[data-period-notes]')).toHaveValue('Prosti petek');
+
+  await hub.getByRole('link', { name: 'Pripravi PDF' }).click();
+  await expect(page).toHaveURL(/#tedenski-pdf$/);
+  await expect(hub.locator('[data-calendar-paper]')).toBeVisible();
+});

@@ -29,13 +29,13 @@ class PagesController < ApplicationController
     @title=if @person
       "Koledar z imenom #{@person.exact}"
     elsif @sun_city_id
-      "Sončni vzhod in zahod – #{SunEngine::CITIES.fetch(@sun_city_id).first}"
+      "Sončni vzhod in zahod (#{SunEngine::CITIES.fetch(@sun_city_id).first})"
     elsif @calendar_collection
       CalendarCollectionEditorial.title(@page)
     else
-      @page.title
+      @page.display_title
     end
-    @title='Ustvari svoj koledar – spletni urejevalnik' if path=='/ustvari-koledar/'
+    @title='Izdelava koledarja po meri' if path=='/ustvari-koledar/'
     @title=ExpansionCatalog.page(path).fetch(:title) if ExpansionCatalog.page(path)
     if %w[/ /mesecni-koledar/ /tedenski-koledar/].include?(path)
       @year=params[:year].present? ? @year : @today.year.clamp(2026,2030)
@@ -49,11 +49,14 @@ class PagesController < ApplicationController
     if path=='/prazniki/'
       @year=CalendarEngine::YEARS.include?(params[:year].to_i) ? params[:year].to_i : 2027
     end
+    if @calendar_collection && CalendarEngine::YEARS.include?(@year) && PublicCalendarGallery.available?
+      @calendar_collection_designs = PublicCalendarGallery.rows_for(year: @year, month: @page.month)
+    end
     @description=if @person
       PageMetadata.name_description(@person)
     elsif @sun_city_id
       city_name=SunEngine::CITIES.fetch(@sun_city_id).first
-      "#{city_name}: sončni vzhod in zahod, zlata ura ter dolžina dneva v slovenskem času. Izberite datum in si oglejte izračunano pot Sonca."
+      SunLocalEditorial.description(@sun_city_id) || "#{city_name}: sončni vzhod in zahod, zlata ura ter dolžina dneva v slovenskem času."
     else
       PageMetadata.description(@page,year:@year)
     end
@@ -193,6 +196,13 @@ class PagesController < ApplicationController
             end
             image=ExpansionCatalog.image(path)
             x['image'].image { x['image'].loc(base+image.fetch('path')) } if image
+            if path == LunarPhaseGuide::PATH
+              LunarPhaseGuide.phases.filter_map { |phase| phase['photo'] }.each do |photo|
+                x['image'].image { x['image'].loc(base+photo.fetch('path')) }
+              end
+            elsif path == LunarPhaseGuide::NEW_MOON_PATH
+              x['image'].image { x['image'].loc(base+LunarPhaseGuide.new_moon_photos.fetch('mlaj-paranal').fetch('path')) }
+            end
               if (calendar_page=collection_pages[path])
                 PublicCalendarGallery.rows_for(year: calendar_page.year, month: calendar_page.month).each do |row|
                   seo=row.fetch('collection_seo')

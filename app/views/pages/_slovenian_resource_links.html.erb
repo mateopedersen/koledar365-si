@@ -2,6 +2,6 @@
 <ul class="sl-resource-links">
   <% paths.each do |path| %>
     <% _, name, icon, description = rows.fetch(path) %>
-    <li><a href="<%= path %>"><%= tool_directory_icon(icon) %><span><strong><%= name %></strong><% if local_assigns[:descriptions] %><small><%= description %></small><% end %></span><span aria-hidden="true">→</span></a></li>
+    <li><a href="<%= path %>"><%= tool_directory_icon(icon) %><span><strong><%= name %></strong><% if local_assigns[:descriptions] %><small><%= description %></small><% end %></span><span aria-hidden="true"><%= ui_icon('arrow') %></span></a></li>
   <% end %>
 </ul>

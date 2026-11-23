@@ -89,7 +89,7 @@ class SeoTest < ActionDispatch::IntegrationTest
         city=city_index.fetch(id)
         mark=card.at_css('.sun-city-link__mark')
         assert_equal 'img',mark.name
-        assert_equal "#{city.fetch('name')} – fotografija mesta",mark['alt']
+        assert_equal "#{city.fetch('name')} na fotografiji",mark['alt']
         assert_equal "/city-marks/#{id}.svg",mark['src']
         assert_equal 'lazy',mark['loading']
         assert_equal '58',mark['width']
@@ -99,7 +99,8 @@ class SeoTest < ActionDispatch::IntegrationTest
         credit=card.at_css('.sun-city-link__credit')
         assert_equal "/fotografije-in-licence/##{id}",credit['href']
         assert_includes credit.text,city.dig('photo','author')
-        assert_includes credit.text,city.dig('photo','license')
+        license = city.dig('photo','license')
+        assert_includes credit.text, license == 'Public domain' ? 'Javna domena' : license
       end
     end
     assert_select 'a[href="/soncni-vzhod-in-zahod/zrece/"]',minimum:1

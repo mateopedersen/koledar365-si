@@ -1,0 +1,12 @@
+<section class="astro-next" aria-labelledby="astro-next-title">
+  <span class="eyebrow" id="astro-next-title"><%= schedule.next_label %></span>
+  <div data-next-event <%= 'hidden' unless upcoming %>>
+    <div class="moon-next__when">
+      <time class="astro-next-date" data-next-date datetime="<%= upcoming&.dig('utc') %>"><%= astro_date(upcoming['date']) if upcoming %></time>
+      <span class="astro-next-time" data-next-time><%= "#{upcoming['time']} #{upcoming['zone']}" if upcoming %></span>
+    </div>
+    <p class="astro-next-context" data-next-context><%= upcoming&.dig('label') %> · Europe/Ljubljana</p>
+    <div class="astro-countdown"><span>Do dogodka</span><strong data-countdown="<%= upcoming&.dig('utc') %>"><%= astro_countdown(upcoming['utc']) if upcoming %></strong></div>
+  </div>
+  <p data-next-empty <%= 'hidden' if upcoming %>>Pregled sega do konca leta 2030. Za poznejši dogodek potrebujemo novo efemerido.</p>
+</section>

@@ -1,61 +1,31 @@
 {
   "/": {
-    "title": "Koledar za različne vrste načrtov",
+    "title": "Kako uporabiti slovenski koledar za skupen teden",
     "paragraphs": [
-      "Za datum ali ročni vpis uporabite mesečni pogled. Kadar razporejate delo, najprej poglejte zakonske dela proste dni in nato prilagodite delovni teden. Za izlete po svetlem primerjajte krajevne ure Sonca, pri šolskem načrtu pa najprej izberite šolsko leto."
+      "Družina, ki razporeja varstvo in prevoz, naj najprej poišče občino šole v [pregledu šolskih počitnic](/solske-pocitnice/). Dva otroka lahko obiskujeta šoli iz različnih skupin. V osebni koledar vpišite prvi in zadnji dan varstva za vsakega posebej. Za dneve, ko je šola zaprta, preverite še, ali gre za [dela prost dan](/prazniki/) tudi po zakonu.",
+      "Če želite razpored obesiti na hladilnik, v koledarju odprite izbrani mesec in uporabite Natisni. Za urejanje na drugi napravi izvozite dogodke kot ICS, za nadaljevanje dela v Koledar365 pa shranite varnostno kopijo. Zapiski in opravila so vezani na brskalnik, v katerem jih vnesete."
     ],
     "links": [
-      "/blog/",
-      "/prazniki/",
-      "/soncni-vzhod-in-zahod/"
+      "/druzinski-planer/",
+      "/blog/osebni-koledar-ics-med-napravami/"
     ],
     "sources": [
-      "holidays"
+      "holidays",
+      "basic-school"
     ]
   },
   "/koledar/": {
-    "title": "Kako izbrati letni ali mesečni koledar",
+    "title": "Kako brati teden čez novo leto",
     "paragraphs": [
-      "V letnem pogledu najprej označite termine, ki vplivajo na več mesecev, na primer počitnice in daljše odsotnosti. Nato odprite posamezni mesec, da določite teden, natisnete podrobnejšo mrežo ali preverite natančen datum. Kadar sledite določenemu tednu ob prehodu leta, je pri zapisu pomembno tudi leto tedna ISO.",
-      "Za delovni pregled primerjajte letni koledar z izračunom delovnih dni. Barva praznika pokaže oznako dneva, izračun pa upošteva, ali bi bil ta dan po izbranem urniku deloven."
+      "Petek, 1. januarja 2027, je v koledarskem letu 2027 in v 53. tednu ISO leta 2026. Prvi teden ISO leta 2027 se začne šele v ponedeljek, 4. januarja.",
+      "Če načrt za ekipo sega čez novo leto, ob številki tedna navedite leto ISO ali zapišite datuma od–do. Za ta primer odprite konec decembra 2026 in začetek januarja 2027."
     ],
     "links": [
-      "/delovni-dnevi/",
-      "/stevilka-tedna/",
-      "/blog/stenski-koledar-izbira-in-tisk/"
+      "/koledar/2026/december/",
+      "/koledar/2027/januar/",
+      "/stevilka-tedna/"
     ],
-    "sources": [
-      "iso",
-      "holidays"
-    ]
-  },
-  "/mesecni-koledar/": {
-    "title": "Od mesečnega pregleda do izvedljivega tedna",
-    "paragraphs": [
-      "Na začetku meseca vnesite dogodke s fiksnim datumom. Opravila, ki jih lahko prestavite, razporedite šele po pregledu prostih dni. Zadnjo vrstico mesečne mreže preglejte skupaj z začetkom naslednjega meseca, da naloga ne izgine na robu obeh pogledov."
-    ],
-    "links": [
-      "/tedenski-koledar/",
-      "/dnevni-planer/",
-      "/blog/druzinski-planer-odgovornosti-prevozi/"
-    ],
-    "sources": [
-      "iso"
-    ]
-  },
-  "/tedenski-koledar/": {
-    "title": "Kaj zapišemo, ko delimo številko tedna",
-    "paragraphs": [
-      "Pri dogovoru za teden navedite začetni ponedeljek in leto tedna. V prvih dneh januarja lahko številka pripada prejšnjemu letu. Če dogovarjate en sam sestanek, dodajte konkreten datum, uro in po potrebi časovni pas."
-    ],
-    "links": [
-      "/stevilka-tedna/",
-      "/mesecni-koledar/",
-      "/blog/tedenski-koledar-pregled-v-30-minutah/"
-    ],
-    "sources": [
-      "iso"
-    ]
+    "sources": []
   },
   "/prazniki/": {
     "title": "Kdaj praznik vpliva na delovni urnik?",
@@ -73,23 +43,28 @@
     ]
   },
   "/pomembni-dnevi/": {
-    "title": "Obeležja uporabite za teme in opomnike",
+    "title": "Kateri pomembni dnevi so uporabni za vaš letni načrt?",
     "paragraphs": [
-      "Dan kulture ali mednarodno obeležje je lahko uporaben kot iztočnica za dogodek, učno uro ali družinski obisk. Preden ga dodate kot prost dan, preverite ločen seznam zakonskih praznikov. Na mesečni strani poiščite še podatke o izvirnem organizatorju in o tem, ali je datum pravilo ali objavljeni termin."
+      "Za jesenski šolski načrt odprite [oktobrska obeležja](/pomembni-dnevi/oktober/). [Svetovni dan učiteljev](/pomembni-dnevi/svetovni-dan-uciteljev/) je 5. oktobra, datum slovenske podelitve nagrad pa preverite v objavi za konkretno leto. Pri načrtovanju pouka ali varstva ločeno preverite [šolski koledar](/solski-koledar/).",
+      "Za dogodke ob prehodu v november preverite vrsto datuma. Noč čarovnic in dan reformacije sta oba 31. oktobra, toda status dela prostega dne ima [dan reformacije](/prazniki/dan-reformacije/). Če iščete obisk dogodka z določeno uro in krajem, odprite še [festivalski koledar](/festivali/) in preverite objavo organizatorja."
     ],
     "links": [
       "/prazniki/",
-      "/mesecni-koledar/",
-      "/blog/letni-koledar-nacrt-za-12-mesecev/"
+      "/solski-koledar/",
+      "/festivali/"
     ],
     "sources": [
-      "holidays"
+      "holidays",
+      "basic-school"
     ]
   },
   "/delovni-dnevi/": {
-    "title": "Pri izračunu začnite z dejanskim urnikom",
+    "title": "Kako izračunamo delovne dni in mesečni fond ur?",
     "paragraphs": [
-      "Izberite delovne dneve tedna, šele potem nastavite ure. Če imate izmenski razpored, enaka mesečna norma za običajen ponedeljek–petek morda ne opiše vašega meseca. Za preverjanje razlike izračunajte isti mesec z običajnim in s svojim urnikom."
+      "Pri običajnem delovniku v Sloveniji najprej preštejemo dneve od ponedeljka do petka. Ko je vključena možnost »Odštej praznike«, odštejemo zakonsko določene dela proste dneve, ki padejo na izbrane delovne dni. Enako pravilo velja za premične praznike, kot je velikonočni ponedeljek. Dan Primoža Trubarja se šteje kot običajen delovni dan, če pade na delovnik. Njegov status in druge izjeme lahko preverite na [uradnem seznamu praznikov in dela prostih dni](@holidays).",
+      "V [letu 2027](/delovni-dnevi/2027/) je pri urniku od ponedeljka do petka 255 delovnih dni oziroma 2040 delovnih ur pri osmih urah na dan. V [januarju 2027](/delovni-dnevi/2027/januar/) je 21 dni od ponedeljka do petka. Novo leto 1. januarja je v petek, 2. januar pa je sobota. Po odštetju petka ostane 20 delovnih dni oziroma 160 ur. Če za isti mesec nastavite 7,5 ure na dan, dobite 150 ur.",
+      "Mesečni fond ur lahko primerjate pred odštetjem praznikov in po njem. V januarskem primeru je pri osmih urah razlika med 168 in 160 urami osem ur novoletnega praznika. Za obračun plače, prazničnih nadomestil in odsotnosti uporabite razpored in evidenco delovnega časa pri delodajalcu. [Pojasnila o delovnem času in evidencah](@labour).",
+      "Pri krajšem delovnem času nastavite dejansko število ur na dan. Če redno delate ob sobotah, jih dodajte med delovne dni. Ponavljajoči se cikel, na primer štiri delovne dni in dva prosta dneva, lahko prikažete z [razporedom izmen](/razpored-izmen/). Za poljubno obdobje odprite [kalkulator delovnih dni med datumoma](/kalkulator-delovnih-dni/) in izberite, ali v štetje vključite začetni in končni datum."
     ],
     "links": [
       "/kalkulator-delovnih-dni/",
@@ -176,14 +151,14 @@
     ]
   },
   "/podaljsani-vikendi/": {
-    "title": "Primerjajte porabo dopusta in dolžino oddiha",
+    "title": "Podaljšani vikendi v Sloveniji: tri primerjave porabe dopusta",
     "paragraphs": [
-      "Termin ocenite po dveh številkah: zaporedni prosti koledarski dnevi in delovni dnevi, ki jih je treba pokriti z dopustom. Najprej primerjajte dva predloga pri enakem proračunu. Odobritev in vaš dejanski razpored preverite pred rezervacijo."
+      "Ob urniku od ponedeljka do petka lahko [junija 2027](/podaljsani-vikendi/2027/) z enim ponedeljkom dopusta povežete štiri proste dni. [Spomladi 2029](/podaljsani-vikendi/2029/) en ponedeljek poveže šest dni, ker sledita oba prvomajska praznika. [Konec oktobra 2030](/podaljsani-vikendi/2030/) štirje dnevi nastanejo brez dopusta, če sta sobota in nedelja prosti.",
+      "Uporabite oba stolpca v preglednici. Če morate v ponedeljek nazaj na delo, izločite predlog, ki se konča v ponedeljek ali pozneje, čeprav ima najugodnejše razmerje. Pri rednem sobotnem delu preverite termine še v [kalkulatorju z lastnim urnikom](/kalkulator-delovnih-dni/)."
     ],
     "links": [
-      "/nacrtovalnik-dopusta/",
-      "/podaljsani-vikendi/2027/",
-      "/blog/dopust-s-prazniki-in-solskim-letom/"
+      "/podaljsani-vikendi/2028/",
+      "/nacrtovalnik-dopusta/"
     ],
     "sources": [
       "holidays",
@@ -236,27 +211,28 @@
     ]
   },
   "/dnevni-planer/": {
-    "title": "En dan razdelite na urnik in opravila",
+    "title": "Dnevni planer za tisk in razpored po urah",
     "paragraphs": [
-      "Termine z natančno uro zapišite po vrstnem redu, med lokacijami rezervirajte čas za pot. Opravila brez ure hranite na ločenem seznamu. Pred koncem dneva označite, katera opravila prenesete v naslednji dan in katera lahko opustite."
+      "Izberite dan in nastavite prvo ter zadnjo uro. Če se sestanki začnejo ob 9.00 in po 16.00 nimate obveznosti, zožite urnik na ta čas. Za termin, ki zahteva pot, vnesite še ločeno obdobje odhoda. Tako ga pri pregledu dneva ne boste zamenjali s časom samega sestanka.",
+      "Primer za dan z dvema lokacijama: sestanek je od 9.00 do 9.45, pot do druge lokacije traja 25 minut, naslednji termin pa se začne ob 10.30. Po vnosu poti do 10.10 ostane 20 minut rezerve. Opravilo brez določenega časa zapišite v opombe, da ne zasede ure, ki jo potrebujete za termin.",
+      "Preden prenesete PDF, preverite datum in ali ima zadnja ura v prikazu dovolj prostora za opombe. Če obveznost zahteva pripravo dan prej, razporedite oba dneva v [tedenskem planerju](/tedenski-koledar/). Pri izmenjavi dogodkov uporabite [vodnik za uvoz ICS](/blog/osebni-koledar-ics-med-napravami/)."
     ],
     "links": [
-      "/tedenski-koledar/",
-      "/druzinski-planer/",
-      "/blog/druzinski-planer-odgovornosti-prevozi/"
+      "/predloge-urnikov/"
     ],
     "sources": [
       "ics"
     ]
   },
   "/druzinski-planer/": {
-    "title": "Dogovor naj pokaže tudi odgovorno osebo",
+    "title": "Družinski tedenski planer: prevzemi, obroki in deljenje",
     "paragraphs": [
-      "Pri skupnih prevozih ali prevzemih poleg ure dodajte osebo in kraj. Pri spremembi označite, ali je nadomestna oseba že potrdila dogovor. Za deljenje pripravite različico brez podrobnosti, ki jih prejemniki ne potrebujejo."
+      "V razdelku »Člani družine« dodajte osebi, ki si delita prevoze. Za torkov trening ob 16.30 vnesite uro, v naslov dodajte kraj in izberite člana, ki opravi prevoz. Če je v četrtek prevzem drugje, ga zapišite kot samostojen dogodek. Ponavljanje izberite samo pri obveznosti, ki ima vsak teden isti termin.",
+      "Pri jedilniku vnesite obrok po dnevih, nato na nakupovalni seznam dodajte le sestavine, ki jih doma nimate. Za hladilnik uporabite »Natisni teden«. Za prenos v novo napravo izvozite kopijo JSON. Če želite v drugi koledar prenesti termine, uporabite »Izvozi v koledar« in po uvozu preverite primer enega ponavljajočega se dogodka. [Postopek preizkusa datoteke ICS](/blog/osebni-koledar-ics-med-napravami/)."
     ],
     "links": [
       "/solski-urnik/",
-      "/tedenski-koledar/",
+      "/solske-pocitnice/",
       "/blog/druzinski-planer-odgovornosti-prevozi/"
     ],
     "sources": [
@@ -264,60 +240,32 @@
     ]
   },
   "/rojstnodnevni-koledar/": {
-    "title": "Letni opomniki in posebni datumi",
+    "title": "Rojstni dnevi 29. februarja in izvoz v osebni koledar",
     "paragraphs": [
-      "Pri rojstnem dnevu 29. februarja se vnaprej odločite za opomnik v letu brez tega datuma. Če rojstne dneve delite v družini, mladoletne ali druge občutljive vnose po potrebi hranite samo v zasebni kopiji. V uvoženi datoteki preverite, da ostanejo dogodki celodnevni."
+      "Pri osebi, rojeni 29. februarja, ohranite izvirni datum. V nastavitvah izberite, ali naj se v neprestopnem letu opomnik pojavi 28. februarja ali 1. marca. Možnost Samo prestopna leta je primerna, če želite vnos le na pravi datum. [Pregled prestopnih let](/prestopno-leto/) vam pomaga preveriti, katero pravilo se uporabi.",
+      "Za preizkus dodajte en rojstni dan in izvozite ICS. Na drugi napravi ga uvozite v ločen koledar in preverite, ali je vnos celodneven. Nato v ciljni aplikaciji nastavite obvestilo, denimo dva dni prej, če želite imeti čas za voščilo.",
+      "Za skupni seznam zadostujeta ime in dan praznovanja. Pravo leto rojstva ali druge osebne podatke dodajte le v zasebno različico. Če boste vnose pozneje urejali na tem mestu, izvozite tudi varnostno kopijo."
     ],
     "links": [
-      "/prestopno-leto/",
-      "/druzinski-planer/",
-      "/blog/rojstnodnevni-koledar-opomniki-za-vse-leto/"
+      "/blog/rojstnodnevni-koledar-opomniki-za-vse-leto/",
+      "/blog/osebni-koledar-ics-med-napravami/"
     ],
     "sources": [
       "ics"
     ]
   },
   "/prazen-koledar/": {
-    "title": "Mrežo izberite glede na količino zapiskov",
+    "title": "Kdaj natisniti prazen mesečni in kdaj tedenski koledar?",
     "paragraphs": [
-      "Če pišete z roko, je pri več dogodkih na dan primernejša večja mreža, tudi če zato natisnete več listov. Če bo koledar na hladilniku ali omari, naredite en poskusni natis. Preverite vidnost črt in prostor za daljše zapise."
+      "Mesečna mreža je primerna za datume pregledov, vadb in izmen, kadar na posamezen dan zapišete kratko oznako. Izberite predlogo brez datumov, če želite vedno znova tiskati isti list. Za razpored, ki ga bodo uporabljali tudi drugi, vklopite datume in preverite izbrani mesec, da se zaporedje začne pod pravim dnevom.",
+      "Če ima isti dan več vnosov, poskusite tedensko postavitev. Za člane gospodinjstva, ki si delijo opravila, pustite ločene vrstice ali uporabite [družinski planer](/druzinski-planer/). Pikčasta podlaga je uporabna za risanje polj, črte za krajše zapise, prazno polje pa za daljše opombe.",
+      "Preden natisnete več listov, preizkusite eno stran in preverite, ali so vidne zunanje črte mreže. V programu za tisk izberite velikost lista, ki je navedena na predlogi. Če želite že vpisane praznike, izberite [koledar z datumi za tisk](/koledar-za-tiskanje/)."
     ],
     "links": [
-      "/koledar-za-tiskanje/",
-      "/ustvari-koledar/",
       "/blog/stenski-koledar-izbira-in-tisk/"
     ],
     "sources": [
       "paper"
-    ]
-  },
-  "/koledar-za-tiskanje/": {
-    "title": "Prvi list natisnite kot preizkus",
-    "paragraphs": [
-      "Izberite format in usmerjenost, ki ju podpira tiskalnik. Pri dejanski velikosti preverite vse robove. Če tiskalnik zahteva prilagajanje strani, preverite, ali se občutno zmanjša prostor za ročno pisanje. Pred tiskanjem več mesecev preizkusite tudi sivinski način."
-    ],
-    "links": [
-      "/prazen-koledar/",
-      "/ustvari-koledar/",
-      "/blog/stenski-koledar-izbira-in-tisk/"
-    ],
-    "sources": [
-      "paper"
-    ]
-  },
-  "/ustvari-koledar/": {
-    "title": "Osnutek, datoteka projekta in končni PDF",
-    "paragraphs": [
-      "PDF pokaže razporeditev za tisk. Za nadaljnje urejanje shranite tudi datoteko projekta in jo za preizkus ponovno odprite. Če delite samo končni koledar, preverite, ali izvoz vsebuje fotografije ali osebne vnose, ki jih ne želite deliti."
-    ],
-    "links": [
-      "/koledar-za-tiskanje/",
-      "/zasebnost/",
-      "/blog/oblikuj-lastni-koledar-projekt-pdf-izvoz/"
-    ],
-    "sources": [
-      "paper",
-      "ics"
     ]
   },
   "/solske-pocitnice/": {
@@ -336,39 +284,50 @@
     ]
   },
   "/solski-koledar/": {
-    "title": "Šolsko leto ni isto kot koledarsko leto",
+    "title": "Kako uporabljati šolski koledar 2026/2027",
     "paragraphs": [
-      "V šolski pregled vnesite leto v obliki 2026/2027. Jesen in naslednja pomlad pripadata istemu šolskemu letu. Pri pripravi opomnikov ločite pouka proste dni, počitnice ter izpite, saj lahko vsak del uporablja drugačno vrsto potrditve."
+      "Šolsko leto poteka od 1. septembra 2026 do 31. avgusta 2027. V izbirniku najprej določite raven šole, nato razred oziroma letnik in lokacijo šole. Tako je lažje poiskati zaključek pouka ali izpitni rok, ki velja za vašega otroka, tudi če spremljate več šolskih urnikov.",
+      "Za devetošolca, ki obiskuje šolo v Kočevju, izberite osnovno šolo, 9. razred in zahodno skupino. Kočevje je ena od občinskih izjem v jugovzhodni Sloveniji, zato zimske počitnice tam trajajo od 22. do 26. februarja 2027. Če je drugi otrok v šoli v Mariboru, njegov oddih traja od 15. do 19. februarja. Celoten seznam skupin najdete v [pregledu zimskih počitnic po regijah](/solske-pocitnice/#zimske-regije).",
+      "Pri načrtovanju junija poglejte posebej zadnji dan pouka in začetek uradnih počitnic. Pouk v 9. razredu se konča 15. junija 2027, v 1.–8. razredu pa 24. junija. V srednji šoli imajo zaključni letniki zadnji dan pouka 21. maja, drugi letniki 24. junija. Za izpit, ki sledi koncu pouka, preverite tudi razpored šole. Splošne poletne počitnice so v koledarju navedene od 28. junija do 31. avgusta.",
+      "Za nacionalno preverjanje znanja odprite [NPZ 2027 po razredih](/npz/). Devetošolci v pregledu najdejo datum tretjega predmeta, ime predmeta za posamezno šolo pa na [seznamu osnovnih šol in predmetov na GOV.SI](@npz-third-subject). Dijaki lahko [v koledarju mature](/matura/2027/) izberejo splošno ali poklicno maturo ter spremljajo pisne izpite in skupna obdobja ustnih izpitov. Osebni razpored ustnih izpitov določi šola.",
+      "Ko je izbor pripravljen, označite samo datume, ki jih potrebujete, in prenesite datoteko ICS. Brez označenih dogodkov se prenese celoten filtrirani prikaz. Za dva otroka lahko pripravite ločena izvoza in ju uvozite v dva koledarja. Za papirni pregled uporabite »Natisni / shrani PDF«. Če želite datume dopolniti z urami, učilnicami in tedenskimi obveznostmi, uporabite [osebni šolski urnik](/solski-urnik/)."
     ],
     "links": [
       "/solske-pocitnice/",
       "/npz/",
+      "/matura/2027/",
+      "/vpisni-koledar/",
       "/blog/izpitni-roki-koledar-ucenja/"
     ],
     "sources": [
       "basic-school",
-      "secondary-school"
+      "secondary-school",
+      "ric-npz"
     ]
   },
   "/solski-urnik/": {
-    "title": "Uporaben urnik vsebuje ure in prostor",
+    "title": "Kako sestaviti šolski urnik, ki ga lahko uporabljaš vsak dan",
     "paragraphs": [
-      "Pri zaporednih urah preverite prostor in prehod med učilnicama. Če se urnik izmenjuje po tednih, shranite vzorec za oba in ju označite z datumom ali tednom ISO. Poskusno različico preizkusite na telefonu in na papirju."
+      "V tedenskem planerju začni z razporedom, ki ga je objavila tvoja šola. Če imaš matematiko v ponedeljek od 8.00 do 8.45 v učilnici 204, dodaj predmet ter vpiši dan, začetek, konec in učilnico. Pri zaporednih urah poglej, koliko časa imaš za menjavo prostora. Šolska ura v osnovni šoli praviloma traja 45 minut, začetek, konec in odmori pa naj sledijo razporedu tvoje šole. [Kako osnovne šole organizirajo pouk](@school-organisation).",
+      "Domačo nalogo dodaj kot obveznost z rokom. Če moraš v petek oddati plakat za zgodovino, vpiši predmet in rok oddaje ter obveznost po oddaji označi kot opravljeno. V izvoz tedenskega planerja se ob predmetih vključijo odprti roki v izbranem datumskem razponu. Tedenski planer pri izvozu ohrani običajne ure tudi med počitnicami.",
+      "Če potrebuješ datume za cel semester, izberi »Urnik za obdobje«. S funkcijo »Dodaj predmete iz tedenskega planerja« lahko preneseš ure iz svojih vnosov v tem brskalniku. Domače naloge ostanejo v tedenskem planerju. Za redni pouk izberi »Vsak teden«, za nadomeščanje ali enkratno delavnico pa »Samo en datum«. Pri nadomeščanju preveri, ali se prekriva z redno uro. Obdobni urnik prikaže opozorilo, o popravku pa odločiš ti.",
+      "V [šolskem koledarju](/solski-koledar/) preveri začetek in konec obdobja. Primer za osnovno šolo v Mariboru: če ponedeljkovo uro vpišeš za februar 2027, izbereš vzhodno skupino in izpuščanje počitnic ter praznikov, ostaneta samo 1. in 22. februar. Orodje izpusti 8. februar zaradi [Prešernovega dne](/prazniki/presernov-dan/) in 15. februar zaradi [zimskih počitnic](/solske-pocitnice/#zimske-regije). Za nadomeščanja in posebne proste dneve preveri še obvestila šole.",
+      "Za izpis na papir ali PDF natisni tedenski načrt. V obdobnem urniku se natisne teden, ki ga vidiš v predogledu. Če želiš samo prazen list za ročno izpolnjevanje, izberi [predlogo urnika za tisk](/predloge-urnikov/#orodje). Datoteka ICS prenese dogodke v aplikacijo za koledar, kopija JSON pa shrani vnose za urejanje v istem načinu na drugi napravi. Če uporabljaš oba načina, shrani dve kopiji. Po spremembi urnika po potrebi ponovi izvoz ICS in pred ponovnim uvozom preveri obstoječe dogodke."
     ],
     "links": [
-      "/solski-koledar/",
-      "/stevilka-tedna/",
-      "/blog/druzinski-planer-odgovornosti-prevozi/"
+      "/druzinski-planer/",
+      "/blog/izpitni-roki-koledar-ucenja/"
     ],
     "sources": [
       "basic-school",
-      "iso"
+      "secondary-school",
+      "ics"
     ]
   },
   "/studijski-koledar/": {
     "title": "Od splošnega semestra do roka fakultete",
     "paragraphs": [
-      "Najprej uporabite študijski koledar za okvir semestra. Nato zabeležite roke svoje članice, predmetne prijave in datum izpita, kadar je objavljen. Pri prepisovanju roka navedite predmet in povezavo do objave, ker enak teden še ne pomeni enakega urnika."
+      "Najprej uporabite študijski koledar za okvir semestra. Nato zabeležite roke svoje članice, predmetne prijave in datum izpita, kadar je objavljen. Pri prepisovanju roka navedite predmet in povezavo do objave. Ko imate potrjen izpitni termin, razporedite preostale ure v [študijskem načrtovalniku](/studijski-nacrtovalnik/)."
     ],
     "links": [
       "/tedenski-koledar/",
@@ -380,24 +339,33 @@
     ]
   },
   "/npz/": {
-    "title": "Ločite datum pisanja od objave rezultatov",
+    "title": "Rezultati NPZ 2027, vpogled in priprava",
     "paragraphs": [
-      "Izberite ustrezen razred, nato preverite predmet in vrsto roka. Pred vnosom v osebni koledar ločite datum pisanja, obvestilo o dosežkih in morebitni naslednji korak. Za izvedbo na šoli sledite obvestilom šole."
+      "Če spremljate NPZ za več otrok, najprej primerjajte datume pisanja. V [3. razredu](/npz/3-razred/) sta jezikovni preizkus 22. marca in matematika 1. aprila 2027. Ista datuma veljata tudi za [6. razred](/npz/6-razred/) in [9. razred](/npz/9-razred/). Dne 24. marca šestošolci pišejo tuji jezik, angleščino ali nemščino, devetošolci pa tretji predmet, določen za njihovo šolo.",
+      "Tretji predmet NPZ za 9. razred poiščite v [objavi ministrstva s seznamom osnovnih šol za 2026/2027](@npz-third-subject). V seznamu poiščite ime šole ter preverite predmet in program. V prilagojenem programu z nižjim izobrazbenim standardom je tretji predmet naravoslovje.",
+      "Ko šola učence seznani z rezultati, lahko učenec ali starši v [portalu Dosežki NPZ](@ric-npz-portal) odprejo izpis in ovrednotene naloge. Za dostop potrebujete učenčevo številko EMŠO in šifro NPZ, ki jo učenec prejme pri prvem preizkusu. Rok za vpogled preverite v preglednici po razredih. Če imate vprašanje glede točkovanja posamezne naloge, se v obdobju vpogleda obrnite na šolo. [Postopek vpogleda in ponovnega vrednotenja pri RIC](@ric-npz-results).",
+      "Dosežki pomagajo ugotoviti, kaj učenec že dobro obvlada in kje potrebuje vajo. Pri devetošolcih so lahko tudi eno od meril pri omejitvi vpisa v srednjo šolo. [Pojasnilo ministrstva o vlogi NPZ pri vpisu](@gov-npz). Za prijavo, morebitni prenos prijave in vpisne roke uporabite [vpisni koledar za srednje šole](/vpisni-koledar/).",
+      "Za pripravo izberite razred in predmet med [gradivi RIC za NPZ](@ric-npz-subjects). Rešite nekaj nalog iz preteklega preizkusa, nato odprite navodila za vrednotenje in pri vsaki nalogi preverite, kateri korak prinese točko. Če ima otrok pravico do prilagoditev pri opravljanju preizkusa, se o izvedbi pravočasno pogovorite s šolo.",
+      "V razdelku »Vaš pregled« izberite razred ter označite datume pisanja, seznanitve z dosežki in vpogleda. Prenesite jih kot datoteko ICS za uvoz v osebni koledar ali jih natisnite. Če spremljate dva razreda, lahko za vsakega pripravite ločen izvoz. Druge šolske obveznosti in zaključek pouka najdete v [šolskem koledarju 2026/2027](/solski-koledar/)."
     ],
     "links": [
-      "/npz/3-razred/",
-      "/npz/6-razred/",
-      "/npz/9-razred/",
-      "/blog/izpitni-roki-koledar-ucenja/"
+      "/solski-koledar/",
+      "/vpisni-koledar/"
     ],
     "sources": [
-      "basic-school"
+      "ric-npz",
+      "npz-third-subject",
+      "ric-npz-results"
     ]
   },
   "/matura/2027/": {
-    "title": "Najprej vrsta mature, nato rok",
+    "title": "Kako uporabljati koledar mature 2027",
     "paragraphs": [
-      "Splošna in poklicna matura imata ločena urnika. Vrsto mature izberite pred prepisovanjem datumov v koledar. Načrt priprav z razširjenim seznamom nalog hranite ločeno od zavezujočih datumov šole ali izdajatelja."
+      "V razdelku »Vaš pregled« najprej izberite [splošno maturo](/matura/2027/splosna/) ali [poklicno maturo](/matura/2027/poklicna/). Nato izberite spomladanski ali jesenski izpitni rok in označite predmete, ki jih opravljate. Skupni dogodki, kot so prijava in rezultati, ostanejo v prikazu tudi po izbiri predmetov. S filtrom »Vrsta dogodka« lahko prikažete na primer samo pisne izpite.",
+      "Če spomladi opravljate matematiko, je pisni izpit pri obeh vrstah mature 5. junija 2027. Datuma rezultatov sta različna. Rezultati poklicne mature so predvideni 8. julija, splošne pa 13. julija. Datume lahko primerjate v [uradnem koledarju splošne mature](@ric-general-matura) in [uradnem koledarju poklicne mature](@ric-vocational-matura).",
+      "Pri obeh vrstah mature spomladanski ustni izpiti praviloma potekajo od 9. do 23. junija 2027. Šola jih lahko izjemoma razporedi tudi na 29. maj ali 5. junij. Pri poklicni maturi junijsko obdobje vključuje tudi četrti predmet. Preden uredite prevoz ali si rezervirate prost dan, preverite svoj datum, uro in učilnico v razporedu šole.",
+      "Po objavi rezultatov preverite tudi rok za vpogled. Pri splošni maturi sta elektronski vpogled in oddaja e-ugovora predvidena od 13. do 15. julija. Pri poklicni maturi je treba pisno zahtevo za vpogled oddati na šoli do 11. julija. Če načrtujete jesenski rok, si vnaprej zabeležite tudi prijavo. Redni rok na šoli je 9. julija za poklicno in 14. julija za splošno maturo.",
+      "Označene datume lahko natisnete ali jih s prenosom ICS dodate v svoj koledar. Če ne označite nobenega, izvoz zajame trenutni filtrirani prikaz. Vnose uvozite kot celodnevne dogodke in jim po potrebi dopišite uro iz razporeda šole. Uvožena datoteka se ne posodablja sama. Termine za učenje si razporedite posebej po korakih iz [vodnika za pripravo na izpitne roke](/blog/izpitni-roki-koledar-ucenja/)."
     ],
     "links": [
       "/matura/2027/splosna/",
@@ -405,7 +373,8 @@
       "/blog/izpitni-roki-koledar-ucenja/"
     ],
     "sources": [
-      "secondary-school"
+      "ric-general-matura",
+      "ric-vocational-matura"
     ]
   },
   "/matura/2027/splosna/": {
@@ -508,33 +477,20 @@
     ]
   },
   "/lunin-koledar/": {
-    "title": "Dnevna osvetljenost, mena in krajevni vzhod",
+    "title": "Mesečni lunin koledar: izberite pravilen podatek za opazovanje",
     "paragraphs": [
-      "V mesečni mreži primerjajte osvetljenost po dnevih. Točen trenutek mlaja ali polne Lune vzemite iz seznama men. Če je cilj opazovanje, dodajte še krajevni vzhod in zahod Lune za isti datum, saj astronomski trenutek sam ne določa vidnosti."
+      "Če iščete naslednji ščip, odprite seznam [točnih datumov luninih men](/lunine-mene/). Če primerjate osvetljenost na več zaporednih večerih, odprite mesečno mrežo. [December 2028](/lunin-koledar/2028/december/) je uporaben preizkus, ker ima dve polni luni. Z obeh datumov zapišite tudi uro, saj se ščip lahko zgodi pred zoro ali po sončnem zahodu.",
+      "Za dejanski ogled v [krajevnem izračunu vzhoda in zahoda](/lunin-vzhod-in-zahod/) izberite isti datum in mesto. Na primer, za silvestrski načrt v Kranju vnesite Kranj in 31. december 2028. Nato določite del večera, ko je Luna nad obzorjem, in preverite vremenske razmere. Osvetljenost sama ne pove, ali bo nebo jasno."
     ],
     "links": [
-      "/lunine-mene/",
+      "/mlaj/",
       "/polna-luna/",
       "/blog/lunin-koledar-opazovalni-dnevnik/"
     ],
     "sources": [
       "moon",
-      "sun"
-    ]
-  },
-  "/lunine-mene/": {
-    "title": "Od datuma mene do opazovanja",
-    "paragraphs": [
-      "Trenutek mene se v tabeli pretvori v slovenski čas. Pri branju zunanje tabele v UTC lahko pretvorba spremeni tudi datum. Za opazovanje preverite, ali je Luna nad obzorjem v vašem kraju. Dnevno osvetljenost primerjajte za enako uro."
-    ],
-    "links": [
-      "/lunin-koledar/",
-      "/mlaj/",
-      "/blog/lunin-koledar-opazovalni-dnevnik/"
-    ],
-    "sources": [
-      "moon",
-      "sun"
+      "sun",
+      "weather"
     ]
   },
   "/polna-luna/": {
@@ -545,21 +501,6 @@
     "links": [
       "/lunine-mene/",
       "/lunin-koledar/",
-      "/blog/lunin-koledar-opazovalni-dnevnik/"
-    ],
-    "sources": [
-      "moon",
-      "sun"
-    ]
-  },
-  "/mlaj/": {
-    "title": "Kaj mlaj pomeni za temno nebo",
-    "paragraphs": [
-      "Ob mlaju je z Zemlje osvetljena stran Lune obrnjena pretežno stran od nas. Za opazovanje zvezd preverite še mrak, oblačnost in svetlobno onesnaženje. Datum mlaja je dobra začetna točka za izbiro noči, potem pa primerjajte še krajevno vidnost."
-    ],
-    "links": [
-      "/lunine-mene/",
-      "/perzeidi/",
       "/blog/lunin-koledar-opazovalni-dnevnik/"
     ],
     "sources": [
@@ -627,20 +568,6 @@
       "timezone"
     ]
   },
-  "/letni-casi/": {
-    "title": "Astronomski in meteorološki letni časi",
-    "paragraphs": [
-      "Pri primerjavi datumov preberite opredelitev. Astronomsko mejo določata enakonočje ali solsticij. Meteorološko načrtovanje uporablja skupine celih mesecev. Za opazovanje svetlobe na izletu odprite še podatek za svoj kraj in datum."
-    ],
-    "links": [
-      "/dolzina-dneva/",
-      "/soncni-vzhod-in-zahod/",
-      "/blog/nacrt-izleta-po-svetlobi/"
-    ],
-    "sources": [
-      "seasons"
-    ]
-  },
   "/horoskop/": {
     "title": "Kaj pomeni datum dnevnega besedila",
     "paragraphs": [
@@ -670,17 +597,17 @@
     ]
   },
   "/orodja/": {
-    "title": "Izberite orodje glede na vrsto vprašanja",
+    "title": "Kateri koledarski pripomoček uporabiti za vaš rok?",
     "paragraphs": [
-      "Za razmik uporabite datumski kalkulator. Če vas zanima delo, nastavite urnik v kalkulatorju delovnih dni. Za tisk in deljenje uporabite predlogo ali urejevalnik ter preverite format dokumenta. Če izbirate med dvema podobnima možnostma, začnite pri vodniku s primerom."
+      "Za izračun roka uporabite [datumski kalkulator](/datumski-kalkulator/), če se štejejo vsi dnevi. Če se štejejo le dnevi po vašem delovnem urniku, v [kalkulatorju delovnih dni](/kalkulator-delovnih-dni/) nastavite običajne dneve dela in preverite, kako se obravnavajo prazniki. Preden prepišete rezultat, preverite, ali ste šteli tudi začetni datum.",
+      "Za ponavljajoče se termine izberite pravo vrsto urnika. [Šolski urnik](/solski-urnik/) je namenjen predmetom in učilnicam po dnevih, [razpored izmen](/razpored-izmen/) pa ciklu, ki se lahko ponavlja neodvisno od dneva v tednu. Če potrebujete list za ročno pisanje, je najkrajša pot izbor predloge PDF."
     ],
     "links": [
-      "/datumski-kalkulator/",
-      "/kalkulator-delovnih-dni/",
+      "/koledar-za-tiskanje/",
       "/blog/"
     ],
     "sources": [
-      "iso"
+      "iso-week"
     ]
   },
   "/o-nas/": {
@@ -825,217 +752,196 @@
     ]
   },
   "/pomembni-dnevi/januar/": {
-    "title": "Januar: novo leto in dan spomina",
+    "title": "Januarski prosti dnevi in spominska obeležja",
     "paragraphs": [
-      "Ob začetku meseca ločite praznični koledar od dneva spomina na žrtve holokavsta 27. januarja. Za šolsko ali knjižnično dejavnost izberite obeležje po temi in preverite gradivo organizatorja. V urnik dela dodajte le dneve, ki so zakonsko prosti in jih vaš razpored upošteva."
+      "Na januarskem listu sta 1. in 2. januar po zakonu prosta dneva. Ob dnevu spomina na žrtve holokavsta 27. januarja lahko v šolski ali knjižnični koledar vpišete uro programa, potem ko jo objavi organizator. Pri delovnem urniku uporabite filter za dela proste dni."
     ],
     "links": [
       "/prazniki/novo-leto/",
-      "/pomembni-dnevi/dan-spomina-na-zrtve-holokavsta/",
-      "/koledar/2027/januar/"
+      "/solski-koledar/"
     ],
     "sources": [
       "holidays"
     ]
   },
   "/pomembni-dnevi/februar/": {
-    "title": "Februar: kulturni praznik, jezik in pust",
+    "title": "Februar s kulturnim praznikom, jezikom in pustnim torkom",
     "paragraphs": [
-      "Prešernov dan je vezan na 8. februar. Mednarodni dan maternega jezika je primer za jezikovno dejavnost, pust pa se lahko iz leta v leto premakne. Če obeležje uporabljate za obisk dogodka, preverite tudi lokalni program."
+      "Osmi februar ima stalen datum in je dela prost dan. Mednarodni dan maternega jezika je 21. februarja. Pustni torek se premika, tudi njegova prireditev lahko poteka na drug dan. Če družina usklajuje ogled povorke in zimske počitnice, naj pregleda program mesta ter skupino šole."
     ],
     "links": [
       "/prazniki/presernov-dan/",
-      "/pomembni-dnevi/mednarodni-dan-maternega-jezika/",
-      "/prazniki/pust/"
+      "/solske-pocitnice/"
     ],
     "sources": [
       "holidays"
     ]
   },
   "/pomembni-dnevi/marec/": {
-    "title": "Marec: državni čas in pomladni običaji",
+    "title": "Tri vrste datumov na marčevskem listu",
     "paragraphs": [
-      "Gregorjevo in dan žena sta vezana na datum, pomladno enakonočje pa nastopi ob izračunanem trenutku. Če načrtujete sprehod po službi, primerjajte sončni zahod pred in po marčevskem premiku ure. Razlika v prikazani uri vključuje tudi spremembo uradnega časa."
+      "Mednarodni dan žensk ima stalen datum 8. marca. Za dan okoli pomladnega enakonočja preverite natančen trenutek. Premik na poletni čas je zadnjo marčevsko nedeljo. Če pripravljate tedenski razpored v času premika ure, zapišite tudi časovni pas."
     ],
     "links": [
-      "/prazniki/gregorjevo/",
-      "/letni-casi/pomladno-enakonocje/",
+      "/letni-casi/",
       "/premik-ure/"
     ],
     "sources": [
-      "seasons",
-      "clock"
+      "seasons"
     ]
   },
   "/pomembni-dnevi/april/": {
-    "title": "April: velikonočni datumi in dnevi za učenje",
+    "title": "Dan upora in datum velikonočnega ponedeljka",
     "paragraphs": [
-      "Velika noč se premika, Dan Zemlje pa je določen na 22. april. Pri pripravi obiska ali dejavnosti zato izberite točno leto. Za bralno srečanje primerjajte še svetovni dan knjige in avtorskih pravic, ki je dan po Dnevu Zemlje."
+      "Praznik 27. aprila ima stalen datum. Velikonočni ponedeljek se premika med leti in je lahko marca ali aprila. Pri letnem načrtu si izberite leto in prepišite oba iz ustreznih pregledov. Za okoljsko temo lahko v koledar dodate tudi dan Zemlje 22. aprila."
     ],
     "links": [
       "/prazniki/velika-noc/",
-      "/prazniki/svetovni-dan-zemlje/",
-      "/pomembni-dnevi/svetovni-dan-knjige-in-avtorskih-pravic/"
+      "/delovni-dnevi/"
     ],
     "sources": [
       "holidays"
     ]
   },
   "/pomembni-dnevi/maj/": {
-    "title": "Maj: praznik dela, družine in čebele",
+    "title": "Majski načrt za praznik dela in svetovni dan čebel",
     "paragraphs": [
-      "Pri odsotnostih upoštevajte zakonski status 1. in 2. maja. Za tematski dogodek lahko izberete mednarodni dan družin ali svetovni dan čebel. Pri obisku čebelarskega dogodka preverite urnik krajevnega organizatorja, ki se lahko razlikuje od datuma obeležja."
+      "Prvi in drugi maj sta dela prosta dneva. Svetovni dan čebel je 20. maja, datum lokalne delavnice pa določi njen organizator. Za delavnico na prostem določite tudi nadomestni termin, če vreme ne omogoča ogleda ali dela na vrtu."
     ],
     "links": [
-      "/prazniki/praznik-dela/",
-      "/pomembni-dnevi/mednarodni-dan-druzin/",
-      "/prazniki/svetovni-dan-cebel/"
+      "/prazniki/svetovni-dan-cebel/",
+      "/setveni-koledar/"
     ],
     "sources": [
       "holidays"
     ]
   },
   "/pomembni-dnevi/junij/": {
-    "title": "Junij: od državnega praznika do poletne svetlobe",
+    "title": "Junijska državna slovesnost in astronomski začetek poletja",
     "paragraphs": [
-      "Dan Primoža Trubarja in dan državnosti imata različen vpliv na privzeti delovni urnik. Za večerni dogodek uporabite tudi krajevni čas sončnega zahoda. Poletni solsticij je astronomski trenutek, zato ni isto kot večer praznovanja po programu organizatorja."
+      "Dan državnosti je 25. junija. Poletni solsticij najdete v astronomskem koledarju in ima natančno uro, ki se spreminja po letih. Če junijski prosti dan uporabite za večerni dogodek na prostem, preverite še krajevni zahod in objavljeni začetek dogodka."
     ],
     "links": [
-      "/prazniki/dan-primoza-trubarja/",
       "/prazniki/dan-drzavnosti/",
-      "/letni-casi/poletni-solsticij/"
+      "/letni-casi/"
     ],
     "sources": [
-      "holidays",
       "seasons"
     ]
   },
   "/pomembni-dnevi/julij/": {
-    "title": "Julij: poletni koledar in načrt po svetlem",
+    "title": "Julijski koledar za dogodke, ki imajo svoj urnik",
     "paragraphs": [
-      "Julijske datume primerjajte z urnikom dopusta in krajevnimi prireditvami. Koledar ponavljajočih se datumov uporabljajte za orientacijo, pri dogodku pa preverite dan in uro v programu prireditelja. Za daljši večerni izlet primerjajte dolžino dneva v kraju odhoda in kraju povratka."
+      "V juliju si za obisk dogodka najprej zapišite kraj in dan, ko se začne posamezni del programa. Pri večdnevnih prireditvah začetek festivala ni enak začetku koncerta. Če del dneva preživite na poti, dodajte še čas prevoza in preverite, kdaj se na cilju zmrači."
     ],
     "links": [
-      "/koledar/2027/julij/",
-      "/nacrtovalnik-dopusta/",
-      "/dolzina-dneva/"
+      "/festivali/",
+      "/soncni-vzhod-in-zahod/"
     ],
     "sources": [
       "sun"
     ]
   },
   "/pomembni-dnevi/avgust/": {
-    "title": "Avgust: praznik, spominski dan in nočno nebo",
+    "title": "Zakaj avgustovski praznik, spominski dan in Perzeidi zahtevajo različne zapiske?",
     "paragraphs": [
-      "Termin opazovanja Perzeidov izberite po razmerah ponoči. Pri načrtovanju odsotnosti preverite ločeno status 15. avgusta ter obeležja združitve prekmurskih Slovencev. En pogled v koledar pokaže datume, pri nočnem opazovanju pa dodajte mrak, Luno in oblačnost."
+      "Petnajsti avgust je po zakonu dela prost dan. Datum spominskega dne ne pove, kdaj bo lokalna slovesnost, pri Perzeidih pa je smiseln nočni razpon namesto enega dnevnega termina. Če izberete noč za meteorski roj, preverite mrak, Lunino fazo in vreme."
     ],
     "links": [
-      "/prazniki/marijino-vnebovzetje/",
-      "/prazniki/zdruzitev-prekmurskih-slovencev/",
-      "/perzeidi/"
+      "/perzeidi/",
+      "/lunin-vzhod-in-zahod/"
     ],
     "sources": [
-      "holidays",
       "perseids"
     ]
   },
   "/pomembni-dnevi/september/": {
-    "title": "September: šolski ritem in jesensko enakonočje",
+    "title": "Septembra ločite začetek pouka od začetka jeseni",
     "paragraphs": [
-      "Pri načrtovanju septembra si rezervirajte prve tedne šolskega urnika. Za kulturno dejavnost preverite evropski dan jezikov. Jesensko enakonočje pa poiščite v astronomski tabeli, kjer poleg datuma lahko preverite še uro v Sloveniji."
+      "Začetek pouka prepišite iz koledarja za svojo raven šolanja. Jesensko enakonočje preverite v astronomskem prikazu, kjer je poleg datuma pomembna ura. Če pripravljate razredni mesečni načrt, označite pouk kot termin, enakonočje pa kot izhodišče za opazovanje."
     ],
     "links": [
       "/solski-koledar/",
-      "/pomembni-dnevi/evropski-dan-jezikov/",
-      "/letni-casi/jesensko-enakonocje/"
+      "/letni-casi/"
     ],
     "sources": [
-      "basic-school",
-      "seasons"
+      "basic-school"
     ]
   },
   "/pomembni-dnevi/oktober/": {
-    "title": "Oktober: dan reformacije in jesenski premik ure",
+    "title": "Dan reformacije in sprememba ure v istem mesecu",
     "paragraphs": [
-      "31. oktober je pomemben tako v prazničnem koledarju kot pri načrtovanju običajev. Za sestanke in nočne izmene preverite tudi ločen datum jesenskega premika ure, ki je vezan na zadnjo nedeljo v oktobru. Datuma se lahko ujameta, vendar opisujeta različni stvari."
+      "Dan reformacije je vedno 31. oktobra. Prehod na zimski čas je zadnjo nedeljo, kar navadno ni isti datum. Pri razporedu na zadnji oktobrski konec tedna preverite pravni status praznika in posebej uro jutranjega odhoda."
     ],
     "links": [
       "/prazniki/dan-reformacije/",
-      "/pomembni-dnevi/noc-carovnic/",
       "/premik-ure/"
     ],
     "sources": [
-      "holidays",
-      "clock"
+      "holidays"
     ]
   },
   "/pomembni-dnevi/november/": {
-    "title": "November: spomin, običaji in obiski",
+    "title": "Prvi november, martinovo in dan slovenske hrane",
     "paragraphs": [
-      "Na začetku meseca ločite dan spomina na mrtve od spomina vseh vernih rajnih. Pri martinovanju in drugih prireditvah je datum obeležja le orientir. Kraj in uro poiščite pri prireditelju, saj je dogodek pogosto na najbližji konec tedna."
+      "Prvi november je dela prost dan, medtem ko datum martinovega ne določa termina mestnega martinovanja. Če si želite ogledati prireditev ali načrtujete dejavnost ob dnevu slovenske hrane, primerjajte datum obeležja z urnikom organizatorja."
     ],
     "links": [
-      "/prazniki/dan-spomina-na-mrtve/",
-      "/pomembni-dnevi/spomin-vseh-vernih-rajnih/",
-      "/prazniki/martinovo/"
+      "/prazniki/martinovo/",
+      "/pomembni-dnevi/dan-slovenske-hrane/"
     ],
     "sources": [
       "holidays"
     ]
   },
   "/pomembni-dnevi/december/": {
-    "title": "December: kulturni dogodki, prazniki in prehod leta",
+    "title": "Decembrska praznika, počitnice in silvestrski dogovor",
     "paragraphs": [
-      "Za obisk kulturne ustanove preverite njen program za Ta veseli dan kulture. Ob načrtovanju dopusta ločite božič in dan samostojnosti in enotnosti od drugih decembrskih obeležij. Za poročanje po tednih preverite še leto ISO zadnje koledarske vrstice."
+      "Božič je 25. decembra, dan samostojnosti in enotnosti pa naslednji dan. Šolske počitnice lahko segajo čez novo leto. Za silvestrski dogovor zapišite tudi datum konca, če nadaljujete po polnoči, in pri načrtovanju obiska mesta preverite aktualni program."
     ],
     "links": [
-      "/pomembni-dnevi/ta-veseli-dan-kulture/",
       "/prazniki/bozic/",
-      "/prazniki/dan-samostojnosti-in-enotnosti/",
-      "/stevilka-tedna/"
+      "/solske-pocitnice/"
     ],
     "sources": [
-      "holidays",
-      "iso"
+      "holidays"
     ]
   },
   "/npz/3-razred/": {
-    "title": "Pri tretjem razredu preverite predmete",
+    "title": "Kako pripraviti pregled terminov NPZ v 3. razredu",
     "paragraphs": [
-      "Uporabite tabelo za 3. razred. Na domačem urniku ločite pripravo od datuma preizkusa. Podrobnosti o prihodu in navodilih pri izvedbi preverite v obvestilu otrokove šole."
+      "V tretjem razredu v koledar označite dva termina, jezik in matematiko. Na narodno mešanem območju pred vnosom preverite, kateri jezik velja za šolo. Za vsak datum uporabite ime predmeta iz obvestila šole, da ga ne zamenjate z rednim poukom ali drugim šolskim dogodkom.",
+      "Če imate doma še šestošolca, pripravite ločen seznam. Tretješolcu ni treba pripisati termina prvega tujega jezika samo zato, ker ga ima starejši otrok. Razliko med predmetniki preverite v [uradnem opisu NPZ](@gov-npz) in na [pregledu za 6. razred](/npz/6-razred/)."
     ],
     "links": [
-      "/npz/",
-      "/solski-koledar/",
-      "/blog/izpitni-roki-koledar-ucenja/"
+      "/solski-koledar/"
     ],
     "sources": [
       "basic-school"
     ]
   },
   "/npz/6-razred/": {
-    "title": "Termine šestega razreda zapišite po predmetih",
+    "title": "Tri preverjanja v šestem razredu",
     "paragraphs": [
-      "Če več preizkusov sledi v istem delu meseca, za vsakega pripravite svojo vrstico z datumom in predmetom. Izognite se kopiranju urnika drugega razreda. Datum seznanitve z dosežki zabeležite posebej."
+      "V šestem razredu v osebni koledar vnesite tri ločene termine, za jezik šolanja, matematiko in prvi tuji jezik. Pri družinskem razporedu zapišite uro prihoda iz šolskega obvestila in ob datumu dodajte opombo, kdo je tisti dan odgovoren za prevoz.",
+      "Prvi tuji jezik je za ta razred samostojno preverjanje. Če hkrati spremljate starejšega učenca, uporabite [pregled NPZ za 9. razred](/npz/9-razred/) za njegov tretji predmet. Seznam preverjanj za posamezni razred objavlja [ministrstvo](@gov-npz)."
     ],
     "links": [
-      "/npz/",
-      "/npz/9-razred/",
-      "/blog/izpitni-roki-koledar-ucenja/"
+      "/solski-urnik/"
     ],
     "sources": [
       "basic-school"
     ]
   },
   "/npz/9-razred/": {
-    "title": "Pri devetem razredu ugotovite tudi tretji predmet",
+    "title": "Kje poiskati tretji predmet za svojo osnovno šolo?",
     "paragraphs": [
-      "Pri branju rokov preverite predmet, šolsko izvedbo in objavo rezultatov. Tretjega predmeta iz splošnega seznama ne prepišite brez preverjanja, kateri je določen za vašo šolo."
+      "Poleg jezika in matematike v devetem razredu preverite tretji predmet. Odprite [uradni seznam NPZ](@gov-npz), izberite šolsko leto in po imenu poiščite svojo šolo. Šele nato prepišite datum in k njemu dodajte predmet. Učenec iz druge šole ima lahko drugačen tretji predmet.",
+      "Roki za vpogled v dosežke in roki za vpis imajo različne namene. Če pripravljate seznam za prehod v srednjo šolo, termine preverjanja označite posebej, prijavo in morebitne dopolnitve pa poiščite v [vpisnem koledarju](/vpisni-koledar/)."
     ],
     "links": [
       "/npz/",
-      "/solski-koledar/",
-      "/blog/izpitni-roki-koledar-ucenja/"
+      "/solski-koledar/"
     ],
     "sources": [
       "basic-school"
@@ -1114,6 +1020,1258 @@
     ],
     "sources": [
       "earth"
+    ]
+  },
+  "/lunin-koledar/2026/": {
+    "title": "Kaj obsega lunin koledar za leto 2026?",
+    "paragraphs": [
+      "V arhivu so podrobne mesečne strani za oktober, november in december. Za datume pred oktobrom je primernejši letni seznam luninih men, kjer lahko izberete leto 2026. Če primerjate zapisa z različnih strani, poleg datuma primerjajte še uro po slovenskem času."
+    ],
+    "links": [
+      "/lunine-mene/",
+      "/lunin-koledar/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2026/oktober/": {
+    "title": "Oktobrski zapiski pred premikom ure in po njem",
+    "paragraphs": [
+      "Če si vsak večer ob isti uri zapišete položaj Lune, ob zadnji oktobrski nedelji zabeležite tudi premik ure. Po prestavitvi na zimski čas enaka številka na uri pomeni drug trenutek dneva. To je pomembno pri primerjanju zaporednih fotografij."
+    ],
+    "links": [
+      "/premik-ure/",
+      "/lunin-koledar/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2026/november/": {
+    "title": "Kaj pomeni novembrski datum brez ure opazovanja?",
+    "paragraphs": [
+      "Datum ščipa uporabite kot oznako v dnevniku. Če pot od doma načrtujete po tem, kdaj bo Luna vidna, izberite še kraj in primerjajte čas vzhoda z uro odhoda. Zvečer je med oblačnimi dnevi pogosto laže ohraniti zaporedje datumov kot enak trenutek opazovanja."
+    ],
+    "links": [
+      "/lunin-vzhod-in-zahod/",
+      "/lunin-koledar/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2026/december/": {
+    "title": "December 2026 kot uvod v koledar za januar 2027",
+    "paragraphs": [
+      "Decembrski list zaključite z zadnjim opazovanjem in si zapišite uro ter kraj. Pri nadaljevanju na januarskem listu ohranite iste podatke, da boste po novoletnem premoru lahko primerjali oba zapisa. Za dan brez opazovanja pustite prazno vrstico."
+    ],
+    "links": [
+      "/lunin-koledar/2027/januar/",
+      "/lunin-koledar/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2027/": {
+    "title": "Dva avgustovska mlaja in zimske ure za leto 2027",
+    "paragraphs": [
+      "Avgust ima mlaj 2. in 31. dne, september pa začne s prvim krajcem. Pri letnem načrtu za opazovanje temnejšega neba označite oba avgustovska datuma. Za opazovanja, ki segajo iz marca v april, ob uri shranite tudi časovni pas."
+    ],
+    "links": [
+      "/lunin-koledar/2027/avgust/",
+      "/lunin-koledar/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2027/januar/": {
+    "title": "Zakaj januarski ščip pade sredi dneva?",
+    "paragraphs": [
+      "Ščip je 22. januarja ob 13.17. Ta ura označuje geometrijski trenutek mene, medtem ko je za prvi večerni posnetek pomembno, kdaj Luna v izbranem kraju preide obzorje. Za primerjavo poskusite še večer pred ščipom."
+    ],
+    "links": [
+      "/lunin-vzhod-in-zahod/",
+      "/lunin-koledar/2027/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2027/februar/": {
+    "title": "Polna luna malo po polnoči 21. februarja",
+    "paragraphs": [
+      "Ščip nastopi v nedeljo ob 00.23. Če ste Luno opazovali pred polnočjo, v dnevnik vpišite soboto, 20. februar, in dejansko uro opazovanja. Za isti vikend je v koledarju mrkov tudi polsenčni Lunin mrk."
+    ],
+    "links": [
+      "/lunin-mrk/",
+      "/lunin-koledar/2027/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2027/marec/": {
+    "title": "Marčevski krajec po prehodu na poletni čas",
+    "paragraphs": [
+      "Polna luna 22. marca je pred premikom ure, zadnji krajec 30. marca ob 02.54 pa po njem. Pri primerjavi urnikov na dveh straneh preverite oznaki CET in CEST. V lastno preglednico vpišite uro, kot je bila prikazana v Sloveniji."
+    ],
+    "links": [
+      "/premik-ure/",
+      "/lunin-koledar/2027/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2027/april/": {
+    "title": "Aprilski krajec in ščip v prvi uri novega dne",
+    "paragraphs": [
+      "Prvi krajec 14. aprila in ščip 21. aprila sta oba kmalu po polnoči. Če načrtujete večerno opazovanje v torek, se datum na astronomskem seznamu zato že glasi sreda. To opazovanje označite z datumom, ki ga ob začetku kaže vaša ura."
+    ],
+    "links": [
+      "/datumski-kalkulator/",
+      "/lunin-koledar/2027/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2027/maj/": {
+    "title": "Isti del dneva pri majskem mlaju in ščipu",
+    "paragraphs": [
+      "Mlaj je 6. maja ob 12.58, ščip 20. maja ob 12.59. Skoraj enaki uri sta uporaben par za primerjavo faz, ki sta si po osvetlitvi nasprotni. Izberite oba datuma v dnevnem pogledu in primerjajte obliko prikaza ob 12.00."
+    ],
+    "links": [
+      "/lunine-mene/",
+      "/lunin-koledar/2027/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2027/junij/": {
+    "title": "Junijska polna luna dva dni pred solsticijem",
+    "paragraphs": [
+      "Polna luna nastopi 19. junija ob 02.44. Če načrtujete daljše večerno opazovanje okoli 21. junija, v istem kraju preverite, kdaj se konča civilni mrak. V tistem delu leta ura ščipa sama ne pove, kdaj se nebo dovolj stemni."
+    ],
+    "links": [
+      "/soncni-vzhod-in-zahod/",
+      "/lunin-koledar/2027/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2027/julij/": {
+    "title": "Od julijskega mlaja do prvega krajca",
+    "paragraphs": [
+      "Na julijskem listu poiščite mlaj 4. julija in prvi krajec 10. julija ob 20.39. Med datumoma primerjajte dva posnetka na isti strani neba in zabeležite uro. Za termin na prostem izberite večer, ko Luna še ni zašla."
+    ],
+    "links": [
+      "/lunin-vzhod-in-zahod/",
+      "/lunin-koledar/2027/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2027/avgust/": {
+    "title": "Dva mlaja in Perzeidi med njima",
+    "paragraphs": [
+      "Mlaja sta 2. in 31. avgusta. Sredi meseca je že mimo prvi krajec 9. avgusta, polna luna pa sledi 17. avgusta. Za opazovanje Perzeidov v tem vmesnem času preverite uro zahoda Lune; datum najbližjega mlaja je od vrhunca roja oddaljen več dni."
+    ],
+    "links": [
+      "/perzeidi/",
+      "/lunin-koledar/2027/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2027/september/": {
+    "title": "Septembrski mesec se začne z rastočo Luno",
+    "paragraphs": [
+      "Po mlaju 31. avgusta pride 7. septembra prvi krajec ob 20.31. Za zaporedje večernih opazovanj ima avgustovski zadnji list zato smisel: prvi septembrski prikaz že nadaljuje cikel, ki se je začel prejšnji mesec."
+    ],
+    "links": [
+      "/lunin-koledar/2027/avgust/",
+      "/lunin-koledar/2027/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2027/oktober/": {
+    "title": "Štiri oktobrske mene pred vrnitvijo na zimski čas",
+    "paragraphs": [
+      "Zadnja od štirih men je mlaj 29. oktobra ob 15.36, dva dni pred premikom ure. Pri načrtu čez konec meseca ločite čas mene od ur opazovanja v prvih novembrskih dneh, ko so ure spet zapisane v CET."
+    ],
+    "links": [
+      "/premik-ure/",
+      "/lunin-koledar/2027/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2027/november/": {
+    "title": "Novembrski ščip in zadnji krajec za zgodnje vstajanje",
+    "paragraphs": [
+      "Ščip 14. novembra nastopi ob 04.26, zadnji krajec 21. novembra pa ob 01.48. Če želite opazovati pred delom ali poukom, najprej vzemite uro Luninega zahoda za svoj kraj. Tako boste vedeli, ali je jutranje okno sploh odprto."
+    ],
+    "links": [
+      "/lunin-vzhod-in-zahod/",
+      "/lunin-koledar/2027/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2027/december/": {
+    "title": "Decembrska Luna od ščipa do prazničnega mlaja",
+    "paragraphs": [
+      "Ščip je 13. decembra ob 17.09, mlaj 27. decembra pa ob 21.12. Na večeru med božičem in novim letom primerjajte dolžino mraka za kraj, kjer boste zunaj. V koledarju izberite tudi dan pred načrtovanim terminom, če želite primerjavo."
+    ],
+    "links": [
+      "/soncni-vzhod-in-zahod/",
+      "/lunin-koledar/2027/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2028/": {
+    "title": "Prestopni februar in dva decembrska ščipa",
+    "paragraphs": [
+      "Februarska mreža ima 29 polj, toda 29. februar ni glavna mena. December pa ima ščipa 2. in 31. dne. Pri celoletnem seznamu opazovanj zato ne preslikajte navad iz prejšnjega leta in ne omejite se na en ščip na mesec."
+    ],
+    "links": [
+      "/lunin-koledar/2028/december/",
+      "/lunin-koledar/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2028/januar/": {
+    "title": "Januarski ščip ob 05.03",
+    "paragraphs": [
+      "Za 12. januar je v preglednici ščip naveden ob 05.03. Če pripravljate jutranje opazovanje Lune in vzhajajočega Sonca, odprite dva izračuna za isti kraj in isti datum. Uporabno je poznati, ali Luna zaide pred svitom ali pozneje."
+    ],
+    "links": [
+      "/soncni-vzhod-in-zahod/",
+      "/lunin-koledar/2028/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2028/februar/": {
+    "title": "29. februar pod rastočo Luno",
+    "paragraphs": [
+      "Po mlaju 25. februarja ob 11.37 je 29. februar že del rastoče faze. Izberite 25. in 29. februar na mreži, če želite videti razliko med trenutkom mene in poznejšim dnevnim prikazom. Podatek o 29 dneh pomaga pri tiskanju februarskega lista."
+    ],
+    "links": [
+      "/prestopno-leto/",
+      "/lunin-koledar/2028/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2028/marec/": {
+    "title": "Mlaj na marčevsko nedeljo s premikom ure",
+    "paragraphs": [
+      "Mlaj je 26. marca ob 06.31 po poletnem času. Pri vnosu v koledar, ki uporablja UTC, vzemite uro iz vrstice s časovnim odmikom. Zadnji krajec 18. marca je še v zimskem času, zato oba trenutka nimata istega odmika."
+    ],
+    "links": [
+      "/premik-ure/",
+      "/lunin-koledar/2028/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2028/april/": {
+    "title": "Prvi krajec in mlaj po 21. uri",
+    "paragraphs": [
+      "Prvi krajec 2. aprila je ob 21.15 in mlaj 24. aprila ob 21.47. Če izbirate med tema večeroma za opazovanje s prostim očesom, vas zanimata predvsem osvetlitev in prehod obzorja. Isti večerni čas na koledarju še ne pomeni primerljivega pogleda."
+    ],
+    "links": [
+      "/lunin-vzhod-in-zahod/",
+      "/lunin-koledar/2028/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2028/maj/": {
+    "title": "Dva prva krajca na istem majskem listu",
+    "paragraphs": [
+      "Prvi krajec nastopi 2. maja ob 04.26 in 31. maja ob 09.36. Za ponovljiv poskus lahko na mreži pri obeh datumih pogledate osvetlitev ob 12.00 in dopišete, koliko ur je minilo od trenutka krajca."
+    ],
+    "links": [
+      "/lunine-mene/",
+      "/lunin-koledar/2028/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2028/junij/": {
+    "title": "Junijski mlaj ob začetku poletja",
+    "paragraphs": [
+      "Mlaj 22. junija ob 20.27 je blizu začetka astronomskega poletja. Temnejše nebo okoli mlaja je uporabno šele po krajevnem mraku. Zabeležite, kdaj Sonce zaide, preden izberete uro za opazovanje."
+    ],
+    "links": [
+      "/soncni-vzhod-in-zahod/",
+      "/lunin-koledar/2028/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2028/julij/": {
+    "title": "Julijski ščip v večernem terminu",
+    "paragraphs": [
+      "Ščip 6. julija je ob 20.11 v slovenskem času. Če ga vnesete v koledar za skupino, poleg datuma označite še kraj srečanja ter ločeno preverite vzhod Lune. Vidljivost med ščipom je odvisna od tega, ali je tedaj nad krajevnim obzorjem."
+    ],
+    "links": [
+      "/lunin-vzhod-in-zahod/",
+      "/lunin-koledar/2028/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2028/avgust/": {
+    "title": "Avgustovski zadnji krajec med dnevi opazovanja Perzeidov",
+    "paragraphs": [
+      "Zadnji krajec je 13. avgusta ob 13.45. Za opazovanje meteorjev v noči z 12. na 13. avgust zato seštejte le ure po koncu mraka in pred morebitnim vzhodom Lune. Za drugi kraj ponovno preverite obe meji."
+    ],
+    "links": [
+      "/perzeidi/",
+      "/lunin-koledar/2028/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2028/september/": {
+    "title": "Septembrska polna luna takoj po začetku meseca",
+    "paragraphs": [
+      "Ščip je 4. septembra ob 01.47, zadnji krajec 12. septembra ob 02.46. Če ste zunaj od večera do naslednjega jutra, v dnevnik med uri dodajte tudi datum. Tako se zapisi ne zamaknejo na napačno stran mesečnega lista."
+    ],
+    "links": [
+      "/tedenski-koledar/",
+      "/lunin-koledar/2028/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2028/oktober/": {
+    "title": "Polna Luna 3. oktobra in pozni jesenski jutranji krajec",
+    "paragraphs": [
+      "Ščip je 3. oktobra ob 18.25, prvi krajec naslednjega cikla pa 25. oktobra ob 06.53. V opazovalnem dnevniku sta to različna dela dneva; pri izbiri ure preverite smer neba in čas Sončevega vzhoda ali zahoda."
+    ],
+    "links": [
+      "/soncni-vzhod-in-zahod/",
+      "/lunin-koledar/2028/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2028/november/": {
+    "title": "Novembrski prehod od večernih do jutranjih terminov",
+    "paragraphs": [
+      "Zadnji krajec 9. novembra je ob 22.26, prvi krajec 24. novembra ob 01.14. V tedenskem razporedu preverite, kdaj je datum že naslednji dan. Za neprekinjen zapis uporabite ločeni polji za začetek in konec opazovanja."
+    ],
+    "links": [
+      "/tedenski-koledar/",
+      "/lunin-koledar/2028/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2028/december/": {
+    "title": "Dve decembrski polni luni",
+    "paragraphs": [
+      "Prva polna luna je 2. decembra ob 02.40 in druga 31. decembra ob 17.48. Ko v koledar prepisujete decembrske datume, vključite oba in ne preskočite zadnje vrstice leta. Pri opazovanju na silvestrovo preverite še, kdaj je Luna nad obzorjem."
+    ],
+    "links": [
+      "/polna-luna/",
+      "/lunin-koledar/2028/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2029/": {
+    "title": "Letni opazovalni načrt od zimskega do jesenskega krajca",
+    "paragraphs": [
+      "Januar se začne z zadnjim krajcem 7. januarja. Septembra sta dva zadnja krajca, 1. in 30. dne. Če beležite isto meno skozi leto, izvoz uskladite s časovnim zaporedjem in v septembru pustite prostor za oba zapisa."
+    ],
+    "links": [
+      "/lunin-koledar/2029/september/",
+      "/lunin-koledar/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2029/januar/": {
+    "title": "Januarski mlaj ob večerni uri, ščip ob jutranji",
+    "paragraphs": [
+      "Mlaj 14. januarja ob 18.24 in ščip 30. januarja ob 07.03 sta dovolj narazen, da obema posvetite svoj tedenski list. Pri jutranjem terminu primerjajte Sončev vzhod in Lunino lego na obzorju za isti kraj."
+    ],
+    "links": [
+      "/soncni-vzhod-in-zahod/",
+      "/lunin-koledar/2029/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2029/februar/": {
+    "title": "Februarska polna luna zadnji dan meseca",
+    "paragraphs": [
+      "Ščip je 28. februarja ob 18.10. Če boste Luno fotografirali naslednji večer, pripada posnetek že marčevskemu listu. Za primerjavo obeh dni odprite sosednja meseca, v opis k fotografiji pa dodajte dejansko uro."
+    ],
+    "links": [
+      "/lunin-koledar/2029/marec/",
+      "/lunin-koledar/2029/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2029/marec/": {
+    "title": "Polna luna pred velikonočno nedeljo",
+    "paragraphs": [
+      "Polna luna nastopi 30. marca ob 04.26. Velikonočna nedelja je 1. aprila 2029. Astronomski trenutek uporabite v opazovalnem dnevniku, za datum praznika pa uporabite praznični koledar, ki sledi cerkvenemu pravilu."
+    ],
+    "links": [
+      "/prazniki/velika-noc/",
+      "/lunin-koledar/2029/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2029/april/": {
+    "title": "Aprilski mlaj dvajset minut pred polnočjo",
+    "paragraphs": [
+      "Mlaj 13. aprila je ob 23.40. Če datum prepisujete iz tujega koledarja, najprej preverite njegov časovni pas in šele nato primerjajte opoldanski posnetek za 13. ali 14. april."
+    ],
+    "links": [
+      "/lunine-mene/",
+      "/lunin-koledar/2029/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2029/maj/": {
+    "title": "Majski ščip v nedeljo zvečer",
+    "paragraphs": [
+      "Polna luna je 27. maja ob 20.37. Kadar načrtujete večerni sprehod, lahko primerjate nedeljo in ponedeljek; razpored poti naj upošteva mrak in krajevni Lunini uri za vsak datum posebej."
+    ],
+    "links": [
+      "/lunin-vzhod-in-zahod/",
+      "/lunin-koledar/2029/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2029/junij/": {
+    "title": "Junijski mlaj ob 05.50 in prvi krajec ob 11.54",
+    "paragraphs": [
+      "Mlaj pade 12. junija, prvi krajec pa 19. junija. Med njima uporabite tri zapise ob isti uri, da boste primerjali, kako hitro se spreminja delež osvetljene površine. Prikaze lahko razporedite v koledarju brez vezave na uro, ob kateri je nastopila mena."
+    ],
+    "links": [
+      "/blog/lunin-koledar-opazovalni-dnevnik/",
+      "/lunin-koledar/2029/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2029/julij/": {
+    "title": "Prvi krajec 18. julija in ščip 25. julija",
+    "paragraphs": [
+      "Obe meni nastopita popoldne, ob 16.14 in 15.36. Če imate za večerno opazovanje na voljo le en termin, primerjajte višino oziroma vzhod Lune za svoj kraj ob uri srečanja; osvetlitvi se med tednoma razlikujeta."
+    ],
+    "links": [
+      "/lunin-vzhod-in-zahod/",
+      "/lunin-koledar/2029/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2029/avgust/": {
+    "title": "Perzeidi v dneh takoj po avgustovskem mlaju",
+    "paragraphs": [
+      "Mlaj nastopi 10. avgusta ob 03.56, prvi krajec 16. avgusta. Za noč proti 13. avgustu preverite, kdaj mlada Luna zaide, nato izberite poznejšo uro za opazovanje. Upoštevajte še oblačnost in osvetlitev kraja."
+    ],
+    "links": [
+      "/perzeidi/",
+      "/lunin-koledar/2029/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2029/september/": {
+    "title": "Dva zadnja krajca, na začetku in koncu septembra",
+    "paragraphs": [
+      "Zadnji krajec je 1. septembra ob 06.33 in 30. septembra ob 22.57. Če sestavljate primerjalni dnevnik, ob fotografijah z obeh datumov označite tudi uro. Na mesečnem prikazu sta videti kot dve ločeni označbi iste vrste mene."
+    ],
+    "links": [
+      "/lunine-mene/",
+      "/lunin-koledar/2029/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2029/oktober/": {
+    "title": "Kako oktobra primerjati uri dveh men okoli premika časa?",
+    "paragraphs": [
+      "Ščip 22. oktobra ob 11.27 je še po poletnem času. Zadnji krajec 30. oktobra ob 12.32 pride po vrnitvi na zimski čas. V preglednici zraven ure ohranite tudi oznako odmika, zlasti če opazovanje usklajujete z nekom v tujini."
+    ],
+    "links": [
+      "/premik-ure/",
+      "/lunin-koledar/2029/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2029/november/": {
+    "title": "Novembrske mene pred svitom",
+    "paragraphs": [
+      "Mlaj 6. novembra ob 05.24 in ščip 21. novembra ob 05.03 sta oba zjutraj. Za jutranji posnetek izberite datum blizu ščipa, preverite zahod in si pustite čas za postavitev pred prihodom svita."
+    ],
+    "links": [
+      "/soncni-vzhod-in-zahod/",
+      "/lunin-koledar/2029/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2029/december/": {
+    "title": "Ščip tik pred koncem 20. decembra",
+    "paragraphs": [
+      "Decembrski ščip nastopi ob 23.46. Če zabeležite posnetek po polnoči, ga v dnevniku uvrstite pod 21. december. Pri nadaljevanju v januar primerjajte še zadnji krajec 28. decembra, da bo razviden prehod v naslednji cikel."
+    ],
+    "links": [
+      "/lunin-koledar/2030/januar/",
+      "/lunin-koledar/2029/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2030/": {
+    "title": "Junijska mlaja na skrajnih datumih meseca",
+    "paragraphs": [
+      "Junija sta mlaja na prvi in zadnji dan meseca, zato je po en šibko osvetljen rob cikla na obeh straneh lista. Pri načrtu od poletja do zime naj bo letna mreža kazalo, podrobne ure pa preberite na izbranem mesečnem listu."
+    ],
+    "links": [
+      "/lunin-koledar/2030/junij/",
+      "/lunin-koledar/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2030/januar/": {
+    "title": "Mlaj 4. januarja in ščip 19. januarja",
+    "paragraphs": [
+      "Januarski mlaj je ob 03.49, ščip ob 16.54. Za primerjavo dnevnih prikazov vzemite oba opoldanska posnetka; v zapiskih ju ločite od trenutkov men, saj do njiju mine še različno število ur."
+    ],
+    "links": [
+      "/lunine-mene/",
+      "/lunin-koledar/2030/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2030/februar/": {
+    "title": "Februarska polna luna ob 07.20",
+    "paragraphs": [
+      "Ščip 18. februarja je jutranji. Za jutranji termin uporabite izračun Luninega zahoda in ga postavite ob čas civilnega svita za izbrano mesto. Tako lahko ločite obdobje, ko je Luna nad ravnim obzorjem, od začetka bolj svetlega neba."
+    ],
+    "links": [
+      "/lunin-vzhod-in-zahod/",
+      "/lunin-koledar/2030/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2030/marec/": {
+    "title": "Marčevska polna luna blizu pomladnega enakonočja",
+    "paragraphs": [
+      "Polna luna 19. marca nastopi ob 18.56. Če isti teden opazujete tudi spremembo dolžine dneva okoli enakonočja, vodite dve ločeni vrstici zapiskov: čas mraka in uro, ko ste našli Luno na nebu."
+    ],
+    "links": [
+      "/letni-casi/",
+      "/lunin-koledar/2030/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2030/april/": {
+    "title": "Dve minuti po začetku 3. aprila",
+    "paragraphs": [
+      "Mlaj je 3. aprila ob 00.02 po slovenskem poletnem času. V UTC je tedaj še 2. april. Če primerjalni vir prikazuje prejšnji datum, primerjajte najprej odmik od UTC in šele potem vnos v mreži."
+    ],
+    "links": [
+      "/premik-ure/",
+      "/lunin-koledar/2030/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2030/maj/": {
+    "title": "Prvi krajec 10. maja kot začetek večernega niza",
+    "paragraphs": [
+      "Prvi krajec 10. maja nastopi ob 19.11. Za večerni dnevnik izberite isti kraj 10., 12. in 14. maja ter primerjajte prikaze ob 12.00. Če kateri večer odpade, zabeležite oblačnost ob praznem zapisu."
+    ],
+    "links": [
+      "/blog/lunin-koledar-opazovalni-dnevnik/",
+      "/lunin-koledar/2030/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2030/junij/": {
+    "title": "Mlaj 1. in 30. junija",
+    "paragraphs": [
+      "Prvi mlaj je ob 08.21, drugi skoraj ob polnoči, ob 23.34. Pri načrtovanju noči brez močne mesečine si oglejte tudi dni ob koncu maja in začetku julija. Oba uporabna niza segata čez rob junijskega lista."
+    ],
+    "links": [
+      "/lunin-koledar/2030/julij/",
+      "/lunin-koledar/2030/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2030/julij/": {
+    "title": "Julijski ščip v ponedeljek pred jutrom",
+    "paragraphs": [
+      "Polna luna je 15. julija ob 04.12. Za opazovanje v noči z nedelje na ponedeljek ločeno zapišite nedeljski datum odhoda ter ponedeljkovo uro ščipa. To pomaga pri vnosu termina, ki prečka polnoč."
+    ],
+    "links": [
+      "/tedenski-koledar/",
+      "/lunin-koledar/2030/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2030/avgust/": {
+    "title": "Luna ob Perzeidih v avgustu 2030",
+    "paragraphs": [
+      "V času običajnega vrhunca Perzeidov se približuje ščip 13. avgusta ob 12.44. Izračun za izbrani kraj vam pomaga poiskati morebitno krajše okno pred vzhodom ali po zahodu Lune. Pri opazovanju po mraku upoštevajte, da mesečina oteži opažanje šibkejših meteorjev."
+    ],
+    "links": [
+      "/perzeidi/",
+      "/lunin-koledar/2030/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2030/september/": {
+    "title": "Dve septembrski meni pred polnočjo",
+    "paragraphs": [
+      "Prvi krajec je 4. septembra ob 23.55, polna luna pa 11. septembra ob 23.18. Če primerjate tedenska večerna termina, lahko zabeležite enako uro prihoda in posebej navedete, koliko časa ste počakali do trenutka mene."
+    ],
+    "links": [
+      "/blog/lunin-koledar-opazovalni-dnevnik/",
+      "/lunin-koledar/2030/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2030/oktober/": {
+    "title": "Oktobrski mlaj večer pred premikom ure",
+    "paragraphs": [
+      "Polna luna je 11. oktobra ob 12.47, mlaj 26. oktobra ob 22.17. Oktobrska vrnitev na zimski čas je 27. oktobra, torej naslednji dan. Za morebitno nadaljevanje po polnoči pri zapisu preverite še uro in časovni odmik."
+    ],
+    "links": [
+      "/premik-ure/",
+      "/lunin-koledar/2030/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2030/november/": {
+    "title": "Prvi novembrski krajec in mlaj na začetku dneva",
+    "paragraphs": [
+      "Prvi krajec 2. novembra je ob 12.56, mlaj 25. novembra pa ob 07.46. Dnevna prikaza sta uporabna za primerjavo osvetlitve ob 12.00. Če načrtujete jutranji pogled pred mlajem, uporabite še krajevne ure vzhoda in zahoda."
+    ],
+    "links": [
+      "/lunin-vzhod-in-zahod/",
+      "/lunin-koledar/2030/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/lunin-koledar/2030/december/": {
+    "title": "Dva prva krajca v istem decembru",
+    "paragraphs": [
+      "Prvi krajec je 1. decembra ob 23.57 in ponovno 31. decembra ob 14.36. Na silvestrskem listu označite drugi dogodek in za opazovanje po mraku preverite kraj ter čas zahoda. Podobna faza na začetku in koncu meseca ne pomeni iste ure vzhoda."
+    ],
+    "links": [
+      "/lunin-vzhod-in-zahod/",
+      "/lunin-koledar/2030/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/sezonski-opomniki/": {
+    "title": "Kako sezonski opomnik prilagoditi dejanskemu vremenu",
+    "paragraphs": [
+      "Za prvo pomladansko setev izberite opravilo in si nastavite datum za pregled gred, ne datum, ko morate nujno sejati. Ob opomniku preverite [krajevno napoved ARSO](@weather) in v [setvenem koledarju](/setveni-koledar/) poiščite primerno obdobje za izbrano vrtnino. Če so tla premokra, spremenite termin.",
+      "Pri jesenskem opravilu, ki ga je mogoče opraviti v več korakih, nastavite en datum za pregled in drugega za izvedbo. Izvozite še odprte opomnike in v drugem koledarju preverite, v kateri seznam so bili uvoženi. Tako lahko stare opomnike odstranite, če datume pozneje prestavite."
+    ],
+    "links": [
+      "/letni-casi/",
+      "/dnevni-planer/"
+    ],
+    "sources": [
+      "garden",
+      "ics"
+    ]
+  },
+  "/lunin-vzhod-in-zahod/": {
+    "title": "Izberite večer, ko je Luna nad obzorjem",
+    "paragraphs": [
+      "Najprej določite kraj in datum. Če je v preglednici vzhod ob 22.15, za srečanje ob 21.00 računajte, da Luna še ni nad ravnim obzorjem. Če je datum za zahod prazen, odprite naslednji dan v sedemdnevnem pregledu. Prehod obzorja se lahko zgodi po polnoči.",
+      "Za opazovanje prav po mraku primerjajte [čas civilnega mraka](/soncni-vzhod-in-zahod/) in čas Luninega vzhoda. Na lokaciji preverite tudi smer odprtega obzorja. Za posnetek osvetljenega roba Lune lahko v [pregledu men](/lunine-mene/) izberete dneve okoli prvega krajca in nato primerjate njihove ure zahoda."
+    ],
+    "links": [
+      "/blog/lunin-koledar-opazovalni-dnevnik/"
+    ],
+    "sources": [
+      "sun",
+      "moon"
+    ]
+  },
+  "/prazniki/2027/": {
+    "title": "Kako razporediti leto, ko božič pade na soboto",
+    "paragraphs": [
+      "Leta 2027 je 25. junij v petek, 25. in 26. december pa sta sobota in nedelja. Če delate od ponedeljka do petka, vam junijski praznik omogoči tridnevni konec tedna. Decembrska praznika pri tem urniku ne odštejeta delovnih dni. Če načrtujete skupni dopust, najprej določite, kdo sicer dela za vikend, nato za vsakega posebej preverite ure."
+    ],
+    "links": [
+      "/prazniki/dan-drzavnosti/",
+      "/delovni-dnevi/2027/"
+    ],
+    "sources": [
+      "holidays"
+    ]
+  },
+  "/prazniki/2028/": {
+    "title": "Prvomajski in božični prazniki na začetku tedna",
+    "paragraphs": [
+      "Prvi in drugi maj ter 25. in 26. december sta leta 2028 ponedeljek in torek. Pri običajnem delovniku je zato za načrt od sobote do torka že na voljo štiridnevni premor. Če želite izračunati odsotnost do srede, v orodju vnesite celoten razpon in ločeno označite dan, ko bi sicer delali."
+    ],
+    "links": [
+      "/podaljsani-vikendi/2028/",
+      "/kalkulator-delovnih-dni/"
+    ],
+    "sources": [
+      "holidays"
+    ]
+  },
+  "/prazniki/2029/": {
+    "title": "Aprilski in junijski praznik kot dva različna premora",
+    "paragraphs": [
+      "Dan upora proti okupatorju je leta 2029 v petek, dan državnosti pa v ponedeljek. Pri načrtu potovanja to vpliva na dan odhoda in na dan vrnitve. Za čas okoli 27. aprila preverite ločeno tudi šolski koledar, saj datum praznika ne določa celotnega trajanja prvomajskih počitnic."
+    ],
+    "links": [
+      "/solske-pocitnice/",
+      "/podaljsani-vikendi/2029/"
+    ],
+    "sources": [
+      "holidays"
+    ]
+  },
+  "/prazniki/2030/": {
+    "title": "Dva prosta dneva čez konec oktobra in začetek novembra",
+    "paragraphs": [
+      "Dan reformacije 31. oktobra je v četrtek, 1. november pa petek. Če sta sobota in nedelja v vašem urniku prosti, je mogoče načrtovati štiri dni brez koriščenja dopusta. Ob uvozu preverite oba datuma, saj sta v različnih mesečnih pregledih in se oznaki praznikov razlikujeta."
+    ],
+    "links": [
+      "/prazniki/dan-reformacije/",
+      "/podaljsani-vikendi/2030/"
+    ],
+    "sources": [
+      "holidays"
+    ]
+  },
+  "/pomembni-dnevi/2027/": {
+    "title": "Kam vpisati prosti petek in kam lokalno obeležje?",
+    "paragraphs": [
+      "Junija 2027 je dan državnosti v petek. Za dopust ga zato najprej ločite od slovenskih in mednarodnih obeležij v istem mesecu. Pri lokalni prireditvi si datum zabeležite šele, ko ga potrdi organizator; na letnem listu naj bo jasno, kateri vnos velja za vso državo."
+    ],
+    "links": [
+      "/prazniki/2027/",
+      "/festivali/"
+    ],
+    "sources": [
+      "holidays"
+    ]
+  },
+  "/pomembni-dnevi/2028/": {
+    "title": "Prestopni dan, majski prazniki in letni izbor tem",
+    "paragraphs": [
+      "Februarski list ima 29 dni, zato šolski ali uredniški načrt preverite na mreži za prestopno leto. Prvi in drugi maj sta ponedeljek in torek. Če okrog praznikov razporejate prispevke o tradicijah, naj bodo obeležja označena ločeno od sprememb delovnega urnika."
+    ],
+    "links": [
+      "/koledar/2028/februar/",
+      "/prazniki/2028/"
+    ],
+    "sources": [
+      "holidays"
+    ]
+  },
+  "/pomembni-dnevi/2029/": {
+    "title": "Jesenski prehod iz oktobra v november leta 2029",
+    "paragraphs": [
+      "Dan reformacije nastopi v sredo, dan spomina na mrtve pa v četrtek. Če objavljate koledar za skupino ali šolo, naj bosta oba vidna tudi, kadar tiskate le en mesečni list. Druge novembrske teme načrtujte po namenu obeležja in objavljenih lokalnih dejavnostih."
+    ],
+    "links": [
+      "/pomembni-dnevi/november/",
+      "/prazniki/2029/"
+    ],
+    "sources": [
+      "holidays"
+    ]
+  },
+  "/pomembni-dnevi/2030/": {
+    "title": "Podaljšani konec oktobra brez mešanja vrst dogodkov",
+    "paragraphs": [
+      "Zakonsko prosta dneva 31. oktobra in 1. novembra leta 2030 prideta tik pred vikendom. V krovnem koledarju za skupino označite, kateri dnevi so prosti, nato dodajte povezavo do programa, če spremljate krajevno prireditev. Dela prost dan sam po sebi ne določa urnika odprtja prizorišča."
+    ],
+    "links": [
+      "/podaljsani-vikendi/2030/",
+      "/pomembni-dnevi/oktober/"
+    ],
+    "sources": [
+      "holidays"
+    ]
+  },
+  "/tedenski-koledar/2026/": {
+    "title": "Konec leta 2026 v tednu ISO 53",
+    "paragraphs": [
+      "Teden, ki se začne v ponedeljek 28. decembra, je še 53. teden leta 2026. Če je petkov rok zapisan 1. januarja 2027, ga poiščite v istem tedenskem listu. Ob predaji dela napišite oba podatka, leto tedna in datum roka."
+    ],
+    "links": [
+      "/stevilka-tedna/",
+      "/tedenski-koledar/2027/"
+    ],
+    "sources": [
+      "iso-week"
+    ]
+  },
+  "/tedenski-koledar/2027/": {
+    "title": "Kako pripraviti teden s prostim ponedeljkom 8. februarja",
+    "paragraphs": [
+      "Prešernov dan leta 2027 pade na ponedeljek v 6. tednu. Za ekipni načrt prestavite ponedeljkove naloge na torek ali jim določite drug rok, preden natisnete tedenski list. Praznik pustite označen v mreži, da drugi ob poznejšem branju razumejo spremembo."
+    ],
+    "links": [
+      "/prazniki/presernov-dan/",
+      "/delovni-dnevi/2027/februar/"
+    ],
+    "sources": [
+      "holidays"
+    ]
+  },
+  "/tedenski-koledar/2028/": {
+    "title": "Prestopni torek in prehod iz februarja v marec",
+    "paragraphs": [
+      "Ponedeljek 28. februar in torek 29. februar spadata v isti teden kot sreda 1. marec. Pri ročnem načrtu, ki ga delite z drugimi, ne prepisujte datumov iz neprestopnega leta. Med ponedeljkom in nedeljo so v tem tednu datumi z dveh mesečnih listov."
+    ],
+    "links": [
+      "/koledar/2028/februar/",
+      "/prestopno-leto/"
+    ],
+    "sources": [
+      "leap"
+    ]
+  },
+  "/tedenski-koledar/2029/": {
+    "title": "Zakaj je ponedeljek 31. decembra že v tednu 2030-W01?",
+    "paragraphs": [
+      "Če pri letni predaji v planer vpišete 31. december 2029, v naslovu tedna pričakujte leto 2030. Številka tedna sledi pravilu ISO. Če dogovor pošljete sodelavcem, ob oznaki tedna dodajte tudi datumski razpon, da bodo ponedeljek našli v pravem koledarju."
+    ],
+    "links": [
+      "/stevilka-tedna/",
+      "/tedenski-koledar/2030/"
+    ],
+    "sources": [
+      "iso-week"
+    ]
+  },
+  "/tedenski-koledar/2030/": {
+    "title": "Termin okoli dveh decembrskih praznikov sredi tedna",
+    "paragraphs": [
+      "Božič in dan samostojnosti sta leta 2030 v sredo in četrtek v 52. tednu ISO. Za tedensko predajo si določite, kaj zaključite v torek in kaj bo počakalo do petka. Če ta teden dodatno skrajšate z dopustom, primerjajte predlogo z dejanskimi delovnimi dnevi svoje ekipe."
+    ],
+    "links": [
+      "/prazniki/2030/",
+      "/delovni-dnevi/2030/december/"
+    ],
+    "sources": [
+      "holidays"
+    ]
+  },
+  "/festivali/": {
+    "title": "Kako izbrati pravi dan za obisk večdnevnega festivala?",
+    "paragraphs": [
+      "Na katalogu izberite kraj in poiščite prireditev. Če na strani piše, da novi termin še ni objavljen, ustrezni vikend pustite odprt, dokler ga organizator ne potrdi. Pri festivalu na več prizoriščih si poleg datuma zapišite dvorano ali trg za izbrano točko programa. Uvoz celotnega festivalskega razpona vam ne zapiše ur posameznih koncertov, projekcij ali nastopov."
+    ],
+    "links": [
+      "/odstevanje/",
+      "/blog/osebni-koledar-ics-med-napravami/"
+    ],
+    "sources": [
+      "ics"
+    ]
+  },
+  "/tedenski-koledar/": {
+    "title": "Tedenski planer PDF za sestanek, roke in predajo nalog",
+    "paragraphs": [
+      "Za načrt dela med ponedeljkom, 7. junija, in nedeljo, 13. junija 2027, odprite 23. teden ISO. Na ponedeljek vpišite nalogo, ki jo mora prevzeti sodelavec, na četrtek pa čas za pregled pred petkovo oddajo. Nalogi, ki ju lahko premaknete na drug dan, zapišite v tedenske opombe. Tako na izpisu ostane vidno, kaj ima določen rok.",
+      "Če načrt pripravljate za skupino, najprej natisnite eno kopijo postavitve »Skupni tedenski pregled«. Pred deljenjem preverite, ali so opombe še berljive in ali je na vrhu pravo leto tedna. Po potrebi izberite različico z več prostora za zapiske. Če se ista obveznost pojavlja več tednov zapored, jo vpišite še v [mesečni koledar](/mesecni-koledar/)."
+    ],
+    "links": [
+      "/tedenski-koledar/2027/",
+      "/stevilka-tedna/",
+      "/blog/tedenski-koledar-pregled-v-30-minutah/"
+    ],
+    "sources": [
+      "iso",
+      "paper"
+    ]
+  },
+  "/podaljsani-vikendi/2027/": {
+    "title": "Dan državnosti 2027: petek povežite z enim ponedeljkom",
+    "paragraphs": [
+      "Dan državnosti je v petek, 25. junija 2027. Če je konec tedna prost, že to prinese tri proste dni. Z odobrenim dopustom v ponedeljek, 28. junija, dobite štiri dni od petka do ponedeljka in se na delo vrnete v torek.",
+      "Če raje odpotujete prej, je četrtek, 24. junija, alternativa ponedeljku. V [junijskem koledarju](/koledar/2027/junij/) primerjajte obe možnosti, pri otrocih pa preverite še urnik ob koncu pouka."
+    ],
+    "links": [
+      "/prazniki/dan-drzavnosti/",
+      "/solski-koledar/",
+      "/nacrtovalnik-dopusta/"
+    ],
+    "sources": [
+      "holidays",
+      "leave"
+    ]
+  },
+  "/podaljsani-vikendi/2028/": {
+    "title": "Od 27. aprila do 2. maja 2028: šest dni z enim petkom dopusta",
+    "paragraphs": [
+      "Dan upora proti okupatorju je v četrtek, 27. aprila. Praznik dela je v ponedeljek in torek, 1. in 2. maja. Če ob sobotah in nedeljah ne delate, ostane v tem razponu en sam običajen delovnik: petek, 28. aprila. Z odobrenim petkom dopusta traja oddih od četrtka do torka.",
+      "V [aprilskem pregledu](/koledar/2028/april/) začnite pri četrtku, v [majskem](/koledar/2028/maj/) pa preverite dan vrnitve, sredo, 3. maja. Pri rezervaciji, ki sega čez konec meseca, zapišite tudi datum odjave."
+    ],
+    "links": [
+      "/prazniki/dan-upora-proti-okupatorju/",
+      "/prazniki/praznik-dela/",
+      "/nacrtovalnik-dopusta/"
+    ],
+    "sources": [
+      "holidays",
+      "leave"
+    ]
+  },
+  "/podaljsani-vikendi/2029/": {
+    "title": "Prvomajski oddih 2029: vlogo za dopust oddajte za 30. april",
+    "paragraphs": [
+      "Tri proste dni od petka, 27. aprila, do nedelje, 29. aprila, od praznikov 1. in 2. maja loči ponedeljek, 30. aprila. Pri petdnevnem urniku z enim odobrenim ponedeljkom dobite šest zaporednih prostih dni in se vrnete v četrtek, 3. maja.",
+      "Če v ponedeljek ne morete vzeti dopusta, termin še vedno ponuja dve ločeni možnosti: konec tedna od 27. do 29. aprila ali dva majska praznika. V [majskem koledarju](/koledar/2029/maj/) označite le tiste dni, za katere je udeležba potrjena."
+    ],
+    "links": [
+      "/koledar/2029/april/",
+      "/prazniki/praznik-dela/",
+      "/nacrtovalnik-dopusta/"
+    ],
+    "sources": [
+      "holidays",
+      "leave"
+    ]
+  },
+  "/podaljsani-vikendi/2030/": {
+    "title": "Od 31. oktobra do 3. novembra 2030: štirje dnevi brez dopusta",
+    "paragraphs": [
+      "Dan reformacije je v četrtek, 31. oktobra 2030, dan spomina na mrtve pa v petek, 1. novembra. Pri urniku od ponedeljka do petka oba praznika skupaj s soboto in nedeljo prineseta štiri proste dni. Če delate med vikendi, to štetje ne velja za vaš razpored.",
+      "Če obisk načrtujete za 1. november, preverite urnik kraja posebej. Datum praznika v [novembrskem koledarju](/koledar/2030/november/) vam pove, kateri dan je prost, odpiralni čas in prometni režim pa objavita upravljavec ali občina."
+    ],
+    "links": [
+      "/prazniki/dan-reformacije/",
+      "/prazniki/dan-spomina-na-mrtve/",
+      "/nacrtovalnik-dopusta/"
+    ],
+    "sources": [
+      "holidays",
+      "leave"
+    ]
+  },
+  "/delovni-dnevi/2026/": {
+    "title": "Delovne ure 2026: julij pri osmih in sedmih urah na dan",
+    "paragraphs": [
+      "Za ponedeljek do petek šteje julij 2026 23 delovnih dni. Pri osmih urah na dan je to 184 ur, pri sedmih pa 161. Če delovni čas zmanjšate za eno uro na dan, se mesečni načrt zmanjša za 23 ur. Razliko je lažje preveriti v tem mesecu, ker na izbrane dni ne pade noben dela prost praznik.",
+      "Za primerjavo s planom vnesite 1. in 31. julij v [kalkulator delovnih dni](/kalkulator-delovnih-dni/) in pri drugem izračunu spremenite samo dnevne ure. Pri primerjavi s plačilno listo odprite dejansko evidenco po dnevih, saj kalkulator ne spremlja vaših prihodov, odsotnosti ali nadur."
+    ],
+    "links": [
+      "/razpored-izmen/",
+      "/kalkulator-delovnih-dni/"
+    ],
+    "sources": [
+      "holidays",
+      "labour"
+    ]
+  },
+  "/delovni-dnevi/2027/": {
+    "title": "Delovne ure 2027: zakaj ima december več delovnikov kot februar",
+    "paragraphs": [
+      "December 2027 ima pri petdnevnem urniku 23 delovnih dni, februar pa 19. Božič in dan samostojnosti in enotnosti v decembru padeta na soboto in nedeljo. Prešernov dan v februarju pade na ponedeljek in zmanjša število delovnikov.",
+      "Če za oba meseca uporabite 7,5 ure na dan, december prinese 172,5 ure, februar pa 142,5 ure. Mesečni načrt zato sestavite iz dejanskih mesecev. V [decembrskem pregledu](/delovni-dnevi/2027/december/) preizkusite še razpored, ki vključuje soboto."
+    ],
+    "links": [
+      "/delovni-dnevi/2027/februar/",
+      "/prazniki/presernov-dan/",
+      "/kalkulator-delovnih-dni/"
+    ],
+    "sources": [
+      "holidays",
+      "labour"
+    ]
+  },
+  "/delovni-dnevi/2028/": {
+    "title": "Delovne ure 2028: prestopni februar in krajši april",
+    "paragraphs": [
+      "Leto je prestopno. Torek, 29. februarja, je pri petdnevnem urniku še en delovnik. April ima po drugi strani samo 18 delovnikov, ker ima 20 dni od ponedeljka do petka in na delovnik padeta velikonočni ponedeljek, 17. aprila, ter dan upora proti okupatorju, 27. aprila.",
+      "Če načrtujete 8 ur na dan, aprila razporedite 144 ur. Ta znesek uporabite pri razdelitvi nalog po tednih in pustite delo, ki lahko počaka, za termin po praznikih. Za pregled konca februarja uporabite [delovne dni v februarju 2028](/delovni-dnevi/2028/februar/)."
+    ],
+    "links": [
+      "/delovni-dnevi/2028/april/",
+      "/prestopno-leto/",
+      "/kalkulator-delovnih-dni/"
+    ],
+    "sources": [
+      "holidays",
+      "labour"
+    ]
+  },
+  "/delovni-dnevi/2029/": {
+    "title": "Delovne ure 2029: februarski praznik pri štiridnevnem tednu",
+    "paragraphs": [
+      "Februar 2029 ima štiri ponedeljke, torke, srede, četrtke in petke. Prešernov dan je v četrtek, 8. februarja. Pri urniku od ponedeljka do petka po odštetju praznika ostane 19 delovnih dni. Pri urniku od torka do petka ostane 15 delovnih dni, ker je praznik tudi na tem razporedu.",
+      "Če štiri dni v tednu delate po 6 ur, za februar načrtujete 90 delovnih ur. V kalkulatorju pustite praznike vključene in odkljukajte ponedeljek. Nato rezultat primerjajte z [mesečnim pregledom februarja](/delovni-dnevi/2029/februar/), ki prikazuje običajni petdnevni razpored."
+    ],
+    "links": [
+      "/kalkulator-delovnih-dni/",
+      "/prazniki/presernov-dan/",
+      "/kalkulator-delovnih-dni/"
+    ],
+    "sources": [
+      "holidays",
+      "labour"
+    ]
+  },
+  "/delovni-dnevi/2030/": {
+    "title": "Delovne ure 2030: junijski fond in torkov državni praznik",
+    "paragraphs": [
+      "Junij 2030 ima 20 dni od ponedeljka do petka. Dan državnosti, 25. junija, je v torek, zato ima mesec 19 delovnih dni oziroma 152 ur pri osmih urah na dan. V tednu od 24. do 30. junija so pri istem urniku delovni ponedeljek, sreda, četrtek in petek.",
+      "Za predajo nalog načrtujte, da bo čez praznični torek ena prekinitev. Če imate torke že sicer proste, v [kalkulatorju](/kalkulator-delovnih-dni/) torek izključite iz urnika. Praznika v tem primeru ne odštejte še enkrat."
+    ],
+    "links": [
+      "/delovni-dnevi/2030/junij/",
+      "/prazniki/dan-drzavnosti/",
+      "/kalkulator-delovnih-dni/"
+    ],
+    "sources": [
+      "holidays",
+      "labour"
+    ]
+  },
+  "/kalkulator-upokojitve/": {
+    "title": "Preden primerjate dva datuma, preverite podatke o zavarovanju",
+    "paragraphs": [
+      "V kalkulatorju zapišite datum, ko po svoji evidenci dosežete zahtevano dobo. Pri prvi primerjavi vnesite isti datum rojstva in primerjajte prikazani poti. Če se razlikujeta, preverite, kateri pogoj v vsaki poti določa poznejši datum: starost ali dopolnitev dobe. Za okvirno višino uporabite pokojninsko osnovo, ki jo imate v izračunu ZPIZ. Znesek mesečne plače ni ta podatek.",
+      "Za podatke iz matične evidence uporabite osebni kalkulator Moj eZPIZ. Če se odločate o prenehanju zavarovanja in vložitvi zahteve, [ZPIZ pojasnjuje postopek pred zaključkom dela](@pension-before-retirement). Za že priznano pokojnino so [datumi nakazil](/izplacila-pokojnin/) objavljeni ločeno."
+    ],
+    "links": [
+      "/izplacila-pokojnin/"
+    ],
+    "sources": [
+      "pension-before-retirement"
+    ]
+  },
+  "/horoskop/oven/": {
+    "title": "Oven: izberite, kaj boste končali danes",
+    "paragraphs": [
+      "Če vas dnevni zapis spomni na več odprtih nalog, v dnevni planer vpišite eno, ki jo lahko končate v 25 minutah. Po koncu zabeležite naslednji korak za preostale naloge. Tako dobite konkreten izid tudi, če se vam z drugimi deli zapisa ne da ukvarjati."
+    ],
+    "links": [
+      "/dnevni-planer/"
+    ],
+    "sources": []
+  },
+  "/horoskop/bik/": {
+    "title": "Bik: pustite en termin v tednu brez obveznosti",
+    "paragraphs": [
+      "V tedenskem planerju najprej označite ure, ki jih ne morete premakniti. Za opravilo, ki se pogosto zavleče, pustite dodaten termin na drugem dnevu. Če ga ne porabite, ni treba nanj prestaviti nove naloge."
+    ],
+    "links": [
+      "/tedenski-koledar/"
+    ],
+    "sources": []
+  },
+  "/horoskop/dvojcka/": {
+    "title": "Dvojčka: ločite ideje od dejanskih dogovorov",
+    "paragraphs": [
+      "Na isti strani si zabeležite idejo in dogovor, vendar le dogovoru dodajte datum in uro. Zamisel, ki se vam zdi zanimiva tudi naslednji dan, lahko nato razdelite na manjše naloge. Dnevni zapis je iztočnica za razmislek, ne potrditev dogovora."
+    ],
+    "links": [
+      "/dnevni-planer/"
+    ],
+    "sources": []
+  },
+  "/horoskop/rak/": {
+    "title": "Rak: pripravite kratek družinski tedenski pregled",
+    "paragraphs": [
+      "Če želite po branju obnoviti družinske načrte, začnite pri treh obveznostih, za katere so dogovorjeni datum, kraj in oseba. Šele nato dodajte opravila, ki se jih lahko loti kdorkoli. Vsakemu pustite prostor za lasten termin."
+    ],
+    "links": [
+      "/druzinski-planer/"
+    ],
+    "sources": []
+  },
+  "/horoskop/lev/": {
+    "title": "Lev: primer za pripravo pred nastopom ali predstavitvijo",
+    "paragraphs": [
+      "Za bližnjo predstavitev določite ločena termina za prvo vajo in kratek pregled gradiva. V tedenski planer vpišite tudi rok za oddajo, če ga je določil organizator. Čas za vajo izberite po razpoložljivosti, ki jo lahko preverite."
+    ],
+    "links": [
+      "/tedenski-koledar/"
+    ],
+    "sources": []
+  },
+  "/horoskop/devica/": {
+    "title": "Devica: koliko časa je še do izpita ali oddaje?",
+    "paragraphs": [
+      "Če vas po branju zanima predvsem bližnji rok, v študijskem načrtovalniku označite tri dni, na katere se res lahko učite. Z enim preizkusom ugotovite, koliko nalog dokončate v eni uri, in nato prilagodite skupno število ur v načrtu."
+    ],
+    "links": [
+      "/studijski-nacrtovalnik/"
+    ],
+    "sources": []
+  },
+  "/horoskop/tehtnica/": {
+    "title": "Tehtnica: dva možna termina za isti dogovor",
+    "paragraphs": [
+      "Ko se morate z nekom uskladiti, ponudite dva termina z začetkom in predvidenim koncem. V koledar kot obveznost vpišite termin, ki ga oba potrdite. Za datum, ki je šele v načrtu, imejte ločen zaznamek."
+    ],
+    "links": [
+      "/mesecni-koledar/"
+    ],
+    "sources": []
+  },
+  "/horoskop/skorpijon/": {
+    "title": "Škorpijon: od zapisa o Luni do opazovanja zunaj",
+    "paragraphs": [
+      "Če v dnevnem zapisu opazite omembo Lune, v orodju za Lunin vzhod izberite kraj in isti datum. Nato preverite, kdaj je Luna nad obzorjem. Dober pogled je odvisen tudi od oblakov ter zgradb ali hribov v smeri opazovanja."
+    ],
+    "links": [
+      "/lunin-vzhod-in-zahod/"
+    ],
+    "sources": [
+      "sun"
+    ]
+  },
+  "/horoskop/strelec/": {
+    "title": "Strelec: koliko dni še ostane za pripravo izleta?",
+    "paragraphs": [
+      "V odštevanje vnesite dan odhoda in mu dodajte opis, po katerem ga boste prepoznali med drugimi datumi. Če je treba prtljago, prijavo ali vstopnice pripraviti do prejšnjega dne, dodajte še ta datum. Z njim dobite uporabnejši rok za pripravo."
+    ],
+    "links": [
+      "/odstevanje/"
+    ],
+    "sources": []
+  },
+  "/horoskop/kozorog/": {
+    "title": "Kozorog: dolgoročni cilj razdelite po mesecih",
+    "paragraphs": [
+      "Izberite en mejnik in določite mesec, v katerem ga lahko preverite. V letnem koledarju zapišite tudi vmesni pregled. Če ob prvem pregledu še nimate potrebnih podatkov, premaknite mejnik in označite razlog, da bo sprememba razumljiva tudi pozneje."
+    ],
+    "links": [
+      "/koledar/"
+    ],
+    "sources": []
+  },
+  "/horoskop/vodnar/": {
+    "title": "Vodnar: primerjajte datum in čas pri izračunu ascendenta",
+    "paragraphs": [
+      "Če rojstna ura izvira iz približnega družinskega spomina, poskusite v kalkulatorju dva bližnja časa in primerjajte prikaza. Kraj in datum pustite enaka, saj tako vidite, kaj spremeni samo čas. Za natančnejši vnos se opirajte na dokument oziroma uro v njem."
+    ],
+    "links": [
+      "/horoskop/izracun-znamenja/"
+    ],
+    "sources": [
+      "timezone"
+    ]
+  },
+  "/horoskop/ribi/": {
+    "title": "Ribi: kaj pomeni navedena Lunina mena?",
+    "paragraphs": [
+      "Če je v dnevnem zapisu naveden del cikla, odprite lunine mene za izbrano leto in poiščite najbližji mlaj ali ščip. Koledar men pove trenutek astronomske faze, lunin vzhod pa je odvisen od kraja. Za ogled neba si zato zabeležite oboje."
+    ],
+    "links": [
+      "/lunine-mene/"
+    ],
+    "sources": [
+      "moon"
+    ]
+  },
+  "/prazniki/2026/": {
+    "title": "Prazniki 2026: prosti petek ob božiču in sobota 26. decembra",
+    "paragraphs": [
+      "Na jesenskem prehodu sta dan reformacije 31. oktobra in dan spomina na mrtve 1. novembra padla na isti konec tedna. Pri petdnevnem urniku ta praznika ne zmanjšata števila delovnikov. Božič, 25. decembra 2026, je v petek, dan samostojnosti in enotnosti pa v soboto.",
+      "Pri razporedu od torka do sobote ima decembrski par drugačen učinek: oba datuma sta sicer delovna. V [kalkulatorju delovnih dni](/kalkulator-delovnih-dni/) izberite tak razpored za 21.–27. december. Pri petdnevnem razporedu od ponedeljka do petka praznik izloči en dan, pri razporedu od torka do sobote pa dva. Za proste dni otrok preverite tudi [novoletne šolske počitnice](/solske-pocitnice/)."
+    ],
+    "links": [
+      "/koledar/2026/december/",
+      "/delovni-dnevi/2026/"
+    ],
+    "sources": [
+      "holidays",
+      "basic-school"
     ]
   }
 }

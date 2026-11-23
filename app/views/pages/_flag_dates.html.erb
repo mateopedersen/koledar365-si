@@ -1,0 +1,71 @@
+<% years = CalendarEngine::YEARS
+   initial_year = @today.year.clamp(years.first, years.last)
+   rules = { 'required' => 'Obvezno na poslopjih državnih in občinskih organov', 'optional' => 'Zastavo lahko izobesite' } %>
+
+<section class="tool-block" id="datumi" aria-labelledby="flag-dates-heading" data-tool-list>
+  <h2 id="flag-dates-heading">Datumi za izobešanje zastave</h2>
+  <p>Izberite leto in odprite posamezen datum. Na strani praznika boste našli njegovo ozadje, status dela prostega dne in možnosti za dodajanje v koledar.</p>
+  <div class="tool-filter-row">
+    <label>Leto
+      <select data-row-year><% years.each do |year| %><option value="<%= year %>" <%= 'selected' if year == initial_year %>><%= year %></option><% end %></select>
+    </label>
+    <label>Pravila izobešanja
+      <select data-row-category>
+        <option value="">Vsi datumi</option>
+        <option value="required">Obvezno na poslopjih organov</option>
+        <option value="optional">Izobešanje je dovoljeno</option>
+      </select>
+    </label>
+    <button type="button" class="tool-secondary" data-row-export>Prenesi prikazane datume (.ics)</button>
+  </div>
+  <div class="tool-line-list">
+    <% LocalTools.flags.each do |row| %>
+      <% date = row.fetch(:date); rule = row.fetch(:type); title = row.fetch(:title) %>
+      <a class="tool-card-line flag-date-link" href="<%= row.fetch(:url) %>" data-tool-row data-year="<%= date.year %>"
+         data-category="<%= rule %>" data-title="<%= title %>" data-date="<%= date %>" data-source="<%= LocalTools::FLAGS_SOURCE %>" <%= 'hidden' if date.year != initial_year %>>
+        <time class="tool-date-chip" datetime="<%= date %>"><%= date.strftime('%-d. %-m.') %></time>
+        <span><strong><%= title %></strong><span class="tool-kind-label"><%= rules.fetch(rule) %></span></span>
+        <span class="flag-date-arrow" aria-hidden="true"><%= ui_icon('chevron-right') %></span>
+      </a>
+    <% end %>
+  </div>
+  <p data-row-empty role="status" hidden>Za izbrani filter ni datumov.</p>
+</section>
+
+<section class="tool-block flag-guidance" id="pravila" aria-labelledby="flag-rules-heading">
+  <h2 id="flag-rules-heading">Kako izobesimo zastavo Republike Slovenije?</h2>
+  <div class="flag-rule-grid">
+    <div>
+      <h3>Na državnih in občinskih poslopjih</h3>
+      <p>Šesti člen ZGZH določa pet praznikov s šestimi datumi, ker praznik dela zajema 1. in 2. maj. Zastava mora biti izobešena ves čas teh praznikov na poslopjih, kjer imajo uradne prostore državni organi ali organi lokalnih skupnosti.</p>
+    </div>
+    <div>
+      <h3>Na domu</h3>
+      <p>Na stanovanjskih hišah je izobešanje ob teh praznikih prostovoljno. GOV.SI navaja še osem državnih praznikov, ob katerih se zastava lahko izobesi. Na drogu naj bo zastava pritrjena po krajši stranici, z belo progo zgoraj in grbom levo zgoraj, gledano od spredaj.</p>
+    </div>
+    <div>
+      <h3>Ob dnevu žalovanja</h3>
+      <p>Dan žalovanja razglasi Vlada Republike Slovenije. Na državnih ustanovah zastave takrat spustijo na pol droga. Datum je znan po objavi sklepa vlade.</p>
+    </div>
+  </div>
+  <div class="tool-source-links">
+    <%= source_link(LocalTools::FLAGS_SOURCE, 'GOV.SI – prazniki in dan žalovanja') %>
+    <%= source_link(LocalTools::STATE_SYMBOLS, 'GOV.SI – pravilno izobešanje zastave') %>
+    <%= source_link(LocalTools::FLAG_PROTOCOL, 'UKOM – priročnik o državnih simbolih (PDF)') %>
+  </div>
+</section>
+
+<section class="tool-block" aria-labelledby="flag-history-heading">
+  <h2 id="flag-history-heading">7. april in zgodovina slovenske zastave</h2>
+  <p>Dan slovenske zastave zaznamuje izobešanje narodne trobojnice na Wolfovi ulici v Ljubljani leta 1848. Gre za spominski dan zunaj seznama šestih obveznih datumov.</p>
+  <a class="tool-card-line flag-date-link" href="/pomembni-dnevi/<%= LocalTools::FLAG_DAY_SLUG %>/">
+    <span class="tool-date-chip">7. april</span>
+    <span><strong>Dan slovenske zastave</strong><span class="tool-kind-label">Zgodba o trobojnici in datumi obeležitve</span></span>
+    <span class="flag-date-arrow" aria-hidden="true"><%= ui_icon('chevron-right') %></span>
+  </a>
+</section>
+
+<nav class="tool-source-links" aria-label="Povezani koledarji">
+  <%= link_to 'Prazniki v Sloveniji', '/prazniki/' %>
+  <%= link_to 'Odštevanje do datuma', '/odstevanje/' %>
+</nav>

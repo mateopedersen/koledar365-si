@@ -1,0 +1,82 @@
+<section class="tool-block name-day-guide" aria-labelledby="name-day-intro">
+  <h2 id="name-day-intro">Kaj je god in kako poiščemo pravi datum?</h2>
+  <p>God je osebno obeleževanje, povezano s svetnikom oziroma z imenom v koledarju. Rojstni dan pa je obletnica rojstva. V družinah lahko god zaznamujejo z voščilom, obiskom ali drobno pozornostjo. Slovenski etnografski muzej hrani tudi motive voščilnic, ki so jih uporabljali za god in rojstni dan.</p>
+  <p>Najprej poiščite ime in preberite ime svetnika v zadetku. Pri več možnostih vprašajte osebo, na kateri datum navadno praznuje. Če poznate le ljubkovalno ime, poskusite s polnim imenom. V koledarju je na primer Miklavž naveden tako pod ljudskim imenom kot pod imenom Nikolaj.</p>
+  <p>Izbor temelji na datumih iz koledarja Slovenske škofovske konference za leto 2026. Za bogoslužje v določenem letu preverite aktualno cerkveno leto in urnik župnije.</p>
+  <a class="button" href="#poisci-god">Poišči ime ali mesec <span aria-hidden="true"><%= ui_icon('arrow-down') %></span></a>
+</section>
+
+<section class="tool-block name-day-directory" id="poisci-god" aria-labelledby="name-day-list" data-tool-list>
+  <h2 id="name-day-list">Izbrani godovi po imenih in mesecih</h2>
+  <div class="tool-filter-row name-day-filters">
+    <label>Ime ali svetnik<input type="search" data-row-search placeholder="npr. Nikolaj ali Jožef"></label>
+    <label>Mesec
+      <select data-row-category>
+        <option value="">Vsi meseci</option>
+        <% CalendarEngine::MONTHS.each_with_index do |month, index| %>
+          <option value="<%= format('%02d', index + 1) %>"><%= month.capitalize %></option>
+        <% end %>
+      </select>
+    </label>
+  </div>
+  <p class="name-day-count" data-row-count="Prikazani godovi" role="status"></p>
+  <div class="tool-line-list">
+    <% LocalTools.saints.each do |saint| %>
+      <% month, day = saint.fetch(:date).split('-'); names = saint.fetch(:names); title = saint.fetch(:title) %>
+      <div class="tool-card-line" data-tool-row data-category="<%= month %>" data-search-text="<%= "#{names} #{title}" %>">
+        <span class="tool-date-chip"><%= day.to_i %>. <%= month.to_i %>.</span>
+        <div><strong><%= names %></strong><p><%= title %></p></div>
+        <button type="button" class="tool-secondary" data-reminder-pick data-name="<%= title %>" data-recurring-day="<%= saint.fetch(:date) %>" aria-label="Uporabi datum za <%= title %>" disabled>Uporabi datum</button>
+      </div>
+    <% end %>
+  </div>
+  <p data-row-empty hidden>Za ta vnos v izboru ni zadetka. Poskusite z drugim imenom ali <a href="#moji-opomniki">vpišite svoj datum</a>.</p>
+</section>
+
+<%= render 'local_tool_reminders', kind: kind, heading: 'Moji godovi', hint: 'Izberite »Uporabi datum« pri godu ali vpišite lasten datum. Nato po potrebi spremenite ime zapisa in izberite »Dodaj«.', today: today %>
+
+<section class="tool-block name-day-guide" aria-labelledby="name-day-examples">
+  <h2 id="name-day-examples">Kako ločiti godove, kadar se ime ponovi?</h2>
+  <div class="name-day-examples">
+    <div>
+      <h3>Jožef 19. marca in 1. maja</h3>
+      <p>Devetnajsti marec je praznik svetega Jožefa, Marijinega moža. Prvega maja je v cerkvenem koledarju sveti Jožef Delavec. Zabeležite datum, ki ga uporablja oseba, ki ji želite voščiti. Več o marčevskem datumu je v zapisu o <a href="/pomembni-dnevi/jozefovo/">jožefovem</a>. Prvi maj je v Sloveniji tudi <a href="/prazniki/praznik-dela/">praznik dela</a>.</p>
+    </div>
+    <div>
+      <h3>Nikolaj in Miklavž 6. decembra</h3>
+      <p>Obe imeni v tem izboru vodita do svetega Nikolaja. God je 6. decembra, miklavževanje z obdarovanjem pa se pogosto začne že zvečer 5. decembra. V koledarju lahko obdržite oba datuma, če želite na enega voščiti in se na drugega udeležiti <a href="/prazniki/miklavz/">miklavževanja</a>.</p>
+    </div>
+    <div>
+      <h3>Ciril in Metod 5. julija</h3>
+      <p>Slovenski katoliški koledar skupni praznik Cirila in Metoda postavlja na 5. julij. Slovenska škofovska konferenca za katoliško obeležitev zunaj slovanskih dežel navaja 14. februar. Pri koledarju iz druge države najprej preverite, kateri cerkveni tradiciji sledi.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tool-block name-day-guide" aria-labelledby="name-day-calendar-help">
+  <h2 id="name-day-calendar-help">Kako shranim god in nastavim letno ponavljanje?</h2>
+  <p>Gumb »Uporabi datum« predlaga najbližji datum izbranega godu od danes naprej po slovenskem času. Če je 19. marec že minil, se izbere 19. marec prihodnjega leta. Pred shranjevanjem lahko vpišete drugo leto ali svoj naslov. Zapis ostane v trenutnem brskalniku in ga lahko pozneje označite kot opravljenega ali odstranite.</p>
+  <p>Za prenos odprtih zapisov izberite »Prenesi opomnike (.ics)«. Datoteka vsebuje izbrane celodnevne dogodke. Po uvozu odprite dogodek v svojem koledarju in tam izberite letno ponavljanje ali obvestilo. Če menjate napravo, si pred tem shranite datoteko. Za ločen pregled rojstnih dni uporabite <a href="/rojstnodnevni-koledar/">rojstnodnevni koledar</a>.</p>
+  <details>
+    <summary>Kaj, če v seznamu manjka ime?</summary>
+    <p>Seznam zajema izbrana imena, zapisana ob datumih v navedenem viru. Če oseba svoj god praznuje na drug datum ali če ime v izboru manjka, v obrazec »Moji godovi« vpišite njen običajni datum. Pri preverjanju pomagata ime svetnika in izdaja cerkvenega koledarja.</p>
+  </details>
+  <details>
+    <summary>Ali ima dan lahko dvojni pomen v Sloveniji?</summary>
+    <p>Da. Šestindvajsetega decembra sta <a href="/pomembni-dnevi/stefanovo/">štefanovo</a> in zakonsko dela prost <a href="/prazniki/dan-samostojnosti-in-enotnosti/">dan samostojnosti in enotnosti</a>. Za družinsko voščilo si zapišite god, za službeni urnik pa preverite <a href="/prazniki/">pregled dela prostih dni</a>.</p>
+  </details>
+</section>
+
+<section class="tool-block name-day-guide" aria-labelledby="name-day-sources">
+  <h2 id="name-day-sources">Viri za datume in izročilo</h2>
+  <p>Datume smo primerjali s koledarjem Slovenske škofovske konference. Pri več imenih na isti dan smo ohranili, na katerega svetnika se posamezno ime nanaša. Pregled virov za to stran je bil opravljen <time datetime="2026-11-23">23. novembra 2026</time>.</p>
+  <ul class="name-day-sources">
+    <li><%= source_link(LocalTools::SAINTS_SOURCE, 'Slovenska škofovska konferenca – koledar za 2026 (PDF)') %> · Izvirni vir datumov v izboru.</li>
+    <li><%= source_link('https://www.katoliska-cerkev.si/slovenski-liturgicni-koledar', 'Slovenski liturgični koledar') %> · Obseg koledarja za Cerkev v Sloveniji in povezava na letne objave.</li>
+    <li><%= source_link('https://www.katoliska-cerkev.si/slovesni-praznik-slovanskih-apostolov-svetih-bratov-cirila-in-metoda', 'Katoliška cerkev – Ciril in Metod') %> · Julijski datum v Sloveniji.</li>
+    <li><%= source_link('https://www.katoliska-cerkev.si/god-sv-nikolaja-miklavza', 'Katoliška cerkev – god svetega Nikolaja') %> · Povezava imena Nikolaj z Miklavžem in decembrsko izročilo.</li>
+    <li><%= source_link('https://fran.si/133/sskj2-slovar-slovenskega-knjiznega-jezika-2/4475975/god', 'Fran, SSKJ² – pomen besede god') %> · Slovarska razlaga izraza.</li>
+    <li><%= source_link('https://www.etno-muzej.si/sl/digitalne-zbirke/anton-sustersic', 'Slovenski etnografski muzej – motivi voščilnic') %> · Primeri kulturnega gradiva o godu in rojstnem dnevu.</li>
+  </ul>
+  <p><a href="/uredniska-politika/">Uredniška pravila Koledar365</a> · <a href="/kontakt/">Predlagajte popravek</a></p>
+</section>

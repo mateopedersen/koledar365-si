@@ -167,10 +167,11 @@ class CityPageTest < ActionDispatch::IntegrationTest
         assert_select 'img',count:1
         assert_select 'a[href=?]',photo.fetch('source'),count:1
         assert_select 'dd',text:photo.fetch('author').squish,count:1
+        license = ImageRights.license_label(photo.fetch('license')).squish
         if photo['license_url'].present?
-          assert_select 'a[href=?]',photo.fetch('license_url'),text:photo.fetch('license').squish,count:1
+          assert_select 'a[href=?]',photo.fetch('license_url'),text:license,count:1
         else
-          assert_select 'dd',text:photo.fetch('license').squish,count:1
+          assert_select 'dd',text:license,count:1
         end
       end
     end

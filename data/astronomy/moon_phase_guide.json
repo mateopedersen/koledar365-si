@@ -1,0 +1,183 @@
+{
+  "hero": {
+    "path": "/images/astronomy/moon-phases/luna-nad-piranom-1280.webp",
+    "width": 1280,
+    "height": 960,
+    "alt": "Skoraj polna Luna nad osvetljenim piranskim obzidjem in strehami mesta.",
+    "source": "https://commons.wikimedia.org/wiki/File:Full_moon_over_the_Walls_of_Piran%2C_2026.jpg",
+    "credit": "Thomas Dahlstrøm Nielsen",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "changes": "Pomanjšanje in zapis v WebP.",
+    "original_sha256": "a3340298b2d1f7c786d567e570f31a2a1a3cbeb3bcc9a4ca6bbaac091523b4ae",
+    "small_path": "/images/astronomy/moon-phases/luna-nad-piranom-640.webp",
+    "caption": "Luna nad piranskim obzidjem, 30. julija 2026",
+    "date": "2026-07-30"
+  },
+  "phases": [
+    {
+      "id": "mlaj",
+      "name": "Mlaj",
+      "label": "Glavna mena",
+      "description": "Luna potuje po nebu blizu Sonca. Osvetljena polovica je obrnjena pretežno stran od Zemlje, zato Lune takrat praviloma ne vidimo."
+    },
+    {
+      "id": "rastoci-srp",
+      "name": "Rastoči srp",
+      "label": "Med mlajem in prvim krajcem",
+      "description": "Po mlaju se prikaže tanek lok. Poiščite ga nizko nad zahodnim obzorjem po sončnem zahodu.",
+      "photo": {
+        "path": "/images/astronomy/moon-phases/rastoci-srp.webp",
+        "width": 538,
+        "height": 440,
+        "alt": "Ozek svetel srp rastoče Lune, nagnjen proti desni na črnem nebu.",
+        "source": "https://commons.wikimedia.org/wiki/File:Waxing_Crescent_Moon_against_a_Dark_Night_Sky_%E2%80%93_Astrophotography.jpg",
+        "credit": "Vishnumishra07",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Izrez, pomanjšanje in zapis v WebP.",
+        "original_sha256": "508919a894e0aa344d3129ac47278b385f91ef9fbf7f8c803b51eb89a0ce2295"
+      }
+    },
+    {
+      "id": "prvi-krajec",
+      "name": "Prvi krajec",
+      "label": "Glavna mena",
+      "description": "Vidimo približno polovico osvetljene ploskve. To je dober večerni čas za opazovanje senc ob robu osvetljenega dela.",
+      "photo": {
+        "path": "/images/astronomy/moon-phases/prvi-krajec.webp",
+        "width": 435,
+        "height": 440,
+        "alt": "Fotografija prvega krajca z osvetljeno desno polovico in sencami v kraterjih.",
+        "source": "https://commons.wikimedia.org/wiki/File:Half_of_Moon.jpg",
+        "credit": "Igor da Bari",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "changes": "Izrez, pomanjšanje in zapis v WebP.",
+        "original_sha256": "5de3443e324e4d5dd12127981fba2bad9809abeff545817d89aad101ec7f8b5b"
+      }
+    },
+    {
+      "id": "rastoca-luna",
+      "name": "Rastoča izbočena Luna",
+      "label": "Med prvim krajcem in ščipom",
+      "description": "Vsak večer vidimo več kot polovico osvetljene ploskve. Pred ščipom je Luna lahko vidna že popoldne.",
+      "photo": {
+        "path": "/images/astronomy/moon-phases/rastoca-izbocena-luna.webp",
+        "width": 521,
+        "height": 440,
+        "alt": "Rastoča izbočena Luna, na desni svetla in na levem robu v senci, na modrem nebu.",
+        "source": "https://commons.wikimedia.org/wiki/File:Waxing_gibbous_moon%2C_2022-10-04.jpg",
+        "credit": "Cbaile19",
+        "license": "CC0 1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Izrez, pomanjšanje in zapis v WebP.",
+        "original_sha256": "94fa16886e7c4e0c617361460ad3f6b284707fd87b89a5cefc08a9d07a29567f"
+      }
+    },
+    {
+      "id": "polna-luna",
+      "name": "Polna luna ali ščip",
+      "label": "Glavna mena",
+      "description": "Proti Zemlji je obrnjena skoraj vsa osvetljena polovica. Polna luna vzide približno takrat, ko Sonce zaide.",
+      "photo": {
+        "path": "/images/astronomy/moon-phases/polna-luna.webp",
+        "width": 463,
+        "height": 440,
+        "alt": "Teleskopski posnetek skoraj povsem osvetljene ploskve polne Lune s temnimi morji in kraterji.",
+        "source": "https://commons.wikimedia.org/wiki/File:FullMoon2010.jpg",
+        "credit": "Gregory H. Revera",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Pomanjšanje in zapis v WebP.",
+        "original_sha256": "c68a2ddc380e437bf54982a8bd178f3076b0f509d204c79829b04dfc73f1f90e"
+      }
+    },
+    {
+      "id": "pojemajoca-luna",
+      "name": "Pojemajoča izbočena Luna",
+      "label": "Med ščipom in zadnjim krajcem",
+      "description": "Po ščipu se osvetljeni del manjša. Luna navadno vzide pozneje zvečer in jo pogosto še ujamemo zjutraj.",
+      "photo": {
+        "path": "/images/astronomy/moon-phases/pojemajoca-izbocena-luna.webp",
+        "width": 385,
+        "height": 440,
+        "alt": "Pojemajoča izbočena Luna s svetlim levim delom in senco ob desnem robu.",
+        "source": "https://commons.wikimedia.org/wiki/File:Lunar_Phases_%2810410930423%29.jpg",
+        "credit": "David Warrington",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/",
+        "changes": "Izrez ene fotografije iz avtorjevega zaporedja, pomanjšanje in zapis v WebP.",
+        "original_sha256": "ca41d2dbf1ab1c56091cb1360f7a870bd24a7be1edb546a6c8c86a77e017d93f"
+      }
+    },
+    {
+      "id": "zadnji-krajec",
+      "name": "Zadnji krajec",
+      "label": "Glavna mena",
+      "description": "Spet je vidna približno polovica osvetljene ploskve. Luna pogosto vzide okoli polnoči in ostane vidna tudi po vzhodu Sonca.",
+      "photo": {
+        "path": "/images/astronomy/moon-phases/zadnji-krajec.webp",
+        "width": 435,
+        "height": 440,
+        "alt": "Luna blizu zadnjega krajca z nagnjeno svetlo polovico in senco na zgornjem desnem delu.",
+        "source": "https://commons.wikimedia.org/wiki/File:Last_Quarter_Moon_at_Ramadan.jpg",
+        "credit": "علاء",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Izrez, pomanjšanje in zapis v WebP.",
+        "original_sha256": "4c100950c81c8331113e0901562c592e7922f3eabe3ec5d520af6df64af570da"
+      }
+    },
+    {
+      "id": "pojemajoci-srp",
+      "name": "Pojemajoči srp",
+      "label": "Med zadnjim krajcem in mlajem",
+      "description": "Pred mlajem je viden vedno tanjši lok. Ob jasnem vzhodnem obzorju ga poiščite v jutranjem mraku.",
+      "photo": {
+        "path": "/images/astronomy/moon-phases/pojemajoci-srp.webp",
+        "width": 442,
+        "height": 440,
+        "alt": "Tanek pojemajoči Lunin srp, osvetljen ob levem in spodnjem robu na temnem nebu.",
+        "source": "https://commons.wikimedia.org/wiki/File:Moon_Crescent_from_Pune%2C_India_on_20_April_2020.jpg",
+        "credit": "Phadke09",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "changes": "Izrez, pomanjšanje in zapis v WebP.",
+        "original_sha256": "b1ffbea7001205f3e3ac467376fa4b03cce6eeadd0564e499275d7903423c32f"
+      }
+    }
+  ],
+  "new_moon_photos": {
+    "mlaj-iss": {
+      "path": "/images/astronomy/moon-phases/mlaj-zemljin-sij-iss-1280.webp",
+      "width": 1280,
+      "height": 898,
+      "original_sha256": "84c6c06ec2c4f915c2c3b75d9d8c661c4b285148ae775dc2a3e87bc482a033fc",
+      "changes": "Izrez, pomanjšanje in zapis v WebP.",
+      "small_path": "/images/astronomy/moon-phases/mlaj-zemljin-sij-iss-640.webp",
+      "caption": "Mlada Luna in Zemljin sij nad atmosfero",
+      "alt": "Fotografija z Mednarodne vesoljske postaje prikazuje ozek Lunin srp, medlo ploskev Lune in modre plasti Zemljinega ozračja.",
+      "source": "https://science.nasa.gov/earth/earth-observatory/earthshine-83782/",
+      "credit": "NASA · ISS Crew Earth Observations Facility",
+      "license": "NASA – pogoji uporabe fotografij",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "copyright_notice": "Fotografija ISS028-E-20073. Uporaba po smernicah NASA za slike in medije."
+    },
+    "mlaj-paranal": {
+      "path": "/images/astronomy/moon-phases/mlaj-lunin-srp-paranal-960.webp",
+      "width": 960,
+      "height": 588,
+      "original_sha256": "fc009929cd166992d93a9d5b88a166a57d5aad6d4bca7b125bed39aeef1697bc",
+      "changes": "Pomanjšanje in zapis v WebP.",
+      "caption": "Prvi dnevi po mlaju nad observatorijem Paranal",
+      "alt": "Svetel Lunin srp in medlo osvetljena preostala ploskev nad obzorjem observatorija Paranal po sončnem zahodu.",
+      "source": "https://www.eso.org/public/images/eso1210a/",
+      "credit": "ESO/B. Tafreshi (twanight.org)",
+      "credit_url": "https://twanight.org/profile/babak-a-tafreshi/",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "terms": "https://www.eso.org/public/outreach/copyright/"
+    }
+  }
+}

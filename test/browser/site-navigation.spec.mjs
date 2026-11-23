@@ -151,6 +151,12 @@ test('tools disclosure supports keyboard, close button, outside clicks, scrollin
     expect(box.x).toBeGreaterThanOrEqual(0);
     expect(box.x + box.width).toBeLessThanOrEqual(width + 1);
     await expect.poll(async () => panel.evaluate(el => el.getBoundingClientRect().bottom)).toBeLessThanOrEqual(901);
+    if (width >= 768) {
+      const search = await panel.locator('.nav-directory__search').boundingBox();
+      const close = await panel.getByRole('button', { name: 'Zapri meni orodij' }).boundingBox();
+      expect(Math.abs(search.y - close.y)).toBeLessThanOrEqual(1);
+      expect(Math.abs(search.height - close.height)).toBeLessThanOrEqual(1);
+    }
     await trigger.press('Escape');
     await expect(menu).not.toHaveAttribute('open', '');
     await expect(trigger).toBeFocused();

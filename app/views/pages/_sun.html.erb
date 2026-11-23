@@ -16,7 +16,7 @@
       <p>Izberite mesto in datum ter raziščite pot Sonca od jutranjega svita do večernega mraka.</p>
       <%= render 'hero_features', label: 'Značilnosti izračuna', dark: true, items: [['pin', "#{city_names.size} slovenskih mest"], ['clock', 'Krajevni čas v Sloveniji'], ['sun', 'Simulacija poti Sonca']] %>
     </div>
-    <a class="sun-masthead__scroll" href="#izracun"><span aria-hidden="true">↓</span> Izberite mesto in datum</a>
+    <a class="sun-masthead__scroll" href="#izracun"><span aria-hidden="true"><%= ui_icon('arrow-down') %></span> Izberite mesto in datum</a>
     <div class="sun-masthead__ornament" aria-hidden="true">
       <svg viewBox="0 0 600 220" focusable="false">
         <defs><linearGradient id="masthead-sun" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff4c7"/><stop offset=".55" stop-color="#ff9a66"/><stop offset="1" stop-color="#d82f45"/></linearGradient></defs>
@@ -55,16 +55,17 @@
         </select>
         <button class="sun-locate" type="button" data-sun-locate aria-label="Poišči najbližje mesto glede na mojo lokacijo" title="Poišči najbližje mesto">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+          <span>Moja lokacija</span>
         </button>
       </div>
       <span class="sun-control-help">Izbor lahko poiščete tudi s tipkanjem imena mesta.</span>
       <label for="sun-date">Datum</label>
       <div class="sun-date-row">
-        <button type="button" class="sun-date-step" data-sun-prev aria-label="Prejšnji dan">‹</button>
+        <button type="button" class="sun-date-step" data-sun-prev aria-label="Prejšnji dan"><%= ui_icon('chevron-left') %></button>
         <input id="sun-date" name="date" type="date" min="1901-01-01" max="2099-12-31" value="<%= date.iso8601 %>" required data-sun-date>
-        <button type="button" class="sun-date-step" data-sun-next aria-label="Naslednji dan">›</button>
+        <button type="button" class="sun-date-step" data-sun-next aria-label="Naslednji dan"><%= ui_icon('chevron-right') %></button>
       </div>
-      <button class="sun-submit" type="submit"><span aria-hidden="true">↗</span> Prikaži sončno pot</button>
+      <button class="sun-submit" type="submit"><span aria-hidden="true"><%= ui_icon('chevron-right') %></span> Prikaži sončno pot</button>
       <button class="sun-today" type="button" data-sun-live>Danes · trenutni čas</button>
       <p class="sun-form-status" role="status" aria-live="polite" data-sun-status></p>
     </form>
@@ -163,22 +164,22 @@
         <div class="sun-timeline__ends"><span>00.00 · noč</span><span>12.00 · poldne</span><span>23.55 · noč</span></div>
         <div class="sun-play-row"><p data-sun-position role="status" aria-live="polite">Izračunani položaj Sonca</p><button type="button" data-sun-play aria-pressed="false"><span aria-hidden="true">▶</span> Predvajaj dnevno pot</button></div>
       </div>
-          <p class="sun-scene-note">Položaj in azimut Sonca se računata za izbrani trenutek; disk prikazuje NASA/SDO-jevo fotosfero z vidno granulacijo in sončnimi pegami, obrobljeno z atmosfersko sipano svetlobo. Alpska panorama in oblaki so ilustrativni, ne prikazujejo lokalnega reliefa ali dejanskega vremena. Površinska fotografija: NASA/SDO HMI Continuum, 21. 10. 2026.</p>
+          <p class="sun-scene-note">Položaj in azimut Sonca izračunamo za izbrani trenutek. Na posnetku observatorija SDO, ki ga uporabimo za prikaz Sonca, so vidne sončne pege in zrnata struktura fotosfere. Svetli rob ponazarja sipanje svetlobe v ozračju. Alpska panorama in oblaki so ilustrativni, ne prikazujejo lokalnega reliefa ali dejanskega vremena. Površinska fotografija: NASA/SDO HMI Continuum, 21. 10. 2026.</p>
     </div>
 
     <section class="sun-day-card" aria-label="Sončni časi in dnevna svetloba">
       <div class="sun-day-card__head"><span class="sun-step">03 <i aria-hidden="true"></i> SONČNI ČASI ZA <b data-sun-city-name><%= sun[:name] %></b></span><span class="sun-day-number" data-sun-day-number><%= sun[:minutes] / 60 %><small>h</small> <%= (sun[:minutes] % 60) %><small>min svetlobe</small></span></div>
       <div class="sun-event-list">
         <div class="sun-event sun-event--twilight"><span class="sun-event__icon" aria-hidden="true">◌</span><div><small>Jutranji civilni mrak</small><strong data-sun-value="civil-dawn"><%= sun[:civil_dawn].strftime('%H:%M') %></strong></div><small>–6°</small></div>
-        <div class="sun-event sun-event--rise"><span class="sun-event__icon" aria-hidden="true">↗</span><div><small>Sončni vzhod</small><strong data-sun-value="sunrise"><%= sun[:rise].strftime('%H:%M') %></strong></div><small>obzorje</small></div>
+        <div class="sun-event sun-event--rise"><span class="sun-event__icon" aria-hidden="true"><%= ui_icon('trend-up') %></span><div><small>Sončni vzhod</small><strong data-sun-value="sunrise"><%= sun[:rise].strftime('%H:%M') %></strong></div><small>obzorje</small></div>
         <div class="sun-event sun-event--golden"><span class="sun-event__icon" aria-hidden="true">✦</span><div><small>Jutranja zlata ura</small><strong><span data-sun-value="golden-morning-start"><%= sun[:golden_morning_start].strftime('%H:%M') %></span>–<span data-sun-value="golden-morning-end"><%= sun[:golden_morning_end].strftime('%H:%M') %></span></strong></div><small>−4° do +6°</small></div>
         <div class="sun-event sun-event--noon"><span class="sun-event__icon" aria-hidden="true">☼</span><div><small>Sončno poldne</small><strong data-sun-value="solar-noon"><%= sun[:solar_noon].strftime('%H:%M') %></strong></div><small>najvišja lega</small></div>
         <div class="sun-event sun-event--golden"><span class="sun-event__icon" aria-hidden="true">✦</span><div><small>Večerna zlata ura</small><strong><span data-sun-value="golden-evening-start"><%= sun[:golden_evening_start].strftime('%H:%M') %></span>–<span data-sun-value="golden-evening-end"><%= sun[:golden_evening_end].strftime('%H:%M') %></span></strong></div><small>+6° do −4°</small></div>
-        <div class="sun-event sun-event--set"><span class="sun-event__icon" aria-hidden="true">↘</span><div><small>Sončni zahod</small><strong data-sun-value="sunset"><%= sun[:set].strftime('%H:%M') %></strong></div><small>obzorje</small></div>
+        <div class="sun-event sun-event--set"><span class="sun-event__icon" aria-hidden="true"><%= ui_icon('trend-down') %></span><div><small>Sončni zahod</small><strong data-sun-value="sunset"><%= sun[:set].strftime('%H:%M') %></strong></div><small>obzorje</small></div>
         <div class="sun-event sun-event--twilight"><span class="sun-event__icon" aria-hidden="true">◌</span><div><small>Večerni civilni mrak</small><strong data-sun-value="civil-dusk"><%= sun[:civil_dusk].strftime('%H:%M') %></strong></div><small>–6°</small></div>
       </div>
       <p class="sun-date-caption" data-sun-date-caption><%= sl_date(date) %> · <%= sun[:name] %></p>
-      <button class="sun-share" type="button" data-sun-share><span aria-hidden="true">↗</span> Kopiraj povezavo do izračuna</button>
+      <button class="sun-share" type="button" data-sun-share>Kopiraj povezavo do izračuna</button>
     </section>
   </div>
 
@@ -199,12 +200,12 @@
         <% photo = city_catalog.fetch(id).fetch('photo') %>
         <article class="sun-city-link" data-city-name="<%= values[0].downcase %>">
           <a class="sun-city-link__main" tabindex="0" href="/soncni-vzhod-in-zahod/<%= id %>/">
-            <img class="sun-city-link__mark" src="/city-marks/<%= id %>.svg" width="58" height="46" alt="<%= values[0] %> – fotografija mesta" loading="lazy" decoding="async">
+            <img class="sun-city-link__mark" src="/city-marks/<%= id %>.svg" width="58" height="46" alt="<%= values[0] %> na fotografiji" loading="lazy" decoding="async">
             <span class="sun-city-link__copy"><strong><%= values[0] %></strong><small><%= format('%.4f° N · %.4f° E', values[1], values[2]) %></small></span>
-            <span class="sun-city-link__arrow" aria-hidden="true">↗</span>
+            <span class="sun-city-link__arrow" aria-hidden="true"><%= ui_icon('chevron-right') %></span>
           </a>
           <a class="sun-city-link__credit" tabindex="0" href="/fotografije-in-licence/#<%= id %>">
-            <span>Foto: <%= photo.fetch('author') %></span><b><%= photo.fetch('license') %></b>
+            <span>Foto: <%= photo.fetch('author') %></span> <b><%= ImageRights.license_label(photo.fetch('license')) %></b>
           </a>
         </article>
       <% end %>
