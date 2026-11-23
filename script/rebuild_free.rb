@@ -47,7 +47,6 @@ run!('bundle','exec','ruby','script/build_seo_publication.rb')
 run!('bundle','exec','ruby','script/build_admin_page.rb')
 run!('bundle','exec','ruby','script/package_social.rb')
 run!('bundle','exec','ruby','script/format_numeric_dates.rb')
-run!('bundle','exec','ruby','script/build_release_inventory.rb')
 # Reuse the verified public catalogue on CI; original rendering folders are private build caches.
 run!('bundle','exec','ruby','script/validate_catalog_sources.rb')
 run!(ENV.fetch('PYTHON_BIN','python3'),'script/optimize_gallery_previews.py')
@@ -55,6 +54,7 @@ run!('bundle','exec','ruby','script/audit_static.rb')
 run!(ENV.fetch('PYTHON_BIN','python3'),'script/audit_indexability.py')
 require_relative '../lib/image_format_labels'
 ImageFormatLabels.rewrite!('site')
+run!('bundle','exec','ruby','script/build_release_inventory.rb')
 run!('ruby','script/finalize_static.rb')
 run!('bundle','exec','ruby','script/audit_site_content.rb')
 # Structural SEO checks stay reusable as new pages enter the publication.
