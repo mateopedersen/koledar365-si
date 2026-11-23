@@ -179,8 +179,9 @@ test('the native tools disclosure remains usable when JavaScript is unavailable'
   const page = await context.newPage();
   await page.goto(baseURL + '/');
   await page.locator('[data-navigation-menu] > summary').click();
-  await expect(page.getByRole('link', { name: /Družinski planer/ })).toBeVisible();
-  await page.getByRole('link', { name: /Družinski planer/ }).click();
+  const familyPlanner = page.locator('#site-tools-menu').getByRole('link', { name: /Družinski planer/ });
+  await expect(familyPlanner).toBeVisible();
+  await familyPlanner.click();
   await expect(page).toHaveURL(/\/druzinski-planer\/$/);
   await context.close();
 });
