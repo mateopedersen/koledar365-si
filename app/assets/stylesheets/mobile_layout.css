@@ -206,8 +206,7 @@
   .home-page main#vsebina { padding-block-start: 10px; }
   .home-page .intro:has(>.calendar-studio-cta) { gap: 5px; margin-bottom: 6px; }
   .home-page #vsebina .intro p { line-height: 1.35; }
-  .home-page #vsebina .intro > a.calendar-studio-cta { --k365-control-height: 44px; padding-block: 4px !important; }
-  .home-page .calendar-panel { --k365-control-height: 44px; }
+  .home-page #vsebina .intro > a.calendar-studio-cta { --k365-control-height: 48px; padding-block: 4px !important; }
   .home-page #vsebina .calendar-title { row-gap: 4px; margin-bottom: 6px; }
   .home-page #vsebina .calendar-toolbar { row-gap: 5px; margin-bottom: 6px; }
   .home-page #vsebina .calendar-title .button { padding-block: 6px; }
