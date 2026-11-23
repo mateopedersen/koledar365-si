@@ -574,6 +574,15 @@
     grid-column: 1 / -1;
   }
 }
+@media screen and (max-width:380px){
+  #vsebina .important-controls { padding-inline: 10px; }
+  #vsebina .important-controls .filters select[name="category"] {
+    inline-size: 100%;
+    padding-inline: 8px 24px;
+    background-position: right 6px center;
+    text-overflow: ellipsis;
+  }
+}
 @media screen and (max-width:600px){
   #vsebina .studio-project-actions{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;width:100%;align-items:stretch}
   #vsebina .studio-project-actions>.studio-history{align-self:center}

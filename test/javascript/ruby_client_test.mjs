@@ -57,6 +57,15 @@ test('two silent workers reject within forty seconds and a later user retry rema
  time.tick(40000);await rejection;assert.equal(workers.length,2);assert.ok(workers.every(w=>w.terminated));assert.equal(time.size,0);
  const retry=call('/izracun/',{from:'2028-02-01'});workers[2].reply({id:2,result:20});assert.equal(await retry,20);assert.equal(time.size,0);
 });
+test('a responsive replacement gets time to load its cold runtime',async()=>{
+ const time=clock(),{workers,call}=setup(time),result=call('/izracun/',{from:'2027-04-26',to:'2027-04-27'});
+ workers[0].reply({id:1,fatal:true});
+ workers[1].reply({id:1,started:true});
+ time.tick(35000);
+ assert.equal(workers.length,2);assert.equal(workers[1].terminated,false);
+ workers[1].reply({id:1,result:{days:1}});
+ assert.deepEqual(await result,{days:1});assert.equal(time.size,0);
+});
 test('long exports retain their existing execution window without a date-calculation timeout',async()=>{
  const time=clock(),{workers,call}=setup(time),result=call('/izvozi/',{type:'annual'});
  time.tick(240000);assert.equal(workers.length,1);assert.equal(workers[0].terminated,false);

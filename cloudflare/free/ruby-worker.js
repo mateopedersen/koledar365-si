@@ -15,6 +15,7 @@ const base64=value=>{const data=new TextEncoder().encode(value);let encoded='';f
 let queue=Promise.resolve();
 self.onmessage=event=>{
  const {id,path,data}=event.data;
+ if(path==='/izracun/')self.postMessage({id,started:true});
  queue=queue.then(async()=>{
   let vm;
   try{vm=await engine()}

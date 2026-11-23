@@ -37,8 +37,8 @@ pnpm exec playwright test test/browser/calendar-event-labels.spec.mjs
 # Exercise cold-runtime tab readiness before the longer matrix.
 pnpm exec playwright test test/browser/seo-interactions.spec.mjs --grep "date calculator tabs"
 # Exercise the responsive controls and isolated worker recovery before the broad scans.
-pnpm exec playwright test test/browser/city-card.spec.mjs test/browser/global-layout.spec.mjs test/browser/responsive-layout.spec.mjs test/browser/select-controls.spec.mjs test/browser/studio-loading-layout.spec.mjs --grep 'weather emoji animate|date statistics|month chips|controls at (320|360)px|dropdown indicator at (320|360)px|studio tool names'
-pnpm exec playwright test test/browser/ruby-runtime-recovery.spec.mjs --project=webkit --workers=1
+pnpm exec playwright test test/browser/city-card.spec.mjs test/browser/global-layout.spec.mjs test/browser/responsive-layout.spec.mjs test/browser/select-controls.spec.mjs test/browser/studio-loading-layout.spec.mjs --grep 'weather emoji animate|date statistics|month chips|controls at (320|360)px|dropdown indicator at (320|360)px|studio tool names|phone shortcuts|important-day filters'
+pnpm exec playwright test test/browser/ruby-runtime-recovery.spec.mjs --project=webkit --project=iphone-webkit --workers=1
 # Catch cookie migration overlaps before the long site-wide matrix.
 pnpm exec playwright test test/browser/consent-bar.spec.mjs test/browser/education.spec.mjs test/browser/garden-payments.spec.mjs --grep "cookie consent appears|school timetable keeps|payment coverage ends"
 QA_WORKERS=1 node script/qa_browser.mjs
