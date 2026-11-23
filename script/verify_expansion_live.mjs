@@ -18,12 +18,13 @@ try{
   }
 }catch(error){report.issues.push('Live publication fingerprint could not be read: '+error.message);}
 const expanded=new Set(inventory.expanded_urls),queue=[...inventory.pages];
-const decode=value=>String(value).replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"'").replace(/&lt;/g,'<').replace(/&gt;/g,'>');
+const entities = { amp: '&', apos: "'", '#39': "'", gt: '>', lt: '<', quot: '"' };
+const decode = value => String(value ?? '').replace(/&(amp|apos|#39|gt|lt|quot);/g, (_, name) => entities[name]);
 async function worker(){while(queue.length){const row=queue.shift(),result={url:origin+row.path,status:null,checks:[]};try{
     const response=await request(row.path);result.status=response.status;const html=await response.text();
     if(response.status!==200)result.checks.push('HTTP '+response.status);
     if(/\bnoindex\b/i.test(response.headers.get('x-robots-tag')||''))result.checks.push('Unexpected X-Robots-Tag noindex');
-    const canonical=html.match(/<link\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)/i)?.[1];
+    const canonical=decode(html.match(/<link\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)/i)?.[1]);
     if(canonical!==row.url)result.checks.push('Canonical differs');
     const title=decode(html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]||'');
     if(title!==row.title)result.checks.push('Title differs from prepared publication');
