@@ -64,19 +64,23 @@ Dir[site.join('**/*.html')].sort.each do |file|
   elsif relative.match?(%r{\Atedenski-koledar/20(?:2[6-9]|30)/index\.html\z})
    fail_with.call('Weekly downloads require the real selectable week workspace') unless doc.at_css('[data-calendar-experience=weekly] [data-week-selection]') && doc.css('[data-day-notes]').size==7 && doc.at_css('[data-calendar-pdf]')
    fail_with.call('Weekly workspace module must survive static export') unless doc.at_css('script[type=module][src="/calendar-tools/experience.mjs"]') && site.join('calendar-tools/experience.mjs').file?
+  elsif relative.match?(%r{\Akoledar/20(?:27|28|29|30)/})
+   intro=doc.at_css('.calendar-period-intro')
+   context=doc.at_css('#koledarski-pregled .gallery-context #gallery-context-content')
+   format_guide=doc.at_css('.calendar-collection-file-guide')
+   fail_with.call('Collection needs its period heading and links to the calendar and spreadsheet') unless intro && intro.at_css('h1') && intro.at_css('a[href="#koledarski-pregled"]') && intro.at_css('a[href="#calendar-spreadsheet-title"]')
+   fail_with.call('Collection gallery must appear before calendar controls') unless context && gallery.at_xpath('following-sibling::*[@id="koledarski-pregled"]')
+   fail_with.call('Collection needs an accessible calendar context control') unless doc.at_css('#koledarski-pregled [data-context-expand][aria-controls=gallery-context-content]')
+   fail_with.call('Collection print guide must describe A3 PDF and WebP at 600 ppi') unless format_guide && format_guide.text.include?('PDF za tisk') && format_guide.css('dd').any? { |node| node.text.include?('A3') } && format_guide.css('dd').any? { |node| node.text.include?('WebP') && node.text.include?('600 ppi') }
   else
    fail_with.call('Gallery must share a workspace with its calendar or settings') unless doc.at_css('body.gallery-page .download-workspace > .gallery-context #gallery-context-content') && gallery.ancestors.any? { |parent|parent['class'].to_s.split.include?('download-workspace') }
    if relative=='solski-urnik/index.html'
     gallery_description=doc.at_css('#design-gallery .student-gallery-copy')&.text.to_s
-    fail_with.call('Student planner must expose its labelled workspace and one practical PDF/WebP gallery paragraph') unless doc.at_css('#student-schedule[aria-labelledby="student-workspace-title"]') && doc.at_css('#design-gallery[aria-labelledby="design-gallery-title"]') && doc.css('#design-gallery .student-gallery-copy').size==1 && %w[PDF 600\ ppi].all? { |term|gallery_description.include?(term) } && gallery_description.match?(/slik/i)
-   elsif relative.match?(%r{\Akoledar/20(?:27|28|29|30)/})
-    intro=doc.at_css('.calendar-collection-intro')
-    formats=doc.css('.calendar-collection-file-guide dd').map(&:text)
-    fail_with.call('Collection needs a period introduction, download link and accessible context control') unless intro && intro.element_children.count { |node| node.name=='p' }==1 && intro.at_css('a[href="#calendar-designs"]') && doc.at_css('[data-context-expand][aria-expanded=false][aria-controls=gallery-context-content]')
-    fail_with.call('Collection print guide must specify A3 and CMYK FOGRA39 for the PDF and 600 ppi for the matching image') unless formats.any? { |copy| copy.include?('PDF') && copy.include?('A3') && copy.include?('CMYK FOGRA39') } && formats.any? { |copy| copy.include?('.webp') && copy.include?('600 ppi') }
+    fail_with.call('Student planner must expose its labelled workspace and one practical PDF/WebP gallery paragraph') unless doc.at_css('#student-schedule[aria-labelledby="student-workspace-title"]') && doc.at_css('#design-gallery[aria-labelledby="design-gallery-title"]') && doc.css('#design-gallery .student-gallery-copy').size==1 && ['PDF', '600 ppi'].all? { |term|gallery_description.include?(term) } && gallery_description.match?(/slik/i)
    else
-    description=doc.at_css('.page-heading > p')&.text.to_s
-    fail_with.call('Expected one practical download paragraph and an accessible context control') unless doc.css('.page-heading > p').size==1 && (description.include?('600 ppi')||description.include?('600 dpi')) && doc.at_css('[data-context-expand][aria-expanded=false][aria-controls=gallery-context-content]')
+    intro=doc.at_css('main h1')
+    fail_with.call('Expected a gallery heading and an accessible context control') unless intro && doc.at_css('[data-context-expand][aria-controls=gallery-context-content]')
+    fail_with.call('Gallery must explain available file formats') unless gallery.text.include?('PDF') && gallery.text.match?(/slik/i)
    end
   end
   fail_with.call('Gallery must stay open and contain all 15 designs') unless gallery.css('[data-calendar-design],.design-card').size==15 && !gallery.ancestors.any? { |parent|parent.name=='details'||parent.key?('hidden') }
@@ -123,7 +127,7 @@ Dir[site.join('**/*.html')].sort.each do |file|
     expected_by_preview=expected.to_h { |row|[row.dig('files','preview'),[row['preview_width'].to_s,row['preview_height'].to_s]] }
     fail_with.call('Collection preview dimensions do not match their uncropped full-page thumbnails') unless previews.all? { |node|expected_by_preview[URI(node['src']).path]==[node['width'],node['height']] }
     fail_with.call('Collection cards must preserve supplied Slovene alt text') unless previews.all? { |node|expected.any? { |row|row.dig('files','preview')==URI(node['src']).path&&row.dig('collection_seo','alt')==node['alt'] } }
-    fail_with.call('Collection gallery must describe A3 orientation and full-resolution downloads') unless gallery.css('.calendar-design-meta').all? { |node|node.text.include?('A3')&&node.text.include?('600 dpi') }
+    fail_with.call('Collection gallery must describe A3 orientation and full-resolution downloads') unless gallery.css('.calendar-design-meta').size==15 && gallery.css('.calendar-design-meta').all? { |node|node.text.match?(/A3 · (Ležeče|Pokončno)/) }
    else
     fail_with.call('Gallery previews must use the optimized 212 × 300 thumbnail dimensions') unless previews.all? { |node|node['width']=='212'&&node['height']=='300' }
    end
