@@ -48,13 +48,13 @@ const dateNoteTools=globalThis.CalendarDateNoteTools;
 const noteDateFormat=new Intl.DateTimeFormat('sl-SI',{timeZone:'UTC',dateStyle:'long'});
 function paintCalendarNote(cell,text) {
  let note=$('.calendar-day-note',cell);
- if(!text?.trim()){note?.remove();return}
+ if(!dateNoteTools.hasContent(cell.dataset.noteDate,text)){note?.remove();return}
  if(!note){
   note=document.createElement('p');
   note.className='calendar-day-note';
   ($('.date-events',cell)||cell).append(note);
  }
- note.textContent=text.trim();
+ note.textContent=text?.trim()||'';
  dateNoteTools.apply(note,dateNoteTools.read(cell.dataset.noteDate));
 }
 function saveCalendarNote(date,text,format) {
@@ -79,10 +79,7 @@ if(dateNotesCalendar&&dateNotesDialog&&dayNotesInput&&dateNoteTools){
   $('[data-calendar-note-date]',dateNotesDialog).textContent=noteDateFormat.format(new Date(date+'T12:00Z'));
   $('[data-note-day-link]',dateNotesDialog).href='/?date='+date+'&view=day#personal-planner';
   notesText.value=planner.dataset.selectedDate===date?dayNotesInput.value:personal.notes[date]||'';
-  selectedFormat=dateNoteTools.toolbar(notesText,date,{
-   tools:'Oblikovanje zapiska',font:'Pisava',fonts:['Običajna','Serifna','Enakomerna'],
-   bold:'Krepko',underline:'Podčrtano',important:'Pomembno',emoji:'Emodžiji',
-  });
+  selectedFormat=dateNoteTools.toolbar(notesText,date);
   eventOptions.replaceChildren();
   const titles=new Set($$('.event-label[href], :scope > a[href]',cell).filter(link=>!link.hidden).map(link=>link.title||link.textContent.trim()));
   for(const title of titles){

@@ -25,14 +25,15 @@
 <section class="panel"><h2><%= ui_icon('check') %> Moji koledarji</h2><label class="check"><input type="checkbox" checked id="show-holidays"> <%= ui_icon('holidays') %> Slovenski prazniki</label><label class="check"><input type="checkbox" checked id="show-personal"> <%= ui_icon('personal') %> Osebni dogodki</label><% {'work'=>'Delo','family'=>'Družina','school'=>'Šola'}.each do |key,label| %><label class="check"><input type="checkbox" checked data-category-toggle="<%= key %>"><%= ui_icon(key) %><%= label %></label><% end %><p class="muted">Osebni zapisi ostanejo samo na tej napravi.</p></section></aside>
 </div>
 <dialog class="calendar-note-dialog" id="calendar-note-dialog" aria-labelledby="calendar-note-title">
-  <form method="dialog">
+  <form class="calendar-note-form" method="dialog">
     <h2 id="calendar-note-title">Zapisek za izbrani dan</h2>
-    <p data-calendar-note-date></p>
-    <label for="calendar-note-text">Zapisek</label>
-    <textarea id="calendar-note-text" rows="4" maxlength="10000" autofocus></textarea>
-    <div data-calendar-note-events hidden><p>Dodajte dogodek s koledarja</p><div></div></div>
-    <a data-note-day-link>Odpri dnevni načrt</a>
-    <div class="calendar-note-actions"><button type="submit" value="cancel">Prekliči</button><button type="submit" value="print">Shrani in natisni</button><button class="primary" type="submit" value="save">Dodaj na koledar</button></div>
+    <div class="calendar-note-meta"><p data-calendar-note-date></p><a class="calendar-note-day-link" data-note-day-link>Odpri dnevni načrt</a></div>
+    <div class="calendar-note-field">
+      <label for="calendar-note-text">Zapisek</label>
+      <textarea id="calendar-note-text" rows="4" maxlength="10000" placeholder="Kaj želite zabeležiti?" autofocus></textarea>
+    </div>
+    <div class="calendar-note-events" data-calendar-note-events hidden><p>Dodajte dogodek s koledarja</p><div></div></div>
+    <div class="calendar-note-actions"><button type="submit" value="cancel">Prekliči</button><button type="submit" value="print">Shrani in natisni</button><button type="submit" value="save">Shrani zapisek</button></div>
   </form>
 </dialog>
 <%= render 'editorial_home' %>
