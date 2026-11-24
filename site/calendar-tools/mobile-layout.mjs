@@ -54,7 +54,8 @@ function prepareCalendar(table){
   if(table.closest('.mini')||!table.querySelector('.date-events'))return;
   let agenda=table.nextElementSibling;
   if(!agenda?.classList.contains('calendar-agenda')){
-    agenda=document.createElement('section');agenda.className='calendar-agenda';
+    const collapsible=table.closest('.download-workspace--period');
+    agenda=document.createElement(collapsible?'details':'section');agenda.className='calendar-agenda';
     agenda.setAttribute('aria-label','Dogodki v prikazu');table.after(agenda);
   }
   const rows=[];
@@ -71,7 +72,8 @@ function prepareCalendar(table){
   const signature=JSON.stringify(rows);
   if(calendarState.get(table)!==signature){
     calendarState.set(table,signature);
-    const heading=document.createElement('h3');heading.textContent='Dogodki v prikazu';
+    const heading=document.createElement(agenda.tagName==='DETAILS'?'summary':'h3');
+    heading.textContent=agenda.tagName==='DETAILS'?'Dogodki v prikazu ('+rows.length+')':'Dogodki v prikazu';
     const list=document.createElement('ul');
     for(const row of rows){
       const item=document.createElement('li'),link=document.createElement('a'),date=document.createElement('time'),title=document.createElement('strong');
