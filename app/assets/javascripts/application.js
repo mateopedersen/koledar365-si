@@ -81,7 +81,7 @@ if(dateNotesCalendar&&dateNotesDialog&&dayNotesInput&&dateNoteTools){
   notesText.value=planner.dataset.selectedDate===date?dayNotesInput.value:personal.notes[date]||'';
   selectedFormat=dateNoteTools.toolbar(notesText,date);
   eventOptions.replaceChildren();
-  const titles=new Set($$('.event-label[href], :scope > a[href]',cell).filter(link=>!link.hidden).map(link=>link.title||link.textContent.trim()));
+  const titles=new Set($$('.event-label[href], :scope > a[href]:not(.date-link)',cell).filter(link=>!link.hidden).map(link=>link.title||link.textContent.trim()));
   for(const title of titles){
    const button=document.createElement('button');
    button.type='button';
