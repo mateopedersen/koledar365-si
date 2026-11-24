@@ -3,12 +3,12 @@ VERSION:2.0
 PRODID:-//Koledar365//SL
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
-DTSTAMP:20261123T113701Z
+DTSTAMP:20261124T010913Z
 UID:si-festival:liffe:2026@koledar365.si
 DTSTART;VALUE=DATE:20261111
 DTEND;VALUE=DATE:20261123
 DESCRIPTION:Ljubljana\nCankarjev dom in druga kino prizorišča\nVir: https
- ://www.cd-cc.si/festivali
+ ://cd-cc.si/kultura/film/37-ljubljanski-mednarodni-filmski-festival-liffe
 SUMMARY:Ljubljanski mednarodni filmski festival LIFFe
 END:VEVENT
 END:VCALENDAR

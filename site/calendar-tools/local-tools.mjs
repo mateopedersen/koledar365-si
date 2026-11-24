@@ -91,11 +91,11 @@ function filterRows(root) {
         row.hidden = Boolean((year?.value && row.dataset.year !== year.value) ||
           (category?.value && row.dataset.category !== category.value) ||
           (stage?.value && row.dataset.stage !== stage.value) ||
-          (query && !normalized(row.textContent).includes(query)));
+          (query && !normalized(row.dataset.searchText || row.textContent).includes(query)));
         if (!row.hidden) count += 1;
       }
       if (empty) empty.hidden = count > 0;
-      if (countLabel) countLabel.textContent = stage?.value ? `Prikazani termini: ${count}` : '';
+      if (countLabel) countLabel.textContent = !stage || stage.value ? `${countLabel.dataset.rowCount || 'Prikazani termini'}: ${count}` : '';
       if (download) download.disabled = !count;
     };
     search?.addEventListener('input', render);
@@ -292,23 +292,65 @@ function pension(root) {
 
 function study(root) {
   const form = root.querySelector('[data-study-form]');
+  const { start, end, title, hours, strategy, dailyMinutes, include } = form.elements;
+  const weekdays = form.querySelector('[data-study-weekdays]');
   const result = root.querySelector('[data-study-result]');
+  const details = root.querySelector('[data-study-details]');
   const bars = root.querySelector('[data-study-bars]');
+  const sessions = root.querySelector('[data-study-sessions]');
   const download = root.querySelector('[data-study-ics]');
-  let plan;
+  const numericDate = new Intl.DateTimeFormat('sl-SI', {
+    day: 'numeric', month: 'numeric', year: 'numeric', timeZone: 'UTC'
+  });
+  const sessionDate = new Intl.DateTimeFormat('sl-SI', {
+    weekday: 'short', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC'
+  });
+  let entries = [];
+
+  function notice(text, state) {
+    result.textContent = text;
+    result.dataset.state = state;
+  }
+
+  function resetResults() {
+    entries = [];
+    details.hidden = true;
+    download.disabled = true;
+  }
+
+  form.addEventListener('input', () => {
+    weekdays.hidden = weekdays.disabled = strategy.value !== 'custom';
+    resetResults();
+    notice('Za posodobitev urnika izberite »Sestavi načrt učenja«.', 'pending');
+  });
+
   form.addEventListener('submit', event => {
     event.preventDefault();
-    bars.replaceChildren();
-    download.disabled = true;
+    resetResults();
     try {
-      const data = formValues(form);
-      plan = studyPlan({ ...data, hours: +data.hours });
-      result.replaceChildren(make('span', 'Čas na učni dan'), make('strong', duration(Math.round(plan.target / plan.days.length)),
-        'tool-study-number'), make('span', `${plan.days.length} učnih dni · skupaj ${duration(plan.target)}`));
+      const data = new FormData(form);
+      const limit = dailyMinutes.value ? Number(dailyMinutes.value) : null;
+      const plan = studyPlan({
+        start: start.value, end: end.value, hours: Number(hours.value), strategy: strategy.value,
+        include: include.checked, weekdays: data.getAll('weekday').map(Number), dailyMinutes: limit
+      });
+      const first = numericDate.format(civilDate(plan.days[0].date));
+      const last = numericDate.format(civilDate(plan.days.at(-1).date));
+      if (plan.scheduled < plan.target) {
+        const pendingMinutes = plan.target - plan.scheduled;
+        notice(`Od cilja ${duration(plan.target)} ostane brez termina ${duration(pendingMinutes)}. Za ta čas potrebujete dodatne učne dni: ${Math.ceil(pendingMinutes / limit)}.`, 'warning');
+      } else {
+        notice(first === last ? `Učni dan: ${first}.` : `Učni dnevi od ${first} do ${last}.`, 'ready');
+      }
+      root.querySelector('[data-study-days]').textContent = plan.days.length;
+      root.querySelector('[data-study-average]').textContent = duration(Math.round(plan.scheduled / plan.days.length));
+      root.querySelector('[data-study-total]').textContent = duration(plan.scheduled);
+
       const maximum = Math.max(...plan.weeks.map(week => week.minutes));
-      const lines = plan.weeks.map(week => {
-        const row = make('div', '', 'tool-study-row');
-        const label = make('span', shortFormat.format(civilDate(week.first)));
+      bars.replaceChildren(...plan.weeks.map(week => {
+        const row = make('li', '', 'tool-study-row');
+        const label = make('time', 'Od ' + shortFormat.format(civilDate(week.first)));
+        label.dateTime = week.first;
         const track = make('span', '', 'tool-study-track');
         const fill = make('i');
         fill.style.width = (week.minutes / maximum) * 100 + '%';
@@ -316,21 +358,45 @@ function study(root) {
         track.append(fill);
         row.append(label, track, make('strong', duration(week.minutes)));
         return row;
-      });
-      bars.append(...lines.slice(0, 8));
-      if (lines.length > 8) {
-        const more = make('details');
-        more.append(make('summary', 'Prikaži preostale tedne'), ...lines.slice(8));
-        bars.append(more);
-      }
+      }));
+      sessions.replaceChildren(...plan.days.map(day => {
+        const row = make('li');
+        const date = make('time', sessionDate.format(civilDate(day.date)));
+        date.dateTime = day.date;
+        row.append(date, make('strong', duration(day.minutes)));
+        return row;
+      }));
+
+      const name = title.value.trim();
+      entries = plan.days.map(day => ({
+        date: day.date,
+        title: `${name || 'Učenje'} · ${duration(day.minutes)}`,
+        uid: name ? `ucenje-${name}-${day.date}` : 'ucenje-' + day.date
+      }));
+      details.hidden = false;
       download.disabled = false;
     } catch (error) {
-      result.textContent = error.message;
+      notice(error.message, 'warning');
     }
   });
-  download.addEventListener('click', () => saveCalendar(download, plan.days.map(day => ({
-    date: day.date, title: `Učenje · ${duration(day.minutes)}`, uid: 'ucenje-' + day.date
-  })), 'nacrt-ucenja'));
+
+  root.querySelector('[data-study-example]').addEventListener('click', () => {
+    start.value = '2027-06-07';
+    end.value = '2027-06-15';
+    title.value = 'Statistika';
+    hours.value = '12';
+    strategy.value = 'workweek';
+    dailyMinutes.value = '';
+    include.checked = false;
+    weekdays.hidden = weekdays.disabled = true;
+    form.requestSubmit();
+  });
+  download.addEventListener('click', () => {
+    if (entries.length) saveCalendar(download, entries, 'nacrt-ucenja');
+  });
+
+  start.value = slToday();
+  end.value = isoDate(byDays(civilDate(start.value), 14));
   form.requestSubmit();
 }
 

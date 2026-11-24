@@ -11,6 +11,14 @@ export function createRubyClient(makeWorker=()=>new Worker('/free/ruby-worker.js
    if(worker!==current)return;
    if(data.fatal){recover(current);return}
    const task=pending.get(data.id);if(!task)return;
+   if(data.started){
+    if(task.path==='/izracun/'){
+     clearTimer(task.timer);
+     // A responsive worker can still be downloading or compiling the cold runtime.
+     task.timer=setTimer(()=>recover(current),60000);
+    }
+    return;
+   }
    clearTimer(task.timer);pending.delete(data.id);
    data.error?task.reject(Error(data.error)):task.resolve(data.result);
   };

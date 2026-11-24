@@ -1,0 +1,433 @@
+.moon-phase-page--guide {
+  --moon-ink: #122d49;
+  --moon-muted: #3e536b;
+  --moon-surface: #f2f6fa;
+  --moon-border: #cbd9e7;
+  --moon-dark: #0b1f34;
+  --moon-accent: #0b598f;
+}
+
+.moon-masthead {
+  display: grid;
+  grid-template: "intro photo" 1fr "next photo" auto / minmax(0, .95fr) minmax(0, 1.15fr);
+  margin: 12px 0 clamp(34px, 5vw, 62px);
+  border: 1px solid var(--moon-border);
+  border-radius: 18px;
+  background: var(--moon-dark);
+  overflow: hidden;
+}
+
+.moon-masthead__intro {
+  grid-area: intro;
+  align-self: end;
+  padding: clamp(20px, 3.4vw, 45px) clamp(18px, 3.4vw, 45px) 22px;
+}
+.moon-masthead h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.05rem, 4.4vw, 4.2rem);
+  line-height: 1.08;
+  letter-spacing: -.042em;
+  text-wrap: balance;
+}
+.moon-masthead h1 span {
+  display: block;
+  margin-top: 8px;
+  color: #abd1ed;
+  font-size: .55em;
+  font-weight: 700;
+  letter-spacing: .025em;
+}
+#vsebina .moon-masthead__intro p {
+  max-width: 48ch;
+  margin: 16px 0 20px;
+  color: #e0ebf6;
+  font-size: clamp(.95rem, 1.4vw, 1.08rem);
+  line-height: 1.65;
+}
+.moon-masthead__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: stretch;
+}
+.moon-masthead__links a {
+  display: inline-flex;
+  flex: 0 1 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 7px 13px;
+  border: 1px solid #7794af;
+  border-radius: 8px;
+  color: #edf6ff;
+  font-size: .88rem;
+  font-weight: 750;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+}
+.moon-masthead__links a:first-child { border-color: #cce7ff; background: #d7edff; color: #123350; }
+.moon-masthead__links a:hover { background: #273f56; color: #fff; }
+.moon-masthead__links .ui-icon { flex: none; width: 16px; height: 16px; }
+.moon-masthead__links a:focus-visible, .moon-masthead__photo a:focus-visible { outline-color: #cce7ff; }
+
+.moon-masthead__photo {
+  grid-area: photo;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  min-width: 0;
+  min-height: 100%;
+  margin: 0;
+  background: #0d1424;
+}
+.moon-masthead__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: 50% 56%;
+}
+#vsebina .moon-masthead__photo figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 12px;
+  padding: 10px 14px;
+  color: #e3edf5;
+  font-size: .79rem;
+  line-height: 1.4;
+}
+.moon-masthead__photo figcaption a { color: #bfddf4; }
+
+.moon-masthead .astro-next {
+  grid-area: next;
+  margin: 0 clamp(18px, 3.4vw, 45px) clamp(18px, 3.4vw, 45px);
+  padding: 16px 18px;
+  border: 1px solid #59718b;
+  border-radius: 12px;
+  background: #142b42;
+}
+.moon-masthead .astro-next::after { content: none; }
+#vsebina .moon-masthead #astro-next-title {
+  display: block;
+  margin: 0 0 6px;
+  color: #c4daee !important;
+  font-size: .88rem !important;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+.moon-next__when {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+}
+.moon-masthead .moon-next__when :is(.astro-next-date, .astro-next-time) {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.03rem, 2.05vw, 1.45rem);
+  letter-spacing: 0;
+}
+.moon-masthead .moon-next__when .astro-next-time { color: #a9dbff; white-space: nowrap; }
+.moon-masthead .astro-next-context { margin-top: 5px !important; color: #c4daee !important; }
+.moon-masthead .astro-next [data-next-empty] { color: #c4daee; }
+.moon-masthead .astro-countdown {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin: 10px 0 0;
+  padding-top: 8px;
+  border-color: #57738d;
+}
+.moon-masthead .astro-countdown span { font-size: .8rem; color: #c4daee; }
+.moon-masthead .astro-countdown strong { font-size: .87rem; color: #fff; }
+
+.moon-phase-gallery, .moon-guide {
+  margin: 0 0 clamp(34px, 5vw, 62px);
+  scroll-margin-top: 18px;
+}
+.moon-section-heading { margin: 0 0 18px; }
+#vsebina .moon-section-heading h2, #vsebina .moon-method h2 {
+  margin: 0;
+  color: var(--moon-ink);
+  font-size: clamp(1.47rem, 3vw, 2.24rem) !important;
+  letter-spacing: -.025em;
+  line-height: 1.17;
+}
+#vsebina .moon-section-heading p {
+  max-width: 72ch;
+  margin: 9px 0 0;
+  color: var(--moon-muted);
+}
+.moon-phase-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.moon-phase-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 1px solid var(--moon-border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+.moon-phase-card__image {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1.27;
+  overflow: hidden;
+  background: #060708;
+}
+.moon-phase-card__image img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.moon-phase-card:has(.moon-phase-card__unlit) .moon-phase-card__image {
+  align-content: center;
+  gap: 9px;
+  padding: 8px;
+  background: #0a1421;
+}
+.moon-phase-card__dark-disk {
+  display: block;
+  width: min(37%, 108px);
+  aspect-ratio: 1;
+  border: 1px solid #576779;
+  border-radius: 50%;
+  background: #111c2a;
+}
+.moon-phase-card__unlit {
+  color: #d1dbe7;
+  font-size: clamp(.67rem, 1.1vw, .86rem);
+  line-height: 1.25;
+  text-align: center;
+}
+.moon-phase-card__copy {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: clamp(10px, 1.35vw, 17px);
+}
+#vsebina .moon-phase-card h3 { margin: 0; font-size: clamp(.95rem, 1.5vw, 1.29rem); line-height: 1.26; }
+#vsebina .moon-phase-card p { margin: 0; font-size: .91rem; line-height: 1.55; }
+#vsebina .moon-phase-card .moon-phase-card__stage { color: var(--moon-accent); font-size: .8rem; font-weight: 700; line-height: 1.4; }
+#vsebina .moon-phase-card small {
+  margin-top: auto;
+  padding-top: 5px;
+  font-size: .78rem !important;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+#vsebina .moon-gallery-note { max-width: 78ch; margin: 13px 0 0; font-size: .89rem; }
+
+.moon-phase-page--guide .astro-calendar { scroll-margin-top: 18px; }
+.moon-phase-page--guide .astro-toolbar {
+  display: grid;
+  grid-template-columns: minmax(125px, 165px) auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: end;
+}
+.moon-phase-page--guide .astro-toolbar label { min-width: 0; }
+.moon-phase-page--guide .astro-toolbar select { min-width: 0; width: 100%; }
+.moon-phase-page--guide .astro-toolbar-actions { justify-content: end; align-items: stretch; }
+#vsebina .moon-phase-page--guide .astro-toolbar :is(.astro-button, button) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  white-space: normal;
+  text-align: center;
+}
+.moon-phase-page--guide .astro-toolbar .ui-icon { flex: none; width: 20px; height: 20px; }
+.moon-calendar-note, .moon-observation-example {
+  margin: 14px 0 0;
+  padding: 18px clamp(14px, 2vw, 24px);
+  border: 1px solid var(--moon-border);
+  border-inline-start: 4px solid #3680b3;
+  border-radius: 10px;
+  background: #edf5fc;
+}
+#vsebina :is(.moon-calendar-note, .moon-observation-example) h3 { margin: 0 0 6px; }
+#vsebina :is(.moon-calendar-note, .moon-observation-example) p { max-width: 86ch; margin: 0; }
+
+.moon-guide__reading, .moon-related ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.moon-guide__reading > section {
+  padding: clamp(16px, 2.2vw, 26px);
+  border: 1px solid var(--moon-border);
+  border-radius: 12px;
+  background: #fff;
+}
+#vsebina .moon-guide__reading h3 { margin: 0 0 9px; }
+#vsebina .moon-guide__reading p { max-width: 74ch; margin: 0 0 12px; }
+#vsebina .moon-guide__reading p:last-child { margin-bottom: 0; }
+.moon-related { margin-top: 24px; }
+#vsebina .moon-related h3 { margin: 0 0 10px; }
+.moon-related ul { grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; }
+.moon-related li > a {
+  display: grid;
+  grid-template-columns: 35px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  padding: 12px;
+  border: 1px solid var(--moon-border);
+  border-radius: 10px;
+  background: #fff;
+  text-decoration: none;
+}
+.moon-related li > a:hover { background: var(--moon-surface); }
+.moon-related li > a:hover strong { text-decoration: underline; }
+.moon-related a strong, .moon-related a small { display: block; line-height: 1.4; }
+.moon-related .ui-icon { width: 35px; height: 35px; }
+
+@media screen and (max-width:760px) {
+  .moon-masthead { grid-template: "intro" auto "photo" auto "next" auto / minmax(0, 1fr); }
+  .moon-masthead__photo { min-height: 0; }
+  .moon-masthead__photo img { height: auto; aspect-ratio: 4/3; }
+  .moon-masthead .astro-next { margin: 14px 14px 16px; }
+  .moon-phase-gallery__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .moon-guide__reading, .moon-related ul { grid-template-columns: minmax(0, 1fr); }
+  .moon-phase-page--guide .astro-toolbar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .moon-phase-page--guide .astro-toolbar-actions {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 0;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .moon-masthead__links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .moon-masthead__links a { padding-inline: 6px; font-size: .81rem; }
+  #vsebina .moon-phase-card p { font-size: .84rem; }
+  #vsebina .moon-phase-card .moon-phase-card__stage { font-size: .74rem; }
+}
+
+@media print {
+  .moon-masthead { display: block; padding: 0; margin: 0; border: 0; background: transparent; }
+  .moon-masthead__intro { padding: 0; }
+  .moon-masthead h1, .moon-masthead h1 span { color: #111; }
+  .moon-masthead h1 { font-size: 20pt; }
+  .moon-masthead h1 span { display: inline; }
+  .moon-masthead__intro p, .moon-masthead__links, .moon-masthead__photo,
+  .moon-phase-gallery, .moon-guide, .moon-calendar-note { display: none; }
+}
+
+.new-moon-masthead {
+  --moon-dark: #10223b;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+}
+.new-moon-masthead .moon-masthead__photo img { object-position: 50% 53%; }
+
+.new-moon-guide, .new-moon-comparison, .new-moon-related {
+  margin: 0 0 clamp(32px, 4vw, 54px);
+  scroll-margin-top: 18px;
+}
+.new-moon-guide__geometry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(15px, 2.3vw, 28px);
+  align-items: start;
+}
+.new-moon-guide__reading, .new-moon-comparison__days > section {
+  min-width: 0;
+  padding: clamp(15px, 2.2vw, 26px);
+  border: 1px solid var(--moon-border);
+  border-radius: 12px;
+  background: #fff;
+}
+#vsebina .new-moon-guide__reading h3 { margin: 15px 0 6px; }
+#vsebina .new-moon-guide__reading h3:first-child { margin-top: 0; }
+#vsebina .new-moon-guide__reading p { margin: 0; }
+.new-moon-geometry, .new-moon-guide__photo {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--moon-border);
+  border-radius: 12px;
+  background: #13253a;
+}
+.new-moon-geometry svg, .new-moon-guide__photo img { display: block; width: 100%; height: auto; }
+#vsebina :is(.new-moon-geometry, .new-moon-guide__photo) figcaption {
+  display: grid;
+  gap: 4px;
+  padding: 11px 14px;
+  border-top: 1px solid #486079;
+  color: #e1ebf6;
+  font-size: .88rem;
+  line-height: 1.52;
+}
+.new-moon-guide__photo figcaption a { color: #c3e4ff; }
+
+.new-moon-comparison__days {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(10px, 2vw, 18px);
+}
+.new-moon-comparison__days > section { display: flex; flex-direction: column; }
+.new-moon-comparison__days > section:last-child { background: #edf5fc; }
+#vsebina :is(.new-moon-comparison__days h3, .new-moon-related h2) { margin: 0 0 12px; }
+.new-moon-comparison__days dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+#vsebina .new-moon-comparison__days dt { font-size: .84rem; line-height: 1.4; }
+#vsebina .new-moon-comparison__days dd {
+  margin: 2px 0 0;
+  color: var(--moon-ink);
+  font-size: clamp(1.04rem, 2vw, 1.45rem);
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+#vsebina .new-moon-comparison__days p { flex: 1; margin: 11px 0 5px; font-size: .85rem; }
+.new-moon-comparison__days meter {
+  display: block;
+  width: 100%;
+  height: 11px;
+  border: 0;
+  border-radius: 6px;
+  background: #d3e1ee;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.new-moon-comparison__days meter::-webkit-meter-bar { border: 0; border-radius: 6px; background: #d3e1ee; }
+.new-moon-comparison__days meter::-webkit-meter-optimum-value { border-radius: 6px; background: var(--moon-accent); }
+.new-moon-comparison__days meter::-moz-meter-bar { border-radius: 6px; background: var(--moon-accent); }
+#vsebina .new-moon-comparison > p { max-width: 82ch; margin: 11px 0 0; font-size: .9rem; }
+
+@media screen and (max-width:760px) {
+  .new-moon-masthead { grid-template-columns: minmax(0, 1fr); }
+  .new-moon-masthead .moon-masthead__photo img { aspect-ratio: 1280 / 898; }
+  .new-moon-guide__geometry { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media screen and (max-width:540px) {
+  .new-moon-comparison__days dl { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media print {
+  .new-moon-guide, .new-moon-comparison, .new-moon-related { display: none; }
+}

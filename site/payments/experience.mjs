@@ -25,8 +25,23 @@ function init(root){
       for(let d=1;d<=total;d++){const cell=document.createElement('span');cell.textContent=d;if(d===1)cell.style.gridColumnStart=String((new Date(Date.UTC(year,monthNumber-1,1)).getUTCDay()+6)%7+1);cell.className=d===day?'is-payment-day':'';mini.append(cell);}mini.hidden=false;
     }else{countdown.textContent='Preverite mesečni pregled in nove objave pri ZPIZ oziroma CSD.';get('.payment-year').textContent=data.overview_year;mini.hidden=true;}
   }
-  function update(){const today=sloveniaToday(),category=benefit?.value||'all';visible=filterPayments(data.events,{category,month:month.value,upcoming:upcoming.checked,today});const ids=new Set(visible.map(event=>event.id));root.querySelectorAll('[data-payment-row]').forEach(row=>{row.hidden=!ids.has(row.dataset.paymentRow);row.classList.toggle('is-today',row.dataset.date===today);});get('[data-payment-count]').textContent=`Prikazani termini: ${visible.length} od ${data.events.length}`;get('[data-payment-empty]').hidden=visible.length>0;get('[data-payment-filtered-ics]').disabled=visible.length===0;updateNext(today,category);
-    const link=get('[data-payment-download]'),slug=category==='all'?(data.kind==='pension'?'pokojnine':'socialni-transferji'):category;link.href=`/payments/${slug}-2026.ics`;
+  function update() {
+    const today = sloveniaToday();
+    const category = benefit?.value || 'all';
+    visible = filterPayments(data.events, { category, month: month.value, upcoming: upcoming.checked, today });
+    const ids = new Set(visible.map(event => event.id));
+    root.querySelectorAll('[data-payment-row]').forEach(row => {
+      row.hidden = !ids.has(row.dataset.paymentRow);
+      row.classList.toggle('is-today', row.dataset.date === today);
+    });
+    const selectedLabel = data.categories[category]?.label;
+    const count = 'Prikazani termini: ' + visible.length + ' od ' + data.events.length;
+    get('[data-payment-count]').textContent = selectedLabel ? selectedLabel + '. ' + count : count;
+    get('[data-payment-empty]').hidden = visible.length > 0;
+    get('[data-payment-filtered-ics]').disabled = visible.length === 0;
+    updateNext(today, category);
+    const slug = category === 'all' ? (data.kind === 'pension' ? 'pokojnine' : 'socialni-transferji') : category;
+    get('[data-payment-download]').href = '/payments/' + slug + '-2026.ics';
   }
   [benefit,month,upcoming].filter(Boolean).forEach(control=>control.addEventListener('change',update));
   get('[data-payment-reset]').addEventListener('click',()=>{if(benefit)benefit.value='all';month.value='all';upcoming.checked=false;update();});

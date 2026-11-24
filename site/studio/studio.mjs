@@ -105,7 +105,23 @@ new ResizeObserver(()=>{if(zoom==='fit')fit();}).observe($('#studio-artboard'));
 $('#studio-fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else if($('.studio-canvas').requestFullscreen)await $('.studio-canvas').requestFullscreen();else throw Error();}catch{tell('Celozaslonski način v tem brskalniku ni na voljo. Uporabite povečavo predogleda.',true);}};
 function download(blob,name){return globalThis.Calendar365Downloads.save(blob,name);}
 $('#studio-save-project').onclick=()=>{download(new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),`koledar365-projekt-${state.year}.json`);$('.studio-menu').open=false;tell('Projekt z vsemi nastavitvami, dogodki in slikami je prenesen.');};
-$('#studio-open-project').onchange=async e=>{const file=e.target.files[0];e.target.value='';if(!file)return;try{if(file.size>35*1024*1024)throw Error('Projekt je prevelik. Največja velikost je 35 MB.');const next=normalize(JSON.parse(await file.text()));change(()=>{state=next;selected=null;});$('.studio-menu').open=false;resetEventForm();tell('Projekt je odprt. Lahko nadaljujete z urejanjem.');}catch(error){tell(error instanceof SyntaxError?'Datoteka JSON ni veljavna.':error.message,true);}};
+$('#studio-open-project').onchange=async event=>{
+  const file=event.target.files[0];
+  event.target.value='';
+  if(!file)return;
+  try{
+    if(file.size>35*1024*1024)throw Error('Projekt je prevelik. Največja velikost je 35 MB.');
+    const next=normalize(JSON.parse(await file.text()));
+    const menu=$('.studio-menu');
+    menu.open=false;
+    $('summary',menu).focus();
+    change(()=>{state=next;selected=null;});
+    resetEventForm();
+    tell('Projekt je odprt. Lahko nadaljujete z urejanjem.');
+  }catch(error){
+    tell(error instanceof SyntaxError?'Datoteka JSON ni veljavna.':error.message,true);
+  }
+};
 $('#studio-reset').onclick=()=>{if(!confirm('Začnete nov koledar? Trenutni projekt prej shranite, če ga želite obdržati.'))return;change(()=>{state=initialState();selected=null;});resetEventForm();switchTab('design');$('.studio-menu').open=false;tell('Nov list, nove zamisli.');};
 $('#studio-clear-draft').onclick=async()=>{if(!confirm('Izbrišete osnutek, shranjen v tem brskalniku? Trenutni koledar ostane odprt. Naslednja sprememba znova vključi samodejno shranjevanje.'))return;clearTimeout(saveTimer);try{await stored('readwrite',s=>s.delete('draft'));$('#studio-save-state').textContent='Shranjeni osnutek je izbrisan';tell('Osnutek na tej napravi je izbrisan. Odprti projekt lahko še vedno prenesete.');}catch{tell('Osnutka ni bilo mogoče izbrisati.',true);}$('.studio-menu').open=false;};
 $('#studio-download').onclick=()=>{sync();$('#studio-export').showModal();};$('#studio-export-close').onclick=()=>{if(!busy)$('#studio-export').close();};$('#studio-export').addEventListener('cancel',e=>{if(busy)e.preventDefault();});$('#studio-export-scope').onchange=sync;
@@ -116,12 +132,12 @@ async function rasterize(svg,s,format='image/jpeg'){
 }
 async function pngDPI(blob,dpi){const bytes=new Uint8Array(await blob.arrayBuffer()),ppm=Math.round(dpi/0.0254),data=new Uint8Array(21),view=new DataView(data.buffer);view.setUint32(0,9);data.set([112,72,89,115],4);view.setUint32(8,ppm);view.setUint32(12,ppm);data[16]=1;let crc=0xffffffff;for(const b of data.slice(4,17)){crc^=b;for(let i=0;i<8;i++)crc=(crc>>>1)^((crc&1)?0xedb88320:0);}view.setUint32(17,(crc^0xffffffff)>>>0);const chunks=[bytes.slice(0,8)];let at=8,added=false;while(at<bytes.length){const n=new DataView(bytes.buffer,bytes.byteOffset+at,4).getUint32(0),type=String.fromCharCode(...bytes.slice(at+4,at+8));if(type!=='pHYs')chunks.push(bytes.slice(at,at+n+12));if(type==='IHDR'&&!added){chunks.push(data);added=true;}at+=n+12;}return new Blob(chunks,{type:'image/png'});}
 async function printPages(s,pages,win){if(!win)throw Error('Brskalnik je preprečil odpiranje tiskanja. Dovolite novo okno ali prenesite PDF.');const d=dimensions(s);win.document.open();win.document.write(`<!doctype html><html lang="sl"><head><meta charset="utf-8"><title>${esc(s.title)} ${s.year}</title><style>@page{size:${d.mmWidth}mm ${d.mmHeight}mm;margin:0}*{box-sizing:border-box}body{margin:0;background:#e5e7eb}.page{width:${d.mmWidth}mm;height:${d.mmHeight}mm;background:white;break-after:page;page-break-after:always;overflow:hidden}.page:last-child{break-after:auto;page-break-after:auto}.page svg{display:block;width:100%;height:100%}@media print{body{background:white}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style></head><body>${pages.map(svg=>`<div class="page">${svg}</div>`).join('')}</body></html>`);win.document.close();await new Promise(resolve=>setTimeout(resolve,500));win.focus();win.print();}
-async function exportFile(format){if(busy)return;const s=clone(state),scope=$('#studio-export-scope').value,name=`${(s.title||'koledar').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'').slice(0,50)||'koledar'}-${s.year}${s.view==='month'&&scope!=='all'?'-'+String(s.month).padStart(2,'0'):''}`,printWindow=format==='print'?window.open('','_blank'):null;
+async function exportFile(format){if(busy)return;const s=clone(state),scope=$('#studio-export-scope').value,allMonths=scope==='all'&&['pdf','print'].includes(format),name=`${(s.title||'koledar').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'').slice(0,50)||'koledar'}-${s.year}${s.view==='month'&&!allMonths?'-'+String(s.month).padStart(2,'0'):''}`,printWindow=format==='print'?window.open('','_blank'):null;
   busy=true;$$('[data-export]').forEach(b=>b.disabled=true);$('#studio-export-close').disabled=true;const progress=$('#studio-export-progress');progress.hidden=false;const meter=$('progress',progress),label=$('p',progress);meter.value=5;label.textContent='Pripravljamo vaš koledar …';
   try{if(format==='svg'){download(new Blob([physicalSVG(renderCalendar(s),s)],{type:'image/svg+xml;charset=utf-8'}),name+'.svg');}
     else if(format==='png'){await new Promise(resolve=>requestAnimationFrame(resolve));const {blob}=await rasterize(renderCalendar(s),s,'image/png');download(await pngDPI(blob,s.quality),name+'.png');}
     else{const pages=exportPages(s,scope);if(format==='print')await printPages(s,pages,printWindow);else{const images=[];for(let i=0;i<pages.length;i++){label.textContent=`Pripravljamo stran ${i+1} od ${pages.length} …`;meter.value=10+(i/pages.length)*80;await new Promise(resolve=>setTimeout(resolve,10));const page=await rasterize(pages[i],s);images.push({width:page.width,height:page.height,bytes:new Uint8Array(await page.blob.arrayBuffer())});}const d=dimensions(s);download(new Blob([createPDF(images,d.mmWidth,d.mmHeight)],{type:'application/pdf'}),name+'.pdf');}}
-    meter.value=100;label.textContent=format==='print'?'Odprto je okno za tisk.':'Datoteka je pripravljena in prenesena.';tell(format==='print'?'Pri tisku izberite merilo 100 % in izbrano velikost papirja.':'Vaš koledar je prenesen. Projekt lahko shranite za prihodnje urejanje.');
+    meter.value=100;label.textContent=format==='print'?'Odprto je okno za tisk.':'Datoteka je pripravljena in prenesena.';tell(format==='print'?'Preverite velikost papirja, usmerjenost in predogled tiskanja.':'Vaš koledar je prenesen. Projekt lahko shranite za prihodnje urejanje.');
   }catch(error){label.textContent=error.message;tell(error.message,true);if(printWindow)printWindow.close();}finally{busy=false;$$('[data-export]').forEach(b=>b.disabled=false);$('#studio-export-close').disabled=false;}
 }
 $$('[data-export]').forEach(button=>button.onclick=()=>exportFile(button.dataset.export));

@@ -191,13 +191,6 @@
 .sl-calc-brackets td, .sl-calc-brackets th { border-bottom: 1px solid var(--sl-edge); padding: 5px; text-align: right; }
 .sl-calc-brackets th:first-child { text-align: left; }
 
-.sl-sky-year { margin-top: 16px; }
-.sl-sky-year h3 { font-size: 1.25rem; }
-.sl-sky-list { padding: 0; margin: 8px 0 0; list-style: none; border-top: 1px solid var(--sl-edge); }
-.sl-sky-list li { display: grid; grid-template-columns: minmax(80px, 1fr) minmax(0, 4fr) 28px; align-items: center; gap: 10px; border-bottom: 1px solid var(--sl-edge); padding: 9px 0; }
-.sl-sky-list small { display: block; color: var(--sl-text); line-height: 1.35; }
-.sl-sky-mark .ui-icon { width: 28px; height: 28px; }
-[data-sl-sky-count] { margin-top: 9px !important; }
 
 .sl-template-panel { background: linear-gradient(#fff, var(--sl-soft)); }
 .sl-template-sheet { background: #fff; margin: 14px 0 0; padding: clamp(8px, 2vw, 16px); border: 1px solid var(--sl-edge); border-radius: 10px; }
@@ -246,6 +239,169 @@
   .sl-print-page > :not([data-sl-templates]), [data-sl-templates] > :not(.sl-template-sheet) { display: none !important; }
   .sl-resource-share { display: none !important; }
   .sl-template-sheet { break-inside: avoid; }
-  .sl-template-sheet + .sl-template-sheet:not([hidden]) { break-before: page; }
+  .sl-template-sheet:not([hidden]) + .sl-template-sheet:not([hidden]) { break-before: page; }
   .sl-template-table td, .sl-template-table th { height: 16mm; color: #12233a; font-size: 10pt; }
+  .sl-template-sheet:not([data-sl-template-sheet="school"]) tbody :is(th, td) { height: 31mm; }
+}
+
+@media screen {
+  .sl-template-picker {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+    min-width: 0;
+    padding: 0;
+    margin: 14px 0 0;
+    border: 0;
+  }
+
+  .sl-template-picker legend {
+    margin-block-end: 7px;
+    font-weight: 750;
+  }
+
+  .sl-template-choice {
+    display: grid;
+    grid-template-columns: auto 30px minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    margin: 0;
+    padding: 10px;
+    border: 1px solid #cbd9e9;
+    border-radius: 10px;
+    background: #fff;
+    cursor: pointer;
+  }
+
+  .sl-template-choice .ui-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .sl-template-choice:has(input:checked) {
+    border-color: #0756a2;
+    background: #edf5fd;
+    box-shadow: inset 0 0 0 1px #0756a2;
+  }
+
+  .sl-template-choice:has(input:focus-visible),
+  .sl-template-table:focus-visible {
+    outline: 3px solid #0756a2;
+    outline-offset: 2px;
+  }
+
+  .sl-template-choice input {
+    width: 18px;
+    height: 18px;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    accent-color: #0756a2;
+  }
+
+  .sl-template-choice small,
+  .sl-template-choice strong {
+    display: block;
+  }
+
+  .sl-template-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 5px 12px;
+    margin-block: 14px;
+  }
+
+  .sl-template-actions > label {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-weight: 750;
+  }
+
+  .sl-template-date-row {
+    display: flex;
+    gap: 7px;
+    min-width: 0;
+  }
+
+  .sl-template-date-row input {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+  }
+
+  .sl-template-date-row button {
+    flex: none;
+  }
+
+  .sl-template-actions [data-sl-print] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+  }
+
+  .sl-template-sheet-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    gap: 4px 12px;
+  }
+
+  .sl-template-sheet-header p {
+    margin: 0;
+  }
+
+  .sl-template-paper {
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: #eff5fc;
+    color: #194670;
+    font-size: .85rem;
+    white-space: nowrap;
+  }
+
+  .sl-template-scroll-hint {
+    display: none;
+  }
+
+  .sl-template-table {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .sl-template-table table { min-width: 660px; }
+  .sl-template-sheet[data-sl-template-sheet="school"] table { min-width: 540px; }
+
+  .sl-template-table tr > th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+  }
+
+  #vsebina .sl-template-table th {
+    font-size: .82rem;
+    overflow-wrap: normal;
+  }
+
+  .sl-template-scroll-hint {
+    display: block;
+    margin-block: 8px 0;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .sl-template-picker, .sl-template-actions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media print {
+  .sl-template-paper, .sl-template-scroll-hint {
+    display: none !important;
+  }
 }

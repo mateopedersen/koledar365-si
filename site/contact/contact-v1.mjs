@@ -20,7 +20,7 @@ if (root) {
       root.querySelector('[data-contact-guide-text]').textContent = guide[1];
       const link = root.querySelector('[data-contact-guide-link]');
       link.href = guide[2];
-      link.textContent = `${guide[3]} →`;
+      link.textContent = guide[3];
       root.querySelector('[data-contact-mail]').href = `mailto:${email}?subject=${encodeURIComponent(`Koledar365 – ${guide[4]}`)}`;
     });
   });

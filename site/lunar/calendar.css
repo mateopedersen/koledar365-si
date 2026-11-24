@@ -250,8 +250,27 @@
 .lunar-experience>.lunar-note a{color:#004f8c;font-weight:700}
 @media (max-width: 650px) {
   .lunar-year-card { border-radius: 16px; }
-  .lunar-year-art__label { font-size: 12px; }
-  .lunar-year-art__credit { font-size: 10px; }
+  .lunar-year-art {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-content: space-between;
+    gap: 10px;
+    min-height: 116px;
+    height: auto;
+  }
+  .lunar-year-art__label {
+    position: relative;
+    inset: auto;
+    grid-column: 1 / -1;
+    font-size: 12px;
+    letter-spacing: .045em;
+  }
+  .lunar-year-art__credit {
+    position: relative;
+    inset: auto;
+    max-width: none;
+    font-size: 10px;
+  }
   .lunar-hub .lunar-month-links a { font-size: 13px; }
 }
 

@@ -48,7 +48,7 @@ function setupPlanner(root) {
   const dateSelect = find('select');
   const reminderSelect = find('reminder');
   const google = find('google');
-  const ics = find('ics');
+  const icsLinks = root.querySelectorAll('[data-occasion-ics]');
   const local = find('local');
   const native = find('native');
   const copy = find('copy');
@@ -90,7 +90,8 @@ function setupPlanner(root) {
     });
     if (entry.location) data.set('location', entry.location);
     google.href = 'https://calendar.google.com/calendar/render?' + data;
-    ics.download = `${dataset.occasionFile}-${entry.start}.ics`;
+    const icsFilename = `${dataset.occasionFile}-${entry.start}.ics`;
+    icsLinks.forEach(link => { link.download = icsFilename; });
     mail.href = `mailto:?subject=${encodeURIComponent(entry.title)}&body=${encodeURIComponent(shareUrl)}`;
 
     const [year, month] = entry.start.split('-');
@@ -111,7 +112,7 @@ function setupPlanner(root) {
     local.hidden = false;
 
     dateSelect.addEventListener('change', () => selectDate(dateSelect.value));
-    ics.addEventListener('click', event => {
+    function downloadIcs(event) {
       if (!globalThis.Calendar365Downloads) {
         event.preventDefault();
         showMessage('Prenos ni na voljo. Osvežite stran in poskusite znova.');
@@ -124,12 +125,13 @@ function setupPlanner(root) {
           location: entry.location, note: [entry.detail, shareUrl].join('\n'),
           reminderAt: reminderAt(entry.start, reminderSelect.value),
         }]);
-        globalThis.Calendar365Downloads.save(file, ics.download);
+        globalThis.Calendar365Downloads.save(file, event.currentTarget.download);
         showMessage('Datoteka ICS je pripravljena za uvoz.');
       } catch {
         showMessage('Prenos ni uspel. Poskusite znova.');
       }
-    });
+    }
+    icsLinks.forEach(link => link.addEventListener('click', downloadIcs));
     local.addEventListener('click', () => {
       try {
         const message = addPersonal(entry, reminderAt(entry.start, reminderSelect.value), shareUrl);

@@ -7,7 +7,7 @@ const addDays=(date,days)=>new Date(date.valueOf()+days*86400000);
 const mondayFor=date=>addDays(date,1-(date.getUTCDay()||7));
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const cap=value=>value[0].toLocaleUpperCase('sl')+value.slice(1);
-const format=date=>new Intl.DateTimeFormat('sl-SI',{timeZone:'UTC',day:'numeric',month:'numeric',year:'numeric'}).format(date);
+const format=date=>`${date.getUTCDate()}. ${date.getUTCMonth()+1}. ${date.getUTCFullYear()}`;
 const ljubljanaToday=()=>{const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Ljubljana',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const get=type=>parts.find(part=>part.type===type).value;return `${get('year')}-${get('month')}-${get('day')}`};
 export const weeksInYear=year=>isoWeek(new Date(Date.UTC(year,11,28))).week;
 export function dateInISOWeek(year,week){
@@ -27,7 +27,8 @@ export function selectedPeriod({data,kind,initial,search='',path='',today}){
   let date=dateFor(query.get('date'));
   if(date&&(iso(date)<data.min_date||iso(date)>data.max_date))date=null;
   if(kind==='weekly'){
-    if(query.has('week'))date=dateInISOWeek(year,Number(query.get('week')))||date;
+    const week=Number(query.get('week'));
+    if(week<= (year>data.years.at(-1) ? 1 : weeksInYear(year))) date=dateInISOWeek(year,week)||date;
     if(!date)date=pathYear||query.has('year')?dateInISOWeek(year,1):dateFor(initial.date);
     // ISO week 1 of 2026 starts in December 2025. Keep its visible seven days,
     // while the printable anchor stays inside the supported calendar years.
@@ -46,9 +47,11 @@ function initializeHub(root){
   const weekly=kind==='weekly',holidays=new Map(data.holidays.map(event=>[event.date,event.title]));
   data.today=ljubljanaToday();
   let state=selectedPeriod({data,kind,initial:{year:root.dataset.initialYear,month:root.dataset.initialMonth,date:root.dataset.initialDate},search:location.search,path:location.pathname,today:data.today});
+  const dayCards=$$('.calendar-sheet__day');
+  const selectionStatus=$('[data-week-selection-status]');
   let notes={},storageOK=true;
   const key=()=>`k365.calendar.${kind}.${weekly?iso(mondayFor(state.date)):`${state.year}-${pad(state.month)}`}`;
-  const message=(text,error=false)=>{const node=$('[data-calendar-status]');node.textContent=text;node.dataset.error=String(error)};
+  const message=(text,error=false,node=$('[data-calendar-status]'))=>{node.textContent=text;node.dataset.error=String(error)};
   const persist=()=>{storageOK=save(key(),notes);$('[data-calendar-save-copy]').textContent=storageOK?'Vaši zapiski ostanejo v tem brskalniku in se vključijo v izvoz.':'Shramba ni na voljo. Zapiske ohranite s prenosom, preden zaprete stran.'};
   const options=()=>({type:kind,year:state.date.getUTCFullYear(),month:state.month,date:iso(state.date),design:$('[data-calendar-layout]:checked').value,paper:$('[data-calendar-paper]').value,orientation:$('[data-calendar-orientation]').value,notes:notes.period||'',entries:weekly?Object.entries(notes).filter(([date,text])=>date!=='period'&&text.trim()).map(([date,title])=>({date,title})):[]});
   function updateURL(){const query=new URLSearchParams();query.set('year',state.year);if(weekly){query.set('week',isoWeek(state.date).week);query.set('date',iso(state.date))}else query.set('month',state.month);history.replaceState(null,'',location.pathname+'?'+query+location.hash)}
@@ -58,11 +61,31 @@ function initializeHub(root){
     $$('[data-calendar-year]').forEach(link=>{const year=Number(link.dataset.calendarYear);if(year===state.year)link.setAttribute('aria-current','true');else link.removeAttribute('aria-current');if(!weekly)link.href='/mesecni-koledar/?'+new URLSearchParams({year,month:state.month})});
     const first=mondayFor(state.date),end=addDays(first,6),week=isoWeek(state.date);
     $('[data-calendar-kicker]').textContent=weekly?`TEDEN ${week.week} / ${week.year}`:'MESEČNI KOLEDAR';
-    $('[data-calendar-heading]').textContent=weekly?`${format(first)}–${format(end)}`:`${cap(data.months[state.month-1])} ${state.year}`;
+    $('[data-calendar-heading]').textContent=weekly?`${format(first)} – ${format(end)}`:`${cap(data.months[state.month-1])} ${state.year}`;
     $('[data-period-notes]').value=typeof notes.period==='string'?notes.period:'';
     if(weekly){
       $('[data-week-date]').value=iso(state.date);$('[data-week-year]').value=week.year;$('[data-week-number]').value=week.week;$('[data-week-number]').max=week.year>data.years.at(-1)?1:weeksInYear(week.year);
-      $('[data-calendar-grid]').innerHTML='<div class="calendar-sheet__week">'+Array.from({length:7},(_,index)=>{const date=addDays(first,index),value=iso(date),holiday=holidays.get(value)||'';return `<section class="calendar-sheet__day${holiday?' is-holiday':''}${index>4?' is-weekend':''}${value===data.today?' is-today':''}"><h4>${escape(cap(data.days[index]))}<time datetime="${value}">${date.getUTCDate()}. ${date.getUTCMonth()+1}.</time></h4>${holiday?`<p class="calendar-sheet__holiday">${escape(holiday)}</p>`:''}<label><span class="sr-only">Načrti za ${escape(format(date))}</span><textarea maxlength="200" data-day-notes="${value}" placeholder="Vaši načrti …">${escape(typeof notes[value]==='string'?notes[value]:'')}</textarea></label></section>`}).join('')+'</div>';
+      dayCards.forEach((card,index)=>{
+        const date=addDays(first,index);
+        const value=iso(date);
+        const title=holidays.get(value)||'';
+        const isToday=value===data.today;
+        const time=card.querySelector('time');
+        const holiday=card.querySelector('.calendar-sheet__holiday');
+        const input=card.querySelector('[data-day-notes]');
+
+        card.classList.toggle('is-holiday',Boolean(title));
+        card.classList.toggle('is-today',isToday);
+        time.dateTime=value;
+        time.textContent=`${date.getUTCDate()}. ${date.getUTCMonth()+1}.`;
+        if(isToday) time.setAttribute('aria-current','date');
+        else time.removeAttribute('aria-current');
+        holiday.textContent=title;
+        holiday.hidden=!title;
+        card.querySelector('[data-week-day-label]').textContent=`Načrti za ${format(date)}`;
+        input.dataset.dayNotes=value;
+        input.value=notes[value]||'';
+      });
       $('[data-calendar-back]').disabled=iso(addDays(first,-1))<data.min_date;$('[data-calendar-next]').disabled=iso(addDays(first,7))>data.max_date;
     }else{
       $$('[data-calendar-month]').forEach(link=>{const month=Number(link.dataset.calendarMonth);link.href=monthPath(state.year,month,data);if(month===state.month)link.setAttribute('aria-current','true');else link.removeAttribute('aria-current');link.querySelector('[data-month-days]').textContent=`${new Date(Date.UTC(state.year,month,0)).getUTCDate()} dni`});
@@ -84,20 +107,25 @@ function initializeHub(root){
     if(url)updateURL();
   }
   function choose(date){
-    if(!date||iso(date)<data.min_date||iso(date)>data.max_date){message('Izberite datum med 1. 1. 2026 in 31. 12. 2030.',true);return}
+    if(!date||iso(date)<data.min_date||iso(date)>data.max_date){message('Izberite datum med 1. 1. 2026 in 31. 12. 2030.',true,selectionStatus||undefined);return}
     const year=weekly?isoWeek(date).year:date.getUTCFullYear();
     const routeYear=location.pathname.match(/^\/tedenski-koledar\/(\d{4})\//)?.[1];
-    if(weekly&&routeYear&&Number(routeYear)!==year){location.assign((year===2026||year>data.years.at(-1)?'/tedenski-koledar/':`/tedenski-koledar/${year}/`)+'?'+new URLSearchParams({year,date:iso(date),week:isoWeek(date).week}));return}
-    state={date,year,month:date.getUTCMonth()+1};render({url:true});message('');
+    if(weekly&&routeYear&&Number(routeYear)!==year){location.assign((year>data.years.at(-1)?'/tedenski-koledar/':`/tedenski-koledar/${year}/`)+'?'+new URLSearchParams({year,date:iso(date),week:isoWeek(date).week}));return}
+    state={date,year,month:date.getUTCMonth()+1};render({url:true});message('');if(selectionStatus)message('',false,selectionStatus);
   }
   $$('[data-calendar-year]').forEach(link=>link.addEventListener('click',event=>{if(event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;event.preventDefault();const year=Number(link.dataset.calendarYear);let date=weekly?dateInISOWeek(year,year>data.years.at(-1)?1:Math.min(isoWeek(state.date).week,weeksInYear(year))):new Date(Date.UTC(year,state.month-1,1));if(iso(date)<data.min_date)date=dateFor(data.min_date);choose(date)}));
   $$('[data-calendar-month]').forEach(link=>link.addEventListener('click',event=>{if(event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;event.preventDefault();choose(new Date(Date.UTC(state.year,Number(link.dataset.calendarMonth)-1,1)))}));
   for(const [selector,direction] of [['[data-calendar-back]',-1],['[data-calendar-next]',1]])$(selector).addEventListener('click',()=>{let date=weekly?addDays(mondayFor(state.date),direction*7):new Date(Date.UTC(state.year,state.month-1+direction,1));if(weekly&&iso(date)<data.min_date&&iso(addDays(date,6))>=data.min_date)date=dateFor(data.min_date);choose(date)});
   $('[data-calendar-today]').addEventListener('click',()=>{const today=ljubljanaToday();choose(dateFor(weekly?today:today.slice(0,7)+'-01'))});
   if(weekly){
-    $('[data-week-date]').addEventListener('change',event=>choose(dateFor(event.target.value)));
+    const input=$('[data-week-date]');
+    input.addEventListener('change',()=>{if(input.validity.valid)choose(dateFor(input.value))});
+    $('[data-week-date-selection]').addEventListener('submit',event=>{
+      event.preventDefault();
+      choose(dateFor(input.value));
+    });
     $('[data-week-year]').addEventListener('change',()=>{const year=Number($('[data-week-year]').value);$('[data-week-number]').max=year>data.years.at(-1)?1:weeksInYear(year)});
-    $('[data-week-selection]').addEventListener('submit',event=>{event.preventDefault();let date=dateInISOWeek(Number($('[data-week-year]').value),Number($('[data-week-number]').value));if(!date){message('V izbranem letu ni tega tedna ISO.',true);return}if(iso(date)<data.min_date)date=dateFor(data.min_date);choose(date)});
+    $('[data-week-selection]').addEventListener('submit',event=>{event.preventDefault();let date=dateInISOWeek(Number($('[data-week-year]').value),Number($('[data-week-number]').value));if(!date){message('V izbranem letu ni tega tedna ISO.',true,selectionStatus);return}if(iso(date)<data.min_date)date=dateFor(data.min_date);choose(date)});
   }
   root.addEventListener('input',event=>{if(event.target.matches('[data-period-notes]')){notes.period=event.target.value;persist()}if(event.target.matches('[data-day-notes]')){notes[event.target.dataset.dayNotes]=event.target.value;persist()}});
   $('[data-calendar-xlsx]')?.addEventListener('click',()=>{try{const result=createCalendarWorkbook({year:state.year,month:state.month,data,notes:notes.period||''});download(result.blob,result.filename);message('Preglednica je pripravljena: '+result.filename)}catch(error){message(error.message,true)}});
@@ -109,7 +137,7 @@ function initializeHub(root){
       for(let attempt=0;attempt<180;attempt++){
         const check=await fetch(job.url);if(!check.ok)throw Error('Prenosa trenutno ni mogoče preveriti. Poskusite znova.');const result=await check.json();
         if(result.status==='complete'){
-          const link=document.createElement('a');link.href=result.files.pdf;link.download=result.filenames?.pdf||'';link.textContent='PDF je pripravljen. Prenesi datoteko →';$('[data-calendar-status]').replaceChildren(link);link.click();return;
+          const link=document.createElement('a');link.href=result.files.pdf;link.download=result.filenames?.pdf||'';link.textContent='PDF je pripravljen. Prenesi datoteko';$('[data-calendar-status]').replaceChildren(link);link.click();return;
         }
         if(['failed','expired'].includes(result.status))throw Error(result.error||'Izvoz ni uspel. Poskusite znova.');
         await new Promise(resolve=>setTimeout(resolve,1000));

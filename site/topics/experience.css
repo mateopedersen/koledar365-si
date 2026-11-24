@@ -74,7 +74,6 @@
 #vsebina .topic-experience .ed-type-links>a,#vsebina .topic-experience .ed-grade-links>a{border:1px solid #bfd4e4;border-radius:13px;background:#fff;padding:22px;min-height:100px}
 #vsebina .topic-experience .ed-type-links strong{font-size:23px}
 #vsebina .topic-experience .ed-type-links small{font-size:17px;line-height:1.5}
-#vsebina .topic-experience .ed-type-links>a>span{font-size:17px}
 #vsebina .topic-experience .ed-grade-links a{font-size:19px}
 #vsebina .topic-experience :is(.ed-type-links,.ed-grade-links) a[aria-current=page]{background:#e9f3fb;box-shadow:inset 0 -4px #005da4}
 #vsebina .topic-experience .ed-workspace{grid-template-columns:310px minmax(0,1fr);gap:28px;padding:20px 0 35px}
@@ -145,7 +144,8 @@
 #vsebina .topic-experience :is(.garden-page label,.garden-filters label,.garden-climate label,.payment-filters label:not(.payment-upcoming-toggle),.payment-filters .payment-upcoming-toggle){font-size:17px;font-weight:800;line-height:1.5}
 #vsebina .topic-experience :is(.garden-filters input,.garden-filters select,.garden-climate select,.garden-plan-form input,.garden-plan-form select,.payment-filters select){font-size:17px;min-height:50px;padding:12px}
 #vsebina .topic-experience .garden-climate{padding:22px;border-radius:13px;gap:24px;grid-template-columns:minmax(310px,.7fr) minmax(0,1.7fr)}
-#vsebina .topic-experience .garden-climate select{width:auto;min-width:0;max-width:100%;flex:1}
+#vsebina .topic-experience .garden-climate label{display:grid;gap:6px;min-width:0;margin:0}
+#vsebina .topic-experience .garden-climate select{width:100%;min-width:0;max-width:100%;padding-inline-end:32px}
 #vsebina .topic-experience .garden-climate p{font-size:17px;line-height:1.75}
 #vsebina .topic-experience :is(.garden-legend>span,.garden-legend>.text-button,.garden-result-count,.garden-photo-note,.garden-static-reference,.garden-plan-total,.garden-plan-form>p,.garden-sheet-heading>span,.garden-status){font-size:17px;line-height:1.65}
 #vsebina .topic-experience .garden-timeline thead th{font-size:17px;line-height:1.5;padding:14px 10px}
@@ -315,7 +315,7 @@
 #vsebina .topic-experience .topic-fact h2{font-size:21px!important;margin:7px 0}
 #vsebina .topic-fact p{font-size:18px;line-height:1.65}
 #vsebina .topic-experience .ed-type-links{grid-template-columns:1fr}
-#vsebina .topic-experience .ed-type-links>a{padding:23px;grid-template-columns:26px minmax(0,1fr) 20px}
+#vsebina .topic-experience .ed-type-links>a{padding:16px 18px}
 #vsebina .topic-experience .ed-type-links strong{font-size:23px}
 #vsebina .topic-experience .ed-grade-links{display:grid;grid-template-columns:1fr;gap:10px}
 #vsebina .topic-experience .ed-grade-links>a{padding:16px 22px;min-height:66px;font-size:21px}
@@ -367,8 +367,7 @@
 #vsebina .topic-checklist label{font-size:18px;line-height:1.65}
 #vsebina .topic-experience :is(.garden-overview,.garden-personal,.payment-schedule,.payment-visual,.garden-method,.garden-faq,.garden-sources,.payment-faq,.payment-source,.astro-calendar,.astro-reading,.astro-related,.astro-method){padding:24px 19px;border-radius:16px;margin:25px 0}
 #vsebina .topic-experience .garden-filters{grid-template-columns:1fr}
-#vsebina .topic-experience .garden-climate{display:block;padding:20px}
-#vsebina .topic-experience .garden-climate select{width:100%;margin:8px 0 16px}
+#vsebina .topic-experience .garden-climate{padding:16px 14px;gap:12px}
 #vsebina .topic-experience .garden-hero-actions{grid-template-columns:minmax(0,1fr)}
 #vsebina .topic-experience .garden-timeline th:first-child{min-width:192px}
 #vsebina .topic-experience .garden-plant-button{padding:13px 12px;gap:10px}
@@ -476,4 +475,66 @@
   #vsebina .topic-experience .payment-next-date{font-size:25px}
   #vsebina .topic-experience .payment-next-month span{font-size:13px;aspect-ratio:auto;min-height:27px;height:auto}
   #vsebina .topic-experience :is(.payment-next-weekday,.payment-next-countdown,.payment-next-caption){font-size:14px!important;line-height:1.45!important}
+}
+#vsebina .topic-experience[data-kind=matura] :is(.ed-subjects,.ed-subjects label>span,.ed-event-date,.ed-event-copy) {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media screen and (max-width:1150px) {
+  #vsebina .topic-experience[data-kind=matura] .ed-timeline .ed-event {
+    grid-template-columns: 24px minmax(0,1fr);
+    gap: 6px 12px;
+  }
+  #vsebina .topic-experience[data-kind=matura] .ed-timeline .ed-event-select {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+  #vsebina .topic-experience[data-kind=matura] .ed-timeline :is(.ed-event-date,.ed-event-copy) {
+    grid-column: 2;
+  }
+  #vsebina .topic-experience[data-kind=matura] .ed-timeline .ed-event-date {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 4px 12px;
+  }
+  #vsebina .topic-experience[data-kind=matura] .ed-timeline .ed-event-date>span {
+    max-width: none;
+    margin: 0;
+    text-align: start;
+  }
+}
+
+@media screen and (max-width:560px) {
+  #vsebina .topic-experience[data-kind=matura] .ed-subjects>div {
+    grid-template-columns: minmax(0,1fr);
+    padding-block: 6px;
+    scrollbar-gutter: stable;
+  }
+  #vsebina .topic-experience[data-kind=matura] .ed-subjects label:not([hidden]) ~ label:not([hidden]) {
+    border-top: 1px solid var(--ed-line);
+  }
+}
+
+#vsebina .topic-experience .payment-filters select {
+  max-width: 100%;
+  padding-inline-end: 32px;
+  text-overflow: ellipsis;
+}
+@media screen and (max-width:980px) {
+  #vsebina .topic-experience .payment-filters:has([data-payment-benefit]) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #vsebina .topic-experience .payment-filters label:has([data-payment-benefit]) {
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+}
+@media screen and (max-width:560px) {
+  #vsebina .topic-experience .payment-filters:has([data-payment-benefit]) {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

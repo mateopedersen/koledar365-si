@@ -3,12 +3,13 @@ VERSION:2.0
 PRODID:-//Koledar365//SL
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
-DTSTAMP:20261123T113701Z
+DTSTAMP:20261124T010913Z
 UID:si-festival:festival-idrijske-cipke:2026@koledar365.si
 DTSTART;VALUE=DATE:20260619
 DTEND;VALUE=DATE:20260622
 DESCRIPTION:Idrija\nStaro mestno jedro\, čipkarska šola in muzejska prizo
- rišča\nVir: https://www.visit-idrija.si/en/events/?m=10&y=2026
+ rišča\nVir: https://www.visit-idrija.si/en/news/news-archive/20260310110
+ 45463/44th-idrija-lace-festival/
 SUMMARY:Festival idrijske čipke
 END:VEVENT
 END:VCALENDAR

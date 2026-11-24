@@ -1,0 +1,351 @@
+.occasion-planner {
+  --occasion-blue: #184d79;
+  --occasion-ink: #153451;
+  --occasion-line: #c9daea;
+  --occasion-provider-width: 44px;
+  min-width: 0;
+  margin: 20px 0 30px;
+  padding: clamp(14px, 2.5vw, 26px);
+  border: 1px solid var(--occasion-line);
+  border-radius: 17px;
+  background: linear-gradient(143deg, #f7fbff, #edf4fb);
+  color: var(--occasion-ink);
+  scroll-margin-top: 18px;
+}
+
+.occasion-planner [hidden] {
+  display: none !important;
+}
+
+.occasion-planner__heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 13px;
+}
+
+.occasion-planner__heading-icon,
+.occasion-planner__action-icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #cfdfed;
+  border-radius: 9px;
+  background: #fff;
+}
+
+.occasion-planner__heading-icon .ui-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.occasion-planner__action-icon {
+  width: var(--occasion-provider-width);
+}
+
+.occasion-planner__action-icon img {
+  display: block;
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+#vsebina .occasion-planner__heading h2 {
+  margin: 0;
+  font-size: clamp(1.18rem, 2.5vw, 1.6rem);
+  line-height: 1.24;
+}
+
+.occasion-planner__event {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  align-items: center;
+  gap: 15px;
+  margin: 0 0 14px;
+  padding: 12px;
+  border: 1px solid var(--occasion-line);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.occasion-planner__calendar {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid #c3d7e8;
+  border-radius: 8px;
+  box-shadow: 0 2px #e3ebf3;
+  text-align: center;
+}
+
+.occasion-planner__calendar span {
+  padding: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.occasion-planner__calendar span:first-child {
+  background: var(--occasion-blue);
+  color: #fff;
+}
+
+.occasion-planner__calendar strong {
+  margin-top: 3px;
+  font-size: 30px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.12;
+}
+
+#vsebina .occasion-planner__event h3 {
+  margin: 0 0 3px;
+  font-size: clamp(1rem, 2.15vw, 1.36rem);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.occasion-planner__event time {
+  color: var(--occasion-blue);
+  font-weight: 750;
+  overflow-wrap: break-word;
+}
+
+#vsebina .occasion-planner__event p {
+  margin: 3px 0 0;
+  font-size: .87rem;
+  line-height: 1.42;
+  overflow-wrap: break-word;
+}
+
+#vsebina .occasion-planner__event .occasion-planner__date-state {
+  color: #754714;
+  font-weight: 750;
+}
+
+.occasion-planner__columns {
+  display: grid;
+  grid-template-columns: minmax(0, .83fr) minmax(0, 1.17fr);
+  gap: 14px;
+}
+
+.occasion-planner__controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  gap: 4px;
+  min-width: 0;
+}
+
+#vsebina .occasion-planner__controls label {
+  color: var(--occasion-ink);
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.occasion-planner__controls select {
+  min-width: 0;
+  width: 100%;
+  min-height: 45px;
+  margin: 0 0 5px;
+  padding: 7px 9px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid #b9ccdf;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--occasion-ink);
+  font-size: 16px;
+}
+
+#vsebina .occasion-planner__hint {
+  margin: 1px 0 0;
+  color: #3c5874;
+  font-size: .84rem;
+  line-height: 1.45;
+}
+
+.occasion-planner__actions {
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: 7px;
+  min-width: 0;
+}
+
+#vsebina .occasion-planner__action {
+  display: grid;
+  grid-template-columns: var(--occasion-provider-width) minmax(0, 1fr) 18px;
+  align-items: center;
+  justify-content: stretch;
+  gap: 9px;
+  width: 100%;
+  min-height: 61px;
+  margin: 0;
+  padding: 7px;
+  border: 1px solid #c5d7e8;
+  border-radius: 9px;
+  background: #fff;
+  color: var(--occasion-ink);
+  text-align: left;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+#vsebina .occasion-planner__action:hover {
+  border-color: #83adcf;
+  background: #e7f2fb;
+  text-decoration: none;
+}
+
+#vsebina .occasion-planner__action--primary {
+  border-color: #1c527d;
+  background: linear-gradient(135deg, #123d66, #215d88);
+  color: #fff;
+}
+
+#vsebina .occasion-planner__action--primary:hover {
+  background: #153f65;
+}
+
+.occasion-planner__action strong,
+.occasion-planner__action-detail {
+  display: block;
+  font-size: .94rem;
+  line-height: 1.26;
+}
+
+#vsebina .occasion-planner__action-detail {
+  margin-top: 2px;
+  color: #44627c;
+  font-size: .8rem;
+  font-weight: 500;
+}
+
+#vsebina .occasion-planner__action--primary .occasion-planner__action-detail {
+  color: #e2effb;
+}
+
+.occasion-planner__action > .ui-icon {
+  width: 17px;
+  height: 17px;
+  border-radius: 4px;
+  background: #edf5fc;
+}
+
+.occasion-planner__action--primary > .ui-icon {
+  background: #ffffff26;
+}
+
+.occasion-planner__share {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #cbddeb;
+}
+
+#vsebina .occasion-planner__share :is(a, button) {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 6px 10px;
+  border: 1px solid #bbd1e5;
+  border-radius: 8px;
+  background: #fff;
+  color: #174973;
+  font-size: .86rem;
+  font-weight: 750;
+  text-align: left;
+  text-decoration: none;
+}
+
+#vsebina .occasion-planner__share :is(a, button):hover {
+  background: #e7f2fb;
+}
+
+.occasion-planner__share .ui-icon,
+.observance-plan-jump .ui-icon {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+.occasion-planner [data-occasion-link] {
+  width: 100%;
+  margin: 10px 0 0;
+  padding: 8px;
+  border: 1px solid #b9ccdf;
+  border-radius: 7px;
+  background: #fff;
+  font-size: 16px;
+}
+
+#vsebina .occasion-planner__message,
+#vsebina .occasion-planner__pending {
+  margin: 9px 0 0;
+  color: #2c4f6c;
+  font-size: .875rem;
+}
+
+.occasion-planner :is(a, button, select):focus-visible,
+.observance-plan-jump:focus-visible {
+  outline: 3px solid #2373b8;
+  outline-offset: 3px;
+}
+
+.observance-plan-jump {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 100%;
+  min-height: 44px;
+  margin: 11px 0 0;
+  padding: 6px 10px;
+  border: 1px solid #b8cde0;
+  border-radius: 8px;
+  background: #fff;
+  color: #174b76;
+  font-size: .9rem;
+  font-weight: 750;
+}
+
+.festival-masthead__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.festival-masthead__actions .observance-plan-jump {
+  margin: 0;
+}
+
+@media (max-width: 710px) {
+  .occasion-planner__columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 11px;
+  }
+  .occasion-planner__event {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 9px;
+    padding: 8px;
+  }
+  .occasion-planner__event time {
+    font-size: .9rem;
+  }
+  .occasion-planner__calendar span {
+    font-size: 10px;
+  }
+  .occasion-planner__calendar strong {
+    font-size: 26px;
+  }
+}
+
+@media print {
+  .occasion-planner,
+  .observance-plan-jump {
+    display: none !important;
+  }
+}

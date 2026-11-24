@@ -67,22 +67,29 @@ export function pensionAmount(year, base, years, months) {
   return { rate, amount: Math.round(baseCents * Math.round(rate * 100) / 10000) / 100 };
 }
 
-export function studyPlan({ start, end, hours, strategy, include }) {
+export function studyPlan({ start, end, hours, strategy, include, weekdays = [], dailyMinutes = null }) {
   const from = civilDate(start), to = civilDate(end);
   const between = from && to ? (+to - +from) / DAY : -1;
   if (between < 0 || between > 366) throw new Error('Izberite pravilen razpon do največ enega leta.');
   if (!Number.isFinite(hours) || hours < .5 || hours > 600) throw new Error('Vpišite od 0,5 do 600 ur učenja.');
+  if (dailyMinutes !== null && (!Number.isInteger(dailyMinutes) || dailyMinutes < 1 || dailyMinutes > 1440)) {
+    throw new Error('Vpišite od 1 do 1440 minut na dan.');
+  }
+  const chosen = new Set(weekdays);
   const eligible = [];
   for (let i = 0; i < between + Number(Boolean(include)); i += 1) {
     const date = byDays(from, i);
     const weekday = date.getUTCDay();
     const weekend = weekday === 0 || weekday === 6;
-    if (strategy === 'daily' || (strategy === 'weekend' ? weekend : !weekend)) eligible.push(date);
+    const onSchedule = strategy === 'custom' ? chosen.has(weekday) : strategy === 'daily' ||
+      (strategy === 'weekend' ? weekend : !weekend);
+    if (onSchedule) eligible.push(date);
   }
   if (!eligible.length) throw new Error('V izbranem obdobju ni dni za učenje. Spremenite datum ali izbor dni.');
   const target = Math.round(hours * 60);
+  const scheduled = dailyMinutes === null ? target : Math.min(target, dailyMinutes * eligible.length);
   const days = eligible.map((date, index) => {
-    const minutes = Math.round((index + 1) * target / eligible.length) - Math.round(index * target / eligible.length);
+    const minutes = Math.round((index + 1) * scheduled / eligible.length) - Math.round(index * scheduled / eligible.length);
     return { date: isoDate(date), minutes };
   }).filter(day => day.minutes > 0);
   const weeks = new Map();
@@ -94,7 +101,7 @@ export function studyPlan({ start, end, hours, strategy, include }) {
     week.minutes += day.minutes;
     weeks.set(monday, week);
   }
-  return { days, weeks: [...weeks.values()], target };
+  return { days, weeks: [...weeks.values()], target, scheduled };
 }
 
 function escapeText(value) {
