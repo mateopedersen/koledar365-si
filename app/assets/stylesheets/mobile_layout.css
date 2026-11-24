@@ -224,3 +224,44 @@
   .home-page #vsebina .calendar-title .button { padding-block: 6px; }
   .home-page .calendar-panel .category-bar { margin-bottom: 6px; }
 }
+
+/* Mini calendars share the same baseline for active dates, spillover dates
+   and ISO week numbers, including when rendered on the home calendar. */
+@media screen {
+  #vsebina .year-grid > .mini { min-width: 0; }
+  #vsebina .year-grid .mini :is(.date-link, .outside-date) {
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    min-height: 30px;
+    padding: 2px 0;
+    font-size: .8125rem;
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+  }
+  #vsebina .year-grid .mini .date-link > time { width: 24px; min-width: 0; height: 24px; max-width: 100%; }
+  #vsebina .year-grid .mini .calendar th {
+    padding-inline: 0;
+    vertical-align: middle;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+  }
+  #vsebina .year-grid .mini .calendar td { height: auto; vertical-align: middle; }
+  #vsebina .year-grid .mini .calendar tbody .weeknum { padding-block: 0; }
+  #vsebina .year-grid .mini .date-link:focus-visible { outline-offset: -2px; }
+}
+
+@media screen and (max-width: 700px) {
+  #vsebina details.calendar-agenda > summary {
+    min-height: 44px;
+    align-content: center;
+    padding: 6px 10px;
+    border: 1px solid #d4deea;
+    border-radius: 8px;
+    background: #f5f8fc;
+    color: #18324e;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  #vsebina details.calendar-agenda[open] > summary { margin-block-end: 8px; }
+}

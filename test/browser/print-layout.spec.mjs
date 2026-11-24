@@ -50,10 +50,13 @@ test('all printable routes load the shared print stylesheet and omit interactive
     });
     if(!hasPrintRules)problems.push(`${route}: shared print stylesheet missing from built page assets`);
     await page.emulateMedia({media:'print'});
-    for(const selector of ['.category-bar','.filters','.year-links','.search','button:not(.sp-day)','.button']){
+    for(const selector of ['.category-bar','.filters','.year-links','.search','button:not(.sp-day, .lunar-day)','.button']){
       const visible=await page.locator(selector).evaluateAll(nodes=>nodes.some(node=>getComputedStyle(node).display!=='none'));
       if(visible)problems.push(`${route}: ${selector} remains visible in print`);
     }
+    // Moon date cells carry the printed dates and phase artwork, just like school day cells.
+    const lunarDates=page.locator('.lunar-calendar .lunar-day');
+    if(await lunarDates.count()&&!await lunarDates.first().isVisible())problems.push(`${route}: Moon calendar dates are hidden in print`);
     const calendarTitle=page.locator('.calendar-title h2');
     if(await calendarTitle.count()&&!await calendarTitle.isVisible())problems.push(`${route}: calendar period heading is hidden in print`);
     const calendarContext=page.locator('.calendar-context .calendar, .calendar-context .year-grid').first();

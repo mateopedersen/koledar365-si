@@ -11,7 +11,7 @@
 .lunar-moon{aspect-ratio:1;display:block;overflow:hidden}
 
 .lunar-years a,.lunar-month-links a{min-height:44px;display:inline-flex;align-items:center}
-@media print{.lunar-day{display:grid!important}.lunar-enlarge{display:block!important}}
+@media print{.lunar-day{display:grid!important}.lunar-enlarge{display:none!important}}
 
 /* The lunar landing page has its own Slovenian tricolour identity. */
 .lunar-hub-masthead{position:relative;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);align-items:center;gap:28px;min-height:330px;margin:0 0 38px;padding:42px clamp(24px,5vw,64px);overflow:hidden;border:1px solid #203a5c;border-radius:30px;background:radial-gradient(ellipse at 76% 46%,#1e4369 0,transparent 38%),linear-gradient(118deg,#101d32 0%,#142d4b 58%,#0d1a2d 100%);color:#fff;box-shadow:0 24px 60px #10253d22}

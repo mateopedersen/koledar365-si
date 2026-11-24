@@ -404,3 +404,41 @@ test('the annual calendar and Excel download fit the available columns', async (
     expect(layout.actionInside, width + 'px').toBe(true);
   }
 });
+
+test('calendar periods show all dates and place action buttons below the grid', async ({ page }) => {
+  await page.goto('/koledar/2027/');
+  const year = page.locator('.calendar-context-view');
+  await expect(year.locator('.mini')).toHaveCount(12);
+
+  for (const width of [320, 390, 768, 1440]) {
+    await page.setViewportSize({ width, height: 820 });
+    const geometry = await year.evaluate(view => {
+      const table = view.querySelector('.mini .calendar');
+      const cell = table.querySelector('td');
+      const render = e => e.getBoundingClientRect();
+      const spillover = render(cell.querySelector('.outside-date'));
+      const day = render(table.querySelector('.date-link'));
+      const actions = render(view.nextElementSibling);
+      const last = render(view.querySelector('.mini:last-child .calendar'));
+      const sheet = render(document.querySelector('.calendar-spreadsheet'));
+      return {
+        noClipping: view.scrollHeight <= view.clientHeight + 1 && view.scrollWidth <= view.clientWidth + 1,
+        alignedDates: Math.abs(spillover.bottom - day.bottom) <= 1,
+        allMonthsAboveActions: last.bottom <= actions.top,
+        spreadsheetBelowCalendar: sheet.top >= render(view.closest('.calendar-context')).bottom,
+      };
+    });
+    expect(geometry, width + 'px').toEqual({
+      noClipping: true, alignedDates: true, allMonthsAboveActions: true, spreadsheetBelowCalendar: true,
+    });
+  }
+
+  await page.setViewportSize({ width: 320, height: 820 });
+  await page.goto('/koledar/2027/junij/');
+  const agenda = page.locator('details.calendar-agenda');
+  await expect(agenda.locator('summary')).toBeVisible();
+  await expect(agenda.locator('a').first()).toBeHidden();
+  await expect(page.locator('.context-actions a.button')).toBeVisible();
+  await agenda.locator('summary').click();
+  await expect(agenda.locator('a').first()).toBeVisible();
+});

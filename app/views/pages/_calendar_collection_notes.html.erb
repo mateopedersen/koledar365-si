@@ -33,7 +33,6 @@
     <p class="calendar-collection-source"><%= editorial_paragraph('Priprava predlog in izračun: Koledar365. Pravni status datumov preverite v [uradnem pregledu praznikov GOV.SI](@holidays). Izračun je opisan v [virih in metodologiji](/viri-in-metodologija/), postopek popravkov pa v [uredniški politiki](/uredniska-politika/).') %></p>
   </section>
 
-  <div class="calendar-collection-notes__aside">
   <% record, from, to, result = CalendarCollectionEditorial.example(copy) %>
   <section class="panel calendar-collection-example" aria-labelledby="calendar-example-title">
     <h2 id="calendar-example-title"><%= record.fetch('title') %></h2>
@@ -75,5 +74,4 @@
     </dl>
     <p><% if month %>Za skupni pogled odprite <%= link_to "letni koledar #{year}", "/koledar/#{year}/" %>.<% elsif catalogue_year %>Odprite <%= link_to "mesečne predloge za januar #{year}", month_url(year, 1) %> in z mesečno navigacijo sestavite komplet dvanajstih listov.<% else %>Za podroben pogled odprite <%= link_to 'oktober 2026', month_url(year, 10) %> ali izberite obdobje v <%= link_to 'mesečnem planerju', '/mesecni-koledar/' %>.<% end %> Za svoj naslov ali fotografijo uporabite <%= link_to 'izdelavo koledarja po meri', '/ustvari-koledar/' %>.</p>
   </section>
-  </div>
 </section>

@@ -344,9 +344,8 @@ html:has(.download-workspace){scroll-behavior:auto}
 }
 .calendar-collection-notes {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-  align-items: start;
-  gap: 14px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(9px, 1vw, 14px);
   scroll-margin-top: 18px;
 }
 .calendar-collection-notes .panel {
@@ -355,11 +354,6 @@ html:has(.download-workspace){scroll-behavior:auto}
   padding: clamp(14px, 2vw, 24px);
   border: 1px solid #d4e0eb;
   border-radius: 13px;
-}
-.calendar-collection-notes__aside {
-  display: grid;
-  gap: 14px;
-  min-width: 0;
 }
 .calendar-collection-example {
   background: #f8fbff;
@@ -450,8 +444,12 @@ html:has(.download-workspace){scroll-behavior:auto}
 #vsebina .calendar-collection-source {
   font-size: .88rem;
 }
-@media (max-width: 740px) {
-  .calendar-collection-notes { grid-template-columns: minmax(0, 1fr); }
+@media screen and (min-width: 920px) {
+  .calendar-collection-file-guide {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
 }
 @media (max-width: 390px) {
   .calendar-collection-intro__actions .button { width: 100%; }
@@ -647,5 +645,124 @@ html:has(.download-workspace){scroll-behavior:auto}
     padding: 0;
     border: 0;
     background: none;
+  }
+}
+
+/* Published year and month pages keep the whole calendar in the page flow. */
+@media screen {
+  .download-workspace--period {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    margin-block-end: 18px;
+    scroll-margin-top: 20px;
+  }
+
+  .download-workspace--period > .calendar-context {
+    position: static;
+    min-width: 0;
+    padding: clamp(10px, 1.5vw, 20px);
+  }
+
+  #vsebina .download-workspace--period .calendar-context .context-content {
+    display: block;
+    min-height: 0;
+    max-height: none;
+    padding: 0;
+    overflow: visible;
+  }
+
+  #vsebina .download-workspace--period .calendar-context-view {
+    max-height: none;
+    overflow: visible;
+  }
+
+  #vsebina .download-workspace--period .year-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.75rem), 1fr));
+    gap: clamp(10px, 1.3vw, 18px);
+  }
+
+  @media (min-width: 1080px) {
+    #vsebina .download-workspace--period .year-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .download-workspace--period .calendar-month-index__links { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  }
+
+  .download-workspace--period .context-heading {
+    margin-block-end: 10px;
+    padding-block-end: 8px;
+  }
+
+  #vsebina .download-workspace--period .calendar-title {
+    margin-block: 0 10px;
+    align-items: center;
+  }
+
+  #vsebina .download-workspace--period .calendar-title .actions {
+    align-items: center;
+    min-width: 0;
+    gap: 6px;
+  }
+
+  #vsebina .download-workspace--period .calendar-title .button {
+    display: inline-flex;
+    justify-content: center;
+    padding-inline: 10px;
+    min-height: 48px;
+    text-align: center;
+  }
+
+  #vsebina .download-workspace--period:not(.context-expanded) .calendar-title > .primary { display: none; }
+  #vsebina .download-workspace--period .calendar-title .square { width: 48px; padding-inline: 0; }
+
+  #vsebina .download-workspace--period .context-actions {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0 0;
+  }
+
+  #vsebina .download-workspace--period .context-actions :is(button, .button) {
+    display: inline-flex;
+    justify-content: center;
+    min-width: 0;
+    min-height: 48px;
+    padding: 6px 12px;
+    line-height: 1.25;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .download-workspace--period .calendar-downloads { container-type: inline-size; }
+  .download-workspace--period .calendar-spreadsheet { margin: 0; }
+  .download-workspace--period .calendar-spreadsheet h2 { margin-block-start: 0; }
+
+  @container (max-width: 540px) {
+    .download-workspace--period .calendar-spreadsheet {
+      grid-template-columns: 2.25rem minmax(0, 1fr);
+      align-items: start;
+      gap: 8px 10px;
+      padding: 12px;
+    }
+
+    .download-workspace--period .calendar-spreadsheet__action { grid-column: 1/-1; margin: 0; }
+    .download-workspace--period .calendar-spreadsheet__action button { width: 100%; min-height: 48px; white-space: normal; }
+  }
+
+  @media (max-width: 650px) {
+    #vsebina .download-workspace--period .calendar-title .actions {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr) 48px;
+      width: 100%;
+    }
+    #vsebina .download-workspace--period .calendar-title h2 {
+      grid-area: 1 / 2;
+      text-align: center;
+      min-width: 0;
+      font-size: clamp(1rem, 4.6vw, 1.2rem) !important;
+      line-height: 1.2;
+    }
+    .download-workspace--period .calendar-title .square:first-child { grid-area: 1 / 1; }
+    .download-workspace--period .calendar-title h2 + .square { grid-area: 1 / 3; }
+    .download-workspace--period .calendar-title .actions > .button:not(.square) { grid-column: 1/-1; }
+    #vsebina .download-workspace--period .calendar-title > .primary { width: 100%; }
+    .download-workspace--period .context-actions > :is(button, .button) { flex: 1 1 7.25rem; }
   }
 }

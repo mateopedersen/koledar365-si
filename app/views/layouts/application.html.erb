@@ -29,7 +29,7 @@
 <% if page_path=='/kontakt/' %><link rel="stylesheet" href="/contact/contact-v1.css?v=20261124-states"><script type="module" src="/contact/contact-v1.mjs"></script><% end %>
 <% if page_path == '/druzinski-planer/' %><%= stylesheet_link_tag 'family_planner' %><%= javascript_include_tag 'family_planner_core', 'family_planner', defer:true %><% end %>
 <% if @section=='sun' -%><%= stylesheet_link_tag 'sun' %><%= javascript_include_tag 'sun',defer:true %><% end -%>
-<% if page_path.start_with?('/lunin-koledar/') -%><link rel="stylesheet" href="/lunar/calendar.css?v=20261124-mobile"><% end -%>
+<% if page_path.start_with?('/lunin-koledar/') -%><link rel="stylesheet" href="/lunar/calendar.css?v=20261124-calendar-fit"><% end -%>
 <% if page_path == '/datumski-kalkulator/' %><%= stylesheet_link_tag 'date_calculator' %><% end %>
 <% if page_path == '/prestopno-leto/' %><%= stylesheet_link_tag 'leap_year' %><%= javascript_include_tag 'leap_year', defer: true %><% end %>
 <% if page_path == '/nacrtovalnik-dopusta/' %><%= stylesheet_link_tag 'vacation' %><%= javascript_include_tag 'vacation',defer:true %><% end %>
@@ -60,7 +60,7 @@
 <% if @section=='school_timetable' %><link rel="stylesheet" href="/education/timetable-page.css"><% end %>
 <% if @section=='terms' %><%= stylesheet_link_tag 'terms' %><% end %>
 <% if @not_found %><%= stylesheet_link_tag 'not_found' %><% end %>
-<%= stylesheet_link_tag 'mobile_layout' %><script type="module" src="/calendar-tools/mobile-layout.mjs?v=20261025-event-labels1"></script>
+<%= stylesheet_link_tag 'mobile_layout' %><script type="module" src="/calendar-tools/mobile-layout.mjs?v=20261124-calendar-fit"></script>
 <% if page_path=='/koledar/' %><%= stylesheet_link_tag 'calendar_directory' %><script type="module" src="/calendar-tools/directory.mjs"></script><% end %>
 <%= stylesheet_link_tag 'brand' %>
 <%= stylesheet_link_tag 'social_share' %><%= javascript_include_tag 'social_share', defer: true %>

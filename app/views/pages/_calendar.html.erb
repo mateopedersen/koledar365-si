@@ -3,7 +3,7 @@
   <% if @calendar_collection_designs %>
     <%= render 'calendar_gallery', year: @year, month: @page.month, rows: @calendar_collection_designs %>
   <% end %>
-<% if with_gallery %><div class="download-workspace<%= ' download-workspace--period' if @calendar_collection_designs %>" id="koledarski-pregled" data-download-workspace><% end %>
+<% if with_gallery %><div class="download-workspace download-workspace--period" id="koledarski-pregled" data-download-workspace><% end %>
   <section class="panel gallery-context <%= 'calendar-context' if with_gallery %>" aria-label="Koledarski pregled">
 <% if with_gallery %><%= render 'context_heading', title: 'Koledarski pregled', expand: 'Razširi koledar' %><% end %>
 <% if with_gallery && @page.month %>
@@ -21,7 +21,7 @@
 <% end %>
     <div class="context-content" id="gallery-context-content" data-print-output>
       <%= render 'calendar_controls' %>
-      <div class="calendar-context-view" tabindex="0" role="region" aria-label="Datumi in prazniki"><%= render 'calendar_view' %></div>
+      <div class="calendar-context-view" role="region" aria-label="Datumi in prazniki"><%= render 'calendar_view' %></div>
       <div class="actions context-actions">
         <button data-print>Natisni</button>
         <a class="button" href="<%= with_gallery ? '#calendar-designs' : '/koledar-za-tiskanje/' %>">15 predlog za prenos</a>
