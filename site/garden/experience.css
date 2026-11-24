@@ -16,6 +16,41 @@
 .garden-plan-form legend{width:auto;max-width:100%;white-space:normal;overflow-wrap:break-word}
 .garden-photo-note{font-size:12px!important;line-height:1.7;color:#536781;margin:0 0 16px}
 .garden-timeline{min-width:1040px}
+.garden-timeline-wrap { container-type: inline-size; }
+.garden-timeline thead th:first-child {
+  position: sticky;
+  inset-inline-start: 0;
+  z-index: 2;
+  border-inline-end: 2px solid #dce6f0;
+}
+.garden-timeline thead th:last-child,
+.garden-timeline tbody tr[data-garden-row] > td:last-child {
+  position: sticky;
+  inset-inline-end: 0;
+  z-index: 1;
+  border-inline-start: 1px solid #dce6f0;
+}
+.garden-timeline tbody tr[data-garden-row] > td:last-child { background: #fff; }
+.garden-timeline tbody tr[data-garden-row]:hover > td:last-child { background: #f8fafc; }
+.garden-timeline .garden-add {
+  display: inline-grid;
+  place-items: center;
+  width: var(--k365-control-height, 48px);
+  min-height: var(--k365-control-height, 48px);
+  border-radius: 9px;
+}
+.garden-timeline .garden-add:is(:hover,:focus-visible) {
+  border-color: #467cad;
+  background: #e3effb;
+  color: #0d4686;
+}
+.garden-plant-detail {
+  position: sticky;
+  inset-inline-start: 0;
+  width: 100cqi;
+  max-width: 100%;
+  box-sizing: border-box;
+}
 .garden-timeline thead th:first-child{width:270px}
 .garden-timeline tbody th{padding:0 12px}
 .garden-plant-button{display:grid;grid-template-columns:64px minmax(0,1fr) 24px;gap:12px;min-height:88px;padding:11px 0;line-height:1.45}
@@ -25,6 +60,21 @@
 .garden-plant-button[aria-expanded=true]>.garden-plant-toggle{background:#0054b8;color:#fff;border-color:#0054b8}
 .garden-detail-photo{display:block;width:112px;height:112px;margin:0 0 13px;opacity:1;filter:none}
 @media(max-width:780px){.garden-timeline thead th:first-child{width:224px}.garden-timeline tbody th{padding:0 10px}.garden-plant-button{grid-template-columns:56px minmax(0,1fr) 22px;gap:9px;min-height:80px}.garden-plant-photo{width:56px;height:56px}.garden-plant-button>.garden-plant-name{font-size:12px}.garden-plant-button>.garden-plant-toggle{width:22px;height:22px}}
+
+@media screen and (max-width:600px) {
+  .garden-timeline thead th:first-child { width: clamp(140px, 37vw, 180px); padding-inline-start: 7px; }
+  .garden-timeline thead th:last-child { width: 58px; }
+  .garden-timeline tbody th { padding-inline: 6px; }
+  .garden-plant-button {
+    grid-template-columns: 32px minmax(0, 1fr) 18px;
+    gap: 5px;
+    min-height: 60px;
+    padding-block: 7px;
+  }
+  .garden-plant-photo { width: 32px; height: 32px; }
+  .garden-plant-button > .garden-plant-name { overflow-wrap: anywhere; }
+  .garden-plant-button > .garden-plant-toggle { width: 18px; height: 18px; font-size: 14px; }
+}
 
 /* Mobile plans keep native pickers and paired actions inside their own rows. */
 @media screen and (max-width:780px){

@@ -121,14 +121,19 @@ function attachSearchSuggestions(form){
   if (row.bottom > panel.bottom - gap) popup.scrollTop += row.bottom - panel.bottom + gap;
   else if (row.top < panel.top + gap) popup.scrollTop -= panel.top + gap - row.top;
  };
- const fitPopup = () => {
+ const fitPopup = (revealInput = false) => {
   if (popup.hidden) return;
-  const anchor = form.getBoundingClientRect();
   const top = viewport?.offsetTop || 0;
   let bottom = top + (viewport?.height || window.innerHeight);
   if (notice && !notice.hidden && getComputedStyle(notice).position === 'fixed') {
    const noticeTop = notice.getBoundingClientRect().top;
-   if (noticeTop > anchor.bottom) bottom = Math.min(bottom, noticeTop);
+   if (noticeTop > top) bottom = Math.min(bottom, noticeTop);
+  }
+  let anchor = form.getBoundingClientRect();
+  if (revealInput && document.activeElement === input && anchor.bottom + gap > bottom &&
+      bottom - top > anchor.height + 2 * gap) {
+   window.scrollBy({ top: Math.ceil(anchor.bottom + gap - bottom), behavior: 'instant' });
+   anchor = form.getBoundingClientRect();
   }
   const above = Math.max(0, anchor.top - top - 2 * gap);
   const below = Math.max(0, bottom - anchor.bottom - 2 * gap);
@@ -139,7 +144,7 @@ function attachSearchSuggestions(form){
   if (selected) keepOptionVisible(selected);
  };
  const close=()=>{clearTimeout(timer);request++;popup.hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');activeIndex=-1};
- const open=()=>{popup.hidden=false;input.setAttribute('aria-expanded','true');fitPopup()};
+ const open=()=>{popup.hidden=false;input.setAttribute('aria-expanded','true');fitPopup(true)};
  const render = (rows, message) => {
   list.replaceChildren();
   popup.scrollTop = 0;
@@ -175,10 +180,13 @@ function attachSearchSuggestions(form){
   input.setAttribute('aria-activedescendant',options[activeIndex].id);
   keepOptionVisible(options[activeIndex]);
  });
- viewport?.addEventListener('resize', fitPopup);
- viewport?.addEventListener('scroll', fitPopup);
- window.addEventListener('scroll', fitPopup, { passive: true });
- window.addEventListener('resize', fitPopup);
+ const refreshViewport = () => fitPopup(true);
+ const refreshScroll = () => fitPopup();
+ viewport?.addEventListener('resize', refreshViewport);
+ viewport?.addEventListener('scroll', refreshScroll);
+ window.addEventListener('scroll', refreshScroll, { passive: true });
+ window.addEventListener('resize', refreshViewport);
+ document.addEventListener('k365:storage-notice-layout', refreshViewport);
  popup.addEventListener('mousedown', event => {
   // Keep the field focused until the option receives its native click, including on Safari touch.
   if (event.button === 0 && event.target.closest('a[role="option"]')) event.preventDefault();

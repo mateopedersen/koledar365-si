@@ -64,7 +64,11 @@ function noticeAcknowledged() {
 function updateClearance() {
   const floating = !notice.hidden && getComputedStyle(notice).position === 'fixed';
   const height = floating ? Math.ceil(notice.getBoundingClientRect().height) : 0;
-  document.documentElement.style.setProperty('--cookie-space', `${height}px`);
+  const rootStyle = document.documentElement.style;
+  const clearance = `${height}px`;
+  if (rootStyle.getPropertyValue('--cookie-space') === clearance) return;
+  rootStyle.setProperty('--cookie-space', clearance);
+  document.dispatchEvent(new Event('k365:storage-notice-layout'));
 }
 
 function updateNotice() {
