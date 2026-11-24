@@ -21,7 +21,11 @@ document.addEventListener('keydown',event=>{
 try{localStorage.removeItem('k365.theme')}catch{}
 $$('.api-form').forEach(form=>form.addEventListener('submit',async e=>{e.preventDefault();const result=$('.result',form),button=$('button',form);button.disabled=true;say(result,'Računamo …');try{const body=await api(form.action,formObject(form));say(result,body.result);if(body.countdown)document.dispatchEvent(new CustomEvent('k365:countdown',{detail:body.countdown}));if(body.entries){if(form.id==='shift-form'){const from=form.elements.from.value,to=form.elements.to.value;const key=entry=>[entry.date,entry.code||'',entry.title||'',entry.person||'',entry.time||'',entry.end_time||''].join('\u0000');plannerEntries=plannerEntries.filter(entry=>!(entry.source==='shift-cycle'&&entry.date>=from&&entry.date<=to));const seen=new Set(plannerEntries.map(key));const added=body.entries.map(entry=>({...entry,source:'shift-cycle'})).filter(entry=>{const signature=key(entry);if(seen.has(signature))return false;seen.add(signature);return true});plannerEntries.push(...added);say(result,`${body.result} ${added.length} novih vnosov. Osebni vnosi in drugi zapisi so ohranjeni.`)}else plannerEntries=body.entries;savePlannerEntries();renderPlannerEntries()}}catch(error){say(result,error.message,true)}finally{button.disabled=false}}));
 let personal=store.get('k365.personal.v1',{events:[],notes:{}});const planner=$('#personal-planner');
-function savePersonal(){if(!store.set('k365.personal.v1',personal))say($('#personal-status'),'Shramba ni na voljo. Shranite varnostno kopijo.',true)}
+function savePersonal(){
+ const saved=store.set('k365.personal.v1',personal);
+ if(!saved)say($('#personal-status'),'Shramba ni na voljo. Shranite varnostno kopijo.',true);
+ return saved;
+}
 const personalReminderFormat = new Intl.DateTimeFormat('sl-SI', {
   timeZone: 'Europe/Ljubljana', dateStyle: 'medium', timeStyle: 'short'
 });
@@ -37,8 +41,81 @@ function personalDates(entry) {
   const dates = $$('td[data-date]').map(cell => cell.dataset.date);
   return [...new Set(dates.filter(date => date >= entry.date && date <= entry.end_date))];
 }
-function renderPersonal(){if(!planner)return;const selected=planner.dataset.selectedDate,root=$('#personal-events');root.replaceChildren();const rows=personal.events.filter(e=>e.date===selected||(selected>e.date&&selected<=e.end_date)||(e.repeat==='yearly'&&e.date.slice(5)===selected.slice(5)));if(!rows.length){const p=document.createElement('p');p.className='empty';p.textContent='Za ta dan še ni osebnih zapisov.';root.append(p)}for(const event of rows){const row=document.createElement('div');row.className='personal-item'+(event.done?' done':'');row.dataset.category=event.category||'personal';const text=document.createElement('div');text.textContent=[event.time,event.title].filter(Boolean).join(' · ');appendPersonalReminder(text,event);row.append(text);if(event.kind==='task'){const complete=document.createElement('button');complete.textContent=event.done?'Označi kot nedokončano':'Označi kot dokončano';complete.addEventListener('click',()=>{event.done=!event.done;savePersonal();renderPersonal()});row.append(complete)}const edit=document.createElement('button');edit.textContent='Uredi';edit.addEventListener('click',()=>{const form=$('#personal-form');for(const key of ['uid','title','date','time','kind','repeat','category'])form.elements[key].value=event[key]||'';$('#event-editor').open=true;form.elements.title.focus()});row.append(edit);const del=document.createElement('button');del.textContent='Izbriši';del.addEventListener('click',()=>{personal.events=personal.events.filter(e=>e.uid!==event.uid);savePersonal();renderPersonal()});row.append(del);root.append(row)}requestAnimationFrame(()=>{renderQuickTasks();filterCalendar()});$('#day-notes').value=personal.notes[selected]||'';$$('.personal-dot').forEach(x=>x.remove());for(const event of personal.events)for(const date of personalDates(event)){const cell=$(`td[data-date="${date}"] .date-events`);if(cell){const dot=document.createElement('span');dot.className='event-label personal-dot';dot.textContent=[event.time,event.title].filter(Boolean).join(' ');dot.dataset.category=event.category||'personal';cell.append(dot)}}}
-if(planner){renderPersonal();$('#personal-form').addEventListener('submit',e=>{e.preventDefault();const form=e.currentTarget,entry=formObject(form);entry.uid=entry.uid||crypto.randomUUID();const found=personal.events.find(x=>x.uid===entry.uid);if(found)Object.assign(found,entry);else personal.events.push(entry);savePersonal();form.reset();form.elements.uid.value='';form.elements.date.value=planner.dataset.selectedDate;$('#event-editor').open=false;renderPersonal()});$('#cancel-event').addEventListener('click',()=>{$('#personal-form').reset();$('#personal-form').elements.uid.value='';$('#event-editor').open=false});$('#save-notes').addEventListener('click',()=>{personal.notes[planner.dataset.selectedDate]=$('#day-notes').value;savePersonal();say($('#notes-status'),'Zapiski so shranjeni na tej napravi.')});$('#backup-data').addEventListener('click',()=>downloadBlob(new Blob([JSON.stringify(personal,null,2)],{type:'application/json'}),'koledar365-osebna-kopija.json'));$('#restore-data').addEventListener('change',async e=>{try{const file=e.target.files[0];if(!file||file.size>1000000)throw new Error('Izberite veljavno datoteko do 1 MB.');const data=JSON.parse(await file.text());if(!Array.isArray(data.events)||data.events.length>500||!data.notes||typeof data.notes!=='object'||data.events.some(x=>typeof x.title!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(x.date)))throw new Error('Kopija ni veljavna.');personal=data;savePersonal();renderPersonal();say($('#personal-status'),'Varnostna kopija je obnovljena.')}catch(error){say($('#personal-status'),error.message,true)}});$('#export-ics').addEventListener('click',async()=>{try{if(!personal.events.length)throw new Error('Ni osebnih dogodkov za izvoz. Najprej dodaj dogodek.');const response=await fetch('/ics/izvoz/',{method:'POST',headers:{'Content-Type':'application/json','X-CSRF-Token':csrf()},body:JSON.stringify({events:personal.events})});if(!response.ok)throw new Error('Izvoz ni uspel. Preverite datume.');downloadBlob(await response.blob(),'koledar365-moj-koledar.ics')}catch(error){say($('#personal-status'),error.message,true)}});$('#ics-file').addEventListener('change',async e=>{try{const file=e.target.files[0];if(!file||file.size>1000000)throw new Error('Največja velikost datoteke je 1 MB.');const data=await api('/ics/uvoz/',{ics:await file.text()});let added=0;for(const event of data.events){const existing=personal.events.find(x=>x.uid===event.uid);if(existing)Object.assign(existing,event);else{personal.events.push(event);added++}}savePersonal();renderPersonal();say($('#personal-status'),`Uvoz je končan. Novi dogodki: ${added}.`)}catch(error){say($('#personal-status'),error.message,true)}});$('#show-holidays')?.addEventListener('change',e=>document.body.classList.toggle('hide-holidays',!e.target.checked));$('#show-personal')?.addEventListener('change',e=>$$('.personal-dot').forEach(n=>n.hidden=!e.target.checked))}
+const dayNotesInput=$('#day-notes');
+const dateNotesCalendar=$('[data-calendar-notes]');
+const dateNotesDialog=$('#calendar-note-dialog');
+const noteDateFormat=new Intl.DateTimeFormat('sl-SI',{timeZone:'UTC',dateStyle:'long'});
+function paintCalendarNote(cell,text) {
+ let note=$('.calendar-day-note',cell);
+ if(!text?.trim()){note?.remove();return}
+ if(!note){
+  note=document.createElement('p');
+  note.className='calendar-day-note';
+  ($('.date-events',cell)||cell).append(note);
+ }
+ note.textContent=text.trim();
+}
+function saveCalendarNote(date,text) {
+ const value=text.trim();
+ if(value)personal.notes[date]=value;
+ else delete personal.notes[date];
+ if(planner?.dataset.selectedDate===date)dayNotesInput.value=value;
+ for(const cell of $$('[data-note-date="'+date+'"]',dateNotesCalendar))paintCalendarNote(cell,value);
+ const saved=savePersonal();
+ say($('#notes-status'),saved?'Zapisek je na koledarju.':'Zapisek je na koledarju. Shramba brskalnika ni na voljo.',!saved);
+}
+if(dateNotesCalendar&&dateNotesDialog&&dayNotesInput){
+ const notesText=$('#calendar-note-text');
+ const events=$('[data-calendar-note-events]');
+ const eventOptions=$('div',events);
+ let selectedCell;
+ function openDateNote(cell) {
+  selectedCell=cell;
+  const date=cell.dataset.noteDate;
+  dateNotesDialog.returnValue='';
+  $('[data-calendar-note-date]',dateNotesDialog).textContent=noteDateFormat.format(new Date(date+'T12:00Z'));
+  notesText.value=planner.dataset.selectedDate===date?dayNotesInput.value:personal.notes[date]||'';
+  eventOptions.replaceChildren();
+  const titles=new Set($$('.event-label[href]',cell).filter(link=>!link.hidden).map(link=>link.title||link.textContent.trim()));
+  for(const title of titles){
+   const button=document.createElement('button');
+   button.type='button';
+   button.textContent=title;
+   button.addEventListener('click',()=>{
+    const next=[notesText.value.trim(),title].filter(Boolean).join('\n');
+    if(!notesText.value.split('\n').includes(title)&&next.length<=notesText.maxLength)notesText.value=next;
+    notesText.focus();
+   });
+   eventOptions.append(button);
+  }
+  events.hidden=!titles.size;
+  dateNotesDialog.showModal();
+ }
+ for(const cell of $$('.calendar td[data-date]:not(.outside),.week-view section[data-date]',dateNotesCalendar)){
+  const date=cell.dataset.date;
+  cell.dataset.noteDate=date;
+  const button=document.createElement('button');
+  button.className='calendar-note-add';
+  button.type='button';
+  button.textContent='+';
+  button.setAttribute('aria-label','Dodaj zapisek · '+noteDateFormat.format(new Date(date+'T12:00Z')));
+  button.addEventListener('click',()=>openDateNote(cell));
+  ($('.date-link, h3',cell)||cell.firstElementChild)?.after(button);
+  cell.addEventListener('click',event=>{
+   if(!event.target.closest('a,button,input,select,textarea')&&!window.getSelection()?.toString())openDateNote(cell);
+  });
+  paintCalendarNote(cell,personal.notes[date]);
+ }
+ dayNotesInput.addEventListener('input',()=>{
+  for(const cell of $$('[data-note-date="'+planner.dataset.selectedDate+'"]',dateNotesCalendar))paintCalendarNote(cell,dayNotesInput.value);
+ });
+ $('#save-notes').addEventListener('click',()=>saveCalendarNote(planner.dataset.selectedDate,dayNotesInput.value));
+ dateNotesDialog.addEventListener('close',()=>{
+  if(dateNotesDialog.returnValue==='save'&&selectedCell)saveCalendarNote(selectedCell.dataset.noteDate,notesText.value);
+ });
+}
+function renderPersonal(){if(!planner)return;const selected=planner.dataset.selectedDate,root=$('#personal-events');root.replaceChildren();const rows=personal.events.filter(e=>e.date===selected||(selected>e.date&&selected<=e.end_date)||(e.repeat==='yearly'&&e.date.slice(5)===selected.slice(5)));if(!rows.length){const p=document.createElement('p');p.className='empty';p.textContent='Za ta dan še ni osebnih zapisov.';root.append(p)}for(const event of rows){const row=document.createElement('div');row.className='personal-item'+(event.done?' done':'');row.dataset.category=event.category||'personal';const text=document.createElement('div');text.textContent=[event.time,event.title].filter(Boolean).join(' · ');appendPersonalReminder(text,event);row.append(text);if(event.kind==='task'){const complete=document.createElement('button');complete.textContent=event.done?'Označi kot nedokončano':'Označi kot dokončano';complete.addEventListener('click',()=>{event.done=!event.done;savePersonal();renderPersonal()});row.append(complete)}const edit=document.createElement('button');edit.textContent='Uredi';edit.addEventListener('click',()=>{const form=$('#personal-form');for(const key of ['uid','title','date','time','kind','repeat','category'])form.elements[key].value=event[key]||'';$('#event-editor').open=true;form.elements.title.focus()});row.append(edit);const del=document.createElement('button');del.textContent='Izbriši';del.addEventListener('click',()=>{personal.events=personal.events.filter(e=>e.uid!==event.uid);savePersonal();renderPersonal()});row.append(del);root.append(row)}requestAnimationFrame(()=>{renderQuickTasks();filterCalendar()});$('#day-notes').value=personal.notes[selected]||'';if(dateNotesCalendar)for(const cell of $$('[data-note-date]',dateNotesCalendar))paintCalendarNote(cell,personal.notes[cell.dataset.noteDate]);$$('.personal-dot').forEach(x=>x.remove());for(const event of personal.events)for(const date of personalDates(event)){const cell=$(`td[data-date="${date}"] .date-events`);if(cell){const dot=document.createElement('span');dot.className='event-label personal-dot';dot.textContent=[event.time,event.title].filter(Boolean).join(' ');dot.dataset.category=event.category||'personal';cell.append(dot)}}}
+if(planner){renderPersonal();$('#personal-form').addEventListener('submit',e=>{e.preventDefault();const form=e.currentTarget,entry=formObject(form);entry.uid=entry.uid||crypto.randomUUID();const found=personal.events.find(x=>x.uid===entry.uid);if(found)Object.assign(found,entry);else personal.events.push(entry);savePersonal();form.reset();form.elements.uid.value='';form.elements.date.value=planner.dataset.selectedDate;$('#event-editor').open=false;renderPersonal()});$('#cancel-event').addEventListener('click',()=>{$('#personal-form').reset();$('#personal-form').elements.uid.value='';$('#event-editor').open=false});$('#backup-data').addEventListener('click',()=>downloadBlob(new Blob([JSON.stringify(personal,null,2)],{type:'application/json'}),'koledar365-osebna-kopija.json'));$('#restore-data').addEventListener('change',async e=>{try{const file=e.target.files[0];if(!file||file.size>1000000)throw new Error('Izberite veljavno datoteko do 1 MB.');const data=JSON.parse(await file.text());if(!Array.isArray(data.events)||data.events.length>500||!data.notes||typeof data.notes!=='object'||data.events.some(x=>typeof x.title!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(x.date)))throw new Error('Kopija ni veljavna.');personal=data;savePersonal();renderPersonal();say($('#personal-status'),'Varnostna kopija je obnovljena.')}catch(error){say($('#personal-status'),error.message,true)}});$('#export-ics').addEventListener('click',async()=>{try{if(!personal.events.length)throw new Error('Ni osebnih dogodkov za izvoz. Najprej dodaj dogodek.');const response=await fetch('/ics/izvoz/',{method:'POST',headers:{'Content-Type':'application/json','X-CSRF-Token':csrf()},body:JSON.stringify({events:personal.events})});if(!response.ok)throw new Error('Izvoz ni uspel. Preverite datume.');downloadBlob(await response.blob(),'koledar365-moj-koledar.ics')}catch(error){say($('#personal-status'),error.message,true)}});$('#ics-file').addEventListener('change',async e=>{try{const file=e.target.files[0];if(!file||file.size>1000000)throw new Error('Največja velikost datoteke je 1 MB.');const data=await api('/ics/uvoz/',{ics:await file.text()});let added=0;for(const event of data.events){const existing=personal.events.find(x=>x.uid===event.uid);if(existing)Object.assign(existing,event);else{personal.events.push(event);added++}}savePersonal();renderPersonal();say($('#personal-status'),`Uvoz je končan. Novi dogodki: ${added}.`)}catch(error){say($('#personal-status'),error.message,true)}});$('#show-holidays')?.addEventListener('change',e=>document.body.classList.toggle('hide-holidays',!e.target.checked));$('#show-personal')?.addEventListener('change',e=>$$('.personal-dot').forEach(n=>n.hidden=!e.target.checked))}
 let plannerEntries=store.get('k365.entries.'+location.pathname,[]);const plannerOptions=$('#planner-options');
 function savePlannerEntries(){store.set('k365.entries.'+location.pathname,plannerEntries)}
 function refreshDesignPreviews(){

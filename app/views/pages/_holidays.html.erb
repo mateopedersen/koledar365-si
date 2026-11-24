@@ -33,7 +33,7 @@
   <nav class="holiday-section-nav" aria-label="Na tej strani"><a href="#prazniki-seznam"><%= ui_icon('note') %> Seznam praznikov</a><a href="#holiday-overview-title"><%= ui_icon('grid') %> Letni pregled</a><a href="#holiday-breaks"><%= ui_icon('sun') %> Podaljšani vikendi</a><a href="#holiday-downloads"><%= ui_icon('print') %> Za tiskanje</a></nav>
 
   <div class="holiday-workspace">
-    <section class="holiday-agenda" id="prazniki-seznam" aria-labelledby="holiday-list-title">
+    <section class="holiday-agenda" id="prazniki-seznam" aria-labelledby="holiday-list-title" data-print-output>
       <div class="holiday-section-heading"><div><span class="eyebrow">DATUMI, KI JIH JE DOBRO POZNATI</span><h2 id="holiday-list-title">Vaši prazniki <strong><%= @year %>.</strong></h2><p>Jasno označeno, kdaj praznujemo in kdaj smo prosti.</p></div><span class="holiday-total"><strong><%= @holidays.events.size %></strong> datumov</span></div>
       <form class="holiday-filters" id="holiday-filters" method="get" action="/prazniki/<%= @year %>/">
         <fieldset><legend class="sr-only">Vrsta praznika</legend>

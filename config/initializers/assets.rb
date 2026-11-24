@@ -14,3 +14,5 @@ Rails.application.config.assets.precompile += %w[social_share.css social_share.j
 
 # Add additional assets to the asset load path.
 # Rails.application.config.assets.paths << Emoji.images_path
+
+Rails.application.config.assets.precompile += %w[calendar_notes.css]

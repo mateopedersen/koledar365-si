@@ -19,7 +19,7 @@
       <div class="calendar-month-index__links"><% CalendarEngine::MONTHS.each_with_index do |month_name,index| %><a href="<%= calendar_path(Date.new(@year,index+1,1)) %>"><%= month_name.capitalize %></a><% end %></div>
     </nav>
 <% end %>
-    <div class="context-content" id="gallery-context-content">
+    <div class="context-content" id="gallery-context-content" data-print-output>
       <%= render 'calendar_controls' %>
       <div class="calendar-context-view" tabindex="0" role="region" aria-label="Datumi in prazniki"><%= render 'calendar_view' %></div>
       <div class="actions context-actions">

@@ -31,10 +31,16 @@ if(process.env.QA_EXPORT_MODE!=='print'){
  }
 }
 if(process.env.QA_EXPORT_MODE!=='downloads'){
- const routes=[['annual','/koledar/2028/','[data-print]'],['monthly','/koledar/2028/februar/','[data-print]'],['lunar-year','/lunin-koledar/2028/','.lunar-print'],['lunar-month','/lunin-koledar/2028/februar/','.lunar-print'],['family','/druzinski-planer/','[data-family-print]'],['school','/solske-pocitnice/','[data-school-calendar-print]'],['student','/solski-urnik/','[data-print-schedule]'],['payments','/izplacila-pokojnin/','[data-payment-print]']];
+ const routes=[['home-note','/?date=2028-02-08','[data-print]'],['annual','/koledar/2028/','[data-print]'],['monthly','/koledar/2028/februar/','[data-print]'],['lunar-year','/lunin-koledar/2028/','.lunar-print'],['lunar-month','/lunin-koledar/2028/februar/','.lunar-print'],['family','/druzinski-planer/','[data-family-print]'],['school','/solske-pocitnice/','[data-school-calendar-print]'],['student','/solski-urnik/','[data-print-schedule]'],['payments','/izplacila-pokojnin/','[data-payment-print]']];
  for(const [name,route,selector] of routes)for(const [paper,orientation,width] of [['A4','portrait',1440],['A4','landscape',1440],['A3','portrait',1440],['A4','portrait',390]]){
   await run({kind:'print',name,path:route,paper,orientation,width},async row=>{
    await page.emulateMedia({media:'screen'});await page.setViewportSize({width,height:1000});await page.goto(base+route,{waitUntil:'load'});
+   if(name==='home-note'){
+    await page.locator('[data-note-date="2028-02-08"] .calendar-note-add').click();
+    await page.locator('#calendar-note-text').fill('Zapisek za preizkus tiskanja');
+    await page.locator('#calendar-note-dialog button[value=save]').click();
+    await page.waitForFunction(()=>document.querySelector('[data-note-date="2028-02-08"] .calendar-day-note')?.textContent==='Zapisek za preizkus tiskanja');
+   }
    if(name==='student'){
     await page.locator('[data-student-timetable][data-hydrated=true]').waitFor();
     if(await page.locator('[data-load-sample]').isVisible())await page.locator('[data-load-sample]').click();
@@ -44,6 +50,11 @@ if(process.env.QA_EXPORT_MODE!=='downloads'){
    await page.locator(selector).first().click();assert(await page.evaluate(()=>window.__printCalls>0),'Button did not invoke print');await page.emulateMedia({media:'print'});
    row.file=`print-${name}-${paper}-${orientation}-${width}.pdf`;await page.pdf({path:path.join(out,row.file),format:paper,landscape:orientation==='landscape',printBackground:true,preferCSSPageSize:false});
    row.chrome=await page.locator('.topbar,.subnav,footer').evaluateAll(els=>els.filter(el=>getComputedStyle(el).display!=='none').map(el=>el.className||el.tagName));assert(!row.chrome.length,'Navigation/footer remain in print');
+   if(name==='home-note'){
+    assert(await page.locator('[data-note-date="2028-02-08"] .calendar-day-note').isVisible());
+    assert(!await page.locator('#home-guides').isVisible());
+    assert(!await page.locator('#personal-planner').isVisible());
+   }
   });
  }
  for(const [paper,orientation] of [['a4','portrait'],['a4','landscape'],['a3','portrait']]){

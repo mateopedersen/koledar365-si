@@ -1,7 +1,33 @@
 /* Shared print rules for the calendar and content templates. Keep this file
    last in the stylesheet order so page-specific screen rules cannot leak into
    the printed document. */
+.print-heading { display: none; }
+
 @media print {
+  /* Keep each printable region and the ancestors that position it. */
+  #vsebina:has([data-print-output]) *:not([data-print-output]):not([data-print-output] *):not(:has([data-print-output])) {
+    display: none !important;
+  }
+
+  #vsebina :is(.download-workspace, .holiday-workspace, .family-week-layout, .lunar-main):has([data-print-output]) {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #vsebina .print-heading { display: block !important; margin: 0 0 4mm; }
+  #vsebina [data-print-output] .calendar-title {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 0 4mm !important;
+  }
+
+  [data-print-output] :is(.calendar-personal-hint, .holiday-filters, .holiday-month-rail,
+    .holiday-caption, .payment-filters, .payment-table-footer) {
+    display: none !important;
+  }
+
+  .calendar-day-note { color: #111 !important; font-size: 8pt !important; white-space: pre-wrap; }
   @page {
     /* Let the browser's paper and orientation selection take effect. */
     size: auto;

@@ -29,7 +29,7 @@ for source in report['rows']:
   else:
    assert file.read_bytes().startswith(b'%PDF-')
    pdf=PdfReader(file,strict=True);assert len(pdf.pages)>0
-   if source['kind']=='print' and source.get('name') in ['annual','monthly','school']:
+   if source['kind']=='print' and source.get('name') in ['home-note','annual','monthly','school']:
     assert len(pdf.pages)==1,'Calendar should fit one sheet without a detached heading/footer'
    if source['kind']=='print' and source.get('name')=='lunar-year':
     first=pdf.pages[0].extract_text()
@@ -44,6 +44,9 @@ for source in report['rows']:
     got=(float(page.mediabox.width)*25.4/72,float(page.mediabox.height)*25.4/72)
     assert all(abs(a-b)<1.2 for a,b in zip(got,expected)),f'Expected {expected}, got {got}'
    content=' '.join(page.extract_text() for page in pdf.pages)
+   if source['kind']=='print' and source.get('name')=='home-note':
+    assert 'Zapisek za preizkus tiskanja' in ' '.join(content.split()),'Selected calendar note missing'
+    assert 'Od datuma do načrta' not in content and 'Festivali in prireditve' not in content,'Unrelated content appeared in calendar print'
    if source['kind']=='print' and source.get('name')=='student':
     assert '7.2.2028' in content and '11.2.2028' in content,'Selected school week missing'
     assert 'Matematika' in content,'Saved sample lesson missing'
