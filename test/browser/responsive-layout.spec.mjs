@@ -230,41 +230,64 @@ test('narrow payment shortcuts and month chips contain their full labels', async
   }
 });
 
-test('sharing stays below the page controls on phones', async ({ page }) => {
-  await page.setViewportSize({ width: 320, height: 850 });
+test('sharing stays below the page controls on phones and desktops', async ({ page }) => {
   await page.goto('/soncni-vzhod-in-zahod/');
   const share = page.locator('body > .site-share');
   await expect(share).toHaveCSS('position', 'static');
   await share.getByText('Deli stran', { exact: true }).click();
   await expect(share.getByText('Kopiraj povezavo')).toBeVisible();
-  const [panel, main] = await Promise.all([
-    share.locator('.site-share__panel').boundingBox(),
-    page.locator('main').boundingBox(),
-  ]);
-  expect(panel.x).toBeGreaterThanOrEqual(0);
-  expect(panel.x + panel.width).toBeLessThanOrEqual(320);
-  expect(panel.y).toBeGreaterThanOrEqual(main.y + main.height);
+  for (const width of [320, 1024]) {
+    await page.setViewportSize({ width, height: 850 });
+    const [panel, main, footer] = await Promise.all([
+      share.locator('.site-share__panel').boundingBox(),
+      page.locator('main').boundingBox(),
+      page.locator('.site-footer').boundingBox(),
+    ]);
+    expect(panel.x).toBeGreaterThanOrEqual(0);
+    expect(panel.x + panel.width).toBeLessThanOrEqual(width);
+    expect(panel.y).toBeGreaterThanOrEqual(main.y + main.height);
+    expect(panel.y + panel.height).toBeLessThanOrEqual(footer.y);
+  }
 });
 
-test('filled workday and astronomy actions retain contrast on hover', async ({ page }) => {
+test('shared calendar and school controls keep their contrast and position on hover', async ({ page }) => {
   test.skip(!await page.evaluate(() => matchMedia('(hover: hover)').matches), 'Desktop hover state');
   for (const [path, selector] of [
     ['/kalkulator-delovnih-dni/', '[data-wdc-form="range"] .wdc-submit'],
     ['/lunin-mrk/', '.astro-toolbar .astro-button'],
     ['/o-nas/', '.about-hero__actions .primary'],
+    ['/o-nas/', '.about-offer-card'],
+    ['/solske-pocitnice/', '.sp-hero-actions .sp-primary'],
+    ['/solske-pocitnice/', '.sp-hero-actions .sp-outline'],
+    ['/solske-pocitnice/', '.sp-photo-credit a'],
+    ['/prazniki/marijino-vnebovzetje/', '.observance-photo figcaption > a'],
+    ['/koledar/2027/februar/', '.calendar-download-action--pdf'],
+    ['/koledar/2027/februar/', '.calendar-download-action--webp'],
+    ['/koledar/2027/februar/', 'a.calendar-month-pager__link'],
+    ['/koledar/2027/', 'button[data-calendar-xlsx]'],
+    ['/mesecni-koledar/', '[data-calendar-all-designs]'],
+    ['/festivali/', '.festival-card__photo-label'],
   ]) {
     await page.goto(path);
     const action = page.locator(selector).first();
     await action.hover();
+    await expect(action).toHaveCSS('transform', 'none');
     await expect.poll(() => action.evaluate(element => {
       const css = getComputedStyle(element);
-      const luminance = color => color.match(/\d+(?:\.\d+)?/g).slice(0, 3)
-        .map(Number).map(channel => channel / 255)
+      const channels = color => color.match(/\d+(?:\.\d+)?/g).map(Number);
+      const luminance = color => channels(color).slice(0, 3)
+        .map(channel => channel / 255)
         .map(channel => channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4)
         .reduce((sum, channel, index) => sum + channel * [0.2126, 0.7152, 0.0722][index], 0);
-      const colors = [css.color, css.backgroundColor].map(luminance).sort((a, b) => b - a);
+      let surface = element;
+      let background = css.backgroundColor;
+      while (surface.parentElement && channels(background)[3] === 0) {
+        surface = surface.parentElement;
+        background = getComputedStyle(surface).backgroundColor;
+      }
+      const colors = [css.color, background].map(luminance).sort((a, b) => b - a);
       return (colors[0] + 0.05) / (colors[1] + 0.05);
-    }), { message: path }).toBeGreaterThanOrEqual(4.5);
+    }), { message: `${path} ${selector}` }).toBeGreaterThanOrEqual(4.5);
   }
 });
 test('the school holiday calendar keeps Sunday and both month arrows inside its card', async ({ page }) => {
@@ -323,5 +346,61 @@ test('adjacent action buttons share both edges when a phone wraps the longer lab
       expect(Math.abs(first.bottom - second.bottom), route).toBeLessThanOrEqual(1);
       expect(Math.abs(first.width - second.width), route).toBeLessThanOrEqual(1);
     }
+  }
+});
+
+test('monthly calendar downloads and the templates link line up at every width', async ({ page }) => {
+  await page.goto('/mesecni-koledar/');
+  const actions = page.locator('.calendar-experience__download-actions > :is(button, a)');
+  await expect(actions).toHaveCount(3);
+
+  for (const width of [320, 390, 768, 1024, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    const [pdf, excel, templates] = await actions.evaluateAll(nodes => nodes.map(node => {
+      const { left, right, top, bottom, height } = node.getBoundingClientRect();
+      return { left, right, top, bottom, height };
+    }));
+    expect(templates.height, `${width}px templates touch target`).toBeGreaterThanOrEqual(48);
+    if (width < 768) {
+      expect(templates.top).toBeGreaterThanOrEqual(Math.max(pdf.bottom, excel.bottom));
+      expect(templates.left).toBeCloseTo(pdf.left, 1);
+      expect(templates.right).toBeCloseTo(excel.right, 1);
+    } else {
+      expect(templates.top).toBeCloseTo(pdf.top, 1);
+      expect(templates.bottom).toBeCloseTo(pdf.bottom, 1);
+      expect(templates.left - excel.right).toBeCloseTo(excel.left - pdf.right, 1);
+    }
+  }
+});
+
+test('the annual calendar and Excel download fit the available columns', async ({ page }) => {
+  const preview = page.locator('.calendar-context-view');
+
+  for (const width of [1440, 1024, 900, 768, 390, 320]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto('/koledar/2027/');
+    await page.evaluate(() => document.fonts.ready);
+    if (!await preview.isVisible()) await page.locator('[data-context-expand]').click();
+    await expect(preview).toBeVisible();
+    const layout = await page.evaluate(() => {
+      const box = selector => document.querySelector(selector).getBoundingClientRect();
+      const preview = document.querySelector('.calendar-context-view');
+      const compactTables = [...preview.querySelectorAll('.mini table')];
+      const copy = document.querySelector('#calendar-spreadsheet-title').parentElement.getBoundingClientRect();
+      const action = box('[data-calendar-xlsx]');
+      const card = box('.calendar-spreadsheet');
+      return {
+        count: compactTables.length,
+        fits: preview.scrollWidth <= preview.clientWidth + 1 && compactTables.every(table => table.scrollWidth <= table.clientWidth + 1),
+        copyWidth: copy.width,
+        separated: copy.right <= action.left + 1 || copy.bottom <= action.top + 1,
+        actionInside: action.left >= card.left && action.right <= card.right,
+      };
+    });
+    expect(layout.count, width + 'px').toBe(12);
+    expect(layout.fits, width + 'px').toBe(true);
+    expect(layout.copyWidth, width + 'px').toBeGreaterThanOrEqual(165);
+    expect(layout.separated, width + 'px').toBe(true);
+    expect(layout.actionInside, width + 'px').toBe(true);
   }
 });

@@ -26,7 +26,17 @@
   .site-footer__group{gap:5px}
   .site-footer__group h2{font-size:14px}
   .site-footer__group>a,.site-footer__cookie-link{font-size:13px}
-  .site-footer__group--contact .site-footer__contact-link{max-width:100%;padding-inline:8px}
+  .site-footer__group>a:not(.site-footer__contact-link){
+    display:flex;
+    align-items:center;
+    min-height:36px;
+    width:100%;
+  }
+  .site-footer .site-footer__group--contact .site-footer__contact-link{min-height:44px;max-width:100%;padding-inline:8px}
+}
+
+@media (max-width:360px) {
+  .site-footer__group:nth-child(-n + 2) h2 { min-block-size: 2lh; }
 }
 
 .site-footer__bottom {

@@ -70,9 +70,26 @@ body:has(.studio) main{max-width:1720px}.studio{--studio-blue:#0054b8;--studio-r
 
 .studio-guide__topics {
   display: grid;
+  align-items: start;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: 12px;
   margin-block: 12px;
+}
+
+#vsebina #studio-export-close {
+  width: var(--k365-control-height, 48px);
+  min-width: var(--k365-control-height, 48px);
+  flex-shrink: 0;
+  padding: 0;
+}
+.studio-export-options button:is(:hover,:focus-visible) {
+  border-color: #517fae;
+  background: #edf5fd;
+  color: #123b67;
+}
+.studio-export-options button > span:last-of-type {
+  color: #4d6077;
+  font-size: .8rem;
 }
 
 .studio-guide__csv {

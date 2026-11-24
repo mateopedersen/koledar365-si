@@ -43,6 +43,48 @@ async function addLesson(page, { subject, start = '08:00', end = '08:45', room =
   await page.locator('[data-tt-submit]').click();
 }
 
+test('school holiday actions stay readable and usable on narrow and wide screens', async ({ page }) => {
+  for (const width of [320, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    await openPage(page, '/solske-pocitnice/');
+
+    const review = page.getByRole('link', { name: 'Preverite počitnice' });
+    const exportCalendar = page.getByRole('button', { name: 'Izvozi koledar', exact: true });
+    const arrow = review.locator('.direction-icon');
+    await expect.poll(() => arrow.locator('use').evaluate(use => use.getBBox().width)).toBeGreaterThan(0);
+    await expect(arrow).toHaveCSS('color', 'rgb(18, 63, 105)');
+    await expect(arrow).toHaveCSS('background-color', 'rgba(255, 255, 255, 0.93)');
+    await expect(review).toHaveCSS('font-size', '15px');
+    await expect(exportCalendar).toHaveCSS('font-size', '15px');
+
+    const [jumpBox, exportBox] = await Promise.all([review.boundingBox(), exportCalendar.boundingBox()]);
+    expect(jumpBox.height).toBeGreaterThanOrEqual(48);
+    expect(exportBox.height).toBeGreaterThanOrEqual(48);
+    if (width === 320) {
+      expect(exportBox.y).toBeGreaterThan(jumpBox.y + jumpBox.height);
+      expect(exportBox.width).toBeCloseTo(jumpBox.width);
+    } else {
+      expect(exportBox.y).toBeCloseTo(jumpBox.y);
+      expect(exportBox.x).toBeGreaterThan(jumpBox.x + jumpBox.width);
+    }
+    await expectNoOverflow(page);
+  }
+
+  const review = page.getByRole('link', { name: 'Preverite počitnice' });
+  const exportCalendar = page.getByRole('button', { name: 'Izvozi koledar', exact: true });
+  await exportCalendar.focus();
+  await page.keyboard.press('Shift+Tab');
+  await review.focus();
+  await expect(review).toBeFocused();
+  await expect(review).toHaveCSS('outline-width', '3px');
+  await review.click();
+  await expect(page).toHaveURL(/#pocitnice$/);
+
+  const { text, filename } = await downloadedText(page, exportCalendar);
+  expect(filename).toMatch(/\.ics$/);
+  expect(text).toContain('BEGIN:VCALENDAR');
+});
+
 test('school filters keep grade and region dates distinct in the annual view, ICS and print', async ({ page }) => {
   await openPage(page, '/solski-koledar/');
   await expect(page.locator('[data-ed-next-date]')).toHaveAttribute('datetime', '2026-10-26');

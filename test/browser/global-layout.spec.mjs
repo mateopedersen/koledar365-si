@@ -24,7 +24,16 @@ for(const width of [320,360,768,1024,1440,1920,2560])test(`shared content axis a
   expect(city.x+city.width).toBeLessThanOrEqual(calendar.x);
   expect(city.y).toBeLessThan(calendar.y);
  }
- if(width<=1100){const cta=await page.locator('.calendar-studio-cta').boundingBox();expect(Math.abs(cta.x+cta.width/2-width/2)).toBeLessThanOrEqual(1.1);}
+ if(width<=1100){
+  const cta=await page.locator('.calendar-studio-cta').boundingBox();
+  if(width<=720)expect(Math.abs(cta.x+cta.width/2-width/2)).toBeLessThanOrEqual(1.1);
+  else{
+   const title=await page.locator('.intro h1').boundingBox();
+   expect(title.x+title.width).toBeLessThanOrEqual(cta.x);
+   expect(title.y).toBeLessThan(cta.y+cta.height);
+   expect(cta.y).toBeLessThan(title.y+title.height);
+  }
+ }
  for(const control of geometry.controls){expect(control.left).toBeGreaterThanOrEqual(geometry.left);expect(control.right).toBeLessThanOrEqual(geometry.right);expect(control.width).toBeGreaterThan(40);}
  if(width<=480){
   for(const control of geometry.controls)expect(Math.abs(control.top-geometry.controls[0].top)).toBeLessThanOrEqual(1);

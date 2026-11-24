@@ -4,7 +4,7 @@
 .site-search-suggestions[data-search-above]{top:auto;bottom:calc(100% + 8px)}
 .site-search-suggestions[hidden]{display:none}
 .site-search-option{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:52px;padding:9px 11px;border-radius:8px;color:#172f53;text-decoration:none!important}
-.site-search-option:is(:hover,:focus-visible,[aria-selected=true]){background:#edf4fd;color:#122e50}
+.site-search-option:is(:hover,:focus-visible,[aria-selected=true]){background:#e0edfb;color:#122e50}
 .site-search-option:focus-visible,.site-search-option[aria-selected=true]{outline:2px solid #2868a4;outline-offset:-2px}
 .site-search-option__copy{display:grid;gap:2px;min-width:0}
 .site-search-option__copy strong{font-size:13px;line-height:1.35;overflow-wrap:anywhere}
@@ -30,6 +30,8 @@
 .search-filters{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 16px}
 .search-filter,.search-more{min-height:37px;padding:7px 11px;border:1px solid #d3dfec;border-radius:7px;background:#fff;color:#25466f;font-size:12px;font-weight:750}
 .search-filter.is-active{border-color:#1764b2;background:#eaf3ff;color:#124d8b}
+.search-filter:is(:hover,:focus-visible),.search-more:is(:hover,:focus-visible){border-color:#487dad;background:#e5f0fc;color:#123b69}
+.search-filter.is-active:hover{border-color:#1b5b96;background:#d4e8fc;color:#123b69}
 .search-more{display:block;margin:16px auto 0}
 .search-empty-copy,.search-loading,.search-error{padding:13px 14px;border-radius:8px;background:#f2f6fb;color:#526982;font-size:14px}
 .search-error{color:#a52d3d}

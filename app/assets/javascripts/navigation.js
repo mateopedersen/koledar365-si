@@ -17,6 +17,7 @@
   const count = directory.querySelector('[data-navigation-count]');
   const empty = directory.querySelector('[data-navigation-empty]');
   const close = directory.querySelector('[data-navigation-close]');
+  const notice = document.getElementById('storage-notice');
   const fold = value => value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
   const groups = [...results.querySelectorAll('[data-navigation-group]')].map(section => ({
     section,
@@ -30,6 +31,7 @@
   let selected = 'all';
   const updateResults = () => {
     const terms = fold(query.value).split(/\s+/).filter(Boolean);
+    directory.toggleAttribute('data-query-active', terms.length > 0);
     let shown = 0;
     for (const { section, cards } of groups) {
       const matchesCategory = selected === 'all' || section.dataset.navigationGroup === selected;
@@ -77,10 +79,19 @@
     const viewport = window.visualViewport;
     const top = viewport?.offsetTop || 0;
     const height = viewport?.height || window.innerHeight;
+    let bottom = top + height;
+    let needsFloatingLayer = false;
+    if (notice && !notice.hidden && getComputedStyle(notice).position === 'fixed') {
+      const noticeBounds = notice.getBoundingClientRect();
+      if (noticeBounds.top < bottom && noticeBounds.bottom > top) {
+        needsFloatingLayer = noticeBounds.top < top + 200;
+        if (!needsFloatingLayer) bottom = noticeBounds.top;
+      }
+    }
     const anchor = navigation.getBoundingClientRect().bottom;
-    const available = top + height - anchor - 10;
-    const floating = available < 270 || anchor < top;
-    const panelHeight = floating ? height - 16 : available;
+    const available = bottom - anchor - 10;
+    const floating = needsFloatingLayer || available < 270 || anchor < top;
+    const panelHeight = floating ? bottom - top - 16 : available;
     directory.classList.toggle('nav-directory--floating', floating);
     directory.classList.toggle('nav-directory--compact', panelHeight < 355);
     directory.style.setProperty('--nav-menu-top', `${top + 8}px`);
@@ -97,6 +108,7 @@
   window.addEventListener('scroll', fitOpenMenu, { passive: true });
   window.visualViewport?.addEventListener('resize', fitOpenMenu);
   window.visualViewport?.addEventListener('scroll', fitOpenMenu);
+  document.addEventListener('k365:storage-notice-layout', fitOpenMenu);
   document.addEventListener('click', event => {
     if (!menu.open) return;
     if (event.target.closest('[data-navigation-close]')) closeMenu(true);

@@ -1,4 +1,4 @@
-.lunar-experience{--moon-ink:#172d38;--moon-accent:#075c9e;color:var(--moon-ink);font-family:Avenir,'Avenir Next',system-ui,sans-serif}.lunar-experience a{color:#075c9e}.lunar-years,.lunar-month-links,.lunar-period-nav{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 24px}.lunar-years a,.lunar-month-links a{padding:8px 12px;border:1px solid #dce5ef;border-radius:8px;background:#fff;text-decoration:none}.lunar-experience [aria-current=page]{background:#075c9e;color:white}.lunar-period-nav{justify-content:space-between}.lunar-main{display:grid;grid-template-columns:minmax(0,2fr) minmax(270px,1fr);gap:24px;align-items:start}.lunar-calendar,.lunar-detail{padding:24px}.lunar-calendar-heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px}.lunar-calendar-heading h2{margin:0 0 20px}.lunar-calendar-heading>span{font-size:12px;color:#56646a}.lunar-grid,.lunar-mini-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.lunar-grid>abbr{text-align:center;text-decoration:none;font-size:12px;padding:6px 0}.lunar-day{position:relative;display:flex;align-items:center;flex-direction:column;min-width:0;padding:8px 3px;border:1px solid transparent;border-radius:8px;background:#f1f5f9;color:#152b35;cursor:pointer;font:inherit;gap:4px}.lunar-day .lunar-moon{width:100%;max-width:60px;height:auto;border-radius:50%;background:#071017}.lunar-number{font-weight:650;font-size:13px}.lunar-percent{font-size:11px;white-space:nowrap}.lunar-day[aria-pressed=true]{border:2px solid #075c9e;padding:7px 2px;background:#e7f1fa}.lunar-event-dot{position:absolute;right:4px;top:3px;color:#8b5e00;font-size:9px}.lunar-experience :focus-visible{outline:3px solid #986523;outline-offset:3px}.lunar-note{font-size:12px;line-height:1.6;color:#53636b}.lunar-enlarge{border:0;display:block;background:transparent;cursor:zoom-in;width:100%;padding:10px}.lunar-enlarge .lunar-moon{width:100%;height:auto;border-radius:50%;background:#071017}.lunar-detail h2{font-size:21px}.lunar-detail h3{font-size:14px;margin-bottom:4px}.lunar-big-percent{font-size:32px;font-weight:600;margin:10px 0 0}.lunar-detail input{width:100%;min-width:0;margin:8px 0}.lunar-detail [role=alert]{color:#a13b28}.lunar-year-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.lunar-year-grid .panel{padding:18px}.lunar-year-grid h2{font-size:20px}.lunar-mini-grid{gap:3px;font-size:10px;text-align:center}.lunar-mini-grid a{display:flex;flex-direction:column;align-items:center;text-decoration:none;gap:3px;padding:3px}.lunar-mini-grid .lunar-moon{width:100%;max-width:28px;height:auto;background:#071017;border-radius:50%}.lunar-year-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.lunar-download-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.lunar-download-grid .panel{padding:14px;min-width:0}.lunar-download-grid img{width:100%;height:220px;object-fit:contain;background:#e8edeb}.lunar-download-grid h3{font-size:16px}.lunar-download-actions{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}.lunar-download-actions .button{font-size:12px;padding:8px}.lunar-phases{margin:24px 0}.lunar-phases select{max-width:100%;margin:12px}.lunar-faq{margin:24px 0}.lunar-faq details{padding:12px 0;border-bottom:1px solid #e3e8e7}.lunar-faq summary{cursor:pointer;font-weight:600}.lunar-dialog{width:fit-content;max-width:calc(100% - 24px);max-height:calc(100dvh - 24px);border:0;border-radius:18px;padding:clamp(12px,3vw,20px);background:#102331;color:#fff;overflow:auto}
+.lunar-experience{--moon-ink:#172d38;--moon-accent:#075c9e;color:var(--moon-ink);font-family:Avenir,'Avenir Next',system-ui,sans-serif}.lunar-experience a{color:#075c9e}.lunar-years,.lunar-month-links,.lunar-period-nav{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 24px}.lunar-years a,.lunar-month-links a{padding:8px 12px;border:1px solid #dce5ef;border-radius:8px;background:#fff;text-decoration:none}.lunar-experience [aria-current=page]{background:#075c9e;color:white}.lunar-period-nav{justify-content:space-between}.lunar-main{display:grid;grid-template-columns:minmax(0,2fr) minmax(270px,1fr);gap:24px;align-items:start}.lunar-calendar,.lunar-detail{padding:24px}.lunar-calendar-heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px}.lunar-calendar-heading h2{margin:0 0 20px}.lunar-calendar-heading>span{font-size:12px;color:#56646a}.lunar-grid,.lunar-mini-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.lunar-grid>abbr{text-align:center;text-decoration:none;font-size:12px;padding:6px 0}.lunar-day{position:relative;display:flex;align-items:center;flex-direction:column;min-width:0;padding:8px 3px;border:1px solid transparent;border-radius:8px;background:#f1f5f9;color:#152b35;cursor:pointer;font:inherit;gap:4px}.lunar-day .lunar-moon{width:100%;max-width:60px;height:auto;border-radius:50%;background:#071017}.lunar-number{font-weight:650;font-size:13px}.lunar-percent{font-size:11px;white-space:nowrap}.lunar-day[aria-pressed=true]{border:2px solid #075c9e;padding:7px 2px;background:#e7f1fa}.lunar-event-dot{position:absolute;right:4px;top:3px;color:#8b5e00;font-size:9px}.lunar-experience :focus-visible{outline:3px solid #986523;outline-offset:3px}.lunar-note{font-size:12px;line-height:1.6;color:#53636b}.lunar-enlarge{border:0;display:block;background:transparent;cursor:zoom-in;width:100%;padding:10px}.lunar-enlarge .lunar-moon{width:100%;height:auto;border-radius:50%;background:#071017}.lunar-detail h2{font-size:21px}.lunar-detail h3{font-size:14px;margin-bottom:4px}.lunar-big-percent{font-size:32px;font-weight:600;margin:10px 0 0}.lunar-detail input{width:100%;min-width:0;margin:8px 0}.lunar-detail [role=alert]{color:#a13b28}.lunar-year-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.lunar-year-grid .panel{padding:18px}.lunar-year-grid h2{font-size:20px}.lunar-mini-grid{gap:3px;font-size:10px;text-align:center}.lunar-mini-grid a{display:flex;flex-direction:column;align-items:center;text-decoration:none;gap:3px;padding:3px}.lunar-mini-grid .lunar-moon{width:100%;max-width:28px;height:auto;background:#071017;border-radius:50%}.lunar-year-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.lunar-download-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.lunar-download-grid .panel{padding:14px;min-width:0}.lunar-download-grid img{display:block;width:100%;height:220px;object-fit:contain;background:#e8edeb}.lunar-download-grid h3{font-size:16px}.lunar-download-actions{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}.lunar-download-actions .button{font-size:12px;padding:8px}.lunar-phases{margin:24px 0}.lunar-phases select{max-width:100%;margin:12px}.lunar-faq{margin:24px 0}.lunar-faq details{padding:12px 0;border-bottom:1px solid #e3e8e7}.lunar-faq summary{cursor:pointer;font-weight:600}.lunar-dialog{width:fit-content;max-width:calc(100% - 24px);max-height:calc(100dvh - 24px);border:0;border-radius:18px;padding:clamp(12px,3vw,20px);background:#102331;color:#fff;overflow:auto}
 .lunar-dialog[open]{display:grid;justify-items:center;gap:8px}
 .lunar-dialog::backdrop{background:#000a}
 .lunar-dialog button{justify-self:end;margin:0}
@@ -221,6 +221,38 @@
 .lunar-download-hint>a{display:inline-flex;align-items:center;gap:9px;min-height:42px;padding:9px 14px;border-radius:10px;background:#005da4;color:#fff!important;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;transition:background .15s ease}
 .lunar-download-hint>a:hover{background:#073f70}.lunar-download-hint>a span{color:#fff;font-size:16px}
 .lunar-downloads[id="prenosi"]{scroll-margin-top:24px}
+
+@media screen and (max-width: 620px) {
+  .lunar-experience :is(.lunar-year-grid,.lunar-download-grid) > .panel { margin-block: 0; }
+  .lunar-download-grid { gap: 12px; }
+  .lunar-download-grid > .panel > a:first-child { display: block; }
+  .lunar-download-grid > .panel > a:first-child img {
+    height: auto;
+    max-height: 300px;
+    aspect-ratio: 1;
+    border-radius: 7px;
+  }
+  .lunar-download-grid > .panel > h3 { margin: 10px 0 4px; }
+  .lunar-download-grid > .panel > p { margin: 0 0 3px; }
+  .lunar-download-grid > .panel > a:nth-of-type(2) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    text-decoration: underline;
+  }
+  .lunar-download-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 5px 0 8px;
+  }
+  .lunar-download-actions .button {
+    justify-content: center;
+    min-width: 0;
+    min-height: 44px;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+}
 .lunar-experience:not(.lunar-hub) .lunar-download-hint :focus-visible{outline:3px solid #ed1c24;outline-offset:3px}
 @media(max-width:900px){.lunar-hub-masthead{grid-template-columns:minmax(0,1fr) minmax(230px,.7fr);min-height:300px;padding:34px}.lunar-hub-method{grid-template-columns:repeat(2,minmax(0,1fr))}.lunar-hub-method>a{grid-column:1/-1}}
 @media(max-width:650px){.lunar-hub-masthead{grid-template-columns:1fr;gap:4px;margin-bottom:29px;padding:27px 22px 16px;border-radius:23px}.lunar-hub-masthead h1{font-size:clamp(34px,10vw,46px)}.lunar-hub-masthead p{font-size:14px}.lunar-hub-masthead__art{width:min(100%,330px);margin-top:-2px}.lunar-hub-section-head{display:block}.lunar-hub-section-head>p{margin-top:8px}.lunar-hub .lunar-year-links{grid-template-columns:1fr}.lunar-hub-method{grid-template-columns:1fr;gap:15px;padding:20px}.lunar-hub-method>a{grid-column:auto}}
@@ -279,10 +311,10 @@
 .lunar-experience:not(.lunar-hub) a{color:#075c9e}
 .lunar-experience:not(.lunar-hub) .lunar-years a,
 .lunar-experience:not(.lunar-hub) .lunar-month-links a,
-.lunar-experience:not(.lunar-hub) .lunar-period-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 14px;border:1px solid #d7e2ed;border-radius:10px;background:linear-gradient(145deg,#fff 0%,#f2f6fb 100%);box-shadow:0 2px 7px #1729410b;color:#174b75;font-size:14px;font-weight:700;text-decoration:none;transition:background .16s ease,border-color .16s ease,color .16s ease,transform .16s ease}
+.lunar-experience:not(.lunar-hub) .lunar-period-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 14px;border:1px solid #d7e2ed;border-radius:10px;background:linear-gradient(145deg,#fff 0%,#f2f6fb 100%);box-shadow:0 2px 7px #1729410b;color:#174b75;font-size:14px;font-weight:700;text-decoration:none;transition:background .16s ease,border-color .16s ease,color .16s ease}
 .lunar-experience:not(.lunar-hub) .lunar-years a:hover,
 .lunar-experience:not(.lunar-hub) .lunar-month-links a:hover,
-.lunar-experience:not(.lunar-hub) .lunar-period-nav a:hover{transform:translateY(-1px);border-color:#8fb1d0;background:linear-gradient(145deg,#f0f6fc,#e2edf8);color:#034b84}
+.lunar-experience:not(.lunar-hub) .lunar-period-nav a:hover{border-color:#8fb1d0;background:linear-gradient(145deg,#f0f6fc,#e2edf8);color:#034b84}
 .lunar-experience:not(.lunar-hub) .lunar-years a[aria-current=page],
 .lunar-experience:not(.lunar-hub) .lunar-month-links a[aria-current=page]{border-color:#075c9e;background:linear-gradient(135deg,#075c9e,#123f70);box-shadow:0 4px 12px #075c9e30;color:#fff}
 .lunar-experience:not(.lunar-hub) .lunar-years a:focus-visible,

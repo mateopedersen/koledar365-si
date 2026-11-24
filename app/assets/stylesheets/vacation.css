@@ -101,7 +101,7 @@
 .vacation-suggestion-count{margin-bottom:4px;padding:6px 9px;border:1px solid #e0e7ed;border-radius:5px;background:#fff;color:#5c7188;font-size:10px;font-weight:750;white-space:nowrap}
 .vacation-suggestion-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .vacation-suggestion-card{display:flex;flex-direction:column;min-width:0;padding:17px;background:#fff;border:1px solid #e0e7ed;border-radius:9px;transition:border-color .15s,transform .15s,box-shadow .15s}
-.vacation-suggestion-card:hover{transform:translateY(-2px);border-color:#c8d8e5;box-shadow:0 6px 18px #173b5c0b}
+.vacation-suggestion-card:hover{border-color:#c8d8e5;box-shadow:0 6px 18px #173b5c0b}
 .vacation-suggestion-card.is-in-plan{border-color:#abc9dd;background:linear-gradient(180deg,#f0f6fa,#fff 58%)}
 .vacation-suggestion-card__top{display:flex;align-items:center;gap:11px;min-width:0}
 .vacation-suggestion-card__top h3{margin:0 0 3px;color:#253d57;font-size:13px;line-height:1.4;letter-spacing:-.1px}

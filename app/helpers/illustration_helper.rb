@@ -26,7 +26,19 @@ module IllustrationHelper
   }.freeze
 
   def self.versioned_svg_url(path)
+    # The local server serves source files. The static export fingerprints them after rendering.
+    return path if Rails.env.development?
+
     SvgAssetReferences.versioned_url(Rails.root.join('public'), path)
+  end
+
+  def development_ui_paint_definitions
+    return unless Rails.env.development?
+
+    content_tag(:svg, tag.defs(SvgAssetReferences.ui_sprite_paint_definitions(Rails.root.join('public')).html_safe),
+      xmlns: SvgAssetReferences::SVG_NAMESPACE, 'data-k365-ui-paint-defs': '',
+      'aria-hidden': 'true', focusable: 'false', width: 0, height: 0,
+      style: 'position:absolute;width:0;height:0;overflow:hidden;pointer-events:none')
   end
 
   def page_hero_art(name, css_class: nil)

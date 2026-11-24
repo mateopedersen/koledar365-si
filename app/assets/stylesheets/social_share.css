@@ -1,6 +1,5 @@
 .site-share{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:calc(18px + env(safe-area-inset-bottom) + var(--cookie-space,0px));z-index:70;font-family:Avenir,"Avenir Next",Arial,sans-serif;color:#173353}
 .site-share__details{position:relative}
-@media(min-width:601px){.site-share[data-footer-visible="true"]:not(:focus-within):not(:has(details[open])){visibility:hidden;pointer-events:none}}
 .site-share__trigger{display:flex;align-items:center;justify-content:center;gap:9px;min-width:122px;min-height:48px;padding:10px 17px;border:1px solid #b5cce4;border-radius:999px;background:linear-gradient(145deg,#0864b8,#054788);box-shadow:0 9px 24px #0d376244,inset 0 1px #ffffff55;color:#fff;font-size:15px;font-weight:850;line-height:1.2;cursor:pointer;list-style:none;user-select:none}
 #vsebina .site-share__trigger{color:#fff}
 .site-share__trigger::-webkit-details-marker{display:none}
@@ -11,7 +10,7 @@
 .site-share__heading{margin-bottom:16px}.site-share__eyebrow{display:block;margin-bottom:4px;color:#b3273b;font-size:11px;font-weight:850;letter-spacing:.12em}.site-share__heading strong{display:block;font-size:21px;line-height:1.2;font-weight:850}.site-share__heading p{margin:6px 0 0;color:#536980;font-size:13px;line-height:1.45}
 .site-share__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
 .site-share__target{--share-color:#0c65ad;display:flex;align-items:center;gap:10px;box-sizing:border-box;min-width:0;min-height:54px;padding:7px 10px;border:1px solid #d5e0eb;border-left:3px solid var(--share-color);border-radius:13px;background:linear-gradient(145deg,#fff,#f5f9fe);box-shadow:0 2px 7px #173a5a0a;color:#1d3857;font-size:13px;font-weight:800;text-decoration:none;overflow-wrap:anywhere;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
-.site-share__target:hover{border-color:var(--share-color);box-shadow:0 7px 16px #173a5a20;text-decoration:none;transform:translateY(-2px)}
+.site-share__target:is(:hover,:focus-visible){border-color:var(--share-color);box-shadow:0 7px 16px #173a5a20;text-decoration:none}
 .site-share__mark{display:grid;place-items:center;width:40px;height:40px;flex:none;border:1px solid #e5ebf2;border-radius:10px;background:#fff;opacity:1}
 .site-share__mark img{display:block;width:26px;height:26px;object-fit:contain;opacity:1;filter:none}
 .site-share__target--whatsapp{--share-color:#16a05b}.site-share__target--telegram{--share-color:#2898c5}.site-share__target--facebook{--share-color:#0866ff}.site-share__target--x{--share-color:#232323}.site-share__target--bluesky{--share-color:#0560ff}.site-share__target--linkedin{--share-color:#2867b2}.site-share__target--pinterest{--share-color:#e60023}.site-share__target--mail{--share-color:#7750a6}
@@ -19,11 +18,10 @@
 .site-share__url-label{display:block;margin:15px 0 5px;color:#536980;font-size:11px;font-weight:800}.site-share__url{box-sizing:border-box;width:100%;height:40px;padding:8px 10px;border:1px solid #cfdae5;border-radius:9px;background:#fff;color:#284863;font-size:12px;cursor:text}.site-share__status{min-height:18px;margin:7px 0 0;color:#0c6446;font-size:12px;font-weight:750}
 .site-share__trigger:focus-visible,.site-share__panel a:focus-visible,.site-share__panel button:focus-visible,.site-share__url:focus-visible{outline:3px solid #c2223a;outline-offset:3px}
 @media(max-width:480px){.site-share{right:12px;bottom:calc(12px + env(safe-area-inset-bottom) + var(--cookie-space,0px))}.site-share__panel{padding:17px;max-height:min(570px,calc(100dvh - 108px - var(--cookie-space,0px)))}.site-share__panel:before{margin:-17px -17px 15px}.site-share__trigger{min-width:110px;min-height:46px;font-size:14px}.site-share__target{font-size:12px}}
-@media(prefers-reduced-motion:reduce){.site-share__target{transition:none}.site-share__target:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.site-share__target{transition:none}}
 @media print{.site-share{display:none!important}}
 
-@media screen and (max-width:600px) {
-  /* Keep sharing in the document flow on phones so it cannot cover controls. */
+@media screen {
   body > .site-share {
     position: static;
     visibility: visible;
@@ -34,14 +32,21 @@
     width: fit-content;
     min-width: 0;
     min-height: 44px;
+    margin-inline-start: auto;
     box-shadow: none;
   }
   body > .site-share .site-share__panel {
     position: static;
     width: min(100%, 390px);
     max-height: none;
-    margin-top: 10px;
+    margin: 10px 0 0 auto;
     box-shadow: none;
+  }
+}
+
+@media screen and (max-width:600px) {
+  body > .site-share :is(.site-share__trigger,.site-share__panel) {
+    margin-inline-start: 0;
   }
 }
 

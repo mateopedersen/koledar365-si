@@ -59,6 +59,16 @@ test('all 69 city cards show their own lazy photo and linked photo credits',asyn
  expect(result).toHaveLength(69);
  expect(new Set(result.map((city)=>city.image)).size).toBe(69);
  expect(result.every((city)=>city.image?.startsWith(`/city-marks/${city.id}.`)&&city.title===`${city.name} na fotografiji`&&city.loading==='lazy'&&city.credit===`/fotografije-in-licence/#${city.id}`&&city.text.length>8)).toBe(true);
+ for (const width of [320, 768, 1024, 1440]) {
+  await page.setViewportSize({ width, height: 900 });
+  const clipped = await page.locator('.sun-city-link__copy strong, .sun-city-link__credit span').evaluateAll(labels => labels.filter(label => {
+   const style = getComputedStyle(label);
+   const range = document.createRange();
+   range.selectNodeContents(label);
+   return style.textOverflow === 'ellipsis' || range.getBoundingClientRect().right > label.getBoundingClientRect().right + 1;
+  }).map(label => label.textContent.trim()));
+  expect(clipped, width + 'px').toEqual([]);
+ }
  const firstMain=page.locator('.sun-city-link__main').first();
  await firstMain.focus();
  await expect(firstMain).toBeFocused();

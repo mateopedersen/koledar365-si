@@ -8,6 +8,7 @@ require 'nokogiri'
 module SvgAssetReferences
   XLINK_NAMESPACE = 'http://www.w3.org/1999/xlink'.freeze
   SVG_NAMESPACE = 'http://www.w3.org/2000/svg'.freeze
+  URL_ATTRIBUTES = %w[src href xlink:href data-direction-sprite].freeze
   UI_SPRITE_PATH = '/visuals/ui-material-v3.svg'.freeze
   UI_PAINT_DEFS_ATTRIBUTE = 'data-k365-ui-paint-defs'.freeze
   VERSION_CACHE = {}
@@ -56,8 +57,8 @@ module SvgAssetReferences
   end
 
   def self.rewrite_document!(document, public_root)
-    document.xpath('//*[@src or @href or @*[name()="xlink:href"]]').each do |node|
-      %w[src href xlink:href].each do |attribute|
+    document.xpath('//*[@src or @href or @data-direction-sprite or @*[name()="xlink:href"]]').each do |node|
+      URL_ATTRIBUTES.each do |attribute|
         reference = node[attribute]
         next unless reference&.start_with?('/')
 
@@ -103,7 +104,24 @@ module SvgAssetReferences
     end
     return document unless has_external_ui_symbol
 
-    definitions = PAINT_DEFS_CACHE[public_root.to_s] ||= begin
+    body = document.at_css('body')
+    return document unless body
+
+    hidden_svg = document.create_element('svg')
+    hidden_svg['xmlns'] = SVG_NAMESPACE
+    hidden_svg[UI_PAINT_DEFS_ATTRIBUTE] = ''
+    hidden_svg['aria-hidden'] = 'true'
+    hidden_svg['focusable'] = 'false'
+    hidden_svg['width'] = '0'
+    hidden_svg['height'] = '0'
+    hidden_svg['style'] = 'position:absolute;width:0;height:0;overflow:hidden;pointer-events:none'
+    hidden_svg.inner_html = "<defs>#{ui_sprite_paint_definitions(public_root)}</defs>"
+    body.prepend_child(hidden_svg)
+    document
+  end
+
+  def self.ui_sprite_paint_definitions(public_root)
+    PAINT_DEFS_CACHE[public_root.to_s] ||= begin
       sprite_file = File.join(public_root, UI_SPRITE_PATH.delete_prefix('/'))
       raise "Missing SVG sprite: #{UI_SPRITE_PATH}" unless File.file?(sprite_file)
 
@@ -120,20 +138,5 @@ module SvgAssetReferences
 
       defs.element_children.map(&:to_xml).join
     end
-
-    body = document.at_css('body')
-    return document unless body
-
-    hidden_svg = document.create_element('svg')
-    hidden_svg['xmlns'] = SVG_NAMESPACE
-    hidden_svg[UI_PAINT_DEFS_ATTRIBUTE] = ''
-    hidden_svg['aria-hidden'] = 'true'
-    hidden_svg['focusable'] = 'false'
-    hidden_svg['width'] = '0'
-    hidden_svg['height'] = '0'
-    hidden_svg['style'] = 'position:absolute;width:0;height:0;overflow:hidden;pointer-events:none'
-    hidden_svg.inner_html = "<defs>#{definitions}</defs>"
-    body.prepend_child(hidden_svg)
-    document
   end
 end

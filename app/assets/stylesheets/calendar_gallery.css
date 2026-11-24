@@ -14,10 +14,15 @@
 .calendar-gallery-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;margin-top:22px}
 .calendar-design-card{min-width:0;background:#fff;border:1px solid #dce2e8;border-radius:9px;overflow:hidden;transition:border-color .15s,box-shadow .15s}
 .calendar-design-card[hidden]{display:none}
-.calendar-design-card:hover{border-color:#8f9fb0;box-shadow:0 6px 20px #24354c09}
 .calendar-design-image{position:relative;display:flex;align-items:center;justify-content:center;height:260px;background:#ebeef0;padding:22px 25px;border-bottom:1px solid #dce2e8}
 .calendar-design-image img{display:block;max-width:100%;width:auto;height:auto;max-height:100%;object-fit:contain;box-shadow:0 5px 13px #1b273a26;background:#fff;transition:transform .18s}
-.calendar-design-image:hover img{transform:translateY(-3px)}
+.calendar-design-image:focus-visible{outline:3px solid #0754a6;outline-offset:-3px}
+@media (hover: hover) {
+  .calendar-design-card:hover{border-color:#8f9fb0;box-shadow:0 6px 20px #24354c09}
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .calendar-design-image:hover img{transform:translateY(-3px)}
+}
 .calendar-design-image>span{position:absolute;right:10px;bottom:10px;background:#ffffffeb;color:#506073;border:1px solid #dce2e8;border-radius:4px;padding:3px 7px;font-size:10px}
 .calendar-design-info{padding:17px 15px 14px}
 .calendar-design-info h3{display:flex;align-items:baseline;gap:9px;min-height:43px;margin:0 0 12px;font-size:16px;line-height:1.3;letter-spacing:-.25px;color:#1d2e43}
@@ -177,28 +182,52 @@
 .calendar-design-downloads .calendar-download-action,
 .download-workspace .calendar-design-downloads .calendar-download-action{
   display:flex;align-items:center;justify-content:center;gap:7px;width:100%;min-width:0;min-height:50px;
-  padding:7px 9px;border:2px solid currentColor!important;border-radius:10px;text-align:left;text-decoration:none;line-height:1.05;
-  box-shadow:0 2px 6px #17324d0b,inset 0 1px 0 #ffffffd9;transition:background .16s,border-color .16s,box-shadow .16s,transform .16s
+  padding:7px 9px;
+  border:2px solid var(--download-line, currentColor)!important;
+  border-radius:10px;
+  background:var(--download-surface, #fff);
+  color:var(--download-ink, #16497b);
+  text-align:left;
+  text-decoration:none;
+  line-height:1.05;
+  box-shadow:0 2px 6px #17324d0b,inset 0 1px 0 #ffffffd9;
+  transition:background .16s,border-color .16s,box-shadow .16s,transform .16s
 }
-.calendar-download-action--pdf,
-.design-card .calendar-download-action--pdf,
-.download-workspace .design-card .calendar-download-action--pdf,
-.calendar-design-downloads .calendar-download-action--pdf,
-.download-workspace .calendar-design-downloads .calendar-download-action--pdf{color:#98283a;border-color:#e3b4bd!important;background:linear-gradient(180deg,#fff,#fff6f7)}
-.calendar-download-action--webp,
-.design-card .calendar-download-action--webp,
-.download-workspace .design-card .calendar-download-action--webp,
-.calendar-design-downloads .calendar-download-action--webp,
-.download-workspace .calendar-design-downloads .calendar-download-action--webp{color:#174f82;border-color:#b6cadd!important;background:linear-gradient(180deg,#fff,#f3f8fd)}
+.calendar-download-action--pdf{
+  --download-line:#e3b4bd;
+  --download-surface:linear-gradient(180deg,#fff,#fff6f7);
+  --download-ink:#98283a;
+  --download-highlight-line:#c86a79;
+  --download-highlight-surface:#fff0f2;
+  --download-highlight-ink:#862032;
+}
+.calendar-download-action--webp{
+  --download-line:#b6cadd;
+  --download-surface:linear-gradient(180deg,#fff,#f3f8fd);
+  --download-ink:#174f82;
+  --download-highlight-line:#7198ba;
+  --download-highlight-surface:#eaf4ff;
+  --download-highlight-ink:#123f69;
+}
 .calendar-download-action__icon,.design-card .calendar-download-action__icon,.download-workspace .design-card .calendar-download-action__icon{display:block;flex:0 0 26px;width:26px;height:26px;max-width:none;max-height:none;margin:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;object-fit:contain}
 .calendar-download-action__copy{display:grid;gap:3px;min-width:0;line-height:1.05}
 .calendar-download-action__copy strong{display:block;color:inherit;font-size:12px;font-weight:850;line-height:1.1;white-space:nowrap}
 .calendar-download-action__copy small{display:block;color:inherit;font-size:9px;font-weight:700;line-height:1.1;opacity:.78;white-space:nowrap}
 .calendar-download-action--webp .calendar-download-action__copy strong{font-size:11px}
-.calendar-download-action:hover,.calendar-download-action:focus-visible{transform:translateY(-1px);text-decoration:none;box-shadow:0 4px 10px #17324d18,inset 0 1px 0 #ffffffd9}
-.calendar-download-action--pdf:hover,.calendar-download-action--pdf:focus-visible{color:#862032;border-color:#c86a79!important;background:#fff0f2}
-.calendar-download-action--webp:hover,.calendar-download-action--webp:focus-visible{color:#123f69;border-color:#7198ba!important;background:#eaf4ff}
-.calendar-download-action:focus-visible{outline:3px solid #1764ad55;outline-offset:2px}
+.calendar-download-action:is(:focus-visible,:active){
+  --download-line:var(--download-highlight-line);
+  --download-surface:var(--download-highlight-surface);
+  --download-ink:var(--download-highlight-ink);
+}
+@media (hover: hover) {
+  .calendar-download-action:hover{
+    --download-line:var(--download-highlight-line);
+    --download-surface:var(--download-highlight-surface);
+    --download-ink:var(--download-highlight-ink);
+    box-shadow:0 4px 10px #17324d18,inset 0 1px 0 #ffffffd9;
+  }
+}
+.calendar-download-action:focus-visible{outline:3px solid #0754a6;outline-offset:2px}
 .design-card h3,.calendar-design-info h3,.download-workspace .design-card h3{display:grid;grid-template-columns:32px minmax(0,1fr);align-items:center;gap:10px;min-width:0;min-height:40px;line-height:1.2}
 .design-card h3>.design-number,.calendar-design-info h3>.design-number,.download-workspace .design-card h3>.design-number{display:grid;place-items:center;flex:none;width:32px;min-width:32px;height:32px;margin:0;border:1px solid #dfe6ee;border-radius:9px;background:#f2f5f8;color:#485b70;font-size:13px;font-weight:850;letter-spacing:0;font-variant-numeric:tabular-nums;line-height:1}
 .design-card h3>.design-title,.calendar-design-info h3>.design-title,.download-workspace .design-card h3>.design-title{display:block;min-width:0;color:#172941;font-size:inherit;font-weight:800;line-height:1.22;letter-spacing:-.2px;overflow-wrap:break-word;word-break:normal;hyphens:auto}
@@ -207,16 +236,16 @@
 
 /* Month navigation stays visible even when the mobile calendar preview is collapsed. */
 .calendar-month-pager{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 14px}
-.calendar-month-pager__link{display:flex;align-items:center;justify-content:space-between;gap:7px;min-width:0;min-height:57px;padding:9px;border:1px solid #cfdae6;border-radius:8px;background:linear-gradient(180deg,#fff,#f7f9fc);color:#174f82;text-decoration:none;transition:border-color .15s,background .15s,transform .15s}
-.calendar-month-pager__link:hover,.calendar-month-pager__link:focus-visible{border-color:#1764ad;background:#f0f6fc;text-decoration:none;transform:translateY(-1px)}
-.calendar-month-pager__link:focus-visible,.calendar-month-pager__year:focus-visible,.calendar-month-index__links a:focus-visible{outline:3px solid #1764ad55;outline-offset:2px}
+.calendar-month-pager__link{display:flex;align-items:center;justify-content:space-between;gap:7px;min-width:0;min-height:57px;padding:9px;border:1px solid #cfdae6;border-radius:8px;background:linear-gradient(180deg,#fff,#f7f9fc);color:#174f82;text-decoration:none;transition:border-color .15s,background .15s}
+.calendar-month-pager__link:is(:hover,:focus-visible){border-color:#1764ad;background:#f0f6fc;text-decoration:none}
+.calendar-month-pager__link:focus-visible,.calendar-month-pager__year:focus-visible,.calendar-month-index__links a:focus-visible{outline:3px solid #0754a6;outline-offset:2px}
 .calendar-month-pager__link>span:not(.calendar-month-pager__arrow){display:grid;gap:3px;min-width:0}
 .calendar-month-pager__link small{color:#5d6d80;font-size:10px;line-height:1.3}
 .calendar-month-pager__link strong{color:#173d63;font-size:12px;line-height:1.3;overflow-wrap:anywhere}
 .calendar-month-pager__arrow{flex:0 0 auto;color:#a12d41;font-size:19px;font-weight:800;line-height:1}
 .calendar-month-pager__link--next{text-align:right}
 .calendar-month-pager__link.is-disabled{border-style:dashed;background:#f7f8fa;color:#68778a}
-.calendar-month-pager__link.is-disabled .calendar-month-pager__arrow,.calendar-month-pager__link.is-disabled strong{color:#68778a}
+.calendar-month-pager__link.is-disabled .calendar-month-pager__arrow,.calendar-month-pager__link.is-disabled strong{color:#5b6a7d}
 .calendar-month-pager__year{grid-column:1/-1;display:flex;align-items:center;justify-content:center;min-height:35px;padding:6px 10px;border:1px solid #d7e1eb;border-radius:7px;background:#fff;color:#24577f;font-size:12px;font-weight:750;text-decoration:none}
 .calendar-month-pager__year:hover{background:#f2f6fa;text-decoration:none}
 .calendar-month-index{margin:0 0 14px;padding:12px;border:1px solid #d9e2ec;border-radius:9px;background:linear-gradient(145deg,#f7fafe,#fff 72%)}
@@ -505,6 +534,7 @@ html:has(.download-workspace){scroll-behavior:auto}
 .print-calendar-guide__setup,
 .print-calendar-guide__files dl {
   display: grid;
+  align-items: start;
   gap: 12px;
 }
 
@@ -580,6 +610,24 @@ html:has(.download-workspace){scroll-behavior:auto}
 @media (max-width: 720px) {
   .print-calendar-intro, .print-calendar-guide__setup {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .print-calendar-intro__ready {
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr);
+    align-items: center;
+    gap: 6px 9px;
+  }
+
+  .print-calendar-intro__ready .ui-icon { width: 36px; height: 36px; }
+  #vsebina .print-calendar-intro__ready h2 { margin: 0; font-size: 1.16rem; line-height: 1.25; }
+  .print-calendar-intro__ready :is(p, a) { grid-column: 1 / -1; }
+  .print-calendar-intro__ready p:last-of-type { margin: 0; }
+  .print-calendar-intro__ready a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    text-decoration: underline;
   }
 }
 

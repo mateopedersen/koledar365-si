@@ -90,6 +90,18 @@
 @media screen and (max-width:600px) {
   main#vsebina{padding-block-start:14px}
   .breadcrumb{gap:3px 8px;margin-block-end:12px}
+  #vsebina .photo-license-grid { gap: 12px; }
+  #vsebina .photo-license-grid > .photo-license { margin-block: 0; }
+  #vsebina .photo-license :is(img,picture) { display: block; }
+  #vsebina .photo-license h2 { margin-block: 10px 8px; }
+  #vsebina .photo-license dl { margin-block: 8px; }
+  #vsebina .photo-license > a[href] {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    line-height: 1.35;
+    text-decoration: underline;
+  }
   .home-page .center-panel>.stats{margin:0;padding-block:9px}
   .home-page .right-panel{gap:10px}
   .home-page .right-panel .empty{margin:8px 0 10px;padding:0}

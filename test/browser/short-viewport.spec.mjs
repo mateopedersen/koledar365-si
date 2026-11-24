@@ -99,6 +99,61 @@ test('the first-visit notice and tools can both be used on a landscape phone', a
   await expect(notice).toBeHidden();
 });
 
+test('tools and empty search results stay above the first-visit notice', async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.removeItem('koledar365:cookie-preferences:v1');
+    localStorage.removeItem('k365.consent');
+  });
+  const notice = page.locator('#storage-notice');
+  const panel = page.locator('#site-tools-menu');
+  for (const [width, height] of [[320, 568], [768, 650], [1024, 768]]) {
+    await page.setViewportSize({ width, height });
+    await page.goto('/');
+    await expect(notice).toBeVisible();
+    await page.locator('.nav-explorer > summary').click();
+    const query = panel.getByRole('searchbox');
+    await query.fill('zxq-neobstoj');
+    await expect(panel.locator('[data-navigation-empty]')).toBeVisible();
+    await expect(panel.getByLabel('Kategorija', { exact: true })).toBeVisible();
+    await expect.poll(async () => {
+      const [menuBox, noticeBox] = await Promise.all([panel.boundingBox(), notice.boundingBox()]);
+      return menuBox.y + menuBox.height <= noticeBox.y + 1 && menuBox.height <= 350;
+    }).toBe(true);
+
+    await query.fill('kalkulator dohodnine');
+    const result = panel.getByRole('link', { name: /Letni izračun dohodnine/ });
+    await result.click();
+    await expect(page).toHaveURL(/\/kalkulator-dohodnine\/$/);
+  }
+});
+
+test('keyboard search options stay above the first-visit notice on a short phone', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 568 });
+  await page.addInitScript(() => {
+    localStorage.removeItem('koledar365:cookie-preferences:v1');
+    localStorage.removeItem('k365.consent');
+  });
+  await page.goto('/isci/');
+  const notice = page.locator('#storage-notice');
+  await expect(notice).toBeVisible();
+  const form = page.locator('.search-page-form');
+  const field = form.getByRole('combobox');
+  const popup = form.locator('.site-search-suggestions');
+  await field.fill('prazniki');
+  const options = popup.getByRole('option');
+  await expect(options).toHaveCount(7);
+  const [popupBox, noticeBox, fieldBox] = await Promise.all([popup.boundingBox(), notice.boundingBox(), field.boundingBox()]);
+  expect(popupBox.y + popupBox.height).toBeLessThanOrEqual(noticeBox.y);
+  expect(fieldBox.y + fieldBox.height).toBeLessThanOrEqual(noticeBox.y);
+  for (const option of await options.all()) {
+    await field.press('ArrowDown');
+    await expect(option).toHaveAttribute('aria-selected', 'true');
+    const box = await option.boundingBox();
+    expect(box.y).toBeGreaterThanOrEqual(popupBox.y - 1);
+    expect(box.y + box.height).toBeLessThanOrEqual(popupBox.y + popupBox.height + 1);
+  }
+});
+
 test('the enlarged Moon and its caption fit together on a landscape phone', async ({ page }) => {
   await page.setViewportSize({ width: 568, height: 320 });
   const fullImageRequests = [];

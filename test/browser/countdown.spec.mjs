@@ -63,6 +63,34 @@ test('aligns upcoming date badges and actions across compact and wide cards', as
   }
 });
 
+test('updates countdown action text and surface together when availability changes', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 800 });
+  await page.clock.setFixedTime(new Date('2027-10-29T12:00:00Z'));
+  await loadCountdown(page);
+
+  const share = page.locator('[data-feature-share]');
+  await expect(share).toBeEnabled();
+  const colors = await share.evaluate(async button => {
+    const paint = () => {
+      const css = getComputedStyle(button);
+      return { foreground: css.color, background: css.backgroundColor };
+    };
+    const settle = async () => {
+      await Promise.allSettled(button.getAnimations().map(animation => animation.finished));
+      return paint();
+    };
+    const enabled = await settle();
+    button.disabled = true;
+    const firstDisabled = paint();
+    const disabled = await settle();
+    button.disabled = false;
+    return { enabled, firstEnabled: paint(), disabled, firstDisabled };
+  });
+  expect(colors.firstDisabled).toEqual(colors.disabled);
+  expect(colors.firstEnabled).toEqual(colors.enabled);
+  expect(colors.disabled).not.toEqual(colors.enabled);
+});
+
 test('selects calendar events immediately and handles the end of a festival in progress', async ({ page }) => {
   await page.clock.setFixedTime(new Date('2027-10-31T12:00:00Z'));
   await loadCountdown(page);

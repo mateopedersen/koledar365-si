@@ -61,3 +61,43 @@ test('shift preview remains inside the phone workspace',async({page})=>{
     expect(pieces.every(x=>x.left>=0&&x.right<=width+1&&x.contentFits)).toBeTruthy();
   }
 });
+
+test('touching the tools menu does not leave it in a mouse hover state', async ({ page }, testInfo) => {
+  test.skip(!testInfo.project.use.hasTouch, 'Requires a touch device');
+  await page.goto('/');
+  const menu = page.locator('.nav-explorer');
+  const toggle = menu.locator('summary');
+  const closedColor = await toggle.evaluate(element => getComputedStyle(element).backgroundColor);
+
+  await toggle.tap();
+  await expect(menu).toHaveJSProperty('open', true);
+  await toggle.tap();
+  await expect(menu).toHaveJSProperty('open', false);
+  await expect(toggle).toHaveCSS('background-color', closedColor);
+});
+
+test('phone download cards use consistent spacing and equal actions', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 900 });
+  await page.goto('/lunin-koledar/2029/avgust/');
+  const cards = page.locator('.lunar-download-grid > .panel');
+  await expect(cards.nth(1)).toBeVisible();
+  const [first, second] = await Promise.all([cards.first().boundingBox(), cards.nth(1).boundingBox()]);
+  expect(second.y - first.y - first.height).toBeLessThanOrEqual(13);
+
+  const actions = await controlGeometry(page, '.lunar-download-grid > .panel:first-child .lunar-download-actions > a');
+  expect(actions).toHaveLength(2);
+  expect(actions.every(action => action.height >= 44 && action.contentFits)).toBeTruthy();
+  expect(Math.abs(actions[0].width - actions[1].width)).toBeLessThanOrEqual(1);
+});
+
+test('the photo caption is legible and separate from the note on a narrow phone', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 900 });
+  await page.goto('/o-nas/');
+  const caption = page.locator('.about-photo figcaption');
+  await expect(caption).toHaveCSS('color', 'rgb(255, 255, 255)');
+  const [photo, note] = await Promise.all([
+    page.locator('.about-photo').boundingBox(),
+    page.locator('.about-calendar-note').boundingBox()
+  ]);
+  expect(photo.y + photo.height).toBeLessThanOrEqual(note.y);
+});

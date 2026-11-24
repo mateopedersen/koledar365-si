@@ -9,14 +9,6 @@
   const copy = root.querySelector('[data-share-copy]');
   const url = root.dataset.shareUrl;
   const title = root.dataset.shareTitle;
-  // Keep the floating control clear of the footer's links and back-to-top button.
-  const footer = document.querySelector('.site-footer');
-  if (footer && !root.hasAttribute('data-site-share-inline') && !root.closest('.editorial-reading') && 'IntersectionObserver' in window) {
-    new IntersectionObserver(entries => {
-      root.dataset.footerVisible = String(entries.some(entry => entry.isIntersecting));
-    }).observe(footer);
-  }
-
   details.addEventListener('toggle', () => {
     if (details.open) root.querySelectorAll('.site-share__mark img').forEach(icon => { icon.loading = 'eager'; });
   });

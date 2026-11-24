@@ -18,6 +18,33 @@ test('garden filter and private plan support real edit, persistence, backup and 
   await page.locator('[data-garden-import]').setInputFiles({name:'vrt.json',mimeType:'application/json',buffer:Buffer.from(backup)});await expect(page.locator('.garden-plan-item')).toHaveCount(1);
 });
 
+test('plant details and the add button stay readable while the garden months scroll',async({page})=>{
+  await page.setViewportSize({width:320,height:780});
+  await page.goto('/setveni-koledar/');
+  await dismiss(page);
+  await page.locator('#garden-search').fill('paradiznik');
+  const row=page.locator('[data-garden-row]:visible');
+  const scrolling=page.locator('.garden-timeline-wrap');
+  const add=row.locator('[data-garden-pick]');
+  await expect(row).toHaveCount(1);
+  await row.locator('[data-garden-details]').click();
+  const detail=page.locator('.garden-detail-row:visible .garden-plant-detail');
+
+  for(const amount of [0,1000]){
+    await scrolling.evaluate((element,left)=>{element.scrollLeft=left;},amount);
+    const [frame,button,copy]=await Promise.all([scrolling.boundingBox(),add.boundingBox(),detail.boundingBox()]);
+    for(const item of [button,copy]){
+      expect(item.x).toBeGreaterThanOrEqual(frame.x-1);
+      expect(item.x+item.width).toBeLessThanOrEqual(frame.x+frame.width+1);
+    }
+    expect(button.width).toBeGreaterThanOrEqual(44);
+  }
+
+  const plant=await row.getAttribute('data-garden-row');
+  await add.click();
+  await expect(page.locator('[data-garden-plan-form] [name=plant]')).toHaveValue(plant);
+});
+
 test('pensions use the December 29 official exception and export the filtered date',async({page})=>{
   await page.clock.setFixedTime(new Date('2026-10-21T12:00:00Z'));await page.goto('/izplacila-pokojnin/');await dismiss(page);
   await expect(page.locator('[data-payment-next-date]')).toHaveAttribute('datetime','2026-10-30');

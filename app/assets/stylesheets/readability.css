@@ -110,7 +110,7 @@
   #vsebina .search-results small,
   #vsebina .weather-source { font-size: 15px !important; }
 
-  /* Preserve white-on-image credits over the dark photo gradient. */
+  /* Keep photo credit text and keyboard focus legible against the caption surface. */
   #vsebina .observance-photo figcaption,
   #vsebina .observance-photo figcaption > span,
   #vsebina .observance-photo figcaption > a {
@@ -464,11 +464,15 @@
 
 
 @media screen {
+  #vsebina :is(.sp-photo-credit,.observance-photo figcaption) {
+    --k365-focus-color: #fff;
+    --k365-focus-halo: #102b50;
+  }
   #vsebina :is(a,button,input,select,textarea,summary,[tabindex]):focus-visible,
   #vsebina input:is([type=date],[type=time],[type=datetime-local]):focus-within {
-    outline: 3px solid #0054b8 !important;
+    outline: 3px solid var(--k365-focus-color, #0054b8) !important;
     outline-offset: 3px !important;
-    box-shadow: 0 0 0 2px #fff !important;
+    box-shadow: 0 0 0 2px var(--k365-focus-halo, #fff) !important;
   }
 }
 

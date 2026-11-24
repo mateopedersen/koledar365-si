@@ -22,7 +22,7 @@
 .lost-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
 .lost-action{display:inline-flex;min-height:45px;align-items:center;justify-content:center;gap:9px;padding:10px 14px;border:1px solid #d2dce8;border-radius:9px;color:#1d3854;font-size:13px;font-weight:800;text-decoration:none!important;transition:transform .18s,box-shadow .18s,background .18s}
 .lost-action .ui-icon{width:19px;height:19px}
-.lost-action:hover{transform:translateY(-2px);box-shadow:0 8px 18px #163b6418}
+.lost-action:is(:hover,:focus-visible){box-shadow:0 8px 18px #163b6418}
 .lost-action--primary{border-color:#0054b8;background:#0054b8;color:#fff;box-shadow:0 5px 13px #0054b826}
 .lost-action--primary:hover{background:#003f8f;color:#fff}
 .lost-action--secondary{background:#fff}
@@ -42,7 +42,7 @@
 .lost-routes__heading>p{max-width:350px;margin:0 0 2px;color:#53667d;font-size:13px;line-height:1.6;text-align:right}
 .lost-destinations{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .lost-destination{display:grid;grid-template-columns:43px minmax(0,1fr) 17px;align-items:center;gap:11px;min-height:93px;padding:14px;border:1px solid #dce4ed;border-radius:13px;background:#fff;color:#1c3653;text-decoration:none!important;box-shadow:0 4px 13px #173a5d08;transition:border-color .18s,transform .18s,box-shadow .18s}
-.lost-destination:hover{transform:translateY(-3px);border-color:#aabed5;box-shadow:0 11px 23px #173a5d13}
+.lost-destination:is(:hover,:focus-visible){border-color:#6489ad;box-shadow:0 11px 23px #173a5d13}
 .lost-destination__icon{display:grid;width:43px;height:43px;place-items:center;border-radius:12px;background:#eaf2fa;color:#0054b8}
 .lost-destination__icon .ui-icon{width:25px;height:25px}
 .lost-destination--red .lost-destination__icon{background:#fbebed;color:#b9273e}

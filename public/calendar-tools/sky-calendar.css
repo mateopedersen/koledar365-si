@@ -197,7 +197,7 @@
 #vsebina .sky-example__credit { margin-top: 10px; font-size: .8rem; line-height: 1.5; }
 .sky-example a, .sky-reading a, .sky-sources a { color: var(--sky-link); }
 
-.sky-reading__grid { margin-top: 14px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.sky-reading__grid { margin-top: 14px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 10px; }
 .sky-reading__card { background: white; border: 1px solid var(--sky-line); border-radius: 12px; padding: clamp(14px, 2vw, 23px); }
 .sky-reading__card p { margin-top: 7px; color: var(--sky-text); max-width: 67ch; }
 .sky-sources { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
