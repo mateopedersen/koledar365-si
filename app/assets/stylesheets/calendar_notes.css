@@ -255,7 +255,6 @@
   .calendar-note-form .calendar-note-tools :is(button,summary), .calendar-note-form .calendar-note-actions button { min-height: 44px; }
   .calendar-note-form .calendar-note-tools > :is(button,details) summary,
   .calendar-note-form .calendar-note-tools > button { min-width: 39px; }
-  .calendar-note-form .calendar-note-font { flex-basis: 6.4rem; }
   .calendar-note-form .calendar-note-tools .calendar-note-font select { min-height: 42px; font-size: .78rem; }
   .calendar-note-menu-name { display: none; }
   .calendar-note-form .calendar-note-categories button { min-height: 37px; }
@@ -266,7 +265,7 @@
   .calendar-note-actions { justify-content: stretch; }
   .calendar-note-form .calendar-note-actions button { flex: 1 1 auto; }
 }
-@media (max-width: 360px) {
+@media (max-width: 640px) {
   .calendar-note-form .calendar-note-tools { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); }
   .calendar-note-form .calendar-note-font { grid-column: 1 / -1; }
   .calendar-note-form .calendar-note-tools > button,
