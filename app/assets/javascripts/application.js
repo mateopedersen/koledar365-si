@@ -44,6 +44,7 @@ function personalDates(entry) {
 const dayNotesInput=$('#day-notes');
 const dateNotesCalendar=$('[data-calendar-notes]');
 const dateNotesDialog=$('#calendar-note-dialog');
+const dateNoteTools=globalThis.CalendarDateNoteTools;
 const noteDateFormat=new Intl.DateTimeFormat('sl-SI',{timeZone:'UTC',dateStyle:'long'});
 function paintCalendarNote(cell,text) {
  let note=$('.calendar-day-note',cell);
@@ -54,9 +55,11 @@ function paintCalendarNote(cell,text) {
   ($('.date-events',cell)||cell).append(note);
  }
  note.textContent=text.trim();
+ dateNoteTools.apply(note,dateNoteTools.read(cell.dataset.noteDate));
 }
-function saveCalendarNote(date,text) {
+function saveCalendarNote(date,text,format) {
  const value=text.trim();
+ dateNoteTools.save(date,value,format);
  if(value)personal.notes[date]=value;
  else delete personal.notes[date];
  if(planner?.dataset.selectedDate===date)dayNotesInput.value=value;
@@ -64,19 +67,24 @@ function saveCalendarNote(date,text) {
  const saved=savePersonal();
  say($('#notes-status'),saved?'Zapisek je na koledarju.':'Zapisek je na koledarju. Shramba brskalnika ni na voljo.',!saved);
 }
-if(dateNotesCalendar&&dateNotesDialog&&dayNotesInput){
+if(dateNotesCalendar&&dateNotesDialog&&dayNotesInput&&dateNoteTools){
  const notesText=$('#calendar-note-text');
  const events=$('[data-calendar-note-events]');
  const eventOptions=$('div',events);
- let selectedCell;
+ let selectedCell, selectedFormat;
  function openDateNote(cell) {
   selectedCell=cell;
   const date=cell.dataset.noteDate;
   dateNotesDialog.returnValue='';
   $('[data-calendar-note-date]',dateNotesDialog).textContent=noteDateFormat.format(new Date(date+'T12:00Z'));
+  $('[data-note-day-link]',dateNotesDialog).href='/?date='+date+'&view=day#personal-planner';
   notesText.value=planner.dataset.selectedDate===date?dayNotesInput.value:personal.notes[date]||'';
+  selectedFormat=dateNoteTools.toolbar(notesText,date,{
+   tools:'Oblikovanje zapiska',font:'Pisava',fonts:['Običajna','Serifna','Enakomerna'],
+   bold:'Krepko',underline:'Podčrtano',important:'Pomembno',emoji:'Emodžiji',
+  });
   eventOptions.replaceChildren();
-  const titles=new Set($$('.event-label[href]',cell).filter(link=>!link.hidden).map(link=>link.title||link.textContent.trim()));
+  const titles=new Set($$('.event-label[href], :scope > a[href]',cell).filter(link=>!link.hidden).map(link=>link.title||link.textContent.trim()));
   for(const title of titles){
    const button=document.createElement('button');
    button.type='button';
@@ -94,15 +102,15 @@ if(dateNotesCalendar&&dateNotesDialog&&dayNotesInput){
  for(const cell of $$('.calendar td[data-date]:not(.outside),.week-view section[data-date]',dateNotesCalendar)){
   const date=cell.dataset.date;
   cell.dataset.noteDate=date;
-  const button=document.createElement('button');
-  button.className='calendar-note-add';
-  button.type='button';
-  button.textContent='+';
-  button.setAttribute('aria-label','Dodaj zapisek · '+noteDateFormat.format(new Date(date+'T12:00Z')));
-  button.addEventListener('click',()=>openDateNote(cell));
-  ($('.date-link, h3',cell)||cell.firstElementChild)?.after(button);
+  const trigger=$('.date-link, h3 > a',cell);
+  trigger?.setAttribute('aria-haspopup','dialog');
   cell.addEventListener('click',event=>{
-   if(!event.target.closest('a,button,input,select,textarea')&&!window.getSelection()?.toString())openDateNote(cell);
+   if(event.metaKey||event.ctrlKey||event.shiftKey||event.altKey||window.getSelection()?.toString())return;
+   const control=event.target.closest('a,button,input,select,textarea');
+   if(control&&control!==trigger)return;
+   event.preventDefault();
+   trigger?.focus({preventScroll:true});
+   openDateNote(cell);
   });
   paintCalendarNote(cell,personal.notes[date]);
  }
@@ -111,7 +119,10 @@ if(dateNotesCalendar&&dateNotesDialog&&dayNotesInput){
  });
  $('#save-notes').addEventListener('click',()=>saveCalendarNote(planner.dataset.selectedDate,dayNotesInput.value));
  dateNotesDialog.addEventListener('close',()=>{
-  if(dateNotesDialog.returnValue==='save'&&selectedCell)saveCalendarNote(selectedCell.dataset.noteDate,notesText.value);
+  const action=dateNotesDialog.returnValue;
+  if(!selectedCell||!['save','print'].includes(action))return;
+  saveCalendarNote(selectedCell.dataset.noteDate,notesText.value,selectedFormat);
+  if(action==='print')requestAnimationFrame(()=>window.print());
  });
 }
 function renderPersonal(){if(!planner)return;const selected=planner.dataset.selectedDate,root=$('#personal-events');root.replaceChildren();const rows=personal.events.filter(e=>e.date===selected||(selected>e.date&&selected<=e.end_date)||(e.repeat==='yearly'&&e.date.slice(5)===selected.slice(5)));if(!rows.length){const p=document.createElement('p');p.className='empty';p.textContent='Za ta dan še ni osebnih zapisov.';root.append(p)}for(const event of rows){const row=document.createElement('div');row.className='personal-item'+(event.done?' done':'');row.dataset.category=event.category||'personal';const text=document.createElement('div');text.textContent=[event.time,event.title].filter(Boolean).join(' · ');appendPersonalReminder(text,event);row.append(text);if(event.kind==='task'){const complete=document.createElement('button');complete.textContent=event.done?'Označi kot nedokončano':'Označi kot dokončano';complete.addEventListener('click',()=>{event.done=!event.done;savePersonal();renderPersonal()});row.append(complete)}const edit=document.createElement('button');edit.textContent='Uredi';edit.addEventListener('click',()=>{const form=$('#personal-form');for(const key of ['uid','title','date','time','kind','repeat','category'])form.elements[key].value=event[key]||'';$('#event-editor').open=true;form.elements.title.focus()});row.append(edit);const del=document.createElement('button');del.textContent='Izbriši';del.addEventListener('click',()=>{personal.events=personal.events.filter(e=>e.uid!==event.uid);savePersonal();renderPersonal()});row.append(del);root.append(row)}requestAnimationFrame(()=>{renderQuickTasks();filterCalendar()});$('#day-notes').value=personal.notes[selected]||'';if(dateNotesCalendar)for(const cell of $$('[data-note-date]',dateNotesCalendar))paintCalendarNote(cell,personal.notes[cell.dataset.noteDate]);$$('.personal-dot').forEach(x=>x.remove());for(const event of personal.events)for(const date of personalDates(event)){const cell=$(`td[data-date="${date}"] .date-events`);if(cell){const dot=document.createElement('span');dot.className='event-label personal-dot';dot.textContent=[event.time,event.title].filter(Boolean).join(' ');dot.dataset.category=event.category||'personal';cell.append(dot)}}}

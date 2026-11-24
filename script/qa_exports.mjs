@@ -36,7 +36,7 @@ if(process.env.QA_EXPORT_MODE!=='downloads'){
   await run({kind:'print',name,path:route,paper,orientation,width},async row=>{
    await page.emulateMedia({media:'screen'});await page.setViewportSize({width,height:1000});await page.goto(base+route,{waitUntil:'load'});
    if(name==='home-note'){
-    await page.locator('[data-note-date="2028-02-08"] .calendar-note-add').click();
+    await page.locator('[data-note-date="2028-02-08"]').click();
     await page.locator('#calendar-note-text').fill('Zapisek za preizkus tiskanja');
     await page.locator('#calendar-note-dialog button[value=save]').click();
     await page.waitForFunction(()=>document.querySelector('[data-note-date="2028-02-08"] .calendar-day-note')?.textContent==='Zapisek za preizkus tiskanja');

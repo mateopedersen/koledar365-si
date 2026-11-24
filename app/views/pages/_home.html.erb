@@ -31,7 +31,8 @@
     <label for="calendar-note-text">Zapisek</label>
     <textarea id="calendar-note-text" rows="4" maxlength="10000" autofocus></textarea>
     <div data-calendar-note-events hidden><p>Dodajte dogodek s koledarja</p><div></div></div>
-    <div class="calendar-note-actions"><button type="submit" value="cancel">Prekliči</button><button class="primary" type="submit" value="save">Dodaj na koledar</button></div>
+    <a data-note-day-link>Odpri dnevni načrt</a>
+    <div class="calendar-note-actions"><button type="submit" value="cancel">Prekliči</button><button type="submit" value="print">Shrani in natisni</button><button class="primary" type="submit" value="save">Dodaj na koledar</button></div>
   </form>
 </dialog>
 <%= render 'editorial_home' %>
