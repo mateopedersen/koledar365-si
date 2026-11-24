@@ -747,6 +747,18 @@ html:has(.download-workspace){scroll-behavior:auto}
   }
 
   @media (max-width: 650px) {
+    .download-workspace--period .context-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 6px;
+      margin-block-end: 8px;
+    }
+    #vsebina .download-workspace--period .context-heading h2 {
+      font-size: clamp(.96rem, 4.2vw, 1.1rem);
+      line-height: 1.2;
+    }
+    .download-workspace--period .context-heading button { max-width: 8.5rem; white-space: normal; }
+
     #vsebina .download-workspace--period .calendar-title .actions {
       display: grid;
       grid-template-columns: 48px minmax(0, 1fr) 48px;
@@ -754,6 +766,7 @@ html:has(.download-workspace){scroll-behavior:auto}
     }
     #vsebina .download-workspace--period .calendar-title h2 {
       grid-area: 1 / 2;
+      justify-content: center;
       text-align: center;
       min-width: 0;
       font-size: clamp(1rem, 4.6vw, 1.2rem) !important;
