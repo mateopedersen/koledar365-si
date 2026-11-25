@@ -53,9 +53,9 @@
 .sun-timeline__meta .sun-time-note{margin-left:auto;color:#a9c1d8;font-size:9px}
 .sun-timeline input[type=range]{display:block;width:100%;height:27px;margin:8px 0 3px;padding:0;accent-color:#e44754;background:transparent;cursor:pointer}
 .sun-timeline__ends{display:flex;justify-content:space-between;color:#a9bfd5;font-size:9px;font-variant-numeric:tabular-nums}
-.sun-play-row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
-.sun-play-row p{margin:0;color:#e3edf7;font-size:10px}
-.sun-play-row button{min-height:31px;padding:6px 9px;border-color:#ffffff35;border-radius:7px;background:#ffffff0d;color:#fff;font-size:10px;white-space:nowrap}
+.sun-play-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.sun-play-row p{flex:1 1 13rem;min-width:0;margin:0;color:#e3edf7;font-size:10px}
+.sun-play-row button{flex:none;min-width:0;max-width:100%;min-height:31px;padding:6px 9px;border-color:#ffffff35;border-radius:7px;background:#ffffff0d;color:#fff;font-size:10px;white-space:normal;overflow-wrap:anywhere}
 .sun-play-row button:hover{background:#ffffff1c}
 .sun-scene-note{margin:0;padding:0 22px 15px;color:#aec2d7;font-size:9px;line-height:1.5}
 .sun-day-card{padding:21px 20px 16px}

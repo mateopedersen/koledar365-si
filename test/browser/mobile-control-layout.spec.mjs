@@ -2,6 +2,22 @@ import {test,expect} from '@playwright/test';
 
 async function controlGeometry(page,selector){return page.locator(selector).evaluateAll(nodes=>nodes.map(node=>{const r=node.getBoundingClientRect(),p=node.parentElement.getBoundingClientRect();const range=document.createRange();range.selectNodeContents(node);return{width:r.width,height:r.height,left:r.left,right:r.right,parentWidth:p.width,contentFits:[...range.getClientRects()].filter(x=>x.width>2&&x.height>2).every(x=>x.left>=r.left-2&&x.right<=r.right+2&&x.top>=r.top-2&&x.bottom<=r.bottom+2)}}));}
 
+test('the homepage note panel keeps the heading, field and save button in separate rows', async ({ page }) => {
+  await page.goto('/');
+  const panel = page.locator('.calendar-notes-panel');
+  for (const width of [320, 390, 600, 960, 1280, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    await panel.scrollIntoViewIfNeeded();
+    const [heading, field, save] = await Promise.all([
+      panel.locator('h2').boundingBox(), panel.locator('#day-notes').boundingBox(),
+      panel.locator('#save-notes').boundingBox(),
+    ]);
+    expect(heading.y + heading.height).toBeLessThanOrEqual(field.y);
+    expect(field.y + field.height).toBeLessThanOrEqual(save.y);
+    expect(save.x + save.width).toBeLessThanOrEqual(field.x + field.width + 1);
+  }
+});
+
 test('mobile garden actions and native date fields fit their rows before and after entry',async({page})=>{
   test.setTimeout(60000);
   await page.goto('/setveni-koledar/');
