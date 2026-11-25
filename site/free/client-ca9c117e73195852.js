@@ -15,7 +15,19 @@ const urls=new Set();
 function objectUrl(blob){const url=URL.createObjectURL(blob);urls.add(url);return url}
 function bytes(base64){return Uint8Array.from(atob(base64),c=>c.charCodeAt(0))}
 const call=createRubyClient();
-const loadScript=src=>new Promise((resolve,reject)=>{const el=document.createElement('script');el.src=src;el.onload=resolve;el.onerror=()=>reject(Error('Datoteke ni mogoče naložiti.'));document.head.append(el)});
+function loadScript(src) {
+ const asset = typeof src === 'string' && /^\/assets\/([a-z0-9_]+-[a-f0-9]+\.js)$/i.exec(src);
+ const url = src === '/free/vendor/jszip.min.js' ? '/free/vendor/jszip.min.js' :
+   asset ? '/assets/' + encodeURIComponent(asset[1]) : null;
+ if (!url) return Promise.reject(Error('Datoteke ni mogoče naložiti.'));
+ return new Promise((resolve, reject) => {
+  const script = document.createElement('script');
+  script.src = url;
+  script.onload = resolve;
+  script.onerror = () => reject(Error('Datoteke ni mogoče naložiti.'));
+  document.head.append(script);
+ });
+}
 let pdfLibrary;
 async function withPdfDocument(pdf,useDocument){pdfLibrary ||= await import('/free/vendor/pdf.min.mjs');pdfLibrary.GlobalWorkerOptions.workerSrc='/free/vendor/pdf.worker.min.mjs';return usingPdfDocument(pdfLibrary,{data:pdf.slice(),isEvalSupported:false,wasmUrl:'/free/vendor/pdf-wasm/'},useDocument)}
 async function renderPage(document,index,scale){const page=await document.getPage(index),viewport=page.getViewport({scale}),canvas=window.document.createElement('canvas');canvas.width=Math.ceil(viewport.width);canvas.height=Math.ceil(viewport.height);try{const context=canvas.getContext('2d',{willReadFrequently:true});if(!context)throw Error('Brskalnik ne podpira slike te velikosti. Poskusite v namiznem brskalniku.');context.fillStyle='#fff';context.fillRect(0,0,canvas.width,canvas.height);await page.render({canvasContext:context,viewport,background:'rgb(255,255,255)'}).promise;return {canvas,context,page}}catch(error){canvas.width=canvas.height=1;throw error}}
