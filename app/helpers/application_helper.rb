@@ -1,3 +1,5 @@
+require 'uri'
+
 module ApplicationHelper
   include IllustrationHelper
 
@@ -219,5 +221,15 @@ module ApplicationHelper
   end
   def source_link(url,label='Vir')
     link_to(label,url,rel:'noopener') if url.present? && url.start_with?('https://')
+  end
+
+  def image_reference_link(label, url)
+    text = ERB::Util.html_escape(String.new(label.to_s))
+    address = URI.parse(url.to_s)
+    return text unless address.is_a?(URI::HTTP) && address.host.present? && address.userinfo.nil?
+
+    link_to(text, address.to_s, rel: 'noopener')
+  rescue URI::InvalidURIError
+    text
   end
 end

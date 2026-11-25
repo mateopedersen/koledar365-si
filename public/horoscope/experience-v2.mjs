@@ -81,7 +81,8 @@ if(root){
       const angle=ascendantLongitude(sky.SiderealTime(instant),obliquity,lat,lon),index=signIndex(angle),rising=profiles[index],sun=profiles[signIndex(sky.SunPosition(instant).elon)];
       const title=element('h3','Vaše vzhajajoče znamenje: '+rising.name),list=element('dl');
       for(const [label,value] of [['Vzhajajoče znamenje',rising.name],['Položaj v znamenju',(angle%30).toLocaleString('sl-SI',{minimumFractionDigits:2,maximumFractionDigits:2})+'°'],['Sončno znamenje',sun.name]]){const row=element('div');row.append(element('dt',label),element('dd',value));list.append(row);}
-      const link=element('a','Preberite horoskop: '+rising.name);link.href='/horoskop/'+rising.slug+'/';
+      const link=element('a','Preberite horoskop: '+rising.name);
+      if (/^[a-z]+$/.test(rising.slug)) link.href='/horoskop/'+rising.slug+'/';
       const note=element('p','Tropski zodiak · časovni pas '+timeZone+' · trenutek '+instant.toISOString().replace('T',' ').replace('.000Z',' UTC')+'. Geometrijski izračun; astrološka razlaga je simbolna.','z-calculation-note');
       result.replaceChildren(element('span','VAŠ OSEBNI ZVEZDNI KOMPAS','z-kicker'),title,list,element('p',rising.rising),link,note);
       if(Math.min(angle%30,30-angle%30)<.5)result.append(element('p','Rezultat je blizu meje znamenj. Že nekaj minut razlike v uri rojstva lahko spremeni znamenje.','z-calculation-note'));

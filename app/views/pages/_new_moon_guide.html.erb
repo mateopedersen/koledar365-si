@@ -24,7 +24,7 @@
       <%= image_tag photo.fetch('path'), width: photo.fetch('width'), height: photo.fetch('height'), alt: photo.fetch('alt'), loading: 'lazy', decoding: 'async' %>
       <figcaption>
         <strong><%= photo.fetch('caption') %> · 27. oktobra 2011</strong>
-        <span><%= link_to photo.fetch('credit'), photo.fetch('credit_url') %> · <%= link_to 'Izvirnik in licenca', LunarPhaseGuide.credit_path('mlaj-paranal') %></span>
+        <span><%= image_reference_link(photo.fetch('credit'), photo.fetch('credit_url')) %> · <%= link_to 'Izvirnik in licenca', LunarPhaseGuide.credit_path('mlaj-paranal') %></span>
       </figcaption>
     </figure>
     <div class="new-moon-guide__reading">

@@ -5,7 +5,7 @@
     <% LunarPhaseGuide.photos.each do |id, photo| %>
       <li id="luna-<%= id %>">
         <strong><%= photo.fetch('caption', photo.fetch('alt')) %></strong><br>
-        Foto <bdi><%= photo.fetch('credit') %></bdi> · <%= link_to 'Izvirna fotografija', photo.fetch('source') %> · <%= link_to ImageRights.license_label(photo.fetch('license')), photo.fetch('license_url') %><br>
+        Foto <bdi><%= photo.fetch('credit') %></bdi> · <%= image_reference_link('Izvirna fotografija', photo.fetch('source')) %> · <%= image_reference_link(ImageRights.license_label(photo.fetch('license')), photo.fetch('license_url')) %><br>
         <%= photo.fetch('changes') %>
       </li>
     <% end %>
@@ -21,12 +21,12 @@
         <strong><%= photo.fetch('caption') %></strong><br>
         Foto
         <% if photo['credit_url'] %>
-          <%= link_to photo.fetch('credit'), photo.fetch('credit_url') %>
+          <%= image_reference_link(photo.fetch('credit'), photo.fetch('credit_url')) %>
         <% else %>
           <bdi><%= photo.fetch('credit') %></bdi>
         <% end %>
-        · <%= link_to 'Izvirna fotografija', photo.fetch('source') %> · <%= link_to ImageRights.license_label(photo.fetch('license')), photo.fetch('license_url') %>
-        <% if photo['terms'] %> · <%= link_to 'Pogoji ESO', photo.fetch('terms') %><% end %><br>
+        · <%= image_reference_link('Izvirna fotografija', photo.fetch('source')) %> · <%= image_reference_link(ImageRights.license_label(photo.fetch('license')), photo.fetch('license_url')) %>
+        <% if photo['terms'] %> · <%= image_reference_link('Pogoji ESO', photo.fetch('terms')) %><% end %><br>
         <%= photo.fetch('changes') %>
       </li>
     <% end %>
