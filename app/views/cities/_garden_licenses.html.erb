@@ -10,8 +10,8 @@
     <article class="panel photo-license garden-photo-license" id="vrtnina-<%= photo.fetch('id') %>">
       <img src="<%= photo.fetch('path') %>" alt="<%= photo.fetch('alt') %>" width="160" height="160" loading="lazy" decoding="async" style="width:160px;height:160px;max-width:100%;object-fit:contain">
       <h3><%= photo.fetch('name') %></h3>
-      <dl><dt>Avtor / vir</dt><dd><%= photo.fetch('author') %></dd><dt>Licenca fotografije</dt><dd><a href="<%= photo.fetch('license_url') %>"><%= ImageRights.license_label(photo.fetch('license')) %></a></dd><dt>Prilagoditve</dt><dd><%= photo.fetch('changes') %></dd></dl>
-      <a href="<%= photo.fetch('source') %>">Izvirna fotografija in podatki o avtorstvu</a>
+      <dl><dt>Avtor / vir</dt><dd><%= photo.fetch('author') %></dd><dt>Licenca fotografije</dt><dd><%= image_reference_link(ImageRights.license_label(photo.fetch('license')), photo.fetch('license_url')) %></dd><dt>Prilagoditve</dt><dd><%= photo.fetch('changes') %></dd></dl>
+      <%= image_reference_link('Izvirna fotografija in podatki o avtorstvu', photo.fetch('source')) %>
     </article>
   <% end %>
 </div>

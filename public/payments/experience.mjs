@@ -41,7 +41,9 @@ function init(root){
     get('[data-payment-filtered-ics]').disabled = visible.length === 0;
     updateNext(today, category);
     const slug = category === 'all' ? (data.kind === 'pension' ? 'pokojnine' : 'socialni-transferji') : category;
-    get('[data-payment-download]').href = '/payments/' + slug + '-2026.ics';
+    const downloadLink = get('[data-payment-download]');
+    if (/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) downloadLink.href = '/payments/' + slug + '-2026.ics';
+    else downloadLink.removeAttribute('href');
   }
   [benefit,month,upcoming].filter(Boolean).forEach(control=>control.addEventListener('change',update));
   get('[data-payment-reset]').addEventListener('click',()=>{if(benefit)benefit.value='all';month.value='all';upcoming.checked=false;update();});

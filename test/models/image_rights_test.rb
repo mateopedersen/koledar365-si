@@ -1,6 +1,22 @@
 require 'test_helper'
 
 class ImageRightsTest < ActiveSupport::TestCase
+  test 'photograph references use web addresses and render credit as text' do
+    helpers = ApplicationController.helpers
+    label = 'Foto <Studio> & partner'
+    html = helpers.image_reference_link(label, 'https://example.org/photo?width=800&height=600')
+    link = Nokogiri::HTML.fragment(html).at_css('a')
+    assert_equal label, link.text
+    assert_equal 'https://example.org/photo?width=800&height=600', link['href']
+    assert_nil link.at_css('studio')
+
+    ['mailto:studio@example.org', '/photos/original', 'https://user@example.org/photo'].each do |url|
+      fragment = Nokogiri::HTML.fragment(helpers.image_reference_link(label, url))
+      assert_equal label, fragment.text
+      assert_empty fragment.element_children
+    end
+  end
+
   test 'reviewed photographic attribution does not invent copyright ownership' do
     photo = HolidayPhotoCatalog.all.find { |item| item['author'].present? && item['license_url'].present? }
     object = {'@type' => 'ImageObject', 'contentUrl' => 'https://koledar365.si' + photo.fetch('local_path')}

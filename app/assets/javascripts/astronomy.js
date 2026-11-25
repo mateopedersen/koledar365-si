@@ -94,16 +94,16 @@
 
   function moonRows() {
     const next = nextMoon(data.events);
-    $('[data-moon-rows]').innerHTML = rows().map(e => `<tr${e.id === next?.id ? ' class="is-upcoming"' : ''}><th scope="row"><time datetime="${escape(e.utc)}">${dateLabel(e.date)}</time></th><td><span class="astro-phase-dot phase-${e.kind}" aria-hidden="true"></span>${e.label}</td><td><strong>${e.time}</strong> <span class="astro-muted">${e.zone}</span></td><td>${e.utc.slice(11,16)}${e.utc.slice(0,10)!==e.date ? `<small class="astro-utc-date">${dateLabel(e.utc)}</small>` : ''}</td></tr>`).join('');
+    $('[data-moon-rows]').innerHTML = rows().map(e => `<tr${e.id === next?.id ? ' class="is-upcoming"' : ''}><th scope="row"><time datetime="${escape(e.utc)}">${dateLabel(e.date)}</time></th><td><span class="astro-phase-dot phase-${escape(e.kind)}" aria-hidden="true"></span>${escape(e.label)}</td><td><strong>${escape(e.time)}</strong> <span class="astro-muted">${escape(e.zone)}</span></td><td>${escape(e.utc.slice(11,16))}${e.utc.slice(0,10)!==e.date ? `<small class="astro-utc-date">${dateLabel(e.utc)}</small>` : ''}</td></tr>`).join('');
   }
   function eclipseRows() {
     $('[data-eclipse-rows]').innerHTML = rows().map(e => {
       const v = local(e);
-      return `<tr><th scope="row"><a href="#astro-event-selection" data-select-event="${e.id}">${dateLabel(e.date)}</a></th><td>${kinds[e.kind]}</td><td><span class="astro-status ${v.visible ? 'is-visible':'is-invisible'}">${v.visible ? kinds[v.kind]:'Ni viden'}</span></td><td>${v.visible ? interval(v.windows):'—'}</td></tr>`;
+      return `<tr><th scope="row"><a href="#astro-event-selection" data-select-event="${escape(e.id)}">${dateLabel(e.date)}</a></th><td>${kinds[e.kind]}</td><td><span class="astro-status ${v.visible ? 'is-visible':'is-invisible'}">${v.visible ? kinds[v.kind]:'Ni viden'}</span></td><td>${v.visible ? interval(v.windows):'—'}</td></tr>`;
     }).join('');
     if (!rows().some(e => e.id === selectedEvent)) selectedEvent = (rows().find(e => local(e).visible) || rows()[0])?.id;
     const select = $('[data-astro-event]');
-    select.innerHTML = rows().map(e => `<option value="${e.id}">${dateLabel(e.date, true)} · ${kinds[e.kind]}</option>`).join('');
+    select.innerHTML = rows().map(e => `<option value="${escape(e.id)}">${dateLabel(e.date, true)} · ${kinds[e.kind]}</option>`).join('');
     select.value = selectedEvent;
     eventDetail();
   }
@@ -138,19 +138,19 @@
       let label = labels[key];
       if (view.geometric_kind === 'annular' && key === 'total_begin') label = 'Začetek kolobarjaste faze';
       if (view.geometric_kind === 'annular' && key === 'total_end') label = 'Konec kolobarjaste faze';
-      return `<div class="astro-contact ${c.above_horizon?'is-above':'is-below'}"><span>${label}</span><time datetime="${escape(c.utc)}">${timeLabel(c.utc)}${localDate(c.utc)!==event.date?`<small class="astro-contact-date">${shortDate(c.utc)}</small>`:''}</time><small>${c.above_horizon?'Nad obzorjem':'Pod obzorjem'} · ${String(c.altitude).replace('.',',')}°</small></div>`;
+      return `<div class="astro-contact ${c.above_horizon?'is-above':'is-below'}"><span>${label}</span><time datetime="${escape(c.utc)}">${timeLabel(c.utc)}${localDate(c.utc)!==event.date?`<small class="astro-contact-date">${shortDate(c.utc)}</small>`:''}</time><small>${c.above_horizon?'Nad obzorjem':'Pod obzorjem'} · ${escape(String(c.altitude).replace('.',','))}°</small></div>`;
     }).join('');
     const utcPeak=roundMinute(event.peak).toISOString();
     $('[data-detail-global]').innerHTML = `Globalni maksimum: <strong>${timeLabel(event.peak,true)}</strong> (${dateLabel(utcPeak)}, ${utcPeak.slice(11,16)} UTC). ${data.kind==='solar'?'To je vrhunec mrka na Zemlji, ne ura največjega zakritja v izbranem kraju.':'Trenutek maksimuma je skupen, njegova vidnost pa je odvisna od kraja.'}`;
     const percent = $('[data-detail-percent]');
     percent.hidden = !(data.kind==='solar' && view.peak_visible);
-    percent.innerHTML = percent.hidden ? '' : `Ob lokalnem maksimumu Luna prekrije približno <strong>${String(view.peak_obscuration).replace('.',',')} % Sončeve ploskve</strong>. To je delež površine, ne magnituda mrka, ki meri prekriti delež premera.`;
+    percent.innerHTML = percent.hidden ? '' : `Ob lokalnem maksimumu Luna prekrije približno <strong>${escape(String(view.peak_obscuration).replace('.',','))} % Sončeve ploskve</strong>. To je delež površine, ne magnituda mrka, ki meri prekriti delež premera.`;
   }
   function perseidRows() {
     $('[data-perseids-nights]').innerHTML = rows().map(n=>{
       const view = local(n), day = +n.date.slice(8,10), a = new Date(view.dark_start).getTime(), duration = new Date(view.dark_end).getTime()-a;
       const blocks = view.moon_free.map(w=>`<span style="left:${((new Date(w.start).getTime()-a)/duration*100).toFixed(3)}%;width:${((new Date(w.end)-new Date(w.start))/duration*100).toFixed(3)}%"></span>`).join('');
-      return `<section class="astro-night"><div class="astro-night-date"><span>NOČ</span><h3>${day}./${day+1}.</h3><p>avgust ${year}</p></div><div class="astro-night-main"><div class="astro-night-heading"><strong>${escape(name())} · astronomska tema</strong><span>${timeLabel(view.dark_start)}–${timeLabel(view.dark_end)}</span></div><div class="astro-night-bar" role="img" aria-label="Modri deli označujejo astronomsko temo, ko je Luna pod obzorjem.">${blocks}</div><div class="astro-night-facts"><span><strong>${n.moon_illumination} %</strong> Lune osvetljene ob polnoči</span><span><strong>Brez Lune:</strong> ${view.moon_free.length?interval(view.moon_free,false):'v tej temni noči ni takega intervala'}</span>${view.moonrise?`<span>Lunin vzhod: ${timeLabel(view.moonrise)}</span>`:''}${view.moonset?`<span>Lunin zahod: ${timeLabel(view.moonset)}</span>`:''}</div></div></section>`;
+      return `<section class="astro-night"><div class="astro-night-date"><span>NOČ</span><h3>${day}./${day+1}.</h3><p>avgust ${year}</p></div><div class="astro-night-main"><div class="astro-night-heading"><strong>${escape(name())} · astronomska tema</strong><span>${timeLabel(view.dark_start)}–${timeLabel(view.dark_end)}</span></div><div class="astro-night-bar" role="img" aria-label="Modri deli označujejo astronomsko temo, ko je Luna pod obzorjem.">${blocks}</div><div class="astro-night-facts"><span><strong>${escape(n.moon_illumination)} %</strong> Lune osvetljene ob polnoči</span><span><strong>Brez Lune:</strong> ${view.moon_free.length?interval(view.moon_free,false):'v tej temni noči ni takega intervala'}</span>${view.moonrise?`<span>Lunin vzhod: ${timeLabel(view.moonrise)}</span>`:''}${view.moonset?`<span>Lunin zahod: ${timeLabel(view.moonset)}</span>`:''}</div></div></section>`;
     }).join('');
   }
   function render(updateUrl=false) {
