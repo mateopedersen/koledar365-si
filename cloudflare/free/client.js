@@ -16,12 +16,13 @@ function objectUrl(blob){const url=URL.createObjectURL(blob);urls.add(url);retur
 function bytes(base64){return Uint8Array.from(atob(base64),c=>c.charCodeAt(0))}
 const call=createRubyClient();
 function loadScript(src) {
- if (typeof src !== 'string' || !(src === '/free/vendor/jszip.min.js' || /^\/assets\/[a-z0-9_]+-[a-f0-9]+\.js$/i.test(src))) {
-  return Promise.reject(Error('Datoteke ni mogoče naložiti.'));
- }
+ const asset = typeof src === 'string' && /^\/assets\/([a-z0-9_]+-[a-f0-9]+\.js)$/i.exec(src);
+ const url = src === '/free/vendor/jszip.min.js' ? '/free/vendor/jszip.min.js' :
+   asset ? '/assets/' + encodeURIComponent(asset[1]) : null;
+ if (!url) return Promise.reject(Error('Datoteke ni mogoče naložiti.'));
  return new Promise((resolve, reject) => {
   const script = document.createElement('script');
-  script.src = src;
+  script.src = url;
   script.onload = resolve;
   script.onerror = () => reject(Error('Datoteke ni mogoče naložiti.'));
   document.head.append(script);
