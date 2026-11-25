@@ -113,7 +113,7 @@ for(const width of [360,760,768,820,1024])test(`horoscope birth fields fit their
 });
 
 
-test('phone shortcuts, calendar filters and note actions share aligned rows', async ({page}) => {
+test('phone shortcuts and calendar filters align, and note controls stay within their panel', async ({page}) => {
   await page.goto('/');
   await expect(page.locator('html')).toHaveAttribute('data-free-ready','true');
   for (const width of [320,390,480]) {
@@ -124,7 +124,7 @@ test('phone shortcuts, calendar filters and note actions share aligned rows', as
         shortcuts: boxes('.nav-shortcut,.nav-explorer > summary'),
         years: boxes('.nav-years a'),
         filters: boxes('.calendar-category-select select,#event-search'),
-        notes: boxes('.calendar-notes-panel h2,#save-notes'),
+        notes: ['.calendar-notes-panel h2','#day-notes','#save-notes'].map(selector => boxes(selector)[0]),
         gridTop: boxes('.calendar-panel .month-block .calendar')[0].top,
         profile: boxes('#personal-planner,#city-card'),
       };
@@ -137,9 +137,11 @@ test('phone shortcuts, calendar filters and note actions share aligned rows', as
     }
     expect(layout.filters[0].top).toBeCloseTo(layout.filters[1].top,1);
     expect(layout.filters[0].right).toBeLessThan(layout.filters[1].left);
-    const [heading, save] = layout.notes;
-    expect(heading.y + heading.height / 2).toBeCloseTo(save.y + save.height / 2,1);
-    expect(heading.right).toBeLessThan(save.left);
+    const [heading, field, save] = layout.notes;
+    expect(heading.bottom).toBeLessThanOrEqual(field.top);
+    expect(field.bottom).toBeLessThanOrEqual(save.top);
+    expect(save.left).toBeCloseTo(field.left,1);
+    expect(save.right).toBeLessThanOrEqual(field.right + 1);
     expect(layout.gridTop).toBeLessThan(790);
     expect(layout.profile[0].bottom).toBeLessThan(layout.profile[1].top);
   }
