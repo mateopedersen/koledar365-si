@@ -18,6 +18,21 @@ test('the homepage note panel keeps the heading, field and save button in separa
   }
 });
 
+test('planning links start under the calendar independently of the desktop side panels', async ({ page }) => {
+  await page.goto('/');
+  for (const width of [960, 1280, 1440, 1680]) {
+    await page.setViewportSize({ width, height: 900 });
+    const [center, followup] = await Promise.all([
+      page.locator('.workspace > .center-panel').boundingBox(),
+      page.locator('.home-calendar-followup').boundingBox(),
+    ]);
+    expect(Math.abs(center.x - followup.x)).toBeLessThan(1);
+    const gap = followup.y - center.y - center.height;
+    expect(gap).toBeGreaterThanOrEqual(0);
+    expect(gap).toBeLessThanOrEqual(24);
+  }
+});
+
 test('mobile garden actions and native date fields fit their rows before and after entry',async({page})=>{
   test.setTimeout(60000);
   await page.goto('/setveni-koledar/');

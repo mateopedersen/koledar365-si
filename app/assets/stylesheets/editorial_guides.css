@@ -174,21 +174,17 @@ main.editorial-reading {
 
 .editorial-home .section-heading { align-items: center; flex-wrap: wrap; gap: .5rem 1rem; margin-bottom: .9rem; }
 .editorial-home .section-heading p { color: #40566a; margin: .35rem 0 0; }
-@media (min-width: 1150px) {
-  .editorial-home .editorial-index__cards { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-}
-
-@media screen and (max-width: 600px) {
+@media screen {
   .editorial-home .editorial-index__cards {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+    gap: 9px;
   }
   .editorial-home .editorial-index__cards article a {
     display: grid;
-    grid-template-columns: clamp(68px, 22vw, 94px) minmax(0, 1fr);
+    grid-template-columns: 62px minmax(0, 1fr);
     gap: 10px;
-    align-items: start;
-    padding: 9px;
+    align-items: center;
+    padding: 10px;
   }
   .editorial-home .editorial-index__cards article img {
     aspect-ratio: 1;

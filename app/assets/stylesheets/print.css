@@ -283,6 +283,7 @@
   /* The homepage print action is for the month grid only. Keep its month
      heading and calendar legend, but omit the site intro and date statistics. */
   body.home-page .intro,
+  body.home-page .home-calendar-followup,
   body.home-page .workspace > .center-panel > .stats {
     display: none !important;
   }
