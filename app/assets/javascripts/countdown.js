@@ -283,9 +283,21 @@
     venue.hidden = !(entry.category === 'festival' && event?.detail);
     if (!venue.hidden) setText(venue, event.detail);
     const source = get('[data-feature-source]');
+    source.hidden = true;
+    source.removeAttribute('href');
     const sourcePath = event?.path || event?.source_url;
-    source.hidden = !sourcePath;
-    if (sourcePath) source.href = sourcePath;
+    if (sourcePath) {
+      try {
+        const destination = new URL(sourcePath, window.location.origin);
+        const isLocal = destination.origin === window.location.origin;
+        if ((isLocal || destination.protocol === 'https:') && !destination.username && !destination.password) {
+          source.href = destination.href;
+          source.hidden = false;
+        }
+      } catch {
+        // An invalid source does not prevent the countdown from running.
+      }
+    }
 
     featureShare.disabled = false;
     updateSaveButton();
