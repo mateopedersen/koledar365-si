@@ -59,8 +59,10 @@ on:
       - 'config/initializers/**'
       - 'config/public_page_redirects.json'
       - 'public/robots.txt'
-      - '.github/workflows/pages-publication.yml'
       - 'script/save_pages_publication.sh'
+      # The live verifier has its own workflow and cannot change published bytes.
+      - '!script/qa_production.py'
+      - '!script/cdn_agent_search_parity.py'
 permissions:
   contents: write
 concurrency:
@@ -142,7 +144,7 @@ jobs:
       - name: Wait for the exact Cloudflare publication
         run: /usr/bin/python3 script/wait_production.py
       - name: Verify live canonical pages and published assets
-        run: /usr/bin/python3 script/qa_seo.py --live --out evidence/qa/live-seo && /usr/bin/python3 script/qa_production.py
+        run: /usr/bin/python3 test/test_cdn_agent_search_parity.py && /usr/bin/python3 script/qa_seo.py --live --out evidence/qa/live-seo && /usr/bin/python3 script/qa_production.py
       - name: Keep production parity evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
