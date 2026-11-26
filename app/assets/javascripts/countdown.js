@@ -291,7 +291,10 @@
         const destination = new URL(sourcePath, window.location.origin);
         const isLocal = destination.origin === window.location.origin;
         if ((isLocal || destination.protocol === 'https:') && !destination.username && !destination.password) {
-          source.href = destination.href;
+          const localPath = isLocal && !destination.pathname.startsWith('//');
+          source.href = localPath
+            ? '/' + destination.pathname.slice(1) + destination.search + destination.hash
+            : destination.href;
           source.hidden = false;
         }
       } catch {
