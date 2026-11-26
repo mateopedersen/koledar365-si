@@ -1,3 +1,5 @@
+require 'strscan'
+
 class IcsService
   LIMIT=1_000_000
   ZONE='Europe/Ljubljana'
@@ -58,9 +60,19 @@ class IcsService
     # Validate TZID wall clocks before the parser can normalize a nonexistent
     # DST time. Folded content lines are unfolded according to RFC 5545.
     text.gsub(/\r?\n[ \t]/,'').each_line do |line|
-      next unless (match=line.match(/\ADT(?:START|END);[^:]*TZID="?([^";:]+)"?[^:]*:(\d{8}T\d{6})/))
-      d=DateTime.strptime(match[2],'%Y%m%dT%H%M%S')
-      local_time(d.year,d.month,d.day,d.hour,d.minute,d.second,match[1])
+      scanner = StringScanner.new(line)
+      next unless scanner.skip(/DT(?:START|END)(?=;)/i)
+
+      zone = nil
+      while scanner.scan(/;([a-z0-9-]+)=/i)
+        name = scanner[1]
+        value = scanner.scan(/"[^"\r\n]*+"|[^;:"\r\n]*+/)
+        zone ||= value.delete_prefix('"').delete_suffix('"') if name.casecmp?('TZID')
+      end
+      next unless zone.present? && scanner.scan(/:(\d{8}T\d{6})/)
+
+      time = DateTime.strptime(scanner[1], '%Y%m%dT%H%M%S')
+      local_time(time.year, time.month, time.day, time.hour, time.minute, time.second, zone)
     end
     calendars=Icalendar::Calendar.parse(text)
     raise ArgumentError,'Datoteka ne vsebuje koledarja.' if calendars.empty?

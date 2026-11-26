@@ -18,6 +18,12 @@ class IcsIntegrityTest < ActiveSupport::TestCase
     assert_equal '09:30',IcsService.import(calendar(':20270704T093000',':20270704T103000')).first['time']
     assert_equal '11:30',IcsService.import(calendar(':20270704T093000Z',':20270704T103000Z')).first['time']
   end
+  test 'quoted and folded timezone parameters preserve the local wall clock' do
+    start = ";X-LABEL=\"09:30 appointment\";\r\n TZID=\"Europe/Ljubljana\":20270704T093000"
+    finish = ';TZID="Europe/Ljubljana";VALUE=DATE-TIME:20270704T103000'
+    row = IcsService.import(calendar(start, finish)).first
+    assert_equal ['09:30', 60], row.values_at('time', 'minutes')
+  end
   test 'multi day all day event preserves inclusive last day on roundtrip' do
     row=IcsService.import(calendar(';VALUE=DATE:20271230',';VALUE=DATE:20280103')).first
     assert_equal '2028-01-02',row['end_date']
