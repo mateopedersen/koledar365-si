@@ -283,9 +283,25 @@
     venue.hidden = !(entry.category === 'festival' && event?.detail);
     if (!venue.hidden) setText(venue, event.detail);
     const source = get('[data-feature-source]');
+    source.hidden = true;
+    source.removeAttribute('href');
     const sourcePath = event?.path || event?.source_url;
-    source.hidden = !sourcePath;
-    if (sourcePath) source.href = sourcePath;
+    if (sourcePath) {
+      try {
+        const destination = new URL(sourcePath, window.location.origin);
+        const isLocal = destination.origin === window.location.origin;
+        const localPath = isLocal && !destination.pathname.startsWith('//');
+        const secureExternal = !isLocal && destination.protocol === 'https:';
+        if ((localPath || secureExternal) && !destination.username && !destination.password) {
+          const target = localPath ? destination.pathname.slice(1) : destination.host + destination.pathname;
+          const suffix = encodeURI(target + destination.search + destination.hash).replace(/%25([0-9a-f]{2})/gi, '%$1');
+          source.href = (localPath ? '/' : 'https://') + suffix;
+          source.hidden = false;
+        }
+      } catch {
+        // An invalid source does not prevent the countdown from running.
+      }
+    }
 
     featureShare.disabled = false;
     updateSaveButton();
