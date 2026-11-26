@@ -290,11 +290,12 @@
       try {
         const destination = new URL(sourcePath, window.location.origin);
         const isLocal = destination.origin === window.location.origin;
-        if ((isLocal || destination.protocol === 'https:') && !destination.username && !destination.password) {
-          const localPath = isLocal && !destination.pathname.startsWith('//');
-          source.href = localPath
-            ? '/' + destination.pathname.slice(1) + destination.search + destination.hash
-            : destination.href;
+        const localPath = isLocal && !destination.pathname.startsWith('//');
+        const secureExternal = !isLocal && destination.protocol === 'https:';
+        if ((localPath || secureExternal) && !destination.username && !destination.password) {
+          const target = localPath ? destination.pathname.slice(1) : destination.host + destination.pathname;
+          const suffix = encodeURI(target + destination.search + destination.hash).replace(/%25([0-9a-f]{2})/gi, '%$1');
+          source.href = (localPath ? '/' : 'https://') + suffix;
           source.hidden = false;
         }
       } catch {
