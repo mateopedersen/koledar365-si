@@ -17,7 +17,8 @@ class EmbeddedCalendarJsonTest < ActiveSupport::TestCase
       assert_equal 1, doc.css('script[type="application/json"]').length, name
       assert_empty doc.css('img'), name
       decoded = JSON.parse(doc.at_css('script').text)
-      assert_equal attack, decoded.fetch(name == '_school_timetable_period' ? 'schoolRange' : 'title').then { |value| value.is_a?(Array) ? value.first : value }, name
+      value = name == '_school_timetable_period' ? decoded.fetch('schoolRange').first : decoded.fetch('title')
+      assert_equal attack, value, name
     end
   end
 end
