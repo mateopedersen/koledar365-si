@@ -113,3 +113,15 @@ test('backup validation prevents silent invented times, duplicate ids and unveri
   const migrated=migrateLegacy(legacy);assert.equal(migrated.lessons[0].repeat,'once');assert.equal(migrated.lessons[0].date,'2026-10-21');assert.equal(migrated.skipBreaks,false);assert.equal(migrated.lessons[0].teacher,'');assert.equal(migrated.lessons[0].legacyPerson,'Učenka Ana');
   assert.throws(()=>migrateLegacy({version:1,entries:[{title:'No time',date:'2026-10-21'}]}),/začetni in končni čas/);
 });
+
+test('year calendar treats event categories as text in interactive and printed cells', () => {
+  const attack = '\"><img src=x onerror="globalThis.injected=true">';
+  const p = {range:['2027-01-01','2027-01-31']};
+  const events = [{start:'2027-01-01',end:'2027-01-01',title:attack,category:attack}];
+  for (const interactive of [true, false]) {
+    const html = yearHTML(p, events, interactive);
+    assert.ok(!html.includes('<img'));
+    assert.ok(html.includes('&lt;img'));
+    assert.ok(!html.includes('data-category="' + attack));
+  }
+});

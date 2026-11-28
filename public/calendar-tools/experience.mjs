@@ -95,7 +95,7 @@ function initializeHub(root){
         for(let index=0;index<7;index++){const date=addDays(start,index),value=iso(date),current=date.getUTCMonth()+1===state.month,holiday=current?holidays.get(value)||'':'';rows+=`<td class="${!current?'is-outside ':''}${holiday?'is-holiday ':''}${index>4?'is-weekend ':''}${value===data.today?'is-today':''}"><span>${date.getUTCDate()}</span>${holiday?`<small title="${escape(holiday)}">${escape(holiday)}</small>`:''}</td>`}rows+='</tr>';
       }
       const monthHolidays=data.holidays.filter(event=>event.date.startsWith(`${state.year}-${pad(state.month)}-`));
-      $('[data-calendar-grid]').innerHTML=`<table class="calendar-sheet__month" aria-label="${escape(cap(data.months[state.month-1]))} ${state.year}"><thead><tr><th scope="col"><abbr title="Teden ISO">T</abbr></th>${data.days.map(day=>`<th scope="col"><abbr title="${escape(day)}">${escape(day.slice(0,3))}</abbr></th>`).join('')}</tr></thead><tbody>${rows}</tbody></table>${monthHolidays.length?`<ul class="calendar-sheet__holidays" aria-label="Dela prosti dnevi v mesecu">${monthHolidays.map(event=>`<li><time datetime="${event.date}">${Number(event.date.slice(-2))}. ${state.month}.</time><span>${escape(event.title)}</span></li>`).join('')}</ul>`:''}`;
+      $('[data-calendar-grid]').innerHTML=`<table class="calendar-sheet__month" aria-label="${escape(cap(data.months[state.month-1]))} ${state.year}"><thead><tr><th scope="col"><abbr title="Teden ISO">T</abbr></th>${data.days.map(day=>`<th scope="col"><abbr title="${escape(day)}">${escape(day.slice(0,3))}</abbr></th>`).join('')}</tr></thead><tbody>${rows}</tbody></table>${monthHolidays.length?`<ul class="calendar-sheet__holidays" aria-label="Dela prosti dnevi v mesecu">${monthHolidays.map(event=>`<li><time datetime="${escape(event.date)}">${Number(event.date.slice(-2))}. ${state.month}.</time><span>${escape(event.title)}</span></li>`).join('')}</ul>`:''}`;
       $('[data-calendar-back]').disabled=state.year===data.years[0]&&state.month===1;$('[data-calendar-next]').disabled=state.year===data.years.at(-1)&&state.month===12;
       $('[data-calendar-detail]').href=monthPath(state.year,state.month,data);
     }
@@ -147,7 +147,7 @@ function initializeHub(root){
   });
   render();
 }
-function monthPath(year,month,data){return year===2026?'/?'+new URLSearchParams({year,month,date:`${year}-${pad(month)}-01`}):`/koledar/${year}/${data.months[month-1]}/`}
+function monthPath(year,month,data){return year===2026?'/?'+new URLSearchParams({year,month,date:`${year}-${pad(month)}-01`}):`/koledar/${encodeURIComponent(year)}/${encodeURIComponent(data.months[month-1])}/`}
 function initializeSpreadsheet(root){
   if(root.dataset.calendarReady)return;root.dataset.calendarReady='true';
   root.querySelector('[data-calendar-xlsx]').addEventListener('click',()=>{const output=root.querySelector('[data-calendar-status]');try{const result=createCalendarWorkbook({year:Number(root.dataset.year),month:root.dataset.month?Number(root.dataset.month):null,data:JSON.parse(root.querySelector('[data-calendar-data]').textContent)});download(result.blob,result.filename);output.textContent='Prenos pripravljen.'}catch(error){output.textContent=error.message}});

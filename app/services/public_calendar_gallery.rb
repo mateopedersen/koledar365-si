@@ -15,13 +15,17 @@ class PublicCalendarGallery
   end
 
   def self.public_file(path)
-    return unless available? && public_paths.include?(path)
-    file = Rails.root.join('site', path.delete_prefix('/'))
-    file if file.file?
+    return unless available?
+    file = public_files[path]
+    file if file&.file?
   end
 
-  def self.public_paths
-    @public_paths ||= index.values.flatten.flat_map { |row| row.fetch('files').values }.to_set
+  def self.public_files
+    @public_files ||= index.values.flatten.flat_map { |row| row.fetch('files').values }.to_h do |path|
+      file = Rails.root.join('site', path.delete_prefix('/')).cleanpath
+      raise 'Invalid public calendar path' unless file.to_s.start_with?(Rails.root.join('site').to_s + File::SEPARATOR)
+      [path, file]
+    end.freeze
   end
 
   def self.index
@@ -35,5 +39,5 @@ class PublicCalendarGallery
       [options['type'], options['year'], options['type'] == 'monthly' ? options['month'] : nil]
     end
   end
-  private_class_method :index, :public_paths
+  private_class_method :index, :public_files
 end

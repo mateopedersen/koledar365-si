@@ -1,0 +1,469 @@
+{
+  "reviewed_baseline_commit": "1f7f7fe6e66f37d8227d52b4a9525c5e97ebaab0",
+  "alerts": [
+    {
+      "alert": 121,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/astronomy-31fd1b08.js",
+      "line": 172,
+      "decision": "false positive",
+      "review": "After rebuilding, this fingerprint is a retained predecessor of the updated astronomy adapter. Its payload is generated from checked-in, independently validated event data. Years are catalog integers and kind/city are controlled identifiers. Its ICS URL starts /astronomy/ and its external reference has the fixed USNO origin. Current source and the new fingerprint encode the values explicitly. The old bytes remain for cached-page compatibility."
+    },
+    {
+      "alert": 120,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/astronomy-31fd1b08.js",
+      "line": 164,
+      "decision": "false positive",
+      "review": "After rebuilding, this fingerprint is a retained predecessor of the updated astronomy adapter. Its payload is generated from checked-in, independently validated event data. Years are catalog integers and kind/city are controlled identifiers. Its ICS URL starts /astronomy/ and its external reference has the fixed USNO origin. Current source and the new fingerprint encode the values explicitly. The old bytes remain for cached-page compatibility."
+    },
+    {
+      "alert": 119,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/astronomy-31fd1b08.js",
+      "line": 150,
+      "decision": "false positive",
+      "review": "After rebuilding, this fingerprint is a retained predecessor of the updated astronomy adapter. Its payload is generated from checked-in, independently validated event data. Years are catalog integers and kind/city are controlled identifiers. Its ICS URL starts /astronomy/ and its external reference has the fixed USNO origin. Current source and the new fingerprint encode the values explicitly. The old bytes remain for cached-page compatibility."
+    },
+    {
+      "alert": 113,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/astronomy-9d26f8d3.js",
+      "line": 172,
+      "decision": "false positive",
+      "review": "Retained earlier fingerprint of the astronomy adapter, preserved for cached pages. The only taint source is the application/json payload emitted from checked-in, independently validated astronomy data. Years are catalog integers, kind/city are controlled identifiers and text fields are escaped. Its ICS URL begins /astronomy/ and the external reference always begins https://aa.usno.navy.mil/. Current source adds explicit attribute encoding and URL component encoding."
+    },
+    {
+      "alert": 112,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/astronomy-9d26f8d3.js",
+      "line": 164,
+      "decision": "false positive",
+      "review": "Retained earlier fingerprint of the astronomy adapter, preserved for cached pages. The only taint source is the application/json payload emitted from checked-in, independently validated astronomy data. Years are catalog integers, kind/city are controlled identifiers and text fields are escaped. Its ICS URL begins /astronomy/ and the external reference always begins https://aa.usno.navy.mil/. Current source adds explicit attribute encoding and URL component encoding."
+    },
+    {
+      "alert": 111,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/astronomy-9d26f8d3.js",
+      "line": 150,
+      "decision": "false positive",
+      "review": "Retained earlier fingerprint of the astronomy adapter, preserved for cached pages. The only taint source is the application/json payload emitted from checked-in, independently validated astronomy data. Years are catalog integers, kind/city are controlled identifiers and text fields are escaped. Its ICS URL begins /astronomy/ and the external reference always begins https://aa.usno.navy.mil/. Current source adds explicit attribute encoding and URL component encoding."
+    },
+    {
+      "alert": 110,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/astronomy-9d26f8d3.js",
+      "line": 147,
+      "decision": "false positive",
+      "review": "Retained earlier fingerprint of the astronomy adapter, preserved for cached pages. The only taint source is the application/json payload emitted from checked-in, independently validated astronomy data. Years are catalog integers, kind/city are controlled identifiers and text fields are escaped. Its ICS URL begins /astronomy/ and the external reference always begins https://aa.usno.navy.mil/. Current source adds explicit attribute encoding and URL component encoding."
+    },
+    {
+      "alert": 109,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/astronomy-9d26f8d3.js",
+      "line": 106,
+      "decision": "false positive",
+      "review": "Retained earlier fingerprint of the astronomy adapter, preserved for cached pages. The only taint source is the application/json payload emitted from checked-in, independently validated astronomy data. Years are catalog integers, kind/city are controlled identifiers and text fields are escaped. Its ICS URL begins /astronomy/ and the external reference always begins https://aa.usno.navy.mil/. Current source adds explicit attribute encoding and URL component encoding."
+    },
+    {
+      "alert": 108,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/astronomy-9d26f8d3.js",
+      "line": 100,
+      "decision": "false positive",
+      "review": "Retained earlier fingerprint of the astronomy adapter, preserved for cached pages. The only taint source is the application/json payload emitted from checked-in, independently validated astronomy data. Years are catalog integers, kind/city are controlled identifiers and text fields are escaped. Its ICS URL begins /astronomy/ and the external reference always begins https://aa.usno.navy.mil/. Current source adds explicit attribute encoding and URL component encoding."
+    },
+    {
+      "alert": 107,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/astronomy-9d26f8d3.js",
+      "line": 97,
+      "decision": "false positive",
+      "review": "Retained earlier fingerprint of the astronomy adapter, preserved for cached pages. The only taint source is the application/json payload emitted from checked-in, independently validated astronomy data. Years are catalog integers, kind/city are controlled identifiers and text fields are escaped. Its ICS URL begins /astronomy/ and the external reference always begins https://aa.usno.navy.mil/. Current source adds explicit attribute encoding and URL component encoding."
+    },
+    {
+      "alert": 102,
+      "rule": "rb/stored-xss",
+      "path": "app/views/pages/_moon_phase_gallery.html.erb",
+      "line": 24,
+      "decision": "fixed",
+      "review": "URL-encode each festival slug or lunar-photo identifier as a single path/fragment component. Trusted existing identifiers retain their original destinations; arbitrary delimiters cannot create a different path or fragment."
+    },
+    {
+      "alert": 87,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/countdown-57fbde69.js",
+      "line": 288,
+      "decision": "false positive",
+      "review": "Retained countdown fingerprint. sourcePath comes solely from the checked-in official event catalog. Every destination is an audited local page or HTTPS primary source. Visitor-created countdown names are not this catalog field. Current countdown source already parses the URL and permits only same-origin or HTTPS links."
+    },
+    {
+      "alert": 83,
+      "rule": "rb/stored-xss",
+      "path": "app/views/pages/show.html.erb",
+      "line": 4,
+      "decision": "false positive",
+      "review": "ShoppingGuides reads generated, version-controlled HTML from data/shopping-html for a path selected by the static DATA.paths catalog. There is no visitor/admin-supplied HTML or user-controlled file path. The authored SVG, JSON data island and module scripts are intended build inputs. Generator and shopping-guide validation tests cover these sources."
+    },
+    {
+      "alert": 82,
+      "rule": "rb/stored-xss",
+      "path": "app/views/pages/_festival_detail.html.erb",
+      "line": 83,
+      "decision": "fixed",
+      "review": "URL-encode each festival slug or lunar-photo identifier as a single path/fragment component. Trusted existing identifiers retain their original destinations; arbitrary delimiters cannot create a different path or fragment."
+    },
+    {
+      "alert": 81,
+      "rule": "rb/stored-xss",
+      "path": "app/views/pages/_festivals.html.erb",
+      "line": 47,
+      "decision": "fixed",
+      "review": "URL-encode each festival slug or lunar-photo identifier as a single path/fragment component. Trusted existing identifiers retain their original destinations; arbitrary delimiters cannot create a different path or fragment."
+    },
+    {
+      "alert": 80,
+      "rule": "rb/stored-xss",
+      "path": "app/views/pages/_festivals.html.erb",
+      "line": 11,
+      "decision": "fixed",
+      "review": "URL-encode each festival slug or lunar-photo identifier as a single path/fragment component. Trusted existing identifiers retain their original destinations; arbitrary delimiters cannot create a different path or fragment."
+    },
+    {
+      "alert": 59,
+      "rule": "rb/stored-xss",
+      "path": "app/views/pages/_important_days.html.erb",
+      "line": 12,
+      "decision": "false positive",
+      "review": "ShoppingGuides reads generated, version-controlled HTML from data/shopping-html for a path selected by the static DATA.paths catalog. There is no visitor/admin-supplied HTML or user-controlled file path. The authored SVG, JSON data island and module scripts are intended build inputs. Generator and shopping-guide validation tests cover these sources."
+    },
+    {
+      "alert": 54,
+      "rule": "js/xss-through-dom",
+      "path": "site/school/experience.mjs",
+      "line": 98,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 53,
+      "rule": "js/xss-through-dom",
+      "path": "site/school/experience.mjs",
+      "line": 87,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 52,
+      "rule": "js/xss-through-dom",
+      "path": "site/school/experience.mjs",
+      "line": 86,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 51,
+      "rule": "js/xss-through-dom",
+      "path": "site/premik-ure/experience.mjs",
+      "line": 18,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 49,
+      "rule": "js/xss-through-dom",
+      "path": "site/horoscope/experience-v1.mjs",
+      "line": 79,
+      "decision": "false positive",
+      "review": "Retained horoscope v1 adapter. rising.slug is one of twelve server-rendered zodiac profile identifiers, selected by a calculated numeric index. A fixed /horoskop/ prefix keeps the result a same-origin path. Current v2 additionally validates the alphabetic slug. No script scheme or HTML sink is involved."
+    },
+    {
+      "alert": 48,
+      "rule": "js/xss-through-dom",
+      "path": "site/garden/calendar-tools.mjs",
+      "line": 35,
+      "decision": "false positive",
+      "review": "URL.createObjectURL receives a locally created calendar Blob. The call supplies text/calendar and a .ics download filename; JSON backups use application/json and .json. The anchor has download set before clicking. No remote or javascript URL is accepted, and no HTML is inserted."
+    },
+    {
+      "alert": 45,
+      "rule": "js/xss-through-dom",
+      "path": "site/education/experience.mjs",
+      "line": 179,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 44,
+      "rule": "js/xss-through-dom",
+      "path": "site/education/experience.mjs",
+      "line": 151,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 43,
+      "rule": "js/xss-through-dom",
+      "path": "site/calendar-tools/experience.mjs",
+      "line": 100,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 42,
+      "rule": "js/xss-through-dom",
+      "path": "site/calendar-tools/experience.mjs",
+      "line": 98,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 41,
+      "rule": "js/xss-through-dom",
+      "path": "site/calendar-tools/experience.mjs",
+      "line": 91,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 40,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/rails-ujs.esm-e925103b.js",
+      "line": 410,
+      "decision": "false positive",
+      "review": "This is retained Rails UJS framework code implementing the documented data-disable-with HTML feature. Its source is a server-authored attribute in the same trusted document. Repository review found no application data-disable-with binding to visitor input. Original child markup is cached and restored by the framework; there is no untrusted external source."
+    },
+    {
+      "alert": 39,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/rails-ujs.esm-e925103b.js",
+      "line": 384,
+      "decision": "false positive",
+      "review": "This is retained Rails UJS framework code implementing the documented data-disable-with HTML feature. Its source is a server-authored attribute in the same trusted document. Repository review found no application data-disable-with binding to visitor input. Original child markup is cached and restored by the framework; there is no untrusted external source."
+    },
+    {
+      "alert": 38,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/rails-ujs-20eaf715.js",
+      "line": 366,
+      "decision": "false positive",
+      "review": "This is retained Rails UJS framework code implementing the documented data-disable-with HTML feature. Its source is a server-authored attribute in the same trusted document. Repository review found no application data-disable-with binding to visitor input. Original child markup is cached and restored by the framework; there is no untrusted external source."
+    },
+    {
+      "alert": 37,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/rails-ujs-20eaf715.js",
+      "line": 343,
+      "decision": "false positive",
+      "review": "This is retained Rails UJS framework code implementing the documented data-disable-with HTML feature. Its source is a server-authored attribute in the same trusted document. Repository review found no application data-disable-with binding to visitor input. Original child markup is cached and restored by the framework; there is no untrusted external source."
+    },
+    {
+      "alert": 36,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/astronomy-9f0976f8.js",
+      "line": 168,
+      "decision": "false positive",
+      "review": "Retained earlier fingerprint of the astronomy adapter, preserved for cached pages. The only taint source is the application/json payload emitted from checked-in, independently validated astronomy data. Years are catalog integers, kind/city are controlled identifiers and text fields are escaped. Its ICS URL begins /astronomy/ and the external reference always begins https://aa.usno.navy.mil/. Current source adds explicit attribute encoding and URL component encoding."
+    },
+    {
+      "alert": 35,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/astronomy-9f0976f8.js",
+      "line": 161,
+      "decision": "false positive",
+      "review": "Retained earlier fingerprint of the astronomy adapter, preserved for cached pages. The only taint source is the application/json payload emitted from checked-in, independently validated astronomy data. Years are catalog integers, kind/city are controlled identifiers and text fields are escaped. Its ICS URL begins /astronomy/ and the external reference always begins https://aa.usno.navy.mil/. Current source adds explicit attribute encoding and URL component encoding."
+    },
+    {
+      "alert": 34,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/astronomy-9f0976f8.js",
+      "line": 147,
+      "decision": "false positive",
+      "review": "Retained earlier fingerprint of the astronomy adapter, preserved for cached pages. The only taint source is the application/json payload emitted from checked-in, independently validated astronomy data. Years are catalog integers, kind/city are controlled identifiers and text fields are escaped. Its ICS URL begins /astronomy/ and the external reference always begins https://aa.usno.navy.mil/. Current source adds explicit attribute encoding and URL component encoding."
+    },
+    {
+      "alert": 33,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/astronomy-9f0976f8.js",
+      "line": 144,
+      "decision": "false positive",
+      "review": "Retained earlier fingerprint of the astronomy adapter, preserved for cached pages. The only taint source is the application/json payload emitted from checked-in, independently validated astronomy data. Years are catalog integers, kind/city are controlled identifiers and text fields are escaped. Its ICS URL begins /astronomy/ and the external reference always begins https://aa.usno.navy.mil/. Current source adds explicit attribute encoding and URL component encoding."
+    },
+    {
+      "alert": 32,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/astronomy-9f0976f8.js",
+      "line": 103,
+      "decision": "false positive",
+      "review": "Retained earlier fingerprint of the astronomy adapter, preserved for cached pages. The only taint source is the application/json payload emitted from checked-in, independently validated astronomy data. Years are catalog integers, kind/city are controlled identifiers and text fields are escaped. Its ICS URL begins /astronomy/ and the external reference always begins https://aa.usno.navy.mil/. Current source adds explicit attribute encoding and URL component encoding."
+    },
+    {
+      "alert": 31,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/astronomy-9f0976f8.js",
+      "line": 97,
+      "decision": "false positive",
+      "review": "Retained earlier fingerprint of the astronomy adapter, preserved for cached pages. The only taint source is the application/json payload emitted from checked-in, independently validated astronomy data. Years are catalog integers, kind/city are controlled identifiers and text fields are escaped. Its ICS URL begins /astronomy/ and the external reference always begins https://aa.usno.navy.mil/. Current source adds explicit attribute encoding and URL component encoding."
+    },
+    {
+      "alert": 30,
+      "rule": "js/xss-through-dom",
+      "path": "site/assets/astronomy-9f0976f8.js",
+      "line": 94,
+      "decision": "false positive",
+      "review": "Retained earlier fingerprint of the astronomy adapter, preserved for cached pages. The only taint source is the application/json payload emitted from checked-in, independently validated astronomy data. Years are catalog integers, kind/city are controlled identifiers and text fields are escaped. Its ICS URL begins /astronomy/ and the external reference always begins https://aa.usno.navy.mil/. Current source adds explicit attribute encoding and URL component encoding."
+    },
+    {
+      "alert": 29,
+      "rule": "js/xss-through-dom",
+      "path": "public/school/experience.mjs",
+      "line": 98,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 28,
+      "rule": "js/xss-through-dom",
+      "path": "public/school/experience.mjs",
+      "line": 87,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 27,
+      "rule": "js/xss-through-dom",
+      "path": "public/school/experience.mjs",
+      "line": 86,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 25,
+      "rule": "js/xss-through-dom",
+      "path": "public/premik-ure/experience.mjs",
+      "line": 18,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 23,
+      "rule": "js/xss-through-dom",
+      "path": "public/education/experience.mjs",
+      "line": 179,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 22,
+      "rule": "js/xss-through-dom",
+      "path": "public/education/experience.mjs",
+      "line": 151,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 21,
+      "rule": "js/xss-through-dom",
+      "path": "public/garden/calendar-tools.mjs",
+      "line": 35,
+      "decision": "false positive",
+      "review": "URL.createObjectURL receives a locally created calendar Blob. The call supplies text/calendar and a .ics download filename; JSON backups use application/json and .json. The anchor has download set before clicking. No remote or javascript URL is accepted, and no HTML is inserted."
+    },
+    {
+      "alert": 20,
+      "rule": "js/xss-through-dom",
+      "path": "public/calendar-tools/experience.mjs",
+      "line": 100,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 19,
+      "rule": "js/xss-through-dom",
+      "path": "public/calendar-tools/experience.mjs",
+      "line": 98,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 18,
+      "rule": "js/xss-through-dom",
+      "path": "public/calendar-tools/experience.mjs",
+      "line": 91,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 16,
+      "rule": "js/xss-through-dom",
+      "path": "app/assets/javascripts/astronomy.js",
+      "line": 172,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 15,
+      "rule": "js/xss-through-dom",
+      "path": "app/assets/javascripts/astronomy.js",
+      "line": 164,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 14,
+      "rule": "js/xss-through-dom",
+      "path": "app/assets/javascripts/astronomy.js",
+      "line": 150,
+      "decision": "fixed",
+      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+    },
+    {
+      "alert": 8,
+      "rule": "rb/stored-xss",
+      "path": "app/views/pages/_school.html.erb",
+      "line": 65,
+      "decision": "false positive",
+      "review": "Non-executable application/json school data comes from a checked-in file. Every < is replaced by a literal JSON Unicode escape before raw, so </script cannot close the data island. Dedicated regression verifies hostile closing-script content remains data."
+    },
+    {
+      "alert": 7,
+      "rule": "rb/stored-xss",
+      "path": "app/views/pages/_school_timetable_period.html.erb",
+      "line": 35,
+      "decision": "false positive",
+      "review": "JSON is deliberately embedded as a non-executable application/json data island. Rails ERB::Util.json_escape encodes <, >, &, U+2028 and U+2029 before raw. The source is version-controlled garden/education data. Closing-script and entity injection are covered by a dedicated rendering regression."
+    },
+    {
+      "alert": 6,
+      "rule": "rb/stored-xss",
+      "path": "app/views/pages/_garden_calendar.html.erb",
+      "line": 3,
+      "decision": "false positive",
+      "review": "JSON is deliberately embedded as a non-executable application/json data island. Rails ERB::Util.json_escape encodes <, >, &, U+2028 and U+2029 before raw. The source is version-controlled garden/education data. Closing-script and entity injection are covered by a dedicated rendering regression."
+    },
+    {
+      "alert": 3,
+      "rule": "rb/clear-text-storage-sensitive-data",
+      "path": "test/integration/planner_test.rb",
+      "line": 78,
+      "decision": "false positive",
+      "review": "The source is a synthetic test-only password in PlannerIntegrationTest, passed to Admin.create! password=. has_secure_password hashes it with bcrypt into password_digest. It is not persisted as plaintext. The regression verifies password changes revoke other test sessions."
+    },
+    {
+      "alert": 2,
+      "rule": "rb/path-injection",
+      "path": "app/controllers/public_calendar_downloads_controller.rb",
+      "line": 10,
+      "decision": "fixed",
+      "review": "Resolve requested download names by exact hash lookup into catalog-owned Pathname objects. The filesystem path is built only from trusted catalog values, checked under site/, never from request.path. Regression verifies traversal variants do not resolve."
+    },
+    {
+      "alert": 1,
+      "rule": "py/clear-text-storage-sensitive-data",
+      "path": "data/lunar/cross_validate_jpl.py",
+      "line": 179,
+      "decision": "false positive",
+      "review": "The SARIF source is the public numeric LONGITUDE_TOLERANCE_DEG constant, not a private coordinate or user record. The sink writes an intentionally public scientific ephemeris validation report. It contains public JPL/USNO comparisons and tolerance values."
+    }
+  ]
+}

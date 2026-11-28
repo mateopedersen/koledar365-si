@@ -150,7 +150,7 @@
     $('[data-perseids-nights]').innerHTML = rows().map(n=>{
       const view = local(n), day = +n.date.slice(8,10), a = new Date(view.dark_start).getTime(), duration = new Date(view.dark_end).getTime()-a;
       const blocks = view.moon_free.map(w=>`<span style="left:${((new Date(w.start).getTime()-a)/duration*100).toFixed(3)}%;width:${((new Date(w.end)-new Date(w.start))/duration*100).toFixed(3)}%"></span>`).join('');
-      return `<section class="astro-night"><div class="astro-night-date"><span>NOČ</span><h3>${day}./${day+1}.</h3><p>avgust ${year}</p></div><div class="astro-night-main"><div class="astro-night-heading"><strong>${escape(name())} · astronomska tema</strong><span>${timeLabel(view.dark_start)}–${timeLabel(view.dark_end)}</span></div><div class="astro-night-bar" role="img" aria-label="Modri deli označujejo astronomsko temo, ko je Luna pod obzorjem.">${blocks}</div><div class="astro-night-facts"><span><strong>${escape(n.moon_illumination)} %</strong> Lune osvetljene ob polnoči</span><span><strong>Brez Lune:</strong> ${view.moon_free.length?interval(view.moon_free,false):'v tej temni noči ni takega intervala'}</span>${view.moonrise?`<span>Lunin vzhod: ${timeLabel(view.moonrise)}</span>`:''}${view.moonset?`<span>Lunin zahod: ${timeLabel(view.moonset)}</span>`:''}</div></div></section>`;
+      return `<section class="astro-night"><div class="astro-night-date"><span>NOČ</span><h3>${day}./${day+1}.</h3><p>avgust ${escape(year)}</p></div><div class="astro-night-main"><div class="astro-night-heading"><strong>${escape(name())} · astronomska tema</strong><span>${timeLabel(view.dark_start)}–${timeLabel(view.dark_end)}</span></div><div class="astro-night-bar" role="img" aria-label="Modri deli označujejo astronomsko temo, ko je Luna pod obzorjem.">${blocks}</div><div class="astro-night-facts"><span><strong>${escape(n.moon_illumination)} %</strong> Lune osvetljene ob polnoči</span><span><strong>Brez Lune:</strong> ${view.moon_free.length?interval(view.moon_free,false):'v tej temni noči ni takega intervala'}</span>${view.moonrise?`<span>Lunin vzhod: ${timeLabel(view.moonrise)}</span>`:''}${view.moonset?`<span>Lunin zahod: ${timeLabel(view.moonset)}</span>`:''}</div></div></section>`;
     }).join('');
   }
   function render(updateUrl=false) {
@@ -161,7 +161,7 @@
     root.querySelectorAll('[data-city-name]').forEach(el=>el.textContent=name());
     const ics = $('[data-astro-ics]');
     const count = isMoon||isPerseids ? rows().length : rows().filter(e=>local(e).visible).length;
-    ics.href = `/astronomy/${data.kind}-${year}${isMoon?'':`-${city}`}.ics`;
+    ics.href = `/astronomy/${encodeURIComponent(data.kind)}-${encodeURIComponent(year)}${isMoon?'':`-${encodeURIComponent(city)}`}.ics`;
     ics.setAttribute('aria-disabled',count ? 'false':'true');
     if (!count) ics.removeAttribute('href');
     const icsLabel = ics.querySelector('[data-astro-ics-label]') || ics;
@@ -169,7 +169,7 @@
     if (isMoon) {
       moonRows();
       const source = $('[data-moon-source]');
-      if (source) { source.href = `https://aa.usno.navy.mil/api/moon/phases/year?year=${year}`; source.textContent = `izvirna tabela USNO ${year}`; }
+      if (source) { source.href = `https://aa.usno.navy.mil/api/moon/phases/year?year=${encodeURIComponent(year)}`; source.textContent = `izvirna tabela USNO ${year}`; }
     } else if (isPerseids) perseidRows(); else eclipseRows();
     updateUpcoming();
     if (updateUrl) {

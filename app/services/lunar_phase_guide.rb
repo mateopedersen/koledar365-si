@@ -11,5 +11,5 @@ module LunarPhaseGuide
   def self.new_moon_photos = DATA.fetch('new_moon_photos')
   def self.new_moon_hero = new_moon_photos.fetch('mlaj-iss')
   def self.photos = { 'luna-nad-piranom' => hero }.merge(phases.filter_map { |phase| [phase.fetch('id'), phase['photo']] if phase['photo'] }.to_h)
-  def self.credit_path(id) = "/fotografije-in-licence/#luna-#{id}"
+  def self.credit_path(id) = "/fotografije-in-licence/#luna-#{ERB::Util.url_encode(id)}"
 end

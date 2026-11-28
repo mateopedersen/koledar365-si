@@ -15,7 +15,7 @@ export function refreshClockChange(root, changes, now = Date.now()) {
   root.querySelector('[data-next-hours]').textContent = `${upcoming.before} na ${upcoming.after}`;
   root.querySelector('[data-next-direction]').textContent = `Eno uro ${upcoming.direction}`;
   root.querySelector('[data-next-sentence]').textContent = upcoming.sentence;
-  root.querySelector('[data-next-year]').href = `#datum-${upcoming.date.slice(0,4)}`;
+  root.querySelector('[data-next-year]').href = `#datum-${encodeURIComponent(upcoming.date.slice(0,4))}`;
 }
 
 if (typeof document !== 'undefined') {
