@@ -23,7 +23,7 @@ class OccasionCatalog
   end
   def self.observance(slug) = observances.find { |row| row.fetch('slug') == slug }
   def self.festival_path(slug) = "#{PATH}##{slug}"
-  def self.festival_detail_path(slug) = "#{PATH}#{slug}/"
+  def self.festival_detail_path(slug) = "#{PATH}#{ERB::Util.url_encode(slug)}/"
   def self.ics_path(slug, start) = "#{PATH}#{slug}/#{start}.ics"
   def self.festival_places(festival) = festival.fetch('places') { [festival.fetch('place')] }
   def self.place_key(name) = ActiveSupport::Inflector.transliterate(name).parameterize
