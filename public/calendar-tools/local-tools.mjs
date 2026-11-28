@@ -204,7 +204,12 @@ function reminders(root) {
       message.textContent = 'Vpišite ime in veljaven datum. Shranite lahko do 100 opomnikov.';
       return;
     }
-    const uid = globalThis.crypto?.randomUUID?.() || `opomnik-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    let uid = globalThis.crypto?.randomUUID?.();
+    if (!uid) {
+      const timestamp = Date.now();
+      let suffix = 0;
+      do { uid = `opomnik-${timestamp}-${suffix++}`; } while (entries.some(entry => entry.uid === uid));
+    }
     entries.push({ title, date: data.date, uid, done: false });
     persist('Opomnik je dodan.');
     form.elements.title.value = '';
