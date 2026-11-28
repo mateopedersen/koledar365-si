@@ -95,7 +95,8 @@ function setupPlanner(root) {
     mail.href = `mailto:?subject=${encodeURIComponent(entry.title)}&body=${encodeURIComponent(shareUrl)}`;
 
     const [year, month] = entry.start.split('-');
-    home.href = `/?year=${year}&month=${Number(month)}&date=${entry.start}&view=day#personal-planner`;
+    const calendarQuery = new URLSearchParams({ year, month: String(Number(month)), date: entry.start, view: 'day' });
+    home.href = `/?${calendarQuery}#personal-planner`;
     home.hidden = true;
     link.hidden = true;
     showMessage('');
