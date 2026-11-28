@@ -6,24 +6,24 @@
       "rule": "js/xss-through-dom",
       "path": "site/assets/astronomy-31fd1b08.js",
       "line": 172,
-      "decision": "fixed",
-      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+      "decision": "false positive",
+      "review": "After rebuilding, this fingerprint is a retained predecessor of the updated astronomy adapter. Its payload is generated from checked-in, independently validated event data. Years are catalog integers and kind/city are controlled identifiers. Its ICS URL starts /astronomy/ and its external reference has the fixed USNO origin. Current source and the new fingerprint encode the values explicitly. The old bytes remain for cached-page compatibility."
     },
     {
       "alert": 120,
       "rule": "js/xss-through-dom",
       "path": "site/assets/astronomy-31fd1b08.js",
       "line": 164,
-      "decision": "fixed",
-      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+      "decision": "false positive",
+      "review": "After rebuilding, this fingerprint is a retained predecessor of the updated astronomy adapter. Its payload is generated from checked-in, independently validated event data. Years are catalog integers and kind/city are controlled identifiers. Its ICS URL starts /astronomy/ and its external reference has the fixed USNO origin. Current source and the new fingerprint encode the values explicitly. The old bytes remain for cached-page compatibility."
     },
     {
       "alert": 119,
       "rule": "js/xss-through-dom",
       "path": "site/assets/astronomy-31fd1b08.js",
       "line": 150,
-      "decision": "fixed",
-      "review": "Encode scalar values at each HTML attribute/text boundary and URL path/query component. School external references must parse as credential-free HTTPS URLs. Existing calendar/date validation and functional behavior remain intact. Corresponding current generated copies are rebuilt from the reviewed source."
+      "decision": "false positive",
+      "review": "After rebuilding, this fingerprint is a retained predecessor of the updated astronomy adapter. Its payload is generated from checked-in, independently validated event data. Years are catalog integers and kind/city are controlled identifiers. Its ICS URL starts /astronomy/ and its external reference has the fixed USNO origin. Current source and the new fingerprint encode the values explicitly. The old bytes remain for cached-page compatibility."
     },
     {
       "alert": 113,
