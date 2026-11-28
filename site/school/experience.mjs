@@ -83,8 +83,13 @@ function initSchoolPage(root) {
     $('[data-university-empty]').hidden=matches.length>0;
     for(const uni of data.universities.filter(uni=>uni.calendars)) {
       const calendar=selectedCalendar(uni);
-      $(`[data-periods-for="${uni.id}"]`).innerHTML=calendar.periods.map(row=>`<div><span class="sp-period-type sp-type-${row[3]}"><i></i>${escapeHTML(row[0])}</span><strong>${rangeText({start:row[1],end:row[2]})}</strong></div>`).join('');
-      $(`[data-calendar-source="${uni.id}"]`).href=calendar.url;
+      $(`[data-periods-for="${uni.id}"]`).innerHTML=calendar.periods.map(row=>`<div><span class="sp-period-type sp-type-${escapeHTML(row[3])}"><i></i>${escapeHTML(row[0])}</span><strong>${rangeText({start:row[1],end:row[2]})}</strong></div>`).join('');
+      const source = $(`[data-calendar-source="${uni.id}"]`);
+      source.removeAttribute('href');
+      try {
+        const destination = new URL(calendar.url);
+        if (destination.protocol === 'https:' && !destination.username && !destination.password) source.href = destination.href;
+      } catch {}
     }
   }
   function exportAll() {
@@ -97,9 +102,9 @@ function initSchoolPage(root) {
     const cards = activeBreaks().filter(row => !savedOnly || favorites.has(row.id));
     $('[data-holiday-grid]').innerHTML = cards.map(row => {
       const photo = data.photos?.[row.photo];
-      const image = photo ? `<img src="${escapeHTML(photo.display_path || photo.path)}" srcset="${escapeHTML(photo.srcset || '')}" sizes="${escapeHTML(cardImageSizes)}" width="${photo.width || 640}" height="${photo.height || 420}" alt="${escapeHTML(photo.alt)}" loading="lazy" decoding="async">` : '';
+      const image = photo ? `<img src="${escapeHTML(photo.display_path || photo.path)}" srcset="${escapeHTML(photo.srcset || '')}" sizes="${escapeHTML(cardImageSizes)}" width="${escapeHTML(photo.width || 640)}" height="${escapeHTML(photo.height || 420)}" alt="${escapeHTML(photo.alt)}" loading="lazy" decoding="async">` : '';
       const credit = photo ? `<div class="sp-photo-credit"><a href="${escapeHTML(photo.source)}" target="_blank" rel="noopener noreferrer" title="${escapeHTML(photo.title)}">Foto: ${escapeHTML(photo.author)}</a><span aria-hidden="true"> · </span>${photo.licenseUrl ? `<a href="${escapeHTML(photo.licenseUrl)}" target="_blank" rel="license noopener noreferrer">${escapeHTML(photo.license)}</a>` : `<span>${escapeHTML(photo.license)}</span>`}</div>` : '';
-      return `<article id="pocitnice-${row.id}" class="sp-holiday sp-${row.season}" data-break-id="${row.id}"><div class="sp-card-art">${image}<span class="sp-season-tag">${{autumn:'JESEN',festive:'PRAZNIČNI ČAS',winter:'ZIMA',spring:'POMLAD',summer:'POLETJE'}[row.season]}</span><button type="button" class="sp-favorite" data-favorite="${row.id}" aria-label="${favorites.has(row.id)?'Odstrani iz shranjenih':'Shrani'}: ${escapeHTML(row.name)}" aria-pressed="${favorites.has(row.id)}">${icon('heart')}</button>${credit}</div><div class="sp-card-content"><small>${escapeHTML(row.tag)}</small><h3>${escapeHTML(row.name)}</h3><div class="sp-card-date">${icon('calendar')}<time datetime="${row.start}">${rangeText(row)}</time></div><div class="sp-card-bottom"><span><strong>${daysInclusive(row.start,row.end)}</strong> koledarskih dni <small>uradnega obdobja</small></span><button type="button" data-export-break="${row.id}" aria-label="Izvozi: ${escapeHTML(row.name)}">${icon('download')}</button></div></div></article>`;
+      return `<article id="pocitnice-${escapeHTML(row.id)}" class="sp-holiday sp-${escapeHTML(row.season)}" data-break-id="${escapeHTML(row.id)}"><div class="sp-card-art">${image}<span class="sp-season-tag">${{autumn:'JESEN',festive:'PRAZNIČNI ČAS',winter:'ZIMA',spring:'POMLAD',summer:'POLETJE'}[row.season]}</span><button type="button" class="sp-favorite" data-favorite="${escapeHTML(row.id)}" aria-label="${favorites.has(row.id)?'Odstrani iz shranjenih':'Shrani'}: ${escapeHTML(row.name)}" aria-pressed="${favorites.has(row.id)}">${icon('heart')}</button>${credit}</div><div class="sp-card-content"><small>${escapeHTML(row.tag)}</small><h3>${escapeHTML(row.name)}</h3><div class="sp-card-date">${icon('calendar')}<time datetime="${escapeHTML(row.start)}">${rangeText(row)}</time></div><div class="sp-card-bottom"><span><strong>${daysInclusive(row.start,row.end)}</strong> koledarskih dni <small>uradnega obdobja</small></span><button type="button" data-export-break="${escapeHTML(row.id)}" aria-label="Izvozi: ${escapeHTML(row.name)}">${icon('download')}</button></div></div></article>`;
     }).join('') + (!savedOnly ? tip : '');
     $('[data-empty]').hidden = !savedOnly || cards.length > 0;
     $('[data-saved-only]').setAttribute('aria-pressed', String(savedOnly)); $('[data-saved-count]').textContent = favorites.size;
